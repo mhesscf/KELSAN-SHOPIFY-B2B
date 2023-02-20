@@ -1,0 +1,48 @@
+{
+  "sections": {
+    "71f28cef-4c23-4257-86c0-c22883889adb": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Our Story",
+        "chsectiontext": "Our goal at FloorScrubbers.com, is to bring you, the customer, the highest quality experience when ordering from us. Not only do we want to offer you the largest selection of floor scrubbing machinery and supplies at the most affordable prices, but we also want to be there for any questions you may have.",
+        "image": "shopify:\/\/shop_images\/fs-about-us.jpg"
+      }
+    },
+    "8af92e74-d566-4a78-85d1-6caece09f093": {
+      "type": "image-gradient-section",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/fs-about-us.jpg",
+        "heading": "Our Story",
+        "subheading": "",
+        "textcontent": "<p>Our goal at FloorScrubbers.com, is to bring you, the customer, the highest quality experience when ordering from us. Not only do we want to offer you the largest selection of floor scrubbing machinery and supplies at the most affordable prices, but we also want to be there for any questions you may have.<\/p>",
+        "button_label": "Button",
+        "button_link": "",
+        "content_right": false,
+        "rmv_top_mgn": false
+      }
+    },
+    "main": {
+      "type": "page-about",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "9d762dc6-9f0e-499a-84bf-4f5a65c2797d": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "full-width",
+        "title": "",
+        "text": "<p>Our goal at FloorScrubbers.com, is to bring you, the customer, the highest quality experience when ordering from us. Not only do we want to offer you the largest selection of floor scrubbing machinery and supplies at the most affordable prices, but we also want to be there for any questions you may have. Our highly trained customer service staff can answer almost any question you may have about one of our machines, and can help supply you with the correct tools for the job. Give us a call with any question from 8:00 a.m. to 5:00 p.m. Monday thru Friday, EST.<\/p><p>Our huge warehouse is packed full of floor cleaning machines, chemicals, and supplies! Due to the fact that we buy in mass quantities, we are able to pass along the best prices on machinery in the industry today! This means that we always have what you're looking for in stock.<\/p><p>We recognize that the service of our floor scrubbers extends beyond the ordering stage. Our staff of cleaning experts will help you choose the right chemical, or piece of cleaning equipment as your requirements grow and your needs change. If you buy your floor maintenance equipment from FloorScrubbers.com, our trained service technicians will be there to help, from the first day of operation and to guide you when changes are needed.<\/p><p><strong>Competitive Prices - Guaranteed Satisfaction.<\/strong><\/p><p>When it comes to prices, we meet the challenge. Because of high volume buying, we offer maximum price breaks on all items regularly.<\/p><p><strong>For Assistance with Your Requirements or Information.<\/strong><\/p><p>Our trained customer service people are anxious to assist you with your requirements or provide helpful information between the hours of 8:00 a.m. to 5:00 p.m. Monday thru Friday. You can reach us toll-free at 1-855-242-9029.<\/p><p><strong>For Additional Information on Our Company.<\/strong><\/p><p>Please check our parent company <a href=\"https:\/\/www.kelsan.biz\/\" target=\"_blank\" title=\"https:\/\/www.kelsan.biz\/\">Kelsan<\/a>. To find out more about us, please feel free to write to us at:<\/p><p>FloorScrubbers.com<br\/>5109 N National Dr.<br\/>Knoxville, TN 37914<br\/>855-242-9029<\/p>",
+        "heading_size": "medium",
+        "text_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "71f28cef-4c23-4257-86c0-c22883889adb",
+    "8af92e74-d566-4a78-85d1-6caece09f093",
+    "main",
+    "9d762dc6-9f0e-499a-84bf-4f5a65c2797d"
+  ]
+}

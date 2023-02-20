@@ -1,0 +1,402 @@
+{% assign section_classes = "home-section--content" %}
+
+{% assign background_color = section.settings.background_color %}
+{% assign heading = section.settings.heading %}
+{% assign subheading = section.settings.subheading %}
+{% assign content = section.settings.content %}
+{% assign button_label = section.settings.button_label %}
+{% assign button_link = section.settings.button_link %}
+{% assign image = section.settings.image %}
+{% assign crop = section.settings.crop %}
+{% assign desktop_image_alignment = section.settings.desktop_image_alignment %}
+{% assign mobile_image_alignment = section.settings.mobile_image_alignment %}
+{% assign text_alignment = section.settings.text_alignment %}
+
+<script type="application/pxs-animation-mapping+json">
+    {
+        "blocks": [".callout"],
+        "elements": [".callout__heading", ".callout__text", ".callout__button"]
+    }
+</script>
+{%- assign base_name = base_name | default: 'callout' -%}
+
+{%- if overlay_opacity > 0 and overlay_color -%}
+    {%- assign overlay_opacity = overlay_opacity | times: 0.01 -%}
+    {%- assign overlay_color = overlay_color | color_modify: 'alpha', overlay_opacity -%}
+{%- endif -%}
+
+{% capture text_classes %}
+    {% if text_alignment != blank %}
+        {{ base_name }}-text-alignment-{{ text_alignment }}
+    {% endif %}
+    {% if text_shadow %}
+        {{ base_name }}--text-shadow
+    {% endif %}
+{% endcapture %}
+
+<section
+        class="
+    {{ base_name }}
+    {% if section_style != blank %}
+      {{ base_name }}--section-style-{{ section_style }}
+    {% endif %}
+    {% if show_border %}
+      {{ base_name }}--section-show-border
+    {% endif %}
+    {% if desktop_image_alignment != blank %}
+      {{ base_name }}--desktop-image-alignment-{{ desktop_image_alignment }}
+    {% endif %}
+    {% if mobile_image_alignment != blank %}
+      {{ base_name }}--mobile-image-alignment-{{ mobile_image_alignment }}
+    {% endif %}
+    {% if content_position != blank %}
+      {{ base_name }}--content-position-{{ content_position }}
+    {% endif %}
+    {% if section_classes != blank %}
+      {{ section_classes }}
+    {% endif %}
+  "
+        data-section-id="{{ section.id }}"
+>
+    <div class="callout--wrapper">
+        <div class="{{ base_name }}__container" style="{% if overlay_color %}background-color: {{ overlay_color }};{% endif %}">
+            <div class="{{ base_name }}__content"
+                {% capture background_style %}
+                    {% if section.settings.section_height == 'original' %}
+                        padding-bottom: {{- 100 | divided_by: section.settings.image.aspect_ratio -}}%;
+                    {% endif %}
+                    background-position: {{ crop }};
+                {% endcapture %}
+                {%
+                  render 'rimg',
+                  img: image,
+                  size: '1800x',
+                  crop: crop,
+                  style: background_style,
+                  lazy: true,
+                  background: true
+                %}>
+                {%- if heading != blank
+                or subheading != blank
+                or button_label != blank
+                or button_link != blank
+                -%}
+                    <div class="{{ base_name }}__content-wrapper {{ text_classes }}">
+                        {%- if subheading -%}
+                            <div class="{{ base_name }}__subheading">{{ subheading }}</div>
+                        {%- endif -%}
+                        {%- if heading != blank -%}
+                            <h2 class="{{ base_name }}__heading">{{ heading | escape }}</h2>
+                        {%- endif -%}
+                        {%- if content != blank -%}
+                            <div class="{{ base_name }}__text">{{ content }}</div>
+                        {%- endif -%}
+                        {%- if
+                                button_label != blank
+                                and button_link != blank
+                        -%}
+                            <a
+                                    class="{{ base_name }}__button"
+                                    href="{{ button_link }}"
+                            >
+                                {{ button_label }}
+                                <span class="{{ base_name}}__button_arrow"><i class="fa-light fa-arrow-right-long"></i> </span>
+                            </a>
+                        {%- endif -%}
+                    </div>
+                {%- endif -%}
+            </div>
+        </div>
+    </div>
+</section>
+{% comment %}Inject @pixelunion/pxs-image-with-text/image-with-text end{% endcomment %}
+
+<style>
+    .callout--wrapper{
+        background-color: {{ background_color }};
+    }
+    .callout__container{
+        --layout-container-max-width: {{ max_width | append: 'px' }};
+        --layout-container-gutter: 10px;
+        max-width: 1400px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-bottom: 35px;
+        margin-top: 200px;
+    }
+    .callout__content{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        border-radius: 30px;
+        transform: translateY(-25%);
+        margin-bottom: -125px;
+        padding: 250px 0 25px;
+    }
+    .callout__content-wrapper{
+        position: relative;
+        border-top-right-radius: 30px;
+        max-width: calc(100% - 20px);
+        background: white;
+        padding: 40px 20px 60px;
+    }
+    .callout__content img{
+        border-radius: 30px;
+        width: 100%;
+    }
+
+    .callout__subheading{
+        color: #5B6770;
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        line-height: 26px;
+    }
+    .callout__heading{
+        color: #4A4A4A;
+        font-family: Industry;
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 40px;
+        text-transform: uppercase;
+        margin-top: .5rem;
+    }
+    .callout__text{
+        color: #303E48;
+        font-family: Roboto;
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: 30px;
+        max-width: 615px;
+    }
+    .callout__button{
+        background-color: #3C8AA4;
+        border-radius: 0;
+        padding: 0 0 0 20px;
+        display: flex;
+        line-height: 31px;
+        text-decoration: none;
+        color: white;
+        align-items: center;
+        font-size: 14px;
+        letter-spacing: 1.66px;
+        gap: 20px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-transform: capitalize;
+    }
+    .callout__button_arrow{
+        display: flex;
+        align-items: center;
+        padding: 15px 20px 15px 20px;
+        border-left: 3px solid white;
+    }
+    .callout__button_arrow svg{
+        font-size: 20px;
+    }
+    .callout__image-wrapper img{
+        border-radius: 30px;
+        width: 100%;
+    }
+    @media (min-width: 1024px){
+        .callout__container {
+            --layout-container-gutter: 25px;
+            padding-right: 25px;
+            padding-left: 25px;
+            padding-top: 90px;
+            display: flex;
+            flex-direction: row;
+            gap: 114px;
+            margin-top: 225px;
+        }
+        .callout__content{
+            transform: translateY(-40%);
+            padding: 75px 0;
+        }
+        .callout__heading{
+            color: #303E48;
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 40px;
+            margin-top: .5rem;
+        }
+        .callout__text{
+            color: #303E48;
+            font-family: Roboto;
+            font-size: 20px;
+            letter-spacing: 0;
+            line-height: 30px;
+            max-width: 615px;
+        }
+        .callout__content-wrapper{
+            max-width: 735px;
+            background: white;
+            padding: 75px;
+        }
+    }
+    @media (min-width: 720px){
+        .callout__container{
+            --layout-container-gutter: 15px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-top: 250px;
+        }
+        .callout__content{
+            padding: 275px 0 25px;
+        }
+        .callout__content-wrapper{
+            max-width: 535px;
+            background: white;
+            padding: 75px;
+        }
+        .callout__button{
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.67px;
+            line-height: 25px;
+        }
+        .callout__button_arrow svg{
+            font-size: 26px;
+        }
+    }
+</style>
+
+{% schema %}
+{
+    "name": "callout",
+    "class": "text-image--section",
+    "settings": [
+        {
+            "type": "radio",
+            "id": "background_color",
+            "label": "Background Color",
+            "options": [
+                {
+                    "value": "#ffffff",
+                    "label": "White"
+                },
+                {
+                    "value": "#C0D3D8",
+                    "label": "Light Gray"
+                },
+                {
+                    "value": "#303E48",
+                    "label": "Cool Gray"
+                },
+                {
+                    "value": "#39798E",
+                    "label": "Blue"
+                }
+            ],
+            "default": "#ffffff"
+        },
+        {
+            "type": "header",
+            "content": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Background Image"
+        },
+        {
+            "type": "select",
+            "id": "crop",
+            "label": "Image focal point",
+            "options": [
+                {
+                    "value": "top",
+                    "label": "Top"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "bottom",
+                    "label": "Bottom"
+                },
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+                ],
+                "default": "center",
+                "info": "Used to keep the subject of your photo in view."
+            },
+        {
+            "type": "header",
+            "content": "Content"
+        },
+        {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Image with text"
+        },
+        {
+            "id": "subheading",
+            "type": "text",
+            "label": "Subheading",
+            "default": "Our Initiatives"
+        },
+        {
+        "id": "content",
+        "type": "richtext",
+        "label": "Content",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+        },
+        {
+        "id": "text_alignment",
+        "type": "select",
+        "options": [
+        {
+        "value": "left",
+        "label": "Left"
+        },
+        {
+        "value": "center",
+        "label": "Center"
+        },
+        {
+        "value": "right",
+        "label": "Right"
+        }
+        ],
+        "default": "left",
+        "label": "Text Alignment"
+        },
+        {
+        "id": "button_label",
+        "type": "text",
+        "label": "Button Label",
+        "default": "Button"
+        },
+        {
+        "id": "button_link",
+        "type": "url",
+        "label": "Button URL"
+        }
+        ],
+        "presets": [
+        {
+        "category": "callout",
+        "name": "Callout Card on Background Image",
+        "settings": {
+        }
+        }
+    ]
+}
+{% endschema %}

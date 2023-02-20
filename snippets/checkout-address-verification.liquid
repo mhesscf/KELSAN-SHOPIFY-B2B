@@ -1,0 +1,26 @@
+<script>
+
+    let validateAddress = function () {
+
+        const xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                alert(this.responseText);
+            }
+        };
+
+        let address = {
+            line_one: document.getElementById("checkout_shipping_address_address1").value,
+            line_two: document.getElementById("checkout_shipping_address_address2").value,
+            locality: document.getElementById("checkout_shipping_address_city").value,
+            region: document.getElementById("checkout_shipping_address_province").value,
+            postal_code: document.getElementById("checkout_shipping_address_zip").value,
+            country: document.getElementById("checkout_shipping_address_country").value,
+        };
+
+        xhttp.open("POST", "https://keller.dsbeta.com/rest/address-validation", true);
+        xhttp.send(JSON.stringify(address));
+
+    }
+</script>

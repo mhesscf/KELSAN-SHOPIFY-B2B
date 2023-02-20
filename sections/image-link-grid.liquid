@@ -1,0 +1,187 @@
+{% style %}
+	.image-link-grid .container{
+		width: 1320px;
+		max-width: 90%;
+		margin: auto;
+		padding: 40px 0;
+	}
+	.image-link-grid .flex-row.link-row{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: space-between;
+	}
+	.image-link-grid .flex-row .column{
+		max-width: 24%;
+		gap: 10px;
+		gap: 10px 20px; /* row-gap column gap */
+		row-gap: 10px;
+		column-gap: 20px;
+		width: 25%;
+		text-align: center;
+	}
+	.image-link-grid .flex-row .link-wrap a{
+		color:  {{ setting.colors_medium_text }};
+		text-decoration: none;
+		display: block;
+		font-size: 18px;
+		margin-top: 10px;
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 50px;
+        display: block;
+        text-align: center;
+        font-weight: 600;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 20px;
+        color: #fff;
+	}
+	.image-link-grid .flex-row .link-wrap a span{
+		margin-left: 5px;
+	}
+	.image-link-grid .flex-row .link-wrap{
+		margin: 10px 0;
+	}
+	.image-link-grid .flex-row .link-wrap .img-wrap{
+        display: block;
+        position: relative;
+        display: block;
+        padding-top: 80%;
+		background-color: #5b8f9a;
+        border-radius: 20px;
+    }
+    .image-link-grid .flex-row .link-wrap .img-wrap a{
+        color: #fff;
+    }
+	.image-link-grid h2{
+		color: {{ setting.colors_text }};
+		font-size: 30px;
+	}
+    .image-link-grid .top-flex-row{
+        display: flex;
+        justify-content: space-between;
+    }
+	.image-link-grid .top-flex-row a{
+		font-size: 17px;
+		line-height: 29px;
+		padding: 8px 35px;
+		color: #fff;
+		background-color: {{ setting.colors_button_background }};
+		display: inline-block;
+		height: 45px;
+		align-self: center;
+		text-decoration: none;
+    }
+	@media (max-width: 1200px){
+		.image-link-grid .flex-row .link-wrap a{
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 991.98px){
+		.image-link-grid .top-flex-row{
+			display: block;
+			text-align: center;
+            margin-bottom: 20px;
+		}
+		.image-link-grid .top-flex-row .section-title{
+			display: block;
+			font-size: 26px;
+            margin-bottom: 10px;
+		}
+		.image-link-grid .flex-row.link-row .column{
+			width: 31%;
+            max-width: 31%;
+		}
+		.image-link-grid .container{
+			padding: 20px 0;
+		}
+		.image-link-grid .flex-row .link-wrap a{
+			font-size: 16px;
+		}
+	}
+	@media (max-width: 700px){
+		.image-link-grid .flex-row.link-row .column{
+			width: 48%;
+            max-width: 48%;
+		}
+    }
+{% endstyle %}
+<section class="image-link-grid">
+    <div class="container">
+
+            <div class="row top-flex-row">
+                {% if section.settings.sectionheading != blank %}
+                <h2 class="section-title">{{ section.settings.sectionheading }}</h2>
+                {% endif %}
+                {% if section.settings.viewalllinktext != blank %}
+                <a href="{{ section.settings.viewalllinkurl }}">{{ section.settings.viewalllinktext }}</a>
+                {% endif %}
+            </div>
+
+        <div class="row flex-row link-row">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'link' %}
+                        <div class="link-wrap column">
+                            <div class="img-wrap">
+                                <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }}</a>
+                            </div>
+                        </div>
+                {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "image-link-grid",
+    "class": "image-link-grid--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "sectionheading"
+        },
+        {
+            "type" : "url",
+            "id": "viewalllinkurl",
+            "label": "View All Link URL"
+        },
+        {
+            "type" : "text",
+            "id": "viewalllinktext",
+            "label": "View All Link Text"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Link",
+            "type": "link",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "linktext",
+                    "label": "Link Text"
+                },
+                {
+                    "type" : "url",
+                    "id": "linkurl",
+                    "label": "Link URL"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "image-link-grid-section",
+            "name": "image Link Grid",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,190 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To burnish\/polish a commercially finished floor to achieve the highest possible shine."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Mop",
+            "linkurl": "shopify:\/\/collections\/dust-mop-heads"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Burnishing Pads",
+            "linkurl": "shopify:\/\/collections\/floor-polishing-pads"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Cleaning Solutions",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-soaps-solutions"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Cleaning Degreasers",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-degreasers"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Polishing Solutions",
+            "linkurl": "shopify:\/\/collections\/floor-polishing-restoring-solutions"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "High Speed Burnishers",
+            "linkurl": "shopify:\/\/collections\/floor-burnishers"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Bucket & Wringers",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "8b844715-3323-4fcd-8192-074b85bb0395": {
+          "type": "link",
+          "settings": {
+            "linktext": "Walk Behind Floor Scrubbers",
+            "linkurl": "shopify:\/\/collections\/walk-behind-auto-scrubbers"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "4b92d5a9-bf31-46d9-a90d-6630835fafe0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Mop Handles",
+            "linkurl": "shopify:\/\/collections\/handles"
+          }
+        },
+        "911062ee-19e3-40d3-a816-2680631822bc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Mops",
+            "linkurl": "shopify:\/\/collections\/wet-mop-heads"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8b844715-3323-4fcd-8192-074b85bb0395",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "4b92d5a9-bf31-46d9-a90d-6630835fafe0",
+        "911062ee-19e3-40d3-a816-2680631822bc"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-burnishing-a-floor.jpg"
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prepping the Burnishing Area -",
+            "steptext": "<p>When burnishing a floor the first thing you'll want to do is close down all possible entrances into the area that you want to burnish. You can do this by either roping off the area, or cordoning it off with wet floor and caution signs. You'll want to make it extremely clear to the public that there can be no foot traffic into the region that you will be working on. Move all furniture, tables, racks and displays that may hinder your progress. Follow the proper dust mopping and wet mopping procedures to ensure the floor is completely free of all dirt and debris. This will help to ensure a clean floor that will achieve the highest shine possible. Starting with a perfectly clean floor will prevent dirt from being ground into the finish and allow you to achieve the highest level of shine.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Prepping the Burnisher -",
+            "steptext": "<p>Choose the correct burnishing pad for your particular floor finish and machine. Some pads are more aggressive at removing scuff marks, but can also wear down the finish more quickly. Some level of trial and error is to be expected if you don’t already have a perfect match of pads to finish. Lean the machine back on its handle and attach the pad to the high speed driver. Typically there will be a centering device that will screw the into the driver and hold the pad in place. Make sure this piece is properly mounted and tightened to the driver.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Prepping Your Solution -",
+            "steptext": "<p>Apply your floor restoring solution by either mopping it onto the floor, or by carrying a spray bottle with the solution mixed in it. A product similar to our Floor Finish Restorer is ideal. As you burnish, you can use the spray bottle to coat the floor. This eliminates any stopping as you're working, and constantly lubricates the pad as you go. You can also use a combination of both of these methods to make the job even easier. Some burnishers will only work well with the mop down method that allows the solution to dry first, so be sure to use the method that your burnisher is meant for.<br\/><br\/>We also have polishing cream available that can be used instead of the spray burnishing solution. The cream should be applied in 3\" long streams. You'll then use the burnisher to spread the solution about. Work the machine forward and back over a portion of that stream to spread the cream. A short stream will clean, polish and restore approximately 600-1200 square feet. Another optional method is to apply small drops on the floor then burnish to a high shine.<\/p>",
+            "product": ""
+          }
+        },
+        "d496862a-d910-4350-89c6-150fc2d6d989": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Burnishing the Floor -",
+            "steptext": "<p>Place the burnisher, with pad attached, in position. Always start the burnisher in a leaned back position, so the pad is not touching the floor. Once you've started the machine, slowly lower the head\/pad assembly onto the floor. Apply your burnishing solution\/cream of choice and begin to work it in. It is best to start working in small areas and expand as you feel more comfortable. The burnisher will move effortlessly in a forward and reverse motion. All you need to do is guide it in its motion. Some burnishers will allow the head to be dug into a surface, often referred to as heeling, to remove deep scuff marks. Our 20\" high speed burnisher is one of these machines. Some other units, like our 1.5 HP high speed burnisher, will not allow this manipulation, and can only be floated over the floor as it polishes. The manufacturers often build safety features into their machines like this to achieve longer motor life. When burnishing the floor, using a pattern that allows for some overlapping on each pass will achieve the most brilliant shine on a floor, as no areas will be missed, or under burnished. Burnish until a high shine is achieved. It is a good idea to change your burnishing pads often so they do not load up with debris. If you start to notice you are not achieving the same results as you were with a fresh pad, it is time to either flip that pad over, or to get a new pad.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Dust mop and then wet mop the entire area that was just burnished, or scrub it with an auto scrubber, to pick up any dust that was created from the high speed polishing. Using a model like our 1500 RPM dust control burnisher initially, can greatly reduce the amount of dust left over after burnishing, because it recovers the dust at it polishes. As a matter of fact, it nearly eliminates this step of clean up. Remove whatever items you placed out to cordon off the area, like your caution and wet floor signs. Return the original moved objects back to their original positions. Gather up the pads that were used and rinse them out completely. Letting them soak in a water bath for an extended period of time after rinsing, can help to regenerate their polishing capabilities. Much of the dirt that accumulated in the pad can slowly start to works itself free while it sits in the water, making it a cleaner pad for the next time it is used.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "d496862a-d910-4350-89c6-150fc2d6d989",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

@@ -1,0 +1,151 @@
+{% style %}
+	.basic-text-cta .container{
+		width: 1340px;
+		max-width: 95%;
+		margin: auto;
+		padding: 40px 0;
+	}
+	.basic-text-cta .cta-row {
+		background: rgb(234,236,240);
+		background: linear-gradient(153deg, #303e48 0%, #1e2830 100%);
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-around;
+		align-content: center;
+	}
+	.basic-text-cta .cta-row .left{
+        padding: 60px;
+		display: flex;
+		flex-flow: column;
+    }
+	.basic-text-cta .cta-row .right{
+		padding: 60px;
+        display: flex;
+	}
+	.basic-text-cta .cta-row .right .inner{
+		display: flex;
+        align-self: center;
+    }
+	.basic-text-cta .cta-row .left p{
+        font-size: 35px;
+        line-height: 1;
+        margin: 0;
+        color: #FFF;
+    }
+	.basic-text-cta .cta-row .left p.medium{
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+	.basic-text-cta .cta-row .right .button.orange{
+		background-color: {{ settings.color_button_secondary_background }} ;
+		padding: 18px 10px;
+		width: 273px;
+		text-align: center;
+		justify-content: center;
+		border-radius: 15px;
+		color: #fff;
+		font-size: 17px;
+		font-weight: 600;
+		text-transform: uppercase;
+		text-decoration: none;
+		letter-spacing: 2px;
+		border: 2px solid #E64D25;
+        transition: all 0.4s ease-in-out;
+    }
+	.basic-text-cta .cta-row .right .button.orange:hover{
+        border: 2px solid {{ settings.color_button_hover }};
+        background-color: {{ settings.color_button_hover }};
+        color: #FFF;
+    }
+	@media (max-width: 991.98px){
+		.basic-text-cta .cta-row{
+            flex-flow: column;
+			text-align: center;
+        }
+		.basic-text-cta .cta-row .right {
+			padding: 0 17px 50px 17px;
+		}
+		.basic-text-cta .cta-row .left {
+			padding: 50px 17px 10px 17px;
+		}
+		.basic-text-cta .cta-row .left, .basic-text-cta .cta-row .right{
+            width: 100%;
+            justify-content: center;
+        }
+		.basic-text-cta .cta-row .right .inner{
+			display: block;
+			align-self: center;
+            width: 100%;
+		}
+		.basic-text-cta .cta-row .left p{
+            line-height: 33px;
+            font-size: 26px;
+            margin-bottom: 10px;
+		}
+		.basic-text-cta .cta-row .right .button.orange{
+			display: inline-block;
+        }
+	}
+	@media (max-width: 640px){
+
+    }
+{% endstyle %}
+<section class="basic-text-cta">
+    <div class="container">
+            <div class="row cta-row">
+                <div class="left">
+                    {% if section.settings.sectionTextBold != blank %}
+                        <p class="medium">{{ section.settings.sectionTextBold }}</p>
+                    {% endif %}
+                    {% if section.settings.sectionTextRegular != blank %}
+                        <p>{{ section.settings.sectionTextRegular }}</p>
+                    {% endif %}
+                </div>
+                <div class="right">
+                    <div class="inner">
+                        {% if section.settings.linktext != blank %}
+                            <a class="button orange" href="{{ section.settings.linkurl }}">{{ section.settings.linktext }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "basic-text-cta",
+    "class": "basic-text-cta--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Text Bold",
+            "id" : "sectionTextBold"
+        },
+        {
+            "type": "text",
+            "label": "Section Text Regular",
+            "id" : "sectionTextRegular"
+        },
+        {
+            "type": "text",
+            "id": "linktext",
+            "label": "Button Text"
+        },
+        {
+            "type" : "url",
+            "id": "linkurl",
+            "label": "Button Link URL"
+        }
+    ],
+
+    "presets": [
+        {
+            "category": "basic-text-cta-section",
+            "name": "Basic Text CTA",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

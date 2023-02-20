@@ -1,0 +1,227 @@
+{% if section.settings.show_section %}
+  {% include 'cart-gift' %}
+{% endif %}
+
+{% schema %}
+{
+"name": "Gift with Purchase",
+"class": "gwp-section",
+"settings": [
+{
+"type": "checkbox",
+"id": "show_section",
+"label": "Show section",
+"default": true
+},
+{
+"type": "color",
+"id": "cart-gwp-background",
+"label": "Background Color",
+"default": "#ffffff"
+},
+{
+"type": "color",
+"id": "cart-gwp-border",
+"label": "Border Color",
+"default": "#ffffff"
+},
+{
+"type": "header",
+"content": "Highest Value Promo"
+},
+{
+"type": "range",
+"id": "top_order_threshold",
+"label": "Order size threshold",
+"min": 10,
+"max": 1000,
+"step": 10,
+"default": 100,
+"unit": "$"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_1",
+"label": "Tier 1 Product (1)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_2",
+"label": "Tier 1 Product (2)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_3",
+"label": "Tier 1 Product (3)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_4",
+"label": "Tier 1 Product (4)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_5",
+"label": "Tier 1 Product (5)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_6",
+"label": "Tier 1 Product (6)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_7",
+"label": "Tier 1 Product (7)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_8",
+"label": "Tier 1 Product (8)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_9",
+"label": "Tier 1 Product (9)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_10",
+"label": "Tier 1 Product (10)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_11",
+"label": "Tier 1 Product (11)"
+},
+{
+"type": "product",
+"id": "cart_gwp_product_12",
+"label": "Tier 1 Product (12)"
+},
+{
+"type": "richtext",
+"id": "cart_gwp_top_text_1",
+"label": "Main text 1",
+"default": "<p><\/p>"
+    },
+    {
+    "type": "text",
+    "id": "cart_gwp_button_1",
+    "label": "Button text 1",
+    "default": "Add Free Gift"
+    },
+    {
+    "type": "richtext",
+    "id": "cart_gwp_bottom_text_1",
+    "label": "Bottom text 1",
+    "default": "<p><\/p>"
+    },
+    {
+    "type": "header",
+    "content": "Second Price Tier"
+    },
+    {
+    "type": "checkbox",
+    "id": "second_price_tier",
+    "label": "Use 2nd (lower) price tier"
+    },
+    {
+    "type": "range",
+    "id": "second_order_threshold",
+    "label": "Order size threshold",
+    "min": 10,
+    "max": 1000,
+    "step": 10,
+    "default": 100,
+    "unit": "$"
+    },
+    {
+    "type": "product",
+    "id": "cart_gwp_product_62",
+    "label": "Product 2"
+    },
+    {
+    "type": "richtext",
+    "id": "cart_gwp_top_text_2",
+    "label": "Main text 2",
+    "default": "<p><\/p>"
+    },
+    {
+    "type": "text",
+    "id": "cart_gwp_button_2",
+    "label": "Button text 2",
+    "default": "Add Free Gift"
+    },
+    {
+    "type": "richtext",
+    "id": "cart_gwp_bottom_text_2",
+    "label": "Bottom text 2",
+    "default": "<p><\/p>"
+    },
+    {
+    "type": "header",
+    "content": "Layout"
+    },
+    {
+    "type": "range",
+    "id": "padding_top",
+    "label": "Top spacing",
+    "min": 0,
+    "max": 80,
+    "default": 20,
+    "unit": "px"
+    },
+    {
+    "type": "range",
+    "id": "padding_bottom",
+    "label": "Bottom spacing",
+    "min": 0,
+    "max": 80,
+    "default": 20,
+    "unit": "px"
+    },
+    {
+    "type": "range",
+    "id": "padding_left",
+    "label": "Left spacing",
+    "min": 0,
+    "max": 80,
+    "default": 0,
+    "unit": "px"
+    },
+    {
+    "type": "range",
+    "id": "padding_right",
+    "label": "Right spacing",
+    "default": 0,
+    "min": 0,
+    "max": 80,
+    "unit": "px"
+    },
+    {
+    "type": "header",
+    "content": "Advanced"
+    },
+    {
+        "type": "text",
+        "id": "css_class",
+        "label": "CSS Class"
+    },
+    {
+    "type": "textarea",
+    "id": "custom_css",
+    "label": "Custom CSS"
+    }
+    ],
+    "presets": [
+    {
+    "name": "Gift with Purchase",
+    "category": "Layout",
+    "settings": {
+
+    }
+    }
+    ]
+    }
+{% endschema %}

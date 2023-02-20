@@ -1,0 +1,126 @@
+{% assign section_classes = "category-resources--content" %}
+{% assign heading = section.settings.sectionheading %}
+{%- assign base_name = base_name | default: 'category-resources-section' -%}
+
+<script type="application/pxs-animation-mapping+json">
+    {
+        "blocks": [".category-resources-section"],
+        "elements": [".category-resources-section__heading", ".category-resources-section__text", ".category-resources-section__button"]
+    }
+</script>
+
+<section
+        class="
+    {{ base_name }}
+    {% if section_classes != blank %}
+      {{ section_classes }}
+    {% endif %}
+  "
+        data-section-id="{{ section.id }}"
+>
+    <div class="category-resources-section--wrapper">
+        <div class="{{ base_name }}__container">
+            <div class="{{ base_name }}__content">
+                {%- if heading != blank -%}
+                    <div class="{{ base_name }}__content-wrapper {{ text_classes }}">
+                        <h2 class="{{ base_name }}__heading">{{ heading | escape }}</h2>
+                    </div>
+                {%- endif -%}
+            </div>
+            <div class="flex-row">
+                {% for block in section.blocks %}
+                    {% assign button_label = block.settings.button_label %}
+                    {% assign button_link = block.settings.button_link %}
+                    {% assign image = block.settings.image %}
+                    {% assign title = block.settings.heading %}
+                    {% assign content = block.settings.subheading %}
+                    <style>
+                        @media (max-width: 992px){
+                            .resource-{{ block.id }}{
+                                background-image: url("{{ image |  image_url }}");
+                            }
+                        }
+                    </style>
+                    <div class="{{ base_name }}__image-wrapper resource-{{ block.id }}">
+                        {%- if image != blank -%}
+                            {% assign alt = image.alt | default: heading %}
+                            {% capture image_classes %}{{ base_name }}__image{% endcapture %}
+                            {%
+                                    render 'rimg'
+                            img: image,
+                                    alt: alt,
+                                    size: '600x',
+                                    lazy: true,
+                                    crop: 'center',
+                                    class: image_classes
+                            %}
+                        {%- else -%}
+                            {% capture placeholder_classes %}{{ base_name }}__image {{ base_name }}__placeholder{% endcapture %}
+                            {{ 'collection-1' | placeholder_svg_tag: placeholder_classes }}
+                        {%- endif -%}
+                        <div class="resource-content-wrapper">
+                            <h3>{{ title }}</h3>
+                            <div class="resource-excerpt">{{ content }}</div>
+                            <a href="{{ button_link }}">{{ button_label }}</a>
+                        </div>
+                    </div>
+                {%  endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+"name":"category-resources",
+"class":"category-resources-section",
+"settings":[
+{
+"type":"text",
+"label":"Section Heading",
+"id":"sectionheading"
+}
+],
+"blocks":[
+{
+"name":"Resource",
+"type":"resource",
+"settings":[
+{
+"type":"image_picker",
+"id":"image",
+"label":"Image"
+},
+{
+"id":"heading",
+"type":"text",
+"label":"Heading"
+},
+{
+"id":"subheading",
+"type":"richtext",
+"label":"Content"
+},
+{
+"id":"button_label",
+"type":"text",
+"label":"Button Label",
+"default":"Button"
+},
+{
+"id":"button_link",
+"type":"url",
+"label":"Button URL"
+}
+]
+}
+],
+"presets":[
+{
+"category":"category-resources__section",
+"name":"Resources",
+"settings":{}
+}
+]
+}
+{% endschema %}

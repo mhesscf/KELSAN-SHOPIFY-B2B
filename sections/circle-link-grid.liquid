@@ -1,0 +1,129 @@
+<style>
+	.circle-link-grid .container{
+		width: 1320px;
+		max-width: 90%;
+		margin: auto;
+		padding: 40px 0;
+	}
+	.circle-link-grid .flex-row{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+        justify-content: center;
+	}
+	.circle-link-grid .flex-row .column{
+		max-width: 20%;
+        min-width: 20%;
+        width: 20%;
+        text-align: center;
+	}
+	.circle-link-grid .flex-row .link-wrap a{
+		color: #767676;
+		text-decoration: none;
+		display: block;
+		font-size: 18px;
+        margin-top: 10px;
+	}
+	.circle-link-grid .flex-row .link-wrap a span{
+		margin-left: 5px;
+	}
+	.circle-link-grid .flex-row .link-wrap{
+		margin: 10px 0;
+		padding: 2%;
+	}
+	.circle-link-grid .flex-row .link-wrap .circle{
+		padding-top: 100%;
+        display: block;
+        background-color: #F8F8F8;
+        border-radius: 50%;
+    }
+	.circle-link-grid h2{
+		color: #4A4A4A;
+		font-size: 30px;
+	}
+ @media (max-width: 1200px){
+	 .circle-link-grid .flex-row .link-wrap a{
+         font-size: 18px;
+     }
+ }
+ @media (max-width: 991.98px){
+	 .circle-link-grid .flex-row .column{
+         width: 48%;
+		 min-width: 48%;
+         max-width: 48%;
+	 }
+	 .circle-link-grid .container{
+         padding: 20px 0;
+     }
+	 .circle-link-grid .flex-row .link-wrap a{
+		 font-size: 16px;
+	 }
+ }
+</style>
+<section class="circle-link-grid">
+    <div class="container">
+        {% if section.settings.sectionheading != blank %}
+            <div class="row">
+                <h2>{{ section.settings.sectionheading }}</h2>
+            </div>
+        {% endif %}
+        <div class="row flex-row link-row">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'link' %}
+                        <div class="link-wrap column">
+                            <div class="circle-bg">
+                            <img src="{{ block.settings.circleimg | img_url: '300x300' }}" alt="{{ block.settings.circleimg.alt }}">
+                            </div>
+                            <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }}</a>
+                        </div>
+                {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "circle-link-grid",
+    "class": "circle-link-grid--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "sectionheading"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Link",
+            "type": "link",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "circleimg",
+                    "label": "Circle Image"
+                },
+                {
+                    "type": "text",
+                    "id": "linktext",
+                    "label": "Link Text"
+                },
+                {
+                    "type" : "url",
+                    "id": "linkurl",
+                    "label": "Link URL"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "circle-link-grid-section",
+            "name": "Circle Link Grid",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

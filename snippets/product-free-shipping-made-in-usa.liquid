@@ -1,0 +1,8 @@
+<div class="ship-made">
+    {% if product.metafields.plytix.made_in_usa %}
+        <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-flag-usa"></i></div> <span>MADE IN THE USA</span></div>
+    {% endif %}
+    {% if product.metafields.plytix.free_shipping %}
+        <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-truck-fast"></i></div> <span>Free</span> shipping for this product.</div>
+    {% endif %}
+</div>

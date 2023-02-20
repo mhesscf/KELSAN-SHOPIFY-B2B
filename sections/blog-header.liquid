@@ -1,0 +1,230 @@
+{% style %}
+	.blog-header{
+		background-color: {{ settings.color_section_background }};
+		position: relative;
+		min-height: 360px;
+	}
+	.blog-header  .container{
+		width: 1400px;
+		max-width: 90%;
+		margin: auto;
+	}
+	.blog-header .flex-row{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: flex-start;
+	}
+	.blog-header .share-wrap span{
+		font-size: 20px;
+		font-weight: 600;
+		color: #4A4A4A;
+		line-height: 1;
+	}
+	.blog-header .share-wrap ul{
+		display: flex;
+		list-style-type: none;
+		padding: 0;
+		margin: 5px 0 0 0;
+	}
+	.blog-header .share-wrap ul li{
+		margin-right: 10px;
+	}
+	.blog-header .share-wrap ul li a{
+		display: block;
+		height: 30px;
+		width: 30px;
+		text-align: center;
+		line-height: 30px;
+		border-radius: 50%;
+		color: #fff;
+	}
+	.blog-header .share-wrap ul li a.facebook{
+		background-color: #1877f2;
+	}
+	.blog-header .share-wrap ul li a.twitter{
+		background-color: #1da1f2;
+	}
+	.blog-header .share-wrap ul li a.youtube{
+		background-color: #ff0000;
+	}
+	.blog-header .share-wrap ul li a.linkedin{
+		background-color: #0a66c2;
+	}
+	.blog-header .share-wrap ul li a.pinterest{
+		background-color: #bd081c;
+	}
+	.blog-header .flex-row .col{
+		width: 50%;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+	}
+	.blog-header .flex-row .col.title-col{
+		padding: 40px 0;
+	}
+	.blog-header .flex-row .col .inner .date-row{
+		border-left: 5px solid {{ settings.color_icons }};
+		display: block;
+		margin: 10px 0;
+	}
+	.blog-header .flex-row .col .inner .date-row p{
+		color: {{ settings.color_icons }};
+		font-size: 20px;
+		padding-left: 10px;
+	}
+	.blog-header .flex-row .col .inner.text-inner{
+		width: 80%;
+		margin-right: auto;
+	}
+	.blog-header .flex-row .col .inner h1{
+		color: {{ settings.color_headings }};
+		font-weight: 700;
+		font-size: 55px;
+		line-height: 65px;
+		margin: 0;
+	}
+	.blog-header .flex-row .col .section-text{
+		border-left: 8px solid #3C8AA4;
+		padding-left: 21px;
+		margin-top: 15px;
+	}
+	.blog-header .flex-row .col .section-text p{
+		font-size: 22px;
+		line-height: 30px;
+		color: #303E48;
+		margin: 0;
+	}
+	.blog-header .flex-row .col.img-col{
+		position: absolute;
+		right: 0;
+		left: 50%;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+	}
+	.blog-header .flex-row .col .banner-image{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-size: cover;
+		background-position: center center;
+	}
+	@media (max-width: 991.98px){
+		.blog-header .container{
+			width: 100%;
+			max-width: 100%;
+		}
+		.blog-header .flex-row .col {
+			width: 100%;
+			display: flex;
+			flex-flow: row;
+			justify-content: center;
+		}
+		.blog-header .flex-row .col .inner.text-inner{
+			width: 100%;
+		}
+		.blog-header .flex-row .col.img-col{
+			order: 0;
+			width: 100%;
+			position: relative;
+			height: 350px;
+			left: 0;
+		}
+		.blog-header .flex-row .col.title-col{
+			order: 1;
+			width: 90%;
+			padding: 5%;
+		}
+		.blog-header .flex-row .col .inner h1{
+			font-size: 38px;
+		}
+	}
+	@media (max-width: 640px){
+		.blog-header .flex-row .col.img-col{
+			height: 200px;
+		}
+		.blog-header .flex-row .col .inner h1{
+			font-size: 38px;
+			line-height: 42px;
+		}
+		.blog-header .flex-row .col .section-text{
+			border-left: 6px solid #3C8AA4;
+			padding-left: 12px;
+			margin-top: 12px;
+		}
+		.blog-header .flex-row .col .section-text p{
+			font-size: 18px;
+			line-height: 23px;
+		}
+	}
+{% endstyle %}
+<section class="blog-header">
+    <div class="container">
+        <div class="flex-row">
+            <div class="col title-col">
+                <div class="inner text-inner">
+                    <h1>{{ article.title }}</h1>
+                    {% if section.settings.chsectiontext != blank %}
+                        <div class="section-text">
+                            <p>{{ section.settings.chsectiontext }}</p>
+                        </div>
+                    {% endif %}
+					{%- if section.settings.blog_show_date -%}
+					<div class="date-row">
+						<p>{{ article.published_at | date: '%d %B %Y' }}</p>
+					</div>
+					{% endif %}
+					<div class="share-wrap">
+						<span>Share:</span>
+						<ul>
+							<li><a class="facebook" href=""><i class="fa-brands fa-facebook"></i></a></li>
+							<li><a class="twitter" href=""><i class="fa-brands fa-twitter"></i></a></li>
+							<li><a class="linkedin" href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+							<li><a class="pinterest" href=""><i class="fa-brands fa-pinterest"></i></a></li>
+						</ul>
+					</div>
+                </div>
+            </div>
+            <div class="col img-col">
+                <div class="banner-image" style="background-image: url({{ section.settings.image | img_url: 'master' }});"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "blog-header",
+    "class": "blog-header--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "chsectionheading"
+        },
+        {
+            "type": "text",
+            "label": "Section Text",
+            "id" : "chsectiontext"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "category": "blog-header-section",
+            "name": "Blog Header",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

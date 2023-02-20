@@ -1,0 +1,202 @@
+{
+  "sections": {
+    "main": {
+      "type": "static-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "judgeme_preview_badge_product_page_f9b6a453": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "41a7893a-eebb-421d-b512-a680458f339c": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "disabled": true,
+          "settings": {
+            "stars_fill_color": "#39798e",
+            "star_size": 15,
+            "text_align": "flex-start",
+            "product": "{{product}}",
+            "stars_text_empty": "No reviews"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "7003d446-734f-49c7-af0b-8d509e436c01": {
+          "type": "shopify:\/\/apps\/advanced-wishlist\/blocks\/wishlist-btn\/330d9272-08ea-4193-b3e0-475a69fa65fa",
+          "settings": {
+            "theme_color": "#003f72",
+            "button_style": "style_4",
+            "button_border": 0,
+            "button_font_size": 16,
+            "button_font_weight": "500",
+            "button_border_radius": 0,
+            "button_vertical_space": 9,
+            "button_horizontal_space": 16,
+            "button_text_color": "#ffffff",
+            "button_background": "#003f72",
+            "border_color": "#003f72",
+            "hover_button_text_color": "#ffffff",
+            "hover_button_background_color": "#003f72",
+            "hover_button_border_color": "#003f72"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "enable_local_pickup": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "judgeme_preview_badge_product_page_f9b6a453",
+        "rating",
+        "41a7893a-eebb-421d-b512-a680458f339c",
+        "price",
+        "7003d446-734f-49c7-af0b-8d509e436c01",
+        "description",
+        "form",
+        "share"
+      ],
+      "settings": {
+        "gallery_aspect_ratio": "natural",
+        "gallery_image_crop": false,
+        "gallery_thumbnail_position": "left",
+        "gallery_video_autoplay": true,
+        "gallery_video_looping": true,
+        "gallery_hover_zoom": "disabled",
+        "gallery_click_to_zoom": "always"
+      }
+    },
+    "1663861234f6954415": {
+      "type": "product-frequently-bought",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16639438241c11df3b": {
+      "type": "product-manufacturer-info",
+      "settings": {
+      }
+    },
+    "16638607221d159a92": {
+      "type": "product-info-features",
+      "settings": {
+      }
+    },
+    "1663947190a886277c": {
+      "type": "product-video",
+      "settings": {
+      }
+    },
+    "16638604598b87d9a0": {
+      "type": "product-specs-info",
+      "settings": {
+      }
+    },
+    "judgeme_section_review_widget_0f5e": {
+      "type": "apps",
+      "blocks": {
+        "judgeme_review_widget_0dca22e1": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judgeme_review_widget_0dca22e1"
+      ],
+      "settings": {
+        "include_padding": true
+      }
+    },
+    "recommendations": {
+      "type": "static-product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "Shop Similar Products"
+      }
+    },
+    "recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "166387146685195dfc": {
+      "type": "product-bottom-strap",
+      "settings": {
+      }
+    },
+    "166257625372457859": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_padding": true
+      }
+    },
+    "1666286255a09a3e65": {
+      "type": "apps",
+      "disabled": true,
+      "blocks": {
+        "771f4a4a-9fb8-48c4-ba27-fcb43f1d0aff": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "771f4a4a-9fb8-48c4-ba27-fcb43f1d0aff"
+      ],
+      "settings": {
+        "include_padding": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1663861234f6954415",
+    "16639438241c11df3b",
+    "16638607221d159a92",
+    "1663947190a886277c",
+    "16638604598b87d9a0",
+    "judgeme_section_review_widget_0f5e",
+    "recommendations",
+    "recently-viewed",
+    "166387146685195dfc",
+    "166257625372457859",
+    "1666286255a09a3e65"
+  ]
+}

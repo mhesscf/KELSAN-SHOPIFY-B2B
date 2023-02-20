@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Pre-Sweeping Machines & Supplies",
+        "chsectiontext": "Looking for a quick way to sweep a large floor? These vacuum sweepers will prep your floor for scrubbing in no time.",
+        "image": "shopify:\/\/shop_images\/sweeper.jpg"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "settings": {
+        "collection": "pre-sweeping",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

@@ -1,0 +1,391 @@
+
+{% if product.metafields.plytix.package_products != blank %}
+
+    {%- assign bproducts = product.metafields.plytix.package_products | split: "," %}
+
+    <section class="bundled-products">
+        <div class="container">
+            <div class="row title-row">
+                <h2 class="section-title">Bundle Details</h2>
+            </div>
+            {% for bproduct in bproducts %}
+                {% assign attr = bproduct | split: "#" %}
+                {%- assign bundlep = attr[0] | strip %}
+                {% assign pkgqnty = attr[1] %}
+
+                <div class="product-row" itemtype="https://schema.org/Product" itemscope>
+                    <meta itemprop="mpn" content="{{ all_products[bundlep].metafields.plytix.erp_sku }}" />
+                    <meta itemprop="name" content="{{ all_products[bundlep].title |  escape }}" />
+                    <link itemprop="image" href="{{ all_products[bundlep].featured_image | img_url: '300x300' }}" />
+                    <meta itemprop="description" content="{{ all_products[bundlep].metafields.plytix.short_description | escape }}" />
+                    {% if all_products[bundlep].metafields.reviews.rating_count %}
+                        <div itemprop="aggregateRating" itemtype="https://schema.org/AggregateRating" itemscope>
+                            <meta itemprop="reviewCount" content="{{ all_products[bundlep].metafields.reviews.rating_count }}" />
+                            <meta itemprop="ratingValue" content="{{ all_products[bundlep].metafields.reviews.rating.value }}" />
+                        </div>
+
+                    {% endif %}
+                    <meta itemprop="sku" content="{{ all_products[bundlep].metafields.plytix.erp_sku }}" />
+                    <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
+                        {%- if all_products[bundlep].price_min == all_products[bundlep].price_max -%}
+                            <meta itemprop="price" content="{{ all_products[bundlep].price | money_without_currency | remove: ',' }}" />
+                        {%- else -%}
+                            <meta itemprop="lowPrice" content="{{ all_products[bundlep].price_min | money_without_currency | remove: ',' }}" />
+                            <meta itemprop="highPrice" content="{{ all_products[bundlep].price_max | money_without_currency | remove: ',' }}" />
+                        {%- endif -%}
+                        <meta itemprop="priceCurrency" content="USD" />
+                    </div>
+                    <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
+                        <meta itemprop="name" content="{{ all_products[bundlep].vendor }}" />
+                    </div>
+                    <div class="pkg-info col">
+                        <div class="inner-wrap">
+                            {% if all_products[bundlep].metafields.plytix.master_quantity != blank %}
+                                {% assign qntyinfo = all_products[bundlep].metafields.plytix.master_quantity %}
+
+                                    <p>Package Quantity {{ pkgqnty }}</p>
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <div class="product-info-col">
+                        <div class="prod-image col">
+
+                            <div class="inner-wrap">
+                                <div class="p-image" style="background-image: url({{ all_products[bundlep].featured_image | img_url: '300x300' }});cursor: pointer;"><a href="{{ all_products[bundlep].url }}"></a></div>
+                            </div>
+
+                        </div>
+                        <div class="prod-info col">
+                            <div class="inner-wrap">
+                                <a class="p-title" href="{{ all_products[bundlep].url }}">{{ all_products[bundlep].title }}</a>
+                                {% if all_products[bundlep].metafields.plytix.erp_sku != blank %}
+                                    <div class="sku-row">
+                                        SKU:<span>{{ all_products[bundlep].selected_or_first_available_variant.sku }}</span>
+                                    </div>
+                                {% endif %}
+                                {{ all_products[bundlep].metafields.plytix.short_description }}
+                                <div class="general-details">
+                                    {% if all_products[bundlep].metafields.plytix.made_in_USA %}
+                                        <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                    {% endif %}
+                                    {% if all_products[bundlep].metafields.plytix.free_shipping %}
+                                        <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
+                                    {% endif %}
+                                    {% if all_products[bundlep].metafields.plytix.gold_medal_winner %}
+                                        <div class="gold-medal">
+                                            <div class="gm-row">
+                                                <div class="gm-img">
+                                                    <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                                                </div>
+                                                <div class="gm-text">
+                                                    Gold Medal Winner
+                                                    <span>It's that Awesome!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-to-cart col">
+                            <div class="inner-wrap">
+                                {% comment %}Start automatically added Judge.me widget{% endcomment %}
+                                {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: all_products[bundlep] %}
+                                {% comment %}End automatically added Judge.me widget{% endcomment %}
+                                {% if all_products[bundlep].available %}
+                                 <div class="stock" style="display: none">In Stock</div>
+                                {% endif %}
+                                <div class="price">
+                                    {% assign pkgqnty = pkgqnty | plus: 0 %}
+                                    {% if pkgqnty > 1 %}
+                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency | times: pkgqnty }}</div>
+                                    {% if all_products[bundlep].plytix.list_price != blank %}
+                                        <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency  | times: pkgqnty }}</div>
+                                    {% endif %}
+                                    {% else %}
+                                        <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency }}</div>
+                                        {% if all_products[bundlep].plytix.list_price != blank %}
+                                            <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency }}</div>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                                <a class="add-to-cart-btn" href="{{ all_products[bundlep].url }}">VIEW PRODUCT</a>
+                                <form method="post" action="/cart/add" class="atc-form" style="display: none;">
+                                    <input type="hidden" name="id" value="{{ all_products[bundlep].variants.first.id }}" />
+                                    <input type="hidden" class="pid" value="{{all_products[bundlep].id}}">
+                                    <input type="hidden" class="ptitle" value="{{all_products[bundlep].title | remove: "'" | remove: '"'}}">
+                                    <input type="hidden" class="pprice" value="{{all_products[bundlep].variants.first.price | times: 0.01}}">
+                                    <input type="hidden" class="pbrand" value="{{all_products[bundlep].vendor | remove: "'" | remove: '"'}}">
+                                    <input type="hidden" class="ptype" value="{{all_products[bundlep].type | remove: "'" | remove: '"'}}">
+                                    <input type="hidden" class="pcategory_id" value="{{ all_products[bundlep].collections.first.id }}">
+                                    <input type="hidden" class="pcategory_name" value="{{ all_products[bundlep].collections.first.title | remove: "'" | remove: '"' }}">
+                                    <input type="hidden" class="pvtitle" value="{{ all_products[bundlep].variants.first.title | remove: "'" | remove: '"' }}">
+                                    <input type="hidden" class="psku" value="{{ all_products[bundlep].variants.first.sku }}">
+                                    <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                                    <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-row-small">
+                    <div class="top-d-row">
+                        {% if all_products[bundlep].metafields.plytix.master_quantity != blank %}
+                            {% assign qntyinfo = all_products[bundlep].metafields.plytix.master_quantity %}
+                                <p>Package Quantity {{ pkgqnty }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-row">
+                        <div class="l-col">
+                            <div class="product-img" style="background-image: url({{ all_products[bundlep].featured_image | img_url: '300x300' }});cursor: pointer;"><a href="{{ all_products[bundlep].url }}"></a></div>
+                            <a target="_blank" class="add-to-cart-btn" href="{{ all_products[bundlep].url }}">VIEW PRODUCT</a>
+                            <form method="post" action="/cart/add" style="display: none;">
+                                <input type="hidden" name="id" value="{{ all_products[bundlep].variants.first.id }}" />
+                                <input type="hidden" class="pid" value="{{all_products[bundlep].id}}">
+                                <input type="hidden" class="ptitle" value="{{all_products[bundlep].title | remove: "'" | remove: '"'}}">
+                                <input type="hidden" class="pprice" value="{{all_products[bundlep].variants.first.price | times: 0.01}}">
+                                <input type="hidden" class="pbrand" value="{{all_products[bundlep].vendor | remove: "'" | remove: '"'}}">
+                                <input type="hidden" class="ptype" value="{{all_products[bundlep].type | remove: "'" | remove: '"'}}">
+                                <input type="hidden" class="pcategory_id" value="{{ all_products[bundlep].collections.first.id }}">
+                                <input type="hidden" class="pcategory_name" value="{{ all_products[bundlep].collections.first.title | remove: "'" | remove: '"' }}">
+                                <input type="hidden" class="pvtitle" value="{{ all_products[bundlep].variants.first.title | remove: "'" | remove: '"' }}">
+                                <input type="hidden" class="psku" value="{{ all_products[bundlep].variants.first.sku }}">
+                                <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                                <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                            </form>
+                        </div>
+                        <div class="r-col">
+                            <a class="p-title" href="{{ all_products[bundlep].url }}">{{ all_products[bundlep].title }}</a>
+                            {% if all_products[bundlep].metafields.plytix.erp_sku != blank %}
+                                <div class="sku-row">
+                                    SKU:<span>{{ all_products[bundlep].selected_or_first_available_variant.sku }}</span>
+                                </div>
+                            {% endif %}
+                            <div class="price">
+                                {% if pkgqnty > 1 %}
+                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency | times: pkgqnty }}</div>
+                                    {% if all_products[bundlep].plytix.list_price != blank %}
+                                        <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency  | times: pkgqnty }}</div>
+                                    {% endif %}
+                                {% else %}
+                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency }}</div>
+                                    {% if all_products[bundlep].plytix.list_price != blank %}
+                                        <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency }}</div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            {{ all_products[bundlep].metafields.plytix.short_description }}
+                            <div class="general-details">
+                                {% if all_products[freeproduct].metafields.plytix.made_in_USA %}
+                                    <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                {% endif %}
+                                {% if all_products[freeproduct].metafields.plytix.free_shipping %}
+                                    <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
+                                {% endif %}
+                                {% if all_products[freeproduct].metafields.plytix.gold_medal_winner %}
+                                    <div class="gold-medal">
+                                        <div class="gm-row">
+                                            <div class="gm-img">
+                                                <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                                            </div>
+                                            <div class="gm-text">
+                                                Gold Medal Winner
+                                                <span>It's that Awesome!</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            {% if all_products[bundlep].available %}
+                                <div class="stock" style="display: none">In Stock</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {%- assign freeproducts = product.metafields.plytix.packaged_free_product | split: "," %}
+            {% for freeprod in freeproducts %}
+                {% assign attr = freeprod | split: "#" %}
+                {%- assign freeproduct = attr[0] | strip %}
+                {% assign fpkgqnty = attr[1] %}
+                <div class="product-row freeproduct" itemtype="https://schema.org/Product" itemscope>
+                    <meta itemprop="mpn" content="{{ all_products[freeproduct].metafields.plytix.erp_sku }}" />
+                    <meta itemprop="name" content="{{ all_products[freeproduct].title |  escape }}" />
+                    <link itemprop="image" href="{{ all_products[freeproduct].featured_image | img_url: '300x300' }}" />
+                    <meta itemprop="description" content="{{ all_products[freeproduct].metafields.plytix.short_description | escape }}" />
+
+                    {% if  all_products[freeproduct].metafields.reviews.rating_count %}
+                    <div itemprop="aggregateRating" itemtype="https://schema.org/AggregateRating" itemscope>
+                        <meta itemprop="reviewCount" content="{{ all_products[freeproduct].metafields.reviews.rating_count }}" />
+                        <meta itemprop="ratingValue" content="{{ all_products[freeproduct].metafields.reviews.rating.value }}" />
+                    </div>
+
+                    {% endif %}
+
+
+                    <meta itemprop="sku" content="{{ all_products[freeproduct].metafields.plytix.erp_sku }}" />
+
+                    <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="USD" />
+
+                    </div>
+
+
+                    <div itemprop="brand" itemtype="https://schema.org/Brand" itemscope>
+                        <meta itemprop="name" content="{{ all_products[freeproduct].vendor }}" />
+                    </div>
+
+                    <div class="pkg-info col">
+                        <div class="inner-wrap">
+                            <p class="ribbon">FREE</p>
+                            {% if all_products[freeproduct].metafields.plytix.master_quantity != blank %}
+                                {% assign qntyinfo = all_products[freeproduct].metafields.plytix.master_quantity %}
+
+                                    <p>Package Quantity {{ fpkgqnty }}</p>
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <div class="product-info-col">
+                        <div class="prod-image col">
+
+                            <div class="inner-wrap">
+                                <div class="p-image" style="background-image: url({{ all_products[freeproduct].featured_image | img_url: '300x300' }});"></div>
+                            </div>
+
+                        </div>
+                        <div class="prod-info col">
+                            <div class="inner-wrap">
+                                <a class="p-title" href="{{ all_products[freeproduct].url }}">{{ all_products[freeproduct].title }}</a>
+                                {% if all_products[freeproduct].metafields.plytix.erp_sku != blank %}
+                                    <div class="sku-row">
+                                        SKU:<span>{{ all_products[freeproduct].selected_or_first_available_variant.sku }}</span>
+                                    </div>
+                                {% endif %}
+                                {{ all_products[freeproduct].metafields.plytix.short_description }}
+                                <div class="general-details">
+                                    {% if all_products[freeproduct].metafields.plytix.made_in_USA %}
+                                        <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                    {% endif %}
+                                    {% if all_products[freeproduct].metafields.plytix.free_shipping %}
+                                        <div class="sm-row"><div class="icon-wrap"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
+                                    {% endif %}
+                                    {% if all_products[freeproduct].metafields.plytix.gold_medal_winner %}
+                                        <div class="gold-medal">
+                                            <div class="gm-row">
+                                                <div class="gm-img">
+                                                    <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                                                </div>
+                                                <div class="gm-text">
+                                                    Gold Medal Winner
+                                                    <span>It's that Awesome!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-to-cart col">
+                            <div class="inner-wrap">
+                                {% comment %}Start automatically added Judge.me widget{% endcomment %}
+                                {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: all_products[freeproduct] %}
+                                {% comment %}End automatically added Judge.me widget{% endcomment %}
+                                {% if all_products[freeproduct].available %}
+                                    <div class="stock" style="display: none">In Stock</div>
+                                {% endif %}
+                                <div class="price">
+                                    <p class="free">FREE</p>
+                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[freeproduct].price | money_without_currency | times: fpkgqnty }}</div>
+                                    {% if all_products[freeproduct].plytix.list_price != blank %}
+                                        <div class="markdown-p">${{ all_products[freeproduct].plytix.list_price | money_without_currency | times: fpkgqnty }}</div>
+                                    {% endif %}
+                                </div>
+                                <a class="add-to-cart-btn" href="{{ all_products[freeproduct].url }}">VIEW PRODUCT</a>
+                                <form method="post" action="/cart/add" class="atc-form" style="display: none;">
+                                    <input type="hidden" name="id" value="{{ all_products[freeproduct].variants.first.id }}" />
+
+                                    <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                                    <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-row-small freeproduct">
+                    <div class="top-d-row">
+                        {% if all_products[freeproduct].metafields.plytix.master_quantity != blank %}
+                            {% assign qntyinfo = all_products[freeproduct].metafields.plytix.master_quantity %}
+
+                                <p>Package Quantity {{ fpkgqnty }}</p>
+
+                        {% endif %}
+                        <p class="ribbon">FREE</p>
+                    </div>
+                    <div class="col-row">
+                        <div class="l-col">
+                            <div class="product-img" style="background-image: url({{ all_products[freeproduct].featured_image | img_url: '300x300' }});"></div>
+                            <a target="_blank" class="add-to-cart-btn" href="{{ all_products[freeproduct].url }}">VIEW PRODUCT</a>
+                            <form method="post" action="/cart/add" style="display: none;">
+                                <input type="hidden" name="id" value="{{ all_products[freeproduct].variants.first.id }}" />
+                                <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                                <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                            </form>
+                        </div>
+                        <div class="r-col">
+                            <a class="p-title" href="{{ all_products[freeproduct].url }}">{{ all_products[freeproduct].title }}</a>
+                            {% if all_products[freeproduct].metafields.plytix.erp_sku != blank %}
+                                <div class="sku-row">
+                                    SKU:<span>{{ all_products[freeproduct].selected_or_first_available_variant.sku }}</span>
+                                </div>
+                            {% endif %}
+                            <div class="price">
+                                <p class="free">FREE</p>
+                                <div class="full-p"><sup class="dollar">$</sup>{{ all_products[freeproduct].price | money_without_currency | times: fpkgqnty }}</div>
+                                {% if all_products[freeproduct].plytix.list_price != blank %}
+                                    <div class="markdown-p">${{ all_products[freeproduct].plytix.list_price | money_without_currency | times: fpkgqnty }}</div>
+                                {% endif %}
+                            </div>
+                            {{ all_products[freeproduct].metafields.plytix.short_description }}
+                            <div class="general-details">
+                                {% if all_products[freeproduct].metafields.plytix.made_in_USA %}
+                                    <div><i class="fa-solid fa-truck-fast"></i> <span>Free</span> shipping for this product.</div>                            {% endif %}
+                                {% if all_products[freeproduct].metafields.plytix.free_shipping %}
+                                    <div><i class="fa-solid fa-flag-usa"></i> <span>MADE IN THE USA</span></div>
+                                {% endif %}
+                            </div>
+                            {% if all_products[freeproduct].available %}
+                                <div class="stock" style="display: none">In Stock</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+{
+    "name": "bundled-products",
+    "class": "bundled-products--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "sectionheading"
+        }
+    ],
+    "presets": [
+        {
+            "category": "bundled-products-section",
+            "name": "Bundled Products Display",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

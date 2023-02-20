@@ -1,0 +1,81 @@
+{% style %}
+    .howto-objective{
+    position: relative;
+    margin: 30px 0;
+    }
+    .howto-objective  .container{
+    width: 1100px;
+    max-width: 90%;
+    margin: auto;
+    }
+    .howto-objective .flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    }
+    .howto-objective .flex-row .col{
+    width: 100%;
+    border: 1px solid {{ settings.color_text_medium }};
+    }
+    .howto-objective .flex-row .col .top-text{
+    background-color: {{ settings.color_text_medium }};
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    }
+    .howto-objective .flex-row .col .objective{
+    padding: 10px 30px;
+    }
+    @media (max-width: 1200px){
+
+    }
+    @media (max-width: 640px){
+
+    }
+{% endstyle %}
+<section class="howto-objective">
+    <div class="container">
+        <div class="flex-row">
+            <div class="col">
+                {% if section.settings.chsectionheading != blank %}
+                    <div class="top-text">{{ section.settings.chsectionheading }}</div>
+                {% else %}
+                    <div class="top-text">Objective:</div>
+                {% endif %}
+                <div class="objective">
+                    <p>{{ section.settings.objectivetext }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "howto-objective",
+    "class": "howto-objective--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Objective Heading",
+            "id" : "chsectionheading"
+        },
+        {
+            "type": "text",
+            "label": "Objective Text",
+            "id" : "objectivetext"
+        }
+    ],
+    "presets": [
+        {
+            "category": "howto-objective-section",
+            "name": "How To Objective",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

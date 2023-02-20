@@ -1,0 +1,303 @@
+<style>
+    .featured-collection-slider__content{
+        --layout-container-max-width: {{ max_width | append: 'px' }};
+        --layout-container-gutter: 10px;
+        max-width: 1400px;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .featured-collection-slider__content .featured-slider-title{
+        color: #303E48;
+        font-family: Roboto;
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 32px;
+        padding-left: 30px;
+    }
+
+    .featured-collection-slider__content .category-link{
+        color: #5B6770;
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 25px;
+        text-decoration: none;
+        padding-left: 30px;
+    }
+
+    .featured-collection-slider__content .category-link svg{
+        width: 22px;
+    }
+
+    .product-slider:after {
+        content: '';
+        position: absolute;
+        width: 336px;
+        height: 446px;
+        opacity: 0.73;
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #FFFFFF 100%);
+        right: 0;
+        top: 0;
+    }
+
+    .product-slider:before {
+        content: '';
+        position: absolute;
+        width: 336px;
+        height: 446px;
+        opacity: 0.73;
+        transform: scaleX(-1);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #FFFFFF 100%);
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    .product-slider .product-slide{
+        border-radius: 29px;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14);
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .product-slider .product-slide img{
+        margin: auto;
+    }
+    .product-slider .product-slide h4{
+        color: {{ setting.colors_headings }};
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+
+    .product-slider .product-slide .product-note{
+        color: {{ setting.colors_medium_text }};
+        font-family: Roboto;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: 22px;
+        margin: 10px 0;
+    }
+    .product-slider .product-slide .product-price sup{
+        color: {{ setting.colors_text }};
+        font-family: Industry;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+    .product-slider .product-slide .product-price{
+        color: {{ setting.colors_text }};
+        font-family: Industry;
+        font-size: 26px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 28px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .product-slider .product-slide .old-product-price{
+        color: {{ setting.colors_text }};
+        font-family: Industry;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-decoration: line-through;
+    }
+
+    .product-slider .product-slide .add-to-cart{
+        border-radius: 13px;
+        background-color: {{ settings.color_button_background }};
+        color: #FFFFFF;
+        font-family: Industry;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1.57px;
+        line-height: 31px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+        padding: 5px 10px;
+    }
+
+    .featured-collection-slider__content ul.slick-dots {
+        float: left;
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+    .featured-collection-slider__content .slick-dots li {
+        float: left;
+        list-style: none;
+        border-radius: 2.4px;
+        background-color: #C0D3D8;
+        /* padding-left: 0; */
+        height: 6px;
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    .featured-collection-slider__content .slick-dots li button {
+        display: none;
+    }
+
+    .featured-collection-slider__content .slick-dots .slick-active {
+        background-color: {{ setting.colors_medium_text }};
+    }
+
+
+</style>
+<section class="featured-collection-wrapper">
+    <div class="featured-collection-slider__content">
+        <h3 class="featured-slider-title">{{ section.settings.featuredcollection }}</h3>
+        <a class="category-link" href="{{ section.settings.link_url }}">{{ section.settings.link_text }} <i class="fa fa-arrow-right-long"></i> </a>
+
+        <div class="product-slider">
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+            <div class="product-slide">
+                <img src="https://place-hold.it/210x210.png" alt="placeholder product"/>
+                <h4 class="product-title">CleanFreak® 20" High Speed Floor Burnisher - 1500 RPM</h4>
+                <div class="product-price"><div><sup>$</sup>799<sup>99</sup></div> <div class="old-product-price">$1,180.00</div></div>
+                <div class="product-note">Free Shipping</div>
+                <a href="#" class="add-to-cart">Add to cart</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+"name": "featured-product-slider",
+"class": "featured-collection--section",
+"settings":[
+{
+"type": "text",
+"label": "Heading",
+"id" : "featuredcollection"
+},
+{
+"type": "url",
+"label":  "Link URL",
+"id": "link_url"
+},
+{
+"type": "text",
+"label":  "Link Text",
+"id": "link_text"
+}
+],
+"presets": [
+{
+"category": "featured-collection-slider",
+"name": "Featured Product Collection Slider",
+"settings": {}
+}
+]
+}
+{% endschema %}

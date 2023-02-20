@@ -1,0 +1,54 @@
+<section class="category-sidebar-menu">
+    <details>
+        <summary>All Categories <span>{% render 'icon-chevron-down' %}</span></summary>
+        <ul>
+            {% for link in section.settings.menu.links %}
+                <li class="menu-link">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+
+                    {% if link.links.size > 0 %}
+                        <ul class="menu dropdown-child">
+                            {% for child_link in link.links %}
+                                <li class="menu-link">
+                                    <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+
+                                    {% if child_link.links.size > 0 %}
+                                        <ul class="menu dropdown-grandchild">
+                                            {% for grandchild_link in child_link.links %}
+                                                <li class="menu-link">
+                                                    <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </details>
+</section>
+{% schema %}
+{
+"name": "Category Sidebar",
+"class": "category-sidebar--menu",
+"settings": [
+    {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Sidebar Menu",
+        "info": "The handle for the menu you would like to use as the sidebar navigation. (ex. vacuum-cleaners)"
+    }
+    ],
+"presets": [
+    {
+        "category": "category-sidebar-menu",
+        "name": "Category Sidebar",
+        "settings": {
+        }
+    }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,184 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To clean a hard floor surface with an autoscrubber and leave it completely dry, eliminating any chance of a slip or fall due to a slippery floor."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Automatic Walk Behind Floor Scrubbers",
+            "linkurl": "shopify:\/\/collections\/walk-behind-auto-scrubbers"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Cleaning Degreasers",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-degreasers"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Cleaning Soaps",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-soaps-solutions"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Scrubbing Brushes",
+            "linkurl": "shopify:\/\/collections\/auto-scrubber-brushes"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Scrubbing Pads",
+            "linkurl": "shopify:\/\/collections\/floor-scrubbing-pads"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Handheld & Utility Strip Pads",
+            "linkurl": "shopify:\/\/collections\/handheld-scrubbing-pads"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Liquid Defoamers",
+            "linkurl": "shopify:\/\/collections\/liquid-defoamers"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Bucket & Wringer Combos",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "ee692fe1-6927-4be1-898e-9aa22fc2d907": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Handles",
+            "linkurl": "shopify:\/\/collections\/handles"
+          }
+        },
+        "f4f3b047-8eb9-450e-86cb-34d14e94caf1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "7966f964-e8b7-4c1b-9c2c-9161d144f2e0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Mops",
+            "linkurl": "shopify:\/\/collections\/wet-mop-heads"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "ee692fe1-6927-4be1-898e-9aa22fc2d907",
+        "f4f3b047-8eb9-450e-86cb-34d14e94caf1",
+        "7966f964-e8b7-4c1b-9c2c-9161d144f2e0"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-autoscrubbing.jpg"
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prep the Auto Scrubber -",
+            "steptext": "<p>Make sure the batteries are fully charged, all hoses are connected and the squeegees are attached and in good condition. Measure out the correct amount of chemical according to the mixing instructions on the label of the bottle. Fill the solution tank with clean water. Put a small amount (just a few ounces) of a defoamer, like our concentrated liquid defoamer, on the ground, and suck it up with the squeegees to coat the squeegee assembly, recovery hoses, and recovery tank. This defoamer will then help to break down the foam from the recovered cleaning solution throughout the entire recovery process. Not only will this allow you to recover more solution, but it will also help to extend the life of the vacuum motor on your machine.<\/p><p>You'll want to choose the correct pad or brush for your job and mount those to the underside of the deck. Pads are better for smooth surfaces, and brushes are better for uneven floors with grout lines.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Prep the Scrubbing Area -",
+            "steptext": "<p>Set up your rest rooms closed or wet floor sign to alert employees and other individuals of the floor scrubbing that is about to take place. Take any obstacles, including tables and furniture, that may hinder your scrubbing path and move them off to the side. Follow the dust mopping procedure to remove all debris, dirt, and large objects (i.e. pallet chips). If any debris is left on the floor it could possibly become obstructed in the auto scrubber head or squeegee assembly. These pieces risk damage to the machine, or may create streaking from the follow behind squeegee, leaving solution left on the floor.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Scrubbing Your Floor -",
+            "steptext": "<p>You'll want to have a fairly large and open area to maximize your scrubbing time. As you start to scrub, your first pass will be up tight against the wall or on the outer boundary of your scrubbing area. As you reach the end of your first pass and turn to come back, you'll want to make a wide sweeping turn. This will allow the squeegee assembly to recover all of the solution the auto scrubber put down. You will not want to go to the other boundary, instead you'll cut the room in half and go down the middle of the floor. As you continue to scrub, the 2nd pass you make will be just inside the 1st pass, and when you come back, you'll go just outside the return pass that cut the room in half. This will keep you continuously scrubbing and there will be no wasted movement in having to go back over different areas to pick up the solution the squeegee missed. For heavily soiled floors, you may want to do a double scrub. To accomplish this, you'll leave the squeegee in the up position and not even turn on the vacuum motor. You do at least one pass over the entire floor with just scrubbing. You can then come back with the squeegee down and the vacuum motors on, recovering the solution while you scrub again for the 2nd time. There may be some areas that cannot be scrubbed during these procedures, so you can touch those areas up with a mop and bucket, or a handheld scrub pad like our medium duty blue handheld scrub pad.<\/p>",
+            "product": "",
+            "stepvideo": "https:\/\/www.youtube.com\/watch?v=ta_F0bjHLZM"
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Make sure the floor is completely dry in all areas before removing all the wet floor\/caution signs and returning all moved objects back to their original positions.<\/p><p>Take the auto scrubber over to a slop sink, toilet, floor drain, or bucket. Most models will have a dump hose that simply unhooks from the machine and dumps the solution out. Rinse out recovery tank and hoses, as well as squeegees and hoses. <strong>This step is especially essential after recovering a caustic scrubbing or stripping agent.<\/strong> Dump out any remaining clean solution. If soap and water sits in the solution tank for any amount of time, it can start to congeal and clog solution lines. Rinse out solution tank as thoroughly as possible. Leave the covers off of both tanks to let them air out and deodorize.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

@@ -1,0 +1,41 @@
+{% style %}
+    .background-swoop {
+    position: absolut;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-top: 74.52%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    }
+    {{ section.settings.customstyles }}
+{% endstyle %}
+<div class="background-swoop" style="background-image: url('{{ section.settings.bgimg | img_url: 'master' }}')"></div>
+{% schema %}
+{
+    "name": "background_swoop",
+    "class": "background_swoop--section",
+    "settings":[
+        {
+            "type": "image_picker",
+            "id": "bgimg",
+            "label": "Background Image"
+        },
+        {
+            "type": "text",
+            "id": "customstyles",
+            "label": "Custom Styles"
+        }
+    ],
+    "presets": [
+        {
+            "category": "background_swoop-section",
+            "name": "Background Swoop",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

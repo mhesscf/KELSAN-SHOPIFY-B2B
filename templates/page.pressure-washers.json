@@ -1,0 +1,328 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Pressure Washers",
+        "chsectiontext": "Shop a wide selection of pressure washers for any application. Cart mount, hand carry, stationary & wall mount, and truck & skid mount options available.",
+        "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "0794dfe6-0cd9-4b57-8034-286788c703be": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-cf2532k-3200-psi-gas-pressure-washer"
+          }
+        },
+        "f3606cea-e255-487e-88c7-13d61eb449c5": {
+          "type": "slide",
+          "settings": {
+            "product": "12-inch-flat-surface-cleaning-attachment-for-ar-blue-clean-ar675-pressure-washer"
+          }
+        },
+        "d1f28b57-89d6-4d7d-99fc-0abd0bc7059d": {
+          "type": "slide",
+          "settings": {
+            "product": "50-foot-pressure-washer-hose"
+          }
+        },
+        "a52ddc10-c632-4062-984f-46a5db60712d": {
+          "type": "slide",
+          "settings": {
+            "product": "1-5-hp-wall-mount-pressure-washer"
+          }
+        },
+        "13a3e250-821c-4d61-9caf-ca123461e51d": {
+          "type": "slide",
+          "settings": {
+            "product": "truck-mount-150-gallon-pressure-washer"
+          }
+        },
+        "cbea0b31-a3ac-438a-82fc-67daff5fe73d": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-cf2730hv-heavy-duty-2700-psi-gas-pressure-washer"
+          }
+        },
+        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63": {
+          "type": "slide",
+          "settings": {
+            "product": "ar-blue-clean-blue-maxx-2300-psi-electric-pressure-washer"
+          }
+        },
+        "ff0b32b6-7f80-4018-816b-258a14112ef7": {
+          "type": "slide",
+          "settings": {
+            "product": "ar-blue-clean-ar675-2000-psi-electric-pressure-washer"
+          }
+        }
+      },
+      "block_order": [
+        "0794dfe6-0cd9-4b57-8034-286788c703be",
+        "f3606cea-e255-487e-88c7-13d61eb449c5",
+        "d1f28b57-89d6-4d7d-99fc-0abd0bc7059d",
+        "a52ddc10-c632-4062-984f-46a5db60712d",
+        "13a3e250-821c-4d61-9caf-ca123461e51d",
+        "cbea0b31-a3ac-438a-82fc-67daff5fe73d",
+        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63",
+        "ff0b32b6-7f80-4018-816b-258a14112ef7"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "auto-detailing",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Pressure Washers by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cart-mount.jpg",
+            "linktext": "Cart mount",
+            "linkurl": "shopify:\/\/collections\/cart-mount"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flat-surfaces-cleaners.jpg",
+            "linktext": "Flat Surface Cleaners",
+            "linkurl": "shopify:\/\/collections\/flat-surface-cleaners"
+          }
+        },
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-carry.jpg",
+            "linktext": "Hand Carry",
+            "linkurl": "shopify:\/\/collections\/hand-carry"
+          }
+        },
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
+          "type": "types",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pressure-washer-accessories.jpg",
+            "linktext": "Pressure Washer Accessories",
+            "linkurl": "shopify:\/\/collections\/pressure-washer-accessories"
+          }
+        },
+        "d5555fee-e855-4369-bb4e-b5f8a603808b": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stationary-wall-mount.jpg",
+            "linktext": "Stationary & Wall Mount",
+            "linkurl": "shopify:\/\/collections\/stationary"
+          }
+        },
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/truck-and-skid-mount.jpg",
+            "linktext": "Truck & Skid Mount",
+            "linkurl": "shopify:\/\/collections\/truck-mount"
+          }
+        },
+        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
+          "type": "caheader",
+          "settings": {
+            "sectionheading": "Shop By Application"
+          }
+        },
+        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
+            "linktext": "Application 1",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
+            "linktext": "Application 2",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c939808d-357a-485e-9410-ae296bc0f014": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
+            "linktext": "Application 3",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "b8376ece-b804-476e-a3b5-35b77607dd21": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
+            "linktext": "Application 4",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeping-category.png",
+            "linktext": "Application 5",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
+            "linktext": "Application 6",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
+          "type": "slider",
+          "settings": {
+            "collection": "cleanfreak"
+          }
+        },
+        "3fba68ff-4018-4287-a0a8-a3b997759627": {
+          "type": "slider",
+          "settings": {
+            "collection": "cam-spray"
+          }
+        },
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
+          "type": "crheader",
+          "settings": {
+            "sectionheading": "Pressure Washing Resources"
+          }
+        },
+        "cb754198-b199-4317-879a-0b37a3021253": {
+          "type": "resource",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
+            "heading": "Choosing the Right Pressure Washer for Commercial Use: Interview with an Expert",
+            "subheading": "<p>Even for seasoned pressure washing veterans and those who’ve already gotten their business off the ground, choosing the right pressure washer for commercial use is difficult. So, we brought in an expert!<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/blogs\/news\/choosing-the-right-pressure-washer-for-commercial-use-interview-with-an-expert"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
+        "d5555fee-e855-4369-bb4e-b5f8a603808b",
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
+        "416df694-767b-4c68-8e90-2c0cff08dc2a",
+        "5b4a6417-f1c3-413e-8694-20fe1b499722",
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
+        "c939808d-357a-485e-9410-ae296bc0f014",
+        "b8376ece-b804-476e-a3b5-35b77607dd21",
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
+        "3fba68ff-4018-4287-a0a8-a3b997759627",
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
+        "cb754198-b199-4317-879a-0b37a3021253"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

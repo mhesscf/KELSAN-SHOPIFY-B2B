@@ -1,0 +1,427 @@
+{% style %}
+    .form-store-info .container{
+        width: 1250px;
+        max-width: 90%;
+        margin: auto;
+        padding: 50px 0;
+    }
+	.form-store-info .container .grid{
+		display: flex;
+		column-gap: 50px;
+    }
+	.form-store-info .container .grid .one-half{
+        width: 100%;
+        display: flex;
+    }
+	.form-store-info .container .grid .one-half .inner.vertical-center{
+        align-self: center;
+    }
+	.form-store-info .container .grid .one-half .info-row{
+        margin-bottom: 20px;
+        max-width: 80%;
+    }
+    .form-store-info .container .grid .one-half .info-row .social_links{
+        display: block;
+        margin: 30px 0 0 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    .form-store-info .container .grid .one-half .info-row .social_links li{
+        display: inline-block;
+        margin-right: 20px;
+    }
+    .form-store-info .container .grid .one-half .info-row .social_links li a{
+        color: {{ settings.color_icons }};
+        transition: all 0.4s ease-in-out;
+        font-size: 20px;
+    }
+    .form-store-info .container .grid .one-half .info-row .social_links li a:hover{
+        color: {{ settings.color_icons | color_darken: 10 }};
+    }
+    .form-store-info .container h1, .form-store-info .container h3{
+        font-weight: bold;
+    }
+
+	.form-store-info .container .grid .one-half .info-row p{
+        margin-bottom: 0;
+        margin-top: 0;
+        line-height: 25px;
+        color: #767676;
+    }
+	.form-store-info .container .grid .one-half .info-row p b{
+        margin-bottom: 5px;
+        color: #4A4A4A;
+    }
+    .form-store-info .container .grid .one-half .info-row p a{
+        color: {{ settings.color_text }}
+    }
+	.form-store-info form{
+        background-color: {{ setting.colors_section_secondary_background }};
+        padding: 50px;
+        width: 100%;
+        box-shadow: 0px 0px 10px rgba(00,00,00,0.2);
+        border-radius: 20px;
+        background-color: #fff;
+    }
+	.form-store-info .contact-form input{
+        height: 50px;
+        border: 1px solid #979797;
+        color: #767676;
+        padding: 0 10px;
+        margin-bottom: 16px;
+    }
+	.form-store-info .contact-form textarea{
+		border: 1px solid #979797;
+		color: #767676;
+	}
+	.form-store-info .contact-form label{
+		font-weight: 700;
+		color: #767676;
+        margin-bottom: 5px;
+        display: block;
+	}
+	.form-store-info .contact-form .top-text{
+        color: {{ setting.colors_text}};
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 36px;
+        margin-bottom: 7px;
+        display: block;
+    }
+	.form-store-info .contact-form .form-action-row{
+        text-align: right;
+    }
+	.form-store-info .contact-form button[type="submit"]{
+        display: inline-block;
+        text-transform: uppercase;
+        color: #ffffff;
+        background-color: {{ setting.color_button_background }};
+        border: 1px solid {{ setting.color_button_background }};
+        padding: 20px 10px;
+        font-size: 17px;
+        line-height: 1;
+        border-radius: 15px;
+        transition: all 0.4s ease-in-out;
+        margin-left: 0;
+        text-align: center;
+        min-width: 200px;
+        font-weight: 600;
+    }
+    .form-store-info .contact-form button[type="submit"]:hover{
+        color: #ffffff;
+        background-color: {{ setting.color_button_background | color_darken: 10 }};
+        border: 1px solid {{ setting.color_button_background | color_darken: 10 }};
+    }
+    @media (max-width: 1100px){
+        .form-store-info form{
+            padding: 20px;
+        }
+    }
+    @media (max-width: 800px){
+        .form-store-info .container .grid{
+            display: block;
+        }
+        .form-store-info .container .grid .one-half{
+            margin-bottom: 40px;
+        }
+    }
+
+{% endstyle %}
+<section class="form-store-info">
+    <div class="container">
+        <div class="row">
+            {% if section.settings.topheadingh1 %}
+                <h1>Contact Us</h1>
+            {% else %}
+                <h3>Contact Us</h3>
+            {% endif %}
+        </div>
+        <div class="grid">
+            <div class="grid__item one-half">
+                <div class="inner vertical-center">
+                    {% if section.settings.storephone != blank %}
+                    <div class="info-row">
+                        <p><b>Phone Number</b></p>
+                        <p><a href="tel:{{ section.settings.storephone }}">{{ section.settings.storephone }}</a></p>
+                    </div>
+                    {% endif %}
+                    {% if section.settings.localphone != blank %}
+                        <div class="info-row">
+                            <p><b>Local Number</b></p>
+                            <p><a href="tel:{{ section.settings.localphone }}">{{ section.settings.localphone }}</a></p>
+                        </div>
+                    {% endif %}
+                    {% if section.settings.storeemail != blank %}
+                        <div class="info-row">
+                            <p><b>Email</b></p>
+                            <p><a href="mailto:{{ section.settings.storeemail }}">{{ section.settings.storeemail }}</a></p>
+                        </div>
+                    {% endif %}
+                    {% if section.settings.storeaddress != blank %}
+                        <div class="info-row">
+                            {% if section.settings.addressheading != blank %}
+                                <p><b>{{ section.settings.addressheading }}</b></p>
+                            {% else %}
+                                <p><b>Our Address</b></p>
+                            {% endif %}
+                            <p>{{ section.settings.storeaddress }}</p>
+                        </div>
+                    {% endif %}
+                    {% if section.settings.storeinfo != blank %}
+                        <div class="info-row">
+                            <p><b>Company Information</b></p>
+                            <p>{{ section.settings.storeinfo }}</p>
+                        </div>
+                    {% endif %}
+                    <div class="info-row">
+                        {% if section.settings.dunsnum != blank %}
+                            <p><b>DUNS # -</b> {{ section.settings.dunsnum }}</p>
+                        {% endif %}
+                        {% if section.settings.federalid != blank %}
+                            <p><b>Federal ID # -</b> {{ section.settings.federalid }}</p>
+                        {% endif %}
+                        {% if section.settings.billingaddress != blank %}
+                            <p><b>Billing & Accounting Department Address -</b></p>
+                            <p>{{ section.settings.billingaddress }}</p>
+                        {% endif %}
+                    </div>
+                    {% if section.settings.hidesocial %}
+
+                    {% else %}
+                        <div class="info-row">
+                            <ul class="social_links">
+                                {% for block in section.blocks %}
+                                    {% case block.type %}
+                                        {% when 'social_media' %}
+                                            <li>
+                                                <a href="{{ block.settings.social_link }}">
+                                                    <i class="{{  block.settings.social_id }}"></i>
+                                                </a>
+                                            </li>
+                                    {% endcase %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="grid__item one-half">
+
+                {% form 'contact' %}
+                    <div class="contact-form">
+                        <span class="top-text">Send Us a Message</span>
+                        {% assign has_message = false %}
+
+                        {% if form.errors != blank %}
+                            {% assign has_message = true %}
+                            {% assign message_type = 'error' %}
+                        {% endif %}
+
+                        {% if form.posted_successfully? %}
+                            {% assign has_message = true %}
+                            {% assign message_type = 'success' %}
+                        {% endif %}
+
+                        {% if has_message %}
+                            <div class="contact-message message--{{ message_type }}">
+                                {% case message_type %}
+                                    {% when 'success' %}
+                                        <p>
+                                            {{ 'contact.form.post_success' | t }}
+                                        </p>
+                                    {% when 'error' %}
+                                        {{ form.errors | default_errors }}
+                                {% endcase %}
+                            </div>
+                        {% endif %}
+                        {% if form.posted_successfully? != true %}
+                            <div class="form-field">
+                                {% assign value = '' %}
+                                {%- if form.fname -%}
+                                    {% assign value = form.fname %}
+                                {%- elsif customer -%}
+                                    {% assign value = customer.fname %}
+                                {%- endif -%}
+                                <label class="" for="contact_fname">
+                                    First Name
+                                </label>
+                                <input
+                                        class="form-field-input form-field-text {% if form.errors contains 'name' %}form-field-error{% endif %}"
+                                        id="contact_fname"
+                                        name="contact[fname]"
+                                        type="text"
+                                        value="{{ value }}">
+                            </div>
+                            <div class="form-field">
+                                {% assign value = '' %}
+                                {%- if form.lname -%}
+                                    {% assign value = form.lname %}
+                                {%- elsif customer -%}
+                                    {% assign value = customer.lname %}
+                                {%- endif -%}
+                                <label class="" for="contact_lname">
+                                    Last Name
+                                </label>
+                                <input
+                                        class="form-field-input form-field-text {% if form.errors contains 'name' %}form-field-error{% endif %}"
+                                        id="contact_lname"
+                                        name="contact[lname]"
+                                        type="text"
+                                        value="{{ value }}">
+
+                            </div>
+                            <div class="form-field">
+                                {% assign value = '' %}
+                                {%- if form.email -%}
+                                    {% assign value = form.email %}
+                                {%- elsif customer -%}
+                                    {% assign value = customer.email %}
+                                {%- endif -%}
+                                <label class="" for="contact_email">
+                                    Email
+                                </label>
+                                <input
+                                        class="form-field-input form-field-text {% if form.errors contains 'email' %}form-field-error{% endif %}"
+                                        id="contact_email"
+                                        name="contact[email]"
+                                        type="text"
+                                        value="{{ value }}"
+                                        autocorrect="off"
+                                        autocapitalize="off">
+                            </div>
+                            <div class="form-field">
+                                {% assign value = '' %}
+                                {%- if form.phone -%}
+                                    {% assign value = form.phone %}
+                                {%- elsif customer -%}
+                                    {% assign value = customer.phone %}
+                                {%- endif -%}
+                                <label class="" for="contact_phone">
+                                    {{ 'contact.form.phone' | t }}
+                                </label>
+                                <input
+                                        class="form-field-input form-field-text {% if form.errors contains 'phone' %}form-field-error{% endif %}"
+                                        id="contact_phone"
+                                        name="contact[phone]"
+                                        type="tel"
+                                        value="{{ value }}">
+                            </div>
+
+                            <div class="form-field">
+                                {% assign value = '' %}
+                                {%- if form.body -%}
+                                    {% assign value = form.body %}
+                                {%- endif -%}
+                                <label class="" for="contact_message">
+                                    Message
+                                </label>
+                                <textarea
+                                        class="form-field-input form-field-textarea {% if form.errors contains 'body' %}form-field-error{% endif %}"
+                                        id="contact_message"
+                                        name="contact[message]">{{ value }}</textarea>
+                            </div>
+
+                            <div class="form-action-row">
+                                <button class="button-primary contact-form-button" type="submit">
+                                    {{ 'contact.form.send' | t }}
+                                </button>
+                            </div>
+
+                        {% endif %}
+                    </div>
+                {% endform %}
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "form-with-store-info",
+    "class": "form-with-store-info--section",
+    "settings":[
+        {
+            "type": "checkbox",
+            "id": "topheadingh1",
+            "label": "Make top Heading an H1 tag",
+            "default": false
+        },
+        {
+            "type": "text",
+            "label": "Store Phone Number",
+            "id" : "storephone"
+        },
+        {
+            "type": "text",
+            "label": "Local Phone Number",
+            "id" : "localphone"
+        },
+        {
+            "type": "text",
+            "label": "Store Email",
+            "id" : "storeemail"
+        },
+        {
+            "type": "text",
+            "label": "Address Heading",
+            "id" : "addressheading"
+        },
+        {
+            "type" : "richtext",
+            "label" : "Store Address",
+            "id" : "storeaddress"
+        },
+        {
+            "type" : "richtext",
+            "label" : "Company Information",
+            "id" : "storeinfo"
+        },
+        {
+            "type": "text",
+            "label": "DUNS#",
+            "id" : "dunsnum"
+        },
+        {
+            "type": "text",
+            "label": "Federal ID",
+            "id" : "federalid"
+        },
+        {
+            "type" : "richtext",
+            "label" : "Billing and Accounting Department Address",
+            "id" : "billingaddress"
+        },
+        {
+            "type": "checkbox",
+            "id": "hidesocial",
+            "label": "Hide Social Media Links",
+            "default": false
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Social Media",
+            "type": "social_media",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "social_id",
+                    "label": "Font Awesome Icon Class"
+                },
+                {
+                    "type": "text",
+                    "id": "social_link",
+                    "label": "Link Address"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "form-with-store-info-section",
+            "name": "Form with store info",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

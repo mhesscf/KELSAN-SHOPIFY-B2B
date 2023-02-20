@@ -1,0 +1,230 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Floor Cleaning Solutions",
+        "chsectiontext": "Scrubbing solutions, defoamers, carpet shampoos, and buffing waxes to make your floors shine.",
+        "image": "shopify:\/\/shop_images\/cleaning-solutions-2.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ea0b2878-052b-4a13-b034-83999112d061": {
+          "type": "slide",
+          "settings": {
+            "product": "traffic-lane-cleaner"
+          }
+        },
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a": {
+          "type": "slide",
+          "settings": {
+            "product": "classroom-finish-high-gloss-floor-finish-flexmax-pouches"
+          }
+        },
+        "63265333-5eaf-4964-8cab-4cc91494709a": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-defoamer-for-auto-scrubber-recovery-tanks"
+          }
+        },
+        "18ae5565-1694-4c79-a5fb-efb5227ff71e": {
+          "type": "slide",
+          "settings": {
+            "product": "floor-wax-polishing-solution"
+          }
+        },
+        "d137b141-09f5-4c83-b7bd-fb64c6488bc0": {
+          "type": "slide",
+          "settings": {
+            "product": "concentrated-degreaser-cleaner"
+          }
+        },
+        "02cffb2b-2f32-4d76-9d19-16c9c9c67260": {
+          "type": "slide",
+          "settings": {
+            "product": "multi-purpose-cleaner-deodorizer"
+          }
+        },
+        "f3c6b1f0-99e2-44a7-b880-1e151c4c3e46": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-nrs-concentrated-no-rinse-floor-stripper"
+          }
+        }
+      },
+      "block_order": [
+        "ea0b2878-052b-4a13-b034-83999112d061",
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a",
+        "63265333-5eaf-4964-8cab-4cc91494709a",
+        "18ae5565-1694-4c79-a5fb-efb5227ff71e",
+        "d137b141-09f5-4c83-b7bd-fb64c6488bc0",
+        "02cffb2b-2f32-4d76-9d19-16c9c9c67260",
+        "f3c6b1f0-99e2-44a7-b880-1e151c4c3e46"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "floor-cleaning-solutions",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Floor Cleaning Solutions by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/traffic-lane-carpet-scrubbing-solution-case.jpg",
+            "linktext": "Carpet Shampoos",
+            "linkurl": "shopify:\/\/collections\/carpet-shampoos"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/high-gloss-wet-look-floor-finish-wax.jpg-2-gallon.jpg",
+            "linktext": "Commercial Tile Floor Wax",
+            "linkurl": "shopify:\/\/collections\/commercial-tile-floor-wax"
+          }
+        },
+        "772bc8ad-1e92-4b51-8792-b3f9a985a813": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/n640-g2-trusted-clean-defoamer_1.jpg",
+            "linktext": "Defoamers",
+            "linkurl": "shopify:\/\/collections\/floor-defoamers"
+          }
+        },
+        "257c7816-1ed0-46a7-8adc-7a35e115e8e6": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-spray-buffing-solution-case-of-2.jpg",
+            "linktext": "Floor Buffing Solutions",
+            "linkurl": "shopify:\/\/collections\/floor-buffing-solutions"
+          }
+        },
+        "9e340111-8887-42e0-bbaf-11879109a23f": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trusted-clean-low-foam-floor-degreaser-case.jpg",
+            "linktext": "Floor Degreasers",
+            "linkurl": "shopify:\/\/collections\/floor-degreasers"
+          }
+        },
+        "08a1a7d2-cd54-4b30-880b-c42408a080ba": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trusted-clean-magnifico-lavender-floor-soap-2-gal.jpg",
+            "linktext": "Floor Cleaning Soaps",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-soaps"
+          }
+        },
+        "48d011e9-3d20-46f4-8927-c6ebd13a7ca0": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bright-solutions-nrs-no-rinse-floor-stripper-2-pouches-v2.jpg",
+            "linktext": "Floor Stripping Chemicals",
+            "linkurl": "shopify:\/\/collections\/floor-stripping-chemicals"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "772bc8ad-1e92-4b51-8792-b3f9a985a813",
+        "257c7816-1ed0-46a7-8adc-7a35e115e8e6",
+        "9e340111-8887-42e0-bbaf-11879109a23f",
+        "08a1a7d2-cd54-4b30-880b-c42408a080ba",
+        "48d011e9-3d20-46f4-8927-c6ebd13a7ca0"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

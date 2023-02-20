@@ -1,0 +1,171 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Floor Scrubbers",
+        "chsectiontext": "We have a wide selection of walk behind floor scrubbers in all different brands to suit your particular floor care needs.",
+        "image": "shopify:\/\/shop_images\/floor-scrubbers.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ea0b2878-052b-4a13-b034-83999112d061": {
+          "type": "slide",
+          "settings": {
+            "product": "clarke-17-electric-auto-scrubber-w-cord"
+          }
+        },
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a": {
+          "type": "slide",
+          "settings": {
+            "product": "32-inch-compact-automatic-rider-scrubber"
+          }
+        },
+        "bc511810-734e-4ada-9fe9-d2d4c9b846ea": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-walk-behind-scrubber-battery-powered"
+          }
+        },
+        "eee8eeae-11af-4c12-9a81-4fee4db08dc3": {
+          "type": "slide",
+          "settings": {
+            "product": "tornado-ride-on-bd-26-27-autoscrubber"
+          }
+        },
+        "a94e2928-7cb7-4abb-87e5-a396c74f1bc6": {
+          "type": "slide",
+          "settings": {
+            "product": "the-advantage-battery-powered-15-gallon-floor-scrubber-20-inch"
+          }
+        }
+      },
+      "block_order": [
+        "ea0b2878-052b-4a13-b034-83999112d061",
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a",
+        "bc511810-734e-4ada-9fe9-d2d4c9b846ea",
+        "eee8eeae-11af-4c12-9a81-4fee4db08dc3",
+        "a94e2928-7cb7-4abb-87e5-a396c74f1bc6"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "floor-scrubbers",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Floor Scrubbers by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ies-20-slnd-01.jpg",
+            "linktext": "Automatic Walk Behind Floor Scrubbers",
+            "linkurl": "shopify:\/\/collections\/walk-behind-floor-scrubbers"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/advance-advenger-with-ecoflex.jpg",
+            "linktext": "Ride-On Floor Scrubbers",
+            "linkurl": "shopify:\/\/collections\/ride-on-floor-scrubbers"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

@@ -1,0 +1,311 @@
+{% assign section_classes = "home-section--content" %}
+
+{% assign heading = section.settings.heading %}
+{% assign subheading = section.settings.subheading %}
+{% assign textcontent = section.settings.textcontent %}
+{% assign button_label = section.settings.button_label %}
+{% assign button_link = section.settings.button_link %}
+{% assign image = section.settings.image %}
+{% assign max_width = settings.layout_max_width %}
+
+<script type="application/pxs-animation-mapping+json">
+  {
+    "blocks": [".text-image-section"],
+    "elements": [".text-image-section__heading", ".text-image-section__text", ".text-image-section__button"]
+  }
+</script>
+{%- assign base_name = base_name | default: 'text-image-section' -%}
+
+{%- if overlay_opacity > 0 and overlay_color -%}
+  {%- assign overlay_opacity = overlay_opacity | times: 0.01 -%}
+  {%- assign overlay_color = overlay_color | color_modify: 'alpha', overlay_opacity -%}
+{%- endif -%}
+
+{% capture text_classes %}
+  {% if text_alignment != blank %}
+    {{ base_name }}-text-alignment-{{ text_alignment }}
+  {% endif %}
+  {% if text_shadow %}
+    {{ base_name }}--text-shadow
+  {% endif %}
+{% endcapture %}
+
+<section
+        class="
+    {{ base_name }}
+    {% if section_style != blank %}
+      {{ base_name }}--section-style-{{ section_style }}
+    {% endif %}
+    {% if show_border %}
+      {{ base_name }}--section-show-border
+    {% endif %}
+    {% if content_position != blank %}
+      {{ base_name }}--content-position-{{ content_position }}
+    {% endif %}
+    {% if section_classes != blank %}
+      {{ section_classes }}
+    {% endif %}
+  "
+        data-section-id="{{ section.id }}"
+
+        {% if section.settings.rmv_top_mgn %}style="margin-top: 0;"{% endif %}
+>
+  <div class="text-image-section--wrapper {% if section.settings.content_right %} content-right {% endif %} {{ section.id }}" id="imgtext-{{ section.id }}">
+    <div class="mobile-img-top"></div>
+    <div class="{{ base_name }}__container">
+      <div class="{{ base_name }}__content"
+      {% if overlay_color or text_color %}
+        style="
+        {% if overlay_color %}background-color: {{ overlay_color }};{% endif %}
+        {% if text_color %}color: {{ text_color }};{% endif %}
+                "
+              {% endif %}>
+        {%-
+                if heading != blank
+        or subheading != blank
+        or button_label != blank
+        or button_link != blank
+        -%}
+          <div class="{{ base_name }}__content-wrapper {{ text_classes }}">
+            {%- if subheading -%}
+              <span class="{{ base_name }}__subhding">{{ subheading }}</span>
+            {%- endif -%}
+            {%- if heading != blank -%}
+              <h2 class="{{ base_name }}__heading">{{ heading | escape }}</h2>
+            {%- endif -%}
+            {%- if textcontent -%}
+              <div class="{{ base_name }}__text">{{ textcontent }}</div>
+            {%- endif -%}
+            {%- if
+                    button_label != blank
+                    and button_link != blank
+            -%}
+              <a
+                      class="{{ base_name }}__button"
+                      href="{{ button_link }}"
+              >
+                {{ button_label }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+{% comment %}Inject @pixelunion/pxs-image-with-text/image-with-text end{% endcomment %}
+{% style %}
+  .text-image-section--wrapper.{{ section.id }}{
+  background: linear-gradient(91deg, #CCE9F1 45%, rgba(204,233,241,0.00) 88%), url("{{ image |  image_url: height: 650}}") no-repeat center right;
+  background-size: contain;
+  padding-top: 85px;
+  padding-bottom: 85px;
+  }
+  .text-image-section--wrapper.content-right.{{ section.id }}{
+  background: linear-gradient(270deg, #CCE9F1 45%, rgba(204,233,241,0.00) 88%), url("{{ image |  image_url: height: 650}}") no-repeat center left;
+  background-size: contain;
+  padding-top: 85px;
+  padding-bottom: 85px;
+  }
+  @media (min-width: 1600px){
+  .text-image-section--wrapper.{{ section.id }}{
+  background: linear-gradient(91deg, #CCE9F1 65%, rgba(204,233,241,0.00) 88%), url("{{ image |  image_url: height: 650}}") no-repeat center right;
+  }
+  .text-image-section--wrapper.content-right.{{ section.id }}{
+  background: linear-gradient(270deg, #CCE9F1 65%, rgba(204,233,241,0.00) 88%), url("{{ image |  image_url: height: 650}}") no-repeat center left;
+  }
+  }
+  @media (min-width: 1200px){
+  .text-image-section--wrapper.{{ section.id }}{
+  background: linear-gradient(91deg, #CCE9F1 55%, rgba(204,233,241,0.00) 88%), url("{{ image |  image_url: height: 650}}") no-repeat center right;
+  }
+  .text-image-section--wrapper.content-right.{{ section.id }}{
+  background: linear-gradient(270deg, #CCE9F1 55%, rgba(204,233,241,0.00) 88%), url("{{ image |  image_url: height: 650}}") no-repeat center left;
+  }
+  }
+
+  .text-image-section__container{
+  --layout-container-max-width: {{ max_width | append: 'px' }};
+  --layout-container-gutter: 10px;
+  max-width: 1370px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 35px;
+  }
+  .text-image-section__content{
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 49px;
+  }
+  .text-image-section__subhding{
+  font-size: 26px;
+  font-weight: 400;
+  color: {{ settings.color_text_medium }};
+  }
+  .text-image-section__heading{
+  color: {{ settings.color_headings }};
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  line-height: 24px;
+  }
+  .text-image-section__text{
+  color: {{ settings.color_text }};
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 32px;
+  }
+  .text-image-section__button{
+  color: {{ settings.color_button_background }};
+  border-radius: 11px;
+  padding: 8px 20px;
+  display: inline-block;
+  line-height: 31px;
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  letter-spacing: 1.66px;
+  text-transform: uppercase;
+  }
+  .text-image-section__image-wrapper img{
+  border-radius: 30px;
+  width: 100%;
+  }
+  .text-image-section--wrapper.content-right .text-image-section__content{
+  margin-left: auto;
+  }
+  @media (min-width: 1024px){
+  .text-image-section__container {
+  --layout-container-gutter: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: row;
+  }
+  .text-image-section__heading{
+  color: {{ settings.color_headings }};
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 40px;
+  }
+  .text-image-section__text{
+  color: {{ settings.color_text }};
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height:46px;
+  max-width: 615px;
+  }
+  }
+  @media (min-width: 720px){
+  .text-image-section__container{
+  --layout-container-gutter: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  }
+  .text-image-section__button{
+  background-color: {{ settings.color_button_background }};
+  border-radius: 15px;
+  padding: 15px 30px;
+  display: inline-block;
+  line-height: 31px;
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  letter-spacing: 1.66px;
+  text-transform: uppercase;
+  }
+  }
+  @media (max-width: 720px){
+  .text-image-section__container {
+  padding-bottom: 0;
+  }
+  .text-image-section--wrapper.{{ section.id }}, .text-image-section--wrapper.content-right.{{ section.id }}{
+  background: linear-gradient(0deg, #CCE9F1 45%, rgba(204,233,241,0.00) 88%), url("{{ image |  image_url: height: 650}}") no-repeat top center;
+  background-size: contain;
+  padding-top: 315px;
+  padding-bottom: 25px;
+  }
+  .text-image-section__subhding{
+  font-size: 16px;
+  }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "text-image-section",
+  "class": "text-image--section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "id": "subheading",
+      "type": "text",
+      "label": "Subheading"
+    },
+    {
+      "id": "textcontent",
+      "type": "richtext",
+      "label": "Text Content",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "id": "button_label",
+      "type": "text",
+      "label": "Button Label",
+      "default": "Button"
+    },
+    {
+      "id": "button_link",
+      "type": "url",
+      "label": "Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "content_right",
+      "label": "Content Right",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "rmv_top_mgn",
+      "label": "Remove Top Margin",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "category": "text-image-section",
+      "name": "Text w/ Image on Colored Background",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

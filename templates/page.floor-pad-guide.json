@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "disabled": true,
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "cab363bd-721b-45c2-a6b2-186f7d95f7aa": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "main": {
+      "type": "page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "cab363bd-721b-45c2-a6b2-186f7d95f7aa",
+    "main"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "166135823044e4c2b4": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Vacuum Cleaners",
+        "chsectiontext": "Shop our variety of vacuum cleaners, ranging from inustrial, wet dry vacuums, and even backpacks.",
+        "image": "shopify:\/\/shop_images\/InUse-18VAC-24SQ-Wide.jpg"
+      }
+    },
+    "16614443106e149234": {
+      "type": "category-featured-product-slider",
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "1661360735e539f2d8": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "featuredcollection": "",
+        "link_url": "",
+        "link_text": ""
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1661364330a7c8a0ab": {
+      "type": "apps",
+      "settings": {
+        "include_padding": true
+      }
+    }
+  },
+  "order": [
+    "166135823044e4c2b4",
+    "16614443106e149234",
+    "1661360735e539f2d8",
+    "main",
+    "1661364330a7c8a0ab"
+  ]
+}

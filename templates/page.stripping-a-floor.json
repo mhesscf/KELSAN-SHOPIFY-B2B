@@ -1,0 +1,239 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To strip old layers of floor finish, or wax, from commercially tiled floors."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Rotary Floor Buffer",
+            "linkurl": "shopify:\/\/collections\/floor-buffers"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Automatic Scrubber",
+            "linkurl": "shopify:\/\/collections\/walk-behind-auto-scrubbers"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Buffer Shampoo Tank",
+            "linkurl": "shopify:\/\/collections\/solution-tanks"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Drying Blowers",
+            "linkurl": "shopify:\/\/collections\/axial-fans"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Stripping Solution",
+            "linkurl": "shopify:\/\/collections\/floor-stripping-solutions"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Stripper Neutralizer",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-soaps-solutions"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Stripping Pads",
+            "linkurl": "shopify:\/\/collections\/floor-stripping-pads"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Handheld Strip Pads",
+            "linkurl": "shopify:\/\/collections\/handheld-scrubbing-pads"
+          }
+        },
+        "eeaa17a1-e662-4fb3-9047-6801af6461c5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Stripping Protective Boots",
+            "linkurl": "shopify:\/\/collections\/stripping-shoes"
+          }
+        },
+        "448e22f7-7c8d-4764-82cd-56b01200c986": {
+          "type": "link",
+          "settings": {
+            "linktext": "Garbage Bags",
+            "linkurl": "shopify:\/\/collections\/trash-can-liners"
+          }
+        },
+        "8bfae1ee-f0e0-463d-9050-69bfb5cffd03": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Bucket & Wringer",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "17b84cdf-959a-402c-9f9c-c32cee1cabd3": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Handles",
+            "linkurl": "shopify:\/\/collections\/handles"
+          }
+        },
+        "f2d0ce85-63a8-4b4c-bf09-dad8fc97a862": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Mops",
+            "linkurl": "shopify:\/\/collections\/wet-mop-heads"
+          }
+        },
+        "cee5a1e2-ba9b-4c7e-8a78-50cf8ce04e67": {
+          "type": "link",
+          "settings": {
+            "linktext": "Safety Supplies",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        },
+        "4f72d7d7-f6b4-482c-a3c8-2b25d013690b": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "6ed2cee1-ff6c-4b2e-8f3a-d2dff14f2755": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Pick-up Vacuum",
+            "linkurl": "shopify:\/\/collections\/shop-vacuums"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "eeaa17a1-e662-4fb3-9047-6801af6461c5",
+        "448e22f7-7c8d-4764-82cd-56b01200c986",
+        "8bfae1ee-f0e0-463d-9050-69bfb5cffd03",
+        "17b84cdf-959a-402c-9f9c-c32cee1cabd3",
+        "f2d0ce85-63a8-4b4c-bf09-dad8fc97a862",
+        "cee5a1e2-ba9b-4c7e-8a78-50cf8ce04e67",
+        "4f72d7d7-f6b4-482c-a3c8-2b25d013690b",
+        "6ed2cee1-ff6c-4b2e-8f3a-d2dff14f2755"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prep Area -",
+            "steptext": "<p>Remove all obstacles and furniture from the area. Set up an area of about 200 to 400 square feet. This will be the area you start with. Cordon off the entire area that needs to be stripped by setting up the necessary caution\/wet floor signs. Create an area for exiting the stripping area. Place mats down to remove protective footwear and avoid tracking stripping materials to other parts of the buildings. Follow the <a href=\"\/pages\/dust-mopping\" title=\"Dust Mopping\">dust mopping procedure<\/a> to remove all debris, dirt, and large objects (i.e. pallet chips), from the area.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Prep Stripping Materials -",
+            "steptext": "<p>Line a mop bucket with a plastic liner, similar to something like our 20 - 30 gallon trash can bags. This will keep the stripper contained and not allow it to enter the bucket area. The mop bucket can then to be used for future mopping purposes, and not just relegated to stripping jobs. Consult the necessary SDS sheets for the stripping solutions, so you are properly acquainted with the hazards associated with the chemicals you'll be using. Take the pre-determined stripping solution and pour it into the lined bucket. We offer a concentrated floor wax stripper, where the 1 quart bottle needs to be mixed with 5 gallons of water. That product is concentrated, so it needs to be mixed with water. Most solutions are used at full strength, you'll need to consult the label on your specific product to be certain. Put on the necessary safety clothing, like our floor stripping protective boots, face masks\/respirators, nitrile gloves and safety glasses.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Apply Stripping Solution -",
+            "steptext": "<p>You'll want to sufficiently cover the 200 to 400 square foot area you already set up. Apply generous amounts of solution with a mop and let it sit for approximately 10 minutes to loosen the floor finish before continuing to the next step. Do not allow the stripper to dry.<\/p><p>Take the specified floor stripping pad and attach it the pad driver on your floor buffer or auto scrubber. Auto scrubbers are often the popular choice for stripping, because they can then be used to recover the stripping solution. If you are using an auto scrubber, leave the squeegee up and scrub the area once completely before putting the squeegee down and scrubbing again while at the same time, recovering the solution. If you are using a rotary floor scrubber, start in the opposite corner of your walk off mat, and slowly move towards that area. Some areas will require several passes to strip the floor completely of the old floor wax. A black utility stripping pad may be needed to properly get into corners and up against baseboards. A baseboard stripper\/cleaner may also be needed to properly clean the baseboards.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Pick Up Dirty Solution -",
+            "steptext": "<p>If you are using an auto scrubber, after a few passes of just scrubbing, lower the squeegee, and recover all the stripping solution while continuing to scrub. If a floor buffer is your stripping machine of choice, you'll need to use a certified wet recovery vacuum that is specialized for stripper recovery like the wet stripper vac, which has a front mount recovery squeegee. You'll want to pick up this solution immediately after scrubbing, as you don't want this solution to dry on the floor.<\/p>",
+            "product": ""
+          }
+        },
+        "01052f49-6fb4-46e7-b68a-b866df0a5b78": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Rinse And Dry Floor -",
+            "steptext": "<p>Use a fresh mop bucket, or remove the liner from the mop bucket you were using and fill it with clean water. Add 1-2 ounces of floor stripping neutralizer per gallon of water. You can also use your auto scrubber or floor buffer mounted with a solution tank to accomplish this. Just make sure to use a different scrub brush or pad than the one you used to strip the floor. Mop\/scrub entire area with the neutralizer\/water combination to try and neutralize as much of the alkaline in the stripper as possible. If the floor is not at a neutral state when putting your floor finish down, it will not adhere properly. Wipe down all baseboards and corners to assure all stripping solution is removed. Rinse the floor one or two more times with just clean water to ensure that all stripping solutions are recovered. To be 100% sure that your floor is neutral, you may also use litmus strips to test the pH levels.<\/p>",
+            "product": ""
+          }
+        },
+        "99090e51-6737-4aad-9b95-05ebbbbdbc06": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "6",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>All solution tanks, mops, mop buckets, squeegees and hoses must be thoroughly rinsed and cleaned out. If the stripping solution or stripped material, otherwise know as slurry is allowed to sit in the tanks, it can dry or start to solidify and ruin the machinery.<\/p><p>All flooring areas need to be completely dry before moving onto the next step of <a href=\"\/pages\/applying-a-floor-finish\" title=\"Applying Floor Finish\">applying floor finish<\/a>. We recommend using a floor drying fan like our lightweight 2800 CFM air mover to ensure all areas are completely dry.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "01052f49-6fb4-46e7-b68a-b866df0a5b78",
+        "99090e51-6737-4aad-9b95-05ebbbbdbc06"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

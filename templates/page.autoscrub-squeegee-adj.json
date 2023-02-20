@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "46c78989-041b-4123-83d9-423977fa834a": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "Auto Scrubber Squeegee Adjustments",
+        "chsectiontext": "Objective: Troubleshoot Auto Scrubber Squeegee Performance"
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "4d32aacd-aa66-4cda-906d-eab2c6a1b05e": {
+      "type": "dynamic-video",
+      "settings": {
+        "title": "",
+        "url": "https:\/\/www.youtube.com\/watch?v=Po9XQWWli7M",
+        "show_caption": false,
+        "caption": "",
+        "autoplay": false,
+        "aspect_ratio": "16-9",
+        "position": "center-center",
+        "show_overlay": false,
+        "background": "#000000",
+        "opacity": 50
+      }
+    },
+    "97ac8cbf-49a3-410a-8fe9-885da970465d": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "wide",
+        "title": "1.) If your squeegee blade is not picking up in the center.",
+        "text": "<p>The adjustment is simply made by lowering your squeegee blade, and removing your vacuum hose. Next you need to loosen the lock nut with a pair of pliers, so the adjustment bolt can move freely in or out. Turning the adjustment bolt clockwise with a 13 millimeter socket will correct the squeegee's angle to allow it to pick up in the center of the assembly. At this point, you will need to tighten the locking nut, and test the squeegee system to ensure it is picking up all of your solution. If minor adjustments are required, stop and repeat.<\/p>",
+        "heading_size": "medium",
+        "text_alignment": "left"
+      }
+    },
+    "a781813d-b1c7-4829-8109-3040972f3889": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "wide",
+        "title": "2.) If your squeegee blade is not picking up on the edges.",
+        "text": "<p>The adjustment is simply made by again lowering your squeegee blade, and removing your vacuum hose. Next you need to loosen the lock nut with a pair of pliers, so the adjustment bolt can move freely in or out. Turning the adjustment bolt counterclockwise with a 13 millimeter socket will correct the squeegee's angle to allow it to pick up on the edges of the assembly. At this point, you will need to tighten the locking nut, and test the squeegee system to ensure it is picking up all of your solution. If minor adjustments are required, stop and repeat.<\/p>",
+        "heading_size": "medium",
+        "text_alignment": "left"
+      }
+    },
+    "f5596fba-0fa9-41d5-bd04-8c48b6b74091": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "wide",
+        "title": "3.) If your squeegee blade is leaving streaks on your floor.",
+        "text": "<p>Get a clean rag or towel, and raise your squeegee assembly into the up position. Then, run the towel along the length of both squeegees, removing any debris or dirt. This should keep your squeegee from streaking. Another way to accomplish this is to simply lift the squeegee assembly up and drop it on the ground essentially knocking any debris or dirt out of the channel that is formed between the two squeegee blades.<\/p>",
+        "heading_size": "medium",
+        "text_alignment": "left"
+      }
+    },
+    "85707304-fc0c-4a10-98a0-f0926cd75d78": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify:\/\/shop_images\/Machines-VariousCUHoriz2.jpg",
+        "crop": "center",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "right",
+        "mobile_image_alignment": "bottom",
+        "heading": "More How To Articles",
+        "subheading": "<p>All the best cleaning information in easy to read articles by CleanFreak.<\/p>",
+        "text_alignment": "left",
+        "button_label": "View All How To Articles",
+        "button_link": "shopify:\/\/pages\/how-tos"
+      }
+    }
+  },
+  "order": [
+    "46c78989-041b-4123-83d9-423977fa834a",
+    "main",
+    "4d32aacd-aa66-4cda-906d-eab2c6a1b05e",
+    "97ac8cbf-49a3-410a-8fe9-885da970465d",
+    "a781813d-b1c7-4829-8109-3040972f3889",
+    "f5596fba-0fa9-41d5-bd04-8c48b6b74091",
+    "85707304-fc0c-4a10-98a0-f0926cd75d78"
+  ]
+}

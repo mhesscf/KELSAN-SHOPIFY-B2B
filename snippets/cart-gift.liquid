@@ -1,0 +1,352 @@
+{% assign cart-size = cart.total_price | divided_by: 100 %}
+{% assign threshold-1 = section.settings.top_order_threshold | minus: 0.01 %}
+{% assign threshold-2 = section.settings.second_order_threshold | minus: 0.01 %}
+{% comment %}{% assign threshold-3 = section.settings.third_order_threshold | minus: 0.01 %}{% endcomment %}
+{% comment %}{% assign threshold-4 = section.settings.fourth_order_threshold | minus: 0.01 %}{% endcomment %}
+{% if cart-size > threshold-1 %}
+
+    {% unless section.settings.cart_gwp_product_1 == blank %}
+        {% assign gwp1 = 0 %}
+        {% for item in cart.items %}
+            {% assign product1-title = "" %}
+            {% assign product12-title = all_products[section.settings.cart_gwp_product_12].title %}
+            {% assign product11-title = all_products[section.settings.cart_gwp_product_11].title %}
+            {% assign product10-title = all_products[section.settings.cart_gwp_product_10].title %}
+            {% assign product9-title = all_products[section.settings.cart_gwp_product_9].title %}
+            {% assign product8-title = all_products[section.settings.cart_gwp_product_8].title %}
+            {% assign product7-title = all_products[section.settings.cart_gwp_product_7].title %}
+            {% assign product6-title = all_products[section.settings.cart_gwp_product_6].title %}
+            {% assign product5-title = all_products[section.settings.cart_gwp_product_5].title %}
+            {% assign product4-title = all_products[section.settings.cart_gwp_product_4].title %}
+            {% assign product3-title = all_products[section.settings.cart_gwp_product_3].title %}
+            {% assign product2-title = all_products[section.settings.cart_gwp_product_2].title %}
+            {% assign product1-title = all_products[section.settings.cart_gwp_product_1].title %}
+
+            {% if
+                    item.product.title == product1-title
+                    or item.product.title == product2-title
+                    or item.product.title == product3-title
+                    or item.product.title == product4-title
+                    or item.product.title == product5-title
+                    or item.product.title == product6-title
+                    or item.product.title == product7-title
+                    or item.product.title == product8-title
+                    or item.product.title == product9-title
+                    or item.product.title == product10-title
+                    or item.product.title == product11-title
+                    or item.product.title == product12-title
+            %}
+                {% assign gwp1 = gwp1 | plus: 1 %}
+            {% endif %}
+        {% endfor %}
+        {% if gwp1 == 0 %}
+            <section class="category-slider-wrapper">
+                <div class="category-slider-wrapper__content cart-gwp container" id="similar-products">
+                    {{ section.settings.cart_gwp_top_text_1 }}
+                    <div class="similar-p-slides" id="gift-slds">
+
+                        {% for j in (1..12) %}
+                            {% assign is = 0 %}
+                            {% assign pid = "" %}
+                            {% assign itemid = j %}
+                            {% case itemid %}
+                                {% when 12 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_12 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_12 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 11 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_11 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_11 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 10 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_10 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_10 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 9 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_9 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_9 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 8 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_8 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_8 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 7 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_7 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_7 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 6 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_6 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_6 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 5 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_5 == blank %}
+                                        {% assign pid = section.settings.cart_gwp_product_5 %}
+                                        {% assign is = 1 %}
+                                    {% endunless %}
+                                {% when 4 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_4 == blank %}
+                                        {% assign is = 1 %}
+                                        {% assign pid = section.settings.cart_gwp_product_4 %}
+                                    {% endunless %}
+                                {% when 3 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_3 == blank %}
+                                        {% assign is = 1 %}
+                                        {% assign pid = section.settings.cart_gwp_product_3 %}
+                                    {% endunless %}
+                                {% when 2 %}
+                                    {% assign pid = "" %}
+                                    {% unless section.settings.cart_gwp_product_2 == blank %}
+                                        {% assign is = 1 %}
+                                        {% assign pid = section.settings.cart_gwp_product_2 %}
+                                    {% endunless %}
+                                {% else %}
+                                    {% unless section.settings.cart_gwp_product_1 == blank %}
+                                        {% assign is = 1 %}
+                                        {% assign pid = section.settings.cart_gwp_product_1 %}
+                                    {% endunless %}
+                            {% endcase %}
+
+                            {% if is != 0 %}
+                                {% assign product1-title = all_products[pid].title %}
+                                {% assign product1-url = all_products[pid].url %}
+                                {% assign compare_at_price = all_products[pid].compare_at_price %}
+                                {% assign price = all_products[pid].price %}
+                                <div class="cart-gwp-row p-slide">
+                                    <div class="inner">
+                                        <div class="cart-gwp-image image-wrap">
+                                            <div class="poster"
+                                                 style="background-image: url({{ all_products[pid] | img_url: '200x' }})"></div>
+                                        </div>
+                                        <p class="product__title hidden"><span><a
+                                                        href="{{ product1-url }}">{{ product1-title }}</a></span></p>
+                                        <div class="price__compare-at visible">
+                                        <span class="" data-price-compare="">
+                                            {{ price | money }}
+                                        </span>
+                                        </div>
+                                        <form method="post" action="/cart/add">
+                                            <input type="hidden" name="id"
+                                                   value="{{ all_products[pid].variants.first.id }}"/>
+                                            <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                                            <input class="add-to-cart-btn" type="submit" value="ADD TO CART"
+                                                   class="btn"/>
+                                        </form>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                    <div id="sim-slide-arrows"></div>
+                    <div class="cart-gwp-details">{{ section.settings.cart_gwp_bottom_text_1 }}</div>
+
+                </div>
+            </section>
+        {% endif %}
+    {% endunless %}
+
+{% elsif section.settings.second_price_tier and cart-size > threshold-2 %}
+
+    {% unless section.settings.cart_gwp_product_2 == blank %}
+        {% assign gwp2 = 0 %}
+        {% assign product2 = section.settings.cart_gwp_product_2 %}
+        {% assign product2-title = all_products[product2].title %}
+        {% assign product2-url = all_products[product2].url %}
+        {% for item in cart.items %}
+            {% if item.product.title contains product2-title %}
+                {% assign gwp2 = gwp2 | plus: 1 %}
+            {% endif %}
+        {% endfor %}
+        {% if gwp2 == 0 %}
+            <div class="cart-gwp">
+                <div class="cart-gwp-row">
+                    <div class="cart-gwp-image">
+                        <img src="{{ all_products[product2] | img_url: '300x' }}">
+                    </div>
+                    <div class="cart-gwp-text">
+                        {{ section.settings.cart_gwp_top_text_2 }}
+                        <div class="top15">
+                            {% if product2.has_only_default_variant %}
+                            {% assign variant2-id = all_products[product2].first_available_variant.id %}
+                            <a href="/cart/add?id={{ variant2-id }}"
+                               class="button action_button button--add-to-cart cart-gwp-button">
+                                {% else %}
+                                <a href="{{ product2-url }}"
+                                   class="button action_button button--add-to-cart cart-gwp-button">
+                                    {% endif %}
+                                    {{ section.settings.cart_gwp_button_2 }}
+                                </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-gwp-details">{{ section.settings.cart_gwp_bottom_text_2 }}</div>
+            </div>
+        {% endif %}
+    {% endunless %}
+
+{% else %}
+    {% unless section.settings.cart_gwp_product_1 == blank %}
+        {% assign gwp = 0 %}
+        {% assign product1 = section.settings.cart_gwp_product_1 %}
+        {% assign product1-title = all_products[product1].title %}
+        {% assign product1-url = all_products[product1].url %}
+        {% assign threshold-left =  threshold-1 |  minus: cart-size %}
+        <div class="cart-gwp">
+            <div class="cart-gwp-row center">
+                <p>You're only ${{ threshold-left }} away from a <em>Free Gift!</em><br><br><a href="/collections/all"
+                                                                                              class="button-primary mdc-ripple-surface mdc-ripple-upgraded">Continue
+                        Shopping</a></p>
+            </div>
+        </div>
+    {% endunless %}
+
+{% endif %}
+{% style %}
+        .cart-gwp-row.center {
+            margin: 0 auto;
+        }
+
+        .category-slider-wrapper .container {
+            width: 1400px;
+            margin: auto;
+            max-width: 90%;
+        }
+
+        .p-slide {
+            display: inline
+        }
+
+        .cart-gwp {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid{{ section.settings.cart-gwp-border }};
+            border-radius: 8px;
+            background-color: {{ section.settings.cart-gwp-background }};
+        }
+
+        .cart-gwp-row {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row /* works with row or column */
+            flex-direction: row;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 200px;
+        {% comment %}min-width: 200px;{% endcomment %}
+        }
+
+        .cart-gwp-button {
+            max-width: 200px;
+            margin-top: 3px;
+        }
+
+        .cart-gwp-details {
+            font-size: 13px;
+            line-height: 1.6em;
+            max-width: 700px;
+            margin: 10px auto 0;
+        }
+
+
+        .cart-gwp-image img {
+            max-width: 100%;
+            max-height: 170px;
+            border-radius: 5px;
+        }
+
+        .cart-gwp-text {
+            padding-left: 10px;
+        }
+
+        #gift-slds .slick-track {
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .cart-gwp-image {
+                display: none;
+            }
+
+            .cart-gwp {
+                width: 90%;
+            }
+            #gift-slds .slick-track {
+                justify-content: start;
+            }
+
+        }
+
+        .top15 {
+            margin-top: 15px;
+        }
+
+        #similar-products .similar-p-slides .p-slide {
+            position: relative;
+            margin-right: 10px;
+        }
+
+        #similar-products .similar-p-slides .p-slide:hover .product__title {
+            display: inline-block !important;
+
+        }
+
+        #similar-products .similar-p-slides .p-slide form {
+            position: relative;
+            z-index: 100;
+        }
+
+        .product__title {
+            position: absolute;
+            background: rgba(0, 0, 0, .6) !important;
+            height: 100%;
+            width: 100%;
+            z-index: 9;
+            color: #fff !important;
+            top: 0;
+            left: 0;
+            margin: 0;
+            border-radius: 25px;
+        }
+
+
+        .product__title span {
+            font-size: 1rem;
+            top: 50%;
+            left: auto;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            right: auto;
+            width: 80%;
+        }
+
+        #similar-products .similar-p-slides .p-slide span a {
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            color: #fff;
+        }
+
+        #similar-products.cart-gwp {
+            margin-bottom: -50px;
+        }
+{% endstyle %}

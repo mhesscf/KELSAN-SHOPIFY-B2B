@@ -1,0 +1,245 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To clean effectively, prevent cross-contamination into other areas, and present a visually appealing restroom."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Bathroom Mopping & Toilet Cleaning Kit",
+            "linkurl": ""
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Color Coded Rags, Mops, & Buckets",
+            "linkurl": ""
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Upright Brooms",
+            "linkurl": "shopify:\/\/collections\/upright-brooms"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Pans",
+            "linkurl": "shopify:\/\/collections\/dustpans"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Caution, Safety & Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Disinfectant Sprays",
+            "linkurl": "shopify:\/\/collections\/liquid-aerosol-disinfectants"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Drain Maintenance Chemicals",
+            "linkurl": "shopify:\/\/collections\/drain-maintenance"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Garbage Bags",
+            "linkurl": "shopify:\/\/collections\/trash-can-liners"
+          }
+        },
+        "7acf5fe6-1248-4d4e-918c-590fd5b63c4f": {
+          "type": "link",
+          "settings": {
+            "linktext": "Glass Cleaners",
+            "linkurl": "shopify:\/\/collections\/glass-cleaners"
+          }
+        },
+        "3d92ce3e-b4c4-46af-a0f4-70b9d148b6f1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Handheld Scrubbing Pads",
+            "linkurl": "shopify:\/\/collections\/handheld-scrubbing-pads"
+          }
+        },
+        "1494cdb1-6d2b-4105-9960-8cff8cc3147b": {
+          "type": "link",
+          "settings": {
+            "linktext": "Janitorial Carts",
+            "linkurl": "shopify:\/\/collections\/janitorial-carts"
+          }
+        },
+        "021b3840-006a-4476-b6c6-cad21a77f082": {
+          "type": "link",
+          "settings": {
+            "linktext": "Hand Soaps",
+            "linkurl": "shopify:\/\/collections\/hand-soaps-lotions"
+          }
+        },
+        "55f1f68d-8f33-4bd1-be6f-af7ad2815fcd": {
+          "type": "link",
+          "settings": {
+            "linktext": "Latex\/Nitrile\/Synthetic\/Vinyl Gloves",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        },
+        "7478187e-7ae6-475e-bdc5-8b6cc2fe9f96": {
+          "type": "link",
+          "settings": {
+            "linktext": "Metermist Aerosol Deodorizers & Dispensers",
+            "linkurl": "shopify:\/\/collections\/aerosol-deodorizers"
+          }
+        },
+        "2c536db4-7791-4dcd-ae01-8a88d6daf480": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Bucket and Wringers",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "08aa0536-fee9-4bc8-9181-a27007d47cac": {
+          "type": "link",
+          "settings": {
+            "linktext": "Restroom Surface Cleansers",
+            "linkurl": "shopify:\/\/pages\/hard-surface-cleaners"
+          }
+        },
+        "2ebb1807-ca34-41e1-9a84-b0aba3c25647": {
+          "type": "link",
+          "settings": {
+            "linktext": "Toilet Bowl Cleaners",
+            "linkurl": "shopify:\/\/collections\/toilet-bowl-cleaners"
+          }
+        },
+        "2a9d17b2-5903-4fa7-b9cd-6ae37a31cb47": {
+          "type": "link",
+          "settings": {
+            "linktext": "Urinal Blocks\/Screens",
+            "linkurl": "shopify:\/\/collections\/urinal-screens-blocks"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "7acf5fe6-1248-4d4e-918c-590fd5b63c4f",
+        "3d92ce3e-b4c4-46af-a0f4-70b9d148b6f1",
+        "1494cdb1-6d2b-4105-9960-8cff8cc3147b",
+        "021b3840-006a-4476-b6c6-cad21a77f082",
+        "55f1f68d-8f33-4bd1-be6f-af7ad2815fcd",
+        "7478187e-7ae6-475e-bdc5-8b6cc2fe9f96",
+        "2c536db4-7791-4dcd-ae01-8a88d6daf480",
+        "08aa0536-fee9-4bc8-9181-a27007d47cac",
+        "2ebb1807-ca34-41e1-9a84-b0aba3c25647",
+        "2a9d17b2-5903-4fa7-b9cd-6ae37a31cb47"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prepping the Restroom -",
+            "steptext": "<p>Gather all of the necessary cleaning supplies and load them onto your janitorial cart. All mops and rags used in this area should be properly marked to avoid being used in other areas. Make sure the restroom is empty and then post the appropriate caution\/safety sign, like a rest rooms closed sign, or a hanging closed for cleaning sign. Move your janitorial cart into the restroom, or for smaller areas, leave it blocking the entrance to the restroom. Leave the door propped open, so potential users can see that you are in there cleaning.<\/p><p>The following instructions are based on the assumption that each restroom will get some sort of care daily. For those restrooms that do not need that kind of upkeep, you can adjust the schedule accordingly.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Daily Cleaning Procedures -",
+            "steptext": "<p>A. Visually check the appearance of the restroom. Pick up any debris on the floor, around the sink or toilet\/urinal areas.<\/p><p>B. Check garbage cans and recycling bins. If they are full or nearly full, remove the trash can liner and replace with a new one.<\/p><p>C. Check soap, toilet paper, and paper towel dispensers to make sure they are properly stocked.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Weekly Cleaning Procedures -",
+            "steptext": "<p>A. Clean and scrub all interior surfaces of toilets\/urinals with a toilet bowl cleaner. Wipe down all exterior surfaces, including toilet seats, with a disinfectant. Follow our disinfecting toilet & urinal procedures for complete instructions on how to disinfect these surfaces.<\/p><p>B. Wipe down and disinfect all surfaces, including door handles, light switches, countertops, partitions and dispensers.<\/p><p>C. Clean all mirrors with a glass cleaner to remove any fingerprints and marks.<\/p><p>D. Use a germicidal\/acidic surface cleanser to wipe down the sinks and faucets and handles. <\/p><p>E. Dust mop, sweep and wet mop the floors, taking care to keep the mops, mop buckets, and solutions used as bathroom only items. Avoid cross-contamination with other areas of the facility at all costs.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Monthly Cleaning Procedures -",
+            "steptext": "<p>A. Dust all out of the way areas, including the tops of doors, shelves, partitions, dispensers, hand dryers and air vents.<\/p><p>B. Replace all metered aerosol deodorizers and air fresheners.<\/p><p>C. Replace the urinal blocks as necessary, if there are PeePod urinal cleaning blocks in place, replace these. The PeePod is the ultimate restroom cleaners friend. Not only will it deodorize the restroom, as it continuously cleans the urinal walls, but it also helps to unclog pipes and make sure they can adequately drain at all times.<\/p><p>D. Check to make sure all drains are properly draining. If not use a drain cleaner to remove all clogs.<\/p>",
+            "product": ""
+          }
+        },
+        "ebb68524-f916-4b1f-ad25-b29c0453f1f6": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Remove all trash bags and place in the dumpster. Do not remove the caution\/restroom closed signs until all work is finished and all surfaces, including the floors are completely dry. Rinse out and clean the mop buckets, mops, and rags that were used.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "ebb68524-f916-4b1f-ad25-b29c0453f1f6"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

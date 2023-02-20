@@ -1,0 +1,324 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Shop By Brand",
+        "chsectiontext": "With so many top brands to choose from, you're sure to find just the right machine for your needs here.",
+        "image": "shopify:\/\/shop_images\/shop-by-brand.jpg"
+      }
+    },
+    "205149a5-0321-4352-bae6-aff60c6a2608": {
+      "type": "popular-categories-links",
+      "blocks": {
+        "36ae0da5-9039-44cd-8947-c9a11238cf8b": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/advance-edit.png",
+            "linktext": "Advance",
+            "linkurl": "shopify:\/\/collections\/advance"
+          }
+        },
+        "eb1d49fa-8cc0-4029-825e-32cab2d8ac92": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aztec.png",
+            "linktext": "Aztec",
+            "linkurl": "shopify:\/\/collections\/aztec"
+          }
+        },
+        "00e89040-8f7a-418f-985c-8968eee1f6f4": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/clarke.png",
+            "linktext": "Clarke",
+            "linkurl": "shopify:\/\/collections\/clarke"
+          }
+        },
+        "7447b3fc-a838-4184-8101-1fa9027e5d4e": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cleanfreak.png",
+            "linktext": "CleanFreak",
+            "linkurl": "shopify:\/\/collections\/cleanfreak"
+          }
+        },
+        "5470779b-ddc9-4571-b6bc-9466b1a6b685": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ipc-eagle.png",
+            "linktext": "IPC Eagle",
+            "linkurl": "shopify:\/\/collections\/ipc-eagle"
+          }
+        },
+        "c5eccd38-0b65-4942-b2c7-529bdb961575": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/minuteman-logo.png",
+            "linktext": "Minuteman",
+            "linkurl": "shopify:\/\/collections\/minuteman"
+          }
+        },
+        "6e464b5a-7130-4798-acd7-b81be52bc23e": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pacific.png",
+            "linktext": "Pacific Floorcare",
+            "linkurl": "shopify:\/\/collections\/pacific"
+          }
+        },
+        "fd16ccf7-1eb6-4327-b596-317d2b20c729": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pioneer.png",
+            "linktext": "Pioneer Eclipse",
+            "linkurl": "shopify:\/\/collections\/pioneer-eclipse"
+          }
+        },
+        "81c6a3d4-23b6-433f-9b91-b0e335be1627": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/powr-flite.png",
+            "linktext": "Powr-Flite",
+            "linkurl": "shopify:\/\/collections\/powr-flite"
+          }
+        },
+        "a69918c4-5178-4a1b-bac6-ce5fc951a6e5": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/task-pro.png",
+            "linktext": "Task-Pro",
+            "linkurl": "shopify:\/\/collections\/task-pro"
+          }
+        },
+        "254f48a6-175d-409d-b47e-a192827759ff": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tornado.png",
+            "linktext": "Tornado",
+            "linkurl": "shopify:\/\/collections\/tornado"
+          }
+        },
+        "7b7a1472-a849-480e-a631-3d3b5d3121bb": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trusted-clean.png",
+            "linktext": "Trusted Clean",
+            "linkurl": "shopify:\/\/collections\/trusted-clean"
+          }
+        },
+        "104aacd6-1664-4368-b6f8-47d6df1e1b24": {
+          "type": "link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/viper.png",
+            "linktext": "Viper",
+            "linkurl": "shopify:\/\/collections\/viper"
+          }
+        }
+      },
+      "block_order": [
+        "36ae0da5-9039-44cd-8947-c9a11238cf8b",
+        "eb1d49fa-8cc0-4029-825e-32cab2d8ac92",
+        "00e89040-8f7a-418f-985c-8968eee1f6f4",
+        "7447b3fc-a838-4184-8101-1fa9027e5d4e",
+        "5470779b-ddc9-4571-b6bc-9466b1a6b685",
+        "c5eccd38-0b65-4942-b2c7-529bdb961575",
+        "6e464b5a-7130-4798-acd7-b81be52bc23e",
+        "fd16ccf7-1eb6-4327-b596-317d2b20c729",
+        "81c6a3d4-23b6-433f-9b91-b0e335be1627",
+        "a69918c4-5178-4a1b-bac6-ce5fc951a6e5",
+        "254f48a6-175d-409d-b47e-a192827759ff",
+        "7b7a1472-a849-480e-a631-3d3b5d3121bb",
+        "104aacd6-1664-4368-b6f8-47d6df1e1b24"
+      ],
+      "settings": {
+        "sectionheading": "Shop Our Brands",
+        "sectionSubHeading": "",
+        "linethrough": true
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "disabled": true,
+      "blocks": {
+        "ea0b2878-052b-4a13-b034-83999112d061": {
+          "type": "slide",
+          "settings": {
+            "product": "carpet-buffer-solution-dispenser"
+          }
+        },
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a": {
+          "type": "slide",
+          "settings": {
+            "product": "silicon-front-squeegee-for-fang-26t"
+          }
+        }
+      },
+      "block_order": [
+        "ea0b2878-052b-4a13-b034-83999112d061",
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a"
+      ],
+      "settings": {
+        "cfpssectionheading": ""
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "disabled": true,
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "main-menu",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Shop Our Brands"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6b8d4cabd63f835ea6453f291d4d03c87acfbc84.webp",
+            "linktext": "Advance",
+            "linkurl": "shopify:\/\/collections\/advance"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6b8d4cabd63f835ea6453f291d4d03c87acfbc84.webp",
+            "linktext": "Advantage",
+            "linkurl": "shopify:\/\/collections\/advantage"
+          }
+        },
+        "772bc8ad-1e92-4b51-8792-b3f9a985a813": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6b8d4cabd63f835ea6453f291d4d03c87acfbc84.webp",
+            "linktext": "Aztec",
+            "linkurl": "\/all?filter.p.vendor=Aztec"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "772bc8ad-1e92-4b51-8792-b3f9a985a813"
+      ],
+      "settings": {
+        "collection": "all-temp",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": false,
+        "grid_list": false,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "9276a55f-a269-47db-91a2-3f344f808985": {
+      "type": "brand-slider",
+      "disabled": true,
+      "blocks": {
+        "05436d49-2e5a-44a6-bbbd-5c09f3e83e1e": {
+          "type": "slide",
+          "settings": {
+            "collection": "advance"
+          }
+        },
+        "0d6e1b30-8057-4dbd-930e-b9ad93df0408": {
+          "type": "slide",
+          "settings": {
+            "collection": "aztec"
+          }
+        },
+        "b6ff7918-3655-4676-b66a-1ed10c45aced": {
+          "type": "slide",
+          "settings": {
+            "collection": "advantage"
+          }
+        }
+      },
+      "block_order": [
+        "05436d49-2e5a-44a6-bbbd-5c09f3e83e1e",
+        "0d6e1b30-8057-4dbd-930e-b9ad93df0408",
+        "b6ff7918-3655-4676-b66a-1ed10c45aced"
+      ],
+      "settings": {
+        "cfpssectionheading": "Brand Slider"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "205149a5-0321-4352-bae6-aff60c6a2608",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694",
+    "9276a55f-a269-47db-91a2-3f344f808985"
+  ]
+}

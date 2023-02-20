@@ -1,0 +1,75 @@
+<section class="category-types">
+    <div class="container">
+        {% if section.settings.sectionheading != blank %}
+            <div class="row section-heading-row">
+                {% if section.settings.sectionSubHeading != blank %}
+                    <span class="section-sub-heading">{{ section.settings.sectionSubHeading }}</span>
+                {% endif %}
+                <div class="heading-wrapper">
+                    <h2>{{ section.settings.sectionheading }}</h2>
+                </div>
+            </div>
+        {% endif %}
+        <div class="row flex-row link-row">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'link' %}
+                        <div class="link-wrap column">
+                            <div class="circle">
+                                <div class="inner" style="background-image: url({{ block.settings.image | img_url: 'master' }});"></div>
+                            </div>
+                            <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }}</a>
+                        </div>
+                {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "category-types",
+    "class": "categories-types--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "sectionheading"
+        },
+        {
+        "type": "text",
+        "label": "Section Sub Heading",
+        "id" : "sectionSubHeading"
+        }
+    ],
+    "blocks": [
+    {
+        "name": "Link",
+        "type": "link",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "linktext",
+                "label": "Link Text"
+            },
+            {
+                "type" : "url",
+                "id": "linkurl",
+                "label": "Link URL"
+            }
+        ]
+    }
+    ],
+    "presets": [
+        {
+        "category": "category-types--section",
+        "name": "Categories By Type",
+        "settings": {}
+        }
+    ]
+}
+{% endschema %}

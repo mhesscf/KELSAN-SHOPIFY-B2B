@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-about",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1e4e7022-2b3d-4704-bd87-cf54d2ff95fe": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "16601585166fe7f712": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<hr>"
+      }
+    },
+    "16601582886bef3d45": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify:\/\/shop_images\/about-cleanfreak.jpg",
+        "crop": "center",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "right",
+        "mobile_image_alignment": "top",
+        "heading": "About Us",
+        "subheading": "<p>We opened for business back in 1995 with a mission to serve clean freaks the world over. To us, that means being stocked with all the right cleaning stuff, and providing good, clean advice along the way. As fellow clean freaks, we've tackled our fair share of messes. We know what it's like to redo a floor because the finish didn't take, or that feeling of euphoria from vacuuming the lines perfectly straight. Back... and forth. Back... and forth. Back... and-- Sorry, you lost us there for a second. Please drop us a line if you have any cleaning questions, want to tell us about a product we don't know about yet, or just want to laugh along with us on Facebook or Twitter.<\/p>",
+        "text_alignment": "left",
+        "button_label": "Button",
+        "button_link": ""
+      }
+    },
+    "166018626269bb8a0d": {
+      "type": "form-with-store-info",
+      "settings": {
+        "topheadingh1": false,
+        "storephone": "(888) 722-5508",
+        "localphone": "",
+        "storeemail": "customerservice@cleanfreak.com",
+        "addressheading": "",
+        "storeaddress": "<p>CleanFreak<\/p><p>5109 N National Dr.<\/p><p>Knoxville, TN 37914<\/p>",
+        "storeinfo": "<p>If you need any of our information to set us up in your system, please take a look below, or you can call us for any additional information that is not listed below at 920-882-8453.<\/p>",
+        "dunsnum": "10-834-9937",
+        "federalid": "61-1027179",
+        "billingaddress": "<p>P.O. Box 639235<\/p><p>Cincinnati, OH <\/p><p>45263-9235<\/p>",
+        "hidesocial": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1e4e7022-2b3d-4704-bd87-cf54d2ff95fe",
+    "16601585166fe7f712",
+    "16601582886bef3d45",
+    "166018626269bb8a0d"
+  ]
+}

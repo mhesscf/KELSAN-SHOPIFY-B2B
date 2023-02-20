@@ -1,0 +1,141 @@
+{% style %}
+    .howto-supplies{
+    position: relative;
+    margin: 30px 0;
+    }
+    .howto-supplies  .container{
+    width: 1100px;
+    max-width: 90%;
+    margin: auto;
+    }
+    .howto-supplies .flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    }
+    .howto-supplies .flex-row .col.supply-col{
+    width: 60%;
+    border: 1px solid {{ settings.color_text_medium }};
+    }
+    .howto-supplies .flex-row .col.supply-col .supply-list{
+    display: block;
+    padding: 10px 30px;
+    }
+    .howto-supplies .flex-row .col.supply-col .supply-list ul{
+    padding: 0 10px;
+    }
+    .howto-supplies .flex-row .col.supply-col .supply-list ul li{
+    margin-bottom: 5px;
+    }
+    .howto-supplies .flex-row .col.supply-col .supply-list ul a{
+    color: {{ settings.color_icons }};
+    text-decoration: none;
+    }
+    .howto-supplies .flex-row .col.img-col{
+    width: 35%;
+    }
+    .howto-supplies .flex-row .col.img-col img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    }
+    .howto-supplies .flex-row .col .top-text{
+    background-color: {{ settings.color_text_medium }};
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 30px;
+    color: #fff;
+    }
+    @media (max-width: 1200px){
+    .howto-supplies .flex-row .col.supply-col{
+    width: 60%;
+    }
+    .howto-supplies .flex-row .col.img-col{
+    width: 35%;
+    }
+    }
+    @media (max-width: 640px){
+
+    }
+{% endstyle %}
+<section class="howto-supplies">
+    <div class="container">
+        <div class="flex-row">
+            <div class="col supply-col">
+                {% if section.settings.chsectionheading != blank %}
+                    <div class="top-text">{{ section.settings.chsectionheading }}</div>
+                {% else %}
+                    <div class="top-text">SUPPLIES & EQUIPMENT NEEDED:</div>
+                {% endif %}
+                <div class="supply-list">
+                    <ul>
+                        {% for block in section.blocks %}
+                            {% case block.type %}
+                                {% when 'link' %}
+                                    <li>
+                                        <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }}</a>
+                                    </li>
+                            {% endcase %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% if section.settings.image != blank %}
+                <div class="col img-col">
+                    <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "howto-supplies",
+    "class": "howto-supplies--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "chsectionheading"
+        },
+        {
+            "type": "text",
+            "label": "Section Text",
+            "id" : "chsectiontext"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Link",
+            "type": "link",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "linktext",
+                    "label": "Link Text"
+                },
+                {
+                    "type" : "url",
+                    "id": "linkurl",
+                    "label": "Link URL"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "howto-supplies-section",
+            "name": "How To Supplies & Equipment",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

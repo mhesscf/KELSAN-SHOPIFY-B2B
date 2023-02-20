@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To scrub highly soiled traffic areas of carpeting to maintain a clean carpet."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Bonnet Scrubbing Shampoos",
+            "linkurl": "shopify:\/\/collections\/bonnet-scrubbing-cleaning"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Bonnets",
+            "linkurl": "shopify:\/\/collections\/bonnets"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Scrubbing Brushes",
+            "linkurl": "shopify:\/\/collections\/auto-scrubber-brushes"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Cleaning Box Extractors",
+            "linkurl": "shopify:\/\/collections\/box-extractors"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Dryers Blowers",
+            "linkurl": "shopify:\/\/collections\/axial-fans"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Spotters",
+            "linkurl": "shopify:\/\/collections\/portable-carpet-spotters"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dual Motor Upright Vacs",
+            "linkurl": "shopify:\/\/collections\/dual-motor-vacuums"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Single Motor Upright Vacs",
+            "linkurl": "shopify:\/\/collections\/single-motor-vacuums"
+          }
+        },
+        "4bfce69e-be5e-4be4-81d0-aae259f306ef": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Buckets, Wringers, & Pails",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "bd36b4ec-f4ca-49e5-9d1b-2cc85026ace3": {
+          "type": "link",
+          "settings": {
+            "linktext": "Pump Up Chemical Sprayers",
+            "linkurl": "shopify:\/\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        },
+        "1973dda2-69a3-4cc9-94b3-8ba804a12028": {
+          "type": "link",
+          "settings": {
+            "linktext": "Rotary Buffer Shampoo Tanks",
+            "linkurl": "shopify:\/\/collections\/solution-tanks"
+          }
+        },
+        "07f55ae2-6e81-4406-ad25-dc0631d15906": {
+          "type": "link",
+          "settings": {
+            "linktext": "Rotary Floor Buffers",
+            "linkurl": "shopify:\/\/collections\/floor-buffers"
+          }
+        },
+        "b327123e-e692-438e-9f20-6f78ab7c6d4b": {
+          "type": "link",
+          "settings": {
+            "linktext": "Safety Supplies",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "4bfce69e-be5e-4be4-81d0-aae259f306ef",
+        "bd36b4ec-f4ca-49e5-9d1b-2cc85026ace3",
+        "1973dda2-69a3-4cc9-94b3-8ba804a12028",
+        "07f55ae2-6e81-4406-ad25-dc0631d15906",
+        "b327123e-e692-438e-9f20-6f78ab7c6d4b"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prepping Your Bonnet Scrubbing Machine -",
+            "steptext": "<p>If you're going to be using bonnets to scrub your carpeting, you'll need to attach the bonnet to the pad driver assembly that came with your floor buffer. Lean the machine back so it rests on its handle and attach the pad driver to the clutch on the bottom of the machine. If you're using a brush, you'll need to follow the same procedures.<br\/><br\/>(<strong>*Note:<\/strong> A carpet scrubbing brush will need to be broken in before using on carpeting. This can be accomplished by removing the center guard on the brush and running the machine with the brush attached on concrete. This will tip the bristles of the brush and remove any burrs that were created in the manufacturing process.)<br\/><br\/>Depending on what you'll be using for each particular job, you'll need to lean your machine back and either attach the brush, or the bonnet\/pad driver assembly to the drive on the bottom of your buffer. Place the machine on the outskirts of the bonneting area.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Prepping the Bonneting Area -",
+            "steptext": "<p>Most carpeted areas will not need to be scrubbed with a bonnet. Only those carpets that are extremely filthy will need this treatment. Heavy traffic areas are a good example of areas that will routinely need to be scrubbed. Most of the other areas will clean up just fine with a simple carpet extraction.<br\/><br\/>Remove all furniture and other obstacles that could be damaged or may impede your scrubbing path. Use a powerful vacuum, like our ProTeam ProForce Vacuum, to clean as much of the loose debris and dirt from the surface of the carpet as possible.<br\/><br\/>Take your chosen bonnet scrubbing chemical and mix appropriately for a pump up chemical sprayer and to be used in the shampoo tank of your floor buffer. Fill your mop bucket or pail with clean water, and soak your bonnet. You never want to use a dry bonnet on your carpet, so make sure it is thoroughly soaked through.<br\/><br\/>Set up and cordon off a small 10' x 10' area. Put on a pair of disposable shoe covers to protect the carpet from any dirt or debris that could be stuck to the bottom of your shoes. Spray down the area with the prepared solution in the pump up sprayer. Let the solution sit for a few minutes so it can work itself into the carpet fibers and loosen the bonds between the dirt and fibers.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Using Your Carpet Bonneting Machine -",
+            "steptext": "<p>Move the buffer into position on the 10' x 10' area that you have set up. Uncoil the power cord and place it behind the path you plan on scrubbing across the carpet. Sling the power cord over your shoulder, so as you operate the buffer, you can control the cord as you go. Lower the handle and lock it into place so the handle rests comfortably in your stomach, just above your belt line. Keep your feet spread apart to create a strong solid base to help you keep your balance as you operate the machine. When starting the machine up, brace yourself, and be prepared for the machine to pull in one direction or the other. Depress the safety start up lever, and pull up on both of the handles to start the machine. Do not fight the machine, as this will only make your job tougher. Let the machine float as it scrubs. When you use slight pressure and push down on the handle, the machine will float to the left. When you raise the handle slightly, the machine will float to the right. You will always want to keep your body perpendicular to the machine, and only scrub in a 90° spectrum. Once you have hit above a 45° angle from where you started, you'll want to stop and come back in the other direction. It is a good idea to start scrubbing in the corner furthest away from your exit point. Overlapping passes will ensure that no portion of the carpet is ever missed. As you're scrubbing, you'll always want to make sure the bonnet is properly lubricated. That's why it is a great idea to have a pre-mixed solution in your shampoo tank, so as you're scrubbing, you can dispense that solution in needed areas. We sell a complete package that comes with the solution tank, buffer, and pad driver for the individual who is just starting. Our carpet scrubbing buffer with shampoo tank is the perfect start up package. The bonnets you're using will collect a lot of the dirt from the carpet, so they will need to be flipped over, since they can be used on 2 sides, and changed out frequently. You can also clean and wring them out in your mop bucket of clean water. When this water becomes dirty, simply dump out and refill with warm, clean water.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Recovery -",
+            "steptext": "<p>When you're finished scrubbing the highly soiled areas, you'll want to go back over those areas with a machine like our non-heated carpet extractor. At this point you'll be extracting the soap, water and dirt that was just scrubbed free from the carpet fibers. The final step will be to actually fill the extractor with clean water and doing a simple rinse with the extractor. You'll just spray down clean water and then recover it again, removing as much dirt and detergent from the carpet as possible. This is very similar to a rinse cycle on your washing machine when you're doing laundry.<br\/><br\/>If you leave the set up scrubbing area for any reason, you'll want to remove your disposable shoe covers. You don't want to track soap and water all over the other carpet areas throughout the business or residence. Upon re-entering the cleaned area place a new pair of protectors over your shoes.<br\/><br\/>Set up several carpet dryers like our air moving fan, blowing in several differing directions. This will help to move as much air as possible and dry the carpets quickly.<\/p>",
+            "product": ""
+          }
+        },
+        "4b31f717-4c85-4578-ad75-2e42d1177275": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Rinse out all bonnets and let them sit in a warm water bath to loosen as much dirt as possible. They can even be laundered so they are clean for the next job. If you have an onsite washer, like the microfiber cloth rags washing machine, that is even better.<br\/><br\/>Rinse out the solution tank on your buffer and the recovery tank on your extractor, after dumping the recovered solution from the carpet. Remove all carpet drying air movers after the carpets have had several hours to dry. Replace all furniture and moved objects. If the carpets are still slightly damp, and furniture has to be moved back into place, you can use some wax paper folded so you have a few layers and the correct size to place down under the feet of the furniture.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "4b31f717-4c85-4578-ad75-2e42d1177275"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

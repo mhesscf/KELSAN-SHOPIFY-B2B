@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16602475815ac3df2f": {
+      "type": "centered-text-heading",
+      "settings": {
+        "pageheading": "Education",
+        "headinginfo": "<p>It is our goal to educate you on the best way to get the job done. Here at the education center we strive to produce quality guides, videos, and provide you with the very best resources for all your cleaning needs. Use our main \"academic\" departments to find what you need.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16602475815ac3df2f"
+  ]
+}

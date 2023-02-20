@@ -1,0 +1,185 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To extract dirt from the carpet fibers to maintain a clean and healthy carpeted environment."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Blowers\/Flood Drying Fans",
+            "linkurl": "shopify:\/\/collections\/air-movers"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Commercial Dehumidifiers",
+            "linkurl": "shopify:\/\/collections\/commercial-dehumidifiers"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Disinfectant\/Fungicide\/Mildewstat",
+            "linkurl": "shopify:\/\/collections\/liquid-aerosol-disinfectants"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Flood Restoration Extractors",
+            "linkurl": "shopify:\/\/collections\/flood-extraction-machines"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Auto Discharge Vacuums",
+            "linkurl": "shopify:\/\/collections\/auto-discharge-vacs"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Safety Supplies",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Tank Vacuums with Dry Pickup",
+            "linkurl": "shopify:\/\/collections\/shop-vacuums"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/flood-restoration.jpg"
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Assess the Situation -",
+            "steptext": "<p>Whether you're facing cleaning up water from a burst pipe, a backed up sewer, or natural disaster flooding the restoration has to be handled carefully. This is definitely an area where professional help is in order. If water and moisture is not sufficiently removed from building materials, it will lead to long term problems with mold and mildew. <strong>Here are the basic steps to assessing and handling flood water clean-up.<\/strong><br\/><br\/>First check to see how bad the initial damage is and know what your limits are. Make sure to properly protect yourself by donning the appropriate safety clothing, eyewear and breathing apparatus. If there is a lot of standing water, a vacuum with a squeegee system like the Trusted Clean 'Quench' may be adequate for the clean-up. For larger jobs, you may need a larger wet\/dry vacuum, or for extreme situations, you may need one of our flood restoration extractors or auto discharge wet vacuums. Unless you are a professional trained in water and flood restoration, we suggest you do not try to handle a major flood restoration project on your own.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Stop the Cause -",
+            "steptext": "<p>If possible, eliminate the source of the water that is entering the area. For example, If you have a broken pipe, shut off the water main outside the building to eliminate the flow of water into the facility.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Removal of Water -",
+            "steptext": "<p>Depending on the amount of water, you can use a standard wet pick-up vacuum with the appropriate accessories to clean up smaller spills. If you are in the midst of a major restoration project, we recommend a professional grade water removal tool such as our CleanFreak Flood Pumper. These machines can recover and pump out water at the same time for immediate removal of large volumes of water.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Drying the Area -",
+            "steptext": "<p>A commercially rated portable dehumidifier can be used to speed up drying when outside humidity levels are high, or if there has been a massive amount of water introduced in the area.<\/p><p>The preferred method for large restoration jobs would be to seal off the affected area, and use a professional grade dehumidifier with several air moving fans to remove moisture from the area. Our CleanFreak 2800 CFM air mover is perfect for this type of work due to its low amp draw and high output of air. Some industry professionals like air movers with built electrical outlets for daisy chaining multiple units together because electrical outlets may be few and far between in flood damaged areas. We have those available as well in our air movers and axial fans departments.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "10745047-996f-47fb-b8f9-22c50e5906fb": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Treat affected areas with the proper chemicals to prevent mold or mildew issues. Be aware that applying disinfectant to dirty surfaces will greatly reduce their germ-killing effectiveness. Surfaces must first be cleaned of dirt and debris with general-purpose cleaners. Clair Multi-Purpose disinfectant is a great spray and wipe option that can disinfect the area to inhibit mold growth.**<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "0485bcb0-2907-4de3-9617-237cb463b886": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "6",
+            "stepheading": "Replace Damaged Materials -",
+            "steptext": "<p>If you have areas that are too severely damaged, then you need to contact a professional contractor to repair or replace those affected areas. It may even be a requirement by your homeowner's insurance policy. It's advisable to contact them first to see if they have an approved list of flood clean up professionals. If you tackle the job yourself you may end up voiding certain parts of your insurance policy. Ask first.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "790c8dc8-459c-4e84-bb65-f795b4e5caaf": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "7",
+            "stepheading": "Monitor for Residual Effects of the Water -",
+            "steptext": "<p>Sometimes unseen damage is found after the clean-up is finished. Continue to monitor the area after you've finished the job. If restoration work is completed without allowing the area to dry properly, or if the area is not cleaned properly, mold and mildew will continue to grow. The result may be structural damage to your home, or discomfort and illness to individuals who enter the area. Testing for mold several months later would be prudent.<\/p><p>*In no way is any of the information listed here intended to replace training provided by a certified professional in flood restoration practices.<\/p><p>**Certain disinfectants may not be effective against some molds, mildew and fungi. Always read the efficacy report to verify which ones are included. If mold is already present you will need to call a professional trained in mold remediation and restoration to ensure proper clean-up.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "10745047-996f-47fb-b8f9-22c50e5906fb",
+        "0485bcb0-2907-4de3-9617-237cb463b886",
+        "790c8dc8-459c-4e84-bb65-f795b4e5caaf"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

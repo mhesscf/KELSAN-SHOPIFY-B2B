@@ -1,0 +1,173 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Floor Buffers",
+        "chsectiontext": "Our selection of low speed floor buffers and high speed burnishers can help you keep your floors clean and shiny.",
+        "image": "shopify:\/\/shop_images\/floor-buffers.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ea0b2878-052b-4a13-b034-83999112d061": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-floor-buffing-machine"
+          }
+        },
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-floor-scrubbing-machine"
+          }
+        },
+        "67b19fb1-6a3e-42d4-80c0-2dea566c800a": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-steel-floor-burnisher-1500-rpm"
+          }
+        },
+        "6879fab3-d6ca-4c48-8f73-d86a8e9fd242": {
+          "type": "slide",
+          "settings": {
+            "product": "bissell-dual-speed-floor-buffing-scrubber"
+          }
+        }
+      },
+      "block_order": [
+        "ea0b2878-052b-4a13-b034-83999112d061",
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a",
+        "67b19fb1-6a3e-42d4-80c0-2dea566c800a",
+        "6879fab3-d6ca-4c48-8f73-d86a8e9fd242"
+      ],
+      "settings": {
+        "cfpssectionheading": ""
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "floor-buffers",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Floor Machines by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/temp-01.jpg",
+            "linktext": "Low Speed Buffers",
+            "linkurl": "shopify:\/\/collections\/low-speed-buffers"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/175-rpm-floor-scrubbing-machine.jpg",
+            "linktext": "Two Speed Buffers",
+            "linkurl": "shopify:\/\/collections\/two-speed-buffers"
+          }
+        },
+        "772bc8ad-1e92-4b51-8792-b3f9a985a813": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kob-00-4430-5-01_1.jpg",
+            "linktext": "High Speed Burnishers",
+            "linkurl": "shopify:\/\/collections\/high-speed-burnishers"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "772bc8ad-1e92-4b51-8792-b3f9a985a813"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

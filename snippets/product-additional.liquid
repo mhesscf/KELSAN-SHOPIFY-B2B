@@ -1,0 +1,39 @@
+{% assign product = product %}
+{% if product.metafields.plytix.package_products == blank %}
+{%
+        render 'product-sxstatus'
+%}
+{% endif %}
+<div class="product-detail-stock-and-shipping" style="display: none;">
+  {% if product.first_available_variant.inventory_quantity > 0 %}
+    <div class="stock-message" style="display: none;">In Stock</div>
+  {% endif %}
+  {% if product.available %}
+    <div class="stock-message">In Stock</div>
+  {% endif %}
+  <div class="shipping-message">Ships in 1-2 Business Days</div>
+</div>
+
+{% if product.metafields.plytix.package_products != blank %}
+  <div class="individually-sold">Sold as a Bundle</div>
+{% else %}
+  {% if product.metafields.plytix.master_quantity != blank %}
+    {% assign qntyinfo = product.metafields.plytix.master_quantity %}
+    {% if qntyinfo == 1 or qntyinfo == '1' %}
+      <div class="individually-sold">Sold Individually</div>
+    {% else %}
+      <div class="individually-sold">{{ product.metafields.plytix.master_quantity }}</div>
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{%
+   render 'product-icons'
+%}
+
+{% if product.metafields.plytix.short_description  != blank %}
+  <div class="quick-overview">
+    <span class="sect-h">Quick Overview</span>
+    {{ product.metafields.plytix.short_description }}
+  </div>
+{% endif %}

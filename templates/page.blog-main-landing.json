@@ -1,0 +1,104 @@
+{
+  "sections": {
+    "02b85d8b-6efe-47ed-8e62-a5f5fe4ba4d6": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<style>\n.custom-html--container{margin-top:25px;}\n.cms-banner.mobile-banner,\n.cms-banner.sm-banner{\n\tdisplay:none;\n}\n\n.blog-color-block{margin-top:6px; margin-right: 5px;width:16px; height: 16px; float:left;}\n.blog-color-block.blue{background-color:#51ddf2}\n.blog-color-block.green{background-color:#a5ed92}\n.blog-color-block.yellow{background-color:#ffe763}\n.blog-color-block.pink{background-color:#f26ca5}\n\n\n.blog-header{text-align:center; font-size:26px; font-weight:bold; width:100%; line-height:50px;}\n.blog-header.blue{background-color:#51ddf2}\n.blog-header.green{background-color:#a5ed92}\n.blog-header.yellow{background-color:#ffe763}\n.blog-header.pink{background-color:#f26ca5}\n\n\n\n.blog-cat strong{color:black}\n\n@media only screen and (max-width: 860px) {\n\t.cms-banner.desk-banner,.cms-banner.mobile-banner{display:none;}\n\t.cms-banner.sm-banner{display:block;}\n}\n@media only screen and (max-width: 500px) {\n\t.cms-banner.desk-banner,.cms-banner.sm-banner{display:none;}\n\t.cms-banner.mobile-banner{display:block;}\n}\n<\/style>\n\n\n<div>\n<img class=\"cms-banner desk-banner\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/cf-blog-header-graphics-01.jpg?v=1674744702\" alt=\" The Janitor's Closet\">\n\n<img class=\"cms-banner sm-banner\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/cf-blog-header-graphics-sm-01.jpg?v=1674744702\" alt=\" The Janitor's Closet\">\n\n<img class=\"cms-banner mobile-banner\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/cf-blog-header-graphics-xs-01.jpg?v=1674744702\" alt=\" The Janitor's Closet\">\n<\/div>\n\n<h2>Categories<\/h2>\n<div style=\"padding-left:25px;\">\n<div class=\"blog-cat\">\n\t<div class=\"blog-color-block blue\"><\/div>\n\t<a href=\"https:\/\/www.cleanfreak.com\/blogs\/news\"><strong>The News<\/strong> - The latest highlights on cleaning news.<\/a>\n<\/div>\n\n<div class=\"blog-cat\">\n\t<div class=\"blog-color-block green\"><\/div>\n\t<a href=\"https:\/\/www.cleanfreak.com\/blogs\/clean\"><strong>The Clean<\/strong> - The best cleaning tips and tricks.<\/a>\n<\/div>\n\n<div class=\"blog-cat\">\n\t<div class=\"blog-color-block yellow\"><\/div>\n\t<a href=\"https:\/\/www.cleanfreak.com\/blogs\/goods\"><strong>The Goods<\/strong> - The greatest breakthroughs in cleaning products.<\/a>\n<\/div>\n\n<div class=\"blog-cat\">\n\t<div class=\"blog-color-block pink\"><\/div>\n\t<a href=\"https:\/\/www.cleanfreak.com\/blogs\/life\"><strong>The Life<\/strong> - The real life aspects associated with cleaning.<\/a>\n<\/div>\n\n<\/div>"
+      }
+    },
+    "e1d8b867-e8c6-476e-a0f2-74503c650781": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<h2>Recent Blog Posts<\/h2>\nJump to:\n<div style=\"padding-left:25px;\">\n<div class=\"blog-cat\">\n<div class=\"blog-color-block blue\"><\/div>\n<a href=\"#thenews\"><strong>The News<\/strong><\/a>\n<\/div>\n<div class=\"blog-cat\">\n<div class=\"blog-color-block green\"><\/div>\n<a href=\"#theclean\"><strong>The Clean<\/strong><\/a>\n<\/div>\n<div class=\"blog-cat\">\n<div class=\"blog-color-block yellow\"><\/div>\n<a href=\"#thegoods\"><strong>The Goods<\/strong><\/a>\n<\/div>\n<div class=\"blog-cat\">\n<div class=\"blog-color-block pink\"><\/div>\n<a href=\"#thelife\"><strong>The Life<\/strong><\/a>\n<\/div>\n<\/div>"
+      }
+    },
+    "1845a324-c3b8-407b-b040-cad9aedc79c0": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div id=\"thenews\" class=\"blog-header blue\">The News<\/div>"
+      }
+    },
+    "171eab63-21f1-4c08-a0c5-4ee618b4ee56": {
+      "type": "dynamic-blog-posts",
+      "settings": {
+        "title": "",
+        "blog": "news",
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": true
+      }
+    },
+    "931e675e-2674-47a7-9181-e56dcc1c9dce": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div id=\"theclean\" class=\"blog-header green\">The Clean<\/div>"
+      }
+    },
+    "f6e2d7bc-88f9-4aa0-97b9-83ee6a06a1f0": {
+      "type": "dynamic-blog-posts",
+      "settings": {
+        "title": "",
+        "blog": "clean",
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": true
+      }
+    },
+    "95415d21-2dcd-4eab-aec3-36d78e97713c": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div id=\"thegoods\" class=\"blog-header yellow\">The Goods<\/div>"
+      }
+    },
+    "30ba2403-b119-4bf3-ab08-f5731f358bae": {
+      "type": "dynamic-blog-posts",
+      "settings": {
+        "title": "",
+        "blog": "goods",
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": true
+      }
+    },
+    "532f7364-f3b5-496f-9c2b-77288cdd4b6a": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div id=\"thelife\" class=\"blog-header pink\">The Life<\/div>"
+      }
+    },
+    "74f09053-0241-487d-9bdc-eb73ee76b178": {
+      "type": "dynamic-blog-posts",
+      "settings": {
+        "title": "",
+        "blog": "life",
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": true
+      }
+    },
+    "main": {
+      "type": "page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "02b85d8b-6efe-47ed-8e62-a5f5fe4ba4d6",
+    "e1d8b867-e8c6-476e-a0f2-74503c650781",
+    "1845a324-c3b8-407b-b040-cad9aedc79c0",
+    "171eab63-21f1-4c08-a0c5-4ee618b4ee56",
+    "931e675e-2674-47a7-9181-e56dcc1c9dce",
+    "f6e2d7bc-88f9-4aa0-97b9-83ee6a06a1f0",
+    "95415d21-2dcd-4eab-aec3-36d78e97713c",
+    "30ba2403-b119-4bf3-ab08-f5731f358bae",
+    "532f7364-f3b5-496f-9c2b-77288cdd4b6a",
+    "74f09053-0241-487d-9bdc-eb73ee76b178",
+    "main"
+  ]
+}

@@ -1,0 +1,64 @@
+{% if product.metafields.plytix.manufacturer_smimg_one != blank or product.metafields.plytix.manufacturer_smimg_two != blank or product.metafields.plytix.manufacturer_smimg_three != blank or product.metafields.plytix.manufacturer_image_large != blank %}
+    <section class="product-manufacturer-info">
+        <div class="section-heading">
+            <h2>From the Manufacturer</h2>
+        </div>
+        <div class="container">
+            {% if product.metafields.plytix.manufacturer_image_large != blank %}
+                <div class="large-img-row">
+                    <div class="img-wrap" style="background-image: url('{{ product.metafields.plytix.manufacturer_image_large }}')">
+
+                    </div>
+                </div>
+            {% endif %}
+            {% if product.metafields.plytix.manufacturer_smimg_one != blank or product.metafields.plytix.manufacturer_smimg_two != blank or product.metafields.plytix.manufacturer_smimg_three != blank %}
+                <div class="small-img-row">
+                    {% if product.metafields.plytix.manufacturer_smimg_one != blank %}
+                        <div class="col">
+                            <div class="img-wrap" style="background-image: url('{{ product.metafields.plytix.manufacturer_smimg_one }}')"></div>
+                            {% if product.metafields.plytix.mf_sm_img_info != blank %}
+                                <div class="info-wrap">
+                                    {{ product.metafields.plytix.mf_sm_img_info }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if product.metafields.plytix.manufacturer_smimg_two != blank %}
+                        <div class="col">
+                            <div class="img-wrap" style="background-image: url('{{ product.metafields.plytix.manufacturer_smimg_two }}')"></div>
+                            {% if product.metafields.plytix.mf_sm_img_info_two != blank %}
+                                <div class="info-wrap">
+                                    {{ product.metafields.plytix.mf_sm_img_info_two }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if product.metafields.plytix.manufacturer_smimg_three != blank %}
+                        <div class="col">
+                            <div class="img-wrap" style="background-image: url('{{ product.metafields.plytix.manufacturer_smimg_three }}')"></div>
+                            {% if product.metafields.plytix.mf_sm_img_info_three != blank %}
+                                <div class="info-wrap">
+                                    {{ product.metafields.plytix.mf_sm_img_info_three }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+{
+    "name": "product-manufacturer-info",
+    "class": "product-manufacturer-info--section",
+    "presets": [
+        {
+            "category": "product-manufacturer-info-section",
+            "name": "Product Manufacturer Info",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

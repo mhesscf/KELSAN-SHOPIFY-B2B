@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "46c78989-041b-4123-83d9-423977fa834a": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "Manufacturer Rebates",
+        "chsectiontext": "View below for current rebate offers to take advantage off. Check back often to see what rebates are currently available."
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "85707304-fc0c-4a10-98a0-f0926cd75d78": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify:\/\/shop_images\/rebates.jpg",
+        "crop": "center",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "right",
+        "mobile_image_alignment": "bottom",
+        "heading": "ProTeam Full Line Rebate",
+        "subheading": "<p>Download the Emerson ProTeam rebate to maximize your cleaning efficiency on ProTeam products. Receive a rebate on up to $15 on select products between October 1, 2022 and December 31, 2022.<\/p>",
+        "text_alignment": "left",
+        "button_label": "Download",
+        "button_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q4-rebate-coupon.pdf?v=1671199531"
+      }
+    },
+    "97ac8cbf-49a3-410a-8fe9-885da970465d": {
+      "type": "dynamic-rich-text",
+      "settings": {
+        "width": "wide",
+        "title": "Past Rebates",
+        "text": "<ul><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q3-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q3-rebate-coupon.pdf?v=1671200947\">Q3 2022 End-User Rebate (07\/01\/2022 to 09\/30\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q2-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q2-rebate-coupon.pdf?v=1671200947\">Q2 2022 End-User Rebate (04\/01\/2022 to 06\/30\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q1-rebate-coupon.pdf?v=1671200948\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q1-rebate-coupon.pdf?v=1671200948\">Q1 2022 End-User Rebate (01\/01\/2022 to 03\/31\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2021-q4-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2021-q4-rebate-coupon.pdf?v=1671200947\">Q4 2021 End-User Rebate (10\/01\/2021 to 12\/31\/2021) (PDF)<\/a><\/li><\/ul>",
+        "heading_size": "medium",
+        "text_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "46c78989-041b-4123-83d9-423977fa834a",
+    "main",
+    "85707304-fc0c-4a10-98a0-f0926cd75d78",
+    "97ac8cbf-49a3-410a-8fe9-885da970465d"
+  ]
+}

@@ -1,0 +1,141 @@
+{% style %}
+	.poster-header{
+
+	}
+	.poster-header  .container{
+		width: 1400px;
+		max-width: 90%;
+		margin: auto;
+		padding: 40px 0;
+	}
+	.poster-header .flex-row{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: center;
+	}
+	.poster-header .flex-row .col{
+		width: 50%;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+	}
+	.poster-header .flex-row .col .inner{
+
+	}
+	.poster-header .flex-row .col .inner.text-inner{
+		width: 80%;
+		margin-right: auto;
+	}
+	.poster-header .flex-row .col .inner h1{
+		color: {{ settings.color_text }};
+		font-weight: 700;
+		font-size: var(--font-size-heading-slideshow);
+		line-height: 1.2;
+		margin: 0;
+	}
+	.poster-header .flex-row .col .section-text{
+		border-left: 8px solid {{ settings.color_icons }};
+		padding-left: 21px;
+		margin-top: 15px;
+	}
+	.poster-header .flex-row .col .section-text p{
+		font-size: 22px;
+		line-height: 30px;
+		color: #303E48;
+		margin: 0;
+	}
+	.poster-header .flex-row .col .banner-image{
+		position: relative;
+		display: block;
+		padding-top: 65%;
+		background-size: cover;
+		background-position: center center;
+		border-radius: 30px;
+	}
+	@media (max-width: 991.98px){
+		.poster-header .flex-row .col {
+			width: 100%;
+			display: flex;
+			flex-flow: row;
+			justify-content: center;
+		}
+		.poster-header .flex-row .col .inner.text-inner{
+			width: 100%;
+		}
+		.poster-header .flex-row .img-col{
+			display: block;
+			margin-top: 40px;
+		}
+	}
+	@media (max-width: 640px){
+		.poster-header .flex-row .col .inner h1{
+			font-size: 38px;
+			line-height: 42px;
+		}
+		.poster-header .flex-row .col .section-text{
+			border-left: 6px solid #3C8AA4;
+			padding-left: 12px;
+			margin-top: 12px;
+		}
+		.poster-header .flex-row .col .section-text p{
+			font-size: 18px;
+			line-height: 23px;
+		}
+	}
+{% endstyle %}
+<section class="poster-header">
+    <div class="container">
+        <div class="flex-row">
+            <div class="col">
+                <div class="inner text-inner">
+                    {% if section.settings.chsectionheading != blank %}
+                        <h1>{{ section.settings.chsectionheading }}</h1>
+                    {% endif %}
+                    {% if section.settings.chsectiontext != blank %}
+                        <div class="section-text">
+                            <p>{{ section.settings.chsectiontext }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col img-col">
+                <div class="inner">
+                    <div class="banner-image" style="background-image: url({{ section.settings.image | img_url: 'master' }});"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "poster-header",
+    "class": "poster-header--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "chsectionheading"
+        },
+        {
+            "type": "text",
+            "label": "Section Text",
+            "id" : "chsectiontext"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "category": "poster-header-section",
+            "name": "Poster Header",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

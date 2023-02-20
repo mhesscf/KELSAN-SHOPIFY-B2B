@@ -1,0 +1,365 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Auto Detailing",
+        "chsectiontext": "Machines & chemicals to clean auto exteriors and deeply embedded dirt in auto upholstery and carpet.",
+        "image": "shopify:\/\/shop_images\/mytee-8070-auto-detailing-extractor-dept-page.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
+          "type": "slide",
+          "settings": {
+            "product": "heated-carpet-spot-cleaner"
+          }
+        },
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
+          "type": "slide",
+          "settings": {
+            "product": "auto-upholstery-stain-removal-package"
+          }
+        },
+        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-quench-wet-push-vacuum"
+          }
+        },
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-carpet-spot-cleaning-machine"
+          }
+        },
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-lite-8070-heated-carpet-extractor-and-auto-detailer"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "reliable-brio-plus-400cc-commercial-steam-cleaner"
+          }
+        },
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
+          "type": "slide",
+          "settings": {
+            "product": "stainless-steel-round-bucket-with-bumper"
+          }
+        },
+        "a0073dda-832a-449f-a358-2e2556962853": {
+          "type": "slide",
+          "settings": {
+            "product": "stationary-parts-washer-bin"
+          }
+        },
+        "b0892088-bca1-439d-bc71-c950456dc54a": {
+          "type": "slide",
+          "settings": {
+            "product": "vapamore-amico-handheld-steam-cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
+        "d0d55955-cf3e-4837-8a9e-53c306acb777",
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36",
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
+        "a0073dda-832a-449f-a358-2e2556962853",
+        "b0892088-bca1-439d-bc71-c950456dc54a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": false,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Auto Detailing by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-detailing-chemicals.jpg",
+            "linktext": "Auto Detailing Chemicals",
+            "linkurl": "shopify:\/\/pages\/automotive-chemicals"
+          }
+        },
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-buckets.jpg",
+            "linktext": "Buckets",
+            "linkurl": "shopify:\/\/collections\/buckets"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-detailing-extractors.jpg",
+            "linktext": "Detailing Extractors",
+            "linkurl": "shopify:\/\/collections\/detailing-extractors"
+          }
+        },
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/microfiber-rags.jpg",
+            "linktext": "Microfiber Rags",
+            "linkurl": "shopify:\/\/collections\/microfiber-rags"
+          }
+        },
+        "4715b000-00ac-457e-86f2-fac625d11e35": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/part-washing-tanks.jpg",
+            "linktext": "Parts Washing Tanks & Sinks",
+            "linkurl": "shopify:\/\/collections\/parts-washing-tanks"
+          }
+        },
+        "d5555fee-e855-4369-bb4e-b5f8a603808b": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/safety-supplies.jpg",
+            "linktext": "Safety Supplies",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        },
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steam-cleaners.jpg",
+            "linktext": "Steam Cleaners",
+            "linkurl": "shopify:\/\/collections\/steam-cleaners"
+          }
+        },
+        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
+          "type": "caheader",
+          "disabled": true,
+          "settings": {
+            "sectionheading": "Shop By Application"
+          }
+        },
+        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
+            "linktext": "Application 1",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
+            "linktext": "Application 2",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c939808d-357a-485e-9410-ae296bc0f014": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
+            "linktext": "Application 3",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "b8376ece-b804-476e-a3b5-35b77607dd21": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
+            "linktext": "Application 4",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeping-category.png",
+            "linktext": "Application 5",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
+            "linktext": "Application 6",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c954c801-0965-4531-a610-39e54b5cb265": {
+          "type": "slider",
+          "settings": {
+            "collection": "cleanfreak"
+          }
+        },
+        "3fba68ff-4018-4287-a0a8-a3b997759627": {
+          "type": "slider",
+          "settings": {
+            "collection": "mytee"
+          }
+        },
+        "d579de19-efac-4983-a0ab-706511d00621": {
+          "type": "slider",
+          "settings": {
+            "collection": "armor-all"
+          }
+        },
+        "74ca4c91-5d6a-4a6a-b199-0b6059b5ecd4": {
+          "type": "slider",
+          "settings": {
+            "collection": "trusted-clean"
+          }
+        },
+        "9137bd9f-c2ac-46a1-ab02-2220bf154c9b": {
+          "type": "slider",
+          "settings": {
+            "collection": "vapamore"
+          }
+        },
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
+          "type": "crheader",
+          "settings": {
+            "sectionheading": "Auto Detailing Resources"
+          }
+        },
+        "cb754198-b199-4317-879a-0b37a3021253": {
+          "type": "resource",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-stain-removal-prevention-dept-page.jpg",
+            "heading": "Stain Removal",
+            "subheading": "<p>Tips on removing spots & stains from carpet and upholstery.<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/pages\/stain-removal-directions"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
+        "4715b000-00ac-457e-86f2-fac625d11e35",
+        "d5555fee-e855-4369-bb4e-b5f8a603808b",
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
+        "416df694-767b-4c68-8e90-2c0cff08dc2a",
+        "5b4a6417-f1c3-413e-8694-20fe1b499722",
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
+        "c939808d-357a-485e-9410-ae296bc0f014",
+        "b8376ece-b804-476e-a3b5-35b77607dd21",
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
+        "c954c801-0965-4531-a610-39e54b5cb265",
+        "3fba68ff-4018-4287-a0a8-a3b997759627",
+        "d579de19-efac-4983-a0ab-706511d00621",
+        "74ca4c91-5d6a-4a6a-b199-0b6059b5ecd4",
+        "9137bd9f-c2ac-46a1-ab02-2220bf154c9b",
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
+        "cb754198-b199-4317-879a-0b37a3021253"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

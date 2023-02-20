@@ -1,0 +1,404 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Safety & PPE",
+        "chsectiontext": "We stock a large offering of safety supplies including Personal Protective Equipment (PPE), clothing, matting, signs, spill cleanup, and more.",
+        "image": "shopify:\/\/shop_images\/safety-personal-protective-equipment-clothing-dept-page.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "aa404ca2-b152-490e-a1c5-e2dd2b5ad1aa": {
+          "type": "slide",
+          "settings": {
+            "product": "meat-cutting-disposable-aprons"
+          }
+        },
+        "b929ff7f-3494-4fb8-91ed-fc3fd185601a": {
+          "type": "slide",
+          "settings": {
+            "product": "floor-stripping-protective-boots"
+          }
+        },
+        "d4dec321-8444-4831-8392-373261bf384b": {
+          "type": "slide",
+          "settings": {
+            "product": "medium-sized-first-aid-kit-metal-case"
+          }
+        },
+        "d22557d9-b277-480c-942f-9f7e3a195d54": {
+          "type": "slide",
+          "settings": {
+            "product": "clean-stride-24x30-sticky-floor-frame"
+          }
+        },
+        "a2ffb4b9-a5ec-485f-a564-7ec3c7b35e7f": {
+          "type": "slide",
+          "settings": {
+            "product": "white-polyester-hairnet-caps"
+          }
+        },
+        "00f5decb-767b-4de7-a09d-96d44dd68386": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-24x36-eversoft-closed-cell-foam-anti-fatigue-floor-mat"
+          }
+        },
+        "6b260fb9-b5a5-4469-93d4-d40d6e8c0f2d": {
+          "type": "slide",
+          "settings": {
+            "product": "yellow-2-sided-wet-floor-sign"
+          }
+        },
+        "cedb8df8-9d4f-4a60-9755-e815bee13409": {
+          "type": "slide",
+          "settings": {
+            "product": "max-earplugs-uncorded"
+          }
+        }
+      },
+      "block_order": [
+        "aa404ca2-b152-490e-a1c5-e2dd2b5ad1aa",
+        "b929ff7f-3494-4fb8-91ed-fc3fd185601a",
+        "d4dec321-8444-4831-8392-373261bf384b",
+        "d22557d9-b277-480c-942f-9f7e3a195d54",
+        "a2ffb4b9-a5ec-485f-a564-7ec3c7b35e7f",
+        "00f5decb-767b-4de7-a09d-96d44dd68386",
+        "6b260fb9-b5a5-4469-93d4-d40d6e8c0f2d",
+        "cedb8df8-9d4f-4a60-9755-e815bee13409"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": false,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Safety & PPE Products by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/alarms-alerts.jpg",
+            "linktext": "Alarms & Tests",
+            "linkurl": "shopify:\/\/collections\/alarms"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/body-protection-clothing.jpg",
+            "linktext": "Body Protection & Clothing",
+            "linkurl": "shopify:\/\/pages\/body-protection-and-clothing"
+          }
+        },
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ear-muffs-ear-plugs.jpg",
+            "linktext": "Ear Protection",
+            "linkurl": "shopify:\/\/collections\/ear-protection"
+          }
+        },
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/safety-glasses.jpg",
+            "linktext": "Eye Protection",
+            "linkurl": "shopify:\/\/collections\/eye-protection"
+          }
+        },
+        "8a4f2a37-497f-45ea-991a-4f1202ac4675": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/first-aid-kits.jpg",
+            "linktext": "First Aid Kits & Thermometers",
+            "linkurl": "shopify:\/\/collections\/first-aid-kits-thermometers"
+          }
+        },
+        "8fd97783-be87-4481-96a3-df40b29aa10d": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flammable-storage-cabinets.jpg",
+            "linktext": "Flammable Storage Cabinets",
+            "linkurl": "shopify:\/\/collections\/flammable-storage-cabinets"
+          }
+        },
+        "d5555fee-e855-4369-bb4e-b5f8a603808b": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/foot-protection.jpg",
+            "linktext": "Foot Protection",
+            "linkurl": "shopify:\/\/pages\/foot-protection"
+          }
+        },
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gloves-hand-protection.jpg",
+            "linktext": "Gloves & Hand Protection",
+            "linkurl": "shopify:\/\/pages\/glove-and-hand-protection"
+          }
+        },
+        "4715b000-00ac-457e-86f2-fac625d11e35": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-beard-covers.jpg",
+            "linktext": "Hair & Beard Covers",
+            "linkurl": "shopify:\/\/collections\/hair-beard-covers"
+          }
+        },
+        "94315b5b-35d4-417b-91a2-3cc8143113a3": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/matting.jpg",
+            "linktext": "Matting",
+            "linkurl": "shopify:\/\/collections\/matting"
+          }
+        },
+        "e45e5126-5a69-479b-b094-8b218693f711": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/respiratory-protection.jpg",
+            "linktext": "Respiratory Protection",
+            "linkurl": "shopify:\/\/pages\/respiratory-protection"
+          }
+        },
+        "dffefa4c-3b94-4275-8c55-9e6fad00eebf": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/signs.jpg",
+            "linktext": "Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
+          "type": "caheader",
+          "settings": {
+            "sectionheading": "Shop By Application"
+          }
+        },
+        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
+            "linktext": "Application 1",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
+            "linktext": "Application 2",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c939808d-357a-485e-9410-ae296bc0f014": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
+            "linktext": "Application 3",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "b8376ece-b804-476e-a3b5-35b77607dd21": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
+            "linktext": "Application 4",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeping-category.png",
+            "linktext": "Application 5",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
+            "linktext": "Application 6",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
+          "type": "slider",
+          "settings": {
+            "collection": "safety-zone"
+          }
+        },
+        "3fba68ff-4018-4287-a0a8-a3b997759627": {
+          "type": "slider",
+          "settings": {
+            "collection": "paws"
+          }
+        },
+        "c954c801-0965-4531-a610-39e54b5cb265": {
+          "type": "slider",
+          "settings": {
+            "collection": "3m™"
+          }
+        },
+        "d579de19-efac-4983-a0ab-706511d00621": {
+          "type": "slider",
+          "settings": {
+            "collection": "impact"
+          }
+        },
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
+          "type": "crheader",
+          "settings": {
+            "sectionheading": "Safety & PPE Resources"
+          }
+        },
+        "cb754198-b199-4317-879a-0b37a3021253": {
+          "type": "resource",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/blog-header-gloves-01.png",
+            "heading": "How to Choose the Right Gloves for Janitorial Use",
+            "subheading": "<p>No matter what type of janitorial or maintenance job you’re working on, you should always make sure to wear the right gloves for the job.<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/blogs\/goods\/how-to-choose-the-right-gloves-for-janitorial-use"
+          }
+        },
+        "e4db288f-956d-4ba1-a3f0-679d2076d676": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/spill-cleanup.jpg",
+            "linktext": "Spill Cleanup",
+            "linkurl": "shopify:\/\/collections\/spill-cleanup"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
+        "8a4f2a37-497f-45ea-991a-4f1202ac4675",
+        "8fd97783-be87-4481-96a3-df40b29aa10d",
+        "d5555fee-e855-4369-bb4e-b5f8a603808b",
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
+        "4715b000-00ac-457e-86f2-fac625d11e35",
+        "94315b5b-35d4-417b-91a2-3cc8143113a3",
+        "e45e5126-5a69-479b-b094-8b218693f711",
+        "dffefa4c-3b94-4275-8c55-9e6fad00eebf",
+        "416df694-767b-4c68-8e90-2c0cff08dc2a",
+        "5b4a6417-f1c3-413e-8694-20fe1b499722",
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
+        "c939808d-357a-485e-9410-ae296bc0f014",
+        "b8376ece-b804-476e-a3b5-35b77607dd21",
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
+        "3fba68ff-4018-4287-a0a8-a3b997759627",
+        "c954c801-0965-4531-a610-39e54b5cb265",
+        "d579de19-efac-4983-a0ab-706511d00621",
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
+        "cb754198-b199-4317-879a-0b37a3021253",
+        "e4db288f-956d-4ba1-a3f0-679d2076d676"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

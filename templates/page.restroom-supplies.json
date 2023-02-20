@@ -1,0 +1,452 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Restroom Supplies",
+        "chsectiontext": "Products and supplies to keep your restrooms sanitary, odor-free and stocked up for guests. Shop cleaning chemicals, paper toweling, wall mount dispensers, stands, hand soaps, deodorizers and more.",
+        "image": "shopify:\/\/shop_images\/restroom-supplies-dept-page.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "3e235bbb-536b-41ad-80b9-82cfdcebd4db": {
+          "type": "slide",
+          "settings": {
+            "product": "pee-pod-urinal-cleaning-block"
+          }
+        },
+        "f51d9f43-95b1-48bf-8e8d-27db3a2c38b2": {
+          "type": "slide",
+          "settings": {
+            "product": "urinal-floor-mat"
+          }
+        },
+        "75245463-fbfb-4983-9c0a-965e0f836d2f": {
+          "type": "slide",
+          "settings": {
+            "product": "time-release-aerosol-deodorize-dispenser"
+          }
+        },
+        "48f78e13-4e92-4137-acbb-5a88b5b4b569": {
+          "type": "slide",
+          "settings": {
+            "product": "febreze-air-effects-spring-and-renewal"
+          }
+        },
+        "c0e6c006-9911-45ae-84bc-f69125197a1d": {
+          "type": "slide",
+          "settings": {
+            "product": "georgia-pacific-enmotion-black-10-automated-touchless-towel-dispenser"
+          }
+        },
+        "396a363e-8f5f-4b51-af69-f91abb316ceb": {
+          "type": "slide",
+          "settings": {
+            "product": "deb-refresh-1-liter-azure-foam-hand-wash"
+          }
+        },
+        "ab228456-0c04-4291-a3e0-4239745db31a": {
+          "type": "slide",
+          "settings": {
+            "product": "mr-clean-toilet-bowl-brush-with-plunger-and-caddy"
+          }
+        }
+      },
+      "block_order": [
+        "3e235bbb-536b-41ad-80b9-82cfdcebd4db",
+        "f51d9f43-95b1-48bf-8e8d-27db3a2c38b2",
+        "75245463-fbfb-4983-9c0a-965e0f836d2f",
+        "48f78e13-4e92-4137-acbb-5a88b5b4b569",
+        "c0e6c006-9911-45ae-84bc-f69125197a1d",
+        "396a363e-8f5f-4b51-af69-f91abb316ceb",
+        "ab228456-0c04-4291-a3e0-4239745db31a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Restroom Supplies by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/air-freshener-dispensers.jpg",
+            "linktext": "Air Freshener Dispensers",
+            "linkurl": "shopify:\/\/collections\/air-freshener-dispensers"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/air-fresheners-odor-eliminators.jpg",
+            "linktext": "Air Fresheners & Odor Eliminators",
+            "linkurl": "shopify:\/\/collections\/air-fresheners-odor-eliminators"
+          }
+        },
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/disinfectant-wipe-dispensers.jpg",
+            "linktext": "Disinfectant Wipe Dispensers",
+            "linkurl": "shopify:\/\/collections\/disinfectant-wipe-dispensers"
+          }
+        },
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/facial-tissues.jpg",
+            "linktext": "Facial Tissues",
+            "linkurl": "shopify:\/\/collections\/facial-tissue"
+          }
+        },
+        "d5555fee-e855-4369-bb4e-b5f8a603808b": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/feminine-hygiene-supplies.jpg",
+            "linktext": "Feminine Hygiene Supplies",
+            "linkurl": "shopify:\/\/collections\/feminine-hygiene-supplies"
+          }
+        },
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-dryers.jpg",
+            "linktext": "Hand Dryers",
+            "linkurl": "shopify:\/\/collections\/hand-dryers"
+          }
+        },
+        "4715b000-00ac-457e-86f2-fac625d11e35": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-sanitizer-dispensers.jpg",
+            "linktext": "Hand Sanitizer Dispensers & Stands",
+            "linkurl": "shopify:\/\/collections\/hand-sanitizer-dispensers-stands"
+          }
+        },
+        "61fc67c2-46d2-4e19-806a-a73b2f80bfdf": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-sanitizers_881953dd-fa89-495f-89ae-e538b2e24929.jpg",
+            "linktext": "Hand Sanitizers",
+            "linkurl": "shopify:\/\/collections\/hand-sanitizers"
+          }
+        },
+        "a4f247c6-f684-4219-b1c7-8f53baf9114f": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-soap.jpg",
+            "linktext": "Hand Soaps & Lotions",
+            "linkurl": "shopify:\/\/collections\/hand-soaps-lotions"
+          }
+        },
+        "77bae2ee-67f2-40ab-8c31-1a3f43f8f0cf": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/paper-towel-dispensers.jpg",
+            "linktext": "Paper Towel Dispensers",
+            "linkurl": "shopify:\/\/collections\/paper-towel-dispensers"
+          }
+        },
+        "b092cbc8-3d74-4302-832c-b0fdfd7db592": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/paper-towels_04919aca-b68b-4c7a-b017-db05f7bf5d35.jpg",
+            "linktext": "Paper Towels",
+            "linkurl": "shopify:\/\/collections\/paper-toweling"
+          }
+        },
+        "de614c95-8422-4152-ba00-569b3da219b8": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sanitary-receptacles-lines.jpg",
+            "linktext": "Sanitary Receptacles & Liners",
+            "linkurl": "shopify:\/\/collections\/sanitary-receptacles-liners"
+          }
+        },
+        "b0279d6c-594c-452d-a81e-139b3c3837d5": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/soap-dispensers.jpg",
+            "linktext": "Soap Dispensers (Wall & Counter Mount)",
+            "linkurl": "shopify:\/\/collections\/soap-dispensers-wall-counter-mount"
+          }
+        },
+        "d7c86600-a38f-47b0-a6c3-d5b4c57a2f39": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-urinal-mats.jpg",
+            "linktext": "Toilet & Urinal Mats",
+            "linkurl": "shopify:\/\/collections\/toilet-urinal-floor-mats"
+          }
+        },
+        "f144c0cf-41e0-42e3-b4b4-bda6c94c5765": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-brushes.jpg",
+            "linktext": "Toilet Brushes",
+            "linkurl": "shopify:\/\/collections\/toilet-brushes"
+          }
+        },
+        "4283c2d0-a446-424e-b956-8bdfedde1039": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-paper.jpg",
+            "linktext": "Toilet paper",
+            "linkurl": "shopify:\/\/collections\/toilet-paper"
+          }
+        },
+        "cb590691-0295-4dda-a0d7-4168c5360a00": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-paper-dispensers.jpg",
+            "linktext": "Toilet Paper Dispensers",
+            "linkurl": "shopify:\/\/collections\/toilet-paper-dispensers"
+          }
+        },
+        "76c7fb62-51ef-4919-a4b5-355920edea3c": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-seat-covers.jpg",
+            "linktext": "Toilet Seat Covers & Sanitizers",
+            "linkurl": "shopify:\/\/collections\/toilet-seat-covers-sanitizers"
+          }
+        },
+        "0278fae5-e510-4e88-b5e4-d34725dda847": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/urinal-screens.jpg",
+            "linktext": "Urinal Screens & Blocks",
+            "linkurl": "shopify:\/\/collections\/urinal-screens-blocks"
+          }
+        },
+        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
+          "type": "caheader",
+          "settings": {
+            "sectionheading": "Shop By Application"
+          }
+        },
+        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
+            "linktext": "Application 1",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
+            "linktext": "Application 2",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c939808d-357a-485e-9410-ae296bc0f014": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
+            "linktext": "Application 3",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "b8376ece-b804-476e-a3b5-35b77607dd21": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
+            "linktext": "Application 4",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeping-category.png",
+            "linktext": "Application 5",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
+            "linktext": "Application 6",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
+          "type": "slider",
+          "settings": {
+            "collection": "nyco"
+          }
+        },
+        "3fba68ff-4018-4287-a0a8-a3b997759627": {
+          "type": "slider",
+          "settings": {
+            "collection": "bright-solutions"
+          }
+        },
+        "c954c801-0965-4531-a610-39e54b5cb265": {
+          "type": "slider",
+          "settings": {
+            "collection": "gojo"
+          }
+        },
+        "d579de19-efac-4983-a0ab-706511d00621": {
+          "type": "slider",
+          "settings": {
+            "collection": "hospeco"
+          }
+        },
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
+          "type": "crheader",
+          "settings": {
+            "sectionheading": "Auto Detailing Resources"
+          }
+        },
+        "cb754198-b199-4317-879a-0b37a3021253": {
+          "type": "resource",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
+            "heading": "Auto Detailing Resource",
+            "subheading": "<p>A brief description here to inform the user about the resource<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/pages\/how-tos"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
+        "d5555fee-e855-4369-bb4e-b5f8a603808b",
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
+        "4715b000-00ac-457e-86f2-fac625d11e35",
+        "61fc67c2-46d2-4e19-806a-a73b2f80bfdf",
+        "a4f247c6-f684-4219-b1c7-8f53baf9114f",
+        "77bae2ee-67f2-40ab-8c31-1a3f43f8f0cf",
+        "b092cbc8-3d74-4302-832c-b0fdfd7db592",
+        "de614c95-8422-4152-ba00-569b3da219b8",
+        "b0279d6c-594c-452d-a81e-139b3c3837d5",
+        "d7c86600-a38f-47b0-a6c3-d5b4c57a2f39",
+        "f144c0cf-41e0-42e3-b4b4-bda6c94c5765",
+        "4283c2d0-a446-424e-b956-8bdfedde1039",
+        "cb590691-0295-4dda-a0d7-4168c5360a00",
+        "76c7fb62-51ef-4919-a4b5-355920edea3c",
+        "0278fae5-e510-4e88-b5e4-d34725dda847",
+        "416df694-767b-4c68-8e90-2c0cff08dc2a",
+        "5b4a6417-f1c3-413e-8694-20fe1b499722",
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
+        "c939808d-357a-485e-9410-ae296bc0f014",
+        "b8376ece-b804-476e-a3b5-35b77607dd21",
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
+        "3fba68ff-4018-4287-a0a8-a3b997759627",
+        "c954c801-0965-4531-a610-39e54b5cb265",
+        "d579de19-efac-4983-a0ab-706511d00621",
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
+        "cb754198-b199-4317-879a-0b37a3021253"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

@@ -1,0 +1,403 @@
+{% assign section_classes = "home-section--content" %}
+
+{% assign heading = section.settings.heading %}
+{% assign subheading = section.settings.subheading %}
+{% assign textcontent = section.settings.textcontent %}
+{% assign button_label = section.settings.button_label %}
+{% assign button_link = section.settings.button_link %}
+{% assign image = section.settings.image %}
+{% assign max_width = settings.layout_max_width %}
+
+<script type="application/pxs-animation-mapping+json">
+    {
+        "blocks": [".image-gradient-section"],
+        "elements": [".image-gradient-section__heading", ".image-gradient-section__text", ".image-gradient-section__button"]
+    }
+</script>
+{%- assign base_name = base_name | default: 'image-gradient-section' -%}
+
+{%- if overlay_opacity > 0 and overlay_color -%}
+    {%- assign overlay_opacity = overlay_opacity | times: 0.01 -%}
+    {%- assign overlay_color = overlay_color | color_modify: 'alpha', overlay_opacity -%}
+{%- endif -%}
+
+{% capture text_classes %}
+    {% if text_alignment != blank %}
+        {{ base_name }}-text-alignment-{{ text_alignment }}
+    {% endif %}
+    {% if text_shadow %}
+        {{ base_name }}--text-shadow
+    {% endif %}
+{% endcapture %}
+
+<section
+        class="
+    {{ base_name }}
+    {% if section_style != blank %}
+      {{ base_name }}--section-style-{{ section_style }}
+    {% endif %}
+    {% if show_border %}
+      {{ base_name }}--section-show-border
+    {% endif %}
+    {% if content_position != blank %}
+      {{ base_name }}--content-position-{{ content_position }}
+    {% endif %}
+    {% if section_classes != blank %}
+      {{ section_classes }}
+    {% endif %}
+  "
+        data-section-id="{{ section.id }}"
+
+        {% if section.settings.rmv_top_mgn %}style="margin-top: 0;"{% endif %}
+>
+    <div class="image-gradient-section--wrapper {% if section.settings.content_right %} content-right {% endif %} {{ section.id }}" id="imgtext-{{ section.id }}">
+        <div class="background-poster" style="background-image: url('{{ image |  image_url: height: 650}}')"></div>
+        <div class="background-gradient"></div>
+        <div class="{{ base_name }}__container">
+            <div class="{{ base_name }}__content"
+            {% if overlay_color or text_color %}
+                style="
+                {% if overlay_color %}background-color: {{ overlay_color }};{% endif %}
+                {% if text_color %}color: {{ text_color }};{% endif %}
+                        "
+                    {% endif %}>
+                {%-
+                        if heading != blank
+                or subheading != blank
+                or button_label != blank
+                or button_link != blank
+                -%}
+                    <div class="{{ base_name }}__content-wrapper {{ text_classes }}">
+                        {%- if subheading -%}
+                            <span class="{{ base_name }}__subhding">{{ subheading }}</span>
+                        {%- endif -%}
+                        {%- if heading != blank -%}
+                            <h2 class="{{ base_name }}__heading">{{ heading | escape }}</h2>
+                        {%- endif -%}
+                        {%- if textcontent -%}
+                            <div class="{{ base_name }}__text">{{ textcontent }}</div>
+                        {%- endif -%}
+                        {%- if
+                                button_label != blank
+                                and button_link != blank
+                        -%}
+                            <a
+                                    class="{{ base_name }}__button"
+                                    href="{{ button_link }}"
+                            >
+                                {{ button_label }}
+                            </a>
+                        {%- endif -%}
+                    </div>
+                {%- endif -%}
+            </div>
+        </div>
+    </div>
+</section>
+{% comment %}Inject @pixelunion/pxs-image-with-text/image-with-text end{% endcomment %}
+
+{% style %}
+    .image-gradient-section--wrapper .image-gradient-section__button{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    background:  {{ settings.color_button_background }};
+    text-transform: uppercase;
+    transition: all 0.4s ease-in-out;
+    padding: 20px 10px;
+    font-size: 17px;
+    line-height: 1;
+    border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    min-width: 200px;
+    font-weight: 600;
+    }
+    .image-gradient-section--wrapper .image-gradient-section__button:hover{
+    background:  {{ settings.color_button_hover }};
+    }
+    .image-gradient-section--wrapper.{{ section.id }}{
+    background-size: contain;
+    padding-top: 85px;
+    padding-bottom: 85px;
+    position: relative;
+    }
+    .image-gradient-section--wrapper.content-right.{{ section.id }}{
+    background-size: contain;
+    padding-top: 85px;
+    padding-bottom: 85px;
+    }
+
+    .image-gradient-section--wrapper.{{ section.id }}{
+    position: relative;
+    }
+    .image-gradient-section--wrapper.{{ section.id }} .image-gradient-section__container{
+    position: relative;
+    z-index: 2;
+    }
+    .image-gradient-section--wrapper.content-right.{{ section.id }} .background-poster{
+    position: absolute;
+    left: 0;
+    right: 40%;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    content: "";
+    z-index: 0;
+    }
+    .image-gradient-section--wrapper.content-right.{{ section.id }} .background-gradient{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    content: "";
+    background: linear-gradient(270deg, {{ settings.color_section_background }} 45%, rgba(204,233,241,0.00) 88%);
+    z-index: 1;
+    }
+    .image-gradient-section--wrapper.{{ section.id }} .background-poster{
+    position: absolute;
+    left: 40%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    z-index: 0;
+    }
+    .image-gradient-section--wrapper.{{ section.id }} .background-gradient{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: linear-gradient(91deg, {{ settings.color_section_background }} 45%, rgba(204,233,241,0.00) 88%);
+    z-index: 1;
+    }
+    .image-gradient-section__container{
+    --layout-container-max-width: {{ max_width | append: 'px' }};
+    --layout-container-gutter: 10px;
+    max-width: 1370px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 35px;
+    }
+    .image-gradient-section__content{
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 49px;
+    }
+    .image-gradient-section__subhding{
+    font-size: 26px;
+    font-weight: 400;
+    color: {{ settings.color_text_medium }};
+    }
+    .image-gradient-section__heading{
+    color: {{ settings.color_headings }};
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    line-height: 24px;
+    }
+    .image-gradient-section__text{
+    color: {{ settings.color_text }};
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 32px;
+    }
+    .image-gradient-section__image-wrapper img{
+    border-radius: 30px;
+    width: 100%;
+    }
+    .image-gradient-section--wrapper.content-right .image-gradient-section__content{
+    margin-left: auto;
+    }
+    @media (min-width: 1024px){
+    .image-gradient-section__container {
+    --layout-container-gutter: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: row;
+    }
+    .image-gradient-section__heading{
+    color: {{ settings.color_headings }};
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 40px;
+    }
+    .image-gradient-section__text{
+    color: {{ settings.color_text }};
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height:46px;
+    max-width: 615px;
+    }
+    }
+    @media (max-width: 1024px){
+    .image-gradient-section--wrapper.content-right.{{ section.id }} .background-poster{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 40%;
+    }
+    .image-gradient-section--wrapper.content-right.{{ section.id }} .background-gradient{
+    background: linear-gradient(0deg, {{ settings.color_section_background }} 45%, rgba(204,233,241,0.00) 88%);
+    }
+    .image-gradient-section--wrapper.{{ section.id }} .background-poster{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 40%;
+    }
+    .image-gradient-section--wrapper.{{ section.id }} .background-gradient{
+    background: linear-gradient(0deg, {{ settings.color_section_background }} 45%, rgba(204,233,241,0.00) 88%);
+    }
+    .image-gradient-section__container {
+    padding-bottom: 0;
+    }
+    .image-gradient-section--wrapper.{{ section.id }}, .image-gradient-section--wrapper.content-right.{{ section.id }}{
+    padding-top: 420px;
+    padding-bottom: 25px;
+    }
+    .image-gradient-section__content{
+    padding: 35px;
+    }
+    }
+    @media (min-width: 720px){
+    .image-gradient-section__container{
+    --layout-container-gutter: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+    .image-gradient-section__button;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 17px;
+    }
+    }
+    @media (max-width: 720px){
+    .image-gradient-section--wrapper.content-right.{{ section.id }} .background-poster{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 40%;
+    }
+    .image-gradient-section--wrapper.content-right.{{ section.id }} .background-gradient{
+    background: linear-gradient(0deg, {{ settings.color_section_background }} 45%, rgba(204,233,241,0.00) 88%);
+    }
+    .image-gradient-section--wrapper.{{ section.id }} .background-poster{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 40%;
+    }
+    .image-gradient-section--wrapper.{{ section.id }} .background-gradient{
+    background: linear-gradient(0deg, {{ settings.color_section_background }} 45%, rgba(204,233,241,0.00) 88%);
+    }
+    .image-gradient-section__container {
+    padding-bottom: 0;
+    }
+    .image-gradient-section--wrapper.{{ section.id }}, .image-gradient-section--wrapper.content-right.{{ section.id }}{
+    padding-top: 315px;
+    padding-bottom: 25px;
+    }
+    .image-gradient-section__subhding{
+    font-size: 16px;
+    }
+    .image-gradient-section__text{
+    font-size: 18px;
+    line-height: 26px;
+    }
+    .image-gradient-section__heading{
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 33.6px;
+    }
+    }
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "image-gradient-section",
+    "class": "image-gradient--section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "header",
+            "content": "Content"
+        },
+        {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Image with text"
+        },
+        {
+            "id": "subheading",
+            "type": "text",
+            "label": "Subheading"
+        },
+        {
+            "id": "textcontent",
+            "type": "richtext",
+            "label": "Text Content",
+            "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+        },
+        {
+            "id": "button_label",
+            "type": "text",
+            "label": "Button Label",
+            "default": "Button"
+        },
+        {
+            "id": "button_link",
+            "type": "url",
+            "label": "Button URL"
+        },
+        {
+            "type": "checkbox",
+            "id": "content_right",
+            "label": "Content Right",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "rmv_top_mgn",
+            "label": "Remove Top Margin",
+            "default": false
+        }
+    ],
+    "presets": [
+        {
+            "category": "image-gradient-section",
+            "name": "Image Gradient With Text",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

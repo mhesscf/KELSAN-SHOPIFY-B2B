@@ -1,0 +1,152 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To properly mop and clean all hard floor surfaces in a facility."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Caution, Safety & Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Mops",
+            "linkurl": "shopify:\/\/collections\/dust-mop-heads"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Cleaning Solutions",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-soaps-solutions"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Degreasers",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-degreasers"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Bucket & Wringer Combos",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Handles",
+            "linkurl": "shopify:\/\/collections\/handles"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Mops",
+            "linkurl": "shopify:\/\/collections\/wet-mop-heads"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-action-wet-mopping.jpg"
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prepping the Mopping Area -",
+            "steptext": "<p>Set up the necessary wet floor\/caution signs to alert other individuals that the immediate area may be slippery, and they should avoid this region or proceed with caution. Move all obstacles including tables and furniture into a safe area where they will not get wet and can be moved easily back into place. Remove all sticky substances and larger debris from the surface to be mopped.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Dust Mopping the Area -",
+            "steptext": "<p>Follow the <a href=\"\/pages\/dust-mopping\" title=\"Dust Mopping\">dust mopping<\/a> procedure to remove all debris, dirt, and large objects (i.e. pallet chips, dust bunnies, dropped food items, etc.), from the mopping area.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Wet Mopping the Area -",
+            "steptext": "<p>Dunk your mop into the solution in the bucket, then wring the mop out until it is just damp. The #1 problem that occurs while mopping is over-wetting of a surface. Using a damp mop will allow the dirt to cling to the mop as you go instead of being spread around by the water on the floor. Start in the corner farthest away from the door. Mop in a figure 8 pattern to utilize your mop most effectively. As you mop, move towards the entrance of the room so you are always standing on a dry piece of floor. This will help to avoid streaking and tracking of your solution to other parts of the facility. Change the solution often to ensure the water you're using to clean is not overly saturated with dirt. Dirty solution will only move dirt from one area to another, it will not remove it from the floor. Always check your chemicals for proper dilution ratios. Running an air mover will speed up your dry time which is especially important in areas that are in use while you are cleaning.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Dump mop bucket out and rinse repeatedly until mop bucket is completely clean. You do not want any solution or residue left over to contaminate your water the next time you use the bucket. Rinse out mops thoroughly and hang up to dry above a slop sink or floor drain. Remove all wet floor\/caution signs originally put in place. Return any moved objects to their original places.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

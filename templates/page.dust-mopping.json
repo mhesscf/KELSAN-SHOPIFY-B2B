@@ -1,0 +1,163 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To maintain a clean facility by routinely removing dust and debris from all major traffic areas."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Brooms & Dust Pans",
+            "linkurl": "shopify:\/\/collections\/upright-brooms"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Mops",
+            "linkurl": "shopify:\/\/collections\/dust-mop-heads"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Mop Frames",
+            "linkurl": "shopify:\/\/collections\/mop-frames-accessories"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Mop Treatment",
+            "linkurl": "shopify:\/\/collections\/dust-mop-treatments"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Garbage Bags",
+            "linkurl": "shopify:\/\/collections\/trash-can-liners"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Quick Change Dust Mop Handle",
+            "linkurl": "shopify:\/\/collections\/handles"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Trash Containers",
+            "linkurl": "shopify:\/\/pages\/janitorial-supplies"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-dust-mopping.jpg"
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Preparation -",
+            "steptext": "<p>Set up a routine schedule for the dust mopping to be done, either nightly, weekly or monthly. This will largely depend on your unique situation and how much foot traffic you have tracking in dirt from the outside world. Once you have your routine in place and are ready to start dust mopping, you'll need to look around and identify things that will impede your efficiency. Move any and all obstacles in the area that may be in your sweeping path. Remove all larger pieces of debris that the dust mop will not able to sweep away and throw them into a trash container.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Choosing Your Dust Mop -",
+            "steptext": "<p>You'll want to choose the appropriate dust mop for your individual situation. We recommend using a dust mop that is approximately 1\/2 to 1\/3 the width of the area that needs dust mopping. For example, retail and grocery store aisles are typically 6 to 7 feet wide, so a 36\" dust mop would be perfect for this situation, because you can clean nearly half the aisle in one pass, yet still allow customers to pass by as you clean. Larger areas, like warehouse aisles would need something larger like a 60\" warehouse dust mop.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Dust Mopping Your Prepped Area -",
+            "steptext": "<p>Push your mop while holding the handle close to your stomach or chest. Get as close to the edges of the aisle as possible. Pull the mop head back frequently and shake out or drop against the ground to keep the dust\/debris in front of the mop and not from loading up in the strands of the mop. When you reach the end of the aisle, make a large sweeping turn, keeping the debris in front of the mop and go back down the aisle overlapping the last path by about 6 or 8 inches. When dust mopping smaller areas, such as bathrooms or offices, use a smaller mop like our 24\" microfiber dust mop. Start dust mopping at the doorway and work the outer perimeter, pushing everything to the center of the room for later removal with a mop and dust pan.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Removal of Dirt & Debris -",
+            "steptext": "<p>Use something similar to our lobby dust pan and stiff yellow corn broom to sweep up all dirt, debris and trash. Empty the lobby dust pan into an acceptable trash container lined with a garbage bag.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "1edd7d7c-cfc3-4985-b633-48fd02ee9358": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Dust Mopping Your Prepped Area -",
+            "steptext": "<p>Take the dust mop outside and shake out like you would a rug to remove as much dirt and debris as possible. If after several shake outs all the dirt does not come out, you can either replace it, or if the mop is launder-able, place it into a microfiber cloth rags washing machine and wash it. Spraying the mop with dust mop treatment after it has been cleaned will help to prolong its life and keep it from streaking on hard floor surfaces.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "1edd7d7c-cfc3-4985-b633-48fd02ee9358"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

@@ -1,0 +1,129 @@
+<section class="frequently-bought-together">
+    <div class="container">
+        <h2>Frequently Bought Together</h2>
+        <div class="row">
+            <div class="product-item">
+                <a href="{{ product.url }}">
+                    <div class="image-wrap">
+                        <div class="poster" style="background-image: url('{{ product.featured_image | img_url: '300x300' }}')"></div>
+                    </div>
+                    <p class="product__title">{{ product.title }}</p>
+                    {% if product.metafields.plytix.erp_sku != blank %}
+                        <div class="product-detail-sku">
+                            SKU:<span>{{ product.metafields.plytix.erp_sku }}</span>
+                        </div>
+                    {% endif %}
+                    <div class="product__price">
+                        <div class="price-current"><sup>$</sup>{{ product.price | money_without_currency }}</div>
+                        <div class="price-compare-at">{{ product.compare_at_price | money }}</div>
+                    </div>
+                    <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                        <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                        <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+                    </form>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="{{ product.url }}">
+                    <div class="image-wrap">
+                        <div class="poster" style="background-image: url('{{ product.featured_image | img_url: '300x300' }}')"></div>
+                    </div>
+                    <p class="product__title">{{ product.title }}</p>
+                    {% if product.metafields.plytix.erp_sku != blank %}
+                        <div class="product-detail-sku">
+                            SKU:<span>{{ product.metafields.plytix.erp_sku }}</span>
+                        </div>
+                    {% endif %}
+                    <div class="product__price">
+                        <div class="price-current"><sup>$</sup>{{ product.price | money_without_currency }}</div>
+                        <div class="price-compare-at">{{ product.compare_at_price | money }}</div>
+                    </div>
+                    <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                        <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+
+                        <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                    </form>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="{{ product.url }}">
+                    <div class="image-wrap">
+                        <div class="poster" style="background-image: url('{{ product.featured_image | img_url: '300x300' }}')"></div>
+                    </div>
+                    <p class="product__title">{{ product.title }}</p>
+                    {% if product.metafields.plytix.erp_sku != blank %}
+                        <div class="product-detail-sku">
+                            SKU:<span>{{ product.metafields.plytix.erp_sku }}</span>
+                        </div>
+                    {% endif %}
+                    <div class="product__price">
+                        <div class="price-current"><sup>$</sup>{{ product.price | money_without_currency }}</div>
+                        <div class="price-compare-at">{{ product.compare_at_price | money }}</div>
+                    </div>
+                    <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                        <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+                        <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                    </form>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="{{ product.url }}">
+                    <div class="image-wrap">
+                        <div class="poster" style="background-image: url('{{ product.featured_image | img_url: '300x300' }}')"></div>
+                    </div>
+                    <p class="product__title">{{ product.title }}</p>
+                    {% if product.metafields.plytix.erp_sku != blank %}
+                        <div class="product-detail-sku">
+                            SKU:<span>{{ product.metafields.plytix.erp_sku }}</span>
+                        </div>
+                    {% endif %}
+                    <div class="product__price">
+                        <div class="price-current"><sup>$</sup>{{ product.price | money_without_currency }}</div>
+                        <div class="price-compare-at">{{ product.compare_at_price | money }}</div>
+                    </div>
+                    <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                        <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+
+                        <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                    </form>
+                </a>
+            </div>
+        </div>
+        <div class="price-row">
+            <div class="inner">
+                <h4>Price for all Four:</h4>
+                <div class="price">
+                    <sup class="dollar">$</sup>3899.97
+                </div>
+                <form method="post" action="/cart/add">
+                    <input type="hidden" name="id" value="{{ all_products[bundlep].variants.first.id }}" />
+                    <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                    <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+                    <input class="add-to-cart-btn" type="submit" value="ADD TO CART" class="btn" />
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "frequently-bought",
+    "class": "frequently-bought--section",
+    "presets": [
+        {
+            "category": "product-section",
+            "name": "Frequently Bought",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

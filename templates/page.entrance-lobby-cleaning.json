@@ -1,0 +1,231 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To provide a clean, warm, inviting and professional appearance at the entrance\/lobby of a business."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "All Purpose Cleaners",
+            "linkurl": "shopify:\/\/collections\/all-purpose-cleaners"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Cleaning Box Extractors",
+            "linkurl": "shopify:\/\/collections\/box-extractors"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Caution, Safety, & Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dual Motor Upright Vacuums",
+            "linkurl": "shopify:\/\/collections\/dual-motor-vacuums"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Single Motor Upright Vacuums",
+            "linkurl": "shopify:\/\/collections\/single-motor-vacuums"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Cleaning Degreasers",
+            "linkurl": "shopify:\/\/collections\/floor-cleaning-degreasers"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Furniture & Wood Polishing Cleaners",
+            "linkurl": "shopify:\/\/collections\/floor-polishing-restoring-solutions"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Garbage Bags",
+            "linkurl": "shopify:\/\/collections\/trash-can-liners"
+          }
+        },
+        "710b4bd2-9dbe-4277-833e-6f27e8d29b9a": {
+          "type": "link",
+          "settings": {
+            "linktext": "Glass Cleaning Chemicals",
+            "linkurl": "shopify:\/\/collections\/glass-cleaners"
+          }
+        },
+        "e60fdb3a-9d15-4832-aef6-ebf4547f4359": {
+          "type": "link",
+          "settings": {
+            "linktext": "Janitorial Carts",
+            "linkurl": "shopify:\/\/collections\/janitorial-carts"
+          }
+        },
+        "c04fa8a1-0435-498b-94ca-334276b31edd": {
+          "type": "link",
+          "settings": {
+            "linktext": "Plastic Pails & Buckets",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "949302c4-f203-4403-b00b-6d8b8ebb93af": {
+          "type": "link",
+          "settings": {
+            "linktext": "Portable Carpet Spotters",
+            "linkurl": "shopify:\/\/collections\/portable-carpet-spotters"
+          }
+        },
+        "0837253d-8f2f-4ec6-a77b-19b779402e24": {
+          "type": "link",
+          "settings": {
+            "linktext": "Stain Removing Carpet Chemicals",
+            "linkurl": "shopify:\/\/collections\/stain-removal-carpet-spotting-chemicals"
+          }
+        },
+        "f362a574-f961-418d-8da7-961cb06cf09e": {
+          "type": "link",
+          "settings": {
+            "linktext": "Window Cleaning Kits",
+            "linkurl": "shopify:\/\/collections\/window-cleaning-kits"
+          }
+        },
+        "c1548500-b7e1-4ae3-9bc7-1973c7f99079": {
+          "type": "link",
+          "settings": {
+            "linktext": "Window Washing Squeegees",
+            "linkurl": "shopify:\/\/collections\/window-washing-squeegees"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "710b4bd2-9dbe-4277-833e-6f27e8d29b9a",
+        "e60fdb3a-9d15-4832-aef6-ebf4547f4359",
+        "c04fa8a1-0435-498b-94ca-334276b31edd",
+        "949302c4-f203-4403-b00b-6d8b8ebb93af",
+        "0837253d-8f2f-4ec6-a77b-19b779402e24",
+        "f362a574-f961-418d-8da7-961cb06cf09e",
+        "c1548500-b7e1-4ae3-9bc7-1973c7f99079"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prepping the Lobby -",
+            "steptext": "<p>Gather all your necessary cleaning materials and load them onto your janitorial cart. Place any caution or wet floor signs that are necessary if you're going to be mopping, or doing any other kind of extensive cleaning. The following steps are based on the assumption that someone will be able to give your lobby, or entranceway, daily attention. If these are overkill for your particular business, you can adjust the following schedule to fit your needs accordingly.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Daily Cleaning Procedures -",
+            "steptext": "<p>A. Remove all trash\/debris, while cordoning off any areas that may need any extensive attention.<\/p><p>B. Dust mop tiled areas using a treated or microfiber dust mop.<\/p><p>C. Spot clean walls, doors, and frames using a degreaser for heavily soiled areas, and an all-purpose cleaner for the every-day cleaning.<\/p><p>D. Immediately use a spot remover and a portable spotter to spot clean any carpeted areas to remove stains and spillage that may occur. We offer a carpet spotting package that comes with many popular stain removers to remove a wide variety of stains.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Weekly Cleaning Procedures -",
+            "steptext": "<p>A. Dust mop, sweep, and then wet mop the vestibule, entrance and any other hard floored surface.<\/p><p>B. Spot clean glass windows with one of our glass cleaners, like our  Crystal Clean aerosol glass cleaner, to remove all fingerprints and smudges.<\/p><p>C. Vacuum or damp wipe furniture in lobby as required, using one of our furniture cleaners or an all-purpose cleaner.<\/p><p>D. Follow our carpet vacuuming procedures on all walk-off mats and traffic lanes with several passes, finishing up by vacuuming all other carpeted areas. <\/p><p>E. If there are any highly polished tiled areas, you'll want to buff or burnish these areas to maintain that high shine following our  burnishing a floor or  spray buffing a floor  procedures.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Monthly Cleaning Procedures -",
+            "steptext": "<p>A. Complete thorough cleaning of wiping down baseboards and walls to remove dust bunnies, cobwebs, or spills.<\/p><p>B. Vacuum and dust all heating vents\/ducts, tops of doorways and picture frames. Remove all walk off mats and thoroughly vacuum those, as well as around and underneath them.<\/p><p>C. Clean all windows with a glass cleaner and microfiber cloth to remove all marks and fingerprints.<\/p>",
+            "product": ""
+          }
+        },
+        "e4fd7491-1ebe-4642-bd42-98db28e88a71": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Semi-Annual Cleaning Procedures -",
+            "steptext": "<p>A. Strip and recoat all resilient floors following our stripping a floor and  applying floor finish procedures.<\/p><p>B. Extract all carpeted areas, runners, and mats using a box style extractor similar to our Maximum Heated Carpet Extractor. You'll want to follow our carpet extraction procedures exactly in order to achieve the best results.<\/p>",
+            "product": ""
+          }
+        },
+        "7dcf7db2-7b2d-4292-a106-fbe5671fea6b": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "6",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Remove any and all trash by placing it in a garbage bag and properly disposing of the bag. If there are any air movers or caution\/wet floor signs left in place, make sure all areas are completely dry and safe before removing the signs. Rinse out or thoroughly clean out any mops, buckets and machinery that you may have used in these steps. Take your janitorial cart and cleaning supplies and return them to their proper storage areas.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "e4fd7491-1ebe-4642-bd42-98db28e88a71",
+        "7dcf7db2-7b2d-4292-a106-fbe5671fea6b"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

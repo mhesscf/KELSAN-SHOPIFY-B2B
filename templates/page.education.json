@@ -1,0 +1,195 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "166024641748f1aa58": {
+      "type": "centered-text-heading",
+      "settings": {
+        "pageheading": "Education",
+        "headinginfo": "<p>It is our goal to educate you on the best way to get the job done. Here at the education center we strive to produce quality guides, videos, and provide you with the very best resources for all your cleaning needs. Use our main \"academic\" departments to find what you need.<\/p>"
+      }
+    },
+    "1660331766dcb7c2c9": {
+      "type": "circle-link-grid",
+      "blocks": {
+        "caf1e08c-d827-4ddf-9720-3a65d5620b83": {
+          "type": "link",
+          "settings": {
+            "circleimg": "shopify:\/\/shop_images\/how-tos-education.png",
+            "linktext": "How To’s",
+            "linkurl": "shopify:\/\/pages\/how-tos"
+          }
+        },
+        "ec46b387-814a-4138-a537-52856bab32c3": {
+          "type": "link",
+          "settings": {
+            "circleimg": "shopify:\/\/shop_images\/education-documents.png",
+            "linktext": "Documents & Guides",
+            "linkurl": "shopify:\/\/pages\/charts-guides"
+          }
+        },
+        "2429278d-5134-4ff5-8a4c-7679228dc8ce": {
+          "type": "link",
+          "settings": {
+            "circleimg": "shopify:\/\/shop_images\/education-blog.png",
+            "linktext": "Our Blog",
+            "linkurl": "shopify:\/\/blogs\/news"
+          }
+        },
+        "fe9b7c94-76cf-4291-96c5-5686a949596c": {
+          "type": "link",
+          "settings": {
+            "circleimg": "shopify:\/\/shop_images\/education-youtube.png",
+            "linktext": "Visit our YoutubeChannel",
+            "linkurl": "https:\/\/www.youtube.com\/user\/cleanfreak1"
+          }
+        }
+      },
+      "block_order": [
+        "caf1e08c-d827-4ddf-9720-3a65d5620b83",
+        "ec46b387-814a-4138-a537-52856bab32c3",
+        "2429278d-5134-4ff5-8a4c-7679228dc8ce",
+        "fe9b7c94-76cf-4291-96c5-5686a949596c"
+      ],
+      "settings": {
+        "sectionheading": ""
+      }
+    },
+    "7c3b0b07-9b94-401c-b12d-42f93717f025": {
+      "type": "background-swoop",
+      "settings": {
+        "bgimg": "shopify:\/\/shop_images\/bg-swoop.png",
+        "customstyles": ""
+      }
+    },
+    "1660332591f04526ab": {
+      "type": "image-link-grid",
+      "blocks": {
+        "8b286358-0e4b-44c8-884d-d6c824ed2fa5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Charts & Guides",
+            "linkurl": "shopify:\/\/pages\/charts-guides"
+          }
+        },
+        "30ce29d5-28bd-46d9-84ae-431a9cb222e7": {
+          "type": "link",
+          "settings": {
+            "linktext": "Product Brochures",
+            "linkurl": ""
+          }
+        },
+        "6e0643d5-6aa7-4635-8435-1c5fcc34888b": {
+          "type": "link",
+          "settings": {
+            "linktext": "Owner’s Manuals",
+            "linkurl": ""
+          }
+        },
+        "3d5ae239-dab6-4dd6-8aff-d20683f68ab2": {
+          "type": "link",
+          "settings": {
+            "linktext": "Safety Data Sheets (SDS)",
+            "linkurl": ""
+          }
+        }
+      },
+      "block_order": [
+        "8b286358-0e4b-44c8-884d-d6c824ed2fa5",
+        "30ce29d5-28bd-46d9-84ae-431a9cb222e7",
+        "6e0643d5-6aa7-4635-8435-1c5fcc34888b",
+        "3d5ae239-dab6-4dd6-8aff-d20683f68ab2"
+      ],
+      "settings": {
+        "sectionheading": "View All Documents",
+        "viewalllinkurl": "shopify:\/\/pages\/charts-guides",
+        "viewalllinktext": ""
+      }
+    },
+    "1660571620e2a0ed52": {
+      "type": "image-link-grid",
+      "blocks": {
+        "93149df3-16a5-4f17-beac-018f6dfa2524": {
+          "type": "link",
+          "settings": {
+            "linktext": "General Cleaning Articles",
+            "linkurl": "shopify:\/\/pages\/how-tos"
+          }
+        },
+        "205ce7fa-af20-4f43-b7e3-ff06db1e8914": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Care Troubleshooting Tips",
+            "linkurl": "shopify:\/\/pages\/how-tos"
+          }
+        },
+        "4e186eef-2135-4a7e-8c55-095fe67e893d": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Spotting & Stain Removal Tips",
+            "linkurl": "shopify:\/\/pages\/how-tos"
+          }
+        },
+        "266c2ffe-f5d3-473b-9266-d2154527e8be": {
+          "type": "link",
+          "settings": {
+            "linktext": "Basic Custodian, Healthcare & Cleaning Procedures",
+            "linkurl": "shopify:\/\/pages\/how-tos"
+          }
+        },
+        "c175986c-a106-4641-b2f4-c22100fc6d87": {
+          "type": "link",
+          "settings": {
+            "linktext": "Infographics",
+            "linkurl": "shopify:\/\/pages\/national-safety-month"
+          }
+        }
+      },
+      "block_order": [
+        "93149df3-16a5-4f17-beac-018f6dfa2524",
+        "205ce7fa-af20-4f43-b7e3-ff06db1e8914",
+        "4e186eef-2135-4a7e-8c55-095fe67e893d",
+        "266c2ffe-f5d3-473b-9266-d2154527e8be",
+        "c175986c-a106-4641-b2f4-c22100fc6d87"
+      ],
+      "settings": {
+        "sectionheading": "How To's Topics",
+        "viewalllinkurl": "",
+        "viewalllinktext": "View All How To's"
+      }
+    },
+    "1660574524b52b461f": {
+      "type": "video-grid",
+      "blocks": {
+        "a6bb0102-f71d-4b7a-a883-e25907f41413": {
+          "type": "video",
+          "settings": {
+            "videotitle": "Maxim® Facility+™ Features & Benefits",
+            "videourl": "https:\/\/www.youtube.com\/embed\/uvDeS21_iw0"
+          }
+        }
+      },
+      "block_order": [
+        "a6bb0102-f71d-4b7a-a883-e25907f41413"
+      ],
+      "settings": {
+        "sectionheading": "View Recent Videos",
+        "viewalllinkurl": "https:\/\/www.youtube.com\/user\/cleanfreak1",
+        "viewalllinktext": "Visit Youtube Channel"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "166024641748f1aa58",
+    "1660331766dcb7c2c9",
+    "7c3b0b07-9b94-401c-b12d-42f93717f025",
+    "1660332591f04526ab",
+    "1660571620e2a0ed52",
+    "1660574524b52b461f"
+  ]
+}

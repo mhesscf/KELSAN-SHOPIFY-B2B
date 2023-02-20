@@ -1,0 +1,192 @@
+{% style %}
+ .three-column-links .container{
+	 width: 1340px;
+	 max-width: 90%;
+	 margin: auto;
+	 padding: 40px 0;
+ }
+ .three-column-links .flex-row{
+	 display: flex;
+	 flex-direction: row;
+	 flex-wrap: wrap;
+	 width: 100%;
+	 justify-content: space-between;
+ }
+ .three-column-links .link-row .column{
+     width: 31%
+ }
+ .three-column-links .link-row h3{
+    font-weight: 600;
+ }
+ .three-column-links .link-row .column a{
+	 display: block;
+	 color: {{ settings.color_icons }};
+	 text-decoration: none;
+	 display: block;
+	 font-size: 17px;
+	 margin: 10px 0;
+ }
+
+    .three-column-links .link-row .column a svg{
+    margin-left: 5px;
+    font-size: 13px;
+    position: relative;
+    }
+ .three-column-links .link-row .column a span{
+     margin-left: 5px;
+ }
+ .three-column-links h2{
+	 color: {{ settings.color_headings }};
+	 font-size: 30px;
+	 font-weight: 600;
+ }
+ @media (max-width: 1200px){
+	 .three-column-links .flex-row .link-wrap a{
+         font-size: 16px;
+     }
+ }
+ @media (max-width: 991.98px){
+	 .three-column-links .flex-row .column{
+		 width: 50%
+	 }
+	 .three-column-links .container{
+         padding: 20px 0;
+     }
+ }
+{% endstyle %}
+<section class="three-column-links">
+    <div class="container">
+        {% if section.settings.sectionheading != blank %}
+            <div class="row">
+                <h2>{{ section.settings.sectionheading }}</h2>
+            </div>
+        {% endif %}
+        <div class="row flex-row link-row">
+            <div class="column">
+                {% if section.settings.c1heading != blank %}
+                    <div class="col-heading">
+                        <h3>{{ section.settings.c1heading }}</h3>
+                    </div>
+                {% endif %}
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'c1link' %}
+                            <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }} <i class="fa-solid fa-arrow-right"></i></a>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+            <div class="column">
+                {% if section.settings.c2heading != blank %}
+                    <div class="col-heading">
+                        <h3>{{ section.settings.c2heading }}</h3>
+                    </div>
+                {% endif %}
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'c2link' %}
+                            <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }} <i class="fa-solid fa-arrow-right"></i></a>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+            <div class="column">
+                {% if section.settings.c3heading != blank %}
+                    <div class="col-heading">
+                        <h3>{{ section.settings.c3heading }}</h3>
+                    </div>
+                {% endif %}
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'c3link' %}
+                            <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }} <i class="fa-solid fa-arrow-right"></i></a>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "three-column-links",
+    "class": "three-column-links--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "sectionheading"
+        },
+        {
+            "type": "text",
+            "label": "Column 1 Heading",
+            "id" : "c1heading"
+        },
+        {
+            "type": "text",
+            "label": "Column 2 Heading",
+            "id" : "c2heading"
+        },
+        {
+            "type": "text",
+            "label": "Column 3 Heading",
+            "id" : "c3heading"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "c1Link",
+            "type": "c1link",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "linktext",
+                    "label": "Link Text"
+                },
+                {
+                    "type" : "url",
+                    "id": "linkurl",
+                    "label": "Link URL"
+                }
+            ]
+        },
+        {
+            "name": "c2Link",
+            "type": "c2link",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "linktext",
+                    "label": "Link Text"
+                },
+                {
+                    "type" : "url",
+                    "id": "linkurl",
+                    "label": "Link URL"
+                }
+            ]
+        },
+        {
+            "name": "c3Link",
+            "type": "c3link",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "linktext",
+                    "label": "Link Text"
+                },
+                {
+                    "type" : "url",
+                    "id": "linkurl",
+                    "label": "Link URL"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "three-column-links-section",
+            "name": "Three Column Links",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

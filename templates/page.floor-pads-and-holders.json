@@ -1,0 +1,182 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Floor Pads & Holders",
+        "chsectiontext": "For additional options, don't forget to check out our complete line of floor scrubber accessories including floor care solutions, autoscrubber brushes, floor scrubber pads and much more.",
+        "image": "shopify:\/\/shop_images\/floor-pads-holders.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ea0b2878-052b-4a13-b034-83999112d061": {
+          "type": "slide",
+          "settings": {
+            "product": "viper-20-inch-pad-driver-for-as510b-and-as5160-auto-scrubbers"
+          }
+        },
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a": {
+          "type": "slide",
+          "settings": {
+            "product": "smartscrub-scrub-and-polish-1-step-floor-pads"
+          }
+        },
+        "f32a6f34-03b2-4258-965e-7929bbf1ac91": {
+          "type": "slide",
+          "settings": {
+            "product": "ecs-microfiber-auto-scrubber-bonnet"
+          }
+        },
+        "adf0b64e-66cc-45d7-a7c1-fb1c2e3fc3e0": {
+          "type": "slide",
+          "settings": {
+            "product": "14-inch-black-stripping-pads"
+          }
+        }
+      },
+      "block_order": [
+        "ea0b2878-052b-4a13-b034-83999112d061",
+        "a00fe92b-d25d-4dd1-8bab-be6f57b7388a",
+        "f32a6f34-03b2-4258-965e-7929bbf1ac91",
+        "adf0b64e-66cc-45d7-a7c1-fb1c2e3fc3e0"
+      ],
+      "settings": {
+        "cfpssectionheading": ""
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "floor-scrubber-accessories",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Floor Pads By Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pad-holder.webp",
+            "linktext": "Pad Holders",
+            "linkurl": "shopify:\/\/collections\/floor-pad-holders"
+          }
+        },
+        "157dc91c-7253-44f9-9cea-89bfcccdb1ad": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/polishing-pads.webp",
+            "linktext": "Polishing Pads",
+            "linkurl": "shopify:\/\/collections\/floor-polishing-pads"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-pads.webp",
+            "linktext": "Scrubbing Pads",
+            "linkurl": "shopify:\/\/collections\/floor-scrubbing-pads"
+          }
+        },
+        "bfeb6535-7dd9-4b3d-9dc9-d5c799470e80": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stripping-pads.jpg",
+            "linktext": "Stripping Pads",
+            "linkurl": "shopify:\/\/collections\/floor-stripping-pads"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "157dc91c-7253-44f9-9cea-89bfcccdb1ad",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "bfeb6535-7dd9-4b3d-9dc9-d5c799470e80"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "4",
+        "sort_by": false,
+        "grid_list": false,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

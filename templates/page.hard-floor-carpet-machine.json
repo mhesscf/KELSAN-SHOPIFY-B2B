@@ -1,0 +1,381 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Hard Floor & Carpet Cleaning Machines",
+        "chsectiontext": "Our industrially rated floor cleaning machines come in a wide range of applications and sizes.",
+        "image": "shopify:\/\/shop_images\/release-your-inner-cleanfreak-floor-carpet-machines-dept-page.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "aff39d0c-52d3-4f80-b80c-d5bfd17bf3a1": {
+          "type": "slide",
+          "settings": {
+            "product": "auto-scrubber-floor-cleaning-kit"
+          }
+        },
+        "73f91175-4696-47f6-a34e-3f38688d694b": {
+          "type": "slide",
+          "settings": {
+            "product": "ultimate-heated-box-extractor"
+          }
+        },
+        "1d793eb8-ed57-48c2-8689-52ad1220bf71": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-floor-buffer-cleaning-package"
+          }
+        },
+        "2bd39576-64b5-44d5-8642-729af5489e74": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-carpet-cleaner-extractor"
+          }
+        },
+        "1be711ee-9f10-4ae9-8063-557bdc9d0517": {
+          "type": "slide",
+          "settings": {
+            "product": "the-advantage-20-red-automatic-floor-scrubber-battery-powered"
+          }
+        },
+        "c50b9299-715b-4f80-9c4c-0b6a22ff39b1": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-carpet-spot-cleaning-machine"
+          }
+        },
+        "0ab2aa5f-3acd-4983-915b-b71da5ee6f16": {
+          "type": "slide",
+          "settings": {
+            "product": "1-5-hp-high-speed-20-inch-burnisher"
+          }
+        }
+      },
+      "block_order": [
+        "aff39d0c-52d3-4f80-b80c-d5bfd17bf3a1",
+        "73f91175-4696-47f6-a34e-3f38688d694b",
+        "1d793eb8-ed57-48c2-8689-52ad1220bf71",
+        "2bd39576-64b5-44d5-8642-729af5489e74",
+        "1be711ee-9f10-4ae9-8063-557bdc9d0517",
+        "c50b9299-715b-4f80-9c4c-0b6a22ff39b1",
+        "0ab2aa5f-3acd-4983-915b-b71da5ee6f16"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": false,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Hard Floor & Carpet Machines by Type"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/baseboard-edgers.jpg",
+            "linktext": "BaseBoard Edgers",
+            "linkurl": "shopify:\/\/collections\/baseboard-edgers-portable-handheld-scrubbers"
+          }
+        },
+        "03610712-ea4b-4140-92ab-1335847e8183": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-extractors.jpg",
+            "linktext": "Carpet Extractors",
+            "linkurl": "shopify:\/\/pages\/extractors"
+          }
+        },
+        "35dd6d94-e689-4b11-93d6-d72c567a56c7": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/escalator-cleaners.jpg",
+            "linktext": "Escalator Cleaners",
+            "linkurl": "shopify:\/\/collections\/escalator-cleaners"
+          }
+        },
+        "544f61ad-a72b-4850-aa39-ca8bbcc22b57": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hard-floor-cleaning-machines.jpg",
+            "linktext": "Hard Floor Cleaning Machines",
+            "linkurl": "shopify:\/\/pages\/hard-floor-cleaning-machines"
+          }
+        },
+        "4df13406-e179-4e52-a101-eb150bee03b7": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
+            "linktext": "Industrial Sweepers",
+            "linkurl": "shopify:\/\/pages\/industrial-sweepers"
+          }
+        },
+        "37f90a06-80c5-4a48-9374-6c3359116fe9": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
+            "linktext": "Pump-up Dispenser & Trigger Sprayers",
+            "linkurl": "shopify:\/\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        },
+        "d2f29606-1b28-4577-ae66-f39ecdd812ac": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steam-cleaner.jpg",
+            "linktext": "Steam Cleaners",
+            "linkurl": "shopify:\/\/collections\/steam-cleaners"
+          }
+        },
+        "a60ce2f2-8e8a-4df0-b783-0dc15d675fa7": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vertical-surface-cleaners.jpg",
+            "linktext": "Vertical Surface Cleaners",
+            "linkurl": "shopify:\/\/collections\/vertical-surface-cleaners"
+          }
+        },
+        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
+          "type": "caheader",
+          "settings": {
+            "sectionheading": "Shop By Application"
+          }
+        },
+        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
+            "linktext": "Application 1",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
+            "linktext": "Application 2",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c939808d-357a-485e-9410-ae296bc0f014": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
+            "linktext": "Application 3",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "b8376ece-b804-476e-a3b5-35b77607dd21": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
+            "linktext": "Application 4",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeping-category.png",
+            "linktext": "Application 5",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
+            "linktext": "Application 6",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
+          "type": "slider",
+          "settings": {
+            "collection": "cleanfreak"
+          }
+        },
+        "3fba68ff-4018-4287-a0a8-a3b997759627": {
+          "type": "slider",
+          "settings": {
+            "collection": "edic"
+          }
+        },
+        "c954c801-0965-4531-a610-39e54b5cb265": {
+          "type": "slider",
+          "settings": {
+            "collection": "mytee"
+          }
+        },
+        "d579de19-efac-4983-a0ab-706511d00621": {
+          "type": "slider",
+          "settings": {
+            "collection": "ipc-eagle"
+          }
+        },
+        "85c252f1-b832-46dd-8d87-dd85d41c1604": {
+          "type": "slider",
+          "settings": {
+            "collection": "advance"
+          }
+        },
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
+          "type": "crheader",
+          "settings": {
+            "sectionheading": "Hard Floor & Carpet Machine Guides"
+          }
+        },
+        "cb754198-b199-4317-879a-0b37a3021253": {
+          "type": "resource",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/burnishing-a-floor.jpg",
+            "heading": "Burnishing a Floor",
+            "subheading": "<p>How to burnish a finished floor to achieve the highest possible shine.<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/pages\/burnishing-a-floor"
+          }
+        },
+        "fb749f3a-8ef1-4334-80d8-2cc9ed42cebd": {
+          "type": "resource",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Scrubbing_with_Buffer.jpg",
+            "heading": "Floor Scrubbing With a Buffer",
+            "subheading": "<p>How to properly clean hard floor surfaces with a buffer to eliminate scuff marks and remove dirt.<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/pages\/floor-buffer-scrubbing"
+          }
+        },
+        "408a97bb-e9bf-425a-bf97-50d3e024d456": {
+          "type": "resource",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Scrubbing_with_Auto_Scrubber.jpg",
+            "heading": "Scrubbing with an Auto Scrubber",
+            "subheading": "<p>How to clean a hard floor surface with an auto scrubber and leave it completely dry, eliminating any chance of a slip or fall due to a slippery floor.<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/pages\/automatic-floor-scrubbing"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "03610712-ea4b-4140-92ab-1335847e8183",
+        "35dd6d94-e689-4b11-93d6-d72c567a56c7",
+        "544f61ad-a72b-4850-aa39-ca8bbcc22b57",
+        "4df13406-e179-4e52-a101-eb150bee03b7",
+        "37f90a06-80c5-4a48-9374-6c3359116fe9",
+        "d2f29606-1b28-4577-ae66-f39ecdd812ac",
+        "a60ce2f2-8e8a-4df0-b783-0dc15d675fa7",
+        "416df694-767b-4c68-8e90-2c0cff08dc2a",
+        "5b4a6417-f1c3-413e-8694-20fe1b499722",
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
+        "c939808d-357a-485e-9410-ae296bc0f014",
+        "b8376ece-b804-476e-a3b5-35b77607dd21",
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
+        "3fba68ff-4018-4287-a0a8-a3b997759627",
+        "c954c801-0965-4531-a610-39e54b5cb265",
+        "d579de19-efac-4983-a0ab-706511d00621",
+        "85c252f1-b832-46dd-8d87-dd85d41c1604",
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
+        "cb754198-b199-4317-879a-0b37a3021253",
+        "fb749f3a-8ef1-4334-80d8-2cc9ed42cebd",
+        "408a97bb-e9bf-425a-bf97-50d3e024d456"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

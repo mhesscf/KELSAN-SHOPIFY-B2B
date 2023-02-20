@@ -1,0 +1,83 @@
+<section class="product-single-spec-manual">
+    <div class="container">
+        <div class="row {% if product.metafields.plytix.sds != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}space-between {% else %}centered-content{% endif %}">
+            <div class="l">
+                <h2>Product Information + Specs</h2>
+                <div class="spec-table">
+                    <div class="inner">
+                        {% assign specs = product.metafields.plytix.specs | split: ";;" %}
+                        {% for spec in specs %}
+                            {% assign attr = spec | split: "::" %}
+                            {% if attr[1] != "None" %}
+                                <div class="row">
+                                    <div class="label">{{ attr[0] }}</div>
+                                    {% assign attrVal = attr[1] | remove: "[" | remove: "]" |  remove : "'" %}
+                                    {% if attrVal == 'false' or attrVal == 'False' %}
+                                        <div class="value">No</div>
+                                    {% else %}
+                                        <div class="value">{{ attr[1] | remove: "[" | remove: "]" |  remove : "'" | replace: ';', ', ' | newline_to_br }}</div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% if product.metafields.plytix.sds != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}
+                <div class="r">
+                    <h2>Safety, Warranty + User Manuals</h2>
+                    <div class="data-sheets">
+                        {% if product.metafields.plytix.sds != blank  %}
+                            <div class="sheet-row">
+                                <div class="sheet-label">Product Safety Data Sheet</div>
+                            </div>
+                            {%- assign sdsheets = product.metafields.plytix.sds | split:"," -%}
+                            {%- for sdsheet in sdsheets -%}
+                                <div class="sheet-row">
+                                    <a taget="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ sdsheet | split: '/' | last }}</a>
+
+                                </div>
+                            {%- endfor -%}
+                        {%- endif -%}
+                        {% if product.metafields.plytix.manual != blank  %}
+                            <div class="sheet-row">
+                                <div class="sheet-label">Product Manual</div>
+                            </div>
+                            {%- assign manuals = product.metafields.plytix.manual | split:"," -%}
+                            {%- for manual in manuals -%}
+                                <div class="sheet-row">
+                                    <a taget="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ manual | split: '/' | last }}</a>
+                                </div>
+                            {%- endfor -%}
+                        {%- endif -%}
+                        {% if product.metafields.plytix.literature != blank  %}
+                            <div class="sheet-row">
+                                <div class="sheet-label">Product Literature</div>
+                            </div>
+                            {%- assign literature = product.metafields.plytix.literature | split:"," -%}
+                            {%- for lit in literature -%}
+                                <div class="sheet-row">
+                                    <a taget="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ lit | split: '/' | last }}</a>
+                                </div>
+                            {%- endfor -%}
+                        {%- endif -%}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "product-specs-info",
+    "class": "product-specs-info--section",
+    "presets": [
+        {
+            "category": "product-specs-info-section",
+            "name": "Product Specs and Info",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

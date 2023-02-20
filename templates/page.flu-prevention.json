@@ -1,0 +1,195 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To provide a healthy, flu free environment for employees to strive and perform their daily tasks without interruption."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Disinfectant Spray",
+            "linkurl": "shopify:\/\/collections\/liquid-aerosol-disinfectants"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Disinfectant Wipes",
+            "linkurl": "shopify:\/\/collections\/disinfectant-wipes"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Face Masks & Respirators",
+            "linkurl": "shopify:\/\/collections\/face-masks"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Facial Tissues",
+            "linkurl": "shopify:\/\/collections\/facial-tissue"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Hand Sanitizing Solutions",
+            "linkurl": "shopify:\/\/collections\/hand-sanitizers"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Hand Wipes",
+            "linkurl": "shopify:\/\/collections\/hand-wipes"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Hand Soaps",
+            "linkurl": ""
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Latex\/Nitrile\/Synthetic\/Vinyl Gloves",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Introduction to Flu Protection -",
+            "steptext": "<p>The #1 prevention measure that the CDC (<a href=\"https:\/\/www.cdc.gov\/flu\/prevent\/index.html\" target=\"_blank\" title=\"Center for Disease Control & Prevention\">Center for Disease Control & Prevention<\/a>) recommends is to get a flu vaccine for the upcoming flu season. Besides getting a flu vaccine, there are many everyday precautionary measures that we can all take in our day to day lives to minimize the risk of spreading the flu. The products listed below are what we recommend to help prevent the spread of these dangerous viruses.<\/p><p><strong>First rule to preventing the spread of germs: Sneeze into a tissue or your elbow!<\/strong><\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Hand Sanitizing -",
+            "steptext": "<p>It is a good idea to keep a hand sanitizing solution near you at all times. This pump version is perfect for use in restrooms, at your home, or in the workplace. We also have convenient <a href=\"\/collections\/hand-wipes\" title=\"Hand Wipes\">sanitizing wipes<\/a> available, which are perfect for keeping in your vehicle, to be used as needed. Hand sanitizers will prevent the most harmful bacteria and viruses from spreading, as long as it has at least a 60% alcohol concentration. However, hand washing with soap and hot water combined with a thorough drying with clean paper towels is still the best method of hand washing. However, hand washing with soap and hot water combined with a thorough drying with clean paper towels is still the best method of hand washing.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Hand Washing -",
+            "steptext": "<p>Thoroughly scrub your hands with a hand soap several times a day. This includes after using the bathroom, coming in contact with other people, and before and after eating. This will help to prevent the spread of the virus from person to person. After washing, be sure to dry your hands thoroughly with clean paper towels. This will remove any soils left behind as well as remove the moisture that germs love to live in.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Disinfecting Common Use Areas -",
+            "steptext": "<p>Disinfect areas that get used frequently by multiple people. Use a disinfectant spray, like our Clorox Healthcare® Bleach Germicidal Disinfectant Cleaner, or a wipe, like our Clorox Germicidal Disinfecting Wipes, to clean these areas frequently. This will help to prevent the spread of viruses and other bacteria. This would include computer keyboards, desks, telephones, countertops, and door handles.<\/p>",
+            "product": ""
+          }
+        },
+        "58cecce7-e38a-48d1-9202-c4ab15a30d35": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Using Tissues -",
+            "steptext": "<p>When you are about to sneeze or cough, use a tissue to help keep the environment free of germs. Throw it into a trash container after this. Stay away from touching your eyes, nose, and mouth with your bare hands, germs are spread this way. Every precaution that can be put in place to keep an environment germ free, helps to keep everyone in the environment healthy.<\/p>",
+            "product": ""
+          }
+        },
+        "972ff28d-ecd8-4228-a562-aae7bf734e0c": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "6",
+            "stepheading": "Breathing Protection -",
+            "steptext": "<p>If you are part of a large work force, and are in close contact with people who may have come in contact with a virus, you may want to incorporate a face mask, like something similar to the blue medical cone face mask, into your prevention measures. This would especially apply to those people who work in care facilities, such as hospitals or retirement homes.<\/p>",
+            "product": ""
+          }
+        },
+        "98c93357-d483-46ff-bf4f-e2c818590bdc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "7",
+            "stepheading": "Hand Protection -",
+            "steptext": "<p>Gloves are another part of the prevention process that may not be necessary for everyone, but it does apply to those in the medical care industry. We have nitrile, vinyl, and latex gloves available, depending on your specific needs. We would definitely recommend getting the \"Exam Grade\" quality gloves, because these will be of the highest quality and will not allow any germs to pass through the glove material.<\/p>",
+            "product": ""
+          }
+        },
+        "f57a98fe-801d-41af-913b-e517af2a474d": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "8",
+            "stepheading": " Overview -",
+            "steptext": "<p>All of these steps will help prevent the spreading of viruses and flu like symptoms, but you'll have to decide which steps are the most important to you. Take care and be cautious of what you touch and especially who you come in contact with if you are not feeling well. Sometimes the best choice is to stay home and let yourself rest, instead of spreading the virus or flu.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "58cecce7-e38a-48d1-9202-c4ab15a30d35",
+        "972ff28d-ecd8-4228-a562-aae7bf734e0c",
+        "98c93357-d483-46ff-bf4f-e2c818590bdc",
+        "f57a98fe-801d-41af-913b-e517af2a474d"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

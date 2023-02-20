@@ -1,0 +1,239 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To thoroughly clean a business\/office setting to provide a comfortable, healthy and friendly working environment."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Backpack Vacuums",
+            "linkurl": "shopify:\/\/collections\/backpack-vacuums"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dual Motor Vacuums",
+            "linkurl": "shopify:\/\/collections\/dual-motor-vacuums"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Single Motor Upright Vacuums",
+            "linkurl": "shopify:\/\/collections\/single-motor-vacuums"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Upright Brooms",
+            "linkurl": "shopify:\/\/collections\/upright-brooms"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Pans",
+            "linkurl": "shopify:\/\/collections\/dustpans"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Caution, Safety & Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Disinfectant Sprays",
+            "linkurl": "shopify:\/\/collections\/liquid-aerosol-disinfectants"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Disinfectant Wipes",
+            "linkurl": "shopify:\/\/collections\/disinfectant-wipes"
+          }
+        },
+        "b8264656-2f13-43ba-b0fe-00808be70d5f": {
+          "type": "link",
+          "settings": {
+            "linktext": "Rotary Floor Scrubbing Buffers",
+            "linkurl": "shopify:\/\/collections\/floor-buffers"
+          }
+        },
+        "eab91ce3-f82f-4940-b0a6-a18c4847cd5d": {
+          "type": "link",
+          "settings": {
+            "linktext": "Furniture & Wood Polishing Cleaners",
+            "linkurl": "shopify:\/\/collections\/furniture-wood-polishes"
+          }
+        },
+        "1b9019d8-722f-48c8-a713-d0e57e5a627d": {
+          "type": "link",
+          "settings": {
+            "linktext": "Garbage Bags",
+            "linkurl": "shopify:\/\/collections\/trash-can-liners"
+          }
+        },
+        "7417d197-b74d-4b3e-b162-bd75d09b05e5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Glass Cleaning Chemicals",
+            "linkurl": "shopify:\/\/collections\/glass-cleaners"
+          }
+        },
+        "98f679b9-b367-4f7f-9249-b77875e562e1": {
+          "type": "link",
+          "settings": {
+            "linktext": "High Speed Burnishers",
+            "linkurl": "shopify:\/\/collections\/floor-burnishers"
+          }
+        },
+        "ff5f971c-a51c-42d8-b478-e8e2276acde7": {
+          "type": "link",
+          "settings": {
+            "linktext": "Janitorial Carts",
+            "linkurl": "shopify:\/\/collections\/janitorial-carts"
+          }
+        },
+        "e3d39436-1914-4607-947d-3af2b6ca06d5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Portable Carpet Spotters",
+            "linkurl": "shopify:\/\/collections\/portable-carpet-spotters"
+          }
+        },
+        "3dfa7a16-606d-402d-9103-dab6587beb62": {
+          "type": "link",
+          "settings": {
+            "linktext": "Stain Removing Carpet Chemicals",
+            "linkurl": "shopify:\/\/collections\/stain-removal-carpet-spotting-chemicals"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "b8264656-2f13-43ba-b0fe-00808be70d5f",
+        "eab91ce3-f82f-4940-b0a6-a18c4847cd5d",
+        "1b9019d8-722f-48c8-a713-d0e57e5a627d",
+        "7417d197-b74d-4b3e-b162-bd75d09b05e5",
+        "98f679b9-b367-4f7f-9249-b77875e562e1",
+        "ff5f971c-a51c-42d8-b478-e8e2276acde7",
+        "e3d39436-1914-4607-947d-3af2b6ca06d5",
+        "3dfa7a16-606d-402d-9103-dab6587beb62"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prepping the Office Area -",
+            "steptext": "<p>You'll want to gather all of the necessary cleaning chemicals, equipment and accessories for the job. Load up your janitorial cart with supplies and chemicals and head towards the cleaning area.<br\/>If any mopping or extensive cleaning is to be done, you'll need to put up \"closed for cleaning\" signs and cordon off the area with the correct caution\/wet floor signs.The following steps are based on the assumption that someone will be able to clean the office daily. If this is not the case, the daily and weekly clean up procedures can be combined.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Daily Cleaning Procedures -",
+            "steptext": "<p>A. Visually check the area for any types of debris or paper. Pick these items up and dispose of them properly.<\/p><p>B. Vacuum up any dirt or debris that can't be removed by hand. Using a backpack vacuum is a great way to quickly and efficiently vacuum up around office cubicles.<\/p><p>C. If there are any spots or stains on the carpets, floors, walls, furniture or baseboards immediately wipe those up. For carpet or upholstery stains, start by identifying the type of stain by using our stain removal instructions guide. Then follow up with a portable spotter like our carpet spotter stain removing machine to remove the stain and chemical.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Weekly Cleaning Procedures -",
+            "steptext": "<p>A. Dust all surfaces, including desks, filing cabinets, cubicle walls and shelves.<\/p><p>B. Empty trash cans and replace garbage bags, a very popular size is the high density 12-16 gallon trash bags for individual offices. Clean trash can and surrounding area if necessary.<\/p><p>C. Wipe down desks, telephones, calculators, and computer keyboards thoroughly using a disinfectant spray that has been sprayed on a micro fiber cloth or a disinfecting wipe, like our germicidal disinfecting wipes.<\/p><p>D. Dust heating vents, ledges, door jambs and window sills at any easily reachable level.<\/p><p>E. Dust mop all tiled or hard surface floors, then sweep up that debris into dust pan following our dust mop procedures.<\/p><p>F. Wet mop all hard floor surfaces following our step by step floor mopping instructions.<\/p><p>G. Vacuum all carpeted floors, starting with the mats and runners, following our carpet vacuuming procedures.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Monthly Cleaning Procedures -",
+            "steptext": "<p>A. Clean wall-mounted units such as paper towel dispensers and hand dryers with a disinfectant spray or wipe. Paying special attention to all fixtures and items in the restroom, all the while following our restroom cleaning procedures.<\/p><p>B. Wipe down all vertical surfaces in the office with an all-purpose cleaner.<\/p><p>C. Spray buff hard surface floors following our spray buffing a floor or our burnishing a floor procedures. The spray procedures will be used with a low speed floor buffer, like our 20\" low speed floor buffing polisher. The burnishing procedures will be best utilized with a high speed burnisher like our ultra high speed burnisher. If the hard floor surfaces are particularly dirty start with scrubbing the floors with a low speed buffer.<\/p><p>D. Polish desks, tables, chairs, and any other wood objects by using a furniture polish to help maintain a professional shine.<\/p><p>E. Dust or vacuum all vents, overhead circular fans, and behind hard to reach areas like tables and desks.<\/p><p>F. Clean all windows with a glass cleaner to remove all marks and fingerprints.<\/p>",
+            "product": ""
+          }
+        },
+        "ee1f5be1-9ff6-4d07-a14f-2ec4146ebaac": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Semi-Annual Cleaning Procedures -",
+            "steptext": "<p>A. Strip and recoat any tiled floors to remove scuff marks and any imperfections in the finish. Following our stripping a floor and our applying floor finish procedures will guarantee a high shine on your floor This will also make it extremely durable for long periods of time, extending the time between additional stripping and re-coatings.<\/p><p>B. Spray buff or burnish the floor immediately to make the finish \"pop\" as much as possible.<\/p><p>C. Institute a burnishing program to prolong the life of your floor, as well as maintaining its appearance at all times of the year.<\/p><p>D. Extract all carpeting, runners, mats and upholstery following our carpet extracting instructions. For any heavily soiled areas, or traffic pattern areas, follow our carpet bonneting instructions for proper carpet scrubbing instructions.<\/p>",
+            "product": ""
+          }
+        },
+        "ddfec364-e468-4f0a-a75a-36014aaad8f7": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "6",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Immediately clean up all equipment, and clean out mop buckets and other cleaning gear. Rinse out all mops and hang to dry. Place all cleaning supplies and accessories back onto the janitorial cart, and return everything back to its original storage place. Remove all garbage and debris by placing it in a garbage bag and disposing of it properly. Remove all carpet dryers and caution\/wet floor signs once the areas are completely dry. Return any moved objects or furniture back to their original positions. A cleaning cart is a great way to keep all your supplies and waste in a mobile platform.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "ee1f5be1-9ff6-4d07-a14f-2ec4146ebaac",
+        "ddfec364-e468-4f0a-a75a-36014aaad8f7"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

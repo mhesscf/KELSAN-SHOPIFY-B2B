@@ -1,0 +1,316 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Wet Dry Vacuums",
+        "chsectiontext": "Shop a wide range of wet dry vacuums including auto discharge vacs, shop vacs, and tank vacs.",
+        "image": "shopify:\/\/shop_images\/InUse-18VAC-24SQ-Wide.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "44c3c628-d35b-4cc6-b424-ac6798ffd334": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-quench-wet-push-vacuum"
+          }
+        },
+        "caeed74c-ab5f-4b3e-9645-9d5a3b3e518c": {
+          "type": "slide",
+          "settings": {
+            "product": "automatic-pump-out-wet-dry-vacuum"
+          }
+        },
+        "2892408d-5c84-4974-a63b-b243ea65eb58": {
+          "type": "slide",
+          "settings": {
+            "product": "trot-mop-wet-dry-vacuum-squeegee"
+          }
+        },
+        "4f07c392-81c9-4a04-9f80-fc6ae213ee78": {
+          "type": "slide",
+          "settings": {
+            "product": "battery-powered-wet-dry-vac"
+          }
+        },
+        "1e5d0df4-cfe8-4f85-9f54-18c8e316aa80": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-hepa-critical-filter-vac"
+          }
+        },
+        "cd45cc99-3ac7-44ee-a4d2-1137307dcf0c": {
+          "type": "slide",
+          "settings": {
+            "product": "compressed-air-external-filter-vacuum"
+          }
+        },
+        "dfb6369b-88c6-4c2e-a63b-1db26f52b193": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-proguard-wet-vacuum-w-squeegee"
+          }
+        }
+      },
+      "block_order": [
+        "44c3c628-d35b-4cc6-b424-ac6798ffd334",
+        "caeed74c-ab5f-4b3e-9645-9d5a3b3e518c",
+        "2892408d-5c84-4974-a63b-b243ea65eb58",
+        "4f07c392-81c9-4a04-9f80-fc6ae213ee78",
+        "1e5d0df4-cfe8-4f85-9f54-18c8e316aa80",
+        "cd45cc99-3ac7-44ee-a4d2-1137307dcf0c",
+        "dfb6369b-88c6-4c2e-a63b-1db26f52b193"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "auto-detailing",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Wet Dry Vacuums by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-discharge-vacuum.jpg",
+            "linktext": "Auto Discharge Vacuums",
+            "linkurl": "shopify:\/\/collections\/auto-discharge-vacs"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shop-vacuums.jpg",
+            "linktext": "Shop Vacuums",
+            "linkurl": "shopify:\/\/collections\/shop-vacuums"
+          }
+        },
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tank-vacuums.jpg",
+            "linktext": "Tank Vacuums",
+            "linkurl": "shopify:\/\/collections\/tank-vacuums"
+          }
+        },
+        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
+          "type": "caheader",
+          "disabled": true,
+          "settings": {
+            "sectionheading": "Shop By Application"
+          }
+        },
+        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
+            "linktext": "Application 1",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
+            "linktext": "Application 2",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c939808d-357a-485e-9410-ae296bc0f014": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
+            "linktext": "Application 3",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "b8376ece-b804-476e-a3b5-35b77607dd21": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
+            "linktext": "Application 4",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeping-category.png",
+            "linktext": "Application 5",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
+            "linktext": "Application 6",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
+          "type": "slider",
+          "settings": {
+            "collection": "ipc-eagle"
+          }
+        },
+        "3fba68ff-4018-4287-a0a8-a3b997759627": {
+          "type": "slider",
+          "settings": {
+            "collection": "trusted-clean"
+          }
+        },
+        "c954c801-0965-4531-a610-39e54b5cb265": {
+          "type": "slider",
+          "settings": {
+            "collection": "tornado"
+          }
+        },
+        "6d84056b-c2ec-42eb-a1ab-1df9cacb5543": {
+          "type": "slider",
+          "settings": {
+            "collection": "viper"
+          }
+        },
+        "35c37aa4-bcae-4372-bb33-f50c204d345e": {
+          "type": "slider",
+          "settings": {
+            "collection": "proteam"
+          }
+        },
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
+          "type": "crheader",
+          "settings": {
+            "sectionheading": "Auto Detailing Resources"
+          }
+        },
+        "cb754198-b199-4317-879a-0b37a3021253": {
+          "type": "resource",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
+            "heading": "Auto Detailing Resource",
+            "subheading": "<p>A brief description here to inform the user about the resource<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/pages\/how-tos"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "416df694-767b-4c68-8e90-2c0cff08dc2a",
+        "5b4a6417-f1c3-413e-8694-20fe1b499722",
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
+        "c939808d-357a-485e-9410-ae296bc0f014",
+        "b8376ece-b804-476e-a3b5-35b77607dd21",
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
+        "3fba68ff-4018-4287-a0a8-a3b997759627",
+        "c954c801-0965-4531-a610-39e54b5cb265",
+        "6d84056b-c2ec-42eb-a1ab-1df9cacb5543",
+        "35c37aa4-bcae-4372-bb33-f50c204d345e",
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
+        "cb754198-b199-4317-879a-0b37a3021253"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

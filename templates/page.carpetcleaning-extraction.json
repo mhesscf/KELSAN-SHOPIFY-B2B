@@ -1,0 +1,197 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To extract dirt from the carpet fibers to maintain a clean and healthy carpeted environment."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Cleaning Box Extractors",
+            "linkurl": "shopify:\/\/collections\/box-extractors"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Cleaning Extractor Tools & Accessories",
+            "linkurl": "shopify:\/\/pages\/carpet-supplies"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Cleaning Shampoo & Solutions",
+            "linkurl": "shopify:\/\/collections\/carpet-upholstery-shampoo"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Deodorizers",
+            "linkurl": "shopify:\/\/collections\/liquid-deodorizers"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Dryers & Blowers",
+            "linkurl": "shopify:\/\/collections\/axial-fans"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Pre-Spray Chemicals",
+            "linkurl": "shopify:\/\/collections\/pre-spray-chemicals"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Commercial Upright Vacuums",
+            "linkurl": "shopify:\/\/collections\/vacuums"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Liquid Carpet Defoamers",
+            "linkurl": "shopify:\/\/collections\/liquid-defoamers"
+          }
+        },
+        "3a8ef405-cc01-4207-bf32-91554aa98852": {
+          "type": "link",
+          "settings": {
+            "linktext": "Plastic Pails & Buckets",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "e4780e3e-fdc6-4065-9bf0-ea15ed723d3f": {
+          "type": "link",
+          "settings": {
+            "linktext": "Safety Supplies",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        },
+        "697ac95b-df95-4101-80ab-17565862bf7e": {
+          "type": "link",
+          "settings": {
+            "linktext": "Self Contained Carpet Scrubbers",
+            "linkurl": "shopify:\/\/collections\/self-contained-carpet-extractors"
+          }
+        },
+        "bb6d3b33-32c0-4aee-8ff3-49b230d8e6f5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Stain Removers",
+            "linkurl": "shopify:\/\/collections\/stain-removal-carpet-spotting-chemicals"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc",
+        "3a8ef405-cc01-4207-bf32-91554aa98852",
+        "e4780e3e-fdc6-4065-9bf0-ea15ed723d3f",
+        "697ac95b-df95-4101-80ab-17565862bf7e",
+        "bb6d3b33-32c0-4aee-8ff3-49b230d8e6f5"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prepping Your Carpet Extractor -",
+            "steptext": "<p>Mix your carpet cleaning chemical according to the directions on the label of the bottle. A great all-purpose carpet cleaning solution is our Extraction Care Carpet & Upholstery Cleaner. Fill the solution tank of your extractor with the proper amount of chemical and water. If it is non-heated unit, it is a good idea to fill your solution tank with hot tap water. If you're using a heated machine, this would be the time to turn the heater on and circulate the water so the solution is at an optimum temperature when you begin cleaning. Attach all hoses and the necessary tools. Place a few ounces of a defoamer into a container and suck it up through the vacuum hose. This will coat all surfaces through the hoses and recovery tank, eliminating foam as the shampoo is recovered.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Prepping the Extraction Area -",
+            "steptext": "<p>Put on a pair of disposable shoe covers to keep from tracking more dirt and debris into the carpeted area. Remove all furniture and other obstructions from the carpeted area that you will be cleaning. Vacuum the area with a powerful vacuum, like our 14 inch commercial vacuum cleaner, to remove as much dirt as possible before the extraction takes place. If there are any stains, those will need to be treated with the proper stain remover and portable spotter. Follow the stain removal instructions guide for each possible type of stain.<br\/><br\/>Place the extractor in a remote position, often in a corner towards the entrance to the room. Plug extractor into a 3-pronged outlet. If it is a heated model, you'll need to find 2, 20 amp outlets on separate circuits. Often times a circuit locator is built into the machine or comes an accessory that can tell you if 2 outlets are, or are not on separate circuits.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Extracting the Carpet -",
+            "steptext": "<p>If the area is extremely soiled, you'll want to do a pre-spray of the entire area to allow the chemicals to soak and break apart the bonds of the dirt, freeing it from the carpet fibers. This can be accomplished with a pre-spray extraction wand or pump-up sprayer.<br\/><br\/>If the area is not completely and totally filled with dirt, you can move right into the first steps of extraction. Start at a point that is furthest away from the entrance to the room. When using a box style extractor like our heated box extractor, you'll start with the drag wand. Make a forward pass, laying down a stream of solution, then come back with the vacuum head on the drag wand and extract the solution you just put down. Move over and repeat the same steps. Overlapping by a few inches will ensure a thorough cleaning.<br\/><br\/>If you're using a self-contained extractor like our professional carpet scrubber extractor, you'll start in the same corner, but you'll be pulling the extractor as you walk backwards. Flip on the switches for the pump, vacuum and brush. As the switch is depressed solution will be sprayed onto the carpeted surface and the brush will spin. So, as you start to walk backwards, you'll depress the button and the machine will spray down a solution. The brush will come over that area and scrub the carpet, and then the vacuum shoe will come over that area and remove the solution. As you're finishing that first pass, make sure to stop spraying a few inches before the end of your path. Go over that area with the vacuum shoe to ensure all solution is recovered. Lean the machine back and walk forward to start your next pass. Overlap a few inches to ensure proper coverage.<br\/><br\/>Use a hand tool with your extractor, or a small portable spotter to clean up any areas that are unreachable by your larger extractor. Use the exact same procedures with just a clean tank of water to rinse out the carpet and remove as much of the shampoo as possible. Think of this last step as a rinse, similar to what happens when doing a load of laundry in your washing machine. <strong>*Note:<\/strong> If extensive graying occurs after the carpet has dried, you'll want to use a neutralizing product, like our Film Off neutralizer to remove as much of the cleaning agent as possible to return the carpet to its natural state. This occurs from the cleaning agent not being fully removed from the carpet during cleaning and keeping the carpet in an alkaline state. Proper dilution of the shampoo solution in the beginning will minimize the possibility of this occurring.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Drying the Extracted Surfaces -",
+            "steptext": "<p>Set up several carpet dryers like our air moving fan, having them blow in several different directions. This will help to move as much air as possible across the damp carpet to dry it as quickly as possible. Turning the air conditioning, heat or circulation fans on high in the area or building will also help to speed dry time.<\/p>",
+            "product": ""
+          }
+        },
+        "254a5ffb-a368-488d-ab9a-24c03ccb24f5": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Most carpet extractors will have either a dump valve or a dump hose. A dump valve can be backed up to a toilet, bucket, floor drain, or slop sink and dumped. If there is any clean solution left in the solution tank, simply take the vacuum hose and suck up the rest of the clean solution. Then again dump out the recovery tank. Flush out and clean both tanks as thoroughly as possible. Leave the tank covers off to allow the tanks to air out and deodorize.<br\/><br\/>Your carpet extractor should be winterized between uses if it is to be exposed to freezing temperatures. To winterize your machine, pour 1\/2 gallon of sub-zero windshield wiper fluid into the empty solution tank. Run the pump until fluid flows through the tank, and all attachments. Then run 1 gallon of water through the extractor before the next use.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "254a5ffb-a368-488d-ab9a-24c03ccb24f5"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

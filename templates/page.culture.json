@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "46c78989-041b-4123-83d9-423977fa834a": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "CleanFreak Culture",
+        "chsectiontext": ""
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "85707304-fc0c-4a10-98a0-f0926cd75d78": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify:\/\/shop_images\/cleanfreak-team-crop.jpg",
+        "crop": "center",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "right",
+        "mobile_image_alignment": "bottom",
+        "heading": "What does it truly mean to be a clean freak?",
+        "subheading": "<p>This is a question we ask ourselves every day. Historically the term clean freak comes from neat freak. A neat freak has been described as someone who is extremely particular about the organization of all items in a particular area. A clean freak, however has been molded through popular culture to mean someone who keeps an extremely clean home or personal area. Essentially, a clean freak is a perfectionist of there domestic domain.<\/p><p>At CleanFreak.com it is our goal to empower the \"clean freak\" and make the world a cleaner place to live. We strive for a community of cleaners and work to develop better practices for the cleaning industry.<\/p><p>Embrace your inner clean.<\/p><p><a href=\"\/pages\/about-us\" title=\"About Us\">About Us<\/a><\/p><p><a href=\"\/pages\/careers\" title=\"Careers\">Careers<\/a><\/p><p><a href=\"\/pages\/contact\" title=\"Contact\">Contact Us<\/a><\/p><p><a href=\"\/pages\/newsletter\" title=\"CleanFreak Newsletter\">Email Sign Up<\/a><\/p>",
+        "text_alignment": "left",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "97ac8cbf-49a3-410a-8fe9-885da970465d": {
+      "type": "dynamic-rich-text",
+      "disabled": true,
+      "settings": {
+        "width": "wide",
+        "title": "Past Rebates",
+        "text": "<ul><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q3-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q3-rebate-coupon.pdf?v=1671200947\">Q3 2022 End-User Rebate (07\/01\/2022 to 09\/30\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q2-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q2-rebate-coupon.pdf?v=1671200947\">Q2 2022 End-User Rebate (04\/01\/2022 to 06\/30\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q1-rebate-coupon.pdf?v=1671200948\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q1-rebate-coupon.pdf?v=1671200948\">Q1 2022 End-User Rebate (01\/01\/2022 to 03\/31\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2021-q4-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2021-q4-rebate-coupon.pdf?v=1671200947\">Q4 2021 End-User Rebate (10\/01\/2021 to 12\/31\/2021) (PDF)<\/a><\/li><\/ul>",
+        "heading_size": "medium",
+        "text_alignment": "left"
+      }
+    },
+    "4a9177aa-893a-44b2-bf06-bbe7af831b4c": {
+      "type": "image-link-grid",
+      "disabled": true,
+      "blocks": {
+        "fb944c3a-acb2-4f3e-89be-e7ea342a6b57": {
+          "type": "link",
+          "settings": {
+            "linktext": "About Us",
+            "linkurl": ""
+          }
+        },
+        "2fd61511-a6a6-4e27-8bc6-3c874e22b630": {
+          "type": "link",
+          "settings": {
+            "linktext": "",
+            "linkurl": ""
+          }
+        }
+      },
+      "block_order": [
+        "fb944c3a-acb2-4f3e-89be-e7ea342a6b57",
+        "2fd61511-a6a6-4e27-8bc6-3c874e22b630"
+      ],
+      "settings": {
+        "sectionheading": "",
+        "viewalllinkurl": "",
+        "viewalllinktext": ""
+      }
+    },
+    "1a99b628-c82a-44ae-aae5-263a7c0eb49d": {
+      "type": "circle-link-grid",
+      "disabled": true,
+      "blocks": {
+        "e0119bf5-b29b-4255-89ee-9ba9a20b40f1": {
+          "type": "link",
+          "settings": {
+            "circleimg": "shopify:\/\/shop_images\/colored-spraybottles.jpg",
+            "linktext": "About us",
+            "linkurl": ""
+          }
+        }
+      },
+      "block_order": [
+        "e0119bf5-b29b-4255-89ee-9ba9a20b40f1"
+      ],
+      "settings": {
+        "sectionheading": ""
+      }
+    }
+  },
+  "order": [
+    "46c78989-041b-4123-83d9-423977fa834a",
+    "main",
+    "85707304-fc0c-4a10-98a0-f0926cd75d78",
+    "97ac8cbf-49a3-410a-8fe9-885da970465d",
+    "4a9177aa-893a-44b2-bf06-bbe7af831b4c",
+    "1a99b628-c82a-44ae-aae5-263a7c0eb49d"
+  ]
+}

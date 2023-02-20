@@ -1,0 +1,139 @@
+{% unless section.settings.cart_gwp_product_1 == blank %}
+    {% assign gwp1 = 0 %}
+        {% for item in cart.items %}
+            {% assign product1 = "" %}
+            {% assign product6 = all_products[section.settings.cart_gwp_product_6].handle %}
+            {% assign product5 = all_products[section.settings.cart_gwp_product_5].handle %}
+            {% assign product4 = all_products[section.settings.cart_gwp_product_4].handle %}
+            {% assign product3 = all_products[section.settings.cart_gwp_product_3].handle %}
+            {% assign product2 = all_products[section.settings.cart_gwp_product_2].handle %}
+            {% assign product1 = all_products[section.settings.cart_gwp_product_1].handle %}
+
+            {% if
+                    item.product.handle == product1
+                    or item.product.handle == product2
+                    or item.product.handle == product3
+                    or item.product.handle == product4
+                    or item.product.handle == product5
+                    or item.product.handle == product6
+            %}
+            {% assign specific_product = all_products[product1] %}
+
+
+
+            {% endif %}
+        {% endfor %}
+
+
+    {% assign product_to_add_auto = all_products[section.settings.free_product] %}
+
+    {% unless cart.item_count == 0 or product_to_add_auto.empty? or product_to_add_auto.variants.first.available == false %}
+
+
+        {% assign variant_id = product_to_add_auto.variants.first.id %}
+        <script src="{{ 'jquery-2.2.4.min.js' | asset_url }}"></script>
+        {% if allProducts == "no" %}
+
+            {% assign isProduct = false %}
+
+            {% for item in cart.items %}
+                {% if item.product.handle == specific_product.handle %}
+                    {% assign isProduct = true %}
+                {% endif %}
+            {% endfor %}
+            {{ isProduct }}
+
+
+            {% if isProduct == true %}
+
+                <script>
+
+                    jQuery(document).ready(function($){
+
+                        let cartItems = {{ cart.items | json }},
+                            qtyInTheCart = 0,
+                            cartUpdates = {};
+
+                        for (let i=0; i<cartItems.length; i++) {
+                            if ( cartItems[i].id === {{ variant_id }} ) {
+                                qtyInTheCart = cartItems[i].quantity;
+                                break;
+                            }
+                        }
+
+                        if ((cartItems.length === 1) && (qtyInTheCart > 0)) {
+                            cartUpdates = { {{ variant_id }}: 0 }
+
+                        }
+                        else if (( cartItems.length >= 1) && (qtyInTheCart !== 1 )) {
+                            cartUpdates = { {{ variant_id }}: 1 }
+                        }
+                        else {
+                            return;
+                        }
+
+                        const params = {
+                            type: 'POST',
+                            url: '/cart/update.js',
+                            data: { updates: cartUpdates },
+                            dataType: 'json',
+                            success: function(stuff) {
+                                window.location.href = '/cart';
+                            }
+                        };
+
+                        $.ajax(params);
+
+                    });
+
+                </script>
+            {% endif %}
+
+        {% else %}
+
+            <script>
+
+                jQuery(document).ready(function($){
+
+                    let cartItems = {{ cart.items | json }},
+                        qtyInTheCart = 0,
+                        cartUpdates = {};
+
+                    for (let i=0; i<cartItems.length; i++) {
+                        if ( cartItems[i].id === {{ variant_id }} ) {
+                            qtyInTheCart = cartItems[i].quantity;
+                            break;
+                        }
+                    }
+
+                    if ((cartItems.length === 1) && (qtyInTheCart > 0)) {
+                        cartUpdates = { {{ variant_id }}: 0 }
+
+                    }
+                    else if (( cartItems.length >= 1) && (qtyInTheCart !== 1 )) {
+                        cartUpdates = { {{ variant_id }}: 1 }
+                    }
+                    else {
+                        return;
+                    }
+
+                    const params = {
+                        type: 'POST',
+                        url: '/cart/update.js',
+                        data: { updates: cartUpdates },
+                        dataType: 'json',
+                        success: function(stuff) {
+                            window.location.href = '/cart';
+                        }
+                    };
+
+                    $.ajax(params);
+
+                });
+
+            </script>
+
+        {% endif %}
+
+    {% endunless %}
+{% endunless %}

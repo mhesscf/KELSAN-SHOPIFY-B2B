@@ -1,0 +1,209 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/stain-removal.jpg"
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To remove spots & stains from carpet and upholstery. The instructions listed below are a set of guidelines for common stain removal. This will not guarantee the removal of any stain, but will give you the best chance of removing that pesky stain."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "disabled": true,
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Glass Cleaners",
+            "linkurl": "shopify:\/\/collections\/glass-cleaners"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Janitorial Carts",
+            "linkurl": "shopify:\/\/collections\/janitorial-carts"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Plastic Pails & Buckets",
+            "linkurl": "shopify:\/\/collections\/buckets"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Window Cleaning Kits",
+            "linkurl": "shopify:\/\/collections\/window-cleaning-kits"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Window Screen Cleaners",
+            "linkurl": "shopify:\/\/collections\/window-screen-cleaners"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Window Washing Squeegees",
+            "linkurl": "shopify:\/\/collections\/window-washing-squeegees"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Optional: Deionized Water Systems",
+            "linkurl": "shopify:\/\/collections\/deionized-di-water-window-cleaning-carts"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Immediate Action -",
+            "steptext": "<p>Immediate action is important! Whenever anything spills on carpet, upholstery, or clothing, lift off or blot up as much of the staining matter as you can right away. <strong>Do not rub in!<\/strong> Use the T-Bone 3-in-1 spotting spatula that comes with our Power System Spotting Kit, or something similar, to remove excess tar, gum, adhesive, thick or crusted material, food, feces, etc., then vacuum. Remove remaining spot material before proceeding to spot removal procedures.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Identification of the Spot (if Immediate Action is not possible) -",
+            "steptext": "<p>There are several ways that can help to determine what the stain is, including; owner's explanation, general appearance of spot, location, touch or feel (stick, oily, stiff, etc.), and by odor.<\/p><p>Once identified, know the spot composition. <strong>Be patient!<\/strong> Read all product labels thoroughly, and ask detailed questions in order to correctly identify what procedure to follow.<\/p>",
+            "product": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Vacuum -",
+            "steptext": "<p>Always vacuum thoroughly to remove all powders before beginning spotting procedures. <strong>Keep it Simple! <\/strong>Powdered copier toner for example should be vacuumed thoroughly before applying a liquid spotter.<\/p>",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Removal -",
+            "steptext": "<p>Quickly remove as much of the excess solids and liquids as you can, using the T-Bone spotting spatula, or something similar.<\/p>",
+            "product": ""
+          }
+        },
+        "08ac0bf8-a636-41d0-a106-6729f105f4fa": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Test -",
+            "steptext": "<p>Test a small, hidden portion of the fiber to determine effect on dyes and fiber. Drip apply your spotting product sparingly. Use product in the order indicated until spot is removed. <strong>Follow all product directions, cautions, and warnings carefully!<\/strong><\/p>",
+            "product": ""
+          }
+        },
+        "88cb0baf-c681-418e-a851-4f8b628eebf6": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "6",
+            "stepheading": "Break Stain Down -",
+            "steptext": "<p>Use a carpet spotting brush by firmly tapping the stained area repeatedly to break the stain down, and to work in your stain removing chemical. Avoid overly aggressive tapping or brushing!<\/p>",
+            "product": ""
+          }
+        },
+        "7acfad62-93e6-438c-afef-4679912547fa": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "7",
+            "stepheading": "Blot -",
+            "steptext": "<p>Thoroughly blot the area using a clean, white terry cloth towel, or equal absorbent blotting material. Continue shifting the towel to clean with dry areas, while applying downward pressure.<\/p>",
+            "product": ""
+          }
+        },
+        "d9e1f03a-0344-4198-b12f-0a3f925d5156": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "8",
+            "stepheading": "Extract -",
+            "steptext": "<p>Extract all residues, and rinse the carpeting with one of our <a href=\"\/collections\/portable-carpet-spotters\" title=\"Portable Carpet Spotters\">carpet cleaning spotters<\/a>, <a href=\"\/collections\/box-extractors\" title=\"Box Extractors\">extractors<\/a>, or <a href=\"\/collections\/detailing-extractors\" title=\"Detailing Extractors\">detailing extractors<\/a>.<\/p>",
+            "product": ""
+          }
+        },
+        "eb1e32af-8995-404d-8dd8-6fc27157f5f0": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "9",
+            "stepheading": "Dry -",
+            "steptext": "<p>Use a <a href=\"\/collections\/axial-fans\" title=\"Axial Fans\">carpet blower<\/a>, an absorbent towel, a hair dryer, or open a window for air circulation to dry the stained area completely.<\/p>",
+            "product": ""
+          }
+        },
+        "2437c927-452e-409f-ac37-6222069a0198": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "10",
+            "stepheading": "**Note: Mysterious Spot Reappearance -",
+            "steptext": "<p>Wicking of a stain is one of the most common problems when a stain reappears after cleaning has removed it. Wicking is the upward movement of water, or solution during drying from the base of the carpet. To reduce wicking, thoroughly vacuum before spotting, make extra pick-up and removal strokes with your extractor wand, and use carpet blowers.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a",
+        "08ac0bf8-a636-41d0-a106-6729f105f4fa",
+        "88cb0baf-c681-418e-a851-4f8b628eebf6",
+        "7acfad62-93e6-438c-afef-4679912547fa",
+        "d9e1f03a-0344-4198-b12f-0a3f925d5156",
+        "eb1e32af-8995-404d-8dd8-6fc27157f5f0",
+        "2437c927-452e-409f-ac37-6222069a0198"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

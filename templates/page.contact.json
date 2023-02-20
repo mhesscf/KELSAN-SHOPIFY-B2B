@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "c37d8512-7f02-4670-90de-dedcc85a6d6d": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "main": {
+      "type": "page-contact",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "c37d8512-7f02-4670-90de-dedcc85a6d6d",
+    "main"
+  ]
+}

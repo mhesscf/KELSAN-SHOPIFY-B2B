@@ -1,0 +1,67 @@
+{
+  "sections": {
+    "46c78989-041b-4123-83d9-423977fa834a": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "Videos",
+        "chsectiontext": ""
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "85707304-fc0c-4a10-98a0-f0926cd75d78": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify:\/\/shop_images\/proteam-super-coachvac-hepa-10-quart-backpack-vacuum-107109.jpg",
+        "crop": "center",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "right",
+        "mobile_image_alignment": "bottom",
+        "heading": "CleanFreak YouTube",
+        "subheading": "<p>All the best cleaning videos under one roof. See demonstrations on floor machines, news on the latest eco-friendly cleaning chemicals, the best product assembly videos and much more. View all our videos on our <a href=\"https:\/\/www.youtube.com\/user\/cleanfreak1\" target=\"_blank\" title=\"CleanFreak.com on YouTube\">YouTube Channel<\/a>.<br\/><br\/>Comment and tell us what you would like to see in the future.<\/p>",
+        "text_alignment": "left",
+        "button_label": "CleanFreak YouTube",
+        "button_link": "https:\/\/www.youtube.com\/user\/cleanfreak1"
+      }
+    },
+    "97ac8cbf-49a3-410a-8fe9-885da970465d": {
+      "type": "dynamic-rich-text",
+      "disabled": true,
+      "settings": {
+        "width": "wide",
+        "title": "Past Rebates",
+        "text": "<ul><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q3-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q3-rebate-coupon.pdf?v=1671200947\">Q3 2022 End-User Rebate (07\/01\/2022 to 09\/30\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q2-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q2-rebate-coupon.pdf?v=1671200947\">Q2 2022 End-User Rebate (04\/01\/2022 to 06\/30\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q1-rebate-coupon.pdf?v=1671200948\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2022-q1-rebate-coupon.pdf?v=1671200948\">Q1 2022 End-User Rebate (01\/01\/2022 to 03\/31\/2022) (PDF)<\/a><\/li><li><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2021-q4-rebate-coupon.pdf?v=1671200947\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/2021-q4-rebate-coupon.pdf?v=1671200947\">Q4 2021 End-User Rebate (10\/01\/2021 to 12\/31\/2021) (PDF)<\/a><\/li><\/ul>",
+        "heading_size": "medium",
+        "text_alignment": "left"
+      }
+    },
+    "4d32aacd-aa66-4cda-906d-eab2c6a1b05e": {
+      "type": "dynamic-video",
+      "settings": {
+        "title": "",
+        "url": "https:\/\/youtu.be\/Mh6DJMrFYDs",
+        "show_caption": false,
+        "caption": "",
+        "autoplay": false,
+        "aspect_ratio": "16-9",
+        "position": "center-center",
+        "show_overlay": false,
+        "background": "#000000",
+        "opacity": 50
+      }
+    }
+  },
+  "order": [
+    "46c78989-041b-4123-83d9-423977fa834a",
+    "main",
+    "85707304-fc0c-4a10-98a0-f0926cd75d78",
+    "97ac8cbf-49a3-410a-8fe9-885da970465d",
+    "4d32aacd-aa66-4cda-906d-eab2c6a1b05e"
+  ]
+}

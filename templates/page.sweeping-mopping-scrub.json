@@ -1,0 +1,432 @@
+{
+  "sections": {
+    "1663617398865396bc": {
+      "type": "category-header",
+      "settings": {
+        "chsectionheading": "Sweeping & Mopping",
+        "chsectiontext": "Everything you need to care for your floors! Shop brooms, brushes, mopping supplies, dustpans, squeegees and more.",
+        "image": "shopify:\/\/shop_images\/sweeping-mopping-dept-page.jpg"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "6a5adbf7-dcc2-4b93-af10-59d55abc947d": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-easydust-cleaning-and-dusting-sheets"
+          }
+        },
+        "650279f9-a8aa-40c6-86f0-cf43cce0ab09": {
+          "type": "slide",
+          "settings": {
+            "product": "36-inch-microfiber-washable-dust-mop"
+          }
+        },
+        "7154d8ec-ee4a-4284-89cd-0746e5843ebd": {
+          "type": "slide",
+          "settings": {
+            "product": "side-press-mop-bucket-wringer-combo"
+          }
+        },
+        "3d010317-ad29-489f-a6c7-c4db2b43c77c": {
+          "type": "slide",
+          "settings": {
+            "product": "floor-finish-flat-wax-applicator-mop"
+          }
+        },
+        "fdf8bcb5-7511-4db4-8668-5f117f06a162": {
+          "type": "slide",
+          "settings": {
+            "product": "maxiplus-lobby-dust-pan"
+          }
+        },
+        "9a80cf52-e5e2-4320-9250-3f5c29dcfeb9": {
+          "type": "slide",
+          "settings": {
+            "product": "white-handheld-utility-scrub-pad"
+          }
+        },
+        "763ec0b7-dbfe-4b1d-8001-7bca134a3d31": {
+          "type": "slide",
+          "settings": {
+            "product": "the-super-jaws-wet-mop-handle"
+          }
+        },
+        "bb3c532f-cab3-4d33-b5f5-bbd1c4dab897": {
+          "type": "slide",
+          "settings": {
+            "product": "unger-excella-floor-wax-backpack-applicator"
+          }
+        },
+        "e1a8a685-8000-4da4-a787-94b6a5918ec2": {
+          "type": "slide",
+          "settings": {
+            "product": "large-green-wet-mop-looped-narrow-band"
+          }
+        }
+      },
+      "block_order": [
+        "6a5adbf7-dcc2-4b93-af10-59d55abc947d",
+        "650279f9-a8aa-40c6-86f0-cf43cce0ab09",
+        "7154d8ec-ee4a-4284-89cd-0746e5843ebd",
+        "3d010317-ad29-489f-a6c7-c4db2b43c77c",
+        "fdf8bcb5-7511-4db4-8668-5f117f06a162",
+        "9a80cf52-e5e2-4320-9250-3f5c29dcfeb9",
+        "763ec0b7-dbfe-4b1d-8001-7bca134a3d31",
+        "bb3c532f-cab3-4d33-b5f5-bbd1c4dab897",
+        "e1a8a685-8000-4da4-a787-94b6a5918ec2"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "disabled": true,
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "auto-detailing",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "1663875378f697f694": {
+      "type": "category-landing-page",
+      "blocks": {
+        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
+          "type": "menu",
+          "settings": {
+            "menu": "auto-detailing",
+            "show_prod_count": true,
+            "menu_depth_range": 3
+          }
+        },
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
+          "type": "ctheader",
+          "settings": {
+            "sectionheading": "Sweeping, Mopping & Scrubbing by Type"
+          }
+        },
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-sweepers-rakes.jpg",
+            "linktext": "Carpet Sweepers & Rakes",
+            "linkurl": "shopify:\/\/collections\/carpet-sweepers-rakes"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/deck-grout-scrubbing-brush-heads.jpg",
+            "linktext": "Deck & Grout Scrubing Brush Heads",
+            "linkurl": "shopify:\/\/collections\/deck-grout-scrubbing"
+          }
+        },
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dust-mop-heads.jpg",
+            "linktext": "Dust Mop Heads",
+            "linkurl": "shopify:\/\/collections\/dust-mop-heads"
+          }
+        },
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dustpans.jpg",
+            "linktext": "Dustpans",
+            "linkurl": "shopify:\/\/collections\/dustpans"
+          }
+        },
+        "d5555fee-e855-4369-bb4e-b5f8a603808b": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-squeegees.jpg",
+            "linktext": "Floor Squeegees",
+            "linkurl": "shopify:\/\/collections\/floor-squeegees"
+          }
+        },
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/handheld-scrubbing-pads.jpg",
+            "linktext": "Handheld Scrubbing Pads",
+            "linkurl": "shopify:\/\/collections\/handheld-scrubbing-pads"
+          }
+        },
+        "4715b000-00ac-457e-86f2-fac625d11e35": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/handles-for-mop-brooms.jpg",
+            "linktext": "Handles",
+            "linkurl": "shopify:\/\/collections\/handles"
+          }
+        },
+        "7ca63494-4621-4e14-a828-e99d8ea2da53": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mop-buckets.jpg",
+            "linktext": "Mop Buckets & Wringers",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "4388cc88-460c-488f-ab67-6f54519e8705": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mop-frames-accessories.jpg",
+            "linktext": "Mop Frames & Accessories",
+            "linkurl": "shopify:\/\/collections\/mop-frames-accessories"
+          }
+        },
+        "7f9144d8-e94c-4bfc-a1f6-31623b0c33a7": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mop-kits.jpg",
+            "linktext": "Mop Kits",
+            "linkurl": "shopify:\/\/collections\/mop-kits"
+          }
+        },
+        "d6ff9f2a-1d44-4c7d-9c5b-020533780329": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/push-broom-heads.jpg",
+            "linktext": "Push Broom Heads",
+            "linkurl": "shopify:\/\/collections\/push-broom-heads"
+          }
+        },
+        "8041cf54-521d-473d-8f31-e47a1bc5e68a": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/swiffers-dusters.jpg",
+            "linktext": "Swiffers & Dusters",
+            "linkurl": "shopify:\/\/collections\/swiffers-dusters"
+          }
+        },
+        "679bff86-0883-41c6-90a4-c8fbec4d3652": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upright-brooms.jpg",
+            "linktext": "Upright Brooms",
+            "linkurl": "shopify:\/\/collections\/upright-brooms"
+          }
+        },
+        "a66c2902-e9cf-49a4-a01e-7ad4deb5c0d4": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wall-mop-heads.jpg",
+            "linktext": "Wall Mop Heads",
+            "linkurl": "shopify:\/\/collections\/wall-mop-heads"
+          }
+        },
+        "955d3458-5b89-4f8e-ba25-ad2477181934": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wax-applicators.jpg",
+            "linktext": "Wax Applicators Heads",
+            "linkurl": "shopify:\/\/collections\/wax-applicators-heads"
+          }
+        },
+        "e6db4b3e-ea26-48cd-be83-4029ed9bfaf0": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-mop-heads.jpg",
+            "linktext": "Wet Mop Heads",
+            "linkurl": "shopify:\/\/collections\/wet-mop-heads"
+          }
+        },
+        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
+          "type": "caheader",
+          "settings": {
+            "sectionheading": "Shop By Application"
+          }
+        },
+        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
+            "linktext": "Application 1",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
+            "linktext": "Application 2",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "c939808d-357a-485e-9410-ae296bc0f014": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
+            "linktext": "Application 3",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "b8376ece-b804-476e-a3b5-35b77607dd21": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
+            "linktext": "Application 4",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeping-category.png",
+            "linktext": "Application 5",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
+          "type": "categoryapplication",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
+            "linktext": "Application 6",
+            "linkurl": "shopify:\/\/collections\/all"
+          }
+        },
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
+          "type": "slider",
+          "settings": {
+            "collection": "unger"
+          }
+        },
+        "3fba68ff-4018-4287-a0a8-a3b997759627": {
+          "type": "slider",
+          "settings": {
+            "collection": "geerpres"
+          }
+        },
+        "c954c801-0965-4531-a610-39e54b5cb265": {
+          "type": "slider",
+          "settings": {
+            "collection": "milwaukee-dustless"
+          }
+        },
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
+          "type": "crheader",
+          "settings": {
+            "sectionheading": "Auto Detailing Resources"
+          }
+        },
+        "cb754198-b199-4317-879a-0b37a3021253": {
+          "type": "resource",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
+            "heading": "Auto Detailing Resource",
+            "subheading": "<p>A brief description here to inform the user about the resource<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "shopify:\/\/pages\/how-tos"
+          }
+        }
+      },
+      "block_order": [
+        "589b0ba5-e3fa-4320-9319-39615c0ac890",
+        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
+        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
+        "d5555fee-e855-4369-bb4e-b5f8a603808b",
+        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
+        "4715b000-00ac-457e-86f2-fac625d11e35",
+        "7ca63494-4621-4e14-a828-e99d8ea2da53",
+        "4388cc88-460c-488f-ab67-6f54519e8705",
+        "7f9144d8-e94c-4bfc-a1f6-31623b0c33a7",
+        "d6ff9f2a-1d44-4c7d-9c5b-020533780329",
+        "8041cf54-521d-473d-8f31-e47a1bc5e68a",
+        "679bff86-0883-41c6-90a4-c8fbec4d3652",
+        "a66c2902-e9cf-49a4-a01e-7ad4deb5c0d4",
+        "955d3458-5b89-4f8e-ba25-ad2477181934",
+        "e6db4b3e-ea26-48cd-be83-4029ed9bfaf0",
+        "416df694-767b-4c68-8e90-2c0cff08dc2a",
+        "5b4a6417-f1c3-413e-8694-20fe1b499722",
+        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
+        "c939808d-357a-485e-9410-ae296bc0f014",
+        "b8376ece-b804-476e-a3b5-35b77607dd21",
+        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
+        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
+        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
+        "3fba68ff-4018-4287-a0a8-a3b997759627",
+        "c954c801-0965-4531-a610-39e54b5cb265",
+        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
+        "cb754198-b199-4317-879a-0b37a3021253"
+      ],
+      "settings": {
+        "collection": "",
+        "show_collection_image": true,
+        "products_per_page_range": 6,
+        "products_per_row": "3",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    }
+  },
+  "order": [
+    "1663617398865396bc",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "1663875378f697f694"
+  ]
+}

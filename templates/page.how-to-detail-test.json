@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "test 2"
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Drying Blowers",
+            "linkurl": "shopify:\/\/collections\/air-movers"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Finish\/Wax",
+            "linkurl": "shopify:\/\/collections\/floor-wax-finishes"
+          }
+        },
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Finish Wax Applicator Mops",
+            "linkurl": "shopify:\/\/collections\/wax-applicators-heads"
+          }
+        },
+        "5b68879a-40b3-402b-8798-b8423e2306c0": {
+          "type": "link",
+          "settings": {
+            "linktext": "Garbage Bags",
+            "linkurl": "shopify:\/\/collections\/trash-can-liners"
+          }
+        },
+        "4d213553-abcf-4b38-8542-cd65e1e248a6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Bucket & Wringer Combos",
+            "linkurl": "shopify:\/\/collections\/mop-buckets"
+          }
+        },
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Frames",
+            "linkurl": "shopify:\/\/collections\/mop-frames-accessories"
+          }
+        },
+        "9649e2b9-0739-4554-9b53-d58391b329cb": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mop Kits",
+            "linkurl": "shopify:\/\/collections\/mop-kits"
+          }
+        },
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
+          "type": "link",
+          "settings": {
+            "linktext": "Wet Floor Signs",
+            "linkurl": "shopify:\/\/collections\/signs"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5",
+        "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0",
+        "5b68879a-40b3-402b-8798-b8423e2306c0",
+        "4d213553-abcf-4b38-8542-cd65e1e248a6",
+        "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
+        "9649e2b9-0739-4554-9b53-d58391b329cb",
+        "8706f2f4-5823-4efe-9d4a-0c82c61974fc"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-apply-floor-finish.jpg"
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Prep the Area & Equipment -",
+            "steptext": "<p>If you're using a wax applicator mop that has looped ends, like our nylon looped wax applicator mop, we recommend lining your mop bucket with a garbage bag, just like in the 1st step of our stripping a floor instructions. This will keep the floor finish from entering the mop bucket and eliminate the possibility of a foreign substance or unwanted chemical from getting into the finish or on the floor. It will also eliminate another clean up step once you've finished applying all the layers of floor finish. If you are using a flat wax applicator mop that looks like a dust mop, like our 18\" floor finish flat wax mop, there are no preparation steps. Set up all necessary caution\/wet floor\/restroom closed floor signs. Isolate or close off any area that will have wax applied to it. You cannot have any traffic through this area until all coats are completely dried. If the floor surface area that is going to be refinished, is not completely dry, you'll need to set up several 3-speed floor dryers on low to dry all surfaces thoroughly. You want the finish to dry, but with air movement that isn’t high enough to ripple the floor finish as it dries. If they are not 100% dry, the new coats of floor finish will not set or cure properly.<\/p>",
+            "product": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "Applying 1st Coat of Wax -",
+            "steptext": "<p>The first thing you'll need to do is grab your wax, read the label, and calculate the amount of square footage that needs to be refinished. Always make sure to have more wax on hand than is necessary. You do not want to run out of wax before the job is finished. Most wax finishes, like our Optimal Wet Look Floor Finish will cover approximately 2,000 square feet per gallon. Each finish is different, but most recommend 4 to 5 coats. For example, 1 gallon of Optimal would provide 5 coats on a 20' x 20' (400 ft²) room.<br\/><br\/>If you're using a flat wax mop, you can simply pour the wax in a thin bead into the open back of the mop. For looped end wax mops, we recommend dipping it into the wax in your bucket, and slightly wringing it out, so the mop is damp, not drenched and dripping with the floor finish. Apply a THIN, and we emphasize THIN, coat of finish to the floor. If the first layer is too thick, the finish can adhere, or cure improperly, and the rest of the coats will be ruined. This will require you to strip off what you just laid down, and start over.The most effective way to apply finish throughout a room is to start at the entranceway and outline the room, running along the baseboards. You'll then do a 180° turn back at the 3rd wall, and fill in the rest of the area by working in a back and forth pattern until you work your way out the door (See image below). This not only provides complete coverage, but it is the most efficient way to apply finish in a room without ever doubling up and walking over an area you've already finished. A 15 - 25% overlap is common to ensure no areas are missed. If any finish is splashed onto the baseboards or surrounding objects, it should be removed immediately. If not removed immediately, removal later can be a lengthy and tedious process. The 1st coat must be allowed to completely dry before applying the subsequent coats. About 20 - 30 minutes is typically a good amount of time to let each coat dry before starting the next coat of finish. You’ll always want to do a touch test to see if the finish feels tacky before applying the next coat. Even with 20-30 minutes transpired, the variables are numerous enough that you’ll need to test.<\/p>",
+            "product": "optimal-wet-look-floor-finish"
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Applying Additional Coats of Wax -",
+            "steptext": "<p>Repeat the above instructions by following the below diagram after allowing the previous coat to completely dry. The more thin coats you put down, the more protection you'll provide for the floor and the less you'll have to strip and refinish further down the road. It is a good idea to allow as much time as possible for all the coats to cure and adhere before allowing foot traffic across the floor. Typically 8 hours of curing is adequate before opening it up to the public. 72 hours is the recommended time for fresh finish to cure prior to burnishing.<\/p>",
+            "image": "shopify:\/\/shop_images\/applying-floor-finish.jpg",
+            "product": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>If there are several jobs that need refinishing over the next few days, you can simply take your mop and tie it off inside a garbage bag. This will create a sealed environment so the mop will stay damp and not dry out. If you are finished applying wax, you can simply rinse the mop out for a few minutes until all the finish has been removed from the mop head. Allow mop to drip dry away from walls and other objects. Laundering is not necessary. Wash out and thoroughly clean all other objects and equipment that may have come in contact with the wax. If wax is allowed to dry on or in them, it will be nearly impossible to remove later.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

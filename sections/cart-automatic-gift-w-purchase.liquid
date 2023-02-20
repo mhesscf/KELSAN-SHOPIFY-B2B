@@ -1,0 +1,65 @@
+{% if section.settings.show_section %}
+  {% include 'cart-auto-gift' %}
+{% endif %}
+{% schema %}
+{
+    "name": "Automatic Gift w/Purchase",
+    "class": "gwp-section",
+    "settings": [
+    {
+        "type": "checkbox",
+        "id": "show_section",
+        "label": "Show section",
+        "default": true
+    },
+    {
+        "type": "product",
+        "id": "cart_gwp_product_1",
+        "label": "Promo Product (1)"
+    },
+    {
+        "type": "product",
+        "id": "cart_gwp_product_2",
+        "label": "Promo Product (2)"
+    },
+    {
+        "type": "product",
+        "id": "cart_gwp_product_3",
+        "label": "Promo Product (3)"
+    },
+    {
+        "type": "product",
+        "id": "cart_gwp_product_4",
+        "label": "Promo Product (4)"
+    },
+    {
+        "type": "product",
+        "id": "cart_gwp_product_5",
+        "label": "Promo Product (5)"
+    },
+    {
+        "type": "product",
+        "id": "cart_gwp_product_6",
+        "label": "Promo Product (6)"
+    },
+    {
+        "type": "header",
+        "content": "Free Product to Apply to Cart"
+    },
+    {
+        "type": "product",
+        "id": "free_product",
+        "label": "Free Product"
+    }
+    ],
+    "presets": [
+    {
+        "name": "Automatic Gift w/Purchase",
+        "category": "Layout",
+        "settings": {
+
+        }
+    }
+    ]
+    }
+{% endschema %}

@@ -1,0 +1,68 @@
+<section class="brand-wrapper">
+    <div class="brand-slider__content">
+        <h3 class="brand-slider-title">{{ section.settings.cfpssectionheading }}</h3>
+        <div class="brand-slider">
+            {% for block in section.blocks %}
+                {% if block.settings.collection.brand.logo %}
+                    {% assign image = block.settings.collection.brand.logo %}
+                {% else %}
+                    {% assign image = block.settings.collection.featured_image %}
+                {% endif %}
+            <div class="brand-slide">
+                <div class="inner">
+                    <div class="col img-col">
+                        <a href="{{ block.settings.collection.url }}">
+                        {%
+                                render 'rimg',
+                                img: image,
+                                size: '140x',
+                                lazy: false,
+                                canvas: false
+                        %}
+                        </a>
+                    </div>
+                    <div class="col txt-col">
+                        <div class="content-wrap">
+                            <a href="{{ block.settings.collection.url }}" class="add-to-cart">{{ block.settings.collection.title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%  endfor  %}
+        </div>
+        <div class="slide-arrows"></div>
+    </div>
+</section>
+{% schema %}
+{
+"name": "brand-slider",
+"class": "brand-slider--section",
+"settings":[
+{
+"type": "text",
+"label": "Section Heading",
+"id" : "cfpssectionheading"
+}
+],
+"blocks": [
+{
+"name": "Slide",
+"type": "slide",
+"settings": [
+{
+"type": "collection",
+"id": "collection",
+"label": "Brand Collection"
+}
+]
+}
+],
+"presets": [
+{
+"category": "brand-slider",
+"name": "Brand Slider",
+"settings": {}
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,56 @@
+<section class="category-applications">
+    <div class="container">
+        <div class="row section-heading-row">
+            <div class="heading-wrapper">
+                <h2>Shop By Application</h2>
+            </div>
+        </div>
+        <div class="row flex-row link-row">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'link' %}
+                        <a href="{{ block.settings.linkurl }}" class="link-wrap column" style="background-image: url({{ block.settings.image | img_url: 'master' }});">
+                            <div class="inner">{{ block.settings.linktext }}</div>
+                        </a>
+                {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+"name": "category-applications",
+"class": "categories-applications--section",
+"settings":[],
+"blocks": [
+{
+    "name": "Link",
+    "type": "link",
+    "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "BackgroundImage"
+            },
+            {
+                "type": "text",
+                "id": "linktext",
+                "label": "Link Text"
+            },
+            {
+                "type" : "url",
+                "id": "linkurl",
+                "label": "Link URL"
+            }
+        ]
+        }
+    ],
+    "presets": [
+        {
+        "category": "category-applications--section",
+        "name": "Category Applications Grid",
+        "settings": {}
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "4066156f-0209-43bd-8e13-3ede1264f71e": {
+      "type": "howto-header",
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc": {
+      "type": "howto-objective",
+      "settings": {
+        "chsectionheading": "",
+        "objectivetext": "To maintain a clean, healthy and professional looking employee base."
+      }
+    },
+    "077235cb-6ded-4e06-80df-6ad080419fe3": {
+      "type": "howto-supplies",
+      "blocks": {
+        "80f22718-bd27-4b6a-a37a-d243e47129f4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Hand Washing Supplies",
+            "linkurl": "shopify:\/\/collections\/hand-soaps-lotions"
+          }
+        },
+        "eb615e5c-7196-49de-bef1-53d652d184b5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Safety Supplies",
+            "linkurl": "shopify:\/\/pages\/safety-ppe"
+          }
+        }
+      },
+      "block_order": [
+        "80f22718-bd27-4b6a-a37a-d243e47129f4",
+        "eb615e5c-7196-49de-bef1-53d652d184b5"
+      ],
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/employee-hygiene-hand-washing.jpg"
+      }
+    },
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
+      "type": "howto-steps",
+      "blocks": {
+        "5912c6db-1602-4c30-818a-585b55885084": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "1",
+            "stepheading": "Overall Appearance -",
+            "steptext": "<p>For your employees to maintain an overall hygienic appearance is a crucial piece to the overall perception of your business. To maintain a professional appearance at all times not only helps you retain your current customer base, but also helps to attract new, prospective clients. Requiring all employees to bathe daily, as well as come to work in a clean, neat and tidy uniform is crucial. Professional employees, who smell fresh, and maintain a crisp, clean appearance go a long way in creating a competent aura.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "2",
+            "stepheading": "On The Job -",
+            "steptext": "<p>Maintaining that professional appearance throughout the job that was established in step 1 is something else that is a necessity. Cross contamination in any medical or food processing facility can not happen. It can cost you lots of time and money to correct the problem. It is best to color code different squeegees, cleaning cloths, brooms, soaps and solvents for different areas.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "3",
+            "stepheading": "Protect Yourself & Other Employees -",
+            "steptext": "<p>When cleaning with any type of caustic cleaning agent, it is a good idea to use the proper safety glasses, nitrile gloves, and even disposable clothing to handle these types of chemicals. A great example is to use our disposable plastic shoe & boot covers when stripping or cleaning floors to protect your shoes, as well as other areas of the facility.<\/p>",
+            "product": "",
+            "stepvideo": ""
+          }
+        },
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Properly Wash Hands -",
+            "steptext": "<p>To protect against the spread of disease, all employees must wash their hands after going to the restroom, finishing up a cleaning job, when handling any types of chemicals, or even when they just appear dirty. You should wash your hands with hot water and one of our hand soaps like a Stoko solvent-free hand soap. Thoroughly scrub your hands for 20 seconds, making sure to cover all parts of your hands, including under fingernails, around cuticles, and in between fingers. After scrubbing, hold your hands under running water to rinse leftover lather. Then, dry off hands with a paper towel or hand dryer. This is important because leaving hands soapy or wet can contribute to dermatitis. If you used a paper towel, hold onto it after drying to turn off the faucet and pull open the door. This will prevent your fingers from picking up germs on the faucet and door handle.<\/p><p>Another way to curtail the spread of germs is to supply employees with their own personal bottle of hand sanitizer like bottle of Deb InstantFOAM® Complete Hand Sanitizer. This way they can frequently sanitize their hands throughout the day without the need of a sink.<\/p>",
+            "product": "",
+            "stepvideo": "https:\/\/www.youtube.com\/watch?v=bMMoyDA-zPw"
+          }
+        }
+      },
+      "block_order": [
+        "5912c6db-1602-4c30-818a-585b55885084",
+        "a80401c3-b3dd-4e34-bfec-8a89c388f9fc",
+        "afa2d538-a70c-4791-99de-1cb3a45a9c95",
+        "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
+    "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "main"
+  ]
+}

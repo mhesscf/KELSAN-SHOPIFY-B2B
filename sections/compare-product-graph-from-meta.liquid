@@ -1,0 +1,139 @@
+
+{% assign metafieldsArry = page.metafields.custom.compare_chart_metafields | split: "," %}
+{% assign metafieldNamesArry = page.metafields.custom.compare_chart_metafields_head | split: "," %}
+<br/>
+<div class="page-width page-width--narrow">
+    <div class="custom-product-chart">
+        <table class="pcc-table">
+            <tbody>
+            <tr class="filter">
+                <th>Pic</th>
+                <th id="heading-sort-sku-val" class="sortheading" onclick="sortme(this)">Sku</th>
+                <th id="heading-sort-title-val" class="sortheading" onclick="sortme(this)">Title</th>
+                {% assign counter = 0 %}
+                {% for metafieldNamescol in metafieldNamesArry %}
+                    <th id="heading-sort-{{ metafieldsArry[counter] }}-val" class="sortheading" onclick="sortme(this)">{{ metafieldNamescol }}</th>
+                    {% assign counter = counter | plus: 1 %}
+                {% endfor %}
+                <th id="heading-sort-price-val" class="sortheading" onclick="sortme(this)">Price</th>
+            </tr>
+            {% for product in page.metafields.custom.compare_chart_products.value %}
+                <tr class="item-row">
+                    {%- assign current_variant = product.selected_or_first_available_variant -%}
+                    <td><img src="{{ product.images[0] | product_img_url: '110x' }}"></td>
+                    <td class="sort-sku-val">{{ current_variant.sku }}</td>
+                    <td class="sort-title-val"><a href="/products/{{ product.handle }}">{{ product.title}}</a></td>
+
+                    {% for metafieldcol in metafieldsArry %}
+                        <td class="sort-{{ metafieldcol }}-val" data="{{ metafieldcol }}">{{ product.metafields.custom[metafieldcol] }}</td>
+                    {% endfor %}
+
+                    <td class="sort-price-val">{{ product.price | money_with_currency }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% schema %}
+{
+"name": "Compare Graph using Meta",
+"settings": [],
+"templates": ["page"],
+"presets" : [
+{
+"category":"Custom Page Blocks",
+"name": "CF Custom Product Compare Table (Page Var)"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+{%- style -%}
+    .pcc-table{
+    border-collapse:collapse;
+    }
+    .pcc-table th{
+    cursor: pointer;
+    }
+
+    .pcc-table td, .pcc-table th{
+    padding:1px 5px;
+    border: 1px solid #ccc;
+    }
+
+
+    .custom-product-chart a{
+    color:  {{ settings.colors_accent_1 }};
+    font-size:16px;
+    }
+    .custom-product-chart a:hover{
+    color:  {{ settings.colors_accent_2 }};
+    }
+{%- endstyle -%}
+
+{{ '//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js' | script_tag }}
+{% javascript %}
+
+
+{% endjavascript %}
+<script>
+    function sortme(element) {
+        var attrToSort = element.id;
+
+        if (jQuery('#' + attrToSort).hasClass("asc-sort")) {
+            jQuery('#' + attrToSort).addClass("desc-sort");
+            jQuery('#' + attrToSort).removeClass("asc-sort");
+            var arrange = "desc"
+        } else {
+            jQuery('#' + attrToSort).addClass("asc-sort");
+            jQuery('#' + attrToSort).removeClass("desc-sort");
+            var arrange = "asc"
+        }
+
+
+        attrToSort = "." + attrToSort.replace("heading-", "");
+        var firstRow = jQuery('.filter').prop('outerHTML');
+
+        jQuery(".pcc-table").each(function () {
+            var events = jQuery('.item-row', this);
+            events.sort(function (a, b) {
+                if (jQuery(attrToSort, a).data("subdata") > 0) {
+                    //for pricing
+                    a = jQuery(attrToSort, a).data("subdata");
+                    b = jQuery(attrToSort, b).data("subdata");
+                } else {
+                    //for text
+                    a = jQuery(attrToSort, a).text();
+                    b = jQuery(attrToSort, b).text();
+                }
+
+
+                if (arrange == "asc") {
+                    if (a > b) {
+                        return 1;
+                    } else if (a < b) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                } else {
+                    if (a > b) {
+                        return -1;
+                    } else if (a < b) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+            jQuery(this).html(events);
+            jQuery(this).prepend(firstRow);
+        });
+    }
+
+</script>

@@ -1,0 +1,322 @@
+{
+  "sections": {
+    "7100ef8a-e4f1-427e-aa52-a53fa1014e6c": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "How To's",
+        "chsectiontext": ""
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "166067973539459f3b": {
+      "type": "basic-link-grid",
+      "blocks": {
+        "0b1fd7b5-e5ce-4a0e-98fc-c9471c8e72a4": {
+          "type": "link",
+          "settings": {
+            "linktext": "Applying a Floor Finish",
+            "linkurl": "shopify:\/\/pages\/applying-a-floor-finish"
+          }
+        },
+        "6dc4e440-89d7-4f1b-84a8-df0c41a5be4a": {
+          "type": "link",
+          "settings": {
+            "linktext": "Burnishing a Floor",
+            "linkurl": "shopify:\/\/pages\/burnishing-a-floor"
+          }
+        },
+        "537967f0-b514-48a5-be41-286f6e7d13d5": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Bonnet Scrubbing",
+            "linkurl": "shopify:\/\/pages\/carpet-bonnet-scrubbing"
+          }
+        },
+        "7ab90417-7206-432f-b0d0-b6e63bcc17c6": {
+          "type": "link",
+          "settings": {
+            "linktext": "Carpet Extraction",
+            "linkurl": "shopify:\/\/pages\/carpet-cleaning-extraction"
+          }
+        },
+        "cde0337f-1638-4f17-b4c3-7c261b0d528d": {
+          "type": "link",
+          "settings": {
+            "linktext": "Disinfecting Toilets & Urinals",
+            "linkurl": "shopify:\/\/pages\/disinfecting-toilets-urinals"
+          }
+        },
+        "e27e03d4-dcf6-4864-833d-6f3f709030db": {
+          "type": "link",
+          "settings": {
+            "linktext": "Dust Mopping",
+            "linkurl": "shopify:\/\/pages\/dust-mopping"
+          }
+        },
+        "48b855e2-4086-4f08-9697-39fb947b4cd1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Employee & Personal Hygiene",
+            "linkurl": "shopify:\/\/pages\/employee-hygiene-hand-washing"
+          }
+        },
+        "b083819d-7795-4f88-912e-211704a28c31": {
+          "type": "link",
+          "settings": {
+            "linktext": "Entrance & Lobby Cleaning",
+            "linkurl": "shopify:\/\/pages\/entrance-lobby-cleaning"
+          }
+        },
+        "f4e933ce-e5c1-4df6-b7c6-d861ebcb5f80": {
+          "type": "link",
+          "settings": {
+            "linktext": "Flood Water Assessment & Clean Up",
+            "linkurl": "shopify:\/\/pages\/flood-water-cleanup"
+          }
+        },
+        "fcc47837-372d-4e78-8d47-2555b232f950": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Scrubbing with a Buffer",
+            "linkurl": "shopify:\/\/pages\/floor-buffer-scrubbing"
+          }
+        },
+        "8362a1d8-8d67-4944-88fb-d08aab2ab3d9": {
+          "type": "link",
+          "settings": {
+            "linktext": "Flu Prevention Tips",
+            "linkurl": "shopify:\/\/pages\/flu-prevention-tips"
+          }
+        },
+        "b47b669c-558e-4875-a12d-f1b07bc184af": {
+          "type": "link",
+          "settings": {
+            "linktext": "Mopping a Floor",
+            "linkurl": "shopify:\/\/pages\/wet-mopping"
+          }
+        },
+        "cbb7758e-3844-481f-ac71-9ee5076a5791": {
+          "type": "link",
+          "settings": {
+            "linktext": "Office Cleaning",
+            "linkurl": "shopify:\/\/pages\/office-cleaning"
+          }
+        },
+        "c6bc1b40-aa42-40e9-a487-cb9305169def": {
+          "type": "link",
+          "settings": {
+            "linktext": "Restroom Cleaning",
+            "linkurl": "shopify:\/\/pages\/restroom-cleaning-procedures"
+          }
+        },
+        "390ffea1-3ebb-46d0-8e28-bc3bf5960e51": {
+          "type": "link",
+          "settings": {
+            "linktext": "Scrubbing with an Auto Scrubber",
+            "linkurl": "shopify:\/\/pages\/automatic-floor-scrubbing"
+          }
+        },
+        "c6c97e7f-a72d-47fb-bfb1-1c60fbc5768e": {
+          "type": "link",
+          "settings": {
+            "linktext": "Spray Buffing a Floor",
+            "linkurl": "shopify:\/\/pages\/spray-buffing-a-floor"
+          }
+        },
+        "85af143d-9bb6-44ce-b7d4-67ee7c18931e": {
+          "type": "link",
+          "settings": {
+            "linktext": "Stripping a Floor",
+            "linkurl": "shopify:\/\/pages\/stripping-a-floor"
+          }
+        },
+        "ecf13a30-22be-4e54-803f-ae3a40a55329": {
+          "type": "link",
+          "settings": {
+            "linktext": "Vacuuming Carpets",
+            "linkurl": "shopify:\/\/pages\/vacuum-carpets"
+          }
+        },
+        "b0f482a9-0135-4df6-9b81-66f9db15d540": {
+          "type": "link",
+          "settings": {
+            "linktext": "Window Cleaning",
+            "linkurl": "shopify:\/\/pages\/window-glass-cleaning"
+          }
+        }
+      },
+      "block_order": [
+        "0b1fd7b5-e5ce-4a0e-98fc-c9471c8e72a4",
+        "6dc4e440-89d7-4f1b-84a8-df0c41a5be4a",
+        "537967f0-b514-48a5-be41-286f6e7d13d5",
+        "7ab90417-7206-432f-b0d0-b6e63bcc17c6",
+        "cde0337f-1638-4f17-b4c3-7c261b0d528d",
+        "e27e03d4-dcf6-4864-833d-6f3f709030db",
+        "48b855e2-4086-4f08-9697-39fb947b4cd1",
+        "b083819d-7795-4f88-912e-211704a28c31",
+        "f4e933ce-e5c1-4df6-b7c6-d861ebcb5f80",
+        "fcc47837-372d-4e78-8d47-2555b232f950",
+        "8362a1d8-8d67-4944-88fb-d08aab2ab3d9",
+        "b47b669c-558e-4875-a12d-f1b07bc184af",
+        "cbb7758e-3844-481f-ac71-9ee5076a5791",
+        "c6bc1b40-aa42-40e9-a487-cb9305169def",
+        "390ffea1-3ebb-46d0-8e28-bc3bf5960e51",
+        "c6c97e7f-a72d-47fb-bfb1-1c60fbc5768e",
+        "85af143d-9bb6-44ce-b7d4-67ee7c18931e",
+        "ecf13a30-22be-4e54-803f-ae3a40a55329",
+        "b0f482a9-0135-4df6-9b81-66f9db15d540"
+      ],
+      "settings": {
+        "sectionheading": "Basic Custodian, Healthcare & Cleaning Procedures"
+      }
+    },
+    "166068003735df09fd": {
+      "type": "basic-link-grid",
+      "blocks": {
+        "d3f2d776-922a-4ead-8596-5a13e53eef73": {
+          "type": "link",
+          "settings": {
+            "linktext": "Finish Swirls or Scratches in Floor Finish",
+            "linkurl": "shopify:\/\/blogs\/clean\/problem-finish-swirls-or-scratches-in-floor-wax"
+          }
+        },
+        "8742c4c0-89a9-4d92-8c6b-2c9106426b21": {
+          "type": "link",
+          "settings": {
+            "linktext": "Floor Finish Discoloration (Yellowing or Browning)",
+            "linkurl": "shopify:\/\/blogs\/clean\/problem-floor-finish-discoloration-yellowing-or-browning"
+          }
+        },
+        "4afad362-39f3-463c-988c-02649aa6c1a1": {
+          "type": "link",
+          "settings": {
+            "linktext": "Poor Gloss to Floor Finish Wax",
+            "linkurl": "shopify:\/\/blogs\/clean\/problem-poor-gloss-to-floor-finish"
+          }
+        },
+        "c6388e65-c0af-4d73-80b8-e1705792ce4a": {
+          "type": "link",
+          "settings": {
+            "linktext": "Slippery Floors & Floor Finish",
+            "linkurl": "shopify:\/\/blogs\/clean\/problem-slippery-floor-finish"
+          }
+        },
+        "8f21017b-4652-4d0c-8536-ba6f6f28073f": {
+          "type": "link",
+          "settings": {
+            "linktext": "Sticky or Tacky Floor Finish",
+            "linkurl": "shopify:\/\/blogs\/clean\/problem-sticky-or-tacky-floor-finish"
+          }
+        },
+        "dbef67a9-3460-4f81-be1c-924e966ffa54": {
+          "type": "link",
+          "settings": {
+            "linktext": "Streaks in Floor Finish",
+            "linkurl": "shopify:\/\/blogs\/clean\/problem-streaks-in-floor-finish"
+          }
+        }
+      },
+      "block_order": [
+        "d3f2d776-922a-4ead-8596-5a13e53eef73",
+        "8742c4c0-89a9-4d92-8c6b-2c9106426b21",
+        "4afad362-39f3-463c-988c-02649aa6c1a1",
+        "c6388e65-c0af-4d73-80b8-e1705792ce4a",
+        "8f21017b-4652-4d0c-8536-ba6f6f28073f",
+        "dbef67a9-3460-4f81-be1c-924e966ffa54"
+      ],
+      "settings": {
+        "sectionheading": "Floor Care Troubleshooting Tips"
+      }
+    },
+    "1660680505a9c0052a": {
+      "type": "three-column-links",
+      "blocks": {
+        "9aa65bd9-0e10-4268-87a3-66cbbaa7bc81": {
+          "type": "c1link",
+          "disabled": true,
+          "settings": {
+            "linktext": "Quick Reference Carpet Spot & Stain Removal Guide",
+            "linkurl": ""
+          }
+        },
+        "aa1ab11f-1f6a-4849-b918-7f0c1a6e71c3": {
+          "type": "c1link",
+          "settings": {
+            "linktext": "Stain Removal Instructions",
+            "linkurl": "shopify:\/\/pages\/stain-removal-directions"
+          }
+        },
+        "2212dd41-3afa-40fe-ae32-e27a4b2b06fc": {
+          "type": "c1link",
+          "settings": {
+            "linktext": "Top 5 Summer Stains (and how to get rid of 'em)",
+            "linkurl": "shopify:\/\/blogs\/clean\/top-5-summer-stains-and-how-to-get-rid-of-them"
+          }
+        },
+        "2342ca77-0dd5-4c0c-b84a-ad7bcb5f480f": {
+          "type": "c2link",
+          "settings": {
+            "linktext": "Basic Understanding of pH",
+            "linkurl": "shopify:\/\/blogs\/news\/basic-understanding-of-ph"
+          }
+        },
+        "cf5f128f-12ab-4c5b-b230-ed3e70ea030f": {
+          "type": "c2link",
+          "settings": {
+            "linktext": "Green Seal Certification",
+            "linkurl": "shopify:\/\/blogs\/news\/green-seal-certification"
+          }
+        },
+        "5070bbd2-b410-428f-8a5a-a7a1f412edcd": {
+          "type": "c2link",
+          "settings": {
+            "linktext": "Three T's of Cleaning",
+            "linkurl": "shopify:\/\/blogs\/clean\/the-3-ts-of-cleaning"
+          }
+        },
+        "c20203af-1ded-4581-bc2b-bbad28b6c866": {
+          "type": "c3link",
+          "settings": {
+            "linktext": "National Safety Month",
+            "linkurl": "shopify:\/\/pages\/national-safety-month"
+          }
+        },
+        "5f8448fd-b158-4eef-bd71-f1291199d5a9": {
+          "type": "c3link",
+          "settings": {
+            "linktext": "Alarming Flu Facts",
+            "linkurl": "shopify:\/\/pages\/flu-statistics"
+          }
+        }
+      },
+      "block_order": [
+        "9aa65bd9-0e10-4268-87a3-66cbbaa7bc81",
+        "aa1ab11f-1f6a-4849-b918-7f0c1a6e71c3",
+        "2212dd41-3afa-40fe-ae32-e27a4b2b06fc",
+        "2342ca77-0dd5-4c0c-b84a-ad7bcb5f480f",
+        "cf5f128f-12ab-4c5b-b230-ed3e70ea030f",
+        "5070bbd2-b410-428f-8a5a-a7a1f412edcd",
+        "c20203af-1ded-4581-bc2b-bbad28b6c866",
+        "5f8448fd-b158-4eef-bd71-f1291199d5a9"
+      ],
+      "settings": {
+        "sectionheading": "",
+        "c1heading": "Carpet Spotting & Stain Removal Tips",
+        "c2heading": "General Cleaning Articles",
+        "c3heading": "Infographics"
+      }
+    }
+  },
+  "order": [
+    "7100ef8a-e4f1-427e-aa52-a53fa1014e6c",
+    "main",
+    "166067973539459f3b",
+    "166068003735df09fd",
+    "1660680505a9c0052a"
+  ]
+}

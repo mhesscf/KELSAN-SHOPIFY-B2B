@@ -1,0 +1,149 @@
+{% style %}
+    .howto-steps{
+    position: relative;
+    margin: 30px 0;
+    }
+    .howto-steps .container{
+    width: 1100px;
+    max-width: 90%;
+    margin: auto;
+    }
+    .howto-steps .flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+    margin-left: 40px;
+    }
+    .howto-steps .flex-row .col{
+    width: 100%;
+    margin-bottom: 10px;
+    }
+    .howto-steps .flex-row .col .step-content{
+    display: flex;
+    }
+    .howto-steps .flex-row .col .step-content p{
+        line-height: 1.5;
+        margin-top: 8px;
+    }
+    .howto-steps .flex-row .col .step-content p a{
+        color: {{ settings.color_links }}
+    }
+    .howto-steps .flex-row .col .step-content .step-image.content-col{
+    margin-left: 30px;
+    }
+    .howto-steps .flex-row .col .step-heading{
+    position: relative;
+    }
+    .howto-steps .flex-row .col .step-heading .step-no{
+    position: absolute;
+    left: -40px;
+    border: 1px solid {{ settings.color_text_medium }};
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    color: {{ settings.color_text_medium }};
+    text-align: center;
+    font-weight: 700;
+    }
+    .howto-steps .flex-row .col .step-heading h3{
+    margin-bottom: 0px;
+    color: {{ settings.color_text_medium }};
+    font-weight: 700;
+    }
+    .howto-steps .flex-row .col .step-heading p{
+    color: {{ settings.color_text }};
+    }
+    @media (max-width: 1200px){
+    .howto-steps .flex-row .col .step-content{
+    display: block;
+    }
+    .howto-steps .flex-row .col .step-content .step-image.content-col{
+    margin-left: 0;
+    }
+    }
+    @media (max-width: 640px){
+
+    }
+{% endstyle %}
+<section class="howto-steps">
+    <div class="container">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'step' %}
+                    <div class="flex-row">
+                        <div class="col step-col">
+                            <div class="step-heading">
+                                <div class="step-no">{{ block.settings.stepnumber }}</div>
+                                <h3>{{ block.settings.stepheading }}</h3>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-text content-col">
+                                    {{ block.settings.steptext }}
+                                </div>
+
+                                {% if block.settings.image  %}
+                                    <div class="step-image content-col">
+                                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+            {% endcase %}
+        {% endfor %}
+    </div>
+</section>
+{% schema %}
+{
+    "name": "howto-steps",
+    "class": "howto-steps--section",
+    "settings":[
+
+    ],
+    "blocks": [
+        {
+            "name": "Step",
+            "type": "step",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "stepnumber",
+                    "label": "Step Number"
+                },
+                {
+                    "type": "text",
+                    "id": "stepheading",
+                    "label": "Step Label"
+                },
+                {
+                    "type" : "richtext",
+                    "id": "steptext",
+                    "label": "content"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "product"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "howto-steps-section",
+            "name": "How To Steps",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}

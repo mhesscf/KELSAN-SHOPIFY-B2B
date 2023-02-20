@@ -1,0 +1,47 @@
+<article class="site-page" data-template-page data-template-alt>
+  <style>
+    .centered-text-heading .container{
+      width: 877px;
+      max-width: 90%;
+      margin: auto;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .centered-text-heading .text-wrapper, .centered-text-heading h1{
+      font-size: 63px;
+      color: #4A4A4A;
+      line-height: 65px;
+      margin: 0 0 10px 0;
+    }
+    .centered-text-heading .text-wrapper, .centered-text-heading .text-wrapper p{
+      font-size: 20px;
+      line-height: 25px;
+      color: {{ settings.colors.text }};
+      margin: 0;
+    }
+    @media (max-width: 991.98px){
+      .centered-text-heading .text-wrapper, .centered-text-heading h1{
+        font-size: 42px;
+        line-height: 1;
+      }
+      .centered-text-heading .text-wrapper, .centered-text-heading .text-wrapper p{
+        font-size: 18px;
+        line-height: 23px;
+      }
+    }
+  </style>
+  <header class="centered-text-heading">
+    <div class="container">
+      <div class="row">
+        <h1 class="page-title">
+          {{ page.title }}
+        </h1>
+        {% if page.content != blank %}
+          <div class="text-wrapper">
+            {{ page.content }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+</article>
