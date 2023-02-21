@@ -574,8 +574,6 @@
         " | split: ","%}
     {% endif %}
 
-------------mitch's bread-------------------<br/>
-
     {% assign urlstolookupobj = urlstolookup | split: '|' %}
     {% for urltolookup in urlstolookupobj %}
         {% assign urlpostion = 1 %}
@@ -643,7 +641,7 @@
     {% endfor %}
 
 
-    <nav class="breadcrumb breadcrumbs-container" role="navigation" aria-label="breadcrumbs"  itemscope itemtype="https://schema.org/BreadcrumbList">
+    <nav class="breadcrumb breadcrumbs-container breadcrumb2point0" role="navigation" aria-label="breadcrumbs"  itemscope itemtype="https://schema.org/BreadcrumbList">
 			<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 			<a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}" itemscope itemtype="https://schema.org/WebPage"
                itemprop="item" itemid="/"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a><meta itemprop="position" content="1" />
@@ -658,8 +656,21 @@
                 <span class="current">{{ collection.title }}</span>
             {%- elsif template contains 'page' -%}
                 <span class="current">{{ page.title }}</span>
+            {%- elsif template == 'blog' -%}
+                <span aria-hidden="true" class="separator">›</span>
+                {%- if current_tags -%}
+                    {{ blog.title | link_to: blog.url }}
+                    <span>{{ current_tags | join: " + " }}</span>
+                {%- else -%}
+                    <span>{{ blog.title }}</span>
+                {%- endif -%}
+            {%- elsif template == 'article' -%}
+                {{ blog.title | link_to: blog.url }}
+                <span aria-hidden="true" class="separator">›</span>
+                <span class="current">{{ article.title }}</span>
             {% endif %}
         {% endif %}
     </nav>
 
 {%- endunless -%}
+
