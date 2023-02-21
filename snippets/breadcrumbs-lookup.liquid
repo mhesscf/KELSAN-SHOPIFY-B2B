@@ -1,0 +1,665 @@
+<style>
+    nav.breadcrumb a span  {
+        color: #171f2b;
+    }
+</style>
+{% unless template == 'index' or template == 'cart'  or template == '404' %}
+
+    {%- assign current_website = 'cf' -%}
+    {%- if request.host contains 'airmovers'  -%}
+        {%- assign current_website = 'am' -%}
+    {%- elsif request.host contains 'carpetextractors'  -%}
+        {%- assign current_website = 'ce' -%}
+    {%- elsif request.host contains 'floorscrubbers'  -%}
+        {%- assign current_website = 'fs' -%}
+    {%- elsif request.host contains 'floorbuffers'  -%}
+        {%- assign current_website = 'fb' -%}
+    {%- endif -%}
+
+    {% comment %}
+    todo:
+    Add blog breadcrumbs
+    Add product last step
+
+    ---------------------------------------------------------------------------------------
+    use this if we ever need to pull breadcrumbslookup from the default shopify nav
+           {% for link in linklists.breadcrumbs.links %}
+               {{ link.url }} : {{ link.url }}, <br/>
+               {% for sublink in link.links %}
+                   {{ link.url}} > {{ sublink.url }}:{{ sublink.url }},<br/>
+                   {% for subsublink in sublink.links %}
+                       {{ link.url}} > {{ sublink.url }} > {{ subsublink.url }}:{{ subsublink.url}},<br/>
+                   {% endfor %}
+               {% endfor %}
+           {% endfor %}
+   ---------------------------------------------------------------------------------------
+   {% endcomment %}
+
+    {% assign productpage = 0 %}
+    {%- if template contains 'product' -%}
+        {% assign productpage = 1 %}
+        {%- capture product_url_string -%}
+            {%- for collection in product.collections -%}{{collection.url }}|{%- endfor -%}
+        {%- endcapture -%}
+        {% comment %}{%- assign object_url_string = product_url_string | append: product.url -%}{% endcomment %}
+        {%- assign object_url_string = product_url_string -%}
+
+    {%- elsif template contains 'collection' and collection.handle -%}
+        {%comment%} ignore brand collection   {%endcomment%}
+        {%- capture object_url_string -%}/collections/{{ collection.handle }}{%- endcapture -%}
+    {%- elsif template contains 'page' -%}
+        {%- capture object_url_string -%}{{ page.url }}{%- endcapture -%}
+    {% endif %}
+
+
+    {% assign urlstolookup = object_url_string %}
+
+    {% comment %}{% assign urlstolookup = "/collections/air-fresheners-odor-eliminators|/collections/floor-cleaning-degreasers|/collections/furniture-wood-polishes|/collections/descaling-chemicals" %}{% endcomment %}
+
+    {% comment %}URL VAR:{{ urlstolookup }}<br/>{% endcomment %}
+    {% if current_website == "cf" %}
+        {% assign breadcrumbslookup = "
+        /pages/auto-detailing : /pages/auto-detailing,
+        /pages/auto-detailing > /pages/automotive-chemicals:/pages/automotive-chemicals,
+        /pages/auto-detailing > /pages/automotive-chemicals > /collections/automotive-detailing:/collections/automotive-detailing,
+        /pages/auto-detailing > /pages/automotive-chemicals > /collections/carpet-upholstery-shampoo:/collections/carpet-upholstery-shampoo,
+        /pages/auto-detailing > /pages/automotive-chemicals > /collections/lubricants:/collections/lubricants,
+        /pages/auto-detailing > /pages/automotive-chemicals > /collections/parts-washing-solutions:/collections/parts-washing-solutions,
+        /pages/auto-detailing > /pages/automotive-chemicals > /collections/pre-spray-chemicals:/collections/pre-spray-chemicals,
+        /pages/auto-detailing > /pages/automotive-chemicals > /collections/stain-removal-carpet-spotting-chemicals:/collections/stain-removal-carpet-spotting-chemicals,
+        /pages/auto-detailing > /collections/parts-washing-tanks:/collections/parts-washing-tanks,
+        /pages/auto-detailing > /collections/detailing-extractors:/collections/detailing-extractors,
+        /pages/chemicals-cleaners : /pages/chemicals-cleaners,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals:/pages/floor-care-chemicals,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals > /collections/dust-mop-treatments:/collections/dust-mop-treatments,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals > /collections/floor-cleaning-degreasers:/collections/floor-cleaning-degreasers,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals > /collections/floor-cleaning-soaps-solutions:/collections/floor-cleaning-soaps-solutions,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals > /collections/floor-polishing-restoring-solutions:/collections/floor-polishing-restoring-solutions,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals > /collections/floor-stripping-solutions:/collections/floor-stripping-solutions,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals > /collections/floor-wax-finishes:/collections/floor-wax-finishes,
+        /pages/chemicals-cleaners > /pages/floor-care-chemicals > /collections/stone-care-products:/collections/stone-care-products,
+        /pages/chemicals-cleaners > /pages/detergent:/pages/detergent,
+        /pages/chemicals-cleaners > /pages/detergent > /collections/dish-washing-soaps:/collections/dish-washing-soaps,
+        /pages/chemicals-cleaners > /pages/detergent > /collections/hair-body-shampoo:/collections/hair-body-shampoo,
+        /pages/chemicals-cleaners > /pages/detergent > /collections/hand-soaps-lotions:/collections/hand-soaps-lotions,
+        /pages/chemicals-cleaners > /pages/detergent > /collections/laundry-detergents-additives:/collections/laundry-detergents-additives,
+        /pages/chemicals-cleaners > /pages/disinfectants:/pages/disinfectants,
+        /pages/chemicals-cleaners > /pages/disinfectants > /collections/food-grade-sanitizers:/collections/food-grade-sanitizers,
+        /pages/chemicals-cleaners > /pages/disinfectants > /collections/hand-sanitizers:/collections/hand-sanitizers,
+        /pages/chemicals-cleaners > /pages/disinfectants > /collections/liquid-aerosol-disinfectants:/collections/liquid-aerosol-disinfectants,
+        /pages/chemicals-cleaners > /pages/carpet-solutions:/pages/carpet-solutions,
+        /pages/chemicals-cleaners > /pages/carpet-solutions > /collections/bonnet-scrubbing-cleaning:/collections/bonnet-scrubbing-cleaning,
+        /pages/chemicals-cleaners > /pages/carpet-solutions > /collections/carpet-chemical-packages:/collections/carpet-chemical-packages,
+        /pages/chemicals-cleaners > /pages/carpet-solutions > /collections/carpet-shampoo-extractor-solutions:/collections/carpet-shampoo-extractor-solutions,
+        /pages/chemicals-cleaners > /pages/carpet-solutions > /collections/liquid-defoamers:/collections/liquid-defoamers,
+        /pages/chemicals-cleaners > /pages/carpet-solutions > /collections/post-extraction-rinse-agents:/collections/post-extraction-rinse-agents,
+        /pages/chemicals-cleaners > /pages/carpet-solutions > /collections/pre-spray-chemicals:/collections/pre-spray-chemicals,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners:/pages/hard-surface-cleaners,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/all-purpose-cleaners:/collections/all-purpose-cleaners,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/descaling-chemicals:/collections/descaling-chemicals,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/furniture-wood-polishes:/collections/furniture-wood-polishes,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/glass-cleaners:/collections/glass-cleaners,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/graffiti-removers:/collections/graffiti-removers,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/oven-smokehouse-cleaners:/collections/oven-smokehouse-cleaners,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/mold-mildew-removers:/collections/mold-mildew-removers,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/porcelain-cleaners:/collections/porcelain-cleaners,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/stainless-steel-cleaners:/collections/stainless-steel-cleaners,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/tile-grout-cleaners:/collections/tile-grout-cleaners,
+        /pages/chemicals-cleaners > /pages/hard-surface-cleaners > /collections/toilet-bowl-cleaners:/collections/toilet-bowl-cleaners,
+        /pages/chemicals-cleaners > /pages/absorbents:/pages/absorbents,
+        /pages/chemicals-cleaners > /pages/absorbents > /collections/aerosol-deodorizers:/collections/aerosol-deodorizers,
+        /pages/chemicals-cleaners > /pages/absorbents > /collections/air-fresheners-odor-eliminators:/collections/air-fresheners-odor-eliminators,
+        /pages/chemicals-cleaners > /pages/absorbents > /collections/gel-deodorizers:/collections/gel-deodorizers,
+        /pages/chemicals-cleaners > /pages/absorbents > /collections/liquid-deodorizers:/collections/liquid-deodorizers,
+        /pages/chemicals-cleaners > /pages/absorbents > /collections/powder-deodorizers:/collections/powder-deodorizers,
+        /pages/chemicals-cleaners > /pages/absorbents > /collections/solid-deodorizers:/collections/solid-deodorizers,
+        /pages/chemicals-cleaners > /pages/absorbents > /collections/spill-cleanup:/collections/spill-cleanup,
+        /pages/chemicals-cleaners > /collections/insecticides:/collections/insecticides,
+        /pages/chemicals-cleaners > /collections/drain-maintenance:/collections/drain-maintenance,
+        /pages/chemicals-cleaners > /pages/stain-removal:/pages/stain-removal,
+        /pages/chemicals-cleaners > /pages/stain-removal > /collections/stain-prevention-treatments:/collections/stain-prevention-treatments,
+        /pages/chemicals-cleaners > /pages/stain-removal > /collections/stain-removal-carpet-spotting-chemicals:/collections/stain-removal-carpet-spotting-chemicals,
+        /pages/hard-floor-and-carpet-machines : /pages/hard-floor-and-carpet-machines,
+        /pages/hard-floor-and-carpet-machines > /collections/counter-rotating-brushes-crb-carpet-floor-scrubbers:/collections/counter-rotating-brushes-crb-carpet-floor-scrubbers,
+        /pages/hard-floor-and-carpet-machines > /collections/floor-buffers:/collections/floor-buffers,
+        /pages/hard-floor-and-carpet-machines > /collections/floor-burnishers:/collections/floor-burnishers,
+        /pages/hard-floor-and-carpet-machines > /collections/multi-surface-tile-carpet:/collections/multi-surface-tile-carpet,
+        /pages/hard-floor-and-carpet-machines > /collections/ride-on-auto-scrubbers:/collections/ride-on-auto-scrubbers,
+        /pages/hard-floor-and-carpet-machines > /collections/walk-behind-auto-scrubbers:/collections/walk-behind-auto-scrubbers,
+        /pages/hard-floor-and-carpet-machines > /collections/wax-stripper-applicators:/collections/wax-stripper-applicators,
+        /pages/hard-floor-and-carpet-machines > /collections/baseboard-edgers-portable-handheld-scrubbers:/collections/baseboard-edgers-portable-handheld-scrubbers,
+        /pages/hard-floor-and-carpet-machines > /pages/industrial-sweepers:/pages/industrial-sweepers,
+        /pages/hard-floor-and-carpet-machines > /pages/industrial-sweepers > /collections/rider-sweepers:/collections/rider-sweepers,
+        /pages/hard-floor-and-carpet-machines > /pages/industrial-sweepers > /collections/push-sweepers:/collections/push-sweepers,
+        /pages/hard-floor-and-carpet-machines > /pages/extractors:/pages/extractors,
+        /pages/hard-floor-and-carpet-machines > /pages/extractors > /collections/box-extractors:/collections/box-extractors,
+        /pages/hard-floor-and-carpet-machines > /pages/extractors > /collections/detailing-extractors:/collections/detailing-extractors,
+        /pages/hard-floor-and-carpet-machines > /pages/extractors > /collections/portable-carpet-spotters:/collections/portable-carpet-spotters,
+        /pages/hard-floor-and-carpet-machines > /pages/extractors > /collections/rotary-extractors:/collections/rotary-extractors,
+        /pages/hard-floor-and-carpet-machines > /pages/extractors > /collections/self-contained-carpet-extractors:/collections/self-contained-carpet-extractors,
+        /pages/hard-floor-and-carpet-machines > /collections/escalator-cleaners:/collections/escalator-cleaners,
+        /pages/hard-floor-and-carpet-machines > /collections/pump-up-dispensers-trigger-sprayers:/collections/pump-up-dispensers-trigger-sprayers,
+        /pages/hard-floor-and-carpet-machines > /collections/steam-cleaners:/collections/steam-cleaners,
+        /pages/hard-floor-and-carpet-machines > /collections/vertical-surface-cleaners:/collections/vertical-surface-cleaners,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines:/pages/hard-floor-cleaning-machines,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines > /collections/counter-rotating-brushes-crb-carpet-floor-scrubbers:/collections/counter-rotating-brushes-crb-carpet-floor-scrubbers,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines > /collections/floor-buffers:/collections/floor-buffers,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines > /collections/floor-burnishers:/collections/floor-burnishers,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines > /collections/multi-surface-tile-carpet:/collections/multi-surface-tile-carpet,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines > /collections/ride-on-auto-scrubbers:/collections/ride-on-auto-scrubbers,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines > /collections/walk-behind-auto-scrubbers:/collections/walk-behind-auto-scrubbers,
+        /pages/hard-floor-and-carpet-machines > /pages/hard-floor-cleaning-machines > /collections/wax-stripper-applicators:/collections/wax-stripper-applicators,
+        /pages/industrial-sweepers : /pages/industrial-sweepers,
+        /pages/industrial-sweepers > /collections/push-sweepers:/collections/push-sweepers,
+        /pages/industrial-sweepers > /collections/rider-sweepers:/collections/rider-sweepers,
+        /pages/industrial-sweepers > /collections/sweeper-parts:/collections/sweeper-parts,
+        /pages/hard-floor-supplies-accessories : /pages/hard-floor-supplies-accessories,
+        /pages/hard-floor-supplies-accessories > /collections/auto-scrubber-brushes:/collections/auto-scrubber-brushes,
+        /pages/hard-floor-supplies-accessories > /collections/auto-scrubber-pad-drivers:/collections/auto-scrubber-pad-drivers,
+        /pages/hard-floor-supplies-accessories > /collections/auto-scrubber-squeegees:/collections/auto-scrubber-squeegees,
+        /pages/hard-floor-supplies-accessories > /pages/floor-scrubber-parts:/pages/floor-scrubber-parts,
+        /pages/hard-floor-supplies-accessories > /collections/concrete-preparation-polishing:/collections/concrete-preparation-polishing,
+        /pages/hard-floor-supplies-accessories > /collections/floor-buffer-brushes:/collections/floor-buffer-brushes,
+        /pages/hard-floor-supplies-accessories > /collections/floor-buffer-pad-drivers:/collections/floor-buffer-pad-drivers,
+        /pages/hard-floor-supplies-accessories > /pages/buffer-burnisher-parts:/pages/buffer-burnisher-parts,
+        /pages/hard-floor-supplies-accessories > /collections/solution-tanks:/collections/solution-tanks,
+        /pages/pads : /pages/pads,
+        /pages/pads > /collections/bonnets:/collections/bonnets,
+        /pages/pads > /collections/floor-scrubbing-pads:/collections/floor-scrubbing-pads,
+        /pages/pads > /collections/floor-polishing-pads:/collections/floor-polishing-pads,
+        /pages/pads > /collections/floor-prep-pads:/collections/floor-prep-pads,
+        /pages/pads > /collections/floor-stripping-pads:/collections/floor-stripping-pads,
+        /pages/pads > /collections/sanding-screens:/collections/sanding-screens,
+        /pages/pads > /collections/steel-wool-floor-pads:/collections/steel-wool-floor-pads,
+        /pages/floor-care-chemicals : /pages/floor-care-chemicals,
+        /pages/floor-care-chemicals > /collections/floor-cleaning-degreasers:/collections/floor-cleaning-degreasers,
+        /pages/floor-care-chemicals > /collections/floor-cleaning-soaps-solutions:/collections/floor-cleaning-soaps-solutions,
+        /pages/floor-care-chemicals > /collections/floor-polishing-restoring-solutions:/collections/floor-polishing-restoring-solutions,
+        /pages/floor-care-chemicals > /collections/floor-stripping-solutions:/collections/floor-stripping-solutions,
+        /pages/floor-care-chemicals > /collections/floor-wax-finishes:/collections/floor-wax-finishes,
+        /pages/floor-care-chemicals > /collections/stone-care-products:/collections/stone-care-products,
+        /pages/extractors : /pages/extractors,
+        /pages/extractors > /collections/box-extractors:/collections/box-extractors,
+        /pages/extractors > /collections/detailing-extractors:/collections/detailing-extractors,
+        /pages/extractors > /collections/portable-carpet-spotters:/collections/portable-carpet-spotters,
+        /pages/extractors > /collections/rotary-extractors:/collections/rotary-extractors,
+        /pages/extractors > /collections/self-contained-carpet-extractors:/collections/self-contained-carpet-extractors,
+        /collections/pump-up-dispensers-trigger-sprayers : /collections/pump-up-dispensers-trigger-sprayers,
+        /pages/carpet-solutions : /pages/carpet-solutions,
+        /pages/carpet-solutions > /collections/bonnet-scrubbing-cleaning:/collections/bonnet-scrubbing-cleaning,
+        /pages/carpet-solutions > /collections/carpet-chemical-packages:/collections/carpet-chemical-packages,
+        /pages/carpet-solutions > /collections/carpet-shampoo-extractor-solutions:/collections/carpet-shampoo-extractor-solutions,
+        /pages/carpet-solutions > /collections/carpet-spotting-kits:/collections/carpet-spotting-kits,
+        /pages/carpet-solutions > /collections/liquid-defoamers:/collections/liquid-defoamers,
+        /pages/carpet-solutions > /collections/post-extraction-rinse-agents:/collections/post-extraction-rinse-agents,
+        /pages/carpet-solutions > /collections/pre-spray-chemicals:/collections/pre-spray-chemicals,
+        /pages/carpet-extractor-parts : /pages/carpet-extractor-parts,
+        /pages/carpet-fans : /pages/carpet-fans,
+        /pages/carpet-fans > /collections/air-movers:/collections/air-movers,
+        /pages/carpet-fans > /collections/axial-fans:/collections/axial-fans,
+        /pages/carpet-fans > /collections/pedestal-fans:/collections/pedestal-fans,
+        /pages/carpet-supplies : /pages/carpet-supplies,
+        /pages/carpet-supplies > /collections/drag-wands:/collections/drag-wands,
+        /pages/carpet-supplies > /collections/extractor-hoses:/collections/extractor-hoses,
+        /pages/carpet-supplies > /collections/power-brushes:/collections/power-brushes,
+        /pages/carpet-supplies > /collections/upholstery-tools:/collections/upholstery-tools,
+        /pages/deals-bundles : /pages/deals-bundles,
+        /pages/deals-bundles > /collections/clearance:/collections/clearance,
+        /pages/deals-bundles > /collections/gold-medal-winners:/collections/gold-medal-winners,
+        /pages/deals-bundles > /collections/demoed-refurbished-equipment:/collections/demoed-refurbished-equipment,
+        /pages/deals-bundles > /collections/auto-scrubber-packages:/collections/auto-scrubber-packages,
+        /pages/deals-bundles > /collections/carpet-cleaning-packages:/collections/carpet-cleaning-packages,
+        /pages/deals-bundles > /collections/chemical-packages:/collections/chemical-packages,
+        /pages/deals-bundles > /collections/mopping-packages:/collections/mopping-packages,
+        /pages/deals-bundles > /collections/rotary-floor-buffer-machine-packages:/collections/rotary-floor-buffer-machine-packages,
+        /pages/deals-bundles > /collections/vacuum-cleaner-packages:/collections/vacuum-cleaner-packages,
+        /pages/flood-remediation : /pages/flood-remediation,
+        /pages/flood-remediation > /collections/air-scrubbers-other-commercial-filtration-devices:/collections/air-scrubbers-other-commercial-filtration-devices,
+        /pages/flood-remediation > /pages/carpet-fans:/pages/carpet-fans,
+        /pages/flood-remediation > /pages/carpet-fans > /collections/air-movers:/collections/air-movers,
+        /pages/flood-remediation > /pages/carpet-fans > /collections/axial-fans:/collections/axial-fans,
+        /pages/flood-remediation > /pages/carpet-fans > /collections/pedestal-fans:/collections/pedestal-fans,
+        /pages/flood-remediation > /collections/commercial-dehumidifiers:/collections/commercial-dehumidifiers,
+        /pages/flood-remediation > /pages/flood-extractors:/pages/flood-extractors,
+        /pages/flood-remediation > /pages/flood-extractors > /collections/sub-surface-deep-water-extraction-tools:/collections/sub-surface-deep-water-extraction-tools,
+        /pages/flood-remediation > /pages/flood-extractors > /collections/flood-extraction-machines:/collections/flood-extraction-machines,
+        /pages/flood-remediation > /collections/filters-ducting-air-scrubbers-dehumidifiers:/collections/filters-ducting-air-scrubbers-dehumidifiers,
+        /pages/janitorial-supplies : /pages/janitorial-supplies,
+        /pages/janitorial-supplies > /pages/carts-organizers-signs:/pages/carts-organizers-signs,
+        /pages/janitorial-supplies > /pages/carts-organizers-signs > /collections/janitorial-carts:/collections/janitorial-carts,
+        /pages/janitorial-supplies > /pages/carts-organizers-signs > /collections/signs:/collections/signs,
+        /pages/janitorial-supplies > /pages/carts-organizers-signs > /collections/tool-hangers:/collections/tool-hangers,
+        /pages/janitorial-supplies > /pages/waste-management:/pages/waste-management,
+        /pages/janitorial-supplies > /pages/waste-management > /collections/shovels:/collections/shovels,
+        /pages/janitorial-supplies > /pages/waste-management > /collections/trash-cans-recycling-bins:/collections/trash-cans-recycling-bins,
+        /pages/janitorial-supplies > /pages/waste-management > /collections/trash-can-liners:/collections/trash-can-liners,
+        /pages/janitorial-supplies > /pages/waste-management > /collections/trash-can-lids-accessories:/collections/trash-can-lids-accessories,
+        /pages/janitorial-supplies > /collections/chemical-dilution-control:/collections/chemical-dilution-control,
+        /pages/janitorial-supplies > /pages/restroom-supplies:/pages/restroom-supplies,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/air-freshener-dispensers:/collections/air-freshener-dispensers,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/air-fresheners-odor-eliminators:/collections/air-fresheners-odor-eliminators,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/disinfectant-wipe-dispensers:/collections/disinfectant-wipe-dispensers,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/facial-tissue:/collections/facial-tissue,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/feminine-hygiene-supplies:/collections/feminine-hygiene-supplies,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/hand-dryers:/collections/hand-dryers,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/hand-sanitizer-dispensers-stands:/collections/hand-sanitizer-dispensers-stands,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/hand-sanitizers:/collections/hand-sanitizers,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/hand-soaps-lotions:/collections/hand-soaps-lotions,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/paper-towel-dispensers:/collections/paper-towel-dispensers,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/paper-toweling:/collections/paper-toweling,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/sanitary-receptacles-liners:/collections/sanitary-receptacles-liners,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/soap-dispensers-wall-counter-mount:/collections/soap-dispensers-wall-counter-mount,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/toilet-brushes:/collections/toilet-brushes,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/toilet-paper-dispensers:/collections/toilet-paper-dispensers,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/toilet-seat-covers-sanitizers:/collections/toilet-seat-covers-sanitizers,
+        /pages/janitorial-supplies > /pages/restroom-supplies > /collections/urinal-screens-blocks:/collections/urinal-screens-blocks,
+        /pages/janitorial-supplies > /collections/pump-up-dispensers-trigger-sprayers:/collections/pump-up-dispensers-trigger-sprayers,
+        /pages/janitorial-supplies > /pages/mop-sweep:/pages/mop-sweep,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/carpet-sweepers-rakes:/collections/carpet-sweepers-rakes,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/deck-grout-scrubbing:/collections/deck-grout-scrubbing,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/dust-mop-heads:/collections/dust-mop-heads,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/dustpans:/collections/dustpans,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/floor-squeegees:/collections/floor-squeegees,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/handheld-scrubbing-pads:/collections/handheld-scrubbing-pads,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/handles:/collections/handles,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/mop-buckets:/collections/mop-buckets,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/mop-frames-accessories:/collections/mop-frames-accessories,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/mop-kits:/collections/mop-kits,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/push-broom-heads:/collections/push-broom-heads,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/swiffers-dusters:/collections/swiffers-dusters,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/upright-brooms:/collections/upright-brooms,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/wall-mop-heads:/collections/wall-mop-heads,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/wax-applicators-heads:/collections/wax-applicators-heads,
+        /pages/janitorial-supplies > /pages/mop-sweep > /collections/wet-mop-heads:/collections/wet-mop-heads,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes:/pages/rags-towels-wipes,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/disinfectant-wipes:/collections/disinfectant-wipes,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/general-use-wipes-disposable-towels:/collections/general-use-wipes-disposable-towels,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/hand-wipes:/collections/hand-wipes,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/microfiber-rags:/collections/microfiber-rags,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/paper-toweling:/collections/paper-toweling,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/paper-toweling:/collections/paper-toweling,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/rag-washers:/collections/rag-washers,
+        /pages/janitorial-supplies > /pages/rags-towels-wipes > /collections/sponges:/collections/sponges,
+        /pages/janitorial-supplies > /pages/window-cleaning-equipment:/pages/window-cleaning-equipment,
+        /pages/janitorial-supplies > /pages/window-cleaning-equipment > /collections/deionized-di-water-window-cleaning-carts:/collections/deionized-di-water-window-cleaning-carts,
+        /pages/janitorial-supplies > /pages/window-cleaning-equipment > /collections/water-fed-poles:/collections/water-fed-poles,
+        /pages/janitorial-supplies > /pages/window-cleaning-equipment > /collections/window-cleaning-kits:/collections/window-cleaning-kits,
+        /pages/janitorial-supplies > /pages/window-cleaning-equipment > /collections/window-screen-cleaners:/collections/window-screen-cleaners,
+        /pages/janitorial-supplies > /pages/window-cleaning-equipment > /collections/window-washing-squeegees:/collections/window-washing-squeegees,
+        /pages/parts-accessories : /pages/parts-accessories,
+        /pages/parts-accessories > /pages/auto-scrubber-accessories:/pages/auto-scrubber-accessories,
+        /pages/parts-accessories > /pages/auto-scrubber-accessories > /collections/auto-scrubber-brushes:/collections/auto-scrubber-brushes,
+        /pages/parts-accessories > /pages/auto-scrubber-accessories > /collections/auto-scrubber-pad-drivers:/collections/auto-scrubber-pad-drivers,
+        /pages/parts-accessories > /pages/floor-buffer-accessories:/pages/floor-buffer-accessories,
+        /pages/parts-accessories > /pages/floor-buffer-accessories > /collections/concrete-preparation-polishing:/collections/concrete-preparation-polishing,
+        /pages/parts-accessories > /pages/floor-buffer-accessories > /collections/floor-buffer-brushes:/collections/floor-buffer-brushes,
+        /pages/parts-accessories > /pages/floor-buffer-accessories > /collections/floor-buffer-pad-drivers:/collections/floor-buffer-pad-drivers,
+        /pages/parts-accessories > /pages/floor-buffer-accessories > /collections/solution-tanks:/collections/solution-tanks,
+        /pages/parts-accessories > /collections/tile-cleaning-tools-attachments:/collections/tile-cleaning-tools-attachments,
+        /pages/parts-accessories > /pages/floor-scrubber-parts:/pages/floor-scrubber-parts,
+        /pages/parts-accessories > /pages/floor-scrubber-parts > /collections/brush-vacuum-motors:/collections/brush-vacuum-motors,
+        /pages/parts-accessories > /pages/floor-scrubber-parts > /collections/miscellaneous-auto-scrubber-parts:/collections/miscellaneous-auto-scrubber-parts,
+        /pages/parts-accessories > /pages/floor-scrubber-parts > /collections/squeegees:/collections/squeegees,
+        /pages/parts-accessories > /pages/buffer-burnisher-parts:/pages/buffer-burnisher-parts,
+        /pages/parts-accessories > /pages/buffer-burnisher-parts > /collections/buffer-burnisher-components:/collections/buffer-burnisher-components,
+        /pages/parts-accessories > /pages/buffer-burnisher-parts > /collections/motors:/collections/motors,
+        /pages/parts-accessories > /pages/buffer-burnisher-parts > /collections/weights:/collections/weights,
+        /pages/parts-accessories > /pages/vacuum-parts:/pages/vacuum-parts,
+        /pages/parts-accessories > /pages/vacuum-parts > /collections/belts:/collections/belts,
+        /pages/parts-accessories > /pages/vacuum-parts > /collections/brush-rolls:/collections/brush-rolls,
+        /pages/parts-accessories > /pages/vacuum-parts > /collections/filters:/collections/filters,
+        /pages/parts-accessories > /pages/vacuum-parts > /collections/gaskets-miscellaneous-parts:/collections/gaskets-miscellaneous-parts,
+        /pages/parts-accessories > /pages/vacuum-parts > /collections/squeegees:/collections/squeegees,
+        /pages/parts-accessories > /pages/vacuum-parts > /collections/vacuum-motors:/collections/vacuum-motors,
+        /pages/parts-accessories > /pages/carpet-supplies:/pages/carpet-supplies,
+        /pages/parts-accessories > /pages/carpet-supplies > /collections/drag-wands:/collections/drag-wands,
+        /pages/parts-accessories > /pages/carpet-supplies > /collections/extractor-hoses:/collections/extractor-hoses,
+        /pages/parts-accessories > /pages/carpet-supplies > /collections/power-brushes:/collections/power-brushes,
+        /pages/parts-accessories > /pages/carpet-supplies > /collections/upholstery-tools:/collections/upholstery-tools,
+        /pages/parts-accessories > /pages/pads:/pages/pads,
+        /pages/parts-accessories > /pages/pads > /collections/bonnets:/collections/bonnets,
+        /pages/parts-accessories > /pages/pads > /collections/floor-polishing-pads:/collections/floor-polishing-pads,
+        /pages/parts-accessories > /pages/pads > /collections/floor-prep-pads:/collections/floor-prep-pads,
+        /pages/parts-accessories > /pages/pads > /collections/floor-scrubbing-pads:/collections/floor-scrubbing-pads,
+        /pages/parts-accessories > /pages/pads > /collections/floor-stripping-pads:/collections/floor-stripping-pads,
+        /pages/parts-accessories > /pages/pads > /collections/sanding-screens:/collections/sanding-screens,
+        /pages/parts-accessories > /pages/pads > /collections/steel-wool-floor-pads:/collections/steel-wool-floor-pads,
+        /pages/parts-accessories > /pages/carpet-extractor-parts:/pages/carpet-extractor-parts,
+        /pages/parts-accessories > /pages/carpet-extractor-parts > /collections/extractor-components:/collections/extractor-components,
+        /pages/parts-accessories > /pages/carpet-extractor-parts > /collections/carpet-extractor-heaters:/collections/carpet-extractor-heaters,
+        /pages/parts-accessories > /pages/carpet-extractor-parts > /collections/drag-wand-jets-parts:/collections/drag-wand-jets-parts,
+        /pages/parts-accessories > /pages/carpet-extractor-parts > /collections/pumps:/collections/pumps,
+        /pages/parts-accessories > /pages/carpet-extractor-parts > /collections/vacuum-motors:/collections/vacuum-motors,
+        /pages/parts-accessories > /collections/pressure-washer-accessories:/collections/pressure-washer-accessories,
+        /pages/parts-accessories > /collections/pressure-washer-parts:/collections/pressure-washer-parts,
+        /pages/parts-accessories > /collections/pump-up-dispensers-trigger-sprayers:/collections/pump-up-dispensers-trigger-sprayers,
+        /pages/parts-accessories > /collections/sweeper-parts:/collections/sweeper-parts,
+        /pages/parts-accessories > /pages/vacuum-accessories:/pages/vacuum-accessories,
+        /pages/parts-accessories > /pages/vacuum-accessories > /collections/attachments-tools:/collections/attachments-tools,
+        /pages/parts-accessories > /pages/vacuum-accessories > /collections/vacuum-bags:/collections/vacuum-bags,
+        /pages/parts-accessories > /pages/vacuum-accessories > /collections/vacuum-batteries-chargers:/collections/vacuum-batteries-chargers,
+        /pages/parts-accessories > /pages/vacuum-accessories > /collections/hoses:/collections/hoses,
+        /pages/power-washers-sprayers : /pages/power-washers-sprayers,
+        /pages/power-washers-sprayers > /collections/disinfectant-chemical-spray-applicators-large-area:/collections/disinfectant-chemical-spray-applicators-large-area,
+        /pages/power-washers-sprayers > /collections/pump-up-dispensers-trigger-sprayers:/collections/pump-up-dispensers-trigger-sprayers,
+        /pages/power-washers-sprayers > /collections/drain-jetters:/collections/drain-jetters,
+        /pages/power-washers-sprayers > /collections/electrostatic-disinfecting-sanitizing-sprayers:/collections/electrostatic-disinfecting-sanitizing-sprayers,
+        /pages/power-washers-sprayers > /pages/pressure-washers:/pages/pressure-washers,
+        /pages/power-washers-sprayers > /pages/pressure-washers > /collections/cart-mount:/collections/cart-mount,
+        /pages/power-washers-sprayers > /pages/pressure-washers > /collections/flat-surface-cleaners:/collections/flat-surface-cleaners,
+        /pages/power-washers-sprayers > /pages/pressure-washers > /collections/hand-carry:/collections/hand-carry,
+        /pages/power-washers-sprayers > /pages/pressure-washers > /collections/stationary:/collections/stationary,
+        /pages/power-washers-sprayers > /pages/pressure-washers > /collections/truck-mount:/collections/truck-mount,
+        /pages/safety-ppe : /pages/safety-ppe,
+        /pages/safety-ppe > /collections/alarms:/collections/alarms,
+        /pages/safety-ppe > /collections/first-aid-kits-thermometers:/collections/first-aid-kits-thermometers,
+        /pages/safety-ppe > /pages/glove-and-hand-protection:/pages/glove-and-hand-protection,
+        /pages/safety-ppe > /pages/glove-and-hand-protection > /collections/cotton-gloves:/collections/cotton-gloves,
+        /pages/safety-ppe > /pages/glove-and-hand-protection > /collections/latex-gloves:/collections/latex-gloves,
+        /pages/safety-ppe > /pages/glove-and-hand-protection > /collections/leather-work-gloves:/collections/leather-work-gloves,
+        /pages/safety-ppe > /pages/glove-and-hand-protection > /collections/nitrile-gloves:/collections/nitrile-gloves,
+        /pages/safety-ppe > /pages/glove-and-hand-protection > /collections/vinyl-gloves:/collections/vinyl-gloves,
+        /pages/safety-ppe > /pages/body-protection-and-clothing:/pages/body-protection-and-clothing,
+        /pages/safety-ppe > /pages/body-protection-and-clothing > /collections/aprons:/collections/aprons,
+        /pages/safety-ppe > /pages/body-protection-and-clothing > /collections/coveralls:/collections/coveralls,
+        /pages/safety-ppe > /pages/body-protection-and-clothing > /collections/lab-coats:/collections/lab-coats,
+        /pages/safety-ppe > /pages/body-protection-and-clothing > /collections/rain-suits-ponchos:/collections/rain-suits-ponchos,
+        /pages/safety-ppe > /pages/body-protection-and-clothing > /collections/sleeves:/collections/sleeves,
+        /pages/safety-ppe > /collections/signs:/collections/signs,
+        /pages/safety-ppe > /collections/ear-protection:/collections/ear-protection,
+        /pages/safety-ppe > /collections/flammable-storage-cabinets:/collections/flammable-storage-cabinets,
+        /pages/safety-ppe > /collections/hair-beard-covers:/collections/hair-beard-covers,
+        /pages/safety-ppe > /collections/matting:/collections/matting,
+        /pages/safety-ppe > /pages/respiratory-protection:/pages/respiratory-protection,
+        /pages/safety-ppe > /pages/respiratory-protection > /collections/face-masks:/collections/face-masks,
+        /pages/safety-ppe > /pages/respiratory-protection > /collections/respirators:/collections/respirators,
+        /pages/safety-ppe > /collections/eye-protection:/collections/eye-protection,
+        /pages/safety-ppe > /pages/foot-protection:/pages/foot-protection,
+        /pages/safety-ppe > /pages/foot-protection > /collections/shoe-covers-nuke-boots:/collections/shoe-covers-nuke-boots,
+        /pages/safety-ppe > /pages/foot-protection > /collections/steel-toe-footwear:/collections/steel-toe-footwear,
+        /pages/safety-ppe > /pages/foot-protection > /collections/stripping-shoes:/collections/stripping-shoes,
+        /pages/safety-ppe > /pages/foot-protection > /collections/waterproof-boots:/collections/waterproof-boots,
+        /pages/safety-ppe > /collections/spill-cleanup:/collections/spill-cleanup,
+        /pages/vacuum-cleaners : /pages/vacuum-cleaners,
+        /pages/vacuum-cleaners > /collections/backpack-vacuums:/collections/backpack-vacuums,
+        /pages/vacuum-cleaners > /collections/hip-style-vacuums:/collections/hip-style-vacuums,
+        /pages/vacuum-cleaners > /collections/canister-portable-vacuums:/collections/canister-portable-vacuums,
+        /pages/vacuum-cleaners > /collections/cordless-battery-powered-vacuums:/collections/cordless-battery-powered-vacuums,
+        /pages/vacuum-cleaners > /pages/upright-vacuums:/pages/upright-vacuums,
+        /pages/vacuum-cleaners > /pages/upright-vacuums > /collections/crb-pile-lifter-vacuums:/collections/crb-pile-lifter-vacuums,
+        /pages/vacuum-cleaners > /pages/upright-vacuums > /collections/dual-motor-vacuums:/collections/dual-motor-vacuums,
+        /pages/vacuum-cleaners > /pages/upright-vacuums > /collections/single-motor-vacuums:/collections/single-motor-vacuums,
+        /pages/vacuum-cleaners > /pages/upright-vacuums > /collections/wide-area-vacuums:/collections/wide-area-vacuums,
+        /pages/vacuum-cleaners > /pages/wet-dry-vaccums:/pages/wet-dry-vaccums,
+        /pages/vacuum-cleaners > /pages/wet-dry-vaccums > /collections/auto-discharge-vacs:/collections/auto-discharge-vacs,
+        /pages/vacuum-cleaners > /pages/wet-dry-vaccums > /collections/shop-vacuums:/collections/shop-vacuums,
+        /pages/vacuum-cleaners > /pages/wet-dry-vaccums > /collections/tank-vacuums:/collections/tank-vacuums,
+        /pages/vacuum-cleaners > /pages/industrial-vacuums:/pages/industrial-vacuums,
+        /pages/vacuum-cleaners > /pages/industrial-vacuums > /collections/concrete-vacuums:/collections/concrete-vacuums,
+        /pages/vacuum-cleaners > /pages/industrial-vacuums > /collections/critical-filter-vacs:/collections/critical-filter-vacs,
+        /pages/vacuum-cleaners > /pages/industrial-vacuums > /collections/external-internal-filter-industrial-vacuums:/collections/external-internal-filter-industrial-vacuums,
+        /pages/how-tos : /pages/how-tos,
+        /pages/how-tos > /pages/applying-a-floor-finish:/pages/applying-a-floor-finish,
+        /pages/how-tos > /pages/burnishing-a-floor:/pages/burnishing-a-floor,
+        /pages/how-tos > /pages/carpet-bonnet-scrubbing:/pages/carpet-bonnet-scrubbing,
+        /pages/how-tos > /pages/carpet-cleaning-extraction:/pages/carpet-cleaning-extraction,
+        /pages/how-tos > /pages/disinfecting-toilets-urinals:/pages/disinfecting-toilets-urinals,
+        /pages/how-tos > /pages/dust-mopping:/pages/dust-mopping,
+        /pages/how-tos > /pages/employee-hygiene-hand-washing:/pages/employee-hygiene-hand-washing,
+        /pages/how-tos > /pages/entrance-lobby-cleaning:/pages/entrance-lobby-cleaning,
+        /pages/how-tos > /pages/flood-water-cleanup:/pages/flood-water-cleanup,
+        /pages/how-tos > /pages/floor-buffer-scrubbing:/pages/floor-buffer-scrubbing,
+        /pages/how-tos > /pages/flu-prevention-tips:/pages/flu-prevention-tips,
+        /pages/how-tos > /pages/wet-mopping:/pages/wet-mopping,
+        /pages/how-tos > /pages/office-cleaning:/pages/office-cleaning,
+        /pages/how-tos > /pages/restroom-cleaning-procedures:/pages/restroom-cleaning-procedures,
+        /pages/how-tos > /pages/automatic-floor-scrubbing:/pages/automatic-floor-scrubbing,
+        /pages/how-tos > /pages/spray-buffing-a-floor:/pages/spray-buffing-a-floor,
+        /pages/how-tos > /pages/stripping-a-floor:/pages/stripping-a-floor,
+        /pages/how-tos > /pages/vacuum-carpets:/pages/vacuum-carpets,
+        /pages/how-tos > /pages/window-glass-cleaning:/pages/window-glass-cleaning,
+        /pages/how-tos > /pages/stain-removal-directions:/pages/stain-removal-directions,
+        /pages/how-tos > /pages/national-safety-month:/pages/national-safety-month,
+        /pages/how-tos > /pages/flu-statistics:/pages/flu-statistics,
+        /collections/discontinued : /collections/discontinued,
+        " | split: ","%}
+    {% elsif current_website == 'am' %}
+        {% assign breadcrumbslookup = "
+        /pages/air-cleaning/ : /pages/air-cleaning/,
+        /pages/air-cleaning/ > /collections/air-scrubbers:/collections/air-scrubbers,
+        /pages/air-cleaning/ > /collections/air-scrubber-filters-ducts:/collections/air-scrubber-filters-ducts,
+        /pages/air-movers : /pages/air-movers,
+        /pages/air-movers > /collections/air-moving-carpet-dryers:/collections/air-moving-carpet-dryers,
+        /pages/air-movers > /collections/air-mover-ducting:/collections/air-mover-ducting,
+        /pages/air-movers > /collections/axial-flood-dryers:/collections/axial-flood-dryers,
+        /pages/air-movers > /collections/barrel-drum-fans:/collections/barrel-drum-fans,
+        /pages/air-movers > /collections/inflatable-blowers:/collections/inflatable-blowers,
+        /pages/air-movers > /collections/pedestal-fans:/collections/pedestal-fans,
+        /pages/flood-restoration-equipment : /pages/flood-restoration-equipment,
+        /pages/flood-restoration-equipment > /collections/commercial-dehumidifiers:/collections/commercial-dehumidifiers,
+        /pages/flood-restoration-equipment > /collections/dehumidifier-accessories:/collections/dehumidifier-accessories,
+        /pages/flood-restoration-equipment > /collections/flood-extractors:/collections/flood-extractors,
+        /pages/flood-restoration-equipment > /collections/moisture-detection-tools:/collections/moisture-detection-tools,
+        /pages/flood-restoration-supplies : /pages/flood-restoration-supplies,
+        /pages/flood-restoration-supplies > /pages/protective-apparel:/pages/protective-apparel,
+        /pages/flood-restoration-supplies > /pages/protective-apparel > /collections/gloves:/collections/gloves,
+        /pages/flood-restoration-supplies > /pages/protective-apparel > /collections/respiratory-protection:/collections/respiratory-protection,
+        /pages/flood-restoration-supplies > /pages/protective-apparel > /collections/hearing-protection:/collections/hearing-protection,
+        /pages/flood-restoration-supplies > /pages/protective-apparel > /collections/eye-protection:/collections/eye-protection,
+        /pages/flood-restoration-supplies > /collections/poly-sheeting:/collections/poly-sheeting,
+        /pages/flood-restoration-supplies > /collections/duct-tape:/collections/duct-tape,
+        /pages/flood-restoration-supplies > /collections/absorbents:/collections/absorbents,
+        /pages/mold-recovery : /pages/mold-recovery,
+        /pages/mold-recovery > /collections/mold-recovery-vacuums:/collections/mold-recovery-vacuums,
+        /pages/mold-recovery > /collections/mold-mildew-inhibitors:/collections/mold-mildew-inhibitors,
+        /pages/mold-recovery > /collections/vacuum-filters-bags:/collections/vacuum-filters-bags,
+        " | split: ","%}
+    {% elsif current_website == "ce" %}
+        {% assign breadcrumbslookup = "
+        /pages/carpet-machines : /pages/carpet-machines,
+        /pages/carpet-machines > /collections/carpet-spotters:/collections/carpet-spotters,
+        /pages/carpet-machines > /collections/cold-water-carpet-extraction-machines:/collections/cold-water-carpet-extraction-machines,
+        /pages/carpet-machines > /collections/heated-carpet-extractors:/collections/heated-carpet-extractors,
+        /pages/carpet-machines > /collections/self-contained-carpet-extractors:/collections/self-contained-carpet-extractors,
+        /collections/carpet-extractor-packages : /collections/carpet-extractor-packages,
+        /pages/carpet-extractor-tools : /pages/carpet-extractor-tools,
+        /pages/carpet-extractor-tools > /collections/carpet-wands:/collections/carpet-wands,
+        /pages/carpet-extractor-tools > /collections/power-heads:/collections/power-heads,
+        /pages/carpet-extractor-tools > /collections/sprayers:/collections/sprayers,
+        /pages/carpet-extractor-tools > /collections/vacuum-solution-hoses:/collections/vacuum-solution-hoses,
+        /pages/carpet-extractor-tools > /collections/vacuum-solution-hoses:/collections/vacuum-solution-hoses,
+        /pages/carpet-solutions : /pages/carpet-solutions,
+        /pages/carpet-solutions > /collections/carpet-cleaning-chemicals:/collections/carpet-cleaning-chemicals,
+        /pages/carpet-solutions > /collections/carpet-cleaning-chemical-kits-packagess:/collections/carpet-cleaning-chemical-kits-packagess,
+        /pages/carpet-solutions > /collections/carpet-extractor-defoamers:/collections/carpet-extractor-defoamers,
+        /pages/carpet-solutions > /collections/enzyme-carpet-cleaners:/collections/enzyme-carpet-cleaners,
+        /pages/carpet-solutions > /collections/spot-stain-carpet-cleaners:/collections/spot-stain-carpet-cleaners,
+        /collections/drying-fans : /collections/drying-fans,
+        /collections/drying-fans > /collections/drying-fans:/collections/drying-fans,
+        /pages/tile-carpet-cleaning : /pages/tile-carpet-cleaning,
+        /pages/tile-carpet-cleaning > /collections/bonnets:/collections/bonnets,
+        /pages/tile-carpet-cleaning > /collections/hard-floor-cleaners:/collections/hard-floor-cleaners,
+        /pages/tile-carpet-cleaning > /collections/tile-carpet-machines:/collections/tile-carpet-machines,
+        /pages/tile-carpet-cleaning > /collections/tile-cleaning-tools:/collections/tile-cleaning-tools,
+        /pages/vacuums : /pages/vacuums,
+        /pages/vacuums > /collections/backpack-vacuums:/collections/backpack-vacuums,
+        /pages/vacuums > /collections/canister-vacuums:/collections/canister-vacuums,
+        /pages/vacuums > /collections/upright-vacuums:/collections/upright-vacuums,
+        " | split: ","%}
+    {% elsif current_website == "fb" %}
+        {% assign breadcrumbslookup = "
+        /collections/floor-buffer-package-deals : /collections/floor-buffer-package-deals,
+        /pages/low-speed-floor-buffers : /pages/low-speed-floor-buffers,
+        /pages/low-speed-floor-buffers > /collections/12-inch-smaller-low-speed-buffers:/collections/12-inch-smaller-low-speed-buffers,
+        /pages/low-speed-floor-buffers > /collections/13-inch-175-rpm-floor-buffing-machines:/collections/13-inch-175-rpm-floor-buffing-machines,
+        /pages/low-speed-floor-buffers > /collections/15-inch-floor-scrubber-buffers:/collections/15-inch-floor-scrubber-buffers,
+        /pages/low-speed-floor-buffers > /collections/17-inch-175-rpm-floor-polishers-buffers:/collections/17-inch-175-rpm-floor-polishers-buffers,
+        /pages/low-speed-floor-buffers > /collections/20-inch-floor-scrubbing-machines:/collections/20-inch-floor-scrubbing-machines,
+        /pages/high-speed-floor-buffers : /pages/high-speed-floor-buffers,
+        /pages/high-speed-floor-buffers > /collections/battery-powered-high-speed-burnishers:/collections/battery-powered-high-speed-burnishers,
+        /pages/high-speed-floor-buffers > /collections/electric-floor-burnisher-buffers:/collections/electric-floor-burnisher-buffers,
+        /pages/high-speed-floor-buffers > /collections/propane-burnisher-buffers-high-speed:/collections/propane-burnisher-buffers-high-speed,
+        /pages/dual-speed-floor-buffers : /pages/dual-speed-floor-buffers,
+        /pages/dual-speed-floor-buffers > /collections/17-inch-two-speed-floor-polishers:/collections/17-inch-two-speed-floor-polishers,
+        /pages/dual-speed-floor-buffers > /collections/20-inch-dual-speed-floor-machines:/collections/20-inch-dual-speed-floor-machines,
+        /pages/rectangular-floor-buffers : /pages/rectangular-floor-buffers,
+        /pages/rectangular-floor-buffers > /collections/12-x-18-floor-buffers:/collections/12-x-18-floor-buffers,
+        /pages/rectangular-floor-buffers > /collections/14-x-20-floor-buffers:/collections/14-x-20-floor-buffers,
+        /pages/rectangular-floor-buffers > /collections/14-x-28-floor-buffers:/collections/14-x-28-floor-buffers,
+        /pages/floor-buffer-pads-brushes-accessories : /pages/floor-buffer-pads-brushes-accessories,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-carpet-floor-bonnets:/collections/floor-buffer-carpet-floor-bonnets,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-carpet-scrubbing-brushes:/collections/floor-buffer-carpet-scrubbing-brushes,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/dust-mops:/collections/dust-mops,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-finish-applicators:/collections/floor-finish-applicators,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-finish-removing-tools:/collections/floor-finish-removing-tools,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-floor-scrubbing-brushes:/collections/floor-buffer-floor-scrubbing-brushes,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-pad-holders:/collections/floor-buffer-pad-holders,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-polishing-pads:/collections/floor-buffer-polishing-pads,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/resurfacing-concrete-wood-floor-tools:/collections/resurfacing-concrete-wood-floor-tools,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-sanding-screens:/collections/floor-buffer-sanding-screens,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-scrubbing-pads:/collections/floor-buffer-scrubbing-pads,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/175-rpm-floor-buffer-solution-tanks:/collections/175-rpm-floor-buffer-solution-tanks,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-steel-wool-pads:/collections/floor-buffer-steel-wool-pads,
+        /pages/floor-buffer-pads-brushes-accessories > /collections/floor-buffer-stripping-pads:/collections/floor-buffer-stripping-pads,
+        /pages/floor-buffing-chemicals : /pages/floor-buffing-chemicals,
+        /pages/floor-buffing-chemicals > /collections/floor-buffing-polishing-chemicals:/collections/floor-buffing-polishing-chemicals,
+        /pages/floor-buffing-chemicals > /collections/floor-buffer-carpet-cleaning-chemicals:/collections/floor-buffer-carpet-cleaning-chemicals,
+        /pages/floor-buffing-chemicals > /collections/floor-cleaning-degreasing-solutions:/collections/floor-cleaning-degreasing-solutions,
+        /pages/floor-buffing-chemicals > /collections/floor-cleaning-soaps-cleaners:/collections/floor-cleaning-soaps-cleaners,
+        /pages/floor-buffing-chemicals > /collections/floor-finish-high-gloss-durable-waxes:/collections/floor-finish-high-gloss-durable-waxes,
+        /pages/floor-buffing-chemicals > /collections/floor-wax-finish-stripper:/collections/floor-wax-finish-stripper,
+        " | split: ","%}
+    {% elsif current_website == "fs" %}
+        {% assign breadcrumbslookup = "
+        /pages/floor-scrubbers : /pages/floor-scrubbers,
+        /pages/floor-scrubbers > /collections/walk-behind-floor-scrubbers:/collections/walk-behind-floor-scrubbers,
+        /pages/floor-scrubbers > /collections/ride-on-floor-scrubbers:/collections/ride-on-floor-scrubbers,
+        /pages/rotary-floor-buffer-scrubbers : /pages/rotary-floor-buffer-scrubbers,
+        /pages/rotary-floor-buffer-scrubbers > /collections/low-speed-buffers:/collections/low-speed-buffers,
+        /pages/rotary-floor-buffer-scrubbers > /collections/two-speed-buffers:/collections/two-speed-buffers,
+        /pages/rotary-floor-buffer-scrubbers > /collections/high-speed-burnishers:/collections/high-speed-burnishers,
+        /pages/rotary-floor-buffer-scrubbers > /collections/orbital-floor-machines:/collections/orbital-floor-machines,
+        /collections/pre-sweeping : /collections/pre-sweeping,
+        /pages/floor-care-solutions : /pages/floor-care-solutions,
+        /pages/floor-care-solutions > /collections/carpet-shampoos:/collections/carpet-shampoos,
+        /pages/floor-care-solutions > /collections/commercial-tile-floor-wax:/collections/commercial-tile-floor-wax,
+        /pages/floor-care-solutions > /collections/floor-defoamers:/collections/floor-defoamers,
+        /pages/floor-care-solutions > /collections/floor-buffing-solutions:/collections/floor-buffing-solutions,
+        /pages/floor-care-solutions > /collections/floor-degreasers:/collections/floor-degreasers,
+        /pages/floor-care-solutions > /collections/floor-cleaning-soaps:/collections/floor-cleaning-soaps,
+        /pages/floor-care-solutions > /collections/floor-stripping-chemicals:/collections/floor-stripping-chemicals,
+        /pages/deals-bundles : /pages/deals-bundles,
+        /pages/deals-bundles > /collections/fs-featured-products:/collections/fs-featured-products,
+        /pages/deals-bundles > /collections/floor-buffer-package-deals:/collections/floor-buffer-package-deals,
+        /pages/deals-bundles > /collections/auto-scrubber-package-deals:/collections/auto-scrubber-package-deals,
+        /pages/floor-scrubber-accessories : /pages/floor-scrubber-accessories,
+        /pages/floor-scrubber-accessories > /collections/carpet-bonnets:/collections/carpet-bonnets,
+        /pages/floor-scrubber-accessories > /pages/floor-pads-holders:/pages/floor-pads-holders,
+        /pages/floor-scrubber-accessories > /pages/floor-pads-holders > /collections/floor-pad-holders:/collections/floor-pad-holders,
+        /pages/floor-scrubber-accessories > /pages/floor-pads-holders > /collections/floor-polishing-pads:/collections/floor-polishing-pads,
+        /pages/floor-scrubber-accessories > /pages/floor-pads-holders > /collections/floor-scrubbing-pads:/collections/floor-scrubbing-pads,
+        /pages/floor-scrubber-accessories > /pages/floor-pads-holders > /collections/floor-stripping-pads:/collections/floor-stripping-pads,
+        /pages/floor-scrubber-accessories > /collections/floor-signs:/collections/floor-signs,
+        /pages/floor-scrubber-accessories > /pages/scrubber-brushes:/pages/scrubber-brushes,
+        /pages/floor-scrubber-accessories > /pages/scrubber-brushes > /collections/auto-scrubber-brushes:/collections/auto-scrubber-brushes,
+        /pages/floor-scrubber-accessories > /pages/scrubber-brushes > /collections/carpet-brushes:/collections/carpet-brushes,
+        /pages/floor-scrubber-accessories > /pages/scrubber-brushes > /collections/cylindrical-brushes:/collections/cylindrical-brushes,
+        /pages/floor-scrubber-accessories > /pages/scrubber-brushes > /collections/rotary-floor-brushes:/collections/rotary-floor-brushes,
+        /pages/floor-scrubber-accessories > /collections/auto-scrubber-squeegees:/collections/auto-scrubber-squeegees,
+        /pages/floor-scrubber-accessories > /collections/shampoo-solution-tanks:/collections/shampoo-solution-tanks,
+        " | split: ","%}
+    {% else %}
+        {% assign breadcrumbslookup = "
+        /notastore : /notastore,
+        " | split: ","%}
+    {% endif %}
+
+------------mitch's bread-------------------<br/>
+
+    {% assign urlstolookupobj = urlstolookup | split: '|' %}
+    {% for urltolookup in urlstolookupobj %}
+        {% assign urlpostion = 1 %}
+        {% for breadcrumbitem in breadcrumbslookup %}
+            {% assign breadcrumb = breadcrumbitem | split: ':' %}
+            {% assign breadcrumblookupurl = breadcrumb[1] | strip %}
+            {% assign urltolookupclean = urltolookup | strip %}
+
+            {% if urltolookupclean == breadcrumblookupurl %}
+                {% assign breadcrumblevels = breadcrumb[0] | split: '>' %}
+                {% capture finalbreadtemp %}
+                    <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                    {%- for breadcrumblevel in breadcrumblevels -%}
+                        {% assign breadcrumblevelobj = breadcrumblevel | split: '/' %}
+                        {% if breadcrumblevelobj[1] == "collections" %}
+                            {% if forloop.last != true or productpage == 1 %}
+                                <a href="/collections/{{breadcrumblevelobj[2]}}" title="{{collections[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/collections/{{breadcrumblevelobj[2]}}">
+										<span itemprop="name">{{collections[breadcrumblevelobj[2]].title}}</span>
+										</a> <span aria-hidden="true" class="separator">›</span>
+                            {% else %}
+                                <span class="current">{{collections[breadcrumblevelobj[2]].title}}</span>
+                            {% endif %}
+                        {% elsif breadcrumblevelobj[1] == "pages" %}
+                            {% if forloop.last != true or productpage == 1 %}
+                                <a href="/pages/{{breadcrumblevelobj[2]}}" title="{{pages[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/pages/{{breadcrumblevelobj[2]}}">
+										<span itemprop="name">{{ pages[breadcrumblevelobj[2]].title }}</span></a>
+                                </a> <span aria-hidden="true" class="separator">›</span>
+                            {% else %}
+                                <span class="current">{{pages[breadcrumblevelobj[2]].title}}</span>
+                            {% endif %}
+                        {% endif %}
+                    {%- endfor -%}
+                    {% if productpage == 1 %}
+                         <span class="current">{{ product.title }} end title</span>
+                    {% endif %}
+                    </span>
+                {% endcapture %}
+                {% assign breadcrumbs = breadcrumbs | append: finalbreadtemp | append: '|' %}
+                {% assign breadposition = breadposition | append: urlpostion | append: '|' %}
+
+            {% endif %}
+            {% assign urlpostion = urlpostion | plus: 1 %}
+        {% endfor %}
+    {% endfor %}
+
+    {% assign breadcrumbs = breadcrumbs | split: '|' %}
+    {% assign breadposition = breadposition | split: '|' %}
+
+    {% assign lowestPostion = 1000000 %}
+    {% comment %} get the lowest postion and display the correct breadcrumb {% endcomment %}
+    {% for positionValue in breadposition %}
+        {% assign positionValueint = positionValue | plus: 0 %}
+        {% if positionValueint < lowestPostion %}
+            {% assign lowestPostion = positionValueint %}
+        {% endif %}
+    {% endfor %}
+
+    {% assign counter = 0 %}
+    {% for breadcrumb in breadcrumbs %}
+        {% assign thisbreadposition = breadposition[counter] | plus: 0 %}
+        {% if thisbreadposition == lowestPostion %}
+            {% assign finalbread = breadcrumb %}
+        {% endif %}
+        {% assign counter = counter | plus: 1 %}
+    {% endfor %}
+
+
+    <nav class="breadcrumb breadcrumbs-container" role="navigation" aria-label="breadcrumbs"  itemscope itemtype="https://schema.org/BreadcrumbList">
+			<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			<a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}" itemscope itemtype="https://schema.org/WebPage"
+               itemprop="item" itemid="/"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a><meta itemprop="position" content="1" />
+			</span>
+        <span aria-hidden="true" class="separator">›</span>
+        {% if finalbread %}
+            {{finalbread}}
+        {% else %}
+            {%- if template contains 'product' -%}
+                <span class="current">{{  product.title }}</span>
+            {%- elsif template contains 'collection' and collection.handle -%}
+                <span class="current">{{ collection.title }}</span>
+            {%- elsif template contains 'page' -%}
+                <span class="current">{{ page.title }}</span>
+            {% endif %}
+        {% endif %}
+    </nav>
+
+{%- endunless -%}
