@@ -239,7 +239,7 @@ jQuery(document).ready(function($){
                 // $('properties[_product_step]').attr('value', vstep);
                 $('input[name="properties[_product_step]"]').attr('value', vstep);
             }
-        },500);
+        },300);
     });
     if(searchParams.has('variant')){
         searchParams.has('variant')
