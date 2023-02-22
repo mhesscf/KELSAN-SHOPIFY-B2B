@@ -182,7 +182,7 @@
         </div>
         {% endif %}
         {% if pstep != '' %}
-          <div id="qtInfo"></div>
+          <div id="qtInfo{{ item.key | replace: ':', '' }}"></div>
           <div class="form-field form-field--qty-input visible">
         {% else %}
           <div class="form-field form-field--qty-input {% if item.quantity < 10 %}hidden{% else %}visible{% endif %}">

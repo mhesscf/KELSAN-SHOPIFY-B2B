@@ -159,8 +159,13 @@
                             {% endif %}
                             {% if product.variants.size > 1 %}
                                 {% for variant in product.variants %}
-                                    <div class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}">
-                                        SKU:<span> {{ variant.sku }}</span>
+                                    {% if variant.metafields.plytix.product_step %}
+                                        {% assign vstep = variant.metafields.plytix.product_step %}
+                                    {% else %}
+                                        {% assign vstep = 1 %}
+                                    {% endif %}
+                                    <div class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
+                                    SKU:<span> {{ variant.sku }}</span>
                                     </div>
                                 {% endfor %}
                             {% else %}

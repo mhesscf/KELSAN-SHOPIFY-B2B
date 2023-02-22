@@ -220,8 +220,25 @@ jQuery(document).ready(function($){
             searchParams.has('variant')
             let param = searchParams.get('variant')
             $('.variant-sku').css('display', 'none');
-            console.log(param)
+            //console.log(param)
             $('#v' + param).css('display', 'block');
+            var vid = $('#v' + param).data('vid');
+            var vstep = $('#v' + param).data('increment');
+            var erpsku = $('#v' + param).data('erpsku');
+            if(vid == param){
+                $('input[name="properties[_erp_sku]"]').attr('value', erpsku);
+                $('#product-quantity-input').data('step', vstep);
+                $('.qtyminus').data('step', vstep);
+                $('.qtyplus').data('step', vstep);
+                $('#product-quantity-input').attr('data-step', vstep);
+                $('#product-quantity-input').attr('value',vstep);
+                $('.qtyminus').attr('data-step', vstep);
+                $('.qtyplus').attr('data-step', vstep);
+                $('#product-quantity-input').val(vstep);
+                $('.product_step').attr('value', vstep);
+                // $('properties[_product_step]').attr('value', vstep);
+                $('input[name="properties[_product_step]"]').attr('value', vstep);
+            }
         },500);
     });
     if(searchParams.has('variant')){
@@ -305,15 +322,13 @@ jQuery(document).ready(function($){
             var step = 1
         }
         var original = $(this).data('original');
-        var qtkey = $(this).data('qtkey');
+        var qtkey = $(this).data('qtkey').replace(':', '');
         var val = $(this).val()
         if(val % step == 0){
             console.log('true')
+            $('#'+qtkey).text('');
         }else{
-            var htmlString = 'The quantity must be in multiples of '+ step +'';
-            $('#qtInfo').text('The quantity must be in multiples of '+ step +'' );
-
-            //$('#'+qtkey).append('<p>The quantity must be in multiples of '+ step +'</p>' );
+            $('#'+qtkey).text('The quantity must be in multiples of '+ step );
             $(this).val(original);
         }
     });
