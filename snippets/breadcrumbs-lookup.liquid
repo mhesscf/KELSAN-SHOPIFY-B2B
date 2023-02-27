@@ -4,7 +4,7 @@
     }
 </style>
 
-{% unless template == 'index' or template == 'cart'  or template == '404' %}
+{%- unless template == 'index' or template == 'cart'  or template == '404' -%}
 
     {%- assign current_website = 'cf' -%}
     {%- if request.host contains 'airmovers'  -%}
@@ -17,33 +17,33 @@
         {%- assign current_website = 'fb' -%}
     {%- endif -%}
 
-    {% comment %}
+    {%- comment -%}
     ---------------------------------------------------------------------------------------
     use this if we ever need to pull breadcrumbslookup from the default shopify nav
-           {% for link in linklists.breadcrumbs.links %}
+           {%- for link in linklists.breadcrumbs.links -%}
                {{ link.url }} : {{ link.url }}, <br/>
-               {% for sublink in link.links %}
+               {%- for sublink in link.links -%}
                    {{ link.url}} > {{ sublink.url }}:{{ sublink.url }},<br/>
-                   {% for subsublink in sublink.links %}
+                   {%- for subsublink in sublink.links -%}
                        {{ link.url}} > {{ sublink.url }} > {{ subsublink.url }}:{{ subsublink.url}},<br/>
-                   {% endfor %}
-               {% endfor %}
-           {% endfor %}
+                   {%- endfor -%}
+               {%- endfor -%}
+           {%- endfor -%}
    ---------------------------------------------------------------------------------------
-   {% endcomment %}
+   {%- endcomment -%}
 
-    {% assign productpage = 0 %}
+    {%- assign productpage = 0 -%}
     {%- if template contains 'product' -%}
-        {% assign productpage = 1 %}
+        {%- assign productpage = 1 -%}
         {%- capture product_url_string -%}
             {%- for collection in product.collections -%}
-                {% comment %}ignore-bread tagged collections, ignore all{% endcomment %}
-                {% unless collection.metafields.custom.ignore_in_breadcrumbs %}
+                {%- comment -%}ignore-bread tagged collections, ignore all{%- endcomment -%}
+                {%- unless collection.metafields.custom.ignore_in_breadcrumbs -%}
                     {{collection.url }}|
-                {% endunless %}
+                {%- endunless -%}
             {%- endfor -%}
         {%- endcapture -%}
-        {% comment %}{%- assign object_url_string = product_url_string | append: product.url -%}{% endcomment %}
+        {%- comment -%}{%- assign object_url_string = product_url_string | append: product.url -%}{%- endcomment -%}
         {%- assign object_url_string = product_url_string -%}
 
     {%- elsif template contains 'collection' and collection.handle -%}
@@ -51,17 +51,17 @@
         {%- capture object_url_string -%}/collections/{{ collection.handle }}{%- endcapture -%}
     {%- elsif template contains 'page' -%}
         {%- capture object_url_string -%}{{ page.url }}{%- endcapture -%}
-    {% endif %}
+    {%- endif -%}
 
 
-    {% assign urlstolookup = object_url_string %}
+    {%- assign urlstolookup = object_url_string -%}
 
-    {% comment %}{% assign urlstolookup = "/collections/air-fresheners-odor-eliminators|/collections/floor-cleaning-degreasers|/collections/furniture-wood-polishes|/collections/descaling-chemicals" %}{% endcomment %}
+    {%- comment -%}{%- assign urlstolookup = "/collections/air-fresheners-odor-eliminators|/collections/floor-cleaning-degreasers|/collections/furniture-wood-polishes|/collections/descaling-chemicals" -%}{%- endcomment -%}
 
     <div style="display: none;" class="breadcoll">{{ urlstolookup }}</div>
 
-    {% if current_website == "cf" %}
-        {% assign breadcrumbslookup = "
+    {%- if current_website == "cf" -%}
+        {%- assign breadcrumbslookup = "
         /pages/auto-detailing : /pages/auto-detailing,
         /pages/auto-detailing > /pages/automotive-chemicals:/pages/automotive-chemicals,
         /pages/auto-detailing > /pages/automotive-chemicals > /collections/automotive-detailing:/collections/automotive-detailing,
@@ -366,8 +366,8 @@
         /pages/how-tos > /pages/flu-statistics:/pages/flu-statistics,
         /collections/discontinued : /collections/discontinued,
         " | split: ","%}
-    {% elsif current_website == 'am' %}
-        {% assign breadcrumbslookup = "
+    {%- elsif current_website == 'am' -%}
+        {%- assign breadcrumbslookup = "
         /pages/air-cleaning/ : /pages/air-cleaning/,
         /pages/air-cleaning/ > /collections/air-scrubbers:/collections/air-scrubbers,
         /pages/air-cleaning/ > /collections/air-scrubber-filters-ducts:/collections/air-scrubber-filters-ducts,
@@ -397,8 +397,8 @@
         /pages/mold-recovery > /collections/mold-mildew-inhibitors:/collections/mold-mildew-inhibitors,
         /pages/mold-recovery > /collections/vacuum-filters-bags:/collections/vacuum-filters-bags,
         " | split: ","%}
-    {% elsif current_website == "ce" %}
-        {% assign breadcrumbslookup = "
+    {%- elsif current_website == "ce" -%}
+        {%- assign breadcrumbslookup = "
         /pages/carpet-machines : /pages/carpet-machines,
         /pages/carpet-machines > /collections/carpet-spotters:/collections/carpet-spotters,
         /pages/carpet-machines > /collections/cold-water-carpet-extraction-machines:/collections/cold-water-carpet-extraction-machines,
@@ -429,8 +429,8 @@
         /pages/vacuums > /collections/canister-vacuums:/collections/canister-vacuums,
         /pages/vacuums > /collections/upright-vacuums:/collections/upright-vacuums,
         " | split: ","%}
-    {% elsif current_website == "fb" %}
-        {% assign breadcrumbslookup = "
+    {%- elsif current_website == "fb" -%}
+        {%- assign breadcrumbslookup = "
         /collections/floor-buffer-package-deals : /collections/floor-buffer-package-deals,
         /pages/low-speed-floor-buffers : /pages/low-speed-floor-buffers,
         /pages/low-speed-floor-buffers > /collections/12-inch-smaller-low-speed-buffers:/collections/12-inch-smaller-low-speed-buffers,
@@ -472,8 +472,8 @@
         /pages/floor-buffing-chemicals > /collections/floor-finish-high-gloss-durable-waxes:/collections/floor-finish-high-gloss-durable-waxes,
         /pages/floor-buffing-chemicals > /collections/floor-wax-finish-stripper:/collections/floor-wax-finish-stripper,
         " | split: ","%}
-    {% elsif current_website == "fs" %}
-        {% assign breadcrumbslookup = "
+    {%- elsif current_website == "fs" -%}
+        {%- assign breadcrumbslookup = "
         /pages/floor-scrubbers : /pages/floor-scrubbers,
         /pages/floor-scrubbers > /collections/walk-behind-floor-scrubbers:/collections/walk-behind-floor-scrubbers,
         /pages/floor-scrubbers > /collections/ride-on-floor-scrubbers:/collections/ride-on-floor-scrubbers,
@@ -511,28 +511,28 @@
         /pages/floor-scrubber-accessories > /collections/auto-scrubber-squeegees:/collections/auto-scrubber-squeegees,
         /pages/floor-scrubber-accessories > /collections/shampoo-solution-tanks:/collections/shampoo-solution-tanks,
         " | split: ","%}
-    {% else %}
-        {% assign breadcrumbslookup = "
+    {%- else -%}
+        {%- assign breadcrumbslookup = "
         /notastore : /notastore,
         " | split: ","%}
-    {% endif %}
+    {%- endif -%}
 
-    {% assign urlstolookupobj = urlstolookup | split: '|' %}
-    {% for urltolookup in urlstolookupobj %}
-        {% assign urlpostion = 1 %}
-        {% for breadcrumbitem in breadcrumbslookup %}
-            {% assign breadcrumb = breadcrumbitem | split: ':' %}
-            {% assign breadcrumblookupurl = breadcrumb[1] | strip %}
-            {% assign urltolookupclean = urltolookup | strip %}
+    {%- assign urlstolookupobj = urlstolookup | split: '|' -%}
+    {%- for urltolookup in urlstolookupobj -%}
+        {%- assign urlpostion = 1 -%}
+        {%- for breadcrumbitem in breadcrumbslookup -%}
+            {%- assign breadcrumb = breadcrumbitem | split: ':' -%}
+            {%- assign breadcrumblookupurl = breadcrumb[1] | strip -%}
+            {%- assign urltolookupclean = urltolookup | strip -%}
 
-            {% if urltolookupclean == breadcrumblookupurl %}
-                {% assign breadcrumblevels = breadcrumb[0] | split: '>' %}
-                {% capture finalbreadtemp %}
+            {%- if urltolookupclean == breadcrumblookupurl -%}
+                {%- assign breadcrumblevels = breadcrumb[0] | split: '>' -%}
+                {%- capture finalbreadtemp -%}
                     {%- assign structureposition = 2 -%}
                     {%- for breadcrumblevel in breadcrumblevels -%}
-                        {% assign breadcrumblevelobj = breadcrumblevel | split: '/' %}
-                        {% if breadcrumblevelobj[1] == "collections" %}
-                            {% if forloop.last != true or productpage == 1 %}
+                        {%- assign breadcrumblevelobj = breadcrumblevel | split: '/' -%}
+                        {%- if breadcrumblevelobj[1] == "collections" -%}
+                            {%- if forloop.last != true or productpage == 1 -%}
 
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <a href="/collections/{{breadcrumblevelobj[2]}}" title="{{collections[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/collections/{{breadcrumblevelobj[2]}}">
@@ -543,14 +543,14 @@
                                 <span aria-hidden="true" class="separator">›</span>
 
 
-                            {% else %}
+                            {%- else -%}
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">{{collections[breadcrumblevelobj[2]].title}}</span></span>
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
-                            {% endif %}
-                        {% elsif breadcrumblevelobj[1] == "pages" %}
-                            {% if forloop.last != true or productpage == 1 %}
+                            {%- endif -%}
+                        {%- elsif breadcrumblevelobj[1] == "pages" -%}
+                            {%- if forloop.last != true or productpage == 1 -%}
 
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <a href="/pages/{{breadcrumblevelobj[2]}}" title="{{pages[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/pages/{{breadcrumblevelobj[2]}}">
@@ -559,51 +559,51 @@
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
                                 <span aria-hidden="true" class="separator">›</span>
-                            {% else %}
+                            {%- else -%}
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">{{pages[breadcrumblevelobj[2]].title}}</span></span>
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
-                            {% endif %}
-                        {% endif %}
-                        {% assign structureposition = structureposition | plus: 1 %}
+                            {%- endif -%}
+                        {%- endif -%}
+                        {%- assign structureposition = structureposition | plus: 1 -%}
                     {%- endfor -%}
-                    {% if productpage == 1 %}
+                    {%- if productpage == 1 -%}
                         <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                             <span class="current"  itemscope="" itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">{{ product.title }}</span></span>
                             <meta itemprop="position" content="{{ structureposition }}">
                         </span>
-                    {% endif %}
+                    {%- endif -%}
                     </span>
-                {% endcapture %}
-                {% assign breadcrumbs = breadcrumbs | append: finalbreadtemp | append: '|' %}
-                {% assign breadposition = breadposition | append: urlpostion | append: '|' %}
-                {% break %}
-            {% endif %}
-            {% assign urlpostion = urlpostion | plus: 1 %}
-        {% endfor %}
-    {% endfor %}
+                {%- endcapture -%}
+                {%- assign breadcrumbs = breadcrumbs | append: finalbreadtemp | append: '|' -%}
+                {%- assign breadposition = breadposition | append: urlpostion | append: '|' -%}
+                {%- break -%}
+            {%- endif -%}
+            {%- assign urlpostion = urlpostion | plus: 1 -%}
+        {%- endfor -%}
+    {%- endfor -%}
 
-    {% assign breadcrumbs = breadcrumbs | split: '|' %}
-    {% assign breadposition = breadposition | split: '|' %}
+    {%- assign breadcrumbs = breadcrumbs | split: '|' -%}
+    {%- assign breadposition = breadposition | split: '|' -%}
 
-    {% assign lowestPostion = 1000000 %}
-    {% comment %} get the lowest postion and display the correct breadcrumb {% endcomment %}
-    {% for positionValue in breadposition %}
-        {% assign positionValueint = positionValue | plus: 0 %}
-        {% if positionValueint < lowestPostion %}
-            {% assign lowestPostion = positionValueint %}
-        {% endif %}
-    {% endfor %}
+    {%- assign lowestPostion = 1000000 -%}
+    {%- comment -%} get the lowest postion and display the correct breadcrumb {%- endcomment -%}
+    {%- for positionValue in breadposition -%}
+        {%- assign positionValueint = positionValue | plus: 0 -%}
+        {%- if positionValueint < lowestPostion -%}
+            {%- assign lowestPostion = positionValueint -%}
+        {%- endif -%}
+    {%- endfor -%}
 
-    {% assign counter = 0 %}
-    {% for breadcrumb in breadcrumbs %}
-        {% assign thisbreadposition = breadposition[counter] | plus: 0 %}
-        {% if thisbreadposition == lowestPostion %}
-            {% assign finalbread = breadcrumb %}
-        {% endif %}
-        {% assign counter = counter | plus: 1 %}
-    {% endfor %}
+    {%- assign counter = 0 -%}
+    {%- for breadcrumb in breadcrumbs -%}
+        {%- assign thisbreadposition = breadposition[counter] | plus: 0 -%}
+        {%- if thisbreadposition == lowestPostion -%}
+            {%- assign finalbread = breadcrumb -%}
+        {%- endif -%}
+        {%- assign counter = counter | plus: 1 -%}
+    {%- endfor -%}
 
 
     <nav class="breadcrumb breadcrumbs-container breadcrumb2point0" role="navigation" aria-label="breadcrumbs"  itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -613,9 +613,9 @@
             <meta itemprop="position" content="1" />
         </span>
         <span aria-hidden="true" class="separator">›</span>
-        {% if finalbread %}
+        {%- if finalbread -%}
             {{finalbread}}
-        {% else %}
+        {%- else -%}
             {%- if template contains 'product' -%}
 
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -652,7 +652,7 @@
                     <span>{{ blog.title }}</span>
                 {%- endif -%}
             {%- elsif template == 'article' -%}
-                {% comment %}blog posts{% endcomment %}
+                {%- comment -%}blog posts{%- endcomment -%}
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a href="{{ blog.url }}" title="{{ blog.title }}" itemscope itemtype="https://schema.org/WebPage"
                        itemprop="item" itemid="{{ blog.url }}"><span itemprop="name">
@@ -670,8 +670,8 @@
                     <meta itemprop="position" content="3" />
                 </span>
 
-            {% endif %}
-        {% endif %}
+            {%- endif -%}
+        {%- endif -%}
     </nav>
 
 {%- endunless -%}
