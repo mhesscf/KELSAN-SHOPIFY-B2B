@@ -5,6 +5,7 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/march-special-of-the-month-desktop-1.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/march-special-of-the-month-mobile-1.jpg",
@@ -48,7 +49,6 @@
         },
         "a8894ef6-646a-4fd5-a052-5fef22012fd0": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "title": "Advantage 20\" Battery Powered Automatic Floor Scrubber",
             "text": "Take Advantage Now! Was $3,849.99. Now $3,549.99.",
