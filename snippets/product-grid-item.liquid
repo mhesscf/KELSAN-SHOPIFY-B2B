@@ -261,9 +261,12 @@ data-product-quickshop-url="{{ product_link }}"
     {% assign template_allows_compare = false %}
   {% endif %}
 
+  {%- assign variant_count = 0 -%}
+  {%- for variant in product.variants -%}
+    {%- assign variant_count = variant_count | plus: 1 -%}
+  {%- endfor -%}
 
-
-  <div class="productitem__container">
+  <div class="productitem__container {% if variant_count > 1 %}with_variants{% endif %}">
     {{ recently_viewed_header }}
 
     <div class="productitem__image-container">
