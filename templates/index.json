@@ -5,7 +5,6 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/march-special-of-the-month-desktop-1.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/march-special-of-the-month-mobile-1.jpg",
@@ -49,6 +48,7 @@
         },
         "a8894ef6-646a-4fd5-a052-5fef22012fd0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/february-sotm-floor-scrubber.jpg",
             "title": "Advantage 20&#8243; Battery Powered Automatic Floor Scrubber",
