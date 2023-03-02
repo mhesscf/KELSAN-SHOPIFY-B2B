@@ -87,7 +87,7 @@
 
                                 {% if block.settings.image  %}
                                     <div class="step-image content-col">
-                                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
                                     </div>
                                 {% endif %}
                             </div>
