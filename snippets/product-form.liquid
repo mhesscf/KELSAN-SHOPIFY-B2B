@@ -34,8 +34,8 @@
 {% endif %}
 
 {% assign pstep = 1 %}
-{% if product.metafields.plytix.product_step %}
-  {% assign pstep = product.metafields.plytix.product_step %}
+{% if product.selected_or_first_available_variant.metafields.plytix.product_step %}
+  {% assign pstep = product.selected_or_first_available_variant.metafields.plytix.product_step %}
 {% endif %}
 {% form 'product', product, class: product_form_class, data-product-form: '' %}
   <input type="hidden" class="product_step" value="{{ pstep }}">

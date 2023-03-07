@@ -1,7 +1,7 @@
-{% comment %}
+{%- comment -%}
   Article structured data
   https://developers.google.com/search/docs/data-types/articles
-{% endcomment %}
+{%- endcomment -%}
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -10,7 +10,7 @@
         "logo": "{{ 'logo.svg' | asset_url }}"
     }
 </script>
-{% if template contains 'article' %}
+{%- if template contains 'article' -%}
   {%- capture article_description  -%}
     {%- if article.excerpt != blank -%}
       {{ article.excerpt | strip_html }}
@@ -28,14 +28,14 @@
         "@id": "{{ shop.url }}{{ article.url }}"
       },
       "headline": {{ article.title | json }},
-      {% if article.image %}
+      {%- if article.image -%}
         "image": {
           "@type": "ImageObject",
           "url": {{ article.image | img_url: '800x800' | prepend: 'https:' | json }},
           "height": 800,
           "width": 800
         },
-      {% endif %}
+      {%- endif -%}
       "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json}},
       "dateModified": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json}},
       "author": {
@@ -53,16 +53,16 @@
       "description": {{ article_description | json }}
     }
   </script>
-{% endif %}
+{%- endif -%}
 
-{% comment %}
+{%- comment -%}
   Breadcrumbs
   https://developers.google.com/search/docs/data-types/breadcrumbs
-{% endcomment %}
+{%- endcomment -%}
 
 {%- if current_tags -%}
-  {%- assign tag_names = current_tags | join: ', ' %}
-  {% comment %}Converting an array to a handle converts it to a string{% endcomment %}
+  {%- assign tag_names = current_tags | join: ', ' -%}
+  {%- comment -%}Converting an array to a handle converts it to a string{%- endcomment -%}
   {%- capture tag_handles -%}
     {%- for tag in current_tags -%}
       {{- tag | handle | append: '|' -}}
@@ -70,26 +70,29 @@
   {%- endcapture -%}
 {%- endif -%}
 
-{% if collection.url == blank %}
-  {% assign collection_url = '/collections/all' %}
-{% else %}
-  {% assign collection_url = collection.url %}
-{% endif %}
+{%- if collection.url == blank -%}
+  {%- assign collection_url = '/collections/all' -%}
+{%- else -%}
+  {%- assign collection_url = collection.url -%}
+{%- endif -%}
 
 
-{% comment %}
+{%- comment -%}
   Product structured data
   https://developers.google.com/search/docs/data-types/products
-{% endcomment %}
-{% if template contains 'collection' %}
-
+{%- endcomment -%}
+{%- if template contains 'collection' -%}
     <script type="application/ld+json">
       {
         "@context": "http://schema.org/",
         "@type": "ItemList",
         "itemListElement":
          [
-             {% for product in collections[collection.handle].products %}
+             {%- for product in collections[collection.handle].products -%}
+                {%- assign variant_count = 0 -%}
+                {%- for variant in product.variants -%}
+                {%- assign variant_count = variant_count | plus: 1 -%}
+              {%- endfor -%}
              {
                "@type": "ListItem",
                "position": "{{ forloop.index }}",
@@ -97,35 +100,43 @@
                   "@type": "Product",
                   "url": "{{ shop.url }}{{ product.url }}",
                    "name":"{{ product.title | escape }}",
-                    {% if product.metafields.reviews.rating_count %}
+                     {%- if variant_count == 1 -%}
+                     "image":"{{  product.featured_image | img_url: '512x' }}",
+                     {%- endif -%}
+                    {%- if product.metafields.reviews.rating_count -%}
                    "aggregateRating": {
                       "@type": "AggregateRating",
                       "ratingValue": "{{ product.metafields.reviews.rating.value }}",
                       "reviewCount": "{{ product.metafields.reviews.rating_count }}"
                     },
-                    {% endif %}
+                    {%- endif -%}
                     "offers": {
-                      "@type": "AggregateOffer",
-                      {%- if product.price_min == product.price_max -%}
-                             "price": "{{ product.price | money_without_currency | remove: ',' }}",
-                             "lowPrice": "{{ product.price | money_without_currency | remove: ','  }}",
+                        {%- if variant_count == 1 -%}
+                            "@type": "Offer",
+                            "price": "{{ product.price | money_without_currency | remove: ',' }}",
                         {%- else -%}
-                          "lowPrice": "{{ product.price_min | money_without_currency | remove: ',' }}",
-                          "highPrice": "{{ product.price_max | money_without_currency | remove: ',' }}",
+                            "@type": "AggregateOffer",
+                            {%- if product.price_min == product.price_max -%}
+                               "price": "{{ product.price | money_without_currency | remove: ',' }}",
+                               "lowPrice": "{{ product.price | money_without_currency | remove: ','  }}",
+                            {%- else -%}
+                              "lowPrice": "{{ product.price_min | money_without_currency | remove: ',' }}",
+                              "highPrice": "{{ product.price_max | money_without_currency | remove: ',' }}",
+                            {%- endif -%}
                         {%- endif -%}
                       "priceCurrency": "USD"
                     }
                   }
-              }{% if forloop.last %}{% else %},{% endif %}
-            {% endfor %}
+              }{%- if forloop.last -%}{%- else -%},{%- endif -%}
+            {%- endfor -%}
          ]
       }
     </script>
-{% endif %}
+{%- endif -%}
 
-{% if template contains 'product' %}
-  {% assign selected_variant = product.selected_or_first_available_variant | default: product.variants.first %}
-  {% assign product_image = selected_variant.featured_image | default: product.featured_image %}
+{%- if template contains 'product' -%}
+  {%- assign selected_variant = product.selected_or_first_available_variant | default: product.variants.first -%}
+  {%- assign product_image = selected_variant.featured_image | default: product.featured_image -%}
   {%- capture product_name -%}
     {{ product.title }}
     {%- if selected_variant.title != 'Default Title' and selected_variant.option1 == 'Default Title' -%}
@@ -134,7 +145,7 @@
   {%- endcapture -%}
 
   {%- assign now = 'now' | date: '%Y-%m-%d' | split: '-' -%}
-  {% capture year_from_now %}{{ now[0] | plus: 1 }}-{{ now[1] }}-{{ now[2] | at_most: 28 }}{% endcapture %}
+  {%- capture year_from_now -%}{{ now[0] | plus: 1 }}-{{ now[1] }}-{{ now[2] | at_most: 28 }}{%- endcapture -%}
 
   <script type="application/ld+json">
   {
@@ -142,43 +153,43 @@
     "@type": "Product",
     "name": {{ product_name | strip_newlines | json }},
     "image": {{ product_image | img_url: '1024x1024' | prepend: 'https:' | json }},
-    {% if product.description != blank %}
+    {%- if product.description != blank -%}
       "description": {{ product.description | json }},
-    {% endif %}
-    {% if product.vendor %}
+    {%- endif -%}
+    {%- if product.vendor -%}
       "brand": {
         "@type": "Brand",
         "name": {{ product.vendor | json }}
       },
-    {% endif %}
+    {%- endif -%}
 
 
-    {% if product.metafields.plytix.package_products != blank %}
-  {%- assign bproducts = product.metafields.plytix.package_products | split: "," %}
-  {% assign bundle_price = 0 %}
-  {% for bproduct in bproducts %}
-  {% assign attr = bproduct | split: "#" %}
-  {%- assign bundlep = attr[0] | strip %}
-  {% assign bundle_price = all_products[bundlep].price | times: attr[1] | plus: bundle_price %}
-    {% endfor %}
+    {%- if product.metafields.plytix.package_products != blank -%}
+  {%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
+  {%- assign bundle_price = 0 -%}
+  {%- for bproduct in bproducts -%}
+  {%- assign attr = bproduct | split: "#" -%}
+  {%- assign bundlep = attr[0] | strip -%}
+  {%- assign bundle_price = all_products[bundlep].price | times: attr[1] | plus: bundle_price -%}
+    {%- endfor -%}
 
-  {%  assign finalprice = bundle_price %}
-  {% else %}
-  {% assign finalprice = selected_variant.price %}
-    {% endif %}
+  {%-  assign finalprice = bundle_price -%}
+  {%- else -%}
+  {%- assign finalprice = selected_variant.price -%}
+    {%- endif -%}
 
 
-    {% if selected_variant.sku != blank %}
+    {%- if selected_variant.sku != blank -%}
       "sku": {{ selected_variant.sku | json }},
-    {% endif %}
-    {% if selected_variant.barcode != blank %}
+    {%- endif -%}
+    {%- if selected_variant.barcode != blank -%}
       "mpn": {{ selected_variant.barcode | json }},
-    {% endif %}
+    {%- endif -%}
     "offers": {
       "@type": "Offer",
       "priceCurrency": {{ cart.currency.iso_code | json }},
       "price": {{ finalprice | divided_by: 100.0 | json }},
-      "availability": "http://schema.org/{% if selected_variant.available %}InStock{% else %}OutOfStock{% endif %}",
+      "availability": "http://schema.org/{%- if selected_variant.available -%}InStock{%- else -%}OutOfStock{%- endif -%}",
       "url": "{{ shop.url }}{{ selected_variant.url }}",
       "seller": {
         "@type": "Organization",
@@ -188,12 +199,12 @@
     }
   }
   </script>
-{% endif %}
+{%- endif -%}
 
-{% comment %}
+{%- comment -%}
   Store information
   https://developers.google.com/search/docs/data-types/sitename
-{% endcomment %}
+{%- endcomment -%}
 
 <script type="application/ld+json">
   {
