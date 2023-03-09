@@ -5,7 +5,6 @@
 </style>
 
 {%- unless template == 'index' or template == 'cart'  or template == '404' or template == 'search' -%}
-{{ template }} here
     {%- assign current_website = 'cf' -%}
     {%- if request.host contains 'airmovers'  -%}
         {%- assign current_website = 'am' -%}
@@ -647,21 +646,64 @@
                 </span>
 
             {%- elsif template == 'blog' -%}
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/pages/blog" title="The Janitor’s Closet | A Blog on Everything Cleaning " itemscope itemtype="https://schema.org/WebPage"
+                       itemprop="item" itemid="/pages/blog">
+                        <span itemprop="name">
+                                The Janitor’s Closet
+                        </span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </span>
+
                 <span aria-hidden="true" class="separator">›</span>
+
                 {%- if current_tags -%}
-                    {{ blog.title | link_to: blog.url }}
-                    <span>{{ current_tags | join: " + " }}</span>
+
+                    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span title="blog.title" itemscope itemtype="https://schema.org/WebPage" itemprop="item">
+                            <span itemprop="name">
+                                    <span class="current">
+                                        {{ blog.title | link_to: blog.url }}
+                                        <span>{{ current_tags | join: " + " }}</span>
+                                    </span>
+                            </span>
+                        </span>
+                       <meta itemprop="position" content="3" />
+                    </span>
+
                 {%- else -%}
-                    <span>{{ blog.title }}</span>
+
+                    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span title="blog.title" itemscope itemtype="https://schema.org/WebPage" itemprop="item">
+                            <span itemprop="name">
+                                    <span class="current">{{  blog.title }}</span>
+                            </span>
+                        </span>
+                        <meta itemprop="position" content="3" />
+                    </span>
+
                 {%- endif -%}
+
             {%- elsif template == 'article' -%}
                 {%- comment -%}blog posts{%- endcomment -%}
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/pages/blog" title="The Janitor’s Closet | A Blog on Everything Cleaning " itemscope itemtype="https://schema.org/WebPage"
+                       itemprop="item" itemid="/pages/blog">
+                        <span itemprop="name">
+                                The Janitor’s Closet
+                        </span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </span>
+
+                <span aria-hidden="true" class="separator">›</span>
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a href="{{ blog.url }}" title="{{ blog.title }}" itemscope itemtype="https://schema.org/WebPage"
                        itemprop="item" itemid="{{ blog.url }}"><span itemprop="name">
                                 {{ blog.title }}
                     </span></a>
-                    <meta itemprop="position" content="2" />
+                    <meta itemprop="position" content="3" />
                 </span>
 
                 <span aria-hidden="true" class="separator">›</span>
@@ -670,7 +712,7 @@
                     <span title="{{ article.title }}" itemscope itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">
                                 <span class="current">{{ article.title }}</span>
                     </span></span>
-                    <meta itemprop="position" content="3" />
+                    <meta itemprop="position" content="4" />
                 </span>
 
             {%- endif -%}
