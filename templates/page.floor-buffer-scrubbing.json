@@ -129,6 +129,7 @@
         },
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
           "type": "step",
+          "disabled": true,
           "settings": {
             "stepnumber": "4",
             "stepheading": "Solution Removal -",
@@ -138,6 +139,7 @@
         },
         "ca1aa355-a7e2-47f1-87e3-d8d15ea48810": {
           "type": "step",
+          "disabled": true,
           "settings": {
             "stepnumber": "5",
             "stepheading": "Clean Up -",
@@ -156,6 +158,42 @@
       "settings": {
       }
     },
+    "2c6c9447-a64c-41fb-8b64-d0c99300a6a9": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div class=\"ht-youtube\" style=\"max-width:600px; margin:-20px auto 0 auto\">\n<div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/QPqkTZfvq5E?amp;rel=0\" width=\"320\" height=\"240\" frameborder=\"0\"><\/iframe><\/div>\n<\/div>"
+      }
+    },
+    "16f33f75-3255-4dc6-9bf8-e1a546ed00c8": {
+      "type": "howto-steps",
+      "blocks": {
+        "353c2174-e7fc-4569-9e2e-c2248094e2ea": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "4",
+            "stepheading": "Solution Removal -",
+            "steptext": "<p>Wipe down any walls or baseboards that may have gotten some overspray. Use a wet\/dry vacuum like our trot mop wet vacuum with squeegee. Vacuums with a front mounted squeegee will simplify the process greatly, but any vacuum with a tool kit that is approved for wet recovery can be used. An auto scrubber could also be used to recover the solution.<\/p><p>If a floor drain is present you can use something similar to our floor squeegee to push the solution towards a drain or outdoors. If floors are still damp, they can be extremely slippery, so it is a good idea to leave your wet floor signs out and place a 3-speed floor dryer or two out to eliminate the moisture.<\/p>",
+            "product": ""
+          }
+        },
+        "f35cc8e0-b936-4e7a-a4f4-a10e207ae920": {
+          "type": "step",
+          "settings": {
+            "stepnumber": "5",
+            "stepheading": "Clean Up -",
+            "steptext": "<p>Dump out any unused solution from the shampoo tank and rinse it out thoroughly. Remove pad holder\/brush from the bottom of the machine. If a machine is left to rest on a brush or pad driver, the bristles can become bent and rendered unusable. Take all pads and rinse them out. If you allow them to sit in clean water, much of the dirt will loosen out of the pad in a day or so. Once clean, leave the pads in an upright position to air dry.<\/p><p>Remove the wet floor\/caution signs and air movers when the floors are 100% dry. Return all items like tables, chairs, and other furniture to their original places. Wipe down all machinery and other items.<\/p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "353c2174-e7fc-4569-9e2e-c2248094e2ea",
+        "f35cc8e0-b936-4e7a-a4f4-a10e207ae920"
+      ],
+      "settings": {
+      }
+    },
     "main": {
       "type": "page",
       "disabled": true,
@@ -168,6 +206,8 @@
     "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
     "077235cb-6ded-4e06-80df-6ad080419fe3",
     "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "2c6c9447-a64c-41fb-8b64-d0c99300a6a9",
+    "16f33f75-3255-4dc6-9bf8-e1a546ed00c8",
     "main"
   ]
 }
