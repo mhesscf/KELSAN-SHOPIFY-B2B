@@ -88,7 +88,7 @@
 		top: 0;
 		z-index: 1;
 	}
-	.category-featured-slider .product-slide .inner .col.txt-col .content-wrap form{
+	.category-featured-slider .product-slide .inner .col.txt-col .content-wrap button{
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -189,8 +189,20 @@
 		font-weight: 500;
 	}
 	.category-featured-slider .product-slide .add-to-cart-btn:hover{
-		background-color: {{ settings.color_button_hover }}
+	background-color: {{ settings.color_button_hover }}
 	}
+	.category-featured-slider .product-slide .add-to-cart-btn.view-product{
+		color: {{ settings.color_button_text }};
+		background-color: {{ settings.color_button_background }};
+		border: 1px solid {{ settings.color_button_background }};
+	}
+
+	.category-featured-slider .product-slide .add-to-cart-btn.view-product:hover{
+		background: {{ settings.color_background | color_mix: settings.color_button_background, 10 }};
+		border: 1px solid {{ settings.color_background | color_mix: settings.color_button_background, 10 }};
+	}
+
+
 
 	.f-cat-slider__content ul.slick-dots {
 		float: left;
@@ -319,6 +331,22 @@
 												<p>Free Shipping</p>
 											</div>
 										{% endif %}
+
+										{% assign has_variants = false %}
+										{% unless block.settings.product.has_only_default_variant %}
+											{% assign has_variants = true %}
+										{% endunless %}
+
+										{% assign pstep = 1 %}
+										{% if product.metafields.plytix.product_step != blank %}
+											{% assign pstep = product.metafields.plytix.product_step %}
+										{% endif %}
+										{% for variant in product.variants %}
+											{% if variant.metafields.plytix.product_step %}
+												{% assign pstep = variant.metafields.plytix.product_step %}
+											{% endif %}
+										{% endfor %}
+
 										{%- if block.settings.product.available != true -%}
 											<form method="post" action="/cart/add" class="cart-form">
 												<input type="hidden" class="pid" value="{{block.settings.product.id}}">
@@ -335,7 +363,8 @@
 												<input disabled class="disabled add-to-cart-btn" type="submit" value="SOLD OUT" class="btn" />
 											</form>
 										{%- else -%}
-											{% if block.settings.product.metafields.plytix.package_products != blank %}
+											{% if block.settings.product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants%}
+												{%- comment -%}
 												<form method="post" action="/cart/add" class="cart-form">
 													{%- assign bundle_products = block.settings.product.metafields.plytix.package_products | split: "," %}
 													{%- assign free_products = block.settings.product.metafields.plytix.packaged_free_product | split: "," %}
@@ -371,10 +400,15 @@
 																   value="{{ free_product_entry_parts[1] }}" />
 														{% endfor %}
 													</div>
+
 													<button class="add-to-cart-btn" type="submit" data-bundle-product-atc data-bundle="{{ block.settings.product.title }}">
-														ADD TO CART
+														View Product
 													</button>
-												</form>
+
+												</form>{%- endcomment -%}
+												<button class="add-to-cart-btn view-product" >
+													VIEW PRODUCT
+												</button>
 											{% else %}
 												<form method="post" action="/cart/add" class="cart-form">
 													<input type="hidden" class="pid" value="{{block.settings.product.id}}">
@@ -387,6 +421,9 @@
 													<input type="hidden" class="pvtitle" value="{{ block.settings.product.variants.first.title | remove: "'" | remove: '"' }}">
 													<input type="hidden" class="psku" value="{{ block.settings.product.variants.first.sku }}">
 													<input type="hidden" name="id" value="{{ block.settings.product.variants.first.id }}" />
+													<input type="hidden" name="properties[_erp_sku]" value="{{ block.settings.product.variants.first.metafields.plytix.erp_sku }}" />
+													<input type="hidden" name="properties[Sku]" value="{{ block.settings.product.variants.first.sku }}" />
+													<input type="hidden" name="properties[_tiered_pricing]" value="{{ block.settings.product.variants.first.metafields.plytix.tiered_pricing }}" />
 													<input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
 													<button class="add-to-cart-btn" type="submit" >
 														ADD TO CART

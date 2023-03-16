@@ -151,11 +151,13 @@
               data-variants
       >
       <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+      <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
       <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
       <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
 
     {% else %}
       <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
+      <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
       <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
       <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
 
@@ -618,6 +620,7 @@
                    class="quantity field"
                    data-bundle-subproduct
                    data-id="{{ bundle_product.selected_or_first_available_variant.id }}"
+                   data-vissku="{{ bundle_product.selected_or_first_available_variant.sku }}"
                    data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
                    data-step="{{ pstep }}"
                    data-tieredPricing=""
@@ -636,6 +639,7 @@
                    data-step="{{ pstep }}"
                    data-id="{{ free_product.selected_or_first_available_variant.id }}"
                    data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
+                   data-vissku="{{ bundle_product.selected_or_first_available_variant.sku }}"
                    data-tieredPricing="fg"
                    data-qty="{{ free_product_entry_parts[1] }}"
                    data-price="{{ free_product.price }}"
