@@ -1314,7 +1314,7 @@ noscript .disclosure-list {
     @param morph_adjustment {Number}
       The number to multiply the lightness and saturation by. Default 2.
   {% endcomment %}
-
+{% assign color_link_hover = settings.color_link_hover %} {% comment %}just run with the assigned hover link in settings, not the crap above.{% endcomment %}
 {% if morph_adjustment == blank %}
 {% assign morph_adjustment = 2 %}
 {% endif %}
@@ -1948,7 +1948,13 @@ h2 {
 h4 {
 	font-size: var(--font-size-heading-4);
 }
-
+a{
+	color: {{ color_links }};
+	transition: all 0.4s ease-in-out;
+}
+a:hover{
+	color: {{ settings.color_link_hover }};
+}
 .highlights-banner__heading, h5 {
 	font-size: var(--font-size-heading-5);
 }
@@ -6183,7 +6189,7 @@ body .mdc-ripple-surface:hover:before {
 
 nav.breadcrumb {
 	width: 1340px;
-	margin: 30px auto;
+	margin: 20px auto;
 	max-width: 90%;
 	padding: 0;
 }
@@ -10469,6 +10475,8 @@ nav.breadcrumb span.separator{
 	justify-content: flex-end;
 	list-style-type: none;
 	padding-left: 0;
+	margin-top: 7px;
+	margin-bottom: 7px;
 }
 .top-menu-wrapper .top-menu-container ul li{
 	margin-left: 20px;
@@ -15472,8 +15480,9 @@ nav.breadcrumb span.separator{
 	}
 }
 .productitem--title a {
-	color: {{ settings.color_text}};
+	color: {{ settings.color_text }};
 }
+
 .productitem--vendor a {
 	font-family: {{ fonts_type_body_family }};
 	font-style: {{ fonts_type_body_style }};
@@ -16616,7 +16625,7 @@ nav.breadcrumb span.separator{
 		grid-template-rows: auto auto;
 		grid-template-areas: "masthead masthead" "sidebar product-items-wrapper";
 		column-gap: 25px;
-		row-gap: {{ space_x_large | divided_by: 16.0 | append: 'rem' }};
+		row-gap: {{ space_x_small | divided_by: 16.0 | append: 'rem' }};
 	}
 	.collection--section .productgrid--outer.layout--no-sidebar {
 		grid-template-areas: "masthead masthead" "product-items-wrapper product-items-wrapper";
