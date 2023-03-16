@@ -108,7 +108,7 @@
 {%- endcapture -%}
 
 {% paginate collection.products by paginate_by %}
-  <div class="productgrid--outer {{ collection_classes | strip_newlines }} collection-header" data-productgrid-outer>
+  <div class="productgrid--outer-head {{ collection_classes | strip_newlines }} collection-header" data-productgrid-outer>
     <div class="productgrid--masthead">
 
       {% if section.settings.show_collection_image and collection.image %}
