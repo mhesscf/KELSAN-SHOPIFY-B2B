@@ -225,8 +225,10 @@ jQuery(document).ready(function($){
             var vid = $('#v' + param).data('vid');
             var vstep = $('#v' + param).data('increment');
             var erpsku = $('#v' + param).data('erpsku');
+            var sku = $('#v' + param + " span").html(); //needed to show sku on checkout
             if(vid == param){
                 $('input[name="properties[_erp_sku]"]').attr('value', erpsku);
+                $('input[name="properties[Sku]"]').attr('value', sku);
                 $('#product-quantity-input').data('step', vstep);
                 $('.qtyminus').data('step', vstep);
                 $('.qtyplus').data('step', vstep);
@@ -590,6 +592,7 @@ jQuery(document).ready(function($){
                 form_type: 'product',
                 utf8: '✓',
                 'properties[_erp_sku]': '',
+                'properties[Sku]': '',
                 'properties[_tiered_pricing]': '',
                 'properties[_bundle_product]': bundle,
                 'id': '',
@@ -599,6 +602,7 @@ jQuery(document).ready(function($){
             const form_datas = []
             $sub_product_container.find('[data-bundle-subproduct], [data-bundle-subproduct-free]').each(function() {
                 form_template["properties[_erp_sku]"] = $(this).data('erpsku')
+                form_template["properties[Sku]"] = $(this).data('vissku')
                 form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
                 form_template.id = $(this).data('id') + ""
                 form_template.quantity = $(this).val() + ""

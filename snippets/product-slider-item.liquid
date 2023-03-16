@@ -483,7 +483,7 @@
                 {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
                 <div data-bundle-subproducts-{{ product.id }}>
                   {% for bundle_product_entry in bundle_products %}
-                    {% assign bundle_product_entry_parts = bundle_product_entry | split: "#" %}
+                    {%- assign bundle_product_entry_parts = bundle_product_entry | split: "#" -%}
                     {%- assign bundle_product_handle = bundle_product_entry_parts[0] | strip %}
                     {%- assign bundle_product = all_products[bundle_product_handle] %}
                     <input type="hidden"
@@ -498,7 +498,7 @@
                            value="{{ bundle_product_entry_parts[1] }}" />
                   {% endfor %}
                   {% for free_product_entry in free_products %}
-                    {% assign free_product_entry_parts = free_product_entry | split: "#" %}
+                    {%- assign free_product_entry_parts = free_product_entry | split: "#" -%}
                     {%- assign free_product_handle = free_product_entry_parts[0] | strip %}
                     {%- assign free_product = all_products[free_product_handle] %}
                     <input type="hidden"
@@ -537,9 +537,11 @@
                           {% endunless %}
                           data-erpsku-name="properties[_erp_sku]"
                           data-tp-name="properties[_tiered_pricing]"
+                          data-vissku-name="properties[Sku]"
                           data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
                           data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
                           data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
+                          data-vissku="{{ product.selected_or_first_available_variant.sku }}"
                           data-variant-id="{{ product.variants.first.id }}"
                           data-pid = "{{product.id}}"
                           data-id="{{ product.variants.first.id }}"
