@@ -662,6 +662,7 @@ jQuery(document).ready(function($){
         const form_datas = []
         $bsub_product_container.find('[data-bundle-subproduct], [data-bundle-subproduct-free]').each(function() {
             form_template["properties[_erp_sku]"] = $(this).data('erpsku')
+            form_template["properties[Sku]"] = $(this).data('vissku')
             form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
             form_template.id = $(this).data('id') + ""
             form_template.quantity = $(this).val() + ""
