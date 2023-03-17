@@ -109,9 +109,17 @@
     {% endfor %}
   {%- endif -%}
 
+  <div class="productgrid--outer-head {{ collection_classes | strip_newlines }} search-header" data-productgrid-outer>
+    <div class="productgrid--masthead">
+      <h1 class="collection--title">
+        Search Results for '{{ sanitized_terms }}'
+      </h1>
+    </div>
+  </div>
+
   <div
     class="
-      productgrid--outer productgrid-listview
+      productgrid--outer productgrid-listview search-main-area
       {% if show_sidebar and search.filters.size > 0 %}
         layout--has-sidebar
       {% else %}
