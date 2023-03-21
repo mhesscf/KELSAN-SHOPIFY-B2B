@@ -720,27 +720,9 @@
                     <meta itemprop="position" content="4" />
                 </span>
 
-            {%- elsif template contains 'customers/login' -%}
-
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span title="home" itemscope itemtype="https://schema.org/WebPage" itemprop="item" ><span itemprop="name">
-                            <span class="current nobreadhere">Account Login</span>
-                    </span></span>
-                    <meta itemprop="position" content="2" />
-                </span>
-            {%- elsif template contains 'customers/' -%}
-
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span title="home" itemscope itemtype="https://schema.org/WebPage" itemprop="item" ><span itemprop="name">
-                            <span class="current nobreadhere">Customer Account</span>
-                    </span></span>
-                    <meta itemprop="position" content="2" />
-                </span>
-
             {%- endif -%}
         {%- endif -%}
     </nav>
 
 {%- endunless -%}
-
 
