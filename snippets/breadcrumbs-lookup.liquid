@@ -4,7 +4,7 @@
     }
 </style>
 
-{%- unless template == 'index' or template == 'cart'  or template == '404' or template == 'search' -%}
+{%- unless template == 'index' or template == 'cart'  or template == '404' or template == 'search' or template == null -%}
     {%- assign current_website = 'cf' -%}
     {%- if request.host contains 'airmovers'  -%}
         {%- assign current_website = 'am' -%}
