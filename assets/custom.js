@@ -735,5 +735,14 @@ jQuery(document).ready(function($){
         e.preventDefault();
         $('#bundle-remove-alert').removeClass('show');
     });
+
+    if(window.location.pathname.includes('/apps/advanced-wishlist')){
+        setTimeout(function(){
+            $('.fancy_title').find('h3[data-wishlisttitle]').replaceWith(function() {
+                return '<h1 data-wishlisttitle >' + $(this).text() + '</h1>';
+            });
+        }, 500);
+    }
+
 });
 
