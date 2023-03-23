@@ -48,6 +48,12 @@
 
     {% if page_description != blank %}
         <meta name="description" content="{{ page_description | escape }}">
+    {%- elsif template contains 'collection' -%}
+        {% if collection.url contains '/collections/vendors' %}
+            <meta name="description" content="{{ collection.title }} products sold by {{ shop.name }}'">
+        {%  endif %}
+    {%- elsif request.path contains '/apps/advanced-wishlist' -%}
+        <meta name="description" content="Your Saved Wishlists for Future Purchases at {{ shop.name }}'">
     {% endif %}
 
     {% render 'favicon' %}
