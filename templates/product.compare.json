@@ -58,6 +58,7 @@
     },
     "dynamic-highlights-banner": {
       "type": "dynamic-highlights-banner",
+      "disabled": true,
       "blocks": {
         "highlight": {
           "type": "highlight",
