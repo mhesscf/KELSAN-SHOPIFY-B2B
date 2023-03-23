@@ -452,7 +452,7 @@
     }
   },
   "product_compare": {
-    "compare": "Add To Comparer",
+    "compare": "Launch Comparer",
     "clear_all": "Clear all products",
     "drawer_title": "Compare products",
     "drawer_notification": {
