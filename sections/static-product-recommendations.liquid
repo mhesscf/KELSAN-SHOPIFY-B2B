@@ -41,24 +41,20 @@
         {{ section.settings.product_recommendations_heading }}
       </h2>
       <div class="similar-p-slides" id="sim-slds">
-        {% if product.metafields.plytix.related_products %}
+        {% if product.metafields.plytix.related_products != blank %}
           {% assign related_products = product.metafields.plytix.related_products | split: "," %}
           {%- for product in  related_products -%}
-            {%- assign product_handle = product |  strip %}
+            {%- assign product_handle = product |  strip -%}
             {%- if product_handle != 'undefined' %}
-
-
-
                             {% assign item = all_products[product_handle] %}
                             {%
                                     render 'product-slider-item',
                                     product: item
                             %}
-
-
             {% endif %}
           {%- endfor -%}
         {% else %}
+          {% comment %}
           {%- for product in recommendations.products -%}
                             {% assign item = all_products[product] %}
                             {%
@@ -67,8 +63,18 @@
                             %}
 
           {%- endfor -%}
+          {% endcomment %}
+          {% comment %}CF: Load top 8 products in the all category if the product doesn't have any related{% endcomment %}
+          {% assign products = collections.all.products  %}
+          {% assign filtered_products = products %}
+          {%- for item in  filtered_products limit: 8 -%}
+            {%- assign item = all_products[item] -%}
+                  {%
+                        render 'product-slider-item',
+                        product: item
+                %}
+          {%- endfor -%}
         {% endif %}
-
       </div>
       <div id="sim-slide-arrows"></div>
     </div>

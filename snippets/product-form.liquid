@@ -38,7 +38,9 @@
   {% assign pstep = product.selected_or_first_available_variant.metafields.plytix.product_step %}
 {% endif %}
 {% form 'product', product, class: product_form_class, data-product-form: '' %}
-  <input type="hidden" class="product_step" value="{{ pstep }}">
+  {% if pstep > 1 %}
+    <input type="hidden" class="product_step" value="{{ pstep }}">
+  {% endif %}
   <input type="hidden" class="erp_sku" value="{{ product.metafields.plytix.erp_sku }}">
   <input type="hidden" class="pid" value="{{product.id}}">
   <input type="hidden" class="ptitle" value="{{product.title | remove: "'" | remove: '"'}}">
@@ -130,7 +132,9 @@
     @param swatches_product_page_size
     @param swatches_custom_colors
   {% endcomment %}
-  <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+  {% if pstep > 1 %}
+    <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+  {% endif %}
   <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
   <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
 
@@ -153,13 +157,17 @@
       <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
       <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
       <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
-      <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+      {% if pstep > 1 %}
+        <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+      {% endif %}
 
     {% else %}
       <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
       <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
       <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
-      <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+      {% if pstep > 1 %}
+        <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+      {% endif %}
 
       <noscript>
         <style>

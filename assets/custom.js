@@ -222,6 +222,10 @@ jQuery(document).ready(function($){
             $('.variant-sku').css('display', 'none');
             //console.log(param)
             $('#v' + param).css('display', 'block');
+            //other var specs like stock status and master qty. FYI Var-specs and Var are uses in more than one place for this functionality
+            $('.var-specs').css('display', 'none');
+            $('.var' + param).css('display', 'block');
+
             var vid = $('#v' + param).data('vid');
             var vstep = $('#v' + param).data('increment');
             var erpsku = $('#v' + param).data('erpsku');
@@ -735,5 +739,14 @@ jQuery(document).ready(function($){
         e.preventDefault();
         $('#bundle-remove-alert').removeClass('show');
     });
+
+    if(window.location.pathname.includes('/apps/advanced-wishlist')){
+        setTimeout(function(){
+            $('.fancy_title').find('h3[data-wishlisttitle]').replaceWith(function() {
+                return '<h1 data-wishlisttitle >' + $(this).text() + '</h1>';
+            });
+        }, 500);
+    }
+
 });
 

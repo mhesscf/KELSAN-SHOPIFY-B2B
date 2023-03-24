@@ -65,9 +65,10 @@
       {% endcomment %}
       <div class="account-page--column-small account-info">
         <div class="account-info-block">
-          <h2 class="account-page-subtitle">
+          <h2 class="account-page-subtitle" style="margin-bottom:0;">
             {{ customer.name }}
           </h2>
+          <div class="account-logout"><a href="/account/logout/">Click here to log out</a></div>
 
           <p class="account-info-item">
             <a href="mailto:{{ customer.email }}">
