@@ -5,6 +5,7 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/march-special-of-the-month-desktop-1.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/march-special-of-the-month-mobile-1.jpg",
@@ -26,19 +27,18 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/cf-jan-sotm-23-desktop-1.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/cf-jan-sotm-23-mobile-1.jpg",
-            "title": "Heated & Non-Heated",
-            "text": "CleanFreak® Carpet Spot Cleaning Machines",
+            "background_image": "shopify:\/\/shop_images\/april-special-banner-desktop-1.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/april-special-banner-mobile-1.jpg",
+            "title": "CleanFreak® 'Flood Master' - Portable Flood Pumper & Extractor",
+            "text": "Pumped Up Deal! <br> Was $2,299.99. Now $2,099.99.",
             "color": "#303e48",
-            "link": "",
+            "link": "https:\/\/www.cleanfreak.com\/products\/flood-pumper-portable-flood-extractor",
             "text_alignment": "left",
-            "button_one_label": "Save $100 on Heated",
-            "button_one_link": "\/products\/commercial-carpet-spot-cleaning-machine",
-            "button_one_style": "primary",
-            "button_two_label": "Save $75 on Non-Heated",
+            "button_one_label": "Save $200 Now",
+            "button_one_link": "https:\/\/www.cleanfreak.com\/products\/flood-pumper-portable-flood-extractor",
+            "button_one_style": "secondary",
+            "button_two_label": "",
             "button_two_link": "\/products\/heated-carpet-spot-cleaner",
             "button_two_style": "primary",
             "show_overlay": false,
