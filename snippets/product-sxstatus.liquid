@@ -1,0 +1,105 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign fservice = current_variant.fulfillment_service %}
+{% assign leadTime = product.metafields.plytix.sxerp_lead_time %}
+{% assign inventoryQuantity = product.first_available_variant.inventory_quantity %}
+{% assign inventoryQuantity = inventoryQuantity | plus: 0 %}
+{% assign leadTime = leadTime | plus: 0 %}
+{% assign pclearance = false %}
+{% for c in product.collections %}
+  {% if c.handle == "clearance" %}
+    {% assign pclearance = true %}
+  {% endif %}
+{% endfor %}
+{% if product.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
+  <div class="sx-status">
+    <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
+    <span class="status-time">May Have Extended Lead Times</span>
+    <details>
+      <summary class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>
+      <p>We do not currently stock this item. It will ship directly from the manufacturer to you for
+        the quickest delivery time possible. Current inventory levels at the manufacturer are
+        unknown.</p>
+    </details>
+  </div>
+{% elsif product.first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
+  <div class="sx-status">
+    <span class="status-desc main-notice">Temporarily On Backorder</span>
+    {% if leadTime < 22  %}
+      <span class="status-time">Estimated Ship Date 1 – 3 wks</span>
+    {% elsif leadTime < 29 %}
+      <span class="status-time">Estimated Ship Date 2 – 4 wks</span>
+    {% elsif leadTime < 36 %}
+      <span class="status-time">Estimated Ship Date 3 – 5 wks</span>
+    {% elsif leadTime < 43 %}
+      <span class="status-time">Estimated Ship Date 4 –6 wks</span>
+    {% elsif leadTime < 50 %}
+      <span class="status-time">Estimated Ship Date 5 – 7 wks</span>
+    {% elsif leadTime < 57 %}
+      <span class="status-time">Estimated Ship Date 6 – 8 wks</span>
+    {% elsif leadTime < 64 %}
+      <span class="status-time">Estimated Ship Date 7 – 9 wks</span>
+    {% elsif leadTime < 71 %}
+      <span class="status-time">Estimated Ship Date 8 – 10 wks</span>
+    {% elsif leadTime < 78 %}
+      <span class="status-time">Estimated Ship Date 9 – 11 wks</span>
+    {% elsif leadTime < 85 %}
+      <span class="status-time">Estimated Ship Date 10 – 12 wks</span>
+    {% elsif leadTime < 121 %}
+      <span class="status-time">Estimated Ship Date 3 – 4 mths</span>
+    {% elsif leadTime < 151 %}
+      <span class="status-time">Estimated Ship Date 4 – 5 mths</span>
+    {% elsif leadTime < 181 %}
+      <span class="status-time">Estimated Ship Date 5 – 6 mths</span>
+    {% elsif leadTime < 211 %}
+      <span class="status-time">Estimated Ship Date 6 – 7 mths</span>
+    {% elsif leadTime < 1000 %}
+      <span class="status-time">Estimated Ship Date over 7 mths</span>
+    {% endif %}
+    <span class="status-order">Order Now to Reserve</span>
+  </div>
+{% elsif product.first_available_variant.inventory_management == nil and leadTime %}
+  <div class="sx-status">
+    <span class="status-desc main-notice">Special Order Item</span>
+    {% if leadTime < 22  %}
+      <span class="status-time">Expected to ship in 1 – 3 wks</span>
+    {% elsif leadTime < 29 %}
+      <span class="status-time">Expected to ship in 2 – 4 wks</span>
+    {% elsif leadTime < 36 %}
+      <span class="status-time">Expected to ship in 3 – 5 wks</span>
+    {% elsif leadTime < 43 %}
+      <span class="status-time">Expected to ship in 4 – 6 wks</span>
+    {% elsif leadTime < 50 %}
+      <span class="status-time">Expected to ship in 5 – 7 wks</span>
+    {% elsif leadTime < 57 %}
+      <span class="status-time">Expected to ship in 6 – 8 wks</span>
+    {% elsif leadTime < 64 %}
+      <span class="status-time">Expected to ship in 7 – 9 wks</span>
+    {% elsif leadTime < 71 %}
+      <span class="status-time">Expected to ship in 8 – 10 wks</span>
+    {% elsif leadTime < 78 %}
+      <span class="status-time">Expected to ship in 9 – 11 wks</span>
+    {% elsif leadTime < 85 %}
+      <span class="status-time">Expected to ship in 10 – 12 wks</span>
+    {% elsif leadTime < 121 %}
+      <span class="status-time">Expected to ship in 3 – 4 mths</span>
+    {% elsif leadTime < 151 %}
+      <span class="status-time">Expected to ship in 4 – 5 mths</span>
+    {% elsif leadTime < 181 %}
+      <span class="status-time">Expected to ship in 5 – 6 mths</span>
+    {% elsif leadTime < 211 %}
+      <span class="status-time">Expected to ship in 6 – 7 mths</span>
+    {% elsif leadTime < 1000 %}
+      <span class="status-time">Expected to ship in over 7 mths</span>
+    {% endif %}
+  </div>
+{% elsif current_variant.inventory_quantity > 0 %}
+<div class="product-detail-stock-and-shipping">
+    <div class="stock-message">In Stock
+      {% if product.metafields.plytix.clearance_overstock == 'true' %}
+        ({{ current_variant.inventory_quantity }} Available)
+      {% elsif pclearance == true %}
+        ({{ current_variant.inventory_quantity }} Available)
+      {% endif %}
+    </div>
+</div>
+{% endif %}
