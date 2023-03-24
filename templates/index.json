@@ -5,7 +5,6 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/march-special-of-the-month-desktop-1.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/march-special-of-the-month-mobile-1.jpg",
@@ -27,6 +26,7 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/april-special-banner-desktop-1.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/april-special-banner-mobile-1.jpg",
@@ -45,33 +45,11 @@
             "overlay_color": "#000000",
             "overlay_opacity": 50
           }
-        },
-        "a8894ef6-646a-4fd5-a052-5fef22012fd0": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "background_image": "shopify:\/\/shop_images\/february-sotm-floor-scrubber.jpg",
-            "title": "Advantage 20&#8243; Battery Powered Automatic Floor Scrubber",
-            "text": "Take Advantage Now! <br>Was $3,849.99. Now $3,549.99.",
-            "color": "#303e48",
-            "link": "shopify:\/\/products\/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
-            "text_alignment": "left",
-            "button_one_label": "SAVE $300",
-            "button_one_link": "shopify:\/\/products\/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
-            "button_one_style": "secondary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
-          }
         }
       },
       "block_order": [
         "slide-1",
-        "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
-        "a8894ef6-646a-4fd5-a052-5fef22012fd0"
+        "b208e0f0-54a1-4304-9ca0-4e24e5a33de4"
       ],
       "settings": {
         "enable_autoplay": true,
