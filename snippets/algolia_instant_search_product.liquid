@@ -227,60 +227,66 @@
             </div>
             <div class="cfais-productitem--actions">
                 <p class="ais-hit--price productitem__price ">
-                    <div class="price__current"><span>${algolia.helpers.displayPrice(hit, hit._distinct)}</span></div>
-                    ${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html `
-                        ${hit.meta.plytix.list_price ? html`<div class="price__compare-at-visible">(Was: ${numberScrub(hit.meta.plytix.list_price)})</div>`:''}
-                    `:''}
+                    <div class="price__current"><span>
+                    ${hit.meta.plytix.package_products ? html`<span class="bundle-price">See Product for Pricing {% render 'icon-chevron-right' %}</span>`: html `<span class="norm-price">${algolia.helpers.displayPrice(hit, hit._distinct)}</span>`}
+
+{%- comment -%}${algolia.helpers.displayPrice(hit, hit._distinct)}{%- endcomment -%}
 
 
-                    {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
-                    {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-discount">${algolia.helpers.displayDiscount(hit.price, hit.compare_at_price, hit.price_ratio)}</span>`}{%- endcomment -%}
-                </p>
+</span></div>
+${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html `
+    ${hit.meta.plytix.list_price ? html`<div class="price__compare-at-visible">(Was: ${numberScrub(hit.meta.plytix.list_price)})</div>`:''}
+`:''}
+
+
+{%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
+{%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-discount">${algolia.helpers.displayDiscount(hit.price, hit.compare_at_price, hit.price_ratio)}</span>`}{%- endcomment -%}
+</p>
 
 
 
 {%- comment -%}was a check for !hit._distinct but didn't work when we went to showing variants as groups {%- endcomment -%}
-                ${hit._distinct && html`
-                  <form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
-                      <input type="hidden" name="id" value="${hit.objectID}" />
-                        <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
-                        <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
-                  </form>
-                  <p class="ais-hit--cart">
-                        {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
+${hit._distinct && html`
+<form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="id" value="${hit.objectID}" />
+    <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
+    <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
+</form>
+<p class="ais-hit--cart">
+    {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
 
-                        ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_management,hit.inventory_quantity,hit.collections) ? html`
-                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html`
-                                <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}">${ algolia.translations.addToCart }</button>
-                            `:html`
-                                <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled" type="button" disabled=""><span class="atc-button--text">
-                                    View Product
-                                </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
-                            `}
-                          `: html`
-                          <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled" type="button" disabled=""><span class="atc-button--text">
-                                Sold Out
-                          </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
-                        `}
-                  </p>
-                `}
-            </div>
-          </div>
-        </div>`
-        };
-    })(window.algoliaShopify);
+    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_management,hit.inventory_quantity,hit.collections) ? html`
+        ${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html`
+            <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}">${ algolia.translations.addToCart }</button>
+        `:html`
+            <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled" type="button" disabled=""><span class="atc-button--text">
+                View Product
+            </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
+        `}
+      `: html`
+      <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled" type="button" disabled=""><span class="atc-button--text">
+            Sold Out
+      </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
+    `}
+</p>
+`}
+</div>
+</div>
+</div>`
+};
+})(window.algoliaShopify);
 
 
 </script>
 
 <script>
-    function numberScrub(num){
-        var newNum = (Math.round(num * 100) / 100).toFixed(2);;
-        newNum = newNum.toLocaleString('en');
-        return ("$"+newNum.toString());
-    }
-    function stoplink(e){
-        //needed to stop product from loading for help tips
-        e.stopPropagation();
-    }
+function numberScrub(num){
+var newNum = (Math.round(num * 100) / 100).toFixed(2);;
+newNum = newNum.toLocaleString('en');
+return ("$"+newNum.toString());
+}
+function stoplink(e){
+//needed to stop product from loading for help tips
+e.stopPropagation();
+}
 </script>
