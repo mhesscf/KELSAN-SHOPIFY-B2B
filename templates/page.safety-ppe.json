@@ -168,6 +168,14 @@
             "linkurl": "shopify:\/\/collections\/ear-protection"
           }
         },
+        "14f4cb56-d125-4fcb-972c-b7e56869b868": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/electrostatic-disinfecting-sprayers.jpg",
+            "linktext": "Electrostatic Disinfecting & Sanitizing Sprayers",
+            "linkurl": "\/collections\/electrostatic-disinfecting-sanitizing-sprayers"
+          }
+        },
         "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
           "type": "types",
           "settings": {
@@ -355,6 +363,7 @@
         "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
         "159a2b1f-8d76-471e-84de-975a6d48fa11",
         "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "14f4cb56-d125-4fcb-972c-b7e56869b868",
         "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
         "8a4f2a37-497f-45ea-991a-4f1202ac4675",
         "8fd97783-be87-4481-96a3-df40b29aa10d",
