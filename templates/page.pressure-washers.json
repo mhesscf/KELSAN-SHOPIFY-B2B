@@ -154,6 +154,14 @@
             "linkurl": "shopify:\/\/collections\/cart-mount"
           }
         },
+        "c82f8abc-a25a-4d78-bf08-80030d4f70cf": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/drain-jetters.jpg",
+            "linktext": "Drain Jetters",
+            "linkurl": "\/collections\/drain-jetters"
+          }
+        },
         "159a2b1f-8d76-471e-84de-975a6d48fa11": {
           "type": "types",
           "settings": {
@@ -288,6 +296,7 @@
         "589b0ba5-e3fa-4320-9319-39615c0ac890",
         "3929b3ce-75f8-4eca-9f78-d29287be26e3",
         "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "c82f8abc-a25a-4d78-bf08-80030d4f70cf",
         "159a2b1f-8d76-471e-84de-975a6d48fa11",
         "8b2e74e9-3f60-4691-b436-59b9179e9f33",
         "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
