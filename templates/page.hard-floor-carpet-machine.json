@@ -155,6 +155,7 @@
         },
         "35dd6d94-e689-4b11-93d6-d72c567a56c7": {
           "type": "types",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/escalator-cleaners.jpg",
             "linktext": "Escalator Cleaners",
