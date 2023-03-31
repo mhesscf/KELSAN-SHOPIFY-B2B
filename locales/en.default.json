@@ -16,7 +16,7 @@
       "select_variant": "Please select a variant",
       "by_vendor": "by {{ vendor }}",
       "by_vendor_html": "by {{ vendor_link }}",
-      "sku_html": "<strong>SKU<\/strong> <span data-product-sku>{{ sku }}",
+      "sku_html": "<strong>SKU:<\/strong> <span data-product-sku>{{ sku }}",
       "customer_reviews_title": "Customer Reviews",
       "zoom": "Click to expand",
       "zoomTap": "Tap or pinch to zoom",
@@ -247,7 +247,7 @@
     "general": {
       "your_cart": "Your cart",
       "continue_shopping": "Continue shopping",
-      "price": "Price",
+      "price": "Price:",
       "quantity": "Qty",
       "checkout": "Check out",
       "update": "Update cart",
