@@ -50,6 +50,33 @@
         return finalmessage;
     };
 
+
+    function stocklookupLineItem(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false"){
+        leadtime = Number(leadtime);
+        var stockStatusMain = '';
+        var stockStatusSub = '';
+        if (variants_count != "1" || bundleitems != ""){
+            stockStatusMain = "See Product Page for Stock Status Details";
+        }else if(dropship == "true") {
+            stockStatusMain = "Ships Direct from Manufacturer";
+            stockStatusSub = "May Have Extended Lead Times";
+        }else if(im == "middleware-fulfillment" && inventory < 1){
+            stockStatusMain = "Temporarily On Backorder";
+            stockStatusSub = backorderLeadtimeLookup(leadtime);
+        }else if(im != "middleware-fulfillment" && leadtime){
+            stockStatusMain = "Special Order Item";
+            stockStatusSub =  specialLeadtimeLookup(leadtime);
+        }else if(inventory > 0) {
+            stockStatusMain = "In Stock";
+        }
+        if(stockStatusSub != ""){
+            var finalLineItemMessage = stockStatusMain + " ("+stockStatusSub+")";
+        }else{
+            var finalLineItemMessage = stockStatusMain;
+        }
+        return finalLineItemMessage;
+    };
+
     function backorderLeadtimeLookup(leadTime = 0){
         var leadtext = ""
         if (leadTime < 22){
@@ -250,6 +277,7 @@ ${hit._distinct && html`
 <form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
   <input type="hidden" name="id" value="${hit.objectID}" />
     <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
+     <input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}" />
     <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
 </form>
 <p class="ais-hit--cart">

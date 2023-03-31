@@ -230,9 +230,15 @@ jQuery(document).ready(function($){
             var vstep = $('#v' + param).data('increment');
             var erpsku = $('#v' + param).data('erpsku');
             var sku = $('#v' + param + " span").html(); //needed to show sku on checkout
+            if($('.var' + param + ".status-area .status-time").html()){
+                var status = $('.var' + param + ".status-area .main-notice").html()+" ("+$('.var' + param + ".status-area .status-time").html()+")";
+            }else{
+                var status = $('.var' + param + ".status-area .main-notice").html();
+            }
             if(vid == param){
                 $('input[name="properties[_erp_sku]"]').attr('value', erpsku);
                 $('input[name="properties[Sku]"]').attr('value', sku);
+                $('input[name="properties[Status]"]').attr('value', status);
                 $('#product-quantity-input').data('step', vstep);
                 $('.qtyminus').data('step', vstep);
                 $('.qtyplus').data('step', vstep);
@@ -607,6 +613,7 @@ jQuery(document).ready(function($){
             $sub_product_container.find('[data-bundle-subproduct], [data-bundle-subproduct-free]').each(function() {
                 form_template["properties[_erp_sku]"] = $(this).data('erpsku')
                 form_template["properties[Sku]"] = $(this).data('vissku')
+                form_template["properties[Status]"] = $(this).data('status')
                 form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
                 form_template.id = $(this).data('id') + ""
                 form_template.quantity = $(this).val() + ""
@@ -667,6 +674,7 @@ jQuery(document).ready(function($){
         $bsub_product_container.find('[data-bundle-subproduct], [data-bundle-subproduct-free]').each(function() {
             form_template["properties[_erp_sku]"] = $(this).data('erpsku')
             form_template["properties[Sku]"] = $(this).data('vissku')
+            form_template["properties[Status]"] = $(this).data('status')
             form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
             form_template.id = $(this).data('id') + ""
             form_template.quantity = $(this).val() + ""

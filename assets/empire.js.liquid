@@ -32801,6 +32801,8 @@ const RULES = `
                 const variantERPSKU = atcButton.getAttribute('data-erp-sku');
                 const variantVisSKUName = atcButton.getAttribute('data-vissku-name');
                 const variantVisSKU = atcButton.getAttribute('data-vissku');
+                const variantStatusName = atcButton.getAttribute('data-status-name');
+                const variantStatus = atcButton.getAttribute('data-status');
                 const variantTPName = atcButton.getAttribute('data-tp-name');
                 const variantTieredPricing = atcButton.getAttribute('data-tiered-pricing');
                 const formData = [{
@@ -32815,6 +32817,9 @@ const RULES = `
                 },{
                     name: variantERPSKUName,
                     value: variantERPSKU
+                },{
+                    name: variantStatusName,
+                    value: variantStatus
                 },{
                     name: variantTPName,
                     value: variantTieredPricing

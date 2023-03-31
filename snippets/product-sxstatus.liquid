@@ -1,7 +1,7 @@
 
 {% assign current_variant_id = product.selected_or_first_available_variant.id %}
 {% for variant in product.variants %}
-  <div class="var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+  <div class="var-specs var{{ variant.id }} status-area" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
   {% assign fservice = variant.fulfillment_service %}
   {% assign leadTime = variant.metafields.plytix.sxerp_lead_time %}
   {% assign inventoryQuantity = variant.inventory_quantity %}
@@ -97,13 +97,14 @@
     </div>
   {% elsif variant.inventory_quantity > 0 %}
     <div class="product-detail-stock-and-shipping">
-      <div class="stock-message">In Stock
+      <div class="stock-message main-notice">In Stock
         {% if product.metafields.plytix.clearance_overstock == 'true' %}
           ({{ variant.inventory_quantity }} Available)
         {% elsif pclearance == true %}
           ({{ variant.inventory_quantity }} Available)
         {% endif %}
       </div>
+      <span class="status-time"></span> {% comment %} keep this line for js {% endcomment %}
     </div>
   {% endif %}
   </div>

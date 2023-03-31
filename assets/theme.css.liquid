@@ -13446,10 +13446,12 @@ nav.breadcrumb span.separator{
 		margin-top: 0;
 	}
 }
-
+.cart-item--product-options, .cart-item--content-price, .cart-item--unit-price,
+.cart-item--stockstatus,
 .cart-item--sku {
-	font-size: 0.8125rem;
-	line-height: 1.5;
+	{% comment %}font-size: 0.8125rem;{% endcomment %}
+	font-size:14px;
+	line-height: 17px;
 	color: {{ settings.color_text_light }};
 }
 

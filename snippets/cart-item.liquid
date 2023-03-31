@@ -19,6 +19,9 @@
     {% if property.first == '_bundle_product' %}
       {% assign product_bundle = property.last %}
     {% endif %}
+    {% if property.first == 'Status' %}
+      {% assign stock_status = property.last %}
+    {% endif %}
     {% if property.first == '_product_step' %}
       {% assign pstep = property.last %}
     {% endif %}
@@ -126,16 +129,12 @@
       {% endif %}
 
       {% if show_sku %}
-        <div
-                class="
-            cart-item--sku
-            {% if item.sku == empty %}cart-item--sku-empty{% endif %}
-          "
-        >
+        <div class="cart-item--sku {% if item.sku == empty %}cart-item--sku-empty{% endif %}">
           {{ 'product.general.sku_html' | t: sku: item.sku | strip_newlines }}
         </div>
       {% endif %}
 
+      {% comment %} Using other stock status instead
       {% if settings.inventory_status %}
         {% if item.variant.inventory_quantity > 0 and item.variant.inventory_quantity <= settings.low_stock_threshold %}
           {%
@@ -147,6 +146,14 @@
           %}
         {% endif %}
       {% endif %}
+      {% endcomment %}
+      {% if stock_status %}
+        <div class="cart-item--stockstatus">
+          <strong>Status:</strong> {{ stock_status }}
+        </div>
+      {% endif %}
+
+
     </div>
 
     <div class="cart-item--info {% if product_bundle != '' %} bundle-item {% endif %}">

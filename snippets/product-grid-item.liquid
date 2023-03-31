@@ -514,7 +514,11 @@ data-product-quickshop-url="{{ product_link }}"
       {% assign fservice = current_variant.fulfillment_service %}
       {% assign leadTime = product.metafields.plytix.sxerp_lead_time %}
       {% assign leadTime = leadTime | plus: 0 %}
+        {% assign stockStatusMain = "" %}
+        {% assign stockStatusSub = "" %}
       {% if product.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
+        {% assign stockStatusMain = "Ships Direct from Manufacturer" %}
+        {% assign stockStatusSub = "May Have Extended Lead Times" %}
         <div class="sx-status">
           <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
           <span class="status-time">May Have Extended Lead Times</span>
@@ -527,76 +531,109 @@ data-product-quickshop-url="{{ product_link }}"
         </div>
       {% elsif product.first_available_variant.inventory_management == 'middleware-fulfillment' and  product.first_available_variant.inventory_quantity < 1 %}
         <div class="sx-status">
+          {% assign stockStatusMain = "Temporarily On Backorder" %}
           <span class="status-desc main-notice">Temporarily On Backorder</span>
           {% if leadTime < 22  %}
+            {% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
             <span class="status-time">Estimated Ship Date 1 – 3 wks</span>
           {% elsif leadTime < 29 %}
+            {% assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" %}
             <span class="status-time">Estimated Ship Date 2 – 4 wks</span>
           {% elsif leadTime < 36 %}
+            {% assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" %}
             <span class="status-time">Estimated Ship Date 3 – 5 wks</span>
           {% elsif leadTime < 43 %}
+            {% assign stockStatusSub = "Estimated Ship Date 4 – 6 wks" %}
             <span class="status-time">Estimated Ship Date 4 –6 wks</span>
           {% elsif leadTime < 50 %}
+            {% assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" %}
             <span class="status-time">Estimated Ship Date 5 – 7 wks</span>
           {% elsif leadTime < 57 %}
+            {% assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" %}
             <span class="status-time">Estimated Ship Date 6 – 8 wks</span>
           {% elsif leadTime < 64 %}
+            {% assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" %}
             <span class="status-time">Estimated Ship Date 7 – 9 wks</span>
           {% elsif leadTime < 71 %}
+            {% assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" %}
             <span class="status-time">Estimated Ship Date 8 – 10 wks</span>
           {% elsif leadTime < 78 %}
+            {% assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" %}
             <span class="status-time">Estimated Ship Date 9 – 11 wks</span>
           {% elsif leadTime < 85 %}
+            {% assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" %}
             <span class="status-time">Estimated Ship Date 10 – 12 wks</span>
           {% elsif leadTime < 121 %}
+            {% assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" %}
             <span class="status-time">Estimated Ship Date 3 – 4 mths</span>
           {% elsif leadTime < 151 %}
+            {% assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" %}
             <span class="status-time">Estimated Ship Date 4 – 5 mths</span>
           {% elsif leadTime < 181 %}
+            {% assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" %}
             <span class="status-time">Estimated Ship Date 5 – 6 mths</span>
           {% elsif leadTime < 211 %}
+            {% assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" %}
             <span class="status-time">Estimated Ship Date 6 – 7 mths</span>
           {% elsif leadTime < 1000 %}
+            {% assign stockStatusSub = "Estimated Ship Date over 7 mths" %}
             <span class="status-time">Estimated Ship Date over 7 mths</span>
           {% endif %}
           <span class="status-order">Order Now to Reserve</span>
         </div>
       {% elsif product.first_available_variant.inventory_management == nil and leadTime %}
         <div class="sx-status">
+          {% assign stockStatusMain = "Special Order Item" %}
           <span class="status-desc main-notice">Special Order Item</span>
           {% if leadTime < 22  %}
+            {% assign stockStatusSub = "Expected to ship in 1 – 3 wks" %}
             <span class="status-time">Expected to ship in 1 – 3 wks</span>
           {% elsif leadTime < 29 %}
+            {% assign stockStatusSub = "Expected to ship in 2 – 4 wks" %}
             <span class="status-time">Expected to ship in 2 – 4 wks</span>
           {% elsif leadTime < 36 %}
+            {% assign stockStatusSub = "Expected to ship in 3 – 5 wks" %}
             <span class="status-time">Expected to ship in 3 – 5 wks</span>
           {% elsif leadTime < 43 %}
+            {% assign stockStatusSub = "Expected to ship in 4 – 6 wks" %}
             <span class="status-time">Expected to ship in 4 – 6 wks</span>
           {% elsif leadTime < 50 %}
+            {% assign stockStatusSub = "Expected to ship in 5 – 7 wks" %}
             <span class="status-time">Expected to ship in 5 – 7 wks</span>
           {% elsif leadTime < 57 %}
+            {% assign stockStatusSub = "Expected to ship in 6 – 8 wks" %}
             <span class="status-time">Expected to ship in 6 – 8 wks</span>
           {% elsif leadTime < 64 %}
+            {% assign stockStatusSub = "Expected to ship in 7 – 9 wks" %}
             <span class="status-time">Expected to ship in 7 – 9 wks</span>
           {% elsif leadTime < 71 %}
+            {% assign stockStatusSub = "Expected to ship in 8 – 10 wks" %}
             <span class="status-time">Expected to ship in 8 – 10 wks</span>
           {% elsif leadTime < 78 %}
+            {% assign stockStatusSub = "Expected to ship in 9 – 11 wks" %}
             <span class="status-time">Expected to ship in 9 – 11 wks</span>
           {% elsif leadTime < 85 %}
+            {% assign stockStatusSub = "Expected to ship in 10 – 12 wks" %}
             <span class="status-time">Expected to ship in 10 – 12 wks</span>
           {% elsif leadTime < 121 %}
+            {% assign stockStatusSub = "Expected to ship in 3 – 4 mths" %}
             <span class="status-time">Expected to ship in 3 – 4 mths</span>
           {% elsif leadTime < 151 %}
+            {% assign stockStatusSub = "Expected to ship in 4 – 5 mths" %}
             <span class="status-time">Expected to ship in 4 – 5 mths</span>
           {% elsif leadTime < 181 %}
+            {% assign stockStatusSub = "Expected to ship in 5 – 6 mths" %}
             <span class="status-time">Expected to ship in 5 – 6 mths</span>
           {% elsif leadTime < 211 %}
+            {% assign stockStatusSub = "Expected to ship in 6 – 7 mths" %}
             <span class="status-time">Expected to ship in 6 – 7 mths</span>
           {% elsif leadTime < 1000 %}
+            {% assign stockStatusSub = "Expected to ship in over 7 mths" %}
             <span class="status-time">Expected to ship in over 7 mths</span>
           {% endif %}
         </div>
       {% elsif current_variant.inventory_quantity > 0 %}
+        {% assign stockStatusMain = "In Stock" %}
         <div class="product-detail-stock-and-shipping">
           <div class="stock-message">
             In Stock
@@ -609,6 +646,13 @@ data-product-quickshop-url="{{ product_link }}"
         </div>
       {% endif %}
       {% endif %}
+
+      {% if stockStatusSub != "" %}
+        {% capture stockStatusNote %}{{ stockStatusMain }} ({{ stockStatusSub }}){% endcapture %}
+      {% else %}
+        {% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
+      {% endif %}
+
     </div>
 
     {% unless recently_viewed %}
@@ -757,10 +801,12 @@ data-product-quickshop-url="{{ product_link }}"
                         data-erpsku-name="properties[_erp_sku]"
                         data-tp-name="properties[_tiered_pricing]"
                         data-vissku-name="properties[Sku]"
+                        data-status-name="properties[Status]"
                         data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
                         data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
                         data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
                         data-vissku="{{ product.selected_or_first_available_variant.sku }}"
+                        data-status="{{ stockStatusNote }}"
                         data-variant-id="{{ product.variants.first.id }}"
                         data-pid = "{{product.id}}"
                         data-id="{{ product.variants.first.id }}"
