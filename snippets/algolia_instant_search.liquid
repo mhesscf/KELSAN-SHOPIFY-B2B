@@ -1,0 +1,183 @@
+<script>
+    (function(algolia) {
+        'use strict';
+
+        algolia.instantSearchMainTemplate = function instantSearchMainTemplate( html, data ) {
+            return html `<div class="ais-page">
+        {%- comment -%}<h1 class="ais-h2">${algolia.translations.searchTitle}</h1>{%- endcomment -%}
+        <div class="ais-input" style="display:none;">
+          <div class="ais-search-box-container"></div>
+          <div class="ais-input-button">
+            <div class="ais-clear-input-icon"></div>
+          </div>
+        </div>
+        <div class="ais-facets-button">
+          Show filters
+        </div>
+        <div class="ais-facets">
+            <div class="ais-facet-header">Filters</div>
+          <div class="ais-clear-refinements-container"></div>
+          <div class="ais-current-refined-values-container"></div>
+          ${data.facets.map( facet =>
+                html`<div class="ais-facet-dropdown-wrapper ais-facet-${facet.type} ais-facet-${facet.escapedName}">
+              <label for="${facet.escapedName}" class="ais-range-slider--header ais-facet--header ais-header">
+              ${facet.title}
+                <span class="collection-filters__filter-icon open">{% render 'icon-chevron-down-small' %}</span>
+              </label>
+              <input class="ais-dropdown-checkbox" type="checkbox" id="${facet.escapedName}" name="dropdown" checked />
+              <div class="ais-facet-${facet.escapedName}-container ais-facet-dropdown-container"></div>
+              <div class="is-showItems"></div>
+            </div>`
+            )}
+        </div>
+        <div class="ais-block">
+          <div class="ais-search-header">
+            <div class="ais-stats-container"></div>
+            <div class="ais-change-display">
+                <span class="ais-change-display-block"><i class="fa fa-th-large"></i></span>
+                <span class="ais-change-display-list ais-change-display-selected"><i class="fa fa-th-list"></i></span>
+            </div>
+            <div class="ais-sort">
+              ${data.multipleSortOrders ?
+                html`${algolia.translations.sortBy} <span class="ais-sort-orders-container"></span>`
+                : html`${algolia.translations.sortBy} ${algolia.translations.relevance}`
+            }
+            </div>
+          </div>
+          <div class="ais-hits-container ais-results-as-list"></div>
+        </div>
+        <div class="ais-pagination-container"></div>
+      </div>`
+        };
+    })(window.algoliaShopify);
+
+    {%- if template == 'collection' or template == 'search' -%}
+
+        $( document ).ready(function() {
+            setTimeout(()=> {
+                DecodeThis(); // Decode html on load
+                adaAlgoliaFixes();
+
+                //Collapse filters and options within filters
+                var counter = 1;
+                $( ".ais-facet-dropdown-wrapper" ).each(function( index ) {
+                    if(counter <= 3){
+                        $(this).find( ".ais-dropdown-checkbox" ).prop( "checked", false );
+                        $(this).find( ".collection-filters__filter-icon" ).addClass('productgrid--sidebar-button-active');
+                    }else{
+                        $(this).find( ".ais-dropdown-checkbox" ).prop( "checked", true );
+                    }
+
+                    var optioncounter = 1;
+                    $(this).find( ".ais-RefinementList-item" ).each(function( index ) {
+                        if(optioncounter > 4){
+                            $(this).hide();
+                        }
+                        optioncounter++;
+                    });
+                    if(optioncounter > 4){
+                        $(this).find( ".is-showItems" ).html("Show More");
+                        if(counter > 3){
+                            $(this).find( ".is-showItems" ).hide();
+                        }
+                    }
+                    counter++;
+                });
+
+                //hide show "show more" depending on if attribute is expanded
+                $( ".ais-dropdown-checkbox" ).click(function( index ) {
+                    if($(this).is(':checked')){
+                        $(this).parent(".ais-facet-dropdown-wrapper").find( ".is-showItems" ).hide();
+                        $(this).parent(".ais-facet-dropdown-wrapper").find( ".collection-filters__filter-icon" ).removeClass('productgrid--sidebar-button-active');
+                    }else{
+                        $(this).parent(".ais-facet-dropdown-wrapper").find( ".is-showItems" ).show();
+                        $(this).parent(".ais-facet-dropdown-wrapper").find( ".collection-filters__filter-icon" ).addClass('productgrid--sidebar-button-active');
+                    }
+                });
+
+                //show more items when there are more than 4
+                $( ".is-showItems" ).click(function( index ) {
+                    if($(this).html() == "Show More"){
+                        $(this).parent(".ais-facet-dropdown-wrapper").find(".ais-RefinementList-item").show();
+                        $(this).html("Show Less");
+                    }else{
+                        var optioncounter = 1;
+                        $(this).parent(".ais-facet-dropdown-wrapper").find(".ais-RefinementList-item").each(function( index ) {
+                            if(optioncounter > 4){
+                                $(this).hide();
+                            }
+                            optioncounter++;
+                        });
+                        $(this).html("Show More");
+                    }
+                });
+
+
+                //watch for changes in dropdown to reload stuff
+                const target = document.querySelector('.ais-facet-dropdown-container');
+                const observer = new MutationObserver(function(mutations) {
+                    // console.log('observer updated');
+                    DecodeThis(); //Trigger Decode
+                    filterTrigger(); //trigger hide/show for filter and options.
+                    adaAlgoliaFixes();
+
+                });
+                // Configure and start the observer
+                const config = { subtree: true, childList: true };
+                observer.observe(target, config);
+
+            },300);
+
+
+            //Trigger when filter is selected
+            function filterTrigger(){
+                setTimeout(()=> {
+                    $( ".ais-facet-dropdown-wrapper .is-showItems" ).hide();
+                    $(".ais-facet-dropdown-wrapper:visible").each(function( index ) {
+                        var optioncounter = 1;
+                        $(this).find(".ais-RefinementList-item:visible").each(function( index ) {
+                            if(optioncounter > 4){
+                                $(this).hide();
+                            }
+                            optioncounter++;
+                        });
+                        if(optioncounter > 4){
+                            $(this).find( ".is-showItems" ).html("Show More").show();
+                        }
+                    });
+                },300);
+            }
+
+            //convert html------------------------>
+            function DecodeThis(){
+                setTimeout(()=> {
+                    // console.log('decoding now')
+                    DecodeHTMLarea(".product-description-raw");
+                    DecodeHTMLarea(".sx-status-other-raw");
+                    DecodeHTMLarea(".is-review-raw");
+                },300);
+            }
+
+            function DecodeHTMLarea(elementClass){
+                $( elementClass ).each(function( index ) {
+                    var visElement = elementClass.replace('-raw','')+'[data-objid="'+$(this).data("objid")+'"]';
+                    var decodeDesc = DecodeHTML($(this).html());
+                    $(visElement).html(decodeDesc);
+                });
+            }
+
+            function DecodeHTML(encodedString) {
+                var textArea = document.createElement('textarea');
+                textArea.innerHTML = encodedString;
+                return textArea.value;
+            }
+            function adaAlgoliaFixes(encodedString) {
+                $(".ais-SortBy-select").prop('title', 'Sorted By Dropdown'); // add title to sort by dropdown for ADA compliance
+                $(".rheostat-handle-lower").prop('title', 'lower range'); // add title to sort by dropdown for ADA compliance
+                $(".rheostat-handle-upper").prop('title', 'upper range'); // add title to sort by dropdown for ADA compliance
+            }
+        });
+    {% endif %}
+
+
+</script>

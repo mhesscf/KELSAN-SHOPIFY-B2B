@@ -302,8 +302,26 @@
     {%- endif -%}
   {% endif %}
 
-  {% if lp != blank %}
+  {% comment %}{% if lp != blank %}
     <div class="price__compare-at-visible">(Was: {{ lp | money }})</div>
-  {% endif %}
+  {% endif %}{% endcomment %}
+
+
+
+  {% assign current_variant_id = product.selected_or_first_available_variant.id %}
+  {% for variant in product.variants %}
+    {% if variant.metafields.plytix.list_price > 0 %}
+      {% assign varlp = variant.metafields.plytix.list_price | times: 100 %}
+    {% endif %}
+    {% if varlp != blank %}
+      <div class="price__compare-at-visible var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+      (Was: {{ varlp | money }})
+      </div>
+    {% endif %}
+  {% endfor %}
+
+
+
+
 </div>
 {% comment %}Inject @pixelunion/shopify-price-ui/price end{% endcomment %}
