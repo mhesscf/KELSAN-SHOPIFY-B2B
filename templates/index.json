@@ -5,6 +5,7 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/march-special-of-the-month-desktop-1.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/march-special-of-the-month-mobile-1.jpg",
@@ -26,7 +27,6 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/april-special-banner-desktop-1.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/april-special-banner-mobile-1.jpg",
