@@ -152,6 +152,14 @@
             "linkurl": "shopify:\/\/collections\/counter-rotating-brushes-crb-carpet-floor-scrubbers"
           }
         },
+        "c6c4a67b-375b-453d-a5f8-085eb0c383c9": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/escalator-cleaners.jpg",
+            "linktext": "Escalator Cleaners",
+            "linkurl": "\/collections\/escalator-cleaners"
+          }
+        },
         "159a2b1f-8d76-471e-84de-975a6d48fa11": {
           "type": "types",
           "settings": {
@@ -312,6 +320,7 @@
         "589b0ba5-e3fa-4320-9319-39615c0ac890",
         "3929b3ce-75f8-4eca-9f78-d29287be26e3",
         "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
+        "c6c4a67b-375b-453d-a5f8-085eb0c383c9",
         "159a2b1f-8d76-471e-84de-975a6d48fa11",
         "8b2e74e9-3f60-4691-b436-59b9179e9f33",
         "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
