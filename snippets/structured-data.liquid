@@ -81,7 +81,7 @@
   Product structured data
   https://developers.google.com/search/docs/data-types/products
 {%- endcomment -%}
-{%- if template contains 'collection' -%}
+{%- if template contains 'collection' and shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
     <script type="application/ld+json">
       {
         "@context": "http://schema.org/",
