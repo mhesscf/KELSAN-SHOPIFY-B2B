@@ -45,7 +45,7 @@
           {% assign related_products = product.metafields.plytix.related_products | split: "," %}
           {%- for product in  related_products -%}
             {%- assign product_handle = product |  strip -%}
-            {%- if product_handle != 'undefined' %}
+            {%- if product_handle != 'undefined' and all_products[product_handle].title != '' %}
                             {% assign item = all_products[product_handle] %}
                             {%
                                     render 'product-slider-item',
