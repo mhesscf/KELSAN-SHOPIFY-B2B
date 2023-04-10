@@ -59,17 +59,15 @@
 
   {% assign page_title = 'general.accessibility.search' | t %}
   {% assign total_result_count = search.results.size %}
-  {% if total_result_count > 0 %}
     {% capture sanitized_terms %}
       {%
         render 'search-sanitizer',
         search_terms: search.terms
       %}
     {% endcapture %}
-
     {% assign sanitized_terms = sanitized_terms | strip %}
     {% assign page_title = 'general.accessibility.search_results' | t: terms: sanitized_terms %}
-  {% endif %}
+
 
   {% for item in search.results %}
     {% if item.object_type == 'product' %}
