@@ -197,7 +197,7 @@
                 </h2>
                 <div class="product-detail-sku">
                     {%- comment -%}SKU: ${hit.sku && html`<span class="algolia-sku">${components.Highlight({ attribute: 'sku', hit })}</span>`}{%- endcomment -%}
-                    SKU: <span itemprop="sku">${hit.sku} ${hit.meta.plytix.manufacturer_sku}</span>
+                    SKU: <span itemprop="sku">${hit.sku}</span>
                     <meta itemprop="mpn" content="${hit.meta.plytix.manufacturer_sku}" />
                 </div>
 

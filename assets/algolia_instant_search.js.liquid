@@ -256,13 +256,17 @@
         if (collectionPageEnabled) {
           // Collection page merchandising:
           // If we are on a collection page, `collectionRulesContextValue` is defined
+          //CleanFreak: Add allproducts rulecontext to target for all products
           if (collectionRulesContextValue) {
             searchFunctionHelper.setQueryParameter('ruleContexts', [
-              collectionRulesContextValue.toString(),
+              collectionRulesContextValue.toString(),"allproducts"
             ]);
           } else {
-            searchFunctionHelper.setQueryParameter('ruleContexts', []);
+            searchFunctionHelper.setQueryParameter('ruleContexts', ["allproducts"]);
           }
+        }else{
+          //for all other pages
+          searchFunctionHelper.setQueryParameter('ruleContexts', ["allproducts"]);
         }
 
         searchFunctionHelper.setPage(page);

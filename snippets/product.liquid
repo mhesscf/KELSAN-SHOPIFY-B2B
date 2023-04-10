@@ -320,7 +320,8 @@
                                     {% assign fprice = all_products[freeproduct].price | money_without_currency | times: fpkgqnty %}
                                     {% assign savingsp = savingsp | plus: fprice %}
                                 {% endfor %}
-                                <div class="free-product-savings">FREE ${{ savingsp }} in Included Products</div>
+                                {% assign savingsp = savingsp | times:100 %}
+                                <div class="free-product-savings">FREE {{ savingsp | money }} in Included Products</div>
                             {% endif %}
                         {% when 'sku' %}
                             {% unless onboarding %}
