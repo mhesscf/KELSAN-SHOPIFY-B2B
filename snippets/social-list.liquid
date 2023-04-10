@@ -21,10 +21,12 @@
     {% if settings.footer_logo %}
       <img src="{{ settings.footer_logo  | img_url: '170x' }}" class="footer-logo" alt="CleanFreak"/>
     {% endif %}
+    {% comment %}
     <p>
       <b>Visit Us</b><br/>
       {{ settings.store_address }}
     </p>
+    {% endcomment %}
     <p>
       <b>Call Us Toll Free:</b><br/>
       {{ settings.phone_number }}
