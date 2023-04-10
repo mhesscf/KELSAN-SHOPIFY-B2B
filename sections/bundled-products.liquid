@@ -100,14 +100,14 @@
                                 <div class="price">
                                     {% assign pkgqnty = pkgqnty | plus: 0 %}
                                     {% if pkgqnty > 1 %}
-                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency | times: pkgqnty }}</div>
+                                    <div class="full-p">{{ all_products[bundlep].price | times: pkgqnty | money }}</div>
                                     {% if all_products[bundlep].plytix.list_price != blank %}
-                                        <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency  | times: pkgqnty }}</div>
+                                        <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | times: pkgqnty | money }}</div>
                                     {% endif %}
                                     {% else %}
-                                        <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency }}</div>
+                                        <div class="full-p">{{ all_products[bundlep].price | money }}</div>
                                         {% if all_products[bundlep].plytix.list_price != blank %}
-                                            <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency }}</div>
+                                            <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | money }}</div>
                                         {% endif %}
                                     {% endif %}
                                 </div>
@@ -165,14 +165,14 @@
                             {% endif %}
                             <div class="price">
                                 {% if pkgqnty > 1 %}
-                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency | times: pkgqnty }}</div>
+                                    <div class="full-p">{{ all_products[bundlep].price | times: pkgqnty | money}}</div>
                                     {% if all_products[bundlep].plytix.list_price != blank %}
-                                        <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency  | times: pkgqnty }}</div>
+                                        <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | times: pkgqnty | money }}</div>
                                     {% endif %}
                                 {% else %}
-                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[bundlep].price | money_without_currency }}</div>
+                                    <div class="full-p">{{ all_products[bundlep].price | money }}</div>
                                     {% if all_products[bundlep].plytix.list_price != blank %}
-                                        <div class="markdown-p">${{ all_products[bundlep].plytix.list_price | money_without_currency }}</div>
+                                        <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | money }}</div>
                                     {% endif %}
                                 {% endif %}
                             </div>
@@ -300,9 +300,9 @@
                                 {% endif %}
                                 <div class="price">
                                     <p class="free">FREE</p>
-                                    <div class="full-p"><sup class="dollar">$</sup>{{ all_products[freeproduct].price | money_without_currency | times: fpkgqnty }}</div>
+                                    <div class="full-p">{{ all_products[freeproduct].price | times: fpkgqnty | money }}</div>
                                     {% if all_products[freeproduct].plytix.list_price != blank %}
-                                        <div class="markdown-p">${{ all_products[freeproduct].plytix.list_price | money_without_currency | times: fpkgqnty }}</div>
+                                        <div class="markdown-p">{{ all_products[freeproduct].plytix.list_price | times: fpkgqnty | money }}</div>
                                     {% endif %}
                                 </div>
                                 <a class="add-to-cart-btn" href="{{ all_products[freeproduct].url }}">VIEW PRODUCT</a>
@@ -345,9 +345,9 @@
                             {% endif %}
                             <div class="price">
                                 <p class="free">FREE</p>
-                                <div class="full-p"><sup class="dollar">$</sup>{{ all_products[freeproduct].price | money_without_currency | times: fpkgqnty }}</div>
+                                <div class="full-p">{{ all_products[freeproduct].price | times: fpkgqnty | money }}</div>
                                 {% if all_products[freeproduct].plytix.list_price != blank %}
-                                    <div class="markdown-p">${{ all_products[freeproduct].plytix.list_price | money_without_currency | times: fpkgqnty }}</div>
+                                    <div class="markdown-p">{{ all_products[freeproduct].plytix.list_price | times: fpkgqnty | money }}</div>
                                 {% endif %}
                             </div>
                             {{ all_products[freeproduct].metafields.plytix.short_description }}

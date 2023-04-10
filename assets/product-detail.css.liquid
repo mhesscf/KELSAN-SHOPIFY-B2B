@@ -1884,14 +1884,15 @@ input.qtyminus {
 .bundled-products .product-row .add-to-cart .dollar{
   font-weight: 400;
 }
-.bundled-products .product-row .add-to-cart .price .full-p sup{
-  top: -7px;
-  font-size: 16px;
-}
+
 .bundled-products .product-row .add-to-cart .price .full-p{
   font-size: 26px;
   font-weight: 800;
 }
+.bundled-products .product-row .add-to-cart .price .full-p::first-letter {
+   font-size: 16px;
+   vertical-align: super;
+ }
 .bundled-products .product-row .add-to-cart .price .markdown-p{
   font-size: 15px;
   color: {{ settings.color_text_medium }};
