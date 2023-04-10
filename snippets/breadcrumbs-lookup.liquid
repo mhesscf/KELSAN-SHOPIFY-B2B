@@ -727,7 +727,6 @@
                     </span>
             {%- elsif template contains 'search' -%}
                 {%- assign total_result_count = search.results.size -%}
-                {% if total_result_count > 0 %}
                     {% capture sanitized_terms %}
                         {%
                                 render 'search-sanitizer',
@@ -735,7 +734,6 @@
                         %}
                     {% endcapture %}
                     {%- assign sanitized_terms = sanitized_terms | strip -%}
-                {%  endif %}
 
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <span title="home" itemscope itemtype="https://schema.org/WebPage" itemprop="item" ><span itemprop="name">
