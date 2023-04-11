@@ -41,11 +41,13 @@
         {{ section.settings.product_recommendations_heading }}
       </h2>
       <div class="similar-p-slides" id="sim-slds">
+        {% assign noProducts = true %}
         {% if product.metafields.plytix.related_products != blank %}
           {% assign related_products = product.metafields.plytix.related_products | split: "," %}
           {%- for product in  related_products -%}
             {%- assign product_handle = product |  strip -%}
             {%- if product_handle != 'undefined' and all_products[product_handle].title != '' %}
+                            {% assign noProducts = false %}
                             {% assign item = all_products[product_handle] %}
                             {%
                                     render 'product-slider-item',
@@ -53,7 +55,9 @@
                             %}
             {% endif %}
           {%- endfor -%}
-        {% else %}
+        {% endif %}
+
+        {% if noProducts == true %}
           {% comment %}
           {%- for product in recommendations.products -%}
                             {% assign item = all_products[product] %}
