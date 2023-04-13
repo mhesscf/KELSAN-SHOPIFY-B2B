@@ -7,985 +7,1000 @@
   @param show_dynamic_checkout_button {Boolean}
     If true, show dynamic checkout button
 {% endcomment %}
-
-{% if is_product_modal and show_dynamic_checkout_button %}
-  {% assign quickshop_smart_buttons = true %}
+{% assign isBundle = false %}
+{% if product.metafields.plytix.package_products != blank %}
+  {% assign isBundle = true %}
 {% endif %}
 
-{% if is_product_modal == false and show_dynamic_checkout_button %}
-  {% assign product_smart_buttons = true %}
-{% endif %}
-
-{% if product.selling_plan_groups.size > 0 %}
-  {% assign show_dynamic_checkout_button = false %}
-{% endif %}
-
-{% if selected_variant.available == false %}
-  {% assign quickshop_smart_buttons = false %}
-  {% assign product_smart_buttons = false %}
-{% endif %}
-
-{% assign product_form_class = '' %}
-
-{% if show_dcb %}
-  {% if product_smart_buttons or quickshop_smart_buttons %}
-    {% assign product_form_class = 'smart-payment-enabled' %}
+{% comment %}
+Cleanfreak update: remove default functionality for add to cart on bundles (remove from) and add just a button. Fixes issue with bundles adding to cart at $0 when JS is turned off.
+{% endcomment %}
+{% if isBundle == false %}
+  {% if is_product_modal and show_dynamic_checkout_button %}
+    {% assign quickshop_smart_buttons = true %}
   {% endif %}
-{% endif %}
 
-{% assign pstep = 1 %}
-{% if product.selected_or_first_available_variant.metafields.plytix.product_step %}
-  {% assign pstep = product.selected_or_first_available_variant.metafields.plytix.product_step %}
-{% endif %}
-{% form 'product', product, class: product_form_class, data-product-form: '' %}
-  {% if pstep > 1 %}
-    <input type="hidden" class="product_step" value="{{ pstep }}">
+  {% if is_product_modal == false and show_dynamic_checkout_button %}
+    {% assign product_smart_buttons = true %}
   {% endif %}
-  <input type="hidden" class="erp_sku" value="{{ product.metafields.plytix.erp_sku }}">
-  <input type="hidden" class="pid" value="{{product.id}}">
-  <input type="hidden" class="ptitle" value="{{product.title | remove: "'" | remove: '"'}}">
-  <input type="hidden" class="pprice" value="{{product.variants.first.price | times: 0.01}}">
-  <input type="hidden" class="pbrand" value="{{product.vendor | remove: "'" | remove: '"'}}">
-  <input type="hidden" class="ptype" value="{{product.type | remove: "'" | remove: '"'}}">
-  <input type="hidden" class="pcategory_id" value="{{ product.collections.first.id }}">
-  <input type="hidden" class="pcategory_name" value="{{ product.collections.first.title | remove: "'" | remove: '"' }}">
-  <input type="hidden" class="pvtitle" value="{{ product.variants.first.title | remove: "'" | remove: '"' }}">
-  <input type="hidden" class="psku" value="{{ product.variants.first.sku }}">
-  {% comment %}
-    Display variant options for a product
 
-    @param product
-    @param selected_variant
-    @param style
+  {% if product.selling_plan_groups.size > 0 %}
+    {% assign show_dynamic_checkout_button = false %}
+  {% endif %}
 
-    @param enable_swatches
-    @param swatches_shape
-    @param swatches_option_trigger
-    @param swatches_option_style
-    @param swatches_product_page_size
-    @param swatch_colors
+  {% if selected_variant.available == false %}
+    {% assign quickshop_smart_buttons = false %}
+    {% assign product_smart_buttons = false %}
+  {% endif %}
 
-    @param select_main_classes
-    @param select_classes
-    @param input_select_wrapper_classes
-    @param input_select_classes
-    @param input_select_label_classes
-    @param input_select_chevron_classes
+  {% assign product_form_class = '' %}
 
-    @param radios_classes
-    @param option_header_classes
-    @param option_name_classes
-    @param option_values_classes
-    @param option_value_classes
-    @param option_value_label_classes
-    @param option_value_input_classes
-    @param option_value_name_classes
-
-    @param swatches_classes
-    @param option_swatch_wrapper_classes
-    @param option_swatch_classes
-    @param option_swatch_inner_classes
-  {% endcomment %}
-  {% assign product = product %}
-  {% assign selected_variant = selected_variant %}
-  {% assign style = settings.product_option_style %}
-  {% assign enable_swatches = settings.swatches_enable %}
-  {% assign sold_out_options = settings.sold_out_options %}
-  {% assign swatches_shape = settings.swatches_shape %}
-  {% assign swatches_option_trigger = settings.swatches_swatch_trigger %}
-  {% assign swatches_option_style = settings.swatches_option_style %}
-  {% assign swatches_product_page_size = settings.swatches_product_page_size %}
-  {% assign swatches_custom_colors = settings.swatches_custom_colors %}
-  {% assign swatch_file_type = 'files' %}
-  {% assign select_main_classes = 'form-options' %}
-  {% assign select_classes = 'form-field form-options' %}
-  {% assign input_select_wrapper_classes = 'form-field-select-wrapper' %}
-  {% assign input_select_classes = 'form-field-input form-field-select' %}
-  {% assign input_select_label_classes = 'form-field-title' %}
-  {% assign radios_classes = 'form-options form-options-selectable-boxes' %}
-  {% assign option_header_classes = 'options-selection__option-header' %}
-  {% assign option_name_classes = 'options-selection__option-name' %}
-  {% assign option_values_classes = 'options-selection__option-values' %}
-  {% assign option_value_classes = 'options-selection__option-value' %}
-  {% assign option_value_label_classes = 'options-selection__option-value-label' %}
-  {% assign option_value_input_classes = 'options-selection__option-value-input' %}
-  {% assign option_value_name_classes = 'options-selection__option-value-name' %}
-  {% assign swatches_classes = 'form-options form-options-swatches' %}
-  {% assign option_swatch_wrapper_classes = 'option-value-name option-value-swatch-wrapper' %}
-  {% assign option_swatch_classes = 'swatch' %}
-  {% assign option_swatch_inner_classes = 'swatch-inner' %}
-
-  {% comment %}Get stock status for logging in order at time of order --------------------------------------------------------------------{% endcomment %}
-
-  {% assign stockStatusMain = "" %}
-  {% assign stockStatusSub = "" %}
-  {% assign fservice = selected_variant.fulfillment_service %}
-  {% assign leadTime = selected_variant.metafields.plytix.sxerp_lead_time %}
-  {% assign inventoryQuantity = selected_variant.inventory_quantity %}
-  {% assign inventoryQuantity = inventoryQuantity | plus: 0 %}
-  {% assign leadTime = leadTime | plus: 0 %}
-
-  {% if selected_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
-    {% assign stockStatusMain = "Ships Direct from Manufacturer" %}
-    {% assign stockStatusSub = "May Have Extended Lead Times" %}
-  {% elsif selected_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
-    {% assign stockStatusMain = "Temporarily On Backorder" %}
-    {% if leadTime < 22  %}
-      {% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
-    {% elsif leadTime < 29 %}
-      {% assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" %}
-    {% elsif leadTime < 36 %}
-      {% assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" %}
-    {% elsif leadTime < 43 %}
-      {% assign stockStatusSub = "Estimated Ship Date 4 –6 wks" %}
-    {% elsif leadTime < 50 %}
-      {% assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" %}
-    {% elsif leadTime < 57 %}
-      {% assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" %}
-    {% elsif leadTime < 64 %}
-      {% assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" %}
-    {% elsif leadTime < 71 %}
-      {% assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" %}
-    {% elsif leadTime < 78 %}
-      {% assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" %}
-    {% elsif leadTime < 85 %}
-      {% assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" %}
-    {% elsif leadTime < 121 %}
-      {% assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" %}
-    {% elsif leadTime < 151 %}
-      {% assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" %}
-    {% elsif leadTime < 181 %}
-      {% assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" %}
-    {% elsif leadTime < 211 %}
-      {% assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" %}
-    {% elsif leadTime < 1000 %}
-      {% assign stockStatusSub = "Estimated Ship Date over 7 mths" %}
+  {% if show_dcb %}
+    {% if product_smart_buttons or quickshop_smart_buttons %}
+      {% assign product_form_class = 'smart-payment-enabled' %}
     {% endif %}
-  {% elsif selected_variant.inventory_management == nil and leadTime %}
-    {% assign stockStatusMain = "Special Order Item" %}
-    {% if leadTime < 22  %}
-      {% assign stockStatusSub = "Expected to ship in 1 – 3 wks" %}
-    {% elsif leadTime < 29 %}
-      {% assign stockStatusSub = "Expected to ship in 2 – 4 wks" %}
-    {% elsif leadTime < 36 %}
-      {% assign stockStatusSub = "Expected to ship in 3 – 5 wks" %}
-    {% elsif leadTime < 43 %}
-      {% assign stockStatusSub = "Expected to ship in 4 – 6 wks" %}
-    {% elsif leadTime < 50 %}
-      {% assign stockStatusSub = "Expected to ship in 5 – 7 wks" %}
-    {% elsif leadTime < 57 %}
-      {% assign stockStatusSub = "Expected to ship in 6 – 8 wks" %}
-    {% elsif leadTime < 64 %}
-      {% assign stockStatusSub = "Expected to ship in 7 – 9 wks" %}
-    {% elsif leadTime < 71 %}
-      {% assign stockStatusSub = "Expected to ship in 8 – 10 wks" %}
-    {% elsif leadTime < 78 %}
-      {% assign stockStatusSub = "Expected to ship in 9 – 11 wks" %}
-    {% elsif leadTime < 85 %}
-      {% assign stockStatusSub = "Expected to ship in 10 – 12 wks" %}
-    {% elsif leadTime < 121 %}
-      {% assign stockStatusSub = "Expected to ship in 3 – 4 mths" %}
-    {% elsif leadTime < 151 %}
-      {% assign stockStatusSub = "Expected to ship in 4 – 5 mths" %}
-    {% elsif leadTime < 181 %}
-      {% assign stockStatusSub = "Expected to ship in 5 – 6 mths" %}
-    {% elsif leadTime < 211 %}
-      {% assign stockStatusSub = "Expected to ship in 6 – 7 mths" %}
-    {% elsif leadTime < 1000 %}
-      {% assign stockStatusSub = "Expected to ship in over 7 mths" %}
+  {% endif %}
+
+  {% assign pstep = 1 %}
+  {% if product.selected_or_first_available_variant.metafields.plytix.product_step %}
+    {% assign pstep = product.selected_or_first_available_variant.metafields.plytix.product_step %}
+  {% endif %}
+  {% form 'product', product, class: product_form_class, data-product-form: '' %}
+    {% if pstep > 1 %}
+      <input type="hidden" class="product_step" value="{{ pstep }}">
     {% endif %}
-  {% elsif selected_variant.inventory_quantity > 0 %}
-    {% assign stockStatusMain = "In Stock" %}
-  {% endif %}
+    <input type="hidden" class="erp_sku" value="{{ product.metafields.plytix.erp_sku }}">
+    <input type="hidden" class="pid" value="{{product.id}}">
+    <input type="hidden" class="ptitle" value="{{product.title | remove: "'" | remove: '"'}}">
+    <input type="hidden" class="pprice" value="{{product.variants.first.price | times: 0.01}}">
+    <input type="hidden" class="pbrand" value="{{product.vendor | remove: "'" | remove: '"'}}">
+    <input type="hidden" class="ptype" value="{{product.type | remove: "'" | remove: '"'}}">
+    <input type="hidden" class="pcategory_id" value="{{ product.collections.first.id }}">
+    <input type="hidden" class="pcategory_name" value="{{ product.collections.first.title | remove: "'" | remove: '"' }}">
+    <input type="hidden" class="pvtitle" value="{{ product.variants.first.title | remove: "'" | remove: '"' }}">
+    <input type="hidden" class="psku" value="{{ product.variants.first.sku }}">
+    {% comment %}
+      Display variant options for a product
 
-  {% if stockStatusSub != "" %}
-    {% capture stockStatusNote %}{{ stockStatusMain }} ({{ stockStatusSub }}){% endcapture %}
-  {% else %}
-    {% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
-  {% endif %}
+      @param product
+      @param selected_variant
+      @param style
 
+      @param enable_swatches
+      @param swatches_shape
+      @param swatches_option_trigger
+      @param swatches_option_style
+      @param swatches_product_page_size
+      @param swatch_colors
 
-  {% comment %}End of stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
+      @param select_main_classes
+      @param select_classes
+      @param input_select_wrapper_classes
+      @param input_select_classes
+      @param input_select_label_classes
+      @param input_select_chevron_classes
 
-  {% comment %}Inject @pixelunion/shopify-variants-ui/variant-selection begin{% endcomment %}
-  {% comment %}
-    Display variant options for a product
+      @param radios_classes
+      @param option_header_classes
+      @param option_name_classes
+      @param option_values_classes
+      @param option_value_classes
+      @param option_value_label_classes
+      @param option_value_input_classes
+      @param option_value_name_classes
 
-    @param product
-    @param selected_variant
-    @param variant_selection_id
-    @param sold_out_options
-    @param style
+      @param swatches_classes
+      @param option_swatch_wrapper_classes
+      @param option_swatch_classes
+      @param option_swatch_inner_classes
+    {% endcomment %}
+    {% assign product = product %}
+    {% assign selected_variant = selected_variant %}
+    {% assign style = settings.product_option_style %}
+    {% assign enable_swatches = settings.swatches_enable %}
+    {% assign sold_out_options = settings.sold_out_options %}
+    {% assign swatches_shape = settings.swatches_shape %}
+    {% assign swatches_option_trigger = settings.swatches_swatch_trigger %}
+    {% assign swatches_option_style = settings.swatches_option_style %}
+    {% assign swatches_product_page_size = settings.swatches_product_page_size %}
+    {% assign swatches_custom_colors = settings.swatches_custom_colors %}
+    {% assign swatch_file_type = 'files' %}
+    {% assign select_main_classes = 'form-options' %}
+    {% assign select_classes = 'form-field form-options' %}
+    {% assign input_select_wrapper_classes = 'form-field-select-wrapper' %}
+    {% assign input_select_classes = 'form-field-input form-field-select' %}
+    {% assign input_select_label_classes = 'form-field-title' %}
+    {% assign radios_classes = 'form-options form-options-selectable-boxes' %}
+    {% assign option_header_classes = 'options-selection__option-header' %}
+    {% assign option_name_classes = 'options-selection__option-name' %}
+    {% assign option_values_classes = 'options-selection__option-values' %}
+    {% assign option_value_classes = 'options-selection__option-value' %}
+    {% assign option_value_label_classes = 'options-selection__option-value-label' %}
+    {% assign option_value_input_classes = 'options-selection__option-value-input' %}
+    {% assign option_value_name_classes = 'options-selection__option-value-name' %}
+    {% assign swatches_classes = 'form-options form-options-swatches' %}
+    {% assign option_swatch_wrapper_classes = 'option-value-name option-value-swatch-wrapper' %}
+    {% assign option_swatch_classes = 'swatch' %}
+    {% assign option_swatch_inner_classes = 'swatch-inner' %}
 
-    @param enable_swatches
-    @param swatches_shape
-    @param swatches_option_trigger
-    @param swatches_option_style
-    @param swatches_product_page_size
-    @param swatches_custom_colors
-  {% endcomment %}
-  {% if pstep > 1 %}
-    <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
-  {% endif %}
-  <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
-  <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+    {% comment %}Get stock status for logging in order at time of order --------------------------------------------------------------------{% endcomment %}
 
-  <variant-selection
-          {% if variant_selection_id != blank %}id="{{ variant_selection_id }}"{% endif %}
-          class="variant-selection"
-          product-url="{{ product.url }}.js"
-          variant="{% if selected_variant %}{{ selected_variant.id }}{% else %}not-selected{% endif %}"
-          data-variant-selection
-  >
+    {% assign stockStatusMain = "" %}
+    {% assign stockStatusSub = "" %}
+    {% assign fservice = selected_variant.fulfillment_service %}
+    {% assign leadTime = selected_variant.metafields.plytix.sxerp_lead_time %}
+    {% assign inventoryQuantity = selected_variant.inventory_quantity %}
+    {% assign inventoryQuantity = inventoryQuantity | plus: 0 %}
+    {% assign leadTime = leadTime | plus: 0 %}
 
-    {% if product.has_only_default_variant %}
-      <input
-              class="variant-selection__variants variant-selection__variants--default"
-              name="id"
-              type="hidden"
-              value="{{ product.variants.first.id }}"-
-              data-variants
-      >
-      <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
-      <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
-      <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
-      <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
-      {% if pstep > 1 %}
-        <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+    {% if selected_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
+      {% assign stockStatusMain = "Ships Direct from Manufacturer" %}
+      {% assign stockStatusSub = "May Have Extended Lead Times" %}
+    {% elsif selected_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
+      {% assign stockStatusMain = "Temporarily On Backorder" %}
+      {% if leadTime < 22  %}
+        {% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
+      {% elsif leadTime < 29 %}
+        {% assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" %}
+      {% elsif leadTime < 36 %}
+        {% assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" %}
+      {% elsif leadTime < 43 %}
+        {% assign stockStatusSub = "Estimated Ship Date 4 –6 wks" %}
+      {% elsif leadTime < 50 %}
+        {% assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" %}
+      {% elsif leadTime < 57 %}
+        {% assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" %}
+      {% elsif leadTime < 64 %}
+        {% assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" %}
+      {% elsif leadTime < 71 %}
+        {% assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" %}
+      {% elsif leadTime < 78 %}
+        {% assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" %}
+      {% elsif leadTime < 85 %}
+        {% assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" %}
+      {% elsif leadTime < 121 %}
+        {% assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" %}
+      {% elsif leadTime < 151 %}
+        {% assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" %}
+      {% elsif leadTime < 181 %}
+        {% assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" %}
+      {% elsif leadTime < 211 %}
+        {% assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" %}
+      {% elsif leadTime < 1000 %}
+        {% assign stockStatusSub = "Estimated Ship Date over 7 mths" %}
       {% endif %}
+    {% elsif selected_variant.inventory_management == nil and leadTime %}
+      {% assign stockStatusMain = "Special Order Item" %}
+      {% if leadTime < 22  %}
+        {% assign stockStatusSub = "Expected to ship in 1 – 3 wks" %}
+      {% elsif leadTime < 29 %}
+        {% assign stockStatusSub = "Expected to ship in 2 – 4 wks" %}
+      {% elsif leadTime < 36 %}
+        {% assign stockStatusSub = "Expected to ship in 3 – 5 wks" %}
+      {% elsif leadTime < 43 %}
+        {% assign stockStatusSub = "Expected to ship in 4 – 6 wks" %}
+      {% elsif leadTime < 50 %}
+        {% assign stockStatusSub = "Expected to ship in 5 – 7 wks" %}
+      {% elsif leadTime < 57 %}
+        {% assign stockStatusSub = "Expected to ship in 6 – 8 wks" %}
+      {% elsif leadTime < 64 %}
+        {% assign stockStatusSub = "Expected to ship in 7 – 9 wks" %}
+      {% elsif leadTime < 71 %}
+        {% assign stockStatusSub = "Expected to ship in 8 – 10 wks" %}
+      {% elsif leadTime < 78 %}
+        {% assign stockStatusSub = "Expected to ship in 9 – 11 wks" %}
+      {% elsif leadTime < 85 %}
+        {% assign stockStatusSub = "Expected to ship in 10 – 12 wks" %}
+      {% elsif leadTime < 121 %}
+        {% assign stockStatusSub = "Expected to ship in 3 – 4 mths" %}
+      {% elsif leadTime < 151 %}
+        {% assign stockStatusSub = "Expected to ship in 4 – 5 mths" %}
+      {% elsif leadTime < 181 %}
+        {% assign stockStatusSub = "Expected to ship in 5 – 6 mths" %}
+      {% elsif leadTime < 211 %}
+        {% assign stockStatusSub = "Expected to ship in 6 – 7 mths" %}
+      {% elsif leadTime < 1000 %}
+        {% assign stockStatusSub = "Expected to ship in over 7 mths" %}
+      {% endif %}
+    {% elsif selected_variant.inventory_quantity > 0 %}
+      {% assign stockStatusMain = "In Stock" %}
+    {% endif %}
 
+    {% if stockStatusSub != "" %}
+      {% capture stockStatusNote %}{{ stockStatusMain }} ({{ stockStatusSub }}){% endcapture %}
     {% else %}
-      <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
-      <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
-      <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
-      <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
-      {% if pstep > 1 %}
-        <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
-      {% endif %}
+      {% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
+    {% endif %}
 
-      <noscript>
-        <style>
-          .variant-selection__variants {
-            display: block !important;
-          }
-        </style>
-      </noscript>
-      <select
-              class="variant-selection__variants"
-              name="id"
-              style="display: none"
-              data-variants
-      >
-        <option
-                value="not-selected"
-                disabled
-                {% if selected_variant == blank %}selected{% endif %}
+
+    {% comment %}End of stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
+
+    {% comment %}Inject @pixelunion/shopify-variants-ui/variant-selection begin{% endcomment %}
+    {% comment %}
+      Display variant options for a product
+
+      @param product
+      @param selected_variant
+      @param variant_selection_id
+      @param sold_out_options
+      @param style
+
+      @param enable_swatches
+      @param swatches_shape
+      @param swatches_option_trigger
+      @param swatches_option_style
+      @param swatches_product_page_size
+      @param swatches_custom_colors
+    {% endcomment %}
+    {% if pstep > 1 %}
+      <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+    {% endif %}
+    <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+    <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+
+    <variant-selection
+            {% if variant_selection_id != blank %}id="{{ variant_selection_id }}"{% endif %}
+            class="variant-selection"
+            product-url="{{ product.url }}.js"
+            variant="{% if selected_variant %}{{ selected_variant.id }}{% else %}not-selected{% endif %}"
+            data-variant-selection
+    >
+
+      {% if product.has_only_default_variant %}
+        <input
+                class="variant-selection__variants variant-selection__variants--default"
+                name="id"
+                type="hidden"
+                value="{{ product.variants.first.id }}"-
+                data-variants
         >
-          {{ 'product.variants.choose_variant' | t }}
-        </option>
-        {% for variant in product.variants %}
+        <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+        <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
+        <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
+        <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+        {% if pstep > 1 %}
+          <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+        {% endif %}
+
+      {% else %}
+        <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
+        <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
+        <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
+        <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
+        {% if pstep > 1 %}
+          <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
+        {% endif %}
+
+        <noscript>
+          <style>
+            .variant-selection__variants {
+              display: block !important;
+            }
+          </style>
+        </noscript>
+        <select
+                class="variant-selection__variants"
+                name="id"
+                style="display: none"
+                data-variants
+        >
           <option
-                  {% if selected_variant and selected_variant.id == variant.id %}selected{% endif %}
-                  value="{{ variant.id }}"
-                  data-variant-option-metafield="{{  variant.metafields.plytix.erp_sku }}"
-            {% unless variant.available %}disabled{% endunless %}
+                  value="not-selected"
+                  disabled
+                  {% if selected_variant == blank %}selected{% endif %}
           >
-            {{ variant.title }} - {{ variant.price | money }}
+            {{ 'product.variants.choose_variant' | t }}
           </option>
-        {% endfor %}
-      </select>
+          {% for variant in product.variants %}
+            <option
+                    {% if selected_variant and selected_variant.id == variant.id %}selected{% endif %}
+                    value="{{ variant.id }}"
+                    data-variant-option-metafield="{{  variant.metafields.plytix.erp_sku }}"
+              {% unless variant.available %}disabled{% endunless %}
+            >
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
 
-      {% comment %}Inject @pixelunion/shopify-variants-ui/options-selection begin{% endcomment %}
-      {% comment %}
-        Display variant options for a product
+        {% comment %}Inject @pixelunion/shopify-variants-ui/options-selection begin{% endcomment %}
+        {% comment %}
+          Display variant options for a product
 
-        @param product
-        @param selected_variant
-        @param variant_selection_id
-        @param sold_out_options
-        @param style
+          @param product
+          @param selected_variant
+          @param variant_selection_id
+          @param sold_out_options
+          @param style
 
-        @param enable_swatches
-        @param swatches_shape
-        @param swatches_option_trigger
-        @param swatches_option_style
-        @param swatches_product_page_size
-        @param swatches_custom_colors
-        @param swatch_file_type
-      {% endcomment %}
+          @param enable_swatches
+          @param swatches_shape
+          @param swatches_option_trigger
+          @param swatches_option_style
+          @param swatches_product_page_size
+          @param swatches_custom_colors
+          @param swatch_file_type
+        {% endcomment %}
 
-      <options-selection
-              {% if variant_selection_id != blank %}variant-selection="{{ variant_selection_id }}"{% endif %}
-              style="display: none;"
-        {% if sold_out_options == 'disabled' %}disable-unavailable{% endif %}
-        {% if sold_out_options == 'hidden' %}remove-unavailable{% endif %}
-              data-options-selection
-      >
-        <script>
-          (function() {
-            const scriptTag = document.scripts[document.scripts.length - 1];
-            const parentTag = scriptTag.parentNode;
+        <options-selection
+                {% if variant_selection_id != blank %}variant-selection="{{ variant_selection_id }}"{% endif %}
+                style="display: none;"
+          {% if sold_out_options == 'disabled' %}disable-unavailable{% endif %}
+          {% if sold_out_options == 'hidden' %}remove-unavailable{% endif %}
+                data-options-selection
+        >
+          <script>
+            (function() {
+              const scriptTag = document.scripts[document.scripts.length - 1];
+              const parentTag = scriptTag.parentNode;
 
-            parentTag.style.display = '';
-          })()
-        </script>
+              parentTag.style.display = '';
+            })()
+          </script>
 
-        {% for option in product.options_with_values %}
-          {% assign option_index = forloop.index0 %}
-          {% assign show_swatches = false %}
-          {% if enable_swatches %}
-            {%- assign swatches_option_trigger = swatches_option_trigger | strip | downcase -%}
-            {%- assign option_name = option.name | strip | downcase -%}
+          {% for option in product.options_with_values %}
+            {% assign option_index = forloop.index0 %}
+            {% assign show_swatches = false %}
+            {% if enable_swatches %}
+              {%- assign swatches_option_trigger = swatches_option_trigger | strip | downcase -%}
+              {%- assign option_name = option.name | strip | downcase -%}
 
-            {% if option_name == swatches_option_trigger %}
-              {% assign show_swatches = true %}
-              {% assign swatch_option_key = 'option' | append: forloop.index %}
+              {% if option_name == swatches_option_trigger %}
+                {% assign show_swatches = true %}
+                {% assign swatch_option_key = 'option' | append: forloop.index %}
+              {% endif %}
+            {% endif %}
+
+            {% if style == 'select' and show_swatches == false %}
+              {%
+                      render 'options-select',
+                      product: product,
+                      selected_variant: selected_variant,
+                      option: option,
+                      option_index: option_index
+              %}
+            {% elsif style == 'radio' or show_swatches == true %}
+              {%
+                      render 'options-radios',
+                      product: product,
+                      selected_variant: selected_variant,
+                      option: option,
+                      option_index: option_index,
+                      show_swatches: show_swatches,
+                      swatch_option_key: swatch_option_key,
+                      swatch_size: swatches_product_page_size,
+                      swatches_option_style: swatches_option_style,
+                      swatch_file_type: swatch_file_type,
+                      swatches_custom_colors: swatches_custom_colors,
+                      swatches_shape: swatches_shape
+              %}
+            {% endif %}
+          {% endfor %}
+        </options-selection>
+        {% comment %}Inject @pixelunion/shopify-variants-ui/options-selection end{% endcomment %}
+
+      {% endif %}
+    </variant-selection>
+    {% comment %}Inject @pixelunion/shopify-variants-ui/variant-selection end{% endcomment %}
+
+    <div class="qtyMsg" style="font-weight: 900;"></div>
+    <div class="product-form--atc">
+      <div class="qtydiv" data-quantity-wrapper>
+        <div class="lside">
+          <label for="Quantity" class="quantity-selector">Quantity</label>
+          <div class="qtybox" id="qtybox">
+            <input type='button' value='−' data-step="{{ pstep }}" class='qtyminus' data-field='quantity' />
+
+
+            <input
+                    type='text'
+                    name='quantity'
+                    id="product-quantity-input"
+                    class="form-field-input form-field-number form-field-filled qty"
+                    value="{{ pstep }}"
+                    data-step="{{ pstep }}"
+                    pattern="\d*"
+                    aria-label="{{ 'general.general.quantity' | t }}"
+                    data-quantity-input
+            />
+            <input type='button' value='+' class='qtyplus' data-step="{{ pstep }}" data-field='quantity' />
+          </div>
+        </div>
+        <div class="rside">
+          {% comment %} Quantity Discount Tieres{% endcomment %}
+          {% if product.metafields.plytix.tiered_pricing != blank %}
+            {% assign pprice = product.price | money_without_currency %}
+            {% assign pprice = pprice | remove: ","  %}
+            {% assign pprice = pprice | plus:0 %}
+            {% if product.metafields.plytix.tiered_pricing == '2|4|6|12' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.02 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+                  <div class="row">
+                    <div class="quantity col">2+</div>
+                    <div class="discount col">2% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">4+</div>
+                    {% assign discount = pprice | times: 0.04 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">4% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    {% assign discount = pprice | times: 0.09 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">9% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">12+</div>
+                    {% assign discount = pprice | times: 0.12 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">12% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '3|6|10' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.05 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+                  <div class="row">
+                    <div class="quantity col">3+</div>
+                    <div class="discount col">5% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    {% assign discount = pprice | times: 0.10 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">10% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">10+</div>
+                    {% assign discount = pprice | times: 0.15 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">15% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '3|6|10|20' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.05 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+                  <div class="row">
+                    <div class="quantity col">3+</div>
+                    <div class="discount col">5% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    {% assign discount = pprice | times: 0.10 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">10% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">10+</div>
+                    {% assign discount = pprice | times: 0.15 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">15% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">20+</div>
+                    {% assign discount = pprice | times: 0.20 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">20% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '3|6|12' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.05 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+                  <div class="row">
+                    <div class="quantity col">3+</div>
+                    <div class="discount col">5% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    {% assign discount = pprice | times: 0.10 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">10% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">12+</div>
+                    {% assign discount = pprice | times: 0.15 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">15% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '6|12|18' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.06 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    <div class="discount col">6% Discount</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="quantity col">12+</div>
+                    {% assign discount = pprice | times: 0.12 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">12% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">18+</div>
+                    {% assign discount = pprice | times: 0.18 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">18% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '6|12|24' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.05 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    <div class="discount col">5% Discount</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="quantity col">12+</div>
+                    {% assign discount = pprice | times: 0.10 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">10% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">24+</div>
+                    {% assign discount = pprice | times: 0.20 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">20% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '6|10|20' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.06 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    <div class="discount col">6% Discount</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="quantity col">10+</div>
+                    {% assign discount = pprice | times: 0.12 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">12% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">20+</div>
+                    {% assign discount = pprice | times: 0.18 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">18% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '10|25|50' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.10 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+
+                  <div class="row">
+                    <div class="quantity col">10+</div>
+                    <div class="discount col">10% Discount</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="quantity col">25+</div>
+                    {% assign discount = pprice | times: 0.20 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">20% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">50+</div>
+                    {% assign discount = pprice | times: 0.30 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">30% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '3|6|12|24' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>This product offers quantity discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.05 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+
+                  <div class="row">
+                    <div class="quantity col">3+</div>
+                    <div class="discount col">5% Discount</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    {% assign discount = pprice | times: 0.10 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">10% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">12+</div>
+                    {% assign discount = pprice | times: 0.15 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">15% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">24+</div>
+                    {% assign discount = pprice | times: 0.20 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">20% Discount</div>
+                  </div>
+                </div>
+              </div>
             {% endif %}
           {% endif %}
-
-          {% if style == 'select' and show_swatches == false %}
-            {%
-                    render 'options-select',
-                    product: product,
-                    selected_variant: selected_variant,
-                    option: option,
-                    option_index: option_index
-            %}
-          {% elsif style == 'radio' or show_swatches == true %}
-            {%
-                    render 'options-radios',
-                    product: product,
-                    selected_variant: selected_variant,
-                    option: option,
-                    option_index: option_index,
-                    show_swatches: show_swatches,
-                    swatch_option_key: swatch_option_key,
-                    swatch_size: swatches_product_page_size,
-                    swatches_option_style: swatches_option_style,
-                    swatch_file_type: swatch_file_type,
-                    swatches_custom_colors: swatches_custom_colors,
-                    swatches_shape: swatches_shape
-            %}
-          {% endif %}
-        {% endfor %}
-      </options-selection>
-      {% comment %}Inject @pixelunion/shopify-variants-ui/options-selection end{% endcomment %}
-
-    {% endif %}
-  </variant-selection>
-  {% comment %}Inject @pixelunion/shopify-variants-ui/variant-selection end{% endcomment %}
-
-  <div class="qtyMsg" style="font-weight: 900;"></div>
-  <div class="product-form--atc">
-    <div class="qtydiv" data-quantity-wrapper>
-      <div class="lside">
-        <label for="Quantity" class="quantity-selector">Quantity</label>
-        <div class="qtybox" id="qtybox">
-          <input type='button' value='−' data-step="{{ pstep }}" class='qtyminus' data-field='quantity' />
-
-
-          <input
-                  type='text'
-                  name='quantity'
-                  id="product-quantity-input"
-                  class="form-field-input form-field-number form-field-filled qty"
-                  value="{{ pstep }}"
-                  data-step="{{ pstep }}"
-                  pattern="\d*"
-                  aria-label="{{ 'general.general.quantity' | t }}"
-                  data-quantity-input
-          />
-          <input type='button' value='+' class='qtyplus' data-step="{{ pstep }}" data-field='quantity' />
+          {% comment %} Quantity Discount Tieres END{% endcomment %}
         </div>
       </div>
-      <div class="rside">
-        {% comment %} Quantity Discount Tieres{% endcomment %}
-        {% if product.metafields.plytix.tiered_pricing != blank %}
-          {% assign pprice = product.price | money_without_currency %}
-          {% assign pprice = pprice | remove: ","  %}
-          {% assign pprice = pprice | plus:0 %}
-          {% if product.metafields.plytix.tiered_pricing == '2|4|6|12' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.02 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-                <div class="row">
-                  <div class="quantity col">2+</div>
-                  <div class="discount col">2% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">4+</div>
-                  {% assign discount = pprice | times: 0.04 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">4% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  {% assign discount = pprice | times: 0.09 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">9% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">12+</div>
-                  {% assign discount = pprice | times: 0.12 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">12% Discount</div>
-                </div>
-              </div>
-            </div>
+
+      <div class="cart-buttons">
+        <div data-prod-upd>
+          <input type="hidden"
+                 name="updates[{{ product.handle }}]"
+                 class="quantity field"
+                 data-bundle-subproduct
+                 data-id="{{ product.selected_or_first_available_variant.id }}"
+                 data-erpSku="{{ product.metafields.plytix.erp_sku }}"
+                 data-step="{{ pstep }}"
+                 data-tieredPricing=""/>
+        </div>
+
+
+          <button class=" product-form--atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
+                  id="p-atc"
+                  type="submit"
+                  {% if selected_variant and selected_variant.available == false %}
+                    disabled
+                  {% endif %}
+                  data-product-atc
+                  {% if product.template_suffix contains 'pre-order' %}
+                    data-product-atc-preorder
+                  {% endif %}
+          >
+
+            <span class="atc-button--text">
+              <i class="fa-regular fa-cart-shopping"></i>
+              {% unless selected_variant and selected_variant.available == false %}
+                {% if product.template_suffix contains 'pre-order' %}
+                  {{ 'product.buttons.pre_order' | t }}
+                {% else %}
+                  {{ 'product.buttons.add_to_cart' | t }}
+                {% endif %}
+              {% else %}
+                {{ 'product.buttons.sold_out' | t }}
+              {% endunless %}
+            </span>
+            <span class="atc-button--icon">
+              {%- render 'icon-spinner' -%}
+            </span>
+          </button>
+          {% if show_dynamic_checkout_button %}
+            {{ form | payment_button }}
           {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '3|6|10' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.05 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-                <div class="row">
-                  <div class="quantity col">3+</div>
-                  <div class="discount col">5% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  {% assign discount = pprice | times: 0.10 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">10% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">10+</div>
-                  {% assign discount = pprice | times: 0.15 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">15% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '3|6|10|20' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.05 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-                <div class="row">
-                  <div class="quantity col">3+</div>
-                  <div class="discount col">5% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  {% assign discount = pprice | times: 0.10 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">10% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">10+</div>
-                  {% assign discount = pprice | times: 0.15 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">15% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">20+</div>
-                  {% assign discount = pprice | times: 0.20 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">20% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '3|6|12' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.05 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-                <div class="row">
-                  <div class="quantity col">3+</div>
-                  <div class="discount col">5% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  {% assign discount = pprice | times: 0.10 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">10% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">12+</div>
-                  {% assign discount = pprice | times: 0.15 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">15% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '6|12|18' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.06 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  <div class="discount col">6% Discount</div>
-                </div>
-
-                <div class="row">
-                  <div class="quantity col">12+</div>
-                  {% assign discount = pprice | times: 0.12 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">12% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">18+</div>
-                  {% assign discount = pprice | times: 0.18 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">18% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '6|12|24' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.05 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  <div class="discount col">5% Discount</div>
-                </div>
-
-                <div class="row">
-                  <div class="quantity col">12+</div>
-                  {% assign discount = pprice | times: 0.10 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">10% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">24+</div>
-                  {% assign discount = pprice | times: 0.20 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">20% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '6|10|20' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.06 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  <div class="discount col">6% Discount</div>
-                </div>
-
-                <div class="row">
-                  <div class="quantity col">10+</div>
-                  {% assign discount = pprice | times: 0.12 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">12% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">20+</div>
-                  {% assign discount = pprice | times: 0.18 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">18% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '10|25|50' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.10 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-
-                <div class="row">
-                  <div class="quantity col">10+</div>
-                  <div class="discount col">10% Discount</div>
-                </div>
-
-                <div class="row">
-                  <div class="quantity col">25+</div>
-                  {% assign discount = pprice | times: 0.20 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">20% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">50+</div>
-                  {% assign discount = pprice | times: 0.30 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">30% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.tiered_pricing == '3|6|12|24' %}
-            <div class="discount-info-wrap">
-              <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-              <p>This product offers quantity discounts</p>
-              <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                <div class="row top">Quantity Discounts</div>
-                {% assign discount = pprice | times: 0.05 %}
-                {% assign tierPrice = pprice | minus: discount %}
-                {% assign tierfloor = tierPrice | floor %}
-                {% assign ppricefloor = pprice | floor %}
-
-                <div class="row">
-                  <div class="quantity col">3+</div>
-                  <div class="discount col">5% Discount</div>
-                </div>
-
-                <div class="row">
-                  <div class="quantity col">6+</div>
-                  {% assign discount = pprice | times: 0.10 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">10% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">12+</div>
-                  {% assign discount = pprice | times: 0.15 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">15% Discount</div>
-                </div>
-                <div class="row">
-                  <div class="quantity col">24+</div>
-                  {% assign discount = pprice | times: 0.20 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="discount col">20% Discount</div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-        {% endif %}
-        {% comment %} Quantity Discount Tieres END{% endcomment %}
       </div>
     </div>
 
-    <div class="cart-buttons">
-      <div data-prod-upd>
+    <div data-payment-terms-reference style="display: none;">
+      {{ form | payment_terms }}
+    </div>
+
+    {% if enable_local_pickup %}
+      <div class="surface-pick-up" data-surface-pick-up></div>
+    {% endif %}
+  {% endform %}
+{% else %}
+{% comment %}Start of bundle logic ---------------------------------------------------------------------------{% endcomment %}
+
+    {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}
+    {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
+    <div data-bundle-subproducts>
+      {% for bundle_product_entry in bundle_products %}
+        {% assign bundle_product_entry_parts = bundle_product_entry | split: "#" %}
+        {%- assign bundle_product_handle = bundle_product_entry_parts[0] | strip %}
+        {%- assign bundle_product = all_products[bundle_product_handle] %}
+
+
+
+        {% comment %}Get stock status for bundle non-free logging in order at time of order --------------------------------------------------------------------{% endcomment %}
+        {% assign stockStatusBunMain = "" %}
+        {% assign stockStatusBunSub = "" %}
+        {% assign fserviceBun = bundle_product.selected_or_first_available_variant.fulfillment_service %}
+        {% assign leadTimeBun = bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time %}
+        {% assign inventoryQuantityBun = bundle_product.selected_or_first_available_variant.inventory_quantity %}
+        {% assign inventoryQuantityBun = inventoryQuantityBun | plus: 0 %}
+        {% assign leadTimeBun = leadTimeBun | plus: 0 %}
+
+        {% if bundle_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
+          {% assign stockStatusBunMain = "Ships Direct from Manufacturer" %}
+          {% assign stockStatusBunSub = "May Have Extended Lead Times" %}
+        {% elsif bundle_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityBun <  1 %}
+          {% assign stockStatusBunMain = "Temporarily On Backorder" %}
+          {% if leadTimeBun < 22  %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 1 – 3 wks" %}
+          {% elsif leadTimeBun < 29 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 2 – 4 wks" %}
+          {% elsif leadTimeBun < 36 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 3 – 5 wks" %}
+          {% elsif leadTimeBun < 43 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 4 –6 wks" %}
+          {% elsif leadTimeBun < 50 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 5 – 7 wks" %}
+          {% elsif leadTimeBun < 57 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 6 – 8 wks" %}
+          {% elsif leadTimeBun < 64 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 7 – 9 wks" %}
+          {% elsif leadTimeBun < 71 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 8 – 10 wks" %}
+          {% elsif leadTimeBun < 78 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 9 – 11 wks" %}
+          {% elsif leadTimeBun < 85 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 10 – 12 wks" %}
+          {% elsif leadTimeBun < 121 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 3 – 4 mths" %}
+          {% elsif leadTimeBun < 151 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 4 – 5 mths" %}
+          {% elsif leadTimeBun < 181 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 5 – 6 mths" %}
+          {% elsif leadTimeBun < 211 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date 6 – 7 mths" %}
+          {% elsif leadTimeBun < 1000 %}
+            {% assign stockStatusBunSub = "Estimated Ship Date over 7 mths" %}
+          {% endif %}
+        {% elsif bundle_product.selected_or_first_available_variant.inventory_management == nil and leadTimeBun %}
+          {% assign stockStatusBunMain = "Special Order Item" %}
+          {% if leadTimeBun < 22  %}
+            {% assign stockStatusBunSub = "Expected to ship in 1 – 3 wks" %}
+          {% elsif leadTimeBun < 29 %}
+            {% assign stockStatusBunSub = "Expected to ship in 2 – 4 wks" %}
+          {% elsif leadTimeBun < 36 %}
+            {% assign stockStatusBunSub = "Expected to ship in 3 – 5 wks" %}
+          {% elsif leadTimeBun < 43 %}
+            {% assign stockStatusBunSub = "Expected to ship in 4 – 6 wks" %}
+          {% elsif leadTimeBun < 50 %}
+            {% assign stockStatusBunSub = "Expected to ship in 5 – 7 wks" %}
+          {% elsif leadTimeBun < 57 %}
+            {% assign stockStatusBunSub = "Expected to ship in 6 – 8 wks" %}
+          {% elsif leadTimeBun < 64 %}
+            {% assign stockStatusBunSub = "Expected to ship in 7 – 9 wks" %}
+          {% elsif leadTimeBun < 71 %}
+            {% assign stockStatusBunSub = "Expected to ship in 8 – 10 wks" %}
+          {% elsif leadTimeBun < 78 %}
+            {% assign stockStatusBunSub = "Expected to ship in 9 – 11 wks" %}
+          {% elsif leadTimeBun < 85 %}
+            {% assign stockStatusBunSub = "Expected to ship in 10 – 12 wks" %}
+          {% elsif leadTimeBun < 121 %}
+            {% assign stockStatusBunSub = "Expected to ship in 3 – 4 mths" %}
+          {% elsif leadTimeBun < 151 %}
+            {% assign stockStatusBunSub = "Expected to ship in 4 – 5 mths" %}
+          {% elsif leadTimeBun < 181 %}
+            {% assign stockStatusBunSub = "Expected to ship in 5 – 6 mths" %}
+          {% elsif leadTimeBun < 211 %}
+            {% assign stockStatusBunSub = "Expected to ship in 6 – 7 mths" %}
+          {% elsif leadTimeBun < 1000 %}
+            {% assign stockStatusBunSub = "Expected to ship in over 7 mths" %}
+          {% endif %}
+        {% elsif bundle_product.selected_or_first_available_variant.inventory_quantity > 0 %}
+          {% assign stockStatusBunMain = "In Stock" %}
+        {% endif %}
+
+        {% if stockStatusBunSub != "" %}
+          {% capture stockStatusBunNote %}{{ stockStatusBunMain }} ({{ stockStatusBunSub }}){% endcapture %}
+        {% else %}
+          {% capture stockStatusBunNote %}{{ stockStatusBunMain }}{% endcapture %}
+        {% endif %}
+        {% comment %}End of bundle non-free stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
+
+
         <input type="hidden"
-               name="updates[{{ product.handle }}]"
+               name="updates[{{ bundle_product_handle }}]"
                class="quantity field"
                data-bundle-subproduct
-               data-id="{{ product.selected_or_first_available_variant.id }}"
-               data-erpSku="{{ product.metafields.plytix.erp_sku }}"
+               data-id="{{ bundle_product.selected_or_first_available_variant.id }}"
+               data-vissku="{{ bundle_product.selected_or_first_available_variant.sku }}"
+               data-status="{{ stockStatusBunNote}}"
+               data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
                data-step="{{ pstep }}"
-               data-tieredPricing=""/>
-      </div>
-      {% if product.metafields.plytix.package_products != blank %}
-        {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}
-        {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
-        <div data-bundle-subproducts>
-          {% for bundle_product_entry in bundle_products %}
-            {% assign bundle_product_entry_parts = bundle_product_entry | split: "#" %}
-            {%- assign bundle_product_handle = bundle_product_entry_parts[0] | strip %}
-            {%- assign bundle_product = all_products[bundle_product_handle] %}
+               data-tieredPricing=""
+               data-qty="{{ bundle_product_entry_parts[1] }}"
+               data-price="{{ bundle_product.price }}"
+               value="{{ bundle_product_entry_parts[1] }}" />
+      {% endfor %}
+      {% for free_product_entry in free_products %}
+        {% assign free_product_entry_parts = free_product_entry | split: "#" %}
+        {%- assign free_product_handle = free_product_entry_parts[0] | strip %}
+        {%- assign free_product = all_products[free_product_handle] %}
 
 
+        {% comment %}Get stock status for bundle free logging in order at time of order --------------------------------------------------------------------{% endcomment %}
+        {% assign stockStatusFreeMain = "" %}
+        {% assign stockStatusFreeSub = "" %}
+        {% assign fserviceFree = free_product.selected_or_first_available_variant.fulfillment_service %}
+        {% assign leadTimeFree = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time %}
+        {% assign inventoryQuantityFree = free_product.selected_or_first_available_variant.inventory_quantity %}
+        {% assign inventoryQuantityFree = inventoryQuantityFree | plus: 0 %}
+        {% assign leadTimeFree = leadTimeFree | plus: 0 %}
 
-            {% comment %}Get stock status for bundle non-free logging in order at time of order --------------------------------------------------------------------{% endcomment %}
-            {% assign stockStatusBunMain = "" %}
-            {% assign stockStatusBunSub = "" %}
-            {% assign fserviceBun = bundle_product.selected_or_first_available_variant.fulfillment_service %}
-            {% assign leadTimeBun = bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time %}
-            {% assign inventoryQuantityBun = bundle_product.selected_or_first_available_variant.inventory_quantity %}
-            {% assign inventoryQuantityBun = inventoryQuantityBun | plus: 0 %}
-            {% assign leadTimeBun = leadTimeBun | plus: 0 %}
-
-            {% if bundle_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
-              {% assign stockStatusBunMain = "Ships Direct from Manufacturer" %}
-              {% assign stockStatusBunSub = "May Have Extended Lead Times" %}
-            {% elsif bundle_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityBun <  1 %}
-              {% assign stockStatusBunMain = "Temporarily On Backorder" %}
-              {% if leadTimeBun < 22  %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 1 – 3 wks" %}
-              {% elsif leadTimeBun < 29 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 2 – 4 wks" %}
-              {% elsif leadTimeBun < 36 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 3 – 5 wks" %}
-              {% elsif leadTimeBun < 43 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 4 –6 wks" %}
-              {% elsif leadTimeBun < 50 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 5 – 7 wks" %}
-              {% elsif leadTimeBun < 57 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 6 – 8 wks" %}
-              {% elsif leadTimeBun < 64 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 7 – 9 wks" %}
-              {% elsif leadTimeBun < 71 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 8 – 10 wks" %}
-              {% elsif leadTimeBun < 78 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 9 – 11 wks" %}
-              {% elsif leadTimeBun < 85 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 10 – 12 wks" %}
-              {% elsif leadTimeBun < 121 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 3 – 4 mths" %}
-              {% elsif leadTimeBun < 151 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 4 – 5 mths" %}
-              {% elsif leadTimeBun < 181 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 5 – 6 mths" %}
-              {% elsif leadTimeBun < 211 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date 6 – 7 mths" %}
-              {% elsif leadTimeBun < 1000 %}
-                {% assign stockStatusBunSub = "Estimated Ship Date over 7 mths" %}
-              {% endif %}
-            {% elsif bundle_product.selected_or_first_available_variant.inventory_management == nil and leadTimeBun %}
-              {% assign stockStatusBunMain = "Special Order Item" %}
-              {% if leadTimeBun < 22  %}
-                {% assign stockStatusBunSub = "Expected to ship in 1 – 3 wks" %}
-              {% elsif leadTimeBun < 29 %}
-                {% assign stockStatusBunSub = "Expected to ship in 2 – 4 wks" %}
-              {% elsif leadTimeBun < 36 %}
-                {% assign stockStatusBunSub = "Expected to ship in 3 – 5 wks" %}
-              {% elsif leadTimeBun < 43 %}
-                {% assign stockStatusBunSub = "Expected to ship in 4 – 6 wks" %}
-              {% elsif leadTimeBun < 50 %}
-                {% assign stockStatusBunSub = "Expected to ship in 5 – 7 wks" %}
-              {% elsif leadTimeBun < 57 %}
-                {% assign stockStatusBunSub = "Expected to ship in 6 – 8 wks" %}
-              {% elsif leadTimeBun < 64 %}
-                {% assign stockStatusBunSub = "Expected to ship in 7 – 9 wks" %}
-              {% elsif leadTimeBun < 71 %}
-                {% assign stockStatusBunSub = "Expected to ship in 8 – 10 wks" %}
-              {% elsif leadTimeBun < 78 %}
-                {% assign stockStatusBunSub = "Expected to ship in 9 – 11 wks" %}
-              {% elsif leadTimeBun < 85 %}
-                {% assign stockStatusBunSub = "Expected to ship in 10 – 12 wks" %}
-              {% elsif leadTimeBun < 121 %}
-                {% assign stockStatusBunSub = "Expected to ship in 3 – 4 mths" %}
-              {% elsif leadTimeBun < 151 %}
-                {% assign stockStatusBunSub = "Expected to ship in 4 – 5 mths" %}
-              {% elsif leadTimeBun < 181 %}
-                {% assign stockStatusBunSub = "Expected to ship in 5 – 6 mths" %}
-              {% elsif leadTimeBun < 211 %}
-                {% assign stockStatusBunSub = "Expected to ship in 6 – 7 mths" %}
-              {% elsif leadTimeBun < 1000 %}
-                {% assign stockStatusBunSub = "Expected to ship in over 7 mths" %}
-              {% endif %}
-            {% elsif bundle_product.selected_or_first_available_variant.inventory_quantity > 0 %}
-              {% assign stockStatusBunMain = "In Stock" %}
-            {% endif %}
-
-            {% if stockStatusBunSub != "" %}
-              {% capture stockStatusBunNote %}{{ stockStatusBunMain }} ({{ stockStatusBunSub }}){% endcapture %}
-            {% else %}
-              {% capture stockStatusBunNote %}{{ stockStatusBunMain }}{% endcapture %}
-            {% endif %}
-            {% comment %}End of bundle non-free stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
-
-
-            <input type="hidden"
-                   name="updates[{{ bundle_product_handle }}]"
-                   class="quantity field"
-                   data-bundle-subproduct
-                   data-id="{{ bundle_product.selected_or_first_available_variant.id }}"
-                   data-vissku="{{ bundle_product.selected_or_first_available_variant.sku }}"
-                   data-status="{{ stockStatusBunNote}}"
-                   data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
-                   data-step="{{ pstep }}"
-                   data-tieredPricing=""
-                   data-qty="{{ bundle_product_entry_parts[1] }}"
-                   data-price="{{ bundle_product.price }}"
-                   value="{{ bundle_product_entry_parts[1] }}" />
-          {% endfor %}
-          {% for free_product_entry in free_products %}
-            {% assign free_product_entry_parts = free_product_entry | split: "#" %}
-            {%- assign free_product_handle = free_product_entry_parts[0] | strip %}
-            {%- assign free_product = all_products[free_product_handle] %}
-
-
-            {% comment %}Get stock status for bundle free logging in order at time of order --------------------------------------------------------------------{% endcomment %}
-            {% assign stockStatusFreeMain = "" %}
-            {% assign stockStatusFreeSub = "" %}
-            {% assign fserviceFree = free_product.selected_or_first_available_variant.fulfillment_service %}
-            {% assign leadTimeFree = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time %}
-            {% assign inventoryQuantityFree = free_product.selected_or_first_available_variant.inventory_quantity %}
-            {% assign inventoryQuantityFree = inventoryQuantityFree | plus: 0 %}
-            {% assign leadTimeFree = leadTimeFree | plus: 0 %}
-
-            {% if free_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
-              {% assign stockStatusFreeMain = "Ships Direct from Manufacturer" %}
-              {% assign stockStatusFreeSub = "May Have Extended Lead Times" %}
-            {% elsif free_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityFree <  1 %}
-              {% assign stockStatusFreeMain = "Temporarily On Backorder" %}
-              {% if leadTimeFree < 22  %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 1 – 3 wks" %}
-              {% elsif leadTimeFree < 29 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 2 – 4 wks" %}
-              {% elsif leadTimeFree < 36 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 3 – 5 wks" %}
-              {% elsif leadTimeFree < 43 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 4 –6 wks" %}
-              {% elsif leadTimeFree < 50 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 5 – 7 wks" %}
-              {% elsif leadTimeFree < 57 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 6 – 8 wks" %}
-              {% elsif leadTimeFree < 64 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 7 – 9 wks" %}
-              {% elsif leadTimeFree < 71 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 8 – 10 wks" %}
-              {% elsif leadTimeFree < 78 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 9 – 11 wks" %}
-              {% elsif leadTimeFree < 85 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 10 – 12 wks" %}
-              {% elsif leadTimeFree < 121 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 3 – 4 mths" %}
-              {% elsif leadTimeFree < 151 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 4 – 5 mths" %}
-              {% elsif leadTimeFree < 181 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 5 – 6 mths" %}
-              {% elsif leadTimeFree < 211 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date 6 – 7 mths" %}
-              {% elsif leadTimeFree < 1000 %}
-                {% assign stockStatusFreeSub = "Estimated Ship Date over 7 mths" %}
-              {% endif %}
-            {% elsif free_product.selected_or_first_available_variant.inventory_management == nil and leadTimeFree %}
-              {% assign stockStatusFreeMain = "Special Order Item" %}
-              {% if leadTimeFree < 22  %}
-                {% assign stockStatusFreeSub = "Expected to ship in 1 – 3 wks" %}
-              {% elsif leadTimeFree < 29 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 2 – 4 wks" %}
-              {% elsif leadTimeFree < 36 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 3 – 5 wks" %}
-              {% elsif leadTimeFree < 43 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 4 – 6 wks" %}
-              {% elsif leadTimeFree < 50 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 5 – 7 wks" %}
-              {% elsif leadTimeFree < 57 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 6 – 8 wks" %}
-              {% elsif leadTimeFree < 64 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 7 – 9 wks" %}
-              {% elsif leadTimeFree < 71 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 8 – 10 wks" %}
-              {% elsif leadTimeFree < 78 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 9 – 11 wks" %}
-              {% elsif leadTimeFree < 85 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 10 – 12 wks" %}
-              {% elsif leadTimeFree < 121 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 3 – 4 mths" %}
-              {% elsif leadTimeFree < 151 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 4 – 5 mths" %}
-              {% elsif leadTimeFree < 181 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 5 – 6 mths" %}
-              {% elsif leadTimeFree < 211 %}
-                {% assign stockStatusFreeSub = "Expected to ship in 6 – 7 mths" %}
-              {% elsif leadTimeFree < 1000 %}
-                {% assign stockStatusFreeSub = "Expected to ship in over 7 mths" %}
-              {% endif %}
-            {% elsif free_product.selected_or_first_available_variant.inventory_quantity > 0 %}
-              {% assign stockStatusFreeMain = "In Stock" %}
-            {% endif %}
-
-            {% if stockStatusFreeSub != "" %}
-              {% capture stockStatusFreeNote %}{{ stockStatusFreeMain }} ({{ stockStatusFreeSub }}){% endcapture %}
-            {% else %}
-              {% capture stockStatusFreeNote %}{{ stockStatusFreeMain }}{% endcapture %}
-            {% endif %}
-            {% comment %}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
-
-
-            <input type="hidden"
-                   name="updates[{{ free_product_handle }}]"
-                   class="quantity field"
-                   data-bundle-subproduct-free
-                   data-step="{{ pstep }}"
-                   data-id="{{ free_product.selected_or_first_available_variant.id }}"
-                   data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
-                   data-vissku="{{ free_product.selected_or_first_available_variant.sku }}"
-                   data-status="{{ stockStatusFreeNote }}"
-                   data-tieredPricing="fg"
-                   data-qty="{{ free_product_entry_parts[1] }}"
-                   data-price="{{ free_product.price }}"
-                   value="{{ free_product_entry_parts[1] }}" />
-          {% endfor %}
-        </div>
-
-        <button class="product-form--atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
-          <span class="atc-button--text">
-            <i class="fa-regular fa-cart-shopping"></i>
-            {{ 'product.buttons.add_to_cart' | t }}
-          </span>
-          <span class="atc-button--icon">
-            {%- render 'icon-spinner' -%}
-          </span>
-        </button>
-      {% else %}
-        <button class=" product-form--atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
-                id="p-atc"
-                type="submit"
-                {% if selected_variant and selected_variant.available == false %}
-                  disabled
-                {% endif %}
-                data-product-atc
-                {% if product.template_suffix contains 'pre-order' %}
-                  data-product-atc-preorder
-                {% endif %}
-        >
-
-          <span class="atc-button--text">
-            <i class="fa-regular fa-cart-shopping"></i>
-            {% unless selected_variant and selected_variant.available == false %}
-              {% if product.template_suffix contains 'pre-order' %}
-                {{ 'product.buttons.pre_order' | t }}
-              {% else %}
-                {{ 'product.buttons.add_to_cart' | t }}
-              {% endif %}
-            {% else %}
-              {{ 'product.buttons.sold_out' | t }}
-            {% endunless %}
-          </span>
-          <span class="atc-button--icon">
-            {%- render 'icon-spinner' -%}
-          </span>
-        </button>
-        {% if show_dynamic_checkout_button %}
-          {{ form | payment_button }}
+        {% if free_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
+          {% assign stockStatusFreeMain = "Ships Direct from Manufacturer" %}
+          {% assign stockStatusFreeSub = "May Have Extended Lead Times" %}
+        {% elsif free_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityFree <  1 %}
+          {% assign stockStatusFreeMain = "Temporarily On Backorder" %}
+          {% if leadTimeFree < 22  %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 1 – 3 wks" %}
+          {% elsif leadTimeFree < 29 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 2 – 4 wks" %}
+          {% elsif leadTimeFree < 36 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 3 – 5 wks" %}
+          {% elsif leadTimeFree < 43 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 4 –6 wks" %}
+          {% elsif leadTimeFree < 50 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 5 – 7 wks" %}
+          {% elsif leadTimeFree < 57 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 6 – 8 wks" %}
+          {% elsif leadTimeFree < 64 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 7 – 9 wks" %}
+          {% elsif leadTimeFree < 71 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 8 – 10 wks" %}
+          {% elsif leadTimeFree < 78 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 9 – 11 wks" %}
+          {% elsif leadTimeFree < 85 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 10 – 12 wks" %}
+          {% elsif leadTimeFree < 121 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 3 – 4 mths" %}
+          {% elsif leadTimeFree < 151 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 4 – 5 mths" %}
+          {% elsif leadTimeFree < 181 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 5 – 6 mths" %}
+          {% elsif leadTimeFree < 211 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date 6 – 7 mths" %}
+          {% elsif leadTimeFree < 1000 %}
+            {% assign stockStatusFreeSub = "Estimated Ship Date over 7 mths" %}
+          {% endif %}
+        {% elsif free_product.selected_or_first_available_variant.inventory_management == nil and leadTimeFree %}
+          {% assign stockStatusFreeMain = "Special Order Item" %}
+          {% if leadTimeFree < 22  %}
+            {% assign stockStatusFreeSub = "Expected to ship in 1 – 3 wks" %}
+          {% elsif leadTimeFree < 29 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 2 – 4 wks" %}
+          {% elsif leadTimeFree < 36 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 3 – 5 wks" %}
+          {% elsif leadTimeFree < 43 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 4 – 6 wks" %}
+          {% elsif leadTimeFree < 50 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 5 – 7 wks" %}
+          {% elsif leadTimeFree < 57 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 6 – 8 wks" %}
+          {% elsif leadTimeFree < 64 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 7 – 9 wks" %}
+          {% elsif leadTimeFree < 71 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 8 – 10 wks" %}
+          {% elsif leadTimeFree < 78 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 9 – 11 wks" %}
+          {% elsif leadTimeFree < 85 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 10 – 12 wks" %}
+          {% elsif leadTimeFree < 121 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 3 – 4 mths" %}
+          {% elsif leadTimeFree < 151 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 4 – 5 mths" %}
+          {% elsif leadTimeFree < 181 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 5 – 6 mths" %}
+          {% elsif leadTimeFree < 211 %}
+            {% assign stockStatusFreeSub = "Expected to ship in 6 – 7 mths" %}
+          {% elsif leadTimeFree < 1000 %}
+            {% assign stockStatusFreeSub = "Expected to ship in over 7 mths" %}
+          {% endif %}
+        {% elsif free_product.selected_or_first_available_variant.inventory_quantity > 0 %}
+          {% assign stockStatusFreeMain = "In Stock" %}
         {% endif %}
-      {% endif %}
+
+        {% if stockStatusFreeSub != "" %}
+          {% capture stockStatusFreeNote %}{{ stockStatusFreeMain }} ({{ stockStatusFreeSub }}){% endcapture %}
+        {% else %}
+          {% capture stockStatusFreeNote %}{{ stockStatusFreeMain }}{% endcapture %}
+        {% endif %}
+        {% comment %}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
+
+
+        <input type="hidden"
+               name="updates[{{ free_product_handle }}]"
+               class="quantity field"
+               data-bundle-subproduct-free
+               data-step="{{ pstep }}"
+               data-id="{{ free_product.selected_or_first_available_variant.id }}"
+               data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
+               data-vissku="{{ free_product.selected_or_first_available_variant.sku }}"
+               data-status="{{ stockStatusFreeNote }}"
+               data-tieredPricing="fg"
+               data-qty="{{ free_product_entry_parts[1] }}"
+               data-price="{{ free_product.price }}"
+               value="{{ free_product_entry_parts[1] }}" />
+      {% endfor %}
     </div>
-  </div>
-
-  <div data-payment-terms-reference style="display: none;">
-    {{ form | payment_terms }}
-  </div>
-
-  {% if enable_local_pickup %}
-    <div class="surface-pick-up" data-surface-pick-up></div>
-  {% endif %}
-{% endform %}
+    <div class="product-form--atc">
+      <div class="cart-buttons">
+        <button class="product-form--atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
+                <span class="atc-button--text">
+                  <i class="fa-regular fa-cart-shopping"></i>
+                  {{ 'product.buttons.add_to_cart' | t }}
+                </span>
+          <span class="atc-button--icon">
+                  {%- render 'icon-spinner' -%}
+                </span>
+        </button>
+      </div>
+    </div>
+{% comment %}end of bundle logic -----------------------------------------------------------------------------------{% endcomment %}
+{% endif %}

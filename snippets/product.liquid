@@ -52,6 +52,13 @@
     {% endfor %}
 {% endif %}
 
+{% assign productType = 'simple' %}
+{% if product.metafields.plytix.package_products != blank %}
+    {% assign productType = 'bundle' %}
+{% elsif product.variants.size > 1 %}
+    {% assign productType = 'variation' %}
+{% endif %}
+
 {% liquid
     assign selected_variant = product.selected_variant
 
@@ -106,7 +113,7 @@
     -%}
 {%- endcapture  -%}
 
-<article class="product--outer">
+<article class="product--outer {{ productType }}">
     {%
             render 'product-gallery',
             product: product,
