@@ -597,6 +597,8 @@ jQuery(document).ready(function($){
 
         $bundle_button.on('click', async function(e) {
             e.preventDefault()
+            $(this).find('.atc-button--text').hide();
+            $(this).find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
             const bundle = $(this).data('bundle')
             const form_template = {
                 form_type: 'product',
