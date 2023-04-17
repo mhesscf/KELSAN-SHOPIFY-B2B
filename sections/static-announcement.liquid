@@ -48,6 +48,62 @@
     padding: 0;
   }
 {% endstyle %}
+
+{% comment %}Below is to display warning for no javascript and to remove add to cart where it would cause a problem{% endcomment %}
+<noscript>
+  <style type="text/css">
+    .jsDisabledWarningPop{
+      display:none;
+      text-align:center;
+      position: fixed;
+      width: 300px;
+      border: 1px solid #ccc;
+      background-color: #fffe95;
+      border-radius: 10px ;
+      padding:20px;
+      top:50%;
+      left:50%;
+      z-index:99999;
+      transform: translate(-50%, -50%);
+      color:#000;
+    }
+    .jsDisabledWarningPop h2{margin:0 10px;}
+
+    .product--outer.bundle .product-block--price,
+    .product--outer.variation .product-block--price,
+    .product--outer.bundle .product-form--atc-button,
+    .product--outer.variation .product-form--atc-button,
+    .product--outer.bundle .shopify-payment-button,
+    .product--outer.variation .shopify-payment-button,
+    .bottom-buy-now-strap{display:none !important;}
+
+    .jsDisabledWarningPop.bundle,
+    .jsDisabledWarningPop.variation{display: inline-block;}
+
+  </style>
+  {% assign productType = 'simple' %}
+  {% if product.metafields.plytix.package_products != blank %}
+    {% assign productType = 'bundle' %}
+  {% elsif product.variants.size > 1 %}
+    {% assign productType = 'variation' %}
+  {% endif %}
+  <div id="alert-bar-{{ productType }}" class="announcement-bar alert-bar show show-everywhere-true" style="
+          color: black;
+          background: #fffe95;
+          ">
+    <div class="announcement-bar-text">
+      Warning: Your browser has Javascript disabled. To ensure the most accurate data, please turn Javascript on. Some functionality is disabled. Please contact {{ shop.phone }} to place orders.
+    </div>
+    <div class="announcement-bar-text-mobile">
+      Warning: Your browser has Javascript disabled. To ensure the most accurate data, please turn Javascript on. Some functionality is disabled. Please contact {{ shop.phone }} to place orders.
+    </div>
+  </div>
+  <div class="jsDisabledWarningPop {{ productType }}">
+    <h2>Warning</h2>
+    <div>Add-to-cart functionality has been disabled for this product.<br/><br/>Please enable Javascript on your browser or contact {{ shop.phone }} to get pricing or to order.</div>
+  </div>
+</noscript>
+
 <script
   type="application/json"
   data-section-id="{{ section.id }}"
