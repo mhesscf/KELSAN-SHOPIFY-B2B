@@ -13,11 +13,11 @@
                   <img src="${algolia.helpers.compactImage(item)}" alt="${item.title}" />
               </div>
               <div class="aa-ItemContentBody">
-                  {% comment %}<div class="aa-ItemContentBrand">
+                  <div class="aa-ItemContentBrand">
                       ${item.product_type && components.Highlight({ hit: item, attribute: 'product_type' })}
                       ${item.vendor && html`<span> by </span>`}
                       ${item.vendor && components.Highlight({ hit: item, attribute: 'vendor' })}
-                  </div>{% endcomment %}
+                  </div>
                   <div class="aa-ItemContentTitleWrapper">
                       <div class="aa-ItemContentTitle">
                           ${components.Highlight({ hit: item, attribute: 'title' })}
@@ -28,8 +28,7 @@
                   </div>
                   <div class="aa-ItemContentPrice">
                       <div class="aa-ItemContentPriceCurrent">
-                      ${item.meta.plytix.package_products ? html`<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
-                          {% comment %}${algolia.helpers.displayPrice(item, distinct)}{% endcomment %}
+                          ${algolia.helpers.displayPrice(item, distinct)}
                       </div>
                   </div>
               </div>
