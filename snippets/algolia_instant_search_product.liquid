@@ -1,61 +1,357 @@
+
 <script>
-  (function(algolia) {
-    'use strict';
-
-    algolia.instantSearchProductTemplate = function instantSearchProductTemplate(hit, html, components) {
-      return html `<div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}">
-        <div class="ais-hit--picture" style="background-image: url('${algolia.helpers.mediumImage(hit)}')"></div>
-
-        <div class="ais-hit--details">
-          <p class="ais-hit--title">
-            <a data-algolia-index="${hit.index}"
-               data-algolia-position="${hit.productPosition}"
-               data-algolia-queryid="${hit.queryID}"
-               data-algolia-objectid="${hit.objectID}"
-               href="${algolia.helpers.instantsearchLink(hit)}"
-               onclick="void(0)"
-               title="${algolia.helpers.fullTitle(hit.title, hit._distinct, hit.variant_title)}">
-              ${components.Highlight({ attribute: 'title', hit })}
-              ${algolia.helpers.variantTitleAddition (hit, hit._distinct)}
-            </a>
-          </p>
-          <p class="ais-hit--subtitle" title="${hit.product_type}${algolia.translation_helpers.by(hit.vendor)}">
-            ${components.Highlight({ attribute: 'product_type', hit })}
-            ${hit.vendor && html`<span> by </span>`}
-            ${hit.vendor && components.Highlight({ attribute: 'vendor', hit })}
-          </p>
-          <p class="ais-hit--price">
-            <b>${algolia.helpers.displayPrice(hit, hit._distinct)}</b>
-            ${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}
-            ${!hit._distinct && html`<span class="ais-hit--price-discount">${algolia.helpers.displayDiscount(hit.price, hit.compare_at_price, hit.price_ratio)}</span>`}
-          </p>
-          <!-- Extra info examples - Remove the display: none to show them -->
-          <p class="ais-hit--info" style="display: none">
-            ${hit.sku && html`<span class="algolia-sku">${components.Highlight({ attribute: 'sku', hit })}</span>`}
-            ${hit.barcode && html`<span class="algolia-barcode">${components.Highlight({ attribute: 'barcode', hit })}</span>`}
-            ${hit.weight && html`<span class="algolia-weight">${hit.weight}</span>`}
-            ${!hit.taxable && html`<span class="algolia-taxable">Tax free</span>`}
-          </p>
-          <!-- Tags example - Remove the display: none to show them -->
-          <p class="ais-hit--tags" style="display: none">
-                  ${hit._highlightResult.tags?.map( tag => html`<span class="ais-hit--tag">${tag.value}</span>`)}
-          </p>
-              ${!hit._distinct && html`
-              <form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="id" value="${hit.objectID}" />
-              </form>
-              <p class="ais-hit--cart">
-                ${hit.can_order ? html`
-                  <button class="ais-hit--cart-button" data-form-id="algolia-add-to-cart-${hit.objectID}">
-                      ${ algolia.translations.addToCart }
-                  </button>`
-                : html`
-                  <button class="ais-hit--cart-button ais-hit--cart-button__disabled">
-                      ${ algolia.translations.outOfStock }
-                  </button>`}
-              </p>`}
-          </div>
-      </div>`
+    function isBuyable(middleware,im,inv,collections){
+        if (collections.includes("discontinued")){
+            return false;
+        }else if(middleware == "manual" || inv > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function showBtn(variants_count,bundleitems = ""){
+        var showButton = "addToCart";
+        if (variants_count != "1" || bundleitems != ""){
+            showButton = "viewProduct";
+        }
+        return showButton;
+    }
+    function isPriceRange(pricing){
+        // check for dash
+        if(pricing.includes("-")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function priceRange(pricing,format,highLow){
+        // remove $, spaces, then split
+        var thisArray = pricing.replace(/\$/g, '').replace(/ /g, '').split("-");
+        var thisPrice = "";
+        if(highLow == "low"){
+            thisPrice = thisArray[0];
+        }else if(highLow == "high"){
+            thisPrice = thisArray[1];
+        }
+        if(format == 0){
+            thisPrice = thisPrice.replace(/\$/g, '').replace(',', '').replace(/ /g, '');
+        }else{
+            thisPrice = thisPrice.replace(/\$/g, '').replace(/ /g, '');
+        }
+        return thisPrice;
+    }
+    function stocklookup(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false"){
+        leadtime = Number(leadtime);
+        var finalmessage = '';
+        if (variants_count != "1" || bundleitems != ""){
+            finalmessage += '<span class="status-desc main-notice">See Product Page for Stock Status Details</span>';
+            finalmessage += '<span class="status-time"></span>';
+            finalmessage += '<details>';
+            finalmessage += '<summary onClick="stoplink(event)" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
+            finalmessage += '<p>This product has multiple item offerings. See product page for the stock status of each individual item.</p>';
+            finalmessage += '</details>';
+        }else if(dropship == "true") {
+            finalmessage += '<span class="status-desc main-notice">Ships Direct from Manufacturer</span>';
+            finalmessage += '<span class="status-time">May Have Extended Lead Times</span>';
+            finalmessage += '<details>';
+            finalmessage += '<summary onClick="stoplink(event)" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
+            finalmessage += '<p>We do not currently stock this item. It will ship directly from the manufacturer to you for the quickest delivery time possible. Current inventory levels at the manufacturer are unknown.</p>';
+            finalmessage += '</details>';
+        }else if(im == "middleware-fulfillment" && inventory < 1){
+            var leadtimeText = backorderLeadtimeLookup(leadtime);
+            finalmessage += '<span class="status-desc main-notice">Temporarily On Backorder</span>';
+            finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
+        }else if(im != "middleware-fulfillment" && leadtime){
+            var leadtimeText = specialLeadtimeLookup(leadtime);
+            finalmessage += '<span class="status-desc main-notice">Special Order Item</span>';
+            finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
+        }else if(inventory > 0) {
+            finalmessage += '<span class="status-desc main-notice">In Stock</span>';
+            if (clearance == true){
+                finalmessage += "("+inventory +" Available)";
+            }
+        }
+        return finalmessage;
     };
-  })(window.algoliaShopify);
+
+
+    function stocklookupLineItem(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false"){
+        leadtime = Number(leadtime);
+        var stockStatusMain = '';
+        var stockStatusSub = '';
+        if (variants_count != "1" || bundleitems != ""){
+            stockStatusMain = "See Product Page for Stock Status Details";
+        }else if(dropship == "true") {
+            stockStatusMain = "Ships Direct from Manufacturer";
+            stockStatusSub = "May Have Extended Lead Times";
+        }else if(im == "middleware-fulfillment" && inventory < 1){
+            stockStatusMain = "Temporarily On Backorder";
+            stockStatusSub = backorderLeadtimeLookup(leadtime);
+        }else if(im != "middleware-fulfillment" && leadtime){
+            stockStatusMain = "Special Order Item";
+            stockStatusSub =  specialLeadtimeLookup(leadtime);
+        }else if(inventory > 0) {
+            stockStatusMain = "In Stock";
+        }
+        if(stockStatusSub != ""){
+            var finalLineItemMessage = stockStatusMain + " ("+stockStatusSub+")";
+        }else{
+            var finalLineItemMessage = stockStatusMain;
+        }
+        return finalLineItemMessage;
+    };
+
+    function backorderLeadtimeLookup(leadTime = 0){
+        var leadtext = ""
+        if (leadTime < 22){
+            leadtext = "Estimated Ship Date 1 – 3 wks"
+        } else if (leadTime < 29) {
+            leadtext = "Estimated Ship Date 2 – 4 wks"
+        } else if (leadTime < 36) {
+            leadtext = "Estimated Ship Date 3 – 5 wks"
+        } else if (leadTime < 43) {
+            leadtext = "Estimated Ship Date 4 –6 wks"
+        } else if (leadTime < 50) {
+            leadtext = "Estimated Ship Date 5 – 7 wks"
+        } else if (leadTime < 57) {
+            leadtext = "Estimated Ship Date 6 – 8 wks"
+        } else if (leadTime < 64) {
+            leadtext = "Estimated Ship Date 7 – 9 wks"
+        } else if (leadTime < 71) {
+            leadtext = "Estimated Ship Date 8 – 10 wks"
+        } else if (leadTime < 78) {
+        leadtext = "Estimated Ship Date 9 – 11 wks"
+        } else if (leadTime < 85) {
+            leadtext = "Estimated Ship Date 10 – 12 wks"
+        } else if(leadTime < 121) {
+            leadtext = "Estimated Ship Date 3 – 4 mths"
+        } else if(leadTime < 151) {
+            leadtext = "Estimated Ship Date 4 – 5 mths"
+        } else if(leadTime < 181) {
+            leadtext = "Estimated Ship Date 5 – 6 mths"
+        } else if(leadTime < 211) {
+            leadtext = "Estimated Ship Date 6 – 7 mths"
+        } else if(leadTime < 1000) {
+            leadtext = "Estimated Ship Date over 7 mths"
+        }
+        return leadtext;
+    }
+    function specialLeadtimeLookup(leadTime = 0){
+        var leadtext = ""
+        if (leadTime < 22){
+            leadtext = "Expected to ship in 1 – 3 wks"
+        } else if (leadTime < 29) {
+            leadtext = "Expected to ship in 2 – 4 wks"
+        } else if (leadTime < 36) {
+            leadtext = "Expected to ship in 3 – 5 wks"
+        } else if (leadTime < 43) {
+            leadtext = "Expected to ship in 4 –6 wks"
+        } else if (leadTime < 50) {
+            leadtext = "Expected to ship in 5 – 7 wks"
+        } else if (leadTime < 57) {
+            leadtext = "Expected to ship in 6 – 8 wks"
+        } else if (leadTime < 64) {
+            leadtext = "Expected to ship in 7 – 9 wks"
+        } else if (leadTime < 71) {
+            leadtext = "Expected to ship in 8 – 10 wks"
+        } else if (leadTime < 78) {
+            leadtext = "Expected to ship in 9 – 11 wks"
+        } else if (leadTime < 85) {
+            leadtext = "Expected to ship in 10 – 12 wks"
+        } else if(leadTime < 121) {
+            leadtext = "Expected to ship in 3 – 4 mths"
+        } else if(leadTime < 151) {
+            leadtext = "Expected to ship in 4 – 5 mths"
+        } else if(leadTime < 181) {
+            leadtext = "Expected to ship in 5 – 6 mths"
+        } else if(leadTime < 211) {
+            leadtext = "Expected to ship in 6 – 7 mths"
+        } else if(leadTime < 1000) {
+            leadtext = "Expected to ship in over 7 mths"
+        }
+        return leadtext;
+    }
+
+
+
+    (function(algolia) {
+        'use strict';
+
+        algolia.instantSearchProductTemplate = function instantSearchProductTemplate(hit, html, components) {
+            return html `
+      <div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <meta itemprop="position" content="${hit.productPosition}" />
+        <div class="productitem" itemprop="item" itemscope itemtype="http://schema.org/Product">
+            <div class="cfais-productitem__image-container">
+                <div itemprop="image" content="${algolia.helpers.mediumImage(hit)}" class="ais-hit--picture" style="background-image: url('${algolia.helpers.mediumImage(hit)}')">
+                </div>
+            </div>
+            <div class="ais-hit--details productitem--info">
+                <h2 class="productitem--title ais-hit--title">
+                <a data-algolia-index="${hit.index}"
+                   data-algolia-position="${hit.productPosition}"
+                   data-algolia-queryid="${hit.queryID}"
+                   data-algolia-objectid="${hit.objectID}"
+                   href="${algolia.helpers.instantsearchLink(hit)}"
+                   onclick="void(0)"
+                   title="${algolia.helpers.fullTitle(hit.title, hit._distinct, hit.variant_title)}"
+                   itemprop="url">
+                   {%- comment -%}${components.Highlight({ attribute: 'title', hit })}{%- endcomment -%}
+                   <span itemprop="name">${hit.title}</span>
+                  ${algolia.helpers.variantTitleAddition (hit, hit._distinct)}
+                </a>
+                </h2>
+                <div class="product-detail-sku">
+                    {%- comment -%}SKU: ${hit.sku && html`<span class="algolia-sku">${components.Highlight({ attribute: 'sku', hit })}</span>`}{%- endcomment -%}
+                    SKU: <span itemprop="sku">${hit.sku}</span>
+                    <meta itemprop="mpn" content="${hit.meta.plytix.manufacturer_sku}" />
+                </div>
+
+
+                ${hit.meta.reviews} ${hit.meta.reviews ? html `<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="${hit.meta.reviews.rating['value']}" />
+                    <meta itemprop="bestRating" content="5" />
+                    <meta itemprop="reviewCount" content="${hit.meta.reviews.rating_count}" />
+                </span>` : `` }
+                <div class="is-review-raw" data-objid="${hit.objectID}" style="display:none">${hit.meta.judgeme.badge}</div>
+                <div class="is-review" data-objid="${hit.objectID}"></div>
+
+                {%- comment -%}<p class="ais-hit--subtitle" title="${hit.product_type}${algolia.translation_helpers.by(hit.vendor)}">
+                    ${components.Highlight({ attribute: 'product_type', hit })}
+                    ${hit.vendor && html`<span> by </span>`}
+                    ${hit.vendor && components.Highlight({ attribute: 'vendor', hit })}
+                </p>{%- endcomment -%}
+
+                {%- comment -%}Beginning of Stock Status ---------------------------------------------------------{%- endcomment -%}
+
+                <div class="sx-status" ${hit.collections.includes("discontinued") ? html`style="display:none"`:''} >
+                    <span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>
+                 </div>
+
+                <div class="deleteme" style="display:none">
+                Has Varians: ${hit.option_names != "" && html`<span class="algolia-weight">yes</span>`}<br/>
+                IM: ${hit.meta.plytix.fulfillment_for_algolia}<br/>
+                QTY: ${hit.inventory_quantity}<br/>
+                Lead: ${hit.meta.plytix.sxerp_lead_time}<br/>
+                </div>
+
+                <div class="product-description-raw" data-objid="${hit.objectID}" style="display:none">${hit.meta.plytix.short_description}</div>
+                <div class="product-description" data-objid="${hit.objectID}"></div>
+
+
+                <div class="product-icons">
+                    <div class="ship-made">
+                        ${hit.tags.includes("Free Shipping") ? html`<div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>`:''}
+                        ${hit.tags.includes("Made in the USA") ? html`<div class="sm-row usamade"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>`:''}
+                        ${hit.tags.includes("Environmentally Responsible") ? html`<div class="sm-row greenproduct"><div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div><span class="sm-row-text"><span>Environmentally Responsible</span><span class="sm-text">Reduced Impact on the Environment</span></span></div>`:''}
+                        ${hit.tags.includes("Gold Medal Winner") ? html`<div class="sm-row goldmedal"><div class="icon-wrap"><img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner" /></div><span class="sm-row-text"><span>Gold Medal Winner</span><span class="sm-text">It's that Awesome!</span></span></div>`:''}
+                        ${hit.meta.plytix.clearance_overstock == "true" ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-solid fa-tag"></i></div><span class="sm-row-text"><span>Clearance / Overstock</span><span class="sm-text">Buy now before they are gone!</span></span></div>`:''}
+                    </div>
+                </div>
+
+
+                {%- comment -%}<!-- Extra info examples - Remove the display: none to show them -->
+                <div class="additional stuff" style="display:none"><br/><br/>
+                    Sku: ${components.Highlight({ attribute: 'sku', hit })}<br/>
+                    ERPSKU: ${hit.meta.plytix.erp_sku}<br/>
+                    Stock Status Ranking ${hit.meta.plytix.stock_status_ranking}<br/>
+                    Color: ${hit.meta.plytix.color}<br/>
+                    Short Description: ${hit.meta.plytix.short_description} <br/><br/><br/>
+                    Inventory qty: ${hit.inventory_quanity} <br/>
+                    Inventory_management: ${hit.meta.plytix.fulfillment_for_algolia} <br/>
+                    Inventory_available: ${hit.inventory_available} <br/>
+                    {%- comment -%}// Button On Searchs: ${hit.meta.plytix.button-on-search} <br/>
+                    // ${let btnobj = hit.plytix.button-on-search.split(":")}{%- endcomment -%}
+                    Free Shipping: ${hit.tags.includes("Free Shipping") ? html`<span>Yes</span>` : html `<span>No</span>`} <br/>
+                    Made in the USA: ${hit.tags.includes("Made in the USA") ? html`<span>Yes</span>` : html `<span>No</span>`} <br/>
+                    Gold Medal: ${hit.tags.includes("Gold Medal Winner") ? html`<span>Yes</span>` : html `<span>No</span>`} <br/>
+                    ${hit.meta.plytix.list_price}
+                </div>
+
+
+
+                <p class="ais-hit--info" style="display: none">
+                ${hit.sku && html`<span class="algolia-sku">${components.Highlight({ attribute: 'sku', hit })}</span>`}
+                ${hit.barcode && html`<span class="algolia-barcode">${components.Highlight({ attribute: 'barcode', hit })}</span>`}
+                ${hit.weight && html`<span class="algolia-weight">${hit.weight}</span>`}
+                ${!hit.taxable && html`<span class="algolia-taxable">Tax free</span>`}
+                </p>
+                {%- endcomment -%}
+
+
+                <!-- Tags example - Remove the display: none to show them -->
+                <p class="ais-hit--tags" style="display: none">
+                      ${hit._highlightResult.tags?.map( tag => html`<span class="ais-hit--tag">${tag.value}</span>`)}
+                </p>
+
+            </div>
+            <div class="cfais-productitem--actions" itemprop="offers" itemscope itemtype="${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? 'http://schema.org/AggregateOffer':'http://schema.org/Offer'}">
+                <p class="ais-hit--price productitem__price ">
+                    <meta itemprop="availability" content="http://schema.org/InStock" />
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <div class="price__current">
+                        <span>
+                        ${hit.meta.plytix.package_products ?
+                        html`<span class="bundle-price" itemprop="price" content="0.00">See Product for Pricing {% render 'icon-chevron-right' %}</span>`
+                        : html `<span>${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? html `<span class="norm-price">$<span itemprop="lowPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span> - $<span itemprop="highPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"high")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"high")}</span></span>` : html `<span class="norm-price">$<span itemprop="price" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span></span>`}</span>`}
+                          {%- comment -%}${algolia.helpers.displayPrice(hit, hit._distinct)}{%- endcomment -%}
+                        </span>
+                    </div>
+
+                    ${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html `
+                        ${hit.meta.plytix.list_price ? html`<div class="price__compare-at-visible">(Was: ${numberScrub(hit.meta.plytix.list_price)})</div>`:''}
+                    `:''}
+
+
+{%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
+{%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-discount">${algolia.helpers.displayDiscount(hit.price, hit.compare_at_price, hit.price_ratio)}</span>`}{%- endcomment -%}
+</p>
+
+
+
+{%- comment -%}was a check for !hit._distinct but didn't work when we went to showing variants as groups {%- endcomment -%}
+${hit._distinct && html`
+<form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="id" value="${hit.objectID}" />
+    <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
+     <input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}" />
+    <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
+</form>
+<p class="ais-hit--cart">
+    {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
+
+    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_management,hit.inventory_quantity,hit.collections) ? html`
+        ${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html`
+            <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}">${ algolia.translations.addToCart }</button>
+        `:html`
+            <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled" type="button" disabled=""><span class="atc-button--text">
+                View Product
+            </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
+        `}
+      `: html`
+      <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled" type="button" disabled=""><span class="atc-button--text">
+            Sold Out
+      </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
+    `}
+</p>
+`}
+</div>
+</div>
+</div>`
+};
+})(window.algoliaShopify);
+
+
+</script>
+
+<script>
+function numberScrub(num){
+var newNum = (Math.round(num * 100) / 100).toFixed(2);;
+newNum = newNum.toLocaleString('en');
+return ("$"+newNum.toString());
+}
+function stoplink(e){
+//needed to stop product from loading for help tips
+e.stopPropagation();
+}
 </script>

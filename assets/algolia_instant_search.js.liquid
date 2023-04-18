@@ -231,20 +231,42 @@
             'filters',
             searchFilters.join(' AND ')
           );
+
         }
+
+        {% comment %}
+        // IP tracking: Patially done but abandoned due to load time taking from 50ms to 500ms for the json call. Could also use api.ipify.org if we ever come back to this.
+        // Added from CleanFreak to for analytic tagging:
+          $.getJSON('https://jsonip.com/?callback=?').done(function(data) {
+          var ip_address = window.JSON.parse(JSON.stringify(data, null, 2));
+          ip_address = ip_address.ip;
+          var kelsanArr = ["74.87.116.150", "74.87.116.xxx", "74.87.116.xxx"];
+          if(ip_address == '74.87.116.150' ) {
+            console.log('Tracking Search as Appleton');
+            searchFunctionHelper.setQueryParameter('analyticsTags', "appleton");
+          }else if((kelsanArr.indexOf(ip_address) > -1)){
+            console.log('Tracking Search as Kelsan');
+            searchFunctionHelper.setQueryParameter('analyticsTags', "Kelsan");
+          }
+        });
+        {% endcomment %}
 
         // Assign any required `ruleContexts` which are required for query rules
         // targeting collection pages
         if (collectionPageEnabled) {
           // Collection page merchandising:
           // If we are on a collection page, `collectionRulesContextValue` is defined
+          //CleanFreak: Add allproducts rulecontext to target for all products
           if (collectionRulesContextValue) {
             searchFunctionHelper.setQueryParameter('ruleContexts', [
-              collectionRulesContextValue.toString(),
+              collectionRulesContextValue.toString(),"allproducts"
             ]);
           } else {
-            searchFunctionHelper.setQueryParameter('ruleContexts', []);
+            searchFunctionHelper.setQueryParameter('ruleContexts', ["allproducts"]);
           }
+        }else{
+          //for all other pages
+          searchFunctionHelper.setQueryParameter('ruleContexts', ["allproducts"]);
         }
 
         searchFunctionHelper.setPage(page);
