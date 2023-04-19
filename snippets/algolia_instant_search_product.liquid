@@ -224,8 +224,8 @@
 
                 {%- comment -%}Beginning of Stock Status ---------------------------------------------------------{%- endcomment -%}
 
-                <div class="sx-status" ${hit.collections.includes("discontinued") ? html`style="display:none"`:''} >
-                    <span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>
+                <div class="sx-status" >
+                  ${hit.collections.includes("discontinued") ? html``: html `<span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>`}
                  </div>
 
                 <div class="deleteme" style="display:none">
@@ -241,12 +241,14 @@
 
                 <div class="product-icons">
                     <div class="ship-made">
-                        ${hit.tags.includes("Free Shipping") ? html`<div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>`:''}
-                        ${hit.tags.includes("Made in the USA") ? html`<div class="sm-row usamade"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>`:''}
-                        ${hit.tags.includes("Environmentally Responsible") ? html`<div class="sm-row greenproduct"><div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div><span class="sm-row-text"><span>Environmentally Responsible</span><span class="sm-text">Reduced Impact on the Environment</span></span></div>`:''}
-                        ${hit.tags.includes("Gold Medal Winner") ? html`<div class="sm-row goldmedal"><div class="icon-wrap"><img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner" /></div><span class="sm-row-text"><span>Gold Medal Winner</span><span class="sm-text">It's that Awesome!</span></span></div>`:''}
-                        ${hit.meta.plytix.clearance_overstock == "true" ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-solid fa-tag"></i></div><span class="sm-row-text"><span>Clearance / Overstock</span><span class="sm-text">Buy now before they are gone!</span></span></div>`:''}
-                    </div>
+                        ${hit.collections.includes("discontinued") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <span class="sm-row-text"><span>Discontinued</span> <span class="sm-text">This Product has Been Discontinued</span></span></div>`: html `
+                            ${hit.tags.includes("Free Shipping") ? html`<div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>`:''}
+                            ${hit.tags.includes("Made in the USA") ? html`<div class="sm-row usamade"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>`:''}
+                            ${hit.tags.includes("Environmentally Responsible") ? html`<div class="sm-row greenproduct"><div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div><span class="sm-row-text"><span>Environmentally Responsible</span><span class="sm-text">Reduced Impact on the Environment</span></span></div>`:''}
+                            ${hit.tags.includes("Gold Medal Winner") ? html`<div class="sm-row goldmedal"><div class="icon-wrap"><img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner" /></div><span class="sm-row-text"><span>Gold Medal Winner</span><span class="sm-text">It's that Awesome!</span></span></div>`:''}
+                            ${hit.meta.plytix.clearance_overstock == "true" ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-solid fa-tag"></i></div><span class="sm-row-text"><span>Clearance / Overstock</span><span class="sm-text">Buy now before they are gone!</span></span></div>`:''}
+                        `}
+                   </div>
                 </div>
 
 
