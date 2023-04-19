@@ -137,8 +137,19 @@
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Starts -->
       <script src='https://upsell-app.logbase.io/lb-upsell.js?shop=cleanfreak-prod.myshopify.com' defer></script>
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
-  <!-- Algolia head -->
-    {{ 'algolia_config.js' | asset_url | script_tag }}
+
+
+    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+
+        <!-- Algolia head -->
+        {{ 'algolia_config.js' | asset_url | script_tag }}
+
+    {%- elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+
+        <!-- Algolia prod version -->
+        {% comment %}{{ 'algolia_config_prod.js' | asset_url | script_tag }}{% endcomment %}
+
+    {%- endif -%}
 
 
 
