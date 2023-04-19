@@ -799,7 +799,7 @@ data-product-quickshop-url="{{ product_link }}"
                     {% endif %}
                   {% endif %}
                 {% endfor %}
-                {% if product.variants.first.price > 0 %}
+                {% if product.variants.first.price > 0 and product.metafields.plytix.hide_product != 'true' %}
                 <button
                         class="{{ quick_buy_classes }}"
                         type="button"
@@ -847,7 +847,7 @@ data-product-quickshop-url="{{ product_link }}"
         </div>
       {% endif %}
     {% endunless %}
-    {% if template_allows_compare %}
+    {% if template_allows_compare and product.metafields.plytix.hide_product != 'true' %}
       {% capture product_compare_image %}
         {% if initial_image %}
           {%

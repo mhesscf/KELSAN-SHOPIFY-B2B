@@ -2,24 +2,26 @@
 <div class="bottom-buy-now-strap" data-prin="{{ product.price }}">
     <div class="container">
         <div class="p-title">{{ product.title }}</div>
-        <div class="p-total">
-            <div class="total-text">Estimated Total</div>
-            <div class="total-price">
-                <sup class="dollar">$</sup><span id="bbsTotal">{{ product.price | money_without_currency }}</span>
+        {% if product.metafields.plytix.hide_product != 'true' %}
+            <div class="p-total">
+                <div class="total-text">Estimated Total</div>
+                <div class="total-price">
+                    <sup class="dollar">$</sup><span id="bbsTotal">{{ product.price | money_without_currency }}</span>
+                </div>
             </div>
-        </div>
-        <div class="p-buy-button">
-            {%- if product.available != true -%}
-                <button id="bottom-strap-soldout" class="add-to-cart-btn">
-                    <i class="fa-regular fa-cart-shopping"></i> Sold Out
-                </button>
-            {%- else -%}
-                <button id="bottom-strap-atc" class="add-to-cart-btn">
-                    <i class="fa-regular fa-cart-shopping"></i> Buy Now
-                </button>
-            {%- endif -%}
-        </div>
 
+            <div class="p-buy-button">
+                {%- if product.available != true -%}
+                    <button id="bottom-strap-soldout" class="add-to-cart-btn">
+                        <i class="fa-regular fa-cart-shopping"></i> Sold Out
+                    </button>
+                {%- else -%}
+                    <button id="bottom-strap-atc" class="add-to-cart-btn">
+                        <i class="fa-regular fa-cart-shopping"></i> Buy Now
+                    </button>
+                {%- endif -%}
+            </div>
+        {% endif %}
     </div>
 </div>
 {% endif %}
