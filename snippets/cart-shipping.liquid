@@ -32,6 +32,28 @@
   <div class="cart-shippingcalc--container" id="shipping-calculator" data-cartshipping>
     <div class="cart-shippingcalc-form">
       <div class="cart-shippingcalc--inner">
+        <div class="form-field">
+          <input
+                  class="form-field-input form-field-text"
+                  type="text"
+                  id="address_address_1"
+                  name="address[address_1]"
+                  value="{{ default_address_1 }}">
+          <label class="form-field-title" for="address_address_1">
+            {{ 'cart.shipping.address_1' | t }}
+          </label>
+        </div>
+        <div class="form-field">
+          <input
+                  class="form-field-input form-field-text"
+                  type="text"
+                  id="address_city"
+                  name="address[city]"
+                  value="{{ default_zip }}">
+          <label class="form-field-title" for="address_city">
+            {{ 'cart.shipping.city' | t }}
+          </label>
+        </div>
 
         <div class="form-field">
           <div class="form-field-select-wrapper">
@@ -47,7 +69,7 @@
           </div>
         </div>
 
-        <div class="form-field" id="address_province_container" style="display:none;">
+        <div class="form-field" id="address_province_container">
           <div class="form-field-select-wrapper">
             <select class="form-field-input form-field-select form-field-filled" name="address[province]" id="address_province" data-default="{{ default_province }}"><option value=""></option></select>
             <label class="form-field-title" for="address_province">

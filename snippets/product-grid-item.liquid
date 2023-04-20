@@ -265,6 +265,12 @@ data-product-quickshop-url="{{ product_link }}"
   {%- for variant in product.variants -%}
     {%- assign variant_count = variant_count | plus: 1 -%}
   {%- endfor -%}
+  {% assign pdiscontinued = false %}
+  {% for c in product.collections %}
+    {% if c.handle == "discontinued" %}
+      {% assign pdiscontinued = true %}
+    {% endif %}
+  {% endfor %}
 
   <div class="productitem__container {% if variant_count > 1 %}with_variants{% endif %}">
     {{ recently_viewed_header }}
@@ -462,50 +468,55 @@ data-product-quickshop-url="{{ product_link }}"
       {% endif %}
       <div class="product-icons">
         <div class="ship-made">
-          {% if product.metafields.plytix.made_in_USA %}
-            <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
-          {% endif %}
-          {% if product.metafields.plytix.free_shipping %}
-            <div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
-          {% endif %}
-          {% if product.metafields.plytix.eco_friendly %}
-            <div class="sm-row">
-              <div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div>
-              <span class="sm-row-text"><span>Environmentally Responsible</span>
-              <span class="sm-text">Reduced Impact on the Environment</span></span>
-            </div>
-          {% endif %}
-          {% if product.metafields.plytix.gold_medal_winner %}
-            <div class="sm-row">
-              <div class="icon-wrap">
-                <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
-              </div>
-              <span class="sm-row-text"><span>Gold Medal Winner</span>
-              <span class="sm-text">It's that Awesome!</span></span>
-            </div>
-          {% endif %}
-          {% assign pclearance = false %}
-          {% for c in product.collections %}
-            {% if c.handle == "clearance" %}
-              {% assign pclearance = true %}
+
+          {% if pdiscontinued == true %}
+            <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <span class="sm-row-text"><span>Discontinued</span> <span class="sm-text">This Product has Been Discontinued</span></span></div>
+          {% else %}
+            {% if product.metafields.plytix.made_in_USA %}
+              <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
             {% endif %}
-          {% endfor %}
-          {% if product.metafields.plytix.clearance_overstock == 'true' %}
-            <div class="sm-row">
-              <div class="icon-wrap" style="font-size: 23px;">
-                <i class="fa-solid fa-tag"></i>
+            {% if product.metafields.plytix.free_shipping %}
+              <div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
+            {% endif %}
+            {% if product.metafields.plytix.eco_friendly %}
+              <div class="sm-row">
+                <div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div>
+                <span class="sm-row-text"><span>Environmentally Responsible</span>
+                <span class="sm-text">Reduced Impact on the Environment</span></span>
               </div>
-              <span class="sm-row-text"><span>Clearance / Overstock</span>
-              <span class="sm-text">Buy now before they are gone!</span></span>
-            </div>
-          {% elsif pclearance == true %}
-            <div class="sm-row">
-              <div class="icon-wrap" style="font-size: 23px;">
-                <i class="fa-solid fa-tag"></i>
+            {% endif %}
+            {% if product.metafields.plytix.gold_medal_winner %}
+              <div class="sm-row">
+                <div class="icon-wrap">
+                  <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                </div>
+                <span class="sm-row-text"><span>Gold Medal Winner</span>
+                <span class="sm-text">It's that Awesome!</span></span>
               </div>
-              <span class="sm-row-text"><span>Clearance / Overstock</span>
-              <span class="sm-text">Buy now before they are gone!</span></span>
-            </div>
+            {% endif %}
+            {% assign pclearance = false %}
+            {% for c in product.collections %}
+              {% if c.handle == "clearance" %}
+                {% assign pclearance = true %}
+              {% endif %}
+            {% endfor %}
+            {% if product.metafields.plytix.clearance_overstock == 'true' %}
+              <div class="sm-row">
+                <div class="icon-wrap" style="font-size: 23px;">
+                  <i class="fa-solid fa-tag"></i>
+                </div>
+                <span class="sm-row-text"><span>Clearance / Overstock</span>
+                <span class="sm-text">Buy now before they are gone!</span></span>
+              </div>
+            {% elsif pclearance == true %}
+              <div class="sm-row">
+                <div class="icon-wrap" style="font-size: 23px;">
+                  <i class="fa-solid fa-tag"></i>
+                </div>
+                <span class="sm-row-text"><span>Clearance / Overstock</span>
+                <span class="sm-text">Buy now before they are gone!</span></span>
+              </div>
+            {% endif %}
           {% endif %}
         </div>
       </div>
@@ -516,7 +527,7 @@ data-product-quickshop-url="{{ product_link }}"
       {% assign leadTime = leadTime | plus: 0 %}
         {% assign stockStatusMain = "" %}
         {% assign stockStatusSub = "" %}
-      {% if product.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
+      {% if product.metafields.plytix.sx_erp_is_drop_ship == 'true' and pdiscontinued == false %}
         {% assign stockStatusMain = "Ships Direct from Manufacturer" %}
         {% assign stockStatusSub = "May Have Extended Lead Times" %}
         <div class="sx-status">
@@ -529,7 +540,7 @@ data-product-quickshop-url="{{ product_link }}"
               unknown.</p>
           </details>
         </div>
-      {% elsif product.first_available_variant.inventory_management == 'middleware-fulfillment' and  product.first_available_variant.inventory_quantity < 1 %}
+      {% elsif product.first_available_variant.inventory_management == 'middleware-fulfillment' and  product.first_available_variant.inventory_quantity < 1 and pdiscontinued == false %}
         <div class="sx-status">
           {% assign stockStatusMain = "Temporarily On Backorder" %}
           <span class="status-desc main-notice">Temporarily On Backorder</span>
@@ -581,7 +592,7 @@ data-product-quickshop-url="{{ product_link }}"
           {% endif %}
           <span class="status-order">Order Now to Reserve</span>
         </div>
-      {% elsif product.first_available_variant.inventory_management == nil and leadTime %}
+      {% elsif product.first_available_variant.inventory_management == nil and leadTime and pdiscontinued == false%}
         <div class="sx-status">
           {% assign stockStatusMain = "Special Order Item" %}
           <span class="status-desc main-notice">Special Order Item</span>
@@ -632,7 +643,7 @@ data-product-quickshop-url="{{ product_link }}"
             <span class="status-time">Expected to ship in over 7 mths</span>
           {% endif %}
         </div>
-      {% elsif current_variant.inventory_quantity > 0 %}
+      {% elsif current_variant.inventory_quantity > 0 and pdiscontinued == false%}
         {% assign stockStatusMain = "In Stock" %}
         <div class="product-detail-stock-and-shipping">
           <div class="stock-message">
@@ -788,7 +799,7 @@ data-product-quickshop-url="{{ product_link }}"
                     {% endif %}
                   {% endif %}
                 {% endfor %}
-                {% if product.variants.first.price > 0 %}
+                {% if product.variants.first.price > 0 and product.metafields.plytix.hide_product != 'true' %}
                 <button
                         class="{{ quick_buy_classes }}"
                         type="button"
@@ -836,7 +847,7 @@ data-product-quickshop-url="{{ product_link }}"
         </div>
       {% endif %}
     {% endunless %}
-    {% if template_allows_compare %}
+    {% if template_allows_compare and product.metafields.plytix.hide_product != 'true' %}
       {% capture product_compare_image %}
         {% if initial_image %}
           {%

@@ -315,7 +315,9 @@
                                         include_tax_line: true,
                                         include_hidden_price: true
                                 %}
-                                <form data-payment-terms-target style="display: none;"></form>
+                                {% if product.metafields.plytix.hide_product != 'true' %}
+                                    <form data-payment-terms-target style="display: none;"></form>
+                                {% endif %}
                             </div>
                             {% if product.metafields.plytix.packaged_free_product != blank %}
                                 {% assign savingsp = 0 %}

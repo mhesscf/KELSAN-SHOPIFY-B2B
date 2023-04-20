@@ -408,7 +408,15 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         </div>
         <div class="rside">
           {% comment %} Quantity Discount Tieres{% endcomment %}
-          {% if product.metafields.plytix.tiered_pricing != blank %}
+
+          {% assign pdiscontinued = false %}
+          {% for c in product.collections %}
+            {% if c.handle == "discontinued" %}
+              {% assign pdiscontinued = true %}
+            {% endif %}
+          {% endfor %}
+
+          {% if product.metafields.plytix.tiered_pricing != blank and pdiscontinued == false %}
             {% assign pprice = product.price | money_without_currency %}
             {% assign pprice = pprice | remove: ","  %}
             {% assign pprice = pprice | plus:0 %}
@@ -718,7 +726,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                  data-tieredPricing=""/>
         </div>
 
-
+        {% if product.metafields.plytix.hide_product != 'true' %}
           <button class=" product-form--atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
                   id="p-atc"
                   type="submit"
@@ -750,6 +758,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {% if show_dynamic_checkout_button %}
             {{ form | payment_button }}
           {% endif %}
+
+        {% endif %}
       </div>
     </div>
 
