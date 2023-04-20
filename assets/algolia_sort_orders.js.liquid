@@ -62,5 +62,9 @@
         });
       }
     });
+   // Updating the default sort order to alphabetical a-z
+   algolia.collectionSortOrders.sort((so1, _) =>
+     so1.label === 'Most popular' ? -1 : 1
+   );
   }
 })(window.algoliaShopify);
