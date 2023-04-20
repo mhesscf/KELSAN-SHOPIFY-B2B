@@ -369,12 +369,14 @@
             </div>
           </div>
         {% else %}
-
-          {% unless emphasize_price %}
-            {{ product_item_price }}
-          {% endunless %}
+          {% if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' %}
+            {% unless emphasize_price %}
+              {{ product_item_price }}
+            {% endunless %}
+          {% elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' %}
+            <span style="font-size:14px; line-height:36px;">View Price in Cart</span>
+          {% endif %}
         {% endif %}
-
         {% unless product_compare %}
 
         {% endunless %}
@@ -573,7 +575,7 @@
               </div>
             {% endif %}
 
-            {% if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants%}
+            {% if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button'%}
               <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct" href="{{ product_link }}" >View Product</a>
               <form method="post" action="/cart/add" class="cart-form" style="display: none">
                 {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}

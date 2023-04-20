@@ -741,7 +741,7 @@ data-product-quickshop-url="{{ product_link }}"
             </div>
           {% endif %}
 
-          {% if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants %}
+          {% if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' %}
             <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded" href="{{ product_link }}" >View Product</a>
             <form method="post" action="/cart/add" class="cart-form" style="display: none">
               {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}
@@ -799,7 +799,7 @@ data-product-quickshop-url="{{ product_link }}"
                     {% endif %}
                   {% endif %}
                 {% endfor %}
-                {% if product.variants.first.price > 0 and product.metafields.plytix.hide_product != 'true' %}
+                {% if product.variants.first.price > 0 and product.metafields.plytix.hide_product != 'true' and product.metafields.plytix.hide_pricing != 'Hide Button Only' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' %}
                 <button
                         class="{{ quick_buy_classes }}"
                         type="button"
@@ -847,7 +847,7 @@ data-product-quickshop-url="{{ product_link }}"
         </div>
       {% endif %}
     {% endunless %}
-    {% if template_allows_compare and product.metafields.plytix.hide_product != 'true' %}
+    {% if template_allows_compare and product.metafields.plytix.hide_product != 'true' and product.metafields.plytix.hide_pricing != 'Hide Button Only' and product.metafields.plytix.hide_pricing != 'Hide Price and Button'%}
       {% capture product_compare_image %}
         {% if initial_image %}
           {%

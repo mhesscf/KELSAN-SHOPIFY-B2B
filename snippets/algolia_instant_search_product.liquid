@@ -9,12 +9,19 @@
             return false;
         }
     }
-    function showBtn(variants_count,bundleitems = ""){
+    function showBtn(variants_count,bundleitems = "",hide_price = ""){
         var showButton = "addToCart";
-        if (variants_count != "1" || bundleitems != ""){
+        if (variants_count != "1" || bundleitems != ""|| hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" ){
             showButton = "viewProduct";
         }
         return showButton;
+    }
+    function showPrice(hide_price){
+        if(hide_price == "Hide Price Only (View in cart)" || hide_price == "Hide Price and Button") {
+            return false
+        }else{
+            return true
+        }
     }
     function isPriceRange(pricing){
         // check for dash
@@ -136,6 +143,8 @@
         }
         return leadtext;
     }
+
+
     function specialLeadtimeLookup(leadTime = 0){
         var leadtext = ""
         if (leadTime < 22){
@@ -251,7 +260,6 @@
                    </div>
                 </div>
 
-
                 {%- comment -%}<!-- Extra info examples - Remove the display: none to show them -->
                 <div class="additional stuff" style="display:none"><br/><br/>
                     Sku: ${components.Highlight({ attribute: 'sku', hit })}<br/>
@@ -293,17 +301,21 @@
                     <meta itemprop="priceCurrency" content="USD" />
                     <div class="price__current">
                         <span>
-                        ${hit.meta.plytix.package_products ?
-                        html`<span class="bundle-price" itemprop="price" content="0.00">See Product for Pricing {% render 'icon-chevron-right' %}</span>`
-                        : html `<span>${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? html `<span class="norm-price">$<span itemprop="lowPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span> - $<span itemprop="highPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"high")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"high")}</span></span>` : html `<span class="norm-price">$<span itemprop="price" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span></span>`}</span>`}
-                          {%- comment -%}${algolia.helpers.displayPrice(hit, hit._distinct)}{%- endcomment -%}
+                        ${hit.meta.plytix.hide_pricing == "Hide Price Only (View in cart)" ? html `View Price in Cart` : html ``}
+                        ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                                ${hit.meta.plytix.package_products ?
+                                html`<span class="bundle-price" itemprop="price" content="0.00">See Product for Pricing {% render 'icon-chevron-right' %}</span>`
+                                : html `<span>${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? html `<span class="norm-price">$<span itemprop="lowPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span> - $<span itemprop="highPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"high")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"high")}</span></span>` : html `<span class="norm-price">$<span itemprop="price" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span></span>`}</span>`}
+                        ` : html ``}
+
+                        {%- comment -%}${algolia.helpers.displayPrice(hit, hit._distinct)}{%- endcomment -%}
                         </span>
                     </div>
-
-                    ${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html `
-                        ${hit.meta.plytix.list_price ? html`<div class="price__compare-at-visible">(Was: ${numberScrub(hit.meta.plytix.list_price)})</div>`:''}
-                    `:''}
-
+                    ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `
+                            ${hit.meta.plytix.list_price ? html`<div class="price__compare-at-visible">(Was: ${numberScrub(hit.meta.plytix.list_price)})</div>`:''}
+                        `:''}
+                    ` : html ``}
 
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-discount">${algolia.helpers.displayDiscount(hit.price, hit.compare_at_price, hit.price_ratio)}</span>`}{%- endcomment -%}
@@ -323,7 +335,7 @@ ${hit._distinct && html`
     {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
 
     ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_management,hit.inventory_quantity,hit.collections) ? html`
-        ${showBtn(hit.variants_count,hit.meta.plytix.package_products) == "addToCart"  ? html`
+        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html`
             <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}">${ algolia.translations.addToCart }</button>
         `:html`
             <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled" type="button" disabled=""><span class="atc-button--text">
