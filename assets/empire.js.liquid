@@ -26014,55 +26014,86 @@
                 this.$shipping.toggleClass('open');
             }
 
-            _getShippingRates() {
+            async _getShippingRates() {
                 this._disableShippingButton();
 
                 const shippingAddress = {};
                 shippingAddress.country = jquery_default()('#address_country').val() || '';
                 shippingAddress.province = jquery_default()('#address_province').val() || '';
-                shippingAddress.zip = jquery_default()('#address_zip').val() || '';
-                const queryString = Object.keys(shippingAddress).map(key => `${encodeURIComponent(`shipping_address[${key}]`)}=${encodeURIComponent(shippingAddress[key])}`).join('&');
-                jquery_default().ajax(`${window.Theme.routes.cart_url}/shipping_rates.json?${queryString}`, {
-                    dataType: 'json'
-                }).fail(error => this._handleErrors(error.responseJSON || {})).done(response => {
-                    const rates = response.shipping_rates;
-                    const addressBase = [];
+                shippingAddress.city = jquery_default()('#address_city').val() || '';
+                shippingAddress.postal_code = jquery_default()('#address_zip').val() || '';
+                shippingAddress.address1 = jquery_default()('#address_address_1').val() || '';
 
-                    if (shippingAddress.zip.length) {
-                        addressBase.push(shippingAddress.zip.trim());
-                    }
+                const country = window.Countries[shippingAddress.country]
+                const province = country.province_codes.hasOwnProperty(shippingAddress.province)
+                    ? country.province_codes[shippingAddress.province]
+                    : ''
 
-                    if (shippingAddress.province.length) {
-                        addressBase.push(shippingAddress.province);
-                    }
+                const cart_data = await (await fetch(`${window.Theme.routes.cart_url}.js`)).json()
+                const response = await fetch('https://keller.dsbeta.com/rest/shipping-rates', {
+                    method: 'POST',
+                    cache: 'no-cache',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        rate: {
+                            destination: {
+                                country: country.code,
+                                postal_code: shippingAddress.postal_code,
+                                province: province,
+                                city: shippingAddress.city,
+                                name: null,
+                                address1: shippingAddress.address1,
+                                address2: null,
+                                address3: null,
+                                latitude: '',
+                                longitude: '',
+                                phone: null,
+                                fax: null,
+                                email: null,
+                                address_type: null,
+                                company_name: "Cleanfreak.com"
+                            },
+                            items: cart_data.items.map(item => ({
+                                sku: item.sku,
+                                quantity: item.quantity,
+                                properties: {
+                                    _erp_sku: item.properties._erp_sku
+                                },
+                                product_id: item.id,
+                                variant_id: item.variant_id,
+                                name: item.title,
+                                price: Math.trunc( item.price )
+                            })),
+                            currency: "USD",
+                            locale: "en-US"
+                        }
+                    })
+                })
 
-                    if (shippingAddress.country.length) {
-                        addressBase.push(shippingAddress.country);
-                    }
+                if(!response.ok){
+                    return this._handleErrors(response.json())
+                }
 
-                    const address = addressBase.join(', ');
-                    let message = '';
-
-                    if (rates.length > 1) {
-                        const firstRate = window.Shopify.formatMoney(rates[0].price, this.settings.money_format);
-                        message = this.shipping.multiple_rates.replace('*address*', address).replace('*number_of_rates*', rates.length).replace('*rate*', `<span class="money">${firstRate}</span>`);
-                    } else if (rates.length === 1) {
-                        message = this.shipping.one_rate.replace('*address*', address);
-                    } else {
-                        message = this.shipping.no_rates;
-                    }
-
-                    const ratesList = rates.map(rate => {
-                        const price = window.Shopify.formatMoney(rate.price, this.settings.money_format);
-                        const rateValue = this.shipping.rate_value.replace('*rate_title*', rate.name).replace('*rate*', `<span class="money">${price}</span>`);
-                        return `<li>${rateValue}</li>`;
-                    });
-
-                    this._handleShippingResponse({
-                        message,
-                        rates: ratesList
-                    });
+                const rates = (await response.json()).rates.map(rate => {
+                    const price = window.Shopify.formatMoney(rate.total_price, this.settings.money_format);
+                    const rateValue = this.shipping.rate_value.replace('*rate_title*', rate.service_name).replace('*rate*', `<span class="money">${price}</span>`);
+                    return `<li>${rateValue}</li>`;
                 });
+                const address = ['postal_code', 'province', 'country']
+                    .filter(k => shippingAddress[k].length > 0)
+                    .map(k => shippingAddress[k].trim())
+                    .join(', ')
+                const message = ((rates) => rates.length === 0 ? this.shipping.no_rates : ( // If no rates
+                    rates.length === 1 ? this.shipping.one_rate.replace('*address*', address) : // If one rate
+                        this.shipping.multiple_rates.replace('*address*', address) // If > 1 rate
+                            .replace('*number_of_rates*', rates.length)
+                            .replace('*rate*', '<span class="money">' + window.Shopify.formatMoney(rates[0].total_price, this.settings.money_format) + '</span>')))(rates)
+                this._handleShippingResponse({
+                    message,
+                    rates
+                })
             }
 
             _enableShippingButton() {

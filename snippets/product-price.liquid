@@ -131,21 +131,56 @@
 {% assign include_tax_line = include_tax_line | default: false %}
 {% assign include_compare_price = include_compare_price | default: true %}
 
-<div class="price {{ class_root }}__price {% if compare_at_price_varies %}price--varies{% endif %}">
-  {% if include_compare_price %}
-    <div
-      class="price__compare-at {% if emphasize_price or on_sale and show_original %}visible{% endif %}"
-      data-price-compare-container
-    >
-      {%- capture compare_at_price_html -%}
-        <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
-        <span class="money price__compare-at--single" data-price-compare>
-          {{ compare_at_price | money }}
-        </span>
-      {%- endcapture -%}
+{% if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' %}
+  <div class="price {{ class_root }}__price {% if compare_at_price_varies %}price--varies{% endif %}">
+    {% if include_compare_price %}
+      <div
+        class="price__compare-at {% if emphasize_price or on_sale and show_original %}visible{% endif %}"
+        data-price-compare-container
+      >
+        {%- capture compare_at_price_html -%}
+          <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
+          <span class="money price__compare-at--single" data-price-compare>
+            {{ compare_at_price | money }}
+          </span>
+        {%- endcapture -%}
 
-      {% if compare_at_price_varies %}
-        {%- capture compare_at_price_range_html -%}
+        {% if compare_at_price_varies %}
+          {%- capture compare_at_price_range_html -%}
+            {% if price_range_format == 'range' %}
+              <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
+              <span class="money price__compare-at--min" data-price-compare-min>
+                {{ compare_at_price_min | money }}
+              </span>
+              -
+              <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
+              <span class="money price__compare-at--max" data-price-compare-max>
+                {{ compare_at_price_max | money }}
+              </span>
+            {% else %}
+              {{ 'product_price.item.price.range_html' | t: price: compare_at_price_html | strip_newlines }}
+            {% endif %}
+          {% endcapture %}
+        {% endif %}
+
+        {% if compare_at_price_varies and on_sale and show_original and show_range %}
+          {{ compare_at_price_range_html }}
+        {% elsif on_sale and show_original %}
+          {{ compare_at_price_html }}
+        {% elsif emphasize_price and include_spacer %}
+          <span class="price__spacer"></span>
+        {% elsif show_original %}
+          <span class="money price__original" data-price-original></span>
+        {% endif %}
+      </div>
+
+
+      {% if include_hidden_price %}
+        {% comment %}
+          Hide an element containing compare at price info to fill in the price when no variant is selected
+        {% endcomment %}
+
+        <div class="price__compare-at--hidden" data-compare-price-range-hidden>
           {% if price_range_format == 'range' %}
             <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
             <span class="money price__compare-at--min" data-price-compare-min>
@@ -159,72 +194,67 @@
           {% else %}
             {{ 'product_price.item.price.range_html' | t: price: compare_at_price_html | strip_newlines }}
           {% endif %}
-        {% endcapture %}
+          <div class="price__compare-at--hidden" data-compare-price-hidden>
+            <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
+            <span class="money price__compare-at--single" data-price-compare>
+            {{ list_price | money }}
+          </span>
+          </div>
+        </div>
       {% endif %}
+    {% endif %}
 
-      {% if compare_at_price_varies and on_sale and show_original and show_range %}
-        {{ compare_at_price_range_html }}
-      {% elsif on_sale and show_original %}
-        {{ compare_at_price_html }}
-      {% elsif emphasize_price and include_spacer %}
-        <span class="price__spacer"></span>
-      {% elsif show_original %}
-        <span class="money price__original" data-price-original></span>
+    <div class="price__current {% if emphasize_price %}price__current--emphasize{% endif %} {% if on_sale %}price__current--on-sale{% endif %}" data-price-container style="{% if product.metafields.plytix.hide_product == 'true' %}display:none;{% endif %}">
+      {%- capture price_html -%}
+        {% if product.metafields.plytix.package_products != blank %}
+          {%- assign bproducts = product.metafields.plytix.package_products | split: "," %}
+          {% assign bundle_price = 0 %}
+          {% for bproduct in bproducts %}
+            {% assign attr = bproduct | split: "#" %}
+            {%- assign bundlep = attr[0] | strip %}
+            {% assign bundle_price = all_products[bundlep].price | times: attr[1] | plus: bundle_price %}
+          {% endfor %}
+          <span class="money bundle-price" data-bundle-price>
+            {{ bundle_price | money }}
+          </span>
+        {% else %}
+          <span class="money" data-price>
+            {{ price | money }}
+          </span>
+        {% endif %}
+      {%- endcapture -%}
+
+      {% capture current_price_range_html %}
+        {% if price_varies %}
+          {% if price_range_format == 'range' %}
+            <span class="money price__current--min" data-price-min>{{ price_min | money}}</span>
+            -
+            <span class="money price__current--max" data-price-max>{{ price_max | money }}</span>
+          {% else %}
+            {{ 'product_price.price.range_html' | t: price: price_html | strip_newlines }}
+          {% endif %}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture current_price_html %}
+        {% if on_sale and show_original %}
+          <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
+        {% endif %}
+        {{ price_html }}
+      {% endcapture %}
+
+      {% if show_range and price_varies %}
+        {{ current_price_range_html }}
+      {% else %}
+        {{ current_price_html }}
       {% endif %}
     </div>
 
-
     {% if include_hidden_price %}
       {% comment %}
-        Hide an element containing compare at price info to fill in the price when no variant is selected
+        Hide an element containing current price info to fill in the price when no variant is selected
       {% endcomment %}
-
-      <div class="price__compare-at--hidden" data-compare-price-range-hidden>
-        {% if price_range_format == 'range' %}
-          <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
-          <span class="money price__compare-at--min" data-price-compare-min>
-            {{ compare_at_price_min | money }}
-          </span>
-          -
-          <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
-          <span class="money price__compare-at--max" data-price-compare-max>
-            {{ compare_at_price_max | money }}
-          </span>
-        {% else %}
-          {{ 'product_price.item.price.range_html' | t: price: compare_at_price_html | strip_newlines }}
-        {% endif %}
-        <div class="price__compare-at--hidden" data-compare-price-hidden>
-          <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
-          <span class="money price__compare-at--single" data-price-compare>
-          {{ list_price | money }}
-        </span>
-        </div>
-      </div>
-    {% endif %}
-  {% endif %}
-
-  <div class="price__current {% if emphasize_price %}price__current--emphasize{% endif %} {% if on_sale %}price__current--on-sale{% endif %}" data-price-container style="{% if product.metafields.plytix.hide_product == 'true' %}display:none;{% endif %}">
-    {%- capture price_html -%}
-      {% if product.metafields.plytix.package_products != blank %}
-        {%- assign bproducts = product.metafields.plytix.package_products | split: "," %}
-        {% assign bundle_price = 0 %}
-        {% for bproduct in bproducts %}
-          {% assign attr = bproduct | split: "#" %}
-          {%- assign bundlep = attr[0] | strip %}
-          {% assign bundle_price = all_products[bundlep].price | times: attr[1] | plus: bundle_price %}
-        {% endfor %}
-        <span class="money bundle-price" data-bundle-price>
-          {{ bundle_price | money }}
-        </span>
-      {% else %}
-        <span class="money" data-price>
-          {{ price | money }}
-        </span>
-      {% endif %}
-    {%- endcapture -%}
-
-    {% capture current_price_range_html %}
-      {% if price_varies %}
+      <div class="price__current--hidden" data-current-price-range-hidden>
         {% if price_range_format == 'range' %}
           <span class="money price__current--min" data-price-min>{{ price_min | money}}</span>
           -
@@ -232,96 +262,74 @@
         {% else %}
           {{ 'product_price.price.range_html' | t: price: price_html | strip_newlines }}
         {% endif %}
-      {% endif %}
-    {% endcapture %}
-
-    {% capture current_price_html %}
-      {% if on_sale and show_original %}
+      </div>
+      <div class="price__current--hidden" data-current-price-hidden>
         <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
-      {% endif %}
-      {{ price_html }}
-    {% endcapture %}
-
-    {% if show_range and price_varies %}
-      {{ current_price_range_html }}
-    {% else %}
-      {{ current_price_html }}
+        {{ price_html }}
+      </div>
     {% endif %}
-  </div>
 
-  {% if include_hidden_price %}
-    {% comment %}
-      Hide an element containing current price info to fill in the price when no variant is selected
-    {% endcomment %}
-    <div class="price__current--hidden" data-current-price-range-hidden>
-      {% if price_range_format == 'range' %}
-        <span class="money price__current--min" data-price-min>{{ price_min | money}}</span>
-        -
-        <span class="money price__current--max" data-price-max>{{ price_max | money }}</span>
-      {% else %}
-        {{ 'product_price.price.range_html' | t: price: price_html | strip_newlines }}
-      {% endif %}
-    </div>
-    <div class="price__current--hidden" data-current-price-hidden>
-      <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
-      {{ price_html }}
-    </div>
-  {% endif %}
+    {% if include_unit_price %}
+      {% assign variant = product.selected_or_first_available_variant %}
+      {% capture total_quantity %}<span class="{{ class_root }}__total-quantity" data-total-quantity>{{ variant.unit_price_measurement.quantity_value }}{{ variant.unit_price_measurement.quantity_unit }}</span>{% endcapture %}
+      {% capture unit_price %}<span class="{{ class_root }}__unit-price--amount money" data-unit-price-amount>{{ variant.unit_price | money }}</span>{% endcapture %}
+      {% capture unit_measure %}<span class="{{ class_root }}__unit-price--measure" data-unit-price-measure>{%- if variant.unit_price_measurement.reference_value != 1 -%}{{ variant.unit_price_measurement.reference_value }}{%- endif %}{{ variant.unit_price_measurement.reference_unit }}</span>{% endcapture %}
 
-  {% if include_unit_price %}
-    {% assign variant = product.selected_or_first_available_variant %}
-    {% capture total_quantity %}<span class="{{ class_root }}__total-quantity" data-total-quantity>{{ variant.unit_price_measurement.quantity_value }}{{ variant.unit_price_measurement.quantity_unit }}</span>{% endcapture %}
-    {% capture unit_price %}<span class="{{ class_root }}__unit-price--amount money" data-unit-price-amount>{{ variant.unit_price | money }}</span>{% endcapture %}
-    {% capture unit_measure %}<span class="{{ class_root }}__unit-price--measure" data-unit-price-measure>{%- if variant.unit_price_measurement.reference_value != 1 -%}{{ variant.unit_price_measurement.reference_value }}{%- endif %}{{ variant.unit_price_measurement.reference_unit }}</span>{% endcapture %}
-
-    <div
-      class="
-        {{ class_root }}__unit-price
-        {% unless variant.unit_price_measurement %}hidden{% endunless %}
-      "
-      data-unit-price
-    >
-      {{ 'product_price.price.price_per_unit_html' | t: total_quantity: total_quantity, unit_price: unit_price, unit_measure: unit_measure | strip_newlines }}
-    </div>
-  {% endif %}
-
-  {% if include_tax_line %}
-    {%- capture tax_text -%}
-      {{ 'product_price.price.tax_line_html' | t }}
-    {%- endcapture -%}
-
-    {%- if tax_text != blank and class_root != 'productitem' -%}
-      <div class="
-          {{ class_root }}__tax
-          {% unless variant.taxable %}hidden{% endunless %}
+      <div
+        class="
+          {{ class_root }}__unit-price
+          {% unless variant.unit_price_measurement %}hidden{% endunless %}
         "
-        data-tax-line
+        data-unit-price
       >
-        {{ tax_text }}
-      </div>
-    {%- endif -%}
-  {% endif %}
-
-  {% comment %}{% if lp != blank %}
-    <div class="price__compare-at-visible">(Was: {{ lp | money }})</div>
-  {% endif %}{% endcomment %}
-
-
-
-  {% assign current_variant_id = product.selected_or_first_available_variant.id %}
-  {% for variant in product.variants %}
-    {% if variant.metafields.plytix.list_price > 0 %}
-      {% assign varlp = variant.metafields.plytix.list_price | times: 100 %}
-    {% endif %}
-    {% if varlp != blank and product.metafields.plytix.hide_product != 'true' %}
-      <div class="price__compare-at-visible var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-      (Was: {{ varlp | money }})
+        {{ 'product_price.price.price_per_unit_html' | t: total_quantity: total_quantity, unit_price: unit_price, unit_measure: unit_measure | strip_newlines }}
       </div>
     {% endif %}
-  {% endfor %}
+
+    {% if include_tax_line %}
+      {%- capture tax_text -%}
+        {{ 'product_price.price.tax_line_html' | t }}
+      {%- endcapture -%}
+
+      {%- if tax_text != blank and class_root != 'productitem' -%}
+        <div class="
+            {{ class_root }}__tax
+            {% unless variant.taxable %}hidden{% endunless %}
+          "
+          data-tax-line
+        >
+          {{ tax_text }}
+        </div>
+      {%- endif -%}
+    {% endif %}
+
+    {% comment %}{% if lp != blank %}
+      <div class="price__compare-at-visible">(Was: {{ lp | money }})</div>
+    {% endif %}{% endcomment %}
+
+
+
+    {% assign current_variant_id = product.selected_or_first_available_variant.id %}
+    {% for variant in product.variants %}
+      {% if variant.metafields.plytix.list_price > 0 %}
+        {% assign varlp = variant.metafields.plytix.list_price | times: 100 %}
+      {% endif %}
+      {% if varlp != blank and product.metafields.plytix.hide_product != 'true' %}
+        <div class="price__compare-at-visible var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+        (Was: {{ varlp | money }})
+        </div>
+      {% endif %}
+    {% endfor %}
 
 
 
 
-</div>
+  </div>
+{% elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' %}
+    <div class="price product__price ">
+        <div class="price__current cartpricing " data-price-container="" style="">
+            <strong>View Price in Cart</strong>
+        </div>
+    </div>
+{% endif %}
 {% comment %}Inject @pixelunion/shopify-price-ui/price end{% endcomment %}

@@ -24,6 +24,9 @@
   var collectionPageEnabled =
     algolia.is_collection_results_page &&
     algolia.config.instant_search_enabled_on_collection;
+  var targetIndexName = collectionPageEnabled
+    ? algolia.config.index_prefix + 'products_recently_ordered_count_desc'
+    : algolia.config.index_prefix + 'products';
 
   if (!algolia.full_results && !algolia.is_collection_results_page) {
     /**
@@ -213,9 +216,9 @@
         algolia.config.app_id,
         algolia.config.search_api_key
       ),
-      indexName: algolia.config.index_prefix + 'products',
+      indexName: targetIndexName,
       routing: {
-        stateMapping: singleIndex(algolia.config.index_prefix + 'products'),
+        stateMapping: singleIndex(targetIndexName),
       },
       searchFunction: function(searchFunctionHelper) {
         // Set query parameters here because they're not kept when someone

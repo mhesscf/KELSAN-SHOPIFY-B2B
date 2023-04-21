@@ -6,21 +6,33 @@
             <div class="p-total">
                 <div class="total-text">Estimated Total</div>
                 <div class="total-price">
-                    <sup class="dollar">$</sup><span id="bbsTotal">{{ product.price | money_without_currency }}</span>
+                    {% if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' %}
+                        {% assign current_variant_id = product.selected_or_first_available_variant.id %}
+                        {% for variant in product.variants %}
+                            <div class="var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                                <sup class="dollar">$</sup><span id="bbsTotal">{{ variant.price | money_without_currency }}</span>
+                            </div>
+                        {% endfor %}
+                    {% elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' %}
+                       <span style="font-size:14px; line-height:36px;">View Price in Cart</span>
+                    {% else %}
+
+                    {% endif %}
                 </div>
             </div>
-
-            <div class="p-buy-button">
-                {%- if product.available != true -%}
-                    <button id="bottom-strap-soldout" class="add-to-cart-btn">
-                        <i class="fa-regular fa-cart-shopping"></i> Sold Out
-                    </button>
-                {%- else -%}
-                    <button id="bottom-strap-atc" class="add-to-cart-btn">
-                        <i class="fa-regular fa-cart-shopping"></i> Buy Now
-                    </button>
-                {%- endif -%}
-            </div>
+            {% if product.metafields.plytix.hide_pricing != 'Hide Button Only' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' %}
+                <div class="p-buy-button">
+                    {%- if product.available != true -%}
+                        <button id="bottom-strap-soldout" class="add-to-cart-btn">
+                            <i class="fa-regular fa-cart-shopping"></i> Sold Out
+                        </button>
+                    {%- else -%}
+                        <button id="bottom-strap-atc" class="add-to-cart-btn">
+                            <i class="fa-regular fa-cart-shopping"></i> Buy Now
+                        </button>
+                    {%- endif -%}
+                </div>
+            {% endif %}
         {% endif %}
     </div>
 </div>
