@@ -55,7 +55,7 @@
       "settings": {
         "show_sku": true,
         "enable_order_notes": false,
-        "enable_shipping_calc": false,
+        "enable_shipping_calc": true,
         "shipping_calc_default_country": "United States"
       }
     }
