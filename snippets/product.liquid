@@ -59,6 +59,13 @@
     {% assign productType = 'variation' %}
 {% endif %}
 
+{% assign pdiscontinued = false %}
+{% for c in product.collections %}
+    {% if c.handle == "discontinued" %}
+        {% assign pdiscontinued = true %}
+    {% endif %}
+{% endfor %}
+
 {% liquid
     assign selected_variant = product.selected_variant
 
@@ -315,7 +322,7 @@
                                         include_tax_line: true,
                                         include_hidden_price: true
                                 %}
-                                {% if product.metafields.plytix.hide_product != 'true' %}
+                                {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
                                     <form data-payment-terms-target style="display: none;"></form>
                                 {% endif %}
                             </div>
