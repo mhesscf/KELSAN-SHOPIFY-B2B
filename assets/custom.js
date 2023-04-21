@@ -710,7 +710,7 @@ jQuery(document).ready(function($){
     });
 
 
-    $('.cartitems select').on('change', function(){
+    $('.cartitems .cartitems--list select').on('change', function(){
         setTimeout(function(){
             window.location = $('#update-cart').attr('href');
         }, 1000);
