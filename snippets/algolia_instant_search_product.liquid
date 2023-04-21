@@ -3,7 +3,7 @@
     function isBuyable(middleware,im,inv,collections){
         if (collections.includes("discontinued")){
             return false;
-        }else if(middleware == "manual" || inv > 0){
+        }else if(middleware == "manual" || middleware == "middleware-fulfillment" || inv > 0){
             return true;
         }else{
             return false;
