@@ -167,9 +167,10 @@
             {% comment %}
               snippets/cart-shipping.liquid has an internal check to see if shipping is required
             {% endcomment %}
-            {% if section.settings.enable_shipping_calc %}
+            {% if section.settings.enable_shipping_calc and shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
               {% render 'cart-shipping' %}
             {% endif %}
+
           </div>
 
           <div class="cart-checkout">
