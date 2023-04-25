@@ -1,5 +1,5 @@
 
-{% comment %}
+{%- comment -%}
   @param product {Object}
     Required to show product information
 
@@ -8,46 +8,43 @@
 
   @param product_compare {Boolean}
     Render card in product compare style
-{% endcomment %}
+{%- endcomment -%}
+{%- if 1==1 -%}
+{%- assign recently_viewed = recently_viewed | default: nil -%}
+{%- assign product_compare = product_compare | default: nil -%}
+{%- assign product_grid_show_second_image = false -%}
+{%- assign emphasize_price = false -%}
+{%- assign quick_shop_display = false -%}
+{%- assign enable_quickshop = false -%}
+{%- assign atc_display = true -%}
+{%- assign atc_button = true -%}
+{%- assign money_format = shop.money_format | strip_html -%}
 
+{%- if product_compare -%}
+  {%- assign enable_quickshop = false -%}
+  {%- assign atc_button = true -%}
+{%- endif -%}
 
-
-
-{% assign recently_viewed = recently_viewed | default: nil %}
-{% assign product_compare = product_compare | default: nil %}
-
-{% assign product_grid_show_second_image = false %}
-{% assign emphasize_price = false %}
-{% assign quick_shop_display = false %}
-{% assign enable_quickshop = false %}
-{% assign atc_display = true %}
-{% assign atc_button = true %}
-{% assign money_format = shop.money_format | strip_html %}
-
-{% if product_compare %}
-  {% assign enable_quickshop = false %}
-  {% assign atc_button = true %}
-{% endif %}
-{% assign pstep = 1 %}
+{%- assign pstep = 1 -%}
 {% if product.metafields.plytix.product_step != blank %}
-  {% assign pstep = product.metafields.plytix.product_step %}
+  {%- assign pstep = product.metafields.plytix.product_step -%}
 {% endif %}
-{% for variant in product.variants %}
-  {% if variant.metafields.plytix.product_step %}
-    {% assign pstep = variant.metafields.plytix.product_step %}
-  {% endif %}
-{% endfor %}
+{%- for variant in product.variants -%}
+  {%- if variant.metafields.plytix.product_step -%}
+    {%- assign pstep = variant.metafields.plytix.product_step -%}
+  {%- endif -%}
+{%- endfor -%}
 {% if product %}
-  {% assign compare_at_price = product.compare_at_price %}
-  {% assign compare_at_price_varies = product.compare_at_price_varies %}
-  {% assign price = product.price %}
-  {% assign price_varies = product.price_varies %}
-  {% assign product_available = product.available %}
-  {% assign product_title = product.title %}
-  {% assign product_vendor = product.vendor %}
-  {% assign product_link = product.url | within: collection %}
-  {% assign product_description = product.description | strip_html %}
-  {% assign product_description_size = product.description | strip_html | size %}
+  {%- assign compare_at_price = product.compare_at_price -%}
+  {%- assign compare_at_price_varies = product.compare_at_price_varies -%}
+  {%- assign price = product.price -%}
+  {%- assign price_varies = product.price_varies -%}
+  {%- assign product_available = product.available -%}
+  {%- assign product_title = product.title -%}
+  {%- assign product_vendor = product.vendor -%}
+  {%- assign product_link = product.url | within: collection -%}
+  {%- assign product_description = product.description | strip_html -%}
+  {%- assign product_description_size = product.description | strip_html | size -%}
   {% if recently_viewed == true %}
     {%- capture recently_viewed_header -%}
       <div class="product-recently-viewed-card-time" data-product-handle="{{product.handle}}">
@@ -62,42 +59,41 @@
     {%- endcapture -%}
   {% endif %}
 {% else %}
-  {% assign onboarding = true %}
-  {% assign compare_at_price = 1999 %}
-  {% assign compare_at_price_varies = false %}
-  {% assign price = 1999 %}
-  {% assign price_varies = false %}
-  {% assign product_available = true %}
-  {% assign product_title = 'onboarding.product.title' | t %}
-  {% assign product_vendor = 'onboarding.product.vendor' | t %}
-  {% assign product_link = '#' %}
+  {%- assign onboarding = true -%}
+  {%- assign compare_at_price = 1999 -%}
+  {%- assign compare_at_price_varies = false -%}
+  {%- assign price = 1999 -%}
+  {%- assign price_varies = false -%}
+  {%- assign product_available = true -%}
+  {%- assign product_title = 'onboarding.product.title' | t -%}
+  {%- assign product_vendor = 'onboarding.product.vendor' | t -%}
+  {%- assign product_link = '#' -%}
 {% endif %}
 
-{% assign on_sale = false %}
-{% for variant in product.variants %}
+{%- assign on_sale = false -%}
+{%- for variant in product.variants -%}
   {% if variant.compare_at_price > variant.price %}
-    {% assign on_sale = true %}
+    {%- assign on_sale = true -%}
     {% break %}
   {% endif %}
-{% endfor %}
+{%- endfor -%}
 
-{% assign has_variants = false %}
+{%- assign has_variants = false -%}
 {% unless product.has_only_default_variant %}
-  {% assign has_variants = true %}
+  {%- assign has_variants = true -%}
 {% endunless %}
 
-{% assign consistent_saved = false %}
-{% capture consistent_savings %}
+{%- assign consistent_saved = false -%}
+{%- capture consistent_savings -%}
   {%
           render 'consistent-savings',
           variants: product.variants,
           on_sale: on_sale
   %}
-{% endcapture %}
+{%- endcapture -%}
 {% if consistent_savings contains 'true' %}
-  {% assign consistent_saved = true %}
+  {%- assign consistent_saved = true -%}
 {% endif %}
-
 {%- capture classes -%}
   productgrid--item
   imagestyle--{% if settings.product_grid_image_crop and settings.product_grid_image_style != 'natural' %}cropped-{% endif %}{{ settings.product_grid_image_style }}
@@ -109,7 +105,7 @@
   {% if atc_display == 'always' or quick_shop_display == 'always' %}show-actions--mobile{% endif %}
 {%- endcapture -%}
 {%- assign show_swatches = false -%}
-{% assign initial_image = product.featured_media.preview_image.src %}
+{%- assign initial_image = product.featured_media.preview_image.src -%}
 {%- if settings.swatches_enable and recently_viewed != true -%}
   {% comment %} Check if product should show swatches {% endcomment %}
   {%- for option in product.options_with_values -%}
@@ -124,29 +120,29 @@
     {%- endif -%}
   {%- endfor -%}
 
-  {% if section.settings.filter_style == 'groups' and current_tags and show_swatches %}
+  {%- if section.settings.filter_style == 'groups' and current_tags and show_swatches -%}
     {% comment %} We are filtered by tags, so check and see if it's filtering by swatch {% endcomment %}
     {% for tag in current_tags %}
-      {% assign tag_group = tag | split: '_' | first | downcase %}
+      {%- assign tag_group = tag | split: '_' | first | downcase -%}
       {% if tag_group == swatch_trigger %}
-        {% assign active_swatch_name = tag | split: '_' | last | downcase %}
+        {%- assign active_swatch_name = tag | split: '_' | last | downcase -%}
 
         {% comment %} Filter variants by swatch (for ex. where color == blue). Can't use | where due to case sensitivity {% endcomment %}
-        {% for variant in product.variants %}
-          {% assign option_value = variant[swatch_option_key] | downcase %}
+        {%- for variant in product.variants -%}
+          {%- assign option_value = variant[swatch_option_key] | downcase -%}
           {% if option_value == active_swatch_name %}
             {% if variant.image %}
-              {% assign initial_image = variant.image %}
+              {%- assign initial_image = variant.image -%}
             {% endif %}
             {% break %}
           {% endif %}
-        {% endfor %}
+        {%- endfor -%}
         {% break %}
       {% endif %}
     {% endfor %}
-  {% endif %}
+  {%- endif -%}
 
-  {% capture product_item_swatches %}
+  {%- capture product_item_swatches -%}
     {%- if show_swatches -%}
       <div
               class="
@@ -229,7 +225,7 @@
         </button>
       </div>
     {%- endif -%}
-  {% endcapture %}
+  {%- endcapture -%}
 {%- endif -%}
 
 {% assign element = 'li' %}
@@ -298,8 +294,8 @@
                 {{ 'product-' | append: index | placeholder_svg_tag: 'placeholder--image' }}
               {% endif %}
             {% endif %}
-
-            {%
+            {%- comment -%}
+            {%-
                     render 'product-badge',
                     class_root: 'productitem',
                     product: product,
@@ -310,7 +306,8 @@
                     show_saved: consistent_saved,
                     include_range: false,
                     compare_at_price_varies: compare_at_price_varies,
-            %}
+            -%}
+            {%- endcomment -%}
           </figure>
         </a>
       </div>
@@ -355,28 +352,28 @@
           </div>
         {% endif %}
 
-        {% unless product_compare %}
-          {% if settings.product_show_vendor and product.vendor != blank %}
+        {%- unless product_compare -%}
+          {%- if settings.product_show_vendor and product.vendor != blank -%}
             <span class="productitem--vendor">
               {{ product_vendor | link_to_vendor }}
             </span>
           {% endif %}
-        {% endunless %}
-        {% if product.metafields.plytix.package_products != blank %}
+        {%- endunless -%}
+        {%- if product.metafields.plytix.package_products != blank -%}
           <div class="productitem__price">
             <div class="price__current">
               <div class="see-item">See Product for Pricing</div>
             </div>
           </div>
-        {% else %}
-          {% if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' %}
-            {% unless emphasize_price %}
+        {%- else -%}
+          {%- if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
+            {%- unless emphasize_price -%}
               {{ product_item_price }}
-            {% endunless %}
-          {% elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' %}
+            {%- endunless -%}
+          {%- elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' -%}
             <span style="font-size:14px; line-height:36px;">View Price in Cart</span>
-          {% endif %}
-        {% endif %}
+          {%- endif -%}
+        {%- endif -%}
         {% unless product_compare %}
 
         {% endunless %}
@@ -518,9 +515,9 @@
           {% endif %}
 
           {% if stockStatusSub != "" %}
-            {% capture stockStatusNote %}{{ stockStatusMain }} ({{ stockStatusSub }}){% endcapture %}
+            {%- capture stockStatusNote -%}{{ stockStatusMain }} ({{ stockStatusSub }}){%- endcapture -%}
           {% else %}
-            {% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
+            {%- capture stockStatusNote -%}{{ stockStatusMain }}{%- endcapture -%}
           {% endif %}
           <div style="display:none">{{ stockStatusNote }}</div>
           {% comment %}End of stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
@@ -672,7 +669,7 @@
         {% endif %}
       {% endunless %}
       {% if template_allows_compare %}
-        {% capture product_compare_image %}
+        {%- capture product_compare_image -%}
           {% if initial_image %}
             {%
                     render 'rimg',
@@ -686,7 +683,7 @@
           {% else %}
             {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
           {% endif %}
-        {% endcapture %}
+        {%- endcapture -%}
 
         {% unless product_compare or recently_viewed %}
           <script type="application/json" data-product-compare-data>
@@ -742,3 +739,4 @@
     </script>
   {% endif %}
 </section>
+{%- endif -%}
