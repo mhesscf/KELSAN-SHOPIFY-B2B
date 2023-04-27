@@ -147,7 +147,7 @@
     {%- elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
 
         <!-- Algolia prod version -->
-        {% comment %}{{ 'algolia_config_prod.js' | asset_url | script_tag }}{% endcomment %}
+        {{ 'algolia_config_prod.js' | asset_url | script_tag }}
 
     {%- endif -%}
 
