@@ -16,8 +16,9 @@
           ${' '}
           ${algolia.translations.resultsFound}
         </span>`}
-        ${' '}
-        ${algolia.translation_helpers.in(data.processingTimeMS)}`
+        {% comment %}${' '}
+        ${algolia.translation_helpers.in(data.processingTimeMS)}{% endcomment %}
+        `
     };
   })(window.algoliaShopify);
 </script>

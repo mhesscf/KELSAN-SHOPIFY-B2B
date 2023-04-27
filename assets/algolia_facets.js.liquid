@@ -9,12 +9,12 @@
     menu: { name: 'menu', params: { limit: 10 }, widget: menu },
     conjunctive: {
       name: 'refinementList',
-      params: { operator: 'and', limit: 10 },
+      params: { operator: 'or', limit: 99, sortBy:['name:asc', 'count:desc'], },
       widget: refinementList,
     },
     disjunctive: {
       name: 'refinementList',
-      params: { operator: 'or', limit: 10 },
+      params: { operator: 'or', limit: 99, sortBy:['name:asc', 'count:desc'], },
       widget: refinementList,
     },
   };
