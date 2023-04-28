@@ -150,8 +150,16 @@
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/cart-mount.jpg",
-            "linktext": "Cart mount",
-            "linkurl": "shopify:\/\/collections\/cart-mount"
+            "linktext": "Cold Water Electric Pressure Washers",
+            "linkurl": "https:\/\/www.cleanfreak.com\/collections\/cold-water-electric-pressure-washers"
+          }
+        },
+        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-carry.jpg",
+            "linktext": "Cold Water Gas Engine Pressure Washers",
+            "linkurl": "https:\/\/www.cleanfreak.com\/collections\/cold-water-gas-engine-pressure-washers"
           }
         },
         "c82f8abc-a25a-4d78-bf08-80030d4f70cf": {
@@ -162,37 +170,28 @@
             "linkurl": "\/collections\/drain-jetters"
           }
         },
-        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/flat-surfaces-cleaners.jpg",
-            "linktext": "Flat Surface Cleaners",
-            "linkurl": "shopify:\/\/collections\/flat-surface-cleaners"
-          }
-        },
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hand-carry.jpg",
-            "linktext": "Hand Carry",
-            "linkurl": "shopify:\/\/collections\/hand-carry"
-          }
-        },
         "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
           "type": "types",
-          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/pressure-washer-accessories.jpg",
-            "linktext": "Pressure Washer Accessories",
-            "linkurl": "shopify:\/\/collections\/pressure-washer-accessories"
+            "linktext": "Hot Water Gas Engine Pressure Washers",
+            "linkurl": "https:\/\/www.cleanfreak.com\/collections\/hot-water-gas-engine-pressure-washers"
           }
         },
         "d5555fee-e855-4369-bb4e-b5f8a603808b": {
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/stationary-wall-mount.jpg",
-            "linktext": "Stationary & Wall Mount",
-            "linkurl": "shopify:\/\/collections\/stationary"
+            "linktext": "Hot Water Electric Pressure Washers",
+            "linkurl": "https:\/\/www.cleanfreak.com\/collections\/hot-water-electric-pressure-washers"
+          }
+        },
+        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flat-surfaces-cleaners.jpg",
+            "linktext": "Specialty Attachments for Pressure Washers",
+            "linkurl": "https:\/\/www.cleanfreak.com\/collections\/specialty-attachments-for-pressure-washers"
           }
         },
         "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
@@ -296,11 +295,11 @@
         "589b0ba5-e3fa-4320-9319-39615c0ac890",
         "3929b3ce-75f8-4eca-9f78-d29287be26e3",
         "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
-        "c82f8abc-a25a-4d78-bf08-80030d4f70cf",
-        "159a2b1f-8d76-471e-84de-975a6d48fa11",
         "8b2e74e9-3f60-4691-b436-59b9179e9f33",
+        "c82f8abc-a25a-4d78-bf08-80030d4f70cf",
         "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
         "d5555fee-e855-4369-bb4e-b5f8a603808b",
+        "159a2b1f-8d76-471e-84de-975a6d48fa11",
         "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
         "416df694-767b-4c68-8e90-2c0cff08dc2a",
         "5b4a6417-f1c3-413e-8694-20fe1b499722",
