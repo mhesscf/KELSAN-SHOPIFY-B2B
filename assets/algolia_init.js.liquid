@@ -22,15 +22,24 @@
   /**
    * Checks whether we are on a collection page
    */
-  algolia.is_collection_results_page = Boolean(
-    // We want to match `/collections/handle` but only if handle != 'all'
-    window.location.pathname.match(/(^\/\w{2}\/|^\/|^\/\w{2}-\w{2}\/)collections\/(?!all$)([^/]+)[/]*$/)
-    /**
-     * To match /collections/handle/handle-two links as well, please use
-     * the following regex instead:
-     */
-    // window.location.pathname.match(/(^\/\w{2}\/|^\/|^\/\w{2}-\w{2}\/)collections\/(?!all)(.*)$/)
-  );
+  var devSites = ["127.0.0.1","dev.airmovers.com","dev.carpetextractors.com","dev.cleanfreak.com","dev.floorbuffers.com","dev.floorscrubbers.com"]
+  //Cleanfreak: Keep allowing dev sites above to show default collections on the /all page
+  if(devSites.includes(window.location.hostname)){
+    algolia.is_collection_results_page = Boolean(
+            // We want to match `/collections/handle` but only if handle != 'all'
+            window.location.pathname.match(/(^\/\w{2}\/|^\/|^\/\w{2}-\w{2}\/)collections\/(?!all$)([^/]+)[/]*$/)
+            /**
+             * To match /collections/handle/handle-two links as well, please use
+             * the following regex instead:
+             */
+            // window.location.pathname.match(/(^\/\w{2}\/|^\/|^\/\w{2}-\w{2}\/)collections\/(?!all)(.*)$/)
+    );
+  }else{
+    algolia.is_collection_results_page = Boolean(
+            // cleanfreak: We want to match `/collections/handle` without the 'all' restriction above
+            window.location.pathname.match(/^\/collections\/([^/]+)[/]*$/)
+    );
+  }
 
   /* Hide page content during InstantSearch loading */
   var collectionPageEnabled =
