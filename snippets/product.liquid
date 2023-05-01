@@ -509,10 +509,11 @@
                             {% endif %}
 
                         {% when '@app' %}
-                            <div class="product-app">
-                                {% render block %}
-                            </div>
-
+                            {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
+                                <div class="product-app">
+                                    {% render block %}
+                                </div>
+                            {% endif %}
                         {% when 'view-product-link' %}
                             <a
                                     class="product-link"
