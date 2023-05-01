@@ -55,6 +55,7 @@
         },
         "b0892088-bca1-439d-bc71-c950456dc54a": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "product": ""
           }
