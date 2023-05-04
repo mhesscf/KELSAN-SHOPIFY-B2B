@@ -1,9 +1,11 @@
 
 <script>
-    function isBuyable(middleware,im,inv,collections){
-        if (collections.includes("discontinued")){
+    function isBuyable(middleware,im,inv,collections,bundleitems = ""){
+        if (collections.includes("discontinued")) {
             return false;
-        }else if((middleware == "manual" && inv > 0) || middleware == "middleware-fulfillment" || inv > 0){
+        }else if (bundleitems != ""){
+            return true;
+        }else if(middleware == "manual" || middleware == "middleware-fulfillment" || inv > 0){
             return true;
         }else{
             return false;
@@ -334,7 +336,7 @@ ${hit._distinct && html`
 <p class="ais-hit--cart">
     {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
 
-    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_management,hit.inventory_quantity,hit.collections) ? html`
+    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_management,hit.inventory_quantity,hit.collections,hit.meta.plytix.package_products) ? html`
         ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html`
             <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}">${ algolia.translations.addToCart }</button>
         `:html`
