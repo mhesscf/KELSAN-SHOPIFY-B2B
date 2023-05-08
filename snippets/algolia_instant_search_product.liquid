@@ -75,10 +75,11 @@
             finalmessage += '<span class="status-desc main-notice">Special Order Item</span>';
             finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
         }else if(inventory > 0) {
-            finalmessage += '<span class="status-desc main-notice">In Stock</span>';
-            if (clearance == true){
-                finalmessage += "("+inventory +" Available)";
+            finalmessage += '<span class="status-desc main-notice">In Stock ';
+            if (clearance == 'true'){
+                finalmessage += '<span class="invcount">('+inventory +' Available)</span>';
             }
+            finalmessage += '</span>';
         }
         return finalmessage;
     };
