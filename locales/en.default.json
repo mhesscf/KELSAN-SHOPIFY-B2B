@@ -263,8 +263,8 @@
     "shipping": {
       "calculate_shipping": "Calculate Shipping",
       "hide_shipping_calculator": "Hide shipping calculator",
-      "address_1":"Address",
-      "city":"City",
+      "address_1": "Address",
+      "city": "City",
       "country": "Country",
       "province": "Province",
       "zip": "Zip \/ Postal Code",
@@ -558,6 +558,12 @@
         },
         "shipping_method": "We're having problems calculating a shipping rate for your order.  Please contact us at 888-722-5508 & we'll be able to help.",
         "shipping_method_not_available": "We're having problems calculating a shipping rate for your order.  Please contact us at 888-722-5508 & we'll be able to help."
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "one": "Search result for \"{{ terms }}\"",
+        "other": "Search results for \"{{ terms }}\""
       }
     }
   }
