@@ -1,6 +1,6 @@
 <section class="product-single-spec-manual">
     <div class="container">
-        <div class="row {% if product.metafields.plytix.sds != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}space-between {% else %}centered-content{% endif %}">
+        <div class="row {% if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}space-between {% else %}centered-content{% endif %}">
             <div class="l">
                 <h2>Product Information + Specs</h2>
                 <div class="spec-table">
@@ -23,15 +23,15 @@
                     </div>
                 </div>
             </div>
-            {% if product.metafields.plytix.sds != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}
+            {% if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}
                 <div class="r">
                     <h2>Safety, Warranty + User Manuals</h2>
                     <div class="data-sheets">
-                        {% if product.metafields.plytix.sds != blank  %}
+                        {% if product.metafields.plytix.sds_file != blank  %}
                             <div class="sheet-row">
                                 <div class="sheet-label">Product Safety Data Sheet</div>
                             </div>
-                            {%- assign sdsheets = product.metafields.plytix.sds | split:"," -%}
+                            {%- assign sdsheets = product.metafields.plytix.sds_file | split:"," -%}
                             {%- for sdsheet in sdsheets -%}
                                 <div class="sheet-row">
                                     <a taget="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ sdsheet | split: '/' | last }}</a>

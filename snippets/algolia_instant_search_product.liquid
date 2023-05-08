@@ -1,12 +1,14 @@
 
 <script>
-    function isBuyable(middleware,im,inv,collections){
-        if (collections.includes("discontinued")){
+    function isBuyable(middleware,im,inv,collections,bundleitems = "",inventorypolicy){
+        if (collections.includes("discontinued")) {
             return false;
-        }else if(middleware == "manual" || middleware == "middleware-fulfillment" || inv > 0){
+        }else if (bundleitems != ""){
             return true;
-        }else{
+        }else if((im == "middleware-fulfillment" || im == "shopify" ) && inventorypolicy == "deny" && inv < 1){
             return false;
+        }else{
+            return true;
         }
     }
     function showBtn(variants_count,bundleitems = "",hide_price = ""){
@@ -324,7 +326,8 @@
 
 
 {%- comment -%}was a check for !hit._distinct but didn't work when we went to showing variants as groups {%- endcomment -%}
-${hit._distinct && html`
+{%- comment -%}1==1 was hit._distinct{%- endcomment -%}
+${1 == 1 && html`
 <form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
   <input type="hidden" name="id" value="${hit.objectID}" />
     <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
@@ -334,7 +337,7 @@ ${hit._distinct && html`
 <p class="ais-hit--cart">
     {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
 
-    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_management,hit.inventory_quantity,hit.collections) ? html`
+    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.meta.plytix.inventory_manage_for_algolia,hit.inventory_quantity,hit.collections,hit.meta.plytix.package_products,hit.inventory_policy) ? html`
         ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html`
             <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}">${ algolia.translations.addToCart }</button>
         `:html`
