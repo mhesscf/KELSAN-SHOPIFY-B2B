@@ -134,7 +134,6 @@
     },
     "6c655d11-18fa-405d-95ec-82cea7bbd8ee": {
       "type": "dynamic-html",
-      "disabled": true,
       "settings": {
         "title": "",
         "custom_html": "<style>\n.ryic-container{margin: -80px -25px 20px;}\n.ryic-container .ryic-mobile{display:none;}\n\n@media only screen and (max-width:679px){\n\t.ryic-container .ryic-desktop{display:none;}\n\t.ryic-container .ryic-mobile{display:block;}\n}\n<\/style>\n\n<div class=\"ryic-container\">\n\t<div class=\"ryic-desktop\">\n\t\t<a href=\"\/pages\/release-your-inner-cleanfreak\"><img alt=\"Release your inner CleanFreak, Spring Edition. Tell Us Your Story, Boost Your Cleaning Business\" class=\"img-resonsive\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/release-your-inner-cleanfreak-contest.jpg?v=1683559687\"><\/a>\n\t<\/div>\n\n\t<div class=\"ryic-mobile\">\n\t\t<a href=\"\/pages\/release-your-inner-cleanfreak\"><img alt=\"Release your inner CleanFreak, Spring Edition. Tell Us Your Story, Boost Your Cleaning Business\" class=\"img-resonsive\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/release-your-inner-cleanfreak-contest-sm.jpg?v=1683559687\"><\/a>\n\t<\/div>\n<\/div>"
