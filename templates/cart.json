@@ -91,7 +91,6 @@
     },
     "001dcba2-5e2c-4322-acff-00ea07c385d2": {
       "type": "cart-cf-buy-x-and-y-get-z",
-      "disabled": true,
       "settings": {
         "show_section": true,
         "debugme": true,
