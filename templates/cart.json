@@ -88,12 +88,46 @@
         ],
         "free_gift_product": "male-quick-connect-brass-fitting"
       }
+    },
+    "001dcba2-5e2c-4322-acff-00ea07c385d2": {
+      "type": "cart-cf-buy-x-and-y-get-z",
+      "settings": {
+        "show_section": true,
+        "debugme": false,
+        "ruleid": 0,
+        "rule_name": "Free Conversion Kit",
+        "rule_message": "You have a tank and a floor buffer in your cart that require a Conversion Kit to be used together. Please click below to add this at not cost to your cart.",
+        "promo-rule-version": "version1",
+        "required_product_list_1": [
+          "17-inch-rotary-floor-buffer",
+          "cleanfreak-17-inch-rotary-floor-buffer-demo",
+          "clean-freak-20-inch-low-speed-rotary-machine"
+        ],
+        "required_product_list_2": [
+          "20-inch-floor-machine-solution-tank",
+          "black-solution-tank-for-floor-buffers",
+          "black-solution-tank-for-floor-buffers-demo",
+          "4-gallon-floor-buffer-solution-tank"
+        ],
+        "v2_list1_required_prefix": "",
+        "v2_list1_excluded_prefix": "",
+        "v2_list1_collections_required": [
+
+        ],
+        "v2_list2_required_prefix": "",
+        "v2_list2_excluded_prefix": "",
+        "v2_list2_collections_required": [
+
+        ],
+        "free_gift_product": "1-2-inch-to-3-8-od-solution-tank-hose-conversion-kit"
+      }
     }
   },
   "order": [
     "cart-gift-with-purchase",
     "45550fbb-99bf-4d33-90a9-1823708a0964",
     "main",
-    "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d"
+    "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d",
+    "001dcba2-5e2c-4322-acff-00ea07c385d2"
   ]
 }
