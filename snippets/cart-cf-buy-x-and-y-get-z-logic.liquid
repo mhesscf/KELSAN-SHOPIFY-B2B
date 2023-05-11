@@ -132,7 +132,7 @@
                 {% unless cartitem.properties == empty %}
                     {% for property in cartitem.properties %}
                         {% if property.first == '_tiered_pricing' %}
-                            {% if property.last == 'fg-bogo' %}
+                            {% if property.last == 'fg-bogo' and cartitem.product.handle == section.settings.free_gift_product.handle  %}
                                 {% assign freegiftItem = 1 %}
                                 {% assign freeGiftLineId = cartitem.id %}
                             {% endif %}
@@ -270,7 +270,7 @@
                     jQuery(".bogo-{{ ruleid }} .bogo-pop button .btn-text").hide();
                     jQuery(".bogo-{{ ruleid }} .bogo-pop button .atc-button--icon").css({"visibility": "visible", "opacity": "100"});
 
-                    var fgdata = {
+                    const fgdata{{ ruleid }} = {
                         id: {{ variant_id_2_add }},
                         quantity: {{ freeGiftsToAdd }},
                         properties: {
@@ -283,7 +283,7 @@
                     const addparams{{ ruleid }} = {
                         type: 'POST',
                         url: '/cart/add.js',
-                        data: fgdata,
+                        data: fgdata{{ ruleid }},
                         dataType: 'json',
                         success: function(stuff) {
                             window.location.href = '/cart';
@@ -317,7 +317,7 @@
                     jQuery(".bogo-pop button .atc-button--icon").css({"visibility": "visible", "opacity": "100"});
 
 
-                    var fgrdata = {
+                    const fgrdata{{ ruleid }} = {
                         quantity: {{ freeGiftsNeed }},
                         id: {{ freeGiftLineId }}
                     };
@@ -325,7 +325,7 @@
                     const removeparams{{ ruleid }} = {
                         type: 'POST',
                         url: '/cart/change.js',
-                        data: fgrdata,
+                        data: fgrdata{{ ruleid }},
                         dataType: 'json',
                         success: function(stuff) {
                             window.location.href = '/cart';
