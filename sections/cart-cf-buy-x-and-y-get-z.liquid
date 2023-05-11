@@ -1,0 +1,137 @@
+{% if section.settings.show_section %}
+  {% include 'cart-cf-buy-x-and-y-get-z-logic' %}
+{% endif %}
+{% schema %}
+{
+    "name": "CF's BOGO",
+    "class": "bogo-section",
+    "settings": [
+    {
+    "type": "header",
+    "content": "Free Product to Apply to Cart"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_section",
+        "label": "Show section",
+        "default": true
+    },
+    {
+    "type": "checkbox",
+    "id": "debugme",
+    "label": "Enable Debugging (CF dev only)",
+    "default": false
+    },
+    {
+    "type": "number",
+    "id": "ruleid",
+    "label": "Please enter a 4 digit number unique to this promo (Required)",
+    "default": 0
+    },
+    {
+    "type": "text",
+    "id": "rule_name",
+    "label": "Rule Name",
+    "default": "Free Gift"
+    },
+    {
+    "type": "textarea",
+    "id": "rule_message",
+    "label": "Rule Message on Popup"
+    },
+    {
+        "type": "radio",
+        "id": "promo-rule-version",
+        "label": "Select Rule Version",
+        "options": [
+                    {
+                    "value": "version1",
+                    "label": "Use List of Skus (V1)"
+                    },
+                    {
+                    "value": "version2",
+                    "label": "Use Prefix and Category (V2)"
+                    }
+                ],
+        "default": "version1"
+    },
+    {
+    "type": "header",
+    "content": "Version 1 Settings",
+    "info": "These are Version 1 settings that only deal with selecting products from a list."
+    },
+    {
+    "type": "product_list",
+    "id": "required_product_list_1",
+    "label": "(V1) List 1 Required Products"
+    },
+    {
+    "type": "product_list",
+    "id": "required_product_list_2",
+    "label": "(V1) List 2 Required Products"
+    },
+    {
+    "type": "header",
+    "content": "Version 2 Settings",
+    "info": "These are Version 2 settings that deal required/excluded prefixes and categories"
+    },
+    {
+    "type": "text",
+    "id": "v2_list1_required_prefix",
+    "label": "List 1 Required Products Prefix",
+    "info": "Comma Seperated, exclude dashes. Example -> (TPL,EDI). Leave blank if not needed."
+    },
+    {
+    "type": "text",
+    "id": "v2_list1_excluded_prefix",
+    "label": "List 1 Exclude Products Prefix",
+    "info": "Comma Seperated, exclude dashes. Example -> (TPL,EDI). Leave blank if not needed."
+    },
+    {
+    "type": "collection_list",
+    "id": "v2_list1_collections_required",
+    "label": "List 1 In Required Collections",
+    "limit": 8,
+    "info": "These products must part of one of these collections."
+    },
+    {
+    "type": "text",
+    "id": "v2_list2_required_prefix",
+    "label": "List 2 Required Products Prefix",
+    "info": "Comma Seperated, exclude dashes. Example -> (TPL,EDI). Leave blank if not needed."
+    },
+    {
+    "type": "text",
+    "id": "v2_list2_excluded_prefix",
+    "label": "List 2 Exclude Products Prefix",
+    "info": "Comma Seperated, exclude dashes. Example -> (TPL,EDI). Leave blank if not needed."
+    },
+    {
+    "type": "collection_list",
+    "id": "v2_list2_collections_required",
+    "label": "List 2 In Required Collections",
+    "limit": 8,
+    "info": "These products must part of one of these collections."
+    },
+    {
+    "type": "header",
+    "content": "Free Gift Settings",
+    "info": "The Free gift added to the cart (for both V1 and V2 settings)"
+    },
+    {
+    "type": "product",
+    "id": "free_gift_product",
+    "label": "Free Gift to Add"
+    }
+    ],
+    "presets": [
+    {
+        "name": "CF's BOGO",
+        "category": "Layout",
+        "settings": {
+
+        }
+    }
+    ]
+    }
+{% endschema %}

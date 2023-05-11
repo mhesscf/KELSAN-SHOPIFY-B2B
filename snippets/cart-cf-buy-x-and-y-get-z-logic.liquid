@@ -1,0 +1,343 @@
+{%- assign ruleid = section.settings.ruleid | plus: 10000 -%}
+{%- assign debugHelp = section.settings.debugme -%}
+{%- assign version = section.settings.promo-rule-version -%}
+{% comment %}Validate ruleid since shopify lacks any sort of it{% endcomment %}
+{%- if ruleid > 10000 and ruleid < 20000 -%}
+    <div class="bogo-{{ ruleid }}">
+        <style>
+            .bogo-pop{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50%;
+                border:1px solid #ccc;
+                max-width:320px;
+                background-color:#fff;
+                border-radius: 29px;
+                padding: 20px;
+                box-shadow: 0px 2px 10px 0px rgba(00,00,00,0.14);
+                transition: all 0.4s ease-in-out;
+                z-index: 99999;
+            }
+            .bogo-pop:hover{
+                box-shadow: 0px 2px 25px 0px rgba(00,00,00,0.24);
+            }
+
+            .bogo-pop .bogo-title{
+                font-size:20px;
+                font-weight: bold;
+            }
+            .bogo-pop .bogo-message {
+                padding-top:15px;
+                padding-bottom:15px;
+            }
+            .bogo-pop .atc-action{
+                text-align:center;
+            }
+            .bogo-pop .atc-action button{
+                position:relative;
+                margin-left: 0;
+                height: 50px;
+                padding: 0;
+                border-radius: 10px;
+                color: {{ settings.color_button_secondary_text }};
+                background-color: {{ settings.color_button_secondary_background }};
+                border: 1px solid {{ settings.color_button_secondary_background }};
+                margin-right: 10px;
+                max-width: 266px;
+                transition: all 0.4s ease-in-out;
+                width: 50%;
+                font-weight: 600;
+                font-size: 15px;
+                font-family: "Roboto", Roboto;
+                cursor: pointer;
+            }
+            .bogo-pop .atc-action button:hover{
+                background-color: {{ settings.color_button_hover }};
+                border: 1px solid {{ settings.color_button_hover }};
+            }
+            .atc-button--icon svg {
+                display: block;
+                width: 26px;
+                height: 26px;
+                transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+                transform: scale(0.8);
+            }
+            .atc-button--icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                margin-top: -13px;
+                margin-left: -13px;
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+                animation: rotate 0.6s linear infinite;
+            }
+
+
+        </style>
+        {% unless section.settings.required_product_list_1 == blank or section.settings.required_product_list_1 == blank or section.settings.free_gift_product.handle == blank %}
+
+        {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
+        <br/>--------- BOGO Activated: Rule >{{ ruleid }}< -----------------------------------<br/>
+            Rule Version: {{ version }}<br/>
+            Name: {{ section.settings.rule_name  }}<br/>
+            Pop Message: {{ section.settings.rule_message  }}<br/>
+        {% if version == "version1" %}
+        {% for item in section.settings.required_product_list_1 %}
+            V1 List 1 Items: {{ item.handle }}<br/>
+        {% endfor %}
+        <br/>
+        {% for item in section.settings.required_product_list_2 %}
+            V1 List2 Items: {{ item.handle }}<br/>
+        {% endfor %}
+        {% elsif version == "version2" %}
+            List 1 Included Prefixs: {{ section.settings.v2_list1_required_prefix }}<br/>
+            List 1 Excluded Prefixs: {{ section.settings.v2_list1_excluded_prefix }}<br/>
+            List 1 Required Categories:
+            {% for category in section.settings.v2_list1_collections_required %}
+                {{ category.handle }},
+            {% endfor %}
+        <br/>
+
+            List 2 Included Prefixs: {{ section.settings.v2_list2_required_prefix }}<br/>
+            List 2 Excluded Prefixs: {{ section.settings.v2_list2_excluded_prefix }}<br/>
+            List 2 Required Categories:
+            {% for category in section.settings.v2_list2_collections_required %}
+                {{ category.handle }},
+            {% endfor %}
+        <br/>
+        {%- endif -%}
+        <br/>Free Gift: {{ section.settings.free_gift_product.handle }}<br/>
+        <br/>
+        {% for item in cart.items %}
+            Cart Item: {{item.product.handle}} Qty:{{ item.quantity }} SKU: {{ item.product.selected_or_first_available_variant.sku}}<br/>
+        {% endfor %}
+            --------- end of DATA -----------------------------------<br/><br/>
+        {%- endif -%}
+
+            {% assign numInList1 = 0 %}
+            {% assign numInList2 = 0 %}
+            {% assign numOfFreeGiftInCart = 0 %}
+            {% assign freeGiftsToAdd = 0 %}
+            {% assign freeGiftsNeed = 0 %}
+            {% assign freeGiftLineId = "" %}
+
+            {% for cartitem in cart.items %}
+
+                {% comment %}check if item has fg-bogo tier lineitem on it{% endcomment %}
+                {% assign freegiftItem = 0 %}
+                {% unless cartitem.properties == empty %}
+                    {% for property in cartitem.properties %}
+                        {% if property.first == '_tiered_pricing' %}
+                            {% if property.last == 'fg-bogo' %}
+                                {% assign freegiftItem = 1 %}
+                                {% assign freeGiftLineId = cartitem.id %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endunless %}
+
+                {% if version == "version1" %}
+                    {% for bogo1item in section.settings.required_product_list_1 %}
+                        {% if bogo1item.handle ==  cartitem.product.handle%}
+                            {% assign numInList1 = numInList1 | plus: cartitem.quantity %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for bogo2item in section.settings.required_product_list_2 %}
+                        {% if bogo2item.handle ==  cartitem.product.handle%}
+                            {% assign numInList2 = numInList2 | plus: cartitem.quantity %}
+                        {% endif %}
+                    {% endfor %}
+                {% elsif version == "version2" %}
+                    {% comment %}Remove spacing and change to lowercase{% endcomment %}
+                    {% assign required_prefix_list1 = section.settings.v2_list1_required_prefix | downcase | replace: " ", "" %}
+                    {% assign excluded_prefix_list1 = section.settings.v2_list1_excluded_prefix | downcase | replace: " ", "" %}
+                    {% assign required_prefix_list2 = section.settings.v2_list2_required_prefix | downcase | replace: " ", "" %}
+                    {% assign excluded_prefix_list2 = section.settings.v2_list2_excluded_prefix | downcase | replace: " ", "" %}
+                    {% comment %}Change to arrays{% endcomment %}
+                    {% assign required_prefix_list1 = required_prefix_list1 | split: "," %}
+                    {% assign excluded_prefix_list1 = excluded_prefix_list1 | split: "," %}
+                    {% assign required_prefix_list2 = required_prefix_list2 | split: "," %}
+                    {% assign excluded_prefix_list2 = excluded_prefix_list2 | split: "," %}
+                    {% comment %}Required Collections{% endcomment %}
+                    {% assign cat_list_1 = section.settings.v2_list1_collections_required | map: 'handle' %}
+                    {% assign cat_list_2 = section.settings.v2_list2_collections_required | map: 'handle' %}
+
+
+                    {% assign itemsku = cartitem.product.selected_or_first_available_variant.sku %}
+                    {% assign itemprefix = itemsku | split: "-" %}
+                    {% assign itemprefix = itemprefix[0] | downcase %}
+
+                    {% comment %}check if is in list 1{% endcomment %}
+                    {% if required_prefix_list1 contains itemprefix or required_prefix_list1.size == 0 %}
+                        {% comment %}but not in exclude list{% endcomment %}
+                        {% unless excluded_prefix_list1 contains itemprefix %}
+                            {% comment %}check if one of the product collections is in the required collections list{% endcomment %}
+                            {% for collection in cartitem.product.collections %}
+                                {% if cat_list_1 contains collection.handle %}
+                                    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
+                                        In List 1: {{ itemsku }} Qty: {{ cartitem.quantity }}<br/>
+                                    {% endif %}
+                                    {% assign numInList1 = numInList1 | plus: cartitem.quantity %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endunless %}
+                    {% endif %}
+
+                    {% comment %}check if is in list 2{% endcomment %}
+                    {% if required_prefix_list2 contains itemprefix or required_prefix_list2.size == 0 %}
+                        {% comment %}but not in exclude list{% endcomment %}
+                        {% unless excluded_prefix_list2 contains itemprefix %}
+                            {% comment %}check if one of the product collections is in the required collections list{% endcomment %}
+                            {% for collection in cartitem.product.collections %}
+                                {% if cat_list_2 contains collection.handle %}
+                                    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
+                                        In List 2: {{ itemsku }} Qty: {{ cartitem.quantity }}<br/>
+                                    {% endif %}
+                                    {% assign numInList2 = numInList2 | plus: cartitem.quantity %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endunless %}
+                    {% endif %}
+
+                {% endif %}
+                {% comment %}log fg in cart{% endcomment %}
+                {% if section.settings.free_gift_product.handle == cartitem.product.handle and freegiftItem == 1 %}
+                    {% assign numOfFreeGiftInCart = numOfFreeGiftInCart | plus: cartitem.quantity %}
+                {% endif %}
+            {% endfor %}
+
+            {% if numInList1 > 0 and numInList2 > 0 %}
+                {% if numInList1 <= numInList2 %}
+                    {% assign freeGiftsToAdd = numInList1 | minus: numOfFreeGiftInCart %}
+                    {% assign freeGiftsNeed = numInList1 %}
+                {% elsif numInList2 < numInList1 %}
+                    {% assign freeGiftsToAdd = numInList2 | minus: numOfFreeGiftInCart %}
+                    {% assign freeGiftsNeed = numInList2 %}
+                {% endif %}
+            {% endif %}
+
+        {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
+            Matching items list 1:{{ numInList1 }}<br/>
+            Matching items list 2:{{ numInList2 }}<br/>
+            Free Gifts Needed in all: {{ freeGiftsNeed }}<br/>
+            Free Gift in Cart: {{ numOfFreeGiftInCart }}<br/>
+            Free Gifts to add: {{ freeGiftsToAdd }}<br/>
+            Add this to cart: {{ section.settings.free_gift_product.variants.first.id }}<br/>
+        {% endif %}
+
+            {% comment %}Trigger if we need to remove any{% endcomment %}
+            {% assign updateFg = false  %}
+            {% if freeGiftsToAdd <= 0 %}
+                {% if freeGiftsToAdd < 0 %}
+                    {% comment %}if freeFiftsToAdd is negative, we need to update it to the right ammount{% endcomment %}
+                    {% assign updateFg = true  %}
+                {% elsif freeGiftsToAdd  == 0 and numOfFreeGiftInCart > 0%}
+                    {% if numInList1 < 1 or numInList2 < 1 %}
+                        {% comment %}if freeFiftsToAdd is zero, only update the match isn't found{% endcomment %}
+                        {% assign updateFg = true  %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+
+
+
+
+        {% if freeGiftsToAdd > 0 %}
+            {% comment %}Popup For Free Gift{% endcomment %}
+            <div class="bogo-pop" style="display:none;">
+                <div class="bogo-pop-contain">
+                    <div class="bogo-title">{{ section.settings.rule_name  }}</div>
+                    <div class="bogo-message">{{ section.settings.rule_message  }}</div>
+                    <div class="atc-action">
+                        <button onclick="addFreeGift{{ ruleid }}()"><span class="btn-text">UPDATE CART</span><span class="atc-button--icon">{%- render 'icon-spinner' -%}</span></button>
+                    </div>
+                </div>
+            </div>
+            {% assign variant_id_2_add = section.settings.free_gift_product.variants.first.id %}
+            <script>
+                jQuery(document).ready(function($){
+                    setTimeout(function() {
+                        jQuery(".bogo-{{ ruleid }} .bogo-pop").show();
+                    }, 2000);
+                });
+
+                function addFreeGift{{ ruleid }}(){
+                    jQuery(".bogo-{{ ruleid }} .bogo-pop button .btn-text").hide();
+                    jQuery(".bogo-{{ ruleid }} .bogo-pop button .atc-button--icon").css({"visibility": "visible", "opacity": "100"});
+
+                    var fgdata = {
+                        id: {{ variant_id_2_add }},
+                        quantity: {{ freeGiftsToAdd }},
+                        properties: {
+                            Sku: "{{  section.settings.free_gift_product.variants.first.sku  }}",
+                            _erp_sku: "{{  section.settings.free_gift_product.metafields.plytix.erp_sku  }}",
+                            _tiered_pricing: "fg-bogo"
+                        }
+                    };
+
+                    const addparams{{ ruleid }} = {
+                        type: 'POST',
+                        url: '/cart/add.js',
+                        data: fgdata,
+                        dataType: 'json',
+                        success: function(stuff) {
+                            window.location.href = '/cart';
+                        }
+                    };
+                    $.ajax(addparams{{ ruleid }});
+                }
+            </script>
+
+        {% elsif updateFg == true %}
+
+            {% comment %}Remove Free Gift{% endcomment %}
+            <div class="bogo-pop" style="display:none;">
+                <div class="bogo-pop-contain">
+                    <div class="bogo-title">Updating Free Gift Quantity</div>
+                    <div class="bogo-message">You have removed some required products for a Free gift you have in your cart, We are updating your cart now.</div>
+                    <div class="atc-action">
+                        <button onclick="removeGift()"><span class="btn-text">UPDATE CART</span><span class="atc-button--icon">{%- render 'icon-spinner' -%}</span></button>
+                    </div>
+                </div>
+            </div>
+            {% assign variant_id_2_remove = section.settings.free_gift_product.variants.first.id %}
+            <script>
+                jQuery(document).ready(function($){
+                    jQuery(".bogo-{{ ruleid }} .bogo-pop").show();
+                    removeGift{{ ruleid }}()
+                });
+
+                function removeGift{{ ruleid }}(){
+                    jQuery(".bogo-pop button .btn-text").hide();
+                    jQuery(".bogo-pop button .atc-button--icon").css({"visibility": "visible", "opacity": "100"});
+
+
+                    var fgrdata = {
+                        quantity: {{ freeGiftsNeed }},
+                        id: {{ freeGiftLineId }}
+                    };
+
+                    const removeparams{{ ruleid }} = {
+                        type: 'POST',
+                        url: '/cart/change.js',
+                        data: fgrdata,
+                        dataType: 'json',
+                        success: function(stuff) {
+                            window.location.href = '/cart';
+                        }
+                    };
+                    $.ajax(removeparams{{ ruleid }});
+                }
+            </script>
+
+        {% endif %}
+
+        {% endunless %}
+    </div>
+{%- endif -%}

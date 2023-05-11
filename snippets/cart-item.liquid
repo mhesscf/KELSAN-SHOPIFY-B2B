@@ -13,7 +13,8 @@
 {%- endif -%}
 
 {%- assign product_bundle = '' -%}
-{% assign pstep = '' %}
+{%- assign pstep = '' -%}
+{%- assign fgbogo = false -%}
 {% unless item.properties == empty %}
   {% for property in item.properties %}
     {% if property.first == '_bundle_product' %}
@@ -24,6 +25,11 @@
     {% endif %}
     {% if property.first == '_product_step' %}
       {% assign pstep = property.last %}
+    {% endif %}
+    {% if property.first == '_tiered_pricing' %}
+      {% if property.last == 'fg-bogo' %}
+        {%- assign fgbogo = true -%}
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endunless %}
@@ -171,7 +177,7 @@
                     aria-label="{{ 'general.general.quantity' | t }}"
                     data-quantity-select
                     data-cartitem-quantity
-            {% if product_bundle != '' %} disabled {% endif %}>
+            {% if product_bundle != '' or fgbogo == true %} disabled {% endif %}>
               {% for i in (1..9) %}
                 <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
                   {{ i }}
@@ -217,8 +223,12 @@
         </div>
         {% if product_bundle != '' %}
           <span class="package-qt-info">
-          Item is not editable because it is part of a package
-        </span>
+            Item is not editable because it is part of a package
+          </span>
+        {% elsif fgbogo == true %}
+          <span class="package-qt-info">
+              Item is not editable because it is a free gift.
+          </span>
         {% endif %}
       </div>
 
@@ -252,6 +262,7 @@
                     id: 'icon-remove'
             %}
           </a>
+
         {% else %}
           {%- assign bName = all_products[product_bundle].title | remove: '"' -%}
           <a
