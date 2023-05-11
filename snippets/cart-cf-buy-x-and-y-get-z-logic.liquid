@@ -132,7 +132,7 @@
                 {% unless cartitem.properties == empty %}
                     {% for property in cartitem.properties %}
                         {% if property.first == '_tiered_pricing' %}
-                            {% if property.last == 'fg-bogo' %}
+                            {% if property.last == 'fg-bogo' and cartitem.product.handle == section.settings.free_gift_product.handle  %}
                                 {% assign freegiftItem = 1 %}
                                 {% assign freeGiftLineId = cartitem.id %}
                             {% endif %}
