@@ -270,7 +270,7 @@
                     jQuery(".bogo-{{ ruleid }} .bogo-pop button .btn-text").hide();
                     jQuery(".bogo-{{ ruleid }} .bogo-pop button .atc-button--icon").css({"visibility": "visible", "opacity": "100"});
 
-                    var fgdata = {
+                    const fgdata{{ ruleid }} = {
                         id: {{ variant_id_2_add }},
                         quantity: {{ freeGiftsToAdd }},
                         properties: {
@@ -317,7 +317,7 @@
                     jQuery(".bogo-pop button .atc-button--icon").css({"visibility": "visible", "opacity": "100"});
 
 
-                    var fgrdata = {
+                    const fgrdata{{ ruleid }} = {
                         quantity: {{ freeGiftsNeed }},
                         id: {{ freeGiftLineId }}
                     };
@@ -336,6 +336,5 @@
             </script>
 
         {% endif %}
-
     </div>
 {%- endif -%}
