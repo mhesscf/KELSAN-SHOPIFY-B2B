@@ -93,7 +93,7 @@
       "type": "cart-cf-buy-x-and-y-get-z",
       "settings": {
         "show_section": true,
-        "debugme": false,
+        "debugme": true,
         "ruleid": 8487,
         "rule_name": "Free Conversion Kit",
         "rule_message": "You have a tank and a floor buffer in your cart that require a Conversion Kit to be used together. Please click below to add this at not cost to your cart.",
