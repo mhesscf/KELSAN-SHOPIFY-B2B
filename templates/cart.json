@@ -58,11 +58,42 @@
         "enable_shipping_calc": true,
         "shipping_calc_default_country": "United States"
       }
+    },
+    "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d": {
+      "type": "cart-cf-buy-x-and-y-get-z",
+      "settings": {
+        "show_section": true,
+        "debugme": false,
+        "ruleid": 5893,
+        "rule_name": "Free 1\/4 inch Male Quick Connect Brass Fitting",
+        "rule_message": "You have added a tool and a machine that needs a 1\/4 quick connect to be used together. Please click below to add one to your cart free of charge.",
+        "promo-rule-version": "version2",
+        "required_product_list_1": [
+
+        ],
+        "required_product_list_2": [
+
+        ],
+        "v2_list1_required_prefix": "TPL",
+        "v2_list1_excluded_prefix": "",
+        "v2_list1_collections_required": [
+          "upholstery-tools"
+        ],
+        "v2_list2_required_prefix": "",
+        "v2_list2_excluded_prefix": "TPL,EDI",
+        "v2_list2_collections_required": [
+          "box-extractors",
+          "detailing-extractors",
+          "self-contained-carpet-extractors"
+        ],
+        "free_gift_product": "male-quick-connect-brass-fitting"
+      }
     }
   },
   "order": [
     "cart-gift-with-purchase",
     "45550fbb-99bf-4d33-90a9-1823708a0964",
-    "main"
+    "main",
+    "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d"
   ]
 }
