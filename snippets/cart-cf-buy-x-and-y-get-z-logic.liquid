@@ -79,7 +79,6 @@
 
 
         </style>
-        {% unless section.settings.required_product_list_1 == blank or section.settings.required_product_list_1 == blank or section.settings.free_gift_product.handle == blank %}
 
         {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
         <br/>--------- BOGO Activated: Rule >{{ ruleid }}< -----------------------------------<br/>
@@ -338,6 +337,5 @@
 
         {% endif %}
 
-        {% endunless %}
     </div>
 {%- endif -%}
