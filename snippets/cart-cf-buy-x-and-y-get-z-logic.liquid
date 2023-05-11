@@ -283,7 +283,7 @@
                     const addparams{{ ruleid }} = {
                         type: 'POST',
                         url: '/cart/add.js',
-                        data: fgdata,
+                        data: fgdata{{ ruleid }},
                         dataType: 'json',
                         success: function(stuff) {
                             window.location.href = '/cart';
@@ -325,7 +325,7 @@
                     const removeparams{{ ruleid }} = {
                         type: 'POST',
                         url: '/cart/change.js',
-                        data: fgrdata,
+                        data: fgrdata{{ ruleid }},
                         dataType: 'json',
                         success: function(stuff) {
                             window.location.href = '/cart';
@@ -336,5 +336,6 @@
             </script>
 
         {% endif %}
+
     </div>
 {%- endif -%}
