@@ -10,7 +10,7 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<style>\n\n.container {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.right-column {\n  flex: 0 0 30;\n  order: 2;\n  padding: 15px;\n}\n\n.left-column {\n  flex: 1;\n  order: 1; \n  Padding: 15px;\n}\n\n.right-column .form-contain{\n\tpadding: 15px;\n\tborder-radius: 15px;\n\tbackground-color: #eeeeee;\n}\n\n\n\/* Add media query to change the layout on smaller screens *\/\n\n@media (max-width: 1000px) {\n  .right-column {\n\tflex: 0 0 35%;\n  }\n}\n\n@media (max-width: 767px) {\n  .right-column {\n\tflex: 0 0 100%;\n    order: 1; \/* move the left column back to the first position *\/\n  }\n  .left-column {\n\tflex: 0 0 100%;\n    order: 2; \/* move the right column back to the second position *\/\n  }\n}\n\n\n\n\n\n<\/style>"
+        "custom_html": "<style>\n\n.container {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.right-column {\n  flex: 0 0 300px;\n  order: 2;\n  padding: 15px;\n}\n\n.left-column {\n  flex: 1;\n  order: 1; \n  Padding: 15px;\n}\n\n.right-column .form-contain{\n\tpadding: 15px;\n\tborder-radius: 15px;\n\tbackground-color: #eeeeee;\n}\n\n\n\/* Add media query to change the layout on smaller screens *\/\n\n@media (max-width: 1000px) {\n  .right-column {\n\tflex: 0 0 300px;\n  }\n}\n\n@media (max-width: 767px) {\n  .right-column {\n\tflex: 0 0 100%;\n    order: 1; \/* move the left column back to the first position *\/\n  }\n  .left-column {\n\tflex: 0 0 100%;\n    order: 2; \/* move the right column back to the second position *\/\n  }\n}\n\n\n\n\n\n<\/style>"
       }
     },
     "ebf34978-16f5-4d2f-90cb-5954860f7448": {
