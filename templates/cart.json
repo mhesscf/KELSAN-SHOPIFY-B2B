@@ -63,7 +63,7 @@
       "type": "cart-cf-buy-x-and-y-get-z",
       "settings": {
         "show_section": true,
-        "debugme": false,
+        "debugme": true,
         "ruleid": 5893,
         "rule_name": "Free 1\/4 inch Male Quick Connect Brass Fitting",
         "rule_message": "You have added a tool and a machine that needs a 1\/4 quick connect to be used together. Please click below to add one to your cart free of charge.",
