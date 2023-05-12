@@ -42,8 +42,12 @@
         }else if(highLow == "high"){
             thisPrice = thisArray[1];
         }
-        if(format == 0){
+        if(format == 0) {
             thisPrice = thisPrice.replace(/\$/g, '').replace(',', '').replace(/ /g, '');
+        }else if(format == 3){
+            //need to add comma
+            thisPrice = parseFloat(thisPrice);
+            thisPrice = thisPrice.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
         }else{
             thisPrice = thisPrice.replace(/\$/g, '').replace(/ /g, '');
         }
@@ -306,8 +310,8 @@
                         <span>
                         ${hit.meta.plytix.hide_pricing == "Hide Price Only (View in cart)" ? html `View Price in Cart` : html ``}
                         ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                                ${hit.meta.plytix.package_products ?
-                                html`<span class="bundle-price" itemprop="price" content="0.00">See Product for Pricing {% render 'icon-chevron-right' %}</span>`
+                                ${hit.meta.plytix.package_products ? html `
+                                    ${hit.meta.plytix.bundle_pricing > 0 ? html `<div class="price__current"><span><span><span class="norm-price">$<span itemprop="price" content="${hit.meta.plytix.bundle_pricing}">${priceRange(hit.meta.plytix.bundle_pricing,3,"low")}</span></span></span></span></div>`: html`<span class="bundle-price" itemprop="price" content="0.00">See Product for Pricing {% render 'icon-chevron-right' %}</span>`}`
                                 : html `<span>${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? html `<span class="norm-price">$<span itemprop="lowPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span> - $<span itemprop="highPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"high")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"high")}</span></span>` : html `<span class="norm-price">$<span itemprop="price" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span></span>`}</span>`}
                         ` : html ``}
 
