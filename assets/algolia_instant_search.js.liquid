@@ -735,10 +735,9 @@
 
           // If we're on a collection page and the handle is available
           // then prefix the product link with the collection handle
-          {% comment %}Cleanfreak: Turning this off{% endcomment %}
-          {% comment %}if (collectionPageEnabled && collectionHandle) {{% endcomment %}
-            {% comment %}link = '/collections/' + collectionHandle;{% endcomment %}
-          {% comment %}}{% endcomment %}
+          if (collectionPageEnabled && collectionHandle) {
+            link = '/collections/' + collectionHandle;
+          }
 
           // Add the product handle to the link
           link = link + '/products/' + productHandle;
