@@ -11,6 +11,12 @@
     "16636174067db7bd8c": {
       "type": "category-featured-product-slider",
       "blocks": {
+        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63": {
+          "type": "slide",
+          "settings": {
+            "product": "pressure-mower-with-hose-reel"
+          }
+        },
         "0794dfe6-0cd9-4b57-8034-286788c703be": {
           "type": "slide",
           "settings": {
@@ -47,13 +53,6 @@
             "product": "cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer"
           }
         },
-        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "product": "ar-blue-clean-blue-maxx-2300-psi-electric-pressure-washer"
-          }
-        },
         "ff0b32b6-7f80-4018-816b-258a14112ef7": {
           "type": "slide",
           "disabled": true,
@@ -63,13 +62,13 @@
         }
       },
       "block_order": [
+        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63",
         "0794dfe6-0cd9-4b57-8034-286788c703be",
         "f3606cea-e255-487e-88c7-13d61eb449c5",
         "a52ddc10-c632-4062-984f-46a5db60712d",
         "d1f28b57-89d6-4d7d-99fc-0abd0bc7059d",
         "13a3e250-821c-4d61-9caf-ca123461e51d",
         "cbea0b31-a3ac-438a-82fc-67daff5fe73d",
-        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63",
         "ff0b32b6-7f80-4018-816b-258a14112ef7"
       ],
       "settings": {
@@ -150,7 +149,7 @@
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/cold-electric-pressure-washers.jpg",
-            "linktext": "Cold Water Electric Pressure Washers",
+            "linktext": "Cold Water Electric",
             "linkurl": "https:\/\/www.cleanfreak.com\/collections\/cold-water-electric-pressure-washers"
           }
         },
@@ -158,7 +157,7 @@
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/cold-gas-powered-pressure-washer.jpg",
-            "linktext": "Cold Water Gas Engine Pressure Washers",
+            "linktext": "Cold Water Gas Engine",
             "linkurl": "https:\/\/www.cleanfreak.com\/collections\/cold-water-gas-engine-pressure-washers"
           }
         },
@@ -174,7 +173,7 @@
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/hot-gas-pressure-washers.jpg",
-            "linktext": "Hot Water Gas Engine Pressure Washers",
+            "linktext": "Hot Water Gas Engine",
             "linkurl": "https:\/\/www.cleanfreak.com\/collections\/hot-water-gas-engine-pressure-washers"
           }
         },
@@ -182,7 +181,7 @@
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/hto-electric-pressure-washers.jpg",
-            "linktext": "Hot Water Electric Pressure Washers",
+            "linktext": "Hot Water Electric",
             "linkurl": "https:\/\/www.cleanfreak.com\/collections\/hot-water-electric-pressure-washers"
           }
         },
@@ -190,7 +189,7 @@
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/flat-surfaces-cleaners.jpg",
-            "linktext": "Specialty Attachments for Pressure Washers",
+            "linktext": "Specialty Attachments",
             "linkurl": "https:\/\/www.cleanfreak.com\/collections\/specialty-attachments-for-pressure-washers"
           }
         },
@@ -198,7 +197,7 @@
           "type": "types",
           "settings": {
             "image": "shopify:\/\/shop_images\/truck-and-skid-mount.jpg",
-            "linktext": "Truck & Skid Mount",
+            "linktext": "Truck & Trailer Mount",
             "linkurl": "shopify:\/\/collections\/truck-mount"
           }
         },
@@ -270,6 +269,7 @@
         },
         "3fba68ff-4018-4287-a0a8-a3b997759627": {
           "type": "slider",
+          "disabled": true,
           "settings": {
             "collection": "cam-spray"
           }
