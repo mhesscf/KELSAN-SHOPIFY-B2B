@@ -1,0 +1,30 @@
+{% if product.metafields.plytix.package_products != blank %}
+<section class="product-single-desc bundle-specs" id="product-single-desc" style="padding-top: 0;">
+    <div class="container" style="border: 0;">
+{% else %}
+        <section class="product-single-desc" id="product-single-desc">
+            <div class="container">
+{% endif %}
+
+        <div class="row">
+            <div class="full">
+                <h2>Product Description</h2>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "product-info-features",
+    "class": "product-info-features--section",
+    "presets": [
+        {
+            "category": "product-info-features-section",
+            "name": "Product Info and Features",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}
