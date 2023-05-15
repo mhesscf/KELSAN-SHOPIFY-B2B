@@ -171,6 +171,17 @@
                                     </h1>
                                 {% endif %}
                             {% endif %}
+
+                            {%- capture vendortext -%}
+                                {% if product.vendor != blank or onboarding %}
+                                       {% unless onboarding %}
+                                           Vendor:<span>{{ product.vendor | link_to_vendor }}</span>
+                                        {% else %}
+                                            {{ 'onboarding.product.by_vendor' | t }}
+                                        {% endunless %}
+                                {% endif %}
+                            {%- endcapture -%}
+
                             {% if product.variants.size > 1 %}
                                 {% for variant in product.variants %}
                                     {% if variant.metafields.plytix.product_step %}
@@ -179,15 +190,16 @@
                                         {% assign vstep = 1 %}
                                     {% endif %}
                                     <div class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
-                                    SKU:<span> {{ variant.sku }}</span>
+                                    SKU:<span> {{ variant.sku }} </span>&nbsp;&nbsp; {{ vendortext }}
                                     </div>
                                 {% endfor %}
                             {% else %}
                                 <div class="product-detail-sku">
-                                    SKU:<span> {{ sku }}</span>
+                                    SKU:<span> {{ sku }} </span>&nbsp;&nbsp; {{ vendortext }}
                                 </div>
                            {% endif %}
-                        {% when 'vendor' %}
+
+                        {% comment %}{% when 'vendor' %}
                             {% if product.vendor != blank or onboarding %}
                                 <div class="product-vendor">
                                     {% unless onboarding %}
@@ -200,7 +212,7 @@
                                     {% endunless %}
                                 </div>
                             {% endif %}
-
+                            {% endcomment %}
                         {% when 'inventory_status' %}
                             {% for variant in product.variants %}
                                 {% capture stock_attributes %}
@@ -322,10 +334,26 @@
                                         include_tax_line: true,
                                         include_hidden_price: true
                                 %}
-                                {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
-                                    <form data-payment-terms-target style="display: none;"></form>
-                                {% endif %}
                             </div>
+
+                            {% assign current_variant_id = product.selected_or_first_available_variant.id %}
+                            {% for variant in product.variants %}
+                                <div class="masterqty-container var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                                    {% if variant.metafields.plytix.package_products != blank %}
+                                        <div class="individually-sold">Sold as a Bundle</div>
+                                    {% else %}
+                                        {% if variant.metafields.plytix.master_quantity != blank %}
+                                            {% assign qntyinfo = variant.metafields.plytix.master_quantity %}
+                                            {% if qntyinfo == 1 or qntyinfo == '1' %}
+                                                <div class="individually-sold">Sold Individually</div>
+                                            {% else %}
+                                                <div class="individually-sold">{{ variant.metafields.plytix.master_quantity }}</div>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+
                             {% if product.metafields.plytix.packaged_free_product != blank %}
                                 {% assign savingsp = 0 %}
                                 {%- assign freeproducts = product.metafields.plytix.packaged_free_product | split: "," %}
@@ -350,21 +378,7 @@
                                     {{ 'product.general.sku_html' | t: sku: sku | strip_newlines }}
                                 </div>
                             {% endunless %}
-                        {% when 'description' %}
-                            {%
-                                    render 'product-additional',
-                                    product: product,
-                                    class_root: 'product'
-                            %}
 
-                            <div class="product-detail-desc">
-                                {% if product.description.size > 700 %}
-                                    <div class="product-description-short">
-                                        <a class="readmore" href="#product-single-desc">See Description</a>
-                                    </div>
-                                {% endif %}
-
-                            </div>
 
                         {% when 'form' %}
                             <div
@@ -398,6 +412,13 @@
                                                 is_product_modal: is_product_modal,
                                         %}
                                     {% endunless %}
+
+                                    {%
+                                            render 'product-additional',
+                                            product: product,
+                                            class_root: 'product'
+                                    %}
+
                                 </div>
                             </div>
 

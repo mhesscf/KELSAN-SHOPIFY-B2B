@@ -496,6 +496,30 @@ jQuery(document).ready(function($){
         });
     },1500);
 
+    setTimeout(()=>{
+        $('.gallery-navigation-horizontal-scroller-slick').slick({
+            arrows: true,
+            autoplay: false,
+            dots: false,
+            infinite: true,
+            //lazyLoad: 'ondemand',
+            slidesToScroll: 3,
+            appendArrows: $('.slickbuttons'),
+            prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
+            slidesToShow: 4,
+            responsive: [
+                {
+                    breakpoint: 1079,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 2
+                    }
+                }
+            ]
+        });
+    },500);
+
     $('.js-load-more').on('click', function(){
         var $this =$(this),
             totalPages = parseInt($('[data-all-pages]').val()),

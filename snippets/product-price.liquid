@@ -310,6 +310,7 @@
 
 
     {% assign current_variant_id = product.selected_or_first_available_variant.id %}
+      {% comment %}
     {% for variant in product.variants %}
       {% if variant.metafields.plytix.list_price > 0 %}
         {% assign varlp = variant.metafields.plytix.list_price | times: 100 %}
@@ -319,7 +320,21 @@
         (Was: {{ varlp | money }})
         </div>
       {% endif %}
-    {% endfor %}
+    {% endfor %}{% endcomment %}
+
+      {% for variant in product.variants %}
+          {% if variant.metafields.plytix.list_price > 0 %}
+              {% assign varlp = variant.metafields.plytix.list_price | times: 100 %}
+              {% assign varprice = variant.price %}
+              {% assign varlpsavings = varlp | minus: varprice %}
+          {% endif %}
+          {% if varlp != blank and product.metafields.plytix.hide_product != 'true' %}
+              <div class="price__compare-at-visible-2 strikethrough var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                  <div class="strikeprice">{{ varlp | money }}</div>
+                  <div class="yousave">You Save: -{{ varlpsavings | money }} off</div>
+              </div>
+          {% endif %}
+      {% endfor %}
 
 
 
@@ -333,3 +348,10 @@
     </div>
 {% endif %}
 {% comment %}Inject @pixelunion/shopify-price-ui/price end{% endcomment %}
+
+
+{% if product.metafields.plytix.package_products == blank %}
+    {%
+            render 'product-sxstatus'
+    %}
+{% endif %}

@@ -24,11 +24,12 @@
       {% assign thumb_dimensions = '75x75' %}
     {% endcase %}
   {% endif %}
-
+{% comment %}turned off this class since I couldn't figure out what the empire theme was doing{% endcomment %}
   <div
-    class="product-gallery--navigation loading"
+    class="product-gallery--navigation-off product-gallery--navigation-slick loading"
     data-gallery-navigation
   >
+    <div class="slickbuttons"></div>
     <button
       class="gallery-navigation--scroll-button scroll-left"
       aria-label="Scroll thumbnails left"
@@ -44,7 +45,7 @@
       <span>{% render 'icon-chevron-down' %}</span>
     </button>
     <div
-      class="gallery-navigation--scroller"
+      class="gallery-navigation--scroller gallery-navigation-horizontal-scroller-slick"
       data-gallery-scroller
     >
     {% for media in product.media %}

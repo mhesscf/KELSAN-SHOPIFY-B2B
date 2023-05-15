@@ -6,14 +6,67 @@
             <div class="container">
 {% endif %}
 
+        {% comment %} Org Layout
         <div class="row">
             <div class="full">
                 <h2>Product Description</h2>
                 <p>{{ product.description }}</p>
             </div>
         </div>
+        {% endcomment %}
+
+        <div class="desc-col-1">
+            <div class="description">
+                <h2>Product Description</h2>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+        <div class="desc-col-2">
+            <div class="short-description">
+                <h2>Quick Overview</h2>
+                {{ product.metafields.plytix.short_description }}
+            </div>
+            <div class="app-area">
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when '@app' %}
+                            <div class="app-block">
+                                {% render block %}
+                            </div>
+                        {% when 'image' %}
+                            <div class="image-block" style="padding-bottom:10px;">
+                                <img class="img-responsive" src="{{ block.settings.sidebanner | img_url: '652x652' }}" alt="{{ block.settings.sidebanner.alt }}">
+                            </div>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="video-area-dynamic">
+            {% if product.metafields.plytix.product_video != blank %}
+                <section class="product-video">
+                    <div class="section-heading">
+                        <h2>Videos</h2>
+                    </div>
+                    {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
+                    {% for vid in pvideo %}
+                        {% assign pyt = vid | split: "::" %}
+                        <div class="container">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0"></iframe>
+                            </div>
+                            {% if pyt[1] != "None" %}
+                                <div class="info-wrap">
+                                    {{ pyt[1] }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        </div>
     </div>
 </section>
+        <div class="clearer"></div>
 {% schema %}
 {
     "name": "product-info-features",
@@ -24,6 +77,23 @@
             "name": "Product Info and Features",
             "settings": {
             }
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        },
+        {
+            "type": "image",
+            "name": "Image Block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "sidebanner",
+                    "label": "Product Side Banner",
+                    "info": "Product Side Banner"
+                }
+            ]
         }
     ]
 }
