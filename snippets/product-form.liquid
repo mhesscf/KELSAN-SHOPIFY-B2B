@@ -423,7 +423,42 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '2|4|6|12' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
+                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
+                  <div class="row top">Quantity Discounts</div>
+                  {% assign discount = pprice | times: 0.03 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierfloor = tierPrice | floor %}
+                  {% assign ppricefloor = pprice | floor %}
+                  <div class="row">
+                    <div class="quantity col">2+</div>
+                    <div class="discount col">3% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">4+</div>
+                    {% assign discount = pprice | times: 0.06 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">6% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">6+</div>
+                    {% assign discount = pprice | times: 0.09 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">9% Discount</div>
+                  </div>
+                  <div class="row">
+                    <div class="quantity col">12+</div>
+                    {% assign discount = pprice | times: 0.12 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="discount col">12% Discount</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if product.metafields.plytix.tiered_pricing == '2|4|6' %}
+              <div class="discount-info-wrap">
+                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.02 %}
@@ -442,15 +477,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   </div>
                   <div class="row">
                     <div class="quantity col">6+</div>
-                    {% assign discount = pprice | times: 0.09 %}
+                    {% assign discount = pprice | times: 0.06 %}
                     {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">9% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">12+</div>
-                    {% assign discount = pprice | times: 0.12 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">12% Discount</div>
+                    <div class="discount col">6% Discount</div>
                   </div>
                 </div>
               </div>
@@ -458,7 +487,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '3|6|10' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.05 %}
@@ -487,7 +516,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '3|6|10|20' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.05 %}
@@ -522,7 +551,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '3|6|12' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.05 %}
@@ -551,7 +580,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '6|12|18' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.06 %}
@@ -582,7 +611,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '6|12|24' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.05 %}
@@ -613,7 +642,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '6|10|20' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.06 %}
@@ -644,7 +673,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '10|25|50' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.10 %}
@@ -675,7 +704,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% if product.metafields.plytix.tiered_pricing == '3|6|12|24' %}
               <div class="discount-info-wrap">
                 <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>This product offers quantity discounts</p>
+                <p>Save w/ Quantity Discounts</p>
                 <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
                   <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.05 %}
@@ -1013,4 +1042,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       </div>
     </div>
 {% comment %}end of bundle logic -----------------------------------------------------------------------------------{% endcomment %}
+{% endif %}
+
+{% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
+  <form data-payment-terms-target class="shoppay-financing" style="display: none;"></form>
 {% endif %}

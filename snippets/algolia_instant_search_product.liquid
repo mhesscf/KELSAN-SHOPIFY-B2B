@@ -42,13 +42,23 @@
         }else if(highLow == "high"){
             thisPrice = thisArray[1];
         }
-        if(format == 0){
+        if(format == 0) {
             thisPrice = thisPrice.replace(/\$/g, '').replace(',', '').replace(/ /g, '');
+        }else if(format == 3){
+            //need to add comma
+            thisPrice = parseFloat(thisPrice);
+            thisPrice = thisPrice.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
         }else{
             thisPrice = thisPrice.replace(/\$/g, '').replace(/ /g, '');
         }
         return thisPrice;
     }
+    function priceSavings(sale,list){
+        var salePrice = priceRange(sale,0,"low");
+        var savings = list - salePrice;
+        return savings;
+    }
+
     function stocklookup(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false"){
         leadtime = Number(leadtime);
         var finalmessage = '';
@@ -306,8 +316,8 @@
                         <span>
                         ${hit.meta.plytix.hide_pricing == "Hide Price Only (View in cart)" ? html `View Price in Cart` : html ``}
                         ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                                ${hit.meta.plytix.package_products ?
-                                html`<span class="bundle-price" itemprop="price" content="0.00">See Product for Pricing {% render 'icon-chevron-right' %}</span>`
+                                ${hit.meta.plytix.package_products ? html `
+                                    ${hit.meta.plytix.bundle_pricing > 0 ? html `<div class="price__current"><span><span><span class="norm-price">$<span itemprop="price" content="${hit.meta.plytix.bundle_pricing}">${priceRange(hit.meta.plytix.bundle_pricing,3,"low")}</span></span></span></span></div>`: html`<span class="bundle-price" itemprop="price" content="0.00">See Product for Pricing {% render 'icon-chevron-right' %}</span>`}`
                                 : html `<span>${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? html `<span class="norm-price">$<span itemprop="lowPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span> - $<span itemprop="highPrice" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"high")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"high")}</span></span>` : html `<span class="norm-price">$<span itemprop="price" content="${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),0,"low")}">${priceRange(algolia.helpers.displayPrice(hit, hit._distinct),1,"low")}</span></span>`}</span>`}
                         ` : html ``}
 
@@ -315,9 +325,10 @@
                         </span>
                     </div>
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `
-                            ${hit.meta.plytix.list_price ? html`<div class="price__compare-at-visible">(Was: ${numberScrub(hit.meta.plytix.list_price)})</div>`:''}
-                        `:''}
+                        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
+                            ${hit.meta.plytix.list_price ? html`<div class="strikeprice">${numberScrub(hit.meta.plytix.list_price)}</div>`:''}
+                            ${hit.meta.plytix.list_price ? html`<div class="yousave">You Save: -${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.meta.plytix.list_price)} off</div>`:''}
+                        </div>`:''}
                     ` : html ``}
 
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
@@ -365,8 +376,9 @@ ${1 == 1 && html`
 
 <script>
 function numberScrub(num){
-var newNum = (Math.round(num * 100) / 100).toFixed(2);;
-newNum = newNum.toLocaleString('en');
+var newNum = (Math.round(num * 100) / 100).toFixed(2);
+    newNum = parseFloat(newNum);
+newNum = newNum.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
 return ("$"+newNum.toString());
 }
 function stoplink(e){
