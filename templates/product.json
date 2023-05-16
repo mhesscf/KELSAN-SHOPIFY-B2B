@@ -138,6 +138,7 @@
     },
     "1663947190a886277c": {
       "type": "product-video",
+      "disabled": true,
       "settings": {
       }
     },
