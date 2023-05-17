@@ -37,6 +37,10 @@
                             <div class="image-block" style="padding-bottom:10px;">
                                 <img class="img-responsive" src="{{ block.settings.sidebanner | img_url: '652x652' }}" alt="{{ block.settings.sidebanner.alt }}">
                             </div>
+                        {% when 'custom_liquid' %}
+                        <div class="custom-liquid-block">
+                            {% render block %}
+                        </div>
                     {% endcase %}
                 {% endfor %}
             </div>
