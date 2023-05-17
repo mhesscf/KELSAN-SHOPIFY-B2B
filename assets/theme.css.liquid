@@ -5583,11 +5583,6 @@ body .mdc-ripple-surface:hover:before {
 	opacity: 0.3;
 }
 
-@media screen and (min-width: 720px) {
-	.product-gallery {
-		width: 49%;
-	}
-}
 @media screen and (min-width: 1024px) {
 	.layout--three-col .product-gallery {
 		width: 35%;
@@ -5595,9 +5590,10 @@ body .mdc-ripple-surface:hover:before {
 }
 
 @media screen and (min-width: 720px) {
+	.product-gallery,
 	.product-main {
-		width: 49%;
-		margin-left: 2%;
+		width: 50%;
+		padding:15px;
 	}
 }
 @media screen and (min-width: 1024px) {
@@ -19424,7 +19420,7 @@ shopify-payment-terms {
 
 .gallery-navigation-horizontal-scroller-slick .product-gallery--media-thumbnail[data-gallery-selected="true"]{
 	box-shadow: 0 0 0 0;
-	border: 1px solid #ccc;
+	border: none;
 }
 .slickbuttons{
 	position:relative;
