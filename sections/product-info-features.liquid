@@ -38,9 +38,18 @@
                                 <img class="img-responsive" src="{{ block.settings.sidebanner | img_url: '652x652' }}" alt="{{ block.settings.sidebanner.alt }}">
                             </div>
                         {% when 'custom_liquid' %}
-                        <div class="custom-liquid-block">
-                            {% render block %}
-                        </div>
+                            <div class="cust-liquid-block">
+                                {% if block.settings.title != blank %}
+                                    <h2 class="custom-liquid-title">
+                                        {{ block.settings.title | escape }}
+                                    </h2>
+                                {% endif %}
+                                {% if block.settings.custom_liquid != blank %}
+                                    <div class="custom-liquid-text">
+                                        {{ block.settings.custom_liquid }}
+                                    </div>
+                                {% endif %}
+                            <div>
                     {% endcase %}
                 {% endfor %}
             </div>
@@ -89,14 +98,20 @@
         },
         {
             "type": "custom_liquid",
-            "name": "t:sections.product.blocks.custom_liquid.name",
+            "name": "Custom Liquid",
             "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Custom Liquid",
-                    "default": "Custom Liquid"
-                }
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Custom Liquid",
+                "default": "Custom Liquid"
+            },
+             {
+                "type": "liquid",
+                "id": "custom_liquid",
+                "label": "Custom Liquid",
+                "info": "Custom Liquid"
+            }
             ]
         },
         {
