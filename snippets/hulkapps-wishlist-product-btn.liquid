@@ -4,6 +4,8 @@
 {%- endif -%}
 <a href="#" class="" data-wishList data-added="false" data-proID="{{ product.id }}" data-varID="{{ product.selected_or_first_available_variant.id }}" data-button-layout="{{ button_layout }}" style="">
     {% comment %}orginal code from plugin{% endcomment %}
+    {% comment %}Removed the following classes because they were causing issues with plugin css:{% endcomment %}
+    {% comment %}icon-wishlist-heart-empty wishlist-btn grid-wishlist-btn heart-wishlist-animation{% endcomment %}
     {% comment %}
      <div class="hulk_wl_icon-text" hulk-wl-custom-style data-count="{{ shop.metafields.hulkapps_wishlist.hulkapps_wishlist_general.public_wishlist_count }}">
          <div class="hulk_wl_icon">
