@@ -331,7 +331,7 @@
           {% if varlp != blank and product.metafields.plytix.hide_product != 'true' %}
               <div class="price__compare-at-visible-2 strikethrough var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
                   <div class="strikeprice">{{ varlp | money }}</div>
-                  <div class="yousave">You Save: -{{ varlpsavings | money }} off</div>
+                  <div class="yousave">You Save: {{ varlpsavings | money }}</div>
               </div>
           {% endif %}
       {% endfor %}

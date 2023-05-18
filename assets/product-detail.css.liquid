@@ -829,6 +829,37 @@ input.qtyminus {
 .product-block--form .shoppay-financing {
   text-align: right;
 }
+.product-single-desc h2.jdgm-rev-widg__title{
+  text-align:left;
+}
+@media (min-width: 1345px) {
+{% comment %}New format for review area (2col){% endcomment %}
+  .jdgm-rev-widg__summary,
+  .jdgm-widget-actions-wrapper {
+    float: left;
+    display: inline-block;
+    width: 260px;
+  }
+
+  .jdgm-histogram {
+    float: right;
+    width: 315px;
+    display: inline-block;
+  }
+
+  .jdgm-row-actions {
+    clear: both;
+  }
+
+  .jdgm-write-rev-link {
+    min-width: 225px;
+  }
+
+  .jdgm-rev-widg__summary {
+    margin-bottom: 12px;
+  }
+}
+
 .jdgm-write-rev-link.jdgm-write-rev-link:hover{
   background-color: {{ settings.color_button_hover }};
 }
