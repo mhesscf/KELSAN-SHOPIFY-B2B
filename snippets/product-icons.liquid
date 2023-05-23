@@ -54,6 +54,18 @@
                   <span class="sm-text">Buy now before they are gone!</span></div>
                 </div>
             {% endif %}
+
+            {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
+                <div class="sm-row">
+                    <div class="icon-wrap" style="font-size: 23px;">
+                        <i class="fa-regular fa-screwdriver-wrench"></i>
+                    </div>
+                    <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
+                        <span class="sm-text">Tested & approved to be in good working order!</span>
+                    </div>
+                </div>
+            {% endif %}
+
         {% endif %}
         {% render 'hulkapps-wishlist-product-btn' %}
     </div>
