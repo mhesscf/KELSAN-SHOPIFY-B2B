@@ -1,4 +1,4 @@
-{% assign cart-size = cart.total_price | divided_by: 100 %}
+{% assign cart-size = cart.total_price | divided_by: 100.00 %}
 {% assign threshold-1 = section.settings.top_order_threshold | minus: 0.01 %}
 {% assign threshold-2 = section.settings.second_order_threshold | minus: 0.01 %}
 {% comment %}{% assign threshold-3 = section.settings.third_order_threshold | minus: 0.01 %}{% endcomment %}
@@ -207,10 +207,11 @@
         {% assign product1 = section.settings.cart_gwp_product_1 %}
         {% assign product1-title = all_products[product1].title %}
         {% assign product1-url = all_products[product1].url %}
-        {% assign threshold-left =  threshold-1 |  minus: cart-size %}
+        {% assign threshold-left =  section.settings.top_order_threshold |  minus: cart-size %}
+        {% assign threshold-left =  threshold-left | times:100 %}
         <div class="cart-gwp">
             <div class="cart-gwp-row center">
-                <p>You're only ${{ threshold-left }} away from a <em>Free Gift!</em><br><br><a href="/collections/all"
+                <p>You're only {{ threshold-left | money}} away from a <em>Free Gift!</em><br><br><a href="/collections/all"
                                                                                               class="button-primary mdc-ripple-surface mdc-ripple-upgraded">Continue
                         Shopping</a></p>
             </div>
