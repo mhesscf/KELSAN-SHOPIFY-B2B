@@ -102,11 +102,16 @@
         {% endif %}
       </div>
     {% elsif variant.inventory_quantity > 0 %}
+      {% assign pdemoitem = false %}
+      {% if variant.sku contains "-DEMO" %}
+        {% assign pdemoitem = true %}
+      {% endif %}
+
       <div class="product-detail-stock-and-shipping">
         <div class="stock-message main-notice">In Stock
           {% if product.metafields.plytix.clearance_overstock == 'true' %}
             ({{ variant.inventory_quantity }} Available)
-          {% elsif pclearance == true %}
+          {% elsif pclearance == true or pdemoitem == true %}
             ({{ variant.inventory_quantity }} Available)
           {% endif %}
         </div>
