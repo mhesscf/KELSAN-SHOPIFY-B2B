@@ -161,6 +161,14 @@
             "linkurl": "shopify:\/\/pages\/carpet-solutions"
           }
         },
+        "03508325-8901-43b1-a395-148b4fd1ab78": {
+          "type": "types",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
+            "linktext": "Detergents",
+            "linkurl": "\/collections\/detergents"
+          }
+        },
         "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
           "type": "types",
           "settings": {
@@ -324,6 +332,7 @@
         "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
         "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
         "159a2b1f-8d76-471e-84de-975a6d48fa11",
+        "03508325-8901-43b1-a395-148b4fd1ab78",
         "8b2e74e9-3f60-4691-b436-59b9179e9f33",
         "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
         "d5555fee-e855-4369-bb4e-b5f8a603808b",
