@@ -227,6 +227,7 @@
   z-index: -1;
   right: -100%;
 }
+.rel-product-tabbed-area .container,
 .product-single-desc .container{
   width: 1330px;
   margin: auto;
@@ -1397,6 +1398,78 @@ input.qtyminus {
     font-size: 28px;
   }
 }
+/*--- New Related Area ---*/
+.rel-product-tabbed-area .container {
+  border-top:none;
+}
+.rel-product-tabbed-area .tab-headers {
+  border-bottom: 1px solid {{ settings.color_product_desc_top_border }};
+  width:100%;
+  display:flex;
+}
+.rel-product-tabbed-area .rel-product-tab-header {
+  border:1px solid {{ settings.color_product_desc_top_border }};
+  padding:10px;
+  font-size:16px;
+  cursor:pointer;
+  margin-bottom:-1px;
+  font-weight:bold;
+}
+.rel-product-tabbed-area .rel-product-tab-header:first-child {
+  {% comment %}border-radius: 10px 0 0 0;{% endcomment %}
+}
+.rel-product-tabbed-area .rel-product-tab-header:last-child {
+  border-radius: 0 10px 0 0;
+}
+.rel-product-tabbed-area .rel-product-tab-header.active-tab {
+  background-color:{{ settings.color_section_secondary }};
+  background-color:{{ settings.color_button_secondary_background }};
+  border:1px solid {{ settings.color_button_secondary_background }};
+  color:white;
+}
+.rel-product-tabbed-area .tabbed-rel-slider {
+  display: flex;
+  margin:10px;
+  overflow: hidden;
+}
+
+.rel-product-tabbed-area .rel-slider-item {
+  width: 250px;
+  min-width: 250px;
+  padding: 8px;
+  display: flex;
+  height: inherit;
+}
+.rel-product-tabbed-area .rel-slider-item .productitem {
+  border-radius:15px;
+}
+.rel-product-tabbed-area .rel-slider-item .productitem--title{
+  font-size:16px;
+}
+.rel-product-tabbed-area .rel-slider-item .productitem__compare{
+  display:none;
+}
+.rel-product-tabbed-area .rel-slide-arrows{
+  text-align:right;
+}
+.rel-product-tabbed-area .slide-arrow{
+  width: 41px;
+  height: 41px;
+  border: 2px solid {{ settings.color_slide_arrow_background }};
+  background-color: {{ settings.color_slide_arrow_background }};
+  color: #fff;
+  border-radius: 50%;
+  font-size: 23px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  margin:0 5px;
+}
+.rel-product-tabbed-area .slide-arrow:hover{
+  border: 2px solid {{ settings.color_button_hover }};
+  background-color: {{ settings.color_button_hover }};
+  color: #fff;
+}
+
 /*--- Gallery ---*/
 
 .product-gallery .gallery-navigation--scroll-button{
