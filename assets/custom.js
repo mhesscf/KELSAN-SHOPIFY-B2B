@@ -516,6 +516,18 @@ jQuery(document).ready(function($){
             }
         });
         $('.'+slideritemId+' .productgrid--item').height(highestBox);
+
+        //Title Height
+        var highestTitleBox = 0;
+        $('.'+slideritemId+' .productitem--title').css({'height':''});
+        $('.'+slideritemId+' .productitem--title').each(function(){
+            // If this box is higher than the cached highest then store it
+            if($(this).height() > highestTitleBox) {
+                highestTitleBox = $(this).height();
+            }
+        });
+        $('.'+slideritemId+' .productitem--title').height(highestTitleBox);
+
     });
 
     //tabbed sliders:
@@ -553,15 +565,27 @@ jQuery(document).ready(function($){
                 ]
             });
 
-            // equalize height
-            var highestBox = 0;
+
+            // Equalize Box and Title Height
             var slideritemId = itemId.replace('-slider','-rel-item');
+            var highestBox = 0;
+
             $('.'+slideritemId+' .productgrid--item', this).each(function(){
                 if($(this).height() > highestBox) {
                     highestBox = $(this).height();
                 }
             });
             $('.'+slideritemId+' .productgrid--item',this).height(highestBox);
+
+            //Title Height
+            var highestTitleBox = 0;
+            $('.'+slideritemId+' .productitem--title', this).each(function(){
+                if($(this).height() > highestTitleBox) {
+                    highestTitleBox = $(this).height();
+                }
+            });
+            $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
+
 
         });
     },1500);

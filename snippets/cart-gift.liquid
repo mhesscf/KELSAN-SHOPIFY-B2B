@@ -145,8 +145,10 @@
                                             <input type="hidden" name="id"
                                                    value="{{ all_products[pid].variants.first.id }}"/>
                                             <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-                                            <input class="add-to-cart-btn" type="submit" value="ADD TO CART"
-                                                   class="btn"/>
+                                            {% comment %}<input class="add-to-cart-btn" type="submit" value="ADD TO CART"{% endcomment %}
+                                                   {% comment %}class="btn"/>{% endcomment %}
+                                            <button class="add-to-cart-btn" type="submit" value="ADD TO CART"
+                                                    class="btn" ><i class="fa-regular fa-cart-shopping"></i> ADD TO CART</button>
                                         </form>
                                     </div>
                                 </div>
