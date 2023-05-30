@@ -573,7 +573,7 @@
             {%- endif -%}
 
             {%- if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button'%}
-              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct" href="{{ product_link }}" >View Product</a>
+              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
               <form method="post" action="/cart/add" class="cart-form" style="display: none">
                 {%- assign bundle_products = product.metafields.plytix.package_products | split: "," -%}
                 {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," -%}
@@ -656,7 +656,7 @@
                           {%- endif -%}
                   >
                   <span class="atc-button--text">
-                    {{ quick_buy_text }}
+                    <i class="fa-regular fa-cart-shopping"></i> {{ quick_buy_text }}
                   </span>
                     <span class="atc-button--icon">
                     {%- render 'icon-spinner' -%}

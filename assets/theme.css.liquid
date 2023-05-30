@@ -2417,7 +2417,7 @@ footer .footer-icon svg{
 .button-secondary {
 	color: {{ settings.color_button_secondary_text }};
 	background-color: {{ settings.color_button_secondary_background }};
-	border: 1px solid {{ settings.color_button_secondary_border }};
+	border: 1px solid {{ settings.color_button_secondary_background }};
 	transition: all 0.4s ease-in-out;
 }
 .button-secondary:hover {
@@ -15446,6 +15446,10 @@ nav.breadcrumb span.separator{
 }
 .productitem--info .rating__star {
 	width: 15px;
+}
+.product-slide .jdgm-qa-badge,
+.productgrid--item .jdgm-qa-badge {
+	display:none !important;
 }
 
 .productitem__price,
