@@ -496,6 +496,78 @@ jQuery(document).ready(function($){
         });
     },1500);
 
+    // tabbed related products code
+    $('.rel-product-tab-header').on('click', function(){
+        var itemId = $(this).attr('id').replace('tab-','').replace('-header','');
+        $('.rel-product-tab-header').removeClass('active-tab');
+        $('#tab-'+itemId+'-header').addClass('active-tab');
+        $('.tabbed-rel-slider').hide();
+        $('#'+itemId+'-slider').show();
+        $('.rel-slide-arrows').hide();
+        $('#'+itemId+'-slider-arrows').show();
+        // equalize height
+        var highestBox = 0;
+        var slideritemId = itemId+'-rel-item';
+        $('.'+slideritemId+' .productgrid--item').css({'height':''});
+        $('.'+slideritemId+' .productgrid--item').each(function(){
+            // If this box is higher than the cached highest then store it
+            if($(this).height() > highestBox) {
+                highestBox = $(this).height();
+            }
+        });
+        $('.'+slideritemId+' .productgrid--item').height(highestBox);
+    });
+
+    //tabbed sliders:
+    setTimeout(()=>{
+        $( ".rel-product-tabbed-area .tabbed-rel-slider" ).each(function( index ) {
+            var itemId = $(this).attr('id');
+            var sliderArrows = '#'+itemId+'-arrows';
+        $('#'+itemId).slick({
+                arrows: true,
+                autoplay: false,
+                dots: false,
+                infinite: true,
+                lazyLoad: 'ondemand',
+                slidesToShow: 5,
+                slidesToScroll: 3,
+                appendArrows: $(sliderArrows),
+                prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
+                variableWidth: true,
+                responsive: [
+                    {
+                        breakpoint: 960,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+
+            // equalize height
+            var highestBox = 0;
+            var slideritemId = itemId.replace('-slider','-rel-item');
+            $('.'+slideritemId+' .productgrid--item', this).each(function(){
+                if($(this).height() > highestBox) {
+                    highestBox = $(this).height();
+                }
+            });
+            $('.'+slideritemId+' .productgrid--item',this).height(highestBox);
+
+        });
+    },1500);
+
+
+
     setTimeout(()=>{
         $('.gallery-navigation-horizontal-scroller-slick').slick({
             arrows: true,

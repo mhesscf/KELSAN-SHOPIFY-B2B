@@ -1,0 +1,60 @@
+{%- comment -%}Made by Cleanfreak{%- endcomment -%}
+{%- assign debugHelp = section.settings.debugme -%}
+{%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
+New Related Product Tabs:<br/>
+{%- endif -%}
+<div class="rel-product-tabbed-area">
+    <div class="container">
+        <div class="tab-headers">
+            {%- comment -%}tab area{%- endcomment -%}
+            {%- assign firstBlockId = "" -%}
+            {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                    {%- when 'tabinfo' -%}
+                        {%- if product.metafields.plytix[block.settings.tab_rel_id] != blank -%}
+                            {%- if firstBlockId == "" -%}
+                                {%- assign firstBlockId = block.settings.tab_rel_id -%}
+                            {%- endif -%}
+                            <h2 id="tab-{{ block.settings.tab_rel_id }}-header" class="rel-product-tab-header {% if firstBlockId == block.settings.tab_rel_id %}active-tab{% endif %}">
+                                {{ block.settings.tab_name }}
+                            </h2>
+                        {%- endif -%}
+                {%- endcase -%}
+            {%- endfor -%}
+        </div>
+    <div class="clearer"></div>
+        {%- comment -%}slider area{%- endcomment -%}
+        {%- for block in section.blocks -%}
+            {%- case block.type -%}
+                {%- when 'tabinfo' -%}
+                    {%- assign tab_rel_id = block.settings.tab_rel_id -%}
+                    {%- assign tab_name = block.settings.tab_name -%}
+                    {%- assign hideSliderDefault = true -%}
+                    {%- if firstBlockId == tab_rel_id -%}
+                        {%- assign hideSliderDefault = false -%}
+                    {%- endif -%}
+                    <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider" style="{% if hideSliderDefault %}display:none;{% endif %}">
+                            {%- assign noProducts = true -%}
+                            {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+                                {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                {%- for product in rel_products_arr -%}
+                                    {%- assign product_handle = product |  strip -%}
+                                    {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
+                                        {%- assign noProducts = false -%}
+                                        {%- assign item = all_products[product_handle] -%}
+                                        <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
+                                            {%-
+                                                    render 'product-slider-item',
+                                                    product: item
+                                            -%}
+                                        </div>
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            {%- endif -%}
+
+                    </div>
+                    <div id="{{ tab_rel_id }}-slider-arrows" class="rel-slide-arrows" style="{% if hideSliderDefault %}display:none;{% endif %}"></div>
+            {%- endcase -%}
+        {%- endfor -%}
+    </div>
+</div>

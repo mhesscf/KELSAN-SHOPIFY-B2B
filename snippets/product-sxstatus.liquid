@@ -1,25 +1,24 @@
+{%- assign current_variant_id = product.selected_or_first_available_variant.id -%}
 
-{% assign current_variant_id = product.selected_or_first_available_variant.id %}
-
-{% assign pclearance = false %}
-{% assign pdiscontinued = false %}
-{% for c in product.collections %}
-  {% if c.handle == "clearance" %}
-    {% assign pclearance = true %}
-  {% elsif c.handle == "discontinued" %}
-    {% assign pdiscontinued = true %}
-  {% endif %}
-{% endfor %}
-{% if pdiscontinued == false %}
-  {% for variant in product.variants %}
-    <div class="var-specs var{{ variant.id }} status-area" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-    {% assign fservice = variant.fulfillment_service %}
-    {% assign leadTime = variant.metafields.plytix.sxerp_lead_time %}
-    {% assign inventoryQuantity = variant.inventory_quantity %}
-    {% assign inventoryQuantity = inventoryQuantity | plus: 0 %}
-    {% assign leadTime = leadTime | plus: 0 %}
-    {% assign pclearance = false %}
-    {% if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
+{%- assign pclearance = false -%}
+{%- assign pdiscontinued = false -%}
+{%- for c in product.collections -%}
+  {%- if c.handle == "clearance" -%}
+    {%- assign pclearance = true -%}
+  {%- elsif c.handle == "discontinued" -%}
+    {%- assign pdiscontinued = true -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if pdiscontinued == false -%}
+  {%- for variant in product.variants -%}
+    <div class="var-specs var{{ variant.id }} status-area" {%- if current_variant_id != variant.id -%}style="display:none;"{%- endif -%}>
+    {%- assign fservice = variant.fulfillment_service -%}
+    {%- assign leadTime = variant.metafields.plytix.sxerp_lead_time -%}
+    {%- assign inventoryQuantity = variant.inventory_quantity -%}
+    {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
+    {%- assign leadTime = leadTime | plus: 0 -%}
+    {%- assign pclearance = false -%}
+    {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
       <div class="sx-status">
         <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
         <span class="status-time">May Have Extended Lead Times</span>
@@ -30,94 +29,94 @@
             unknown.</p>
         </details>
       </div>
-    {% elsif variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
+    {%- elsif variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
       <div class="sx-status">
         <span class="status-desc main-notice">Temporarily On Backorder</span>
-        {% if leadTime < 22  %}
+        {%- if leadTime < 22  -%}
           <span class="status-time">Estimated Ship Date 1 – 3 wks</span>
-        {% elsif leadTime < 29 %}
+        {%- elsif leadTime < 29 -%}
           <span class="status-time">Estimated Ship Date 2 – 4 wks</span>
-        {% elsif leadTime < 36 %}
+        {%- elsif leadTime < 36 -%}
           <span class="status-time">Estimated Ship Date 3 – 5 wks</span>
-        {% elsif leadTime < 43 %}
+        {%- elsif leadTime < 43 -%}
           <span class="status-time">Estimated Ship Date 4 –6 wks</span>
-        {% elsif leadTime < 50 %}
+        {%- elsif leadTime < 50 -%}
           <span class="status-time">Estimated Ship Date 5 – 7 wks</span>
-        {% elsif leadTime < 57 %}
+        {%- elsif leadTime < 57 -%}
           <span class="status-time">Estimated Ship Date 6 – 8 wks</span>
-        {% elsif leadTime < 64 %}
+        {%- elsif leadTime < 64 -%}
           <span class="status-time">Estimated Ship Date 7 – 9 wks</span>
-        {% elsif leadTime < 71 %}
+        {%- elsif leadTime < 71 -%}
           <span class="status-time">Estimated Ship Date 8 – 10 wks</span>
-        {% elsif leadTime < 78 %}
+        {%- elsif leadTime < 78 -%}
           <span class="status-time">Estimated Ship Date 9 – 11 wks</span>
-        {% elsif leadTime < 85 %}
+        {%- elsif leadTime < 85 -%}
           <span class="status-time">Estimated Ship Date 10 – 12 wks</span>
-        {% elsif leadTime < 121 %}
+        {%- elsif leadTime < 121 -%}
           <span class="status-time">Estimated Ship Date 3 – 4 mths</span>
-        {% elsif leadTime < 151 %}
+        {%- elsif leadTime < 151 -%}
           <span class="status-time">Estimated Ship Date 4 – 5 mths</span>
-        {% elsif leadTime < 181 %}
+        {%- elsif leadTime < 181 -%}
           <span class="status-time">Estimated Ship Date 5 – 6 mths</span>
-        {% elsif leadTime < 211 %}
+        {%- elsif leadTime < 211 -%}
           <span class="status-time">Estimated Ship Date 6 – 7 mths</span>
-        {% elsif leadTime < 1000 %}
+        {%- elsif leadTime < 1000 -%}
           <span class="status-time">Estimated Ship Date over 7 mths</span>
-        {% endif %}
+        {%- endif -%}
         <span class="status-order">Order Now to Reserve</span>
       </div>
-    {% elsif variant.inventory_management == nil and leadTime %}
+    {%- elsif variant.inventory_management == nil and leadTime -%}
       <div class="sx-status">
         <span class="status-desc main-notice">Special Order Item</span>
-        {% if leadTime < 22  %}
+        {%- if leadTime < 22  -%}
           <span class="status-time">Expected to ship in 1 – 3 wks</span>
-        {% elsif leadTime < 29 %}
+        {%- elsif leadTime < 29 -%}
           <span class="status-time">Expected to ship in 2 – 4 wks</span>
-        {% elsif leadTime < 36 %}
+        {%- elsif leadTime < 36 -%}
           <span class="status-time">Expected to ship in 3 – 5 wks</span>
-        {% elsif leadTime < 43 %}
+        {%- elsif leadTime < 43 -%}
           <span class="status-time">Expected to ship in 4 – 6 wks</span>
-        {% elsif leadTime < 50 %}
+        {%- elsif leadTime < 50 -%}
           <span class="status-time">Expected to ship in 5 – 7 wks</span>
-        {% elsif leadTime < 57 %}
+        {%- elsif leadTime < 57 -%}
           <span class="status-time">Expected to ship in 6 – 8 wks</span>
-        {% elsif leadTime < 64 %}
+        {%- elsif leadTime < 64 -%}
           <span class="status-time">Expected to ship in 7 – 9 wks</span>
-        {% elsif leadTime < 71 %}
+        {%- elsif leadTime < 71 -%}
           <span class="status-time">Expected to ship in 8 – 10 wks</span>
-        {% elsif leadTime < 78 %}
+        {%- elsif leadTime < 78 -%}
           <span class="status-time">Expected to ship in 9 – 11 wks</span>
-        {% elsif leadTime < 85 %}
+        {%- elsif leadTime < 85 -%}
           <span class="status-time">Expected to ship in 10 – 12 wks</span>
-        {% elsif leadTime < 121 %}
+        {%- elsif leadTime < 121 -%}
           <span class="status-time">Expected to ship in 3 – 4 mths</span>
-        {% elsif leadTime < 151 %}
+        {%- elsif leadTime < 151 -%}
           <span class="status-time">Expected to ship in 4 – 5 mths</span>
-        {% elsif leadTime < 181 %}
+        {%- elsif leadTime < 181 -%}
           <span class="status-time">Expected to ship in 5 – 6 mths</span>
-        {% elsif leadTime < 211 %}
+        {%- elsif leadTime < 211 -%}
           <span class="status-time">Expected to ship in 6 – 7 mths</span>
-        {% elsif leadTime < 1000 %}
+        {%- elsif leadTime < 1000 -%}
           <span class="status-time">Expected to ship in over 7 mths</span>
-        {% endif %}
+        {%- endif -%}
       </div>
-    {% elsif variant.inventory_quantity > 0 %}
-      {% assign pdemoitem = false %}
-      {% if variant.sku contains "-DEMO" %}
-        {% assign pdemoitem = true %}
-      {% endif %}
+    {%- elsif variant.inventory_quantity > 0 -%}
+      {%- assign pdemoitem = false -%}
+      {%- if variant.sku contains "-DEMO" -%}
+        {%- assign pdemoitem = true -%}
+      {%- endif -%}
 
       <div class="product-detail-stock-and-shipping">
         <div class="stock-message main-notice">In Stock
-          {% if product.metafields.plytix.clearance_overstock == 'true' %}
+          {%- if product.metafields.plytix.clearance_overstock == 'true' -%}
             ({{ variant.inventory_quantity }} Available)
-          {% elsif pclearance == true or pdemoitem == true %}
+          {%- elsif pclearance == true or pdemoitem == true -%}
             ({{ variant.inventory_quantity }} Available)
-          {% endif %}
+          {%- endif -%}
         </div>
-        <span class="status-time"></span> {% comment %} keep this line for js {% endcomment %}
+        <span class="status-time"></span> {%- comment -%} keep this line for js {%- endcomment -%}
       </div>
-    {% endif %}
+    {%- endif -%}
     </div>
-  {% endfor %}
-{% endif %}
+  {%- endfor -%}
+{%- endif -%}
