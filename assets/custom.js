@@ -506,19 +506,10 @@ jQuery(document).ready(function($){
         $('.rel-slide-arrows').hide();
         $('#'+itemId+'-slider-arrows').show();
         // equalize height
+        var highestTitleBox = 0;
         var highestBox = 0;
         var slideritemId = itemId+'-rel-item';
-        $('.'+slideritemId+' .productgrid--item').css({'height':''});
-        $('.'+slideritemId+' .productgrid--item').each(function(){
-            // If this box is higher than the cached highest then store it
-            if($(this).height() > highestBox) {
-                highestBox = $(this).height();
-            }
-        });
-        $('.'+slideritemId+' .productgrid--item').height(highestBox);
-
         //Title Height
-        var highestTitleBox = 0;
         $('.'+slideritemId+' .productitem--title').css({'height':''});
         $('.'+slideritemId+' .productitem--title').each(function(){
             // If this box is higher than the cached highest then store it
@@ -527,6 +518,16 @@ jQuery(document).ready(function($){
             }
         });
         $('.'+slideritemId+' .productitem--title').height(highestTitleBox);
+
+        //box height
+        $('.'+slideritemId+' .productgrid--item').css({'height':''});
+        $('.'+slideritemId+' .productgrid--item').each(function(){
+            // If this box is higher than the cached highest then store it
+            if($(this).height() > highestBox) {
+                highestBox = $(this).height();
+            }
+        });
+        $('.'+slideritemId+' .productgrid--item').height(highestBox);
 
     });
 
@@ -569,13 +570,7 @@ jQuery(document).ready(function($){
             // Equalize Box and Title Height
             var slideritemId = itemId.replace('-slider','-rel-item');
             var highestBox = 0;
-
-            $('.'+slideritemId+' .productgrid--item', this).each(function(){
-                if($(this).height() > highestBox) {
-                    highestBox = $(this).height();
-                }
-            });
-            $('.'+slideritemId+' .productgrid--item',this).height(highestBox);
+            var highestTitleBox = 0;
 
             //Title Height
             var highestTitleBox = 0;
@@ -585,7 +580,14 @@ jQuery(document).ready(function($){
                 }
             });
             $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
-
+            
+            //box height
+            $('.'+slideritemId+' .productgrid--item', this).each(function(){
+                if($(this).height() > highestBox) {
+                    highestBox = $(this).height();
+                }
+            });
+            $('.'+slideritemId+' .productgrid--item',this).height(highestBox);
 
         });
     },1500);
