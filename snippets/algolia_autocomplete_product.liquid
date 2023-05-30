@@ -28,7 +28,9 @@
                   </div>
                   <div class="aa-ItemContentPrice">
                       <div class="aa-ItemContentPriceCurrent">
-                      ${item.meta.plytix.package_products ? html`<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
+                      ${item.meta.plytix.package_products ? html`
+                        ${item.meta.plytix.bundle_pricing > 0 ? html `<span class="bundle-price">${priceFormat(item.meta.plytix.bundle_pricing)}</span>`: html `<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`}
+                      `: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
                           {% comment %}${algolia.helpers.displayPrice(item, distinct)}{% endcomment %}
                       </div>
                   </div>
@@ -37,4 +39,11 @@
       </a>`
     };
   })(window.algoliaShopify);
+
+
+  function priceFormat(bundleprice){
+      thisPrice = parseFloat(bundleprice);
+      thisPrice = "$"+thisPrice.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      return thisPrice;
+  }
 </script>
