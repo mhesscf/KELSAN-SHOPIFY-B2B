@@ -899,6 +899,7 @@ input.qtyminus {
   transition: all 0.4s ease-in-out;
 }
 .product-form--atc .cart-buttons button.product-form--atc-button:hover{
+  color: {{ settings.color_button_secondary_text }};
   background-color: {{ settings.color_button_hover }};
   border: 1px solid {{ settings.color_button_hover }};
 }
@@ -1455,6 +1456,14 @@ input.qtyminus {
 .rel-product-tabbed-area .rel-slider-item .productitem__compare{
   display:none;
 }
+.rel-product-tabbed-area .rel-slider-item .productitem--action{
+  margin-top:0;
+}
+.rel-product-tabbed-area .rel-slider-item .jdgm-widget.jdgm-widget{
+  display:block !important;
+  margin-bottom:5px;
+}
+
 .rel-product-tabbed-area .rel-slide-arrows{
   text-align:right;
 }
