@@ -362,7 +362,12 @@
         {%- if product.metafields.plytix.package_products != blank -%}
           <div class="productitem__price">
             <div class="price__current">
-              <div class="see-item">See Product for Pricing</div>
+              {%- if product.metafields.plytix.bundle_pricing != blank -%}
+                {%- assign bundleprice = product.metafields.plytix.bundle_pricing | times: 100 -%}
+                <div class="see-item">{{ bundleprice| money }}</div>
+              {%- else -%}
+                <div class="see-item">See Product for Pricing</div>
+              {%- endif -%}
             </div>
           </div>
         {%- else -%}
