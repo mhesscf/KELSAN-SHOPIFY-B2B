@@ -1410,7 +1410,9 @@ input.qtyminus {
   display:flex;
 }
 .rel-product-tabbed-area .rel-product-tab-header {
-  border:1px solid {{ settings.color_product_desc_top_border }};
+  border:1px solid white;
+  color:white;
+  background-color:{{ settings.color_slide_arrow_background }};
   padding:10px;
   font-size:16px;
   cursor:pointer;
@@ -1418,18 +1420,30 @@ input.qtyminus {
   font-weight:bold;
 }
 .rel-product-tabbed-area .rel-product-tab-header:first-child {
-  border-radius: 10px 0 0 0;
+  border-top-left-radius:10px;
   margin-left:22px;
 }
 .rel-product-tabbed-area .rel-product-tab-header:last-child {
-  border-radius: 0 10px 0 0;
+  border-top-right-radius:10px;
+  border-right:0px solid {{ settings.color_product_desc_top_border }};
 }
 .rel-product-tabbed-area .rel-product-tab-header.active-tab {
-  background-color:{{ settings.color_section_secondary }};
-  background-color:{{ settings.color_button_secondary_background }};
-  border:1px solid {{ settings.color_button_secondary_background }};
-  color:white;
+  background-color:white;
+  border:1px solid {{ settings.color_product_desc_top_border }};
+  border-bottom:1px solid white;
+  color: {{ settings.color_text }};
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: default;
 }
+
+
+
+
+
+
+
 .rel-product-tabbed-area .tabbed-rel-slider {
   display: flex;
   margin:10px;
