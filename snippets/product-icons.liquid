@@ -10,12 +10,21 @@
     {% endif %}
 {% endfor %}
 
+
+
  
 <div class="product-icons">
     <div class="ship-made">
         {% if pdiscontinued == true %}
-            <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>
+
+            {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
+                {% comment %}on discontinued demos, replace wording with diff than normal discontinued{% endcomment %}
+                <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>
+            {% else %}
+                <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>
+            {% endif %}
         {% else %}
+
             {% if product.metafields.plytix.made_in_USA %}
                 <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div>
             {% endif %}
