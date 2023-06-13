@@ -36,7 +36,7 @@ body {background-color:#fff !important;}
 {% comment %}padding: 0;{% endcomment %}
 
   line-height: 1;
-  font-size: initial;
+  {% comment %}font-size: initial;{% endcomment %}
 }
 
 /* font */
@@ -1079,6 +1079,9 @@ margin-right:0;
 .ais-page .ais-results-as-block .product-icons{
   {% comment %}text-align:left;{% endcomment %}
   {% comment %}max-width:200px;{% endcomment %}
+}
+.ais-page .product-icons .ship-made .sm-row strong{
+  color:{{ settings.color_button_secondary_background }};
 }
 
 

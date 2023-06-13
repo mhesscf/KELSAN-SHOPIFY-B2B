@@ -219,6 +219,19 @@
             }
         }
     }
+    function bundlespecialdata(thisdata,postion){
+        if(thisdata){
+            const thisArray = thisdata.split(",");
+            if(postion == 0){
+                var value = thisArray[postion];
+                value = parseFloat(value);
+                value = value.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                return "$"+value;
+            }else{
+                return thisArray[postion];
+            }
+        }
+    }
 
     (function(algolia) {
         'use strict';
@@ -289,7 +302,9 @@
                     <div class="ship-made">
                         ${hit.collections.includes("discontinued") && !hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>`: html `
                             ${hit.collections.includes("discontinued") && hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>`: html `
-                                ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"enddate")}</strong> and <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"savings")}</strong></span></div></div>` : ``}
+                                ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"enddate")}</strong> and <strong>Save ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"savings")}</strong></span></div></div>` : ``}
+                                ${hit.meta.plytix.bundle_special_data ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>${bundlespecialdata(hit.meta.plytix.bundle_special_data,1)}</strong> and <strong>Save ${bundlespecialdata(hit.meta.plytix.bundle_special_data,0)}</strong></span></div></div>` : ``}
+
                                 ${hit.tags.includes("Free Shipping") ? html`<div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the Continental US</span></div></div>`:''}
                                 ${hit.tags.includes("Made in the USA") ? html`<div class="sm-row usamade"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div>`:''}
                                 ${hit.tags.includes("Environmentally Responsible") ? html`<div class="sm-row greenproduct"><div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div><div class="sm-row-text"><span>Environmentally Responsible</span><br/><span class="sm-text">Reduced Impact on the Environment</span></div></div>`:''}
