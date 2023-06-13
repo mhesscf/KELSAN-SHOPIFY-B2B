@@ -24,7 +24,19 @@
                 <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>
             {% endif %}
         {% else %}
-
+            {% if product.selected_or_first_available_variant.compare_at_price %}
+                {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+                    {% assign specialSavings = product.compare_at_price | minus: product.price %}
+                    {% comment %}{% assign endDate = product.selected_or_first_available_variant.metafields.plytix.sale_end_date %}{% endcomment %}
+                    {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
+                    {% assign nowTimestamp = 'now' | date: '%s' %}
+                    {% assign diffSeconds = endDate | minus: nowTimestamp %}
+                    {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+                    {% if diffDays >= -1 %}
+                        <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
             {% if product.metafields.plytix.made_in_USA %}
                 <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div>
             {% endif %}
