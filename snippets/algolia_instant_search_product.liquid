@@ -87,7 +87,7 @@
             finalmessage += '<span class="status-desc main-notice">Special Order Item</span>';
             finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
         }else if(inventory > 0) {
-            finalmessage += '<span class="status-desc main-notice">In Stock ';
+            finalmessage += '<span class="status-desc main-notice"><i class="fa-regular fa-circle-check"></i> In Stock ';
             if (clearance == 'true' || sku.includes("-DEMO") ){
                 finalmessage += '<span class="invcount">('+inventory +' Available)</span>';
             }
