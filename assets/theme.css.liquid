@@ -4068,8 +4068,8 @@ body .mdc-ripple-surface:hover:before {
 
 .site-header-cart--count {
 	position: absolute;
-	top: -10px;
-	right: -3px;
+	top: -4px;
+	right: -6px;
 	display: block;
 	opacity: 0;
 	transition: opacity 150ms cubic-bezier(0.4, 0, 1, 1);
@@ -21702,6 +21702,12 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
 .site-header-right {
 	width: 15%;
 }
+
+@media screen and (max-width: 1150px) {
+	.site-header-right {
+		width: 18%;
+	}
+}
 .site-header-actions {
 	display: flex;
 	flex: 1 0 auto;
@@ -21753,6 +21759,7 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
 .site-header-actions li a.site-header-cart--button:hover .cart-label{
 	color: {{ settings.color_link_hover }};
 }
+.site-header-actions li a.site-header-cart--button i,
 .site-header-actions li a.site-header-cart--button svg{
 	width: 100%;
 	max-width: 1.6125rem;
@@ -21761,6 +21768,7 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
 	margin: auto;
 	display: block;
 	color: {{ settings.color_button_background }};
+	font-size:24px;
 }
 
 .site-header-actions li a.site-header-cart--button .site-header-cart--count:after{
@@ -21801,8 +21809,9 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
 }
 .site-header-actions .site-header-cart-icon svg,
 .site-header-actions .site-header-actions__account-link.account-log_in_out{
-	margin-right: 10px
+	margin-right: 18px
 }
+.site-header-actions .site-header-actions__account-link i,
 .site-header-actions .site-header-actions__account-link svg {
 	width: 100%;
 	max-width: 1.3125rem;
@@ -21811,7 +21820,9 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
 	color: {{ settings.color_button_background }};
 	margin: auto;
 	display: block;
+	font-size:24px;
 }
+
 .site-header-actions .site-header__account-link--account {
 	padding-right: 8px;
 	padding-left: 8px;
