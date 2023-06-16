@@ -21826,16 +21826,17 @@ body:not(.user-is-tabbing) .surface-pick-up-embed__modal-btn:focus {
 .site-header-actions .site-header__account-link--account {
 	padding-right: 8px;
 	padding-left: 8px;
-	font-size: var(--font-size-body-small);
+	font-size: 500;
 	font-weight: {{ fonts_type_body_weight_bolder }};
 }
 @media screen and (min-width: 1024px) {
 	.site-header-actions .site-header__account-link--account {
-		padding-right: {{ space_x_small | divided_by: 16.0 | append: 'rem' }};
-		padding-left: {{ space_x_small | divided_by: 16.0 | append: 'rem' }};
-		margin-bottom: {{ space_xxx_small | divided_by: 16.0 | append: 'rem' }};
+		{% comment %}padding-right: {{ space_x_small | divided_by: 16.0 | append: 'rem' }};{% endcomment %}
+		{% comment %}padding-left: {{ space_x_small | divided_by: 16.0 | append: 'rem' }};{% endcomment %}
+		{% comment %}margin-bottom: {{ space_xxx_small | divided_by: 16.0 | append: 'rem' }};{% endcomment %}
 	}
 }
+.site-header-actions .site-header__account-link--account,
 .site-header-actions .site-header_account-link-text {
 	display: flex;
 	align-items: center;
@@ -23945,7 +23946,7 @@ img.category-resources-section__image {
 	text-decoration: none;
 	font-weight: 500;
 	font-family: {{ fonts_type_body_family }};
-	margin-top: 6px;
+	margin-top: 7px;
 	display: inline-block;
 	color: {{ settings.color_text }};
 	transition: all 0.4s ease-in-out;
