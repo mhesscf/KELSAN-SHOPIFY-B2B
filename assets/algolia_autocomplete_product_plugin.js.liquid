@@ -56,7 +56,11 @@
             item({ item, html, components }) {
               const distinct = config.show_products;
               const variantInfo = !distinct && item.objectID !== item.id ? `?variant= ${item.objectID}` : '';
-              const itemLink = `/products/${item.handle}/${variantInfo}`;
+              if (variantInfo == ''){
+                var itemLink = `/products/${item.handle}`;
+              }else{
+                var itemLink = `/products/${item.handle}/${variantInfo}`;
+              }
               const getConversionData = (e, item) => {
                 if (!algolia.config.analytics_enabled) return;
                 // algolia.saveForConversionTracking({
