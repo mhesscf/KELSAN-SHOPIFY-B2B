@@ -196,7 +196,7 @@
         return leadtext;
     }
 
-    function specialDateCheck(rawdate,salePrice,orgPrice,youWantWhat){
+    function specialDateCheck(rawdate,salePrice,orgPrice,listprice,youWantWhat){
         // youWantWhat == bool, enddate, or savings
         if (rawdate && salePrice && orgPrice){
             if(salePrice < orgPrice){
@@ -207,7 +207,7 @@
                     if(youWantWhat == "bool"){
                         return true;
                     }else if(youWantWhat == "savings"){
-                        var saledif = orgPrice - salePrice
+                        var saledif = listprice - salePrice
                         saledif = parseFloat(saledif);
                         saledif = saledif.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
                         return "$"+saledif;
@@ -302,7 +302,7 @@
                     <div class="ship-made">
                         ${hit.collections.includes("discontinued") && !hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>`: html `
                             ${hit.collections.includes("discontinued") && hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>`: html `
-                                ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"enddate")}</strong> and <strong>Save ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"savings")}</strong></span></div></div>` : ``}
+                                ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,hit.meta.plytix.list_price,"bool") ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,hit.meta.plytix.list_price,"enddate")}</strong> and <strong>Save ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,hit.meta.plytix.list_price,"savings")}</strong></span></div></div>` : ``}
                                 ${hit.meta.plytix.bundle_special_data ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>${bundlespecialdata(hit.meta.plytix.bundle_special_data,1)}</strong> and <strong>Save ${bundlespecialdata(hit.meta.plytix.bundle_special_data,0)}</strong></span></div></div>` : ``}
 
                                 ${hit.tags.includes("Free Shipping") ? html`<div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the Continental US</span></div></div>`:''}
