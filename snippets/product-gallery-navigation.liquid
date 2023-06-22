@@ -48,6 +48,8 @@
       class="gallery-navigation--scroller gallery-navigation-horizontal-scroller-slick"
       data-gallery-scroller
     >
+      {% assign mediaSize = product.media | size  %}
+
     {% for media in product.media %}
       <button
         class="
@@ -62,6 +64,7 @@
         data-gallery-selected="{%- if selected_media.id == media.id -%}true{%- else -%}false{%- endif -%}"
         data-media="{{ media.id }}"
         data-media-type="{{ media.media_type }}"
+        {% if mediaSize < 2 %} style="display:none;" {% endif %}
       >
         <span class="product-gallery--media-thumbnail-img-wrapper" tabindex="-1">
           {% if media.media_type == 'video' or media.media_type == 'external_video' %}
