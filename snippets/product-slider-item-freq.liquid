@@ -1,0 +1,392 @@
+
+{%- comment -%}
+  @param product {Object}
+    Required to show product information
+
+
+{%- endcomment -%}
+{%- if 1==1 -%}
+{%- assign product_grid_show_second_image = false -%}
+{%- assign emphasize_price = false -%}
+{%- assign quick_shop_display = false -%}
+{%- assign enable_quickshop = false -%}
+{%- assign atc_display = true -%}
+{%- assign atc_button = true -%}
+{%- assign money_format = shop.money_format | strip_html -%}
+
+{%- assign pstep = 1 -%}
+{%- if product.metafields.plytix.product_step != blank -%}
+  {%- assign pstep = product.metafields.plytix.product_step -%}
+{%- endif -%}
+{%- for variant in product.variants -%}
+  {%- if variant.metafields.plytix.product_step -%}
+    {%- assign pstep = variant.metafields.plytix.product_step -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if product -%}
+  {%- assign compare_at_price = product.compare_at_price -%}
+  {%- assign compare_at_price_varies = product.compare_at_price_varies -%}
+  {%- assign price = product.price -%}
+  {%- assign price_varies = product.price_varies -%}
+  {%- assign product_available = product.available -%}
+  {%- assign product_title = product.title -%}
+  {%- assign product_vendor = product.vendor -%}
+  {%- assign product_link = product.url | within: collection -%}
+
+{%- else -%}
+  {%- assign onboarding = true -%}
+  {%- assign compare_at_price = 1999 -%}
+  {%- assign compare_at_price_varies = false -%}
+  {%- assign price = 1999 -%}
+  {%- assign price_varies = false -%}
+  {%- assign product_available = true -%}
+  {%- assign product_title = 'onboarding.product.title' | t -%}
+  {%- assign product_vendor = 'onboarding.product.vendor' | t -%}
+  {%- assign product_link = '#' -%}
+{%- endif -%}
+  {% comment %}Product Type{% endcomment %}
+  {%- assign has_variants = false -%}
+  {%- unless product.has_only_default_variant -%}
+    {%- assign has_variants = true -%}
+  {%- endunless -%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+  {%- assign product_type = 'simple' -%}
+  {%- if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button'%}
+    {%- assign product_type = 'nobuy' -%}
+  {%- elsif has_variants %}
+    {%- assign product_type = 'variant' -%}
+  {%- endif -%}
+
+{%- assign on_sale = false -%}
+{%- for variant in product.variants -%}
+  {%- if variant.compare_at_price > variant.price -%}
+    {%- assign on_sale = true -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign consistent_saved = false -%}
+{%- capture consistent_savings -%}
+  {%
+          render 'consistent-savings',
+          variants: product.variants,
+          on_sale: on_sale
+  -%}
+{%- endcapture -%}
+{%- if consistent_savings contains 'true' -%}
+  {%- assign consistent_saved = true -%}
+{%- endif -%}
+{%- capture classes -%}
+  productgrid--item
+  imagestyle--{%- if settings.product_grid_image_crop and settings.product_grid_image_style != 'natural' -%}cropped-{%- endif -%}{{ settings.product_grid_image_style }}
+  {%- unless product.featured_media.preview_image -%}imagestyle--no-image{%- endunless -%}
+  {%- if on_sale -%}productitem--sale{%- endif -%}
+  {%- if emphasize_price -%}productitem--emphasis{%- endif -%}
+  {%- if atc_display == 'always' or quick_shop_display == 'always' -%}show-actions--mobile{%- endif -%}
+{%- endcapture -%}
+
+{%- assign initial_image = product.featured_media.preview_image.src -%}
+
+{%- assign element = 'li' -%}
+
+<section class="{{ classes | strip_newlines }}" id="freq-product-{{ product.id }}" data-product-item data-product-quickshop-url="{{ product_link }}" >
+  <input type="checkbox" class="freq-check" {% unless has_variants %}checked{% endunless %}>
+  <div class="productitem" data-product-item-content>
+
+    <div class="productitem__container">
+
+
+      <div class="productitem__image-container">
+        <a
+                class="productitem--image-link"
+                href="{{ product.url | within: collection }}"
+                tabindex="-1"
+                title="{{ product_title }}"
+                data-product-page-link
+        >
+          <figure
+                  class="productitem--image"
+                  data-product-item-image
+                  {%- if settings.product_grid_image_style == 'natural' and initial_image -%}
+                    style="--product-grid-item-image-aspect-ratio: {{ initial_image.aspect_ratio }};"
+                  {%- endif -%}
+          >
+            {%- if initial_image -%}
+              {%- if product_grid_show_second_image and product.media.size > 1 -%}
+                {%- assign second_image = product.media[1].preview_image.src -%}
+                {%
+                        render 'rimg',
+                        img: second_image,
+                        size: '512x',
+                        class: 'productitem--image-alternate'
+                -%}
+              {%- endif -%}
+              {%
+                      render 'rimg',
+                      img: initial_image
+                      size: '512x',
+                      class: 'productitem--image-primary'
+              -%}
+            {%- else -%}
+              {%- if product -%}
+                {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
+              {%- else -%}
+                {%- capture index -%}
+                  {%- cycle '1', '2', '3', '4', '5', '6' -%}
+                {%- endcapture -%}
+                {{ 'product-' | append: index | placeholder_svg_tag: 'placeholder--image' }}
+              {%- endif -%}
+            {%- endif -%}
+            {%- comment -%}
+            {%-
+                    render 'product-badge',
+                    class_root: 'productitem',
+                    product: product,
+                    product_available: product_available,
+                    on_sale: on_sale,
+                    price: price,
+                    compare_at_price: compare_at_price,
+                    show_saved: consistent_saved,
+                    include_range: false,
+                    compare_at_price_varies: compare_at_price_varies,
+            -%}
+            {%- endcomment -%}
+          </figure>
+        </a>
+      </div>
+{% comment %}Org Price
+      {%- capture product_item_price -%}
+        {%
+                render 'product-price',
+                product: product,
+                class_root: 'productitem',
+                price: price,
+                list_price : list_price,
+                price_varies: price_varies,
+                compare_at_price: compare_at_price,
+                compare_at_price_varies: compare_at_price_varies,
+                on_sale: on_sale,
+                emphasize_price: emphasize_price,
+                show_original: true,
+                show_range: false,
+                include_unit_price: true,
+                include_hidden_price: false,
+        -%}
+      {%- endcapture -%}
+      {% endcomment %}
+
+
+
+      <div class="productitem--info">
+         <h2 class="productitem--title">
+          <a href="{{ product_link }}" data-product-page-link>
+            {{ product_title }}
+          </a>
+        </h2>
+
+
+
+
+
+        {%- comment -%}Start automatically added Judge.me widget{%- endcomment -%}
+        {% comment %}{%- render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product -%}{% endcomment %}
+        {%- comment -%}End automatically added Judge.me widget{%- endcomment -%}
+
+      </div>
+
+
+        {%- if enable_quickshop or atc_button -%}
+          {%- comment -%}
+            Default button appearance and text
+          {%- endcomment -%}
+          {%- assign quick_shop_text = 'product.buttons.quick_shop' | t -%}
+          {%- assign quick_buy_text = 'product.buttons.add_to_cart' | t -%}
+
+          {%- assign quick_shop_classes = 'productitem--action-trigger button-secondary' -%}
+          {%- assign quick_buy_classes = 'productitem--action-trigger productitem--action-atc button-secondary' -%}
+
+          {%- if has_variants -%}
+            {%- assign quick_buy_text = 'product.buttons.choose_options' | t -%}
+          {%- else -%}
+            {%- if product.template_suffix contains 'pre-order' -%}
+              {%- assign quick_buy_text = 'product.buttons.pre_order' | t -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- unless product_available -%}
+            {%- assign quick_buy_text = 'product.buttons.sold_out' | t -%}
+            {%- assign quick_buy_classes = quick_buy_classes | append: ' disabled' -%}
+          {%- endunless -%}
+
+
+
+          {% for variant in product.variants %}
+            {%- comment -%}Get stock status for logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
+
+            {%- assign stockStatusMain = "" -%}
+            {%- assign stockStatusSub = "" -%}
+            {%- assign fservice = variant.fulfillment_service -%}
+            {%- assign leadTime = variant.metafields.plytix.sxerp_lead_time -%}
+            {%- assign inventoryQuantity = variant.inventory_quantity -%}
+            {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
+            {%- assign leadTime = leadTime | plus: 0 -%}
+
+            {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+              {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
+              {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
+            {%- elsif variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
+              {%- assign stockStatusMain = "Temporarily On Backorder" -%}
+              {%- if leadTime < 22  -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" -%}
+              {%- elsif leadTime < 29 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" -%}
+              {%- elsif leadTime < 36 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" -%}
+              {%- elsif leadTime < 43 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 4 –6 wks" -%}
+              {%- elsif leadTime < 50 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" -%}
+              {%- elsif leadTime < 57 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" -%}
+              {%- elsif leadTime < 64 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" -%}
+              {%- elsif leadTime < 71 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" -%}
+              {%- elsif leadTime < 78 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" -%}
+              {%- elsif leadTime < 85 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" -%}
+              {%- elsif leadTime < 121 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" -%}
+              {%- elsif leadTime < 151 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" -%}
+              {%- elsif leadTime < 181 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" -%}
+              {%- elsif leadTime < 211 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" -%}
+              {%- elsif leadTime < 1000 -%}
+                {%- assign stockStatusSub = "Estimated Ship Date over 7 mths" -%}
+              {%- endif -%}
+            {%- elsif variant.inventory_management == nil and leadTime -%}
+              {%- assign stockStatusMain = "Special Order Item" -%}
+              {%- if leadTime < 22  -%}
+                {%- assign stockStatusSub = "Expected to ship in 1 – 3 wks" -%}
+              {%- elsif leadTime < 29 -%}
+                {%- assign stockStatusSub = "Expected to ship in 2 – 4 wks" -%}
+              {%- elsif leadTime < 36 -%}
+                {%- assign stockStatusSub = "Expected to ship in 3 – 5 wks" -%}
+              {%- elsif leadTime < 43 -%}
+                {%- assign stockStatusSub = "Expected to ship in 4 – 6 wks" -%}
+              {%- elsif leadTime < 50 -%}
+                {%- assign stockStatusSub = "Expected to ship in 5 – 7 wks" -%}
+              {%- elsif leadTime < 57 -%}
+                {%- assign stockStatusSub = "Expected to ship in 6 – 8 wks" -%}
+              {%- elsif leadTime < 64 -%}
+                {%- assign stockStatusSub = "Expected to ship in 7 – 9 wks" -%}
+              {%- elsif leadTime < 71 -%}
+                {%- assign stockStatusSub = "Expected to ship in 8 – 10 wks" -%}
+              {%- elsif leadTime < 78 -%}
+                {%- assign stockStatusSub = "Expected to ship in 9 – 11 wks" -%}
+              {%- elsif leadTime < 85 -%}
+                {%- assign stockStatusSub = "Expected to ship in 10 – 12 wks" -%}
+              {%- elsif leadTime < 121 -%}
+                {%- assign stockStatusSub = "Expected to ship in 3 – 4 mths" -%}
+              {%- elsif leadTime < 151 -%}
+                {%- assign stockStatusSub = "Expected to ship in 4 – 5 mths" -%}
+              {%- elsif leadTime < 181 -%}
+                {%- assign stockStatusSub = "Expected to ship in 5 – 6 mths" -%}
+              {%- elsif leadTime < 211 -%}
+                {%- assign stockStatusSub = "Expected to ship in 6 – 7 mths" -%}
+              {%- elsif leadTime < 1000 -%}
+                {%- assign stockStatusSub = "Expected to ship in over 7 mths" -%}
+              {%- endif -%}
+            {%- elsif variant.inventory_quantity > 0 -%}
+              {%- assign stockStatusMain = "In Stock" -%}
+            {%- endif -%}
+
+            {%- if stockStatusSub != "" -%}
+              {%- capture stockStatusNote -%}{{ stockStatusMain }} ({{ stockStatusSub }}){%- endcapture -%}
+            {%- else -%}
+              {%- capture stockStatusNote -%}{{ stockStatusMain }}{%- endcapture -%}
+            {%- endif -%}
+            {%- comment -%}End of stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
+
+            {% comment %}Print each of the variation values{% endcomment %}
+            <div class="freq-var{{ variant.id }} freq-var-variables {% if current_variant.id == variant.id and has_variants == false %}current-freq-var{% endif %}">
+                  <div class="product-detail-sku">SKU:<span>{{ variant.sku }}</span></div>
+                  {%- if product.metafields.plytix.package_products != blank -%}
+                    <div class="productitem__price">
+                      <div class="price__current">
+                        {%- if product.metafields.plytix.bundle_pricing != blank -%}
+                          {%- assign bundleprice = product.metafields.plytix.bundle_pricing | times: 100 -%}
+                          <div class="see-item">{{ bundleprice| money }}</div>
+                        {%- else -%}
+                          <div class="see-item">See Product for Pricing</div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- else -%}
+                    {%- if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
+                      <div class="price productitem__price ">
+                        <div class="price__current " data-price-container="" style=""><span class="money" data-price="{{ variant.price }}">{{ variant.price | money }}</span></div>
+                      </div>
+                    {%- elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' -%}
+                      <span style="font-size:14px; line-height:36px;">View Price in Cart</span>
+                    {%- endif -%}
+                  {%- endif -%}
+                  <div class="freq-status" style="display:none;">{{ stockStatusNote }}</div>
+              <div id="data-freq-var{{ variant.id }}"
+
+                   data-var_id="{{ variant.id }}"
+                   data-var_vissku="{{ variant.sku }}"
+                   data-var_status="{{ stockStatusNote }}"
+                   data-var_erpsku="{{ variant.metafields.plytix.erp_sku }}"
+                   data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
+                   data-var_price="{{ variant.price }}"
+                   data-freqbundle-subproduct
+                   style="display: none" ></div>
+            </div>
+      {% endfor %}
+
+
+          <div class="productitem--actions" data-product-actions>
+
+            {%- if product_type == 'nobuy' %}
+              {% comment %}We are not allowing these products{% endcomment %}
+              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
+
+
+            {%- elsif product_type == 'variant' %}
+              {% comment %}Dropdown for variations{% endcomment %}
+              {% for option in product.options_with_values %}
+                <div class="option-name">{{ option.name }}:</div>
+              {% endfor %}
+              <select class="freq-var-select" id="freq-var-select-{{ product.id }}">
+                <option value="">Choose Option</option>
+                {% for variant in product.variants %}
+                    {% comment %}SKU:<span> {{ variant.id }}{{ variant.sku }}{{ variant.title }} </span>{% endcomment %}
+                     <option value="{{ variant.id }}" >{{ variant.title }}</option>
+                {% endfor %}
+              </select>
+
+            {%- endif -%}
+
+            {% comment %}Values for custom.js to pull to add to cart: changes on variation select{% endcomment %}
+            <input type="hidden" name="updates[{{ product.handle }}]" class="product-data" data-freqbundle-subproduct data-id="{{ current_variant.id }}" data-vissku="{{ current_variant.sku }}" data-status="{{ stockStatusNote }}" data-erpsku="{{ current_variant.metafields.plytix.erp_sku }}" data-step="" data-tieredpricing="{{ current_variant.metafields.plytix.tiered_pricing }}" data-qty="1" data-price="{{ current_variant.price }}" value="1" >
+
+          </div>
+        {%- endif -%}
+    </div>
+  </div>
+
+  {%- if atc_button -%}
+    <script type="application/json" data-quick-buy-settings>
+      {
+        "cart_redirection": {{ settings.enable_cart_redirection | json }},
+       "money_format": {{ shop.money_format | strip_html | json }}
+      }
+    </script>
+  {%- endif -%}
+</section>
+{%- endif -%}

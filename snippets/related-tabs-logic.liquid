@@ -16,7 +16,7 @@ New Related Product Tabs:<br/>
                                 {%- assign firstBlockId = block.settings.tab_rel_id -%}
                             {%- endif -%}
                             <h2 id="tab-{{ block.settings.tab_rel_id }}-header" class="rel-product-tab-header {% if firstBlockId == block.settings.tab_rel_id %}active-tab{% endif %}">
-                                {{ block.settings.tab_name }}
+                                <span class="desktop">{{ block.settings.tab_name }}</span><span class="mobile">{{ block.settings.tab_name_sm }}</span>
                             </h2>
                         {%- endif -%}
                 {%- endcase -%}
@@ -33,26 +33,93 @@ New Related Product Tabs:<br/>
                     {%- if firstBlockId == tab_rel_id -%}
                         {%- assign hideSliderDefault = false -%}
                     {%- endif -%}
-                    <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider" style="{% if hideSliderDefault %}display:none;{% endif %}">
-                            {%- assign noProducts = true -%}
-                            {%- if product.metafields.plytix[tab_rel_id] != blank -%}
-                                {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
-                                {%- for product in rel_products_arr -%}
-                                    {%- assign product_handle = product |  strip -%}
-                                    {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
-                                        {%- assign noProducts = false -%}
-                                        {%- assign item = all_products[product_handle] -%}
-                                        <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
-                                            {%-
-                                                    render 'product-slider-item',
-                                                    product: item
-                                            -%}
-                                        </div>
-                                    {%- endif -%}
-                                {%- endfor -%}
-                            {%- endif -%}
 
-                    </div>
+
+                    {%- if tab_rel_id == "freq_bought" -%}
+
+                        <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-freq tabbed-rel-slider" style="{% if hideSliderDefault %}display:none;{% endif %}">
+                            <div class="freq-bought-items">
+                                {%- assign noProducts = true -%}
+                                {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+
+
+
+                                    <div class="{{ tab_rel_id }}-rel-item rel-slider-item freq-item main-item" data-freqbundle-subproducts>
+                                        {%-
+                                                render 'product-slider-item-freq',
+                                                product: product
+                                        -%}
+                                    </div>
+                                    <div class="freq-add">+</div>
+
+
+
+                                    {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                    {%- for product in rel_products_arr -%}
+
+                                        {%- assign product_handle = product |  strip -%}
+                                        {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
+                                            {%- assign noProducts = false -%}
+                                            {%- assign item = all_products[product_handle] -%}
+
+                                            {%- assign has_variants = false -%}
+                                            {%- unless item.has_only_default_variant -%}
+                                                {%- assign has_variants = true -%}
+                                            {%- endunless -%}
+
+                                            <div class="{{ tab_rel_id }}-rel-item rel-slider-item freq-item" data-freqbundle-subproducts>
+                                                {%-
+                                                        render 'product-slider-item-freq',
+                                                        product: item
+                                                -%}
+                                            </div>
+                                            <div class="freq-add">+</div>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                {%- endif -%}
+                            </div>
+                            <div class="freq-sum-area">
+                                <div class="freq-total-price">Total Price: <span class="freq-price">$<span>0.00</span></span></div>
+                                <div class="freq-cart-button">
+                                    {% comment %}Org Bundle cart
+                                        <button class="product-form--atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
+                                    {% endcomment %}
+                                    <button class="product-form--atc-button" id="p-atc" type="submit" data-freqbundle-product-atc data-freqbundle="{{ product.handle }}">
+                                        <span class="atc-button--text">
+                                          <i class="fa-regular fa-cart-shopping"></i>
+                                          Add Items to Cart
+                                        </span>
+                                                <span class="atc-button--icon">
+                                          {%- render 'icon-spinner' -%}
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearer"></div>
+                    {%- else -%}
+                        <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider" style="{% if hideSliderDefault %}display:none;{% endif %}">
+                                {%- assign noProducts = true -%}
+                                {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+                                    {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                    {%- for product in rel_products_arr -%}
+                                        {%- assign product_handle = product |  strip -%}
+                                        {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
+                                            {%- assign noProducts = false -%}
+                                            {%- assign item = all_products[product_handle] -%}
+                                            <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
+                                                {%-
+                                                        render 'product-slider-item',
+                                                        product: item
+                                                -%}
+                                            </div>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                {%- endif -%}
+                        </div>
+                    {%- endif -%}
+
+
                     <div id="{{ tab_rel_id }}-slider-arrows" class="rel-slide-arrows" style="{% if hideSliderDefault %}display:none;{% endif %}"></div>
             {%- endcase -%}
         {%- endfor -%}
