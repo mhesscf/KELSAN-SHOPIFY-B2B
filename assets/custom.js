@@ -509,31 +509,34 @@ jQuery(document).ready(function($){
         var highestTitleBox = 0;
         var highestBox = 0;
         var slideritemId = itemId+'-rel-item';
-        //Title Height
-        $('.'+slideritemId+' .productitem--title').css({'height':''});
-        $('.'+slideritemId+' .productitem--title').each(function(){
-            // If this box is higher than the cached highest then store it
-            if($(this).height() > highestTitleBox) {
-                highestTitleBox = $(this).height();
-            }
-        });
-        $('.'+slideritemId+' .productitem--title').height(highestTitleBox);
 
-        //box height
-        $('.'+slideritemId+' .productgrid--item').css({'height':''});
-        $('.'+slideritemId+' .productgrid--item').each(function(){
-            // If this box is higher than the cached highest then store it
-            if($(this).height() > highestBox) {
-                highestBox = $(this).height();
-            }
-        });
-        $('.'+slideritemId+' .productgrid--item').height(highestBox);
+        if(slideritemId != "freq_bought-rel-item") {
+            //Title Height (exclude frequently bought together)
+            $('.' + slideritemId + ' .productitem--title').css({'height': ''});
+            $('.' + slideritemId + ' .productitem--title').each(function () {
+                // If this box is higher than the cached highest then store it
+                if ($(this).height() > highestTitleBox) {
+                    highestTitleBox = $(this).height();
+                }
+            });
+            $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
+
+            //box height (exclude frequently bought together)
+            $('.' + slideritemId + ' .productgrid--item').css({'height': ''});
+            $('.' + slideritemId + ' .productgrid--item').each(function () {
+                // If this box is higher than the cached highest then store it
+                if ($(this).height() > highestBox) {
+                    highestBox = $(this).height();
+                }
+            });
+            $('.' + slideritemId + ' .productgrid--item').height(highestBox);
+        }
 
     });
 
     //tabbed sliders:
     setTimeout(()=>{
-        $( ".rel-product-tabbed-area .tabbed-rel-slider" ).each(function( index ) {
+        $( ".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq')" ).each(function( index ) {
             var itemId = $(this).attr('id');
             var sliderArrows = '#'+itemId+'-arrows';
         $('#'+itemId).slick({
@@ -757,6 +760,130 @@ jQuery(document).ready(function($){
             location.href = window.Theme.routes.cart_url
         })
     }
+
+
+    // Frequently Bought Together Add to cart (Bundle qty handling)
+    const $freq_sub_product_container = $('.freq-bought-items') //items
+    const $freq_bundle_button = $('[data-freqbundle-product-atc]')
+    if($freq_sub_product_container.length) {
+        //trigger price on load
+        freqPriceCalc();
+
+        //add to cart
+        $freq_bundle_button.on('click', async function(e) {
+            e.preventDefault();
+            $(this).find('.atc-button--text').hide();
+            $(this).find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
+            const form_template = {
+                form_type: 'product',
+                utf8: '✓',
+                'properties[_erp_sku]': '',
+                'properties[Sku]': '',
+                'properties[_tiered_pricing]': '',
+                'id': '',
+                'quantity': 0
+            }
+
+            const form_datas = []
+            var missingOptions = 0;
+            $freq_sub_product_container.find('[data-freqbundle-subproducts]').each(function() {
+                $(this).find('.freq-var-select').css('border','');
+                if($(this).find('.freq-check').is(':checked')){
+                    if($(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku')){
+
+                        // console.log("ERP: "+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_erpsku'));
+                        // console.log("vissku: "+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku'));
+                        // console.log("status: "+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_status'));
+                        // console.log("tier: "+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing'));
+                        // console.log("var id: "+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id'));
+                        // console.log("--------");
+
+                        form_template["properties[_erp_sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_erpsku');
+                        form_template["properties[Sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku');
+                        form_template["properties[Status]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_status');
+                        form_template["properties[_tiered_pricing]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing');
+                        form_template.id = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id') + ""
+                        form_template.quantity = "1" + ""
+
+                        form_datas.push({...form_template})
+                    }else{
+                        $(this).find('.freq-var-select').css('border','2px solid red');
+                        missingOptions = 1;
+                    }
+
+                };
+            });
+            if(missingOptions != 1 && $('.freq-price span').text() != "0.00") {
+                form_datas.reverse();
+                for (const f of form_datas) {
+                    await $.ajax({
+                        type: 'POST',
+                        url: `${window.Theme.routes.cart_add_url}.js`,
+                        data: f,
+                        dataType: 'json'
+                    })
+                }
+
+                location.href = window.Theme.routes.cart_url
+            }else {
+                if(missingOptions == 1){
+                    alert('Please choose an option.');
+                }else{
+                    alert("Please add a product.");
+                }
+                $(this).find('.atc-button--text').show();
+                $(this).find('.atc-button--icon').css({"visibility": "hidden", "opacity": "0"});
+            }
+        })
+    }
+
+    // Frequently Bought Together total price calc
+
+    function freqPriceCalc(){
+        var freqBundPrice = 0;
+        $freq_sub_product_container.find('[data-freqbundle-subproducts]').each(function() {
+            if($(this).find('.freq-check').is(':checked')){
+                if($(this).find('.current-freq-var .money').data("price")){
+                    freqBundPrice = freqBundPrice + $(this).find('.current-freq-var .money').data("price");
+                }
+            }
+
+        });
+        freqBundPrice = freqBundPrice/100;
+        // thisPrice = parseFloat(freqBundPrice);
+        freqBundPrice = freqBundPrice.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        $('.freq-price span').html(freqBundPrice);
+    }
+    //update freq pricing on checkbox toggle
+    $('.freq-check').click(function() {
+        freqPriceCalc();
+    });
+
+
+    // Frequently Bought Together Variation Change
+    $('.freq-var-select').on('change', function() {
+        var thisProductId = $(this).attr('id').replace("freq-var-select-","");
+        var thisVariantId = this.value;
+        if(thisVariantId == ""){
+            $("#freq-product-"+thisProductId+" .freq-check").prop('checked', false);
+
+        }else{
+            $("#freq-product-"+thisProductId+" .freq-check").prop('checked', true);
+            $("#freq-product-"+thisProductId+" .freq-var-variables").removeClass("current-freq-var");
+            $("#freq-product-"+thisProductId+" .freq-var"+thisVariantId).addClass("current-freq-var");
+
+
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-id', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_id'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-vissku', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_vissku'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-status', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_status'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-erpsku', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_erpsku'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-tieredpricing', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_tieredpricing'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-price', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_price'));
+        }
+        //recalc price
+        freqPriceCalc();
+    });
+
 
     $(document).on('click', '.site-header-menu-toggle--button', function(){
         if($(window).width() < 1130){

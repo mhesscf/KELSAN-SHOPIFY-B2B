@@ -741,6 +741,7 @@ input.qtyminus {
   position: relative;
   margin-right: 8px;
   display: inline-block;
+  text-align: center;
 }
 
 .product-main .product-details .sm-row i{
@@ -1428,6 +1429,9 @@ input.qtyminus {
   margin-bottom:-1px;
   font-weight:bold;
 }
+.rel-product-tabbed-area .rel-product-tab-header .mobile{
+  display:none;
+}
 .rel-product-tabbed-area .rel-product-tab-header:first-child {
   border-top-left-radius:10px;
   margin-left:22px;
@@ -1520,7 +1524,212 @@ input.qtyminus {
 }
 
 
-/*--- Gallery ---*/
+/*--- Freq bought together ---*/
+.rel-product-tabbed-area .tabbed-rel-freq .freq-item{
+  width:23%;
+  min-width: unset;
+  float:left;
+  position: relative;
+  z-index:1;
+  display:inline-block;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .productitem__container a::after{
+  display:none;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-item .freq-check{
+  position: absolute;
+  top:20px;
+  left:20px;
+  z-index:400;
+  width:20px;
+  height:20px;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .rel-slider-item .productitem--title{
+  font-size:14px;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .main-item .productitem--title a:before{
+  content:"This Item:";
+  color:{{ settings.color_button_secondary_background }};
+}
+.rel-product-tabbed-area .tabbed-rel-freq .productitem__price .price__current span{
+  font-size:22px;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-item .option-name{
+  font-weight:bold;
+  font-size:14px;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-item .freq-var-select{
+  width:100%;
+  font-size:15px;
+  padding:5px;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-add{
+  width:15px;
+  text-align:center;
+  font-size:26px;
+  margin-top:150px;
+  float:left;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-add:last-child{
+  display:none;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-item .freq-var-variables{
+  display:none;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-item .freq-var-variables.current-freq-var{
+  display:inline-block;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area{
+  max-width:300px;
+  float:left;
+
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-cart-button button{
+  width:230px;
+  height:52px;
+  border-radius:10px;
+}
+
+.rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-total-price{
+  text-align: center;
+  font-size:20px;
+  margin-top:50px;
+  margin-bottom: 15px;
+}
+.rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-total-price span{
+  font-weight:bold;
+  font-size:20px;
+}
+
+/*--- Freq bought together responsive ---*/
+
+@media (max-width: 1079px){
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-item{
+    width:24%;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-total-price{
+    font-size:16px;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-total-price span{
+    font-size:18px;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-cart-button button{
+    width:165px;
+    font-size:16px;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .rel-slider-item .productitem--title{
+    font-size:12px;
+    line-height:16px;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-add{
+    width:6px;
+    font-size:16px;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .productitem__price .price__current span{
+    font-size:18px;
+  }
+}
+@media (max-width: 859px){
+      .rel-product-tabbed-area .rel-product-tab-header .mobile{
+        display:inline;
+      }
+      .rel-product-tabbed-area .rel-product-tab-header .desktop{
+        display:none;
+      }
+
+      .rel-product-tabbed-area .productitem__container{
+        display:block;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items{
+        max-width: 75%;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-add{
+        display:none;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item{
+        width:100%;
+        padding-bottom:3px;
+        padding-top:0px;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem:hover,
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem{
+        box-shadow:none !important;
+        border:none !important;
+        padding-top:0;
+        padding-bottom:0;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .freq-check{
+        top:10px;
+        left:-5px;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem__image-container{
+        width:66px;
+        float:left;
+        position:relative;
+        padding-left:15px;
+        padding-right:10px;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem--title{
+        margin-bottom:0px;
+      }
+
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem--actions,
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .freq-var-variables.current-freq-var,
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem--info{
+        width:70%;
+        float:left;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .product-detail-sku{
+        display:none;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .option-name{
+        float:left;
+        font-size:15px;
+        line-height:24px;
+        padding-right:5px;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .freq-item .freq-var-select{
+        float:left;
+        max-width:200px;
+        padding:0 5px;
+      }
+}
+@media (max-width: 679px){
+  .rel-product-tabbed-area .rel-product-tab-header{
+    font-size:14px;
+    padding:5px;
+    min-height:30px;
+  }
+  .rel-product-tabbed-area .rel-product-tab-header:first-child{
+    margin-left:0;
+  }
+  .rel-product-tabbed-area .tabbed-rel-slider{
+    display:block;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items,
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area{
+    max-width: 100%;
+    width:100%;
+    float:none;
+    clear:both;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem--actions,
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-item .freq-var-variables.current-freq-var,
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-item .productitem--info{
+    width:67%;
+  }
+
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-total-price{
+    text-align:left;
+    padding:15px 5px;
+    margin:0;
+  }
+  .rel-product-tabbed-area .tabbed-rel-freq .freq-sum-area .freq-cart-button button{
+    margin-left:5px;
+  }
+}
+
+  /*--- Gallery ---*/
 
 .product-gallery .gallery-navigation--scroll-button{
   color: {{ settings.color_icons }};
