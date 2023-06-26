@@ -511,16 +511,6 @@ jQuery(document).ready(function($){
         var slideritemId = itemId+'-rel-item';
 
         if(slideritemId != "freq_bought-rel-item") {
-            //Title Height (exclude frequently bought together)
-            $('.' + slideritemId + ' .productitem--title').css({'height': ''});
-            $('.' + slideritemId + ' .productitem--title').each(function () {
-                // If this box is higher than the cached highest then store it
-                if ($(this).height() > highestTitleBox) {
-                    highestTitleBox = $(this).height();
-                }
-            });
-            $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
-
             //box height (exclude frequently bought together)
             $('.' + slideritemId + ' .productgrid--item').css({'height': ''});
             $('.' + slideritemId + ' .productgrid--item').each(function () {
@@ -531,6 +521,15 @@ jQuery(document).ready(function($){
             });
             $('.' + slideritemId + ' .productgrid--item').height(highestBox);
         }
+        //Title Height (exclude frequently bought together)
+        $('.' + slideritemId + ' .productitem--title').css({'height': ''});
+        $('.' + slideritemId + ' .productitem--title').each(function () {
+            // If this box is higher than the cached highest then store it
+            if ($(this).height() > highestTitleBox) {
+                highestTitleBox = $(this).height();
+            }
+        });
+        $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
 
     });
 
@@ -593,6 +592,25 @@ jQuery(document).ready(function($){
             $('.'+slideritemId+' .productgrid--item',this).height(highestBox);
 
         });
+
+
+        // Equalize Title Height which is exlcuded above
+        $( ".rel-product-tabbed-area .tabbed-rel-freq" ).each(function( index ) {
+            var itemId = $(this).attr('id');
+
+            // Equalize Box and Title Height
+            var slideritemId = itemId.replace('-slider','-rel-item');
+
+            //Title Height
+            var highestTitleBox = 0;
+            $('.'+slideritemId+' .productitem--title', this).each(function(){
+                if($(this).height() > highestTitleBox) {
+                    highestTitleBox = $(this).height();
+                }
+            });
+            $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
+        });
+        
     },1500);
 
 
