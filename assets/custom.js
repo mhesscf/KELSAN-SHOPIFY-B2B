@@ -510,6 +510,15 @@ jQuery(document).ready(function($){
         var highestBox = 0;
         var slideritemId = itemId+'-rel-item';
 
+        //Title Height (exclude frequently bought together)
+        $('.' + slideritemId + ' .productitem--title').css({'height': ''});
+        $('.' + slideritemId + ' .productitem--title').each(function () {
+            // If this box is higher than the cached highest then store it
+            if ($(this).height() > highestTitleBox) {
+                highestTitleBox = $(this).height();
+            }
+        });
+        
         if(slideritemId != "freq_bought-rel-item") {
             //box height (exclude frequently bought together)
             $('.' + slideritemId + ' .productgrid--item').css({'height': ''});
@@ -521,14 +530,7 @@ jQuery(document).ready(function($){
             });
             $('.' + slideritemId + ' .productgrid--item').height(highestBox);
         }
-        //Title Height (exclude frequently bought together)
-        $('.' + slideritemId + ' .productitem--title').css({'height': ''});
-        $('.' + slideritemId + ' .productitem--title').each(function () {
-            // If this box is higher than the cached highest then store it
-            if ($(this).height() > highestTitleBox) {
-                highestTitleBox = $(this).height();
-            }
-        });
+
         $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
 
     });
@@ -610,7 +612,7 @@ jQuery(document).ready(function($){
             });
             $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
         });
-        
+
     },1500);
 
 
