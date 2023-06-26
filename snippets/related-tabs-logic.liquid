@@ -35,8 +35,13 @@ New Related Product Tabs:<br/>
                     {%- endif -%}
 
 
-                    {%- if tab_rel_id == "freq_bought" -%}
-
+                    {% assign pstep = 1 %}
+                    {% if product.metafields.plytix.product_step != blank %}
+                        {% assign pstep = product.metafields.plytix.product_step %}
+                    {% endif %}
+                    {% comment %}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{% endcomment %}
+                    {% comment %}Do not show as as freq_bought functionality if this is the case{% endcomment %}
+                    {%- if tab_rel_id == "freq_bought" and product.metafields.plytix.package_products == blank and pstep < 2-%}
                         <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-freq tabbed-rel-slider" style="{% if hideSliderDefault %}display:none;{% endif %}">
                             <div class="freq-bought-items">
                                 {%- assign noProducts = true -%}
