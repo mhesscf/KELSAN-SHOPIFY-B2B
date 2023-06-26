@@ -124,20 +124,20 @@
     "d10cdd15-1629-4449-91e1-ec84724ecc7d": {
       "type": "related-tabs",
       "blocks": {
-        "b5f685c0-087d-4f5b-82a0-1b3ab914619b": {
-          "type": "tabinfo",
-          "settings": {
-            "tab_name": "Related Products",
-            "tab_name_sm": "Related",
-            "tab_rel_id": "related_products"
-          }
-        },
         "f1b95c38-8fb7-4cae-bd6b-2610e41f8acd": {
           "type": "tabinfo",
           "settings": {
             "tab_name": "Frequently Bought Together",
             "tab_name_sm": "Bought Together",
             "tab_rel_id": "freq_bought"
+          }
+        },
+        "b5f685c0-087d-4f5b-82a0-1b3ab914619b": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Related Products",
+            "tab_name_sm": "Related",
+            "tab_rel_id": "related_products"
           }
         },
         "908ae5ae-8f36-43b2-9c13-a3102c783b4a": {
@@ -158,8 +158,8 @@
         }
       },
       "block_order": [
-        "b5f685c0-087d-4f5b-82a0-1b3ab914619b",
         "f1b95c38-8fb7-4cae-bd6b-2610e41f8acd",
+        "b5f685c0-087d-4f5b-82a0-1b3ab914619b",
         "908ae5ae-8f36-43b2-9c13-a3102c783b4a",
         "cac90bff-26fa-4e04-a472-516032b68d4e"
       ],
