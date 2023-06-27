@@ -351,7 +351,15 @@
                 </p>
 
             </div>
+
             <div class="cfais-productitem--actions" itemprop="offers" itemscope itemtype="${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? 'http://schema.org/AggregateOffer':'http://schema.org/Offer'}">
+
+                            ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
+                            ${hit.meta.plytix.list_price ? html`<div class="strikeprice">${numberScrub(hit.meta.plytix.list_price)}</div>`:''}
+                        </div>`:''}
+                    ` : html ``}
+
                 <p class="ais-hit--price productitem__price ">
                     <meta itemprop="availability" content="http://schema.org/InStock" />
                     <meta itemprop="priceCurrency" content="USD" />
@@ -369,7 +377,7 @@
                     </div>
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
-                            ${hit.meta.plytix.list_price ? html`<div class="strikeprice">${numberScrub(hit.meta.plytix.list_price)}</div>`:''}
+
                             ${hit.meta.plytix.list_price ? html`<div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.meta.plytix.list_price)}</div>`:''}
                         </div>`:''}
                     ` : html ``}

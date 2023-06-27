@@ -737,7 +737,8 @@ body {background-color:#fff !important;}
 }
 
 .ais-page .ais-hit--price {
-  margin: 10px 0;
+  {% comment %}margin: 10px 0;{% endcomment %}
+  margin:0;
   color: var(--main-color);
 }
 
@@ -962,15 +963,17 @@ body {background-color:#fff !important;}
   padding-right:5px;
 }
 
-.ais-page .price__compare-at-visible{
-  text-align:right;
-  margin-top:2px;
-  display:block;
+.ais-page .cfais-productitem--actions{
+  margin-top:10px;
+}
+.ais-page .ais-results-as-block .cfais-productitem--actions{
+  margin-top:20px;
 }
 
 .ais-page .price__compare-at-visible-2 .strikeprice{
   color: {{ settings.color_text }};
   font-size:14px;
+  line-height:14px;
 }
 
 .ais-page .price__compare-at-visible-2 .yousave{
@@ -980,6 +983,7 @@ body {background-color:#fff !important;}
 
 .ais-page .price__current{
 margin-right:0;
+  margin-top:-5px;
 }
 .atc-button--text:hover {
   color: {{ settings.color_button_secondary_text }};
@@ -1017,7 +1021,7 @@ margin-right:0;
   max-width:175px;
   float:right;
 }
-.ais-page .ais-results-as-list .productitem__price .price__current span.bundle-price{
+.ais-page .productitem__price .price__current span.bundle-price{
   font-size:18px;
   line-height:22px;
 }
@@ -1062,9 +1066,11 @@ margin-right:0;
   font-size:16px;
 }
 .ais-page .ais-results-as-block .price__current,
-.ais-page .ais-results-as-block .price__compare-at-visible,
 .ais-page .ais-results-as-block .price__compare-at-visible-2{
   text-align:center;
+}
+.ais-page .productitem__price .price__current span{
+  line-height:40px;
 }
 .ais-page .ais-results-as-block .productitem__price .price__current span.bundle-price{
   font-size:16px;
@@ -1113,9 +1119,9 @@ margin-right:0;
 
   .ais-page .ais-results-as-list .productitem__price .price__current span{
     font-size:22px;
-    line-height:22px;
+    line-height:34px;
   }
-  .ais-page .ais-results-as-list .ais-page .price__compare-at-visible{
+  .ais-page .ais-results-as-list .ais-page .price__compare-at-visible-2{
     font-size:14px;
     line-height:14px;
   }
@@ -1157,15 +1163,24 @@ margin-right:0;
     display:block;
     padding:10px;
   }
-  .ais-page .ais-results-as-list .price__compare-at-visible,
+
+  .ais-page .ais-results-as-list .price__compare-at-visible-2,
   .ais-page .ais-results-as-list .price__current{
     text-align:center;
   }
+
   .ais-results-as-block .ais-Hits-list{
     display:block;
   }
   .ais-page .ais-results-as-block .ais-hit{
     width:100%
+  }
+  .ais-results-as-list .ais-Hits-item .cfais-productitem--actions{
+    text-align:center;
+  }
+  .ais-results-as-list .ais-Hits-item .cfais-productitem--actions button{
+    float:none;
+    margin:auto;
   }
 
 }

@@ -20568,7 +20568,8 @@ a.pswp__share--download:hover {
 .price__current {
 	margin-right: {{ space_xxx_small | divided_by: 16.0 | append: 'rem' }};
 	font-size: var(--font-size-body);
-	line-height: 1.4375rem;
+	{% comment %}line-height: 1.4375rem;{% endcomment %}
+	line-height:32px;
 }
 
 .price__current--hidden,
