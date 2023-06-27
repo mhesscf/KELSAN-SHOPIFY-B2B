@@ -5,6 +5,7 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-2000x639.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-800x427-sm.jpg",
@@ -26,7 +27,6 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/june-sotm-floor-stripping-machine-2000x639-temp.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/june-sotm-floor-stripping-machine-800x427-temp.jpg",
