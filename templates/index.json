@@ -5,12 +5,11 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-2000x639.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-800x427-sm.jpg",
             "title": "Trusted Clean 'Dura 17' Electric Auto Scrubber",
-            "text": "Scrub Away the Heat,<br>Summer Savings Can't Be Beat!<br>Now $1,649.99.",
+            "text": "A Star-Spangled Clean with the Dura 17!<br>Now $1,649.99.",
             "color": "#303e48",
             "link": "https:\/\/www.cleanfreak.com\/products\/17-inch-electric-auto-scrubber",
             "text_alignment": "left",
