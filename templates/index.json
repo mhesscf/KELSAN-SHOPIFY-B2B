@@ -5,6 +5,7 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-2000x639.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-800x427-sm.jpg",
