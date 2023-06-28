@@ -108,11 +108,11 @@
 
       <div class="product-detail-stock-and-shipping">
         <div class="stock-message main-notice"><i class="fa-regular fa-circle-check"></i> In Stock
-          {%- if product.metafields.plytix.clearance_overstock == 'true' -%}
+          {% if product.metafields.plytix.clearance_overstock == 'true' %}
             ({{ variant.inventory_quantity }} Available)
-          {%- elsif pclearance == true or pdemoitem == true -%}
+          {% elsif pclearance == true or pdemoitem == true %}
             ({{ variant.inventory_quantity }} Available)
-          {%- endif -%}
+          {% endif %}
         </div>
         <span class="status-time"></span> {%- comment -%} keep this line for js {%- endcomment -%}
       </div>
