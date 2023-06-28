@@ -16,6 +16,13 @@
     "166067973539459f3b": {
       "type": "basic-link-grid",
       "blocks": {
+        "3beb7f67-ef16-4246-8cf5-b2b291560371": {
+          "type": "link",
+          "settings": {
+            "linktext": "Black Diamond Pad Guide",
+            "linkurl": "shopify:\/\/pages\/diamond-pad-guide"
+          }
+        },
         "0b1fd7b5-e5ce-4a0e-98fc-c9471c8e72a4": {
           "type": "link",
           "settings": {
@@ -160,6 +167,7 @@
         }
       },
       "block_order": [
+        "3beb7f67-ef16-4246-8cf5-b2b291560371",
         "0b1fd7b5-e5ce-4a0e-98fc-c9471c8e72a4",
         "6dc4e440-89d7-4f1b-84a8-df0c41a5be4a",
         "537967f0-b514-48a5-be41-286f6e7d13d5",
