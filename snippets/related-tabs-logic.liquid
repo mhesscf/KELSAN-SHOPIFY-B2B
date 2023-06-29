@@ -3,44 +3,6 @@
 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
 New Related Product Tabs:<br/>
 {%- endif -%}
-{% assign product_limit = 10 %}
-
-
-{%- capture section_type -%}
-    static-collection-slider
-{%- endcapture -%}
-{% comment %}need to keep "data-section-type="static-product-recommendations" or else the add to cart will break (line 45039 empire.js){% endcomment %}
-<script
-        type="application/json"
-        data-section-type="static-product-recommendations"
-        data-section-id="{{ section.id }}"
-        data-section-data
->
-{
-  "settings": {
-    "limit": {{ product_limit }}
-  },
-    "productId": {{ product.id | json }},
-    "sectionId": {{ section.id | json }}
-}
-  </script>
-
-<script
-        type="application/json"
-        data-section-type="{{ section_type | strip }}"
-        data-section-id="{{ section.id }}"
-        data-section-data
->
-
-</script>
-<section
-        {% comment %}
-      class="product-section--container product-row--container product-recommendations--container"
-      {% endcomment %}
-        data-html
-        data-product-recommendations
-        id="similar-products-2"
->
 
 <div class="rel-product-tabbed-area">
     <div class="container">
@@ -62,7 +24,9 @@ New Related Product Tabs:<br/>
             {%- endfor -%}
         </div>
     <div class="clearer"></div>
-        {%- comment -%}slider area{%- endcomment -%}
+
+        {% comment %}FREQ AREA Needs to be split out due to the add to cart bug with sections or else js won't work{% endcomment %}
+
         {%- for block in section.blocks -%}
             {%- case block.type -%}
                 {%- when 'tabinfo' -%}
@@ -129,44 +93,100 @@ New Related Product Tabs:<br/>
                                         <button class="product-form--atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
                                     {% endcomment %}
                                     <button class="product-form--atc-button" id="p-atc" type="submit" data-freqbundle-product-atc data-freqbundle="{{ product.handle }}">
-                                        <span class="atc-button--text">
-                                          <i class="fa-regular fa-cart-shopping"></i>
-                                          Add Items to Cart
-                                        </span>
-                                                <span class="atc-button--icon">
-                                          {%- render 'icon-spinner' -%}
-                                        </span>
+                                            <span class="atc-button--text">
+                                              <i class="fa-regular fa-cart-shopping"></i>
+                                              Add Items to Cart
+                                            </span>
+                                        <span class="atc-button--icon">
+                                              {%- render 'icon-spinner' -%}
+                                            </span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="clearer"></div>
-                    {%- else -%}
-                        <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider" style="{% if hideSliderDefault %}display:none;{% endif %}">
-                                {%- assign noProducts = true -%}
-                                {%- if product.metafields.plytix[tab_rel_id] != blank -%}
-                                    {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
-                                    {%- for product in rel_products_arr -%}
-                                        {%- assign product_handle = product |  strip -%}
-                                        {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
-                                            {%- assign noProducts = false -%}
-                                            {%- assign item = all_products[product_handle] -%}
-                                            <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
-                                                {%-
-                                                        render 'product-slider-item',
-                                                        product: item
-                                                -%}
-                                            </div>
-                                        {%- endif -%}
-                                    {%- endfor -%}
-                                {%- endif -%}
-                        </div>
                     {%- endif -%}
-
-
-                    <div id="{{ tab_rel_id }}-slider-arrows" class="rel-slide-arrows" style="{% if hideSliderDefault %}display:none;{% endif %}"></div>
             {%- endcase -%}
         {%- endfor -%}
+
+
+        {% assign product_limit = 10 %}
+        {%- capture section_type -%}
+            static-collection-slider
+        {%- endcapture -%}
+        {% comment %}This was all thrown together to get add to cart to work after we found out it broke on launch{% endcomment %}
+        {% comment %}need to keep "data-section-type="static-product-recommendations" and sections or else the add to cart will break (line 45039 empire.js){% endcomment %}
+        <script
+                type="application/json"
+                data-section-type="static-product-recommendations"
+                data-section-id="{{ section.id }}"
+                data-section-data
+        >
+            {
+              "settings": {
+                "limit": {{ product_limit }}
+              },
+                "productId": {{ product.id | json }},
+                "sectionId": {{ section.id | json }}
+            }
+        </script>
+
+        <script
+                type="application/json"
+                data-section-type="{{ section_type | strip }}"
+                data-section-id="{{ section.id }}"
+                data-section-data
+        >
+
+        </script>
+        <section data-html data-product-recommendations id="rel-products">
+
+
+            {%- comment -%}slider area{%- endcomment -%}
+            {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                    {%- when 'tabinfo' -%}
+                        {%- assign tab_rel_id = block.settings.tab_rel_id -%}
+                        {%- assign tab_name = block.settings.tab_name -%}
+                        {%- assign hideSliderDefault = true -%}
+                        {%- if firstBlockId == tab_rel_id -%}
+                            {%- assign hideSliderDefault = false -%}
+                        {%- endif -%}
+
+
+                        {% assign pstep = 1 %}
+                        {% if product.metafields.plytix.product_step != blank %}
+                            {% assign pstep = product.metafields.plytix.product_step %}
+                        {% endif %}
+                        {% comment %}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{% endcomment %}
+                        {% comment %}Do not show as as freq_bought functionality if this is the case{% endcomment %}
+                        {%- if tab_rel_id != "freq_bought" -%}
+                            <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider" style="{% if hideSliderDefault %}display:none;{% endif %}">
+                                    {%- assign noProducts = true -%}
+                                    {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+                                        {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                        {%- for product in rel_products_arr -%}
+                                            {%- assign product_handle = product |  strip -%}
+                                            {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
+                                                {%- assign noProducts = false -%}
+                                                {%- assign item = all_products[product_handle] -%}
+                                                <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
+                                                    {%-
+                                                            render 'product-slider-item',
+                                                            product: item
+                                                    -%}
+                                                </div>
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    {%- endif -%}
+                            </div>
+                        {%- endif -%}
+
+
+                        <div id="{{ tab_rel_id }}-slider-arrows" class="rel-slide-arrows" style="{% if hideSliderDefault %}display:none;{% endif %}"></div>
+                {%- endcase -%}
+            {%- endfor -%}
+        </section>
     </div>
 </div>
 </section>
