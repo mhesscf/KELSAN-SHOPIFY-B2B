@@ -613,7 +613,7 @@ jQuery(document).ready(function($){
             $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
         });
 
-    },1500);
+    },2500);
 
 
 

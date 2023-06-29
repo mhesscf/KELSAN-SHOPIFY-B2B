@@ -3,6 +3,45 @@
 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
 New Related Product Tabs:<br/>
 {%- endif -%}
+{% assign product_limit = 10 %}
+
+
+{%- capture section_type -%}
+    static-collection-slider
+{%- endcapture -%}
+{% comment %}need to keep "data-section-type="static-product-recommendations" or else the add to cart will break (line 45039 empire.js){% endcomment %}
+<script
+        type="application/json"
+        data-section-type="static-product-recommendations"
+        data-section-id="{{ section.id }}"
+        data-section-data
+>
+{
+  "settings": {
+    "limit": {{ product_limit }}
+  },
+    "productId": {{ product.id | json }},
+    "sectionId": {{ section.id | json }}
+}
+  </script>
+
+<script
+        type="application/json"
+        data-section-type="{{ section_type | strip }}"
+        data-section-id="{{ section.id }}"
+        data-section-data
+>
+
+</script>
+<section
+        {% comment %}
+      class="product-section--container product-row--container product-recommendations--container"
+      {% endcomment %}
+        data-html
+        data-product-recommendations
+        id="similar-products-2"
+>
+
 <div class="rel-product-tabbed-area">
     <div class="container">
         <div class="tab-headers">
@@ -130,3 +169,4 @@ New Related Product Tabs:<br/>
         {%- endfor -%}
     </div>
 </div>
+</section>
