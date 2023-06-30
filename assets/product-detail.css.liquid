@@ -1453,7 +1453,10 @@ input.qtyminus {
 
 
 
-
+.rel-product-tabbed-area .sliderhidden{
+  position: absolute;
+  right: 100000px;
+}
 
 
 
@@ -1474,7 +1477,7 @@ input.qtyminus {
   border-radius:15px;
 }
 .rel-product-tabbed-area .rel-slider-item .productitem:hover {
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14) !important;
+  box-shadow: none !important;
 }
 .rel-product-tabbed-area .rel-slider-item .productitem--title{
   font-size:16px;
@@ -1501,7 +1504,9 @@ input.qtyminus {
   display:none !important;
   margin-bottom:5px;
 }
-
+.rel-product-tabbed-area button:focus{
+  box-shadow:none !important;
+}
 .rel-product-tabbed-area .rel-slide-arrows{
   text-align:right;
 }
