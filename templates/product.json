@@ -227,6 +227,7 @@
     },
     "166387146685195dfc": {
       "type": "product-bottom-strap",
+      "disabled": true,
       "settings": {
       }
     },
