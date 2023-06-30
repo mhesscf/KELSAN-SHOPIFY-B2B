@@ -501,10 +501,16 @@ jQuery(document).ready(function($){
         var itemId = $(this).attr('id').replace('tab-','').replace('-header','');
         $('.rel-product-tab-header').removeClass('active-tab');
         $('#tab-'+itemId+'-header').addClass('active-tab');
-        $('.tabbed-rel-slider').hide();
-        $('#'+itemId+'-slider').show();
-        $('.rel-slide-arrows').hide();
-        $('#'+itemId+'-slider-arrows').show();
+        // $('.tabbed-rel-slider').hide();
+        // $('#'+itemId+'-slider').show();
+        // $('.rel-slide-arrows').hide();
+        // $('#'+itemId+'-slider-arrows').show();
+
+        $('.tabbed-rel-slider').addClass("sliderhidden");
+        $('#'+itemId+'-slider').removeClass("sliderhidden");
+        $('.rel-slide-arrows').addClass("sliderhidden");
+        $('#'+itemId+'-slider-arrows').removeClass("sliderhidden");
+
         // equalize height
         var highestTitleBox = 0;
         var highestBox = 0;
@@ -592,7 +598,6 @@ jQuery(document).ready(function($){
                 }
             });
             $('.'+slideritemId+' .productgrid--item',this).height(highestBox);
-
         });
 
 
@@ -613,7 +618,7 @@ jQuery(document).ready(function($){
             $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
         });
 
-    },2500);
+    },3500);
 
 
 
