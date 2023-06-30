@@ -16,7 +16,7 @@
     "e9a0224d-0b69-4d03-8ada-85e508ab34a6": {
       "type": "dynamic-custom-liquid",
       "settings": {
-        "custom_liquid": "<ul>\n  {%- for product_vendor in shop.vendors -%}\n    <li><a href=\"\/collections\/vendors?refinementList[vendor][0]={{ product_vendor }}&q={{ product_vendor }}\">{{ product_vendor }}<\/a><\/li>\n  {%- endfor -%}\n<\/ul>"
+        "custom_liquid": "<ul>\n  {%- for product_vendor in shop.vendors -%}\n  {%- assign vendorclean = product_vendor | replace: \"&\", \"%26\"-%}\n    <li><a href=\"\/collections\/vendors?refinementList[vendor][0]={{ vendorclean }}&q={{ vendorclean }}\">{{ product_vendor }}\/{{ vendorclean }}<\/a><\/li>\n  {%- endfor -%}\n<\/ul>"
       }
     }
   },
