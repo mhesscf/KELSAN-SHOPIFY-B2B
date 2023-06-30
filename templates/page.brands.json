@@ -3,18 +3,26 @@
     "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
       "type": "gradient-text-header",
       "settings": {
-        "chsectionheading": "",
+        "chsectionheading": "Brands sold on CleanFreak.com",
         "chsectiontext": ""
       }
     },
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "e9a0224d-0b69-4d03-8ada-85e508ab34a6": {
+      "type": "dynamic-custom-liquid",
+      "settings": {
+        "custom_liquid": "hello sir!"
       }
     }
   },
   "order": [
     "d567f3fb-0056-4b4a-b887-445ab03fabaa",
-    "main"
+    "main",
+    "e9a0224d-0b69-4d03-8ada-85e508ab34a6"
   ]
 }
