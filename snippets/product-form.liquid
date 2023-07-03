@@ -417,327 +417,266 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {% endfor %}
 
           {% if product.metafields.plytix.tiered_pricing != blank and pdiscontinued == false %}
-            {% assign pprice = product.price | money_without_currency %}
-            {% assign pprice = pprice | remove: ","  %}
-            {% assign pprice = pprice | plus:0 %}
-            {% if product.metafields.plytix.tiered_pricing == '2|4|6|12' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
-                  {% assign discount = pprice | times: 0.03 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-                  <div class="row">
-                    <div class="quantity col">2+</div>
-                    <div class="discount col">3% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">4+</div>
-                    {% assign discount = pprice | times: 0.06 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">6% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    {% assign discount = pprice | times: 0.09 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">9% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">12+</div>
-                    {% assign discount = pprice | times: 0.12 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">12% Discount</div>
-                  </div>
+            {% comment %}{% assign pprice = product.price | money_without_currency %}{% endcomment %}
+            {% comment %}{% assign pprice = pprice | remove: ","  %}{% endcomment %}
+            {% comment %}{% assign pprice = pprice | plus:0 %}{% endcomment %}
+
+            {% assign pprice = product.price %}
+
+
+
+
+            <div class="discount-info-wrap-v2">
+              <div class="discount-info-wrap-v2-header">Quantity Discounts</div>
+              <div class="discount-table">
+                <div class="col first">
+                  <div class="row row1">Quantity</div>
+                  <div class="row row2">Discounts</div>
+                  <div class="row row3">Price</div>
                 </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '2|4|6' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
-                  {% assign discount = pprice | times: 0.02 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-                  <div class="row">
-                    <div class="quantity col">2+</div>
-                    <div class="discount col">2% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">4+</div>
+
+                {% if product.metafields.plytix.tiered_pricing == '2|4|6' %}
+                    {% assign discount = pprice | times: 0.02 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">2+</div>
+                          <div class="row row2">2%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
                     {% assign discount = pprice | times: 0.04 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">4% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">6+</div>
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">4+</div>
+                          <div class="row row2">4%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
                     {% assign discount = pprice | times: 0.06 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">6% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '3|6|10' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">6+</div>
+                          <div class="row row2">6%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+
+
+                  {% elsif product.metafields.plytix.tiered_pricing == '2|4|6|12' %}
+                    {% assign discount = pprice | times: 0.03 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">2+</div>
+                          <div class="row row2">3%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.06 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">4+</div>
+                          <div class="row row2">6%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.09 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">6+</div>
+                          <div class="row row2">9%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                  {% assign discount = pprice | times: 0.12 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">12+</div>
+                        <div class="row row2">12%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+
+                {% elsif product.metafields.plytix.tiered_pricing == '3|6|10|20' %}
                   {% assign discount = pprice | times: 0.05 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-                  <div class="row">
-                    <div class="quantity col">3+</div>
-                    <div class="discount col">5% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    {% assign discount = pprice | times: 0.10 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">3+</div>
+                        <div class="row row2">5%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.10 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">6+</div>
+                        <div class="row row2">10%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.15 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">10+</div>
+                        <div class="row row2">15%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.20 %}
                     {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">10% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">10+</div>
-                    {% assign discount = pprice | times: 0.15 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">15% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '3|6|10|20' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
+                    <div class="col">
+                      <div class="row row1">20+</div>
+                      <div class="row row2">20%<span> off</span></div>
+                      <div class="row row3">{{ tierPrice | money }}</div>
+                    </div>
+
+                {% elsif product.metafields.plytix.tiered_pricing == '3|6|12|24' %}
                   {% assign discount = pprice | times: 0.05 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">3+</div>
+                        <div class="row row2">5%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.10 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">6+</div>
+                        <div class="row row2">10%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.15 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">12+</div>
+                        <div class="row row2">15%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.20 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">24+</div>
+                        <div class="row row2">20%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+
+                {% elsif product.metafields.plytix.tiered_pricing == '10|25|50' %}
+                  {% assign discount = pprice | times: 0.10 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">10+</div>
+                        <div class="row row2">10%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.20 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">25+</div>
+                        <div class="row row2">20%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.30 %}
                   {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-                  <div class="row">
-                    <div class="quantity col">3+</div>
-                    <div class="discount col">5% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    {% assign discount = pprice | times: 0.10 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">10% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">10+</div>
-                    {% assign discount = pprice | times: 0.15 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">15% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">20+</div>
-                    {% assign discount = pprice | times: 0.20 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">20% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '3|6|12' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
+                      <div class="col">
+                        <div class="row row1">50+</div>
+                        <div class="row row2">30%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+
+                {% elsif product.metafields.plytix.tiered_pricing == '6|12|24' %}
                   {% assign discount = pprice | times: 0.05 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-                  <div class="row">
-                    <div class="quantity col">3+</div>
-                    <div class="discount col">5% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    {% assign discount = pprice | times: 0.10 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">10% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">12+</div>
-                    {% assign discount = pprice | times: 0.15 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">15% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '6|12|18' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">6+</div>
+                        <div class="row row2">5%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.10 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">12+</div>
+                        <div class="row row2">10%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.20 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">24+</div>
+                        <div class="row row2">20%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+
+
+                {% elsif product.metafields.plytix.tiered_pricing == '6|10|20' %}
                   {% assign discount = pprice | times: 0.06 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">6+</div>
+                        <div class="row row2">6%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.12 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">10+</div>
+                        <div class="row row2">12%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
+                  {% assign discount = pprice | times: 0.18 %}
+                      {% assign tierPrice = pprice | minus: discount %}
+                      <div class="col">
+                        <div class="row row1">20+</div>
+                        <div class="row row2">18%<span> off</span></div>
+                        <div class="row row3">{{ tierPrice | money }}</div>
+                      </div>
 
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    <div class="discount col">6% Discount</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="quantity col">12+</div>
-                    {% assign discount = pprice | times: 0.12 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">12% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">18+</div>
-                    {% assign discount = pprice | times: 0.18 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">18% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '6|12|24' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
+                {% elsif product.metafields.plytix.tiered_pricing == '3|6|12' %}
                   {% assign discount = pprice | times: 0.05 %}
                   {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    <div class="discount col">5% Discount</div>
+                  <div class="col">
+                    <div class="row row1">3+</div>
+                    <div class="row row2">5%<span> off</span></div>
+                    <div class="row row3">{{ tierPrice | money }}</div>
                   </div>
-
-                  <div class="row">
-                    <div class="quantity col">12+</div>
-                    {% assign discount = pprice | times: 0.10 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">10% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">24+</div>
-                    {% assign discount = pprice | times: 0.20 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">20% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '6|10|20' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
-                  {% assign discount = pprice | times: 0.06 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    <div class="discount col">6% Discount</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="quantity col">10+</div>
-                    {% assign discount = pprice | times: 0.12 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">12% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">20+</div>
-                    {% assign discount = pprice | times: 0.18 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">18% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '10|25|50' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
                   {% assign discount = pprice | times: 0.10 %}
                   {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-
-                  <div class="row">
-                    <div class="quantity col">10+</div>
-                    <div class="discount col">10% Discount</div>
+                  <div class="col">
+                    <div class="row row1">6+</div>
+                    <div class="row row2">10%<span> off</span></div>
+                    <div class="row row3">{{ tierPrice | money }}</div>
+                  </div>
+                  {% assign discount = pprice | times: 0.15 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  <div class="col">
+                    <div class="row row1">15+</div>
+                    <div class="row row2">15%<span> off</span></div>
+                    <div class="row row3">{{ tierPrice | money }}</div>
                   </div>
 
-                  <div class="row">
-                    <div class="quantity col">25+</div>
-                    {% assign discount = pprice | times: 0.20 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">20% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">50+</div>
-                    {% assign discount = pprice | times: 0.30 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">30% Discount</div>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-            {% if product.metafields.plytix.tiered_pricing == '3|6|12|24' %}
-              <div class="discount-info-wrap">
-                <a class="p-disc-info-toggle" href="#quantifydiscountinfobox">&blacktriangledown;</a>
-                <p>Save w/ Quantity Discounts</p>
-                <div class="quantity-discount-infobox hidden" id="quantity-discount-infobox">
-                  <div class="row top">Quantity Discounts</div>
+                {% elsif product.metafields.plytix.tiered_pricing == '3|6|10' %}
                   {% assign discount = pprice | times: 0.05 %}
                   {% assign tierPrice = pprice | minus: discount %}
-                  {% assign tierfloor = tierPrice | floor %}
-                  {% assign ppricefloor = pprice | floor %}
-
-                  <div class="row">
-                    <div class="quantity col">3+</div>
-                    <div class="discount col">5% Discount</div>
+                  <div class="col">
+                    <div class="row row1">3+</div>
+                    <div class="row row2">5%<span> off</span></div>
+                    <div class="row row3">{{ tierPrice | money }}</div>
+                  </div>
+                  {% assign discount = pprice | times: 0.10 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  <div class="col">
+                    <div class="row row1">6+</div>
+                    <div class="row row2">10%<span> off</span></div>
+                    <div class="row row3">{{ tierPrice | money }}</div>
+                  </div>
+                  {% assign discount = pprice | times: 0.15 %}
+                  {% assign tierPrice = pprice | minus: discount %}
+                  <div class="col">
+                    <div class="row row1">10+</div>
+                    <div class="row row2">15%<span> off</span></div>
+                    <div class="row row3">{{ tierPrice | money }}</div>
                   </div>
 
-                  <div class="row">
-                    <div class="quantity col">6+</div>
-                    {% assign discount = pprice | times: 0.10 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">10% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">12+</div>
-                    {% assign discount = pprice | times: 0.15 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">15% Discount</div>
-                  </div>
-                  <div class="row">
-                    <div class="quantity col">24+</div>
-                    {% assign discount = pprice | times: 0.20 %}
-                    {% assign tierPrice = pprice | minus: discount %}
-                    <div class="discount col">20% Discount</div>
-                  </div>
-                </div>
+
+
+
+
+                {% endif %}
+
+
+
+
+
               </div>
-            {% endif %}
+            </div>
           {% endif %}
           {% comment %} Quantity Discount Tieres END{% endcomment %}
         </div>
