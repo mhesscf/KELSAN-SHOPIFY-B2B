@@ -107,7 +107,7 @@
       {%- endif -%}
 
       <div class="product-detail-stock-and-shipping">
-        <div class="stock-message main-notice"><i class="fa-regular fa-circle-check"></i> In Stock
+        <i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock
           {% if product.metafields.plytix.clearance_overstock == 'true' %}
             ({{ variant.inventory_quantity }} Available)
           {% elsif pclearance == true or pdemoitem == true %}
