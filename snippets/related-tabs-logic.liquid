@@ -1,8 +1,29 @@
 {%- comment -%}Made by Cleanfreak{%- endcomment -%}
 {%- assign debugHelp = section.settings.debugme -%}
 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
-New Related Product Tabs:<br/>
+{% comment %}New Related Product Tabs:<br/>{% endcomment %}
 {%- endif -%}
+
+{% comment %}do not show freq if main item is discontinued, or there is no valid product{% endcomment %}
+{%- assign showfreq = true -%}
+{%- for c in product.collections -%}
+    {%- if c.handle == "discontinued" -%}
+        {% assign showfreq = false -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- assign freqitemcount = 0 -%}
+{%- assign freq_products_arr = product.metafields.plytix.freq_bought  | split: ", " -%}
+{%- for freqproduct in freq_products_arr -%}
+    {%- assign product_handle = freqproduct | strip -%}
+    {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
+        {%- assign freqitemcount = freqitemcount | plus: 1 -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- if freqitemcount < 1 -%}
+    {% assign showfreq = false -%}
+{%- endif -%}
+
+
 
 <div class="rel-product-tabbed-area">
     <div class="container">
@@ -13,12 +34,24 @@ New Related Product Tabs:<br/>
                 {%- case block.type -%}
                     {%- when 'tabinfo' -%}
                         {%- if product.metafields.plytix[block.settings.tab_rel_id] != blank -%}
-                            {%- if firstBlockId == "" -%}
-                                {%- assign firstBlockId = block.settings.tab_rel_id -%}
+                            {% comment %}hide freq if discontinued{% endcomment %}
+                            {%- if block.settings.tab_rel_id == "freq_bought" and showfreq -%}
+                                {%- if firstBlockId == "" -%}
+                                    {%- assign firstBlockId = block.settings.tab_rel_id -%}
+                                {%- endif -%}
+                                <h2 id="tab-{{ block.settings.tab_rel_id }}-header" class="rel-product-tab-header {% if firstBlockId == block.settings.tab_rel_id %}active-tab{% endif %}">
+                                    <span class="desktop">{{ block.settings.tab_name }}</span><span class="mobile">{{ block.settings.tab_name_sm }}</span>
+                                </h2>
+                            {%- elsif block.settings.tab_rel_id != "freq_bought" -%}
+                                {%- if firstBlockId == "" -%}
+                                    {%- assign firstBlockId = block.settings.tab_rel_id -%}
+                                {%- endif -%}
+                                <h2 id="tab-{{ block.settings.tab_rel_id }}-header" class="rel-product-tab-header {% if firstBlockId == block.settings.tab_rel_id %}active-tab{% endif %}">
+                                    <span class="desktop">{{ block.settings.tab_name }}</span><span class="mobile">{{ block.settings.tab_name_sm }}</span>
+                                </h2>
                             {%- endif -%}
-                            <h2 id="tab-{{ block.settings.tab_rel_id }}-header" class="rel-product-tab-header {% if firstBlockId == block.settings.tab_rel_id %}active-tab{% endif %}">
-                                <span class="desktop">{{ block.settings.tab_name }}</span><span class="mobile">{{ block.settings.tab_name_sm }}</span>
-                            </h2>
+
+
                         {%- endif -%}
                 {%- endcase -%}
             {%- endfor -%}
@@ -44,13 +77,12 @@ New Related Product Tabs:<br/>
                     {% endif %}
                     {% comment %}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{% endcomment %}
                     {% comment %}Do not show as as freq_bought functionality if this is the case{% endcomment %}
-                    {%- if tab_rel_id == "freq_bought" and product.metafields.plytix.package_products == blank and pstep < 2-%}
+                    {% comment %}hide freq if discontinued{% endcomment %}
+                    {%- if tab_rel_id == "freq_bought" and product.metafields.plytix.package_products == blank and pstep < 2 and showfreq -%}
                         <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-freq tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}" >
                             <div class="freq-bought-items">
                                 {%- assign noProducts = true -%}
                                 {%- if product.metafields.plytix[tab_rel_id] != blank -%}
-
-
 
                                     <div class="{{ tab_rel_id }}-rel-item rel-slider-item freq-item main-item" data-freqbundle-subproducts>
                                         {%-
@@ -63,6 +95,7 @@ New Related Product Tabs:<br/>
 
 
                                     {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                    {% assign total = 1 %}
                                     {%- for product in rel_products_arr -%}
 
                                         {%- assign product_handle = product |  strip -%}
@@ -75,13 +108,22 @@ New Related Product Tabs:<br/>
                                                 {%- assign has_variants = true -%}
                                             {%- endunless -%}
 
-                                            <div class="{{ tab_rel_id }}-rel-item rel-slider-item freq-item" data-freqbundle-subproducts>
-                                                {%-
-                                                        render 'product-slider-item-freq',
-                                                        product: item
-                                                -%}
-                                            </div>
-                                            <div class="freq-add">+</div>
+                                            {%- assign showthisproduct = true -%}
+                                            {%- for c in product.collections -%}
+                                                {%- if c.handle == "discontinued" -%}
+                                                    {% assign showthisproduct = false -%}
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                            {%- if  showthisproduct == true and total < 4 -%}
+                                                {% assign total = total | plus: 1 %}
+                                                <div class="{{ tab_rel_id }}-rel-item rel-slider-item freq-item" data-freqbundle-subproducts>
+                                                    {%-
+                                                            render 'product-slider-item-freq',
+                                                            product: item
+                                                    -%}
+                                                </div>
+                                                <div class="freq-add">+</div>
+                                            {%- endif -%}
                                         {%- endif -%}
                                     {%- endfor -%}
                                 {%- endif -%}
@@ -170,12 +212,22 @@ New Related Product Tabs:<br/>
                                             {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
                                                 {%- assign noProducts = false -%}
                                                 {%- assign item = all_products[product_handle] -%}
-                                                <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
-                                                    {%-
-                                                            render 'product-slider-item',
-                                                            product: item
-                                                    -%}
-                                                </div>
+
+                                                {% comment %}filter discontinued{% endcomment %}
+                                                {%- assign showthisproduct = true -%}
+                                                {%- for c in item.collections -%}
+                                                    {%- if c.handle == "discontinued" -%}
+                                                        {% assign showthisproduct = false -%}
+                                                    {%- endif -%}
+                                                {%- endfor -%}
+                                                {%- if  showthisproduct == true -%}
+                                                    <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
+                                                        {%-
+                                                                render 'product-slider-item',
+                                                                product: item
+                                                        -%}
+                                                    </div>
+                                                {%- endif -%}
                                             {%- endif -%}
                                         {%- endfor -%}
                                     {%- endif -%}
