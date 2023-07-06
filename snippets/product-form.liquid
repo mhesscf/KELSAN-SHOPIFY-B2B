@@ -235,9 +235,27 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {% if pstep > 1 %}
       <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
     {% endif %}
-    <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
-    <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
 
+    {% assign isSpecial = false %}
+    {% if product.selected_or_first_available_variant.compare_at_price %}
+      {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+        {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
+        {% assign nowTimestamp = 'now' | date: '%s' %}
+        {% assign diffSeconds = endDate | minus: nowTimestamp %}
+        {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+        {% if diffDays >= -1 %}
+          {% assign isSpecial = true %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+
+
+    <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+
+    {% if isSpecial == false %}
+      <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+    {% endif %}
     <variant-selection
             {% if variant_selection_id != blank %}id="{{ variant_selection_id }}"{% endif %}
             class="variant-selection"
@@ -257,7 +275,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
         <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
         <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
-        <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+        {% if isSpecial == false %}
+          <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+        {% endif %}
         {% if pstep > 1 %}
           <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
         {% endif %}
@@ -266,6 +286,24 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
         <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
         <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
+
+
+        {% assign isSpecialSelectVar = false %}
+        {% if selected_variant.compare_at_price %}
+          {% if selected_variant.price < selected_variant.compare_at_price %}
+            {% assign endDate = selected_variant.metafields.plytix.special_enddate | date: '%s' %}
+            {% assign nowTimestamp = 'now' | date: '%s' %}
+            {% assign diffSeconds = endDate | minus: nowTimestamp %}
+            {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+            {% if diffDays >= -1 %}
+              {% assign isSpecialSelectVar = true %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+        {% if isSpecialSelectVar == false %}
+          <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
+        {% endif %}
+
         <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
         {% if pstep > 1 %}
           <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
@@ -416,7 +454,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% endif %}
           {% endfor %}
 
-          {% if product.metafields.plytix.tiered_pricing != blank and pdiscontinued == false %}
+          {% if product.metafields.plytix.tiered_pricing != blank and pdiscontinued == false and isSpecial == false %}
             {% comment %}{% assign pprice = product.price | money_without_currency %}{% endcomment %}
             {% comment %}{% assign pprice = pprice | remove: ","  %}{% endcomment %}
             {% comment %}{% assign pprice = pprice | plus:0 %}{% endcomment %}

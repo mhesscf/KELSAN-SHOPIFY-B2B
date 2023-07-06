@@ -507,6 +507,19 @@
 													VIEW PRODUCT
 												</button>
 											{% else %}
+
+												{% assign isSpecial = false %}
+												{% if current_variant.compare_at_price %}
+													{% if current_variant.price < current_variant.compare_at_price %}
+														{% assign endDate = current_variant.metafields.plytix.special_enddate | date: '%s' %}
+														{% assign nowTimestamp = 'now' | date: '%s' %}
+														{% assign diffSeconds = endDate | minus: nowTimestamp %}
+														{% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+														{% if diffDays >= -1 %}
+															{% assign isSpecial = true %}
+														{% endif %}
+													{% endif %}
+												{% endif %}
 												<form method="post" action="/cart/add" class="cart-form">
 													<input type="hidden" class="pid" value="{{block.settings.product.id}}">
 													<input type="hidden" class="ptitle" value="{{block.settings.product.title | remove: "'" | remove: '"'}}">
@@ -521,7 +534,9 @@
 													<input type="hidden" name="properties[_erp_sku]" value="{{ block.settings.product.variants.first.metafields.plytix.erp_sku }}" />
 													<input type="hidden" name="properties[Sku]" value="{{ block.settings.product.variants.first.sku }}" />
 													<input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
-													<input type="hidden" name="properties[_tiered_pricing]" value="{{ block.settings.product.variants.first.metafields.plytix.tiered_pricing }}" />
+													{% if isSpecial == false %}
+														<input type="hidden" name="properties[_tiered_pricing]" value="{{ block.settings.product.variants.first.metafields.plytix.tiered_pricing }}" />
+													{% endif %}
 													<input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
 													<button class="add-to-cart-btn" type="submit" >
 														ADD TO CART

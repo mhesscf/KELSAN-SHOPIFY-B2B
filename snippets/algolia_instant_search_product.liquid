@@ -394,7 +394,7 @@ ${1 == 1 && html`
 <form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
   <input type="hidden" name="id" value="${hit.objectID}" />
     <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
-    <input type="hidden" name="properties[_tiered_pricing]" value="${hit.meta.plytix.tiered_pricing}" />
+    ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,hit.meta.plytix.list_price,"bool") ? html `` : html `<input type="hidden" name="properties[_tiered_pricing]" value="${hit.meta.plytix.tiered_pricing}" />`}
      <input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}" />
     <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
 </form>
