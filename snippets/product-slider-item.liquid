@@ -620,6 +620,20 @@
               </form>
             {% else %}
               {% if atc_button %}
+                {% assign isSpecial = false %}
+                {% if product.selected_or_first_available_variant.compare_at_price %}
+                  {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+                    {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
+                    {% assign nowTimestamp = 'now' | date: '%s' %}
+                    {% assign diffSeconds = endDate | minus: nowTimestamp %}
+                    {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+                    {% if diffDays >= -1 %}
+                      {% assign isSpecial = true %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+
+
                 <div
                         class="
                   productitem--action
@@ -642,7 +656,9 @@
                           data-status-name="properties[Status]"
                           data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
                           data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
-                          data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
+                          {% if isSpecial == false %}
+                            data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
+                          {% endif %}
                           data-vissku="{{ product.selected_or_first_available_variant.sku }}"
                           data-status="{{ stockStatusNote }}"
                           data-variant-id="{{ product.variants.first.id }}"
