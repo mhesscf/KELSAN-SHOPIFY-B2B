@@ -542,11 +542,11 @@ jQuery(document).ready(function($){
     });
 
     //tabbed sliders:
-    setTimeout(()=>{
-        $( ".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq')" ).each(function( index ) {
+    function sliderGo() {
+        $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq')").each(function (index) {
             var itemId = $(this).attr('id');
-            var sliderArrows = '#'+itemId+'-arrows';
-        $('#'+itemId).slick({
+            var sliderArrows = '#' + itemId + '-arrows';
+            $('#' + itemId).slick({
                 arrows: true,
                 autoplay: false,
                 dots: false,
@@ -578,48 +578,66 @@ jQuery(document).ready(function($){
 
 
             // Equalize Box and Title Height
-            var slideritemId = itemId.replace('-slider','-rel-item');
+            var slideritemId = itemId.replace('-slider', '-rel-item');
             var highestBox = 0;
             var highestTitleBox = 0;
 
             //Title Height
             var highestTitleBox = 0;
-            $('.'+slideritemId+' .productitem--title', this).each(function(){
-                if($(this).height() > highestTitleBox) {
+            $('.' + slideritemId + ' .productitem--title', this).each(function () {
+                if ($(this).height() > highestTitleBox) {
                     highestTitleBox = $(this).height();
                 }
             });
-            $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
-            
+            $('.' + slideritemId + ' .productitem--title', this).height(highestTitleBox);
+
             //box height
-            $('.'+slideritemId+' .productgrid--item', this).each(function(){
-                if($(this).height() > highestBox) {
+            $('.' + slideritemId + ' .productgrid--item', this).each(function () {
+                if ($(this).height() > highestBox) {
                     highestBox = $(this).height();
                 }
             });
-            $('.'+slideritemId+' .productgrid--item',this).height(highestBox);
+            $('.' + slideritemId + ' .productgrid--item', this).height(highestBox);
         });
 
 
         // Equalize Title Height which is exlcuded above
-        $( ".rel-product-tabbed-area .tabbed-rel-freq" ).each(function( index ) {
+        $(".rel-product-tabbed-area .tabbed-rel-freq").each(function (index) {
             var itemId = $(this).attr('id');
 
             // Equalize Box and Title Height
-            var slideritemId = itemId.replace('-slider','-rel-item');
+            var slideritemId = itemId.replace('-slider', '-rel-item');
 
             //Title Height
             var highestTitleBox = 0;
-            $('.'+slideritemId+' .productitem--title', this).each(function(){
-                if($(this).height() > highestTitleBox) {
+            $('.' + slideritemId + ' .productitem--title', this).each(function () {
+                if ($(this).height() > highestTitleBox) {
                     highestTitleBox = $(this).height();
                 }
             });
-            $('.'+slideritemId+' .productitem--title',this).height(highestTitleBox);
+            $('.' + slideritemId + ' .productitem--title', this).height(highestTitleBox);
         });
+    }
+    //check for slider, initiate slider if not found, continue to run since atc functionlity will remove it if slider runs early
+    function checkRelSlider(){
+        if($('.rel-product-tabbed-area .slick-initialized').length) {
+            // console.log('slider found');
+        }else{
+            // console.log('slider not found');
+            sliderGo();
+        }
+    }
 
-    },3500);
-
+    //check for slide ever 2 seconds for 10 seconds
+    var i=0;
+    var myfunc = setInterval(function(){
+        i = i + 1;
+        checkRelSlider();
+        // console.log('slide check at '+ 2*i + ' seconds');
+        if(i==5) {
+            clearInterval(myfunc);
+        }
+    }, 2000);
 
 
     setTimeout(()=>{
