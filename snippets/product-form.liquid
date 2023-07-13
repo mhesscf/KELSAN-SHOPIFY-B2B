@@ -1020,7 +1020,10 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     </div>
 {% comment %}end of bundle logic -----------------------------------------------------------------------------------{% endcomment %}
 {% endif %}
-
+{% comment %} shoppay finaincing link
 {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
   <form data-payment-terms-target class="shoppay-financing" style="display: none;"></form>
 {% endif %}
+{% endcomment %}
+
+<div class="finance-wrapper"></div>

@@ -1,0 +1,220 @@
+var $j = jQuery.noConflict();
+var bestFinanceRate = .0237; //which currently is 60 month financing via equipmoney
+
+jQuery(document).ready(function() {
+
+    // on equipmoney click
+    $j(".equipmoneylink").click(function () {
+        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+        runRates();
+        $j(".em-rate-area, .em-text, .loanamount").removeClass('hidden');
+    });
+
+    // on creditkey click
+    $j(".creditkeylink").click(function () {
+        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+        runRates();
+        $j(".ck-rate-area, .ck-text, .loanamount").removeClass('hidden');
+    });
+
+    // on shoppay click
+    $j(".shoplink").click(function () {
+        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+        runRates();
+        $j(".shop-rate-area, .shop-text, .loanamount").removeClass('hidden');
+    });
+
+    // on default text click
+    $j(".defaultlink").click(function () {
+        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+        runRates();
+        $j(".default-text").removeClass('hidden');
+    });
+
+    // on shop instruction text click
+    $j("#shop-instruct").click(function () {
+        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+        runRates();
+        $j(".shop-instructions").removeClass('hidden');
+    });
+
+
+
+    $j("#loan-amount").keyup(function(){
+        runRates();
+    });
+
+    //EquipMoney Radio Clicks
+    // $j(".em-radio").click(function () {
+    //     runRates();
+    // });
+    $j("#em-terms").change(function () {
+        runRates();
+    });
+
+    $j("#spoof-addtocart").click(function () {
+        $j("#p-atc").trigger('click');
+        closePaymentPop('payment-request');
+    });
+
+});
+
+function calculateFixedMonthlyPayment(loanAmount, apr, loanTerm) {
+    // Convert APR to monthly interest rate
+    var monthlyInterestRate = apr / 12;
+
+    // Calculate the fixed monthly payment
+    var fixedMonthlyPayment = (monthlyInterestRate * loanAmount) / (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
+
+    return fixedMonthlyPayment;
+}
+function calculateTotalInterest(loanAmount, fixedMonthlyPayment, loanTerm) {
+    // Calculate the total interest paid
+    var totalInterest = (fixedMonthlyPayment * loanTerm) - loanAmount;
+
+    return totalInterest;
+}
+
+function runRates(){
+    var location = window.location.hostname;
+    var loanAmount = $j("#loan-amount").val();
+    loanAmount = loanAmount.replace('$','');
+    loanAmount = parseFloat(loanAmount);
+
+    if (loanAmount != 0 && !isNaN(loanAmount)) {
+
+    //ShopPay
+        var apr = 0.15;
+
+        //3 month
+        var fixedPayment3 = calculateFixedMonthlyPayment(loanAmount, apr, 3);
+        var totalInterest3 = calculateTotalInterest(loanAmount, fixedPayment3.toFixed(2), 3);
+        var totalpaid3 = totalInterest3 + loanAmount;
+        $j(".3month .price-per-term span").text(fixedPayment3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        $j(".3month .interest-amount .interest-value span").text(totalInterest3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        $j(".3month .interest-total .interest-value span").text(totalpaid3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        //12 month
+        var fixedPayment12 = calculateFixedMonthlyPayment(loanAmount, apr, 12);
+        var totalInterest12 = calculateTotalInterest(loanAmount, fixedPayment12.toFixed(2), 12);
+        var totalpaid12 = totalInterest12 + loanAmount;
+        $j(".12month .price-per-term span").text(fixedPayment12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        $j(".12month .interest-amount .interest-value span").text(totalInterest12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        $j(".12month .interest-total .interest-value span").text(totalpaid12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+
+    //CreditKey
+        // Payments = cost/payment*(1+rate) (not sure about this)
+        // Payments = cost/12*1.01 (not sure about this)
+
+        $j("#ck-rate span.rate").text((loanAmount/12*1.01).toFixed(2));
+
+    //EquipMoney
+        // For Select area
+        $j("#em-bb-12-select-rate .rate").text((loanAmount * .0894).toFixed(2));
+        $j("#em-bb-12-select").attr('ratedata',(loanAmount * .0894).toFixed(2));
+
+        $j("#em-bb-24-select-rate .rate").text((loanAmount * .0487).toFixed(2));
+        $j("#em-bb-24-select").attr('ratedata',(loanAmount * .0487).toFixed(2));
+
+        $j("#em-bb-36-select-rate .rate").text((loanAmount * .0344).toFixed(2));
+        $j("#em-bb-36-select").attr('ratedata',(loanAmount * .0344).toFixed(2));
+
+        $j("#em-bb-48-select-rate .rate").text((loanAmount * .0276).toFixed(2));
+        $j("#em-bb-48-select").attr('ratedata',(loanAmount * .0276).toFixed(2));
+        //note, bestrate needs to be global for leasestation functionality that was repurposed
+        $j("#em-bb-60-select-rate .rate").text((loanAmount * bestFinanceRate).toFixed(2));
+        $j("#em-bb-60-select").attr('ratedata',(loanAmount * bestFinanceRate).toFixed(2));
+
+        $j("#em-bd-13-select-rate .rate").text((loanAmount * .083333).toFixed(2));
+        $j("#em-bd-13-select").attr('ratedata',(loanAmount * .083333).toFixed(2));
+
+        //show selected rate area
+        var rateTextId = "#"+$j('#em-terms').find(":selected").attr('id')+"-rate";
+        $j('.em-select-text').hide();
+        $j(rateTextId).show();
+        //alert(rateTextId);
+
+
+
+        if(location.includes('airmovers.com')){
+            var apiKey = 'apikey=o25a9kfm5zf4i4y1kd7ka882ke4ehltenwluo8ng';
+        }else if (location.includes('carpetextractors.com')){
+            var apiKey = 'apikey=65p31omf440owjyds2fgfsrb1uia9f9mb8envbzk';
+        }else if (location.includes('floorbuffers.com')){
+            var apiKey = 'apikey=m4dgzg15ivnla1rzow7r7e9u0u5671ssijyjppln';
+        }else if (location.includes('floorscrubbers.com')){
+            var apiKey = 'apikey=y6of02tnrzd60t8a4yyzag0ckz7suttjioreyble';
+        }else{
+            var apiKey = 'apikey=7da8oxb72fq4n08k8gl43dlm4xrkg2ags8ofcyhl';
+        }
+
+
+        var eqUrl = 'https://www.leaseconsultants.com/Tools/BaseApplication/BaseApplication.php?';
+        //var apiKey = 'apikey=7da8oxb72fq4n08k8gl43dlm4xrkg2ags8ofcyhl';
+        var plan = '&plan=BestBuy'; //BestBuy
+
+        if ($j('#em-terms').find(":selected").attr('id') == 'em-bd-13-select'){
+            plan = '&plan=2'; //Baker's Dozen
+        }
+        var termsTerm = '&termsTerm='+ $j('#em-terms').find(":selected").attr('value');
+        var cartTotal = '&cartTotal=' + loanAmount;
+        var termsMonthly = '&termsMonthly='+$j('#em-terms').find(":selected").attr('ratedata');
+        var itemsSKUs = '&itemsSKUs='+$j("#requestedskus").text();
+        var itemCounts = '&itemCounts='+$j("#requestedqty").text();
+
+        //$j("#em-appLinkTest").text(eqUrl+apiKey+plan+termsTerm+cartTotal+termsMonthly+itemsSKUs+itemCounts);
+        $j("#em-appLink").attr("href",eqUrl+apiKey+plan+termsTerm+cartTotal+termsMonthly+itemsSKUs+itemCounts);
+        $j("#em-appLink").removeClass('hidden');
+    }
+}
+
+
+function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, apptype='unset'){
+    if(apptype == 'unset' || apptype == ''){
+        apptype = 'default';
+        {% comment %}apptype = 'shop';{% endcomment %}
+    }
+    e.preventDefault();
+
+    $j(".finance-pop-overlay").removeClass('hidden');
+    $j(".rate-area, .text-area").addClass('hidden');
+    $j(".loanamount").addClass('hidden');
+
+    if (!$j('#acp-overlay').hasClass('ajaxcartpro-box-show')){
+        $j('#acp-overlay').removeClass('ajaxcartpro-box-hide').addClass('ajaxcartpro-box-show');
+    }
+    var w = ($j(window).width() - 300) / 2,
+        h = ($j(window).height() - 400) / 2;
+    var paymentRequest = $j('#payment-request');
+    $j(paymentRequest).css({'left':w+'px','top':h+'px'});
+
+    $j(paymentRequest).toggleClass('hidden');
+
+    if (amount == 0){
+        amount = 1000.00;
+    }
+    $j('#loan-amount').val('$'+ amount.toFixed(2));
+    $j('#requestedskus').text(requestedsku);
+    $j('#requestedqty').text(requestedqty);
+
+    runRates();
+    if(apptype == 'ck'){
+        $j(".ck-rate-area, .ck-text").removeClass('hidden');
+        $j(".loanamount").removeClass('hidden');
+    }else if(apptype == 'em'){
+        $j(".em-rate-area, .em-text").removeClass('hidden');
+        $j(".loanamount").removeClass('hidden');
+    }else if(apptype == 'shop'){
+        $j(".shop-rate-area, .shop-text").removeClass('hidden');
+        $j(".loanamount").removeClass('hidden');
+    }else if(apptype == 'default'){
+        $j(".default-text").removeClass('hidden');
+    }
+}
+
+function closePaymentPop(el){
+    if (jQuery('#acp-overlay').hasClass('ajaxcartpro-box-show')){
+        jQuery('#acp-overlay').removeClass('ajaxcartpro-box-show').addClass('ajaxcartpro-box-hide');
+    }
+    $j(".finance-pop-overlay").addClass('hidden');
+    jQuery('#'+el).toggleClass('hidden');
+}

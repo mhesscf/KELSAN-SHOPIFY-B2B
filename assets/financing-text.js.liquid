@@ -1,0 +1,203 @@
+/**
+ * Created by Mitch Hess on 04/06/2019.
+ */
+
+var webSiteUrl = window.location.hostname;
+var webSite = "na";
+var utm_source = "";
+var wsc="";
+var fRate = .0275;
+var lowestRate = bestFinanceRate; //new lowest rate on credit key/equipmoney
+var imgLink = "";
+var itemSku = "";
+var itemqty = "1";
+var itemtitle = "";
+if (webSiteUrl.indexOf("cleanfreak.com") >= 0){
+    website = "cf";
+    imgLink = "https://dev02.cleanfreak.com/cf/images";
+    utm_source = "rcwe9em";
+}else if (webSiteUrl.indexOf("airmovers.com") >= 0){
+    website = "am"
+    wsc = "air";
+    imgLink = "https://dev02.airmovers.com/fb/images";
+    utm_source = "rcwe9em";
+}else if (webSiteUrl.indexOf("carpetextractors.com") >= 0){
+    website = "ce"
+    wsc = "carpet";
+    imgLink = "https://dev02.carpetextractors.com/ce/images";
+    utm_source = "rcwe9em";
+}else if (webSiteUrl.indexOf("floorbuffers.com") >= 0){
+    website = "fb";
+    wsc = "floor";
+    imgLink = "https://dev02.floorbuffers.com/fb/images";
+    utm_source = "rcwe9em";
+}else if (webSiteUrl.indexOf("floorscrubbers.com") >= 0){
+    website = "fs";
+    wsc = "scrubber";
+    imgLink = "https://dev02.floorscrubbers.com/fs/images";
+    utm_source = "rcwe9em";
+}else if (webSiteUrl.indexOf("rocketindustrial.com") >= 0){
+    website = "ri";
+    wsc = "rocket";
+    imgLink = "https://media.rocketindustrial.com/fs/images";
+    utm_source = "rcwe9em";
+}
+
+function getLinkv2(sku,cost,title, qty=1){
+    title = encodeURIComponent(title.trim());
+    title = title.replace(/'/g, '%27');
+    var LSlink = "https://secure.quickspark.com/app.cfm?utm_source="+utm_source+"&utm_medium=ls-detail-button&utm_term=bubblebutton-blue&utm_campaign=application&vurl="+utm_source+"&wsc="+wsc+"&loc=&vButton=ipd&do=apply&skny=n&rel=nofollow&appType=B&ec="+cost+"&cost="+cost+"&ProductId=SKU%23%20"+sku+"&ProductName="+title;
+    //new LSlink for equipmoney and creditkey popup
+    var LowestRateTotal = cost*lowestRate ;
+    var PaymentOptionPopCall = 'getPaymentOptions(event,'+cost+',\''+sku+'\',\''+qty+'\',\'\');';
+    LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong><i class="fa-solid fa-calculator"></i></div><div class="clearer"></div>';
+
+
+    return LSlink;
+}
+
+function checkCost(cost) {
+    cost = cost.replace(/[$,]/g, ''); // remove characters
+    cost = cost.trim();
+    if (cost > 999.99){
+        return cost;
+    }else{
+        return false;
+    }
+}
+
+/*Product page functions*/
+function productPageCheck(type){
+    //Clear container if filled
+    jQuery(".product-main .finance-wrapper").html("");
+    //simple and variations
+    var itempricing = checkCost(jQuery(".price__current .money").first().text());
+
+    if (itempricing != false && !isNaN(itempricing)) {
+
+            itemSku = jQuery(".product-main .product-detail-sku span:visible").first().text();
+            itemqty = jQuery(".product-main .qtybox .qty").val();
+            if(isNaN(itemqty)){
+                itemqty = 1;
+            }
+            itempricing = itempricing*itemqty;
+            itemtitle = jQuery(".product-main .product-title").first().text();
+
+            {% comment %}alert(itemSku + " + " + itemqty + " + "+ itempricing + " + " + itemtitle );{% endcomment %}
+
+            jQuery(".product-main .finance-wrapper").append(getLinkv2(itemSku, itempricing, itemtitle, itemqty));
+
+    }
+}
+
+function cartPageCheck(){
+    {% comment %}var cartSkus = "CPL-225FP-17-CF_CPL-18VAC-24SQ_NYC-N640-G2";{% endcomment %}
+    {% comment %}var cartQtys = "1_1_1";{% endcomment %}
+    var cartCost = checkCost(jQuery(".cart-final-total .cart-subtotal .money").first().text());
+    var cartSkus = "";
+    var cartQtys = "";
+    var firstTrigger = 1;
+    jQuery( ".cart-item" ).each( function( i ) {
+        if(firstTrigger){
+            cartSkus += jQuery(this).find('.cart-item--sku span').text().trim();
+            cartQtys += jQuery(this).find('.form-field-select-wrapper select option:selected').text().trim();
+            firstTrigger = 0;
+        }else{
+            cartSkus += "_"+jQuery(this).find('.cart-item--sku span').text().trim();
+            cartQtys += "_"+jQuery(this).find('.form-field-select-wrapper select option:selected').text().trim();
+        }
+
+    } );
+    var cartLowestRateTotal = cartCost*lowestRate ;
+    var cartPaymentOptionPopCall = 'getPaymentOptions(event,'+cartCost+',\''+cartSkus+'\',\''+cartQtys+'\',\'\');';
+    var cartLink = '<div onclick="'+cartPaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(cartLowestRateTotal)+'/month</strong><i class="fa-solid fa-calculator"></i></div><div class="clearer"></div></div>';
+
+    if (cartCost >= 1000){
+        jQuery(".cart-checkout .finance-wrapper").html("");
+        jQuery(".cart-checkout .finance-wrapper").append(cartLink);
+    }else{
+        jQuery(".cart-checkout .finance-wrapper").html("");
+    }
+}
+
+
+jQuery(document).ready(function() {
+    /*Product pages***/
+    if (jQuery('.template-product').length > 0) {
+
+        /*Simple, Variation, bundle checks***/
+        if (jQuery('.options-selection__select').length > 0) {
+            // Variation/variant
+            setTimeout(function(){productPageCheck("variant");},250);
+                jQuery(".options-selection__select select").change(function() {
+                    /* must run after custom.js line 254 **/
+                        setTimeout(function(){productPageCheck("variant");},305);
+                });
+            /* qty box trigger **/
+            jQuery(".product-main .qtybox .qty").change(function() {
+                setTimeout(function(){productPageCheck("variant");},100);
+            });
+            jQuery(".product-main .qtybox input").on( "click", function() {
+                setTimeout(function(){productPageCheck("variant");},100);
+            });
+        }else{
+            {% comment %}console.log('Simple or Bundle Financing Trigger');{% endcomment %}
+            productPageCheck("simple");
+            /* qty box trigger **/
+            jQuery(".product-main .qtybox .qty").change(function() {
+                setTimeout(function(){productPageCheck("simple");},100);
+            });
+            jQuery(".product-main .qtybox input").on( "click", function() {
+                setTimeout(function(){productPageCheck("simple");},100);
+            });
+        }
+    }
+
+    /*Solr and category pages***/
+    /* if (jQuery('.catalog-category-view').length > 0 || jQuery('.pti-solr-index-index').length > 0 || jQuery('.catalogsearch-result-index').length > 0) {
+        jQuery( ".item" ).each(function() {
+            var itempricing = false;
+            if (website == "ri-off"){
+                if (jQuery(this).find('.price-box-v2 .special-price .price').length > 0) {
+                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .special-price .price").text());
+                } else if (jQuery(this).find(".price-box-v2 .regular-price .price .price").length > 0) {
+                    console.log('chekcing');
+                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .regular-price .price .price").text());
+                } else if (jQuery(this).find(".price-box-v2 .minimal-price .price").length > 0) {
+                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .minimal-price .price").text());
+                } else if (jQuery(this).find(".price-box-v2 .price-from .price").length > 0) {
+                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .price-from .price").text());
+                }
+            }else {
+                if (jQuery(this).find(".price-box-v2 .regular-price .price").length > 0) {
+                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .regular-price .price").text());
+                    if (jQuery(this).find('.price-box-v2 .special-price .price').length > 0) {
+                        itempricing = checkCost(jQuery(this).find(".price-box-v2 .special-price .price").text());
+                    }
+                } else if (jQuery(this).find(".price-box-v2 .minimal-price .price").length > 0) {
+                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .minimal-price .price").text());
+                } else if (jQuery(this).find(".price-box-v2 .price-from .price").length > 0) {
+                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .price-from .price").text());
+                }
+            }
+
+            if (itempricing != false) {
+                if (website == "ri"){
+                    itemSku = jQuery(this).find(".list-info .sku-brand").text().trim();
+                    itemtitle = jQuery(this).find(".list-info .product-name span").text().trim();
+                }else {
+                    itemSku = jQuery(this).find(".product-shop h5:contains('SKU') span").text().trim();
+                    itemtitle = jQuery(this).find(".product-shop .product-name span").text().trim();
+                }
+                jQuery(this).find(".finance-wrapper").append(getLink(itemSku, itempricing, itemtitle,1));
+            }
+        });
+    }  */
+
+    /*Cart page***/
+    if (jQuery('.template-cart').length > 0){
+        setTimeout(function(){cartPageCheck();},250);
+    }
+
+
+});
