@@ -25,6 +25,12 @@
         "text_alignment": "left"
       }
     },
+    "04c9946a-362a-46fe-8dda-204dab909e29": {
+      "type": "dynamic-custom-liquid",
+      "settings": {
+        "custom_liquid": "{{ cart.total_price | money }}\n{% for item in cart.items %}\n\tQty: {{ item.quantity }} <br\/>\n\tSKU: {{ item.product.selected_or_first_available_variant.sku}} <br\/>\n{% endfor %}"
+      }
+    },
     "1f7742d0-75ed-4a64-8bdb-bcc36ba3144f": {
       "type": "dynamic-html",
       "settings": {
@@ -57,6 +63,7 @@
     "main",
     "6dbab1e9-685a-43a3-9116-232ec76b3d16",
     "80d0b14a-66ab-4378-a7a0-fb100aa2292e",
+    "04c9946a-362a-46fe-8dda-204dab909e29",
     "1f7742d0-75ed-4a64-8bdb-bcc36ba3144f",
     "e789fc47-75ac-40aa-8f17-b5c34494dcd0",
     "3a031f5e-1401-4732-98ef-d871d13c5db2"
