@@ -51,7 +51,12 @@ jQuery(document).ready(function() {
     $j("#em-terms").change(function () {
         runRates();
     });
-
+    setTimeout(function(){
+        $j("#spoof-addtocart").click(function () {
+            $j("#p-atc").trigger('click');
+            closePaymentPop('payment-request');
+        });
+    },1000);
 });
 
 function calculateFixedMonthlyPayment(loanAmount, apr, loanTerm) {
@@ -164,12 +169,6 @@ function runRates(){
 
 
 function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, apptype='unset'){
-
-    $j("#spoof-addtocart").click(function () {
-        $j("#p-atc").trigger('click');
-        closePaymentPop('payment-request');
-    });
-
     if(apptype == 'unset' || apptype == ''){
         apptype = 'default';
         {% comment %}apptype = 'shop';{% endcomment %}
