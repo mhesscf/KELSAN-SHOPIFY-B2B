@@ -1,0 +1,229 @@
+
+{%- assign websiteurl = shop.name -%}
+{%- if websiteurl == 'CeanFreak.com' or websiteurl == 'CleanFreak - DEV' -%}
+    {%- assign websiteurl  = "https://www.creditkey.com/app/apply/cleanfreak" -%}
+{%- elsif websiteurl == 'AirMovers.com' or websiteurl == 'AirMovers - Dev' -%}
+    {%- assign creditKeyUrl  = "https://www.creditkey.com/app/apply/air-movers" -%}
+{%- elsif websiteurl == 'CarpetExtractors.com' or websiteurl == 'CarpetExtractors - Dev' -%}
+    {%- assign creditKeyUrl  = "https://www.creditkey.com/app/apply/carpet-extractors" -%}
+{%- elsif websiteurl == 'FloorBuffers.com' or websiteurl == 'CleanFreak - DEV' -%}
+    {%- assign creditKeyUrl  = "https://www.creditkey.com/app/apply/floor-buffers" -%}
+{%- elsif websiteurl == 'FloorScrubbers.com' or websiteurl == 'CleanFreak - DEV' -%}
+    {%- assign creditKeyUrl  = "https://www.creditkey.com/app/apply/floor-scrubbers" -%}
+{%- else -%}
+    {%- assign creditKeyUrl  = "https://www.creditkey.com/app/apply/cleanfreak" -%}
+{%- endif -%}
+
+
+<div class="hidden a-center" id="payment-request" style="position:fixed; background:#fff; border-radius: 10px; box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14); padding:20px; width:310px; height:430px; z-index:1000;">
+    <div class="close-pop" id="close-payment-request" onclick="closePaymentPop('payment-request')"><span></span></div>
+
+    <div id="payment-price-request">
+
+    <div class="text-block common-text default-text text-area">
+        <div class="creditkeylink optionlink">
+            <div class="step1-logo">{{ images['credit-key-logo.jpg'] | image_url: height: 40 | image_tag }}</div>
+
+            {% comment %}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{% endcomment %}
+            <ul>
+                <li>Limit up to $50,000</li>
+                <li>Terms up to 12 months</li>
+            </ul>
+            <div style="text-align:center;"><strong><span class="fake-link" >Click here</span> to check out our Credit Key plan.</strong></div>
+        </div>
+        <hr class="logo-line" />
+        <div class="equipmoneylink optionlink">
+            <div class="step1-logo">{{ images['equipmoney-logo.jpg'] | image_url: height: 40 | image_tag }}</div>
+                {% comment %}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{% endcomment %}
+                <ul>
+                    <li>Limit up to $1,000,000</li>
+                    <li>Terms up to 60 months</li>
+                </ul>
+            <div style="text-align:center;"><strong><span  class="fake-link" >Click here</span> to check out our EquipMoney plans.</strong></div>
+        </div>
+        <hr class="logo-line" />
+        <div class="shoplink optionlink">
+            <div class="step1-logo">{{ images['shop-pay-trans.png'] | image_url: height: 40 | image_tag }}</div>
+            {% comment %}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{% endcomment %}
+            <ul>
+                <li>Limit up to $17,500</li>
+                <li>Terms up to 12 months</li>
+            </ul>
+            <div style="text-align:center;"><strong><span  class="fake-link" >Click here</span> to check out our ShopPay plans.</strong></div>
+        </div>
+
+
+    </div>
+
+        <div class="text-block common-text shop-instructions text-area">
+            <div class="step1-logo"><a href="/payment-options.html">{{ images['shop-pay-trans.png'] | image_url: height: 40 | image_tag }}</a></div>
+            <hr class="logo-line" />
+            To finance through ShopPay, simply add the items you wish to finance to your cart and click on the {{ images['shoppay-button.png'] | image_url: height: 20 | image_tag }} button which can be found in the cart or on the checkout under "Express checkout" on the first page.
+            <br/><br/>
+            In the new ShopPay checkout, select "Pay in monthly installments" as your payment options and fill in the rest of the info to apply.
+            <br/><br/>
+            <div style="text-align:center">
+                <button id="spoof-addtocart" style="margin:auto;" class="button payment-blue"><span><span>Add Item to Cart</span></span></button>
+            </div>
+
+            <div class="pop-footer defaultlink"><strong><span class="fake-link" >Click here</span> to view all financing options.</strong></div>
+        </div>
+
+    <div class="text-block common-text ck-text text-area">
+            <div class="step1-logo"><a href="/payment-options.html">{{ images['credit-key-logo.jpg'] | image_url: height: 40 | image_tag }}</a></div>
+            <hr class="logo-line" />
+            <div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>
+        <ul>
+            <li>Limit up to $50,000</li>
+            <li>Terms up to 12 months</li>
+            <li>No prepayment penalties</li>
+            <li>Instant Approval</li>
+            <li>30 days interest free</li>
+        </ul>
+        <hr/>
+    </div>
+    <div class="text-block common-text em-text text-area">
+        <div class="step1-logo"><a href="/payment-options.html">{{ images['equipmoney-logo.jpg'] | image_url: height: 40 | image_tag }}</a></div>
+        <hr class="logo-line" />
+        <div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>
+        <ul>
+            <li>Terms up to 60 months</li>
+            <li>No prepayment penalties</li>
+            <li>Instant approval with no hard credit pulls</li>
+            <li>All credits welcome – including start-ups</li>
+            <li>Business accounts only</li>
+        </ul>
+        <hr/>
+    </div>
+
+    <div class="text-block common-text shop-text text-area">
+        <div class="step1-logo"><a href="/payment-options.html">{{ images['shop-pay-trans.png'] | image_url: height: 40 | image_tag }}</a></div>
+        <hr class="logo-line" />
+        <div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>
+        <ul>
+            <li>3, 6, 12 month payment options</li>
+            <li>For orders between $150.00 and $17,500.00 with a 10% - 36% interest rate</li>
+            <li>No credit score check, No additional fees </li>
+        </ul>
+        <hr/>
+    </div>
+
+<fieldset class="loanamount" style="max-height:280px; overflow:hidden;">
+
+    <div class="payment-option-amount">
+        <label for="loan-amount">Loan Amount: </label><input name="Loan Amount" id="loan-amount" type="text" class="input-text required-entry" /><br />
+        <div id="requestedskus" class="hidden"></div>
+        <div id="requestedqty" class="hidden"></div>
+    </div>
+
+    <div class="clearer"></div>
+
+
+    <div class="ck-rate-area rate-area hidden">
+        <div id="ck-rate" class="rate-text">12 payments as low as <span class="rate-full">$<span class="rate"></span>/month</span></div>
+        <a id="ck-appLink" target="_blank" class="" href="{{ creditKeyUrl }}">
+            <button class="button payment-blue ck-application"><span><span>Apply Now</span></span></button>
+        </a>
+        {% comment %}<div class="ck-pop-footer pop-footer equipmoneylink"><strong>Looking for a lower rate of <span class="rate-full">$<span class="lowestrate"></span>/month</span>?<br/><span  class="fake-link" >Click here</span> to check out our EquipMoney plans.</strong></div>{% endcomment %}
+        <div class="pop-footer defaultlink"><strong><span class="fake-link" >Click here</span> to view all financing options.</strong></div>
+    </div>
+
+
+    <div class="em-rate-area rate-area hidden">
+        <div class="rate-text">
+
+            <div class="payment-option-length">
+                <label class="payment-label" for="em-terms">Months:</label>
+                <select name="em-terms" id="em-terms" title="Equip Money Terms">
+                    <?php // <option class="em-select" ratedata="" id="em-bb-12-select" value="12">12</option> ?>
+                    <option class="em-select" ratedata="" id="em-bd-13-select" value="13">13</option>
+                    <option class="em-select" ratedata="" id="em-bb-24-select" value="24">24</option>
+                    <option class="em-select" ratedata="" id="em-bb-36-select" value="36">36</option>
+                    <option class="em-select" ratedata="" id="em-bb-48-select" value="48">48</option>
+                    <option class="em-select" ratedata="" id="em-bb-60-select" value="60" selected>60</option>
+                </select>
+                <br>
+            </div>
+            <div class="clearer"></div>
+
+            <div id="em-bb-12-select-rate" class="em-select-text" style="display:none;">12 payments as low as <span class="rate-full">$<span class="rate"></span>/month</span></div>
+            <div id="em-bb-24-select-rate" class="em-select-text" style="display:none;">24 payments as low as <span class="rate-full">$<span class="rate"></span>/month</span></div>
+            <div id="em-bb-36-select-rate" class="em-select-text" style="display:none;">36 payments as low as <span class="rate-full">$<span class="rate"></span>/month</span></div>
+            <div id="em-bb-48-select-rate" class="em-select-text" style="display:none;">48 payments as low as <span class="rate-full">$<span class="rate"></span>/month</span></div>
+            <div id="em-bb-60-select-rate" class="em-select-text" style="display:none;">60 payments as low as <span class="rate-full">$<span class="rate"></span>/month</span></div>
+            <div id="em-bd-13-select-rate" class="em-select-text" style="display:none;">13 payments as low as <span class="rate-full">$<span class="rate"></span>/month</span></div>
+        </div>
+
+        <a id="em-appLink" target="_blank" class="hidden" href="">
+            <button class="button payment-blue em-application"><span><span>Apply Now</span></span></button>
+        </a>
+        {% comment %}<div class="pop-footer creditkeylink"><strong>Need to apply for a revolving line of credit<br/>at 12 month payments?<br/><span class="fake-link" >Click here</span> to check out our Credit Key plan.</strong></div>{% endcomment %}
+        <div class="pop-footer defaultlink"><strong><span class="fake-link" >Click here</span> to view all financing options.</strong></div>
+    </div>
+
+
+    <div class="shop-rate-area rate-area hidden">
+       <div class="shop-results 3month">
+               <div class="financial-container">
+              <span class="amount-per-interval" style="float:left;">
+                <b class="price-per-term">$<span></span></b>&nbsp;<span class="frequency">/ month</span>
+              </span>
+                   <div class="payment-length" style="float:right;">
+                       <span class="number-of-terms">3 months</span>
+                   </div>
+               </div>
+               <div class="interest-container" style="clear:both;">
+                   <div class="interest interest-apr">
+                       <span class="interest-label">APR</span>
+                       <span class="interest-value apr-amount">15%</span>
+                   </div>
+                   <div class="interest interest-amount">
+                       <span class="interest-label">Interest</span>
+                       <span class="interest-value">$<span></span></span>
+                   </div>
+                   <div class="interest interest-total">
+                       <span class="interest-label">Total</span>
+                       <span class="interest-value">$<span></span></span>
+                   </div>
+               </div>
+       </div>
+
+        <div class="shop-results 12month">
+            <div class="financial-container">
+              <span class="amount-per-interval"  style="float:left;">
+                <b class="price-per-term">$<span></span></b>&nbsp;<span class="frequency">/ month</span>
+              </span>
+                <div class="payment-length" style="float:right;">
+                    <span class="number-of-terms">12 months</span>
+                </div>
+            </div>
+            <div class="interest-container" style="clear:both;">
+                <div class="interest interest-apr">
+                    <span class="interest-label">APR</span>
+                    <span class="interest-value apr-amount">15%</span>
+                </div>
+                <div class="interest interest-amount">
+                    <span class="interest-label">Interest</span>
+                    <span class="interest-value">$<span></span></span>
+                </div>
+                <div class="interest interest-total">
+                    <span class="interest-label">Total</span>
+                    <span class="interest-value">$<span></span></span>
+                </div>
+            </div>
+        </div>
+        {% comment %}<div class="subnotes">The estimated payment amount excludes taxes and shipping. Rates range from 0-36% APR. Payment options through Shop Pay Installments are subject to an eligibility check and are provided by these lending partners: <a href="https://www.affirm.com/lenders">affirm.com/lenders</a>. Options depend on your purchase amount, and a down payment may be required. More options may be available upon approval. State notices to consumers: <a href="https://www.affirm.com/licenses">affirm.com/licenses</a>.</div>{% endcomment %}
+        <div style="padding-top:5px;">
+            <button id="shop-instruct" class="button payment-blue"><span><span>How to Apply</span></span></button>
+        </div>
+
+        <div class="pop-footer defaultlink"><strong><span class="fake-link" >Click here</span> to view all financing options.</strong></div>
+    </div>
+
+
+
+</fieldset>
+</div>
+</div>
+
+<div class="finance-pop-overlay hidden"></div>
