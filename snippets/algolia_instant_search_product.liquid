@@ -232,6 +232,11 @@
             }
         }
     }
+    function financinglink(handle,price){
+        var bestFinanceRate = .0237;
+        var LowestRateTotal = price*lowestRate ;
+        return '<div onclick="stoplink(event);"><a href="/products/'+handle+'?finance=pop"><div class="al-search finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong><i class="fa-solid fa-calculator"></i></div></a></div>'
+    }
 
     (function(algolia) {
         'use strict';
@@ -414,6 +419,19 @@ ${1 == 1 && html`
             Sold Out
       </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
     `}
+
+
+${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                                ${hit.meta.plytix.package_products ? html `
+                                    ${hit.meta.plytix.bundle_pricing > 1000 ? html `<div class="finance-raw" data-objid="${hit.objectID}" style="display:none"><div class="finance-wrapper"> ${financinglink(hit.handle,hit.meta.plytix.bundle_pricing)}</div></div>`: html``}`
+                                : html `
+                                    ${hit.price > 1000 ? html `<div class="finance-raw" data-objid="${hit.objectID}" style="display:none"><div class="finance-wrapper"> ${financinglink(hit.handle,hit.price)}</div></div>`:``}
+                                    `}
+                        ` : html ``}
+
+
+    <div class="finance" data-objid="${hit.objectID}"></div>
+
 </p>
 `}
 </div>

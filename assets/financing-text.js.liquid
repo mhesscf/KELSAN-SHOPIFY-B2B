@@ -8,38 +8,27 @@ var utm_source = "";
 var wsc="";
 var fRate = .0275;
 var lowestRate = bestFinanceRate; //new lowest rate on credit key/equipmoney
-var imgLink = "";
 var itemSku = "";
 var itemqty = "1";
 var itemtitle = "";
 if (webSiteUrl.indexOf("cleanfreak.com") >= 0){
     website = "cf";
-    imgLink = "https://dev02.cleanfreak.com/cf/images";
     utm_source = "rcwe9em";
 }else if (webSiteUrl.indexOf("airmovers.com") >= 0){
     website = "am"
     wsc = "air";
-    imgLink = "https://dev02.airmovers.com/fb/images";
     utm_source = "rcwe9em";
 }else if (webSiteUrl.indexOf("carpetextractors.com") >= 0){
     website = "ce"
     wsc = "carpet";
-    imgLink = "https://dev02.carpetextractors.com/ce/images";
     utm_source = "rcwe9em";
 }else if (webSiteUrl.indexOf("floorbuffers.com") >= 0){
     website = "fb";
     wsc = "floor";
-    imgLink = "https://dev02.floorbuffers.com/fb/images";
     utm_source = "rcwe9em";
 }else if (webSiteUrl.indexOf("floorscrubbers.com") >= 0){
     website = "fs";
     wsc = "scrubber";
-    imgLink = "https://dev02.floorscrubbers.com/fs/images";
-    utm_source = "rcwe9em";
-}else if (webSiteUrl.indexOf("rocketindustrial.com") >= 0){
-    website = "ri";
-    wsc = "rocket";
-    imgLink = "https://media.rocketindustrial.com/fs/images";
     utm_source = "rcwe9em";
 }
 
@@ -50,8 +39,14 @@ function getLinkv2(sku,cost,title, qty=1){
     //new LSlink for equipmoney and creditkey popup
     var LowestRateTotal = cost*lowestRate ;
     var PaymentOptionPopCall = 'getPaymentOptions(event,'+cost+',\''+sku+'\',\''+qty+'\',\'\');';
-    LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong><i class="fa-solid fa-calculator"></i></div><div class="clearer"></div>';
 
+    //pop the popup if finance equals pop in url
+    const urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.get('finance') == 'pop'){
+        getPaymentOptions(event,cost,sku,qty,'');
+    };
+
+    LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong><i class="fa-solid fa-calculator"></i></div><div class="clearer"></div>';
 
     return LSlink;
 }
