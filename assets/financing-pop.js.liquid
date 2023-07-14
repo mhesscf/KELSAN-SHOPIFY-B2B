@@ -1,59 +1,59 @@
-var $j = jQuery.noConflict();
+{% comment %}var $j = jQuery.noConflict();   have to turn this off. was killing algolia's js{% endcomment %}
 var bestFinanceRate = .0237; //which currently is 60 month financing via equipmoney
 
 jQuery(document).ready(function() {
 
     // on equipmoney click
-    $j(".equipmoneylink").click(function () {
-        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+    jQuery(".equipmoneylink").click(function () {
+        jQuery(".rate-area, .text-area, .loanamount").addClass('hidden');
         runRates();
-        $j(".em-rate-area, .em-text, .loanamount").removeClass('hidden');
+        jQuery(".em-rate-area, .em-text, .loanamount").removeClass('hidden');
     });
 
     // on creditkey click
-    $j(".creditkeylink").click(function () {
-        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+    jQuery(".creditkeylink").click(function () {
+        jQuery(".rate-area, .text-area, .loanamount").addClass('hidden');
         runRates();
-        $j(".ck-rate-area, .ck-text, .loanamount").removeClass('hidden');
+        jQuery(".ck-rate-area, .ck-text, .loanamount").removeClass('hidden');
     });
 
     // on shoppay click
-    $j(".shoplink").click(function () {
-        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+    jQuery(".shoplink").click(function () {
+        jQuery(".rate-area, .text-area, .loanamount").addClass('hidden');
         runRates();
-        $j(".shop-rate-area, .shop-text, .loanamount").removeClass('hidden');
+        jQuery(".shop-rate-area, .shop-text, .loanamount").removeClass('hidden');
     });
 
     // on default text click
-    $j(".defaultlink").click(function () {
-        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+    jQuery(".defaultlink").click(function () {
+        jQuery(".rate-area, .text-area, .loanamount").addClass('hidden');
         runRates();
-        $j(".default-text").removeClass('hidden');
+        jQuery(".default-text").removeClass('hidden');
     });
 
     // on shop instruction text click
-    $j("#shop-instruct").click(function () {
-        $j(".rate-area, .text-area, .loanamount").addClass('hidden');
+    jQuery("#shop-instruct").click(function () {
+        jQuery(".rate-area, .text-area, .loanamount").addClass('hidden');
         runRates();
-        $j(".shop-instructions").removeClass('hidden');
+        jQuery(".shop-instructions").removeClass('hidden');
     });
 
 
 
-    $j("#loan-amount").keyup(function(){
+    jQuery("#loan-amount").keyup(function(){
         runRates();
     });
 
     //EquipMoney Radio Clicks
-    // $j(".em-radio").click(function () {
+    // jQuery(".em-radio").click(function () {
     //     runRates();
     // });
-    $j("#em-terms").change(function () {
+    jQuery("#em-terms").change(function () {
         runRates();
     });
     setTimeout(function(){
-        $j("#spoof-addtocart").click(function () {
-            $j(".product-form--atc-button").first().trigger('click').trigger('click');
+        jQuery("#spoof-addtocart").click(function () {
+            jQuery(".product-form--atc-button").first().trigger('click').trigger('click');
             {% comment %}Not sure why it needs a double click to work on dev/prod but it does{% endcomment %}
             closePaymentPop('payment-request');
         });
@@ -78,7 +78,7 @@ function calculateTotalInterest(loanAmount, fixedMonthlyPayment, loanTerm) {
 
 function runRates(){
     var location = window.location.hostname;
-    var loanAmount = $j("#loan-amount").val();
+    var loanAmount = jQuery("#loan-amount").val();
     loanAmount = loanAmount.replace('$','');
     loanAmount = parseFloat(loanAmount);
 
@@ -91,47 +91,47 @@ function runRates(){
         var fixedPayment3 = calculateFixedMonthlyPayment(loanAmount, apr, 3);
         var totalInterest3 = calculateTotalInterest(loanAmount, fixedPayment3.toFixed(2), 3);
         var totalpaid3 = totalInterest3 + loanAmount;
-        $j(".3month .price-per-term span").text(fixedPayment3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
-        $j(".3month .interest-amount .interest-value span").text(totalInterest3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
-        $j(".3month .interest-total .interest-value span").text(totalpaid3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        jQuery(".3month .price-per-term span").text(fixedPayment3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        jQuery(".3month .interest-amount .interest-value span").text(totalInterest3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        jQuery(".3month .interest-total .interest-value span").text(totalpaid3.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
         //12 month
         var fixedPayment12 = calculateFixedMonthlyPayment(loanAmount, apr, 12);
         var totalInterest12 = calculateTotalInterest(loanAmount, fixedPayment12.toFixed(2), 12);
         var totalpaid12 = totalInterest12 + loanAmount;
-        $j(".12month .price-per-term span").text(fixedPayment12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
-        $j(".12month .interest-amount .interest-value span").text(totalInterest12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
-        $j(".12month .interest-total .interest-value span").text(totalpaid12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        jQuery(".12month .price-per-term span").text(fixedPayment12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        jQuery(".12month .interest-amount .interest-value span").text(totalInterest12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+        jQuery(".12month .interest-total .interest-value span").text(totalpaid12.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}));
 
     //CreditKey
         // Payments = cost/payment*(1+rate) (not sure about this)
         // Payments = cost/12*1.01 (not sure about this)
 
-        $j("#ck-rate span.rate").text((loanAmount/12*1.01).toFixed(2));
+        jQuery("#ck-rate span.rate").text((loanAmount/12*1.01).toFixed(2));
 
     //EquipMoney
         // For Select area
-        $j("#em-bb-12-select-rate .rate").text((loanAmount * .0894).toFixed(2));
-        $j("#em-bb-12-select").attr('ratedata',(loanAmount * .0894).toFixed(2));
+        jQuery("#em-bb-12-select-rate .rate").text((loanAmount * .0894).toFixed(2));
+        jQuery("#em-bb-12-select").attr('ratedata',(loanAmount * .0894).toFixed(2));
 
-        $j("#em-bb-24-select-rate .rate").text((loanAmount * .0487).toFixed(2));
-        $j("#em-bb-24-select").attr('ratedata',(loanAmount * .0487).toFixed(2));
+        jQuery("#em-bb-24-select-rate .rate").text((loanAmount * .0487).toFixed(2));
+        jQuery("#em-bb-24-select").attr('ratedata',(loanAmount * .0487).toFixed(2));
 
-        $j("#em-bb-36-select-rate .rate").text((loanAmount * .0344).toFixed(2));
-        $j("#em-bb-36-select").attr('ratedata',(loanAmount * .0344).toFixed(2));
+        jQuery("#em-bb-36-select-rate .rate").text((loanAmount * .0344).toFixed(2));
+        jQuery("#em-bb-36-select").attr('ratedata',(loanAmount * .0344).toFixed(2));
 
-        $j("#em-bb-48-select-rate .rate").text((loanAmount * .0276).toFixed(2));
-        $j("#em-bb-48-select").attr('ratedata',(loanAmount * .0276).toFixed(2));
+        jQuery("#em-bb-48-select-rate .rate").text((loanAmount * .0276).toFixed(2));
+        jQuery("#em-bb-48-select").attr('ratedata',(loanAmount * .0276).toFixed(2));
         //note, bestrate needs to be global for leasestation functionality that was repurposed
-        $j("#em-bb-60-select-rate .rate").text((loanAmount * bestFinanceRate).toFixed(2));
-        $j("#em-bb-60-select").attr('ratedata',(loanAmount * bestFinanceRate).toFixed(2));
+        jQuery("#em-bb-60-select-rate .rate").text((loanAmount * bestFinanceRate).toFixed(2));
+        jQuery("#em-bb-60-select").attr('ratedata',(loanAmount * bestFinanceRate).toFixed(2));
 
-        $j("#em-bd-13-select-rate .rate").text((loanAmount * .083333).toFixed(2));
-        $j("#em-bd-13-select").attr('ratedata',(loanAmount * .083333).toFixed(2));
+        jQuery("#em-bd-13-select-rate .rate").text((loanAmount * .083333).toFixed(2));
+        jQuery("#em-bd-13-select").attr('ratedata',(loanAmount * .083333).toFixed(2));
 
         //show selected rate area
-        var rateTextId = "#"+$j('#em-terms').find(":selected").attr('id')+"-rate";
-        $j('.em-select-text').hide();
-        $j(rateTextId).show();
+        var rateTextId = "#"+jQuery('#em-terms').find(":selected").attr('id')+"-rate";
+        jQuery('.em-select-text').hide();
+        jQuery(rateTextId).show();
         //alert(rateTextId);
 
 
@@ -153,18 +153,18 @@ function runRates(){
         //var apiKey = 'apikey=7da8oxb72fq4n08k8gl43dlm4xrkg2ags8ofcyhl';
         var plan = '&plan=BestBuy'; //BestBuy
 
-        if ($j('#em-terms').find(":selected").attr('id') == 'em-bd-13-select'){
+        if (jQuery('#em-terms').find(":selected").attr('id') == 'em-bd-13-select'){
             plan = '&plan=2'; //Baker's Dozen
         }
-        var termsTerm = '&termsTerm='+ $j('#em-terms').find(":selected").attr('value');
+        var termsTerm = '&termsTerm='+ jQuery('#em-terms').find(":selected").attr('value');
         var cartTotal = '&cartTotal=' + loanAmount;
-        var termsMonthly = '&termsMonthly='+$j('#em-terms').find(":selected").attr('ratedata');
-        var itemsSKUs = '&itemsSKUs='+$j("#requestedskus").text();
-        var itemCounts = '&itemCounts='+$j("#requestedqty").text();
+        var termsMonthly = '&termsMonthly='+jQuery('#em-terms').find(":selected").attr('ratedata');
+        var itemsSKUs = '&itemsSKUs='+jQuery("#requestedskus").text();
+        var itemCounts = '&itemCounts='+jQuery("#requestedqty").text();
 
-        //$j("#em-appLinkTest").text(eqUrl+apiKey+plan+termsTerm+cartTotal+termsMonthly+itemsSKUs+itemCounts);
-        $j("#em-appLink").attr("href",eqUrl+apiKey+plan+termsTerm+cartTotal+termsMonthly+itemsSKUs+itemCounts);
-        $j("#em-appLink").removeClass('hidden');
+        //jQuery("#em-appLinkTest").text(eqUrl+apiKey+plan+termsTerm+cartTotal+termsMonthly+itemsSKUs+itemCounts);
+        jQuery("#em-appLink").attr("href",eqUrl+apiKey+plan+termsTerm+cartTotal+termsMonthly+itemsSKUs+itemCounts);
+        jQuery("#em-appLink").removeClass('hidden');
     }
 }
 
@@ -176,39 +176,39 @@ function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, apptype='un
     }
     e.preventDefault();
 
-    $j(".finance-pop-overlay").removeClass('hidden');
-    $j(".rate-area, .text-area").addClass('hidden');
-    $j(".loanamount").addClass('hidden');
+    jQuery(".finance-pop-overlay").removeClass('hidden');
+    jQuery(".rate-area, .text-area").addClass('hidden');
+    jQuery(".loanamount").addClass('hidden');
 
-    if (!$j('#acp-overlay').hasClass('ajaxcartpro-box-show')){
-        $j('#acp-overlay').removeClass('ajaxcartpro-box-hide').addClass('ajaxcartpro-box-show');
+    if (!jQuery('#acp-overlay').hasClass('ajaxcartpro-box-show')){
+        jQuery('#acp-overlay').removeClass('ajaxcartpro-box-hide').addClass('ajaxcartpro-box-show');
     }
-    var w = ($j(window).width() - 300) / 2,
-        h = ($j(window).height() - 400) / 2;
-    var paymentRequest = $j('#payment-request');
-    $j(paymentRequest).css({'left':w+'px','top':h+'px'});
+    var w = (jQuery(window).width() - 300) / 2,
+        h = (jQuery(window).height() - 400) / 2;
+    var paymentRequest = jQuery('#payment-request');
+    jQuery(paymentRequest).css({'left':w+'px','top':h+'px'});
 
-    $j(paymentRequest).toggleClass('hidden');
+    jQuery(paymentRequest).toggleClass('hidden');
 
     if (amount == 0){
         amount = 1000.00;
     }
-    $j('#loan-amount').val('$'+ amount.toFixed(2));
-    $j('#requestedskus').text(requestedsku);
-    $j('#requestedqty').text(requestedqty);
+    jQuery('#loan-amount').val('$'+ amount.toFixed(2));
+    jQuery('#requestedskus').text(requestedsku);
+    jQuery('#requestedqty').text(requestedqty);
 
     runRates();
     if(apptype == 'ck'){
-        $j(".ck-rate-area, .ck-text").removeClass('hidden');
-        $j(".loanamount").removeClass('hidden');
+        jQuery(".ck-rate-area, .ck-text").removeClass('hidden');
+        jQuery(".loanamount").removeClass('hidden');
     }else if(apptype == 'em'){
-        $j(".em-rate-area, .em-text").removeClass('hidden');
-        $j(".loanamount").removeClass('hidden');
+        jQuery(".em-rate-area, .em-text").removeClass('hidden');
+        jQuery(".loanamount").removeClass('hidden');
     }else if(apptype == 'shop'){
-        $j(".shop-rate-area, .shop-text").removeClass('hidden');
-        $j(".loanamount").removeClass('hidden');
+        jQuery(".shop-rate-area, .shop-text").removeClass('hidden');
+        jQuery(".loanamount").removeClass('hidden');
     }else if(apptype == 'default'){
-        $j(".default-text").removeClass('hidden');
+        jQuery(".default-text").removeClass('hidden');
     }
 }
 
@@ -216,6 +216,6 @@ function closePaymentPop(el){
     if (jQuery('#acp-overlay').hasClass('ajaxcartpro-box-show')){
         jQuery('#acp-overlay').removeClass('ajaxcartpro-box-show').addClass('ajaxcartpro-box-hide');
     }
-    $j(".finance-pop-overlay").addClass('hidden');
+    jQuery(".finance-pop-overlay").addClass('hidden');
     jQuery('#'+el).toggleClass('hidden');
 }
