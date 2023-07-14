@@ -53,7 +53,8 @@ jQuery(document).ready(function() {
     });
     setTimeout(function(){
         $j("#spoof-addtocart").click(function () {
-            $j("#p-atc").trigger('click');
+            $j(".product-form--atc-button").first().trigger('click').trigger('click');
+            {% comment %}Not sure why it needs a double click to work on dev/prod but it does{% endcomment %}
             closePaymentPop('payment-request');
         });
     },1000);
