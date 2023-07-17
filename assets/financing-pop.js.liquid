@@ -183,7 +183,7 @@ function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, apptype='un
     if (!jQuery('#acp-overlay').hasClass('ajaxcartpro-box-show')){
         jQuery('#acp-overlay').removeClass('ajaxcartpro-box-hide').addClass('ajaxcartpro-box-show');
     }
-    var w = (jQuery(window).width() - 300) / 2,
+    var w = (jQuery(window).width() - 310) / 2,
         h = (jQuery(window).height() - 400) / 2;
     var paymentRequest = jQuery('#payment-request');
     jQuery(paymentRequest).css({'left':w+'px','top':h+'px'});
