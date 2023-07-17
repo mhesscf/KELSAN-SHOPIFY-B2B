@@ -96,7 +96,7 @@
         "debugme": true,
         "ruleid": 8487,
         "rule_name": "Free Conversion Kit",
-        "rule_message": "You have a tank and a floor buffer in your cart that require a Conversion Kit to be used together. Please click below to add this at not cost to your cart.",
+        "rule_message": "You have a tank and a floor buffer in your cart that require a Conversion Kit to be used together. Please click below to add this at no cost to your cart.",
         "promo-rule-version": "version1",
         "required_product_list_1": [
           "17-inch-rotary-floor-buffer",
