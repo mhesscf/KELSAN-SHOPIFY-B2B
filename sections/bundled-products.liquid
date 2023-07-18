@@ -40,13 +40,7 @@
                     </div>
                     <div class="pkg-info col">
                         <div class="inner-wrap">
-                            {% if all_products[bundlep].metafields.plytix.master_quantity != blank %}
-                                {% assign qntyinfo = all_products[bundlep].metafields.plytix.master_quantity %}
-
                                     <p>Package Quantity {{ pkgqnty }}</p>
-
-                            {% endif %}
-
                         </div>
                     </div>
                     <div class="product-info-col">
@@ -225,10 +219,7 @@
                 </div>
                 <div class="product-row-small">
                     <div class="top-d-row">
-                        {% if all_products[bundlep].metafields.plytix.master_quantity != blank %}
-                            {% assign qntyinfo = all_products[bundlep].metafields.plytix.master_quantity %}
                                 <p>Package Quantity {{ pkgqnty }}</p>
-                        {% endif %}
                     </div>
                     <div class="col-row">
                         <div class="l-col">
@@ -334,13 +325,7 @@
                     <div class="pkg-info col">
                         <div class="inner-wrap">
                             <p class="ribbon">FREE</p>
-                            {% if all_products[freeproduct].metafields.plytix.master_quantity != blank %}
-                                {% assign qntyinfo = all_products[freeproduct].metafields.plytix.master_quantity %}
-
                                     <p>Package Quantity {{ fpkgqnty }}</p>
-
-                            {% endif %}
-
                         </div>
                     </div>
                     <div class="product-info-col">
@@ -503,12 +488,7 @@
                 </div>
                 <div class="product-row-small freeproduct">
                     <div class="top-d-row">
-                        {% if all_products[freeproduct].metafields.plytix.master_quantity != blank %}
-                            {% assign qntyinfo = all_products[freeproduct].metafields.plytix.master_quantity %}
-
-                                <p>Package Quantity {{ fpkgqnty }}</p>
-
-                        {% endif %}
+                                   <p>Package Quantity {{ fpkgqnty }}</p>
                         <p class="ribbon">FREE</p>
                     </div>
                     <div class="col-row">
