@@ -229,6 +229,8 @@ jQuery(document).ready(function($){
             var vid = $('#v' + param).data('vid');
             var vstep = $('#v' + param).data('increment');
             var erpsku = $('#v' + param).data('erpsku');
+            var tier = $('#v' + param).data('tier');
+            alert('tier'+tier);
             var sku = $('#v' + param + " span").html(); //needed to show sku on checkout
             if($('.var' + param + ".status-area .status-time").html()){
                 var status = $('.var' + param + ".status-area .main-notice").html()+" ("+$('.var' + param + ".status-area .status-time").html()+")";
@@ -239,6 +241,7 @@ jQuery(document).ready(function($){
                 $('input[name="properties[_erp_sku]"]').attr('value', erpsku);
                 $('input[name="properties[Sku]"]').attr('value', sku);
                 $('input[name="properties[Status]"]').attr('value', status);
+                $('input[name="properties[_tiered_pricing]"]').attr('value', tier);
                 $('#product-quantity-input').data('step', vstep);
                 $('.qtyminus').data('step', vstep);
                 $('.qtyplus').data('step', vstep);

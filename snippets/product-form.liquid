@@ -42,6 +42,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
   {% endif %}
 
   {% assign pstep = 1 %}
+  {% assign current_variant_id = product.selected_or_first_available_variant.id %}
   {% if product.selected_or_first_available_variant.metafields.plytix.product_step %}
     {% assign pstep = product.selected_or_first_available_variant.metafields.plytix.product_step %}
   {% endif %}
@@ -272,11 +273,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                 value="{{ product.variants.first.id }}"-
                 data-variants
         >
-        <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
+        <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
         <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
         <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
         {% if isSpecial == false %}
-          <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+          <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
         {% endif %}
         {% if pstep > 1 %}
           <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
@@ -304,7 +305,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
         {% endif %}
 
-        <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
+        {% comment %}<input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />{% endcomment %}
+
         {% if pstep > 1 %}
           <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
         {% endif %}
@@ -454,17 +456,19 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% endif %}
           {% endfor %}
 
-          {% if product.metafields.plytix.tiered_pricing != blank and pdiscontinued == false and isSpecial == false %}
+
+
+    {% for variant in product.variants %}
+
+          {% if variant.metafields.plytix.tiered_pricing != blank and pdiscontinued == false and isSpecial == false %}
             {% comment %}{% assign pprice = product.price | money_without_currency %}{% endcomment %}
             {% comment %}{% assign pprice = pprice | remove: ","  %}{% endcomment %}
             {% comment %}{% assign pprice = pprice | plus:0 %}{% endcomment %}
 
-            {% assign pprice = product.price %}
+            {% assign pprice = variant.price %}
 
 
-
-
-            <div class="discount-info-wrap-v2">
+            <div class="discount-info-wrap-v2 var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
               <div class="discount-info-wrap-v2-header">Quantity Discounts</div>
               <div class="discount-table">
                 <div class="col first">
@@ -473,7 +477,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   <div class="row row3">Price</div>
                 </div>
 
-                {% if product.metafields.plytix.tiered_pricing == '2|4|6' %}
+                {% if variant.metafields.plytix.tiered_pricing == '2|4|6' %}
                     {% assign discount = pprice | times: 0.02 %}
                         {% assign tierPrice = pprice | minus: discount %}
                         <div class="col">
@@ -497,7 +501,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                         </div>
 
 
-                  {% elsif product.metafields.plytix.tiered_pricing == '2|4|6|12' %}
+                  {% elsif variant.metafields.plytix.tiered_pricing == '2|4|6|12' %}
                     {% assign discount = pprice | times: 0.03 %}
                         {% assign tierPrice = pprice | minus: discount %}
                         <div class="col">
@@ -527,7 +531,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                         <div class="row row3">{{ tierPrice | money }}</div>
                       </div>
 
-                {% elsif product.metafields.plytix.tiered_pricing == '3|6|10|20' %}
+                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|10|20' %}
                   {% assign discount = pprice | times: 0.05 %}
                       {% assign tierPrice = pprice | minus: discount %}
                       <div class="col">
@@ -557,7 +561,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                       <div class="row row3">{{ tierPrice | money }}</div>
                     </div>
 
-                {% elsif product.metafields.plytix.tiered_pricing == '3|6|12|24' %}
+                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|12|24' %}
                   {% assign discount = pprice | times: 0.05 %}
                       {% assign tierPrice = pprice | minus: discount %}
                       <div class="col">
@@ -587,7 +591,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                         <div class="row row3">{{ tierPrice | money }}</div>
                       </div>
 
-                {% elsif product.metafields.plytix.tiered_pricing == '10|25|50' %}
+                {% elsif variant.metafields.plytix.tiered_pricing == '10|25|50' %}
                   {% assign discount = pprice | times: 0.10 %}
                       {% assign tierPrice = pprice | minus: discount %}
                       <div class="col">
@@ -610,7 +614,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                         <div class="row row3">{{ tierPrice | money }}</div>
                       </div>
 
-                {% elsif product.metafields.plytix.tiered_pricing == '6|12|24' %}
+                {% elsif variant.metafields.plytix.tiered_pricing == '6|12|24' %}
                   {% assign discount = pprice | times: 0.05 %}
                       {% assign tierPrice = pprice | minus: discount %}
                       <div class="col">
@@ -634,7 +638,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                       </div>
 
 
-                {% elsif product.metafields.plytix.tiered_pricing == '6|10|20' %}
+                {% elsif variant.metafields.plytix.tiered_pricing == '6|10|20' %}
                   {% assign discount = pprice | times: 0.06 %}
                       {% assign tierPrice = pprice | minus: discount %}
                       <div class="col">
@@ -657,7 +661,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                         <div class="row row3">{{ tierPrice | money }}</div>
                       </div>
 
-                {% elsif product.metafields.plytix.tiered_pricing == '3|6|12' %}
+                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|12' %}
                   {% assign discount = pprice | times: 0.05 %}
                   {% assign tierPrice = pprice | minus: discount %}
                   <div class="col">
@@ -675,12 +679,12 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {% assign discount = pprice | times: 0.15 %}
                   {% assign tierPrice = pprice | minus: discount %}
                   <div class="col">
-                    <div class="row row1">15+</div>
+                    <div class="row row1">12+</div>
                     <div class="row row2">15%<span> off</span></div>
                     <div class="row row3">{{ tierPrice | money }}</div>
                   </div>
 
-                {% elsif product.metafields.plytix.tiered_pricing == '3|6|10' %}
+                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|10' %}
                   {% assign discount = pprice | times: 0.05 %}
                   {% assign tierPrice = pprice | minus: discount %}
                   <div class="col">
@@ -716,6 +720,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
               </div>
             </div>
           {% endif %}
+      {% endfor %}
           {% comment %} Quantity Discount Tieres END{% endcomment %}
         </div>
       </div>
