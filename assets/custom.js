@@ -230,7 +230,6 @@ jQuery(document).ready(function($){
             var vstep = $('#v' + param).data('increment');
             var erpsku = $('#v' + param).data('erpsku');
             var tier = $('#v' + param).data('tier');
-            alert('tier'+tier);
             var sku = $('#v' + param + " span").html(); //needed to show sku on checkout
             if($('.var' + param + ".status-area .status-time").html()){
                 var status = $('.var' + param + ".status-area .main-notice").html()+" ("+$('.var' + param + ".status-area .status-time").html()+")";
