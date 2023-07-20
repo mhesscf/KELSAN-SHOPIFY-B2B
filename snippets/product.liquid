@@ -120,7 +120,7 @@
     -%}
 {%- endcapture  -%}
 
-<article class="product--outer {{ productType }}">
+<article class="product--outer {{ productType }} {%- if pdiscontinued == true -%}discontinued{%- endif -%}">
     {%
             render 'product-gallery',
             product: product,

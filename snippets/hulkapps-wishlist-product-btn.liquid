@@ -2,7 +2,7 @@
 {%- if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_general.button_layout != null  -%}
     {%- assign button_layout = shop.metafields.hulkapps_wishlist.hulkapps_wishlist_general.button_layout -%}
 {%- endif -%}
-<a href="#" class="" data-wishList data-added="false" data-proID="{{ product.id }}" data-varID="{{ product.selected_or_first_available_variant.id }}" data-button-layout="{{ button_layout }}" style="">
+<a href="#" class="hulk-wishlist-btn" data-wishList data-added="false" data-proID="{{ product.id }}" data-varID="{{ product.selected_or_first_available_variant.id }}" data-button-layout="{{ button_layout }}" style="">
     {% comment %}orginal code from plugin{% endcomment %}
     {% comment %}Removed the following classes because they were causing issues with plugin css:{% endcomment %}
     {% comment %}icon-wishlist-heart-empty wishlist-btn grid-wishlist-btn heart-wishlist-animation{% endcomment %}
