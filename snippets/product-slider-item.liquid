@@ -10,6 +10,7 @@
     Render card in product compare style
 {% endcomment %}
 {% if 1==1 %}
+
 {% assign recently_viewed = recently_viewed | default: nil %}
 {% assign product_compare = product_compare | default: nil %}
 {% assign product_grid_show_second_image = false %}
@@ -311,25 +312,28 @@
           </figure>
         </a>
       </div>
-
-      {% capture product_item_price %}
-        {%
-                render 'product-price',
-                product: product,
-                class_root: 'productitem',
-                price: price,
-                list_price : list_price,
-                price_varies: price_varies,
-                compare_at_price: compare_at_price,
-                compare_at_price_varies: compare_at_price_varies,
-                on_sale: on_sale,
-                emphasize_price: emphasize_price,
-                show_original: true,
-                show_range: false,
-                include_unit_price: true,
-                include_hidden_price: false,
-        %}
-      {% endcapture %}
+      {% if product.metafields.plytix.package_products == blank %}
+          {% capture product_item_price %}
+            {%
+                    render 'product-price',
+                    product: product,
+                    class_root: 'productitem',
+                    price: price,
+                    list_price : list_price,
+                    price_varies: price_varies,
+                    compare_at_price: compare_at_price,
+                    compare_at_price_varies: compare_at_price_varies,
+                    on_sale: on_sale,
+                    emphasize_price: emphasize_price,
+                    show_original: true,
+                    show_range: false,
+                    include_unit_price: true,
+                    include_hidden_price: falsec
+            %}
+          {% endcapture %}
+        {% elsif product.metafields.plytix.bundle_pricing != blank %}
+          {% assign product_item_price = product.metafields.plytix.bundle_pricing %}
+        {% endif %}
 
 
 
@@ -579,45 +583,6 @@
  
             {% if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button'%}
               <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
-              <form method="post" action="/cart/add" class="cart-form" style="display: none">
-                {% assign bundle_products = product.metafields.plytix.package_products | split: "," %}
-                {% assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
-                <div data-bundle-subproducts-{{ product.id }}>
-                  {% for bundle_product_entry in bundle_products %}
-                    {% assign bundle_product_entry_parts = bundle_product_entry | split: "#" %}
-                    {% assign bundle_product_handle = bundle_product_entry_parts[0] | strip %}
-                    {% assign bundle_product = all_products[bundle_product_handle] %}
-                    <input type="hidden"
-                           name="updates[{{ bundle_product_handle }}]"
-                           class="quantity field"
-                           data-bundle-subproduct
-                           data-id="{{ bundle_product.selected_or_first_available_variant.id }}"
-                           data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
-                           data-tieredPricing=""
-                           data-qty="{{ bundle_product_entry_parts[1] }}"
-                           data-price="{{ bundle_product.price }}"
-                           value="{{ bundle_product_entry_parts[1] }}" />
-                  {% endfor %}
-                  {% for free_product_entry in free_products %}
-                    {% assign free_product_entry_parts = free_product_entry | split: "#" %}
-                    {% assign free_product_handle = free_product_entry_parts[0] | strip %}
-                    {% assign free_product = all_products[free_product_handle] %}
-                    <input type="hidden"
-                           name="updates[{{ free_product_handle }}]"
-                           class="quantity field"
-                           data-bundle-subproduct-free
-                           data-id="{{ free_product.selected_or_first_available_variant.id }}"
-                           data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
-                           data-tieredPricing="fg"
-                           data-qty="{{ free_product_entry_parts[1] }}"
-                           data-price="{{ free_product.price }}"
-                           value="{{ free_product_entry_parts[1] }}" />
-                  {% endfor %}
-                </div>
-                <button class="add-to-cart-btn bundle-atc {{ quick_buy_classes }}" type="submit" data-bid="{{ product.id }}" data-bundle="{{ product.handle }}">
-                  ADD TO CART
-                </button>
-              </form>
             {% else %}
               {% if atc_button %}
                 {% assign isSpecial = false %}

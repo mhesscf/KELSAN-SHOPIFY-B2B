@@ -552,7 +552,7 @@ jQuery(document).ready(function($){
                 arrows: true,
                 autoplay: false,
                 dots: false,
-                infinite: true,
+                infinite: false,
                 lazyLoad: 'ondemand',
                 slidesToShow: 5,
                 slidesToScroll: 3,
