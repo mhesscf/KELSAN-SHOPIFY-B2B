@@ -8,6 +8,63 @@
         "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg"
       }
     },
+    "99bbd373-79e2-4fb6-8131-3241c7ff619f": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "template--16671985533140__99bbd373-79e2-4fb6-8131-3241c7ff619f-slide-1": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-2000x639.jpg",
+            "title": "",
+            "text": "",
+            "color": "#FFFFFF",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "",
+            "button_one_link": "",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 1
+          }
+        },
+        "template--16671985533140__99bbd373-79e2-4fb6-8131-3241c7ff619f-slide-2": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/march-special-of-the-month-desktop-1_d904642b-932f-4d68-b0e6-72d475e9fd64.jpg",
+            "title": "",
+            "text": "",
+            "color": "#FFFFFF",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "",
+            "button_one_link": "",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 1
+          }
+        }
+      },
+      "block_order": [
+        "template--16671985533140__99bbd373-79e2-4fb6-8131-3241c7ff619f-slide-1",
+        "template--16671985533140__99bbd373-79e2-4fb6-8131-3241c7ff619f-slide-2"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
+      }
+    },
     "16636174067db7bd8c": {
       "type": "category-featured-product-slider",
       "blocks": {
@@ -339,6 +396,7 @@
   },
   "order": [
     "1663617398865396bc",
+    "99bbd373-79e2-4fb6-8131-3241c7ff619f",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
