@@ -250,7 +250,18 @@
     </div>
   </section>
 </footer>
-
+<div class="popup-container hidden">
+  <div class="close-pop" onclick="closechildPop('bund-pop-{{ all_products[bundlep].id }}')"><span></span></div>
+  <div class="content"></div>
+</div>
+<script>
+  function closechildPop(el){
+    jQuery(".popup-container").addClass('hidden');
+    jQuery(".pop-grad").addClass('hidden');
+    jQuery(".popup-container .content").html('');
+  }
+</script>
+<div class="pop-grad hidden"></div>
 {%
         render 'finance-pop'
 %}
