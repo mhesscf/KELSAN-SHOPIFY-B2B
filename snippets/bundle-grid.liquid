@@ -352,8 +352,9 @@
                                     <div class="pop-image"><img class="img-responsive" src="{{ all_products[bundlep].featured_image | img_url: '100x100' }}" alt="{{ all_products[bundlep].featured_image.alt }}"/></div>
                                     <div class="pop-title">{{ all_products[bundlep].title |  escape }}</div>
                                     <div class="pop-pricing"><span>{{ all_products[bundlep].price | money }}</span> ea.</div>
-                                    <div class="pop-package-qty">Package Quantity: <span class="pk-free">{{ pkgqnty }} for FREE!</span></div>
-                                    <div class="pop-short">{{ all_products[bundlep].metafields.plytix.short_description }}</div>
+                                    <div class="pop-stock">{{ stockStatusNote }}</div>
+                                    <div class="pop-short"><ul><li>Package Quantity: <span class="pk-free">{{ pkgqnty }} for FREE!</li></ul>{{ all_products[bundlep].metafields.plytix.short_description }}</div>
+
                                     <div class="pop-icons">
                                         {%
                                                 render 'product-icons',
