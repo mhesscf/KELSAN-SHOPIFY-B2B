@@ -2,6 +2,7 @@
   "sections": {
     "1663617398865396bc": {
       "type": "category-header",
+      "disabled": true,
       "settings": {
         "chsectionheading": "Pressure Washers",
         "chsectiontext": "Shop a wide selection of pressure washers for any application. Choose from hot or cold water pressure washers with gasoline engine or electric power.",
@@ -12,7 +13,7 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.mobile-banner{display:none;}\n@media (max-width: 1139px){\n\t.mobile-banner{display:block;}\n\t.desk-banner{display:none;}\n}\n<\/style>\n<div class=\"desk-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-2000x639.jpg?v=1690392034\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>\n<div class=\"mobile-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-800x427.jpg?v=1690392034\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>"
+        "custom_html": "<style>\n.mobile-banner{display:none;}\n@media (max-width: 1139px){\n\t.mobile-banner{display:block;}\n\t.desk-banner{display:none;}\n}\n\n<\/style>\n<h1 style=\"color:#303E48; font-weight:700; font-size:55px; line-height:65px;\">Pressure Washers<\/h1>\n<div class=\"desk-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-2000x639.jpg?v=1690392034\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>\n<div class=\"mobile-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-800x427.jpg?v=1690392034\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>"
       }
     },
     "16636174067db7bd8c": {
