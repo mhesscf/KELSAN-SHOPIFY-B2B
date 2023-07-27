@@ -5,6 +5,7 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-2000x639.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-800x427-sm.jpg",
@@ -26,17 +27,16 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/june-sotm-floor-stripping-machine-2000x639-temp.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/june-sotm-floor-stripping-machine-800x427-temp.jpg",
-            "title": "CleanFreak® Oscillating 14&rdquo; x 20&rdquo; Floor Machine",
-            "text": "Floor Stripping Made Easy! <br> Now $1,349.99.",
+            "background_image": "shopify:\/\/shop_images\/august-sweeper-special-2000x639.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/august-sweeper-special-800x427.jpg",
+            "title": "CleanFreak® 'EasySweep' Warehouse Vacuum Sweeper",
+            "text": "Floor Stripping Made Easy! <br> Now $2,149.99",
             "color": "#303e48",
-            "link": "https:\/\/www.cleanfreak.com\/products\/cleanfreak-dry-surface-strip-machine",
+            "link": "https:\/\/www.cleanfreak.com\/products\/warehouse-concrete-floor-sweeper",
             "text_alignment": "left",
             "button_one_label": "Save Now!",
-            "button_one_link": "https:\/\/www.cleanfreak.com\/products\/cleanfreak-dry-surface-strip-machine",
+            "button_one_link": "https:\/\/www.cleanfreak.com\/products\/warehouse-concrete-floor-sweeper",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "\/products\/heated-carpet-spot-cleaner",
