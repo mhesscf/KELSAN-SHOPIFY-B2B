@@ -82,6 +82,8 @@ function productPageCheck(type){
 
             jQuery(".product-main .finance-wrapper").append(getLinkv2(itemSku, itempricing, itemtitle, itemqty));
 
+        jQuery(".product-main .product-form--finance-atc-button").html(getLinkv2(itemSku, itempricing, itemtitle, itemqty)).show();
+        jQuery(".product-main .product-form--finance-atc-button .finance-link").html("Financing Available");
     }
 }
 

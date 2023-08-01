@@ -963,6 +963,24 @@ input.qtyminus {
   background-color: #757575;
   border: #757575;
 }
+
+.product-form--atc .cart-buttons button.product-form--finance-atc-button{
+  margin-left: 0;
+  height: 48px;
+  padding: 0;
+  border-radius: 10px;
+  color: {{ settings.color_button_secondary_text }};
+  background-color:{{ settings.color_slide_arrow_background }};
+  border: 1px solid {{ settings.color_slide_arrow_background }};
+  max-width: 350px;
+  transition: all 0.4s ease-in-out;
+  cursor:pointer;
+}
+.product-form--atc .cart-buttons button.product-form--finance-atc-button:hover{
+  color: {{ settings.color_button_secondary_text }};
+  opacity:0.7;
+}
+
 .product-form--atc .cart-buttons .shopify-payment-button button.shopify-payment-button__button{
   background-color: {{ settings.color_button_hollow_background }};
   color: {{ settings.color_button_hollow_text }};
