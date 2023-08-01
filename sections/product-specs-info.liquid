@@ -24,40 +24,91 @@
                 </div>
             </div>
             {% if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}
+                {% assign pdf_names = product.metafields.plytix.pdf_file_names | split: ","  %}
+                {% assign pdf_titles = product.metafields.plytix.pdf_file_titles | split: ","  %}
                 <div class="r">
                     <h2>Safety, Warranty + User Manuals</h2>
                     <div class="data-sheets">
                         {% if product.metafields.plytix.sds_file != blank  %}
                             <div class="sheet-row">
-                                <div class="sheet-label">Product Safety Data Sheet</div>
+                                <div class="sheet-label"><strong>Product Safety Data Sheet</strong></div>
                             </div>
                             {%- assign sdsheets = product.metafields.plytix.sds_file | split:"," -%}
                             {%- for sdsheet in sdsheets -%}
-                                <div class="sheet-row">
-                                    <a taget="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ sdsheet | split: '/' | last }}</a>
-
+                                {%- assign basefilename = sdsheet | split: '/' | last -%}
+                                {%- assign filetitle = basefilename -%}
+                                {%- assign indexofname = 0 -%}
+                                {%- assign pdftitlecheck = 0 -%}
+                                {%- for file_name in pdf_names -%}
+                                    {% if basefilename == file_name  %}
+                                        {% if pdf_titles[indexofname]  %}
+                                            {%- assign filetitle = pdf_titles[indexofname] -%}
+                                        {%- endif -%}
+                                    {%- endif -%}
+                                    {%- assign indexofname = indexofname | plus: 1 -%}
+                                {%- endfor -%}
+                                <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                                    {% if shop.name contains "AirMovers" %}
+                                        <a taget="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                    {% else %}
+                                        <a taget="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                    {% endif %}
                                 </div>
                             {%- endfor -%}
                         {%- endif -%}
                         {% if product.metafields.plytix.manual != blank  %}
                             <div class="sheet-row">
-                                <div class="sheet-label">Product Manual</div>
+                                <div class="sheet-label"><strong>Product Manual</strong></div>
                             </div>
                             {%- assign manuals = product.metafields.plytix.manual | split:"," -%}
                             {%- for manual in manuals -%}
-                                <div class="sheet-row">
-                                    <a taget="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ manual | split: '/' | last }}</a>
+                                {%- assign basefilename = manual | split: '/' | last -%}
+                                {%- assign filetitle = basefilename -%}
+                                {%- assign indexofname = 0 -%}
+                                {%- assign pdftitlecheck = 0 -%}
+                                {%- for file_name in pdf_names -%}
+                                    {% if basefilename == file_name  %}
+                                        {% if pdf_titles[indexofname]  %}
+                                            {%- assign filetitle = pdf_titles[indexofname] -%}
+                                        {%- endif -%}
+                                    {%- endif -%}
+                                    {%- assign indexofname = indexofname | plus: 1 -%}
+                                {%- endfor -%}
+
+                                <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                                    {% if shop.name contains "AirMovers" %}
+                                        <a taget="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                    {% else %}
+                                        <a taget="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                    {% endif %}
                                 </div>
                             {%- endfor -%}
                         {%- endif -%}
                         {% if product.metafields.plytix.literature != blank  %}
                             <div class="sheet-row">
-                                <div class="sheet-label">Product Literature</div>
+                                <div class="sheet-label"><strong>Product Literature</strong></div>
                             </div>
                             {%- assign literature = product.metafields.plytix.literature | split:"," -%}
                             {%- for lit in literature -%}
-                                <div class="sheet-row">
-                                    <a taget="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ lit | split: '/' | last }}</a>
+                                {%- assign basefilename = lit | split: '/' | last -%}
+                                {%- assign filetitle = basefilename -%}
+                                {%- assign indexofname = 0 -%}
+                                {%- assign pdftitlecheck = 0 -%}
+                                {%- for file_name in pdf_names -%}
+                                    {% if basefilename == file_name  %}
+                                        {% if pdf_titles[indexofname]  %}
+                                            {%- assign filetitle = pdf_titles[indexofname] -%}
+                                            {%- assign pdftitlecheck = 1 -%}
+                                        {%- endif -%}
+                                    {%- endif -%}
+                                    {%- assign indexofname = indexofname | plus: 1 -%}
+                                {%- endfor -%}
+                                <div class="sheet-row sheet-name {%- if pdftitlecheck == 0 -%}orgfile{% endif %}">
+                                    {% if shop.name contains "AirMovers" %}
+                                        <a taget="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                    {% else %}
+                                        <a taget="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                    {% endif %}
                                 </div>
                             {%- endfor -%}
                         {%- endif -%}
