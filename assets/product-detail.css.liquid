@@ -195,7 +195,8 @@
   font-weight: 700;
   color: {{ settings.warning_text }};
   color: #B94B3E;
-  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom:-5px;
 }
 .product-main .shopify-payment-terms{
   margin: 0;
@@ -2695,24 +2696,24 @@ popup-container .bundle-child-details .pop-icons .sm-row-text span{
 
 .popup-container .bundle-child-details .add-to-cart-btn{
   font-size: 15px;
-  letter-spacing: 3px;
   display: block;
   text-align: center;
   padding: 8px 0;
-  border-radius: 13px;
+  border-radius: 10px;
   text-decoration: none;
   width: 225px;
   margin: 0 auto;
   font-family: Roboto,Roboto;
-  background-color: {{ settings.color_button_background }};
-  color: {{ settings.color_button_text }};
-  border: 2px solid {{ settings.color_button_background }};
+  background-color: {{ settings.color_button_secondary_background }};
+  border: 1px solid {{ settings.color_button_secondary_background }};
+  color: {{ settings.color_button_secondary_text }};
   cursor: pointer;
   transition: all .4s ease-in-out;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: "Roboto", Roboto;
 }
 .popup-container .bundle-child-details .add-to-cart-btn:hover{
-  background-color: {{ settings.color_button_background |  color_darken: 10 }};
-  color: {{ settings.color_button_text }};
-  border: 2px solid {{ settings.color_button_background |  color_darken: 10 }};
+  color: {{ settings.color_button_secondary_text }};
+  background-color: {{ settings.color_button_hover }};
+  border: 1px solid {{ settings.color_button_hover }};
 }
