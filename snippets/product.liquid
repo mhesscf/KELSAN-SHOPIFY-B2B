@@ -340,6 +340,21 @@
                                 %}
                             </div>
 
+                        {% if product.metafields.plytix.packaged_free_product != blank %}
+                            {% assign savingsp = 0 %}
+                            {%- assign freeproducts = product.metafields.plytix.packaged_free_product | split: "," %}
+                            {% for freeprod in freeproducts %}
+                                {% assign attr = freeprod | split: "#" %}
+                                {%- assign freeproduct = attr[0] | strip %}
+                                {% assign fpkgqnty = attr[1] %}
+                                {% assign fprice = all_products[freeproduct].price | money_without_currency | times: fpkgqnty %}
+                                {% assign savingsp = savingsp | plus: fprice %}
+                            {% endfor %}
+                            {% assign savingsp = savingsp | times:100 %}
+                            <div class="free-product-savings">FREE {{ savingsp | money }} in Included Products</div>
+                        {% endif %}
+
+
                             {% assign current_variant_id = product.selected_or_first_available_variant.id %}
 
                             {% for variant in product.variants %}
@@ -359,19 +374,6 @@
                                 </div>
                             {% endfor %}
 
-                            {% if product.metafields.plytix.packaged_free_product != blank %}
-                                {% assign savingsp = 0 %}
-                                {%- assign freeproducts = product.metafields.plytix.packaged_free_product | split: "," %}
-                                {% for freeprod in freeproducts %}
-                                    {% assign attr = freeprod | split: "#" %}
-                                    {%- assign freeproduct = attr[0] | strip %}
-                                    {% assign fpkgqnty = attr[1] %}
-                                    {% assign fprice = all_products[freeproduct].price | money_without_currency | times: fpkgqnty %}
-                                    {% assign savingsp = savingsp | plus: fprice %}
-                                {% endfor %}
-                                {% assign savingsp = savingsp | times:100 %}
-                                <div class="free-product-savings">FREE {{ savingsp | money }} in Included Products</div>
-                            {% endif %}
                         {% when 'sku' %}
                             {% unless onboarding %}
                                 <div
