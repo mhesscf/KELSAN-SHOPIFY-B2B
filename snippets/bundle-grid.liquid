@@ -383,11 +383,12 @@
                 {% endfor %}
             </tbody></table>
     </section>
+<style>
+    .bundled-products-grid table .stock-status{height: 0; overflow: hidden; transition: all 1.5s ease-in-out;}
+    .bundled-products-grid table .stock-status.showme{height: unset; }
+</style>
 
 {% if stockisthesame  %}
-    <style>
-        .bundled-products-grid table .stock-status{display:none !important;}
-    </style>
     <script>
         $(document).ready(function($) {
             $('.bundle-status-area').html('<div>{{ stockcheck  }}</div>');
@@ -396,7 +397,7 @@
 {% else %}
     <script>
         $(document).ready(function($) {
-            $('.bundle-status-area').html('<div class="stock-gen-bundle"><strong>View above for individual stock status details.</strong></div>');
+            $('.bundle-status-area').html('<div class="stock-gen-bundle" onclick="showstock();"><strong>Click to display individual stock status details.</strong></div>');
         });
     </script>
 {% endif %}
@@ -416,9 +417,34 @@
         {%- if soldoutitems == true -%}
         $('.product-form--regular').html('<div style="background-color:#fff4c7; padding:10px; border:1px solid #ccc; border-radius: 10px;"><div><strong>Sold Out</strong></div><div class="soldoutbundle-dir">Please contact support at <strong>{{ shop.phone }}</strong> to order the bundle with an available replacement item.</div></div>');
         {%- endif -%}
-
     });
 
+
+    function showstock(){
+        if($('.stock-gen-bundle strong').hasClass('hidestock')){
+            $('.stock-gen-bundle strong').removeClass('hidestock');
+            $('.stock-gen-bundle strong').text('Click to display individual stock status details.');
+            $('.bundled-products-grid table .stock-status').removeClass('showme');
+            $('.bundled-products-grid table .bnd-product-row').removeClass('sold-product');
+
+        }else{
+            $('.stock-gen-bundle strong').text('Click to hide stock status details.');
+            $('.stock-gen-bundle strong').addClass('hidestock');
+
+            $('.bundled-products-grid table .stock-status').addClass('showme');
+            $('.bundled-products-grid table .bnd-product-row').each(function(){
+                if($(this).find(".stock-status").text().trim() != "In Stock"){
+                    $(this).addClass('sold-product');
+                }
+            });
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $(".bundled-products-grid").offset().top -100
+            }, 1000);
+        }
+
+
+
+    }
 
 
 
