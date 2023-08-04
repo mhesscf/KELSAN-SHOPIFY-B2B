@@ -35,6 +35,11 @@
             "stars_text_empty": "No reviews"
           }
         },
+        "fcf2b793-e43b-41ab-8b67-4309e4eca5e6": {
+          "type": "bundlegrid",
+          "settings": {
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -51,11 +56,6 @@
             "enable_local_pickup": true
           }
         },
-        "fcf2b793-e43b-41ab-8b67-4309e4eca5e6": {
-          "type": "bundlegrid",
-          "settings": {
-          }
-        },
         "share": {
           "type": "share",
           "disabled": true,
@@ -69,10 +69,10 @@
         "rating",
         "2ae8ae39-f40e-42fe-8891-5f4966df3b19",
         "48a869b3-9a72-45c4-8c34-d19cc98140e7",
+        "fcf2b793-e43b-41ab-8b67-4309e4eca5e6",
         "price",
         "description",
         "form",
-        "fcf2b793-e43b-41ab-8b67-4309e4eca5e6",
         "share"
       ],
       "settings": {
