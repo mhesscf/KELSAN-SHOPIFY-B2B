@@ -63,12 +63,13 @@ function checkCost(cost) {
 
 /*Product page functions*/
 function productPageCheck(type){
-    //Clear container if filled
-    jQuery(".product-main .finance-wrapper").html("");
     //simple and variations
     var itempricing = checkCost(jQuery(".price__current .money").first().text());
 
     if (itempricing != false && !isNaN(itempricing)) {
+
+        //Clear container if filled
+        jQuery(".product-main .finance-wrapper").html("");
 
             itemSku = jQuery(".product-main .product-detail-sku span:visible").first().text();
             itemqty = jQuery(".product-main .qtybox .qty").val();
