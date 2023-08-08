@@ -10,7 +10,7 @@
         "cart_gwp_product_1": "hospeco-germ-away-foaming-germicidal-disinfectant-cleaner",
         "cart_gwp_product_2": "",
         "cart_gwp_product_3": "claire-food-surface-sanitizing-wipes",
-        "cart_gwp_product_4": "red-hospital-bodily-fluid-microfiber-rag",
+        "cart_gwp_product_4": "",
         "cart_gwp_product_5": "total-solutions-toilet-seat-wipes",
         "cart_gwp_product_6": "pet-patrol-urine-feces-stain-remover",
         "cart_gwp_product_7": "scrubs-medaphene-disinfectant-wipes",
@@ -63,7 +63,7 @@
       "type": "cart-cf-buy-x-and-y-get-z",
       "settings": {
         "show_section": true,
-        "debugme": true,
+        "debugme": false,
         "ruleid": 5893,
         "rule_name": "Free 1\/4 inch Male Quick Connect Brass Fitting",
         "rule_message": "You have added a tool and a machine that needs a 1\/4 quick connect to be used together. Please click below to add one to your cart free of charge.",
@@ -93,7 +93,7 @@
       "type": "cart-cf-buy-x-and-y-get-z",
       "settings": {
         "show_section": true,
-        "debugme": true,
+        "debugme": false,
         "ruleid": 8487,
         "rule_name": "Free Conversion Kit",
         "rule_message": "You have a tank and a floor buffer in your cart that require a Conversion Kit to be used together. Please click below to add this at no cost to your cart.",
