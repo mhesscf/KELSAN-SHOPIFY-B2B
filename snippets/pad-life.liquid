@@ -1,0 +1,500 @@
+{% comment %}Location is where this is rendered ("cms" or "product"){% endcomment %}
+{% comment %}testing this on "/pages/about-us" on local on cf dev{% endcomment %}
+{% assign location = location %}
+{% assign location = "cms" %}
+{% comment %}
+Equation:
+From - 25,000 / 20 x 'SIZE"
+TO -  50,000 / 20 x 'SIZE"
+{% endcomment %}
+{%- assign striplookup = "
+        6.5:8,125 - 16,250;
+        8:10,000 - 20,000;
+        10:12,500 - 25,000;
+        12:15,000 - 30,000;
+        13:16,250 - 32,500;
+        14:17,500 - 35,000;
+        15:18,750 - 37,500;
+        16:20,000 - 40,000;
+        17:21,250 - 42,500;
+        18:22,500 - 45,000;
+        19:23,750 - 47,500;
+        20:25,000 - 50,000;
+        24:30,000 - 60,000
+        " | split: ";"%}
+{% comment %}
+Equation:
+From - 75,000 / 20 x 'SIZE"
+TO -  100,000 / 20 x 'SIZE"
+{% endcomment %}
+{%- assign buffinglookup = "
+       6.5:24,375 - 32,500;
+         8:30,000 - 40,000;
+        10:37,500 - 50,000;
+        12:45,000 - 60,000;
+        13:48,750 - 65,000;
+        14:52,500 - 70,000;
+        15:56,250 - 75,000;
+        16:60,000 - 80,000;
+        17:63,750 - 85,000;
+        18:67,500 - 90,000;
+        19:71,250 - 95,000;
+        20:75,000 - 100,000;
+        21:78,750 - 105,000;
+        24:90,000 - 120,000;
+        27:101,250 - 135,000;
+        28:105,000 - 140,000
+        " | split: ";"%}
+{% comment %}
+Equation:
+From - 100,000 / 20 x 'SIZE"
+TO -  150,000 / 20 x 'SIZE"
+{% endcomment %}
+{%- assign burnishinglookup = "
+       6.5:32,500 - 48,750;
+        10:50,000 - 75,000;
+        12:60,000 - 90,000;
+        13:65,000 - 97,500;
+        14:70,000 - 105,000;
+        15:75,000 - 112,500;
+        16:80,000 - 120,000;
+        17:85,000 - 127,500;
+        18:90,000 - 135,000;
+        19:95,000 - 142,000;
+        20:100,000 - 150,000;
+        21:105,000 - 157,500;
+        24:120,000 - 180,000;
+        27:135,000 - 202,500;
+        28:140,000 - 210,000
+        " | split: ";"%}
+{% comment %}
+Equation:
+From - 5,000 / 20 x 'SIZE"
+{% endcomment %}
+{%- assign chemfreelookup = "
+        17:4,250;
+        19:4,750;
+        20:5,000
+        " | split: ";"%}
+{% comment %}
+Equation:
+From - 5,000 / 20 x 'SIZE"
+{% endcomment %}
+{%- assign melaminelookup = "
+        17:4,250;
+        20:5,000
+        " | split: ";"%}
+{% comment %}
+Equation:
+From - 300,000 / 20 x 'SIZE"
+{% endcomment %}
+{%- assign turflookup = "
+        17:255,000;
+        20:300,000
+        " | split: ";"%}
+
+{% comment %}
+Equation:
+From - 250,000 / 20 x 'SIZE"
+{% endcomment %}
+{%- assign blkdiamondlowlookup = "
+        6.5:81,250;
+         10:125,000;
+         12:150,000;
+         13:162,500;
+         14:175,000;
+         15:187,500;
+         16:200,000;
+         17:212,500;
+         18:225,000;
+         20:250,000;
+         21:262,500;
+         24:300,000;
+         27:337,500;
+         28:350,000
+        " | split: ";"%}
+
+{%- assign blkdiamondhighlookup = "
+        6.5:8,125;
+        10:12,500;
+        12:15,000;
+        13:16,250;
+        14:17,500;
+        15:18,750;
+        16:20,000;
+        17:21,250;
+        18:22,500;
+        20:25,000;
+        21:26,250;
+        24:30,000;
+        27:33,750;
+        28:35,000
+        " | split: ";"%}
+
+
+
+{%- if location == 'cms' %}
+    <style>
+        .pad-life-contain .desc-text{float:left; width:55%; padding-right:15px;}
+        .pad-life-contain .chart-links{float:right; width:45%; border-left:1px solid #ccc; padding-left: 15px;}
+        .pad-life-charts-container{clear:both; padding-top:10px;}
+        .pad-life-contain .pad-life-chart{margin-bottom:25px;}
+        .pad-life-contain .pad-life-chart h2{font-weight:bold; font-size:22px; margin-bottom:10px;}
+        .pad-life-contain .pad-life-chart table{width:100%; border-collapse: collapse;}
+        .pad-life-contain .table tr th{padding:5px 3px;}
+        .pad-life-contain .table-striped > tbody > tr:nth-child(2n+1) > td{background-color:#f9f9f9;}
+        .pad-life-contain .table tbody > tr > td{vertical-align:top; font-size:15px;}
+        .pad-life-contain .table td li img{position:relative; top:8px;}
+        .pad-life-contain .table ul{list-style:none; padding-left:20px; margin-top:10px;}
+        @media (max-width: 479px) {
+            .pad-life-contain .desc-text,
+            .pad-life-contain .chart-links{float:none; width:100%; border:none; padding: 15px;}
+            .pad-life-contain .table tbody > tr > td{font-size:14px; text-align:center;}
+            .pad-life-contain .table td li img{display:block; margin:auto; top:0}
+            .pad-life-contain .table ul{padding-left:0}
+        }
+    </style>
+    <div class="pad-life-contain">
+
+        <div class="desc-area">
+            <h1>Floor Pad Life Expectancy Estimates</h1>
+            <div class="desc-text">
+                <img class="img-responsive" src="//www.cleanfreak.com/cdn/shop/files/pad-life.jpg" alt="Pad Life Charts" ><br/>
+                There are so many variables that may affect the life of a floor pad that makes an accurate answer difficult. However, if all things were perfect, here is an estimated life expectancy range for floor pads.
+            </div>
+                <div class="chart-links">
+                    <strong>Choose Type of Pads</strong>
+                    <ul style="list-style-type: disc;">
+                        <li><a href="#strip">Stripping, Scrubbing, and Cleaning Pads</a></li>
+                        <li><a href="#buffing">Buffing and Polishing Pads</a></li>
+                        <li><a href="#burnish">Burnishing Pads</a></li>
+                        <li><a href="#chemfree">Chemical Free Stripping Pads</a></li>
+                        <li><a href="#melamine">Cleaning Melamine Pads</a></li>
+                        <li><a href="#turfpad">Scrubbing Turf Pads</a></li>
+                        <li><a href="#diamondlo">Black Diamond Pads at Low Speed</a></li>
+                        <li><a href="#diamondhi">Black Diamond Pads at High Speed</a></li>
+                    </ul>
+                </div>
+        </div>
+      <div class="pad-life-charts-container">
+        {% comment %}Stripping, Scrubbing, and Cleaning Pads ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="strip">Stripping, Scrubbing, and Cleaning Pads</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+              {%- assign thischart = striplookup -%}
+              {% for thissize in thischart  %}
+                <tr>
+                  {%- assign sizearray = thissize | split: ":" -%}
+                  {% if forloop.index == 1 %}
+                    <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                      <ul>
+                        <li><img style="padding:2px 5px;" src="{{ 'pad-page-blue.png' | file_img_url }}" alt="Blue Scrubbing Pads" ><a href="https://www.cleanfreak.com/collections/floor-scrubbing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Blue">Blue Scrubbing</a></li>
+                        <li><img style="padding:2px 5px;" src="{{ 'pad-page-black.png' | file_img_url }}" alt="Black Stripping Pads" ><a href="https://www.cleanfreak.com/collections/floor-stripping-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Black">Black Stripping</a></li>
+                        <li><img style="padding:2px 5px;" src="{{ 'pad-page-brown.png' | file_img_url }}" alt="Brown Stripping Pads" ><a href="https://www.cleanfreak.com/collections/floor-stripping-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Brown">Brown Stripping</a></li>
+                        <li><img style="padding:2px 5px;" src="{{ 'pad-page-burgundy.png' | file_img_url }}" alt="Dominator Pads" ><a href="https://www.cleanfreak.com/collections/floor-stripping-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Burgundy">Dominator</a></li>
+                        <li><img style="padding:2px 5px;" src="{{ 'pad-page-flamingo.png' | file_img_url }}" alt="Flamingo Pads" ><a href="https://www.cleanfreak.com/collections/floor-scrubbing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Pink">Flamingo</a></li>
+                        <li><img style="padding:2px 5px;" src="{{ 'pad-page-green.png' | file_img_url }}" alt="Green Scrubbing Pads" ><a href="https://www.cleanfreak.com/collections/floor-scrubbing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Green">Green Scrubbing</a></li>
+                        <li><img style="padding:2px 5px;" src="{{ 'pad-page-titan.png' | file_img_url }}" alt="Titan Pads" ><a href="https://www.cleanfreak.com/collections/floor-stripping-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Black%20%2F%20Gray">Titan</a></li>
+                      </ul>
+                    </td>
+                  {% endif %}
+                  <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Buffing and Polishing Pads ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="buffing">Buffing and Polishing Pads</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = buffinglookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-red.png' | file_img_url }}" alt="Red Buffing Pads" ><a href="https://www.cleanfreak.com/collections/floor-scrubbing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Red">Red Buffing</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-white.png' | file_img_url }}" alt="White Polishing Pads" ><a href="https://www.cleanfreak.com/collections/floor-polishing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=White">White Polish</a></li>
+                    </ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Burnishing Pads ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="burnish">Burnishing Pads</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = burnishinglookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-blue-lust.png' | file_img_url }}" alt="Luster Lite Polishing Pads" ><a href="https://www.cleanfreak.com/collections/floor-polishing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Blue">Luster Lite</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-champagne.png' | file_img_url }}" alt="Champagne Polishing Pads" ><a href="https://www.cleanfreak.com/collections/floor-polishing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Champagne">Champagne</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-aqua.png' | file_img_url }}" alt="Aqua Polishing Pads" ><a href="https://www.cleanfreak.com/collections/floor-polishing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Aqua">Aqua</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-pink.png' | file_img_url }}" alt="Pink Polishing Pads" ><a href="https://www.cleanfreak.com/collections/floor-polishing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Pink">Pink Polishing</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-combo.png' | file_img_url }}" alt="Combo Pads" ><a href="https://www.cleanfreak.com/collections/floor-polishing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=White%20%2F%20Black%20Blend">Combo</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-gray.png' | file_img_url }}" alt="Natural Hair Pads" ><a href="https://www.cleanfreak.com/collections/floor-polishing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Black%20%2F%20Gray">Natural Hair</a></li>
+                    </ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Chemical Free Stripping Pads ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="chemfree">Chemical Free Stripping Pads</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = chemfreelookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul><li><img style="padding:2px 5px;" src="{{ 'pad-page-maroon.png' | file_img_url }}" alt="Maroon EcoPrep Pads" ><a href="https://www.cleanfreak.com/collections/floor-stripping-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Maroon">Maroon EcoPrep</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'pad-page-maroon.png' | file_img_url }}" alt="Maroon X Extreme" ><a href="https://www.cleanfreak.com/collections/floor-stripping-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Maroon">Maroon X Extreme</a></li></ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Cleaning Melamine Pads ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="melamine">Cleaning Melamine Pads</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = melaminelookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul><li><img style="padding:2px 5px;" src="{{ 'pad-page-white.png' | file_img_url }}" alt="Melamine Pads" ><a href="https://www.cleanfreak.com/collections/floor-scrubbing-pads?refinementList%5Bmeta.plytix.color%5D%5B0%5D=White">Melamine</a></li>
+                    </ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Scrubbing Turf Pads ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="turfpad">Scrubbing Turf Pads</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = turflookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul><li><img style="padding:2px 5px;" src="{{ 'pad-page-green.png' | file_img_url }}" alt="TurfScrub Pads" ><a href="https://www.cleanfreak.com/search?refinementList%5Bmeta.plytix.color%5D%5B0%5D=Green&q=turf%20pads">TurfScrub</a></li></ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Black Diamond Pads at Low Speed ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="diamondlo">Black Diamond Pads at Low Speed</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = blkdiamondlowlookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul>
+                      <li><img style="padding:2px 5px;" src="{{ 'red-round-black-diamond-pads.png' | file_img_url }}" alt="Red Black Diamond Pads" ><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-red-400-grit-round">Red</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'white-round-black-diamond-pads.png' | file_img_url }}" alt="White Black Diamond Pads" ><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-white-800-grit-round">White</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'yellow-round-black-diamond-pads.png' | file_img_url }}" alt="Yellow Black Diamond Pads" ><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-yellow-1500-grit-round">Yellow</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'green-round-black-diamond-pads.png' | file_img_url }}" alt="Green Black Diamond Pads" ><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-green-3000-grit-round">Green</a></li>
+                      </ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Black Diamond Pads at High Speed ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="diamondlo">Black Diamond Pads at High Speed</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = blkdiamondhighlookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul>
+                      <li><img style="padding:2px 5px;" src="{{ 'white-round-black-diamond-pads.png' | file_img_url }}" alt="White Black Diamond Pads"><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-white-800-grit-round">White</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'yellow-round-black-diamond-pads.png' | file_img_url }}" alt="Yellow Black Diamond Pads"><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-yellow-1500-grit-round">Yellow</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'green-round-black-diamond-pads.png' | file_img_url }}" alt="Green Black Diamond Pads"><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-green-3000-grit-round">Green</a></li>
+                      </ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}Black Diamond Pads at High Speed ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+        <div class="pad-life-chart stripping">
+          <h2 id="diamondhi">Black Diamond Pads at High Speed</h2>
+          <table class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+              <th style="font-weight: bold; width:34%">Pads</th>
+              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
+              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%- assign thischart = blkdiamondhighlookup -%}
+            {% for thissize in thischart  %}
+              <tr>
+                {%- assign sizearray = thissize | split: ":" -%}
+                {% if forloop.index == 1 %}
+                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
+                    <ul>
+                      <li><img style="padding:2px 5px;" src="{{ 'white-round-black-diamond-pads.png' | file_img_url }}" alt="White Black Diamond Pads" ><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-white-800-grit-round">White</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'yellow-round-black-diamond-pads.png' | file_img_url }}" alt="Yellow Black Diamond Pads" ><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-yellow-1500-grit-round">Yellow</a></li>
+                      <li><img style="padding:2px 5px;" src="{{ 'green-round-black-diamond-pads.png' | file_img_url }}" alt="Green Black Diamond Pads" ><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-green-3000-grit-round">Green</a></li>
+                    </ul>
+                  </td>
+                {% endif %}
+                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% comment %}end of charts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+      </div>
+    </div>
+{%- elsif location == 'product' %}
+  {% assign padtype = padtype %}
+  {% assign productpadsize = padsize | replace: "inches", "" %}
+
+  {% assign padtype = 'Stripping, Scrubbing, and Cleaning Pads' %}
+  {% assign productpadsize = '20 inches' | replace: " inches", "" %}
+
+
+  {% if padtype == 'Stripping, Scrubbing, and Cleaning Pads' %}
+    {% assign padtypearray = striplookup%}
+  {%- endif -%}
+
+  {% for thissize in padtypearray  %}
+    <tr>
+      {%- assign sizearray = thissize | split: ":" -%}
+      {%- assign thissizearray = thissize | split: ":" -%}
+
+      {%- assign thissizecheck = sizearray[0] | strip -%}
+      {% if productpadsize == thissizecheck %}
+
+        <a href="/docs/charts/pad-life-expectancy.html"><img style="float:left; padding-right:15px; padding-top:3px; padding-bottom:25px; width:75px;" src="{{ 'pad-life-icon.jpg' | file_img_url }}" alt="Pad Life Estimates"></a>
+        <div style="font-weight:bold; font-size:12px;">Pad Life Estimate</div>
+
+        <div style="font-size:12px; line-height:26px; padding:3px 2px 0px 0"><span style="color:#2a96d0; font-weight:bold; font-size:26px;">{{ sizearray[1] }}</span> ft² per Pad</div>
+        <div style="font-size:12px;">For a complete rundown of estimates for different pad type and sizes,<br>please view our <a href="/pages/pad-life-expectancy">Floor Pad Life Expectancy Estimates</a> page.</div>
+
+
+      {% endif %}
+    </tr>
+  {% endfor %}
+
+
+{%- endif -%}
