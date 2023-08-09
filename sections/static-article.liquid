@@ -25,6 +25,7 @@
 {%- endcapture  -%}
 
 <section class="article--outer">
+  {% comment %}old way
   {% if article.image %}
     <figure
       class="article-image article-image--{{- section.settings.featured_image_width }}"
@@ -47,6 +48,16 @@
       %}
     </figure>
   {% endif %}
+  {% endcomment %}
+  {%
+          render 'rimg',
+          img: article.image,
+          size: '1800x',
+          lazy: false,
+          crop: 'center',
+          class: 'img-responsive',
+          background: false
+  %}
 
   <div class="article--container">
 
