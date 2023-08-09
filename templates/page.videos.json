@@ -1,5 +1,16 @@
 {
   "sections": {
+    "f613587d-bdc5-486d-80c8-6dd569ce7311": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "46c78989-041b-4123-83d9-423977fa834a": {
       "type": "gradient-text-header",
       "settings": {
@@ -58,6 +69,7 @@
     }
   },
   "order": [
+    "f613587d-bdc5-486d-80c8-6dd569ce7311",
     "46c78989-041b-4123-83d9-423977fa834a",
     "main",
     "85707304-fc0c-4a10-98a0-f0926cd75d78",
