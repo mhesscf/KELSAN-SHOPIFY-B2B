@@ -8,9 +8,21 @@
         "show_author": false,
         "use_share_buttons": true
       }
+    },
+    "bd884a58-53cc-4fe0-b6b3-67df01b157e6": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "bd884a58-53cc-4fe0-b6b3-67df01b157e6"
   ]
 }
