@@ -1,5 +1,16 @@
 {
   "sections": {
+    "7667d2f1-344c-4293-bbb8-a1fc9f32473d": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "4066156f-0209-43bd-8e13-3ede1264f71e": {
       "type": "howto-header",
       "settings": {
@@ -196,6 +207,7 @@
     }
   },
   "order": [
+    "7667d2f1-344c-4293-bbb8-a1fc9f32473d",
     "4066156f-0209-43bd-8e13-3ede1264f71e",
     "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
     "077235cb-6ded-4e06-80df-6ad080419fe3",
