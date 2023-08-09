@@ -1,5 +1,16 @@
 {
   "sections": {
+    "153333dd-110f-485a-b51d-8b076c9fd872": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "4066156f-0209-43bd-8e13-3ede1264f71e": {
       "type": "howto-header",
       "settings": {
@@ -123,8 +134,7 @@
             "stepnumber": "1",
             "stepheading": "Prep the Auto Scrubber -",
             "steptext": "<p>Make sure the batteries are fully charged, all hoses are connected and the squeegees are attached and in good condition. Measure out the correct amount of chemical according to the mixing instructions on the label of the bottle. Fill the solution tank with clean water. Put a small amount (just a few ounces) of a defoamer, like our concentrated liquid defoamer, on the ground, and suck it up with the squeegees to coat the squeegee assembly, recovery hoses, and recovery tank. This defoamer will then help to break down the foam from the recovered cleaning solution throughout the entire recovery process. Not only will this allow you to recover more solution, but it will also help to extend the life of the vacuum motor on your machine.<\/p><p>You'll want to choose the correct pad or brush for your job and mount those to the underside of the deck. Pads are better for smooth surfaces, and brushes are better for uneven floors with grout lines.<\/p>",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         },
         "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
@@ -133,8 +143,7 @@
             "stepnumber": "2",
             "stepheading": "Prep the Scrubbing Area -",
             "steptext": "<p>Set up your rest rooms closed or wet floor sign to alert employees and other individuals of the floor scrubbing that is about to take place. Take any obstacles, including tables and furniture, that may hinder your scrubbing path and move them off to the side. Follow the dust mopping procedure to remove all debris, dirt, and large objects (i.e. pallet chips). If any debris is left on the floor it could possibly become obstructed in the auto scrubber head or squeegee assembly. These pieces risk damage to the machine, or may create streaking from the follow behind squeegee, leaving solution left on the floor.<\/p>",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         },
         "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
@@ -143,8 +152,7 @@
             "stepnumber": "3",
             "stepheading": "Scrubbing Your Floor -",
             "steptext": "<p>You'll want to have a fairly large and open area to maximize your scrubbing time. As you start to scrub, your first pass will be up tight against the wall or on the outer boundary of your scrubbing area. As you reach the end of your first pass and turn to come back, you'll want to make a wide sweeping turn. This will allow the squeegee assembly to recover all of the solution the auto scrubber put down. You will not want to go to the other boundary, instead you'll cut the room in half and go down the middle of the floor. As you continue to scrub, the 2nd pass you make will be just inside the 1st pass, and when you come back, you'll go just outside the return pass that cut the room in half. This will keep you continuously scrubbing and there will be no wasted movement in having to go back over different areas to pick up the solution the squeegee missed. For heavily soiled floors, you may want to do a double scrub. To accomplish this, you'll leave the squeegee in the up position and not even turn on the vacuum motor. You do at least one pass over the entire floor with just scrubbing. You can then come back with the squeegee down and the vacuum motors on, recovering the solution while you scrub again for the 2nd time. There may be some areas that cannot be scrubbed during these procedures, so you can touch those areas up with a mop and bucket, or a handheld scrub pad like our medium duty blue handheld scrub pad.<\/p>",
-            "product": "",
-            "stepvideo": "https:\/\/www.youtube.com\/watch?v=ta_F0bjHLZM"
+            "product": ""
           }
         },
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
@@ -153,8 +161,7 @@
             "stepnumber": "4",
             "stepheading": "Clean Up -",
             "steptext": "<p>Make sure the floor is completely dry in all areas before removing all the wet floor\/caution signs and returning all moved objects back to their original positions.<\/p><p>Take the auto scrubber over to a slop sink, toilet, floor drain, or bucket. Most models will have a dump hose that simply unhooks from the machine and dumps the solution out. Rinse out recovery tank and hoses, as well as squeegees and hoses. <strong>This step is especially essential after recovering a caustic scrubbing or stripping agent.<\/strong> Dump out any remaining clean solution. If soap and water sits in the solution tank for any amount of time, it can start to congeal and clog solution lines. Rinse out solution tank as thoroughly as possible. Leave the covers off of both tanks to let them air out and deodorize.<\/p>",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         }
       },
@@ -175,6 +182,7 @@
     }
   },
   "order": [
+    "153333dd-110f-485a-b51d-8b076c9fd872",
     "4066156f-0209-43bd-8e13-3ede1264f71e",
     "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
     "077235cb-6ded-4e06-80df-6ad080419fe3",
