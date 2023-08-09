@@ -1,6 +1,6 @@
 {% comment %}test on local with how to template of "http://127.0.0.1:9292/pages/automatic-floor-scrubbing" {% endcomment %}
 {%- assign navigation_handle = section.settings.navigation -%}
-{%- assign left_classes = section.settings.left_classes -%}
+{%- assign left_classes = section.settings.left_classes | split: "," -%}
 {%- assign navtitle = section.settings.nav_title -%}
 {%- assign hide_lvl_1_links = section.settings.hide_lvl_1_links -%}
 {%- assign hide_lvl_2_links = section.settings.hide_lvl_2_links -%}
@@ -11,17 +11,26 @@
         margin:auto;
     }
 
-    .site-main .shopify-section{
+    .site-main > .shopify-section{
         float:right;
         width:75%;
-        padding:0 10px
+        padding:0 10px;
+        clear:right;
     }
     .site-main .shopify-section.left-column-nav {
        float:left;
         width:25%;
-        padding:0 10px
+        padding:0 10px;
+        clear:left;
     }
-
+    {% for class in left_classes %}
+        .site-main .shopify-section.{{ class }} {
+            float:left;
+            width:25%;
+            padding:0 10px;
+            clear:left;
+        }
+    {% endfor %}
     #shopify-section-static-footer{
         clear:both;
     }
