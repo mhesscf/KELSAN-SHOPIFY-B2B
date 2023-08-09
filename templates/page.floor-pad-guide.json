@@ -8,6 +8,17 @@
         "chsectiontext": ""
       }
     },
+    "98085d05-3bec-4b14-b3a6-216a83ad6ef5": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "cab363bd-721b-45c2-a6b2-186f7d95f7aa": {
       "type": "gradient-text-header",
       "settings": {
@@ -23,6 +34,7 @@
   },
   "order": [
     "4066156f-0209-43bd-8e13-3ede1264f71e",
+    "98085d05-3bec-4b14-b3a6-216a83ad6ef5",
     "cab363bd-721b-45c2-a6b2-186f7d95f7aa",
     "main"
   ]
