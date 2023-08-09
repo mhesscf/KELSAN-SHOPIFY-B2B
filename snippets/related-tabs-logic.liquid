@@ -38,6 +38,21 @@
                 {%- case block.type -%}
                     {%- when 'tabinfo' -%}
                         {%- if product.metafields.plytix[block.settings.tab_rel_id] != blank -%}
+
+                            {% comment %}check for atleast 1 item{% endcomment %}
+                            {%- assign prod_check_arr = product.metafields.plytix[block.settings.tab_rel_id] | split: ", " -%}
+                            {% assign show = 0 %}
+                            {%- for product in prod_check_arr -%}
+                                {%- assign product_handle = product |  strip -%}
+                                {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
+                                    {%- assign show = 1 -%}
+                                    {%- break -%}
+                                {% endif %}
+                            {% endfor %}
+                            {%- if show == 0 -%}
+                                {%- continue -%}
+                            {% endif %}
+
                             {% comment %}hide freq if discontinued{% endcomment %}
                             {%- if block.settings.tab_rel_id == "freq_bought" and showfreq -%}
                                 {%- if firstBlockId == "" -%}
