@@ -1,5 +1,16 @@
 {
   "sections": {
+    "874ea716-2ea7-4759-b625-d56e78520a01": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "main": {
       "type": "page",
       "disabled": true,
@@ -184,6 +195,7 @@
     }
   },
   "order": [
+    "874ea716-2ea7-4759-b625-d56e78520a01",
     "main",
     "166024641748f1aa58",
     "1660331766dcb7c2c9",
