@@ -26,6 +26,13 @@
   max-width: 90%;
   margin: auto;
 }
+@media (min-width: 720px ) and ( max-width: 1023px){
+  .template-product #site-main .product--section{max-width:100%;}
+}
+@media ( max-width: 479px){
+  .template-product #site-main .product--section{max-width:100%;}
+}
+
 .template-product .lb-upsell-ppa .ppa-prod-container .ppa-add-radio-cont{
   display: flex;
 }
@@ -945,7 +952,7 @@ input.qtyminus {
 .product-form--atc .cart-buttons button.product-form--atc-button{
   margin-left: 0;
   height: 48px;
-  padding: 0;
+  padding: 0 10px;
   border-radius: 10px;
   color: {{ settings.color_button_secondary_text }};
   background-color: {{ settings.color_button_secondary_background }};
@@ -967,7 +974,7 @@ input.qtyminus {
 .product-form--atc .cart-buttons button.product-form--finance-atc-button{
   margin-left: 0;
   height: 48px;
-  padding: 0;
+  padding: 0 10px;
   border-radius: 10px;
   color: {{ settings.color_button_secondary_text }};
   background-color:{{ settings.color_slide_arrow_background }};
@@ -2629,6 +2636,7 @@ input.qtyminus {
   font-size:16px;
   font-weight:bold;
 }
+
 .bundled-products-grid table.custom-bundle tr.bundle-title{
   background: {{ settings.color_slide_arrow_background }};
   color:white;
@@ -2639,6 +2647,8 @@ input.qtyminus {
 .bundled-products-grid table.custom-bundle .custom-bundle-col-qty .qty{
   font-size:14px;
   background:none;
+  width:30px;
+  height:30px;
 }
 .bundled-products-grid table.custom-bundle .qty-disabled{
   border:none;
@@ -2666,6 +2676,20 @@ input.qtyminus {
 .bundled-products-grid table.custom-bundle .child-name-pop{
   cursor:pointer;
   font-size:15px;
+}
+
+@media (min-width: 720px ) and ( max-width: 1023px){
+  .bundled-products-grid table.custom-bundle td{padding:3px;}
+  .bundled-products-grid table.custom-bundle td.custom-bundle-col-price{font-size:15px; max-width:100%; white-space:nowrap;}
+  .bundled-products-grid table.custom-bundle td.custom-bundle-col-prod{width:50%}
+  .bundled-products-grid table.custom-bundle tr.freegift .full-p .disount{display:block;}
+}
+@media (max-width: 479px ){
+  .bundled-products-grid table.custom-bundle td{padding:3px;}
+  .bundled-products-grid table.custom-bundle td.custom-bundle-col-price{font-size:14px; max-width:100%; white-space:nowrap;}
+  .bundled-products-grid table.custom-bundle td.custom-bundle-col-prod{width:50%}
+  .bundled-products-grid table.custom-bundle tr.freegift .full-p .disount{display:block;}
+  .bundled-products-grid table.custom-bundle .child-name-pop{font-size:12px;}
 }
 /*-- bundle children popup --*/
 
