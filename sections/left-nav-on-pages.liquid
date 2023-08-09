@@ -1,0 +1,63 @@
+{% comment %}test on local with how to template of "http://127.0.0.1:9292/pages/automatic-floor-scrubbing" {% endcomment %}
+{% if section.settings.show_section %}
+    {% include 'left-nav-on-pages-logic' %}
+{% endif %}
+{% schema %}
+{
+    "name": "Left Nav for Pages",
+    "class": "left-column-nav",
+    "settings": [
+        {
+        "type": "header",
+        "content": "Left Navigation Menu"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_section",
+            "label": "Show section",
+            "default": true
+        },
+        {
+        "type": "text",
+        "id": "navigation",
+        "label": "Navigation Handle",
+        "default": "education"
+        },
+        {
+        "type": "text",
+        "id": "nav_title",
+        "label": "Title of Navigation",
+        "default": "Education"
+        },
+        {
+        "type": "text",
+        "id": "left_classes",
+        "label": "Section Classes to include in Left Column",
+        "info": "Comma separated no spaces. Example: (class1,class2,class3)"
+        },
+        {
+        "type": "checkbox",
+        "id": "hide_lvl_1_links",
+        "label": "Hide Level 1 Links",
+        "info": "If links are set as #, they will show unlinked and bold",
+        "default": true
+        },
+        {
+        "type": "checkbox",
+        "id": "hide_lvl_2_links",
+        "label": "Hide Level 2 Links",
+        "info": "If links are set as #, they will show unlinked and bold",
+        "default": false
+        }
+    ],
+    "presets": [
+        {
+            "name": "Left Nav for Pages",
+            "category": "Layout",
+            "settings": {
+
+            }
+        }
+    ]
+}
+{% endschema %}

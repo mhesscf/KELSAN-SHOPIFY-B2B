@@ -1,0 +1,147 @@
+{% comment %}test on local with how to template of "http://127.0.0.1:9292/pages/automatic-floor-scrubbing" {% endcomment %}
+{%- assign navigation_handle = section.settings.navigation -%}
+{%- assign left_classes = section.settings.left_classes -%}
+{%- assign navtitle = section.settings.nav_title -%}
+{%- assign hide_lvl_1_links = section.settings.hide_lvl_1_links -%}
+{%- assign hide_lvl_2_links = section.settings.hide_lvl_2_links -%}
+
+<style>
+    .site-main {
+        max-width:1400px;
+        margin:auto;
+    }
+
+    .site-main .shopify-section{
+        float:right;
+        width:75%;
+        padding:0 10px
+    }
+    .site-main .shopify-section.left-column-nav {
+       float:left;
+        width:25%;
+        padding:0 10px
+    }
+
+    #shopify-section-static-footer{
+        clear:both;
+    }
+
+
+    .left-sub-nav ul{
+        padding-left:15px;
+    }
+
+    .left-sub-nav ul li{
+        padding:4px 5px 4px 0;
+        list-style:none;
+        font-size: 13px;
+    }
+
+    .left-sub-nav .nav-group{
+        border: 1px solid #ccc;
+        margin-bottom:10px;
+        border-radius:10px;
+        overflow:hidden;
+    }
+
+    .left-sub-nav .main-nav-cat{
+        background-color:#303e49;
+        padding:10px 10px;
+        color:#fff;
+    }
+
+
+    /* Add media query to change the layout on smaller screens */
+
+    @media (max-width: 1023px) {
+        .site-main .shopify-section{
+            float:right;
+            width:65%;
+            padding:0 10px
+        }
+        .site-main .shopify-section.left-column-nav {
+            float:left;
+            width:35%;
+            padding:0 10px
+        }
+    }
+
+    @media (max-width: 767px) {
+        .site-main .shopify-section{
+            float:none;
+            width:100%;
+            padding:0 10px
+        }
+        .site-main{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .site-main .shopify-section {
+            flex: 0 0 100%;
+            order: 1; /* move the left column back to the first position */
+        }
+        .site-main .left-column-nav {
+            flex: 0 0 100%;
+            order: 2; /* move the right column back to the second position */
+        }
+
+    }
+
+
+
+
+    @media only screen and (min-width:480px) and (max-width:767px) {
+
+    }
+    @media only screen and (max-width:480px) {
+
+    }
+    @media only screen and (max-width:362px) {
+
+    }
+    @media only screen and (max-width:340px) {
+
+    }
+    @media only screen and (max-width:320px) and (max-height:460px)  {
+
+    }
+
+
+</style>
+
+
+<div class="left-column">
+    {%- if navtitle != "" -%}<h3 class="left-nav-title">{{ navtitle }}</h3>{%- endif -%}
+    <nav>
+        <div class="left-sub-nav">
+            {% for link in linklists[navigation_handle].links %}
+                <div class="nav-group">
+                    {% if link.url == "#" or hide_lvl_1_links == true %}
+                        <div class="main-nav-cat"><strong>{{ link.title }}</strong></div>
+                    {% else %}
+                        <div class="main-nav-cat"><a href="{{ link.url }}"><strong>{{ link.title }}</strong></a></div>
+                    {% endif %}
+                    <ul>
+                        {% for sublink in link.links %}
+                            {% if sublink.url == "#" or hide_lvl_2_links == true %}
+                                <li><strong>{{ sublink.title }}</strong></li>
+                            {% else %}
+                                <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+                            {% endif %}
+
+                            <ul>
+                                {% for subsublink in sublink.links %}
+                                    <li><a href="{{ subsublink.url }}">{{ subsublink.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </nav>
+
+
+</div>
+
