@@ -1,5 +1,16 @@
 {
   "sections": {
+    "1196d52a-7227-4cf5-83e6-e858ca915ffc": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "4066156f-0209-43bd-8e13-3ede1264f71e": {
       "type": "howto-header",
       "settings": {
@@ -99,8 +110,7 @@
             "stepnumber": "1",
             "stepheading": "Prepping the Vacuuming Area -",
             "steptext": "<p>Remove all obstructions from your vacuuming path. Place chairs on top of tables, or out of the way. Remove any large debris that won't be recovered by your vacuum or may potentially clog it.<\/p>",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         },
         "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
@@ -109,8 +119,7 @@
             "stepnumber": "2",
             "stepheading": "Choosing The Correct Vacuum -",
             "steptext": "<p>Each individual situation will require a different vacuum that excels in different situations. For large wide open areas, a wide area vacuum may be the best fit. For office settings with lots of obstructions and individual cubicle settings, a backpack or hip vacuum may be best suited for that particular job. Whatever your cleaning task may be, it is a good idea to scout out the area before deciding what vacuum would best suit your needs.<\/p>",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         },
         "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
@@ -120,8 +129,7 @@
             "stepheading": "Prepping Your Vacuum -",
             "steptext": "<p>The first step before starting to vacuum should always be to check the filters and recovery bag. If the bag is anywhere near full, it should be changed before starting your job. A typical vacuum with a bag that is over 50% full can lose up to 80% of its vacuuming performance. If any filters appear clogged, dirty or torn, they should be replaced right away also. To ensure proper recovery on a carpeted surface, the beater bar should be set at a height where the bristles just touch the tips of the carpet fibers. Most individuals set the beater bar height at its lowest setting due to perception that this will grind into the carpet fibers and recover more. This is not the case for optimum performance, you just want the beater bar bristles to just scrape the top of the carpet fibers.<\/p><p>Plug in your vacuum, turn it on, and make sure there are no obstructions in the hoses or anything that will keep the beater bar from turning. If there are, turn off the unit, unplug the power cord from the vacuum, and remove the obstruction.<\/p>",
             "image": "shopify:\/\/shop_images\/upright-vacuum-bag.jpg",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         },
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
@@ -130,8 +138,7 @@
             "stepnumber": "4",
             "stepheading": "Vacuuming Carpeted & Other Areas -",
             "steptext": "<p>To start, it is a good idea to uncoil the power cord behind your vacuum and work forward from that point. This will keep the cord out of your way at all times. Normal carpeting may require up to 3 or 4 passes with an upright model to recover all of the debris located in the carpet fibers. Heavy traffic areas may require up to 7 passes for full recovery. The most efficient recovery will occur when vacuuming against the nap of the carpeting. Overlapping your strokes will definitely increase the recovery of dirt. Use upholstery tools and attachments to vacuum up tight against baseboards and into hard to reach areas. Depending on the amount of foot traffic, and how much dirt is tracked in, vacuuming should occur routinely. Once or twice a week is adequate for most applications. Backpack vacuums can be an integral part of the cleaning program. They can be utilized with the upright to maximize productivity. These steps may only be needed once every month or so, whereas the typical vacuuming is a weekly occurrence. Use the backpack vacuum tools to clean overhead ducts, computer keyboards, door frames, picture frames, and upholstery\/furniture. Backpack vacs excel at portability, making overhead and other hard to reach cleaning a breeze.<\/p>",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         },
         "a351662b-2158-4bf1-87fc-eb0f0f40aaf8": {
@@ -141,8 +148,7 @@
             "stepheading": "Clean Up -",
             "steptext": "<p>When you're finished vacuuming, all filters and bags should be checked again. If the bag is full, or the filters are dirty, they should be replaced. All originally moved obstacles should be returned to their original positions. Wipe down the vacuum and power cord. Always wrap the cord beginning at the point where it exits the vacuum, and work away. Never wrap from the plug inward – doing so can kink the cord and cause damage.<\/p>",
             "image": "shopify:\/\/shop_images\/backpack-vac-with-bag.jpg",
-            "product": "",
-            "stepvideo": ""
+            "product": ""
           }
         }
       },
@@ -164,6 +170,7 @@
     }
   },
   "order": [
+    "1196d52a-7227-4cf5-83e6-e858ca915ffc",
     "4066156f-0209-43bd-8e13-3ede1264f71e",
     "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
     "077235cb-6ded-4e06-80df-6ad080419fe3",
