@@ -45,6 +45,7 @@
   data-product-gallery-aspect-ratio="{{ aspect_ratio }}"
   data-product-gallery-thumbnails="{{ thumbnail_position }}"
 >
+  <div class="stickme">
   {%
     render 'product-gallery-viewer'
     product: product,
@@ -88,4 +89,5 @@
       {{ 'product.media.view_in_your_space' | t }}
     </button>
   {% endif %}
+</div>
 </div>
