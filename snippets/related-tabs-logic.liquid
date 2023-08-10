@@ -132,6 +132,9 @@
                                                 {%- assign maxproductscounter = maxproductscounter | plus: 1 -%}
                                             {%- endif -%}
                                         {%- endif -%}
+                                        {%- if all_products[product_handle].metafields.plytix.package_products -%}
+                                            {%- assign show = false -%}
+                                        {%- endif -%}
 
                                         {%- if show == true -%}
                                             {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
