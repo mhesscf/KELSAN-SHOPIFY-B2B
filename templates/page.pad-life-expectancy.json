@@ -28,7 +28,7 @@
     "a3f88b1a-8ea2-4bef-944b-f5f13f2d0c58": {
       "type": "dynamic-custom-liquid",
       "settings": {
-        "custom_liquid": "{%\n        render 'pad-life',\n        location: 'cms',\n        padtype: 'unset'\n\tpadsize: 'unset'\n      %}"
+        "custom_liquid": "{%\n        render 'pad-life',\n        location: 'cms',\n        padtype: 'unset',\n\tpadsize: 'unset'\n      %}"
       }
     }
   },
