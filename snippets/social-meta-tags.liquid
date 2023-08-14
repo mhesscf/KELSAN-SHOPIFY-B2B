@@ -1,30 +1,26 @@
-{% assign og_title = page_title %}
-{% assign og_description = page_description | default: shop.description | default: shop.name %}
-{% assign og_url = canonical_url %}
-{% assign og_type = 'website' %}
-{% assign og_image_tags = '' %}
-
+{%- assign og_title = page_title -%}
+{%- assign og_description = page_description | default: shop.description | default: shop.name %}
+{%- assign og_url = canonical_url -%}
+{%- assign og_type = 'website' -%}
+{%- assign og_image_tags = '' -%}
 {% if default_image == blank %}
-  {% assign og_default_image = page_image %}
+  {%- assign og_default_image = page_image -%}
 {% else %}
-  {% assign og_default_image = default_image %}
+  {%- assign og_default_image = default_image -%}
 {% endif %}
-
 {% if template.name == 'product' %}
-  {% assign variant = product.selected_variant %}
-  {% assign og_image = variant.featured_media.preview_image | default: product.featured_media.preview_image %}
+  {%- assign variant = product.selected_variant -%}
+  {%- assign og_image = variant.featured_media.preview_image | default: product.featured_media.preview_image -%}
 {% elsif template.name == 'collection' %}
-  {% assign og_image = collection.image %}
+  {%- assign og_image = collection.image -%}
 {% elsif template.name == 'article' %}
   {% if article.image %}
-    {% assign og_image = article.image %}
+    {%- assign og_image = article.image -%}
   {% endif %}
 {% endif %}
-
 {% if og_image == blank %}
-  {% assign og_image = og_default_image %}
+  {%- assign og_image = og_default_image -%}
 {% endif %}
-
 {% if og_image != blank %}
   {% capture og_image_tags %}
     {% comment %}
@@ -35,7 +31,6 @@
     {% endcomment %}
     {% assign width = 1200 %}
     {% assign height = width | divided_by: og_image.aspect_ratio | round %}
-
     {% if height < 630 %}
       {% assign height = 630 %}
       {% assign width = height | times: og_image.aspect_ratio | round %}
@@ -51,27 +46,25 @@
     />
     <meta property="og:image:width" content="{{ width }}" />
     <meta property="og:image:height" content="{{ height }}" />
-    {% assign image_alt = og_image.alt %}
+    {%- assign image_alt = og_image.alt -%}
     {% if og_image.alt == blank %}
-      {% assign image_alt = 'Social media image' %}
+      {%- assign image_alt = 'Social media image' -%}
     {% endif %}
     <meta property="og:image:alt" content="{{ image_alt }}" />
   {% endcapture %}
 {% endif %}
-
 {% if template.name == 'product' %}
-  {% assign variant = product.selected_variant %}
-  {% assign og_title = product.title | append: variant.title | strip_html %}
+  {%- assign variant = product.selected_variant -%}
+  {%- assign og_title = product.title | append: variant.title | strip_html -%}
 {% elsif template.name == 'article' %}
-  {% assign og_title = article.title | strip_html %}
-  {% assign og_type = 'article' %}
-  {% assign og_description = article.excerpt_or_content | strip_html %}
+  {%- assign og_title = article.title | strip_html -%}
+  {%- assign og_type = 'article' -%}
+  {%- assign og_description = article.excerpt_or_content | strip_html -%}
 {% elsif template.name == 'password' %}
-  {% assign og_title = shop.name %}
-  {% assign og_url = shop.url %}
-  {% assign og_description = shop.description | default: shop.name %}
+  {%- assign og_title = shop.name -%}
+  {%- assign og_url = shop.url -%}
+  {%- assign og_description = shop.description | default: shop.name -%}
 {% endif %}
-
 <meta property="og:site_name" content="{{ shop.name | escape }}">
 <meta property="og:url" content="{{ og_url }}">
 <meta property="og:title" content="{{ og_title | escape }}">
