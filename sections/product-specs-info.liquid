@@ -49,9 +49,9 @@
                                 {%- endfor -%}
                                 <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
                                     {% if shop.name contains "AirMovers" %}
-                                        <a taget="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                        <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                     {% else %}
-                                        <a taget="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                        <a target="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                     {% endif %}
                                 </div>
                             {%- endfor -%}
@@ -77,9 +77,9 @@
 
                                 <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
                                     {% if shop.name contains "AirMovers" %}
-                                        <a taget="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                        <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                     {% else %}
-                                        <a taget="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                        <a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                     {% endif %}
                                 </div>
                             {%- endfor -%}
@@ -105,9 +105,9 @@
                                 {%- endfor -%}
                                 <div class="sheet-row sheet-name {%- if pdftitlecheck == 0 -%}orgfile{% endif %}">
                                     {% if shop.name contains "AirMovers" %}
-                                        <a taget="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                        <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                     {% else %}
-                                        <a taget="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                        <a target="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                     {% endif %}
                                 </div>
                             {%- endfor -%}
