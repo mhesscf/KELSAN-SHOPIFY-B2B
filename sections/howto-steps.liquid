@@ -1,28 +1,29 @@
+{% comment %}test on http://127.0.0.1:9292/pages/applying-a-floor-finish {% endcomment %}
 {% style %}
     .howto-steps{
-    position: relative;
-    margin: 30px 0;
+        position: relative;
+        margin: 30px 0;
     }
     .howto-steps .container{
-    width: 1100px;
-    max-width: 90%;
-    margin: auto;
+        width: 1100px;
+        max-width: 90%;
+        margin: auto;
     }
     .howto-steps .flex-row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    width: calc(100% - 40px);
-    justify-content: space-between;
-    margin-left: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        width: calc(100% - 40px);
+        justify-content: space-between;
+        margin-left: 40px;
     }
     .howto-steps .flex-row .col{
-    width: 100%;
-    margin-bottom: 10px;
+        width: 100%;
+        margin-bottom: 10px;
     }
     .howto-steps .flex-row .col .step-content{
-    display: flex;
+        display: flex;
     }
     .howto-steps .flex-row .col .step-content p{
         line-height: 1.5;
@@ -31,44 +32,65 @@
     .howto-steps .flex-row .col .step-content p a{
         color: {{ settings.color_links }}
     }
-    .howto-steps .flex-row .col .step-content .step-image.content-col{
-    margin-left: 30px;
+    .howto-steps .flex-row .col .step-content .right-col{
+        margin-left: 30px;
     }
+    .howto-steps .flex-row .col .step-content .left-col{
+        margin-right: 30px;
+    }
+    .howto-steps .flex-row .col .step-content .step-additional{
+        margin-top:16px;
+        flex: 0 0 30%;
+    }
+
+    .content-col.prodplace .productgrid--item{
+        max-width:320px;
+        margin:auto;
+    }
+    .content-col.prodplace .productitem__image-container{
+        max-width:130px;
+        margin:auto;
+    }
+    .content-col.prodplace .productitem--info{
+        text-align:center;
+    }
+
     .howto-steps .flex-row .col .step-heading{
-    position: relative;
+        position: relative;
     }
     .howto-steps .flex-row .col .step-heading .step-no{
-    position: absolute;
-    left: -40px;
-    border: 1px solid {{ settings.color_text_medium }};
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    color: {{ settings.color_text_medium }};
-    text-align: center;
-    font-weight: 700;
+        position: absolute;
+        left: -40px;
+        border: 1px solid {{ settings.color_text_medium }};
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        color: {{ settings.color_text_medium }};
+        text-align: center;
+        font-weight: 700;
     }
     .howto-steps .flex-row .col .step-heading h3{
-    margin-bottom: 0px;
-    color: {{ settings.color_text_medium }};
-    font-weight: 700;
+        margin-bottom: 0px;
+        color: {{ settings.color_text_medium }};
+        font-weight: 700;
     }
     .howto-steps .flex-row .col .step-heading p{
-    color: {{ settings.color_text }};
+        color: {{ settings.color_text }};
     }
     @media (max-width: 1200px){
-    .howto-steps .flex-row .col .step-content{
-    display: block;
-    }
-    .howto-steps .flex-row .col .step-content .step-image.content-col{
-    margin-left: 0;
-    }
+        .howto-steps .flex-row .col .step-content{
+            display: block;
+        }
+        .howto-steps .flex-row .col .step-content .step-additional.content-col{
+            margin-left: 0;
+        }
     }
     @media (max-width: 640px){
 
     }
 {% endstyle %}
+
 <section class="howto-steps">
     <div class="container">
         {% for block in section.blocks %}
@@ -81,14 +103,39 @@
                                 <h3>{{ block.settings.stepheading }}</h3>
                             </div>
                             <div class="step-content">
+
+                                {% if block.settings.img_placement == "left" %}
+                                    {% if block.settings.product.title  %}
+                                        <div class="step-additional content-col left-col prodplace">
+                                            {%-
+                                                    render 'product-cms-block-item',
+                                                    product: block.settings.product
+                                            -%}
+                                        </div>
+                                    {% elsif block.settings.image  %}
+                                        <div class="step-additional content-col left-col img">
+                                            <img style="max-width:300px" src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+
                                 <div class="step-text content-col">
                                     {{ block.settings.steptext }}
                                 </div>
 
-                                {% if block.settings.image  %}
-                                    <div class="step-image content-col">
-                                        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
-                                    </div>
+                                {% if block.settings.img_placement == "right" %}
+                                    {% if block.settings.product.title  %}
+                                        <div class="step-additional content-col right-col prodplace">
+                                            {%-
+                                                    render 'product-cms-block-item',
+                                                    product: block.settings.product
+                                            -%}
+                                        </div>
+                                    {% elsif block.settings.image  %}
+                                        <div class="step-additional content-col right-col img">
+                                            <img style="max-width:300px" src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
+                                        </div>
+                                    {% endif %}
                                 {% endif %}
                             </div>
                         </div>
@@ -123,6 +170,22 @@
                     "type" : "richtext",
                     "id": "steptext",
                     "label": "content"
+                },
+                {
+                    "type": "radio",
+                    "id": "img_placement",
+                    "label": "Image/Product Placement",
+                    "options": [
+                        {
+                        "value": "left",
+                        "label": "Left"
+                        },
+                        {
+                        "value": "right",
+                        "label": "Right"
+                        }
+                    ],
+                    "default": "right"
                 },
                 {
                     "type": "image_picker",
