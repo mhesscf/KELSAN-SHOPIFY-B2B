@@ -403,7 +403,9 @@
     </script>
 {% endif %}
 
-
+{%- if soldoutitems == true -%}
+    <div class="crawlcheck"><!-- check product bundle for sold out --></div>
+{%- endif -%}
 <script>
     $(document).ready(function($) {
         $( ".child-name-pop" ).on( "click", function() {
