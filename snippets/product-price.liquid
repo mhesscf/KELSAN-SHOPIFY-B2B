@@ -342,6 +342,10 @@
           {%- if varlp != blank and product.metafields.plytix.hide_product != 'true' -%}
               <div class="price__compare-at-visible-2 var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
                   <div class="yousave">You Save: {{ varlpsavings | money }}</div>
+                  {%- assign listdif = varlp | minus: varprice -%}
+                  {% if varlp <= varprice %}
+                  <div class="crawlcheck"><!-- check product. List price smaller than price --></div>
+                  {% endif %}
               </div>
           {%- endif -%}
       {%- endfor -%}
