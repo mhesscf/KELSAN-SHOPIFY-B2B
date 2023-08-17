@@ -399,38 +399,6 @@ From - 250,000 / 20 x 'SIZE"
 
         {% comment %}Black Diamond Pads at High Speed ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
         <div class="pad-life-chart stripping">
-          <h2 id="diamondlo">Black Diamond Pads at High Speed</h2>
-          <table class="table table-striped">
-            <thead>
-            <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
-              <th style="font-weight: bold; width:34%">Pads</th>
-              <th style="font-weight: bold; width:25%; text-align:center;">Size</th>
-              <th style="font-weight: bold; width:33%; text-align:center;" colspan="3">Square Feet Per Pad</th>
-            </tr>
-            </thead>
-            <tbody>
-            {%- assign thischart = blkdiamondhighlookup -%}
-            {% for thissize in thischart  %}
-              <tr>
-                {%- assign sizearray = thissize | split: ":" -%}
-                {% if forloop.index == 1 %}
-                  <td style="border-right:1px solid #ccc" rowspan="{{ thischart | size }}">
-                    <ul>
-                      <li><img style="padding:2px 5px;" src="{{ 'white-round-black-diamond-pads.png' | file_img_url }}" alt="White Black Diamond Pads"><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-white-800-grit-round">White</a></li>
-                      <li><img style="padding:2px 5px;" src="{{ 'yellow-round-black-diamond-pads.png' | file_img_url }}" alt="Yellow Black Diamond Pads"><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-yellow-1500-grit-round">Yellow</a></li>
-                      <li><img style="padding:2px 5px;" src="{{ 'green-round-black-diamond-pads.png' | file_img_url }}" alt="Green Black Diamond Pads"><a href="https://www.cleanfreak.com/products/black-diamond-concrete-prep-pads-green-3000-grit-round">Green</a></li>
-                      </ul>
-                  </td>
-                {% endif %}
-                <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td><td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
-              </tr>
-            {% endfor %}
-            </tbody>
-          </table>
-        </div>
-
-        {% comment %}Black Diamond Pads at High Speed ----------------------------------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
-        <div class="pad-life-chart stripping">
           <h2 id="diamondhi">Black Diamond Pads at High Speed</h2>
           <table class="table table-striped">
             <thead>
@@ -466,34 +434,136 @@ From - 250,000 / 20 x 'SIZE"
     </div>
 {%- elsif location == 'product' %}
   {% assign padtype = padtype %}
-  {% assign productpadsize = padsize | replace: "inches", "" %}
+    {% if padtype == 'diamondhilo' %}
+        <style>
+            .pad-life-chart{margin-bottom:25px;}
+            .pad-life-chart h2{font-weight:bold; font-size:22px; margin-bottom:10px;}
+            .pad-life-chart table{width:100%; border-collapse: collapse;}
+            .pad-life-chart .table tr th{padding:5px 3px; font-size:14px; line-height:18px;}
+            .pad-life-chart .table-striped > tbody > tr:nth-child(2n+1) > td{background-color:#f9f9f9;}
+            .pad-life-chart .table tbody > tr > td{vertical-align:top; font-size:15px;}
+            .pad-life-chart .table td li img{position:relative; top:8px;}
+            .pad-life-chart .table ul{list-style:none; padding-left:20px; margin-top:10px;}
+            @media (max-width: 859px) {
+                .pad-life-chart .table tbody > tr > td{font-size:12px; text-align:center;}
+                .pad-life-chart .table td li img{display:block; margin:auto; top:0}
+                .pad-life-chart .table ul{padding-left:0}
+            }
+        </style>
 
-  {% assign padtype = 'Stripping, Scrubbing, and Cleaning Pads' %}
-  {% assign productpadsize = '20 inches' | replace: " inches", "" %}
+        <hr style="border:0; border-top:1px solid #eee;" />
+        <div class="pad-life-chart stripping">
+            <a href="/docs/charts/pad-life-expectancy.html"><img style="float:left; padding-right:15px; padding-top:3px; padding-bottom:10px; width:75px;" src="{{ 'pad-life-icon.jpg' | file_img_url }}" alt="Pad Life Estimates"></a>
+            <div style="font-weight:bold; font-size:12px;">Pad Life Estimate</div>
+            <div style="font-size:12px; line-height:26px; padding:3px 2px 0px 0"><span style="color:#2a96d0; font-weight:bold; font-size:26px;">Black Diamond Pads</span> </div>
+            <table class="table table-striped">
+                <thead>
+                <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+                    <th style="font-weight: bold; width:34%">Size</th>
+                    <th style="font-weight: bold; width:25%; text-align:center;">Square Feet Per Pad<br/>(Low Speed)</th>
+                    <th style="font-weight: bold; width:33%; text-align:center;">Square Feet Per Pad<br/>(High Speed)</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for thissize in blkdiamondlowlookup  %}
+                    {%- assign hi_size = "" -%}
+
+                    {%- assign sizearray = thissize | split: ":" -%}
+
+                    {% for thissizehi in blkdiamondhighlookup  %}
+                        {%- assign sizehiarray = thissizehi | split: ":" -%}
+                        {%- assign sizelowcheck = sizearray[0] | strip -%}
+                        {%- assign sizehicheck = sizehiarray[0] | strip -%}
+                        {% if sizelowcheck == sizehicheck %}
+                            {%- assign hi_size = sizehiarray[1] -%}
+                            {%- break -%}
+                        {% endif %}
+                    {% endfor %}
+                    <tr>
+                        <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td>
+                        <td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+                        <td style="padding:4px 8px; text-align:center;">{{ hi_size }} ft²</td>
+                    </tr>
+                {% endfor %}
+                <tr><td style="text-align:center; padding:10px;" colspan="3">For a complete rundown of estimates for different pad type and sizes,<br>please view our <a href="/pages/pad-life-expectancy">Floor Pad Life Expectancy Estimates</a> page.</td></tr>
+                </tbody>
+            </table>
+        </div>
 
 
-  {% if padtype == 'Stripping, Scrubbing, and Cleaning Pads' %}
-    {% assign padtypearray = striplookup%}
-  {%- endif -%}
 
-  {% for thissize in padtypearray  %}
-    <tr>
-      {%- assign sizearray = thissize | split: ":" -%}
-      {%- assign thissizearray = thissize | split: ":" -%}
+    {% elsif padtype == 'diamondlo' %}
+            <style>
+                .pad-life-chart{margin-bottom:25px;}
+                .pad-life-chart h2{font-weight:bold; font-size:22px; margin-bottom:10px;}
+                .pad-life-chart table{width:100%; border-collapse: collapse;}
+                .pad-life-chart .table tr th{padding:5px 3px; font-size:14px; line-height:18px;}
+                .pad-life-chart .table-striped > tbody > tr:nth-child(2n+1) > td{background-color:#f9f9f9;}
+                .pad-life-chart .table tbody > tr > td{vertical-align:top; font-size:15px;}
+                .pad-life-chart .table td li img{position:relative; top:8px;}
+                .pad-life-chart .table ul{list-style:none; padding-left:20px; margin-top:10px;}
+                @media (max-width: 859px) {
+                    .pad-life-chart .table tbody > tr > td{font-size:14px; text-align:center;}
+                    .pad-life-chart .table td li img{display:block; margin:auto; top:0}
+                    .pad-life-chart .table ul{padding-left:0}
+                }
+            </style>
+            <hr style="border:0; border-top:1px solid #eee;" />
+            <div class="pad-life-chart stripping">
+                <a href="/docs/charts/pad-life-expectancy.html"><img style="float:left; padding-right:15px; padding-top:3px; padding-bottom:10px; width:75px;" src="{{ 'pad-life-icon.jpg' | file_img_url }}" alt="Pad Life Estimates"></a>
+                <div style="font-weight:bold; font-size:12px;">Pad Life Estimate</div>
+                <div style="font-size:12px; line-height:26px; padding:3px 2px 0px 0"><span style="color:#2a96d0; font-weight:bold; font-size:26px;">Black Diamond Pads at Low Speed</span> </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+                        <th style="font-weight: bold; width:34%">Size</th>
+                        <th style="font-weight: bold; width:25%; text-align:center;">Square Feet Per Pad</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for thissize in blkdiamondlowlookup  %}
+                        {%- assign sizearray = thissize | split: ":" -%}
+                        <tr>
+                            <td style="padding:4px 8px; text-align:center;">{{ sizearray[0] }} inch </td>
+                            <td style="padding:4px 8px; text-align:center;">{{ sizearray[1] }} ft²</td>
+                        </tr>
+                    {% endfor %}
+                    <tr><td style="text-align:center; padding:10px;"  colspan="2">For a complete rundown of estimates for different pad type and sizes,<br>please view our <a href="/pages/pad-life-expectancy">Floor Pad Life Expectancy Estimates</a> page.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+    {% elsif padsize  %}
 
-      {%- assign thissizecheck = sizearray[0] | strip -%}
-      {% if productpadsize == thissizecheck %}
+        {% assign productpadsize = padsize | replace: " inches", "" %}
 
-        <a href="/docs/charts/pad-life-expectancy.html"><img style="float:left; padding-right:15px; padding-top:3px; padding-bottom:25px; width:75px;" src="{{ 'pad-life-icon.jpg' | file_img_url }}" alt="Pad Life Estimates"></a>
-        <div style="font-weight:bold; font-size:12px;">Pad Life Estimate</div>
+        {% if padtype == 'Stripping, Scrubbing, and Cleaning Pads' %}
+            {%- assign padtypearray = striplookup -%}
+        {% elsif padtype == 'Buffing and Polishing Pads' %}
+            {%- assign padtypearray = buffinglookup -%}
+        {% elsif padtype == 'Burnishing Pads' %}
+            {%- assign padtypearray = burnishinglookup -%}
+        {% elsif padtype == 'Chemical Free Stripping Pads' %}
+            {%- assign padtypearray = chemfreelookup -%}
+        {% elsif padtype == 'Cleaning Melamine Pads' %}
+            {%- assign padtypearray = melaminelookup -%}
+        {% elsif padtype == 'Scrubbing Turf Pads' %}
+            {%- assign padtypearray = turflookup -%}
+        {%- endif -%}
 
-        <div style="font-size:12px; line-height:26px; padding:3px 2px 0px 0"><span style="color:#2a96d0; font-weight:bold; font-size:26px;">{{ sizearray[1] }}</span> ft² per Pad</div>
-        <div style="font-size:12px;">For a complete rundown of estimates for different pad type and sizes,<br>please view our <a href="/pages/pad-life-expectancy">Floor Pad Life Expectancy Estimates</a> page.</div>
-
-
-      {% endif %}
-    </tr>
-  {% endfor %}
-
-
+        {% for thissize in padtypearray  %}
+                {%- assign sizearray = thissize | split: ":" -%}
+                {%- assign thissizecheck = sizearray[0] | strip -%}
+                {% if productpadsize == thissizecheck %}
+                    <hr style="border:0; border-top:1px solid #eee;" />
+                    <div style="display:flex">
+                        <div><a href="/docs/charts/pad-life-expectancy.html"><img style="padding-right:15px; padding-top:3px; width:75px;" src="{{ 'pad-life-icon.jpg' | file_img_url }}" alt="Pad Life Estimates"></a></div>
+                        <div>
+                            <div style="font-weight:bold; font-size:12px;">Pad Life Estimate</div>
+                            <div style="font-size:12px; line-height:26px; padding:3px 2px 0px 0"><span style="color:#2a96d0; font-weight:bold; font-size:26px;">{{ sizearray[1] }}</span> ft² per Pad</div>
+                            <div style="font-size:12px;">For a complete rundown of estimates for different pad type and sizes,<br>please view our <a href="/pages/pad-life-expectancy">Floor Pad Life Expectancy Estimates</a> page.</div>
+                        </div>
+                    </div>
+                   {% endif %}
+        {% endfor %}
+    {%- endif -%}
 {%- endif -%}
