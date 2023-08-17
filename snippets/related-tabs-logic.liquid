@@ -3,7 +3,7 @@
 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
 {% comment %}New Related Product Tabs:<br/>{% endcomment %}
 {%- endif -%}
-{%- assign maxproducts = 20 -%}
+{%- assign maxproducts = 19 -%}
 {%- assign maxproductscounter = 0 -%}
 {%- assign maxhandleholder = "" -%}
 
@@ -130,11 +130,23 @@
                                                 {%- assign show = true -%}
                                             {%- else -%}
                                                 {%- assign maxproductscounter = maxproductscounter | plus: 1 -%}
+                                                <div class="crawlcheck"><!-- check this for 20+ related/freq product calls (({{ product_handle }})) --></div>
                                             {%- endif -%}
                                         {%- endif -%}
                                         {%- if all_products[product_handle].metafields.plytix.package_products -%}
                                             {%- assign show = false -%}
                                         {%- endif -%}
+
+                                        {% assign crawlcheck = false %}
+                                        {% for c in all_products[product_handle].collections %}
+                                            {% if c.handle == "discontinued" %}
+                                                {% assign crawlcheck = true %}
+                                                {%- assign show = false -%}
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if crawlcheck == true %}
+                                            <div class="crawlcheck"><!-- check product that is supposed to be here for discontinued or broken handle (({{ product_handle }})) --></div>
+                                        {% endif %}
 
                                         {%- if show == true -%}
                                             {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
@@ -260,8 +272,20 @@
                                                     {%- assign show = true -%}
                                                 {%- else -%}
                                                     {%- assign maxproductscounter = maxproductscounter | plus: 1 -%}
+                                                    <div class="crawlcheck"><!-- check this for 20+ related/freq product calls (({{ product_handle }})) --></div>
                                                 {%- endif -%}
                                             {%- endif -%}
+
+                                            {% assign crawlcheck = false %}
+                                            {% for c in all_products[product_handle].collections %}
+                                                {% if c.handle == "discontinued" %}
+                                                    {% assign crawlcheck = true %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if crawlcheck == true %}
+                                                <div class="crawlcheck"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
+                                            {% endif %}
+
                                             {%- if show == true -%}
                                                 {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
                                                     {%- assign noProducts = false -%}
@@ -298,6 +322,5 @@
 </div>
 </section>
 {%- if maxproductscounter > maxproducts -%}
-{{ maxproductscounter }}
     <div data-allprodtotal="{{ maxproductscounter }}">----</div>
 {%- endif -%}
