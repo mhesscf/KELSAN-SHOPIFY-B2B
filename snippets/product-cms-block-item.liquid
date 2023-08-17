@@ -13,18 +13,10 @@
 
 {% assign recently_viewed = recently_viewed | default: nil %}
 {% assign product_compare = product_compare | default: nil %}
-{% assign product_grid_show_second_image = false %}
 {% assign emphasize_price = false %}
-{% assign quick_shop_display = false %}
-{% assign enable_quickshop = false %}
-{% assign atc_display = true %}
-{% assign atc_button = true %}
-{% assign money_format = shop.money_format | strip_html %}
 
-{% if product_compare %}
-  {% assign enable_quickshop = false %}
-  {% assign atc_button = true %}
-{% endif %}
+
+{% assign money_format = shop.money_format | strip_html %}
 
 {% assign pstep = 1 %}
 {% if product.metafields.plytix.product_step != blank %}
@@ -36,6 +28,7 @@
   {% endif %}
 {% endfor %}
 {% if product %}
+
   {% assign compare_at_price = product.compare_at_price %}
   {% assign compare_at_price_varies = product.compare_at_price_varies %}
   {% assign price = product.price %}
@@ -102,8 +95,6 @@
   {% if on_sale %}productitem--sale{% endif %}
   {% if emphasize_price %}productitem--emphasis{% endif %}
   {% if recently_viewed %}product-recently-viewed-card{% endif %}
-  {% if product_compare %}product-compare-card{% endif %}
-  {% if atc_display == 'always' or quick_shop_display == 'always' %}show-actions--mobile{% endif %}
 {% endcapture %}
 {% assign show_swatches = false %}
 {% assign initial_image = product.featured_media.preview_image.src %}
@@ -255,15 +246,6 @@
                   {% endif %}
           >
             {% if initial_image %}
-              {% if product_grid_show_second_image and product.media.size > 1 %}
-                {% assign second_image = product.media[1].preview_image.src %}
-                {%
-                        render 'rimg',
-                        img: second_image,
-                        size: '512x',
-                        class: 'productitem--image-alternate'
-                %}
-              {% endif %}
               {%
                       render 'rimg',
                       img: initial_image
@@ -410,14 +392,7 @@
     </div>
   </div>
 
-  {% if atc_button %}
-    <script type="application/json" data-quick-buy-settings>
-      {
-        "cart_redirection": {{ settings.enable_cart_redirection | json }},
-       "money_format": {{ shop.money_format | strip_html | json }}
-      }
-    </script>
-  {% endif %}
+
 
 </section>
 {% endif %}

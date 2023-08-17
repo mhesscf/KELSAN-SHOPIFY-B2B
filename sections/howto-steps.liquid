@@ -104,6 +104,21 @@
                             </div>
                             <div class="step-content">
 
+                                {% assign crawlcheck = false %}
+                                {% for c in block.settings.product.collections %}
+                                    {% if c.handle == "discontinued" %}
+                                        {% assign crawlcheck = true %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if block.settings.product != "" %}
+                                    {% if block.settings.product.title == nil %}
+                                        {% assign crawlcheck = true %}
+                                    {% endif %}
+                                {% endif %}
+                                {% if crawlcheck == true %}
+                                    <div class="crawlcheck"><!-- check product that is supposed to be here for discontinued or broken handle --></div>
+                                {% endif %}
+
                                 {% if block.settings.img_placement == "left" %}
                                     {% if block.settings.product.title  %}
                                         <div class="step-additional content-col left-col prodplace">
