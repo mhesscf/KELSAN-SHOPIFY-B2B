@@ -53,7 +53,6 @@
         },
         "fcf2b793-e43b-41ab-8b67-4309e4eca5e6": {
           "type": "bundlegrid",
-          "disabled": true,
           "settings": {
           }
         },
@@ -88,6 +87,7 @@
     },
     "1661863734d30d3d47": {
       "type": "bundled-products",
+      "disabled": true,
       "settings": {
         "sectionheading": ""
       }
