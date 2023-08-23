@@ -5,7 +5,7 @@
 
 
 {%- endcomment -%}
-{%- if 1==1 -%}
+{%- if 1 == 1 -%}
 {%- assign product_grid_show_second_image = false -%}
 {%- assign emphasize_price = false -%}
 {%- assign quick_shop_display = false -%}
@@ -118,14 +118,14 @@
                 {%
                         render 'rimg',
                         img: second_image,
-                        size: '512x',
+                        size: '120x',
                         class: 'productitem--image-alternate'
                 -%}
               {%- endif -%}
               {%
                       render 'rimg',
                       img: initial_image
-                      size: '512x',
+                      size: '120x',
                       class: 'productitem--image-primary'
               -%}
             {%- else -%}

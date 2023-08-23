@@ -1,0 +1,89 @@
+{% layout none %}
+{%- assign freqarray =  product.metafields.plytix.freq_bought | split: ", " -%}
+<div class="cart-item--upsell freq-bought-items">
+    <div class="upsell-header"><span>Accessories</span><br/>for {{ product.title }}</div>
+    {%- for freq in freqarray -%}
+        {%- if freq != "" and freq !="undefined" -%}
+            <div class="upsell--item" data-freqbundle-subproducts >
+                {%- assign  thisprod = all_products[freq] -%}
+                {%-
+                        render 'product-slider-item-freq',
+                        product: thisprod
+                -%}
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div class="upsell-atc-container">
+        <div class="cart-upsell-btn-atc add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary button-secondary" data-freqbundle-product-atc tabindex="0" >
+            <span class="atc-button--text"><i class="fa-regular fa-cart-shopping"></i>Add Items to Cart</span>
+            <span class="atc-button--icon">{%- render 'icon-spinner' -%}</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Frequently Bought Together Add to cart (Bundle qty handling)
+    const $freq_sub_product_container = $('.cart-item--upsell') //items
+    const $freq_bundle_button = $('[data-freqbundle-product-atc]')
+    if($freq_sub_product_container.length) {
+        //add to cart
+        $freq_bundle_button.on('click', async function(e) {
+            console.log('adding products');
+            e.preventDefault();
+            $(this).find('.atc-button--text').hide();
+            $(this).find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
+            const form_template = {
+                form_type: 'product',
+                utf8: '✓',
+                'properties[_erp_sku]': '',
+                'properties[Sku]': '',
+                'properties[_tiered_pricing]': '',
+                'id': '',
+                'quantity': 0
+            }
+
+            const form_datas = []
+            var missingOptions = 0;
+            $freq_sub_product_container.find('[data-freqbundle-subproducts]').each(function() {
+                $(this).find('.freq-var-select').css('border','');
+                if($(this).find('.freq-check').is(':checked')){
+                    if($(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku')){
+                        form_template["properties[_erp_sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_erpsku');
+                        form_template["properties[Sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku');
+                        form_template["properties[Status]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_status');
+                        form_template["properties[_tiered_pricing]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing');
+                        form_template.id = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id') + ""
+                        form_template.quantity = "1" + ""
+
+                        form_datas.push({...form_template})
+                    }else{
+                        $(this).find('.freq-var-select').css('border','2px solid red');
+                        missingOptions = 1;
+                    }
+
+                };
+            });
+            if(missingOptions != 1 && $('.freq-price span').text() != "0.00") {
+                form_datas.reverse();
+                for (const f of form_datas) {
+                    await $.ajax({
+                        type: 'POST',
+                        url: `${window.Theme.routes.cart_add_url}.js`,
+                        data: f,
+                        dataType: 'json'
+                    })
+                }
+
+                location.href = window.Theme.routes.cart_url
+            }else {
+                if(missingOptions == 1){
+                    alert('Please choose an option.');
+                }else{
+                    alert("Please add a product.");
+                }
+                $(this).find('.atc-button--text').show();
+                $(this).find('.atc-button--icon').css({"visibility": "hidden", "opacity": "0"});
+            }
+        })
+    }
+</script>

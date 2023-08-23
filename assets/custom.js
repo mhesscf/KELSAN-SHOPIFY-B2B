@@ -816,6 +816,7 @@ jQuery(document).ready(function($){
 
         //add to cart
         $freq_bundle_button.on('click', async function(e) {
+            console.log('adding products');
             e.preventDefault();
             $(this).find('.atc-button--text').hide();
             $(this).find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
@@ -1051,6 +1052,54 @@ jQuery(document).ready(function($){
             });
         }, 500);
     }
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var productHandle = "your-product-handle"; // Replace with the actual product handle
+
+        // Construct the GraphQL query to fetch product data
+        var query = `
+    {
+      productByHandle(handle: "${productHandle}") {
+        id
+        title
+        description
+        // Add more fields as needed
+      }
+    }
+  `;
+    });
+    // Cart upsell popup
+    $('.cart-upsell-btn').on('click', function(e){
+        const handle = $(this).data('handle');
+        const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=itemcard`;
+        $.get(fetchUrl).then(response => {
+            if (response) {
+                if(response.includes("data-product-quickshop-url")){
+                    $('.popup-container .content').html(response);
+                    $('.popup-container').addClass('widepop');
+                }else{
+                    $('.popup-container .content').html('<div class="noproducts">No accessories found for this product.</div>');
+                }
+
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                $('.cart-item--upsell a').attr("target", "_blank");
+
+                // equalize title height
+                var highestTitleBox = 0;
+                $('.upsell--item .productitem--title').each(function () {
+                    if ($(this).height() > highestTitleBox) {
+                        highestTitleBox = $(this).height();
+                    }
+                });
+                $('.upsell--item .productitem--title').height(highestTitleBox);
+            }else{
+                console.log('product not returned');
+            }
+        })
+    });
 
 });
 
