@@ -159,6 +159,19 @@
         </div>
       {% endif %}
 
+      {% if item.product.metafields.plytix.freq_bought %}
+          {% comment %}check items other than "undefined"{% endcomment %}
+          {%- assign freqarray =  item.product.metafields.plytix.freq_bought | split: ", " -%}
+          {%- assign hasitems = false -%}
+          {%- for freq in freqarray -%}
+            {% if freq != "undefined" %}
+              {%- assign hasitems =  true -%}{% break %}
+            {% endif %}
+          {% endfor %}
+          {% if hasitems == true %}
+            <div data-prod="{{ item.product.id }}" data-handle="{{ item.product.handle }}" class="cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary button-secondary" tabindex="0" > Accessories <i class="fa-sharp fa-solid fa-caret-right"></i></div>
+          {% endif %}
+       {% endif %}
 
     </div>
 

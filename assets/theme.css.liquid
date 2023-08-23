@@ -13601,6 +13601,62 @@ nav.breadcrumb span.separator{
 	fill: currentColor;
 }
 
+.cart-upsell-btn.productitem--action-trigger{
+	width:145px;
+	padding:3px;
+	margin-top:10px;
+	border-radius:8px;
+	font-size:13px;
+	text-transform:none;
+}
+
+.cart-item--upsell{
+	display:flex;
+	flex-wrap:wrap;
+}
+.cart-item--upsell .freq-check{
+	position: absolute;
+	top:20px;
+	left:20px;
+	z-index:400;
+	width:20px;
+	height:20px;
+}
+.cart-item--upsell .upsell--item{
+	flex: 0 0 33.3%;
+	padding:0 6px;
+}
+.cart-item--upsell .productgrid--item .productitem{
+	padding:3px 10px;
+	border-radius: 15px;
+}
+.cart-item--upsell .productgrid--item .productitem--image{
+	aspect-ratio:unset;
+	width:100%;
+	max-height:120px;
+}
+.cart-item--upsell .productgrid--item .productitem--title{
+	font-size: 14px;
+	line-height:18px;
+}
+.cart-item--upsell .upsell-header{
+	flex: 0 0 100%;
+	padding:0 20px 8px 8px;
+	margin-bottom:10px;
+	border-bottom:1px solid #ccc;
+	font-size:14px;
+}
+.cart-item--upsell .upsell-header span {
+	font-weight:bold;
+	font-size:24px;
+}
+.cart-item--upsell .upsell-atc-container{
+	flex: 0 0 100%;
+	padding:20px 40px 0 40px;
+}
+.cart-item--upsell .cart-upsell-btn-atc{
+	height: 40px;
+}
 .collection__item-image {
 	position: relative;
 	margin: 0;
@@ -24465,6 +24521,10 @@ button.payment-blue.button:hover span {background:#303e48;}
 	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14);
 	z-index:999;
 	padding:20px;
+}
+.popup-container.widepop{
+	width: 710px;
+	left: calc(50% - 355px);
 }
 .popup-container .close-pop span {background:url('https://cdn.shopify.com/s/files/1/0624/3270/6740/files/bkg_close.gif?v=1688743343'); cursor:pointer; height:33px; width:33px; display:block; position:absolute; top:-12px; right:-12px;}
 
