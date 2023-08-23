@@ -37,10 +37,12 @@
                         <link itemprop="image" href="{{ all_products[bundlep].featured_image | img_url: '300x300' }}" />
                         <meta itemprop="description" content="{{ all_products[bundlep].metafields.plytix.short_description | escape }}" />
                         {% comment %}reviews{% endcomment %}
+                        {% if all_products[bundlep].metafields.reviews.rating_count %}
                             <div itemprop="aggregateRating" itemtype="https://schema.org/AggregateRating" itemscope>
                                 <meta itemprop="reviewCount" content="{{ all_products[bundlep].metafields.reviews.rating_count }}" />
                                 <meta itemprop="ratingValue" content="{{ all_products[bundlep].metafields.reviews.rating.value }}" />
                             </div>
+                        {% endif %}
                         <meta itemprop="sku" content="{{ all_products[bundlep].metafields.plytix.erp_sku }}" />
                         <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
                             {%- if all_products[bundlep].price_min == all_products[bundlep].price_max -%}
@@ -226,10 +228,12 @@
                             <link itemprop="image" href="{{ all_products[bundlep].featured_image | img_url: '300x300' }}" />
                             <meta itemprop="description" content="{{ all_products[bundlep].metafields.plytix.short_description | escape }}" />
                             {% comment %}reviews{% endcomment %}
-                            <div itemprop="aggregateRating" itemtype="https://schema.org/AggregateRating" itemscope>
-                                <meta itemprop="reviewCount" content="{{ all_products[bundlep].metafields.reviews.rating_count }}" />
-                                <meta itemprop="ratingValue" content="{{ all_products[bundlep].metafields.reviews.rating.value }}" />
-                            </div>
+                            {% if all_products[bundlep].metafields.reviews.rating_count %}
+                                <div itemprop="aggregateRating" itemtype="https://schema.org/AggregateRating" itemscope>
+                                    <meta itemprop="reviewCount" content="{{ all_products[bundlep].metafields.reviews.rating_count }}" />
+                                    <meta itemprop="ratingValue" content="{{ all_products[bundlep].metafields.reviews.rating.value }}" />
+                                </div>
+                            {% endif %}
                             <meta itemprop="sku" content="{{ all_products[bundlep].metafields.plytix.erp_sku }}" />
 
                             <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
