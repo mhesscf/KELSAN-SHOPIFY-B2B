@@ -61,7 +61,7 @@
     "product_grid_show_second_image": false,
     "product_grid_image_style": "natural",
     "product_grid_image_crop": true,
-    "enable_product_compare": true,
+    "enable_product_compare": false,
     "product_grid_enable_quickshop": false,
     "social_facebook": "https:\/\/www.facebook.com\/cleanfreakcom",
     "social_linkedin": "",
