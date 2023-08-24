@@ -24,6 +24,27 @@
             "overlay_opacity": 13
           }
         },
+        "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/september-sotm-wet-dry-vac1400x450.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/september-sotm-wet-dry-vac-800x427.jpg",
+            "title": "CleanFreak® Wet \/ Dry Vacuum",
+            "text": "Wet or Dry, A Great Buy!<br>Now $639.99!",
+            "color": "#FFFFFF",
+            "link": "https:\/\/www.cleanfreak.com\/products\/19-gallon-wet-dry-vac-with-front-mount-squeegee",
+            "text_alignment": "left",
+            "button_one_label": "SAVE NOW!",
+            "button_one_link": "https:\/\/www.cleanfreak.com\/products\/19-gallon-wet-dry-vac-with-front-mount-squeegee",
+            "button_one_style": "secondary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
           "disabled": true,
@@ -49,6 +70,7 @@
       },
       "block_order": [
         "slide-1",
+        "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4"
       ],
       "settings": {
