@@ -5,12 +5,11 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-2000x639.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/july-special-floor-scrubber-800x427-sm.jpg",
-            "title": "Trusted Clean 'Dura 17' Electric Auto Scrubber",
-            "text": "A Star-Spangled Clean with the Dura 17!<br>Now $1,649.99.",
+            "background_image": "shopify:\/\/shop_images\/september-sotm-dura-18-1400x450.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/september-sotm-dura-18-800x427.jpg",
+            "title": "Trusted Clean 'Dura 18HD' Cord Electric 18&rdquo; Automatic Floor Scrubber",
+            "text": "Dura-ble, Reliable, Economical<br>Now $1,699.99.",
             "color": "#303e48",
             "link": "https:\/\/www.cleanfreak.com\/products\/17-inch-electric-auto-scrubber",
             "text_alignment": "left",
@@ -27,6 +26,7 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/august-sweeper-special-2000x639.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/august-sweeper-special-800x427.jpg",
