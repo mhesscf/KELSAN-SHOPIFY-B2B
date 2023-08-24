@@ -9,6 +9,79 @@
         "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg"
       }
     },
+    "b7587dfe-01d4-43e5-bf53-5e0c58f9cabc": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-1": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "Slide 1",
+            "text": "Introduce customers to your shop with lifestyle and product imagery",
+            "color": "#FFFFFF",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "Button",
+            "button_one_link": "",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
+        "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "Slide 2",
+            "text": "Introduce customers to your shop with lifestyle and product imagery",
+            "color": "#FFFFFF",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "Button",
+            "button_one_link": "",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
+        "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/400test.jpg",
+            "link": ""
+          }
+        },
+        "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/500test.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-1",
+        "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-2",
+        "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf",
+        "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
+      }
+    },
     "475144ee-1619-40db-8de5-a06451836ae0": {
       "type": "dynamic-html",
       "settings": {
@@ -85,7 +158,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -116,6 +188,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -347,6 +420,7 @@
   },
   "order": [
     "1663617398865396bc",
+    "b7587dfe-01d4-43e5-bf53-5e0c58f9cabc",
     "475144ee-1619-40db-8de5-a06451836ae0",
     "16636174067db7bd8c",
     "main",
