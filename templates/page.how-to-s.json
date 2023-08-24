@@ -297,6 +297,13 @@
             "linkurl": "shopify:\/\/pages\/national-safety-month"
           }
         },
+        "a3c4f8be-f547-47ba-9a47-8fcf495ac880": {
+          "type": "c3link",
+          "settings": {
+            "linktext": "Floor Pad Guide",
+            "linkurl": "\/pages\/floor-pad-guide"
+          }
+        },
         "5f8448fd-b158-4eef-bd71-f1291199d5a9": {
           "type": "c3link",
           "settings": {
@@ -313,6 +320,7 @@
         "cf5f128f-12ab-4c5b-b230-ed3e70ea030f",
         "5070bbd2-b410-428f-8a5a-a7a1f412edcd",
         "c20203af-1ded-4581-bc2b-bbad28b6c866",
+        "a3c4f8be-f547-47ba-9a47-8fcf495ac880",
         "5f8448fd-b158-4eef-bd71-f1291199d5a9"
       ],
       "settings": {
