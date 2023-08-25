@@ -81,9 +81,9 @@
           "settings": {
             "stepnumber": "3",
             "stepheading": "Protect Yourself & Other Employees -",
-            "steptext": "<p>When cleaning with any type of caustic cleaning agent, it is a good idea to use the proper <a href=\"\/collections\/eye-protection\" title=\"\/collections\/eye-protection\">safety glasses<\/a>, <a href=\"\/collections\/nitrile-gloves\" title=\"\/collections\/nitrile-gloves\">nitrile gloves<\/a>, and even disposable clothing to handle these types of chemicals. A great example is to use our <a href=\"\/pages\/foot-protection\" title=\"\/pages\/foot-protection\">disposable plastic shoe & boot covers<\/a> when stripping or cleaning floors to protect your shoes, as well as other areas of the facility.<\/p>",
+            "steptext": "<p>When cleaning with any type of caustic cleaning agent, it is a good idea to use the proper <a href=\"\/collections\/eye-protection\" title=\"\/collections\/eye-protection\">safety glasses<\/a>, <a href=\"\/collections\/nitrile-gloves\" title=\"\/collections\/nitrile-gloves\">nitrile gloves<\/a>, and even <a href=\"\/pages\/body-protection-and-clothing\" title=\"\/pages\/body-protection-and-clothing\">disposable clothing<\/a> to handle these types of chemicals. A great example is to use our <a href=\"\/pages\/foot-protection\" title=\"\/pages\/foot-protection\">disposable plastic shoe & boot covers<\/a> when stripping or cleaning floors to protect your shoes, as well as other areas of the facility.<\/p>",
             "img_placement": "right",
-            "product": ""
+            "product": "meat-cutting-disposable-aprons"
           }
         },
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
@@ -91,7 +91,7 @@
           "settings": {
             "stepnumber": "4",
             "stepheading": "Properly Wash Hands -",
-            "steptext": "<p>To protect against the spread of disease, all employees must wash their hands after going to the restroom, finishing up a cleaning job, when handling any types of chemicals, or even when they just appear dirty. You should wash your hands with hot water and one of our hand soaps like a Stoko solvent-free hand soap. Thoroughly scrub your hands for 20 seconds, making sure to cover all parts of your hands, including under fingernails, around cuticles, and in between fingers. After scrubbing, hold your hands under running water to rinse leftover lather. Then, dry off hands with a paper towel or hand dryer. This is important because leaving hands soapy or wet can contribute to dermatitis. If you used a paper towel, hold onto it after drying to turn off the faucet and pull open the door. This will prevent your fingers from picking up germs on the faucet and door handle.<\/p><p>Another way to curtail the spread of germs is to supply employees with their own personal bottle of hand sanitizer like bottle of Deb InstantFOAM® Complete Hand Sanitizer. This way they can frequently sanitize their hands throughout the day without the need of a sink.<\/p>",
+            "steptext": "<p>To protect against the spread of disease, all employees must wash their hands after going to the restroom, finishing up a cleaning job, when handling any types of chemicals, or even when they just appear dirty. You should wash your hands with hot water and one of our <a href=\"\/collections\/hand-soaps-lotions\" title=\"\/collections\/hand-soaps-lotions\">hand soaps<\/a> like a <a href=\"\/products\/deb-stoko-solopol-classic-solvent-free-hand-cleansing-paste\" title=\"\/products\/deb-stoko-solopol-classic-solvent-free-hand-cleansing-paste\">Stoko solvent-free hand soap<\/a>. Thoroughly scrub your hands for 20 seconds, making sure to cover all parts of your hands, including under fingernails, around cuticles, and in between fingers. After scrubbing, hold your hands under running water to rinse leftover lather. Then, dry off hands with a paper towel or hand dryer. This is important because leaving hands soapy or wet can contribute to dermatitis. If you used a paper towel, hold onto it after drying to turn off the faucet and pull open the door. This will prevent your fingers from picking up germs on the faucet and door handle.<\/p><p>Another way to curtail the spread of germs is to supply employees with their own personal bottle of hand sanitizer like bottle of <a href=\"\/products\/deb-instantfoam-complete-hand-sanitizer-47-ml-or-400-ml-pump-bottles\" title=\"\/products\/deb-instantfoam-complete-hand-sanitizer-47-ml-or-400-ml-pump-bottles\">Deb InstantFOAM® Complete Hand Sanitizer<\/a>. This way they can frequently sanitize their hands throughout the day without the need of a sink.<\/p>",
             "img_placement": "right",
             "product": ""
           }
@@ -104,6 +104,13 @@
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a"
       ],
       "settings": {
+      }
+    },
+    "bbfd6766-abc4-4611-804e-0382212e3ad8": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div style=\"margin-top:-30px\"><iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/bMMoyDA-zPw?si=3vdDTRRAYAIYO7di\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"><\/iframe><\/div>"
       }
     },
     "main": {
@@ -119,6 +126,7 @@
     "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
     "077235cb-6ded-4e06-80df-6ad080419fe3",
     "f4bf06c6-ebd4-4542-afbd-1332f952205d",
+    "bbfd6766-abc4-4611-804e-0382212e3ad8",
     "main"
   ]
 }
