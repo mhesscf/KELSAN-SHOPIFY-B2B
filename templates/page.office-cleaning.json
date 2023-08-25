@@ -161,7 +161,8 @@
       ],
       "settings": {
         "chsectionheading": "",
-        "chsectiontext": ""
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-office-cleaning.jpg"
       }
     },
     "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
@@ -173,6 +174,7 @@
             "stepnumber": "1",
             "stepheading": "Prepping the Office Area -",
             "steptext": "<p>You'll want to gather all of the necessary cleaning chemicals, equipment and accessories for the job. Load up your janitorial cart with supplies and chemicals and head towards the cleaning area.<br\/>If any mopping or extensive cleaning is to be done, you'll need to put up \"closed for cleaning\" signs and cordon off the area with the correct caution\/wet floor signs.The following steps are based on the assumption that someone will be able to clean the office daily. If this is not the case, the daily and weekly clean up procedures can be combined.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -181,8 +183,9 @@
           "settings": {
             "stepnumber": "2",
             "stepheading": "Daily Cleaning Procedures -",
-            "steptext": "<p>A. Visually check the area for any types of debris or paper. Pick these items up and dispose of them properly.<\/p><p>B. Vacuum up any dirt or debris that can't be removed by hand. Using a backpack vacuum is a great way to quickly and efficiently vacuum up around office cubicles.<\/p><p>C. If there are any spots or stains on the carpets, floors, walls, furniture or baseboards immediately wipe those up. For carpet or upholstery stains, start by identifying the type of stain by using our stain removal instructions guide. Then follow up with a portable spotter like our carpet spotter stain removing machine to remove the stain and chemical.<\/p>",
-            "product": ""
+            "steptext": "<p>A. Visually check the area for any types of debris or paper. Pick these items up and dispose of them properly.<\/p><p>B. Vacuum up any dirt or debris that can't be removed by hand. Using a <a href=\"\/collections\/backpack-vacuums\" title=\"\/collections\/backpack-vacuums\">backpack vacuum<\/a> is a great way to quickly and efficiently vacuum up around office cubicles.<\/p><p>C. If there are any spots or stains on the carpets, floors, walls, furniture or baseboards immediately wipe those up. For carpet or upholstery stains, start by identifying the type of stain by using our <a href=\"\/pages\/stain-removal-directions\" title=\"\/pages\/stain-removal-directions\">stain removal instructions<\/a> guide. Then follow up with a portable spotter like our <a href=\"\/products\/car-spotter-with-detailing-tool\" title=\"\/products\/car-spotter-with-detailing-tool\">automotive spotter<\/a> to remove the stain and chemical.<\/p>",
+            "img_placement": "right",
+            "product": "proteam-super-coach-pro-6-qt-vac"
           }
         },
         "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
@@ -190,8 +193,9 @@
           "settings": {
             "stepnumber": "3",
             "stepheading": "Weekly Cleaning Procedures -",
-            "steptext": "<p>A. Dust all surfaces, including desks, filing cabinets, cubicle walls and shelves.<\/p><p>B. Empty trash cans and replace garbage bags, a very popular size is the high density 12-16 gallon trash bags for individual offices. Clean trash can and surrounding area if necessary.<\/p><p>C. Wipe down desks, telephones, calculators, and computer keyboards thoroughly using a disinfectant spray that has been sprayed on a micro fiber cloth or a disinfecting wipe, like our germicidal disinfecting wipes.<\/p><p>D. Dust heating vents, ledges, door jambs and window sills at any easily reachable level.<\/p><p>E. Dust mop all tiled or hard surface floors, then sweep up that debris into dust pan following our dust mop procedures.<\/p><p>F. Wet mop all hard floor surfaces following our step by step floor mopping instructions.<\/p><p>G. Vacuum all carpeted floors, starting with the mats and runners, following our carpet vacuuming procedures.<\/p>",
-            "product": ""
+            "steptext": "<p>A. Dust all surfaces, including desks, filing cabinets, cubicle walls and shelves.<\/p><p>B. Empty trash cans and replace garbage bags, a very popular size is the high density <a href=\"\/products\/sak-it-high-density-12-16-gallon-clear-trash-can-liners\" title=\"\/products\/sak-it-high-density-12-16-gallon-clear-trash-can-liners\">12-16 gallon trash bags<\/a> for individual offices. Clean trash can and surrounding area if necessary.<\/p><p>C. Wipe down desks, telephones, calculators, and computer keyboards thoroughly using a disinfectant spray that has been sprayed on a micro fiber cloth or a disinfecting wipe, like our <a href=\"\/products\/clorox-germicidal-disinfecting-wipes\" title=\"\/products\/clorox-germicidal-disinfecting-wipes\">germicidal disinfecting wipes<\/a>.<\/p><p>D. Dust heating vents, ledges, door jambs and window sills at any easily reachable level.<\/p><p>E. Dust mop all tiled or hard surface floors, then sweep up that debris into dust pan following our <a href=\"\/pages\/dust-mopping\" title=\"\/pages\/dust-mopping\">dust mop procedures<\/a>.<\/p><p>F. Wet mop all hard floor surfaces following our step by step <a href=\"\/pages\/wet-mopping\" title=\"\/pages\/wet-mopping\">floor mopping instructions<\/a>.<\/p><p>G. Vacuum all carpeted floors, starting with the mats and runners, following our <a href=\"\/pages\/vacuum-carpets\" title=\"\/pages\/vacuum-carpets\">carpet vacuuming procedures<\/a>.<\/p>",
+            "img_placement": "right",
+            "product": "clorox-germicidal-disinfecting-wipes"
           }
         },
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
@@ -199,7 +203,8 @@
           "settings": {
             "stepnumber": "4",
             "stepheading": "Monthly Cleaning Procedures -",
-            "steptext": "<p>A. Clean wall-mounted units such as paper towel dispensers and hand dryers with a disinfectant spray or wipe. Paying special attention to all fixtures and items in the restroom, all the while following our restroom cleaning procedures.<\/p><p>B. Wipe down all vertical surfaces in the office with an all-purpose cleaner.<\/p><p>C. Spray buff hard surface floors following our spray buffing a floor or our burnishing a floor procedures. The spray procedures will be used with a low speed floor buffer, like our 20\" low speed floor buffing polisher. The burnishing procedures will be best utilized with a high speed burnisher like our ultra high speed burnisher. If the hard floor surfaces are particularly dirty start with scrubbing the floors with a low speed buffer.<\/p><p>D. Polish desks, tables, chairs, and any other wood objects by using a furniture polish to help maintain a professional shine.<\/p><p>E. Dust or vacuum all vents, overhead circular fans, and behind hard to reach areas like tables and desks.<\/p><p>F. Clean all windows with a glass cleaner to remove all marks and fingerprints.<\/p>",
+            "steptext": "<p>A. Clean wall-mounted units such as paper towel dispensers and <a href=\"\/collections\/hand-dryers\" title=\"\/collections\/hand-dryers\">hand dryers<\/a> with a disinfectant spray or wipe. Paying special attention to all fixtures and items in the restroom, all the while following our <a href=\"\/pages\/restroom-cleaning-procedures\" title=\"\/pages\/restroom-cleaning-procedures\">restroom cleaning procedures<\/a>.<\/p><p>B. Wipe down all vertical surfaces in the office with an all-purpose cleaner.<\/p><p>C. Spray buff hard surface floors following our <a href=\"\/pages\/spray-buffing-a-floor\" title=\"\/pages\/spray-buffing-a-floor\">spray buffing a floor<\/a> or our <a href=\"\/pages\/burnishing-a-floor\" title=\"\/pages\/burnishing-a-floor\">burnishing a floor procedures<\/a>. The spray procedures will be used with a low speed floor buffer, like our <a href=\"\/products\/clean-freak-20-inch-low-speed-rotary-machine\" title=\"\/products\/clean-freak-20-inch-low-speed-rotary-machine\">20\" low speed floor buffing polisher<\/a>. The burnishing procedures will be best utilized with a high speed burnisher like our <a href=\"\/products\/1500-rpm-ultra-high-speed-burnisher\" title=\"\/products\/1500-rpm-ultra-high-speed-burnisher\">ultra high speed burnisher<\/a>. If the hard floor surfaces are particularly dirty start with <a href=\"\/pages\/floor-buffer-scrubbing\" title=\"\/pages\/floor-buffer-scrubbing\">scrubbing the floors with a low speed buffer<\/a>.<\/p><p>D. Polish desks, tables, chairs, and any other wood objects by using a furniture polish to help maintain a professional shine.<\/p><p>E. Dust or vacuum all vents, overhead circular fans, and behind hard to reach areas like tables and desks.<\/p><p>F. Clean all windows with a glass cleaner to remove all marks and fingerprints.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -209,6 +214,7 @@
             "stepnumber": "5",
             "stepheading": "Semi-Annual Cleaning Procedures -",
             "steptext": "<p>A. Strip and recoat any tiled floors to remove scuff marks and any imperfections in the finish. Following our stripping a floor and our applying floor finish procedures will guarantee a high shine on your floor This will also make it extremely durable for long periods of time, extending the time between additional stripping and re-coatings.<\/p><p>B. Spray buff or burnish the floor immediately to make the finish \"pop\" as much as possible.<\/p><p>C. Institute a burnishing program to prolong the life of your floor, as well as maintaining its appearance at all times of the year.<\/p><p>D. Extract all carpeting, runners, mats and upholstery following our carpet extracting instructions. For any heavily soiled areas, or traffic pattern areas, follow our carpet bonneting instructions for proper carpet scrubbing instructions.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -218,6 +224,7 @@
             "stepnumber": "6",
             "stepheading": "Clean Up -",
             "steptext": "<p>Immediately clean up all equipment, and clean out mop buckets and other cleaning gear. Rinse out all mops and hang to dry. Place all cleaning supplies and accessories back onto the janitorial cart, and return everything back to its original storage place. Remove all garbage and debris by placing it in a garbage bag and disposing of it properly. Remove all carpet dryers and caution\/wet floor signs once the areas are completely dry. Return any moved objects or furniture back to their original positions. A cleaning cart is a great way to keep all your supplies and waste in a mobile platform.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         }
