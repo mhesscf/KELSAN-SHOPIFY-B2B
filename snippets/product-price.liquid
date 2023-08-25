@@ -367,6 +367,7 @@
 {%- if product.metafields.plytix.package_products == blank -%}
     {%
             render 'product-sxstatus'
+            product: product
     -%}
   {%- else -%}
     <div class="bundle-status-area status-area"></div>

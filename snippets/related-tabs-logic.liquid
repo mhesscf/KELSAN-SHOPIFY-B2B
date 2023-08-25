@@ -44,7 +44,13 @@
                             {% assign show = 0 %}
                             {%- for product in prod_check_arr -%}
                                 {%- assign product_handle = product |  strip -%}
-                                {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
+                                {%- assign discontinued = false -%}
+                                {%- for c in all_products[product_handle].collections -%}
+                                    {%- if c.handle == "discontinued" -%}
+                                        {% assign discontinued = true -%}
+                                    {%- endif -%}
+                                {%- endfor -%}
+                                {%- if product_handle != 'undefined' and all_products[product_handle].title != '' and discontinued == false -%}
                                     {%- assign show = 1 -%}
                                     {%- break -%}
                                 {% endif %}
