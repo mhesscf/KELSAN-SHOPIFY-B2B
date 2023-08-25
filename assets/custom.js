@@ -1094,7 +1094,10 @@ jQuery(document).ready(function($){
                         highestTitleBox = $(this).height();
                     }
                 });
-                $('.upsell--item .productitem--title').height(highestTitleBox);
+                if($(window).width() > 719){
+                    $('.upsell--item .productitem--title').height(highestTitleBox);
+                }
+
             }else{
                 console.log('product not returned');
             }

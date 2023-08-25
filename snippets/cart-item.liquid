@@ -169,7 +169,7 @@
             {% endif %}
           {% endfor %}
           {% if hasitems == true %}
-            <div data-prod="{{ item.product.id }}" data-handle="{{ item.product.handle }}" class="cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary button-secondary" tabindex="0" > Accessories <i class="fa-sharp fa-solid fa-caret-right"></i></div>
+            <div data-prod="{{ item.product.id }}" data-handle="{{ item.product.handle }}" class="cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0" ><span>+</span> Accessories</div>
           {% endif %}
        {% endif %}
 
