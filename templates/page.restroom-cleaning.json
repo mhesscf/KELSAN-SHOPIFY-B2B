@@ -177,7 +177,8 @@
       ],
       "settings": {
         "chsectionheading": "",
-        "chsectiontext": ""
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-action-restroom-cleaning-procedures.jpg"
       }
     },
     "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
@@ -188,8 +189,9 @@
           "settings": {
             "stepnumber": "1",
             "stepheading": "Prepping the Restroom -",
-            "steptext": "<p>Gather all of the necessary cleaning supplies and load them onto your janitorial cart. All mops and rags used in this area should be properly marked to avoid being used in other areas. Make sure the restroom is empty and then post the appropriate caution\/safety sign, like a rest rooms closed sign, or a hanging closed for cleaning sign. Move your janitorial cart into the restroom, or for smaller areas, leave it blocking the entrance to the restroom. Leave the door propped open, so potential users can see that you are in there cleaning.<\/p><p>The following instructions are based on the assumption that each restroom will get some sort of care daily. For those restrooms that do not need that kind of upkeep, you can adjust the schedule accordingly.<\/p>",
-            "product": ""
+            "steptext": "<p>Gather all of the necessary cleaning supplies and load them onto your janitorial cart. All mops and rags used in this area should be properly marked to avoid being used in other areas. Make sure the restroom is empty and then post the appropriate caution\/safety sign, like a <a href=\"\/products\/rubbermaid-4-language-closed-floor-sign\" title=\"\/products\/rubbermaid-4-language-closed-floor-sign\">rest rooms closed sign<\/a>, or a <a href=\"\/products\/hanging-closed-for-cleaning-safety-sign\" title=\"\/products\/hanging-closed-for-cleaning-safety-sign\">hanging closed for cleaning sign<\/a>. Move your janitorial cart into the restroom, or for smaller areas, leave it blocking the entrance to the restroom. Leave the door propped open, so potential users can see that you are in there cleaning.<\/p><p>The following instructions are based on the assumption that each restroom will get some sort of care daily. For those restrooms that do not need that kind of upkeep, you can adjust the schedule accordingly.<\/p>",
+            "img_placement": "right",
+            "product": "hanging-closed-for-cleaning-safety-sign"
           }
         },
         "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
@@ -198,6 +200,7 @@
             "stepnumber": "2",
             "stepheading": "Daily Cleaning Procedures -",
             "steptext": "<p>A. Visually check the appearance of the restroom. Pick up any debris on the floor, around the sink or toilet\/urinal areas.<\/p><p>B. Check garbage cans and recycling bins. If they are full or nearly full, remove the trash can liner and replace with a new one.<\/p><p>C. Check soap, toilet paper, and paper towel dispensers to make sure they are properly stocked.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -206,8 +209,9 @@
           "settings": {
             "stepnumber": "3",
             "stepheading": "Weekly Cleaning Procedures -",
-            "steptext": "<p>A. Clean and scrub all interior surfaces of toilets\/urinals with a toilet bowl cleaner. Wipe down all exterior surfaces, including toilet seats, with a disinfectant. Follow our disinfecting toilet & urinal procedures for complete instructions on how to disinfect these surfaces.<\/p><p>B. Wipe down and disinfect all surfaces, including door handles, light switches, countertops, partitions and dispensers.<\/p><p>C. Clean all mirrors with a glass cleaner to remove any fingerprints and marks.<\/p><p>D. Use a germicidal\/acidic surface cleanser to wipe down the sinks and faucets and handles. <\/p><p>E. Dust mop, sweep and wet mop the floors, taking care to keep the mops, mop buckets, and solutions used as bathroom only items. Avoid cross-contamination with other areas of the facility at all costs.<\/p>",
-            "product": ""
+            "steptext": "<p>A. Clean and scrub all interior surfaces of toilets\/urinals with a toilet bowl cleaner. Wipe down all exterior surfaces, including toilet seats, with a disinfectant. Follow our <a href=\"\/pages\/disinfecting-toilets-urinals\" title=\"\/pages\/disinfecting-toilets-urinals\">disinfecting toilet & urinal procedures<\/a> for complete instructions on how to disinfect these surfaces.<\/p><p>B. Wipe down and disinfect all surfaces, including door handles, light switches, countertops, partitions and dispensers.<\/p><p>C. Clean all mirrors with a glass cleaner to remove any fingerprints and marks.<\/p><p>D. Use a germicidal\/acidic surface cleanser to wipe down the sinks and faucets and handles. <\/p><p>E. <a href=\"\/pages\/dust-mopping\" title=\"\/pages\/dust-mopping\">Dust mop<\/a>, sweep and <a href=\"\/pages\/wet-mopping\" title=\"\/pages\/wet-mopping\">wet mop<\/a> the floors, taking care to keep the mops, mop buckets, and solutions used as bathroom only items. Avoid cross-contamination with other areas of the facility at all costs.<\/p>",
+            "img_placement": "right",
+            "product": "pee-pod-urinal-cleaning-block"
           }
         },
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
@@ -215,7 +219,8 @@
           "settings": {
             "stepnumber": "4",
             "stepheading": "Monthly Cleaning Procedures -",
-            "steptext": "<p>A. Dust all out of the way areas, including the tops of doors, shelves, partitions, dispensers, hand dryers and air vents.<\/p><p>B. Replace all metered aerosol deodorizers and air fresheners.<\/p><p>C. Replace the urinal blocks as necessary, if there are PeePod urinal cleaning blocks in place, replace these. The PeePod is the ultimate restroom cleaners friend. Not only will it deodorize the restroom, as it continuously cleans the urinal walls, but it also helps to unclog pipes and make sure they can adequately drain at all times.<\/p><p>D. Check to make sure all drains are properly draining. If not use a drain cleaner to remove all clogs.<\/p>",
+            "steptext": "<p>A. Dust all out of the way areas, including the tops of doors, shelves, partitions, dispensers, hand dryers and air vents.<\/p><p>B. Replace all metered aerosol deodorizers and air fresheners.<\/p><p>C. Replace the urinal blocks as necessary, if there are <a href=\"\/products\/pee-pod-urinal-cleaning-block\" title=\"\/products\/pee-pod-urinal-cleaning-block\">PeePod urinal cleaning blocks<\/a> in place, replace these. The PeePod is the ultimate restroom cleaners friend. Not only will it deodorize the restroom, as it continuously cleans the urinal walls, but it also helps to unclog pipes and make sure they can adequately drain at all times.<\/p><p>D. Check to make sure all drains are properly draining. If not use a drain cleaner to remove all clogs.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -225,6 +230,7 @@
             "stepnumber": "5",
             "stepheading": "Clean Up -",
             "steptext": "<p>Remove all trash bags and place in the dumpster. Do not remove the caution\/restroom closed signs until all work is finished and all surfaces, including the floors are completely dry. Rinse out and clean the mop buckets, mops, and rags that were used.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         }
