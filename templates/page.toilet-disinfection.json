@@ -109,8 +109,9 @@
           "settings": {
             "stepnumber": "1",
             "stepheading": "Prepping the Restroom -",
-            "steptext": "<p>Gather all your necessary cleaning supplies and place them on your janitorial cart. Follow the proper restroom cleaning instructions guide to prep the restroom. Place your rest rooms closed sign, or a hanging closed for cleaning sign in the entranceway or block it with your janitorial cart. Prop the door open, so any potential user can see that the restroom is currently being cleaned. Put on a pair of protective gloves and safety glasses. Remove any objects that may be stored around the toilet.<\/p>",
-            "product": ""
+            "steptext": "<p>Gather all your necessary cleaning supplies and place them on your janitorial cart. Follow the <a href=\"\/pages\/restroom-cleaning-procedures\" title=\"\/pages\/restroom-cleaning-procedures\">proper restroom cleaning instructions guide<\/a> to prep the restroom. Place your <a href=\"\/products\/rubbermaid-4-language-closed-floor-sign\" title=\"\/products\/rubbermaid-4-language-closed-floor-sign\">restroom closed sign<\/a>, or a <a href=\"\/products\/hanging-closed-for-cleaning-safety-sign\" title=\"\/products\/hanging-closed-for-cleaning-safety-sign\">hanging closed for cleaning sign<\/a> in the entranceway or block it with your janitorial cart. Prop the door open, so any potential user can see that the restroom is currently being cleaned. Put on a pair of protective gloves and safety glasses. Remove any objects that may be stored around the toilet.<\/p>",
+            "img_placement": "right",
+            "product": "hanging-closed-for-cleaning-safety-sign"
           }
         },
         "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
@@ -119,7 +120,8 @@
             "stepnumber": "2",
             "stepheading": "Cleaning the Toilet -",
             "steptext": "<p>With the toilet seat down (if there is one), flush the toilet. Use a pail filled with water and dump the water into the toilet. This will cause the toilet to flush and will not refill to the normal water level. With the water level lowered, take your bowl cleaner and squirt under the lip of the rim of the toilet. Our Green bathroom & bowl cleaner\/descaler is a great \"green\" option for cleaning toilets and urinals in any LEED certified building. Let the bowl cleaner sit on the bowl while you clean the exterior of the toilet. Use a disinfectant cleaner to wipe down the exterior of the toilet. Sponges are not recommended due to the potential of spreading bacteria to other areas. Disinfecting wipes, disposable rags or paper towels are best for wiping down the toilet. Start at the top and work your way down towards the floor, including thoroughly cleaning\/disinfecting the toilet seat. Use your bowl brush to thoroughly scrub the interior of the toilet, including under the flushing rim and the disposal chute. Flush toilet.<\/p>",
-            "product": ""
+            "img_placement": "right",
+            "product": "bathroom-bowl-cleaner-descaler"
           }
         },
         "afa2d538-a70c-4791-99de-1cb3a45a9c95": {
@@ -128,6 +130,7 @@
             "stepnumber": "3",
             "stepheading": "Cleaning the Urinal -",
             "steptext": "<p>Flush urinal to rinse down interior surfaces. Remove any urinal screens or blocks, and other foreign materials. Use the same bowl cleaner and squirt a solid stream along the top of the inside flushing edge of the urinal. Allow the solution to run down the inside surface of the urinal as you wipe down the exterior surfaces with a disinfecting wipe or a disinfectant cleaner and disposable rag or paper towel. Make sure to wipe down pipes and flushing handle as well. Scrub the interior surface of the urinal with your bowl brush, taking care to thoroughly scrub all surfaces. Flush urinal. Place new urinal screen or block into the bottom of the urinal. An even better solution is to place a PeePod urinal cleaning block into the flushing rim, which will automatically clean the urinal walls, exit piping, and deodorize the bathroom for an entire month. These PeePods extend cleaning times, and need to be replaced monthly.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -137,6 +140,7 @@
             "stepnumber": "4",
             "stepheading": "Clean Up -",
             "steptext": "<p>Make sure to clean up and wipe clean all external surfaces, including walls and baseboards, that may have caught any overspray. Properly dispose of all disinfecting wipes, rags or paper towels. Rinse out bowl brush and pail. Take off your protective gloves and dispose of them. If they are not a disposable pair, make sure they are properly labeled for restroom use only to avoid cross-contamination. Remove safety glasses and clean. Wash hands thoroughly and then sanitize.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         }
