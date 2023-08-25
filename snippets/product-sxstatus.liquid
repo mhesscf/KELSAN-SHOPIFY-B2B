@@ -1,8 +1,8 @@
-{%- assign current_variant_id = product.selected_or_first_available_variant.id -%}
-
+{%- assign thisproduct = product -%}
+{%- assign current_variant_id = thisproduct.selected_or_first_available_variant.id -%}
 {%- assign pclearance = false -%}
 {%- assign pdiscontinued = false -%}
-{%- for c in product.collections -%}
+{%- for c in thisproduct.collections -%}
   {%- if c.handle == "clearance" -%}
     {%- assign pclearance = true -%}
   {%- elsif c.handle == "discontinued" -%}
@@ -10,7 +10,7 @@
   {%- endif -%}
 {%- endfor -%}
 {%- if pdiscontinued == false -%}
-  {%- for variant in product.variants -%}
+  {%- for variant in thisproduct.variants -%}
     <div class="var-specs var{{ variant.id }} status-area" {%- if current_variant_id != variant.id -%}style="display:none;"{%- endif -%}>
     {%- assign fservice = variant.fulfillment_service -%}
     {%- assign leadTime = variant.metafields.plytix.sxerp_lead_time -%}
@@ -108,7 +108,7 @@
 
       <div class="product-detail-stock-and-shipping">
         <i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock
-          {% if product.metafields.plytix.clearance_overstock == 'true' %}
+          {% if thisproduct.metafields.plytix.clearance_overstock == 'true' %}
             ({{ variant.inventory_quantity }} Available)
           {% elsif pclearance == true or pdemoitem == true %}
             ({{ variant.inventory_quantity }} Available)
