@@ -153,7 +153,8 @@
       ],
       "settings": {
         "chsectionheading": "",
-        "chsectiontext": ""
+        "chsectiontext": "",
+        "image": "shopify:\/\/shop_images\/how-to-lobby-cleaning.jpg"
       }
     },
     "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
@@ -165,6 +166,7 @@
             "stepnumber": "1",
             "stepheading": "Prepping the Lobby -",
             "steptext": "<p>Gather all your necessary cleaning materials and load them onto your janitorial cart. Place any caution or wet floor signs that are necessary if you're going to be mopping, or doing any other kind of extensive cleaning. The following steps are based on the assumption that someone will be able to give your lobby, or entranceway, daily attention. If these are overkill for your particular business, you can adjust the following schedule to fit your needs accordingly.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -173,7 +175,8 @@
           "settings": {
             "stepnumber": "2",
             "stepheading": "Daily Cleaning Procedures -",
-            "steptext": "<p>A. Remove all trash\/debris, while cordoning off any areas that may need any extensive attention.<\/p><p>B. Dust mop tiled areas using a treated or microfiber dust mop.<\/p><p>C. Spot clean walls, doors, and frames using a degreaser for heavily soiled areas, and an all-purpose cleaner for the every-day cleaning.<\/p><p>D. Immediately use a spot remover and a portable spotter to spot clean any carpeted areas to remove stains and spillage that may occur. We offer a carpet spotting package that comes with many popular stain removers to remove a wide variety of stains.<\/p>",
+            "steptext": "<p>A. Remove all trash\/debris, while cordoning off any areas that may need any extensive attention.<\/p><p>B. <a href=\"\/pages\/dust-mopping\" title=\"\/pages\/dust-mopping\">Dust mop<\/a> tiled areas using a treated or microfiber dust mop.<\/p><p>C. Spot clean walls, doors, and frames using a degreaser for heavily soiled areas, and an all-purpose cleaner for the every-day cleaning.<\/p><p>D. Immediately use a spot remover and a portable spotter to spot clean any carpeted areas to remove stains and spillage that may occur. We offer a <a href=\"\/products\/pet-accident-carpet-spotting-package\" title=\"\/products\/pet-accident-carpet-spotting-package\">carpet spotting package<\/a> that comes with many popular stain removers to remove a wide variety of stains.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -182,8 +185,9 @@
           "settings": {
             "stepnumber": "3",
             "stepheading": "Weekly Cleaning Procedures -",
-            "steptext": "<p>A. Dust mop, sweep, and then wet mop the vestibule, entrance and any other hard floored surface.<\/p><p>B. Spot clean glass windows with one of our glass cleaners, like our  Crystal Clean aerosol glass cleaner, to remove all fingerprints and smudges.<\/p><p>C. Vacuum or damp wipe furniture in lobby as required, using one of our furniture cleaners or an all-purpose cleaner.<\/p><p>D. Follow our carpet vacuuming procedures on all walk-off mats and traffic lanes with several passes, finishing up by vacuuming all other carpeted areas. <\/p><p>E. If there are any highly polished tiled areas, you'll want to buff or burnish these areas to maintain that high shine following our  burnishing a floor or  spray buffing a floor  procedures.<\/p>",
-            "product": ""
+            "steptext": "<p>A. Dust mop, sweep, and then <a href=\"\/pages\/wet-mopping\" title=\"\/pages\/wet-mopping\">wet mop<\/a> the vestibule, entrance and any other hard floored surface.<\/p><p>B. Spot clean glass windows with one of our glass cleaners, like our  <a href=\"\/products\/maxim-aerosol-glass-cleaner\" title=\"\/products\/maxim-aerosol-glass-cleaner\">Maxim Glass Cleaner<\/a>, to remove all fingerprints and smudges.<\/p><p>C. Vacuum or damp wipe furniture in lobby as required, using one of our furniture cleaners or an all-purpose cleaner.<\/p><p>D. Follow our <a href=\"\/pages\/vacuum-carpets\" title=\"\/pages\/vacuum-carpets\">carpet vacuuming procedures<\/a> on all walk-off mats and traffic lanes with several passes, finishing up by vacuuming all other carpeted areas. <\/p><p>E. If there are any highly polished tiled areas, you'll want to buff or burnish these areas to maintain that high shine following our  <a href=\"\/pages\/burnishing-a-floor\" title=\"\/pages\/burnishing-a-floor\">burnishing a floor<\/a><a href=\"\/pages\/spray-buffing-a-floor\" title=\"\/pages\/spray-buffing-a-floor\"> or spray buffing a floor procedures<\/a>.<\/p>",
+            "img_placement": "right",
+            "product": "commercial-carpet-spot-cleaning-machine"
           }
         },
         "26b3a58a-d992-45ba-b70b-5fb9e0e0a52a": {
@@ -192,6 +196,7 @@
             "stepnumber": "4",
             "stepheading": "Monthly Cleaning Procedures -",
             "steptext": "<p>A. Complete thorough cleaning of wiping down baseboards and walls to remove dust bunnies, cobwebs, or spills.<\/p><p>B. Vacuum and dust all heating vents\/ducts, tops of doorways and picture frames. Remove all walk off mats and thoroughly vacuum those, as well as around and underneath them.<\/p><p>C. Clean all windows with a glass cleaner and microfiber cloth to remove all marks and fingerprints.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -201,6 +206,7 @@
             "stepnumber": "5",
             "stepheading": "Semi-Annual Cleaning Procedures -",
             "steptext": "<p>A. Strip and recoat all resilient floors following our stripping a floor and  applying floor finish procedures.<\/p><p>B. Extract all carpeted areas, runners, and mats using a box style extractor similar to our Maximum Heated Carpet Extractor. You'll want to follow our carpet extraction procedures exactly in order to achieve the best results.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -210,6 +216,7 @@
             "stepnumber": "6",
             "stepheading": "Clean Up -",
             "steptext": "<p>Remove any and all trash by placing it in a garbage bag and properly disposing of the bag. If there are any air movers or caution\/wet floor signs left in place, make sure all areas are completely dry and safe before removing the signs. Rinse out or thoroughly clean out any mops, buckets and machinery that you may have used in these steps. Take your janitorial cart and cleaning supplies and return them to their proper storage areas.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         }
