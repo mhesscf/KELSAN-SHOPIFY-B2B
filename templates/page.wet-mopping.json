@@ -102,7 +102,8 @@
             "stepnumber": "1",
             "stepheading": "Prepping the Mopping Area -",
             "steptext": "<p>Set up the necessary wet floor\/caution signs to alert other individuals that the immediate area may be slippery, and they should avoid this region or proceed with caution. Move all obstacles including tables and furniture into a safe area where they will not get wet and can be moved easily back into place. Remove all sticky substances and larger debris from the surface to be mopped.<\/p>",
-            "product": ""
+            "img_placement": "right",
+            "product": "yellow-2-sided-wet-floor-sign"
           }
         },
         "a80401c3-b3dd-4e34-bfec-8a89c388f9fc": {
@@ -110,7 +111,8 @@
           "settings": {
             "stepnumber": "2",
             "stepheading": "Dust Mopping the Area -",
-            "steptext": "<p>Follow the <a href=\"\/pages\/dust-mopping\" title=\"Dust Mopping\">dust mopping<\/a> procedure to remove all debris, dirt, and large objects (i.e. pallet chips, dust bunnies, dropped food items, etc.), from the mopping area.<\/p>",
+            "steptext": "<p>Follow the <a href=\"\/pages\/dust-mopping\" title=\"\/pages\/dust-mopping\">dust mopping<\/a> procedure to remove all debris, dirt, and large objects (i.e. pallet chips, dust bunnies, dropped food items, etc.), from the mopping area.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -120,6 +122,7 @@
             "stepnumber": "3",
             "stepheading": "Wet Mopping the Area -",
             "steptext": "<p>Dunk your mop into the solution in the bucket, then wring the mop out until it is just damp. The #1 problem that occurs while mopping is over-wetting of a surface. Using a damp mop will allow the dirt to cling to the mop as you go instead of being spread around by the water on the floor. Start in the corner farthest away from the door. Mop in a figure 8 pattern to utilize your mop most effectively. As you mop, move towards the entrance of the room so you are always standing on a dry piece of floor. This will help to avoid streaking and tracking of your solution to other parts of the facility. Change the solution often to ensure the water you're using to clean is not overly saturated with dirt. Dirty solution will only move dirt from one area to another, it will not remove it from the floor. Always check your chemicals for proper dilution ratios. Running an air mover will speed up your dry time which is especially important in areas that are in use while you are cleaning.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -129,7 +132,8 @@
             "stepnumber": "4",
             "stepheading": "Clean Up -",
             "steptext": "<p>Dump mop bucket out and rinse repeatedly until mop bucket is completely clean. You do not want any solution or residue left over to contaminate your water the next time you use the bucket. Rinse out mops thoroughly and hang up to dry above a slop sink or floor drain. Remove all wet floor\/caution signs originally put in place. Return any moved objects to their original places.<\/p>",
-            "product": ""
+            "img_placement": "right",
+            "product": "lightweight-air-mover-fan-2800-cfm"
           }
         }
       },
