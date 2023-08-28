@@ -296,13 +296,6 @@
                                     </div>
                                 </div>
                             {% endunless %}
-                        {% when 'bundlegrid' %}
-                            {% if product.metafields.plytix.package_products != blank %}
-                                {%
-                                        render 'bundle-grid',
-                                        product: product
-                                %}
-                            {% endif %}
                         {% when 'price' %}
                             <div
                                     class="product-pricing"
@@ -420,15 +413,20 @@
                                         %}
                                     {% endunless %}
 
+                                    {% if product.metafields.plytix.package_products != blank %}
+                                        {%
+                                                render 'bundle-grid',
+                                                product: product
+                                        %}
+                                    {% endif %}
+
                                     {%
                                             render 'product-additional',
                                             product: product,
                                             class_root: 'product'
                                     %}
-
                                 </div>
                             </div>
-
                         {% when 'text' %}
                             <div class="product-text">
                                 {{ block.settings.text }}
