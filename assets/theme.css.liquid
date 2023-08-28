@@ -19361,9 +19361,6 @@ shopify-payment-terms {
 	}
 }
 @media screen and (max-width: 719px) {
-	.gallery-navigation--scroller .product-gallery--media-thumbnail:last-child {
-		margin-right: 10px;
-	}
 	.gallery-navigation--scroller::-webkit-scrollbar {
 		display: none;
 	}
@@ -19374,12 +19371,13 @@ shopify-payment-terms {
 	display: inline-block;
 	height: 4rem;
 	padding: 2px;
-	margin-right: 0.1875rem;
-	margin-left: 0.1875rem;
 	vertical-align: middle;
 	border-radius: 2px;
 	box-shadow: 0 0 2px transparent;
 	transition: box-shadow 100ms cubic-bezier(0.4, 0, 1, 1);
+}
+.product-gallery--media-thumbnail img{
+	padding:3px;
 }
 @media screen and (min-width: 720px) {
 	.product-gallery--media-thumbnail {
@@ -19601,9 +19599,6 @@ shopify-payment-terms {
 	position:relative;
 	max-width:470px;
 	margin:auto;
-}
-.slick-list{
-	margin-left:5px!important;
 }
 .product-gallery--navigation-slick .slide-arrow{
 	width: 41px;
