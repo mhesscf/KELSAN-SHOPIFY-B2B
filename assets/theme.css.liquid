@@ -6217,10 +6217,15 @@ nav.breadcrumb span.separator{
 	margin: 0 10px;
 	font-size: 25px;
 	position: relative;
-	line-height: 1;
+	line-height: 18px;
 	top: -1px;
 	font-weight: 300;
 	font-family: 'Roboto';
+}
+@media screen and (max-width: 859px) {
+	nav.breadcrumb span.separator{
+		margin: 0 5px;
+	}
 }
 
 
@@ -13313,6 +13318,13 @@ nav.breadcrumb span.separator{
 	display: inline-block;
 	vertical-align: middle;
 }
+@media screen and (max-width: 720px) {
+	.breadcrumbs-container a,
+	.breadcrumbs-container span {
+		display: inline;
+	}
+}
+
 .breadcrumbs-container span {
 	color: {{ settings.color_text_light }};
 }
@@ -19648,6 +19660,10 @@ shopify-payment-terms {
 		width: 30px;
 		height: 30px;
 		margin-top: 16px;
+		font-size:20px;
+		line-height:28px;
+		padding:0;
+		text-align:center;
 	}
 }
 
