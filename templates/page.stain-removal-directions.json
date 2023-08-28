@@ -102,7 +102,7 @@
           "settings": {
             "stepnumber": "1",
             "stepheading": "Immediate Action -",
-            "steptext": "<p>Immediate action is important! Whenever anything spills on carpet, upholstery, or clothing, lift off or blot up as much of the staining matter as you can right away. <strong>Do not rub in!<\/strong> Use the T-Bone 3-in-1 spotting spatula that comes with our Power System Spotting Kit, or something similar, to remove excess tar, gum, adhesive, thick or crusted material, food, feces, etc., then vacuum. Remove remaining spot material before proceeding to spot removal procedures.<\/p>",
+            "steptext": "<p>Immediate action is important! Whenever anything spills on carpet, upholstery, or clothing, lift off or blot up as much of the staining matter as you can right away. <strong>Do not rub in!<\/strong> Use the T-Bone 3-in-1 spotting spatula that comes with our <a href=\"\/products\/core-power-system-spotting-kit\" title=\"\/products\/core-power-system-spotting-kit\">Power System Spotting Kit<\/a>, or something similar, to remove excess tar, gum, adhesive, thick or crusted material, food, feces, etc., then vacuum. Remove remaining spot material before proceeding to spot removal procedures.<\/p>",
             "img_placement": "right",
             "product": ""
           }
@@ -172,7 +172,7 @@
           "settings": {
             "stepnumber": "8",
             "stepheading": "Extract -",
-            "steptext": "<p>Extract all residues, and rinse the carpeting with one of our <a href=\"\/collections\/portable-carpet-spotters\" title=\"Portable Carpet Spotters\">carpet cleaning spotters<\/a>, <a href=\"\/collections\/box-extractors\" title=\"Box Extractors\">extractors<\/a>, or <a href=\"\/collections\/detailing-extractors\" title=\"Detailing Extractors\">detailing extractors<\/a>.<\/p>",
+            "steptext": "<p>Extract all residues, and rinse the carpeting with one of our <a href=\"\/collections\/portable-carpet-spotters\" title=\"\/collections\/portable-carpet-spotters\">carpet cleaning spotters<\/a>, <a href=\"\/collections\/box-extractors\" title=\"\/collections\/box-extractors\">extractors<\/a>, or <a href=\"\/collections\/detailing-extractors\" title=\"\/collections\/detailing-extractors\">detailing extractors<\/a>.<\/p>",
             "img_placement": "right",
             "product": ""
           }
@@ -182,7 +182,7 @@
           "settings": {
             "stepnumber": "9",
             "stepheading": "Dry -",
-            "steptext": "<p>Use a <a href=\"\/collections\/axial-fans\" title=\"Axial Fans\">carpet blower<\/a>, an absorbent towel, a hair dryer, or open a window for air circulation to dry the stained area completely.<\/p>",
+            "steptext": "<p>Use a <a href=\"\/pages\/carpet-fans\" title=\"\/pages\/carpet-fans\">carpet blower<\/a>, an absorbent towel, a hair dryer, or open a window for air circulation to dry the stained area completely.<\/p>",
             "img_placement": "right",
             "product": ""
           }
