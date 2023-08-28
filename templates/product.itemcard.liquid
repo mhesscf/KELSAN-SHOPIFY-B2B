@@ -63,7 +63,7 @@
 
                 };
             });
-            if(missingOptions != 1 && $('.freq-price span').text() != "0.00") {
+            if(missingOptions != 1) {
                 form_datas.reverse();
                 for (const f of form_datas) {
                     await $.ajax({
@@ -86,4 +86,29 @@
             }
         })
     }
+
+    // Frequently Bought Together Variation Change
+    $('.freq-var-select').on('change', function() {
+        var thisProductId = $(this).attr('id').replace("freq-var-select-","");
+        var thisVariantId = this.value;
+        if(thisVariantId == ""){
+            $("#freq-product-"+thisProductId+" .freq-check").prop('checked', false);
+
+        }else{
+            $("#freq-product-"+thisProductId+" .freq-check").prop('checked', true);
+            $("#freq-product-"+thisProductId+" .freq-var-variables").removeClass("current-freq-var");
+            $("#freq-product-"+thisProductId+" .freq-var"+thisVariantId).addClass("current-freq-var");
+
+
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-id', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_id'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-vissku', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_vissku'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-status', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_status'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-erpsku', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_erpsku'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-tieredpricing', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_tieredpricing'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-price', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_price'));
+        }
+        //recalc price
+        freqPriceCalc();
+    });
+
 </script>
