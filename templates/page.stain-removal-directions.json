@@ -1,5 +1,16 @@
 {
   "sections": {
+    "edccc0f2-98b9-4694-9fe4-59f4a68ceb75": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "4066156f-0209-43bd-8e13-3ede1264f71e": {
       "type": "howto-header",
       "settings": {
@@ -17,7 +28,6 @@
     },
     "077235cb-6ded-4e06-80df-6ad080419fe3": {
       "type": "howto-supplies",
-      "disabled": true,
       "blocks": {
         "80f22718-bd27-4b6a-a37a-d243e47129f4": {
           "type": "link",
@@ -78,6 +88,7 @@
         "928ecefc-7cb8-4a4f-bb19-3ba177192af1",
         "9649e2b9-0739-4554-9b53-d58391b329cb"
       ],
+      "disabled": true,
       "settings": {
         "chsectionheading": "",
         "chsectiontext": ""
@@ -92,6 +103,7 @@
             "stepnumber": "1",
             "stepheading": "Immediate Action -",
             "steptext": "<p>Immediate action is important! Whenever anything spills on carpet, upholstery, or clothing, lift off or blot up as much of the staining matter as you can right away. <strong>Do not rub in!<\/strong> Use the T-Bone 3-in-1 spotting spatula that comes with our Power System Spotting Kit, or something similar, to remove excess tar, gum, adhesive, thick or crusted material, food, feces, etc., then vacuum. Remove remaining spot material before proceeding to spot removal procedures.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -101,6 +113,7 @@
             "stepnumber": "2",
             "stepheading": "Identification of the Spot (if Immediate Action is not possible) -",
             "steptext": "<p>There are several ways that can help to determine what the stain is, including; owner's explanation, general appearance of spot, location, touch or feel (stick, oily, stiff, etc.), and by odor.<\/p><p>Once identified, know the spot composition. <strong>Be patient!<\/strong> Read all product labels thoroughly, and ask detailed questions in order to correctly identify what procedure to follow.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -110,6 +123,7 @@
             "stepnumber": "3",
             "stepheading": "Vacuum -",
             "steptext": "<p>Always vacuum thoroughly to remove all powders before beginning spotting procedures. <strong>Keep it Simple! <\/strong>Powdered copier toner for example should be vacuumed thoroughly before applying a liquid spotter.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -119,6 +133,7 @@
             "stepnumber": "4",
             "stepheading": "Removal -",
             "steptext": "<p>Quickly remove as much of the excess solids and liquids as you can, using the T-Bone spotting spatula, or something similar.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -128,6 +143,7 @@
             "stepnumber": "5",
             "stepheading": "Test -",
             "steptext": "<p>Test a small, hidden portion of the fiber to determine effect on dyes and fiber. Drip apply your spotting product sparingly. Use product in the order indicated until spot is removed. <strong>Follow all product directions, cautions, and warnings carefully!<\/strong><\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -137,6 +153,7 @@
             "stepnumber": "6",
             "stepheading": "Break Stain Down -",
             "steptext": "<p>Use a carpet spotting brush by firmly tapping the stained area repeatedly to break the stain down, and to work in your stain removing chemical. Avoid overly aggressive tapping or brushing!<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -146,6 +163,7 @@
             "stepnumber": "7",
             "stepheading": "Blot -",
             "steptext": "<p>Thoroughly blot the area using a clean, white terry cloth towel, or equal absorbent blotting material. Continue shifting the towel to clean with dry areas, while applying downward pressure.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -155,6 +173,7 @@
             "stepnumber": "8",
             "stepheading": "Extract -",
             "steptext": "<p>Extract all residues, and rinse the carpeting with one of our <a href=\"\/collections\/portable-carpet-spotters\" title=\"Portable Carpet Spotters\">carpet cleaning spotters<\/a>, <a href=\"\/collections\/box-extractors\" title=\"Box Extractors\">extractors<\/a>, or <a href=\"\/collections\/detailing-extractors\" title=\"Detailing Extractors\">detailing extractors<\/a>.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -164,6 +183,7 @@
             "stepnumber": "9",
             "stepheading": "Dry -",
             "steptext": "<p>Use a <a href=\"\/collections\/axial-fans\" title=\"Axial Fans\">carpet blower<\/a>, an absorbent towel, a hair dryer, or open a window for air circulation to dry the stained area completely.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         },
@@ -173,6 +193,7 @@
             "stepnumber": "10",
             "stepheading": "**Note: Mysterious Spot Reappearance -",
             "steptext": "<p>Wicking of a stain is one of the most common problems when a stain reappears after cleaning has removed it. Wicking is the upward movement of water, or solution during drying from the base of the carpet. To reduce wicking, thoroughly vacuum before spotting, make extra pick-up and removal strokes with your extractor wand, and use carpet blowers.<\/p>",
+            "img_placement": "right",
             "product": ""
           }
         }
@@ -200,6 +221,7 @@
     }
   },
   "order": [
+    "edccc0f2-98b9-4694-9fe4-59f4a68ceb75",
     "4066156f-0209-43bd-8e13-3ede1264f71e",
     "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
     "077235cb-6ded-4e06-80df-6ad080419fe3",
