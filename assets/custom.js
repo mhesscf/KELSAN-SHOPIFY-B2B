@@ -1053,23 +1053,7 @@ jQuery(document).ready(function($){
         }, 500);
     }
 
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var productHandle = "your-product-handle"; // Replace with the actual product handle
-
-        // Construct the GraphQL query to fetch product data
-        var query = `
-    {
-      productByHandle(handle: "${productHandle}") {
-        id
-        title
-        description
-        // Add more fields as needed
-      }
-    }
-  `;
-    });
+    
     // Cart upsell popup
     $('.cart-upsell-btn').on('click', function(e){
         const handle = $(this).data('handle');
