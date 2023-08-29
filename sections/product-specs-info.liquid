@@ -78,6 +78,26 @@
                                         {% comment %}<a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
                                 </div>
                             {%- endfor -%}
+                            {%- assign manualexternal = product.metafields.plytix.manual_plytix | split:"," -%}
+                            {%- for manual in manualexternal -%}
+                                {%- assign basefilename = manual | split: '/' | last -%}
+                                {%- assign filetitle = basefilename -%}
+                                {%- assign indexofname = 0 -%}
+                                {%- assign pdftitlecheck = 0 -%}
+                                {%- for file_name in pdf_names -%}
+                                    {% if basefilename == file_name  %}
+                                        {% if pdf_titles[indexofname]  %}
+                                            {%- assign filetitle = pdf_titles[indexofname] -%}
+                                        {%- endif -%}
+                                    {%- endif -%}
+                                    {%- assign indexofname = indexofname | plus: 1 -%}
+                                {%- endfor -%}
+
+                                <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                                    <a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                </div>
+                            {%- endfor -%}
+
                         {%- endif -%}
                         {% if product.metafields.plytix.literature != blank  %}
                             <div class="sheet-row">
