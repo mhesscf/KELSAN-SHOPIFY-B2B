@@ -2,6 +2,7 @@
   "sections": {
     "a475181a-3079-4a36-9edf-37785d0fdb22": {
       "type": "left-nav-on-pages",
+      "disabled": true,
       "settings": {
         "show_section": true,
         "navigation": "education",
@@ -13,7 +14,6 @@
     },
     "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
       "type": "gradient-text-header",
-      "disabled": true,
       "settings": {
         "chsectionheading": "",
         "chsectiontext": ""
@@ -28,7 +28,7 @@
     "b75c15c7-77d5-4f80-a007-8d06ec2d1abc": {
       "type": "dynamic-custom-liquid",
       "settings": {
-        "custom_liquid": "{%- assign chartproducts = \"17-inch-electric-auto-scrubber,222222,333333,44444\" -%}\n{%-\n\trender 'fs-compare-chart-logic',\n\tproduct: chartproducts\n-%}"
+        "custom_liquid": "{%- assign chartproducts = \"17-inch-electric-auto-scrubber,dura-18-cord-electric-automatic-floor-scrubber,trusted-clean-dura-20-inch-automatic-floor-scrubber,20-inch-hard-floor-scrubbing-machine,the-advantage-20-red-automatic-floor-scrubber-battery-powered,viper-as430c-17-inch-electric-auto-scrubber,viper-as510b-20-inch-battery-powered-auto-scrubber,viper-as5160-walk-behind-20-auto-scrubber\" -%}\n{%-\n\trender 'fs-compare-chart-logic',\n\tproduct: chartproducts\n-%}"
       }
     }
   },
