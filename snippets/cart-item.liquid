@@ -169,7 +169,9 @@
             {% endif %}
           {% endfor %}
           {% if hasitems == true %}
-            <div data-prod="{{ item.product.id }}" data-handle="{{ item.product.handle }}" class="cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0" ><span>+</span> Accessories</div>
+            {% if item.product.metafields.plytix.general_product_type == "Machine" %}
+              <div data-prod="{{ item.product.id }}" data-handle="{{ item.product.handle }}" class="cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0" ><span>+</span> Accessories</div>
+            {% endif %}
           {% endif %}
        {% endif %}
 
