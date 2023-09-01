@@ -147,7 +147,7 @@
 
     // default products
     function runwhatisthere(){
-        $('.comparetable .item-row').each(function () {
+        $($('.comparetable .item-row').get().reverse()).each(function () {
             // If this box is higher than the cached highest then store it
             var thissku =  $(this).data('sku');
             addSku(thissku,0);
