@@ -143,7 +143,7 @@
         <td class="item-price" subdata="{{ thisprice }}">
             {{ thisprice | money}}
         </td>
-        <td class="remove"><button class="button orange button-secondary" onclick="removeSku('{{ product.handle }}');"><span><span>Remove</span></span></button>
+        <td class="remove"><button class="button orange button-secondary" onclick="removeSku('{{ variant.sku }}');"><span><span>Remove</span></span></button>
         </td>
 {% else %}
     {%- assign variant = product.selected_or_first_available_variant -%}
