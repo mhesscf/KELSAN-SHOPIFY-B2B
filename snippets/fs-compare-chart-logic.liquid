@@ -2,12 +2,14 @@
 
 {%- assign allhandles = "" -%}
 {%- assign allskus = "" -%}
+{%- assign allskusids = "" -%}
 
 {% paginate collections['walk-behind-auto-scrubbers'].products by 500 %}
     {% for product in collections['walk-behind-auto-scrubbers'].products %}
         {% for variant in product.variants %}
             {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
             {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
+            {%- assign allskusids = allskusids | append:'"' | append: variant.id | append:'",' -%}
         {% endfor %}
     {% endfor %}
 {% endpaginate %}
@@ -17,6 +19,7 @@
         {% for variant in product.variants %}
             {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
             {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
+            {%- assign allskusids = allskusids | append:'"' | append: variant.id | append:'",' -%}
         {% endfor %}
     {% endfor %}
 {% endpaginate %}
@@ -25,7 +28,7 @@
     .pcc-table{border-collapse:collapse; border-radius:10px 10px 0 0; width:100%; overflow:hidden;}
     .pcc-table.table-striped th{background-color:#298EC6 !important; color:#fff; font-size:14px; font-weight:bold; vertical-align:bottom; text-align:center; padding:6px 3px}
     .pcc-table .sortheading{cursor: pointer;}
-    .pcc-table td{text-align:center; vertical-align:middle; padding:2px 5px; font-size:12px; border-right:2px solid white;}
+    .pcc-table td{text-align:center; vertical-align:middle; padding:2px 4px; font-size:12px; border-right:2px solid white;}
     .pcc-table td .item-name{font-weight:bold;}
     .pcc-table td img{width:65px; padding:3px;}
     .pcc-table td .item-sku{padding-top:3px;}
@@ -36,6 +39,11 @@
     .pcc-table td.item-price{font-size:16px; font-weight:bold;}
     .pcc-table tr.addedsku td{background-color:#fff1cc !important;}
     .pcc-table tr:last-child{border-bottom:1px solid #f9f9f9}
+    .pcc-table .subselect.body,
+    .pcc-table .subselect.parts,
+    .pcc-table .subselect.vacmotor{display:inline-block; width:58px; margin-left:-3px;}
+    .pcc-table .subselect.body,
+    .pcc-table .subselect.parts{border-right:1px solid #ccc;}
     .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{background-color:#f9f9f9;}
     .input-area .input-title{font-weight:bold; margin:8px 0 -8px 0;}
     .input-area input{margin-right:10px; height:40px;}
@@ -43,13 +51,12 @@
         padding-right: 20px;
         padding-left: 20px;
         text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
         border-radius: 13px;
         letter-spacing: 1px;
         text-transform: uppercase;
         font-weight: 500;
         height:40px;
+        lineheight:20px;
     }
     .remove button.button{margin:10px;
         padding: 7px 15px;
@@ -100,8 +107,8 @@
             <th id="remove"></th>
         </tr>
 
-        {%- for producthandle in chartProductsArray -%}
-            <tr class="item-row" data-handle="{{ producthandle }}" >
+        {%- for productsku in chartProductsArray -%}
+            <tr class="item-row" data-sku="{{ productsku }}" >
                 <td scope="row"></td>
                 <td class="item-model"></td>
                 <td class="item-power_source"></td>
@@ -130,11 +137,11 @@
         const additional = urlParams.get('addproduct')
 
         runwhatisthere();
-
         if (additional){
-            addhandle(additional);
+            setTimeout(() => {
+                addSku(additional,1);
+            }, "2000");
         }
-
 
     });
 
@@ -142,60 +149,58 @@
     function runwhatisthere(){
         $('.comparetable .item-row').each(function () {
             // If this box is higher than the cached highest then store it
-            var thishandle =  $(this).data('handle');
-            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${thishandle}?view=fs-compare-row`;
-            $.get(fetchUrl).then(response => {
-                if (response) {
-                    $(this).html(response);
-                }else{
-                    console.log('product not returned');
-                }
-            });
+            var thissku =  $(this).data('sku');
+            addSku(thissku,0);
         });
     }
 
-    function addSku(){
+    function addSku(sku,useradded){
         // Use skuArr and handleArr to crossrefference sku with handle to add
         const handleArr = [{{ allhandles }}];
         const skuArr = [{{ allskus }}];
+        const idArr = [{{ allskusids }}];
 
-        var thissku = jQuery("#sku-additions").val().trim();
+        if(sku){
+            var thissku = sku;
+        }else{
+            var thissku = jQuery("#sku-additions").val().trim();
+            useradded = 1;
+        }
+
         let skuindex = skuArr.indexOf(thissku);
+
         if(skuindex >= 0){
-            addhandle(handleArr[skuindex]);
+            addhandle(handleArr[skuindex],idArr[skuindex],thissku,useradded);
         }else{
             alert('Sku not found in our Floor Scrubber categories, please try a different one.');
         }
     }
 
     // remove product
-    function removeSku(handle){
-        $('.item-row[data-handle="'+handle+'"]').remove();
+    function removeSku(sku){
+        $('.item-row[data-sku="'+sku+'"]').remove();
     }
 
-
     // Add Sku to row
-    function addhandle(handle){
-        var thishandle = "";
-        if(handle){
-            var thishandle = handle;
-        }else{
-            var thishandle = jQuery("#sku-additions").val()
-        }
-        removeSku(thishandle);
+    function addhandle(thishandle,variantid,thissku,useradded){
+        removeSku(thissku);
         if(thishandle !=""){
             jQuery(".loading").show();
-            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${thishandle}?view=fs-compare-row`;
+            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${thishandle}?variant=${variantid}&view=fs-compare-row`;
             $.get(fetchUrl).then(response => {
                 if(response.includes("not an auto scrubber")){
                     alert(response.trim());
                 }else if(response != "not a scrubber" && response) {
-                    $('<tr class="item-row addedsku" data-handle="'+thishandle+'">'+response+'</tr>').insertAfter('tr.filter');
+                    if(useradded == 1){
+                        $('<tr class="item-row addedsku" data-sku="'+thissku+'">'+response+'</tr>').insertAfter('tr.filter');
+                    }else{
+                        $('<tr class="item-row" data-sku="'+thissku+'">'+response+'</tr>').insertAfter('tr.filter');
+                    }
                 }else{
                     console.log('error 32425t');
                 }
             }).fail(function(){
-                alert('No Item found under this handle, please try a different one.');
+                alert('No Item found under this sku, please try a different one.');
             });
             jQuery(".loading").hide();
         }
@@ -206,8 +211,8 @@
         const defaultproducts = "{{ chartproducts }}";
         $('.item-row').remove();
         const defaultprodarray = defaultproducts.split(",");
-        defaultprodarray.reverse().forEach((handle) => {
-            $('<tr class="item-row" data-handle="'+handle+'"></tr>').insertAfter('tr.filter');
+        defaultprodarray.reverse().forEach((sku) => {
+            $('<tr class="item-row" data-sku="'+sku+'"></tr>').insertAfter('tr.filter');
         });
         runwhatisthere();
     }
