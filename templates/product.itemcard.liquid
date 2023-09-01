@@ -2,8 +2,9 @@
 {%- assign freqarray =  product.metafields.plytix.freq_bought | split: ", " -%}
 <div class="cart-item--upsell freq-bought-items">
     <div class="upsell-header"><span>Accessories</span><br/>for {{ product.title }}</div>
+    {%- assign counter = 1 -%}
     {%- for freq in freqarray -%}
-        {%- if freq != "" and freq !="undefined" -%}
+        {%- if freq != "" and freq !="undefined" and counter < 4 -%}
             <div class="upsell--item" data-freqbundle-subproducts >
                 {%- assign  thisprod = all_products[freq] -%}
                 {%-
@@ -11,6 +12,7 @@
                         product: thisprod
                 -%}
             </div>
+            {%- assign counter = counter | plus: 1 -%}
         {% endif %}
     {% endfor %}
     <div class="upsell-atc-container">
