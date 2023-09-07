@@ -92,12 +92,12 @@
                                     {%- assign bottlesSaved = bottlesSaved | floor -%}
                                     <div style="display:flex">
                                         <div>
-                                            <a href="/docs/charts/savings-calculator.html"><img style="float:left; padding-right:15px; padding-top:3px; width:75px;" src="{{ 'recycle-bottles.jpg' | file_img_url }}" alt="Bottles Saved"/></a>
+                                            <a href="/pages/environmental-savings-calculator"><img style="float:left; padding-right:15px; padding-top:3px; width:75px;" src="{{ 'recycle-bottles.jpg' | file_img_url }}" alt="Bottles Saved"/></a>
                                         </div>
                                         <div>
                                             <div style="font-weight:bold; font-size:12px;">Bottles Saved Estimate</div>
                                             <div style="font-size:12px; line-height:26px; padding:3px 2px 0px 0" datacase="{{ case_qty }}" datasaved="{{ sizeValueArray[1] }}" ><span style="color:#2a96d0; font-weight:bold; font-size:26px;"> {{ bottlesSaved }} Bottles</span> per Case</div>
-                                            <div style="font-size:12px;">Calculate how many bottles you save when using this pad with our handy <a href="/pages/savings-calculator">savings calculator</a>.</div>
+                                            <div style="font-size:12px;">Calculate how many bottles you save when using this pad with our handy <a href="/pages/environmental-savings-calculator">savings calculator</a>.</div>
                                         </div>
                                     </div>
                                      {%- assign found = true -%}
@@ -108,11 +108,11 @@
                             {% if found == false %}
                                 <div style="display:flex">
                                     <div>
-                                        <a href="/docs/charts/savings-calculator.html"><img style="float:left; padding-right:15px; padding-top:3px; width:75px;" src="{{ 'recycle-bottles.jpg' | file_img_url }}" alt="Bottles Saved"/></a>
+                                        <a href="/pages/environmental-savings-calculator"><img style="float:left; padding-right:15px; padding-top:3px; width:75px;" src="{{ 'recycle-bottles.jpg' | file_img_url }}" alt="Bottles Saved"/></a>
                                     </div>
                                     <div>
-                                        <div style="font-size:26px; font-weight:bold; color:#2a96d0;"><a style="font-size:12px; color:{{ settings.color_text }}; text-decoration:none;" href="/pages/savings-calculator">Environmental Savings Calculator</a></div>
-                                        <div style="font-size:12px;">Calculate how many bottles you save when using this pad with our handy <a href="/pages/savings-calculator">savings calculator</a>.</div>
+                                        <div style="font-size:26px; font-weight:bold; color:#2a96d0;"><a style="font-size:12px; color:{{ settings.color_text }}; text-decoration:none;" href="/pages/environmental-savings-calculator">Environmental Savings Calculator</a></div>
+                                        <div style="font-size:12px;">Calculate how many bottles you save when using this pad with our handy <a href="/pages/environmental-savings-calculator">savings calculator</a>.</div>
                                     </div>
                                 </div>
                             {% endif %}
