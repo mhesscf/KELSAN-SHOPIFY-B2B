@@ -422,7 +422,7 @@
         });
 
         {%- if soldoutitems == true -%}
-        $('.product-form--regular').html('<div style="background-color:#fff4c7; padding:10px; border:1px solid #ccc; border-radius: 10px;"><div><strong>Sold Out</strong></div><div class="soldoutbundle-dir">Please contact support at <strong>{{ shop.phone }}</strong> to order the bundle with an available replacement item.</div></div>');
+        $('.product-form--regular .product-form--atc').css("font-size","17px").html('<div style="background-color:#fff4c7; padding:10px; border:1px solid #ccc; border-radius: 10px;"><div><strong>Sold Out</strong></div><div class="soldoutbundle-dir">Please contact support at <strong>{{ shop.phone }}</strong> to order the bundle with an available replacement item.</div></div>');
         {%- endif -%}
     });
 
