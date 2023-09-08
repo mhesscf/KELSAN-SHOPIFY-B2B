@@ -19,179 +19,6 @@
 		line-height: 32px;
 		margin-bottom: 15px;
 	}
-
-	.f-cat-slider__content .category-link{
-		color: #5B6770;
-		font-family: Roboto;
-		font-size: 18px;
-		font-weight: 500;
-		letter-spacing: 0;
-		line-height: 25px;
-		text-decoration: none;
-		padding-left: 30px;
-	}
-
-	.f-cat-slider__content .category-link svg{
-		width: 22px;
-	}
-
-	.category-featured-slider .product-slide{
-		border-radius: 29px;
-		background-color: #FFFFFF;
-		box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14);
-		padding: 20px;
-		margin-right: 20px;
-		width: 531px;
-		height: inherit !important;
-		position: relative;
-		overflow: hidden;
-	}
-	.category-featured-slider .slick-track{
-		display: flex !important;
-	}
-	.category-featured-slider .product-slide a{
-		text-decoration: none;
-	}
-	.category-featured-slider .product-slide .inner{
-		display: flex;
-		flex-flow: row;
-		justify-content: space-between;
-		height: 100%;
-	}
-	.category-featured-slider .product-slide .inner .col{
-		display: flex;
-		flex-flow: column;
-	}
-	.category-featured-slider .product-slide .inner .col.img-col{
-		width: 43%;
-    }
-	.category-featured-slider .product-slide .inner .col.txt-col{
-		width: 53%;
-		display: flex;
-		height: inherit;
-		z-index: 2;
-	}
-	.category-featured-slider .product-slide .inner .col.txt-col .content-wrap{
-		height: 100%;
-		padding-bottom: 50px;
-		position: relative;
-	}
-	.category-featured-slider .product-slide .inner .col.txt-col .content-wrap .jdgm-prev-badge__text{
-		color: {{ settings.color_text }};
-	}
-	.category-featured-slider .product-slide .inner::after{
-		position: absolute;
-		content: "";
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: 0;
-		z-index: 1;
-	}
-	.category-featured-slider .product-slide .inner .col.txt-col .content-wrap button{
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 3;
-	}
-
-	.category-featured-slider .product-slide img{
-		margin: auto;
-        width: 100%;
-        max-width: 100%;
-	}
-	.category-featured-slider .product-slide .product-title{
-		color: {{ settings.color_headings }};
-		font-family: Roboto;
-		font-size: 20px;
-		font-weight: 500;
-		letter-spacing: 0;
-		line-height: 22px;
-        margin-top: 0;
-		text-decoration: none;
-	}
-	.category-featured-slider .product-slide .ship-made p{
-		color: {{ settings.color_text }};
-		margin: 8px 0 0 0;
-	}
-
-	.category-featured-slider .product-slide a{
-		text-decoration: unset;
-	}
-	.category-featured-slider .product-slide .product-note{
-		color: #5B6770;
-		font-family: Roboto;
-		font-size: 15px;
-		letter-spacing: 0;
-		line-height: 22px;
-		margin: 10px 0;
-	}
-	.category-featured-slider .product-slide .product__price sup{
-		color: {{ settings.color_headings }};
-		font-family: Roboto;
-		font-size: 16px;
-		font-weight: 500;
-		letter-spacing: 0;
-		line-height: 22px;
-	}
-	.category-featured-slider .product-slide .product__price div{
-        font-weight: 800;
-    }
-	.category-featured-slider .product-slide .product__price{
-		color: #303E48;
-		font-family: Roboto;
-		font-size: 26px;
-		font-weight: 300;
-		letter-spacing: 0;
-		line-height: 28px;
-		display: flex;
-		justify-content: flex-start;
-		margin-bottom: 8px;
-	}
-	.category-featured-slider .product-slide .price-compare-at{
-		color: #303E48;
-		font-family: Roboto;
-		font-size: 15px;
-		font-weight: 300;
-		letter-spacing: 0;
-		line-height: 22px;
-		text-decoration: line-through;
-        margin-left: 10px;
-        position: relative;
-        top: 8px;
-	}
-
-	.category-featured-slider .product-slide .price-was{
-		font-size: 13px;
-		position: relative;
-		margin-bottom: 8px;
-		color: {{ settings.color_button_secondary_background }};
-	}
-
-	.category-featured-slider .product-slide .add-to-cart-btn{
-		font-size: 15px;
-		letter-spacing: 3px;
-		display: block;
-		color: #fff;
-		text-align: center;
-		padding: 11px 0;
-		border-radius: 13px;
-		text-decoration: none;
-		width: 100%;
-		margin: 10px 0 0 0;
-		font-family: "Roboto", Roboto;
-		background-color: {{ settings.color_button_secondary_background  }};
-		color: {{ settings.color_button_text }};
-		border: 0;
-		cursor: pointer;
-		transition: all 0.4s ease-in-out;
-		font-weight: 500;
-	}
-	.category-featured-slider .product-slide .add-to-cart-btn:hover{
-	background-color: {{ settings.color_button_hover }}
-	}
-
 	.f-cat-slider__content ul.slick-dots {
 		float: left;
 		padding-left: 0;
@@ -216,9 +43,67 @@
 	.f-cat-slider__content .slick-dots .slick-active {
 		background-color: #5B6770;
 	}
+
+	.f-cat-slider__content .rel-slider-item {
+	width: 250px;
+	min-width: 250px;
+	padding: 8px;
+	display: flex;
+	height: inherit;
+	}
+	.f-cat-slider__content .rel-slider-item .productitem {
+	border-radius:15px;
+	}
+	.f-cat-slider__content .rel-slider-item .productitem:hover {
+	box-shadow: none !important;
+	}
+	.f-cat-slider__content .rel-slider-item .productitem__container{
+	Justify-content:start;
+	padding-bottom:28px;
+	}
+	.f-cat-slider__content .rel-slider-item .productitem--title{
+	font-size:16px;
+	}
+	.f-cat-slider__content .rel-slider-item .productitem--title,
+	.f-cat-slider__content .rel-slider-item .product-detail-sku,
+	.f-cat-slider__content .rel-slider-item .productitem__price,
+	.f-cat-slider__content .rel-slider-item .var-specs,
+	.f-cat-slider__content .rel-slider-item .productitem--action{
+	margin-top:0px;
+	margin-bottom:4px;
+	}
+	.f-cat-slider__content .rel-slider-item .product-detail-sku{
+	color: {{ settings.color_text_medium }};
+	font-weight: 700;
+	display: block;
+	}
+	.f-cat-slider__content .rel-slider-item .product-detail-sku span{
+	color: {{ settings.color_text_medium }};
+	font-weight: 400;
+	display: inline-block;
+	margin-left: 5px;
+	}
+	.f-cat-slider__content .rel-slider-item .jdgm-widget.jdgm-widget{
+	margin-bottom:0px;
+	}
+	.f-cat-slider__content .rel-slider-item .price__compare-at-visible-2{
+	display:none;
+	}
+	.f-cat-slider__content .rel-slider-item .productitem--image{
+	max-height:120px;
+	}
+	.f-cat-slider__content .rel-slider-item .jdgm-prev-badge[data-number-of-reviews="0"]{
+		display:none !important;
+	}
+	.f-cat-slider__content .rel-slider-item .productitem--action-trigger{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	}
 	.f-cat-wrapper .category-featured-slider{
         width: 100%;
         max-width: 1400px;
+	margin:10px;
     }
 	.f-cat-wrapper .category-featured-slider .slick-list{
         overflow: visible;
@@ -248,29 +133,23 @@
         margin-right: 10px;
     }
 	@media (max-width: 640px){
-		.category-featured-slider .product-slide{
-            max-width: 250px;
-        }
-		.category-featured-slider .product-slide .inner{
-            display: block;
-        }
-		.category-featured-slider .product-slide .inner .col{
-            display: block;
-        }
-		.category-featured-slider .product-slide .inner .col.img-col{
-			width: 100%;
-		}
-		.category-featured-slider .product-slide .inner .col.txt-col{
-			width: 100%;
-			height: auto;
-		}
-		.category-featured-slider .product-slide h4{
-            font-size: 18px;
-            line-height: 22px;
-        }
+
 	}
 {% endstyle %}
-<section class="f-cat-wrapper">
+{%- capture section_type -%}
+	static-collection-slider
+{%- endcapture -%}
+
+
+<script
+		type="application/json"
+		data-section-type="{{ section_type | strip }}"
+		data-section-id="{{ section.id }}"
+		data-section-data
+>
+
+</script>
+<section class="f-cat-wrapper" data-section-id="{{ section.id }}">
     <div class="f-cat-slider__content">
         <h3 class="featured-slider-title">{{ section.settings.cfpssectionheading }}</h3>
         <div class="category-featured-slider">
@@ -290,268 +169,14 @@
 						{% endif %}
 						{% if crawlcheck == true %}
 							<div class="crawlcheck"><!-- check product that is supposed to be here for discontinued or broken handle --></div>
+						{% else %}
+							<div class="rel-slider-item">
+								{%-
+										render 'product-slider-item',
+										product: block.settings.product
+								-%}
+							</div>
 						{% endif %}
-
-                        <div class="product-slide">
-                            <a href="{{ block.settings.product.url }}" class="inner">
-                                <div class="col img-col">
-                                    <img src="{{ block.settings.product.featured_image | img_url: '300x300' }}" alt="{{ block.settings.product.featured_image.alt }}">
-                                </div>
-                                <div class="col txt-col">
-                                    <div class="content-wrap" >
-                                        <div class="product-title">{{ block.settings.product.title }}</div>
-										{% assign current_variant = block.settings.product.selected_or_first_available_variant %}
-										{% if current_variant.sku != blank %}
-											<div class="product-detail-sku">
-												SKU:<span>{{ current_variant.sku }}</span>
-											</div>
-										{% endif %}
-
-
-
-										{% comment %}Get stock status for logging in order at time of order --------------------------------------------------------------------{% endcomment %}
-
-										{% assign stockStatusMain = "" %}
-										{% assign stockStatusSub = "" %}
-										{% assign fservice = current_variant.fulfillment_service %}
-										{% assign leadTime = current_variant.metafields.plytix.sxerp_lead_time %}
-										{% assign inventoryQuantity = current_variant.inventory_quantity %}
-										{% assign inventoryQuantity = inventoryQuantity | plus: 0 %}
-										{% assign leadTime = leadTime | plus: 0 %}
-
-										{% if current_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
-											{% assign stockStatusMain = "Ships Direct from Manufacturer" %}
-											{% assign stockStatusSub = "May Have Extended Lead Times" %}
-										{% elsif current_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
-											{% assign stockStatusMain = "Temporarily On Backorder" %}
-											{% if leadTime < 22  %}
-												{% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
-											{% elsif leadTime < 29 %}
-												{% assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" %}
-											{% elsif leadTime < 36 %}
-												{% assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" %}
-											{% elsif leadTime < 43 %}
-												{% assign stockStatusSub = "Estimated Ship Date 4 –6 wks" %}
-											{% elsif leadTime < 50 %}
-												{% assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" %}
-											{% elsif leadTime < 57 %}
-												{% assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" %}
-											{% elsif leadTime < 64 %}
-												{% assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" %}
-											{% elsif leadTime < 71 %}
-												{% assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" %}
-											{% elsif leadTime < 78 %}
-												{% assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" %}
-											{% elsif leadTime < 85 %}
-												{% assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" %}
-											{% elsif leadTime < 121 %}
-												{% assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" %}
-											{% elsif leadTime < 151 %}
-												{% assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" %}
-											{% elsif leadTime < 181 %}
-												{% assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" %}
-											{% elsif leadTime < 211 %}
-												{% assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" %}
-											{% elsif leadTime < 1000 %}
-												{% assign stockStatusSub = "Estimated Ship Date over 7 mths" %}
-											{% endif %}
-										{% elsif current_variant.inventory_management == nil and leadTime %}
-											{% assign stockStatusMain = "Special Order Item" %}
-											{% if leadTime < 22  %}
-												{% assign stockStatusSub = "Expected to ship in 1 – 3 wks" %}
-											{% elsif leadTime < 29 %}
-												{% assign stockStatusSub = "Expected to ship in 2 – 4 wks" %}
-											{% elsif leadTime < 36 %}
-												{% assign stockStatusSub = "Expected to ship in 3 – 5 wks" %}
-											{% elsif leadTime < 43 %}
-												{% assign stockStatusSub = "Expected to ship in 4 – 6 wks" %}
-											{% elsif leadTime < 50 %}
-												{% assign stockStatusSub = "Expected to ship in 5 – 7 wks" %}
-											{% elsif leadTime < 57 %}
-												{% assign stockStatusSub = "Expected to ship in 6 – 8 wks" %}
-											{% elsif leadTime < 64 %}
-												{% assign stockStatusSub = "Expected to ship in 7 – 9 wks" %}
-											{% elsif leadTime < 71 %}
-												{% assign stockStatusSub = "Expected to ship in 8 – 10 wks" %}
-											{% elsif leadTime < 78 %}
-												{% assign stockStatusSub = "Expected to ship in 9 – 11 wks" %}
-											{% elsif leadTime < 85 %}
-												{% assign stockStatusSub = "Expected to ship in 10 – 12 wks" %}
-											{% elsif leadTime < 121 %}
-												{% assign stockStatusSub = "Expected to ship in 3 – 4 mths" %}
-											{% elsif leadTime < 151 %}
-												{% assign stockStatusSub = "Expected to ship in 4 – 5 mths" %}
-											{% elsif leadTime < 181 %}
-												{% assign stockStatusSub = "Expected to ship in 5 – 6 mths" %}
-											{% elsif leadTime < 211 %}
-												{% assign stockStatusSub = "Expected to ship in 6 – 7 mths" %}
-											{% elsif leadTime < 1000 %}
-												{% assign stockStatusSub = "Expected to ship in over 7 mths" %}
-											{% endif %}
-										{% elsif current_variant.inventory_quantity > 0 %}
-											{% assign stockStatusMain = "In Stock" %}
-										{% endif %}
-
-										{% if stockStatusSub != "" %}
-											{% capture stockStatusNote %}{{ stockStatusMain }} ({{ stockStatusSub }}){% endcapture %}
-										{% else %}
-											{% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
-										{% endif %}
-										<div style="display:none">{{ stockStatusNote }}</div>
-										{% comment %}End of stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
-
-
-
-
-										<div class="product__price">
-											{% if block.settings.product.metafields.plytix.package_products != blank %}
-												{%- assign bproducts = block.settings.product.metafields.plytix.package_products | split: "," %}
-												{% assign bundle_price = 0 %}
-												{% for bproduct in bproducts %}
-													{% assign attr = bproduct | split: "#" %}
-													{%- assign bundlep = attr[0] | strip %}
-													{% assign bundle_price = all_products[bundlep].price | times: attr[1] | plus: bundle_price %}
-												{% endfor %}
-												<span class="money bundle-price" data-bundle-price>
-													<div class="price-current"><sup>$</sup>{{ bundle_price | money_without_currency }}</div>
-												</span>
-											{% else %}
-												<div class="price-current"><sup>$</sup>{{ block.settings.product.price | money_without_currency }}</div>
-											{% endif %}
-											<div class="price-compare-at">{{ block.settings.product.plytix.list_price | money }}</div>
-										</div>
-                                        {% if block.settings.product.compare_at_price != blank %}
-                                            <div class="price-was">( Was <sup>$</sup>{{ block.settings.product.compare_at_price | money_without_currency }})</div>
-                                        {% endif %}
-										{% comment %}Start automatically added Judge.me widget{% endcomment %}
-										{% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: block.settings.product %}
-										{% comment %}End automatically added Judge.me widget{% endcomment %}
-										{% if block.settings.product.metafields.plytix.free_shipping %}
-											<div class="ship-made">
-												<p>Free Shipping</p>
-											</div>
-										{% endif %}
-
-										{% assign has_variants = false %}
-										{% unless block.settings.product.has_only_default_variant %}
-											{% assign has_variants = true %}
-										{% endunless %}
-
-										{% assign pstep = 1 %}
-										{% if product.metafields.plytix.product_step != blank %}
-											{% assign pstep = product.metafields.plytix.product_step %}
-										{% endif %}
-										{% for variant in product.variants %}
-											{% if variant.metafields.plytix.product_step %}
-												{% assign pstep = variant.metafields.plytix.product_step %}
-											{% endif %}
-										{% endfor %}
-
-										{%- if block.settings.product.available != true -%}
-											<form method="post" action="/cart/add" class="cart-form">
-												<input type="hidden" class="pid" value="{{block.settings.product.id}}">
-												<input type="hidden" class="ptitle" value="{{block.settings.product.title | remove: "'" | remove: '"'}}">
-												<input type="hidden" class="pprice" value="{{block.settings.product.variants.first.price | times: 0.01}}">
-												<input type="hidden" class="pbrand" value="{{block.settings.product.vendor | remove: "'" | remove: '"'}}">
-												<input type="hidden" class="ptype" value="{{block.settings.product.type | remove: "'" | remove: '"'}}">
-												<input type="hidden" class="pcategory_id" value="{{ block.settings.product.collections.first.id }}">
-												<input type="hidden" class="pcategory_name" value="{{ block.settings.product.collections.first.title | remove: "'" | remove: '"' }}">
-												<input type="hidden" class="pvtitle" value="{{ block.settings.product.variants.first.title | remove: "'" | remove: '"' }}">
-												<input type="hidden" class="psku" value="{{ block.settings.product.variants.first.sku }}">
-												<input type="hidden" name="id" value="{{ block.settings.product.variants.first.id }}" />
-												<input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-												<input disabled class="disabled add-to-cart-btn" type="submit" value="SOLD OUT" class="btn" />
-											</form>
-										{%- else -%}
-											{% if block.settings.product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants%}
-												{%- comment -%}
-												<form method="post" action="/cart/add" class="cart-form">
-													{%- assign bundle_products = block.settings.product.metafields.plytix.package_products | split: "," %}
-													{%- assign free_products = block.settings.product.metafields.plytix.packaged_free_product | split: "," %}
-													<div data-bundle-subproducts>
-														{% for bundle_product_entry in bundle_products %}
-															{% assign bundle_product_entry_parts = bundle_product_entry | split: "#" %}
-															{%- assign bundle_product_handle = bundle_product_entry_parts[0] | strip %}
-															{%- assign bundle_product = all_products[bundle_product_handle] %}
-															<input type="hidden"
-																   name="updates[{{ bundle_product_handle }}]"
-																   class="quantity field"
-																   data-bundle-subproduct
-																   data-id="{{ bundle_product.selected_or_first_available_variant.id }}"
-																   data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
-																   data-tieredPricing=""
-																   data-qty="{{ bundle_product_entry_parts[1] }}"
-																   data-price="{{ bundle_product.price }}"
-																   value="{{ bundle_product_entry_parts[1] }}" />
-														{% endfor %}
-														{% for free_product_entry in free_products %}
-															{% assign free_product_entry_parts = free_product_entry | split: "#" %}
-															{%- assign free_product_handle = free_product_entry_parts[0] | strip %}
-															{%- assign free_product = all_products[free_product_handle] %}
-															<input type="hidden"
-																   name="updates[{{ free_product_handle }}]"
-																   class="quantity field"
-																   data-bundle-subproduct-free
-																   data-id="{{ free_product.selected_or_first_available_variant.id }}"
-																   data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
-																   data-tieredPricing="fg"
-																   data-qty="{{ free_product_entry_parts[1] }}"
-																   data-price="{{ free_product.price }}"
-																   value="{{ free_product_entry_parts[1] }}" />
-														{% endfor %}
-													</div>
-
-													<button class="add-to-cart-btn" type="submit" data-bundle-product-atc data-bundle="{{ block.settings.product.title }}">
-														View Product
-													</button>
-
-												</form>{%- endcomment -%}
-												<button class="add-to-cart-btn view-product" >
-													VIEW PRODUCT
-												</button>
-											{% else %}
-
-												{% assign isSpecial = false %}
-												{% if current_variant.compare_at_price %}
-													{% if current_variant.price < current_variant.compare_at_price %}
-														{% assign endDate = current_variant.metafields.plytix.special_enddate | date: '%s' %}
-														{% assign nowTimestamp = 'now' | date: '%s' %}
-														{% assign diffSeconds = endDate | minus: nowTimestamp %}
-														{% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
-														{% if diffDays >= -1 %}
-															{% assign isSpecial = true %}
-														{% endif %}
-													{% endif %}
-												{% endif %}
-												<form method="post" action="/cart/add" class="cart-form">
-													<input type="hidden" class="pid" value="{{block.settings.product.id}}">
-													<input type="hidden" class="ptitle" value="{{block.settings.product.title | remove: "'" | remove: '"'}}">
-													<input type="hidden" class="pprice" value="{{block.settings.product.variants.first.price | times: 0.01}}">
-													<input type="hidden" class="pbrand" value="{{block.settings.product.vendor | remove: "'" | remove: '"'}}">
-													<input type="hidden" class="ptype" value="{{block.settings.product.type | remove: "'" | remove: '"'}}">
-													<input type="hidden" class="pcategory_id" value="{{ block.settings.product.collections.first.id }}">
-													<input type="hidden" class="pcategory_name" value="{{ block.settings.product.collections.first.title | remove: "'" | remove: '"' }}">
-													<input type="hidden" class="pvtitle" value="{{ block.settings.product.variants.first.title | remove: "'" | remove: '"' }}">
-													<input type="hidden" class="psku" value="{{ block.settings.product.variants.first.sku }}">
-													<input type="hidden" name="id" value="{{ block.settings.product.variants.first.id }}" />
-													<input type="hidden" name="properties[_erp_sku]" value="{{ block.settings.product.variants.first.metafields.plytix.erp_sku }}" />
-													<input type="hidden" name="properties[Sku]" value="{{ block.settings.product.variants.first.sku }}" />
-													<input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
-													{% if isSpecial == false %}
-														<input type="hidden" name="properties[_tiered_pricing]" value="{{ block.settings.product.variants.first.metafields.plytix.tiered_pricing }}" />
-													{% endif %}
-													<input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-													<button class="add-to-cart-btn" type="submit" >
-														ADD TO CART
-													</button>
-												</form>
-											{% endif %}
-										{%- endif -%}
-
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
                 {% endcase %}
             {% endfor %}
         </div>
