@@ -151,35 +151,62 @@ jQuery(document).ready(function($){
         ]
     })
 
+    //was org       slidesToShow: 3,
+    //         slidesToScroll: 2,
+    //variableWidth: true,
     $('.category-featured-slider').slick({
         arrows: true,
         autoplay: false,
         dots: false,
-        infinite: true,
+        infinite: false,
         lazyLoad: 'ondemand',
-        slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToShow: 5,
+        slidesToScroll: 3,
         appendArrows: $('.f-cat-slider__content .slide-arrows'),
         prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
         nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
         variableWidth: true,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 960,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                 }
             },
             {
-                breakpoint: 720,
+                breakpoint: 640,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
-            },
+            }
         ]
     })
+
+    // equalize height
+    var highestTitleBox = 0;
+    var highestBox = 0;
+
+    //Title Height (exclude frequently bought together)
+    $('.f-cat-slider__content .productitem--title').css({'height': ''});
+    $('.f-cat-slider__content .productitem--title').each(function () {
+        // If this box is higher than the cached highest then store it
+        if ($(this).height() > highestTitleBox) {
+            highestTitleBox = $(this).height();
+        }
+    });
+    $('.f-cat-slider__content .productitem--title').height(highestTitleBox);
+    //box height (exclude frequently bought together)
+    $('.f-cat-slider__content .productgrid--item').css({'height': ''});
+    $('.f-cat-slider__content .productgrid--item').each(function () {
+        // If this box is higher than the cached highest then store it
+        if ($(this).height() > highestBox) {
+            highestBox = $(this).height();
+        }
+    });
+    $('.f-cat-slider__content .productgrid--item').height(highestBox);
+
 
     $('.brand-slider').slick({
         arrows: true,
