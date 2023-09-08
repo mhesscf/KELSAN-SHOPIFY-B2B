@@ -32,6 +32,25 @@
         </div>
         <div class="ais-block">
           <div class="ais-search-header">
+          {% if collection.metafields.custom.question %}
+          <div class="custom-additional-info">
+            <div class="left-col">
+                <div class="question"><h3>{{ collection.metafields.custom.question }}</h3></div>
+                <div class="answer">{{ collection.metafields.custom.answer | metafield_tag }}</div>
+            </div>
+            <div class="right-col">
+                <div class="areas-of-use">
+                    <h3>Area of Use</h3>
+                    <p>
+                    {% for area_of_use in collection.metafields.custom.area_of_use.value %}
+                        - {{ area_of_use }}<br/>
+                    {% endfor %}
+                    </p>
+                </div>
+            </div>
+            <div class="clearer"></div>
+          </div>
+          {% endif %}
             <div class="ais-stats-container"></div>
             <div class="ais-change-display">
                 <span class="ais-change-display-block"><i class="fa fa-th-large"></i></span>

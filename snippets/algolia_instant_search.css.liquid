@@ -629,6 +629,42 @@ body {background-color:#fff !important;}
   font-size: inherit;
   line-height: 1.6;
 }
+.ais-page .ais-search-header .custom-additional-info{
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom: 1px solid #ccc;
+  font-size:15px;
+  line-height:20px;
+}
+.ais-page .ais-search-header .custom-additional-info a{
+  color: {{ settings.color_links }};
+}
+.ais-page .ais-search-header .custom-additional-info a:hover {
+  color: {{ settings.color_link_hover }};
+}
+.ais-page .ais-search-header .custom-additional-info h3{
+  font-style: {{ settings.type_body.style }};
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  margin:0;
+  color: {{ settings.color_headings }};
+}
+.ais-page .ais-search-header .custom-additional-info .p,
+.ais-page .ais-search-header .custom-additional-info .usage-list{
+  margin:10px 0;
+}
+.ais-page .ais-search-header .custom-additional-info .usage{
+  margin-left:10px;
+}
+.ais-page .ais-search-header .custom-additional-info .left-col{
+  float:left;
+  width:74%;
+}
+.ais-page .ais-search-header .custom-additional-info .right-col{
+  float:right;
+  width:25%;
+}
 
 /* Stats */
 .ais-page .ais-Stats {
