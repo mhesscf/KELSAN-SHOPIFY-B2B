@@ -678,9 +678,9 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
         )()
     </script>
 {% endunless %}
-
+{% comment %}org-> src="{{ 'empire.js' | asset_url }}"{% endcomment %}
 <script
-        src="{{ 'empire.js' | asset_url }}"
+        src="{{ 'empire.min.js' | asset_url }}"
         data-scripts
         data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
         data-shopify-countries="/services/javascripts/countries.js"
