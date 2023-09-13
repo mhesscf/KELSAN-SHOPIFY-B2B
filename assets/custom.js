@@ -553,7 +553,9 @@ jQuery(document).ready(function($){
                 highestTitleBox = $(this).height();
             }
         });
-        
+
+        $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
+
         if(slideritemId != "freq_bought-rel-item") {
             //box height (exclude frequently bought together)
             $('.' + slideritemId + ' .productgrid--item').css({'height': ''});
@@ -566,7 +568,7 @@ jQuery(document).ready(function($){
             $('.' + slideritemId + ' .productgrid--item').height(highestBox);
         }
 
-        $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
+
 
     });
 
