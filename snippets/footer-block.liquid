@@ -52,5 +52,7 @@
       context: 'footer',
       logo: block.settings.logo
     %}
+  {% elsif block.type == 'custom-liquid' %}
+    {{ block.settings.custom_liquid }}
   {% endif %}
 </div>
