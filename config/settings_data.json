@@ -242,6 +242,10 @@
           "edf395ef-d6a1-420a-b7e5-36b93e891e4f",
           "3a02ed06-1436-4ecf-a69c-d4aa2a3162ac"
         ],
+        "custom_css": [
+          ".site-footer-block-item-wrapper{width:20%;}",
+          ".site-footer-block-item-wrapper:nth-of-type(4) {width: 35%;}"
+        ],
         "settings": {
           "payment_icons": false,
           "show_locale_selector": true,
