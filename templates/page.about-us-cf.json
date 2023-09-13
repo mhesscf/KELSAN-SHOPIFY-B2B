@@ -38,6 +38,13 @@
         "text_alignment": "left"
       }
     },
+    "e6d380b6-bb09-416a-b37b-159e94b4f9a8": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<style>\n.form-store-info h3,\n.grid__item.one-half #contact_form\n{display:none !important}\n<\/style>"
+      }
+    },
     "f81cf4b2-cb8a-4c84-80f0-3fab54469d44": {
       "type": "form-with-store-info",
       "settings": {
@@ -60,6 +67,7 @@
     "8af92e74-d566-4a78-85d1-6caece09f093",
     "main",
     "9d762dc6-9f0e-499a-84bf-4f5a65c2797d",
+    "e6d380b6-bb09-416a-b37b-159e94b4f9a8",
     "f81cf4b2-cb8a-4c84-80f0-3fab54469d44"
   ]
 }
