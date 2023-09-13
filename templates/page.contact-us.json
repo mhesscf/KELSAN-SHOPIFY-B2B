@@ -1,13 +1,5 @@
 {
   "sections": {
-    "71f28cef-4c23-4257-86c0-c22883889adb": {
-      "type": "category-header",
-      "settings": {
-        "chsectionheading": "Our Story",
-        "chsectiontext": "We opened for business back in 1995 with a mission to serve clean freaks the world over. To us, that means being stocked with all the right cleaning stuff, and providing good, clean advice along the way. As fellow clean freaks, we've tackled our fair share of messes. We know what it's like to redo a floor because the finish didn't take, or that feeling of euphoria from vacuuming the lines perfectly straight. Back... and forth. Back... and forth. Back... and-- Sorry, you lost us there for a second. Please drop us a line if you have any cleaning questions, want to tell us about a product we don't know about yet, or just want to laugh along with us on Facebook or Twitter.",
-        "image": "shopify:\/\/shop_images\/about-cleanfreak.jpg"
-      }
-    },
     "8af92e74-d566-4a78-85d1-6caece09f093": {
       "type": "image-gradient-section",
       "disabled": true,
@@ -38,13 +30,6 @@
         "text_alignment": "left"
       }
     },
-    "e6d380b6-bb09-416a-b37b-159e94b4f9a8": {
-      "type": "dynamic-html",
-      "settings": {
-        "title": "",
-        "custom_html": "<style>\n.form-store-info h3,\n.grid__item.one-half #contact_form\n{display:none !important}\n<\/style>"
-      }
-    },
     "f81cf4b2-cb8a-4c84-80f0-3fab54469d44": {
       "type": "form-with-store-info",
       "settings": {
@@ -63,11 +48,9 @@
     }
   },
   "order": [
-    "71f28cef-4c23-4257-86c0-c22883889adb",
     "8af92e74-d566-4a78-85d1-6caece09f093",
     "main",
     "9d762dc6-9f0e-499a-84bf-4f5a65c2797d",
-    "e6d380b6-bb09-416a-b37b-159e94b4f9a8",
     "f81cf4b2-cb8a-4c84-80f0-3fab54469d44"
   ]
 }
