@@ -245,7 +245,7 @@
         "custom_css": [
           ".site-footer-block-item-wrapper {width: 20%; margin: 0;}",
           ".site-footer-block-item-wrapper:nth-of-type(4) {width: 40%;}",
-          "@media (max-width: 1023px){.site-footer-block-item-wrapper:nth-of-type(4), .site-footer-block-item-wrapper {width: 100%; margin: 0;}}"
+          "@media (max-width: 1023px) {.site-footer-block-item-wrapper:nth-of-type(4){width:100% margin-top:15px; } .site-footer-block-item-wrapper {width: 100%; margin: 0; }}"
         ],
         "settings": {
           "payment_icons": false,
