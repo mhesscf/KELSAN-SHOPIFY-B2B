@@ -178,7 +178,9 @@
                                             product: all_products[bundlep]
                                     %}
                                 </div>
-                                <div class="pop-link"><a class="add-to-cart-btn" href="{{ all_products[bundlep].url }}">VIEW PRODUCT</a></div>
+                                {% if all_products[bundlep].metafields.plytix.hide_product != 'true' %}
+                                    <div class="pop-link"><a class="add-to-cart-btn" href="{{ all_products[bundlep].url }}">VIEW PRODUCT</a></div>
+                                {% endif %}
                             </div>
                         </div>
                     </td>
@@ -365,7 +367,9 @@
                                                 product: all_products[bundlep]
                                         %}
                                     </div>
-                                    <div class="pop-link"><a class="add-to-cart-btn" href="{{ all_products[bundlep].url }}">VIEW PRODUCT</a></div>
+                                    {% if all_products[bundlep].metafields.plytix.hide_product != 'true' %}
+                                        <div class="pop-link"><a class="add-to-cart-btn" href="{{ all_products[bundlep].url }}">VIEW PRODUCT</a></div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </td>
