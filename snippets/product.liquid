@@ -175,7 +175,9 @@
                             {%- capture vendortext -%}
                                 {% if product.vendor != blank or onboarding %}
                                        {% unless onboarding %}
-                                           Vendor:<span>{{ product.vendor | link_to_vendor }}</span>
+                                           {%- assign vendorclean = product.vendor | replace: "&", "%26"-%}
+                                           Vendor:<span><a href="/collections/vendors?refinementList[vendor][0]={{ vendorclean }}&q={{ vendorclean }}">{{ product.vendor }}</a></span>
+                                           {% comment %}Vendor:<span>{{ product.vendor | link_to_vendor }}</span>{% endcomment %}
                                         {% else %}
                                             {{ 'onboarding.product.by_vendor' | t }}
                                         {% endunless %}
