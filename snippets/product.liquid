@@ -363,6 +363,7 @@
                                                 <div class="individually-sold">Sold Individually</div>
                                             {% else %}
                                                 <div class="individually-sold">{{ variant.metafields.plytix.master_quantity }}</div>
+                                                {% if variant.metafields.plytix.product_step > 1 %}<div style="color:red">Must be bought in multiples of {{ variant.metafields.plytix.product_step }}.</div>{% endif %}
                                             {% endif %}
                                         {% endif %}
                                     {% endif %}
