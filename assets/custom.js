@@ -60,30 +60,11 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
 
 function updateCart(){
-    var updateThis = 1;
-    $( ".stepValItem .form-field-number" ).each(function( index ) {
-        var step = $(this).data('step');
-        if($(this).data('step')){
-            var step = $(this).data('step');
-        } else {
-            var step = 1
-        }
-        var original = $(this).data('original');
-        var qtkey = $(this).data('qtkey').replace(':', '');
-        var val = $(this).val();
-        if(val % step == 0){
-            console.log('true')
-            $('#'+qtkey).text('');
-        }else{
-            updateThis = 0;
-            $('#'+qtkey).text('The quantity must be in multiples of '+ step );
-            $(this).val(original);
-        }
-        if(updateThis == 1){
+    setTimeout(function(){
             $('#update-cart').attr('href',"/cart");
             window.location = $('#update-cart').attr('href');
-        }
-    });
+
+    }, 500);
 }
 
 jQuery(document).ready(function($){
@@ -399,7 +380,7 @@ jQuery(document).ready(function($){
             $('#'+qtkey).text('');
         }else{
             $('#'+qtkey).text('The quantity must be in multiples of '+ step );
-            // $(this).val(original);
+            $(this).val(original);
         }
     });
 
