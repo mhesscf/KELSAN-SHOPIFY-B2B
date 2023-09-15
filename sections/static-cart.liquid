@@ -113,7 +113,8 @@
         %}
         <div class="cart-total">
           <a data-href="/cart/clear" class="btn button-primary" id="empty-cart" style="margin-bottom:10px;">Empty cart</a>
-          <a href="/cart" class="btn button-primary" id="update-cart" style="margin-bottom:10px;">Update Cart</a>
+          {% comment %}<a href="/cart" class="btn button-primary" id="update-cart" style="margin-bottom:10px;">Update Cart</a>{% endcomment %}
+          <a class="btn button-primary" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;">Update Cart</a>
           {% if section.settings.enable_order_notes %}
             <div class="cart-ordernote">
               <span class="cart-ordernote-heading">{{ 'cart.general.enter_order_note' | t }}</span>
