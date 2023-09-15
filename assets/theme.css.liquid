@@ -10426,6 +10426,7 @@ nav.breadcrumb span.separator{
 	list-style-type: none;
 	transform: translateX(-50%);
 }
+
 @media screen and (max-width: 719px) {
 	.slideshow--text-below-image-false .slideshow-pagination {
 		top: auto !important;
@@ -24502,7 +24503,7 @@ button.payment-blue.button:hover span {background:#303e48;}
 .finance-wrapper strong{color: {{ color_links }};}
 .finance-wrapper:hover strong{color: {{ color_link_hover  }};}
 
-#payment-request{font-size:12px;}
+#payment-request{font-size:14px; width:370px; height:470px; }
 #payment-request hr {margin-top:20px; margin-bottom:20px; border:0; border-top:1px solid #eeeeee;}
 #payment-request .text-block {text-align:left; margin:0 8px 10px 8px;}
 #payment-request .close-pop span {background:url('https://cdn.shopify.com/s/files/1/0624/3270/6740/files/bkg_close.gif?v=1688743343'); cursor:pointer; height:33px; width:33px; display:block; position:absolute; top:-12px; right:-12px;}
@@ -24511,10 +24512,10 @@ button.payment-blue.button:hover span {background:#303e48;}
 #payment-request input.input-text{width:100px; float:left; padding:0 10px;}
 #payment-request select{width:46px; float:left; padding:0 4px; background-color:#fff;}
 #payment-request .form-area{padding-left:60px;}
-#payment-request ul{font-size:11px;}
+#payment-request ul{font-size:14px;}
 #payment-request hr{margin:12px 0 8px 0;}
 #payment-request .optionlink{cursor:pointer; padding:1px 0 7px 0}
-#payment-request .text-block .optionlink ul{margin:2px 0 0 38px;}
+#payment-request .text-block .optionlink ul{margin:2px 0 0 54px;}
 #payment-request .default-text ul{padding-bottom:8px;}
 #payment-request .benefit-title{margin-top:5px;}
 #payment-request fieldset{min-width:unset; text-align:center; border:none; }
@@ -24539,7 +24540,7 @@ button.payment-blue.button:hover span {background:#303e48;}
 #payment-request .subnotes{font-size:10px; color:#ccc;}
 
 #payment-request .fake-link{color:#43c7e7; cursor:pointer;}
-#payment-request .pop-footer{margin:8px 0; width:268px; position:absolute; text-align:center; bottom:5px; cursor:pointer;}
+#payment-request .pop-footer{margin:8px 0; width:84%; position:absolute; text-align:center; bottom:5px; cursor:pointer;}
 #payment-request .pop-footer:hover .rate-full,
 #payment-request .pop-footer:hover .fake-link{text-decoration: underline;}
 #payment-request .rate-full {font-weight:bold; color:#43c7e7;}
@@ -24588,6 +24589,13 @@ button.payment-blue.button:hover span {background:#303e48;}
 @keyframes fadeinbg {
 	from { opacity: 0; }
 	to   { opacity: .3; }
+}
+
+@media (max-width: 1079px){
+	#payment-request{font-size:12px; height:430px; width:310px;}
+	#payment-request ul{font-size:11px;}
+	#payment-request .text-block .optionlink ul{margin:2px 0 0 38px;}
+	#payment-request .pop-footer{width:268px;}
 }
 
 /* ======================================================================================= */
