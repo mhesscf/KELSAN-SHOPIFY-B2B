@@ -80,6 +80,7 @@ function updateCart(){
             $(this).val(original);
         }
         if(updateThis == 1){
+            $('#update-cart').attr('href',"/cart");
             window.location = $('#update-cart').attr('href');
         }
     });
