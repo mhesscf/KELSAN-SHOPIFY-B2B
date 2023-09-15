@@ -70,7 +70,7 @@ function updateCart(){
         }
         var original = $(this).data('original');
         var qtkey = $(this).data('qtkey').replace(':', '');
-        var val = $(this).val()
+        var val = $(this).val();
         if(val % step == 0){
             console.log('true')
             $('#'+qtkey).text('');
@@ -399,7 +399,7 @@ jQuery(document).ready(function($){
             $('#'+qtkey).text('');
         }else{
             $('#'+qtkey).text('The quantity must be in multiples of '+ step );
-            $(this).val(original);
+            // $(this).val(original);
         }
     });
 
