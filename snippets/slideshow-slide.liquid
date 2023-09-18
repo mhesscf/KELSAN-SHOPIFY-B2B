@@ -23,10 +23,15 @@
 
     <div class="slideshow-slide__image-wrapper" data-slide-image-wrapper >
       <div class="slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
+        {% if link == "" %}
         <a href="{{ link }}">
           <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
           <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
         </a>
+        {% else %}
+            <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
+            <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
+        {% endif %}
       </div>
     </div>
 
