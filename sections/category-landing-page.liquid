@@ -17,7 +17,7 @@
 {% if filter_block and filter_block.settings.filter_option == 'faceted' %}
     {% assign filter_type = 'faceted' %}
 {% endif %}
-
+{% comment %} static-collection is not needed and creates an error with "data-sticky-utils" if specified as section-id
 {%- capture section_type -%}
     {% if filter_type == 'faceted' %}
         static-collection-faceted-filters
@@ -25,7 +25,11 @@
         static-collection
     {% endif %}
 {%- endcapture -%}
+{% endcomment %}
 
+{%- capture section_type -%}
+        static-collection-product-slider
+{%- endcapture -%}
 
 <script
         type="application/json"

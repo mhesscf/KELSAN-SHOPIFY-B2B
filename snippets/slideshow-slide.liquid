@@ -31,6 +31,46 @@
     </div>
 
   </div>
+{% elsif block_slide_type == "categoryhead" %}
+  {% comment %}http://127.0.0.1:9292/pages/hard-floor-cleaning-machines{% endcomment %}
+    {% liquid
+      assign link = block.settings.link
+      assign slide_number = block_index | plus: 1
+    %}
+    <div
+            class="slideshow-slide banner-slideshow-slide {{ block_class }}"
+            aria-label="{{ 'sections.slideshow.slide_counter' | t: count: slide_number, total: section.blocks.size }}"
+            tabindex="-1"
+            data-slideshow-slide
+            data-slide-index="{{ block_index }}"
+            {{ block.shopify_attributes }}
+    >
+
+    <div class="slideshow-slide__header-wrapper" data-slide-image-wrapper >
+      <div class="slideshow-slide__content  slideshow-slide__content--{{ block.id }} slider-category-header"  data-slide-content>
+        <div class="container">
+          <div class="flex-row">
+            <div class="col col-left">
+              <div class="inner text-inner">
+                {% if block.settings.cat_title != blank %}
+                  <h1>{{ block.settings.cat_title }}</h1>
+                {% endif %}
+                {% if block.settings.cat_text != blank %}
+                  <div class="section-text">
+                    <p>{{ block.settings.cat_text }}</p>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col col-right img-col">
+              <div class="inner">
+                <div class="banner-image" title="{{ block.settings.cat_title }}" style="background-image: url({{ block.settings.cat_image | img_url: 'master' }});"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 {% elsif block_slide_type == "custom_liquid" %}
