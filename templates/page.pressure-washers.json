@@ -2,6 +2,7 @@
   "sections": {
     "475144ee-1619-40db-8de5-a06451836ae0": {
       "type": "dynamic-html",
+      "disabled": true,
       "settings": {
         "title": "",
         "custom_html": "<style>\n#shopify-section-template--16671985533140__475144ee-1619-40db-8de5-a06451836ae0 .custom-html--container{\npadding-left:0; \npadding-right:0;\n}\n\n.mobile-banner{display:none;}\n@media (max-width: 800px){\n\t.mobile-banner{display:block;}\n\t.desk-banner{display:none;}\n}\n\n<\/style>\n<h1 style=\"color:#303E48; font-weight:700; padding-left:25px; font-size:55px; line-height:65px;\">Pressure Washers<\/h1>\n<div class=\"desk-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-2000x639.jpg?v=1690392030\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>\n<div class=\"mobile-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-800x427.jpg?v=1690392030\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>"
@@ -59,17 +60,43 @@
             "overlay_opacity": 50
           }
         },
+        "942a18a7-53dd-44b7-b13d-69ed6b63aa8e": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
+            "cat_title": "Pressure Washers",
+            "cat_text": "Shop a wide selection of pressure washers for any application. Choose from hot or cold water pressure washers with gasoline engine or electric power."
+          }
+        },
         "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/400test.jpg",
+            "banner-lg": "shopify:\/\/shop_images\/free-shipping-on-pressure-washers-v2-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/free-shipping-on-pressure-washers-800x427.jpg",
             "link": ""
           }
         },
         "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/500test.jpg",
+            "banner-lg": "shopify:\/\/shop_images\/got-a-big-job-banner-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/got-a-big-job-banner-800x427.jpg",
+            "link": ""
+          }
+        },
+        "1bbb33c2-2444-465d-8285-f1a6681bee8b": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/hot-water-press-washer-banner-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/hot-water-press-washer-banner-800x427.jpg",
+            "link": ""
+          }
+        },
+        "55c96410-9583-4bcd-9414-2823d5265d9f": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/pressure-mower-banner-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/pressure-mower-banner-800x427.jpg",
             "link": ""
           }
         }
@@ -77,10 +104,12 @@
       "block_order": [
         "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-1",
         "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-2",
+        "942a18a7-53dd-44b7-b13d-69ed6b63aa8e",
         "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf",
-        "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca"
+        "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca",
+        "1bbb33c2-2444-465d-8285-f1a6681bee8b",
+        "55c96410-9583-4bcd-9414-2823d5265d9f"
       ],
-      "disabled": true,
       "settings": {
         "enable_autoplay": true,
         "autoplay_duration": 8,
