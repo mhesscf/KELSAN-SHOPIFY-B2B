@@ -115,7 +115,7 @@
         "autoplay_duration": 8,
         "slideshow_width": "full",
         "slideshow_height": "medium",
-        "slideshow_height_mobile": "medium",
+        "slideshow_height_mobile": "x-large",
         "slideshow_text_below_image": true
       }
     },
