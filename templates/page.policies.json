@@ -1,5 +1,16 @@
 {
   "sections": {
+    "cf13ee47-bfcd-4169-a499-650a3712fc98": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "policies",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "28df9b5f-280b-44e5-b7c3-c5fecdeb8930": {
       "type": "gradient-text-header",
       "settings": {
@@ -205,6 +216,7 @@
     }
   },
   "order": [
+    "cf13ee47-bfcd-4169-a499-650a3712fc98",
     "28df9b5f-280b-44e5-b7c3-c5fecdeb8930",
     "main",
     "6dbab1e9-685a-43a3-9116-232ec76b3d16",
