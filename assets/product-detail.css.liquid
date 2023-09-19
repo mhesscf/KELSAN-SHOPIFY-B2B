@@ -1790,7 +1790,12 @@ input.qtyminus {
   /*--- Gallery ---*/
 .product-gallery .stickme{
   position:sticky;
-  top:100px;
+  top:75px;
+}
+@media (max-width: 1023px) {
+  .product-gallery .stickme{
+    top:105px;
+  }
 }
 .product-gallery .gallery-navigation--scroll-button{
   color: {{ settings.color_icons }};
