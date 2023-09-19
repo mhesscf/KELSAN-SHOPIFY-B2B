@@ -1,0 +1,88 @@
+
+{% if section.blocks.size > 0 %}
+    <section class="brand-wrapper">
+        <div class="brand-slider__content">
+            <h3 class="brand-slider-title">{{ section.settings.block-title }}</h3>
+            <div class="brand-slider">
+                {% for block in section.blocks %}
+                        {% assign image = block.settings.brand-image %}
+
+                    <div class="brand-slide">
+                        <div class="inner">
+                            <div class="col img-col">
+                                <a href="{{ block.settings.brand-link }}">
+                                    {%
+                                            render 'rimg',
+                                            img: image,
+                                            size: '140x',
+                                            lazy: false,
+                                            canvas: false
+                                    %}
+                                </a>
+                            </div>
+                            <div class="col txt-col">
+                                <div class="content-wrap">
+                                    <a href="{{ block.settings.brand-link }}" class="add-to-cart">{{ block.settings.brand-title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%  endfor  %}
+            </div>
+            <div class="slide-arrows"></div>
+        </div>
+    </section>
+{% endif %}
+
+
+{% schema %}
+{
+    "name": "Department Brand Links",
+    "class": "dept-brand-brands",
+    "settings": [
+        {
+        "type": "header",
+        "content": "Department Brands"
+        },
+        {
+        "type": "text",
+        "id": "block-title",
+        "label": "Block Title",
+        "default": "Featured Brands"
+        }
+    ],
+    "blocks": [
+    {
+        "type": "brandlink",
+        "name": "Brand Link",
+        "settings": [
+            {
+                "type": "text",
+                "id": "brand-title",
+                "label": "Brand Title",
+                "default": "Title"
+             },
+            {
+                "type": "url",
+                "id": "brand-link",
+                "label": "Brand Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "brand-image",
+                "label": "Brand Image"
+            }
+        ]
+    }
+    ],
+    "presets": [
+    {
+        "name": "Department Brand Links",
+        "category": "Layout",
+        "settings": {
+
+        }
+    }
+    ]
+    }
+{% endschema %}
