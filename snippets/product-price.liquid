@@ -344,7 +344,7 @@
                   <div class="yousave">You Save: {{ varlpsavings | money }}</div>
                   {%- assign listdif = varlp | minus: varprice -%}
                   {% if varlp <= varprice %}
-                  <div class="crawlcheck"><!-- check product. List price smaller than price --></div>
+                  <div class="crawlcheck crawlcheck-price"><!-- check product. List price smaller than price --></div>
                   {% endif %}
               </div>
           {%- endif -%}
