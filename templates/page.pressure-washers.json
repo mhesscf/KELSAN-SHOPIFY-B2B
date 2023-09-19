@@ -382,6 +382,7 @@
         },
         "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
           "type": "slider",
+          "disabled": true,
           "settings": {
             "collection": "cleanfreak"
           }
@@ -446,6 +447,25 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "864df9a0-435e-4cc2-9657-e4ee6d46a626": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/all?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers",
+            "brand-image": "shopify:\/\/shop_images\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -455,6 +475,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "864df9a0-435e-4cc2-9657-e4ee6d46a626"
   ]
 }
