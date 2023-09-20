@@ -1,0 +1,120 @@
+{% if section.blocks.size > 0 %}
+
+
+    {% assign heading = section.settings.block-title %}
+
+    {% assign section_classes = "category-resources--content" %}
+    {%- assign base_name = base_name | default: 'category-resources-section' -%}
+
+
+    <section class="category-resources--content category-resources-section" data-section-id="{{ section.id }}">
+        <div class="category-resources-section--wrapper">
+            <div class="{{ base_name }}__container">
+                <div class="{{ base_name }}__content">
+                    {%- if heading != blank -%}
+                        <div class="{{ base_name }}__content-wrapper {{ text_classes }}">
+                            <h2 class="{{ base_name }}__heading">{{ heading | escape }}</h2>
+                        </div>
+                    {%- endif -%}
+                </div>
+                <div class="flex-row">
+                    {% for block in section.blocks %}
+                        {% assign button_label = block.settings.button_label %}
+                        {% assign button_link = block.settings.button_link %}
+                        {% assign image = block.settings.image %}
+                        {% assign title = block.settings.heading %}
+                        {% assign content = block.settings.subheading %}
+
+                        <div class="{{ base_name }}__image-wrapper resource-{{ block.id }}">
+                            {%- if image != blank -%}
+                                {% assign alt = image.alt | default: heading %}
+                                {% capture image_classes %}{{ base_name }}__image{% endcapture %}
+                                {%
+                                        render 'rimg'
+                                img: image,
+                                        alt: alt,
+                                        size: '600x',
+                                        lazy: true,
+                                        crop: 'center',
+                                        class: image_classes
+                                %}
+                            {%- else -%}
+                                {% capture placeholder_classes %}{{ base_name }}__image {{ base_name }}__placeholder{% endcapture %}
+                                {{ 'collection-1' | placeholder_svg_tag: placeholder_classes }}
+                            {%- endif -%}
+                            <div class="resource-content-wrapper">
+                                <h3>{{ title }}</h3>
+                                <div class="resource-excerpt">{{ content }}</div>
+                                <a href="{{ button_link }}">{{ button_label }}</a>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+
+
+{% schema %}
+{
+    "name": "Department Resource Links",
+    "class": "dept-resources",
+    "settings": [
+        {
+        "type": "header",
+        "content": "Department Resource"
+        },
+        {
+        "type": "text",
+        "id": "block-title",
+        "label": "Block Title",
+        "default": "Resources"
+        }
+    ],
+    "blocks": [
+    {
+        "type": "resourcelink",
+        "name": "Resource Link",
+        "settings": [
+            {
+            "type":"image_picker",
+            "id":"image",
+            "label":"Image"
+            },
+            {
+            "id":"heading",
+            "type":"text",
+            "label":"Heading"
+            },
+            {
+            "id":"subheading",
+            "type":"richtext",
+            "label":"Content"
+            },
+            {
+            "id":"button_label",
+            "type":"text",
+            "label":"Button Label",
+            "default":"Button"
+            },
+            {
+            "id":"button_link",
+            "type":"url",
+            "label":"Button URL"
+            }
+        ]
+    }
+    ],
+    "presets": [
+    {
+        "name": "Department Resource Links",
+        "category": "Layout",
+        "settings": {
+
+        }
+    }
+    ]
+    }
+{% endschema %}
