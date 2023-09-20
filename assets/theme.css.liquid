@@ -23819,6 +23819,7 @@ img.category-resources-section__image {
 	flex-basis: 100%;
 	border-radius: 30px;
 	position: relative;
+	max-width:420px;
 }
 
 .resource-content-wrapper {
@@ -23827,8 +23828,7 @@ img.category-resources-section__image {
 	background: white;
 	border-radius: 28px;
 	left: 0;
-	padding: 40px;
-	max-width: 40vw;
+	padding: 15px;
 }
 
 .resource-content-wrapper h3 {
@@ -23837,16 +23837,17 @@ img.category-resources-section__image {
 	color: #303E48;
 	letter-spacing: 1px;
 	line-height: 32px;
-	margin: 0 0 20px 0;
+	margin: 0 0 3px 0;
 	font-weight: 500;
 }
 
-.resource-excerpt {
+.resource-excerpt p{
 	font-family: Roboto-Regular;
 	font-size: 20px;
 	color: #5B6770;
 	letter-spacing: 0;
 	line-height: 26px;
+	margin:0;
 }
 
 .resource-content-wrapper a {
@@ -23861,47 +23862,20 @@ img.category-resources-section__image {
 	text-transform: uppercase;
 	padding: 15px 30px;
 	border-radius: 15px;
-	margin-top: 30px;
+	margin-top: 15px;
 	display: inline-block;
 }
 
 @media (max-width: 992px){
-	.category-resources-section__image-wrapper img{
-		display: none;
-	}
-	.resource-content-wrapper{
-		position: initial;
-		bottom: unset;
-		background: white;
-		border-radius: 28px;
-		left: unset;
-		padding: 30px;
-		max-width: calc(100% - 100px);
-		margin: 300px auto 30px;
-		background-size: cover;
-		background-position: center center;
-	}
+
 }
 
 @media (max-width: 767px){
-
-	.resource-content-wrapper{
-		position: initial;
-		bottom: unset;
-		background: white;
-		border-radius: 28px;
-		left: unset;
-		padding: 30px;
-		max-width: calc(100% - 50px);
-		margin: 300px auto 30px;
+	.category-resources-section__container .flex-row{
+		flex-wrap: wrap;
 	}
-	.resource-content-wrapper a{
-		font-family: Roboto;
-		font-size: 17px;
-		color: #FFFFFF;
-		letter-spacing: 1.66px;
-		line-height: 22px;
-		padding: 10px;
+	.category-resources-section__image-wrapper {
+		margin:auto;
 	}
 }
 /* ------------------- Category Resources End ---------------*/
