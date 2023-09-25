@@ -15,7 +15,7 @@
                                     {% if attrVal == 'false' or attrVal == 'False' %}
                                         <div class="value">No</div>
                                     {% else %}
-                                        <div class="value">{{ attr[1] | remove: "[" | remove: "]" |  remove : "'" | replace: ';', ', ' | newline_to_br }}</div>
+                                        <div class="value">{{ attr[1] | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }}</div>
                                     {% endif %}
                                 </div>
                             {% endif %}
