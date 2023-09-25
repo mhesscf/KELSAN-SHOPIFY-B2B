@@ -15,7 +15,11 @@
                                     {% if attrVal == 'false' or attrVal == 'False' %}
                                         <div class="value">No</div>
                                     {% else %}
-                                        <div class="value">{{ attr[1] | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }}</div>
+                                        {% if attr[0] == 'Operating Weight' or attr[0] == 'Packaged Weight (lbs)' %}
+                                            <div class="value">{{ attr[1] | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }} lbs.</div>
+                                        {% else %}
+                                            <div class="value">{{ attr[1] | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }}</div>
+                                        {% endif %}
                                     {% endif %}
                                 </div>
                             {% endif %}
