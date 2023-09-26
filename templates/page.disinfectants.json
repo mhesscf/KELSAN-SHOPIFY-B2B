@@ -17,12 +17,6 @@
             "product": "midlab-maxim-facility-plus-one-step-disinfectant-cleaner-and-deodorant"
           }
         },
-        "add8b9cb-fe80-41d0-b004-e8681a3ade12": {
-          "type": "slide",
-          "settings": {
-            "product": "brulin-victory-professional-cordless-electrostatic-backpack-sprayer"
-          }
-        },
         "aeb3dd79-cecf-4582-b4bf-fb714d7792ab": {
           "type": "slide",
           "settings": {
@@ -50,7 +44,6 @@
       },
       "block_order": [
         "f44cbc73-aca6-482b-a2b1-0c597d04a6e1",
-        "add8b9cb-fe80-41d0-b004-e8681a3ade12",
         "aeb3dd79-cecf-4582-b4bf-fb714d7792ab",
         "24030384-af2f-4460-a4a2-dd94f36dbe59",
         "bed65ff3-7156-4b19-81fc-3618a7dc7f21",
@@ -62,7 +55,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -93,6 +85,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,

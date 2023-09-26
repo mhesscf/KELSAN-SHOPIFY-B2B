@@ -32,7 +32,7 @@
         "73b090e4-0ba5-4a9a-9e9f-961d0a790e2f": {
           "type": "slide",
           "settings": {
-            "product": "yellow-rubber-slush-boots"
+            "product": "yellow-heavy-weight-latex-nuke-boot"
           }
         },
         "b166a864-d6a2-4d8a-9fe3-c38844758a68": {
@@ -62,7 +62,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -93,6 +92,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,

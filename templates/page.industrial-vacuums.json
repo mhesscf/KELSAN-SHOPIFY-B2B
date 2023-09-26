@@ -29,12 +29,6 @@
             "product": "55-gallon-barrel-vacuum-head"
           }
         },
-        "a83ba446-f4be-4bc9-b5fc-1aa8d10c43bf": {
-          "type": "slide",
-          "settings": {
-            "product": "handheld-concrete-grinding-tool-vacuum"
-          }
-        },
         "087c4e6f-5251-4807-b68a-1e565a8abab4": {
           "type": "slide",
           "settings": {
@@ -46,7 +40,6 @@
         "9a0da6d8-5486-4510-83ed-8964527e4af4",
         "ad572150-5b83-41a1-86f3-5f0a28f4cc0a",
         "f4dc5c83-d2d9-4a57-987c-bf654312701a",
-        "a83ba446-f4be-4bc9-b5fc-1aa8d10c43bf",
         "087c4e6f-5251-4807-b68a-1e565a8abab4"
       ],
       "settings": {
@@ -55,7 +48,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -86,6 +78,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,

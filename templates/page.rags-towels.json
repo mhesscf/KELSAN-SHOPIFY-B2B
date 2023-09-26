@@ -50,7 +50,7 @@
         "b0ad7bb1-abae-4b44-8337-c1c61f7e1430": {
           "type": "slide",
           "settings": {
-            "product": "bay-west-eco-soft-roll-paper-towels"
+            "product": "enmotion-white-roll-towels"
           }
         },
         "c3b3a918-dcc9-45aa-9e00-bf74dd3bf189": {
@@ -76,7 +76,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -107,6 +106,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
