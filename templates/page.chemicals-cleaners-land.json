@@ -14,7 +14,7 @@
         "339c16a2-1b31-4797-8b49-f4a047776d06": {
           "type": "slide",
           "settings": {
-            "product": "trusted-clean-low-foam-floor-degreaser"
+            "product": "cleanfreak-low-foam-floor-cleaning-degreaser"
           }
         },
         "f65b84f1-0a57-466d-a1e1-109c4f5c679f": {
@@ -69,7 +69,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -100,6 +99,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
