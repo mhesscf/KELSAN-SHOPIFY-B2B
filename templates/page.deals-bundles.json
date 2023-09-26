@@ -23,12 +23,6 @@
             "product": "commercial-floor-buffer-cleaning-package"
           }
         },
-        "f0d34c69-8245-49bb-aee6-cc6ef5136939": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-backpack-vacuum-package"
-          }
-        },
         "d06cb5f9-0d69-482b-a09c-8d02bedb3c8c": {
           "type": "slide",
           "settings": {
@@ -45,7 +39,6 @@
       "block_order": [
         "319978c5-e18f-488b-bdca-87d8df12677c",
         "fb1d4f29-8eba-4d53-a3c5-65c0dfffbc28",
-        "f0d34c69-8245-49bb-aee6-cc6ef5136939",
         "d06cb5f9-0d69-482b-a09c-8d02bedb3c8c",
         "710a1d21-d529-4587-8556-0095db7f92f7"
       ],
@@ -55,7 +48,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -86,6 +78,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
