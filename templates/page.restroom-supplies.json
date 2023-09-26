@@ -50,7 +50,7 @@
         "ab228456-0c04-4291-a3e0-4239745db31a": {
           "type": "slide",
           "settings": {
-            "product": "mr-clean-toilet-bowl-brush-with-plunger-and-caddy"
+            "product": "bright-solutions-12-inch-cone-bowl-mop"
           }
         }
       },
@@ -69,7 +69,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -100,6 +99,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
