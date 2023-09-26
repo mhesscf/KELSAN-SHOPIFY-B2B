@@ -402,6 +402,7 @@
         },
         "cb754198-b199-4317-879a-0b37a3021253": {
           "type": "resource",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
             "heading": "Choosing the Right Pressure Washer for Commercial Use: Interview with an Expert",
@@ -466,6 +467,27 @@
       "settings": {
         "block-title": "Featured Brands"
       }
+    },
+    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "81b61309-2377-4eec-862e-f3c9b8075b89": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
+            "heading": "Choosing the Right Pressure Washer for Commercial Use: Interview with an Expert",
+            "subheading": "<p> right pressure washer for commercial use is difficult. So, we brought in an expert!<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "\/blogs\/news\/choosing-the-right-pressure-washer-for-commercial-use-interview-with-an-expert"
+          }
+        }
+      },
+      "block_order": [
+        "81b61309-2377-4eec-862e-f3c9b8075b89"
+      ],
+      "settings": {
+        "block-title": "Resources"
+      }
     }
   },
   "order": [
@@ -476,6 +498,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "864df9a0-435e-4cc2-9657-e4ee6d46a626"
+    "864df9a0-435e-4cc2-9657-e4ee6d46a626",
+    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634"
   ]
 }
