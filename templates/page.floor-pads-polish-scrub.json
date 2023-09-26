@@ -47,12 +47,6 @@
             "product": "20-inch-rectangular-dry-strip-pads"
           }
         },
-        "64fcc1b9-dfc1-4c8c-a8c0-defc4775ac6f": {
-          "type": "slide",
-          "settings": {
-            "product": "twister-diamond-concrete-prep-pads-floor-buffer-starter-pack"
-          }
-        },
         "b25a130a-3fda-4187-8df8-7a0981bd72b8": {
           "type": "slide",
           "settings": {
@@ -67,7 +61,6 @@
         "f6f51ab7-472c-4bb4-9dea-f7b665325726",
         "fa963954-7fee-4b2c-8751-3843a1fd44bc",
         "733c10b0-e8e0-4ff0-bd2e-365a2a23dc18",
-        "64fcc1b9-dfc1-4c8c-a8c0-defc4775ac6f",
         "b25a130a-3fda-4187-8df8-7a0981bd72b8"
       ],
       "settings": {
@@ -76,7 +69,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -107,6 +99,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
