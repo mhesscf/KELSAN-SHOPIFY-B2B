@@ -57,12 +57,21 @@
                 </div>
             {% endif %}
             {% if product.metafields.plytix.gold_medal_winner %}
-                <div class="sm-row">
-                    <div class="icon-wrap">
-                        <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                    <a href="/collections/gold-medal-winners"><div class="sm-row">
+                        <div class="icon-wrap">
+                            <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                        </div>
+                        <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">It's that Awesome!</span></div>
+                    </div></a>
+                {%- else -%}
+                    <div class="sm-row">
+                        <div class="icon-wrap">
+                            <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                        </div>
+                        <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">It's that Awesome!</span></div>
                     </div>
-                    <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">It's that Awesome!</span></div>
-                </div>
+                {% endif %}
             {% endif %}
 
             {% if product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
@@ -86,14 +95,25 @@
             {% endif %}
 
             {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
-                <div class="sm-row">
-                    <div class="icon-wrap" style="font-size: 23px;">
-                        <i class="fa-regular fa-screwdriver-wrench"></i>
+                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                    <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">
+                        <div class="icon-wrap" style="font-size: 23px;">
+                            <i class="fa-regular fa-screwdriver-wrench"></i>
+                        </div>
+                        <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
+                            <span class="sm-text">Tested & approved to be in good working order!</span>
+                        </div>
+                    </div></a>
+                {%- else -%}
+                    <div class="sm-row">
+                        <div class="icon-wrap" style="font-size: 23px;">
+                            <i class="fa-regular fa-screwdriver-wrench"></i>
+                        </div>
+                        <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
+                            <span class="sm-text">Tested & approved to be in good working order!</span>
+                        </div>
                     </div>
-                    <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
-                        <span class="sm-text">Tested & approved to be in good working order!</span>
-                    </div>
-                </div>
+                {% endif %}
             {% endif %}
 
         {% endif %}
