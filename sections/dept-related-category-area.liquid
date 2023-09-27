@@ -3,11 +3,11 @@
 
     {% assign heading = section.settings.block-title %}
 
-    {% assign section_classes = "category-types-v2" %}
-    {%- assign base_name = base_name | default: 'category-types-v2' -%}
+    {% assign section_classes = "related-cat-types-v2" %}
+    {%- assign base_name = base_name | default: 'related-cat-types-v2' -%}
 
 
-    <section class="category-types-v2" data-section-id="{{ section.id }}">
+    <section class="related-cat-types-v2" data-section-id="{{ section.id }}">
         <div class="category-links-section--wrapper">
             <div class="{{ base_name }}__container">
                 <div class="{{ base_name }}__content">
@@ -32,7 +32,7 @@
                                                     render 'rimg'
                                                     img: image,
                                                     alt: alt,
-                                                    size: '600x',
+                                                    size: '150x',
                                                     lazy: true,
                                                     crop: 'center',
                                                     class: image_classes
@@ -45,20 +45,6 @@
                                             {{ title }}
                                         </div>
                                     </a>
-                                    {%- if block.settings.url contains "/collections/" -%}
-                                        {%- assign trueHandle =  block.settings.url | replace: "/collections/","" -%}
-                                        {%- if collections[trueHandle].metafields.custom.answer != blank -%}
-                                            <div class="moreinfo-btn" data-info-target="{{ trueHandle }}">More Info <i class="fa-sharp fa-solid fa-caret-right"></i></div>
-                                            <div class="moreinfo-area closed" data-cat-info="{{ trueHandle }}">
-                                                <div class="answer-box">
-                                                    <div class="topborder"></div>
-                                                    <div class="close-info" data-info-target="{{ trueHandle }}"><i class="fa-solid fa-xmark"></i></div>
-                                                    <div class="answer-text">{{ collections[trueHandle].metafields.custom.answer | metafield_tag }}</div>
-                                                    <div class="view-products"><a href="{{ url }}">View Products <i class="fa-sharp fa-solid fa-caret-right"></i></a></div>
-                                                </div>
-                                            </div>
-                                        {%- endif -%}
-                                    {%- endif -%}
                                 </div>
                             </div>
                     {%  endfor %}
@@ -68,38 +54,27 @@
     </section>
 {% endif %}
 
-<script>
-    jQuery('.moreinfo-btn').on( "click", function() {
-        var target = jQuery(this).data("info-target");
-        jQuery('.moreinfo-area[data-cat-info="'+target+'"]').addClass('open').removeClass('closed');
-    } );
-
-    jQuery('.close-info').on( "click", function() {
-        var target = jQuery(this).data("info-target");
-        jQuery('.moreinfo-area[data-cat-info="'+target+'"]').addClass('closed').removeClass('open');
-    } );
-</script>
 
 {% schema %}
 {
-    "name": "Department Category Links",
-    "class": "dept-category",
+    "name": "Dept Related Cat Links",
+    "class": "dept-related",
     "settings": [
         {
         "type": "header",
-        "content": "Department Categories"
+        "content": "Department Related Categories"
         },
         {
         "type": "text",
         "id": "block-title",
         "label": "Block Title",
-        "default": "Categories"
+        "default": "Related Categories"
         }
     ],
     "blocks": [
     {
-        "type": "categorylink",
-        "name": "Category Link",
+        "type": "related_cat_link",
+        "name": "Related Category Link",
         "settings": [
             {
             "type":"image_picker",
@@ -121,7 +96,7 @@
     ],
     "presets": [
     {
-        "name": "Department Category Links",
+        "name": "Department Related Category Links",
         "category": "Layout",
         "settings": {
 
