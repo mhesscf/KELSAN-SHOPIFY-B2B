@@ -5,6 +5,7 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/september-sotm-dura-18-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/september-sotm-dura-18-800x427.jpg",
@@ -26,6 +27,7 @@
         },
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/september-sotm-wet-dry-vac1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/september-sotm-wet-dry-vac-800x427.jpg",
@@ -47,20 +49,40 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/august-sweeper-special-2000x639.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/august-sweeper-special-800x427.jpg",
-            "title": "CleanFreak® 'EasySweep' Warehouse Vacuum Sweeper",
-            "text": "Sweep Smarter, Save Bigger.<br> Now $2,149.99",
+            "background_image": "shopify:\/\/shop_images\/burnisher-october-special-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/burnisher-october-special-800x427.jpg",
+            "title": "CleanFreak® 20&quot; High-Speed Floor Burnisher",
+            "text": "Maximize Shine, Minimize Costs.<br> Now $869.99.",
             "color": "#303e48",
-            "link": "https:\/\/www.cleanfreak.com\/products\/warehouse-concrete-floor-sweeper",
+            "link": "\/products\/1-5-hp-high-speed-20-inch-burnisher",
             "text_alignment": "left",
             "button_one_label": "Save Now!",
-            "button_one_link": "https:\/\/www.cleanfreak.com\/products\/warehouse-concrete-floor-sweeper",
+            "button_one_link": "\/products\/1-5-hp-high-speed-20-inch-burnisher",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "\/products\/heated-carpet-spot-cleaner",
+            "button_two_style": "primary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
+        "11a75ad9-3839-4050-bb7f-7cec379b8726": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/extractor-october-special-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/extractor-october-special-800x427.jpg",
+            "title": "CleanFreak® Heated 500 PSI Portable Extractor",
+            "text": "Unleash the Heat, Ignite the Savings!<br>Now $2,749.99.",
+            "color": "#FFFFFF",
+            "link": "\/products\/heated-500-psi-portable-extractor",
+            "text_alignment": "left",
+            "button_one_label": "SAVE NOW!",
+            "button_one_link": "\/products\/heated-500-psi-portable-extractor",
+            "button_one_style": "secondary",
+            "button_two_label": "",
+            "button_two_link": "",
             "button_two_style": "primary",
             "show_overlay": false,
             "overlay_color": "#000000",
@@ -71,7 +93,8 @@
       "block_order": [
         "slide-1",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
-        "b208e0f0-54a1-4304-9ca0-4e24e5a33de4"
+        "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
+        "11a75ad9-3839-4050-bb7f-7cec379b8726"
       ],
       "settings": {
         "enable_autoplay": true,
