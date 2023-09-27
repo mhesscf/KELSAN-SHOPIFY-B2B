@@ -23691,6 +23691,7 @@ body:not(.user-is-tabbing) .rte .tabs .grouped-content-trigger {
 	font-weight: 500;
 	letter-spacing: 0;
 	line-height: 32px;
+	margin-top: 5px;
 	margin-bottom: 15px;
 }
 .brand-slider .brand-slide{
@@ -23796,7 +23797,7 @@ body:not(.user-is-tabbing) .rte .tabs .grouped-content-trigger {
 	width: 100%;
 	max-width: 1400px;
 	margin: 0 auto 20px;
-	padding: 40px 15px;
+	padding: 20px 15px;
 	border-bottom: 1px solid #C0D3D8;
 }
 
@@ -24014,11 +24015,24 @@ img.category-resources-section__image {
 }
 /* ------------------- Category Types End ---------------*/
 /* ------------------- Category Types V2 Start ---------------*/
+.category-resources-section__heading,
+.category-types-v2__heading,
+.related-cat-types-v2__heading{
+	color: {{ settings.color_headings }};
+	font-family: Roboto;
+	font-size: 30px;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 32px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
 .category-types-v2__container{
 	width: 100%;
 	max-width: 1400px;
 	margin: 0 auto 20px;
-	padding: 40px 15px;
+	padding: 20px 15px;
 	border-bottom: 1px solid #C0D3D8;
 }
 .category-types-v2 .flex-row{
@@ -24135,6 +24149,72 @@ img.category-resources-section__image {
 	}
 }
 /* ------------------- Category Types V2 end ---------------*/
+
+/* ------------------- Related Category Types V2 Start ---------------*/
+.related-cat-types-v2__container{
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto 20px;
+	padding: 1px 15px 20px 15px;
+	border-bottom: 1px solid #C0D3D8;
+}
+.related-cat-types-v2 .flex-row{
+	display:flex;
+	flex-wrap:wrap;
+}
+.related-cat-types-v2 .category-link-wrapper{
+	text-align:center;
+	width:16%;
+	padding:10px;
+}
+.related-cat-types-v2 .category-link-wrapper .category-link-border{
+	border:1px solid #ccc;
+	border-radius: 15px;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+	padding:10px;
+}
+.related-cat-types-v2 .category-link-wrapper .category-link-title{
+	padding:3px 15px;
+	color: #303E48;
+	font-size: 16px;
+	line-height: 24px;
+}
+.related-cat-types-v2 .category-link-wrapper a{
+	text-decoration: none;
+}
+
+@media (max-width: 1279px){
+	.related-cat-types-v2 .category-link-wrapper{
+		width:20%;
+	}
+}
+@media (max-width: 1023px){
+	.related-cat-types-v2 .category-link-wrapper{
+		width:25%;
+	}
+}
+@media (max-width: 719px){
+	.related-cat-types-v2 .category-link-wrapper{
+		width:33.3%;
+	}
+}
+@media (max-width: 679px){
+	.related-cat-types-v2 .category-link-wrapper{
+		width:50%;
+		padding:5px;
+	}
+	.related-cat-types-v2 .related-cat-types-v2__image{
+		width:100px;
+	}
+	.related-cat-types-v2 .category-link-wrapper .category-link-title{
+		font-size:14px;
+		line-height:17px
+	}
+}
+/* ------------------- Related Category Types V2 end ---------------*/
+
 /* ------------------- Category Applications Begin ---------------*/
 .category-applications .container{
 	width: 100%;
