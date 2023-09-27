@@ -65,22 +65,24 @@
                 </div>
             {% endif %}
 
-            {% if product.metafields.plytix.clearance_overstock == 'true' %}
-                <div class="sm-row">
-                    <div class="icon-wrap" style="font-size: 23px;">
-                        <i class="fa-solid fa-tag"></i>
+            {% if product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
+                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                    <a href="/collections/clearance"><div class="sm-row">
+                        <div class="icon-wrap" style="font-size: 23px;">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+                        <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
+                            <span class="sm-text">Buy now before they are gone!</span></div>
+                        </div></a>
+                {%- else -%}
+                    <div class="sm-row">
+                        <div class="icon-wrap" style="font-size: 23px;">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+                        <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
+                      <span class="sm-text">Buy now before they are gone!</span></div>
                     </div>
-                    <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
-                  <span class="sm-text">Buy now before they are gone!</span></div>
-                </div>
-            {% elsif pclearance == true %}
-                <div class="sm-row">
-                    <div class="icon-wrap" style="font-size: 23px;">
-                        <i class="fa-solid fa-tag"></i>
-                    </div>
-                    <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
-                  <span class="sm-text">Buy now before they are gone!</span></div>
-                </div>
+                {% endif %}
             {% endif %}
 
             {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
