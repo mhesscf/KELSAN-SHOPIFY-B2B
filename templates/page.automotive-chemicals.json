@@ -339,6 +339,70 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "85771e13-292a-4bc3-bd9e-07169c2de970": {
+      "type": "dept-category-area",
+      "blocks": {
+        "b68c6a8f-5635-4953-865d-a3f05705563f": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-detailing-chemicals_eccbf1f9-079d-4a74-9f46-f18e5d1366e8.jpg",
+            "title": "Automotive Detailing",
+            "url": "\/collections\/automotive-detailing"
+          }
+        },
+        "adb80271-f7e5-4c41-a032-834fec95da2c": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-shampoo.jpg",
+            "title": "Carpet & Upholstery Shampoo",
+            "url": "\/collections\/carpet-upholstery-shampoo"
+          }
+        },
+        "bc346da2-220b-4a17-b510-5513a084051b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lubricants.jpg",
+            "title": "Lubricants",
+            "url": "\/collections\/lubricants"
+          }
+        },
+        "140ad200-8bf3-4986-9bfa-87074410bad5": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/parts-washing-solutions.jpg",
+            "title": "Parts Washing Solutions",
+            "url": "\/collections\/parts-washing-solutions"
+          }
+        },
+        "077ded7e-3939-491c-8095-50347dbb2734": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pre-spray-chemicals.jpg",
+            "title": "Pre-Spray Chemicals",
+            "url": "\/collections\/pre-spray-chemicals"
+          }
+        },
+        "c0a0a8cf-7b65-45d1-a6c9-83741af70cac": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stain-removal.jpg",
+            "title": "Stain Removal",
+            "url": "\/collections\/stain-removal-carpet-spotting-chemicals"
+          }
+        }
+      },
+      "block_order": [
+        "b68c6a8f-5635-4953-865d-a3f05705563f",
+        "adb80271-f7e5-4c41-a032-834fec95da2c",
+        "bc346da2-220b-4a17-b510-5513a084051b",
+        "140ad200-8bf3-4986-9bfa-87074410bad5",
+        "077ded7e-3939-491c-8095-50347dbb2734",
+        "c0a0a8cf-7b65-45d1-a6c9-83741af70cac"
+      ],
+      "settings": {
+        "block-title": "Auto Detailing Chemicals by Type"
+      }
     }
   },
   "order": [
@@ -346,6 +410,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "85771e13-292a-4bc3-bd9e-07169c2de970"
   ]
 }
