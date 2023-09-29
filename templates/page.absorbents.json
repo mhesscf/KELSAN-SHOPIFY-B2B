@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "b50e1c62-eace-4f33-84e1-f66c735be752": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "7b319128-5b79-4379-aa3e-ba1404cd147a": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/febreze-deodorizer-absorbents-dept-page.jpg",
+            "cat_title": "Deodorizers & Absorbents",
+            "cat_text": "A large selection of absorbents, deodorizers, and clean up kits to help you deal with different messes."
+          }
+        }
+      },
+      "block_order": [
+        "7b319128-5b79-4379-aa3e-ba1404cd147a"
+      ],
       "settings": {
-        "chsectionheading": "Deodorizers & Absorbents",
-        "chsectiontext": "A large selection of absorbents, deodorizers, and clean up kits to help you deal with different messes.",
-        "image": "shopify:\/\/shop_images\/febreze-deodorizer-absorbents-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -76,7 +92,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -107,6 +122,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -332,13 +348,42 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "06a2ab73-b6b8-44a0-9633-08e6b4816915": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "37e6dcf9-be21-4fbd-9169-97eba07045d6": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Aerosol Deodorizers",
+            "brand-link": "\/collections\/aerosol-deodorizers",
+            "brand-image": "shopify:\/\/shop_images\/aerosol-deodorizers.jpg"
+          }
+        },
+        "66e81919-0651-47dd-bd63-383cfb25b18b": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Air Fresheners & Odor Eliminators",
+            "brand-link": "\/collections\/air-fresheners-odor-eliminators",
+            "brand-image": "shopify:\/\/shop_images\/air-fresheners.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "37e6dcf9-be21-4fbd-9169-97eba07045d6",
+        "66e81919-0651-47dd-bd63-383cfb25b18b"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "b50e1c62-eace-4f33-84e1-f66c735be752",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "06a2ab73-b6b8-44a0-9633-08e6b4816915"
   ]
 }
