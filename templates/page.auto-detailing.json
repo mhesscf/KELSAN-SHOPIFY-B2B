@@ -353,6 +353,29 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "7796c4bc-8b20-4e80-bf34-71095753a2cd": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "ad3d8d75-1ed2-44ed-b4f8-9579510258b2": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_title": "Category Name",
+            "cat_text": "Category Text"
+          }
+        }
+      },
+      "block_order": [
+        "ad3d8d75-1ed2-44ed-b4f8-9579510258b2"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
+      }
     }
   },
   "order": [
@@ -360,6 +383,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "7796c4bc-8b20-4e80-bf34-71095753a2cd"
   ]
 }
