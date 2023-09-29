@@ -403,6 +403,52 @@
       "settings": {
         "block-title": "Auto Detailing Chemicals by Type"
       }
+    },
+    "f55c7ec1-8165-407c-a219-c09e3207f945": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "edc1e9cb-03bf-4e58-9a70-0ff7d73ff367": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Armor All®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Armor All&refinementList[product_type][0]=Auto Detailing Chemicals&q=Armor All",
+            "brand-image": "shopify:\/\/shop_images\/144680.jpg"
+          }
+        },
+        "95e9e9a0-eadb-4a3c-a4e8-9e74f02138fc": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Nyco®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Hard Surface Cleaners&q=Nyco",
+            "brand-image": "shopify:\/\/shop_images\/nyco-ink-spot-nl529-q6-cae_342d9ec0-8540-4df5-88e2-508b9e66232e.jpg"
+          }
+        },
+        "11b741c1-4869-4cf0-8b9f-3adf5138762e": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Bright Solutions®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Hard Surface Cleaners&q=Bright Solutions",
+            "brand-image": "shopify:\/\/shop_images\/bright-solutions-activate-odor-removing-bioculture-case-with-1-sprayer.jpg"
+          }
+        },
+        "4b53e1d3-ab6a-4ad4-9a06-6095ed7cefb6": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-pet-patrol-stain-remover-6-pack_1_3a054d95-deea-406c-8475-e85585803319.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "edc1e9cb-03bf-4e58-9a70-0ff7d73ff367",
+        "95e9e9a0-eadb-4a3c-a4e8-9e74f02138fc",
+        "11b741c1-4869-4cf0-8b9f-3adf5138762e",
+        "4b53e1d3-ab6a-4ad4-9a06-6095ed7cefb6"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -411,6 +457,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "85771e13-292a-4bc3-bd9e-07169c2de970"
+    "85771e13-292a-4bc3-bd9e-07169c2de970",
+    "f55c7ec1-8165-407c-a219-c09e3207f945"
   ]
 }
