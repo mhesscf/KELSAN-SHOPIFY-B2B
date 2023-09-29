@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "7796c4bc-8b20-4e80-bf34-71095753a2cd": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "ad3d8d75-1ed2-44ed-b4f8-9579510258b2": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/mytee-8070-auto-detailing-extractor-dept-page.jpg",
+            "cat_title": "Auto Detailing",
+            "cat_text": "Machines & chemicals to clean auto exteriors and deeply embedded dirt in auto upholstery and carpet."
+          }
+        }
+      },
+      "block_order": [
+        "ad3d8d75-1ed2-44ed-b4f8-9579510258b2"
+      ],
       "settings": {
-        "chsectionheading": "Auto Detailing",
-        "chsectiontext": "Machines & chemicals to clean auto exteriors and deeply embedded dirt in auto upholstery and carpet.",
-        "image": "shopify:\/\/shop_images\/mytee-8070-auto-detailing-extractor-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -353,37 +369,13 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
-    },
-    "7796c4bc-8b20-4e80-bf34-71095753a2cd": {
-      "type": "dynamic-slideshow",
-      "blocks": {
-        "ad3d8d75-1ed2-44ed-b4f8-9579510258b2": {
-          "type": "categoryhead",
-          "settings": {
-            "cat_title": "Category Name",
-            "cat_text": "Category Text"
-          }
-        }
-      },
-      "block_order": [
-        "ad3d8d75-1ed2-44ed-b4f8-9579510258b2"
-      ],
-      "settings": {
-        "enable_autoplay": true,
-        "autoplay_duration": 8,
-        "slideshow_width": "full",
-        "slideshow_height": "medium",
-        "slideshow_height_mobile": "medium",
-        "slideshow_text_below_image": true
-      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "7796c4bc-8b20-4e80-bf34-71095753a2cd",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694",
-    "7796c4bc-8b20-4e80-bf34-71095753a2cd"
+    "1663875378f697f694"
   ]
 }
