@@ -352,29 +352,46 @@
     "06a2ab73-b6b8-44a0-9633-08e6b4816915": {
       "type": "dept-brands-area",
       "blocks": {
+        "10156cbf-bca8-455b-af03-2485af4756db": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=CleanFreak"
+          }
+        },
         "37e6dcf9-be21-4fbd-9169-97eba07045d6": {
           "type": "brandlink",
           "settings": {
-            "brand-title": "Aerosol Deodorizers",
-            "brand-link": "\/collections\/aerosol-deodorizers",
-            "brand-image": "shopify:\/\/shop_images\/aerosol-deodorizers.jpg"
+            "brand-title": "Nyco®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Nyco",
+            "brand-image": "shopify:\/\/shop_images\/nl763-q12s_sani-spritz-spray-12-case.jpg"
           }
         },
         "66e81919-0651-47dd-bd63-383cfb25b18b": {
           "type": "brandlink",
           "settings": {
-            "brand-title": "Air Fresheners & Odor Eliminators",
-            "brand-link": "\/collections\/air-fresheners-odor-eliminators",
-            "brand-image": "shopify:\/\/shop_images\/air-fresheners.jpg"
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-low-foam-floor-degreaser-case.jpg"
+          }
+        },
+        "789d16cf-eaf4-41e4-ab8b-193c30f8e2e4": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Nilodor®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nilodor&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Nilodor",
+            "brand-image": "shopify:\/\/shop_images\/nilodor-nilosorb-moisture-absorbent-920-ngc.jpg"
           }
         }
       },
       "block_order": [
+        "10156cbf-bca8-455b-af03-2485af4756db",
         "37e6dcf9-be21-4fbd-9169-97eba07045d6",
-        "66e81919-0651-47dd-bd63-383cfb25b18b"
+        "66e81919-0651-47dd-bd63-383cfb25b18b",
+        "789d16cf-eaf4-41e4-ab8b-193c30f8e2e4"
       ],
       "settings": {
-        "block-title": "Deodorizers & Absorbents by Type"
+        "block-title": "Featured Brands"
       }
     }
   },
