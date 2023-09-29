@@ -413,14 +413,59 @@
             "title": "Air Fresheners & Odor Eliminators",
             "url": "\/collections\/air-fresheners-odor-eliminators"
           }
+        },
+        "5954a462-e123-404a-92b5-445d8670b452": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gel-deodorizers.jpg",
+            "title": "Gel Deodorizers",
+            "url": "\/collections\/gel-deodorizers"
+          }
+        },
+        "262f8cc1-0cab-4cb2-94eb-41d76074f9de": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/liquid-deodorizers.jpg",
+            "title": "Liquid Deodorizers",
+            "url": "\/collections\/liquid-deodorizers"
+          }
+        },
+        "fafc5f3c-7c38-4add-ba53-7a630589ffd9": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/powder-deodorizers.jpg",
+            "title": "Powder Deodorizers",
+            "url": "\/collections\/powder-deodorizers"
+          }
+        },
+        "fdb052d2-7d61-49cb-8dfa-71b6533beb71": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/solid-deodorizers.jpg",
+            "title": "Solid Deodorizers",
+            "url": "\/collections\/solid-deodorizers"
+          }
+        },
+        "278c598c-4e40-40b9-ada1-54cfa5264bac": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/spill-cleanup.jpg",
+            "title": "Spill Cleanup",
+            "url": "\/collections\/spill-cleanup"
+          }
         }
       },
       "block_order": [
         "3330f278-061c-4e00-ac57-98406437f066",
-        "c40703b8-1a37-446e-a144-d513ec01076b"
+        "c40703b8-1a37-446e-a144-d513ec01076b",
+        "5954a462-e123-404a-92b5-445d8670b452",
+        "262f8cc1-0cab-4cb2-94eb-41d76074f9de",
+        "fafc5f3c-7c38-4add-ba53-7a630589ffd9",
+        "fdb052d2-7d61-49cb-8dfa-71b6533beb71",
+        "278c598c-4e40-40b9-ada1-54cfa5264bac"
       ],
       "settings": {
-        "block-title": "Categories"
+        "block-title": "Deodorizers & Absorbents by Type"
       }
     }
   },
