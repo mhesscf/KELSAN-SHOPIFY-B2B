@@ -369,6 +369,79 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "80ef6642-8cbc-4122-abc3-81d615c556d7": {
+      "type": "dept-category-area",
+      "blocks": {
+        "556d9754-4e12-4593-8c38-4aa3a1351307": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-detailing-chemicals.jpg",
+            "title": "Auto Detailing Chemicals",
+            "url": "\/pages\/automotive-chemicals"
+          }
+        },
+        "91bfa59d-6342-4d4a-8682-2cc7c90e2dcc": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-buckets.jpg",
+            "title": "Buckets",
+            "url": "\/collections\/buckets"
+          }
+        },
+        "56f385c7-49fd-453c-924d-269f990340e7": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-detailing-extractors.jpg",
+            "title": "Detailing Extractors",
+            "url": "\/collections\/detailing-extractors"
+          }
+        },
+        "191afa71-3c89-4b5d-8027-0a6a7a4ebd5c": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/microfiber-rags.jpg",
+            "title": "Microfiber Rags",
+            "url": "\/collections\/microfiber-rags"
+          }
+        },
+        "30eddd01-5364-474a-a7be-fb21e9699a70": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/part-washing-tanks.jpg",
+            "title": "Parts Washing Tanks & Sinks",
+            "url": "\/collections\/parts-washing-tanks"
+          }
+        },
+        "07373a37-ee5c-4b25-9675-805cda493186": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/safety-supplies.jpg",
+            "title": "Safety Supplies",
+            "url": "\/pages\/safety-ppe"
+          }
+        },
+        "38d9f74d-d029-458a-bae0-a0bb711ebc9d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steam-cleaners.jpg",
+            "title": "Steam Cleaners",
+            "url": "\/collections\/steam-cleaners"
+          }
+        }
+      },
+      "block_order": [
+        "556d9754-4e12-4593-8c38-4aa3a1351307",
+        "91bfa59d-6342-4d4a-8682-2cc7c90e2dcc",
+        "56f385c7-49fd-453c-924d-269f990340e7",
+        "191afa71-3c89-4b5d-8027-0a6a7a4ebd5c",
+        "30eddd01-5364-474a-a7be-fb21e9699a70",
+        "07373a37-ee5c-4b25-9675-805cda493186",
+        "38d9f74d-d029-458a-bae0-a0bb711ebc9d"
+      ],
+      "settings": {
+        "block-title": "Auto Detailing by Type"
+      }
     }
   },
   "order": [
@@ -376,6 +449,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "80ef6642-8cbc-4122-abc3-81d615c556d7"
   ]
 }
