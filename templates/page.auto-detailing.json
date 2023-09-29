@@ -150,226 +150,6 @@
         "enable_recently_viewed_products": true
       }
     },
-    "1663875378f697f694": {
-      "type": "category-landing-page",
-      "blocks": {
-        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
-          "type": "menu",
-          "settings": {
-            "menu": "",
-            "show_prod_count": false,
-            "menu_depth_range": 3
-          }
-        },
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
-          "type": "ctheader",
-          "settings": {
-            "sectionheading": "Auto Detailing by Type"
-          }
-        },
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/auto-detailing-chemicals.jpg",
-            "linktext": "Auto Detailing Chemicals",
-            "linkurl": "shopify:\/\/pages\/automotive-chemicals"
-          }
-        },
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/auto-buckets.jpg",
-            "linktext": "Buckets",
-            "linkurl": "shopify:\/\/collections\/buckets"
-          }
-        },
-        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/auto-detailing-extractors.jpg",
-            "linktext": "Detailing Extractors",
-            "linkurl": "shopify:\/\/collections\/detailing-extractors"
-          }
-        },
-        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/microfiber-rags.jpg",
-            "linktext": "Microfiber Rags",
-            "linkurl": "shopify:\/\/collections\/microfiber-rags"
-          }
-        },
-        "4715b000-00ac-457e-86f2-fac625d11e35": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/part-washing-tanks.jpg",
-            "linktext": "Parts Washing Tanks & Sinks",
-            "linkurl": "shopify:\/\/collections\/parts-washing-tanks"
-          }
-        },
-        "d5555fee-e855-4369-bb4e-b5f8a603808b": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/safety-supplies.jpg",
-            "linktext": "Safety Supplies",
-            "linkurl": "shopify:\/\/pages\/safety-ppe"
-          }
-        },
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/steam-cleaners.jpg",
-            "linktext": "Steam Cleaners",
-            "linkurl": "shopify:\/\/collections\/steam-cleaners"
-          }
-        },
-        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
-          "type": "caheader",
-          "disabled": true,
-          "settings": {
-            "sectionheading": "Shop By Application"
-          }
-        },
-        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
-            "linktext": "Application 1",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
-            "linktext": "Application 2",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "c939808d-357a-485e-9410-ae296bc0f014": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
-            "linktext": "Application 3",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "b8376ece-b804-476e-a3b5-35b77607dd21": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
-            "linktext": "Application 4",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sweeping-category.png",
-            "linktext": "Application 5",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
-            "linktext": "Application 6",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "c954c801-0965-4531-a610-39e54b5cb265": {
-          "type": "slider",
-          "settings": {
-            "collection": "cleanfreak"
-          }
-        },
-        "3fba68ff-4018-4287-a0a8-a3b997759627": {
-          "type": "slider",
-          "settings": {
-            "collection": "mytee"
-          }
-        },
-        "d579de19-efac-4983-a0ab-706511d00621": {
-          "type": "slider",
-          "settings": {
-            "collection": "armor-all"
-          }
-        },
-        "74ca4c91-5d6a-4a6a-b199-0b6059b5ecd4": {
-          "type": "slider",
-          "settings": {
-            "collection": "trusted-clean"
-          }
-        },
-        "9137bd9f-c2ac-46a1-ab02-2220bf154c9b": {
-          "type": "slider",
-          "settings": {
-            "collection": "vapamore"
-          }
-        },
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
-          "type": "crheader",
-          "settings": {
-            "sectionheading": "Auto Detailing Resources"
-          }
-        },
-        "cb754198-b199-4317-879a-0b37a3021253": {
-          "type": "resource",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-stain-removal-prevention-dept-page.jpg",
-            "heading": "Stain Removal",
-            "subheading": "<p>Tips on removing spots & stains from carpet and upholstery.<\/p>",
-            "button_label": "Read the Guide",
-            "button_link": "shopify:\/\/pages\/stain-removal-directions"
-          }
-        }
-      },
-      "block_order": [
-        "589b0ba5-e3fa-4320-9319-39615c0ac890",
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
-        "159a2b1f-8d76-471e-84de-975a6d48fa11",
-        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
-        "4715b000-00ac-457e-86f2-fac625d11e35",
-        "d5555fee-e855-4369-bb4e-b5f8a603808b",
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
-        "416df694-767b-4c68-8e90-2c0cff08dc2a",
-        "5b4a6417-f1c3-413e-8694-20fe1b499722",
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
-        "c939808d-357a-485e-9410-ae296bc0f014",
-        "b8376ece-b804-476e-a3b5-35b77607dd21",
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
-        "c954c801-0965-4531-a610-39e54b5cb265",
-        "3fba68ff-4018-4287-a0a8-a3b997759627",
-        "d579de19-efac-4983-a0ab-706511d00621",
-        "74ca4c91-5d6a-4a6a-b199-0b6059b5ecd4",
-        "9137bd9f-c2ac-46a1-ab02-2220bf154c9b",
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
-        "cb754198-b199-4317-879a-0b37a3021253"
-      ],
-      "settings": {
-        "collection": "",
-        "show_collection_image": true,
-        "products_per_page_range": 6,
-        "products_per_row": "3",
-        "sort_by": true,
-        "grid_list": true,
-        "default_view": "grid-view",
-        "enable_subcollection": false,
-        "show_product_count": false,
-        "thumbnail_image": "product-image",
-        "image_crop": "original"
-      }
-    },
     "80ef6642-8cbc-4122-abc3-81d615c556d7": {
       "type": "dept-category-area",
       "blocks": {
@@ -504,6 +284,27 @@
       "settings": {
         "block-title": "Featured Brands"
       }
+    },
+    "6fc05447-9a5d-4ad4-8974-a0bae21241f7": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "6df0d581-342b-41b9-a10d-537c887d4eb7": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-stain-removal-prevention-dept-page.jpg",
+            "heading": "Stain Removal",
+            "subheading": "<p>Tips on removing spots & stains from carpet and upholstery.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/pages\/stain-removal-directions"
+          }
+        }
+      },
+      "block_order": [
+        "6df0d581-342b-41b9-a10d-537c887d4eb7"
+      ],
+      "settings": {
+        "block-title": "Auto Detailing Resources"
+      }
     }
   },
   "order": [
@@ -511,9 +312,9 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694",
     "80ef6642-8cbc-4122-abc3-81d615c556d7",
     "728646d7-5b75-4775-a83d-17457ccf7f8f",
-    "5428e26b-99f7-469c-9b24-a05003f836a2"
+    "5428e26b-99f7-469c-9b24-a05003f836a2",
+    "6fc05447-9a5d-4ad4-8974-a0bae21241f7"
   ]
 }
