@@ -394,6 +394,34 @@
       "settings": {
         "block-title": "Featured Brands"
       }
+    },
+    "9e970e79-b67d-44fb-873b-1170977e44de": {
+      "type": "dept-category-area",
+      "blocks": {
+        "3330f278-061c-4e00-ac57-98406437f066": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aerosol-deodorizers.jpg",
+            "title": "Aerosol Deodorizers",
+            "url": "\/collections\/aerosol-deodorizers"
+          }
+        },
+        "c40703b8-1a37-446e-a144-d513ec01076b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/air-fresheners.jpg",
+            "title": "Air Fresheners & Odor Eliminators",
+            "url": "\/collections\/air-fresheners-odor-eliminators"
+          }
+        }
+      },
+      "block_order": [
+        "3330f278-061c-4e00-ac57-98406437f066",
+        "c40703b8-1a37-446e-a144-d513ec01076b"
+      ],
+      "settings": {
+        "block-title": "Categories"
+      }
     }
   },
   "order": [
@@ -402,6 +430,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "06a2ab73-b6b8-44a0-9633-08e6b4816915"
+    "06a2ab73-b6b8-44a0-9633-08e6b4816915",
+    "9e970e79-b67d-44fb-873b-1170977e44de"
   ]
 }
