@@ -356,7 +356,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=CleanFreak"
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/cleanfreak-deodorizers.jpg"
           }
         },
         "37e6dcf9-be21-4fbd-9169-97eba07045d6": {
