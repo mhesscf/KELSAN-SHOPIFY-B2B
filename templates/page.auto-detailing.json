@@ -442,6 +442,68 @@
       "settings": {
         "block-title": "Auto Detailing by Type"
       }
+    },
+    "728646d7-5b75-4775-a83d-17457ccf7f8f": {
+      "type": "dept-related-category-area",
+      "disabled": true,
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
+    "5428e26b-99f7-469c-9b24-a05003f836a2": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "fd278dfb-1a2a-44e2-ab9d-a0ee3fb6e4d9": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Carpet %26 Upholstery&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/san-cf-3-h-01.jpg"
+          }
+        },
+        "cf2cbf0d-a670-473b-955a-94d1dd637662": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Mytee Products®, Inc.",
+            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Mytee&refinementList%5Bproduct_type%5D%5B0%5D=Carpet%20Extractors&refinementList%5Bproduct_type%5D%5B1%5D=Carpet%20Extractor%20Hoses%2C%20Wands%20%26%20Accessories&q=Mytee",
+            "brand-image": "shopify:\/\/shop_images\/mytee-8070-carpet-extractor-spotter-w-new-hose.jpg"
+          }
+        },
+        "d00b1869-f114-45ed-ae1a-241f073f25d7": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Armor All®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Armor All&refinementList[product_type][0]=Auto Detailing Chemicals&q=Armor All",
+            "brand-image": "shopify:\/\/shop_images\/144680.jpg"
+          }
+        },
+        "fdf3e9db-e456-4b37-884f-0652ff4c6b40": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Carpet Extractors&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-quench-wet-dry-vacuum.jpg"
+          }
+        },
+        "6b4f656b-a877-480e-ba78-1fc5a1e38f10": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Vapamore®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Vapamore&refinementList[product_type][0]=Steam Cleaners&q=Vapamore",
+            "brand-image": "shopify:\/\/shop_images\/vapamore-mr-75-amico-handheld-steamer-with-hose.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "fd278dfb-1a2a-44e2-ab9d-a0ee3fb6e4d9",
+        "cf2cbf0d-a670-473b-955a-94d1dd637662",
+        "d00b1869-f114-45ed-ae1a-241f073f25d7",
+        "fdf3e9db-e456-4b37-884f-0652ff4c6b40",
+        "6b4f656b-a877-480e-ba78-1fc5a1e38f10"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -450,6 +512,8 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "80ef6642-8cbc-4122-abc3-81d615c556d7"
+    "80ef6642-8cbc-4122-abc3-81d615c556d7",
+    "728646d7-5b75-4775-a83d-17457ccf7f8f",
+    "5428e26b-99f7-469c-9b24-a05003f836a2"
   ]
 }
