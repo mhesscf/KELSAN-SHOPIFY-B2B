@@ -1,0 +1,20 @@
+<ul class="cartitems--list" data-cart-item-list>
+  {% for item in cart.items %}
+    {%
+      render 'cart-item',
+      item: item,
+      show_sku: show_sku,
+      item_index: forloop.index,
+    %}
+  {% endfor %}
+</ul>
+<div id="bundle-remove-alert">
+    <div class="inner">
+        {{ settings.bundle_remove_text }}
+        <div class="button-row">
+            <button class="popup-button button-primary remove">Remove Items</button>
+            <button class="popup-button button-primary cancel">Cancel</button>
+        </div>
+    </div>
+    <span class="cancel close-x">✕</span>
+</div>
