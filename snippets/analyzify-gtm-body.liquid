@@ -348,16 +348,16 @@
             document.addEventListener("click", (event) => {
                 found_element = [];
                 found_atc_element_form = [];
-                var checkout_elem = window.findElemInPath(event.path, analyzify.checkout_btn_attributes);
-                var rfc_elem = window.findElemInPath(event.path, analyzify.removefromcart_btn_attributes);
+                var checkout_elem = window.findElemInPath(event.composedPath(), analyzify.checkout_btn_attributes);
+                var rfc_elem = window.findElemInPath(event.composedPath(), analyzify.removefromcart_btn_attributes);
                 {% case template_name %}
                 {%- when 'product' -%}
-                var atc_elem = window.findElemInPath(event.path, analyzify.addtocart_btn_attributes);
+                var atc_elem = window.findElemInPath(event.composedPath(), analyzify.addtocart_btn_attributes);
                 {% when 'collection' %}
-                var col_prod_click_elem = window.findElemInPath(event.path, analyzify.collection_prod_click_attributes);
-                var coll_atc_elem = window.findElemInPath(event.path, analyzify.collection_atc_attributes);
+                var col_prod_click_elem = window.findElemInPath(event.composedPath(), analyzify.collection_prod_click_attributes);
+                var coll_atc_elem = window.findElemInPath(event.composedPath(), analyzify.collection_atc_attributes);
                 {% when 'search' %}
-                var search_prod_click_elem = window.findElemInPath(event.path, analyzify.search_prod_click_attributes);
+                var search_prod_click_elem = window.findElemInPath(event.composedPath(), analyzify.search_prod_click_attributes);
                 {% endcase %}
                 if(event.target.classList.contains('product-form--atc-button') || event.target.closest('.product-form--atc-button')){
                     analyzify.quickViewAtcEventFunc(event);
