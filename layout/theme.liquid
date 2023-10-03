@@ -369,6 +369,19 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
                     </footer>
                 </div>
             </div>
+            {% comment %}superfreak details: Hard coding to save any handle issues{% endcomment %}
+            {% assign sf_price = 99.99 %}
+
+            <div class="atc-sf-area" data-atc-sf-banner >
+                <div class="sf-main-text">Protect this item with a SuperFreak service plan.</div>
+                <table class="sf-details">
+                    <tr>
+                        <td class="sf-price">${{ sf_price }}</td>
+                        <td class="sf-details-text">includes Extended Service Plan 2 Yr with Accidental Coverage - Starts Day of Purchase</td>
+                        <td class="sf-atc"><div onclick="sf_atc(this,'header');" data-plan-qty="" data-plan-item="" data-plan-item-handle="" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>
+                    </tr>
+                </table>
+            </div>
 
             <button
                     class="atc-banner--close"
