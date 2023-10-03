@@ -28997,6 +28997,18 @@ PERFORMANCE OF THIS SOFTWARE.
 
                     const productTitle = flyOut.querySelector('[data-atc-banner-product-title]');
                     productTitle.innerHTML = response.product_title;
+
+                    /* check for superfreak: if _sf_eligible lineitem attribute is true */
+                    const productSF = flyOut.querySelector('[data-atc-sf-banner]');
+                    productSF.style.display = "none";
+
+                    if(response.properties['_sf_eligible']) {
+                        const SFbtn = flyOut.querySelector('.sf-atc-btn');
+                        SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
+                        SFbtn.setAttribute("data-plan-item-handle", response.handle);
+                        SFbtn.setAttribute("data-plan-qty", quantity);
+                        productSF.style.display = "block";
+                    }
                     /*
         TODO: Bring in `variant.options`, iterate through to get option
           name for: <strong>Option name:</strong> Option
@@ -32830,6 +32842,10 @@ const RULES = `
                 const variantID = atcButton.getAttribute('data-variant-id');
                 const variantERPSKUName = atcButton.getAttribute('data-erpsku-name');
                 const variantERPSKU = atcButton.getAttribute('data-erp-sku');
+
+                const variantSFeligibleName = atcButton.getAttribute('data-sfeligible-name');
+                const variantSFeligible = atcButton.getAttribute('data-sfeligible');
+
                 const variantVisSKUName = atcButton.getAttribute('data-vissku-name');
                 const variantVisSKU = atcButton.getAttribute('data-vissku');
                 const variantStatusName = atcButton.getAttribute('data-status-name');
@@ -32848,6 +32864,9 @@ const RULES = `
                 },{
                     name: variantERPSKUName,
                     value: variantERPSKU
+                },{
+                    name: variantSFeligibleName,
+                    value: variantSFeligible
                 },{
                     name: variantStatusName,
                     value: variantStatus

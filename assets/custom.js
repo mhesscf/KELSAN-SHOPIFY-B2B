@@ -823,6 +823,7 @@ jQuery(document).ready(function($){
             const form_datas = []
             $sub_product_container.find('[data-bundle-subproduct], [data-bundle-subproduct-free]').each(function() {
                 form_template["properties[_erp_sku]"] = $(this).data('erpsku')
+                form_template["properties[_sf_eligible]"] = $(this).data('sfeligible')
                 form_template["properties[Sku]"] = $(this).data('vissku')
                 form_template["properties[Status]"] = $(this).data('status')
                 form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
@@ -863,6 +864,7 @@ jQuery(document).ready(function($){
                 form_type: 'product',
                 utf8: '✓',
                 'properties[_erp_sku]': '',
+                'properties[_sf_eligible]': '',
                 'properties[Sku]': '',
                 'properties[_tiered_pricing]': '',
                 'id': '',
@@ -884,6 +886,7 @@ jQuery(document).ready(function($){
                         // console.log("--------");
 
                         form_template["properties[_erp_sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_erpsku');
+                        form_template["properties[_sf_eligible]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('sfeligible');
                         form_template["properties[Sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku');
                         form_template["properties[Status]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_status');
                         form_template["properties[_tiered_pricing]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing');
@@ -968,7 +971,6 @@ jQuery(document).ready(function($){
         //recalc price
         freqPriceCalc();
     });
-
 
     $(document).on('click', '.site-header-menu-toggle--button', function(){
         if($(window).width() < 1130){
@@ -1128,3 +1130,40 @@ jQuery(document).ready(function($){
 
 });
 
+// superfreak add to cart jiloik
+function sf_atc(btn,placement){
+    var sf_plan_item = $(btn).data('plan-item');
+    var sf_plan_item_handle = $(btn).data('plan-item-handle');
+    var sf_price = 99.99;
+    var sf_qty = parseInt($(btn).data('plan-qty'));
+    data = {
+        form_type: 'product',
+        utf8: '✓',
+        'properties[_erp_sku]': 'SUPERFREAK',
+        'properties[_sf_item]': sf_plan_item,
+        'properties[_sf_item_handle]': sf_plan_item_handle,
+        'id': '43956946534612',
+        'quantity': sf_qty
+    }
+
+    $(btn).addClass("sf-added").html("...");
+
+    $.ajax({
+        type: 'POST',
+        url: `${window.Theme.routes.cart_add_url}.js`,
+        data: data,
+        dataType: 'json',
+        success: function () {
+            $(btn).addClass("sf-added").html("Plan Added!").attr('onClick',"");
+            var newCartTotal = parseInt($('[data-header-cart-count]').attr("data-header-cart-count")) + sf_qty;
+            $('[data-header-cart-count]').attr("data-header-cart-count", newCartTotal);
+            $('[data-atc-banner-cart-button] span').text(newCartTotal)
+            var newCartPrice = parseFloat($('.atc-subtotal--price').text().replace(/[$,]/g, '')) + (sf_price*sf_qty);
+            $('.atc-subtotal--price').text("$" + newCartPrice.toLocaleString());
+            if(placement == "cart"){
+                location.href = window.Theme.routes.cart_url
+            }
+        }
+    });
+
+}

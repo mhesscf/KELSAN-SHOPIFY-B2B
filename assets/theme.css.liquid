@@ -2182,7 +2182,7 @@ footer .footer-icon svg{
 .shoppable-image__text-box-subheading table,
 .image-with-text__text table {
 	border: 1px solid {{ color_border | color_modify: 'alpha', 0.16 }};
-	box-shadow: 0 1px 4px {{ color_border | color_modify: 'alpha', 0.11 }};
+	{% comment %}box-shadow: 0 1px 4px {{ color_border | color_modify: 'alpha', 0.11 }};{% endcomment %}
 }
 
 .pagination--chevron-right,
@@ -13405,6 +13405,39 @@ nav.breadcrumb span.separator{
 	font-size: var(--font-size-body-smaller);
 	color: {{ settings.color_text | color_modify: 'alpha', 0.8 }};
 }
+/* ------------------- superfreak area in dropdown ---------------*/
+.atc-banner--container .atc-sf-area{
+	background-color: #F5F8FA;
+	padding:10px;
+	border: 1px solid #ccc;
+	max-width: 600px;
+	margin:auto;
+}
+.atc-banner--container .atc-sf-area .sf-main-text{
+	font-weight:bold;
+	font-size:16px;
+}
+.atc-banner--container .atc-sf-area .sf-details{
+	vertical-align:middle;
+}
+.atc-banner--container .atc-sf-area .sf-details td{
+	padding:4px;
+}
+.atc-banner--container .atc-sf-area .sf-price{
+	font-weight:bold;
+	font-size:16px;
+}
+.atc-banner--container .atc-sf-area .sf-details-text{
+	font-size:14px;
+}
+.atc-banner--container .atc-sf-area .cart-upsell-btn.sf-atc-btn{
+	margin-top:0;
+}
+.atc-banner--container .atc-sf-area .cart-upsell-btn.sf-atc-btn.sf-added{
+	background-color: {{ settings.color_button_secondary_background }};
+	color:white;
+	cursor: default;
+}
 
 .breadcrumbs-container {
 	margin-top: {{ space_medium | divided_by: 16.0 | append: 'rem' }};
@@ -13730,7 +13763,10 @@ nav.breadcrumb span.separator{
 	cursor:pointer;
 	transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
 }
-
+.cart--section .cart-upsell-btn.productitem--action-trigger{
+	float:left;
+	margin-right:5px;
+}
 .cart-upsell-btn.productitem--action-trigger:hover{
 	background-color: {{ settings.color_button_secondary_background }};
 	color:white;
@@ -13842,6 +13878,48 @@ nav.breadcrumb span.separator{
 	.cart-item--upsell .upsell--item .productitem__price{margin:0;}
 	.cart-item--upsell .upsell--item .productitem__price .price__current span{font-size:18px;}
 	.cart-item--upsell .upsell-atc-container{padding-top:8px;}
+}
+
+{% comment %}superfreak in the cart{% endcomment %}
+.cart-item.has-sf-cart-addon{
+	border-bottom:0 solid #ccc;
+	margin-bottom:0;
+}
+.cart-item.sf-cart-addon{
+	border-top:0 solid #ccc;
+	margin-top:0;
+	background-color:#ccc;
+}
+
+/* ------------------- superfreak area in dropdown ---------------*/
+.cart-item .atc-sf-area{
+	background-color: #F5F8FA;
+	padding:10px;
+	border: 1px solid #ccc;
+	max-width: 600px;
+	margin:10px 0 0 0;
+	float:left;
+	clear:both;
+}
+.cart-item .atc-sf-area .sf-main-text{
+	font-weight:bold;
+	font-size:16px;
+}
+.cart-item .atc-sf-area .sf-details{
+	vertical-align:middle;
+}
+.cart-item .atc-sf-area .sf-details td{
+	padding:4px;
+}
+.cart-item .atc-sf-area .sf-price{
+	font-weight:bold;
+	font-size:16px;
+}
+.cart-item .atc-sf-area .sf-details-text{
+	font-size:14px;
+}
+.cart-item .atc-sf-area .cart-upsell-btn.sf-atc-btn{
+	margin-top:0;
 }
 
 
