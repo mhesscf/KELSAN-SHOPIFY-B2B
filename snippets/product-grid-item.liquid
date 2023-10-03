@@ -810,6 +810,12 @@ data-product-quickshop-url="{{ product_link }}"
                           data-quickshop-slim
                         {% endunless %}
                         data-erpsku-name="properties[_erp_sku]"
+                        {% if product.metafields.plytix.general_product_type == "Machine" %}
+                          {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
+                            data-erpsku-name="properties[_sf_eligible]"
+                            data-sfeligible="true"
+                          {% endif %}
+                        {% endif %}
                         data-tp-name="properties[_tiered_pricing]"
                         data-vissku-name="properties[Sku]"
                         data-status-name="properties[Status]"

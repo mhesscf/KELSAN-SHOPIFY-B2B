@@ -1,11 +1,123 @@
 <ul class="cartitems--list" data-cart-item-list>
   {% for item in cart.items %}
-    {%
-      render 'cart-item',
-      item: item,
-      show_sku: show_sku,
-      item_index: forloop.index,
-    %}
+      {% comment %}check for matching superfreak program{% endcomment %}
+      {% comment %}sf_line is the sf line number associated to that item. pass "0" if it is the SF item attached to it.{% endcomment %}
+    {% assign sf_line = -1 %}
+      {% assign sf_item = "" %}
+
+      {% assign counter = 1 %}
+      {% for subitem in cart.items %}
+          {% if subitem.sku == "SUPERFREAK" %}
+              {% unless subitem.properties == empty %}
+                  {% for property in subitem.properties %}
+                      {% if property.first == '_sf_item' %}
+                          {% if property.last == item.sku %}
+                              {% assign sf_line = counter %}
+                              {% assign sf_item = subitem %}
+                          {% endif %}
+                      {% endif %}
+                  {% endfor %}
+              {% endunless %}
+          {% endif %}
+          {% assign counter = counter | plus: 1 %}
+      {% endfor %}
+
+      {% comment %}hide product if it is a superfreak plan that is attached to an item.{% endcomment %}
+      {% assign showItem = true %}
+      {% if item.sku == "SUPERFREAK" %}
+          {% assign matchFound = false %}
+          {% unless item.properties == empty %}
+              {% for property in item.properties %}
+                  {% if property.first == '_sf_item' %}
+                      {% assign showItem = false %}
+                      {% for subitem in cart.items %}
+                          {% if property.last == subitem.sku %}
+                              {% assign matchFound = true %}
+                          {% endif %}
+                      {% endfor %}
+                  {% endif %}
+              {% endfor %}
+          {% endunless %}
+      {% endif %}
+
+    {% if showItem == true %}
+        {%
+          render 'cart-item',
+          item: item,
+          show_sku: show_sku,
+          item_index: forloop.index,
+          sf_addon: sf_line
+        %}
+        {% if sf_item != "" %}
+            {%
+                    render 'cart-item',
+                    item: sf_item,
+                    show_sku: show_sku,
+                    item_index: sf_line,
+                    sf_addon: 0
+            %}
+            {% comment %}Make sure qty for sf attached items are equal{% endcomment %}
+
+            {% if sf_item.quantity != item.quantity %}
+                <script>
+
+                    setTimeout(() => {
+                        $('.popup-container .content').html('<strong>Notice:</strong><br/> The number of units you have on your SuperFreak Service Plan has changed. <br/><br/>Please wait while we update your SuperFreak plan quantity. ');
+                        $('.popup-container').removeClass('hidden');
+                        $(".pop-grad").removeClass('hidden');
+                    }, "500");
+
+                    const sfdata = {
+                        quantity: {{ item.quantity }},
+                        id: {{ sf_item.id }},
+                        line: {{ sf_line }}
+                    };
+
+                    const updateSF = {
+                        type: 'POST',
+                        url: '/cart/change.js',
+                        data: sfdata,
+                        dataType: 'json',
+                        success: function(stuff) {
+                            window.location.href = '/cart';
+                        }
+                    };
+                    $.ajax(updateSF);
+
+
+                </script>
+            {% endif %}
+        {% endif %}
+    {% elsif showItem == false %}
+        {% if matchFound == false %}
+        {% comment %}//remove sf item{% endcomment %}
+        <script>
+            alert('Removing SuperFreak Qty');
+            setTimeout(() => {
+                $('.popup-container .content').html('<strong>Notice:</strong><br/> The unit(s) you have on your SuperFreak Service Plan has been removed. <br/><br/>Please wait while we remove your SuperFreak plan tied to that unit. ');
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+            }, "500");
+            const sfdata = {
+                quantity: 0,
+                id: {{ item.id }},
+                line:{{ forloop.index }}
+            };
+
+            const updateSF = {
+                type: 'POST',
+                url: '/cart/change.js',
+                data: sfdata,
+                dataType: 'json',
+                success: function(stuff) {
+                    window.location.href = '/cart';
+                }
+            };
+            $.ajax(updateSF);
+
+        </script>
+        {% endif %}
+    {% endif %}
   {% endfor %}
 </ul>
 <div id="bundle-remove-alert">

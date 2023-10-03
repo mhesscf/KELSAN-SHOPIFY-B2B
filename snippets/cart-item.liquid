@@ -1,4 +1,6 @@
 {% assign compare_at_price = 0 %}
+{% comment %}to style like a superfreak addon{% endcomment %}
+{% assign sf_addon = sf_addon %}
 
 {% for variant in item.product.variants %}
   {% if variant.id == item.variant.id and variant.compare_at_price > item.price %}
@@ -15,6 +17,7 @@
 {%- assign product_bundle = '' -%}
 {%- assign pstep = '' -%}
 {%- assign fgbogo = false -%}
+{%- assign sf_eligible = false -%}
 {% unless item.properties == empty %}
   {% for property in item.properties %}
     {% if property.first == '_bundle_product' %}
@@ -26,6 +29,9 @@
     {% if property.first == '_product_step' %}
       {% assign pstep = property.last %}
     {% endif %}
+    {% if property.first == '_sf_eligible' %}
+      {% assign sf_eligible = true %}
+    {% endif %}
     {% if property.first == '_tiered_pricing' %}
       {% if property.last == 'fg-bogo' %}
         {%- assign fgbogo = true -%}
@@ -35,7 +41,7 @@
 {% endunless %}
 
 <li
-        class="cart-item {% if product_bundle != '' %}{{ product_bundle | escape  }}{% endif %} {% if pstep != '' %}stepValItem{% endif %}"
+        class="cart-item {% if sf_addon == 0 %}sf-cart-addon{% elsif sf_addon > 0 %}has-sf-cart-addon{% endif %} {% if product_bundle != '' %}{{ product_bundle | escape  }}{% endif %} {% if pstep != '' %}stepValItem{% endif %}"
         data-cartitem
         data-cartitem-id="{{ item.variant_id }}"
         data-cartitem-key="{{ item.key }}"
@@ -59,10 +65,19 @@
 
   <div class="cart-item--inner">
 
+    {% assign sf_sku = "" %}
+    {% unless item.properties == empty %}
+      {% for property in item.properties %}
+        {% if property.first == '_sf_item' %}
+          {% assign sf_sku = property.last %}
+        {% endif %}
+      {% endfor %}
+    {% endunless %}
+
     <div class="cart-item--content">
       <h2 class="cart-item--content-title">
         <a href="{{ item.url }}">
-          {{ item.product.title }}
+          {{ item.product.title }}{% if sf_sku != "" %} for "{{ sf_sku }}"{% endif %}
         </a>
       </h2>
 
@@ -109,6 +124,9 @@
           {%- else -%}
             {{ item.original_price | money }}
           {%- endif %}
+
+          {% if item.sku =="SUPERFREAK" %}per unit{% endif %}
+
         </span>
         </div>
       {% endif %}
@@ -139,6 +157,7 @@
           {{ 'product.general.sku_html' | t: sku: item.sku | strip_newlines }}
         </div>
       {% endif %}
+
 
       {% comment %} Using other stock status instead
       {% if settings.inventory_status %}
@@ -175,6 +194,28 @@
           {% endif %}
        {% endif %}
 
+      {% if sf_eligible == true and sf_addon < 0 %}
+        {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+          <div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>
+
+
+        <div class="atc-sf-area" >
+          <div class="sf-main-text">Protect this item with a SuperFreak service plan.</div>
+          <table class="sf-details">
+            <tr>
+              <td class="sf-price">$99.99</td>
+              <td class="sf-details-text">includes Extended Service Plan 2 Yr with Accidental Coverage - Starts Day of Purchase</td>
+              <td class="sf-atc"><div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
+
+        {% endif %}
+      {% endif %}
+
     </div>
 
     <div class="cart-item--info {% if product_bundle != '' %} bundle-item {% endif %}">
@@ -192,7 +233,7 @@
                     aria-label="{{ 'general.general.quantity' | t }}"
                     data-quantity-select
                     data-cartitem-quantity
-            {% if product_bundle != '' or fgbogo == true %} disabled {% endif %}>
+            {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}>
               {% for i in (1..9) %}
                 <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
                   {{ i }}

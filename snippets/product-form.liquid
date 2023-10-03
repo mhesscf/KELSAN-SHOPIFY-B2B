@@ -254,6 +254,12 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
     <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
 
+    {% if product.metafields.plytix.general_product_type == "Machine" %}
+      {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+        <input type="hidden" name="properties[_sf_eligible]" value="true" />
+      {% endif %}
+    {% endif %}
+
     {% if isSpecial == false %}
       <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
     {% endif %}
@@ -893,6 +899,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                data-vissku="{{ bundle_product.selected_or_first_available_variant.sku }}"
                data-status="{{ stockStatusBunNote}}"
                data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
+                {% if bundle_product.metafields.plytix.general_product_type == "Machine" %}
+                  {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+                    data-sfeligible="true"
+                  {% endif %}
+                {% endif %}
                data-step="{{ pstep }}"
                data-tieredPricing=""
                data-qty="{{ bundle_product_entry_parts[1] }}"
