@@ -29000,15 +29000,17 @@ PERFORMANCE OF THIS SOFTWARE.
 
                     /* check for superfreak: if _sf_eligible lineitem attribute is true */
                     const productSF = flyOut.querySelector('[data-atc-sf-banner]');
-                    productSF.style.display = "none";
-
-                    if(response.properties['_sf_eligible']) {
-                        const SFbtn = flyOut.querySelector('.sf-atc-btn');
-                        SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
-                        SFbtn.setAttribute("data-plan-item-handle", response.handle);
-                        SFbtn.setAttribute("data-plan-qty", quantity);
-                        productSF.style.display = "block";
+                    if (productSF){
+                        productSF.style.display = "none";
+                        if(response.properties['_sf_eligible']) {
+                            const SFbtn = flyOut.querySelector('.sf-atc-btn');
+                            SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
+                            SFbtn.setAttribute("data-plan-item-handle", response.handle);
+                            SFbtn.setAttribute("data-plan-qty", quantity);
+                            productSF.style.display = "block";
+                        }
                     }
+
                     /*
         TODO: Bring in `variant.options`, iterate through to get option
           name for: <strong>Option name:</strong> Option
