@@ -392,6 +392,40 @@
       "settings": {
         "block-title": "Carpet Extractor Parts by Type"
       }
+    },
+    "94ac15c5-4bb4-46ff-b837-03ddd6f36bdf": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "b18232bf-5959-4e16-9004-98f08261ee74": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": ""
+          }
+        },
+        "19529c50-a18b-49af-a081-1f6fbb4f3ee8": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "EDIC",
+            "brand-link": ""
+          }
+        },
+        "982f2aea-b8fd-44ac-b80d-1f9e079c28fe": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Mytee Products®, Inc.",
+            "brand-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b18232bf-5959-4e16-9004-98f08261ee74",
+        "19529c50-a18b-49af-a081-1f6fbb4f3ee8",
+        "982f2aea-b8fd-44ac-b80d-1f9e079c28fe"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -400,6 +434,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "cc9065fd-6183-4668-a6d3-4ae7a1782eb0"
+    "cc9065fd-6183-4668-a6d3-4ae7a1782eb0",
+    "94ac15c5-4bb4-46ff-b837-03ddd6f36bdf"
   ]
 }
