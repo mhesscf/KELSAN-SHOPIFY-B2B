@@ -1,21 +1,26 @@
 {
   "sections": {
-    "a475181a-3079-4a36-9edf-37785d0fdb22": {
-      "type": "left-nav-on-pages",
+    "a96fc367-e4f3-483f-b57b-c8fd1c86847c": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "56f66ff0-bd3b-450d-b915-bfdf0fa6238f": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_title": "Ourjob is to make sure your equipment does its job.",
+            "cat_text": "Don’t let one of your biggest cleaningassets become your biggest doorstop. We’ll keep your equipment up and runningthrough worldclass support with our SuperFreak Service Program."
+          }
+        }
+      },
+      "block_order": [
+        "56f66ff0-bd3b-450d-b915-bfdf0fa6238f"
+      ],
       "settings": {
-        "show_section": true,
-        "navigation": "education",
-        "nav_title": "",
-        "left_classes": "",
-        "hide_lvl_1_links": true,
-        "hide_lvl_2_links": false
-      }
-    },
-    "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
-      "type": "gradient-text-header",
-      "settings": {
-        "chsectionheading": "",
-        "chsectiontext": ""
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
       }
     },
     "main": {
@@ -25,8 +30,7 @@
     }
   },
   "order": [
-    "a475181a-3079-4a36-9edf-37785d0fdb22",
-    "d567f3fb-0056-4b4a-b887-445ab03fabaa",
+    "a96fc367-e4f3-483f-b57b-c8fd1c86847c",
     "main"
   ]
 }
