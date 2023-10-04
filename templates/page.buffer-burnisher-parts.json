@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "c468a4d3-de88-424d-95ef-f27e5ba4be48": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "8be4f419-942d-4bf7-9413-37852bb03868": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/floor-buffer-burnisher-parts-dept-page.jpg",
+            "cat_title": "Floor Buffer & Burnisher Parts",
+            "cat_text": "A full offering of repair parts and accessories to keep your floor machines operating smoothly."
+          }
+        }
+      },
+      "block_order": [
+        "8be4f419-942d-4bf7-9413-37852bb03868"
+      ],
       "settings": {
-        "chsectionheading": "Floor Buffer & Burnisher Parts",
-        "chsectiontext": "A full offering of repair parts and accessories to keep your floor machines operating smoothly.",
-        "image": "shopify:\/\/shop_images\/floor-buffer-burnisher-parts-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -62,7 +78,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -93,6 +108,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -282,13 +298,51 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "9d53e52b-d00b-4f54-813c-fe0339d29bec": {
+      "type": "dept-category-area",
+      "blocks": {
+        "9e79d6bb-8926-49d9-9081-eeafc95b815a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-components.jpg",
+            "title": "Components",
+            "url": "\/collections\/buffer-burnisher-components"
+          }
+        },
+        "9e89a25f-e76d-4308-9f05-f7008459241a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-motors.jpg",
+            "title": "Motors",
+            "url": "\/collections\/motors"
+          }
+        },
+        "132a63c5-c189-483e-8957-6586877bf15b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-weights.jpg",
+            "title": "Floor Buffer Weights",
+            "url": "\/collections\/weights"
+          }
+        }
+      },
+      "block_order": [
+        "9e79d6bb-8926-49d9-9081-eeafc95b815a",
+        "9e89a25f-e76d-4308-9f05-f7008459241a",
+        "132a63c5-c189-483e-8957-6586877bf15b"
+      ],
+      "settings": {
+        "block-title": "Categories"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "c468a4d3-de88-424d-95ef-f27e5ba4be48",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "9d53e52b-d00b-4f54-813c-fe0339d29bec"
   ]
 }
