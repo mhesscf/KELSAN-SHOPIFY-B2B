@@ -343,7 +343,7 @@
                    data-var_status="{{ stockStatusNote }}"
                    data-var_erpsku="{{ variant.metafields.plytix.erp_sku }}"
                   {% if variant.metafields.plytix.general_product_type == "Machine" %}
-                    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+                    {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
                       data-sfeligible="true"
                     {% endif %}
                   {% endif %}
