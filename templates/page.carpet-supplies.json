@@ -129,183 +129,87 @@
         "enable_recently_viewed_products": true
       }
     },
-    "1663875378f697f694": {
-      "type": "category-landing-page",
+    "cdb1edb6-aa41-4d11-a173-60059d8a2b38": {
+      "type": "dept-category-area",
       "blocks": {
-        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
-          "type": "menu",
-          "settings": {
-            "menu": "",
-            "show_prod_count": true,
-            "menu_depth_range": 3
-          }
-        },
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
-          "type": "ctheader",
-          "settings": {
-            "sectionheading": "Tools & Accessories for Carpet Cleaning Extractors by Type"
-          }
-        },
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
-          "type": "types",
+        "5aa6fbd0-509b-4b61-8985-daee2a270cc0": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/drag-wands.jpg",
-            "linktext": "Drag Wands",
-            "linkurl": "shopify:\/\/collections\/drag-wands"
+            "title": "Drag Wands",
+            "url": "\/collections\/drag-wands"
           }
         },
-        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
-          "type": "types",
+        "db66934f-9069-474f-be1b-94fdf10636e7": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/extractor-hoses.jpg",
-            "linktext": "Extractor Hoses",
-            "linkurl": "shopify:\/\/collections\/extractor-hoses"
+            "title": "Extractor Hoses",
+            "url": "\/collections\/extractor-hoses"
           }
         },
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
-          "type": "types",
+        "a660b0a3-be5c-4d22-9213-b7ba8c88500d": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/power-brushes.jpg",
-            "linktext": "Power Brushes",
-            "linkurl": "shopify:\/\/collections\/power-brushes"
+            "title": "Power Brushes",
+            "url": "\/collections\/power-brushes"
           }
         },
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
-          "type": "types",
+        "0ec81c42-3bed-457d-8db0-d9b5f9f0c637": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/upholstery-tools.jpg",
-            "linktext": "Upholstery Tools",
-            "linkurl": "shopify:\/\/collections\/upholstery-tools"
-          }
-        },
-        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
-          "type": "caheader",
-          "settings": {
-            "sectionheading": "Shop By Application"
-          }
-        },
-        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
-            "linktext": "Application 1",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
-            "linktext": "Application 2",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "c939808d-357a-485e-9410-ae296bc0f014": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
-            "linktext": "Application 3",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "b8376ece-b804-476e-a3b5-35b77607dd21": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
-            "linktext": "Application 4",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sweeping-category.png",
-            "linktext": "Application 5",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
-            "linktext": "Application 6",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
-          "type": "slider",
-          "settings": {
-            "collection": "edic"
-          }
-        },
-        "3fba68ff-4018-4287-a0a8-a3b997759627": {
-          "type": "slider",
-          "settings": {
-            "collection": "trusted-clean"
-          }
-        },
-        "d579de19-efac-4983-a0ab-706511d00621": {
-          "type": "slider",
-          "settings": {
-            "collection": "mytee"
-          }
-        },
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
-          "type": "crheader",
-          "settings": {
-            "sectionheading": "Auto Detailing Resources"
-          }
-        },
-        "cb754198-b199-4317-879a-0b37a3021253": {
-          "type": "resource",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
-            "heading": "Auto Detailing Resource",
-            "subheading": "<p>A brief description here to inform the user about the resource<\/p>",
-            "button_label": "Read the Guide",
-            "button_link": "shopify:\/\/pages\/how-tos"
+            "title": "Upholstery Tools",
+            "url": "\/collections\/upholstery-tools"
           }
         }
       },
       "block_order": [
-        "589b0ba5-e3fa-4320-9319-39615c0ac890",
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
-        "159a2b1f-8d76-471e-84de-975a6d48fa11",
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
-        "416df694-767b-4c68-8e90-2c0cff08dc2a",
-        "5b4a6417-f1c3-413e-8694-20fe1b499722",
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
-        "c939808d-357a-485e-9410-ae296bc0f014",
-        "b8376ece-b804-476e-a3b5-35b77607dd21",
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
-        "3fba68ff-4018-4287-a0a8-a3b997759627",
-        "d579de19-efac-4983-a0ab-706511d00621",
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
-        "cb754198-b199-4317-879a-0b37a3021253"
+        "5aa6fbd0-509b-4b61-8985-daee2a270cc0",
+        "db66934f-9069-474f-be1b-94fdf10636e7",
+        "a660b0a3-be5c-4d22-9213-b7ba8c88500d",
+        "0ec81c42-3bed-457d-8db0-d9b5f9f0c637"
       ],
       "settings": {
-        "collection": "",
-        "show_collection_image": true,
-        "products_per_page_range": 6,
-        "products_per_row": "3",
-        "sort_by": true,
-        "grid_list": true,
-        "default_view": "grid-view",
-        "enable_subcollection": false,
-        "show_product_count": false,
-        "thumbnail_image": "product-image",
-        "image_crop": "original"
+        "block-title": "Tools & Accessories for Carpet Cleaning Extractors by Type"
+      }
+    },
+    "7ccaad67-6d7c-4906-b1e4-b3dbb4557fb9": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "4c22dbea-beb1-4a11-8567-130977797503": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "EDIC",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=EDIC&refinementList[product_type][0]=Carpet Extractor Hoses%2C Wands %26 Accessories&q=EDIC",
+            "brand-image": "shopify:\/\/shop_images\/edic-pre-spray-wand_1.jpg"
+          }
+        },
+        "366766d9-73ee-4d39-a663-7d3a1762b20f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Carpet Extractor Hoses%2C Wands %26 Accessories&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/ss-auto-detailer-tool_1.jpg"
+          }
+        },
+        "e8908bbf-f23e-4bb7-9e1b-cf4a7a4154f0": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Mytee Products®, Inc.",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Carpet Extractor Hoses%2C Wands %26 Accessories&q=Mytee",
+            "brand-image": "shopify:\/\/shop_images\/mytee-carpet-cleaner-wand-ez.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "4c22dbea-beb1-4a11-8567-130977797503",
+        "366766d9-73ee-4d39-a663-7d3a1762b20f",
+        "e8908bbf-f23e-4bb7-9e1b-cf4a7a4154f0"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
       }
     }
   },
@@ -314,6 +218,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "cdb1edb6-aa41-4d11-a173-60059d8a2b38",
+    "7ccaad67-6d7c-4906-b1e4-b3dbb4557fb9"
   ]
 }
