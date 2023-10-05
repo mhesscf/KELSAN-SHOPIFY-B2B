@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "65485192-727d-46a8-b337-1bf36c289bcb": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "ae2cc3c3-b9e8-40b6-894a-0218d4453693": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/chemicals-cleaners-dept-page.jpg",
+            "cat_title": "Chemicals & Cleaners",
+            "cat_text": "Every cleaning solution and chemical you could need to keep facilities shiny and sparkling, from refills to sprays to floor machine solutions."
+          }
+        }
+      },
+      "block_order": [
+        "ae2cc3c3-b9e8-40b6-894a-0218d4453693"
+      ],
       "settings": {
-        "chsectionheading": "Chemicals & Cleaners",
-        "chsectiontext": "Every cleaning solution and chemical you could need to keep facilities shiny and sparkling, from refills to sprays to floor machine solutions.",
-        "image": "shopify:\/\/shop_images\/chemicals-cleaners-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -367,13 +383,123 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "89223217-38ea-46e2-a445-2f49e24e825d": {
+      "type": "dept-category-area",
+      "blocks": {
+        "52277ddd-76d0-4598-b932-2f798edf3cc4": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-detailing-chemicals_2b559cd8-0ee7-4234-abdf-2e870742453b.jpg",
+            "title": "Auto Detailing Chemicals",
+            "url": "\/pages\/automotive-chemicals"
+          }
+        },
+        "0672e129-eb14-480c-b984-b3062ecb98c0": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/soaps-and-detergents.jpg",
+            "title": "Body Soaps & Detergents (Hand, Body, Dish & Laundry)",
+            "url": "\/pages\/detergent"
+          }
+        },
+        "c401604e-93c9-438f-bb4e-7e163c85364a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-upholstery-chemcials.jpg",
+            "title": "Carpet & Upholstery",
+            "url": "\/pages\/carpet-solutions"
+          }
+        },
+        "567fae25-b416-44fd-b931-d8c283789865": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
+            "title": "Detergents",
+            "url": "\/collections\/detergents"
+          }
+        },
+        "00bce087-30eb-468f-82b4-0dbc4392427b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/deodorizers-and-absorbents-chemicals.jpg",
+            "title": "Deodorizers & Absorbents",
+            "url": "\/pages\/absorbents"
+          }
+        },
+        "989aab83-2f82-4f6c-b0c6-1a60b3006f85": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/disinfectants-and-sanitizers.jpg",
+            "title": "Disinfectants & Sanitizers",
+            "url": "\/pages\/disinfectants"
+          }
+        },
+        "8c26ed4d-6da8-4544-8314-7d7d7a1d53b0": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-care-chemicals.jpg",
+            "title": "Floor Care Chemicals",
+            "url": "\/pages\/floor-care-chemicals"
+          }
+        },
+        "adfc27e3-fdb7-476f-b6cf-2e8b96f03323": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hard-surface-cleaners.jpg",
+            "title": "Window & Hard Surface Cleaners",
+            "url": "\/pages\/hard-surface-cleaners"
+          }
+        },
+        "7da01d1a-8e2f-48b7-9f33-0fa9887ee8ec": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insecticides.jpg",
+            "title": "Insecticides",
+            "url": "\/collections\/insecticides"
+          }
+        },
+        "8bf9ec0f-60aa-44e3-9064-b102592ba0da": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/plumbing-chemicals.jpg",
+            "title": "Plumbing",
+            "url": "\/collections\/drain-maintenance"
+          }
+        },
+        "73bada5e-8c97-436b-93c7-1f8af58cb8ca": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stain-removal-chemicals.jpg",
+            "title": "Stain Removal & Prevention",
+            "url": "\/pages\/stain-removal"
+          }
+        }
+      },
+      "block_order": [
+        "52277ddd-76d0-4598-b932-2f798edf3cc4",
+        "0672e129-eb14-480c-b984-b3062ecb98c0",
+        "c401604e-93c9-438f-bb4e-7e163c85364a",
+        "567fae25-b416-44fd-b931-d8c283789865",
+        "00bce087-30eb-468f-82b4-0dbc4392427b",
+        "989aab83-2f82-4f6c-b0c6-1a60b3006f85",
+        "8c26ed4d-6da8-4544-8314-7d7d7a1d53b0",
+        "adfc27e3-fdb7-476f-b6cf-2e8b96f03323",
+        "7da01d1a-8e2f-48b7-9f33-0fa9887ee8ec",
+        "8bf9ec0f-60aa-44e3-9064-b102592ba0da",
+        "73bada5e-8c97-436b-93c7-1f8af58cb8ca"
+      ],
+      "settings": {
+        "block-title": "Chemicals & Cleaners by Type"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "65485192-727d-46a8-b337-1bf36c289bcb",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "89223217-38ea-46e2-a445-2f49e24e825d"
   ]
 }
