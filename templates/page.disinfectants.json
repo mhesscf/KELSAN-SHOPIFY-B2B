@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "b55c51b3-14cb-4444-8e15-fd2a0b68b42d": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "e3dcf6fd-4770-409f-a9c3-a1a1b06bbe44": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/maxim-facility-plus-disinfectants-and-sanitizers-dept-page.jpg",
+            "cat_title": "Disinfectants & Sanitizers",
+            "cat_text": "A wide variety of sanitizing & disinfectant solutions from America's top brands. Electrostatic sprayers, wipes, liquids & more to keep your employees & customers safe."
+          }
+        }
+      },
+      "block_order": [
+        "e3dcf6fd-4770-409f-a9c3-a1a1b06bbe44"
+      ],
       "settings": {
-        "chsectionheading": "Disinfectants & Sanitizers",
-        "chsectiontext": "A wide variety of sanitizing & disinfectant solutions from America's top brands. Electrostatic sprayers, wipes, liquids & more to keep your employees & customers safe.",
-        "image": "shopify:\/\/shop_images\/maxim-facility-plus-disinfectants-and-sanitizers-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -301,13 +317,60 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "ebeb35e9-b732-4c85-a747-a11f18a18b24": {
+      "type": "dept-category-area",
+      "blocks": {
+        "0346e11e-3adf-466e-9d03-d84f85dd81c9": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/disinfectant-surface-wipes.jpg",
+            "title": "Disinfectant Surface Wipes",
+            "url": "\/collections\/disinfectant-wipes"
+          }
+        },
+        "c63e54d2-2e60-40b8-939f-514e29a9cd84": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/food-grade-sanitizers.jpg",
+            "title": "Food Grade Sanitizers",
+            "url": "\/collections\/food-grade-sanitizers"
+          }
+        },
+        "0a61f07b-236e-4b9a-a780-98047ff30010": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-sanitizers.jpg",
+            "title": "Hand Sanitizers",
+            "url": "\/collections\/hand-sanitizers"
+          }
+        },
+        "90a25e00-f4e8-454a-b0f7-5fabee4eb84e": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/liquid-aerosol-disinfectants.jpg",
+            "title": "Liquid & Aerosol Disinfectants",
+            "url": "\/collections\/liquid-aerosol-disinfectants"
+          }
+        }
+      },
+      "block_order": [
+        "0346e11e-3adf-466e-9d03-d84f85dd81c9",
+        "c63e54d2-2e60-40b8-939f-514e29a9cd84",
+        "0a61f07b-236e-4b9a-a780-98047ff30010",
+        "90a25e00-f4e8-454a-b0f7-5fabee4eb84e"
+      ],
+      "settings": {
+        "block-title": "Disinfectants & Sanitizers by Type"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "b55c51b3-14cb-4444-8e15-fd2a0b68b42d",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "ebeb35e9-b732-4c85-a747-a11f18a18b24"
   ]
 }
