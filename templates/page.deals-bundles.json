@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "cba53468-db6f-41ec-9ed7-fc3255c70c3e": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "1b022c65-58d9-4861-acb1-078b9ee03995": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/floor-scrubber-package-deals-and-bundles-dept-page.jpg",
+            "cat_title": "Deals & Bundles",
+            "cat_text": "Check out our different deals on clearance items, refurbished machines, and gold medal winning equipment. We've pre-built several different packages if you don't know where to start."
+          }
+        }
+      },
+      "block_order": [
+        "1b022c65-58d9-4861-acb1-078b9ee03995"
+      ],
       "settings": {
-        "chsectionheading": "Deals & Bundles",
-        "chsectiontext": "Check out our different deals on clearance items, refurbished machines, and gold medal winning equipment. We've pre-built several different packages if you don't know where to start.",
-        "image": "shopify:\/\/shop_images\/floor-scrubber-package-deals-and-bundles-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -336,13 +352,105 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "026b0119-d79f-45dd-8251-faad1b0109c9": {
+      "type": "dept-category-area",
+      "blocks": {
+        "20c39ad6-02d9-4d2c-b28b-4303a09d0beb": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/specials-category.jpg",
+            "title": "Clearance and Overstock",
+            "url": "\/collections\/clearance"
+          }
+        },
+        "331a6eca-3397-43e4-8ad7-75d4fa234636": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gold-medal-winners.jpg",
+            "title": "Gold Medal Winners",
+            "url": "\/collections\/gold-medal-winners"
+          }
+        },
+        "9aaaf909-3594-49e0-8341-75454ff53916": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/refurbished-returns.jpg",
+            "title": "Refurbished, Returns and Used",
+            "url": "\/collections\/demoed-refurbished-equipment"
+          }
+        },
+        "2924fcc3-53a9-4c55-857b-1f30e6d02e76": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-packages.jpg",
+            "title": "Auto Scrubber Packages",
+            "url": "\/collections\/auto-scrubber-packages"
+          }
+        },
+        "fd65e796-f6ea-4c5a-b2ff-898d75009b1b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-packages.jpg",
+            "title": "Carpet Cleaning Packages",
+            "url": "\/collections\/carpet-cleaning-packages"
+          }
+        },
+        "f0273d0c-4ade-4f85-b017-9ac229368db9": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/chemical-packages.jpg",
+            "title": "Chemical Packages",
+            "url": "\/collections\/chemical-packages"
+          }
+        },
+        "2b1ae648-c45a-47d4-8e7b-92fd6c12979d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mopping-packages.jpg",
+            "title": "Mopping Packages",
+            "url": "\/collections\/mopping-packages"
+          }
+        },
+        "8158985d-aae9-4834-9290-ca5342ebcbc1": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rotary-floor-buffer-packages.jpg",
+            "title": "Rotary Floor Buffer Machine Packages",
+            "url": "\/collections\/rotary-floor-buffer-machine-packages"
+          }
+        },
+        "22403f29-5aaa-4ff9-9770-8a38672cf28b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vacuum-cleaner-packages.jpg",
+            "title": "Vacuum Cleaner Packages",
+            "url": "\/collections\/vacuum-cleaner-packages"
+          }
+        }
+      },
+      "block_order": [
+        "20c39ad6-02d9-4d2c-b28b-4303a09d0beb",
+        "331a6eca-3397-43e4-8ad7-75d4fa234636",
+        "9aaaf909-3594-49e0-8341-75454ff53916",
+        "2924fcc3-53a9-4c55-857b-1f30e6d02e76",
+        "fd65e796-f6ea-4c5a-b2ff-898d75009b1b",
+        "f0273d0c-4ade-4f85-b017-9ac229368db9",
+        "2b1ae648-c45a-47d4-8e7b-92fd6c12979d",
+        "8158985d-aae9-4834-9290-ca5342ebcbc1",
+        "22403f29-5aaa-4ff9-9770-8a38672cf28b"
+      ],
+      "settings": {
+        "block-title": "Deals & Bundles by Type"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "cba53468-db6f-41ec-9ed7-fc3255c70c3e",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "026b0119-d79f-45dd-8251-faad1b0109c9"
   ]
 }
