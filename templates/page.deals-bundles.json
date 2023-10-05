@@ -474,7 +474,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": ""
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Oreck&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Oreck",
+            "brand-image": "shopify:\/\/shop_images\/oreck-orbiter-rotary-floor-machine-package-v2.jpg"
           }
         },
         "248ee9d5-51d7-4f17-936b-ea32fb54e514": {
