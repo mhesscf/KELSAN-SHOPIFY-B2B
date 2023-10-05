@@ -492,6 +492,52 @@
       "settings": {
         "block-title": "Chemicals & Cleaners by Type"
       }
+    },
+    "9f6314a2-b098-4c35-9aa0-8cd87d6e5e67": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "4b180297-8c8d-4b94-b9d6-eec77d53722f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Bright Solutions®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Disinfectants %26 Sanitizers&refinementList[product_type][3]=Floor Care Chemicals&refinementList[product_type][4]=Hard Surface Cleaners&q=Bright Solutions",
+            "brand-image": "shopify:\/\/shop_images\/bright-solutions-reflection-neutral-floor-cleaner-case-of-4-gallons.jpg"
+          }
+        },
+        "85bb5be5-fe89-4270-b176-19bf8b223175": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Deodorizers %26 Absorbents&refinementList[product_type][3]=Plumbing&refinementList[product_type][4]=Floor Care Chemicals&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-magnifico-lavender-floor-soap-2-gal.jpg"
+          }
+        },
+        "e7206b0f-a69e-4288-a745-79a62d31f553": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Dial®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Dial&refinementList[product_type][0]=Disinfectants %26 Sanitizers&refinementList[product_type][1]=Body Soaps %26 Detergents&q=Dial",
+            "brand-image": "shopify:\/\/shop_images\/dial-original-gold-88047-antimicrobial-liquid-hand-soap.jpg"
+          }
+        },
+        "a40a8904-a289-43d3-8fb2-4f4dcc0e3b04": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Claire®",
+            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Claire&refinementList%5Bproduct_type%5D%5B0%5D=Auto%20Detailing%20Chemicals&refinementList%5Bproduct_type%5D%5B1%5D=Disinfectants%20%26%20Sanitizers&refinementList%5Bproduct_type%5D%5B2%5D=Floor%20Care%20Chemicals&refinementList%5Bproduct_type%5D%5B3%5D=Hard%20Surface%20Cleaners&refinementList%5Bproduct_type%5D%5B4%5D=Insecticides&refinementList%5Bproduct_type%5D%5B5%5D=Stain%20Removal%20%26%20Prevention&q=Claire",
+            "brand-image": "shopify:\/\/shop_images\/claire-cl1002-disinfectant-spray-q-lemon-scent.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "4b180297-8c8d-4b94-b9d6-eec77d53722f",
+        "85bb5be5-fe89-4270-b176-19bf8b223175",
+        "e7206b0f-a69e-4288-a745-79a62d31f553",
+        "a40a8904-a289-43d3-8fb2-4f4dcc0e3b04"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -500,6 +546,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "89223217-38ea-46e2-a445-2f49e24e825d"
+    "89223217-38ea-46e2-a445-2f49e24e825d",
+    "9f6314a2-b098-4c35-9aa0-8cd87d6e5e67"
   ]
 }
