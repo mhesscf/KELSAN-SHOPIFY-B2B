@@ -429,7 +429,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Carpet %26 Upholstery&q=Trusted Clean"
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Carpet %26 Upholstery&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-defoamer-vacuum-motor-protectant-n640-g2-case-of-2-gallons.jpg"
           }
         },
         "2eb3fdce-bf16-4059-b462-8290a606669f": {
