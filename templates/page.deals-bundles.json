@@ -443,6 +443,56 @@
       "settings": {
         "block-title": "Deals & Bundles by Type"
       }
+    },
+    "9dc75e18-4f87-43e1-97b8-9261434ef62c": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "62a8ef33-5c4f-469b-96a1-ab13a6a4cfd2": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": ""
+          }
+        },
+        "28b21e50-bd4b-49fb-9fd5-d6262374a4e3": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "ProTeam®",
+            "brand-link": ""
+          }
+        },
+        "0dfea96c-1b95-4a94-aea3-6563f634cc4f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": ""
+          }
+        },
+        "edaba4f8-1776-4600-a78b-808e8d4d4e3e": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Oreck",
+            "brand-link": ""
+          }
+        },
+        "248ee9d5-51d7-4f17-936b-ea32fb54e514": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Clarke®",
+            "brand-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "62a8ef33-5c4f-469b-96a1-ab13a6a4cfd2",
+        "28b21e50-bd4b-49fb-9fd5-d6262374a4e3",
+        "0dfea96c-1b95-4a94-aea3-6563f634cc4f",
+        "edaba4f8-1776-4600-a78b-808e8d4d4e3e",
+        "248ee9d5-51d7-4f17-936b-ea32fb54e514"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -451,6 +501,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "026b0119-d79f-45dd-8251-faad1b0109c9"
+    "026b0119-d79f-45dd-8251-faad1b0109c9",
+    "9dc75e18-4f87-43e1-97b8-9261434ef62c"
   ]
 }
