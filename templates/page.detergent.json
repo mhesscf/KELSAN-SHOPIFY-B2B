@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "0eeba151-e2f1-4a6a-a446-c344151f30b8": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "3970a7d7-e233-4b22-9b0d-dba273d2c085": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/hand-soap-dish-laundry-detergents-dept-page.jpg",
+            "cat_title": "Body Soaps & Detergents",
+            "cat_text": "We offer the best soap & detergent cleaning options from many top brands in the industry. Whether it is for cleaning your hands, or your dishes, we have the soap for you!"
+          }
+        }
+      },
+      "block_order": [
+        "3970a7d7-e233-4b22-9b0d-dba273d2c085"
+      ],
       "settings": {
-        "chsectionheading": "Body Soaps & Detergents",
-        "chsectiontext": "We offer the best soap & detergent cleaning options from many top brands in the industry. Whether it is for cleaning your hands, or your dishes, we have the soap for you!",
-        "image": "shopify:\/\/shop_images\/hand-soap-dish-laundry-detergents-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -62,7 +78,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -93,6 +108,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -284,13 +300,60 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "88292e72-775b-4056-bd28-8b90c21250e5": {
+      "type": "dept-category-area",
+      "blocks": {
+        "fa841d9e-dffe-4a83-9348-7702e252bbbe": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dish-washing-soaps.jpg",
+            "title": "Dish Washing Soaps",
+            "url": "\/collections\/dish-washing-soaps"
+          }
+        },
+        "881eae5c-4916-43a1-88a5-adada4d51b74": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-and-body-shampoo.jpg",
+            "title": "Hair & Body Shampoo",
+            "url": "\/collections\/hair-body-shampoo"
+          }
+        },
+        "95aa2811-706b-4e26-9fda-b7b339f0c6b2": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-soaps.jpg",
+            "title": "Hand Soaps & Lotions",
+            "url": "\/collections\/hand-soaps-lotions"
+          }
+        },
+        "33773475-a706-4a12-94d3-3eb8a8dee013": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/laundry-detergents.jpg",
+            "title": "Laundry Detergents & Additives",
+            "url": "\/collections\/laundry-detergents-additives"
+          }
+        }
+      },
+      "block_order": [
+        "fa841d9e-dffe-4a83-9348-7702e252bbbe",
+        "881eae5c-4916-43a1-88a5-adada4d51b74",
+        "95aa2811-706b-4e26-9fda-b7b339f0c6b2",
+        "33773475-a706-4a12-94d3-3eb8a8dee013"
+      ],
+      "settings": {
+        "block-title": "Soaps & Detergents by Type"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "0eeba151-e2f1-4a6a-a446-c344151f30b8",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "88292e72-775b-4056-bd28-8b90c21250e5"
   ]
 }
