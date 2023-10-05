@@ -429,21 +429,23 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": ""
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Carpet %26 Upholstery&q=Trusted Clean"
           }
         },
         "2eb3fdce-bf16-4059-b462-8290a606669f": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": ""
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Carpet %26 Upholstery&q=Bright Solutions",
+            "brand-image": "shopify:\/\/shop_images\/bright-solutions-deep-extractor-carpet-extraction-cleaner-92400-41-case.jpg"
           }
         },
         "5dbb6f90-0ea8-4163-ae22-e088055081a0": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Carpet %26 Upholstery&q=Nyco"
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Carpet %26 Upholstery&q=Nyco",
+            "brand-image": "shopify:\/\/shop_images\/nyco-defoam-anti-foam-additive-nl640-case-of-4-gallons.jpg"
           }
         },
         "8d585025-d925-431e-8629-55109864de46": {
