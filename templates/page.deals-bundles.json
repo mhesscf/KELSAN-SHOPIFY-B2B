@@ -451,7 +451,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "https:\/\/www.cleanfreak.com\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=CleanFreak&refinementList%5Btags%5D%5B0%5D=Package&refinementList%5Btags%5D%5B1%5D=Gold%20Medal%20Winner&q=CleanFreak"
+            "brand-link": "https:\/\/www.cleanfreak.com\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=CleanFreak&refinementList%5Btags%5D%5B0%5D=Package&refinementList%5Btags%5D%5B1%5D=Gold%20Medal%20Winner&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/orbital-floor-buffer-package-for-vinyl-tile-cleaning-and-grout-concrete-scrubbing-v3.jpg"
           }
         },
         "28b21e50-bd4b-49fb-9fd5-d6262374a4e3": {
@@ -465,7 +466,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": ""
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/flr-package2-v6.jpg"
           }
         },
         "edaba4f8-1776-4600-a78b-808e8d4d4e3e": {
