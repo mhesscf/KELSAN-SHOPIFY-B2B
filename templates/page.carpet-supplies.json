@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "cf60e53b-9058-43ac-90fe-c3a0f66870e1": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "c48e6613-5bba-4fe4-a507-6bb5fd34dab8": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/carpet-cleaning-tools-and-accessories-dept-page.jpg",
+            "cat_title": "Tools & Accessories for Carpet Cleaning Extractors",
+            "cat_text": "We stock drag wands, vac hoses, upholstery tools & more for the most popular carpet cleaning machines in the industry. You’re sure to find something here to increase your cleaning productivity."
+          }
+        }
+      },
+      "block_order": [
+        "c48e6613-5bba-4fe4-a507-6bb5fd34dab8"
+      ],
       "settings": {
-        "chsectionheading": "Tools & Accessories for Carpet Cleaning Extractors",
-        "chsectiontext": "We stock drag wands, vac hoses, upholstery tools & more for the most popular carpet cleaning machines in the industry. You’re sure to find something here to increase your cleaning productivity.",
-        "image": "shopify:\/\/shop_images\/carpet-cleaning-tools-and-accessories-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -62,7 +78,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -93,6 +108,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -294,7 +310,7 @@
     }
   },
   "order": [
-    "1663617398865396bc",
+    "cf60e53b-9058-43ac-90fe-c3a0f66870e1",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
