@@ -346,6 +346,43 @@
       "settings": {
         "block-title": "Soaps & Detergents by Type"
       }
+    },
+    "3e718b34-34ed-49df-9c97-daaba983025f": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "07da5af4-525e-40a1-8627-5c1ad042390c": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Dial®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Dial&refinementList[product_type][0]=Body Soaps %26 Detergents&q=Dial",
+            "brand-image": "shopify:\/\/shop_images\/dial-original-gold-88047-antimicrobial-liquid-hand-soap.jpg"
+          }
+        },
+        "17059dd6-3bba-4593-858b-675327176b53": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "GOJO®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Body Soaps %26 Detergents&q=GOJO",
+            "brand-image": "shopify:\/\/shop_images\/gojo-multi-green-hand-cleaner-case-4-jpg.jpg"
+          }
+        },
+        "57d9164c-3900-4844-b1e1-2a1f263438da": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Tide®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tide&refinementList[product_type][0]=Body Soaps %26 Detergents&q=Tide",
+            "brand-image": "shopify:\/\/shop_images\/tide-40213-liquid-laundry-detergent.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "07da5af4-525e-40a1-8627-5c1ad042390c",
+        "17059dd6-3bba-4593-858b-675327176b53",
+        "57d9164c-3900-4844-b1e1-2a1f263438da"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -354,6 +391,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "88292e72-775b-4056-bd28-8b90c21250e5"
+    "88292e72-775b-4056-bd28-8b90c21250e5",
+    "3e718b34-34ed-49df-9c97-daaba983025f"
   ]
 }
