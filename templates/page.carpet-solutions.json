@@ -421,6 +421,49 @@
       "settings": {
         "block-title": "Carpet & Upholstery Cleaning Chemicals by Type"
       }
+    },
+    "81e0dbef-c482-4f47-be1e-2794fe97b946": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "543c9bc4-32ad-41fe-8e02-1dbea8dba5f5": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": ""
+          }
+        },
+        "2eb3fdce-bf16-4059-b462-8290a606669f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Bright Solutions®",
+            "brand-link": ""
+          }
+        },
+        "5dbb6f90-0ea8-4163-ae22-e088055081a0": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Nyco®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Carpet %26 Upholstery&q=Nyco"
+          }
+        },
+        "8d585025-d925-431e-8629-55109864de46": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Nilodor®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nilodor&refinementList[product_type][0]=Carpet %26 Upholstery&q=Nilodor",
+            "brand-image": "shopify:\/\/shop_images\/128sbn-shp-nilodor-encap-shampoo-and-carpet-cleaner-grp_3b3b4b2c-42f2-4d25-888b-a92ad5d04135.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "543c9bc4-32ad-41fe-8e02-1dbea8dba5f5",
+        "2eb3fdce-bf16-4059-b462-8290a606669f",
+        "5dbb6f90-0ea8-4163-ae22-e088055081a0",
+        "8d585025-d925-431e-8629-55109864de46"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -429,6 +472,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "9f7c5adc-148e-458c-b440-7d7ed115c2ac"
+    "9f7c5adc-148e-458c-b440-7d7ed115c2ac",
+    "81e0dbef-c482-4f47-be1e-2794fe97b946"
   ]
 }
