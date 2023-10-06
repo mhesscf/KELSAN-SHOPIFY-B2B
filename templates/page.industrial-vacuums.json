@@ -284,6 +284,71 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "6ebb3192-d7ea-45e3-88f2-723346351f85": {
+      "type": "dept-category-area",
+      "blocks": {
+        "583a02c2-a34d-474a-8483-815c67ad006d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/concrete-vacuums.jpg",
+            "title": "Concrete Vacuums",
+            "url": "\/collections\/concrete-vacuums"
+          }
+        },
+        "df0cd6df-5d81-40dd-9362-fc8c2ce5c64e": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/critical-filter-vacuums.jpg",
+            "title": "Critical Filter Vacuums",
+            "url": "\/collections\/critical-filter-vacs"
+          }
+        },
+        "8490d37d-9cca-4268-af8e-676ffeb717f8": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/internal-external-filter-vacs.jpg",
+            "title": "Internal\/External Filter Vacuums",
+            "url": "\/collections\/external-internal-filter-industrial-vacuums"
+          }
+        }
+      },
+      "block_order": [
+        "583a02c2-a34d-474a-8483-815c67ad006d",
+        "df0cd6df-5d81-40dd-9362-fc8c2ce5c64e",
+        "8490d37d-9cca-4268-af8e-676ffeb717f8"
+      ],
+      "settings": {
+        "block-title": "Industrial Vacuums by Type"
+      }
+    },
+    "b7ebe36d-bf00-4167-aff6-dd14a93f1274": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "ef7b03c6-9ae9-4a79-b20e-eba46314fff3": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Industrial Vacuums&q=IPC Eagle",
+            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-bv390-barrel-vacuum.jpg"
+          }
+        },
+        "f925e07d-378e-4a06-a7aa-5b6dbf562289": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Tornado®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Industrial Vacuums&q=Tornado",
+            "brand-image": "shopify:\/\/shop_images\/tornado-98450.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "ef7b03c6-9ae9-4a79-b20e-eba46314fff3",
+        "f925e07d-378e-4a06-a7aa-5b6dbf562289"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -291,6 +356,8 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "6ebb3192-d7ea-45e3-88f2-723346351f85",
+    "b7ebe36d-bf00-4167-aff6-dd14a93f1274"
   ]
 }
