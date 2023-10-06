@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "d22c9114-d9f7-4696-bbec-b2d5419d7b6b": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "e22204b3-44e0-48af-9a26-16555001e279": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/floor-stripping-protection-for-shoes-dept-page.jpg",
+            "cat_title": "Foot Protection",
+            "cat_text": "We stock specialty floor stripping shoes, steel toed footwear, shoe covers, nuke boots & more."
+          }
+        }
+      },
+      "block_order": [
+        "e22204b3-44e0-48af-9a26-16555001e279"
+      ],
       "settings": {
-        "chsectionheading": "Foot Protection",
-        "chsectiontext": "We stock specialty floor stripping shoes, steel toed footwear, shoe covers, nuke boots & more.",
-        "image": "shopify:\/\/shop_images\/floor-stripping-protection-for-shoes-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -294,7 +310,7 @@
     }
   },
   "order": [
-    "1663617398865396bc",
+    "d22c9114-d9f7-4696-bbec-b2d5419d7b6b",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
