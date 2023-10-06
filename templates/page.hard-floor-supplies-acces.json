@@ -373,6 +373,150 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "8914fa3f-ce8e-4a64-a5e1-05d8aa0de694": {
+      "type": "dept-category-area",
+      "blocks": {
+        "53e92014-0e91-4b71-aa38-69471efee5f2": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-brushes.jpg",
+            "title": "Auto Scrubber Brushes",
+            "url": "\/collections\/auto-scrubber-brushes"
+          }
+        },
+        "84b07ba3-ce1f-44dd-b906-b123b6d04c31": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-pad-drivers.jpg",
+            "title": "Auto Scrubber Pad Drivers",
+            "url": "\/collections\/auto-scrubber-pad-drivers"
+          }
+        },
+        "625c7683-5f30-4158-86de-dfddb846eedc": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-squeegees.jpg",
+            "title": "Auto Scrubber Squeegees",
+            "url": "\/collections\/auto-scrubber-squeegees"
+          }
+        },
+        "71587327-1f8c-46bb-836a-d064f54b57d0": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/misc-auto-scrubber-parts.jpg",
+            "title": "Auto Scrubber Parts",
+            "url": "\/pages\/floor-scrubber-parts"
+          }
+        },
+        "0419b892-cc0c-43ed-b199-e3a474e845b1": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/concrete-preparation.jpg",
+            "title": "Concrete Preparation",
+            "url": "\/collections\/concrete-preparation-polishing"
+          }
+        },
+        "c29d0111-7031-49a2-b560-5bc0be3d2a03": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-brushes.jpg",
+            "title": "Floor Buffer Brushes",
+            "url": "\/collections\/floor-buffer-brushes"
+          }
+        },
+        "77a73235-40f1-43af-84c1-e562dd9c2d73": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-pad-drivers.jpg",
+            "title": "Floor Buffer Pad Drivers",
+            "url": "\/collections\/floor-buffer-pad-drivers"
+          }
+        },
+        "065a6d18-85b2-401e-a67e-2488315feacf": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-burnisher-parts-2.jpg",
+            "title": "Floor Buffer & Burnisher Parts",
+            "url": "\/pages\/buffer-burnisher-parts"
+          }
+        },
+        "35f1fd70-348f-47c9-9ace-5b11be7bf88a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/solution-tanks.jpg",
+            "title": "Solution Tanks",
+            "url": "\/collections\/solution-tanks"
+          }
+        }
+      },
+      "block_order": [
+        "53e92014-0e91-4b71-aa38-69471efee5f2",
+        "84b07ba3-ce1f-44dd-b906-b123b6d04c31",
+        "625c7683-5f30-4158-86de-dfddb846eedc",
+        "71587327-1f8c-46bb-836a-d064f54b57d0",
+        "0419b892-cc0c-43ed-b199-e3a474e845b1",
+        "c29d0111-7031-49a2-b560-5bc0be3d2a03",
+        "77a73235-40f1-43af-84c1-e562dd9c2d73",
+        "065a6d18-85b2-401e-a67e-2488315feacf",
+        "35f1fd70-348f-47c9-9ace-5b11be7bf88a"
+      ],
+      "settings": {
+        "block-title": "Hard Floor Supplies & Accessories by Type"
+      }
+    },
+    "d591081d-db96-4c26-85ee-9d0e7ac287c3": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "60fdd843-80b5-466c-8de1-c5366805c5be": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": ""
+          }
+        },
+        "e7a5d426-31db-49a6-ac0e-d0700667a316": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Viper",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=Viper",
+            "brand-image": "shopify:\/\/shop_images\/vf90453-pad-holder-top-view_1.jpg"
+          }
+        },
+        "18a04235-48cd-4dc5-9311-8991ebc3d71c": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": ""
+          }
+        },
+        "d9b0e208-b8c4-4b82-bad0-e3e24af53fa9": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Malish",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=Malish",
+            "brand-image": "shopify:\/\/shop_images\/17-inch-heavy-duty-malish-driver.jpg"
+          }
+        },
+        "adc642a1-fbfd-4cb3-9d8c-ebb15e8e5d83": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/eag-mpvr08039-02_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "60fdd843-80b5-466c-8de1-c5366805c5be",
+        "e7a5d426-31db-49a6-ac0e-d0700667a316",
+        "18a04235-48cd-4dc5-9311-8991ebc3d71c",
+        "d9b0e208-b8c4-4b82-bad0-e3e24af53fa9",
+        "adc642a1-fbfd-4cb3-9d8c-ebb15e8e5d83"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -380,6 +524,8 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "8914fa3f-ce8e-4a64-a5e1-05d8aa0de694",
+    "d591081d-db96-4c26-85ee-9d0e7ac287c3"
   ]
 }
