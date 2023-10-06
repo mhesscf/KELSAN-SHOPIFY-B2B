@@ -296,6 +296,68 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "c0acf549-ff7e-4f63-82df-d2dc8ebffc8d": {
+      "type": "dept-category-area",
+      "blocks": {
+        "c2fda0c1-70ef-46f7-a1f2-c0a73771a038": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flood-extraction-machines.jpg",
+            "title": "Flood Extraction Machines",
+            "url": "\/collections\/flood-extraction-machines"
+          }
+        },
+        "73a5cf39-a264-4f95-bfc5-aa7ff3a0537b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sub-surface-extraction-tools.jpg",
+            "title": "Sub Surface & Deep Water Extraction Tools",
+            "url": "\/collections\/sub-surface-deep-water-extraction-tools"
+          }
+        }
+      },
+      "block_order": [
+        "c2fda0c1-70ef-46f7-a1f2-c0a73771a038",
+        "73a5cf39-a264-4f95-bfc5-aa7ff3a0537b"
+      ],
+      "settings": {
+        "block-title": "Flood Restoration Equipment & Extractors by Type"
+      }
+    },
+    "534f37a0-4828-479d-9303-ae308891af7d": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "31d36ae2-6f15-46e0-98a2-c92db5f64be5": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": ""
+          }
+        },
+        "a166ac7e-5b79-4829-b1be-e4c22889bef9": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Mytee Products®, Inc.",
+            "brand-link": ""
+          }
+        },
+        "e8a5288b-569d-4a6c-acd1-67c476c9c2b2": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Dri-Eaz®",
+            "brand-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "31d36ae2-6f15-46e0-98a2-c92db5f64be5",
+        "a166ac7e-5b79-4829-b1be-e4c22889bef9",
+        "e8a5288b-569d-4a6c-acd1-67c476c9c2b2"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -303,6 +365,8 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "c0acf549-ff7e-4f63-82df-d2dc8ebffc8d",
+    "534f37a0-4828-479d-9303-ae308891af7d"
   ]
 }
