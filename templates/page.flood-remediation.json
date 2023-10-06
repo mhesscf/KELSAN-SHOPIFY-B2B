@@ -136,200 +136,6 @@
         "enable_recently_viewed_products": true
       }
     },
-    "1663875378f697f694": {
-      "type": "category-landing-page",
-      "blocks": {
-        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
-          "type": "menu",
-          "settings": {
-            "menu": "",
-            "show_prod_count": false,
-            "menu_depth_range": 3
-          }
-        },
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
-          "type": "ctheader",
-          "settings": {
-            "sectionheading": "Flood Remediation Products by Type"
-          }
-        },
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/air-scrubbers.jpg",
-            "linktext": "Air Scrubbers & Other Commercial Filtration Devices",
-            "linkurl": "shopify:\/\/collections\/air-scrubbers-other-commercial-filtration-devices"
-          }
-        },
-        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-fans.jpg",
-            "linktext": "Carpet Fans",
-            "linkurl": "shopify:\/\/pages\/carpet-fans"
-          }
-        },
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/commercial-dehumidifiers.jpg",
-            "linktext": "Commercial Dehumidifiers",
-            "linkurl": "shopify:\/\/collections\/commercial-dehumidifiers"
-          }
-        },
-        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/filters-ducting.jpg",
-            "linktext": "Filters & Ducting (Air Scrubbers & Dehumidifiers)",
-            "linkurl": "shopify:\/\/collections\/filters-ducting-air-scrubbers-dehumidifiers"
-          }
-        },
-        "4715b000-00ac-457e-86f2-fac625d11e35": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/flood-restoration-equip.jpg",
-            "linktext": "Flood Restoration Equipment & Extractors",
-            "linkurl": "shopify:\/\/pages\/flood-extractors"
-          }
-        },
-        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
-          "type": "caheader",
-          "settings": {
-            "sectionheading": "Shop By Application"
-          }
-        },
-        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
-            "linktext": "Application 1",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
-            "linktext": "Application 2",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "c939808d-357a-485e-9410-ae296bc0f014": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
-            "linktext": "Application 3",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "b8376ece-b804-476e-a3b5-35b77607dd21": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
-            "linktext": "Application 4",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sweeping-category.png",
-            "linktext": "Application 5",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
-            "linktext": "Application 6",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
-          "type": "slider",
-          "settings": {
-            "collection": "drieaz"
-          }
-        },
-        "3fba68ff-4018-4287-a0a8-a3b997759627": {
-          "type": "slider",
-          "settings": {
-            "collection": "mytee"
-          }
-        },
-        "c954c801-0965-4531-a610-39e54b5cb265": {
-          "type": "slider",
-          "settings": {
-            "collection": "cleanfreak"
-          }
-        },
-        "d579de19-efac-4983-a0ab-706511d00621": {
-          "type": "slider",
-          "settings": {
-            "collection": "xpower"
-          }
-        },
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
-          "type": "crheader",
-          "settings": {
-            "sectionheading": "Flood Remediation Resources"
-          }
-        },
-        "cb754198-b199-4317-879a-0b37a3021253": {
-          "type": "resource",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
-            "heading": "Flood Water Cleanup",
-            "subheading": "<p>Whether you're facing cleaning up water from a burst pipe, a backed up sewer, or natural disaster flooding, the restoration has to be handled carefully. Check out our step-by-step guide on flood water cleanup. <\/p>",
-            "button_label": "Read the Guide",
-            "button_link": "shopify:\/\/pages\/flood-water-cleanup"
-          }
-        }
-      },
-      "block_order": [
-        "589b0ba5-e3fa-4320-9319-39615c0ac890",
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
-        "159a2b1f-8d76-471e-84de-975a6d48fa11",
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
-        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
-        "4715b000-00ac-457e-86f2-fac625d11e35",
-        "416df694-767b-4c68-8e90-2c0cff08dc2a",
-        "5b4a6417-f1c3-413e-8694-20fe1b499722",
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
-        "c939808d-357a-485e-9410-ae296bc0f014",
-        "b8376ece-b804-476e-a3b5-35b77607dd21",
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
-        "3fba68ff-4018-4287-a0a8-a3b997759627",
-        "c954c801-0965-4531-a610-39e54b5cb265",
-        "d579de19-efac-4983-a0ab-706511d00621",
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
-        "cb754198-b199-4317-879a-0b37a3021253"
-      ],
-      "settings": {
-        "collection": "",
-        "show_collection_image": true,
-        "products_per_page_range": 6,
-        "products_per_row": "3",
-        "sort_by": true,
-        "grid_list": true,
-        "default_view": "grid-view",
-        "enable_subcollection": false,
-        "show_product_count": false,
-        "thumbnail_image": "product-image",
-        "image_crop": "original"
-      }
-    },
     "d4cd80ed-65b8-4c09-831d-ae5f95fd15ce": {
       "type": "dept-category-area",
       "blocks": {
@@ -384,6 +190,73 @@
       "settings": {
         "block-title": "Flood Remediation Products by Type"
       }
+    },
+    "08ded979-5db1-43ef-a4de-5ee9e726a941": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "6ecc0aff-8d4b-4daa-b12a-438d31998dd1": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Dri-Eaz®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Dri-Eaz&refinementList[product_type][0]=Flood Restoration Equipment %26 Extractors&refinementList[product_type][1]=Commercial Dehumidifiers&refinementList[product_type][2]=Carpet Fans&refinementList[product_type][3]=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&refinementList[product_type][4]=Air Scrubbers %26 Other Commercial Filtration Devices&q=Dri-Eaz",
+            "brand-image": "shopify:\/\/shop_images\/hepa-700-air-scrubber.jpg"
+          }
+        },
+        "25e4b837-202d-4bfc-a92a-b6a4a43c6ae8": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Mytee Products®, Inc.",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Flood Restoration Equipment %26 Extractors&refinementList[product_type][1]=Commercial Dehumidifiers&refinementList[product_type][2]=Carpet Fans&refinementList[product_type][3]=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&refinementList[product_type][4]=Air Scrubbers %26 Other Commercial Filtration Devices&q=Mytee",
+            "brand-image": "shopify:\/\/shop_images\/7000sx-flood-pumper_2_1.jpg"
+          }
+        },
+        "c9ed7257-3722-4c7e-a5f4-540cdf10092c": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Flood Restoration Equipment %26 Extractors&refinementList[product_type][1]=Commercial Dehumidifiers&refinementList[product_type][2]=Carpet Fans&refinementList[product_type][3]=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&refinementList[product_type][4]=Air Scrubbers %26 Other Commercial Filtration Devices&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/high-speed-air-mover-quarter.jpg"
+          }
+        },
+        "abeed352-a286-4ccd-8d6a-0d9c077b0d7b": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "XPower®",
+            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=XPower&refinementList%5Bproduct_type%5D%5B0%5D=Flood%20Restoration%20Equipment%20%26%20Extractors&refinementList%5Bproduct_type%5D%5B1%5D=Commercial%20Dehumidifiers&refinementList%5Bproduct_type%5D%5B2%5D=Carpet%20Fans&refinementList%5Bproduct_type%5D%5B3%5D=Filters%20%26%20Ducting%20%28Air%20Scrubbers%20%26%20Dehumidifiers%29&refinementList%5Bproduct_type%5D%5B4%5D=Air%20Scrubbers%20%26%20Other%20Commercial%20Filtration%20Devices&q=XPower",
+            "brand-image": "shopify:\/\/shop_images\/viking-pds-21-heated-air-mover-main-image.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "6ecc0aff-8d4b-4daa-b12a-438d31998dd1",
+        "25e4b837-202d-4bfc-a92a-b6a4a43c6ae8",
+        "c9ed7257-3722-4c7e-a5f4-540cdf10092c",
+        "abeed352-a286-4ccd-8d6a-0d9c077b0d7b"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
+    },
+    "6597d2a2-61d2-40ea-9485-10d3d400c602": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "58cb3958-9f14-4969-9fc5-d6631ab9336c": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
+            "heading": "Flood Water Cleanup",
+            "subheading": "<p>Whether you're facing cleaning up water from a burst pipe, a backed up <br\/>sewer, or natural disaster flooding, the restoration has to be handled <br\/>carefully. Check out our step-by-step guide on flood water cleanup.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/pages\/flood-water-cleanup"
+          }
+        }
+      },
+      "block_order": [
+        "58cb3958-9f14-4969-9fc5-d6631ab9336c"
+      ],
+      "settings": {
+        "block-title": "Flood Remediation Resources"
+      }
     }
   },
   "order": [
@@ -391,7 +264,8 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694",
-    "d4cd80ed-65b8-4c09-831d-ae5f95fd15ce"
+    "d4cd80ed-65b8-4c09-831d-ae5f95fd15ce",
+    "08ded979-5db1-43ef-a4de-5ee9e726a941",
+    "6597d2a2-61d2-40ea-9485-10d3d400c602"
   ]
 }
