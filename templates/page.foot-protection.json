@@ -307,6 +307,52 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "5ef2dd83-8ccb-40f7-b72a-641e0836edb2": {
+      "type": "dept-category-area",
+      "blocks": {
+        "748654fa-da71-4687-9acb-9854ae3cf42c": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shoe-covers.jpg",
+            "title": "Shoe Covers & Nuke Boots",
+            "url": "\/collections\/shoe-covers-nuke-boots"
+          }
+        },
+        "32ccc816-205f-4106-a4ef-febbaf686401": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steel-toe-footwear.jpg",
+            "title": "Steel Toe Footwear",
+            "url": "\/collections\/steel-toe-footwear"
+          }
+        },
+        "bb969f5e-3e55-40f8-b815-f9fdbb1a520d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stripping-shoes.jpg",
+            "title": "Stripping Shoes",
+            "url": "\/collections\/stripping-shoes"
+          }
+        },
+        "21205158-72fc-4702-af77-ee5121c2aa23": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/waterproof-boots.jpg",
+            "title": "Waterproof Boots",
+            "url": "\/collections\/waterproof-boots"
+          }
+        }
+      },
+      "block_order": [
+        "748654fa-da71-4687-9acb-9854ae3cf42c",
+        "32ccc816-205f-4106-a4ef-febbaf686401",
+        "bb969f5e-3e55-40f8-b815-f9fdbb1a520d",
+        "21205158-72fc-4702-af77-ee5121c2aa23"
+      ],
+      "settings": {
+        "block-title": "Foot Protection by Type"
+      }
     }
   },
   "order": [
@@ -314,6 +360,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "5ef2dd83-8ccb-40f7-b72a-641e0836edb2"
   ]
 }
