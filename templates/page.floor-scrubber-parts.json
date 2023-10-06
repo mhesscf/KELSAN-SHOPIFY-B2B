@@ -349,6 +349,52 @@
       "settings": {
         "block-title": "Auto Scrubber Parts & Accessories by Type"
       }
+    },
+    "f6affc7e-6e40-4be0-a838-2ed2a2445076": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "8c71f4d3-8c7f-4dda-bc65-ce9afda103b1": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Viper",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Auto Scrubber Parts&q=Viper",
+            "brand-image": "shopify:\/\/shop_images\/rear-viper-squeegee-blade-as530r.jpg"
+          }
+        },
+        "7f59400c-d945-4ac9-b807-5f36ee073a6f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Scrubber Parts&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/eag-mpvr08039-02_1.jpg"
+          }
+        },
+        "7caf580d-f2e0-43a1-86f5-03aef25927c1": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Advance®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Advance&refinementList[product_type][0]=Auto Scrubber Parts&q=Advance",
+            "brand-image": "shopify:\/\/shop_images\/advanced-56104483-squeegee-kit.jpg"
+          }
+        },
+        "01547516-8648-4f6c-9ad4-918ee0179e5b": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Scrubber Parts&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-dura-18hd-rear-sqeegee.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8c71f4d3-8c7f-4dda-bc65-ce9afda103b1",
+        "7f59400c-d945-4ac9-b807-5f36ee073a6f",
+        "7caf580d-f2e0-43a1-86f5-03aef25927c1",
+        "01547516-8648-4f6c-9ad4-918ee0179e5b"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -357,6 +403,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "b1e0ab68-50bd-4987-b7b9-230f0ef28748"
+    "b1e0ab68-50bd-4987-b7b9-230f0ef28748",
+    "f6affc7e-6e40-4be0-a838-2ed2a2445076"
   ]
 }
