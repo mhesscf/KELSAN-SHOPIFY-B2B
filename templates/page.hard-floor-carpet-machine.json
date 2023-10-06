@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "fe76ad0d-0220-4f99-b07f-392fc739c499": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "cd5afef0-f630-4752-8495-250801033f36": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/release-your-inner-cleanfreak-floor-carpet-machines-dept-page.jpg",
+            "cat_title": "Hard Floor & Carpet Cleaning Machines",
+            "cat_text": "Our industrially rated floor cleaning machines come in a wide range of applications and sizes."
+          }
+        }
+      },
+      "block_order": [
+        "cd5afef0-f630-4752-8495-250801033f36"
+      ],
       "settings": {
-        "chsectionheading": "Hard Floor & Carpet Cleaning Machines",
-        "chsectiontext": "Our industrially rated floor cleaning machines come in a wide range of applications and sizes.",
-        "image": "shopify:\/\/shop_images\/release-your-inner-cleanfreak-floor-carpet-machines-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -69,7 +85,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -100,6 +115,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -370,13 +386,138 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "742eb16f-ac48-421d-bd2e-f867fe368979": {
+      "type": "dept-category-area",
+      "blocks": {
+        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/baseboard-edgers.jpg",
+            "title": "BaseBoard Edgers",
+            "url": "\/collections\/baseboard-edgers-portable-handheld-scrubbers"
+          }
+        },
+        "f05d75b2-7018-420b-9bfa-98b62fad2cf6": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-extractors.jpg",
+            "title": "Carpet Extractors",
+            "url": "\/pages\/extractors"
+          }
+        },
+        "c787aac2-a892-4ec9-b1a2-72bb3672ebbb": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hard-floor-cleaning-machines.jpg",
+            "title": "Hard Floor Cleaning Machines",
+            "url": "\/pages\/hard-floor-cleaning-machines"
+          }
+        },
+        "8944d628-68f9-4791-9825-ebf7a34d90f5": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
+            "title": "Industrial Sweepers",
+            "url": "\/pages\/industrial-sweepers"
+          }
+        },
+        "b9b0224c-9eae-417a-8a13-428ddce56e19": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
+            "title": "Pump-up Dispenser & Trigger Sprayers",
+            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        },
+        "8e103da5-5a77-4b14-b3a3-8facbcccea34": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steam-cleaner.jpg",
+            "title": "Steam Cleaners",
+            "url": "\/collections\/steam-cleaners"
+          }
+        },
+        "36864348-c948-496d-b80e-c0a8c7b6297a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vertical-surface-cleaners.jpg",
+            "title": "Vertical Surface Cleaners",
+            "url": "\/collections\/vertical-surface-cleaners"
+          }
+        }
+      },
+      "block_order": [
+        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146",
+        "f05d75b2-7018-420b-9bfa-98b62fad2cf6",
+        "c787aac2-a892-4ec9-b1a2-72bb3672ebbb",
+        "8944d628-68f9-4791-9825-ebf7a34d90f5",
+        "b9b0224c-9eae-417a-8a13-428ddce56e19",
+        "8e103da5-5a77-4b14-b3a3-8facbcccea34",
+        "36864348-c948-496d-b80e-c0a8c7b6297a"
+      ],
+      "settings": {
+        "block-title": "Hard Floor & Carpet Machines by Type"
+      }
+    },
+    "7f5d1566-bccb-480a-80ac-d26728af74b6": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "1e8076d3-5332-4561-bf4a-7aa7a2eb60fe": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": ""
+          }
+        },
+        "ab45b39a-4ca1-4c7a-9f2a-21f9d599d892": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "EDIC",
+            "brand-link": ""
+          }
+        },
+        "ba39cf02-daea-490b-bf18-ad866089a2ba": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Mytee Products®, Inc.",
+            "brand-link": ""
+          }
+        },
+        "32530c79-1eee-4f83-8dd8-1cd3eb0658b6": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": ""
+          }
+        },
+        "ff8ee659-6e77-4d5b-9cd1-109ba6146b9e": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Advance®",
+            "brand-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1e8076d3-5332-4561-bf4a-7aa7a2eb60fe",
+        "ab45b39a-4ca1-4c7a-9f2a-21f9d599d892",
+        "ba39cf02-daea-490b-bf18-ad866089a2ba",
+        "32530c79-1eee-4f83-8dd8-1cd3eb0658b6",
+        "ff8ee659-6e77-4d5b-9cd1-109ba6146b9e"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "fe76ad0d-0220-4f99-b07f-392fc739c499",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "742eb16f-ac48-421d-bd2e-f867fe368979",
+    "7f5d1566-bccb-480a-80ac-d26728af74b6"
   ]
 }
