@@ -361,12 +361,48 @@
             "title": "Floor Cleaning Soaps & Solutions",
             "url": "\/collections\/floor-cleaning-soaps-solutions"
           }
+        },
+        "3564e769-0e2d-4ca1-986b-e145876985dc": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-polishing-restoring-solutions.jpg",
+            "title": "Floor Polishing & Restoring Solutions",
+            "url": "\/collections\/floor-polishing-restoring-solutions"
+          }
+        },
+        "6d58d77b-dd3d-4985-bf19-59f329fad1d9": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-stripping-solutions.jpg",
+            "title": "Floor Stripping Solutions",
+            "url": "\/collections\/floor-stripping-solutions"
+          }
+        },
+        "48e2077c-e9ec-4192-888b-299550b1af32": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-wax-finishes.jpg",
+            "title": "Floor Wax & Finishes",
+            "url": "\/collections\/floor-wax-finishes"
+          }
+        },
+        "00eaa512-13f8-45fc-8512-4b925e8badbe": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stone-care-products.jpg",
+            "title": "Stone Care Products",
+            "url": "\/collections\/stone-care-products"
+          }
         }
       },
       "block_order": [
         "50cae42b-fa7c-4938-a2b7-2eb5bb0e58bd",
         "b4e69939-7ca2-4425-9d84-68d456443c2c",
-        "f0ad7b14-eab0-4145-a2ea-16cbadcd662b"
+        "f0ad7b14-eab0-4145-a2ea-16cbadcd662b",
+        "3564e769-0e2d-4ca1-986b-e145876985dc",
+        "6d58d77b-dd3d-4985-bf19-59f329fad1d9",
+        "48e2077c-e9ec-4192-888b-299550b1af32",
+        "00eaa512-13f8-45fc-8512-4b925e8badbe"
       ],
       "settings": {
         "block-title": "Floor Care Chemicals by Type"
