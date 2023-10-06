@@ -3,48 +3,17 @@
     "239b79e1-9eb1-4460-9439-e5093c6fa480": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "template--16671987957972__239b79e1-9eb1-4460-9439-e5093c6fa480-slide-1": {
-          "type": "slide",
+        "6caff2f2-34f9-407d-ac7e-4595e1c7e9df": {
+          "type": "categoryhead",
           "settings": {
-            "title": "Slide 1",
-            "text": "Introduce customers to your shop with lifestyle and product imagery",
-            "color": "#FFFFFF",
-            "link": "",
-            "text_alignment": "center",
-            "button_one_label": "Button",
-            "button_one_link": "",
-            "button_one_style": "primary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": true,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
-          }
-        },
-        "template--16671987957972__239b79e1-9eb1-4460-9439-e5093c6fa480-slide-2": {
-          "type": "slide",
-          "settings": {
-            "title": "Slide 2",
-            "text": "Introduce customers to your shop with lifestyle and product imagery",
-            "color": "#FFFFFF",
-            "link": "",
-            "text_alignment": "center",
-            "button_one_label": "Button",
-            "button_one_link": "",
-            "button_one_style": "primary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": true,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
+            "cat_image": "shopify:\/\/shop_images\/floor-buffer-accessories-dept-page.jpg",
+            "cat_title": "Floor Buffer Accessories",
+            "cat_text": "Accessories for everyday floor maintenance tasks from concrete prep work to buffing, scrubbing, and stripping hard floors. Many different tools, brushes, pad drivers, and solution tanks in stock."
           }
         }
       },
       "block_order": [
-        "template--16671987957972__239b79e1-9eb1-4460-9439-e5093c6fa480-slide-1",
-        "template--16671987957972__239b79e1-9eb1-4460-9439-e5093c6fa480-slide-2"
+        "6caff2f2-34f9-407d-ac7e-4595e1c7e9df"
       ],
       "settings": {
         "enable_autoplay": true,
@@ -53,14 +22,6 @@
         "slideshow_height": "medium",
         "slideshow_height_mobile": "x-large",
         "slideshow_text_below_image": true
-      }
-    },
-    "1663617398865396bc": {
-      "type": "category-header",
-      "settings": {
-        "chsectionheading": "Floor Buffer Accessories",
-        "chsectiontext": "Accessories for everyday floor maintenance tasks from concrete prep work to buffing, scrubbing, and stripping hard floors. Many different tools, brushes, pad drivers, and solution tanks in stock.",
-        "image": "shopify:\/\/shop_images\/floor-buffer-accessories-dept-page.jpg"
       }
     },
     "16636174067db7bd8c": {
@@ -360,14 +321,98 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "9223f029-014a-4090-94c5-f6049ab26b6d": {
+      "type": "dept-category-area",
+      "blocks": {
+        "4d0fa2ed-e0e7-4e5c-a489-2c107b72764a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/concrete-preparation.jpg",
+            "title": "Concrete Preparation",
+            "url": "\/collections\/concrete-preparation-polishing"
+          }
+        },
+        "243be5ff-1a3e-45c8-be0b-82a6be73aff2": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-brushes.jpg",
+            "title": "Floor Buffer Brushes",
+            "url": "\/collections\/floor-buffer-brushes"
+          }
+        },
+        "a4e4b977-a5cc-4c90-a601-1a0677c4a308": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-pad-drivers.jpg",
+            "title": "Floor Buffer Pad Drivers",
+            "url": "\/collections\/floor-buffer-pad-drivers"
+          }
+        },
+        "74bd558c-8495-4b07-92ee-e6b01b7148e2": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/solution-tanks.jpg",
+            "title": "Solution Tanks",
+            "url": "\/collections\/solution-tanks"
+          }
+        }
+      },
+      "block_order": [
+        "4d0fa2ed-e0e7-4e5c-a489-2c107b72764a",
+        "243be5ff-1a3e-45c8-be0b-82a6be73aff2",
+        "a4e4b977-a5cc-4c90-a601-1a0677c4a308",
+        "74bd558c-8495-4b07-92ee-e6b01b7148e2"
+      ],
+      "settings": {
+        "block-title": "Floor Buffer Accessories by Type"
+      }
+    },
+    "9d240fc7-3d19-4b88-80b2-b390dc1df52a": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "8348ea26-384d-4b4e-b339-480bdfb44228": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Floor Buffer Accessories&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/tank_1.jpg"
+          }
+        },
+        "84388f15-c047-49a0-a202-7182ea1997ee": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Oreck",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Oreck&refinementList[product_type][0]=Floor Buffer Accessories&q=Oreck",
+            "brand-image": "shopify:\/\/shop_images\/oreck-buffer-carpet-scrubbing-brush.jpg"
+          }
+        },
+        "af361663-843a-4d31-aa39-a7de2dd69c3b": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Malish",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer Accessories&q=Malish",
+            "brand-image": "shopify:\/\/shop_images\/malish-pad-lok-19-inch-pad-driver-with-bristles-782719np.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8348ea26-384d-4b4e-b339-480bdfb44228",
+        "84388f15-c047-49a0-a202-7182ea1997ee",
+        "af361663-843a-4d31-aa39-a7de2dd69c3b"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
     "239b79e1-9eb1-4460-9439-e5093c6fa480",
-    "1663617398865396bc",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "9223f029-014a-4090-94c5-f6049ab26b6d",
+    "9d240fc7-3d19-4b88-80b2-b390dc1df52a"
   ]
 }
