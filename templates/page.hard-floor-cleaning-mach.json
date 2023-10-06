@@ -143,235 +143,6 @@
         "enable_recently_viewed_products": true
       }
     },
-    "1663875378f697f694": {
-      "type": "category-landing-page",
-      "blocks": {
-        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
-          "type": "menu",
-          "settings": {
-            "menu": "",
-            "show_prod_count": true,
-            "menu_depth_range": 3
-          }
-        },
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
-          "type": "ctheader",
-          "settings": {
-            "sectionheading": "Hard Floor Cleaning Machines by Type"
-          }
-        },
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/counter-rotating-brushes-scrubbers.jpg",
-            "linktext": "Counter Rotating Brushes (CRB) Carpet & Floor Scrubber",
-            "linkurl": "shopify:\/\/collections\/counter-rotating-brushes-crb-carpet-floor-scrubbers"
-          }
-        },
-        "c6c4a67b-375b-453d-a5f8-085eb0c383c9": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/escalator-cleaners.jpg",
-            "linktext": "Escalator Cleaners",
-            "linkurl": "\/collections\/escalator-cleaners"
-          }
-        },
-        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/floor-buffers.jpg",
-            "linktext": "Floor Buffers",
-            "linkurl": "shopify:\/\/collections\/floor-buffers"
-          }
-        },
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/floor-burnishers.jpg",
-            "linktext": "Floor Burnishers",
-            "linkurl": "shopify:\/\/collections\/floor-burnishers"
-          }
-        },
-        "d1992b30-2381-4ce4-b21e-23bc30b1e78d": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/multi-surface-scrubbers.jpg",
-            "linktext": "Multi-Surface (Tile & Carpet) Machines",
-            "linkurl": "shopify:\/\/collections\/multi-surface-tile-carpet"
-          }
-        },
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ride-on-floor-scrubbers.jpg",
-            "linktext": "Ride-On Floor Scrubbers",
-            "linkurl": "shopify:\/\/collections\/ride-on-auto-scrubbers"
-          }
-        },
-        "d5555fee-e855-4369-bb4e-b5f8a603808b": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/walk-behind-floor-scrubbers.jpg",
-            "linktext": "Walk-Behind Floor Scrubbers",
-            "linkurl": "shopify:\/\/collections\/walk-behind-auto-scrubbers"
-          }
-        },
-        "4715b000-00ac-457e-86f2-fac625d11e35": {
-          "type": "types",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Wax-Stripper-applicators.jpg",
-            "linktext": "Wax & Stripper Applicators",
-            "linkurl": "shopify:\/\/collections\/wax-stripper-applicators"
-          }
-        },
-        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
-          "type": "caheader",
-          "settings": {
-            "sectionheading": "Shop By Application"
-          }
-        },
-        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
-            "linktext": "Application 1",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
-            "linktext": "Application 2",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "c939808d-357a-485e-9410-ae296bc0f014": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
-            "linktext": "Application 3",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "b8376ece-b804-476e-a3b5-35b77607dd21": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
-            "linktext": "Application 4",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sweeping-category.png",
-            "linktext": "Application 5",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
-            "linktext": "Application 6",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
-          "type": "slider",
-          "settings": {
-            "collection": "trusted-clean"
-          }
-        },
-        "3fba68ff-4018-4287-a0a8-a3b997759627": {
-          "type": "slider",
-          "settings": {
-            "collection": "viper"
-          }
-        },
-        "c954c801-0965-4531-a610-39e54b5cb265": {
-          "type": "slider",
-          "settings": {
-            "collection": "ipc-eagle"
-          }
-        },
-        "9137bd9f-c2ac-46a1-ab02-2220bf154c9b": {
-          "type": "slider",
-          "settings": {
-            "collection": "cleanfreak"
-          }
-        },
-        "9a51d90d-942e-4cf2-bf41-30857f863e18": {
-          "type": "slider",
-          "settings": {
-            "collection": "advance"
-          }
-        },
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
-          "type": "crheader",
-          "settings": {
-            "sectionheading": "Auto Detailing Resources"
-          }
-        },
-        "cb754198-b199-4317-879a-0b37a3021253": {
-          "type": "resource",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
-            "heading": "Auto Detailing Resource",
-            "subheading": "<p>A brief description here to inform the user about the resource<\/p>",
-            "button_label": "Read the Guide",
-            "button_link": "shopify:\/\/pages\/how-tos"
-          }
-        }
-      },
-      "block_order": [
-        "589b0ba5-e3fa-4320-9319-39615c0ac890",
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
-        "c6c4a67b-375b-453d-a5f8-085eb0c383c9",
-        "159a2b1f-8d76-471e-84de-975a6d48fa11",
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
-        "d1992b30-2381-4ce4-b21e-23bc30b1e78d",
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
-        "d5555fee-e855-4369-bb4e-b5f8a603808b",
-        "4715b000-00ac-457e-86f2-fac625d11e35",
-        "416df694-767b-4c68-8e90-2c0cff08dc2a",
-        "5b4a6417-f1c3-413e-8694-20fe1b499722",
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
-        "c939808d-357a-485e-9410-ae296bc0f014",
-        "b8376ece-b804-476e-a3b5-35b77607dd21",
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
-        "3fba68ff-4018-4287-a0a8-a3b997759627",
-        "c954c801-0965-4531-a610-39e54b5cb265",
-        "9137bd9f-c2ac-46a1-ab02-2220bf154c9b",
-        "9a51d90d-942e-4cf2-bf41-30857f863e18",
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
-        "cb754198-b199-4317-879a-0b37a3021253"
-      ],
-      "settings": {
-        "collection": "",
-        "show_collection_image": true,
-        "products_per_page_range": 6,
-        "products_per_row": "3",
-        "sort_by": true,
-        "grid_list": true,
-        "default_view": "grid-view",
-        "enable_subcollection": false,
-        "show_product_count": false,
-        "thumbnail_image": "product-image",
-        "image_crop": "original"
-      }
-    },
     "57d423fa-788b-45c5-aedf-748a91c4b11a": {
       "type": "dept-category-area",
       "blocks": {
@@ -453,6 +224,61 @@
       "settings": {
         "block-title": "Hard Floor Cleaning Machines by Type"
       }
+    },
+    "98b16032-31db-47eb-8e93-88120664ee70": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "0e163466-1982-4591-be89-ffa09cc355b4": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/dura-17-c-with-dust-skirt.jpg"
+          }
+        },
+        "8a97ceab-755d-42fb-8c1d-36a142f58b62": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Viper",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Viper",
+            "brand-image": "shopify:\/\/shop_images\/viper-as430c-17-inch-electric-auto-scrubber.jpg"
+          }
+        },
+        "fe3b09fd-1a25-46c1-a77e-4e6a51a1bc25": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=IPC Eagle",
+            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
+          }
+        },
+        "3b237663-c98e-4967-8b14-0198e0addd1f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/kob-00-4497-4-01.jpg"
+          }
+        },
+        "ef5fef08-fa82-46e8-8d7b-2a37f3c24d6d": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Advance®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Advance&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Advance",
+            "brand-image": "shopify:\/\/shop_images\/advance-adfinity-x20c-scrubber.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0e163466-1982-4591-be89-ffa09cc355b4",
+        "8a97ceab-755d-42fb-8c1d-36a142f58b62",
+        "fe3b09fd-1a25-46c1-a77e-4e6a51a1bc25",
+        "3b237663-c98e-4967-8b14-0198e0addd1f",
+        "ef5fef08-fa82-46e8-8d7b-2a37f3c24d6d"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -460,7 +286,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694",
-    "57d423fa-788b-45c5-aedf-748a91c4b11a"
+    "57d423fa-788b-45c5-aedf-748a91c4b11a",
+    "98b16032-31db-47eb-8e93-88120664ee70"
   ]
 }
