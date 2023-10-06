@@ -407,6 +407,22 @@
             "title": "Sweeping & Mopping",
             "url": "\/pages\/mop-sweep"
           }
+        },
+        "ea8cd9f6-bc25-4a35-85ef-b98b5df758c4": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/waste-managment.jpg",
+            "title": "Waste Management",
+            "url": "\/pages\/waste-management"
+          }
+        },
+        "ae32e330-f41c-4d09-a5d0-e128c2046dfd": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/window-cleaning-equipment.jpg",
+            "title": "Window Cleaning Equipment",
+            "url": "\/pages\/window-cleaning-equipment"
+          }
         }
       },
       "block_order": [
@@ -415,10 +431,70 @@
         "64e88809-ed07-457a-8dfa-69fe9b3723df",
         "28952ee1-8a64-4c01-b698-ae7068d4b537",
         "5213e7a7-131f-4eab-a927-b18f89f7e2cc",
-        "078cbbec-3c84-4b75-a61f-ffb6f1fc4f32"
+        "078cbbec-3c84-4b75-a61f-ffb6f1fc4f32",
+        "ea8cd9f6-bc25-4a35-85ef-b98b5df758c4",
+        "ae32e330-f41c-4d09-a5d0-e128c2046dfd"
       ],
       "settings": {
         "block-title": "Janitorial Supplies by Type"
+      }
+    },
+    "81b3f8ab-4122-466d-b45b-2375f44bc383": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "c432ef2a-a2cd-4782-8f16-086f70a595fb": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Rubbermaid®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Rubbermaid&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&refinementList[product_type][6]=Waste Management&q=Rubbermaid",
+            "brand-image": "shopify:\/\/shop_images\/black_wastebasket_lg.jpg"
+          }
+        },
+        "343719c6-3991-4508-95ac-d0a56e043a51": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&q=IPC Eagle",
+            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-window-pole.jpg"
+          }
+        },
+        "c1bf4e7a-7dd2-4b8d-9071-493f942c2b7a": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Impact®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&q=Impact",
+            "brand-image": "shopify:\/\/shop_images\/red_microfiber_wipes_lg.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "c432ef2a-a2cd-4782-8f16-086f70a595fb",
+        "343719c6-3991-4508-95ac-d0a56e043a51",
+        "c1bf4e7a-7dd2-4b8d-9071-493f942c2b7a"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
+    },
+    "51948144-8659-4dea-891d-43d14912cccb": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "db3f9533-eb88-409b-8fa2-9f2f48efcd39": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rags-towels-wipes-dept-page.jpg",
+            "heading": "Commercial Spring Cleaning Checklist",
+            "subheading": "<p>Spring has finally sprung and many people are eager to begin spring <br\/>cleaning! In a commercial setting, this means adding on a good thorough <br\/>cleaning of high traffic areas and those hard to reach spots that don’t <br\/>get covered during regular cleanings.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/blogs\/clean\/commercial-spring-cleaning-checklist"
+          }
+        }
+      },
+      "block_order": [
+        "db3f9533-eb88-409b-8fa2-9f2f48efcd39"
+      ],
+      "settings": {
+        "block-title": "Resources"
       }
     }
   },
@@ -428,6 +504,8 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "9a1c3e17-0631-4079-8687-306e1e4abd89"
+    "9a1c3e17-0631-4079-8687-306e1e4abd89",
+    "81b3f8ab-4122-466d-b45b-2375f44bc383",
+    "51948144-8659-4dea-891d-43d14912cccb"
   ]
 }
