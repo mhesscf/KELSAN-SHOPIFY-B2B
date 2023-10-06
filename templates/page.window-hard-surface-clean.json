@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "d8751039-56e2-471b-bbdd-7b73f7ff78c2": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "447ba91e-4571-4f5f-a506-d5fc9ff6c9b3": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/hard-surface-cleaners-dept-page.jpg",
+            "cat_title": "Window & Hard Surface Cleaners",
+            "cat_text": "We stock many different multi-purpose & other hard surface cleaners from industry leaders like Lysol®, Windex®, Pledge® & more."
+          }
+        }
+      },
+      "block_order": [
+        "447ba91e-4571-4f5f-a506-d5fc9ff6c9b3"
+      ],
       "settings": {
-        "chsectionheading": "Window & Hard Surface Cleaners",
-        "chsectiontext": "We stock many different multi-purpose & other hard surface cleaners from industry leaders like Lysol®, Windex®, Pledge® & more.",
-        "image": "shopify:\/\/shop_images\/hard-surface-cleaners-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -69,7 +85,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -100,6 +115,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -368,13 +384,114 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "bc5c3fff-b412-41fd-9546-a127f49d6586": {
+      "type": "dept-category-area",
+      "blocks": {
+        "7b3849b7-c990-4c9a-933e-a3352139f2d7": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/all-purpose-cleaner.jpg",
+            "title": "All Purpose Cleaners",
+            "url": "\/collections\/all-purpose-cleaners"
+          }
+        },
+        "d2c0aa89-791f-464f-be80-20733186f72e": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/descaling-chemicals.jpg",
+            "title": "Descaling Chemicals",
+            "url": "\/collections\/descaling-chemicals"
+          }
+        },
+        "66f2e4f4-9707-4bbc-b9a7-8799346439fe": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/furniture-wood-polishes.jpg",
+            "title": "Furniture & Wood Polishes",
+            "url": "\/collections\/furniture-wood-polishes"
+          }
+        },
+        "f08832a6-d9c5-475d-a6f4-0842bacf1658": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/glass-cleaners.jpg",
+            "title": "Glass Cleaners",
+            "url": "\/collections\/glass-cleaners"
+          }
+        },
+        "1712a796-cef5-4dac-9b72-b434d776f90c": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/graffiti-removers.jpg",
+            "title": "Graffiti Removers",
+            "url": "\/collections\/graffiti-removers"
+          }
+        },
+        "400bbf95-2076-40fe-8ddb-d67f5603a7bf": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grill-and-oven-cleaners.jpg",
+            "title": "Grill & Oven Cleaners",
+            "url": "\/collections\/oven-smokehouse-cleaners"
+          }
+        },
+        "0e0e51d9-ffe4-4af1-a36d-622869589406": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mold-mildew-removers.jpg",
+            "title": "Mold & Mildew Removers",
+            "url": "\/collections\/mold-mildew-removers"
+          }
+        },
+        "c42615eb-56a4-4747-892f-6559af166f56": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/porcelain-cleaners.jpg",
+            "title": "Porcelain Cleaners",
+            "url": "\/collections\/porcelain-cleaners"
+          }
+        },
+        "fceeeb09-a0ee-4418-a335-d5da4537bd31": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stainless-steel-cleaners.jpg",
+            "title": "Stainless Steel Cleaners",
+            "url": "\/collections\/stainless-steel-cleaners"
+          }
+        },
+        "07c0ca85-4cfd-48a1-a8e2-e50a048626f8": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-bowl-cleaners.jpg",
+            "title": "Toilet Bowl Cleaners",
+            "url": "\/collections\/toilet-bowl-cleaners"
+          }
+        }
+      },
+      "block_order": [
+        "7b3849b7-c990-4c9a-933e-a3352139f2d7",
+        "d2c0aa89-791f-464f-be80-20733186f72e",
+        "66f2e4f4-9707-4bbc-b9a7-8799346439fe",
+        "f08832a6-d9c5-475d-a6f4-0842bacf1658",
+        "1712a796-cef5-4dac-9b72-b434d776f90c",
+        "400bbf95-2076-40fe-8ddb-d67f5603a7bf",
+        "0e0e51d9-ffe4-4af1-a36d-622869589406",
+        "c42615eb-56a4-4747-892f-6559af166f56",
+        "fceeeb09-a0ee-4418-a335-d5da4537bd31",
+        "07c0ca85-4cfd-48a1-a8e2-e50a048626f8"
+      ],
+      "settings": {
+        "block-title": "Window & Hard Surface Cleaners by Type"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "d8751039-56e2-471b-bbdd-7b73f7ff78c2",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "bc5c3fff-b412-41fd-9546-a127f49d6586"
   ]
 }
