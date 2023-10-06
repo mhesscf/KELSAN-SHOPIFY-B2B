@@ -365,7 +365,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Safety Zone®",
-            "brand-link": ""
+            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Safety%20Zone&refinementList%5Bproduct_type%5D%5B0%5D=Gloves%20%26%20Hand%20Protection&q=Safety%20Zone",
+            "brand-image": "shopify:\/\/shop_images\/gnpr-1e-safety-zone-powder-free-grp.jpg"
           }
         }
       },
