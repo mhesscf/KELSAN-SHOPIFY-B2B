@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "b15c812f-be30-44cc-a749-5b495a518711": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "2de27119-4199-40b2-96a7-8d33bd873f22": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/hand-protection-nitrile-gloves-dept-page.jpg",
+            "cat_title": "Gloves & Hand Protection",
+            "cat_text": "We stock and have access to many different types of nitrile, latex, cotton, leather & other work gloves."
+          }
+        }
+      },
+      "block_order": [
+        "2de27119-4199-40b2-96a7-8d33bd873f22"
+      ],
       "settings": {
-        "chsectionheading": "Gloves & Hand Protection",
-        "chsectiontext": "We stock and have access to many different types of nitrile, latex, cotton, leather & other work gloves.",
-        "image": "shopify:\/\/shop_images\/hand-protection-nitrile-gloves-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -55,7 +71,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -86,6 +101,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -286,13 +302,69 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "847f93bd-c7df-4d98-bb86-a933dbb53376": {
+      "type": "dept-category-area",
+      "blocks": {
+        "b2737847-cd7b-4369-b1e4-6dcb68658b08": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cotton-gloves.jpg",
+            "title": "Cotton Gloves",
+            "url": "\/collections\/cotton-gloves"
+          }
+        },
+        "532dbaf9-789e-4ea5-b045-ef04399b04f1": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/latex-gloves.jpg",
+            "title": "Latex Gloves",
+            "url": "\/collections\/latex-gloves"
+          }
+        },
+        "ea73a063-fc21-4fde-ae47-a754894fc28d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/leather-work-gloves.jpg",
+            "title": "Leather Work Gloves",
+            "url": "\/collections\/leather-work-gloves"
+          }
+        },
+        "ab3b2a71-9a23-42b1-9159-cc9e6017ce90": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/nitrile-gloves.jpg",
+            "title": "Nitrile Gloves",
+            "url": "\/collections\/nitrile-gloves"
+          }
+        },
+        "149c8437-cf71-4aaf-8b7c-e12a74305d2a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vinyl-gloves.jpg",
+            "title": "Vinyl Gloves",
+            "url": "\/collections\/vinyl-gloves"
+          }
+        }
+      },
+      "block_order": [
+        "b2737847-cd7b-4369-b1e4-6dcb68658b08",
+        "532dbaf9-789e-4ea5-b045-ef04399b04f1",
+        "ea73a063-fc21-4fde-ae47-a754894fc28d",
+        "ab3b2a71-9a23-42b1-9159-cc9e6017ce90",
+        "149c8437-cf71-4aaf-8b7c-e12a74305d2a"
+      ],
+      "settings": {
+        "block-title": "Glove & Hand Protection by Type"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "b15c812f-be30-44cc-a749-5b495a518711",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "847f93bd-c7df-4d98-bb86-a933dbb53376"
   ]
 }
