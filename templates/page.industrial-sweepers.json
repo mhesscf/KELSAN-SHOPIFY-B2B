@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "7e54333d-d412-49a4-bdea-6e9b63dbed34": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "18d3ca86-898e-4151-ad93-a9995cbe30de": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/cleanfreak-easysweep-industrial-vacuum-sweeper-in-use-dept-page.jpg",
+            "cat_title": "Industrial Sweepers",
+            "cat_text": "Walk behind & rider floor sweepers clear debris for large area cleaning. Many options available including those with vacuum recovery to control dust."
+          }
+        }
+      },
+      "block_order": [
+        "18d3ca86-898e-4151-ad93-a9995cbe30de"
+      ],
       "settings": {
-        "chsectionheading": "Industrial Sweepers",
-        "chsectiontext": "Walk behind & rider floor sweepers clear debris for large area cleaning. Many options available including those with vacuum recovery to control dust.",
-        "image": "shopify:\/\/shop_images\/cleanfreak-easysweep-industrial-vacuum-sweeper-in-use-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -69,7 +85,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -100,6 +115,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -120,181 +136,87 @@
         "enable_recently_viewed_products": true
       }
     },
-    "1663875378f697f694": {
-      "type": "category-landing-page",
+    "fce3e32f-efcd-4d81-bffc-fc15c455ca52": {
+      "type": "dept-category-area",
       "blocks": {
-        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
-          "type": "menu",
-          "settings": {
-            "menu": "",
-            "show_prod_count": true,
-            "menu_depth_range": 3
-          }
-        },
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
-          "type": "ctheader",
-          "settings": {
-            "sectionheading": "Industrial Sweepers by Type"
-          }
-        },
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
-          "type": "types",
+        "45d0b489-8d26-43ba-b631-74278fe6c815": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/ride-on-sweepers.jpg",
-            "linktext": "Rider Sweepers",
-            "linkurl": "shopify:\/\/collections\/rider-sweepers"
+            "title": "Rider Sweepers",
+            "url": "\/collections\/rider-sweepers"
           }
         },
-        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
-          "type": "types",
+        "febf52a1-f601-4fe3-b021-3d5b9b449462": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/push-sweepers.jpg",
-            "linktext": "Push Sweepers",
-            "linkurl": "shopify:\/\/collections\/push-sweepers"
-          }
-        },
-        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
-          "type": "caheader",
-          "disabled": true,
-          "settings": {
-            "sectionheading": "Shop By Application"
-          }
-        },
-        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
-            "linktext": "Application 1",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
-            "linktext": "Application 2",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "c939808d-357a-485e-9410-ae296bc0f014": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
-            "linktext": "Application 3",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "b8376ece-b804-476e-a3b5-35b77607dd21": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
-            "linktext": "Application 4",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sweeping-category.png",
-            "linktext": "Application 5",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
-            "linktext": "Application 6",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
-          "type": "slider",
-          "settings": {
-            "collection": "cleanfreak"
-          }
-        },
-        "c9154776-6a34-45be-a5fd-cb8d8ec02447": {
-          "type": "slider",
-          "settings": {
-            "collection": "ipc-eagle"
-          }
-        },
-        "3fba68ff-4018-4287-a0a8-a3b997759627": {
-          "type": "slider",
-          "settings": {
-            "collection": "viper"
-          }
-        },
-        "c954c801-0965-4531-a610-39e54b5cb265": {
-          "type": "slider",
-          "settings": {
-            "collection": "bissell"
-          }
-        },
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
-          "type": "crheader",
-          "settings": {
-            "sectionheading": "Auto Detailing Resources"
-          }
-        },
-        "cb754198-b199-4317-879a-0b37a3021253": {
-          "type": "resource",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
-            "heading": "Auto Detailing Resource",
-            "subheading": "<p>A brief description here to inform the user about the resource<\/p>",
-            "button_label": "Read the Guide",
-            "button_link": "shopify:\/\/pages\/how-tos"
+            "title": "Push Sweepers",
+            "url": "\/collections\/push-sweepers"
           }
         }
       },
       "block_order": [
-        "589b0ba5-e3fa-4320-9319-39615c0ac890",
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
-        "159a2b1f-8d76-471e-84de-975a6d48fa11",
-        "416df694-767b-4c68-8e90-2c0cff08dc2a",
-        "5b4a6417-f1c3-413e-8694-20fe1b499722",
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
-        "c939808d-357a-485e-9410-ae296bc0f014",
-        "b8376ece-b804-476e-a3b5-35b77607dd21",
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
-        "c9154776-6a34-45be-a5fd-cb8d8ec02447",
-        "3fba68ff-4018-4287-a0a8-a3b997759627",
-        "c954c801-0965-4531-a610-39e54b5cb265",
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
-        "cb754198-b199-4317-879a-0b37a3021253"
+        "45d0b489-8d26-43ba-b631-74278fe6c815",
+        "febf52a1-f601-4fe3-b021-3d5b9b449462"
       ],
       "settings": {
-        "collection": "",
-        "show_collection_image": true,
-        "products_per_page_range": 6,
-        "products_per_row": "3",
-        "sort_by": true,
-        "grid_list": true,
-        "default_view": "grid-view",
-        "enable_subcollection": false,
-        "show_product_count": false,
-        "thumbnail_image": "product-image",
-        "image_crop": "original"
+        "block-title": "Industrial Sweepers by Type"
+      }
+    },
+    "715967e6-7ba7-4e56-b065-374ea8120de3": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "6798b0ad-e7b0-4ba7-a7f1-604ffedc1c79": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Industrial Sweepers&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/ies-tk464-y2-01_1.jpg"
+          }
+        },
+        "2c8d50bf-210a-4ee1-b8c9-5efa0dacf922": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Industrial Sweepers&q=IPC Eagle",
+            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-464-battery-vacuum-sweeper.jpg"
+          }
+        },
+        "cbad50f8-61cc-42ec-b4ab-dcdf934ceb6d": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Viper",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Industrial Sweepers&q=Viper",
+            "brand-image": "shopify:\/\/shop_images\/ros1300-viper-ride-on-sweeper.jpg"
+          }
+        },
+        "dd4753cc-c447-468a-9650-4bad5be742d1": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Bissell®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bissell&refinementList[product_type][0]=Industrial Sweepers&q=Bissell",
+            "brand-image": "shopify:\/\/shop_images\/bissel-bg-677-sweeper.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "6798b0ad-e7b0-4ba7-a7f1-604ffedc1c79",
+        "2c8d50bf-210a-4ee1-b8c9-5efa0dacf922",
+        "cbad50f8-61cc-42ec-b4ab-dcdf934ceb6d",
+        "dd4753cc-c447-468a-9650-4bad5be742d1"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
       }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "7e54333d-d412-49a4-bdea-6e9b63dbed34",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "fce3e32f-efcd-4d81-bffc-fc15c455ca52",
+    "715967e6-7ba7-4e56-b065-374ea8120de3"
   ]
 }
