@@ -3,48 +3,17 @@
     "d073e89e-15eb-4dca-aab5-b7b92fe99297": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "template--16671984320724__d073e89e-15eb-4dca-aab5-b7b92fe99297-slide-1": {
-          "type": "slide",
+        "9f8ded4c-20c1-425b-87b6-868346661d4d": {
+          "type": "categoryhead",
           "settings": {
-            "title": "Slide 1",
-            "text": "Introduce customers to your shop with lifestyle and product imagery",
-            "color": "#FFFFFF",
-            "link": "",
-            "text_alignment": "center",
-            "button_one_label": "Button",
-            "button_one_link": "",
-            "button_one_style": "primary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": true,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
-          }
-        },
-        "template--16671984320724__d073e89e-15eb-4dca-aab5-b7b92fe99297-slide-2": {
-          "type": "slide",
-          "settings": {
-            "title": "Slide 2",
-            "text": "Introduce customers to your shop with lifestyle and product imagery",
-            "color": "#FFFFFF",
-            "link": "",
-            "text_alignment": "center",
-            "button_one_label": "Button",
-            "button_one_link": "",
-            "button_one_style": "primary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": true,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
+            "cat_image": "shopify:\/\/shop_images\/auto-scrubber-parts-and-accessories-dept-page.jpg",
+            "cat_title": "Auto Scrubber Parts & Accessories",
+            "cat_text": "Offering a large selection of replacement parts, brush and vacuum motors, squeegee blades & more for all major auto scrubber manufacturers."
           }
         }
       },
       "block_order": [
-        "template--16671984320724__d073e89e-15eb-4dca-aab5-b7b92fe99297-slide-1",
-        "template--16671984320724__d073e89e-15eb-4dca-aab5-b7b92fe99297-slide-2"
+        "9f8ded4c-20c1-425b-87b6-868346661d4d"
       ],
       "settings": {
         "enable_autoplay": true,
@@ -53,14 +22,6 @@
         "slideshow_height": "medium",
         "slideshow_height_mobile": "x-large",
         "slideshow_text_below_image": true
-      }
-    },
-    "1663617398865396bc": {
-      "type": "category-header",
-      "settings": {
-        "chsectionheading": "Auto Scrubber Parts & Accessories",
-        "chsectiontext": "Offering a large selection of replacement parts, brush and vacuum motors, squeegee blades & more for all major auto scrubber manufacturers.",
-        "image": "shopify:\/\/shop_images\/auto-scrubber-parts-and-accessories-dept-page.jpg"
       }
     },
     "16636174067db7bd8c": {
@@ -351,14 +312,51 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "b1e0ab68-50bd-4987-b7b9-230f0ef28748": {
+      "type": "dept-category-area",
+      "blocks": {
+        "8436c49f-65df-4999-8ee2-6715ecbceb98": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brush-vacuum-motors.jpg",
+            "title": "Brush & Vacuum Motors",
+            "url": "\/collections\/brush-vacuum-motors"
+          }
+        },
+        "285d4e93-da54-4880-87f2-267490178584": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/misc-auto-scrubber-parts.jpg",
+            "title": "Miscellaneous Auto Scrubber Parts",
+            "url": "\/collections\/miscellaneous-auto-scrubber-parts"
+          }
+        },
+        "0e4454f8-11d8-467a-9850-7201d0aef2f1": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-squeegees.jpg",
+            "title": "Auto Scrubber Squeegees",
+            "url": "\/collections\/auto-scrubber-squeegees"
+          }
+        }
+      },
+      "block_order": [
+        "8436c49f-65df-4999-8ee2-6715ecbceb98",
+        "285d4e93-da54-4880-87f2-267490178584",
+        "0e4454f8-11d8-467a-9850-7201d0aef2f1"
+      ],
+      "settings": {
+        "block-title": "Auto Scrubber Parts & Accessories by Type"
+      }
     }
   },
   "order": [
     "d073e89e-15eb-4dca-aab5-b7b92fe99297",
-    "1663617398865396bc",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "b1e0ab68-50bd-4987-b7b9-230f0ef28748"
   ]
 }
