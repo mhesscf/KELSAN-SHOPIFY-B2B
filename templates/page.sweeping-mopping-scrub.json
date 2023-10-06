@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "a8d09b5a-4990-4983-8ada-26ec3821973e": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "7bc80511-c480-4da2-8e92-8f1ce1736edc": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/sweeping-mopping-dept-page.jpg",
+            "cat_title": "Sweeping & Mopping",
+            "cat_text": "Everything you need to care for your floors! Shop brooms, brushes, mopping supplies, dustpans, squeegees and more."
+          }
+        }
+      },
+      "block_order": [
+        "7bc80511-c480-4da2-8e92-8f1ce1736edc"
+      ],
       "settings": {
-        "chsectionheading": "Sweeping & Mopping",
-        "chsectiontext": "Everything you need to care for your floors! Shop brooms, brushes, mopping supplies, dustpans, squeegees and more.",
-        "image": "shopify:\/\/shop_images\/sweeping-mopping-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -83,7 +99,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -114,6 +129,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -420,13 +436,51 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "0511c49d-be00-47d8-9b4d-d9618f032dfc": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "0fec4b98-0168-4896-b5b5-e6653d002f0a": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Unger®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Unger&refinementList[product_type][0]=Sweeping %26 Mopping&q=Unger",
+            "brand-image": "shopify:\/\/shop_images\/24-inch-unger-excella-floor-kit-conf.jpg"
+          }
+        },
+        "5030095f-c927-4424-9646-f810fb28bd3d": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Geerpres®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Geerpres&refinementList[product_type][0]=Sweeping %26 Mopping&q=Geerpres",
+            "brand-image": "shopify:\/\/shop_images\/2023-geerpres-8-gal-round-bucket-w-casters-1.jpg"
+          }
+        },
+        "1e67e69f-cf97-4805-9081-2a74f5a9df9c": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Milwaukee Dustless",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Milwaukee Dustless&refinementList[product_type][0]=Sweeping %26 Mopping&q=Milwaukee Dustless",
+            "brand-image": "shopify:\/\/shop_images\/24in-gray-flagged-pvc-broom-lg.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0fec4b98-0168-4896-b5b5-e6653d002f0a",
+        "5030095f-c927-4424-9646-f810fb28bd3d",
+        "1e67e69f-cf97-4805-9081-2a74f5a9df9c"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "a8d09b5a-4990-4983-8ada-26ec3821973e",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "0511c49d-be00-47d8-9b4d-d9618f032dfc"
   ]
 }
