@@ -357,6 +357,24 @@
       "settings": {
         "block-title": "Glove & Hand Protection by Type"
       }
+    },
+    "2a80b226-ef8f-41cf-85fd-49f5cc1d32d6": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "8f12c707-dbd9-4149-8449-379cce35a046": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Safety Zone®",
+            "brand-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8f12c707-dbd9-4149-8449-379cce35a046"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -365,6 +383,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "847f93bd-c7df-4d98-bb86-a933dbb53376"
+    "847f93bd-c7df-4d98-bb86-a933dbb53376",
+    "2a80b226-ef8f-41cf-85fd-49f5cc1d32d6"
   ]
 }
