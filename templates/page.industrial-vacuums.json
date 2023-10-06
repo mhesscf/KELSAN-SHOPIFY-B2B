@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "88a705e7-65d2-4d01-bb65-b7a022a8c51f": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "0cb2d71a-c3f2-43b5-92ad-5960d80adbf2": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/industrial-vacuum-in-use-landing-page.jpg",
+            "cat_title": "Industrial Vacuums",
+            "cat_text": "A sizable selection of vacuums graded for industrial use including concrete, critical filter, and heavy duty recovery vacuums with internal and external filter options."
+          }
+        }
+      },
+      "block_order": [
+        "0cb2d71a-c3f2-43b5-92ad-5960d80adbf2"
+      ],
       "settings": {
-        "chsectionheading": "Industrial Vacuums",
-        "chsectiontext": "A sizable selection of vacuums graded for industrial use including concrete, critical filter, and heavy duty recovery vacuums with internal and external filter options.",
-        "image": "shopify:\/\/shop_images\/industrial-vacuum-in-use-landing-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -271,7 +287,7 @@
     }
   },
   "order": [
-    "1663617398865396bc",
+    "88a705e7-65d2-4d01-bb65-b7a022a8c51f",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
