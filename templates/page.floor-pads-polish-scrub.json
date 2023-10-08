@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "60c7608d-9fb8-4faa-9d5a-b055655dec84": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "c3e04012-d07f-47a4-afeb-ec102c8c19cf": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/floor-polishing-scrubbing-stripping-pads-dept-page.jpg",
+            "cat_title": "Floor Pads, Bonnets & Sanding Screens",
+            "cat_text": "Durable CleanFreak® floor pads outlast the competition when it comes to polishing, scrubbing, and stripping hard floors. We also have carpet bonnets, sanding screens & other floor prep pads in stock & ready to ship!"
+          }
+        }
+      },
+      "block_order": [
+        "c3e04012-d07f-47a4-afeb-ec102c8c19cf"
+      ],
       "settings": {
-        "chsectionheading": "Floor Pads, Bonnets & Sanding Screens",
-        "chsectiontext": "Durable CleanFreak® floor pads outlast the competition when it comes to polishing, scrubbing, and stripping hard floors. We also have carpet bonnets, sanding screens & other floor prep pads in stock & ready to ship!",
-        "image": "shopify:\/\/shop_images\/floor-polishing-scrubbing-stripping-pads-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -325,13 +341,125 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "4a4387d2-b9c1-4346-9cc3-55fc69d39db4": {
+      "type": "dept-category-area",
+      "blocks": {
+        "7461b615-cf70-410a-a19b-2124267de8f5": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bonnets.jpg",
+            "title": "Bonnets",
+            "url": "\/collections\/bonnets"
+          }
+        },
+        "aefa97b8-3c5b-4a1a-bea3-0d1a9c3dbeaf": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-polishing-pads.jpg",
+            "title": "Floor Polishing Pads",
+            "url": "\/collections\/floor-polishing-pads"
+          }
+        },
+        "dad4083d-2e22-4b5a-9be0-2ee592920978": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-prep-pads.jpg",
+            "title": "Floor Prep Pads (Marble, Terrazzo & Concrete Polishing)",
+            "url": "\/collections\/floor-prep-pads"
+          }
+        },
+        "502dfe4e-a978-4e76-b2a3-b1ba0bd835b9": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-scrubbing-pads.jpg",
+            "title": "Floor Scrubbing Pads",
+            "url": "\/collections\/floor-scrubbing-pads"
+          }
+        },
+        "24288dbe-e22c-481c-9a8b-407636176c8d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-stripping-pads.jpg",
+            "title": "Floor Stripping Pads",
+            "url": "\/collections\/floor-stripping-pads"
+          }
+        },
+        "aeaae1b0-a310-4717-ad28-4480ed6a2fe3": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sanding-screens.jpg",
+            "title": "Sanding Screens",
+            "url": "\/collections\/sanding-screens"
+          }
+        },
+        "b2cc1327-17a2-4b38-8f77-7e965a6b9632": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steel-wool-floor-pads.jpg",
+            "title": "Steel Wool Floor Pads",
+            "url": "\/collections\/steel-wool-floor-pads"
+          }
+        }
+      },
+      "block_order": [
+        "7461b615-cf70-410a-a19b-2124267de8f5",
+        "aefa97b8-3c5b-4a1a-bea3-0d1a9c3dbeaf",
+        "dad4083d-2e22-4b5a-9be0-2ee592920978",
+        "502dfe4e-a978-4e76-b2a3-b1ba0bd835b9",
+        "24288dbe-e22c-481c-9a8b-407636176c8d",
+        "aeaae1b0-a310-4717-ad28-4480ed6a2fe3",
+        "b2cc1327-17a2-4b38-8f77-7e965a6b9632"
+      ],
+      "settings": {
+        "block-title": "Floor Pads, Bonnets & Sanding by Type"
+      }
+    },
+    "e01d7337-3871-41bd-b604-87ced8d6dab7": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "51ff7492-33a0-4cf8-be54-42df7814e5b5": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Oreck",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Oreck&refinementList[product_type][0]=Floor Pads%2C Bonnets %26 Sanding Screens&q=Oreck",
+            "brand-image": "shopify:\/\/shop_images\/oreck-12-inch-terry-cloth-bonnet-0437053.jpg"
+          }
+        },
+        "28f0c872-f093-4aa4-b3ae-f470bc7c9f30": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Floor Pads%2C Bonnets %26 Sanding Screens&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/case-of-17-inch-red-pads.jpg"
+          }
+        },
+        "2ecebfc6-62c1-40c0-9895-da1d6babd612": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "International Steel Wool",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=International Steel Wool&refinementList[product_type][0]=Floor Pads%2C Bonnets %26 Sanding Screens&q=International Steel Wool",
+            "brand-image": "shopify:\/\/shop_images\/17-inch-texsteel-steel-wool-floor-pad.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "51ff7492-33a0-4cf8-be54-42df7814e5b5",
+        "28f0c872-f093-4aa4-b3ae-f470bc7c9f30",
+        "2ecebfc6-62c1-40c0-9895-da1d6babd612"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "60c7608d-9fb8-4faa-9d5a-b055655dec84",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "4a4387d2-b9c1-4346-9cc3-55fc69d39db4",
+    "e01d7337-3871-41bd-b604-87ced8d6dab7"
   ]
 }
