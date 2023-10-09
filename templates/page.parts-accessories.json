@@ -582,6 +582,64 @@
       "settings": {
         "block-title": "Parts & Accesories by Type"
       }
+    },
+    "3c5ea8d0-62ef-4edc-a1a9-84747fac77b7": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "716df8fc-83a9-426b-a9c3-ea8b741d69bb": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][3]=Carpet Extractor Parts&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Floor Pads%2C Bonnets %26 Sanding Screens&q=Trusted Clean"
+          }
+        },
+        "30dfc600-d4be-4648-8f88-5af1b001bff0": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "EDIC",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=EDIC&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][3]=Carpet Extractor Parts&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Floor Pads%2C Bonnets %26 Sanding Screens&q=EDIC"
+          }
+        },
+        "31e9da91-11a5-4ef9-af33-839e580f5c2d": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][3]=Carpet Extractor Parts&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Floor Pads%2C Bonnets %26 Sanding Screens&q=CleanFreak"
+          }
+        },
+        "c17c12bc-937c-4c6d-8a9d-77fe74596ba8": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Hoover®",
+            "brand-link": ""
+          }
+        },
+        "4cdf2265-58c0-4fe6-b19a-9460debc6e8a": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "ProTeam®",
+            "brand-link": ""
+          }
+        },
+        "28cc3f6b-e6b2-44de-8688-f1fa1ae349c7": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "716df8fc-83a9-426b-a9c3-ea8b741d69bb",
+        "30dfc600-d4be-4648-8f88-5af1b001bff0",
+        "31e9da91-11a5-4ef9-af33-839e580f5c2d",
+        "c17c12bc-937c-4c6d-8a9d-77fe74596ba8",
+        "4cdf2265-58c0-4fe6-b19a-9460debc6e8a",
+        "28cc3f6b-e6b2-44de-8688-f1fa1ae349c7"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -591,6 +649,7 @@
     "static-recently-viewed",
     "1663875378f697f694",
     "6d43bc46-6824-4a4e-b59b-80459baffda4",
-    "da934c17-4968-488e-998c-2cefd60abb17"
+    "da934c17-4968-488e-998c-2cefd60abb17",
+    "3c5ea8d0-62ef-4edc-a1a9-84747fac77b7"
   ]
 }
