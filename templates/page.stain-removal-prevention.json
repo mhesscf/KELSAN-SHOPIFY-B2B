@@ -181,7 +181,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?refinementList[vendor][0]=Nyco",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Claire&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Stain Removal %26 Prevention&q=Claire",
             "brand-image": "shopify:\/\/shop_images\/nyco-ink-spot-nl529-q6-cae_342d9ec0-8540-4df5-88e2-508b9e66232e.jpg"
           }
         },
