@@ -507,6 +507,110 @@
             "title": "Hand Dryers",
             "url": "\/collections\/hand-dryers"
           }
+        },
+        "f0e7fcc3-c065-4ae8-896e-e2046a1fd482": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-sanitizer-dispensers.jpg",
+            "title": "Hand Sanitizer Dispensers & Stands",
+            "url": "\/collections\/hand-sanitizer-dispensers-stands"
+          }
+        },
+        "e76758dc-15fc-49de-a3f9-fc02c8a977f6": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-sanitizers_881953dd-fa89-495f-89ae-e538b2e24929.jpg",
+            "title": "Hand Sanitizers",
+            "url": "\/collections\/hand-sanitizers"
+          }
+        },
+        "af297062-fc94-4900-b306-9111630b5425": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-soap.jpg",
+            "title": "Hand Soaps & Lotions",
+            "url": "\/collections\/hand-soaps-lotions"
+          }
+        },
+        "476ebd2f-2a9f-4b4b-9228-93cdae46fa86": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/paper-towel-dispensers.jpg",
+            "title": "Paper Towel Dispensers",
+            "url": "\/collections\/paper-towel-dispensers"
+          }
+        },
+        "0e4db2e6-8aa5-47f7-80bf-caf9e067d61a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/paper-towels_04919aca-b68b-4c7a-b017-db05f7bf5d35.jpg",
+            "title": "Paper Towels",
+            "url": "\/collections\/paper-toweling"
+          }
+        },
+        "da3eb280-7cba-49c3-a736-43c3c83f9bb8": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sanitary-receptacles-lines.jpg",
+            "title": "Sanitary Receptacles & Liners",
+            "url": "\/collections\/sanitary-receptacles-liners"
+          }
+        },
+        "059e2713-3f17-4312-abf3-d0f1f0e115d6": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/soap-dispensers.jpg",
+            "title": "Soap Dispensers (Wall & Counter Mount)",
+            "url": "\/collections\/soap-dispensers-wall-counter-mount"
+          }
+        },
+        "e5a6dd40-0392-4e8e-9274-56d87f572f94": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-urinal-mats.jpg",
+            "title": "Toilet & Urinal Mats",
+            "url": "\/collections\/toilet-urinal-floor-mats"
+          }
+        },
+        "0699412d-6cfd-4aa7-b419-e3ebfd3ab917": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-brushes.jpg",
+            "title": "Toilet Brushes",
+            "url": "\/collections\/toilet-brushes"
+          }
+        },
+        "6e7072e0-272f-4fa1-a74e-44577be00345": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-paper.jpg",
+            "title": "Toilet Paper",
+            "url": "\/collections\/toilet-paper"
+          }
+        },
+        "cf8fb03b-e083-40ea-8d44-d69dff390052": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-paper-dispensers.jpg",
+            "title": "Toilet Paper Dispensers",
+            "url": "\/collections\/toilet-paper-dispensers"
+          }
+        },
+        "9efc8e05-6010-41d5-9aa0-7177b6182d9e": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toilet-seat-covers.jpg",
+            "title": "Toilet Seat Covers & Sanitizers",
+            "url": "\/collections\/toilet-seat-covers-sanitizers"
+          }
+        },
+        "ad6c09ff-093d-4344-88c3-cba513b051d4": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/urinal-screens.jpg",
+            "title": "Urinal Screens & Blocks",
+            "url": "\/collections\/urinal-screens-blocks"
+          }
         }
       },
       "block_order": [
@@ -515,7 +619,20 @@
         "17d67080-2451-496f-9ca8-848d6d89448e",
         "3fde840c-eb34-441c-972d-bc57e3bc2ea2",
         "16d36557-0698-4b1c-8c50-fd3e5956cf68",
-        "118206ed-7157-4de0-855a-3729a95f1c02"
+        "118206ed-7157-4de0-855a-3729a95f1c02",
+        "f0e7fcc3-c065-4ae8-896e-e2046a1fd482",
+        "e76758dc-15fc-49de-a3f9-fc02c8a977f6",
+        "af297062-fc94-4900-b306-9111630b5425",
+        "476ebd2f-2a9f-4b4b-9228-93cdae46fa86",
+        "0e4db2e6-8aa5-47f7-80bf-caf9e067d61a",
+        "da3eb280-7cba-49c3-a736-43c3c83f9bb8",
+        "059e2713-3f17-4312-abf3-d0f1f0e115d6",
+        "e5a6dd40-0392-4e8e-9274-56d87f572f94",
+        "0699412d-6cfd-4aa7-b419-e3ebfd3ab917",
+        "6e7072e0-272f-4fa1-a74e-44577be00345",
+        "cf8fb03b-e083-40ea-8d44-d69dff390052",
+        "9efc8e05-6010-41d5-9aa0-7177b6182d9e",
+        "ad6c09ff-093d-4344-88c3-cba513b051d4"
       ],
       "settings": {
         "block-title": "Restroom Supplies by Type"
