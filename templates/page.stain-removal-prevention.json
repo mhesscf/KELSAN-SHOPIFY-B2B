@@ -1,5 +1,29 @@
 {
   "sections": {
+    "2512f266-e1f4-4198-a298-e86178a4c9fd": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "34af31ac-4a15-4888-81fa-3a07d25fdf84": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/carpet-stain-removal-prevention-dept-page.jpg",
+            "cat_title": "Stain Removal & Prevention",
+            "cat_text": "Products to remove stubborn stains and prevent future stains from occurring. Shop a variety carpet spotting & pre-spray chemicals, as well as stain prevention treatments."
+          }
+        }
+      },
+      "block_order": [
+        "34af31ac-4a15-4888-81fa-3a07d25fdf84"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
+      }
+    },
     "1663617398865396bc": {
       "type": "category-header",
       "settings": {
@@ -55,7 +79,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -86,6 +109,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -276,6 +300,7 @@
     }
   },
   "order": [
+    "2512f266-e1f4-4198-a298-e86178a4c9fd",
     "1663617398865396bc",
     "16636174067db7bd8c",
     "main",
