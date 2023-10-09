@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "304f99bb-05bc-4c8d-9b48-98749a2cb6af": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "9b18660a-5895-4ed7-b09c-df482081714c": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/proteam-upright-vacuum-cleaning-an-entrance-mat-dept-page.jpg",
+            "cat_title": "Upright Vacuums",
+            "cat_text": "A large selection of upright vacuums in stock for many different applications. Shop single or dual motor upright vacuums, as well as CRB (Counter-Rotating Brush) Machines & Pile Lifters."
+          }
+        }
+      },
+      "block_order": [
+        "9b18660a-5895-4ed7-b09c-df482081714c"
+      ],
       "settings": {
-        "chsectionheading": "Upright Vacuums",
-        "chsectiontext": "A large selection of upright vacuums in stock for many different applications. Shop single or dual motor upright vacuums, as well as CRB (Counter-Rotating Brush) Machines & Pile Lifters.",
-        "image": "shopify:\/\/shop_images\/proteam-upright-vacuum-cleaning-an-entrance-mat-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -69,7 +85,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -100,6 +115,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -120,198 +136,105 @@
         "enable_recently_viewed_products": true
       }
     },
-    "1663875378f697f694": {
-      "type": "category-landing-page",
+    "96763295-b770-451a-b8bf-e3c1b0f1c1cd": {
+      "type": "dept-category-area",
       "blocks": {
-        "589b0ba5-e3fa-4320-9319-39615c0ac890": {
-          "type": "menu",
-          "settings": {
-            "menu": "",
-            "show_prod_count": true,
-            "menu_depth_range": 3
-          }
-        },
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3": {
-          "type": "ctheader",
-          "settings": {
-            "sectionheading": "Upright Vacuums by Type"
-          }
-        },
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
-          "type": "types",
+        "d7d9ca0f-ad44-4942-939d-e6cb10e83588": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/crb-pile-lifter-vacuums.jpg",
-            "linktext": "CRB & Pile Lifter Vacuums",
-            "linkurl": "shopify:\/\/collections\/crb-pile-lifter-vacuums"
+            "title": "CRB & Pile Lifter Vacuums",
+            "url": "\/collections\/crb-pile-lifter-vacuums"
           }
         },
-        "159a2b1f-8d76-471e-84de-975a6d48fa11": {
-          "type": "types",
+        "5a1cf8c5-b53a-49e8-b197-277fc9718971": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/dual-motor-vacuums.jpg",
-            "linktext": "Dual Motor Vacuums",
-            "linkurl": "shopify:\/\/collections\/dual-motor-vacuums"
+            "title": "Dual Motor Vacuums",
+            "url": "\/collections\/dual-motor-vacuums"
           }
         },
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33": {
-          "type": "types",
+        "f708a2c9-6eaa-4282-88dc-bf3dbd0896cb": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/single-motor-vacuums.jpg",
-            "linktext": "Single Motor Vacuums",
-            "linkurl": "shopify:\/\/collections\/single-motor-vacuums"
+            "title": "Single Motor Vacuums",
+            "url": "\/collections\/single-motor-vacuums"
           }
         },
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e": {
-          "type": "types",
+        "3bdc248b-b45f-4365-9374-a9072f33e1e2": {
+          "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/wide-area-vacuums.jpg",
-            "linktext": "Wide Area Vacuums",
-            "linkurl": "shopify:\/\/collections\/wide-area-vacuums"
-          }
-        },
-        "416df694-767b-4c68-8e90-2c0cff08dc2a": {
-          "type": "caheader",
-          "settings": {
-            "sectionheading": "Shop By Application"
-          }
-        },
-        "5b4a6417-f1c3-413e-8694-20fe1b499722": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hardfloor-cleaning-category.png",
-            "linktext": "Application 1",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/upholstery-cleaning-category.png",
-            "linktext": "Application 2",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "c939808d-357a-485e-9410-ae296bc0f014": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-cleaning-category.png",
-            "linktext": "Application 3",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "b8376ece-b804-476e-a3b5-35b77607dd21": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/wet-dry-floor-cleaning-category.png",
-            "linktext": "Application 4",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/sweeping-category.png",
-            "linktext": "Application 5",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773": {
-          "type": "categoryapplication",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scrubbing-category.png",
-            "linktext": "Application 6",
-            "linkurl": "shopify:\/\/collections\/all"
-          }
-        },
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec": {
-          "type": "slider",
-          "settings": {
-            "collection": "bissell"
-          }
-        },
-        "3fba68ff-4018-4287-a0a8-a3b997759627": {
-          "type": "slider",
-          "settings": {
-            "collection": "hoover"
-          }
-        },
-        "c954c801-0965-4531-a610-39e54b5cb265": {
-          "type": "slider",
-          "settings": {
-            "collection": "proteam"
-          }
-        },
-        "d579de19-efac-4983-a0ab-706511d00621": {
-          "type": "slider",
-          "settings": {
-            "collection": "tornado"
-          }
-        },
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229": {
-          "type": "crheader",
-          "settings": {
-            "sectionheading": "Auto Detailing Resources"
-          }
-        },
-        "cb754198-b199-4317-879a-0b37a3021253": {
-          "type": "resource",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-resource-bg.png",
-            "heading": "Auto Detailing Resource",
-            "subheading": "<p>A brief description here to inform the user about the resource<\/p>",
-            "button_label": "Read the Guide",
-            "button_link": "shopify:\/\/pages\/how-tos"
+            "title": "Wide Area Vacuums",
+            "url": "\/collections\/wide-area-vacuums"
           }
         }
       },
       "block_order": [
-        "589b0ba5-e3fa-4320-9319-39615c0ac890",
-        "3929b3ce-75f8-4eca-9f78-d29287be26e3",
-        "48dc13e1-dfc3-4756-a082-12f18ac9fb83",
-        "159a2b1f-8d76-471e-84de-975a6d48fa11",
-        "8b2e74e9-3f60-4691-b436-59b9179e9f33",
-        "e3c6e06b-19ee-41eb-ba80-e07d9a95339e",
-        "416df694-767b-4c68-8e90-2c0cff08dc2a",
-        "5b4a6417-f1c3-413e-8694-20fe1b499722",
-        "0ce39e19-d362-403b-9a4b-ca6cf95ac458",
-        "c939808d-357a-485e-9410-ae296bc0f014",
-        "b8376ece-b804-476e-a3b5-35b77607dd21",
-        "e7b6b3a4-1fdd-4d66-8f8c-fcffc2ba3ae8",
-        "9ca475bb-5fd2-4ce9-ab29-38e1233d4773",
-        "ba430e4b-0504-4662-aec7-9c28c31a19ec",
-        "3fba68ff-4018-4287-a0a8-a3b997759627",
-        "c954c801-0965-4531-a610-39e54b5cb265",
-        "d579de19-efac-4983-a0ab-706511d00621",
-        "8e6d6ccc-6c5b-4c3e-aeaf-1b93b07b0229",
-        "cb754198-b199-4317-879a-0b37a3021253"
+        "d7d9ca0f-ad44-4942-939d-e6cb10e83588",
+        "5a1cf8c5-b53a-49e8-b197-277fc9718971",
+        "f708a2c9-6eaa-4282-88dc-bf3dbd0896cb",
+        "3bdc248b-b45f-4365-9374-a9072f33e1e2"
       ],
       "settings": {
-        "collection": "",
-        "show_collection_image": true,
-        "products_per_page_range": 6,
-        "products_per_row": "3",
-        "sort_by": true,
-        "grid_list": true,
-        "default_view": "grid-view",
-        "enable_subcollection": false,
-        "show_product_count": false,
-        "thumbnail_image": "product-image",
-        "image_crop": "original"
+        "block-title": "Upright Vacuums by Type"
+      }
+    },
+    "a0256aeb-2e50-4303-86ca-50a48456cc46": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "8b01a79f-7fb7-4dde-b0f7-3d36807b4374": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Bissell®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bissell&refinementList[product_type][0]=Upright Vacuums&q=Bissell",
+            "brand-image": "shopify:\/\/shop_images\/bissell_vac_3822_lg.jpg"
+          }
+        },
+        "9c27aef8-2e66-4d6b-afd6-a4301cebaecf": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Hoover®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Upright Vacuums&q=Hoover",
+            "brand-image": "shopify:\/\/shop_images\/ch95519-mpwr-40v-upright-left3q-bnd.jpg"
+          }
+        },
+        "973bc8bd-810a-4594-ba9c-a5896c6ab0da": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "ProTeam®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Upright Vacuums&q=ProTeam",
+            "brand-image": "shopify:\/\/shop_images\/proforce-15-vac.jpg"
+          }
+        },
+        "14080081-9a3d-45e6-af73-85127c586ee8": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Tornado®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Upright Vacuums&q=Tornado",
+            "brand-image": "shopify:\/\/shop_images\/tornado-roam-cordless-upight-vacuum.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8b01a79f-7fb7-4dde-b0f7-3d36807b4374",
+        "9c27aef8-2e66-4d6b-afd6-a4301cebaecf",
+        "973bc8bd-810a-4594-ba9c-a5896c6ab0da",
+        "14080081-9a3d-45e6-af73-85127c586ee8"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
       }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "304f99bb-05bc-4c8d-9b48-98749a2cb6af",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "96763295-b770-451a-b8bf-e3c1b0f1c1cd",
+    "a0256aeb-2e50-4303-86ca-50a48456cc46"
   ]
 }

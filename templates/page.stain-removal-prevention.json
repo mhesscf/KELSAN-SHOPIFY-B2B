@@ -192,13 +192,6 @@
             "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?refinementList[vendor][0]=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/trusted-clean-pet-patrol-stain-remover-6-pack_1_3a054d95-deea-406c-8475-e85585803319.jpg"
           }
-        },
-        "89d10ebc-4d72-4c39-9567-e37cd8ec51bd": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Title",
-            "brand-link": ""
-          }
         }
       },
       "block_order": [
@@ -206,8 +199,7 @@
         "d1a62d4a-fd05-455d-9f7b-46d6f66689a0",
         "40cc9644-db98-4c35-b9dd-143203d7fb7b",
         "44807488-d7bd-4242-b3ae-c654c386f08a",
-        "fe3de80f-8a2f-4f61-8cb6-81021da78935",
-        "89d10ebc-4d72-4c39-9567-e37cd8ec51bd"
+        "fe3de80f-8a2f-4f61-8cb6-81021da78935"
       ],
       "settings": {
         "block-title": "Featured Brands"
