@@ -457,182 +457,65 @@
         "image_crop": "original"
       }
     },
-    "e57680ff-a962-473d-bea1-56a79a4408d0": {
-      "type": "dept-brands-area",
+    "e79ff4f1-a161-4bb7-805c-5b4a1374b855": {
+      "type": "dept-category-area",
       "blocks": {
-        "f288a026-5400-4827-8b9e-2e54e7bace01": {
-          "type": "brandlink",
+        "26a22137-b588-43c2-907d-8157b8b0bde6": {
+          "type": "categorylink",
           "settings": {
-            "brand-title": "Air Freshener Dispensers",
-            "brand-link": "\/collections\/air-freshener-dispensers",
-            "brand-image": "shopify:\/\/shop_images\/air-freshener-dispensers.jpg"
+            "image": "shopify:\/\/shop_images\/air-freshener-dispensers.jpg",
+            "title": "Air Freshener Dispensers",
+            "url": "\/collections\/air-freshener-dispensers"
           }
         },
-        "a41a0903-3cc0-4b4f-8045-2eb3bab33389": {
-          "type": "brandlink",
+        "0a938762-0bb4-4fe6-b42e-a9a200506e33": {
+          "type": "categorylink",
           "settings": {
-            "brand-title": "Air Fresheners & Odor Eliminators",
-            "brand-link": "\/collections\/air-fresheners-odor-eliminators",
-            "brand-image": "shopify:\/\/shop_images\/air-fresheners-odor-eliminators.jpg"
+            "image": "shopify:\/\/shop_images\/air-fresheners-odor-eliminators.jpg",
+            "title": "Air Fresheners & Odor Eliminators",
+            "url": "\/collections\/air-fresheners-odor-eliminators"
           }
         },
-        "cbf36670-ad46-4ce8-98ea-ff705a7361b2": {
-          "type": "brandlink",
+        "17d67080-2451-496f-9ca8-848d6d89448e": {
+          "type": "categorylink",
           "settings": {
-            "brand-title": "Disinfectant Wipe Dispensers",
-            "brand-link": "\/collections\/disinfectant-wipe-dispensers",
-            "brand-image": "shopify:\/\/shop_images\/disinfectant-wipe-dispensers.jpg"
+            "image": "shopify:\/\/shop_images\/disinfectant-wipe-dispensers.jpg",
+            "title": "Disinfectant Wipe Dispensers",
+            "url": "\/collections\/disinfectant-wipe-dispensers"
           }
         },
-        "d39090ab-feed-4acd-9a4d-0986f4375c4f": {
-          "type": "brandlink",
+        "3fde840c-eb34-441c-972d-bc57e3bc2ea2": {
+          "type": "categorylink",
           "settings": {
-            "brand-title": "Facial Tissues",
-            "brand-link": "\/collections\/facial-tissue",
-            "brand-image": "shopify:\/\/shop_images\/facial-tissues.jpg"
+            "image": "shopify:\/\/shop_images\/facial-tissues.jpg",
+            "title": "Facial Tissues",
+            "url": "\/collections\/facial-tissue"
           }
         },
-        "4b1b8139-affc-48f7-a387-af7eca35936f": {
-          "type": "brandlink",
+        "16d36557-0698-4b1c-8c50-fd3e5956cf68": {
+          "type": "categorylink",
           "settings": {
-            "brand-title": "Feminine Hygiene Supplies",
-            "brand-link": "\/collections\/feminine-hygiene-supplies",
-            "brand-image": "shopify:\/\/shop_images\/feminine-hygiene-supplies.jpg"
+            "image": "shopify:\/\/shop_images\/feminine-hygiene-supplies.jpg",
+            "title": "Feminine Hygiene Supplies",
+            "url": "\/collections\/feminine-hygiene-supplies"
           }
         },
-        "07dd4807-37e9-4c74-a270-c01f1ceafa22": {
-          "type": "brandlink",
+        "118206ed-7157-4de0-855a-3729a95f1c02": {
+          "type": "categorylink",
           "settings": {
-            "brand-title": "Hand Dryers",
-            "brand-link": "\/collections\/hand-dryers",
-            "brand-image": "shopify:\/\/shop_images\/hand-dryers.jpg"
-          }
-        },
-        "4f2a1ad0-76c1-46f4-96c0-5fa77ce30bf9": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Hand Sanitizer Dispensers & Stands",
-            "brand-link": "\/collections\/hand-sanitizer-dispensers-stands",
-            "brand-image": "shopify:\/\/shop_images\/hand-sanitizer-dispensers.jpg"
-          }
-        },
-        "99b7fa9a-1011-4238-b028-a780b2955c33": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Hand Sanitizers",
-            "brand-link": "\/collections\/hand-sanitizers",
-            "brand-image": "shopify:\/\/shop_images\/hand-sanitizers_881953dd-fa89-495f-89ae-e538b2e24929.jpg"
-          }
-        },
-        "8da6ca19-8a71-45be-8b6c-e1e9256e1d68": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Hand Soaps & Lotions",
-            "brand-link": "\/collections\/hand-soaps-lotions",
-            "brand-image": "shopify:\/\/shop_images\/hand-soap.jpg"
-          }
-        },
-        "6ceec8b0-d00f-4dbb-a33e-e9fa8e7566c8": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Paper Towel Dispensers",
-            "brand-link": "\/collections\/paper-towel-dispensers",
-            "brand-image": "shopify:\/\/shop_images\/paper-towel-dispensers.jpg"
-          }
-        },
-        "faa57a1c-8c01-42ac-b8c6-ac9f0d6b6f0a": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Paper Towels",
-            "brand-link": "\/collections\/paper-toweling",
-            "brand-image": "shopify:\/\/shop_images\/paper-towels_04919aca-b68b-4c7a-b017-db05f7bf5d35.jpg"
-          }
-        },
-        "62d94217-19bb-4623-b25d-f6f0c60871a8": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Sanitary Receptacles & Liners",
-            "brand-link": "\/collections\/sanitary-receptacles-liners",
-            "brand-image": "shopify:\/\/shop_images\/sanitary-receptacles-lines.jpg"
-          }
-        },
-        "d20f59cc-cec7-4cdd-bc20-d13b1c95b548": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Soap Dispensers (Wall & Counter Mount)",
-            "brand-link": "\/collections\/soap-dispensers-wall-counter-mount",
-            "brand-image": "shopify:\/\/shop_images\/soap-dispensers.jpg"
-          }
-        },
-        "207675ab-7516-4d5a-b8a0-383b8fde5f17": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Toilet & Urinal Mats",
-            "brand-link": "\/collections\/toilet-urinal-floor-mats",
-            "brand-image": "shopify:\/\/shop_images\/toilet-urinal-mats.jpg"
-          }
-        },
-        "dc2b610a-776f-49df-ad56-fb9c9a177d27": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Toilet Brushes",
-            "brand-link": "\/collections\/toilet-brushes",
-            "brand-image": "shopify:\/\/shop_images\/toilet-brushes.jpg"
-          }
-        },
-        "dd6abcf4-ffac-438a-8335-edb3269c5797": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Toilet paper",
-            "brand-link": "\/collections\/toilet-paper",
-            "brand-image": "shopify:\/\/shop_images\/toilet-paper.jpg"
-          }
-        },
-        "3847254b-d754-4790-9445-f3e95e5ac2da": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Toilet Paper Dispensers",
-            "brand-link": "\/collections\/toilet-paper-dispensers",
-            "brand-image": "shopify:\/\/shop_images\/toilet-paper-dispensers.jpg"
-          }
-        },
-        "c975976f-4a21-4591-a3fa-98c0eba197be": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Toilet Seat Covers & Sanitizers",
-            "brand-link": "\/collections\/toilet-seat-covers-sanitizers",
-            "brand-image": "shopify:\/\/shop_images\/toilet-seat-covers.jpg"
-          }
-        },
-        "00fa0eb1-9176-41c2-b222-81f51fd5456f": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Urinal Screens & Blocks",
-            "brand-link": "\/collections\/urinal-screens-blocks",
-            "brand-image": "shopify:\/\/shop_images\/urinal-screens.jpg"
+            "image": "shopify:\/\/shop_images\/hand-dryers.jpg",
+            "title": "Hand Dryers",
+            "url": "\/collections\/hand-dryers"
           }
         }
       },
       "block_order": [
-        "f288a026-5400-4827-8b9e-2e54e7bace01",
-        "a41a0903-3cc0-4b4f-8045-2eb3bab33389",
-        "cbf36670-ad46-4ce8-98ea-ff705a7361b2",
-        "d39090ab-feed-4acd-9a4d-0986f4375c4f",
-        "4b1b8139-affc-48f7-a387-af7eca35936f",
-        "07dd4807-37e9-4c74-a270-c01f1ceafa22",
-        "4f2a1ad0-76c1-46f4-96c0-5fa77ce30bf9",
-        "99b7fa9a-1011-4238-b028-a780b2955c33",
-        "8da6ca19-8a71-45be-8b6c-e1e9256e1d68",
-        "6ceec8b0-d00f-4dbb-a33e-e9fa8e7566c8",
-        "faa57a1c-8c01-42ac-b8c6-ac9f0d6b6f0a",
-        "62d94217-19bb-4623-b25d-f6f0c60871a8",
-        "d20f59cc-cec7-4cdd-bc20-d13b1c95b548",
-        "207675ab-7516-4d5a-b8a0-383b8fde5f17",
-        "dc2b610a-776f-49df-ad56-fb9c9a177d27",
-        "dd6abcf4-ffac-438a-8335-edb3269c5797",
-        "3847254b-d754-4790-9445-f3e95e5ac2da",
-        "c975976f-4a21-4591-a3fa-98c0eba197be",
-        "00fa0eb1-9176-41c2-b222-81f51fd5456f"
+        "26a22137-b588-43c2-907d-8157b8b0bde6",
+        "0a938762-0bb4-4fe6-b42e-a9a200506e33",
+        "17d67080-2451-496f-9ca8-848d6d89448e",
+        "3fde840c-eb34-441c-972d-bc57e3bc2ea2",
+        "16d36557-0698-4b1c-8c50-fd3e5956cf68",
+        "118206ed-7157-4de0-855a-3729a95f1c02"
       ],
       "settings": {
         "block-title": "Restroom Supplies by Type"
@@ -645,6 +528,6 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "e57680ff-a962-473d-bea1-56a79a4408d0"
+    "e79ff4f1-a161-4bb7-805c-5b4a1374b855"
   ]
 }
