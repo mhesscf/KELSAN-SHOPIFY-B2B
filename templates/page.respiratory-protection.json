@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "5a07689d-a005-4870-8bc8-b7f63c48a2df": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "47126953-25df-41c5-94ab-9c65535e356a": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/respiratory-protection-dept-page.jpg",
+            "cat_title": "Respiratory Protection",
+            "cat_text": "For those jobs with unsafe air conditions, we’ve got you covered…literally! Shop our face masks and respirators."
+          }
+        }
+      },
+      "block_order": [
+        "47126953-25df-41c5-94ab-9c65535e356a"
+      ],
       "settings": {
-        "chsectionheading": "Respiratory Protection",
-        "chsectiontext": "For those jobs with unsafe air conditions, we’ve got you covered…literally! Shop our face masks and respirators.",
-        "image": "shopify:\/\/shop_images\/respiratory-protection-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -259,13 +275,80 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "a6126d70-119f-4f37-9259-ed2f6ae761cb": {
+      "type": "dept-category-area",
+      "blocks": {
+        "bbb884ed-f531-4181-a131-329363ca65ab": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/face-masks.jpg",
+            "title": "Disposable Face Masks",
+            "url": "\/collections\/face-masks"
+          }
+        },
+        "168edec0-67fb-4cf6-bb35-0c7540c59ae5": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/respirators.jpg",
+            "title": "Reusable Respirators",
+            "url": "\/collections\/respirators"
+          }
+        }
+      },
+      "block_order": [
+        "bbb884ed-f531-4181-a131-329363ca65ab",
+        "168edec0-67fb-4cf6-bb35-0c7540c59ae5"
+      ],
+      "settings": {
+        "block-title": "Respiratory Protection by Type"
+      }
+    },
+    "cada603e-bedb-4c4b-b1ea-89f3ae5fe5d8": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "b5509132-bc85-43fd-80e8-dc74757f4c3b": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Safety Zone®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Safety Zone&refinementList[product_type][0]=Respiratory Protection&q=Safety Zone",
+            "brand-image": "shopify:\/\/shop_images\/safety-zone-3-ply-blue-face-masks-with-ear-loops-mfb-3-el-2k.jpg"
+          }
+        },
+        "1d32377a-a460-43f9-8714-6b5dae1a83a1": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Impact®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Respiratory Protection&q=Impact",
+            "brand-image": "shopify:\/\/shop_images\/7312b-20-impact-n95-masks.jpg"
+          }
+        },
+        "ffad8ac7-4c02-48b5-a46c-dddbfde3cd14": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "3M™",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=3M&refinementList[product_type][0]=Respiratory Protection&q=3M",
+            "brand-image": "shopify:\/\/shop_images\/3m-6000-series-respirator-left_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "b5509132-bc85-43fd-80e8-dc74757f4c3b",
+        "1d32377a-a460-43f9-8714-6b5dae1a83a1",
+        "ffad8ac7-4c02-48b5-a46c-dddbfde3cd14"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "5a07689d-a005-4870-8bc8-b7f63c48a2df",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "a6126d70-119f-4f37-9259-ed2f6ae761cb",
+    "cada603e-bedb-4c4b-b1ea-89f3ae5fe5d8"
   ]
 }
