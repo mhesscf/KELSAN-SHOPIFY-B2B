@@ -376,6 +376,79 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "7076bb82-91dc-4068-a5db-5f7f4f728ca6": {
+      "type": "dept-category-area",
+      "blocks": {
+        "38da43d0-2947-44e4-960c-c0b18e02645f": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/backpack-vacs.jpg",
+            "title": "Backpack Vacuums",
+            "url": "\/collections\/backpack-vacuums"
+          }
+        },
+        "5ca0d1a9-aeb3-47a5-ada2-1ab1f5058d56": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/canister-portable-vac.jpg",
+            "title": "Canister & Portable",
+            "url": "\/collections\/canister-portable-vacuums"
+          }
+        },
+        "c3263c39-bfa5-4d99-94c0-a8a2aa4ff83b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cordless-vacuums.jpg",
+            "title": "Cordless",
+            "url": "\/collections\/cordless-battery-powered-vacuums"
+          }
+        },
+        "343a8666-fefa-4742-94d0-283823060110": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/industrial-vacuums.jpg",
+            "title": "Industrial Vacuums",
+            "url": "\/pages\/industrial-vacuums"
+          }
+        },
+        "a0d0ea81-1c54-4b9c-8d3a-a40bb4cb33d7": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hip-style-vacs.jpg",
+            "title": "Hip Style",
+            "url": "\/collections\/hip-style-vacuums"
+          }
+        },
+        "f80fcf1f-f373-4582-a88b-221f247757ab": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upright-vacuums.jpg",
+            "title": "Upright",
+            "url": "\/pages\/upright-vacuums"
+          }
+        },
+        "154bdddf-36ec-47ba-8528-6d46fca94de2": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wet-dry-vacuums.jpg",
+            "title": "Wet Dry Vacuums",
+            "url": "\/pages\/wet-dry-vaccums"
+          }
+        }
+      },
+      "block_order": [
+        "38da43d0-2947-44e4-960c-c0b18e02645f",
+        "5ca0d1a9-aeb3-47a5-ada2-1ab1f5058d56",
+        "c3263c39-bfa5-4d99-94c0-a8a2aa4ff83b",
+        "343a8666-fefa-4742-94d0-283823060110",
+        "a0d0ea81-1c54-4b9c-8d3a-a40bb4cb33d7",
+        "f80fcf1f-f373-4582-a88b-221f247757ab",
+        "154bdddf-36ec-47ba-8528-6d46fca94de2"
+      ],
+      "settings": {
+        "block-title": "Vacuums Cleaners by Type"
+      }
     }
   },
   "order": [
@@ -383,6 +456,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "7076bb82-91dc-4068-a5db-5f7f4f728ca6"
   ]
 }
