@@ -637,6 +637,52 @@
       "settings": {
         "block-title": "Restroom Supplies by Type"
       }
+    },
+    "60b84b7b-705f-49c7-acdf-3b20716203a9": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "15d0c806-1295-4cb0-8dec-1987fa47730b": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Nyco®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Nyco",
+            "brand-image": "shopify:\/\/shop_images\/csd-8007-w-white-nyco-dispenser.jpg"
+          }
+        },
+        "d69407a8-a57a-4531-ba58-57a7ed8b09f8": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Bright Solutions®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Bright Solutions",
+            "brand-image": "shopify:\/\/shop_images\/bright-solutions-wave-3d-mango-urinal-screen-wds10mg-with-box.jpg"
+          }
+        },
+        "acb904cc-e70a-4027-b46e-a0c2ee8ac022": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "GOJO®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=GOJO",
+            "brand-image": "shopify:\/\/shop_images\/gojo-multi-green-hand-cleaner-case-4-jpg.jpg"
+          }
+        },
+        "bb305ca5-67db-4933-bb41-d3b3588d2e58": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Hospeco®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hospeco&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Hospeco",
+            "brand-image": "shopify:\/\/shop_images\/hospeco-wall-mount-gym-equipment-and-surface-wipes-dispenser.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "15d0c806-1295-4cb0-8dec-1987fa47730b",
+        "d69407a8-a57a-4531-ba58-57a7ed8b09f8",
+        "acb904cc-e70a-4027-b46e-a0c2ee8ac022",
+        "bb305ca5-67db-4933-bb41-d3b3588d2e58"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -645,6 +691,7 @@
     "main",
     "static-recently-viewed",
     "1663875378f697f694",
-    "e79ff4f1-a161-4bb7-805c-5b4a1374b855"
+    "e79ff4f1-a161-4bb7-805c-5b4a1374b855",
+    "60b84b7b-705f-49c7-acdf-3b20716203a9"
   ]
 }
