@@ -223,7 +223,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "GOJO®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=GOJO"
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=GOJO",
+            "brand-image": "shopify:\/\/shop_images\/gojo-fast-towels-225-count-case-of-2-6299-02.jpg"
           }
         },
         "53637d35-f469-4b7b-bc03-66c1daa423bf": {
