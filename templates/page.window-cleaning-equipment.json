@@ -321,10 +321,55 @@
             "title": "DI Water Carts",
             "url": "\/collections\/deionized-di-water-window-cleaning-carts"
           }
+        },
+        "50a179c0-42a7-40df-82ad-6cb882ddc67d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/di-water-cart-parts.jpg",
+            "title": "DI Water Carts Parts & Accessories",
+            "url": ""
+          }
+        },
+        "e9a7d7a7-f19e-4f57-a04c-56fd4aa12d60": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/di-water-fed-poles.jpg",
+            "title": "DI Water Fed Poles",
+            "url": "\/collections\/water-fed-poles"
+          }
+        },
+        "f574add0-1316-4cf1-854e-d16bfede018f": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/window-cleaning-kits.jpg",
+            "title": "Window Cleaning Kits",
+            "url": "\/collections\/window-cleaning-kits"
+          }
+        },
+        "6b061c06-7ecd-4edb-af47-38aaa918644c": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/window-screen-cleaners.jpg",
+            "title": "Window Screen Cleaners",
+            "url": "\/collections\/window-screen-cleaners"
+          }
+        },
+        "1a95afc9-f7a5-4160-afbd-3df4e27b242e": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/window-washing-squeegees.jpg",
+            "title": "Window Washing Squeegees",
+            "url": "\/collections\/window-washing-squeegees"
+          }
         }
       },
       "block_order": [
-        "98f58ac5-19c4-4085-9d90-dd7864be0882"
+        "98f58ac5-19c4-4085-9d90-dd7864be0882",
+        "50a179c0-42a7-40df-82ad-6cb882ddc67d",
+        "e9a7d7a7-f19e-4f57-a04c-56fd4aa12d60",
+        "f574add0-1316-4cf1-854e-d16bfede018f",
+        "6b061c06-7ecd-4edb-af47-38aaa918644c",
+        "1a95afc9-f7a5-4160-afbd-3df4e27b242e"
       ],
       "settings": {
         "block-title": "Window Cleaning Equipment by Type"
