@@ -320,6 +320,98 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "7c71351f-d886-427a-bec9-0e9e7bbedd40": {
+      "type": "dept-category-area",
+      "blocks": {
+        "f76a9179-2d6b-4b3c-b704-7cef22da2caa": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-discharge-vacuum.jpg",
+            "title": "Auto Discharge Vacuums",
+            "url": "\/collections\/auto-discharge-vacs"
+          }
+        },
+        "8f1046a3-fccf-4f39-ad66-9ed7f099f9d2": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shop-vacuums.jpg",
+            "title": "Shop Vacuums",
+            "url": "\/collections\/shop-vacuums"
+          }
+        },
+        "d2eeff6f-71a0-4f35-a799-1bb07e3e4c46": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tank-vacuums.jpg",
+            "title": "Tank Vacuums",
+            "url": "\/collections\/tank-vacuums"
+          }
+        }
+      },
+      "block_order": [
+        "f76a9179-2d6b-4b3c-b704-7cef22da2caa",
+        "8f1046a3-fccf-4f39-ad66-9ed7f099f9d2",
+        "d2eeff6f-71a0-4f35-a799-1bb07e3e4c46"
+      ],
+      "settings": {
+        "block-title": "Wet Dry Vacuums by Type"
+      }
+    },
+    "6e2ff117-37ce-4914-ad49-1be3e411efa2": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "b1a07238-d64f-43c7-bd44-7cdae63acc13": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Wet Dry Vacs&q=IPC Eagle",
+            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-gs278-19-gallon-steel-tank-vacuum.jpg"
+          }
+        },
+        "449280f6-4a87-402d-96a3-dc63f6cfb198": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Wet Dry Vacs&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-quench-wet-dry-vacuum.jpg"
+          }
+        },
+        "a70a90c7-51c8-4f84-a518-0216575fa143": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Tornado®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Wet Dry Vacs&q=Tornado",
+            "brand-image": "shopify:\/\/shop_images\/tornado-taskforce-external-filter-commercial-tank-vacuum-98995.jpg"
+          }
+        },
+        "ac90f548-5237-4ecd-a08f-5507158ef359": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Viper",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Wet Dry Vacs&q=Viper",
+            "brand-image": "shopify:\/\/shop_images\/viper-shovelnose-wet-dry-vac-with-tool-kits.jpg"
+          }
+        },
+        "ef0a6513-809d-4cef-ab0a-bcf082be2bbd": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "ProTeam®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Wet Dry Vacs&q=ProTeam",
+            "brand-image": "shopify:\/\/shop_images\/proteam-proguard-wet-vacuum.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "b1a07238-d64f-43c7-bd44-7cdae63acc13",
+        "449280f6-4a87-402d-96a3-dc63f6cfb198",
+        "a70a90c7-51c8-4f84-a518-0216575fa143",
+        "ac90f548-5237-4ecd-a08f-5507158ef359",
+        "ef0a6513-809d-4cef-ab0a-bcf082be2bbd"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
@@ -327,6 +419,8 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "7c71351f-d886-427a-bec9-0e9e7bbedd40",
+    "6e2ff117-37ce-4914-ad49-1be3e411efa2"
   ]
 }
