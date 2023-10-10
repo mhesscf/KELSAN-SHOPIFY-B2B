@@ -328,7 +328,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/all?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer.jpg"
           }
         }
