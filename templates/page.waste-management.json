@@ -313,6 +313,52 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "92679af6-0bed-48d0-9d35-8a2a3fe116c9": {
+      "type": "dept-category-area",
+      "blocks": {
+        "f851e619-b5da-4df5-9f3f-cba126d54349": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shovels.jpg",
+            "title": "Shovels",
+            "url": "\/collections\/shovels"
+          }
+        },
+        "6769c638-03e9-45ba-9831-22714c4c582d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trash-recycling-bins.jpg",
+            "title": "Trash & Recycling Bins",
+            "url": "\/collections\/trash-cans-recycling-bins"
+          }
+        },
+        "09a68719-a50c-4c1c-8b76-5da56a0dfdf1": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trash-can-liners.jpg",
+            "title": "Trash Can Liners",
+            "url": "\/collections\/trash-can-liners"
+          }
+        },
+        "a1031e13-8765-4d14-921c-0cf7a306393c": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trash-can-lids-accessories.jpg",
+            "title": "Trash Can Lids & Accessories",
+            "url": "\/collections\/trash-can-lids-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "f851e619-b5da-4df5-9f3f-cba126d54349",
+        "6769c638-03e9-45ba-9831-22714c4c582d",
+        "09a68719-a50c-4c1c-8b76-5da56a0dfdf1",
+        "a1031e13-8765-4d14-921c-0cf7a306393c"
+      ],
+      "settings": {
+        "block-title": "Waste Management by Type"
+      }
     }
   },
   "order": [
@@ -320,6 +366,7 @@
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "92679af6-0bed-48d0-9d35-8a2a3fe116c9"
   ]
 }
