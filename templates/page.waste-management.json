@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "28aefd69-01f3-43a8-9f1e-85703b47122f": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "157938b9-b930-47a5-a622-e37d6d981920": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/rubbermaid-brute-trash-can-dept-page.jpg",
+            "cat_title": "Waste Management",
+            "cat_text": "Keep your facilities clean and organized with trash cans, recycling bins, can liners and other accessories."
+          }
+        }
+      },
+      "block_order": [
+        "157938b9-b930-47a5-a622-e37d6d981920"
+      ],
       "settings": {
-        "chsectionheading": "Waste Management",
-        "chsectiontext": "Keep your facilities clean and organized with trash cans, recycling bins, can liners and other accessories.",
-        "image": "shopify:\/\/shop_images\/rubbermaid-brute-trash-can-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -69,7 +85,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -100,6 +115,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -300,7 +316,7 @@
     }
   },
   "order": [
-    "1663617398865396bc",
+    "28aefd69-01f3-43a8-9f1e-85703b47122f",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
