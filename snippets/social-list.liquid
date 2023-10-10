@@ -38,8 +38,12 @@
     </p>
   </div>
 
+      {% assign thisSite = "" %}
+      {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+        {%- assign thisSite = "cf" -%}
+      {%- endif -%}
 
-  <div class="social-icons" style="display: none;">
+  <div class="social-icons" style="{% if thisSite != "cf" %}display: none;{% endif %}">
     {%- if settings.social_behance != blank -%}
       {%
         render 'social-link',
