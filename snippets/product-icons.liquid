@@ -12,111 +12,171 @@
 
 
 
- 
-<div class="product-icons">
-    <div class="ship-made">
-        {% if pdiscontinued == true %}
+<div class="product-icons-area">
+    <div class="product-icons">
+        <div class="ship-made">
+            {% if pdiscontinued == true %}
 
-            {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
-                {% comment %}on discontinued demos, replace wording with diff than normal discontinued{% endcomment %}
-                <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>
+                {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
+                    {% comment %}on discontinued demos, replace wording with diff than normal discontinued{% endcomment %}
+                    <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>
+                {% else %}
+                    <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>
+                {% endif %}
             {% else %}
-                <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>
-            {% endif %}
-        {% else %}
-            {% if product.selected_or_first_available_variant.compare_at_price %}
-                {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
-                    {% comment %}{% assign specialSavings = product.compare_at_price | minus: product.price %}{% endcomment %}
-                    {% assign listprice = product.selected_or_first_available_variant.metafields.plytix.list_price | times: 100 %}
-                    {% assign specialSavings = listprice | minus: product.price %}
-                    {% comment %}{% assign endDate = product.selected_or_first_available_variant.metafields.plytix.sale_end_date %}{% endcomment %}
-                    {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
-                    {% assign nowTimestamp = 'now' | date: '%s' %}
-                    {% assign diffSeconds = endDate | minus: nowTimestamp %}
-                    {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
-                    {% if diffDays >= -1 %}
-                        <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div>
+                {% if product.selected_or_first_available_variant.compare_at_price %}
+                    {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+                        {% comment %}{% assign specialSavings = product.compare_at_price | minus: product.price %}{% endcomment %}
+                        {% assign listprice = product.selected_or_first_available_variant.metafields.plytix.list_price | times: 100 %}
+                        {% assign specialSavings = listprice | minus: product.price %}
+                        {% comment %}{% assign endDate = product.selected_or_first_available_variant.metafields.plytix.sale_end_date %}{% endcomment %}
+                        {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
+                        {% assign nowTimestamp = 'now' | date: '%s' %}
+                        {% assign diffSeconds = endDate | minus: nowTimestamp %}
+                        {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+                        {% if diffDays >= -1 %}
+                            <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div>
+                        {% endif %}
                     {% endif %}
                 {% endif %}
-            {% endif %}
-            {% if product.metafields.plytix.bundle_special_data %}
-                {%- assign bundle_spec_data_array = product.metafields.plytix.bundle_special_data |split: "," -%}
-                {%- assign bundsavings = bundle_spec_data_array[0] | times: 100 -%}
-                <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div>
-            {% endif %}
-            {% if product.metafields.plytix.made_in_USA %}
-                <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div>
-            {% endif %}
-            {% if product.metafields.plytix.free_shipping %}
-                <div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the Continental US</span></div></div>
-            {% endif %}
-            {% if product.metafields.plytix.eco_friendly %}
-                <div class="sm-row">
-                    <div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div>
-                    <div class="sm-row-text"><span>Environmentally Responsible</span><br/><span class="sm-text">Reduced Impact on the Environment</span></div>
-                </div>
-            {% endif %}
-            {% if product.metafields.plytix.gold_medal_winner %}
-                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                    <a href="/collections/gold-medal-winners"><div class="sm-row">
-                        <div class="icon-wrap">
-                            <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
-                        </div>
-                        <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">It's that Awesome!</span></div>
-                    </div></a>
-                {%- else -%}
+                {% if product.metafields.plytix.bundle_special_data %}
+                    {%- assign bundle_spec_data_array = product.metafields.plytix.bundle_special_data |split: "," -%}
+                    {%- assign bundsavings = bundle_spec_data_array[0] | times: 100 -%}
+                    <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div>
+                {% endif %}
+                {% if product.metafields.plytix.made_in_USA %}
+                    <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div>
+                {% endif %}
+                {% if product.metafields.plytix.free_shipping %}
+                    <div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the Continental US</span></div></div>
+                {% endif %}
+                {% if product.metafields.plytix.eco_friendly %}
                     <div class="sm-row">
-                        <div class="icon-wrap">
-                            <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
-                        </div>
-                        <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">It's that Awesome!</span></div>
+                        <div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div>
+                        <div class="sm-row-text"><span>Environmentally Responsible</span><br/><span class="sm-text">Reduced Impact on the Environment</span></div>
                     </div>
                 {% endif %}
-            {% endif %}
-
-            {% if product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
-                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                    <a href="/collections/clearance"><div class="sm-row">
-                        <div class="icon-wrap" style="font-size: 23px;">
-                            <i class="fa-solid fa-tag"></i>
-                        </div>
-                        <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
-                            <span class="sm-text">Buy now before they are gone!</span></div>
+                {% if product.metafields.plytix.gold_medal_winner %}
+                    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                        <a href="/collections/gold-medal-winners"><div class="sm-row">
+                            <div class="icon-wrap">
+                                <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                            </div>
+                            <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">It's that Awesome!</span></div>
                         </div></a>
-                {%- else -%}
-                    <div class="sm-row">
-                        <div class="icon-wrap" style="font-size: 23px;">
-                            <i class="fa-solid fa-tag"></i>
+                    {%- else -%}
+                        <div class="sm-row">
+                            <div class="icon-wrap">
+                                <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                            </div>
+                            <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">It's that Awesome!</span></div>
                         </div>
-                        <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
-                      <span class="sm-text">Buy now before they are gone!</span></div>
-                    </div>
+                    {% endif %}
                 {% endif %}
-            {% endif %}
 
-            {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
-                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                    <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">
-                        <div class="icon-wrap" style="font-size: 23px;">
-                            <i class="fa-regular fa-screwdriver-wrench"></i>
+                {% if product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
+                    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                        <a href="/collections/clearance"><div class="sm-row">
+                            <div class="icon-wrap" style="font-size: 23px;">
+                                <i class="fa-solid fa-tag"></i>
+                            </div>
+                            <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
+                                <span class="sm-text">Buy now before they are gone!</span></div>
+                            </div></a>
+                    {%- else -%}
+                        <div class="sm-row">
+                            <div class="icon-wrap" style="font-size: 23px;">
+                                <i class="fa-solid fa-tag"></i>
+                            </div>
+                            <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
+                          <span class="sm-text">Buy now before they are gone!</span></div>
                         </div>
-                        <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
-                            <span class="sm-text">Tested & approved to be in good working order!</span>
-                        </div>
-                    </div></a>
-                {%- else -%}
-                    <div class="sm-row">
-                        <div class="icon-wrap" style="font-size: 23px;">
-                            <i class="fa-regular fa-screwdriver-wrench"></i>
-                        </div>
-                        <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
-                            <span class="sm-text">Tested & approved to be in good working order!</span>
-                        </div>
-                    </div>
+                    {% endif %}
                 {% endif %}
-            {% endif %}
 
-        {% endif %}
-        {% render 'hulkapps-wishlist-product-btn' %}
+                {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
+                    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                        <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">
+                            <div class="icon-wrap" style="font-size: 23px;">
+                                <i class="fa-regular fa-screwdriver-wrench"></i>
+                            </div>
+                            <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
+                                <span class="sm-text">Tested & approved to be in good working order!</span>
+                            </div>
+                        </div></a>
+                    {%- else -%}
+                        <div class="sm-row">
+                            <div class="icon-wrap" style="font-size: 23px;">
+                                <i class="fa-regular fa-screwdriver-wrench"></i>
+                            </div>
+                            <div class="sm-row-text"><span>Refurbished / Demo Model</span><br/>
+                                <span class="sm-text">Tested & approved to be in good working order!</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+            {% endif %}
+            {% render 'hulkapps-wishlist-product-btn' %}
+        </div>
     </div>
+    <div class="prod-promo-image">
+        {% assign today_date = 'now' | date: '%s' %}
+        {%- assign bannerObj = shop.metaobjects.product_banner.values | sort: 'prioritystring'  -%}
+        {% for banner in bannerObj %}
+            {% assign start = banner.startdate | date: '%s' %}
+
+            {% comment %}//add one day to the end date{% endcomment %}
+            {% assign date = banner.enddate | date: '%s' %}
+            {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
+            {% assign end = date | date: "%s" | plus: seconds | date: "%s" %}
+
+                {% comment %}if not active, skip{% endcomment %}
+            {% if today_date < start or today_date > end %}
+                {% continue %}
+            {% endif %}
+
+
+            {%- assign showBanner = false -%}
+            {% comment %}// check collections{% endcomment %}
+            {% for bannerColl in banner.collections.value  %}
+                {% for collection in product.collections %}
+                    {% if collection.id == bannerColl.id  %}
+                        {%- assign showBanner = true -%}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                {% if showBanner == true %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+
+            {% comment %}// check products{% endcomment %}
+            {% if showBanner == false  %}
+                {% for bannerProd in banner.products.value  %}
+                    {% if product.id == bannerProd.id  %}
+                        {%- assign showBanner = true -%}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if showBanner == true %}
+                {% if banner.linkurl  %}
+                    <a href="{{ banner.linkurl }}">{{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}</a>
+                {% else %}
+                    {{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}
+                {% endif %}
+                {% comment %}Name: {{ banner.name }}<br/>
+                Link: {{ banner.linkurl }}<br/>
+                Products: {{ banner.products }}<br/>
+                Collections: {{ banner.collections }}<br/>
+                Priority: {{ banner.prioritystring }}<br/>
+                Start: {{ banner.startdate }}<br/>
+                End: {{ banner.enddate }}<br/><br/><br/>{% endcomment %}
+                {% break %}
+            {% endif %}
+
+        {% endfor %}
+    </div>
+    <div class="clearer"></div>
 </div>
