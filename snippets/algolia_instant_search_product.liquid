@@ -289,7 +289,7 @@
                 {%- comment -%}Beginning of Stock Status ---------------------------------------------------------{%- endcomment -%}
 
                 <div class="sx-status" >
-                  ${hit.collections.includes("discontinued") ? html``: html `<span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.sku)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>`}
+                  ${(hit.collections.includes("discontinued") || hit.sku == "SUPERFREAK") ? html``: html `<span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.sku)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>`}
                  </div>
 
                 <div class="deleteme" style="display:none">
@@ -403,8 +403,10 @@ ${1 == 1 && html`
      ${hit.meta.plytix.general_product_type == "Machine" ? html `<input type="hidden" name="properties[_sf_eligible]" value="true" />` : ``}
      {% endif %}
      ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,hit.meta.plytix.list_price,"bool") ? html `` : html `<input type="hidden" name="properties[_tiered_pricing]" value="${hit.meta.plytix.tiered_pricing}" />`}
-     <input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}" />
-    <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
+     ${hit.sku != "SUPERFREAK" ? html `
+<input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}" />
+` : ``}
+     <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
 </form>
 <p class="ais-hit--cart">
     {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}

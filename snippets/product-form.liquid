@@ -212,7 +212,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {% else %}
       {% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
     {% endif %}
-
+    {% if selected_variant.sku == "SUPERFREAK" %}
+      {% assign stockStatusNote = ""  %}
+    {% endif %}
 
     {% comment %}End of stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
 
@@ -281,7 +283,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         >
         <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
         <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
-        <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
+        {% if stockStatusNote != "" %}
+          <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
+        {% endif %}
         {% if isSpecial == false %}
           <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
         {% endif %}
@@ -292,7 +296,10 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       {% else %}
         <input type="hidden" name="properties[_erp_sku]" value="{{ selected_variant.metafields.plytix.erp_sku }}" />
         <input type="hidden" name="properties[Sku]" value="{{ selected_variant.sku }}" />
-        <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
+
+        {% if stockStatusNote != "" %}
+          <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
+        {% endif %}
 
 
         {% assign isSpecialSelectVar = false %}

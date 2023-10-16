@@ -9,7 +9,7 @@
     {%- assign pdiscontinued = true -%}
   {%- endif -%}
 {%- endfor -%}
-{%- if pdiscontinued == false -%}
+{%- if pdiscontinued == false and thisproduct.selected_or_first_available_variant.sku != "SUPERFREAK"-%}
   {%- for variant in thisproduct.variants -%}
     <div class="var-specs var{{ variant.id }} status-area" {%- if current_variant_id != variant.id -%}style="display:none;"{%- endif -%}>
     {%- assign fservice = variant.fulfillment_service -%}
