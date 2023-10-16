@@ -68,7 +68,7 @@
     {% assign sf_sku = "" %}
     {% unless item.properties == empty %}
       {% for property in item.properties %}
-        {% if property.first == '_sf_item' %}
+        {% if property.first == 'SuperFreak Item' %}
           {% assign sf_sku = property.last %}
         {% endif %}
       {% endfor %}

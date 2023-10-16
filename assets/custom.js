@@ -1140,8 +1140,7 @@ function sf_atc(btn,placement){
         form_type: 'product',
         utf8: '✓',
         'properties[_erp_sku]': 'SUPERFREAK',
-        'properties[_sf_item]': sf_plan_item,
-        'properties[_sf_item_handle]': sf_plan_item_handle,
+        'properties[SuperFreak Item]': sf_plan_item,
         'id': '43956946534612',
         'quantity': sf_qty
     }
