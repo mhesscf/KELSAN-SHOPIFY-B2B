@@ -13886,12 +13886,27 @@ nav.breadcrumb span.separator{
 	margin-bottom:0;
 }
 .cart-item.sf-cart-addon{
-	border-top:0 solid #ccc;
+	border-top: 1px solid rgb(204, 204, 204);
 	margin-top:0;
-	background-color:#ccc;
+	background-color:#F5F8FA;
+	max-height: 80px;
+}
+.cart-item.sf-cart-addon .cart-item--image-wrapper img{
+	width:65px;
+}
+.cart-item.sf-cart-addon .cart-item--total,
+.cart-item.sf-cart-addon .cart-item--quantity{
+	margin-top: 0;
+}
+.cart-item.sf-cart-addon select{
+	border:none;
+}
+.cart-item.sf-cart-addon .icon-chevron-down,
+.cart-item.sf-cart-addon .cart-item--sku{
+	display:none !important;
 }
 
-/* ------------------- superfreak area in dropdown ---------------*/
+	/* ------------------- superfreak area in dropdown ---------------*/
 .cart-item .atc-sf-area{
 	background-color: #F5F8FA;
 	padding:10px;
