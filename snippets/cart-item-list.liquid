@@ -10,7 +10,7 @@
           {% if subitem.sku == "SUPERFREAK" %}
               {% unless subitem.properties == empty %}
                   {% for property in subitem.properties %}
-                      {% if property.first == '_sf_item' %}
+                      {% if property.first == 'SuperFreak Item' %}
                           {% if property.last == item.sku %}
                               {% assign sf_line = counter %}
                               {% assign sf_item = subitem %}
@@ -28,7 +28,7 @@
           {% assign matchFound = false %}
           {% unless item.properties == empty %}
               {% for property in item.properties %}
-                  {% if property.first == '_sf_item' %}
+                  {% if property.first == 'SuperFreak Item' %}
                       {% assign showItem = false %}
                       {% for subitem in cart.items %}
                           {% if property.last == subitem.sku %}
