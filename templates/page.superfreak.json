@@ -1,5 +1,16 @@
 {
   "sections": {
+    "66af8670-5d46-4605-84d6-21ccbd90e586": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "superfreak-terms",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "a96fc367-e4f3-483f-b57b-c8fd1c86847c": {
       "type": "dynamic-slideshow",
       "blocks": {
@@ -42,6 +53,7 @@
     }
   },
   "order": [
+    "66af8670-5d46-4605-84d6-21ccbd90e586",
     "a96fc367-e4f3-483f-b57b-c8fd1c86847c",
     "main",
     "08bfee3b-091f-4f05-9c9a-a16fda4aaf82"
