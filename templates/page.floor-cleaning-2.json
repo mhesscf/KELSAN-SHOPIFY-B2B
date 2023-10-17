@@ -6,7 +6,7 @@
         "942a18a7-53dd-44b7-b13d-69ed6b63aa8e": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
+            "cat_image": "shopify:\/\/shop_images\/hard-floor-cleaning-machines-dept-page.jpg",
             "cat_title": "Floor Cleaning",
             "cat_text": "Shop a wide selection machines, chemicals and accessories to maintain your hard floors like concrete, tile, stone, terrazzo, and more."
           }
@@ -157,7 +157,7 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/cold-electric-pressure-washers.jpg",
-            "title": "Cold Water Electric",
+            "title": "Hard Floor Cleaning Machines",
             "url": "\/collections\/cold-water-electric-pressure-washers"
           }
         },
@@ -165,7 +165,7 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/cold-gas-powered-pressure-washer.jpg",
-            "title": "Cold Water Gas Engine",
+            "title": "Hard Floor Supplies & Accessories",
             "url": "\/collections\/cold-water-gas-engine-pressure-washers"
           }
         },
@@ -173,7 +173,7 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/detergents-category.jpg",
-            "title": "Detergents",
+            "title": "Floor Pads, Bonnets & Sanding Screens",
             "url": "\/collections\/detergents"
           }
         },
@@ -181,7 +181,7 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/drain-jetters.jpg",
-            "title": "Drain Jetters",
+            "title": "Industrial Sweepers",
             "url": "\/collections\/drain-jetters"
           }
         },
@@ -189,32 +189,8 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/hot-gas-pressure-washers.jpg",
-            "title": "Hot Water Gas Engine",
+            "title": "Floor Car Chemicals",
             "url": "\/collections\/hot-water-gas-engine-pressure-washers"
-          }
-        },
-        "170a8bf8-9d6d-474a-b55c-eee6dc161442": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hto-electric-pressure-washers.jpg",
-            "title": "Hot Water Electric",
-            "url": "\/collections\/hot-water-electric-pressure-washers"
-          }
-        },
-        "b0c688b8-3bf4-4751-b863-86b45272103c": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/flat-surfaces-cleaners.jpg",
-            "title": "Specialty Attachments",
-            "url": "\/collections\/specialty-attachments-for-pressure-washers"
-          }
-        },
-        "90e76373-00dc-4d7b-98bf-f8ead2c9ab48": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/truck-and-skid-mount.jpg",
-            "title": "Truck & Trailer Mount",
-            "url": "\/collections\/truck-mount"
           }
         }
       },
@@ -223,10 +199,7 @@
         "6216137a-2b4c-43a5-821c-c28e0c093f9c",
         "45d203af-bc0c-4595-ab4a-70accfc8c1a0",
         "0c3e5a7a-1a1d-4d2b-bb5f-2991977e571a",
-        "b795079d-d2c7-485d-b049-2aa01a830b43",
-        "170a8bf8-9d6d-474a-b55c-eee6dc161442",
-        "b0c688b8-3bf4-4751-b863-86b45272103c",
-        "90e76373-00dc-4d7b-98bf-f8ead2c9ab48"
+        "b795079d-d2c7-485d-b049-2aa01a830b43"
       ],
       "settings": {
         "block-title": "Pressure Washers by Type"
