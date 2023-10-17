@@ -266,16 +266,38 @@
         "81b61309-2377-4eec-862e-f3c9b8075b89": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
-            "heading": "Choosing the Right Pressure Washer for Commercial Use: Interview with an Expert",
-            "subheading": "<p> right pressure washer for commercial use is difficult. So, we brought in an expert!<\/p>",
+            "image": "shopify:\/\/shop_images\/burnishing-a-floor.jpg",
+            "heading": "Burnishing a Floor",
+            "subheading": "<p>How to burnish a finished floor to achieve the highest possible shine.<\/p>",
             "button_label": "Read the Guide",
-            "button_link": "\/blogs\/news\/choosing-the-right-pressure-washer-for-commercial-use-interview-with-an-expert"
+            "button_link": "\/pages\/burnishing-a-floor"
+          }
+        },
+        "03fc67fc-9046-40e3-aa19-c67bc77e67e4": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Scrubbing_with_Buffer.jpg",
+            "heading": "Floor Scrubbing With a Buffer",
+            "subheading": "<p>How to properly clean hard floor surfaces with a buffer to eliminate scuff marks and remove dirt.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/pages\/floor-buffer-scrubbing"
+          }
+        },
+        "f8fc76b8-7c94-49a3-bc96-6f25825667d5": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Scrubbing_with_Auto_Scrubber.jpg",
+            "heading": "Scrubbing with an Auto Scrubber",
+            "subheading": "<p>How to clean a hard floor surface with an auto scrubber and leave it <br\/>completely dry, eliminating any chance of a slip or fall due to a <br\/>slippery floor.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/pages\/automatic-floor-scrubbing"
           }
         }
       },
       "block_order": [
-        "81b61309-2377-4eec-862e-f3c9b8075b89"
+        "81b61309-2377-4eec-862e-f3c9b8075b89",
+        "03fc67fc-9046-40e3-aa19-c67bc77e67e4",
+        "f8fc76b8-7c94-49a3-bc96-6f25825667d5"
       ],
       "settings": {
         "block-title": "Resources"
