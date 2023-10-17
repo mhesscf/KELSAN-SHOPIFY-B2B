@@ -1,0 +1,249 @@
+{
+  "sections": {
+    "29f88aed-5198-4ab8-956f-af2a43a1021d": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "f99106b9-821e-475f-81ca-0cc8d5a1b428": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/trusted-clean-carpet-extractor-in-use-dept-page.jpg",
+            "cat_title": "Carpet Cleaning Extractors",
+            "cat_text": "Carpet cleaning extractors are the workhorse of the industry. We offer many different types (self-contained, portable, spotters, rotary scrubbers, CRBs & more) & have them in stock."
+          }
+        }
+      },
+      "block_order": [
+        "f99106b9-821e-475f-81ca-0cc8d5a1b428"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "08738b00-0444-41c9-9e43-45e8bc2cecb0": {
+          "type": "slide",
+          "settings": {
+            "product": "ultimate-heated-box-extractor"
+          }
+        },
+        "044471d9-3826-4e02-ab69-ec53aa9fedb5": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-lite-8070-heated-carpet-extractor-and-auto-detailer"
+          }
+        },
+        "d76bff54-6329-47b1-b661-845355ba51ed": {
+          "type": "slide",
+          "settings": {
+            "product": "basic-carpet-cleaning-package"
+          }
+        },
+        "a787e186-2711-4eed-be04-bf6db2f3d284": {
+          "type": "slide",
+          "settings": {
+            "product": "heated-carpet-spot-cleaner"
+          }
+        },
+        "7a76ea89-22fb-4c57-a156-0cb064f773f2": {
+          "type": "slide",
+          "settings": {
+            "product": "cimex-triple-brush-premium-carpet-encapsulation-machine"
+          }
+        },
+        "df088985-522c-4ba6-b69b-5104497c020c": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-carpet-spot-cleaning-machine"
+          }
+        },
+        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f": {
+          "type": "slide",
+          "settings": {
+            "product": "7-gallon-professional-carpet-extractor"
+          }
+        }
+      },
+      "block_order": [
+        "08738b00-0444-41c9-9e43-45e8bc2cecb0",
+        "044471d9-3826-4e02-ab69-ec53aa9fedb5",
+        "d76bff54-6329-47b1-b661-845355ba51ed",
+        "a787e186-2711-4eed-be04-bf6db2f3d284",
+        "7a76ea89-22fb-4c57-a156-0cb064f773f2",
+        "df088985-522c-4ba6-b69b-5104497c020c",
+        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "main": {
+      "type": "static-collection",
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "fd31970b-b25d-4641-821d-a01bd23aad8e": {
+      "type": "dept-category-area",
+      "blocks": {
+        "1a4102cf-e2f1-4879-9997-a2e77ebd312d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/box-extractors.jpg",
+            "title": "Box Extractors",
+            "url": "\/collections\/box-extractors"
+          }
+        },
+        "fb914cb7-2468-4a2f-8522-b8d7d117e396": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/detailing-carpet-extractors.jpg",
+            "title": "Detailing Extractors",
+            "url": "\/collections\/detailing-extractors"
+          }
+        },
+        "b713364f-ba16-4b66-91b9-6e566c81bc76": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/portable-carpet-spotters.jpg",
+            "title": "Portable Carpet Spotters",
+            "url": "\/collections\/portable-carpet-spotters"
+          }
+        },
+        "672a3bd4-fe0b-4443-a3c8-64c630893e23": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rotary-extractors.jpg",
+            "title": "Rotary Extractors",
+            "url": "\/collections\/rotary-extractors"
+          }
+        },
+        "fcec15ee-eaa5-4624-a1f3-db4b919922ac": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/self-contained-carpet-extractors.jpg",
+            "title": "Self-Contained Carpet Extractors",
+            "url": "\/collections\/self-contained-carpet-extractors"
+          }
+        }
+      },
+      "block_order": [
+        "1a4102cf-e2f1-4879-9997-a2e77ebd312d",
+        "fb914cb7-2468-4a2f-8522-b8d7d117e396",
+        "b713364f-ba16-4b66-91b9-6e566c81bc76",
+        "672a3bd4-fe0b-4443-a3c8-64c630893e23",
+        "fcec15ee-eaa5-4624-a1f3-db4b919922ac"
+      ],
+      "settings": {
+        "block-title": "Carpet Extractors by Type"
+      }
+    },
+    "0a674ccc-9523-4a66-9ab9-51e056ddd146": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "dc3a8b92-0802-4b2e-a619-44d7c1ed6c69": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Carpet Extractors&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-deluxe-12-gallon-carpet-cleaning-extractor-with-wand-and-hose.jpg"
+          }
+        },
+        "c8957f09-4f6d-4696-862f-d267b77e1333": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Mytee Products®, Inc.",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Carpet Extractors&q=Mytee",
+            "brand-image": "shopify:\/\/shop_images\/mytee-2002cs-carpet-cleaning-extractor-with-wand-hose.jpg"
+          }
+        },
+        "052ab639-ed17-4241-9f8e-9b4efb8da85c": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Carpet Extractors&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/san-cf-3-01.jpg"
+          }
+        },
+        "0a8e4509-f8ce-4737-8d4e-14a74892c2fb": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "EDIC",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=EDIC&refinementList[product_type][0]=Carpet Extractors&q=EDIC",
+            "brand-image": "shopify:\/\/shop_images\/edic-polaris-701ps-self-contained-carpet-extractor.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "dc3a8b92-0802-4b2e-a619-44d7c1ed6c69",
+        "c8957f09-4f6d-4696-862f-d267b77e1333",
+        "052ab639-ed17-4241-9f8e-9b4efb8da85c",
+        "0a8e4509-f8ce-4737-8d4e-14a74892c2fb"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
+    }
+  },
+  "order": [
+    "29f88aed-5198-4ab8-956f-af2a43a1021d",
+    "16636174067db7bd8c",
+    "main",
+    "static-recently-viewed",
+    "fd31970b-b25d-4641-821d-a01bd23aad8e",
+    "0a674ccc-9523-4a66-9ab9-51e056ddd146"
+  ]
+}
