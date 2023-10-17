@@ -247,7 +247,7 @@
         "fcec15ee-eaa5-4624-a1f3-db4b919922ac"
       ],
       "settings": {
-        "block-title": "Carpet Extractors by Type"
+        "block-title": "Carpet Cleaning by Type"
       }
     },
     "0a674ccc-9523-4a66-9ab9-51e056ddd146": {
@@ -295,6 +295,38 @@
       "settings": {
         "block-title": "Featured Brands"
       }
+    },
+    "5011ca16-9cd0-41ba-adc5-fc953d96644c": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "69466f93-a25b-439d-bcad-d18776db3cec": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-cleaning-extraction-guide.jpg",
+            "heading": "Carpet Cleaning Extraction",
+            "subheading": "<p>Learn how to extract dirt from the carpet fibers to maintain a clean and healthy carpeted environment.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/pages\/carpet-cleaning-extraction"
+          }
+        },
+        "69491bb8-a1dc-414c-9677-7559813e2b29": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-extracting-rob.jpg",
+            "heading": "Stain Removal Directions for Carpets",
+            "subheading": "<p>Remove spots & stains from carpet and upholstery with this set of guidelines for common stain removal to give you the best chance of removing that pesky stain.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/pages\/stain-removal-directions"
+          }
+        }
+      },
+      "block_order": [
+        "69466f93-a25b-439d-bcad-d18776db3cec",
+        "69491bb8-a1dc-414c-9677-7559813e2b29"
+      ],
+      "settings": {
+        "block-title": "Carpet Cleaning Resources"
+      }
     }
   },
   "order": [
@@ -303,6 +335,7 @@
     "main",
     "static-recently-viewed",
     "fd31970b-b25d-4641-821d-a01bd23aad8e",
-    "0a674ccc-9523-4a66-9ab9-51e056ddd146"
+    "0a674ccc-9523-4a66-9ab9-51e056ddd146",
+    "5011ca16-9cd0-41ba-adc5-fc953d96644c"
   ]
 }
