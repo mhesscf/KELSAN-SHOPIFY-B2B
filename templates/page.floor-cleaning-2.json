@@ -212,13 +212,49 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer.jpg"
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Bundles&refinementList[product_type][4]=Floor Buffer %26 Burnisher Parts&refinementList[product_type][5]=Floor Care Chemicals&refinementList[product_type][6]=Floor Pads%2C Bonnets %26 Sanding Screens&refinementList[product_type][7]=Industrial Sweepers&refinementList[product_type][8]=Sweeper Parts&refinementList[product_type][9]=Tile Cleaning Tools %26 Attachments&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/kob-00-4497-4-01_dept.jpg"
+          }
+        },
+        "4af01473-aaf8-4f23-8900-dcbd9e8aa741": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Trusted Clean",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Floor Buffer Accessories&refinementList[product_type][3]=Floor Care Chemicals&refinementList[product_type][4]=Floor Pads%2C Bonnets %26 Sanding Screens&refinementList[product_type][5]=Hard Floor Cleaning Machines&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/dura-17-c-with-dust-skirt.jpg"
+          }
+        },
+        "5a12a746-8c6d-4322-89dc-6a97d1252f77": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Viper",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Floor Buffer %26 Burnisher Parts&refinementList[product_type][3]=Hard Floor Cleaning Machines&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Industrial Sweepers&q=Viper",
+            "brand-image": "shopify:\/\/shop_images\/viper-as430c-17-inch-electric-auto-scrubber.jpg"
+          }
+        },
+        "3ad1e4bb-97db-4c29-874f-6e5a3ba67c96": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "IPC Eagle",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Floor Buffer Accessories&refinementList[product_type][3]=Floor Pads%2C Bonnets %26 Sanding Screens&refinementList[product_type][4]=Hard Floor Cleaning Machines&refinementList[product_type][5]=Industrial Sweepers&refinementList[product_type][6]=Sweeper Parts&q=IPC Eagle",
+            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
+          }
+        },
+        "cdd11276-8440-47d7-9804-d03a0d1eba12": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Advance",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Advance&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Industrial Sweepers&q=Advance",
+            "brand-image": "shopify:\/\/shop_images\/advance-adfinity-x20c-scrubber.jpg"
           }
         }
       },
       "block_order": [
-        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00"
+        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00",
+        "4af01473-aaf8-4f23-8900-dcbd9e8aa741",
+        "5a12a746-8c6d-4322-89dc-6a97d1252f77",
+        "3ad1e4bb-97db-4c29-874f-6e5a3ba67c96",
+        "cdd11276-8440-47d7-9804-d03a0d1eba12"
       ],
       "settings": {
         "block-title": "Featured Brands"
