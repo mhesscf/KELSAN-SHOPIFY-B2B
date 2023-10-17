@@ -7,8 +7,8 @@
           "type": "categoryhead",
           "settings": {
             "cat_image": "shopify:\/\/shop_images\/trusted-clean-carpet-extractor-in-use-dept-page.jpg",
-            "cat_title": "Carpet Cleaning Extractors",
-            "cat_text": "Carpet cleaning extractors are the workhorse of the industry. We offer many different types (self-contained, portable, spotters, rotary scrubbers, CRBs & more) & have them in stock."
+            "cat_title": "Carpet Cleaning",
+            "cat_text": "Check out our selection of carpet cleaning and care tools to keep your carpet looking the best. Shop our selection of extractors, carpet chemicals, fans, and extractor accessories."
           }
         }
       },
@@ -53,6 +53,7 @@
         },
         "7a76ea89-22fb-4c57-a156-0cb064f773f2": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "product": "cimex-triple-brush-premium-carpet-encapsulation-machine"
           }
@@ -68,6 +69,48 @@
           "settings": {
             "product": "7-gallon-professional-carpet-extractor"
           }
+        },
+        "dcc82bdb-3409-4cfb-a99c-51cf0b037fe5": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-deep-extractor-carpet-extraction-cleaner"
+          }
+        },
+        "3c88e68a-7e0f-4dc5-a15c-6e559d45827b": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-defoamer-vacuum-motor-protectant"
+          }
+        },
+        "7cb8dad1-09ec-4068-82ee-4f27f7f57fd1": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-pet-patrol-urine-and-feces-carpet-spotter-stain-remover"
+          }
+        },
+        "934eff80-3ec1-4e33-8d6c-a86987fb82e9": {
+          "type": "slide",
+          "settings": {
+            "product": "lightweight-air-mover-fan-2800-cfm"
+          }
+        },
+        "41b9b2d2-dc9c-493c-a7c4-e1bef7492a8c": {
+          "type": "slide",
+          "settings": {
+            "product": "dual-jet-s-bend-carpet-extraction-wand"
+          }
+        },
+        "1624baf8-fd0e-400f-8b39-4bec22110115": {
+          "type": "slide",
+          "settings": {
+            "product": "25-foot-extractor-vacuum-solution-hose"
+          }
+        },
+        "a5945d13-0fe4-4c26-bfbf-7c16740f671c": {
+          "type": "slide",
+          "settings": {
+            "product": "stainless-steel-auto-detailer-tool"
+          }
         }
       },
       "block_order": [
@@ -77,7 +120,14 @@
         "a787e186-2711-4eed-be04-bf6db2f3d284",
         "7a76ea89-22fb-4c57-a156-0cb064f773f2",
         "df088985-522c-4ba6-b69b-5104497c020c",
-        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f"
+        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f",
+        "dcc82bdb-3409-4cfb-a99c-51cf0b037fe5",
+        "3c88e68a-7e0f-4dc5-a15c-6e559d45827b",
+        "7cb8dad1-09ec-4068-82ee-4f27f7f57fd1",
+        "934eff80-3ec1-4e33-8d6c-a86987fb82e9",
+        "41b9b2d2-dc9c-493c-a7c4-e1bef7492a8c",
+        "1624baf8-fd0e-400f-8b39-4bec22110115",
+        "a5945d13-0fe4-4c26-bfbf-7c16740f671c"
       ],
       "settings": {
         "cfpssectionheading": "Featured Products"
