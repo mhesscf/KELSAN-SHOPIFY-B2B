@@ -1,14 +1,39 @@
 {
   "sections": {
+    "753fb855-a888-4626-a596-931d69e2633c": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "f9c13a1c-c37e-4243-b9b8-68ead6a7acab": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_title": "All Categories",
+            "cat_text": "We offer a diverse array of cleaning products, including industrial scrubbers, extractors & sweepers for small to large cleaning tasks, eco-friendly cleaning solutions and equipment that streamline efficiency. Check out our comprehensive selections below to meet all your cleaning needs."
+          }
+        }
+      },
+      "block_order": [
+        "f9c13a1c-c37e-4243-b9b8-68ead6a7acab"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
+      }
+    },
     "main": {
       "type": "static-list-collections",
       "settings": {
-        "thumbnail_columns_desktop": 4,
-        "thumbnail_columns_mobile": 3
+        "thumbnail_columns_desktop": 6,
+        "thumbnail_columns_mobile": 3,
+        "image-crop": "round"
       }
     }
   },
   "order": [
+    "753fb855-a888-4626-a596-931d69e2633c",
     "main"
   ]
 }
