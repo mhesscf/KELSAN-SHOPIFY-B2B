@@ -225,6 +225,61 @@
         "block-title": "Hard Floor Cleaning Machines by Type"
       }
     },
+    "ee711244-a4fe-4591-b4a1-b0a48b29ce85": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "b9d3192e-b54d-4e49-a1e6-3914e8905630": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-accessories.jpg",
+            "title": "Auto Scrubber Accessories",
+            "url": "\/pages\/auto-scrubber-accessories"
+          }
+        },
+        "f1ddc939-5fa7-4246-893b-37a08875df6a": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/automatic-scrubber-parts_1ff8f7b2-0b92-4f04-8c36-e2c2630ff82b.jpg",
+            "title": "Auto Scrubber Parts",
+            "url": "\/pages\/floor-scrubber-parts"
+          }
+        },
+        "7013ec16-4250-44d8-98ca-c2ee3beea884": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-accessories.jpg",
+            "title": "Floor Buffer Accessories",
+            "url": "\/pages\/floor-buffer-accessories"
+          }
+        },
+        "6faaf029-646e-4149-aa25-d176b3cb8dba": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-burnisher-parts-2.jpg",
+            "title": "Floor Buffer & Burnisher Parts",
+            "url": "\/pages\/buffer-burnisher-parts"
+          }
+        },
+        "26d392a6-c7b5-4a5a-bbf5-5e8f8f30298a": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-pads-sanding-bonnets.jpg",
+            "title": "Floor Pads, Bonnets & Sanding Screens",
+            "url": "\/pages\/pads"
+          }
+        }
+      },
+      "block_order": [
+        "b9d3192e-b54d-4e49-a1e6-3914e8905630",
+        "f1ddc939-5fa7-4246-893b-37a08875df6a",
+        "7013ec16-4250-44d8-98ca-c2ee3beea884",
+        "6faaf029-646e-4149-aa25-d176b3cb8dba",
+        "26d392a6-c7b5-4a5a-bbf5-5e8f8f30298a"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "98b16032-31db-47eb-8e93-88120664ee70": {
       "type": "dept-brands-area",
       "blocks": {
@@ -287,6 +342,7 @@
     "main",
     "static-recently-viewed",
     "57d423fa-788b-45c5-aedf-748a91c4b11a",
+    "ee711244-a4fe-4591-b4a1-b0a48b29ce85",
     "98b16032-31db-47eb-8e93-88120664ee70"
   ]
 }
