@@ -1,11 +1,27 @@
 {
   "sections": {
-    "1663617398865396bc": {
-      "type": "category-header",
+    "efd3179f-3eef-46ae-a180-4900fd7bbf7f": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "b0ed4593-0a7f-4931-8428-b4eb374474d7": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/safety-personal-protective-equipment-clothing-dept-page.jpg",
+            "cat_title": "Safety & PPE",
+            "cat_text": "We stock a large offering of safety supplies including Personal Protective Equipment (PPE), clothing, matting, signs, spill cleanup, and more."
+          }
+        }
+      },
+      "block_order": [
+        "b0ed4593-0a7f-4931-8428-b4eb374474d7"
+      ],
       "settings": {
-        "chsectionheading": "Safety & PPE",
-        "chsectiontext": "We stock a large offering of safety supplies including Personal Protective Equipment (PPE), clothing, matting, signs, spill cleanup, and more.",
-        "image": "shopify:\/\/shop_images\/safety-personal-protective-equipment-clothing-dept-page.jpg"
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
       }
     },
     "16636174067db7bd8c": {
@@ -76,7 +92,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -107,6 +122,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -401,13 +417,197 @@
         "thumbnail_image": "product-image",
         "image_crop": "original"
       }
+    },
+    "6949a966-cdd6-403a-9940-3eeaa6f69de6": {
+      "type": "dept-category-area",
+      "blocks": {
+        "bdecbb02-5b05-4db7-af0a-307104c0906a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/alarms-alerts.jpg",
+            "title": "Alarms & Tests",
+            "url": "\/collections\/alarms"
+          }
+        },
+        "e0c371b0-20e2-4e98-9132-993d67978149": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/body-protection-clothing.jpg",
+            "title": "Body Protection & Clothing",
+            "url": "\/pages\/body-protection-and-clothing"
+          }
+        },
+        "091256ee-48e0-4d41-aff5-9153f32ff0ed": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ear-muffs-ear-plugs.jpg",
+            "title": "Ear Protection",
+            "url": "\/collections\/ear-protection"
+          }
+        },
+        "7c02bb8e-bdfa-45c3-88d2-fd78d9e1fbbc": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/electrostatic-disinfecting-sprayers.jpg",
+            "title": "Electrostatic Disinfecting & Sanitizing Sprayers",
+            "url": "\/collections\/electrostatic-disinfecting-sanitizing-sprayers"
+          }
+        },
+        "b3bfc4dd-69b3-4955-8460-ea85e80f11ed": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/safety-glasses.jpg",
+            "title": "Eye Protection",
+            "url": "\/collections\/eye-protection"
+          }
+        },
+        "3d0dbf7c-0935-4f59-b243-ec8ce8e74dbb": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/first-aid-kits.jpg",
+            "title": "First Aid Kits & Thermometers",
+            "url": "\/collections\/first-aid-kits-thermometers"
+          }
+        },
+        "5718462f-e0a1-4424-8e2e-61ed550f942b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flammable-storage-cabinets.jpg",
+            "title": "Flammable Storage Cabinets",
+            "url": "\/collections\/flammable-storage-cabinets"
+          }
+        },
+        "41b5a618-ab0d-4cc4-9b92-115b46a8019d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/foot-protection.jpg",
+            "title": "Foot Protection",
+            "url": "\/pages\/foot-protection"
+          }
+        },
+        "056f3d33-d8e1-4748-bb7e-bd354eebc4b3": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gloves-hand-protection.jpg",
+            "title": "Gloves & Hand Protection",
+            "url": "\/pages\/glove-and-hand-protection"
+          }
+        },
+        "094641ff-aaa3-414b-868d-d762fca682fe": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hair-beard-covers.jpg",
+            "title": "Hair & Beard Covers",
+            "url": "\/collections\/hair-beard-covers"
+          }
+        },
+        "767fab66-39e0-48f9-b011-4e55a1c17105": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/matting.jpg",
+            "title": "Matting",
+            "url": "\/collections\/matting"
+          }
+        },
+        "f2d7bde6-6171-4a0d-bef4-4025ae22713f": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/respiratory-protection.jpg",
+            "title": "Respiratory Protection",
+            "url": "\/pages\/respiratory-protection"
+          }
+        },
+        "e50fe474-546a-493d-859f-8bbabc5d2d14": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/signs.jpg",
+            "title": "Signs",
+            "url": "\/collections\/signs"
+          }
+        },
+        "fd6bbc4c-45cb-49f3-85d2-78bf2b9ebd4b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/spill-cleanup.jpg",
+            "title": "Spill Cleanup",
+            "url": "\/collections\/spill-cleanup"
+          }
+        }
+      },
+      "block_order": [
+        "bdecbb02-5b05-4db7-af0a-307104c0906a",
+        "e0c371b0-20e2-4e98-9132-993d67978149",
+        "091256ee-48e0-4d41-aff5-9153f32ff0ed",
+        "7c02bb8e-bdfa-45c3-88d2-fd78d9e1fbbc",
+        "b3bfc4dd-69b3-4955-8460-ea85e80f11ed",
+        "3d0dbf7c-0935-4f59-b243-ec8ce8e74dbb",
+        "5718462f-e0a1-4424-8e2e-61ed550f942b",
+        "41b5a618-ab0d-4cc4-9b92-115b46a8019d",
+        "056f3d33-d8e1-4748-bb7e-bd354eebc4b3",
+        "094641ff-aaa3-414b-868d-d762fca682fe",
+        "767fab66-39e0-48f9-b011-4e55a1c17105",
+        "f2d7bde6-6171-4a0d-bef4-4025ae22713f",
+        "e50fe474-546a-493d-859f-8bbabc5d2d14",
+        "fd6bbc4c-45cb-49f3-85d2-78bf2b9ebd4b"
+      ],
+      "settings": {
+        "block-title": "Safety & PPE Products by Type"
+      }
+    },
+    "3af9e454-1529-4cbc-9987-a7a5d51dfb38": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "9484b5e0-940f-43ba-a2d6-3fff9fe8cc2f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Safety Zone®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Safety Zone&refinementList[product_type][0]=Body Protection %26 Clothing&refinementList[product_type][1]=Eye Protection&refinementList[product_type][2]=First Aid Kits %26 Thermometers&refinementList[product_type][3]=Foot Protection&refinementList[product_type][4]=Gloves %26 Hand Protection&refinementList[product_type][5]=Hair %26 Beard Covers&refinementList[product_type][6]=Respiratory Protection&q=Safety Zone",
+            "brand-image": "shopify:\/\/shop_images\/safety-zone-latex-powder-free-grpr-1-t-group.jpg"
+          }
+        },
+        "11209e72-4b52-4983-8993-c0d5209b7737": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Paws",
+            "brand-link": "\/collections\/paws?refinementList[product_type][0]=Foot Protection",
+            "brand-image": "shopify:\/\/shop_images\/shoe_stripping_soles_lg.jpg"
+          }
+        },
+        "74f2c0a5-164a-4c8d-b171-a04b2dea91ef": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "3M™",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=3M&refinementList[product_type][0]=Ear Protection&refinementList[product_type][1]=Matting&refinementList[product_type][2]=Respiratory Protection&q=3M",
+            "brand-image": "shopify:\/\/shop_images\/3m-peltor-x2-earmuffs.jpg"
+          }
+        },
+        "26f9f382-e8d7-42a7-a651-bdc3f46cb9f8": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Impact®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Body Protection %26 Clothing&refinementList[product_type][1]=Ear Protection&refinementList[product_type][2]=Respiratory Protection&q=Impact",
+            "brand-image": "shopify:\/\/shop_images\/impact-promax-microporous-coveralls-grp.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "9484b5e0-940f-43ba-a2d6-3fff9fe8cc2f",
+        "11209e72-4b52-4983-8993-c0d5209b7737",
+        "74f2c0a5-164a-4c8d-b171-a04b2dea91ef",
+        "26f9f382-e8d7-42a7-a651-bdc3f46cb9f8"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
     }
   },
   "order": [
-    "1663617398865396bc",
+    "efd3179f-3eef-46ae-a180-4900fd7bbf7f",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "1663875378f697f694"
+    "1663875378f697f694",
+    "6949a966-cdd6-403a-9940-3eeaa6f69de6",
+    "3af9e454-1529-4cbc-9987-a7a5d51dfb38"
   ]
 }
