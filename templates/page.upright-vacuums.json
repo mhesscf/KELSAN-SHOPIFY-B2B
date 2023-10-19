@@ -182,6 +182,34 @@
         "block-title": "Upright Vacuums by Type"
       }
     },
+    "ea90e0f2-e43f-422c-9537-fea8140d8563": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "048569e7-903b-4971-839b-82271d66bc78": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vacuum-accessories-1.jpg",
+            "title": "Vacuum Accessories",
+            "url": "\/pages\/vacuum-accessories"
+          }
+        },
+        "20734d8f-715c-42d1-97c8-d9994f646e3e": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vacuum-parts-1.jpg",
+            "title": "Vacuum Parts",
+            "url": "\/pages\/vacuum-parts"
+          }
+        }
+      },
+      "block_order": [
+        "048569e7-903b-4971-839b-82271d66bc78",
+        "20734d8f-715c-42d1-97c8-d9994f646e3e"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "a0256aeb-2e50-4303-86ca-50a48456cc46": {
       "type": "dept-brands-area",
       "blocks": {
@@ -235,6 +263,7 @@
     "main",
     "static-recently-viewed",
     "96763295-b770-451a-b8bf-e3c1b0f1c1cd",
+    "ea90e0f2-e43f-422c-9537-fea8140d8563",
     "a0256aeb-2e50-4303-86ca-50a48456cc46"
   ]
 }
