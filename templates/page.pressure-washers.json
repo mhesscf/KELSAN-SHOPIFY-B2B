@@ -321,25 +321,6 @@
         "block-title": "Pressure Washers by Type"
       }
     },
-    "864df9a0-435e-4cc2-9657-e4ee6d46a626": {
-      "type": "dept-brands-area",
-      "blocks": {
-        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00"
-      ],
-      "settings": {
-        "block-title": "Featured Brands"
-      }
-    },
     "6cc15e43-cf84-4807-a0fc-063958c2e890": {
       "type": "dept-related-category-area",
       "blocks": {
@@ -395,6 +376,25 @@
         "block-title": "Related Categories"
       }
     },
+    "864df9a0-435e-4cc2-9657-e4ee6d46a626": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "CleanFreak®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers&q=CleanFreak",
+            "brand-image": "shopify:\/\/shop_images\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "db34ef1e-046a-410d-96c6-4ff0bc8e4d00"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
+      }
+    },
     "aa50a5ae-5cfa-4ccf-b529-de813ef5d634": {
       "type": "dept-resource-area",
       "blocks": {
@@ -425,8 +425,8 @@
     "main",
     "static-recently-viewed",
     "02508936-78e3-41da-b054-6e9ecca3b173",
-    "864df9a0-435e-4cc2-9657-e4ee6d46a626",
     "6cc15e43-cf84-4807-a0fc-063958c2e890",
+    "864df9a0-435e-4cc2-9657-e4ee6d46a626",
     "aa50a5ae-5cfa-4ccf-b529-de813ef5d634"
   ]
 }
