@@ -200,6 +200,25 @@
         "block-title": "Auto Detailing Chemicals by Type"
       }
     },
+    "50430a45-f80c-45f3-b692-cbc67d510d29": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "2d979026-127f-4542-9fe1-b6f2634e699e": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
+            "title": "Pump-up Dispenser & Trigger Sprayers",
+            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        }
+      },
+      "block_order": [
+        "2d979026-127f-4542-9fe1-b6f2634e699e"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "f55c7ec1-8165-407c-a219-c09e3207f945": {
       "type": "dept-brands-area",
       "blocks": {
@@ -253,6 +272,7 @@
     "main",
     "static-recently-viewed",
     "85771e13-292a-4bc3-bd9e-07169c2de970",
+    "50430a45-f80c-45f3-b692-cbc67d510d29",
     "f55c7ec1-8165-407c-a219-c09e3207f945"
   ]
 }
