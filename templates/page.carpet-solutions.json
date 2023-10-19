@@ -209,6 +209,25 @@
         "block-title": "Carpet & Upholstery Cleaning Chemicals by Type"
       }
     },
+    "01e4e831-cb79-4467-a412-426bcdd4ee9b": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "022e2410-c724-4df2-aac5-249592ffc14f": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
+            "title": "Pump-up Dispenser & Trigger Sprayers",
+            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        }
+      },
+      "block_order": [
+        "022e2410-c724-4df2-aac5-249592ffc14f"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "81e0dbef-c482-4f47-be1e-2794fe97b946": {
       "type": "dept-brands-area",
       "blocks": {
@@ -262,6 +281,7 @@
     "main",
     "static-recently-viewed",
     "9f7c5adc-148e-458c-b440-7d7ed115c2ac",
+    "01e4e831-cb79-4467-a412-426bcdd4ee9b",
     "81e0dbef-c482-4f47-be1e-2794fe97b946"
   ]
 }
