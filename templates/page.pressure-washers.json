@@ -324,27 +324,11 @@
     "6cc15e43-cf84-4807-a0fc-063958c2e890": {
       "type": "dept-related-category-area",
       "blocks": {
-        "2ab3f257-3ad3-4870-bfda-6f4830bc2622": {
-          "type": "related_cat_link",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/body-protection-clothing.jpg",
-            "title": "Body Protection & Clothing",
-            "url": "\/pages\/body-protection-and-clothing"
-          }
-        },
-        "0682afab-96c5-4be0-9d62-98fb9f224556": {
-          "type": "related_cat_link",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/foot-protection.jpg",
-            "title": "Foot Protection",
-            "url": "\/pages\/foot-protection"
-          }
-        },
         "f21a1c19-e085-4fa3-8e30-57b4a65a13ca": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gloves-hand-protection.jpg",
-            "title": "Gloves & Hand Protection",
+            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
+            "title": "Detergents",
             "url": "\/pages\/glove-and-hand-protection"
           }
         },
@@ -366,8 +350,6 @@
         }
       },
       "block_order": [
-        "2ab3f257-3ad3-4870-bfda-6f4830bc2622",
-        "0682afab-96c5-4be0-9d62-98fb9f224556",
         "f21a1c19-e085-4fa3-8e30-57b4a65a13ca",
         "2eaa0edc-6777-4bb7-81e5-1229d10c83d8",
         "176e6ec1-c3b5-453d-badf-c828eb6bf41b"
