@@ -340,27 +340,6 @@
         "block-title": "Featured Brands"
       }
     },
-    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634": {
-      "type": "dept-resource-area",
-      "blocks": {
-        "81b61309-2377-4eec-862e-f3c9b8075b89": {
-          "type": "resourcelink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
-            "heading": "Choosing the Right Pressure Washer for Commercial Use: Interview with an Expert",
-            "subheading": "<p> right pressure washer for commercial use is difficult. So, we brought in an expert!<\/p>",
-            "button_label": "Read the Guide",
-            "button_link": "\/blogs\/news\/choosing-the-right-pressure-washer-for-commercial-use-interview-with-an-expert"
-          }
-        }
-      },
-      "block_order": [
-        "81b61309-2377-4eec-862e-f3c9b8075b89"
-      ],
-      "settings": {
-        "block-title": "Resources"
-      }
-    },
     "6cc15e43-cf84-4807-a0fc-063958c2e890": {
       "type": "dept-related-category-area",
       "blocks": {
@@ -415,6 +394,27 @@
       "settings": {
         "block-title": "Related Categories"
       }
+    },
+    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "81b61309-2377-4eec-862e-f3c9b8075b89": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
+            "heading": "Choosing the Right Pressure Washer for Commercial Use: Interview with an Expert",
+            "subheading": "<p> right pressure washer for commercial use is difficult. So, we brought in an expert!<\/p>",
+            "button_label": "Read the Guide",
+            "button_link": "\/blogs\/news\/choosing-the-right-pressure-washer-for-commercial-use-interview-with-an-expert"
+          }
+        }
+      },
+      "block_order": [
+        "81b61309-2377-4eec-862e-f3c9b8075b89"
+      ],
+      "settings": {
+        "block-title": "Resources"
+      }
     }
   },
   "order": [
@@ -426,7 +426,7 @@
     "static-recently-viewed",
     "02508936-78e3-41da-b054-6e9ecca3b173",
     "864df9a0-435e-4cc2-9657-e4ee6d46a626",
-    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634",
-    "6cc15e43-cf84-4807-a0fc-063958c2e890"
+    "6cc15e43-cf84-4807-a0fc-063958c2e890",
+    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634"
   ]
 }
