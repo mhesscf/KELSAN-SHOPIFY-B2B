@@ -194,6 +194,14 @@
     "8d1f5d4a-94a2-4271-a3be-a3895c7a817e": {
       "type": "dept-related-category-area",
       "blocks": {
+        "162e1d48-75ec-4517-a9bd-7d3aebe1feab": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-upholstery-chemcials.jpg",
+            "title": "Carpet & Upholstery",
+            "url": "\/pages\/carpet-solutions"
+          }
+        },
         "24dda6e7-aa0e-4c1c-9967-069d719640b1": {
           "type": "related_cat_link",
           "settings": {
@@ -210,12 +218,28 @@
             "url": "\/pages\/carpet-extractor-parts"
           }
         },
+        "ee9fb311-7ba8-420e-aaa4-0c8508898427": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/liquid-deodorizers.jpg",
+            "title": "Liquid Deodorizers",
+            "url": "\/collections\/liquid-deodorizers"
+          }
+        },
         "b2536370-abd6-49c8-959b-6ef0761727c6": {
           "type": "related_cat_link",
           "settings": {
             "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
             "title": "Pump-Up Dispensers & Trigger Sprayers",
             "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        },
+        "1c1024ff-357d-4481-907a-509455bd462a": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stain-removal.jpg",
+            "title": "Stain Removal",
+            "url": "\/collections\/stain-removal-carpet-spotting-chemicals"
           }
         },
         "7decf6e1-44ee-432d-8bb9-7ee7b622c1a8": {
@@ -228,9 +252,12 @@
         }
       },
       "block_order": [
+        "162e1d48-75ec-4517-a9bd-7d3aebe1feab",
         "24dda6e7-aa0e-4c1c-9967-069d719640b1",
         "aa43bc19-92fc-4327-a24b-c5778b165239",
+        "ee9fb311-7ba8-420e-aaa4-0c8508898427",
         "b2536370-abd6-49c8-959b-6ef0761727c6",
+        "1c1024ff-357d-4481-907a-509455bd462a",
         "7decf6e1-44ee-432d-8bb9-7ee7b622c1a8"
       ],
       "settings": {
