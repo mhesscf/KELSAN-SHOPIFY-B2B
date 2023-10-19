@@ -324,6 +324,27 @@
       "settings": {
         "block-title": "Featured Brands"
       }
+    },
+    "c685a816-7e1f-4488-bbb4-725466dba757": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "517207a2-d7e9-4e27-a3f4-11795c75a205": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/blog-header-gloves-01.png",
+            "heading": "How to Choose the Right Gloves for Janitorial Use",
+            "subheading": "<p>No matter what type of janitorial or maintenance job you’re working on, <br\/>you should always make sure to wear the right gloves for the job.<\/p>",
+            "button_label": "Read The Guide",
+            "button_link": "\/blogs\/goods\/how-to-choose-the-right-gloves-for-janitorial-use"
+          }
+        }
+      },
+      "block_order": [
+        "517207a2-d7e9-4e27-a3f4-11795c75a205"
+      ],
+      "settings": {
+        "block-title": "Safety & PPE Resources"
+      }
     }
   },
   "order": [
@@ -332,6 +353,7 @@
     "main",
     "static-recently-viewed",
     "6949a966-cdd6-403a-9940-3eeaa6f69de6",
-    "3af9e454-1529-4cbc-9987-a7a5d51dfb38"
+    "3af9e454-1529-4cbc-9987-a7a5d51dfb38",
+    "c685a816-7e1f-4488-bbb4-725466dba757"
   ]
 }
