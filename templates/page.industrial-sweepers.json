@@ -164,6 +164,25 @@
         "block-title": "Industrial Sweepers by Type"
       }
     },
+    "e6c49a8f-5f4a-4635-bd9c-6a7cd2dadf1a": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "727e18eb-df6e-47c1-be98-3c3497747e00": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sweeper-parts-1.jpg",
+            "title": "Sweeper Parts",
+            "url": "\/collections\/sweeper-parts"
+          }
+        }
+      },
+      "block_order": [
+        "727e18eb-df6e-47c1-be98-3c3497747e00"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "715967e6-7ba7-4e56-b065-374ea8120de3": {
       "type": "dept-brands-area",
       "blocks": {
@@ -217,6 +236,7 @@
     "main",
     "static-recently-viewed",
     "fce3e32f-efcd-4d81-bffc-fc15c455ca52",
+    "e6c49a8f-5f4a-4635-bd9c-6a7cd2dadf1a",
     "715967e6-7ba7-4e56-b065-374ea8120de3"
   ]
 }
