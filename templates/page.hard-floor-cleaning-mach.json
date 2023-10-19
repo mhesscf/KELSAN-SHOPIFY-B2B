@@ -260,6 +260,14 @@
             "url": "\/pages\/buffer-burnisher-parts"
           }
         },
+        "16c89b79-8040-4007-a613-320dd7b78eca": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-care-chemicals.jpg",
+            "title": "Floor Care Chemicals",
+            "url": "\/pages\/floor-care-chemicals"
+          }
+        },
         "26d392a6-c7b5-4a5a-bbf5-5e8f8f30298a": {
           "type": "related_cat_link",
           "settings": {
@@ -274,6 +282,7 @@
         "f1ddc939-5fa7-4246-893b-37a08875df6a",
         "7013ec16-4250-44d8-98ca-c2ee3beea884",
         "6faaf029-646e-4149-aa25-d176b3cb8dba",
+        "16c89b79-8040-4007-a613-320dd7b78eca",
         "26d392a6-c7b5-4a5a-bbf5-5e8f8f30298a"
       ],
       "settings": {
