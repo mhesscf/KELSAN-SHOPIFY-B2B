@@ -171,6 +171,43 @@
         "block-title": "Auto Scrubber Accessories by Type"
       }
     },
+    "21bf886d-3f09-42d3-88d8-e3a5bddbf3bf": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "27a3fb11-fe86-453a-8eb4-dd5f8791c571": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brush-vacuum-motors.jpg",
+            "title": "Brush & Vacuum Motors",
+            "url": "\/collections\/brush-vacuum-motors"
+          }
+        },
+        "50bca2fc-673c-413d-a367-dceba63f9c95": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/misc-auto-scrubber-parts.jpg",
+            "title": "Miscellaneous Auto Scrubber Parts",
+            "url": "\/collections\/miscellaneous-auto-scrubber-parts"
+          }
+        },
+        "80abfbcd-8c07-434d-9f1b-c9204460bc75": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-squeegees.jpg",
+            "title": "Auto Scrubber Squeegees",
+            "url": "\/collections\/auto-scrubber-squeegees"
+          }
+        }
+      },
+      "block_order": [
+        "27a3fb11-fe86-453a-8eb4-dd5f8791c571",
+        "50bca2fc-673c-413d-a367-dceba63f9c95",
+        "80abfbcd-8c07-434d-9f1b-c9204460bc75"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "cd06b5fc-1871-406d-ba52-76ce6873befd": {
       "type": "dept-brands-area",
       "blocks": {
@@ -224,6 +261,7 @@
     "main",
     "static-recently-viewed",
     "a792edec-ad1c-4930-bc16-59dbdd1df7a7",
+    "21bf886d-3f09-42d3-88d8-e3a5bddbf3bf",
     "cd06b5fc-1871-406d-ba52-76ce6873befd"
   ]
 }
