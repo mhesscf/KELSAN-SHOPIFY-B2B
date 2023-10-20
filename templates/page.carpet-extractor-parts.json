@@ -205,6 +205,52 @@
         "block-title": "Carpet Extractor Parts by Type"
       }
     },
+    "f50b2f6e-d572-4c34-86bf-6f91443776b3": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "ebd662a3-c210-4cd3-a0ad-51b63c7c78cb": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/drag-wands.jpg",
+            "title": "Drag Wands",
+            "url": "\/collections\/drag-wands"
+          }
+        },
+        "b2d358f5-4efe-4434-aabd-1fa1b2808c58": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/extractor-hoses.jpg",
+            "title": "Extractor Hoses",
+            "url": "\/collections\/extractor-hoses"
+          }
+        },
+        "0888881f-6e55-4fac-81b8-9fb6274369b9": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/power-brushes.jpg",
+            "title": "Power Brushes",
+            "url": "\/collections\/power-brushes"
+          }
+        },
+        "4a469a04-f0a7-4df9-b00d-9b4fd8fd61bc": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/upholstery-tools.jpg",
+            "title": "Upholstery Tools",
+            "url": "\/collections\/upholstery-tools"
+          }
+        }
+      },
+      "block_order": [
+        "ebd662a3-c210-4cd3-a0ad-51b63c7c78cb",
+        "b2d358f5-4efe-4434-aabd-1fa1b2808c58",
+        "0888881f-6e55-4fac-81b8-9fb6274369b9",
+        "4a469a04-f0a7-4df9-b00d-9b4fd8fd61bc"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "94ac15c5-4bb4-46ff-b837-03ddd6f36bdf": {
       "type": "dept-brands-area",
       "blocks": {
@@ -249,6 +295,7 @@
     "main",
     "static-recently-viewed",
     "cc9065fd-6183-4668-a6d3-4ae7a1782eb0",
+    "f50b2f6e-d572-4c34-86bf-6f91443776b3",
     "94ac15c5-4bb4-46ff-b837-03ddd6f36bdf"
   ]
 }
