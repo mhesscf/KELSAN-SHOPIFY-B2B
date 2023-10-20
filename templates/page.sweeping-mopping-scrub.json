@@ -304,6 +304,25 @@
         "block-title": "Sweeping, Mopping & Scrubbing by Type"
       }
     },
+    "bd8f5731-1cff-4eb1-9461-1a00dfde4c03": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "d37b84ed-ffbd-489e-978a-57cab7353ede": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
+            "title": "Industrial Sweepers",
+            "url": "\/pages\/industrial-sweepers"
+          }
+        }
+      },
+      "block_order": [
+        "d37b84ed-ffbd-489e-978a-57cab7353ede"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "0511c49d-be00-47d8-9b4d-d9618f032dfc": {
       "type": "dept-brands-area",
       "blocks": {
@@ -348,6 +367,7 @@
     "main",
     "static-recently-viewed",
     "e0b07be9-3947-40c6-b2f4-ad05c1ae3dcb",
+    "bd8f5731-1cff-4eb1-9461-1a00dfde4c03",
     "0511c49d-be00-47d8-9b4d-d9618f032dfc"
   ]
 }
