@@ -174,6 +174,14 @@
     "21bf886d-3f09-42d3-88d8-e3a5bddbf3bf": {
       "type": "dept-related-category-area",
       "blocks": {
+        "80abfbcd-8c07-434d-9f1b-c9204460bc75": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-squeegees.jpg",
+            "title": "Auto Scrubber Squeegees",
+            "url": "\/collections\/auto-scrubber-squeegees"
+          }
+        },
         "27a3fb11-fe86-453a-8eb4-dd5f8791c571": {
           "type": "related_cat_link",
           "settings": {
@@ -189,20 +197,12 @@
             "title": "Miscellaneous Auto Scrubber Parts",
             "url": "\/collections\/miscellaneous-auto-scrubber-parts"
           }
-        },
-        "80abfbcd-8c07-434d-9f1b-c9204460bc75": {
-          "type": "related_cat_link",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/auto-scrubber-squeegees.jpg",
-            "title": "Auto Scrubber Squeegees",
-            "url": "\/collections\/auto-scrubber-squeegees"
-          }
         }
       },
       "block_order": [
+        "80abfbcd-8c07-434d-9f1b-c9204460bc75",
         "27a3fb11-fe86-453a-8eb4-dd5f8791c571",
-        "50bca2fc-673c-413d-a367-dceba63f9c95",
-        "80abfbcd-8c07-434d-9f1b-c9204460bc75"
+        "50bca2fc-673c-413d-a367-dceba63f9c95"
       ],
       "settings": {
         "block-title": "Related Categories"
