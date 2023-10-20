@@ -189,6 +189,70 @@
         "block-title": "Vacuum Accessories by Type"
       }
     },
+    "eaeef958-d68c-46ed-9c58-38a301607a21": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "b275edba-c6cc-4735-aa78-c6a8b83eef5d": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-belts.jpg",
+            "title": "Belts",
+            "url": "\/collections\/belts"
+          }
+        },
+        "ff77e7bb-1690-4727-bdba-6dd2b69eeca7": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-brush-rolls.jpg",
+            "title": "Brush Rolls",
+            "url": "\/collections\/brush-rolls"
+          }
+        },
+        "0157494e-2279-40e1-b8c6-2ac82a225b89": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-filters.jpg",
+            "title": "Filters",
+            "url": "\/collections\/filters"
+          }
+        },
+        "e817ac0d-2bff-4a3f-8ce4-eb6b7bcf0204": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-gaskets-and-misc.jpg",
+            "title": "Gaskets & Miscellaneous Parts",
+            "url": "\/collections\/gaskets-miscellaneous-parts"
+          }
+        },
+        "b78d4666-2522-4b2c-95e9-bddbe1b0b790": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-squeegees.jpg",
+            "title": "Squeegees",
+            "url": "\/collections\/squeegees"
+          }
+        },
+        "2625d1c7-ba10-43d5-9d0f-2df118a03dd0": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-motors.jpg",
+            "title": "Vacuum Motors",
+            "url": "\/collections\/vacuum-motors"
+          }
+        }
+      },
+      "block_order": [
+        "b275edba-c6cc-4735-aa78-c6a8b83eef5d",
+        "ff77e7bb-1690-4727-bdba-6dd2b69eeca7",
+        "0157494e-2279-40e1-b8c6-2ac82a225b89",
+        "e817ac0d-2bff-4a3f-8ce4-eb6b7bcf0204",
+        "b78d4666-2522-4b2c-95e9-bddbe1b0b790",
+        "2625d1c7-ba10-43d5-9d0f-2df118a03dd0"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "df58619a-5ac7-466e-8ec3-670cc90022d0": {
       "type": "dept-brands-area",
       "blocks": {
@@ -242,6 +306,7 @@
     "main",
     "static-recently-viewed",
     "13f96a0d-c884-4df4-abd2-5ffe06f21edf",
+    "eaeef958-d68c-46ed-9c58-38a301607a21",
     "df58619a-5ac7-466e-8ec3-670cc90022d0"
   ]
 }
