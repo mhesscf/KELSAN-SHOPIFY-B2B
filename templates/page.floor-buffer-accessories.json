@@ -200,14 +200,6 @@
             "url": "\/collections\/buffer-burnisher-components"
           }
         },
-        "cb800bef-d22d-490a-8ecb-e5e27ebd8e48": {
-          "type": "related_cat_link",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-motors.jpg",
-            "title": "Motors",
-            "url": "\/collections\/motors"
-          }
-        },
         "b59ee9f3-5a2d-446f-a34a-d3a8eaab0408": {
           "type": "related_cat_link",
           "settings": {
@@ -215,12 +207,20 @@
             "title": "Floor Buffer Weights",
             "url": "\/collections\/weights"
           }
+        },
+        "cb800bef-d22d-490a-8ecb-e5e27ebd8e48": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-motors.jpg",
+            "title": "Motors",
+            "url": "\/collections\/motors"
+          }
         }
       },
       "block_order": [
         "9e7e49e4-5ee4-4992-9bb1-61acf814c7ec",
-        "cb800bef-d22d-490a-8ecb-e5e27ebd8e48",
-        "b59ee9f3-5a2d-446f-a34a-d3a8eaab0408"
+        "b59ee9f3-5a2d-446f-a34a-d3a8eaab0408",
+        "cb800bef-d22d-490a-8ecb-e5e27ebd8e48"
       ],
       "settings": {
         "block-title": "Related Categories"
