@@ -168,6 +168,34 @@
         "block-title": "Disinfectants & Sanitizers by Type"
       }
     },
+    "4e8b020c-a319-462d-93c9-92f71f0e0d36": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "e0ad5c62-6864-4ae8-9bf6-abd303d7646a": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/electrostatic-disinfecting-sprayers.jpg",
+            "title": "Electrostatic Disinfecting & Sanitizing Sprayers",
+            "url": "\/collections\/electrostatic-disinfecting-sanitizing-sprayers"
+          }
+        },
+        "aaf29a21-70e4-4102-b5d5-4c9aeabebcec": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-sanitizer-dispensers.jpg",
+            "title": "Hand Sanitizer Dispensers & Stands",
+            "url": "\/collections\/hand-sanitizer-dispensers-stands"
+          }
+        }
+      },
+      "block_order": [
+        "e0ad5c62-6864-4ae8-9bf6-abd303d7646a",
+        "aaf29a21-70e4-4102-b5d5-4c9aeabebcec"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "0ba1e376-57cc-45c3-88a0-31559a7a08d1": {
       "type": "dept-brands-area",
       "blocks": {
@@ -221,6 +249,7 @@
     "main",
     "static-recently-viewed",
     "ebeb35e9-b732-4c85-a747-a11f18a18b24",
+    "4e8b020c-a319-462d-93c9-92f71f0e0d36",
     "0ba1e376-57cc-45c3-88a0-31559a7a08d1"
   ]
 }
