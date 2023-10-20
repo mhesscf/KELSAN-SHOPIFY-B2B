@@ -189,6 +189,43 @@
         "block-title": "Floor Buffer Accessories by Type"
       }
     },
+    "0541121f-89a6-42fe-b7b1-c449e013c65c": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "9e7e49e4-5ee4-4992-9bb1-61acf814c7ec": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-components.jpg",
+            "title": "Components",
+            "url": "\/collections\/buffer-burnisher-components"
+          }
+        },
+        "cb800bef-d22d-490a-8ecb-e5e27ebd8e48": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-motors.jpg",
+            "title": "Motors",
+            "url": "\/collections\/motors"
+          }
+        },
+        "b59ee9f3-5a2d-446f-a34a-d3a8eaab0408": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/buffer-weights.jpg",
+            "title": "Floor Buffer Weights",
+            "url": "\/collections\/weights"
+          }
+        }
+      },
+      "block_order": [
+        "9e7e49e4-5ee4-4992-9bb1-61acf814c7ec",
+        "cb800bef-d22d-490a-8ecb-e5e27ebd8e48",
+        "b59ee9f3-5a2d-446f-a34a-d3a8eaab0408"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "9d240fc7-3d19-4b88-80b2-b390dc1df52a": {
       "type": "dept-brands-area",
       "blocks": {
@@ -233,6 +270,7 @@
     "main",
     "static-recently-viewed",
     "9223f029-014a-4090-94c5-f6049ab26b6d",
+    "0541121f-89a6-42fe-b7b1-c449e013c65c",
     "9d240fc7-3d19-4b88-80b2-b390dc1df52a"
   ]
 }
