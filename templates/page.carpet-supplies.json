@@ -175,6 +175,61 @@
         "block-title": "Tools & Accessories for Carpet Cleaning Extractors by Type"
       }
     },
+    "7e98748e-bd9f-4438-89aa-3a234291c093": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "b8d17924-e432-4429-85c7-da15a654109c": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/components.jpg",
+            "title": "Carpet Extractor Components",
+            "url": "\/collections\/extractor-components"
+          }
+        },
+        "c386e749-103d-40da-897e-25fc9150407c": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-extractor-heaters.jpg",
+            "title": "Carpet Extractor Heaters",
+            "url": "\/collections\/carpet-extractor-heaters"
+          }
+        },
+        "dd7f06c4-0e62-4e93-bd45-a7a678f71575": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pumps-for-carpet-extractors.jpg",
+            "title": "Carpet Extractor Pumps",
+            "url": "\/collections\/pumps"
+          }
+        },
+        "4262abf5-d8a2-4fa5-bc34-d75ef8ce62ed": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/extractor-vacuum-motors.jpg",
+            "title": "Carpet Extractor Vacuum Motors",
+            "url": "\/collections\/extractor-vacuum-motors"
+          }
+        },
+        "130639d7-9f51-4ca4-8ed5-9af9bfec5519": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/drag-wand-jets-parts.jpg",
+            "title": "Drag Wand Jets & Parts",
+            "url": "\/collections\/drag-wand-jets-parts"
+          }
+        }
+      },
+      "block_order": [
+        "b8d17924-e432-4429-85c7-da15a654109c",
+        "c386e749-103d-40da-897e-25fc9150407c",
+        "dd7f06c4-0e62-4e93-bd45-a7a678f71575",
+        "4262abf5-d8a2-4fa5-bc34-d75ef8ce62ed",
+        "130639d7-9f51-4ca4-8ed5-9af9bfec5519"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "7ccaad67-6d7c-4906-b1e4-b3dbb4557fb9": {
       "type": "dept-brands-area",
       "blocks": {
@@ -219,6 +274,7 @@
     "main",
     "static-recently-viewed",
     "cdb1edb6-aa41-4d11-a173-60059d8a2b38",
+    "7e98748e-bd9f-4438-89aa-3a234291c093",
     "7ccaad67-6d7c-4906-b1e4-b3dbb4557fb9"
   ]
 }
