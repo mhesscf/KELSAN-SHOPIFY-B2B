@@ -175,6 +175,25 @@
         "block-title": "Soaps & Detergents by Type"
       }
     },
+    "92d4eb1d-c712-45c6-a7be-b0b39f476776": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "8eee4c2d-7b60-4f99-8c9d-2221b2a3db13": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/soap-dispensers.jpg",
+            "title": "Soap Dispensers (Wall & Counter Mount)",
+            "url": "\/collections\/soap-dispensers-wall-counter-mount"
+          }
+        }
+      },
+      "block_order": [
+        "8eee4c2d-7b60-4f99-8c9d-2221b2a3db13"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "3e718b34-34ed-49df-9c97-daaba983025f": {
       "type": "dept-brands-area",
       "blocks": {
@@ -219,6 +238,7 @@
     "main",
     "static-recently-viewed",
     "88292e72-775b-4056-bd28-8b90c21250e5",
+    "92d4eb1d-c712-45c6-a7be-b0b39f476776",
     "3e718b34-34ed-49df-9c97-daaba983025f"
   ]
 }
