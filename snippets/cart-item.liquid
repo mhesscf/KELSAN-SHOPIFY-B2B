@@ -195,17 +195,17 @@
        {% endif %}
 
       {% if sf_eligible == true and sf_addon < 0 %}
-        {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
+        {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
           {% comment %}<div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>{% endcomment %}
 
 
         <div class="atc-sf-area" >
-          <div class="sf-main-text">Protect this item with a SuperFreak service plan.</div>
+          <div class="sf-main-text">Protect this item with SuperFreak.</div>
           <table class="sf-details">
             <tr>
               <td class="sf-price">$99.99</td>
-              <td class="sf-details-text">includes Extended Service Plan 2 Yr with Accidental Coverage - Starts Day of Purchase</td>
-              <td class="sf-atc"><div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>
+              <td class="sf-details-text">Get peace of mind for warranty issues with virtual technical assistance. <span class="sf-info-pop" onclick="sf_info_pop()" >What is this? <i class="fa-solid fa-circle-question"></i></span></td>
+              <td class="sf-atc"><div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
               </td>
             </tr>
           </table>

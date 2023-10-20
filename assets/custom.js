@@ -1127,8 +1127,16 @@ jQuery(document).ready(function($){
             }
         })
     });
-
 });
+
+// superfreak infopop
+function sf_info_pop(){
+    $('.popup-container').removeClass('hidden');
+    $(".pop-grad").removeClass('hidden');
+    var newhtml = $(".sf-pop-html").html();
+    $('.popup-container .content').html(newhtml);
+    $('.popup-container').addClass('widepop');
+};
 
 // superfreak add to cart jiloik
 function sf_atc(btn,placement){

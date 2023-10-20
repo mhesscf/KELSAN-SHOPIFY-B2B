@@ -13881,6 +13881,33 @@ nav.breadcrumb span.separator{
 }
 
 {% comment %}superfreak in the cart{% endcomment %}
+
+.cart-upsell-orange-btn.productitem--action-trigger{
+	width:145px;
+	padding:8px 6px 6px 4px;
+	margin-top:10px;
+	border-radius:8px;
+	font-size:14px;
+	text-transform:none;
+	border:1px solid {{ settings.color_button_secondary_background }};
+	background-color: {{ settings.color_button_secondary_background }};
+	color: white;
+	cursor:pointer;
+	transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+.cart-upsell-orange-btn.productitem--action-trigger:hover{
+	color: {{ settings.color_button_secondary_text }};
+	background-color: {{ settings.color_button_hover }};
+	border: 1px solid {{ settings.color_button_hover }};
+}
+.sf-details-text .sf-info-pop{
+	color: {{ color_links }};
+	transition: all 0.4s ease-in-out;
+	cursor: pointer;
+}
+.sf-details-text .sf-info:hover{
+	color: {{ settings.color_link_hover }};
+}
 .cart-item.has-sf-cart-addon{
 	border-bottom:0 solid #ccc;
 	margin-bottom:0;
