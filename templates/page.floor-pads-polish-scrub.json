@@ -209,6 +209,34 @@
         "block-title": "Floor Pads, Bonnets & Sanding by Type"
       }
     },
+    "a71960da-5008-467a-926c-a4457920be7c": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "b3f6284c-f87c-462b-8eb3-11d6118f5877": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-pad-drivers.jpg",
+            "title": "Auto Scrubber Pad Drivers",
+            "url": "\/collections\/auto-scrubber-pad-drivers"
+          }
+        },
+        "faa86900-e7b6-4cb6-8918-917ebb964d55": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-pad-drivers.jpg",
+            "title": "Floor Buffer Pad Drivers",
+            "url": "\/collections\/floor-buffer-pad-drivers"
+          }
+        }
+      },
+      "block_order": [
+        "b3f6284c-f87c-462b-8eb3-11d6118f5877",
+        "faa86900-e7b6-4cb6-8918-917ebb964d55"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "e01d7337-3871-41bd-b604-87ced8d6dab7": {
       "type": "dept-brands-area",
       "blocks": {
@@ -253,6 +281,7 @@
     "main",
     "static-recently-viewed",
     "4a4387d2-b9c1-4346-9cc3-55fc69d39db4",
+    "a71960da-5008-467a-926c-a4457920be7c",
     "e01d7337-3871-41bd-b604-87ced8d6dab7"
   ]
 }
