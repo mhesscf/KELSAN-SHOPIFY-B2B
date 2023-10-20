@@ -173,6 +173,34 @@
         "block-title": "Auto Scrubber Parts & Accessories by Type"
       }
     },
+    "d1da1fe5-30ca-473f-a600-0516d1f4322c": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "dbd63f8a-beff-4ef4-8542-addb4c9c52e5": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-brushes_838ec80b-d434-4d4b-9e71-99b9a3edc6d2.jpg",
+            "title": "Auto Scrubber Brushes",
+            "url": "\/collections\/auto-scrubber-brushes"
+          }
+        },
+        "620ed830-2a15-48ea-bab3-43594feb8d82": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-pad-drivers.jpg",
+            "title": "Auto Scrubber Pad Drivers",
+            "url": "\/collections\/auto-scrubber-pad-drivers"
+          }
+        }
+      },
+      "block_order": [
+        "dbd63f8a-beff-4ef4-8542-addb4c9c52e5",
+        "620ed830-2a15-48ea-bab3-43594feb8d82"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "f6affc7e-6e40-4be0-a838-2ed2a2445076": {
       "type": "dept-brands-area",
       "blocks": {
@@ -226,6 +254,7 @@
     "main",
     "static-recently-viewed",
     "b1e0ab68-50bd-4987-b7b9-230f0ef28748",
+    "d1da1fe5-30ca-473f-a600-0516d1f4322c",
     "f6affc7e-6e40-4be0-a838-2ed2a2445076"
   ]
 }
