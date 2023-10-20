@@ -186,6 +186,25 @@
         "block-title": "Window Cleaning Equipment by Type"
       }
     },
+    "93503292-9487-4e50-b379-f3d8e461f5ba": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "249a7c37-7972-4dff-9419-c138e0b24890": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/glass-cleaners.jpg",
+            "title": "Glass Cleaner",
+            "url": "\/collections\/glass-cleaners"
+          }
+        }
+      },
+      "block_order": [
+        "249a7c37-7972-4dff-9419-c138e0b24890"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "bbceef21-39b3-4927-b314-92a1df3303ee": {
       "type": "dept-brands-area",
       "blocks": {
@@ -221,6 +240,7 @@
     "main",
     "static-recently-viewed",
     "9379e9fb-9fad-421a-be7c-92fcabc0fcbe",
+    "93503292-9487-4e50-b379-f3d8e461f5ba",
     "bbceef21-39b3-4927-b314-92a1df3303ee"
   ]
 }
