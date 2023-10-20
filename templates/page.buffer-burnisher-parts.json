@@ -166,6 +166,52 @@
         "block-title": "Floor Buffer & Burnisher Parts by Type"
       }
     },
+    "0dbe2ea1-22d5-4b57-8271-19e21771f44e": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "69a93430-1b18-49a8-83e9-b105118a9405": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/concrete-preparation.jpg",
+            "title": "Concrete Preparation",
+            "url": "\/collections\/concrete-preparation-polishing"
+          }
+        },
+        "9ccc27ca-c01a-473e-9c6f-f2a3b4fd2bfb": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-brushes.jpg",
+            "title": "Floor Buffer Brushes",
+            "url": "\/collections\/floor-buffer-brushes"
+          }
+        },
+        "20217013-92c1-454c-bd13-06068b6ba41b": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floor-buffer-pad-drivers.jpg",
+            "title": "Floor Buffer Pad Drivers",
+            "url": "\/collections\/floor-buffer-pad-drivers"
+          }
+        },
+        "95a144fa-1e65-44a2-b7eb-c370fb758232": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/solution-tanks.jpg",
+            "title": "Solution Tanks",
+            "url": "\/collections\/solution-tanks"
+          }
+        }
+      },
+      "block_order": [
+        "69a93430-1b18-49a8-83e9-b105118a9405",
+        "9ccc27ca-c01a-473e-9c6f-f2a3b4fd2bfb",
+        "20217013-92c1-454c-bd13-06068b6ba41b",
+        "95a144fa-1e65-44a2-b7eb-c370fb758232"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "8e594012-b285-448b-964e-b6288e02e255": {
       "type": "dept-brands-area",
       "blocks": {
@@ -210,6 +256,7 @@
     "main",
     "static-recently-viewed",
     "9d53e52b-d00b-4f54-813c-fe0339d29bec",
+    "0dbe2ea1-22d5-4b57-8271-19e21771f44e",
     "8e594012-b285-448b-964e-b6288e02e255"
   ]
 }
