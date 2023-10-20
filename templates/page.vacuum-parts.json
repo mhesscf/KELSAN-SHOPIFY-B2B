@@ -186,6 +186,52 @@
         "block-title": "Vacuum Parts by Type"
       }
     },
+    "ba31f530-8b82-4742-b22f-02bfde92520a": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "674474a5-be31-4cf0-b801-b6f224c21af7": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-attachments-tools.jpg",
+            "title": "Attachments & Tools",
+            "url": "\/collections\/attachments-tools"
+          }
+        },
+        "d5f789b0-f631-4a0b-a6f1-7c6a147e59e9": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-bags.jpg",
+            "title": "Bags",
+            "url": "\/collections\/vacuum-bags"
+          }
+        },
+        "be67ba22-acb3-4d81-be20-c48f54b7e034": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-batteries-chargers.jpg",
+            "title": "Batteries & Chargers",
+            "url": "\/collections\/vacuum-batteries-chargers"
+          }
+        },
+        "c449afa2-a712-4fd6-a109-b5648e4e0083": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-hoses.jpg",
+            "title": "Hoses",
+            "url": "\/collections\/hoses"
+          }
+        }
+      },
+      "block_order": [
+        "674474a5-be31-4cf0-b801-b6f224c21af7",
+        "d5f789b0-f631-4a0b-a6f1-7c6a147e59e9",
+        "be67ba22-acb3-4d81-be20-c48f54b7e034",
+        "c449afa2-a712-4fd6-a109-b5648e4e0083"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "271eb046-986b-4a14-90ae-be209d32da1e": {
       "type": "dept-brands-area",
       "blocks": {
@@ -239,6 +285,7 @@
     "main",
     "static-recently-viewed",
     "bcb1c562-bdfb-4715-b82d-85da72757477",
+    "ba31f530-8b82-4742-b22f-02bfde92520a",
     "271eb046-986b-4a14-90ae-be209d32da1e"
   ]
 }
