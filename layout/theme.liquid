@@ -369,20 +369,28 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
                     </footer>
                 </div>
             </div>
+
             {% comment %}superfreak details: Hard coding to save any handle issues{% endcomment %}
-            {% assign sf_price = 99.99 %}
+            {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
+                {% assign sf_price = 99.99 %}
 
-            <div class="atc-sf-area" data-atc-sf-banner >
-                <div class="sf-main-text">Protect this item with a SuperFreak service plan.</div>
-                <table class="sf-details">
-                    <tr>
-                        <td class="sf-price">${{ sf_price }}</td>
-                        <td class="sf-details-text">includes Extended Service Plan 2 Yr with Accidental Coverage - Starts Day of Purchase</td>
-                        <td class="sf-atc"><div onclick="sf_atc(this,'header');" data-plan-qty="" data-plan-item="" data-plan-item-handle="" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>
-                    </tr>
-                </table>
-            </div>
-
+                <div class="atc-sf-area" data-atc-sf-banner style="display:none;" >
+                    <div class="sf-main-text">Protect this item with SuperFreak.</div>
+                    <table class="sf-details">
+                        <tr>
+                            <td class="sf-price">${{ sf_price }}</td>
+                            <td class="sf-details-text">Get peace of mind for warranty issues with virtual technical assistance. <span class="sf-info-pop" onclick="sf_info_pop()" >What is this? <i class="fa-solid fa-circle-question"></i></span></td>
+                            <td class="sf-atc"><div onclick="sf_atc(this,'header');" data-plan-qty="" data-plan-item="" data-plan-item-handle="" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sf-pop-html" style="display:none;">
+                    <div>
+                        <div style="font-size:26px;"><strong>SuperFreak Plus Programs</strong></div>
+                        <div>Add Text Here</div>
+                    </div>
+                </div>
+            {% endif %}
             <button
                     class="atc-banner--close"
                     type="button"
