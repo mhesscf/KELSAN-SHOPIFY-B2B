@@ -219,6 +219,14 @@
     "f6d5cd4e-dfb4-4e3d-8b1e-c70586c0424d": {
       "type": "dept-related-category-area",
       "blocks": {
+        "9ae0feb3-4a9f-4b83-8ab8-6dff143d1dde": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
+            "title": "Industrial Sweepers",
+            "url": "\/pages\/industrial-sweepers"
+          }
+        },
         "b33bdd5a-3e25-4d5f-8f7a-787412a73ec5": {
           "type": "related_cat_link",
           "settings": {
@@ -237,6 +245,7 @@
         }
       },
       "block_order": [
+        "9ae0feb3-4a9f-4b83-8ab8-6dff143d1dde",
         "b33bdd5a-3e25-4d5f-8f7a-787412a73ec5",
         "e3c412c2-950a-4016-92ba-a73224e488b6"
       ],
