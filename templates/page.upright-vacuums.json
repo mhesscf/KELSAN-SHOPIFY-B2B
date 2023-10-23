@@ -139,14 +139,6 @@
     "96763295-b770-451a-b8bf-e3c1b0f1c1cd": {
       "type": "dept-category-area",
       "blocks": {
-        "d7d9ca0f-ad44-4942-939d-e6cb10e83588": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/crb-pile-lifter-vacuums.jpg",
-            "title": "CRB & Pile Lifter Vacuums",
-            "url": "\/collections\/crb-pile-lifter-vacuums"
-          }
-        },
         "5a1cf8c5-b53a-49e8-b197-277fc9718971": {
           "type": "categorylink",
           "settings": {
@@ -173,7 +165,6 @@
         }
       },
       "block_order": [
-        "d7d9ca0f-ad44-4942-939d-e6cb10e83588",
         "5a1cf8c5-b53a-49e8-b197-277fc9718971",
         "f708a2c9-6eaa-4282-88dc-bf3dbd0896cb",
         "3bdc248b-b45f-4365-9374-a9072f33e1e2"
@@ -185,6 +176,14 @@
     "ea90e0f2-e43f-422c-9537-fea8140d8563": {
       "type": "dept-related-category-area",
       "blocks": {
+        "2cebcd68-8974-4ab7-834b-804c25365c99": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/counter-rotating-brushes-scrubbers.jpg",
+            "title": "Counter Rotating Brush (CRB) Scrubbers",
+            "url": "\/collections\/counter-rotating-brushes-crb-carpet-floor-scrubbers"
+          }
+        },
         "048569e7-903b-4971-839b-82271d66bc78": {
           "type": "related_cat_link",
           "settings": {
@@ -203,6 +202,7 @@
         }
       },
       "block_order": [
+        "2cebcd68-8974-4ab7-834b-804c25365c99",
         "048569e7-903b-4971-839b-82271d66bc78",
         "20734d8f-715c-42d1-97c8-d9994f646e3e"
       ],
