@@ -219,6 +219,14 @@
     "f6d5cd4e-dfb4-4e3d-8b1e-c70586c0424d": {
       "type": "dept-related-category-area",
       "blocks": {
+        "2eab39d3-e178-444b-bc75-3f0ba1b38e82": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/counter-rotating-brushes-scrubbers.jpg",
+            "title": "Counter Rotating Brush (CRB) Scrubbers",
+            "url": "\/collections\/counter-rotating-brushes-crb-carpet-floor-scrubbers"
+          }
+        },
         "9ae0feb3-4a9f-4b83-8ab8-6dff143d1dde": {
           "type": "related_cat_link",
           "settings": {
@@ -245,6 +253,7 @@
         }
       },
       "block_order": [
+        "2eab39d3-e178-444b-bc75-3f0ba1b38e82",
         "9ae0feb3-4a9f-4b83-8ab8-6dff143d1dde",
         "b33bdd5a-3e25-4d5f-8f7a-787412a73ec5",
         "e3c412c2-950a-4016-92ba-a73224e488b6"
