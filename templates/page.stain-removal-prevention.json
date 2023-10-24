@@ -150,6 +150,25 @@
         "block-title": "Stain Removal & Prevention by Type"
       }
     },
+    "7eca499c-268d-48bd-8006-71b809cc4271": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "bae0b262-1572-4bd3-9126-a8d9e72dc3a6": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
+            "title": "Pump-up Dispenser & Trigger Sprayers",
+            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        }
+      },
+      "block_order": [
+        "bae0b262-1572-4bd3-9126-a8d9e72dc3a6"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
     "fe6c0d39-4a0b-4e39-8dd2-d348d5020610": {
       "type": "dept-brands-area",
       "blocks": {
@@ -204,25 +223,6 @@
       "settings": {
         "block-title": "Featured Brands"
       }
-    },
-    "7eca499c-268d-48bd-8006-71b809cc4271": {
-      "type": "dept-related-category-area",
-      "blocks": {
-        "bae0b262-1572-4bd3-9126-a8d9e72dc3a6": {
-          "type": "related_cat_link",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
-            "title": "Pump-up Dispenser & Trigger Sprayers",
-            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
-          }
-        }
-      },
-      "block_order": [
-        "bae0b262-1572-4bd3-9126-a8d9e72dc3a6"
-      ],
-      "settings": {
-        "block-title": "Related Categories"
-      }
     }
   },
   "order": [
@@ -231,7 +231,7 @@
     "main",
     "static-recently-viewed",
     "74250fca-dd78-479c-bc4c-86cecc2b032e",
-    "fe6c0d39-4a0b-4e39-8dd2-d348d5020610",
-    "7eca499c-268d-48bd-8006-71b809cc4271"
+    "7eca499c-268d-48bd-8006-71b809cc4271",
+    "fe6c0d39-4a0b-4e39-8dd2-d348d5020610"
   ]
 }
