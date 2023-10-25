@@ -46,7 +46,13 @@
                 {% if product.metafields.plytix.bundle_special_data %}
                     {%- assign bundle_spec_data_array = product.metafields.plytix.bundle_special_data |split: "," -%}
                     {%- assign bundsavings = bundle_spec_data_array[0] | times: 100 -%}
-                    <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div></a>
+
+                    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                        <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div></a>
+                    {% else %}
+                        <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div>
+                    {% endif %}
+
                 {% endif %}
                 {% if product.metafields.plytix.made_in_USA %}
                     <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div></a>
