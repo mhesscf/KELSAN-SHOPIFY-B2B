@@ -207,7 +207,7 @@
                     if(youWantWhat == "bool"){
                         return true;
                     }else if(youWantWhat == "savings"){
-                        var saledif = listprice - salePrice
+                        var saledif = orgPrice - salePrice
                         saledif = parseFloat(saledif);
                         saledif = saledif.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
                         return "$"+saledif;
@@ -368,10 +368,16 @@
 
             <div class="cfais-productitem--actions" itemprop="offers" itemscope itemtype="${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? 'http://schema.org/AggregateOffer':'http://schema.org/Offer'}">
 
-                            ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                    ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                        ${hit.compare_at_price > hit.price ? html `
+                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
+                                <div class="strikeprice">${numberScrub(hit.compare_at_price)}</div>
+                            </div>`:''}
+                        ` : html ``}
+                        {% comment %}old list price
                         ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
                             ${hit.meta.plytix.list_price ? html`<div class="strikeprice">${numberScrub(hit.meta.plytix.list_price)}</div>`:''}
-                        </div>`:''}
+                        </div>`:''}{% endcomment %}
                     ` : html ``}
 
                 <p class="ais-hit--price productitem__price ">
@@ -390,10 +396,17 @@
                         </span>
                     </div>
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                        {%- comment -%}old list price way
                         ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
 
                             ${hit.meta.plytix.list_price ? html`<div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.meta.plytix.list_price)}</div>`:''}
                         </div>`:''}
+                        {%- endcomment -%}
+                        ${hit.compare_at_price > hit.price ? html `
+                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
+                                <div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.compare_at_price)}</div>
+                            </div>`:''}
+                        ` : html ``}
                     ` : html ``}
 
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
