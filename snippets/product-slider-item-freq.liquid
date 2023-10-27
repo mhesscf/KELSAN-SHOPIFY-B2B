@@ -343,9 +343,7 @@
                    data-var_status="{{ stockStatusNote }}"
                    data-var_erpsku="{{ variant.metafields.plytix.erp_sku }}"
                   {% if variant.metafields.plytix.general_product_type == "Machine" %}
-                    {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
-                      data-sfeligible="true"
-                    {% endif %}
+                    data-sfeligible="true"
                   {% endif %}
                    data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
                    data-var_price="{{ variant.price }}"
@@ -381,9 +379,7 @@
 
             <input type="hidden" name="updates[{{ product.handle }}]" class="product-data" data-freqbundle-subproduct data-id="{{ current_variant.id }}" data-vissku="{{ current_variant.sku }}" data-status="{{ stockStatusNote }}" data-erpsku="{{ current_variant.metafields.plytix.erp_sku }}" data-step="" data-tieredpricing="{{ current_variant.metafields.plytix.tiered_pricing }}" data-qty="1" data-price="{{ current_variant.price }}"
                     {% if product.metafields.plytix.general_product_type == "Machine" %}
-                    {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
                       data-sfeligible="true"
-                    {% endif %}
                    {% endif %}
                    value="1" >
 
