@@ -195,9 +195,29 @@
        {% endif %}
 
       {% if sf_eligible == true and sf_addon < 0 %}
-        {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
-          {% comment %}<div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>{% endcomment %}
 
+          {% comment %}<div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>{% endcomment %}
+        {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
+          {% assign sf_item_id = "43956946534612" %}
+        {% elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
+          {% assign sf_item_id = "42413671612596" %}
+        {% elsif shop.permanent_domain contains "airmovers-dev.myshopify.com" %}
+          {% assign sf_item_id = "47125098594586" %}
+        {% elsif shop.permanent_domain contains "airmovers-prod.myshopify.com" %}
+          {% assign sf_item_id = "41930992386253" %}
+        {% elsif shop.permanent_domain contains "carpetextractors-dev1.myshopify.com" %}
+          {% assign sf_item_id = "47272142307640" %}
+        {% elsif shop.permanent_domain contains "carpetextractors.myshopify.com" %}
+          {% assign sf_item_id = "44214778626282" %}
+        {% elsif shop.permanent_domain contains "floorbuffers-dev.myshopify.com" %}
+          {% assign sf_item_id = "47289865011479" %}
+        {% elsif shop.permanent_domain contains "floorbuffers-prod.myshopify.com" %}
+          {% assign sf_item_id = "44158887395548" %}
+        {% elsif shop.permanent_domain contains "floorscrubbers-dev.myshopify.com" %}
+          {% assign sf_item_id = "47255628316965" %}
+        {% elsif shop.permanent_domain contains "floorscrubbers-prod.myshopify.com" %}
+          {% assign sf_item_id = "44506347798694" %}
+        {% endif %}
 
         <div class="atc-sf-area" >
           <div class="sf-main-text">Protect this item with SuperFreak.</div>
@@ -205,7 +225,7 @@
             <tr>
               <td class="sf-price">$99.99</td>
               <td class="sf-details-text">Get peace of mind for warranty issues with virtual technical assistance. <span class="sf-info-pop" onclick="sf_info_pop()" >What is this? <i class="fa-solid fa-circle-question"></i></span></td>
-              <td class="sf-atc"><div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
+              <td class="sf-atc"><div onclick="sf_atc(this,'cart');" data-at="{{ sf_item_id }}" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
               </td>
             </tr>
           </table>
@@ -213,8 +233,8 @@
 
 
 
-        {% endif %}
       {% endif %}
+
 
     </div>
 

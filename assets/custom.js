@@ -1144,13 +1144,13 @@ function sf_atc(btn,placement){
     var sf_plan_item_handle = $(btn).data('plan-item-handle');
     var sf_price = 99.99;
     var sf_qty = parseInt($(btn).data('plan-qty'));
-    var siteDomain = window.location.hostname;
-    if(siteDomain.includes('dev.cleanfreak.com') || siteDomain.includes('127.0.0.1') ){
-     var sf_var_id = '43956946534612';
-    } else if (siteDomain.includes('www.cleanfreak.com')){
-     var sf_var_id = '42413671612596';
-    }
-
+    var sf_var_id = $(btn).data('at');
+    // var siteDomain = window.location.hostname;
+    // if(siteDomain.includes('dev.cleanfreak.com') || siteDomain.includes('127.0.0.1') ){
+    //  var sf_var_id = '43956946534612';
+    // } else if (siteDomain.includes('www.cleanfreak.com')){
+    //  var sf_var_id = '42413671612596';
+    // }
     data = {
         form_type: 'product',
         utf8: '✓',
