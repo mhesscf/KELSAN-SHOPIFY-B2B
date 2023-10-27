@@ -257,9 +257,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
 
     {% if product.metafields.plytix.general_product_type == "Machine" %}
-      {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
-        <input type="hidden" name="properties[_sf_eligible]" value="true" />
-      {% endif %}
+      <input type="hidden" name="properties[_sf_eligible]" value="true" />
     {% endif %}
 
     {% if isSpecial == false %}
