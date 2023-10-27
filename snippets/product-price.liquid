@@ -176,7 +176,9 @@
 
         {%- assign current_variant_id = product.selected_or_first_available_variant.id -%}
         {%- for variant in product.variants -%}
+           {% comment %} old listprice way
             {%- if variant.metafields.plytix.list_price > 0 -%}
+                {% comment %}{%- assign varlp = variant.metafields.plytix.list_price | times: 100 -%}{% endcomment %}
                 {%- assign varlp = variant.metafields.plytix.list_price | times: 100 -%}
                 {%- assign varprice = variant.price -%}
                 {%- assign varlpsavings = varlp | minus: varprice -%}
@@ -184,6 +186,12 @@
             {%- if varlp != blank and product.metafields.plytix.hide_product != 'true' -%}
                 <div class="price__compare-at-visible-2 strikethrough var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
                     <div class="strikeprice">{{ varlp | money }}</div>
+                </div>
+            {%- endif -%}
+            {% endcomment %}
+            {%- if variant.compare_at_price > variant.price -%}
+                <div class="price__compare-at-visible-2 strikethrough var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                    <div class="strikeprice">{{ variant.compare_at_price | money }}</div>
                 </div>
             {%- endif -%}
         {%- endfor -%}
@@ -334,6 +342,7 @@
     {%- endfor -%}{%- endcomment -%}
 
       {%- for variant in product.variants -%}
+          {% comment %}old list price way
           {%- if variant.metafields.plytix.list_price > 0 -%}
               {%- assign varlp = variant.metafields.plytix.list_price | times: 100 -%}
               {%- assign varprice = variant.price -%}
@@ -346,6 +355,15 @@
                   {% if varlp <= varprice %}
                   <div class="crawlcheck crawlcheck-price"><!-- check product. List price smaller than price --></div>
                   {% endif %}
+              </div>
+          {%- endif -%}
+          {% endcomment %}
+          {%- if variant.compare_at_price > variant.price-%}
+              {%- assign varprice = variant.price -%}
+              {%- assign varlpsavings = variant.compare_at_price | minus: varprice -%}
+              
+              <div class="price__compare-at-visible-2 var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                  <div class="yousave">You Save: {{ varlpsavings | money }}</div>
               </div>
           {%- endif -%}
       {%- endfor -%}
