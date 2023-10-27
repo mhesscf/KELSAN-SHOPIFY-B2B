@@ -372,25 +372,61 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
 
             {% comment %}superfreak details: Hard coding to save any handle issues{% endcomment %}
             {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
-                {% assign sf_price = 99.99 %}
-
-                <div class="atc-sf-area" data-atc-sf-banner style="display:none;" >
-                    <div class="sf-main-text">Protect this item with SuperFreak.</div>
-                    <table class="sf-details">
-                        <tr>
-                            <td class="sf-price">${{ sf_price }}</td>
-                            <td class="sf-details-text">Get peace of mind for warranty issues with virtual technical assistance. <span class="sf-info-pop" onclick="sf_info_pop()" >What is this? <i class="fa-solid fa-circle-question"></i></span></td>
-                            <td class="sf-atc"><div onclick="sf_atc(this,'header');" data-plan-qty="" data-plan-item="" data-plan-item-handle="" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="sf-pop-html" style="display:none;">
-                    <div>
-                        <div style="font-size:26px;"><strong>SuperFreak Plus Programs</strong></div>
-                        <div>Add Text Here</div>
-                    </div>
-                </div>
+                {% assign sf_item_id = "43956946534612" %}
+            {% elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
+                {% assign sf_item_id = "42413671612596" %}
+            {% elsif shop.permanent_domain contains "airmovers-dev.myshopify.com" %}
+                {% assign sf_item_id = "47125098594586" %}
+            {% elsif shop.permanent_domain contains "airmovers-prod.myshopify.com" %}
+                {% assign sf_item_id = "41930992386253" %}
+            {% elsif shop.permanent_domain contains "carpetextractors-dev1.myshopify.com" %}
+                {% assign sf_item_id = "47272142307640" %}
+            {% elsif shop.permanent_domain contains "carpetextractors.myshopify.com" %}
+                {% assign sf_item_id = "44214778626282" %}
+            {% elsif shop.permanent_domain contains "floorbuffers-dev.myshopify.com" %}
+                {% assign sf_item_id = "47289865011479" %}
+            {% elsif shop.permanent_domain contains "floorbuffers-prod.myshopify.com" %}
+                {% assign sf_item_id = "44158887395548" %}
+            {% elsif shop.permanent_domain contains "floorscrubbers-dev.myshopify.com" %}
+                {% assign sf_item_id = "47255628316965" %}
+            {% elsif shop.permanent_domain contains "floorscrubbers-prod.myshopify.com" %}
+                {% assign sf_item_id = "44506347798694" %}
             {% endif %}
+
+            {% assign sf_price = 99.99 %}
+
+            <div class="atc-sf-area" data-atc-sf-banner style="display:none;" >
+                <div class="sf-main-text">Protect this item with SuperFreak.</div>
+                <table class="sf-details">
+                    <tr>
+                        <td class="sf-price">${{ sf_price }}</td>
+                        <td class="sf-details-text">Get peace of mind for warranty issues with virtual technical assistance. <span class="sf-info-pop" onclick="sf_info_pop()" >What is this? <i class="fa-solid fa-circle-question"></i></span></td>
+                        <td class="sf-atc"><div onclick="sf_atc(this,'header');" data-at="{{ sf_item_id }}" data-plan-qty="" data-plan-item="" data-plan-item-handle="" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="sf-pop-html" style="display:none;">
+                <div>
+                    <div style="font-size:26px; margin-bottom:15px;"><strong>SuperFreak Program</strong></div>
+                    <div>The SuperFreak Program provides top tier service and support to you at a moment's notice. No more waiting for a service tech to fit you into his busy schedule & come visit your facility. Get virtual training, troubleshooting & sourcing to repair your machinery as quickly as possible.
+                        <br/><br/>
+                        <strong>What the Program Includes</strong>
+                        <ul>
+                            <li>Free Virtual Assistance for machine setup and training.</li>
+                            <li>Access to factory trained and certified virtual service technicians.</li>
+                            <li>When it comes to warranty claims, you aren’t alone.</li>
+                            <li>No more guessing when it comes to repair parts.</li>
+                            <li>You’ll have your own product expert ready to help.</li>
+                            <li>10% off parts and consumable purchases for the life of your plan.</li>
+                            <li>Exclusive offers and discounts.</li>
+                            <li>When something goes wrong, we're here to help.</li>
+                        </ul>
+                        <br/>
+                        Check out the SuperFreak Service Program <a href="/pages/superfreak">benefits</a>, as well as the <a href="/pages/superfreak-terms">terms & conditions</a> for more info.</div>
+
+                </div>
+            </div>
+
             <button
                     class="atc-banner--close"
                     type="button"
