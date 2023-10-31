@@ -1127,7 +1127,22 @@ jQuery(document).ready(function($){
             }
         })
     });
+
+    //look for discount code cookie. Popup message saying it was applied
+   if(readCookie('applied_discount_code') && readCookie('discount_code')){
+        $('.popup-container').removeClass('hidden');
+        $(".pop-grad").removeClass('hidden');
+        var newhtml = "<div style='text-align:center'>The promo code<br/><span style='color:#d74018'>&quot;"+readCookie('discount_code')+"&quot;</span><br/>has been applied.<br/><br/>Your discount will be applied at the checkout.</div>";
+        $('.popup-container .content').html(newhtml);
+        //remove cookie
+        document.cookie = "applied_discount_code=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
+   };
+
 });
+
+function readCookie(name) {
+    return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+}
 
 // superfreak infopop
 function sf_info_pop(){
@@ -1138,19 +1153,19 @@ function sf_info_pop(){
     $('.popup-container').addClass('widepop');
 };
 
-// superfreak add to cart jiloik
+// superfreak add to cart
 function sf_atc(btn,placement){
     var sf_plan_item = $(btn).data('plan-item');
     var sf_plan_item_handle = $(btn).data('plan-item-handle');
     var sf_price = 99.99;
     var sf_qty = parseInt($(btn).data('plan-qty'));
-    var siteDomain = window.location.hostname;
-    if(siteDomain.includes('dev.cleanfreak.com') || siteDomain.includes('127.0.0.1') ){
-     var sf_var_id = '43956946534612';
-    } else if (siteDomain.includes('www.cleanfreak.com')){
-     var sf_var_id = '42413671612596';
-    }
-
+    var sf_var_id = $(btn).data('at');
+    // var siteDomain = window.location.hostname;
+    // if(siteDomain.includes('dev.cleanfreak.com') || siteDomain.includes('127.0.0.1') ){
+    //  var sf_var_id = '43956946534612';
+    // } else if (siteDomain.includes('www.cleanfreak.com')){
+    //  var sf_var_id = '42413671612596';
+    // }
     data = {
         form_type: 'product',
         utf8: '✓',
@@ -1180,4 +1195,14 @@ function sf_atc(btn,placement){
         }
     });
 
+}
+
+
+// Promo Redirect. Look for "discount_code" cookie
+function promoRedirect(code,url){
+    console.log("applying promo!!!");
+    document.cookie = "applied_discount_code="+code+"; expires=0; path=/";
+    var decodedUrl = encodeURIComponent(url);
+    var promoUrl = "/discount/"+code+"?redirect="+decodedUrl;
+    location.href = promoUrl;
 }
