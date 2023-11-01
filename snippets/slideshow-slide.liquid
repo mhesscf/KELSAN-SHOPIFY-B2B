@@ -11,6 +11,7 @@
     assign banner_sm = block.settings.banner-sm
     assign link = block.settings.link
     assign slide_number = block_index | plus: 1
+    assign coupon_code = block.settings.coupon-code
   %}
   <div
           class="slideshow-slide banner-slideshow-slide {{ block_class }}"
@@ -23,11 +24,16 @@
 
     <div class="slideshow-slide__image-wrapper" data-slide-image-wrapper >
       <div class="slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
-        {% if link == blank  %}
+        {% if link == blank and coupon_code == blank %}
           <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
           <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
-        {% else %}
+        {% elsif coupon_code == blank %}
           <a href="{{ link }}">
+            <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
+            <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
+          </a>
+        {% else %}
+          <a style="cursor:pointer;" title="Apply '{{ coupon_code }}' Promo" onclick="promoRedirect('{{ coupon_code }}','{{ link }}')">
             <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
             <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
           </a>
