@@ -91,6 +91,7 @@
         },
         "29a4430e-2f41-4cc2-a8d4-1449dc26ec25": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/halloween-free-shipping-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/halloween-free-shipping-banner-800x427.jpg",
