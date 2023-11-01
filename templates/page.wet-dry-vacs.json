@@ -48,16 +48,28 @@
             "product": "automatic-pump-out-wet-dry-vacuum"
           }
         },
+        "4abafa39-c3c9-4d8e-bad2-dc934015051a": {
+          "type": "slide",
+          "settings": {
+            "product": "19-gallon-wet-dry-vac-with-front-mount-squeegee"
+          }
+        },
         "2892408d-5c84-4974-a63b-b243ea65eb58": {
           "type": "slide",
           "settings": {
             "product": "trot-mop-wet-dry-vacuum-squeegee"
           }
         },
-        "4f07c392-81c9-4a04-9f80-fc6ae213ee78": {
+        "dfb6369b-88c6-4c2e-a63b-1db26f52b193": {
           "type": "slide",
           "settings": {
-            "product": "battery-powered-wet-dry-vac"
+            "product": "proteam-proguard-wet-vacuum-w-squeegee"
+          }
+        },
+        "66bad056-f65e-48cc-8a81-5fc0253be3a6": {
+          "type": "slide",
+          "settings": {
+            "product": "minuteman-tsunami-16-gallon-wet-vacuum"
           }
         },
         "1e5d0df4-cfe8-4f85-9f54-18c8e316aa80": {
@@ -71,22 +83,17 @@
           "settings": {
             "product": "compressed-air-external-filter-vacuum"
           }
-        },
-        "dfb6369b-88c6-4c2e-a63b-1db26f52b193": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-proguard-wet-vacuum-w-squeegee"
-          }
         }
       },
       "block_order": [
         "44c3c628-d35b-4cc6-b424-ac6798ffd334",
         "caeed74c-ab5f-4b3e-9645-9d5a3b3e518c",
+        "4abafa39-c3c9-4d8e-bad2-dc934015051a",
         "2892408d-5c84-4974-a63b-b243ea65eb58",
-        "4f07c392-81c9-4a04-9f80-fc6ae213ee78",
+        "dfb6369b-88c6-4c2e-a63b-1db26f52b193",
+        "66bad056-f65e-48cc-8a81-5fc0253be3a6",
         "1e5d0df4-cfe8-4f85-9f54-18c8e316aa80",
-        "cd45cc99-3ac7-44ee-a4d2-1137307dcf0c",
-        "dfb6369b-88c6-4c2e-a63b-1db26f52b193"
+        "cd45cc99-3ac7-44ee-a4d2-1137307dcf0c"
       ],
       "settings": {
         "cfpssectionheading": "Featured Products"
