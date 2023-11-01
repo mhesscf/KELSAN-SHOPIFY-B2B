@@ -66,6 +66,9 @@
           <div class="ais-hits-container ais-results-as-list" itemscope itemtype="http://schema.org/ItemList"></div>
         </div>
         <div class="ais-pagination-container"></div>
+        {%- if request.path != '/collections/discontinued' -%}
+        <div class="discontinued-link">Looking for info on an old product?<br/>View our <a href="/collections/discontinued">discontinued products</a> for Specs, Manuals, and SDS sheets on unavailable items.</div>
+        {%- endif -%}
       </div>`
         };
     })(window.algoliaShopify);
