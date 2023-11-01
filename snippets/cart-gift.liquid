@@ -3,10 +3,65 @@
 {% assign threshold-2 = section.settings.second_order_threshold | minus: 0.01 %}
 {% comment %}{% assign threshold-3 = section.settings.third_order_threshold | minus: 0.01 %}{% endcomment %}
 {% comment %}{% assign threshold-4 = section.settings.fourth_order_threshold | minus: 0.01 %}{% endcomment %}
-{% if cart-size > threshold-1 %}
+{%- assign fg1000 = false -%}
+{% for item in cart.items %}
+    {% comment %}Check for fg-1000 tag{% endcomment %}
+    {% unless item.properties == empty %}
+        {% for property in item.properties %}
+            {% if property.first == '_tiered_pricing' %}
+                {% if property.last == 'fg-1000' %}
 
+                    {% if fg1000 == true %}
+                        {% comment %}remove extra free gifts{% endcomment %}
+                        {% assign freeGiftLineId = item.id %}
+                        <script>
+                            jQuery(document).ready(function($){
+                                $('.popup-container').removeClass('hidden');
+                                $(".pop-grad").removeClass('hidden');
+                                var newhtml = "<div style='text-align:center'>You have added too many free gifts to your cart. Removing now.</div>";
+                                $('.popup-container .content').html(newhtml);
+                                removeFreeGift();
+                            });
+
+                            function removeFreeGift(){
+                                jQuery(".bogo-pop button .btn-text").hide();
+                                jQuery(".bogo-pop button .atc-button--icon").css({"visibility": "visible", "opacity": "100"});
+                                const fgrdata = {
+                                    quantity: 0,
+                                    id: {{ freeGiftLineId }}
+                                };
+                                const removeparams = {
+                                    type: 'POST',
+                                    url: '/cart/change.js',
+                                    data: fgrdata,
+                                    dataType: 'json',
+                                    success: function(stuff) {
+                                        window.location.href = '/cart';
+                                    }
+                                };
+                                $.ajax(removeparams);
+                            }
+                        </script>
+
+
+
+
+
+                    {% endif %}
+                    {%- assign fg1000 = true -%}
+                    {% comment %}there is a fg here{% endcomment %}
+                    {% break %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endunless %}
+{% endfor %}
+
+{% if cart-size > threshold-1 and fg1000 == false%}
     {% unless section.settings.cart_gwp_product_1 == blank %}
+
         {% assign gwp1 = 0 %}
+        {% comment %}old way
         {% for item in cart.items %}
             {% assign product1-title = "" %}
             {% assign product12-title = all_products[section.settings.cart_gwp_product_12].title %}
@@ -39,6 +94,7 @@
                 {% assign gwp1 = gwp1 | plus: 1 %}
             {% endif %}
         {% endfor %}
+        {% endcomment %}
         {% if gwp1 == 0 %}
             <section class="category-slider-wrapper">
                 <div class="category-slider-wrapper__content cart-gwp container" id="similar-products">
@@ -144,6 +200,7 @@
                                         <form method="post" action="/cart/add">
                                             <input type="hidden" name="id"
                                                    value="{{ all_products[pid].variants.first.id }}"/>
+                                            <input type="hidden" name="properties[_tiered_pricing]" value="fg-1000" />
                                             <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
                                             {% comment %}<input class="add-to-cart-btn" type="submit" value="ADD TO CART"{% endcomment %}
                                                    {% comment %}class="btn"/>{% endcomment %}
@@ -203,7 +260,7 @@
         {% endif %}
     {% endunless %}
 
-{% else %}
+{% elsif fg1000 == false %}
     {% unless section.settings.cart_gwp_product_1 == blank %}
         {% assign gwp = 0 %}
         {% assign product1 = section.settings.cart_gwp_product_1 %}
@@ -353,3 +410,13 @@
             margin-bottom: -50px;
         }
 {% endstyle %}
+
+<script>
+    $(document).ready(function($) {
+        $('#gift-slds .add-to-cart-btn').on('click', function(){
+            $('#gift-slds .add-to-cart-btn').not(this).hide();
+            $(this).html('<i class="fa-regular fa-cart-shopping"></i> ADDING...');
+        });
+    });
+
+</script>
