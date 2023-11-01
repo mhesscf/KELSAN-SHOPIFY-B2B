@@ -11,14 +11,19 @@
             {% if property.first == '_tiered_pricing' %}
                 {% if property.last == 'fg-1000' %}
 
-                    {% if fg1000 == true %}
+                    {% if fg1000 == true or cart-size < threshold-1 %}
+                        {% if fg1000 == true %}
+                            {%- assign poptext = "You have added too many free gifts to your cart. Removing items now." -%}
+                        {% elsif cart-size < threshold-1 %}
+                            {%- assign poptext = "Your cart is below $1000.<br/>Removing the free gift from your cart." -%}
+                        {% endif %}
                         {% comment %}remove extra free gifts{% endcomment %}
                         {% assign freeGiftLineId = item.id %}
                         <script>
                             jQuery(document).ready(function($){
                                 $('.popup-container').removeClass('hidden');
                                 $(".pop-grad").removeClass('hidden');
-                                var newhtml = "<div style='text-align:center'>You have added too many free gifts to your cart. Removing now.</div>";
+                                var newhtml = "<div style='text-align:center'>{{ poptext }}</div>";
                                 $('.popup-container .content').html(newhtml);
                                 removeFreeGift();
                             });
