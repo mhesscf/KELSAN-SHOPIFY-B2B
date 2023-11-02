@@ -205,8 +205,8 @@
                                             <div class="poster"
                                                  style="background-image: url({{ all_products[pid] | img_url: '200x' }})"></div>
                                         </div>
-                                        <p class="product__title hidden"><span><a
-                                                        href="{{ product1-url }}">{{ product1-title }}</a></span></p>
+                                        <p class="product__title hidden"><span class="p-title"><a
+                                                        href="{{ product1-url }}">{{ product1-title }}<br/><span class="p-price">Originally ${{ price | money_without_currency }}</span></a></span></p>
                                         <div class="price__compare-at visible">
                                         <span class="" data-price-compare="">
                                             {{ price | money }}
@@ -408,7 +408,7 @@
         }
 
 
-        .product__title span {
+        .product__title span.p-title {
             font-size: 1rem;
             top: 50%;
             left: auto;
@@ -416,6 +416,9 @@
             position: absolute;
             right: auto;
             width: 80%;
+        }
+        .product__title span.p-price {
+            padding-top:12px;
         }
 
         #similar-products .similar-p-slides .p-slide span a {
