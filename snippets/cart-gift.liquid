@@ -189,6 +189,16 @@
                                 {% assign product1-url = all_products[pid].url %}
                                 {% assign compare_at_price = all_products[pid].compare_at_price %}
                                 {% assign price = all_products[pid].price %}
+
+                                {% assign available = true %}
+                                {% for c in all_products[pid].collections %}
+                                    {% if c.handle == "discontinued" %}
+                                        {% assign available = false %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if all_products[pid].available == false %}
+                                    {% assign available = false %}
+                                {% endif %}
                                 <div class="cart-gwp-row p-slide">
                                     <div class="inner">
                                         <div class="cart-gwp-image image-wrap">
@@ -202,16 +212,20 @@
                                             {{ price | money }}
                                         </span>
                                         </div>
-                                        <form method="post" action="/cart/add">
-                                            <input type="hidden" name="id"
-                                                   value="{{ all_products[pid].variants.first.id }}"/>
-                                            <input type="hidden" name="properties[_tiered_pricing]" value="fg-1000" />
-                                            <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
-                                            {% comment %}<input class="add-to-cart-btn" type="submit" value="ADD TO CART"{% endcomment %}
-                                                   {% comment %}class="btn"/>{% endcomment %}
-                                            <button class="add-to-cart-btn" type="submit" value="ADD TO CART"
-                                                    class="btn" ><i class="fa-regular fa-cart-shopping"></i> ADD TO CART</button>
-                                        </form>
+                                         {% if available == true %}
+                                            <form method="post" action="/cart/add">
+                                                <input type="hidden" name="id"
+                                                       value="{{ all_products[pid].variants.first.id }}"/>
+                                                <input type="hidden" name="properties[_tiered_pricing]" value="fg-1000" />
+                                                <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
+                                                {% comment %}<input class="add-to-cart-btn" type="submit" value="ADD TO CART"{% endcomment %}
+                                                       {% comment %}class="btn"/>{% endcomment %}
+                                                <button class="add-to-cart-btn" type="submit" value="ADD TO CART"
+                                                        class="btn" ><i class="fa-regular fa-cart-shopping"></i> ADD TO CART</button>
+                                            </form>
+                                         {% else %}
+                                             <button class="add-to-cart-btn" style="background-color:dimgray" value="Sold Out" class="btn" >SOLD OUT</button>
+                                         {% endif %}
                                     </div>
                                 </div>
                             {% endif %}
@@ -418,7 +432,7 @@
 
 <script>
     $(document).ready(function($) {
-        $('#gift-slds .add-to-cart-btn').on('click', function(){
+        $('#gift-slds form .add-to-cart-btn').on('click', function(){
             $('#gift-slds .add-to-cart-btn').not(this).hide();
             $(this).html('<i class="fa-regular fa-cart-shopping"></i> ADDING...');
         });
