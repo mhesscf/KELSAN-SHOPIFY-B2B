@@ -1,28 +1,5 @@
 {
   "sections": {
-    "45550fbb-99bf-4d33-90a9-1823708a0964": {
-      "type": "cart-automatic-gift-w-purchase",
-      "disabled": true,
-      "settings": {
-        "show_section": true,
-        "cart_gwp_product_1": "10-inch-black-strip-pads",
-        "cart_gwp_product_2": "mal-zrplr150",
-        "cart_gwp_product_3": "",
-        "cart_gwp_product_4": "",
-        "cart_gwp_product_5": "",
-        "cart_gwp_product_6": "",
-        "free_product": "1-5-hp-wall-mount-pressure-washer"
-      }
-    },
-    "main": {
-      "type": "static-cart",
-      "settings": {
-        "show_sku": true,
-        "enable_order_notes": false,
-        "enable_shipping_calc": true,
-        "shipping_calc_default_country": "United States"
-      }
-    },
     "cart-gift-with-purchase": {
       "type": "cart-gift-with-purchase",
       "settings": {
@@ -57,6 +34,29 @@
         "padding_right": 0,
         "css_class": "",
         "custom_css": ""
+      }
+    },
+    "45550fbb-99bf-4d33-90a9-1823708a0964": {
+      "type": "cart-automatic-gift-w-purchase",
+      "disabled": true,
+      "settings": {
+        "show_section": true,
+        "cart_gwp_product_1": "10-inch-black-strip-pads",
+        "cart_gwp_product_2": "mal-zrplr150",
+        "cart_gwp_product_3": "",
+        "cart_gwp_product_4": "",
+        "cart_gwp_product_5": "",
+        "cart_gwp_product_6": "",
+        "free_product": "1-5-hp-wall-mount-pressure-washer"
+      }
+    },
+    "main": {
+      "type": "static-cart",
+      "settings": {
+        "show_sku": true,
+        "enable_order_notes": false,
+        "enable_shipping_calc": true,
+        "shipping_calc_default_country": "United States"
       }
     },
     "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d": {
@@ -124,9 +124,9 @@
     }
   },
   "order": [
+    "cart-gift-with-purchase",
     "45550fbb-99bf-4d33-90a9-1823708a0964",
     "main",
-    "cart-gift-with-purchase",
     "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d",
     "001dcba2-5e2c-4322-acff-00ea07c385d2"
   ]
