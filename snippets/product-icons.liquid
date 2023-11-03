@@ -205,7 +205,11 @@
             {% endif %}
             {% if showBanner == true %}
                 {% if banner.linkurl  %}
-                    <a href="{{ banner.linkurl }}">{{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}</a>
+                    {% if banner.promo_code  %}
+                        <a style="cursor:pointer;" title="Apply '{{ banner.promo_code }}' Promo" onclick="promoRedirect('{{ banner.promo_code }}','{{ banner.linkurl }}')" >{{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}</a>
+                    {% else %}
+                        <a href="{{ banner.linkurl }}">{{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}</a>
+                    {% endif %}
                 {% else %}
                     {{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}
                 {% endif %}
