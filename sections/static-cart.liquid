@@ -1,3 +1,5 @@
+{% comment %}{% include 'cart-cf-promo-buy-x-and-y-get-z-logic' %}{% endcomment %}
+
 {% assign is_customer = false %}
 {% if shop.customer_accounts_enabled and customer %}
   {% assign is_customer = true %}
@@ -112,7 +114,7 @@
           cart: cart
         %}
         <div class="cart-total">
-          <a data-href="/cart/clear" class="btn button-primary" id="empty-cart" style="margin-bottom:10px;">Empty cart</a>
+          <a data-href="/cart/clear" class="btn button-primary" id="empty-cart" style="margin-bottom:10px;">Empty Cart</a>
           {% comment %}<a href="/cart" class="btn button-primary" id="update-cart" style="margin-bottom:10px;">Update Cart</a>{% endcomment %}
           <a class="btn button-primary" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;">Update Cart</a>
           {% if section.settings.enable_order_notes %}
@@ -124,7 +126,22 @@
               </div>
             </div>
           {% endif %}
-
+          {% comment %}start of fg break out of form{% endcomment %}
+        </div>
+    </div>
+  </section>
+</form>
+  <div class="fg-area">
+  </div>
+<form
+        action="{{ routes.cart_url }}"
+        method="post"
+        aria-label="cart checkout"
+>
+  <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
+    <div class="cartitems">
+        <div class="cart-total">
+          {% comment %}end fg break out of form{% endcomment %}
           <div class="cart-final-total">
 
             <noscript>
@@ -256,7 +273,6 @@
     {% endif %}
   </section>
 </form>
-
 {% schema %}
 {
   "name": "t:sections.cart_page.name",
@@ -333,3 +349,10 @@
   ]
 }
 {% endschema %}
+
+<script>
+  $(document).ready(function($){
+    $(".gwp-section").hide().prependTo(".fg-area");
+    $(".fg-area .gwp-section").show();
+  });
+</script>
