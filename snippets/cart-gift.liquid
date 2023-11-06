@@ -206,7 +206,7 @@
                                                  style="background-image: url({{ all_products[pid] | img_url: '200x' }})"></div>
                                         </div>
                                         <p class="product__title hidden"><span class="p-title"><a
-                                                        href="{{ product1-url }}">{{ product1-title }}<br/><span class="p-price">Originally ${{ price | money_without_currency }}</span></a></span></p>
+                                                        href="{{ product1-url }}">{{ product1-title }}</a></span></p>
                                         <div class="price__compare-at visible">
                                         <span class="" data-price-compare="">
                                             {{ price | money }}
@@ -223,6 +223,7 @@
                                                 <button class="add-to-cart-btn" type="submit" value="ADD TO CART"
                                                         class="btn" ><i class="fa-regular fa-cart-shopping"></i> ADD TO CART</button>
                                             </form>
+                                             <div class="p-price">${{ price | money_without_currency }} Value</div>
                                          {% else %}
                                              <button class="add-to-cart-btn" style="background-color:dimgray" value="Sold Out" class="btn" >SOLD OUT</button>
                                          {% endif %}
@@ -417,8 +418,9 @@
             right: auto;
             width: 80%;
         }
-        .product__title span.p-price {
-            padding-top:12px;
+        #gift-slds .p-price {
+            padding-top:5px;
+            font-weight:bold;
         }
 
         #similar-products .similar-p-slides .p-slide span a {
