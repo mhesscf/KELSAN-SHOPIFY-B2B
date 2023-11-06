@@ -66,8 +66,10 @@
           <div class="ais-hits-container ais-results-as-list" itemscope itemtype="http://schema.org/ItemList"></div>
         </div>
         <div class="ais-pagination-container"></div>
-        {%- if request.path != '/collections/discontinued' -%}
-        <div class="discontinued-link">Looking for info on an old product?<br/>View our <a href="/collections/discontinued">discontinued products</a> for Specs, Manuals, and SDS sheets on unavailable items.</div>
+        {%- if request.path == '/collections/demoed-refurbished-equipment' -%}
+          <div class="discontinued-link">Looking for examples of old refurbished units that we have sold in the past?<br/>View our past <a href="/collections/sold-demos">Sold Demo Products</a> for Specs, Manuals, and SDS sheets on unavailable items.</div>
+        {%- elsif request.path != '/collections/discontinued' -%}
+            <div class="discontinued-link">Looking for info on an old product?<br/>View our <a href="/collections/discontinued">discontinued products</a> for Specs, Manuals, and SDS sheets on unavailable items.</div>
         {%- endif -%}
       </div>`
         };
