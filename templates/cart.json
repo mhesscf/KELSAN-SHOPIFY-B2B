@@ -44,7 +44,7 @@
         "cart_gwp_product_12": "",
         "cart_gwp_top_text_1": "<p>You qualify for a FREE GIFT with purchase.<strong>*<\/strong><\/p>",
         "cart_gwp_button_1": "Add Free Gift",
-        "cart_gwp_bottom_text_1": "<p>Adding this product to the cart will trigger an automatic discount and the price will be FREE! <\/p><p><strong>*Not applicable on orders with discount coupons.<\/strong><\/p>",
+        "cart_gwp_bottom_text_1": "<p>Adding this product to the cart will trigger an automatic discount and the price will be FREE! <\/p>",
         "second_price_tier": false,
         "second_order_threshold": 1000,
         "cart_gwp_product_62": "",
