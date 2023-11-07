@@ -248,7 +248,7 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
 <a class="skip-to-main" href="#site-main">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
 {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
-    {% if customer.tags contains 'SuperFreak' %}
+    {% if customer.tags contains 'SuperFreak' or customer.tags contains 'superfreak' %}
         <script>
             setTimeout(() => {
                 console.log("SuperFreak Eligible "+readCookie('superfreakPromo') +"/"+ readCookie('discount_code'));
