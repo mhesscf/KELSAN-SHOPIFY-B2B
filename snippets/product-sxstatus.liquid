@@ -30,6 +30,15 @@
         </details>
       </div>
     {%- elsif variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
+      
+      {% comment %}Look at po date instead of lead time{% endcomment %}
+      {%- if variant.metafields.plytix.sxerp_po_date -%}
+        {% assign dateStart = variant.metafields.plytix.sxerp_po_date | date: '%s' %}
+        {% assign nowTimestamp = 'now' | date: '%s' %}
+        {% assign diffSeconds = dateStart | minus: nowTimestamp %}
+        {% assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+      {%- endif -%}
+
       <div class="sx-status">
         <span class="status-desc main-notice">Temporarily On Backorder</span>
         {%- if leadTime < 22  -%}

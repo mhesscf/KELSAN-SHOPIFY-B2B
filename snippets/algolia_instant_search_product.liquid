@@ -61,7 +61,7 @@
         return savings;
     }
 
-    function stocklookup(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false",sku){
+    function stocklookup(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false",sku,sxerp_po_date){
         leadtime = Number(leadtime);
         var finalmessage = '';
         if (variants_count != "1" || bundleitems != ""){
@@ -79,6 +79,12 @@
             finalmessage += '<p>We do not currently stock this item. It will ship directly from the manufacturer to you for the quickest delivery time possible. Current inventory levels at the manufacturer are unknown.</p>';
             finalmessage += '</details>';
         }else if(im == "middleware-fulfillment" && inventory < 1){
+            if(sxerp_po_date){
+                var currentDate = new Date();
+                var targetDate = new Date(sxerp_po_date);
+                var timeDifference = targetDate - currentDate;
+                leadtime = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
+            }
             var leadtimeText = backorderLeadtimeLookup(leadtime);
             finalmessage += '<span class="status-desc main-notice">Temporarily On Backorder</span>';
             finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
@@ -97,7 +103,7 @@
     };
 
 
-    function stocklookupLineItem(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false"){
+    function stocklookupLineItem(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false",sxerp_po_date){
         leadtime = Number(leadtime);
         var stockStatusMain = '';
         var stockStatusSub = '';
@@ -107,6 +113,12 @@
             stockStatusMain = "Ships Direct from Manufacturer";
             stockStatusSub = "May Have Extended Lead Times";
         }else if(im == "middleware-fulfillment" && inventory < 1){
+            if(sxerp_po_date){
+                var currentDate = new Date();
+                var targetDate = new Date(sxerp_po_date);
+                var timeDifference = targetDate - currentDate;
+                leadtime = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
+            }
             stockStatusMain = "Temporarily On Backorder";
             stockStatusSub = backorderLeadtimeLookup(leadtime);
         }else if(im != "middleware-fulfillment" && leadtime){
@@ -310,7 +322,7 @@
                 {%- comment -%}Beginning of Stock Status ---------------------------------------------------------{%- endcomment -%}
 
                 <div class="sx-status" >
-                  ${(hit.collections.includes("discontinued") || hit.sku == "SUPERFREAK") ? html``: html `<span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.sku)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>`}
+                  ${(hit.collections.includes("discontinued") || hit.sku == "SUPERFREAK") ? html``: html `<span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.sku,hit.meta.plytix.sxerp_po_date)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>`}
                  </div>
 
                 <div class="deleteme" style="display:none">
@@ -448,7 +460,7 @@ ${1 == 1 && html`
      ${hit.meta.plytix.general_product_type == "Machine" ? html `<input type="hidden" name="properties[_sf_eligible]" value="true" />` : ``}
      ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,hit.meta.plytix.list_price,"bool") ? html `` : html `<input type="hidden" name="properties[_tiered_pricing]" value="${hit.meta.plytix.tiered_pricing}" />`}
      ${hit.sku != "SUPERFREAK" ? html `
-<input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock)}" />
+<input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.meta.plytix.sxerp_po_date)}" />
 ` : ``}
      <input type="hidden" name="properties[Sku]" value="${hit.sku}" />
 </form>
