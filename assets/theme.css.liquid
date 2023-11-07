@@ -5227,6 +5227,30 @@ body .mdc-ripple-surface:hover:before {
 	margin-bottom: 0;
 }
 
+
+.popup-container .content button{
+	position:relative;
+	margin-left: 0;
+	height: 40px;
+	padding: 0;
+	border-radius: 10px;
+	color: {{ settings.color_button_secondary_text }};
+	background-color: {{ settings.color_button_secondary_background }};
+	border: 1px solid {{ settings.color_button_secondary_background }};
+	margin-right: 10px;
+	max-width: 266px;
+	transition: all 0.4s ease-in-out;
+	width: 50%;
+	font-weight: 600;
+	font-size: 15px;
+	font-family: "Roboto", Roboto;
+	cursor: pointer;
+}
+.popup-container .content button:hover{
+	background-color: {{ settings.color_button_hover }};
+	border: 1px solid {{ settings.color_button_hover }};
+}
+
 .collection--section {
 	margin-top: {{ space_medium | divided_by: 16.0 | append: 'rem' }};
 }
