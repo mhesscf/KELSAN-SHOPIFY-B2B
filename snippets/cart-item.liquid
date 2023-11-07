@@ -292,7 +292,7 @@
                   type="text"
                   pattern="\d*"
                   {% if item.quantity < 10 %}tabindex="-1"{% endif %}
-                  {% if product_bundle != '' %} disabled {% endif %}
+                  {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
                   aria-label="{{ 'general.general.quantity' | t }}"
                   data-quantity-input
                   data-cartitem-quantity>
