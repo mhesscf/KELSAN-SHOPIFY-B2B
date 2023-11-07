@@ -1,0 +1,155 @@
+{% comment %}Should act much like the current buy x but use meta objects{% endcomment %}
+{%- assign bannerObj = shop.metaobjects.buy_x_get_y_free_promo_rule.values -%}
+{%- assign rulecounter = 1 -%}
+{% for bogorule in bannerObj %}
+    {% assign numOfBuyThis = 0 %}
+    {% assign start = bogorule.start_date | date: '%s' %}
+    {% comment %}//add one day to the end date{% endcomment %}
+    {% assign enddate = bogorule.end_date | date: '%s' %}
+    {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
+    {% assign end = enddate | date: "%s" | plus: seconds | date: "%s" %}
+
+    {% comment %}if not active, skip{% endcomment %}
+    {% assign today_date = 'now' | date: '%s' %}
+    {% if today_date < start or today_date > end %}
+        {% continue %}
+    {% endif %}
+
+
+
+    {% assign ruleName = bogorule.rule_name | escape %}
+    {% assign buyThis = bogorule.buy_this %}
+    {% assign fp1 = bogorule.free_product_1.value %}
+    {% assign fp1qty = bogorule.free_product_1_qty %}
+    {% assign fp2 = bogorule.free_product_2.value %}
+    {% assign fp2qty = bogorule.free_product_2_qty %}
+    {% assign header = bogorule.popup_header | escape %}
+    {% assign message = bogorule.message | strip_newlines | replace: '"', '\"' %}
+    {% assign currentfp1qty = 0 %}
+    {% assign currentfp2qty = 0 %}
+
+    {% comment %}loop through items promo apply to{% endcomment %}
+    {% for buyProd in buyThis.value  %}
+        {% assign buyThisHandle = buyProd.handle %}
+        {% for cartitem in cart.items %}
+            {% if buyThisHandle ==  cartitem.product.handle%}
+                {% assign numOfBuyThis = numOfBuyThis | plus: cartitem.quantity %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+    {% comment %}find current fg's and make sure no qty adjustments are need{% endcomment %}
+    {% for cartitem in cart.items %}
+        {% for property in cartitem.properties %}
+            {% if property.first == '_tiered_pricing' %}
+                {% if property.last == 'fg-bogo' and cartitem.product.handle == fp1.handle  %}
+                    {% assign currentfp1qty = currentfp1qty | plus: cartitem.quantity%}
+                    {% assign freeGift1LineId = cartitem.id %}
+                {% endif %}
+                {% if property.last == 'fg-bogo' and cartitem.product.handle == fp2.handle  %}
+                    {% assign currentfp2qty = currentfp2qty | plus: cartitem.quantity %}
+                    {% assign freeGift2LineId = cartitem.id %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    {% assign fp1qtyToAddDiff = fp1qty | times: numOfBuyThis | minus: currentfp1qty %}
+
+    <script>
+        jQuery(document).ready(function($){
+            {% if currentfp1qty == 0 and currentfp2qty == 0 and fp1qtyToAddDiff != 0 and fp2qtyToAddDiff != 0 %}
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                var newhtml = "<div style='text-align:center'><h2 style='font-weight:bold; font-size:18px;'>{{ header }}</h2>{{ message }}<br/><br/> <div class='atc-action'><button onClick='bogoPromo{{ rulecounter }}()'><span class='btn-text'>UPDATE CART</span></button></div></div>";
+                $('.popup-container .content').html(newhtml);
+                {% comment %}bogoPromo{{ rulecounter }}();{% endcomment %}
+            {% elsif fp1qtyToAddDiff != 0 and fp2qtyToAddDiff != 0 %}
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                var newhtml = "<div style='text-align:center'>You have made changes to your cart. Updating Free Gifts.</div>";
+                $('.popup-container .content').html(newhtml);
+                bogoPromo{{ rulecounter }}();
+            {% endif %}
+        });
+
+        async function bogoPromo{{ rulecounter }}(e) {
+            // if fg qty current in cart is 0, run add;
+            {% if currentfp1qty == 0 and currentfp2qty == 0 and fp1qtyToAddDiff != 0 and fp2qtyToAddDiff != 0 %}
+                const form_template = {
+                form_type: 'product',
+                utf8: '✓',
+                'properties[_erp_sku]': '',
+                'properties[Sku]': '',
+                'properties[_tiered_pricing]': '',
+                'properties[BOGO PROMO]': '',
+                'id': '',
+                'quantity': 0
+                }
+
+                const form_datas = []
+                {% if fp1.id != blank and fp1qty > 0 %}
+                    form_template["properties[_erp_sku]"] = '{{ fp1.metafields.plytix.erp_sku}}';
+                    form_template["properties[Sku]"] = '{{ fp1.variants.first.sku}}';
+                    form_template["properties[_tiered_pricing]"] = 'fg-bogo';
+                    form_template["properties[BOGO PROMO]"] = '{{ ruleName }}';
+                    form_template.id = '{{ fp1.variants.first.id }}' + "";
+                    form_template.quantity = '{{ fp1qty | times: numOfBuyThis }}' + "";
+                    form_datas.push({...form_template});
+                {% endif %}
+
+                {% if fp2.id != blank and fp2qty > 0 %}
+                    form_template["properties[_erp_sku]"] = '{{ fp2.metafields.plytix.erp_sku}}';
+                    form_template["properties[Sku]"] = '{{ fp2.variants.first.sku}}';
+                    form_template["properties[_tiered_pricing]"] = 'fg-bogo';
+                    form_template["properties[BOGO PROMO]"] = '{{ ruleName }}';
+                    form_template.id = '{{ fp2.variants.first.id }}' + "";
+                    form_template.quantity = '{{ fp2qty | times: numOfBuyThis }}' + "";
+                    form_datas.push({...form_template});
+                {% endif %}
+
+                form_datas.reverse();
+                for(const f of form_datas){
+                    await $.ajax({
+                        type: 'POST',
+                        url: `${window.Theme.routes.cart_add_url}.js`,
+                        data: f,
+                        dataType: 'json'
+                    })
+                }
+            {% elsif fp1qtyToAddDiff != 0 and fp2qtyToAddDiff != 0 %}
+                const update_form_template = {
+                    id: '',
+                    quantity: '',
+                }
+                const update_form_datas = []
+
+                {% if freeGift1LineId != blank %}
+                    update_form_template.id = '{{ freeGift1LineId }}' + "";
+                    update_form_template.quantity = '{{ fp1qty | times: numOfBuyThis }}' + "";
+                    update_form_datas.push({...update_form_template});
+                {% endif %}
+
+                {% if freeGift2LineId != blank %}
+                    update_form_template.id = '{{ freeGift2LineId }}' + "";
+                    update_form_template.quantity = '{{ fp2qty | times: numOfBuyThis }}' + "";
+                    update_form_datas.push({...update_form_template});
+                {% endif %}
+
+                for(const f of update_form_datas){
+                    await $.ajax({
+                        type: 'POST',
+                        url: '/cart/change.js',
+                        data: f,
+                        dataType: 'json'
+                    })
+                }
+            {% endif %}
+            location.href = window.Theme.routes.cart_url
+        }
+    </script>
+
+
+
+    {%- assign rulecounter = rulecounter | plus: 1 -%}
+{% endfor %}
+
