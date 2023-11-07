@@ -1140,9 +1140,6 @@ jQuery(document).ready(function($){
 
 });
 
-function readCookie(name) {
-    return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
-}
 
 // superfreak infopop
 function sf_info_pop(){
@@ -1205,4 +1202,16 @@ function promoRedirect(code,url){
     var decodedUrl = encodeURIComponent(url);
     var promoUrl = "/discount/"+code+"?redirect="+decodedUrl;
     location.href = promoUrl;
+}
+
+function readCookie(name) {
+    return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+}
+function sfApply(enable){
+    document.cookie = "superfreakPromo="+enable+"; expires=0; path=/";
+    if(enable ==1){
+        promoRedirect('SUPERFREAK','/')
+    }else{
+        closechildPop('bund-pop-');
+    }
 }
