@@ -247,6 +247,25 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
 
 <a class="skip-to-main" href="#site-main">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
+{% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
+    {% if customer.tags contains 'SuperFreak' %}
+        <script>
+            setTimeout(() => {
+                console.log("SuperFreak Eligible "+readCookie('superfreakPromo') +"/"+ readCookie('discount_code'));
+                if(readCookie('superfreakPromo')){
+                    if(readCookie('discount_code') == "SUPERFREAK"){
+                        console.log('Applying SF Discount')
+                    }
+                }else{
+                    $('.popup-container').removeClass('hidden');
+                    $(".pop-grad").removeClass('hidden');
+                    var newhtml = "<div style='text-align:center'><strong>Welcome Back<br/>SuperFreak Member!</strong><br/><br/>Would you like to apply your SuperFreak 10% discount on parts today?<br><br><button style='width:70px;' onClick='sfApply(1)'><span class='btn-text'>Yes</span></button> <button style='width:70px;' onClick='sfApply(0)'><span class='btn-text'>No</span></button> </div>";
+                    $('.popup-container .content').html(newhtml);
+                }
+            }, "1000");
+        </script>
+    {% endif %}
+{% endif %}
 
 {% section 'static-utility-bar' %}
 
