@@ -66,7 +66,7 @@
             {% elsif fp1qtyToAddDiff != 0 and fp2qtyToAddDiff != 0 %}
                 $('.popup-container').removeClass('hidden');
                 $(".pop-grad").removeClass('hidden');
-                var newhtml = "<div style='text-align:center'>You have made changes to your cart. Updating Free Gifts.</div>";
+                var newhtml = "<div style='text-align:center'>You have made changes to your cart.<br/><br/>Updating your free gifts.</div>";
                 $('.popup-container .content').html(newhtml);
                 bogoPromo{{ rulecounter }}();
             {% endif %}
