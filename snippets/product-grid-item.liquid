@@ -542,6 +542,15 @@ data-product-quickshop-url="{{ product_link }}"
         </div>
       {% elsif product.first_available_variant.inventory_management == 'middleware-fulfillment' and  product.first_available_variant.inventory_quantity < 1 and pdiscontinued == false %}
         <div class="sx-status">
+
+          {% comment %}Look at po date instead of lead time{% endcomment %}
+          {%- if product.first_available_variant.metafields.plytix.sxerp_po_date -%}
+            {% assign dateStart = product.first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' %}
+            {% assign nowTimestamp = 'now' | date: '%s' %}
+            {% assign diffSeconds = dateStart | minus: nowTimestamp %}
+            {% assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+          {%- endif -%}
+
           {% assign stockStatusMain = "Temporarily On Backorder" %}
           <span class="status-desc main-notice">Temporarily On Backorder</span>
           {% if leadTime < 22  %}

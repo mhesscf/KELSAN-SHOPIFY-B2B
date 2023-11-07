@@ -454,6 +454,15 @@
             {% assign stockStatusMain = "Ships Direct from Manufacturer" %}
             {% assign stockStatusSub = "May Have Extended Lead Times" %}
           {% elsif current_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
+
+            {% comment %}Look at po date instead of lead time{% endcomment %}
+            {%- if current_variant.metafields.plytix.sxerp_po_date -%}
+              {% assign dateStart = current_variant.metafields.plytix.sxerp_po_date | date: '%s' %}
+              {% assign nowTimestamp = 'now' | date: '%s' %}
+              {% assign diffSeconds = dateStart | minus: nowTimestamp %}
+              {% assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+            {%- endif -%}
+
             {% assign stockStatusMain = "Temporarily On Backorder" %}
             {% if leadTime < 22  %}
               {% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
