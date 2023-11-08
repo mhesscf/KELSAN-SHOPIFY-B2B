@@ -260,6 +260,9 @@
     jQuery(".popup-container").addClass('hidden');
     jQuery(".pop-grad").addClass('hidden');
     jQuery(".popup-container .content").html('');
+    setTimeout(() => {
+      jQuery(".close-pop.sf-off").removeClass('sf-off');
+    }, "500");
   }
 </script>
 <div class="pop-grad hidden"></div>
