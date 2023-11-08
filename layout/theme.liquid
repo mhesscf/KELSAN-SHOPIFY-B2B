@@ -259,8 +259,13 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
                 }else{
                     $('.popup-container').removeClass('hidden');
                     $(".pop-grad").removeClass('hidden');
+                    $(".popup-container .close-pop").addClass('sf-off');
                     var newhtml = "<div style='text-align:center'><strong>Welcome Back<br/>SuperFreak Member!</strong><br/><br/>Would you like to apply your SuperFreak 10% discount on parts today?<br><br><button style='width:70px;' onClick='sfApply(1)'><span class='btn-text'>Yes</span></button> <button style='width:70px;' onClick='sfApply(0)'><span class='btn-text'>No</span></button> </div>";
                     $('.popup-container .content').html(newhtml);
+
+                    $('.popup-container .close-pop.sf-off').on('click', function(e){
+                        sfApply(0);
+                    });
                 }
             }, "1000");
         </script>
