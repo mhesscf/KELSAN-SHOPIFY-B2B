@@ -405,7 +405,7 @@
             <div class="cfais-productitem--actions" itemprop="offers" itemscope itemtype="${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? 'http://schema.org/AggregateOffer':'http://schema.org/Offer'}">
 
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                        ${hit.compare_at_price > hit.price ? html `
+                        ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
                             ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
                                 <div class="strikeprice">${numberScrub(hit.compare_at_price)}</div>
                             </div>`:''}
@@ -438,7 +438,7 @@
                             ${hit.meta.plytix.list_price ? html`<div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.meta.plytix.list_price)}</div>`:''}
                         </div>`:''}
                         {%- endcomment -%}
-                        ${hit.compare_at_price > hit.price ? html `
+                        ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
                             ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
                                 <div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.compare_at_price)}</div>
                             </div>`:''}
