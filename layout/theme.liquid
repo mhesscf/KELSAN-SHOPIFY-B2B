@@ -251,10 +251,15 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
     {% if customer.tags contains 'SuperFreak' or customer.tags contains 'superfreak' %}
         <script>
             setTimeout(() => {
-                console.log("SuperFreak Eligible "+readCookie('superfreakPromo') +"/"+ readCookie('discount_code'));
-                if(readCookie('superfreakPromo')){
-                    if(readCookie('discount_code') == "SUPERFREAK"){
+                console.log("SuperFreak Eligible "+readCookieHead('superfreakPromo') +"/"+ readCookieHead('discount_code'));
+                if(readCookieHead('superfreakPromo')){
+                    if(readCookieHead('discount_code') == "SUPERFREAK"){
                         console.log('Applying SF Discount')
+                    }
+                    if(readCookieHead('superfreakPromo') == 1){
+                        $('.sf-promo-link.promo-applied').show();
+                    }else if(readCookieHead('superfreakPromo') == 0){
+                        $('.sf-promo-link.promo-needed').show();
                     }
                 }else{
                     $('.popup-container').removeClass('hidden');
@@ -268,6 +273,9 @@ window.TriplePixelData={TripleName:"cleanfreak-dev.myshopify.com",ver:"1.9.0"},f
                     });
                 }
             }, "1000");
+            function readCookieHead(name) {
+                return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+            }
         </script>
     {% endif %}
 {% endif %}
