@@ -1210,7 +1210,7 @@ function readCookie(name) {
 function sfApply(enable){
     document.cookie = "superfreakPromo="+enable+"; expires=0; path=/";
     if(enable ==1){
-        promoRedirect('SUPERFREAK','/')
+        promoRedirect('SUPERFREAK',window.location.pathname)
     }else{
         closechildPop('bund-pop-');
     }

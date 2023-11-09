@@ -105,6 +105,21 @@
     {% endif %}
   </header>
 
+  {% assign override = 1 %}
+  {% if customer.tags contains 'SuperFreak' or override == 1 %}
+    {% assign total_sf_savings = 0 %}
+    {% comment %}calculate total discount of 10% SF discount{% endcomment %}
+    {% for cartitem in cart.items %}
+      {% if cartitem.product.tags contains 'SuperFreak Discount Eligible' %}
+        {% assign total_sf_savings = total_sf_savings | plus: cartitem.final_line_price %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="sf-promo-link promo-needed" style="display:none;" ><div>As a SuperFreak member, you can save {{ total_sf_savings | times: 0.1 | floor | money  }} on this order. </div><a style="cursor:pointer" onClick="sfApply(1);">Click here to apply the promo code for this discount.</a></div>
+      <div class="sf-promo-link promo-applied" style="display:none;" ><div>As a SuperFreak member, you will save {{ total_sf_savings | times: 0.1 | floor | money  }} on this order. Your promo code has already been applied and will show up on the checkout.</div></div>
+
+  {% endif %}
+
   <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
     <div class="cartitems">
       {% if has_items %}
