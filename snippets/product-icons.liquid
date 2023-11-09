@@ -160,7 +160,9 @@
                 {% endif %}
 
             {% endif %}
-            {% render 'hulkapps-wishlist-product-btn' %}
+            {% if product.metafields.plytix.package_products == blank %}
+                {% render 'hulkapps-wishlist-product-btn' %}
+            {% endif %}
         </div>
     </div>
     <div class="prod-promo-image">
