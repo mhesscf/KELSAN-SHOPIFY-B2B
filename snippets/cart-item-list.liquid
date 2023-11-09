@@ -92,7 +92,6 @@
         {% if matchFound == false %}
         {% comment %}//remove sf item{% endcomment %}
         <script>
-            alert('Removing SuperFreak Qty');
             setTimeout(() => {
                 $('.popup-container .content').html('<strong>Notice:</strong><br/> The unit(s) you have on your SuperFreak Service Plan has been removed. <br/><br/>Please wait while we remove your SuperFreak plan tied to that unit. ');
                 $('.popup-container').removeClass('hidden');
