@@ -115,8 +115,8 @@
       {% endif %}
     {% endfor %}
     {% if total_sf_savings > 0 %}
-      <div class="sf-promo-link promo-needed" style="display:none;" ><div>As a SuperFreak member, you can save {{ total_sf_savings | times: 0.1 | floor | money  }} on this order. </div><a style="cursor:pointer" onClick="sfApply(1);">Click here to apply the promo code for this discount.</a></div>
-        <div class="sf-promo-link promo-applied" style="display:none;" ><div>As a SuperFreak member, you will save {{ total_sf_savings | times: 0.1 | floor | money  }} on this order. Your promo code has already been applied and will show up on the checkout.</div></div>
+      <div class="sf-promo-link promo-needed" style="display:none;" ><div>As a SuperFreak member, you can save <span class="sf-discount">{{ total_sf_savings | times: 0.1 | floor | money  }}</span> on this order. <br><a style="cursor:pointer" onClick="sfApply(1);">Click here to apply the promo code for this discount.</a></div></div>
+      <div class="sf-promo-link promo-applied" style="display:none;" ><div>As a SuperFreak member, you will save <span class="sf-discount">{{ total_sf_savings | times: 0.1 | floor | money  }}</span> on this order.<br>Your promo code has already been applied and will show up on the checkout.</div></div>
     {% endif %}
   {% endif %}
 
