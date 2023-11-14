@@ -13232,7 +13232,7 @@ nav.breadcrumb span.separator{
 }
 
 .atc-banner--cart {
-	margin-top: {{ space_xx_large | divided_by: 16.0 | append: 'rem' }};
+	margin-top: 16px;
 	vertical-align: middle;
 }
 @media screen and (min-width: 720px) {
@@ -13447,6 +13447,17 @@ nav.breadcrumb span.separator{
 .atc-banner--container .atc-sf-area .sf-details td{
 	padding:4px;
 }
+@media screen and (max-width: 679px) {
+	.atc-banner--container .atc-sf-area .sf-main-text,
+	.atc-banner--container .atc-sf-area .sf-details td{
+		display:block;
+		text-align:center;
+	}
+	.productitem--action-trigger.productitem--action-atc{
+		margin:auto;
+	}
+}
+
 .atc-banner--container .atc-sf-area .sf-price{
 	font-weight:bold;
 	font-size:16px;
@@ -13462,6 +13473,13 @@ nav.breadcrumb span.separator{
 	color:white;
 	cursor: default;
 }
+@media screen and (min-width: 1024px) {
+	.atc-banner--close {
+		right: 25px;
+	}
+}
+
+
 
 .breadcrumbs-container {
 	margin-top: {{ space_medium | divided_by: 16.0 | append: 'rem' }};
@@ -13669,6 +13687,13 @@ nav.breadcrumb span.separator{
 		margin-top: 0;
 	}
 }
+@media screen and (max-width: 559px) {
+	.cart-item--info {
+		clear:both;
+		padding-top:10px;
+	}
+}
+
 .cart-item--product-options, .cart-item--content-price, .cart-item--unit-price,
 .cart-item--stockstatus,
 .cart-item--sku {
@@ -13940,7 +13965,8 @@ nav.breadcrumb span.separator{
 	border-top: 1px solid rgb(204, 204, 204);
 	margin-top:0;
 	background-color:#F5F8FA;
-	max-height: 80px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .cart-item.sf-cart-addon .cart-item--image-wrapper img{
 	width:65px;
@@ -13977,6 +14003,11 @@ nav.breadcrumb span.separator{
 .cart-item .atc-sf-area .sf-details td{
 	padding:4px;
 }
+@media screen and (max-width: 1023px) {
+	.cart-item .atc-sf-area .sf-details td{
+		display:block;
+	}
+}
 .cart-item .atc-sf-area .sf-price{
 	font-weight:bold;
 	font-size:16px;
@@ -13986,6 +14017,11 @@ nav.breadcrumb span.separator{
 }
 .cart-item .atc-sf-area .cart-upsell-btn.sf-atc-btn{
 	margin-top:0;
+}
+@media (max-width: 650px) {
+	.fg-area #similar-products .similar-p-slides {
+		width: 100%
+	}
 }
 .sf-promo-link .sf-discount{
 	color:{{ settings.color_button_secondary_background }};
