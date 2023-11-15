@@ -161,7 +161,9 @@
 
             {% endif %}
             {% if product.metafields.plytix.package_products == blank %}
-                {% render 'hulkapps-wishlist-product-btn' %}
+                {% if product.metafields.plytix.hide_product != 'true' and product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" %}
+                    {% render 'hulkapps-wishlist-product-btn' %}
+                {% endif %}
             {% endif %}
         </div>
     </div>

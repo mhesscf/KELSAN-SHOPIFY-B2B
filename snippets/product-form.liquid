@@ -757,7 +757,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                  data-tieredPricing=""/>
         </div>
 
-        {% if product.metafields.plytix.hide_product != 'true' and product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" %}
+        {% if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" %}
           <button class=" product-form--atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
                   id="p-atc"
                   type="submit"
