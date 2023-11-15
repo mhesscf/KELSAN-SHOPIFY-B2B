@@ -3,6 +3,15 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "29a4430e-2f41-4cc2-a8d4-1449dc26ec25": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/2023-pre-black-friday-banner-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/2023-pre-black-friday-banner-800-427.jpg",
+            "link": "\/",
+            "coupon-code": "THANKS25"
+          }
+        },
         "slide-1": {
           "type": "slide",
           "settings": {
@@ -88,24 +97,14 @@
             "overlay_color": "#000000",
             "overlay_opacity": 50
           }
-        },
-        "29a4430e-2f41-4cc2-a8d4-1449dc26ec25": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/halloween-free-shipping-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/halloween-free-shipping-banner-800x427.jpg",
-            "link": "",
-            "coupon-code": ""
-          }
         }
       },
       "block_order": [
+        "29a4430e-2f41-4cc2-a8d4-1449dc26ec25",
         "slide-1",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
-        "11a75ad9-3839-4050-bb7f-7cec379b8726",
-        "29a4430e-2f41-4cc2-a8d4-1449dc26ec25"
+        "11a75ad9-3839-4050-bb7f-7cec379b8726"
       ],
       "settings": {
         "enable_autoplay": true,
