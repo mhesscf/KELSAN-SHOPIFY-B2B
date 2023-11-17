@@ -50,13 +50,20 @@
           "settings": {
             "product": "assorted-carpet-chemical-package"
           }
+        },
+        "339b2fa5-baa5-4ef6-a117-f93a008cdfb6": {
+          "type": "slide",
+          "settings": {
+            "product": "oreck-orbiter-floor-package"
+          }
         }
       },
       "block_order": [
         "319978c5-e18f-488b-bdca-87d8df12677c",
         "fb1d4f29-8eba-4d53-a3c5-65c0dfffbc28",
         "d06cb5f9-0d69-482b-a09c-8d02bedb3c8c",
-        "710a1d21-d529-4587-8556-0095db7f92f7"
+        "710a1d21-d529-4587-8556-0095db7f92f7",
+        "339b2fa5-baa5-4ef6-a117-f93a008cdfb6"
       ],
       "settings": {
         "cfpssectionheading": "Featured Bundles"
