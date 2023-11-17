@@ -1,0 +1,57 @@
+{% layout none %}
+{% assign productObj =  all_products[product] %}
+{% assign productFirstVar = product.first_available_variant %}
+{% assign variations = 0 %}
+
+{% for variant in product.variants %}
+    {% assign variations = variations | plus: 1 %}
+{% endfor %}
+
+
+{% assign padDesciption = "" %}
+{% assign padImg = "" %}
+
+{% case productFirstVar.metafields.plytix.color %}
+    {% when 'Red' %}
+        {% assign padDesciption = "For light buffing to remove dirt, produces a high gloss shine." %}
+        {% assign padImg = "pad-page-red.png" %}
+    {% when 'Blue' %}
+        {% assign padDesciption = "Removes dirt/scuff marks from heavily soiled floors." %}
+        {% assign padImg = "pad-page-blue.png" %}
+    {% when 'Green' %}
+        {% assign padDesciption = "For heavy duty scrubbing or light stripping." %}
+        {% assign padImg = "pad-page-green.png" %}
+    {% when 'White' %}
+        {% assign padDesciption = "Extra fine pad for polishing clean dry floors. For soft finishes and low traffic areas." %}
+        {% assign padImg = "pad-page-white.png" %}
+    {% when 'Brown' %}
+        {% assign padDesciption = "Removes dirt and old finishes. For wet or dry stripping. Slightly less aggressive than black pads." %}
+        {% assign padImg = "pad-page-brown.png" %}
+    {% when 'Black' %}
+        {% assign padDesciption = "Removes dirt and old finishes. For wet stripping only. More aggressive than brown pads." %}
+        {% assign padImg = "pad-page-black.png" %}
+{% endcase %}
+
+<td class="pad-color">
+    <strong>{{ productFirstVar.metafields.plytix.color }}</strong>
+</td>
+<td class="pad-image" data-pad-title>
+    <img style="padding:2px 5px;" src="{{ padImg | file_img_url }}" alt=" {{ product.title | escape }}" >
+</td>
+<td class="case-qty">
+    <span class="padCase">{{ productFirstVar.metafields.plytix.qty_per_carton |  floor }}</span><br/><span class="perCase">per case</span>
+</td>
+<td class="pad-desciption">
+   {{ padDesciption }}
+</td>
+<td class="pad-price">
+    {% if variations == 1 %}
+        <span class="single-price">{{ productFirstVar.price | money }}</span>
+    {% endif %}
+</td>
+<td class="pad-atc">
+    <a href="/products/{{ product.handle }}"><button class="button-secondary">View Details</button></a>
+</td>
+
+
+
