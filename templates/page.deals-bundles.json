@@ -86,6 +86,12 @@
           "settings": {
             "product": "commercial-floor-burnishing-package"
           }
+        },
+        "c8d60898-cd90-44f7-94d0-208ad004e7c2": {
+          "type": "slide",
+          "settings": {
+            "product": "encapsulation-carpet-chemical-package"
+          }
         }
       },
       "block_order": [
@@ -98,7 +104,8 @@
         "2774d9da-966c-4b1f-af74-fe6c6e66f064",
         "06f62ebe-4f85-4dc9-849f-5bd266aa7bb5",
         "7f0bd26b-8626-4e9a-af2b-de1c6ed4b093",
-        "a65c9131-643d-4997-a479-601dbf294a63"
+        "a65c9131-643d-4997-a479-601dbf294a63",
+        "c8d60898-cd90-44f7-94d0-208ad004e7c2"
       ],
       "settings": {
         "cfpssectionheading": "Featured Bundles"
