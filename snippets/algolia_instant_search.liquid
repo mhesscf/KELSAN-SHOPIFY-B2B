@@ -32,6 +32,21 @@
         </div>
         <div class="ais-block">
           <div class="ais-search-header">
+
+            {% assign thisPadCategory = "" %}
+            {% if collection.handle == "floor-scrubbing-pads" %}
+                {% assign thisPadCategory = "scrubbing" %}
+            {% elsif collection.handle == "floor-polishing-pads" %}
+                {% assign thisPadCategory = "polishing" %}
+            {% elsif collection.handle == "floor-stripping-pads" %}
+                {% assign thisPadCategory = "stripping" %}
+            {% endif %}
+            {% if thisPadCategory != "" %}
+                {%
+                render 'pad-charts',
+                category: thisPadCategory
+                %}
+            {% endif %}
           {% if collection.metafields.custom.question %}
           <div class="custom-additional-info">
             <div class="left-col">
