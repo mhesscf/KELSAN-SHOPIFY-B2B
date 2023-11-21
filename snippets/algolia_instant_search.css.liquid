@@ -800,6 +800,61 @@ body {background-color:#fff !important;}
 .ais-page .discontinued-link a{
   color: {{ settings.color_links }};
 }
+
+/****************** Category Pad Table ***********/
+
+.pad-grid-table{width:100%; margin:10px 0; border-collapse: collapse;}
+.pad-grid-table td a{color:#509cb5; font-size:14px !important;}
+.pad-grid-table td a:hover{color:#2a6496;}
+.pad-grid-table tr.odd{background-color:#F2F7FB}
+.pad-grid-table tr.even{background-color:#DEF1F8}
+.pad-grid-table td{text-align: center; font-size:14px; padding: 3px;}
+.pad-grid-table td.pad-color{text-align:right; width:110px;}
+.pad-grid-table td.pad-image{width:30px;}
+.pad-grid-table td.pad-hint{width:10px;}
+.pad-grid-table td.pad-size-circle.last{border-right:1px solid #ccc;}
+.pad-grid-table td.pad-size-square{max-width:40px;}
+.pad-grid-table td img{padding:2px 2px 0 2px; margin-top:0; margin-bottom:-4px;}
+
+@media screen and (max-width: 1279px) {
+  .pad-grid-table td.pad-color span{display:none;}
+  .pad-grid-table td.pad-color{width: 90px;}
+}
+@media screen and (max-width: 1079px) {
+  .pad-grid-table td a{font-size:13px !important;}
+  .pad-grid-table td.pad-size-square{max-width:54px;}
+  .pad-grid-table td.pad-color{width:85px;}
+}
+   /* Tooltip container */
+.pad-grid-table .tooltip {
+   position: relative;
+   display: inline-block;
+ }
+
+/* Tooltip text */
+.pad-grid-table .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 260px;
+  background-color: #303e48;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  font-size:14px;
+  line-height:18px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 120;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.pad-grid-table .tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
 @media screen and (max-width: 799px) {
   .ais-page .discontinued-link{
     width:100%;
