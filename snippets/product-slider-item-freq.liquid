@@ -33,6 +33,19 @@
   {%- assign product_vendor = product.vendor -%}
   {%- assign product_link = product.url | within: collection -%}
 
+  {% assign isSpecial = false %}
+  {% if product.selected_or_first_available_variant.compare_at_price %}
+    {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+      {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
+      {% assign nowTimestamp = 'now' | date: '%s' %}
+      {% assign diffSeconds = endDate | minus: nowTimestamp %}
+      {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+      {% if diffDays >= -1 %}
+        {% assign isSpecial = true %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
 {%- else -%}
   {%- assign onboarding = true -%}
   {%- assign compare_at_price = 1999 -%}
@@ -354,7 +367,9 @@
                   {% if variant.metafields.plytix.general_product_type == "Machine" %}
                     data-sfeligible="true"
                   {% endif %}
-                   data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
+                  {% if isSpecial == false %}
+                    data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
+                  {% endif %}
                    data-var_price="{{ variant.price }}"
                    data-freqbundle-subproduct
                    style="display: none" ></div>
@@ -363,7 +378,6 @@
 
 
           <div class="productitem--actions" data-product-actions>
-
             {%- if product_type == 'nobuy' %}
               {% comment %}We are not allowing these products{% endcomment %}
               <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
