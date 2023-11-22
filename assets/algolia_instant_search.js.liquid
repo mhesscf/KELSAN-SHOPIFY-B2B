@@ -692,7 +692,7 @@
           ...item,
           _distinct: instant.distinct,
           can_order:
-            item.inventory_management !== 'shopify' ||
+            {% comment %}item.inventory_management !== 'shopify' ||{% endcomment %}
             item.inventory_policy === 'continue' ||
             item.inventory_quantity > 0,
           queryID: item.__queryID,
