@@ -322,7 +322,8 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
         if (response) {
             if(currentsfdis == response ) {
                 document.cookie = "discount_code=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
-                fetch("/checkout?discount=UNSET");
+                fetch("/discount/CLEAR");
+                fetch("/checkout?discount=%20");
             };
         }
     });
