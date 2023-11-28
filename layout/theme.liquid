@@ -255,38 +255,83 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
 
 <a class="skip-to-main" href="#site-main">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-{% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
-    {% if customer.tags contains 'SuperFreak' or customer.tags contains 'superfreak' %}
-        <script>
-            setTimeout(() => {
-                console.log("SuperFreak Eligible "+readCookieHead('superfreakPromo') +"/"+ readCookieHead('discount_code'));
-                if(readCookieHead('superfreakPromo')){
-                    if(readCookieHead('discount_code') == "SUPERFREAK"){
-                        console.log('Applying SF Discount')
-                    }
-                    if(readCookieHead('superfreakPromo') == 1){
-                        $('.sf-promo-link.promo-applied').show();
-                    }else if(readCookieHead('superfreakPromo') == 0){
-                        $('.sf-promo-link.promo-needed').show();
-                    }
-                }else{
-                    $('.popup-container').removeClass('hidden');
-                    $(".pop-grad").removeClass('hidden');
-                    $(".popup-container .close-pop").addClass('sf-off');
-                    var newhtml = "<div style='text-align:center'><strong>Welcome Back<br/>SuperFreak Member!</strong><br/><br/>Would you like to apply your SuperFreak 10% discount on parts today?<br><br><button style='width:70px;' onClick='sfApply(1)'><span class='btn-text'>Yes</span></button> <button style='width:70px;' onClick='sfApply(0)'><span class='btn-text'>No</span></button> </div>";
-                    $('.popup-container .content').html(newhtml);
-
-                    $('.popup-container .close-pop.sf-off').on('click', function(e){
-                        sfApply(0);
-                    });
+{% comment %}start of superfreak{% endcomment %}
+{% assign override = 0 %}
+{% if customer.tags contains 'SuperFreak' or customer.tags contains 'superfreak'or override == 1 %}
+    <script>
+        setTimeout(() => {
+            console.log("SuperFreak Eligible "+readCookieHead('superfreakPromo') +"/"+ readCookieHead('discount_code'));
+            if(readCookieHead('superfreakPromo')){
+                if(readCookieHead('discount_code') == "SUPERFREAK"){
+                    console.log('Applying SF Discount')
                 }
-            }, "1000");
-            function readCookieHead(name) {
-                return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+                if(readCookieHead('superfreakPromo') == 1){
+                    $('.sf-promo-link.promo-applied').show();
+                }else if(readCookieHead('superfreakPromo') == 0){
+                    $('.sf-promo-link.promo-needed').show();
+                }
+            }else{
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                $(".popup-container .close-pop").addClass('sf-off');
+                var newhtml = "<div style='text-align:center'><strong>Welcome Back<br/>SuperFreak Member!</strong><br/><br/>Would you like to apply your SuperFreak 10% discount on parts today?<br><br><button style='width:70px;' onClick='sfApply(1)'><span class='btn-text'>Yes</span></button> <button style='width:70px;' onClick='sfApply(0)'><span class='btn-text'>No</span></button> </div>";
+                $('.popup-container .content').html(newhtml);
+
+                $('.popup-container .close-pop.sf-off').on('click', function(e){
+                    sfApply(0);
+                });
             }
-        </script>
-    {% endif %}
+        }, "1000");
+        function readCookieHead(name) {
+            return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+        }
+    </script>
 {% endif %}
+
+
+{% unless customer.tags contains 'SuperFreak' %}
+    {% assign sf-discount = 0 %}
+    {% for cartitem in cart.items %}
+        {% if cartitem.product.handle contains 'superfreak-program' %}
+            {% assign sf-discount = 1 %}
+        {% endif %}
+    {% endfor %}
+{% endunless %}
+
+<script>
+    var currentsfdis = readCookieHead2('discount_code');
+    const fetchUrl = "/pages/contact?view=sf-dis";
+    var sfdis = ""
+    {% if sf-discount == 1 %}
+    {% comment %}get "hidden discount" {% endcomment %}
+    $.get(fetchUrl).then(response => {
+        if (response) {
+            sfdis = response;
+            if(currentsfdis != response && currentsfdis == undefined ){
+                const fetchUrl = "/discount/"+response;
+                $.get(fetchUrl).then(response => {
+                    if (response) {
+                        console.log("SF");
+                    }
+                });
+            };
+        }
+    });
+    {% else %}
+    $.get(fetchUrl).then(response => {
+        if (response) {
+            if(currentsfdis == response ) {
+                document.cookie = "discount_code=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
+                fetch("/checkout?discount=%20");
+            };
+        }
+    });
+    {% endif %}
+    function readCookieHead2(name) {
+        return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+    }
+</script>
+{% comment %}end of superfreak{% endcomment %}
 
 {% section 'static-utility-bar' %}
 
