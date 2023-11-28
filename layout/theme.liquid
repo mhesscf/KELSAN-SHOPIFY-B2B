@@ -322,7 +322,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
         if (response) {
             if(currentsfdis == response ) {
                 document.cookie = "discount_code=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
-                fetch("/checkout?discount=%20");
+                fetch("/checkout?discount=UNSET");
             };
         }
     });
@@ -490,7 +490,6 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
                     </tr>
                 </table>
             </div>
-
             <div class="sf-pop-html" style="display:none;">
                 <div>
                     <div style="font-size:26px; margin-bottom:15px;"><strong>SuperFreak Program</strong></div>
@@ -509,7 +508,6 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
                         </ul>
                         <br/>
                         Check out the SuperFreak Program <a href="/pages/superfreak">benefits</a>, as well as the <a href="/pages/superfreak-terms">terms & conditions</a> for more info.</div>
-
                 </div>
             </div>
 
