@@ -185,6 +185,14 @@
             "url": "\/collections\/dustpans"
           }
         },
+        "a9ce98f1-db7a-4111-b7cd-e9d028d390e0": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wax-applicators.jpg",
+            "title": "Floor Finish Applicators",
+            "url": "\/collections\/floor-finish-applicators"
+          }
+        },
         "b2279f2f-124c-4d10-9389-2593be47b3d4": {
           "type": "categorylink",
           "settings": {
@@ -265,14 +273,6 @@
             "url": "\/collections\/wall-mop-heads"
           }
         },
-        "a9ce98f1-db7a-4111-b7cd-e9d028d390e0": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/wax-applicators.jpg",
-            "title": "Wax Applicators Heads",
-            "url": "\/collections\/wax-applicators-heads"
-          }
-        },
         "22896291-85e7-4c22-ba29-03fb815d7c9e": {
           "type": "categorylink",
           "settings": {
@@ -287,6 +287,7 @@
         "379a1a02-0b44-4215-b08f-4499b135d95a",
         "9a97fb46-2069-4671-bb1f-b583ac230c6a",
         "90e85570-b6e5-425e-8490-a9bf8a8517a8",
+        "a9ce98f1-db7a-4111-b7cd-e9d028d390e0",
         "b2279f2f-124c-4d10-9389-2593be47b3d4",
         "d2edcc8e-bbee-40b6-97ee-46a4c48be4ed",
         "1e59c08d-aeb0-4be9-9720-46442fcacd82",
@@ -297,7 +298,6 @@
         "1bee4640-4742-43fa-8bdc-74665fd5cc84",
         "7ceb4f27-3d5a-4b87-9451-0550c7e71ed8",
         "e01887ce-e008-4f98-a1c8-8ae0183b20ce",
-        "a9ce98f1-db7a-4111-b7cd-e9d028d390e0",
         "22896291-85e7-4c22-ba29-03fb815d7c9e"
       ],
       "settings": {
