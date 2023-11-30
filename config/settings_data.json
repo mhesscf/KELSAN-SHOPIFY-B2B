@@ -366,6 +366,12 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "qikify-tmenu-1701320627": {
+        "type": "shopify:\/\/apps\/qikify-smart-menu-mega-menu\/blocks\/app-embed\/19d2f1cd-1836-4a32-8937-03df3c601dc8",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
