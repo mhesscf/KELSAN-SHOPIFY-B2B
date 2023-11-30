@@ -289,12 +289,18 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
 {% endif %}
 
 
+{% assign sf-discount = 0 %}
+{% assign sf-discoutItem = 0 %}
 {% unless customer.tags contains 'SuperFreak' %}
-    {% assign sf-discount = 0 %}
     {% for cartitem in cart.items %}
         {% if cartitem.product.handle contains 'superfreak-program' %}
             {% assign sf-discount = 1 %}
         {% endif %}
+        {% for c in cartitem.product.collections %}
+            {% if c.handle == "superfreak-discount-eligible" %}
+                {% assign sf-discoutItem = 1 %}
+            {% endif %}
+        {% endfor %}
     {% endfor %}
 {% endunless %}
 
@@ -302,7 +308,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
     var currentsfdis = readCookieHead2('discount_code');
     const fetchUrl = "/pages/contact?view=sf-dis";
     var sfdis = ""
-    {% if sf-discount == 1 %}
+    {% if sf-discount == 1 and sf-discoutItem == 1 %}
     {% comment %}get "hidden discount" {% endcomment %}
     $.get(fetchUrl).then(response => {
         if (response) {
@@ -320,9 +326,10 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
     {% else %}
     $.get(fetchUrl).then(response => {
         if (response) {
-            if(currentsfdis == response ) {
-                $.get("/discount/CLEAR").then(response => {
-                    $.get("/checkout?discount=%20").then(response => {
+            if(currentsfdis == response || currentsfdis == "CLEAR" ) {
+                fetch("/discount/CLEAR").then(response => {
+                    fetch("/checkout?discount=%20").then(response => {
+                        console.log("clear");
                         document.cookie = "discount_code=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
                     });
                 });
