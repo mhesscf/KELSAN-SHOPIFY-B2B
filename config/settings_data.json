@@ -294,7 +294,8 @@
           "homepage_announcement": false,
           "announcement_text": "See something that's not right? We just launched a new version of CleanFreak.com.  If you see something that doesn't look right, give us a call and we'll make sure to fix it for you.<br>You'll also be entered in a contest to win some cool new CleanFreak swag.",
           "announcement_text_mobile": "Having problems? Give us a call at 888-722-5508 for help.",
-          "announcement_link": "",
+          "announcement_link": "\/collections\/all",
+          "announcement_promo": "TESTPROMO",
           "announcement_color": "#ffffff",
           "announcement_background": "#123570"
         }
