@@ -88,13 +88,35 @@
             "overlay_color": "#000000",
             "overlay_opacity": 50
           }
+        },
+        "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/flash-sale-1400x350.jpg",
+            "title": "Thursday Flash Sale!",
+            "text": "Use the coupon code <br><span>\"FLASHCLEAN\"<\/span><br> to receive 10% off your order.",
+            "color": "#FFFFFF",
+            "link": "",
+            "text_alignment": "left",
+            "button_one_label": "Apply Coupon Code",
+            "button_one_link": "",
+            "button_one_style": "secondary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
         }
       },
       "block_order": [
         "slide-1",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
-        "11a75ad9-3839-4050-bb7f-7cec379b8726"
+        "11a75ad9-3839-4050-bb7f-7cec379b8726",
+        "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a"
       ],
       "settings": {
         "enable_autoplay": true,
