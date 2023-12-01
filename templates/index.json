@@ -95,6 +95,7 @@
         },
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/flash-sale-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/flash-sale-800x427.jpg",
