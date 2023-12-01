@@ -3,16 +3,6 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "29a4430e-2f41-4cc2-a8d4-1449dc26ec25": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/2023-pre-black-friday-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/2023-pre-black-friday-banner-800-427.jpg",
-            "link": "\/",
-            "coupon-code": "THANKS25"
-          }
-        },
         "slide-1": {
           "type": "slide",
           "disabled": true,
@@ -63,7 +53,7 @@
             "background_image": "shopify:\/\/shop_images\/dec-sotm-desktop-banner-dura20-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/dec-sotm-mobile-banner-dura20-800x427.jpg",
             "title": "Trusted Clean 'Dura 20' Automatic Floor Scrubber",
-            "text": "Efficient Cleaning,<br>Exceptional Savings!<br>Now $3,599.99",
+            "text": "Efficient Cleaning,<br>Exceptional Savings!<br>Now $3,599.99.",
             "color": "#303e48",
             "link": "\/products\/trusted-clean-dura-20-inch-automatic-floor-scrubber",
             "text_alignment": "left",
@@ -101,7 +91,6 @@
         }
       },
       "block_order": [
-        "29a4430e-2f41-4cc2-a8d4-1449dc26ec25",
         "slide-1",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
