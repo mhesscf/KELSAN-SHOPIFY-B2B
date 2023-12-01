@@ -148,7 +148,13 @@
         background: {{ section.settings.announcement_background }};
       ">
 
-      {% if section.settings.announcement_link != blank %}
+      {% if section.settings.announcement_promo != blank %}
+        <a
+                class="announcement-bar-link"
+                style="cursor:pointer"
+                onclick="promoRedirect('{{ section.settings.announcement_promo }}','{{ section.settings.announcement_link }}');"
+        ></a>
+      {% elsif section.settings.announcement_link != blank %}
         <a
           class="announcement-bar-link"
           href="{{ section.settings.announcement_link }}"
@@ -208,6 +214,11 @@
       "id": "announcement_link",
       "type": "url",
       "label": "t:sections.announcement_bar.announcement_link.label"
+    },
+    {
+      "id": "announcement_promo",
+      "type": "text",
+      "label": "Promo Code"
     },
     {
       "id": "announcement_color",

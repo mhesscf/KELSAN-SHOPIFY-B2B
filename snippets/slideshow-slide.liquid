@@ -121,6 +121,7 @@
     assign block_text_alignment = block.settings.text_alignment
     assign block_text_color = block.settings.color
     assign block_background_link = block.settings.link
+    assign block_promo_link = block.settings.promo_link
 
     assign block_crop_images = 'center'
     if section.settings.slideshow_height == 'original'
@@ -268,19 +269,20 @@
       "
             data-slide-content
     >
-    {%- if block_background_link != blank -%}
+    {%- if block_promo_link != blank -%}
+      <a style="cursor:pointer;" onclick="promoRedirect('{{ block_promo_link }}','{{ block_background_link }}');">
+    {%- elsif block_background_link != blank -%}
       <a
               href="{{ block_background_link }}"
               class="slideshow-slide__content-background-link"
       >
-        {%- endif -%}
+    {%- endif -%}
 
         {%- if block_preheading != blank -%}
           <p class="slideshow-slide__preheading">
             {{ block_preheading }}
           </p>
         {%- endif -%}
-
         {%- if block_slide_title != blank -%}
           <h1 class="slideshow-slide__heading">
             <b>{{ block_slide_title }}</b>
@@ -292,13 +294,15 @@
             {{ block_subheading }}
           </div>
         {%- endif -%}
-
         {%- if block_background_link != blank -%}
-      </a>
-      {%- endif -%}
+          </a>
+        {%- endif -%}
 
       {%- if block_button_label != blank -%}
-        {% if block_button_link != blank %}
+
+        {% if block_promo_link != blank %}
+          <a style="cursor:pointer;" onclick="promoRedirect('{{ block_promo_link }}','{{ block_background_link }}');"
+        {% elsif block_button_link != blank %}
           <a href="{{ block_button_link }}"
         {% else %}
           <span
