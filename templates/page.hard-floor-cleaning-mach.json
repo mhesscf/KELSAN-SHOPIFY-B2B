@@ -209,6 +209,13 @@
             "title": "Wax & Stripper Applicators",
             "url": "\/collections\/wax-stripper-applicators"
           }
+        },
+        "87015220-2af2-4ca0-9d32-0e74aecc275c": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Small Area Floor Washing Machines",
+            "url": "\/collections\/small-area-floor-washing-machines"
+          }
         }
       },
       "block_order": [
@@ -219,7 +226,8 @@
         "fe7bb8e3-ad6c-411d-83c9-aa2c53bb5b92",
         "3da1c72e-23ab-4454-b4fe-5bbf74084be7",
         "dae2e653-bde1-4561-bf7a-d224b90883cf",
-        "bac758dd-ea18-4dbf-bcca-b563db71d998"
+        "bac758dd-ea18-4dbf-bcca-b563db71d998",
+        "87015220-2af2-4ca0-9d32-0e74aecc275c"
       ],
       "settings": {
         "block-title": "Hard Floor Cleaning Machines by Type"
