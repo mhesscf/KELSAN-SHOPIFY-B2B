@@ -235,7 +235,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    <div class="price__current {% if emphasize_price %}price__current--emphasize{% endif %} {% if on_sale %}price__current--on-sale{% endif %}" data-price-container style="{% if product.metafields.plytix.hide_product == 'true' %}display:none;{% endif %}">
+    <div class="price__current {% if emphasize_price %}price__current--emphasize{% endif %} {% if on_sale %}price__current--on-sale{% endif %}" data-price-container style="">
       {%- capture price_html -%}
         {%- if product.metafields.plytix.package_products != blank -%}
           {%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
