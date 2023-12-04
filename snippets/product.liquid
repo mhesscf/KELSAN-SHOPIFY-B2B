@@ -304,19 +304,20 @@
                                     aria-live="polite"
                                     data-product-pricing
                             >
-                                {%
-                                        render 'product-badge',
-                                        class_root: 'product',
-                                        product: product,
-                                        product_available: product_available,
-                                        on_sale: on_sale,
-                                        price: price,
-                                        compare_at_price: compare_at_price,
-                                        show_saved: true,
-                                        include_range: false,
-                                        selected_variant: selected_variant,
-                                %}
-
+                                {% if product.metafields.plytix.packaged_free_product == blank %}
+                                    {%
+                                            render 'product-badge',
+                                            class_root: 'product',
+                                            product: product,
+                                            product_available: product_available,
+                                            on_sale: on_sale,
+                                            price: price,
+                                            compare_at_price: compare_at_price,
+                                            show_saved: true,
+                                            include_range: false,
+                                            selected_variant: selected_variant,
+                                    %}
+                                {% endif %}
                                 {%
                                         render 'product-price',
                                         product: product,
