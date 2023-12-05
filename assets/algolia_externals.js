@@ -549,7 +549,7 @@ algoliaShopify.externals = function (e) {
 
     function O(e) {
         // Cleanfreak: not sure what this does, but was erroring out on click. Seems to work even when comment out.
-        // this.l[e.type + !1](T.event ? T.event(e) : e)
+        this.l[e.type + !1](T.event ? T.event(e) : e)
     }
 
     function j(e) {
