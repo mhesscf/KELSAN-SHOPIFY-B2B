@@ -45,12 +45,6 @@
             "product": "x-power-x-34ar-axial-fan"
           }
         },
-        "e0051e9d-548f-4db7-bc2a-b60a21e2692a": {
-          "type": "slide",
-          "settings": {
-            "product": "trusted-clean-3-speed-air-mover"
-          }
-        },
         "608fd692-c6d4-48bf-a9dc-376096249355": {
           "type": "slide",
           "settings": {
@@ -62,15 +56,21 @@
           "settings": {
             "product": "powr-flite-deluxe-axial-carpet-dryer"
           }
+        },
+        "e0051e9d-548f-4db7-bc2a-b60a21e2692a": {
+          "type": "slide",
+          "settings": {
+            "product": "tennant-3-speed-air-mover"
+          }
         }
       },
       "block_order": [
         "d784aa52-8ab0-4008-a6c9-fc910696a837",
         "ebac4389-687a-4951-a2bd-46df58611a87",
         "a92bb8dc-25b9-4c85-8934-269a4ce1c932",
-        "e0051e9d-548f-4db7-bc2a-b60a21e2692a",
         "608fd692-c6d4-48bf-a9dc-376096249355",
-        "33952e03-685a-4d9b-b4a6-51b3fcc0382f"
+        "33952e03-685a-4d9b-b4a6-51b3fcc0382f",
+        "e0051e9d-548f-4db7-bc2a-b60a21e2692a"
       ],
       "settings": {
         "cfpssectionheading": "Featured Products"
