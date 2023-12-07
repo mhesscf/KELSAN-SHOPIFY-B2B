@@ -189,7 +189,7 @@
       "@type": "Offer",
       "priceCurrency": {{ cart.currency.iso_code | json }},
       "price": {{ finalprice | divided_by: 100.0 | json }},
-      "availability": "http://schema.org/{%- if selected_variant.available -%}InStock{%- else -%}OutOfStock{%- endif -%}",
+      "availability": "http://schema.org/{% if product.metafields.plytix.package_products != blank %}InStock{%- elsif selected_variant.available -%}InStock{%- else -%}OutOfStock{%- endif -%}",
       "url": "{{ shop.url }}{{ selected_variant.url }}",
       "seller": {
         "@type": "Organization",
