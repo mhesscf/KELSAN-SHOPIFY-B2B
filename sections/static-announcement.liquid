@@ -1,3 +1,14 @@
+
+{% assign flashbg = false %}
+{% assign alertbg = section.settings.announcement_background %}
+{% assign alerttxt = section.settings.announcement_color  %}
+
+{% if section.settings.flash == true %}
+  {% assign flashbg = true %}
+  {% assign alertbg = "black" %}
+  {% assign alerttxt = "white" %}
+{% endif %}
+
 {% style %}
   #shopify-section-static-announcement{
     position: relative;
@@ -46,6 +57,53 @@
     line-height: 24px;
     margin: 0;
     padding: 0;
+  }
+  .alert-bar.flashsale{
+  font-size:16px;
+  padding:0;
+  }
+  .alert-bar.flashsale span{
+  font-size:20px;
+  }
+  .alert-bar.flashsale .flash-img{
+  float:left;
+  margin-bottom:-5px;
+  margin-left:-25px;
+  margin-right:25px;
+  }
+  .alert-bar.flashsale .announcement-bar-text{
+  display:flex;
+  align-items:center;
+  text-align:left;
+  }
+  @media screen and (max-width: 1279px) {
+    .alert-bar.flashsale .flash-img{
+      margin-bottom:-5px;
+      margin-left:0px;
+    }
+
+    .alert-bar.flashsale .flash-img img{
+      width:400px;
+    }
+  }
+  @media screen and (max-width: 1079px) {
+    .alert-bar.flashsale .flash-img img{
+    width:300px;
+    }
+  }
+  @media screen and (max-width: 859px) {
+    .alert-bar.flashsale .flash-img img{
+      margin:auto;
+    }
+    .alert-bar.flashsale .flash-img{
+      float:none;
+      width:100%;
+      margin:auto;
+      text-align: center;
+    }
+    .alert-bar.flashsale .announcement-bar-text{
+      display:inline-block;
+    }
   }
 {% endstyle %}
 
@@ -136,6 +194,7 @@
     <div
       id="alert-bar"
       class="
+        {% if flashbg == true %}flashsale{% endif %}
         announcement-bar alert-bar
         {% if template == 'index' and homepage_only == true %}show home-only-true{% endif %}
         {% if show_everywhere == true %}show show-everywhere-true{% endif %}
@@ -144,8 +203,8 @@
         {% endif %}
       "
       style="
-        color: {{ section.settings.announcement_color }};
-        background: {{ section.settings.announcement_background }};
+        color: {{ alerttxt  }};
+        background: {{ alertbg  }};
       ">
 
       {% if section.settings.announcement_promo != blank %}
@@ -163,7 +222,11 @@
 
       {% if section.settings.announcement_text != blank %}
         <div class="announcement-bar-text">
-          {{ section.settings.announcement_text }}
+
+          {% if flashbg == true %}<div class="flash-img" ><img src="{{ 'flash-sale.png' | file_url }}" alt="Flash Sale!"></div>{% endif %}
+          <div class="bar-text" >
+            {{ section.settings.announcement_text }}
+          </div>
         </div>
       {% endif %}
 
@@ -219,6 +282,11 @@
       "id": "announcement_promo",
       "type": "text",
       "label": "Promo Code"
+    },
+    {
+      "type": "checkbox",
+      "id": "flash",
+      "label": "Flash Sale Background"
     },
     {
       "id": "announcement_color",
