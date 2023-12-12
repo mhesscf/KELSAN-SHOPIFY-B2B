@@ -250,11 +250,19 @@
                                 border-collapse: collapse;
                                 width:100%;
                             }
+                            .prod-used-pads a{
+                                color:#303e48;
+                                text-decoration:none;
+                            }
                             .prod-used-pads tr{
                                 background:#F2F7FB;
                             }
                             .prod-used-pads tr:nth-child(odd){
                                 background:#DEF1F8;
+                            }
+                            .prod-used-pads tr:hover:nth-child(odd),
+                            .prod-used-pads tr:hover{
+                                background:#ffffff;
                             }
                             .prod-used-pads tr:first-child{
                                 border-top:1px solid black;
@@ -360,6 +368,97 @@
                     {% endif %}
 
                 {% endif %}
+
+                 {%- assign chem_guide = false -%}
+                    {% for c in product.collections %}
+                        {% if c.handle == "floor-buffers" or c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" %}
+                            {%- assign chem_guid = true -%}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if chem_guid == true %}
+                        <style>
+                            .chemical-guide h3{
+                                color: #303e48;
+                            }
+                            .chemical-guide h4{
+                                margin: 20px 0 5px 0;
+                                font-size:16px;
+                                font-weight:bold;
+                            }
+                            .chemical-guide a{
+                                color: black;
+                                text-decoration: none;
+                            }
+
+
+                            .chemical-guide table{
+                                border-collapse: collapse;
+                                width:100%;
+                            }
+                            .chemical-guide tr{
+                                background:#DEF1F8;
+                            }
+                            .chemical-guide a:hover tr{
+                                background:#F2F7FB;
+                            }
+                            .chemical-guide tr:first-child{
+                                border-top:1px solid black;
+                            }
+                            .chemical-guide tr:last-child{
+                                border-bottom:1px solid black;
+                            }
+                            .chemical-guide td{
+                                padding: 10px;
+                            }
+                            .chem-price .single-price{
+                                font-weight: bold;
+                                color: #e64d25;
+                            }
+
+                            @media screen and (max-width: 1079px) {
+                                .prod-used-pads .case-qty{
+                                 display:none;
+                                }
+
+
+                            }
+                        </style>
+
+
+                        {%- assign chemicalsHand = "cleanfreak-film-off-floor-film-neutralizer-and-cleaner,cleanfreak-low-foam-floor-cleaning-degreaser,cleanfreak-extraction-care-carpet-and-upholstery-cleaner" -%}
+                        {%- assign chemicalsArr = chemicalsHand | split: "," -%}
+
+                        <h3 style="padding:10px 0 10px; margin-bottom:10px;" class="prod-block-title">Chemical Recommendations</h3>
+                        <hr style="border:0; border-top:1px solid #eee;">
+                        <div class="chemical-guide">
+                            {% for chemical in chemicalsArr %}
+                                <div class="chemical-guide-item" data-handle="{{ chemical }}"><td>loading...</td></div>
+                            {% endfor %}
+                        </div>
+                              <script>
+                                  $(document).ready(function($){
+                                  // pad rows
+                                      $( ".chemical-guide .chemical-guide-item" ).each(function() {
+                                          const handle = $(this).data('handle');
+                                          const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=chemrow`;
+                                          $.get(fetchUrl).then(response => {
+                                              if (response) {
+                                                  if(response.includes("data-chem-title")){
+                                                      $(this).html(response);
+
+                                                  }
+                                              }else{
+                                                  console.log('product not returned');
+                                              }
+                                          })
+                                      });
+                                  });
+                              </script>
+                        {% endif %}
+
+
+
             </div>
         </div>
         <div class="desc-col-2">

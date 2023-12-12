@@ -33,25 +33,26 @@
 {% endcase %}
 
 <td class="pad-color">
-    <strong>{{ productFirstVar.metafields.plytix.color }}</strong>
+    <a href="/products/{{ product.handle }}"><strong>{{ productFirstVar.metafields.plytix.color }}</strong></a>
 </td>
 <td class="pad-image" data-pad-title>
-    <img style="padding:2px 5px;" src="{{ padImg | file_img_url }}" alt=" {{ product.title | escape }}" >
+    <a href="/products/{{ product.handle }}"><img style="padding:2px 5px;" src="{{ padImg | file_img_url }}" alt=" {{ product.title | escape }}" ></a>
 </td>
 <td class="case-qty">
-    <span class="padCase">{{ productFirstVar.metafields.plytix.qty_per_carton |  floor }}</span><br/><span class="perCase">per case</span>
+    <a href="/products/{{ product.handle }}"><span class="padCase">{{ productFirstVar.metafields.plytix.qty_per_carton |  floor }}</span><br/><span class="perCase">per case</span></a>
 </td>
 <td class="pad-desciption">
-   {{ padDesciption }}
+    <a href="/products/{{ product.handle }}">{{ padDesciption }}</a>
 </td>
 <td class="pad-price">
     {% if variations == 1 %}
-        <span class="single-price">{{ productFirstVar.price | money }}</span>
+    <a href="/products/{{ product.handle }}"><span class="single-price">{{ productFirstVar.price | money }}</span></a>
     {% endif %}
 </td>
+{% comment %}
 <td class="pad-atc">
     <a href="/products/{{ product.handle }}"><button class="button-secondary">View Details</button></a>
 </td>
-
+{% endcomment %}
 
 
