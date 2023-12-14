@@ -576,6 +576,26 @@ jQuery(document).ready(function($){
                 }
             });
             $('.' + slideritemId + ' .productgrid--item').height(highestBox);
+
+
+            if(slideritemId == "part_items-rel-item") {
+                $( ".parts-data-area .part-item" ).each(function() {
+                    const handle = $(this).data('handle');
+                    const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=partsrow`;
+                    $.get(fetchUrl).then(response => {
+                        if (response) {
+                            if(response.includes("data-part-title")){
+                                $( ".parts-data-area .loading-text" ).hide();
+                                $(this).html(response);
+                            }
+                        }else{
+                            console.log('product not returned');
+                        }
+                    })
+                });
+            }
+
+
         }
 
 
@@ -584,7 +604,7 @@ jQuery(document).ready(function($){
 
     //tabbed sliders:
     function sliderGo() {
-        $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq')").each(function (index) {
+        $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, #part_items-slider')").each(function (index) {
             var itemId = $(this).attr('id');
             var sliderArrows = '#' + itemId + '-arrows';
             $('#' + itemId).slick({

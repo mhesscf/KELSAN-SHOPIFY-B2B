@@ -1,0 +1,40 @@
+{% layout none %}
+{% assign productObj =  all_products[product] %}
+{% assign productFirstVar = product.first_available_variant %}
+{% assign variations = 0 %}
+
+{% for variant in product.variants %}
+    {% assign variations = variations | plus: 1 %}
+{% endfor %}
+<a href="/products/{{ product.handle }}">
+<h4 data-chem-title >{{ product.title }}</h4>
+<table>
+    <tr>
+
+
+        <td class="chem-image" >
+            {{ product.featured_image | img_url: '75x75' | img_tag: product.featured_image.alt }}
+        </td>
+        {% comment %}<td class="chem-qty">{% endcomment %}
+            {% comment %}<span class="padCase">{{ productFirstVar.metafields.plytix.qty_per_carton |  floor }}</span><br/><span class="perCase">per case</span>{% endcomment %}
+        {% comment %}</td>{% endcomment %}
+        <td class="chem-desciption">
+            {{ product.metafields.plytix.single_line_desc }}
+        </td>
+        <td class="chem-price">
+            {% if variations == 1 %}
+                <span class="single-price">{{ productFirstVar.price | money }}</span>
+            {% endif %}
+        </td>
+        <td class="link-arrow" ><a href="/products/{{ product.handle }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
+        {% comment %}<td class="chem-atc">{% endcomment %}
+            {% comment %}<a href="/products/{{ product.handle }}"><button class="button-secondary">View Details</button></a>{% endcomment %}
+        {% comment %}</td>{% endcomment %}
+
+
+
+    </tr>
+</table>
+
+</a>
+

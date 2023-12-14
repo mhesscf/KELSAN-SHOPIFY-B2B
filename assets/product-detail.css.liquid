@@ -1821,7 +1821,55 @@ input.qtyminus {
     margin-left:5px;
   }
 }
+/*--- parts grid together ---*/
+.rel-product-tabbed-area .parts-data-area table{
+  border-collapse: collapse;
+}
+.rel-product-tabbed-area .parts-data-area a{
+  font-weight:bold;
+  color:#303e48;
+  text-decoration:none;
+  width:97%;
+  margin:10px 10px 7px 10px;
+  display:block;
+  font-size:14px;
+}
+.rel-product-tabbed-area .parts-data-area tr{
+  background:#F2F7FB;
+}
+.rel-product-tabbed-area .parts-data-area tr:nth-child(odd){
+  background:#DEF1F8;
+}
 
+.rel-product-tabbed-area .parts-data-area tr:first-child{
+  border-top:1px solid black;
+}
+.rel-product-tabbed-area .parts-data-area tr:last-child{
+  border-bottom:1px solid black;
+}
+
+.rel-product-tabbed-area .parts-data-area,
+.rel-product-tabbed-area .parts-service-img{
+  width:50%;
+  padding:10px 14px;
+}
+@media (max-width: 859px) {
+  .rel-product-tabbed-area .tabbed-rel-slider{
+    display:block;
+  }
+  .rel-product-tabbed-area .parts-data-area,
+  .rel-product-tabbed-area .parts-service-img{
+    width:100%;
+    padding:10px 0;
+    max-width:600px;
+  }
+}
+@media (max-width: 479px) {
+  .rel-product-tabbed-area .parts-data-area a{
+    margin:5px;
+    font-size:12px;
+  }
+}
   /*--- Gallery ---*/
 .product-gallery .stickme{
   position:sticky;
