@@ -10,19 +10,10 @@
             "cat_title": "Wet Dry Vacuums",
             "cat_text": "Shop a wide range of wet dry vacuums including auto discharge vacs, shop vacs, and tank vacs."
           }
-        },
-        "5a4a30bc-a739-4466-8ff7-eb734334488b": {
-          "type": "banner",
-          "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/proteam-proguard-vac-promo-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/proteam-proguard-vac-promo-banner-mobile.jpg",
-            "link": "\/products\/proteam-proguard-wet-vacuum-w-squeegee"
-          }
         }
       },
       "block_order": [
-        "12b5e135-5ff0-4e2c-a065-173260b50108",
-        "5a4a30bc-a739-4466-8ff7-eb734334488b"
+        "12b5e135-5ff0-4e2c-a065-173260b50108"
       ],
       "settings": {
         "enable_autoplay": true,
