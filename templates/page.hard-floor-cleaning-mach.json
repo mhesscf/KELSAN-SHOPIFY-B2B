@@ -10,10 +10,20 @@
             "cat_title": "Hard Floor Cleaning Machines",
             "cat_text": "We stock a ton of auto scrubbers, floor buffers, burnishers & more to make sure we have the equipment you need, when you need it."
           }
+        },
+        "71ea2eaa-3b3a-4aa9-b752-787ed97ad793": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-desktop-banner-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-email-graphic-800x427.jpg",
+            "link": "\/products\/clarke-ca30-20b-battery-powered-automatic-floor-scrubber",
+            "coupon-code": ""
+          }
         }
       },
       "block_order": [
-        "614000bc-cdda-4bdb-9705-8f9bd346f000"
+        "614000bc-cdda-4bdb-9705-8f9bd346f000",
+        "71ea2eaa-3b3a-4aa9-b752-787ed97ad793"
       ],
       "settings": {
         "enable_autoplay": true,
