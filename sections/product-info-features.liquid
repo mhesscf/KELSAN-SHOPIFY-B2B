@@ -278,10 +278,12 @@
                                 width:70px;
                                 text-align:center;
                             }
-                            .prod-used-pads td .padCase,
-                            .prod-used-pads td .single-price{
+                            .prod-used-pads td .padCase{
                                 font-weight:bold;
                                 color:#e64d25;
+                            }
+                            .prod-used-pads td .single-price{
+                                font-weight:bold;
                             }
                             .prod-used-pads td .perCase,
                             .prod-used-pads td.pad-desciption{
@@ -319,7 +321,7 @@
                                     <table class="prod-used-pads">
                                         <tbody>
                                             {% for scrubbingHandle in scrubbingArr %}
-                                                <tr class="pad-row" data-handle="{{ scrubbingHandle }}"><td>loading...</td></tr>
+                                                <tr class="pad-row" data-handle="{{ scrubbingHandle }}"><td>Loading...</td></tr>
                                             {% endfor %}
                                         </tbody>
                                     </table>
@@ -329,7 +331,7 @@
                                     <table class="prod-used-pads">
                                         <tbody>
                                         {% for polishingHandle in polishingArr %}
-                                            <tr class="pad-row" data-handle="{{ polishingHandle }}"><td>loading...</td></tr>
+                                            <tr class="pad-row" data-handle="{{ polishingHandle }}"><td>Loading...</td></tr>
                                         {% endfor %}
                                         </tbody>
                                     </table>
@@ -339,7 +341,7 @@
                                     <table class="prod-used-pads">
                                         <tbody>
                                         {% for strippingHandle in strippingArr %}
-                                            <tr class="pad-row" data-handle="{{ strippingHandle }}"><td>loading...</td></tr>
+                                            <tr class="pad-row" data-handle="{{ strippingHandle }}"><td>Loading...</td></tr>
                                         {% endfor %}
                                         </tbody>
                                     </table>
@@ -413,15 +415,32 @@
                             }
                             .chem-price .single-price{
                                 font-weight: bold;
-                                color: #e64d25;
                             }
 
-                            @media screen and (max-width: 1079px) {
-                                .prod-used-pads .case-qty{
-                                 display:none;
+                            @media screen and (max-width: 1023px) {
+                                .chemical-guide td{
+                                    padding:7px;
                                 }
-
-
+                                .chemical-guide .chem-image img{
+                                    max-width:40px;
+                                }
+                                .chemical-guide .chem-desciption{
+                                    font-size:15px
+                                }
+                            }
+                            @media screen and (max-width: 479px) {
+                                .chemical-guide td{
+                                    padding:4px;
+                                }
+                                .chemical-guide .chem-image img{
+                                    max-width:30px;
+                                }
+                                .chemical-guide .chem-desciption{
+                                    font-size:13px
+                                }
+                                .chemical-guide .link-arrow{
+                                    display:none;
+                                }
                             }
                         </style>
 
@@ -433,7 +452,7 @@
                         <hr style="border:0; border-top:1px solid #eee;">
                         <div class="chemical-guide">
                             {% for chemical in chemicalsArr %}
-                                <div class="chemical-guide-item" data-handle="{{ chemical }}"><td>loading...</td></div>
+                                <div class="chemical-guide-item" data-handle="{{ chemical }}"><td>>oading...</td></div>
                             {% endfor %}
                         </div>
                               <script>

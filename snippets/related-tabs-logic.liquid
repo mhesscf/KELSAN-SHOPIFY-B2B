@@ -259,7 +259,25 @@
                         {% endif %}
                         {% comment %}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{% endcomment %}
                         {% comment %}Do not show as as freq_bought functionality if this is the case{% endcomment %}
-                        {%- if tab_rel_id != "freq_bought" -%}
+                        {%- if tab_rel_id == "part_items" -%}
+                            <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
+                                <div class="parts-data-area">
+                                    <div class="loading-text">Loading.....</div>
+                                    <table>
+                                    {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+                                        {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                        {%- for product in rel_products_arr -%}
+                                        <tr class="part-item" data-handle="{{ product }}">
+                                        </tr>
+                                        {%- endfor -%}
+                                    {%- endif -%}
+                                    </table>
+                                </div>
+                                <div class="parts-service-img">
+                                    <img class="img-responsive" src="{{ 'superfreak-parts-area-banner.jpg' | file_url }}" alt="SuperFreak Program Link!">
+                                </div>
+                            </div>
+                        {%- elsif tab_rel_id != "freq_bought" -%}
                             <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
                                     {%- assign noProducts = true -%}
                                     {%- if product.metafields.plytix[tab_rel_id] != blank -%}
