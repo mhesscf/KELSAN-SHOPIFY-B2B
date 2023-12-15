@@ -7,11 +7,11 @@
     {% assign variations = variations | plus: 1 %}
 {% endfor %}
 <a href="/products/{{ product.handle }}">
-<h4 data-chem-title >{{ product.title }}</h4>
+    {% assign shortTitle1Arry = product.title | split: '(' %}
+    {% assign shortTitle2Arry = product.title | split: ')' %}
+<h4 data-chem-title >{{ shortTitle1Arry[0] }}{{ shortTitle2Arry[1] }}</h4>
 <table>
     <tr>
-
-
         <td class="chem-image" >
             {{ product.featured_image | img_url: '75x75' | img_tag: product.featured_image.alt }}
         </td>
