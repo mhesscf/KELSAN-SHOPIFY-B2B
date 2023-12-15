@@ -373,7 +373,8 @@
 
                  {%- assign chem_guide = false -%}
                     {% for c in product.collections %}
-                        {% if c.handle == "floor-buffers" or c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" %}
+                        {% comment %} if c.handle == "floor-buffers" or c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" {% endcomment %}
+                        {% if c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" %}
                             {%- assign chem_guid = true -%}
                         {% endif %}
                     {% endfor %}
@@ -445,14 +446,14 @@
                         </style>
 
 
-                        {%- assign chemicalsHand = "cleanfreak-film-off-floor-film-neutralizer-and-cleaner,cleanfreak-low-foam-floor-cleaning-degreaser,cleanfreak-extraction-care-carpet-and-upholstery-cleaner" -%}
+                        {%- assign chemicalsHand = "cleanfreak-neutral-clean-floor-cleaning-solution,cleanfreak-magnifico-lavender-scented-floor-cleaning-solution,cleanfreak-low-foam-floor-cleaning-degreaser,cleanfreak-eliminator-heavy-duty-floor-cleaning-degreaser" -%}
                         {%- assign chemicalsArr = chemicalsHand | split: "," -%}
 
                         <h3 style="padding:10px 0 10px; margin-bottom:10px;" class="prod-block-title">Chemical Recommendations</h3>
                         <hr style="border:0; border-top:1px solid #eee;">
                         <div class="chemical-guide">
                             {% for chemical in chemicalsArr %}
-                                <div class="chemical-guide-item" data-handle="{{ chemical }}"><td>>oading...</td></div>
+                                <div class="chemical-guide-item" data-handle="{{ chemical }}"><td>Loading...</td></div>
                             {% endfor %}
                         </div>
                               <script>
