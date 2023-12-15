@@ -12,7 +12,9 @@
       {% comment %}
         Customer order summary
       {% endcomment %}
+
       <div class="account-page--column-large account-order-history">
+
         <h2 class="account-page-subtitle">
           {{ 'customers.account.order_history' | t }}
         </h2>
@@ -64,6 +66,7 @@
         Customer address summary
       {% endcomment %}
       <div class="account-page--column-small account-info">
+
         <div class="account-info-block">
           <h2 class="account-page-subtitle" style="margin-bottom:0;">
             {{ customer.name }}
@@ -71,6 +74,7 @@
           <div class="account-logout"><a href="/account/logout/">Click here to log out</a></div>
 
           <p class="account-info-item">
+            Email:
             <a href="mailto:{{ customer.email }}">
               {{ customer.email }}
             </a>
@@ -100,6 +104,9 @@
               </a>
             {% endif %}
           </p>
+
+          {% render 'superfreak-cust' %}
+
         </div>
       </div>
     </div>
