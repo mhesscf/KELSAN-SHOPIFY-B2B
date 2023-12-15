@@ -19,19 +19,21 @@
 {% endfor %}
 
 
-
+<td>
+    <a href="/products/{{ product.handle }}">{{ productFirstVar.sku }}</a>
+</td>
         <td class="chem-image" >
             <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '40x40' | img_tag: product.featured_image.alt }}</a>
         </td>
 
-        <td data-part-title ><a href="/products/{{ product.handle }}">{{ product.title }}</a></td>
+        <td class="parts-title" data-part-title ><a href="/products/{{ product.handle }}">{{ product.title }}</a></td>
 
         <td class="chem-price">
             {% if variations == 1 %}
                 <a href="/products/{{ product.handle }}"><span class="single-price">{{ productFirstVar.price | money }}</span></a>
             {% endif %}
         </td>
-<td><a href="/products/{{ product.handle }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
+<td class="link-icon" ><a href="/products/{{ product.handle }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
         {% comment %}<td class="chem-atc">{% endcomment %}
             {% comment %}<a href="/products/{{ product.handle }}"><button class="button-secondary">View Details</button></a>{% endcomment %}
         {% comment %}</td>{% endcomment %}
