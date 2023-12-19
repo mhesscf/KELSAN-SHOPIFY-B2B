@@ -222,6 +222,11 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"1.9",pla
 {% include 'algolia_instant_search_no_result' %}
   <!-- /Algolia head -->
 
+    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+        {% comment %}Approve financing script for CF{% endcomment %}
+        <script type="text/javascript" async> window.kwipped_approve = window.kwipped_approve || {}; window.kwipped_approve.url = https://www.kwipped.com; window.kwipped_approve.approve_id = "eyJpdiI6InoyTFJvUG14N1l2Z3BqSnR1bWpKK2c9PSIsInZhbHVlIjoiSDlnVDR2c01SaHJDRFBxOWdGbU84UT09IiwibWFjIjoiMmVjMzZlZTZhYjNkMmQwYjQzYTU1N2VjNWEwNGZkOGRlNjM3Y2UyNzUzMzhlMTY4ZTBjY2ZjMzUwMjUzY2IzMCJ9"; function init_kwipped_approve_snippet() { var b = document.getElementsByTagName('body')[0]; var t = document.querySelector('approve-widget'); if (!t) { t = document.createElement('approve-widget'); t.setAttribute('autosubmission', 1); t.setAttribute('theme', 'custom'); t.setAttribute('themestyle', '{"bgcolor":"#303E48","header_font":{"fontFamily":"","fontWeight":"","fontStyle":""},"inner_bgcolor":"#FFFFFF","button_bgcolor":"#D74018","button_border_color":"#FFFFFF","button_text_color":"#FFFFFF","button_font":{"fontFamily":"","fontWeight":"","fontStyle":""},"maintext_font":{"fontFamily":"","fontWeight":"","fontStyle":""},"maintext_color":"#303E48","headertext_color":"#FFFFFF"}'); b.appendChild(t); } var s=document.createElement('script'); s.type= 'text/javascript'; s.src = 'https://api.kwipped.com/approve/plugin/3.0/approve_plugin_loader.php'; b.appendChild(s); } if(document.readyState != 'loading'){ init_kwipped_approve_snippet(); } else{ window.addEventListener('DOMContentLoaded',init_kwipped_approve_snippet); } </script>
+    {% endif %}
+
 </head>
 
 <body class="template-{{ template.name }}" data-instant-allow-query-string
