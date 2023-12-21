@@ -224,7 +224,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Trusted%20Clean&refinementList%5Bproduct_type%5D%5B0%5D=Auto%20Scrubber%20Accessories&q=Trusted%20Clean"
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Scrubber Accessories&q=Trusted Clean",
+            "brand-image": "shopify:\/\/shop_images\/trusted-clean-dura-18hd-pad-driver.jpg"
           }
         },
         "624080fe-6937-414b-b37a-9189d0c77435": {
