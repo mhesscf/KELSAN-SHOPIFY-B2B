@@ -9,37 +9,42 @@
     {% endfor %}
     {%- if sf_customer == 1 -%}
         <div class="sf-account-area">
-            <h2>Welcome back,<br/> SuperFreak customer!</h2>
+            <h2>Welcome back, SuperFreak customer!</h2>
             {%- assign sf_items = customer.metafields.custom.superfreak_items_long | split: "," -%}
             <div class="tbl-column">
                 <table class="sf-account">
-                    <tr><th>SuperFreak Item</th><th>End Date</th></tr>
+                    <tr><th>SuperFreak Item</th><th>Start Date</th><th>End Date</th></tr>
                     {% for sf_item in sf_items %}
                     {%- assign sf_item_arr = sf_item | split: "||" -%}
                     {% comment %}seconds in a year to give the user the end date{% endcomment %}
                     {% assign seconds = 31536000 %}
                     {%- assign buydate = sf_item_arr[1] -%}
                     {%- assign enddate = sf_item_arr[1] | date: "%s" | plus: seconds -%}
-                    <tr><td>{{ sf_item_arr[0] }}</td><td>{{ enddate | date: "%m-%d-%Y" }}</td>
+                    <tr><td>{{ sf_item_arr[0] }}</td><td>{{ buydate | date: "%m-%d-%Y" }}</td><td>{{ enddate | date: "%m-%d-%Y" }}</td>
                         {% endfor %}
                 </table>
                 <div class="sf-discount-reminder">Get 10% off of <a href="/collections/superfreak-discount-eligible">parts and accessories</a> using promo code <span>"SUPERFREAK"</span>.</div>
             </div>
 
             <style>
-
-                .sf-account{
-                    border-collapse: collapse;
-                    border-radius: 10px;
-                    width:100%;
+                .sf-account-area{
+                    border-bottom:1px solid #ccc;
+                    padding-top:10px;
+                    width: 1320px;
+                    max-width: 90%;
+                    margin: 0 auto 10px;
+                    padding: 10px 0;
                 }
                 .sf-account-area h2{
-                    font-size:26px;
-                    border-top:1px solid #ccc;
+                    font-size:34px;
                     margin-bottom:15px;
-                    margin-top:15px;
-                    padding-top:15px
+                    font-weight:bold;
                 }
+                .sf-account{
+                     border-collapse: collapse;
+                     border-radius: 10px;
+                     width:100%;
+                 }
                 .sf-account th:first-child{
                     border-radius: 10px 0 0 0;
                 }
@@ -48,7 +53,7 @@
                 }
                 .sf-account th{
                     background:#303e49;
-                    padding:5px 15px;
+                    padding:10px 15px;
                     color:#fff;
                 }
                 .sf-account td{
@@ -58,6 +63,7 @@
                 }
                 .sf-discount-reminder{
                     padding:15px 0;
+                    text-align: center;
                 }
 
             </style>
