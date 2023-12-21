@@ -33,6 +33,12 @@
             "product": "dura-17-brush"
           }
         },
+        "3ad14737-d7b6-4050-9b31-dab469d7508f": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-performer-front-squeegee-replacement-blade"
+          }
+        },
         "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
           "type": "slide",
           "settings": {
@@ -72,12 +78,13 @@
         "a0073dda-832a-449f-a358-2e2556962853": {
           "type": "slide",
           "settings": {
-            "product": "trusted-clean-dura-18hd-auto-scrubber-pad-driver"
+            "product": "ipc-eagle-ct30-scrubber-front-squeegee"
           }
         }
       },
       "block_order": [
         "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
+        "3ad14737-d7b6-4050-9b31-dab469d7508f",
         "b8094b38-e33c-4bf9-9e98-94700b387cf9",
         "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
         "d0d55955-cf3e-4837-8a9e-53c306acb777",
