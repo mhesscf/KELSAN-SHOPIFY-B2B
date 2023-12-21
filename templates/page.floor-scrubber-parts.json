@@ -29,6 +29,7 @@
       "blocks": {
         "03e7d2c6-2c73-44d4-98e9-18fdc8d27323": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "product": "cleanfreak-performer-front-squeegee-replacement-blade"
           }
@@ -53,6 +54,7 @@
         },
         "b45c59de-ed5d-41cf-93bb-206001ad9f89": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "product": "ipc-eagle-ct30-scrubber-front-squeegee"
           }
