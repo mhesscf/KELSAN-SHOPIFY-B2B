@@ -161,11 +161,20 @@
             "title": "Auto Scrubber Pad Drivers",
             "url": "\/collections\/auto-scrubber-pad-drivers"
           }
+        },
+        "7fdc34ad-aff4-416b-bf0f-817ffb61df94": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/auto-scrubber-squeegees.jpg",
+            "title": "Auto Scrubber Squeegee Blades",
+            "url": "\/collections\/auto-scrubber-squeegees"
+          }
         }
       },
       "block_order": [
         "baa01c85-86de-4db8-bcbc-df52463e11a0",
-        "0da5d0e5-8d5d-4e99-8b3b-ebb5691a9164"
+        "0da5d0e5-8d5d-4e99-8b3b-ebb5691a9164",
+        "7fdc34ad-aff4-416b-bf0f-817ffb61df94"
       ],
       "settings": {
         "block-title": "Auto Scrubber Accessories by Type"
@@ -177,9 +186,9 @@
         "80abfbcd-8c07-434d-9f1b-c9204460bc75": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/auto-scrubber-squeegees.jpg",
-            "title": "Auto Scrubber Squeegees",
-            "url": "\/collections\/auto-scrubber-squeegees"
+            "image": "shopify:\/\/shop_images\/crk-9100000085-01.jpg",
+            "title": "Squeegees Assemblies",
+            "url": "\/collections\/squeegee-assemblies"
           }
         },
         "27a3fb11-fe86-453a-8eb4-dd5f8791c571": {
@@ -215,8 +224,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Trusted%20Clean&refinementList%5Bproduct_type%5D%5B0%5D=Auto%20Scrubber%20Accessories&q=Trusted%20Clean",
-            "brand-image": "shopify:\/\/shop_images\/dura17nylonbrush.png"
+            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Trusted%20Clean&refinementList%5Bproduct_type%5D%5B0%5D=Auto%20Scrubber%20Accessories&q=Trusted%20Clean"
           }
         },
         "624080fe-6937-414b-b37a-9189d0c77435": {
