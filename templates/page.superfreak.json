@@ -11,6 +11,12 @@
         "hide_lvl_2_links": false
       }
     },
+    "14632851-f7fa-4221-ab0d-4d6a21d2a034": {
+      "type": "dynamic-custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'superfreak-cust' %}"
+      }
+    },
     "a96fc367-e4f3-483f-b57b-c8fd1c86847c": {
       "type": "dynamic-slideshow",
       "blocks": {
@@ -54,6 +60,7 @@
   },
   "order": [
     "66af8670-5d46-4605-84d6-21ccbd90e586",
+    "14632851-f7fa-4221-ab0d-4d6a21d2a034",
     "a96fc367-e4f3-483f-b57b-c8fd1c86847c",
     "main",
     "08bfee3b-091f-4f05-9c9a-a16fda4aaf82"
