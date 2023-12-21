@@ -13,14 +13,14 @@
             {%- assign sf_items = customer.metafields.custom.superfreak_items_long | split: "," -%}
             <div class="tbl-column">
                 <table class="sf-account">
-                    <tr><th>SuperFreak Item</th><th>Start Date</th><th>End Date</th></tr>
+                    <tr><th>SuperFreak Item</th><th class="start" >Start Date</th><th>End Date</th></tr>
                     {% for sf_item in sf_items %}
                     {%- assign sf_item_arr = sf_item | split: "||" -%}
                     {% comment %}seconds in a year to give the user the end date{% endcomment %}
                     {% assign seconds = 31536000 %}
                     {%- assign buydate = sf_item_arr[1] -%}
                     {%- assign enddate = sf_item_arr[1] | date: "%s" | plus: seconds -%}
-                    <tr><td>{{ sf_item_arr[0] }}</td><td>{{ buydate | date: "%m-%d-%Y" }}</td><td>{{ enddate | date: "%m-%d-%Y" }}</td>
+                    <tr><td>{{ sf_item_arr[0] }}</td><td class="start" >{{ buydate | date: "%m-%d-%Y" }}</td><td>{{ enddate | date: "%m-%d-%Y" }}</td>
                         {% endfor %}
                 </table>
                 <div class="sf-discount-reminder">Get 10% off of <a href="/collections/superfreak-discount-eligible">parts and accessories</a> using promo code <span>"SUPERFREAK"</span>.</div>
@@ -65,7 +65,9 @@
                     padding:15px 0;
                     text-align: center;
                 }
-
+                @media screen and (max-width: 390px) {
+                    .sf-account .start{display:none;}
+                }
             </style>
         </div>
 
