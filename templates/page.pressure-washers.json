@@ -28,6 +28,7 @@
             "text": "Introduce customers to your shop with lifestyle and product imagery",
             "color": "#ffffff",
             "link": "",
+            "promo_link": "",
             "text_alignment": "center",
             "button_one_label": "Button",
             "button_one_link": "",
@@ -48,6 +49,7 @@
             "text": "Introduce customers to your shop with lifestyle and product imagery",
             "color": "#ffffff",
             "link": "",
+            "promo_link": "",
             "text_alignment": "center",
             "button_one_label": "Button",
             "button_one_link": "",
@@ -73,7 +75,8 @@
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/free-shipping-on-pressure-washers-v2-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/free-shipping-on-pressure-washers-800x427.jpg",
-            "link": ""
+            "link": "",
+            "coupon-code": ""
           }
         },
         "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca": {
@@ -81,7 +84,8 @@
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/got-a-big-job-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/got-a-big-job-banner-800x427.jpg",
-            "link": ""
+            "link": "",
+            "coupon-code": ""
           }
         },
         "1bbb33c2-2444-465d-8285-f1a6681bee8b": {
@@ -89,7 +93,8 @@
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/hot-water-press-washer-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/hot-water-press-washer-banner-800x427.jpg",
-            "link": "\/products\/cleanfreak-clh-3530g-hot-water-pressure-washer"
+            "link": "\/products\/cleanfreak-clh-3530g-hot-water-pressure-washer",
+            "coupon-code": ""
           }
         },
         "55c96410-9583-4bcd-9414-2823d5265d9f": {
@@ -97,7 +102,8 @@
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/pressure-mower-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/pressure-mower-banner-800x427.jpg",
-            "link": "\/products\/pressure-mower-with-hose-reel"
+            "link": "\/products\/pressure-mower-with-hose-reel",
+            "coupon-code": ""
           }
         }
       },
@@ -290,6 +296,14 @@
             "url": "\/collections\/hot-water-electric-pressure-washers"
           }
         },
+        "62c887d0-92ff-4e2d-87de-968a815c860b": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/softwash-system-dept.jpg",
+            "title": "Softwash Systems",
+            "url": "\/collections\/softwash-systems"
+          }
+        },
         "b0c688b8-3bf4-4751-b863-86b45272103c": {
           "type": "categorylink",
           "settings": {
@@ -314,6 +328,7 @@
         "0c3e5a7a-1a1d-4d2b-bb5f-2991977e571a",
         "b795079d-d2c7-485d-b049-2aa01a830b43",
         "170a8bf8-9d6d-474a-b55c-eee6dc161442",
+        "62c887d0-92ff-4e2d-87de-968a815c860b",
         "b0c688b8-3bf4-4751-b863-86b45272103c",
         "90e76373-00dc-4d7b-98bf-f8ead2c9ab48"
       ],
