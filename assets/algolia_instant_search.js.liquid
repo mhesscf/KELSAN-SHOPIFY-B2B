@@ -804,8 +804,29 @@
           }
 
           e.stopPropagation();
+          window.dataLayer = window.dataLayer || [];
+
           var $this = cartButton;
           var formId = $this.dataset.formId;
+
+          var formIdObj = document.getElementById(formId);
+
+          window.dataLayer.push({
+            event: 'ee_addToCart',
+            product_name: formIdObj.querySelector('input[name="title"]').value,
+            product_id : formIdObj.querySelector('input[name="id"]').value,
+            product_price: formIdObj.querySelector('input[name="price"]').value,
+            product_brand:  formIdObj.querySelector('input[name="vendor"]').value,
+            currency: "USD",
+            product_type: formIdObj.querySelector('input[name="prod_type"]').value,
+            category_id: formIdObj.querySelector('input[name="category_id"]').value,
+            category_title: formIdObj.querySelector('input[name="category"]').value,
+            variant_id: formIdObj.querySelector('input[name="id"]').value,
+            variant_title: formIdObj.querySelector('input[name="vartitle"]').value,
+            product_sku: formIdObj.querySelector('input[name="properties[Sku]"]').value,
+            quantity: "1",
+            atc_loc: formIdObj.querySelector('input[name="location"]').value
+          });
 
           if (formId) {
             document.getElementById(formId).submit();

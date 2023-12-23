@@ -444,7 +444,6 @@
                             </div>`:''}
                         ` : html ``}
                     ` : html ``}
-
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-discount">${algolia.helpers.displayDiscount(hit.price, hit.compare_at_price, hit.price_ratio)}</span>`}{%- endcomment -%}
 </p>
@@ -456,6 +455,21 @@
 ${1 == 1 && html`
 <form id="algolia-add-to-cart-${hit.objectID}" style="display: none;" action="/cart/add" method="post" enctype="multipart/form-data">
   <input type="hidden" name="id" value="${hit.objectID}" />
+  <input type="hidden" name="varid" value="${hit.id}" />
+  <input type="hidden" name="title" value="${hit.title}" />
+  <input type="hidden" name="vartitle" value="${hit.variant_title}" />
+  <input type="hidden" name="price" value="${hit.price}" />
+  <input type="hidden" name="vendor" value="${hit.vendor}" />
+<input type="hidden" name="prod_type" value="${hit.product_type}" />
+{%- if collection -%}
+    <input type="hidden" name="category" value="{{ collection.title }}" />
+    <input type="hidden" name="category_id" value="{{ collection.id }}" />
+    <input type="hidden" name="location" value="Collection" />
+{%- else -%}
+    <input type="hidden" name="category" value="Search" />
+    <input type="hidden" name="category_id" value="NA" />
+    <input type="hidden" name="location" value="Search" />
+{%- endif -%}
     <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
      ${hit.meta.plytix.general_product_type == "Machine" ? html `<input type="hidden" name="properties[_sf_eligible]" value="true" />` : ``}
      ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,hit.meta.plytix.list_price,"bool") ? html `` : html `<input type="hidden" name="properties[_tiered_pricing]" value="${hit.meta.plytix.tiered_pricing}" />`}

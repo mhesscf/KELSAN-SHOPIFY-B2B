@@ -364,6 +364,8 @@
                    data-var_vissku="{{ variant.sku }}"
                    data-var_status="{{ stockStatusNote }}"
                    data-var_erpsku="{{ variant.metafields.plytix.erp_sku }}"
+                   data-producttype="{{ product.type }}"
+                   data-brand="{{ product.vendor }}"
                   {% if variant.metafields.plytix.general_product_type == "Machine" %}
                     data-sfeligible="true"
                   {% endif %}
@@ -400,7 +402,7 @@
 
             {% comment %}Values for custom.js to pull to add to cart: changes on variation select{% endcomment %}
 
-            <input type="hidden" name="updates[{{ product.handle }}]" class="product-data" data-freqbundle-subproduct data-id="{{ current_variant.id }}" data-vissku="{{ current_variant.sku }}" data-status="{{ stockStatusNote }}" data-erpsku="{{ current_variant.metafields.plytix.erp_sku }}" data-step="" data-tieredpricing="{{ current_variant.metafields.plytix.tiered_pricing }}" data-qty="1" data-price="{{ current_variant.price }}"
+            <input type="hidden" name="updates[{{ product.handle }}]" class="product-data" data-brand="{{ product.vendor }}" data-producttype="{{ product.type }}" data-freqbundle-subproduct data-id="{{ current_variant.id }}" data-vissku="{{ current_variant.sku }}" data-status="{{ stockStatusNote }}" data-erpsku="{{ current_variant.metafields.plytix.erp_sku }}" data-step="" data-tieredpricing="{{ current_variant.metafields.plytix.tiered_pricing }}" data-qty="1" data-price="{{ current_variant.price }}"
                     {% if product.metafields.plytix.general_product_type == "Machine" %}
                       data-sfeligible="true"
                    {% endif %}
