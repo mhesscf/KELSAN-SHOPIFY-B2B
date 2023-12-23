@@ -17,6 +17,7 @@
         "g_feed_region": "US", //Change this if your Google Ads feed is in another region
         //Modify the following button attributes if you do not see any ee_addToCart datalayer event when you click add to cart button in any product detail page.
         "addtocart_btn_attributes": {
+            "class": ["shopify-payment-button"],
         },
         //Modify the following element attribute if you see that quantity being pushed to datalayer is wrong when you try to add the a product to the cart with more than 1 as quantity.
         "product_quantity":{
@@ -374,7 +375,9 @@
                         {%- case template_name -%}
                         {%- when 'product' -%}
                 else if(atc_elem !== null) {
-                    analyzify.atcEventFunc();
+                    if(atc_elem.dataset['shopify'] == "payment-button") {
+                        analyzify.atcEventFuncFinance();
+                    }
                 }
                         {%- when 'collection' -%}
                 else if(col_prod_click_elem !== null){
@@ -507,6 +510,83 @@
                 }
             }
             {% endcase %}
+
+            window.analyzify.atcEventFuncFinance = function(){
+
+                {{ productInfos }}
+
+                var formElement = found_atc_element_form[0];
+                if( analyzify.pageFly == false){
+                    if(formElement){
+                        if(Array.from(formElement.elements).find(item => item.name == 'id')){
+                            var formVariantInput = Array.from(formElement.elements).find(item => item.name == 'id').value;
+                        }
+                    }
+                }
+
+                var initial_url = window.location.href;
+
+                if (formVariantInput){
+                    var variantInput = formVariantInput;
+                } else if(initial_url.includes("variant=")){
+                    var variantInput = initial_url.split( 'variant=' )[1];
+                } else{
+                    var variantInput = '{{ product.selected_or_first_available_variant.id }}';
+                }
+
+                for (let i = 0; i < productJson.variants.length; i++) {
+                    if(productJson.variants[i].id == variantInput){
+                        var productPrice = productJson.variants[i].price;
+                        var variantSku = productJson.variants[i].sku;
+                        var variantName = productJson.variants[i].public_title;
+                    }
+                }
+
+                var found_qty = [];
+
+                window.findQty = function(attr_obj) {
+                    found_qty = [];
+                    for (var k in attr_obj) {
+                        if (attr_obj.hasOwnProperty(k)) {
+                            var attribute_name = k;
+                            var attribute_values = attr_obj[k];
+                            var qtyEl = document.querySelector('['+attribute_name+'="'+attribute_values+'"]');
+                            if(qtyEl && qtyEl.value){
+                                found_qty.push(qtyEl.value);
+                            }
+                        }
+                    }
+                }
+
+                window.findQty(analyzify.product_quantity);
+
+                if (found_qty.length > 0) {
+                    var prodQty = found_qty[0];
+                } else{
+                    var prodQty = 1;
+                }
+
+                window.dataLayer.push({
+                    event: 'ee_addToCart',
+                    product_name: productName,
+                    product_id: productId,
+                    product_price: (productPrice / 100).toFixed(2).toString(),
+                    currency: detected_currency,
+                    product_brand: productBrand,
+                    product_type: productType,
+                    category_id: collectionId,
+                    category_title: collectionTitle,
+                    quantity: prodQty,
+                    variant_id: variantInput,
+                    variant_title: variantName,
+                    product_sku : variantSku,
+                    g_product_id: `shopify_`+ analyzify.g_feed_region +`_`+productId+`_`+variantInput,
+                    atc_loc: "ShopPay"
+                });
+                // console.log(window.dataLayer);
+                analyzify.log("Product ee_addToCart==>");
+                analyzify.log(window.dataLayer);
+            }
 
             window.analyzify.atcEventFunc = function(){
 
@@ -730,7 +810,8 @@
                             variant_id: formElement.querySelector('*[name="id"]').value,
                             variant_title: formElement.querySelector('.pvtitle').value,
                             product_sku: formElement.querySelector('.psku').value,
-                            quantity: quantity
+                            quantity: quantity,
+                            atc_loc: formElement.querySelector('.atc_loc').value
                         });
                     }
                 }
@@ -752,7 +833,8 @@
                         variant_id: atcBtn.getAttribute('data-vid'),
                         variant_title: atcBtn.getAttribute('data-pvtitle'),
                         product_sku: atcBtn.getAttribute('data-psku'),
-                        quantity: 1
+                        quantity: 1,
+                        atc_loc: atcBtn.getAttribute('data-atc_loc')
                     });
                 }
             }
