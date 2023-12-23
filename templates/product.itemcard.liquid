@@ -30,7 +30,6 @@
     if($freq_sub_product_container.length) {
         //add to cart
         $freq_bundle_button.on('click', async function(e) {
-            console.log('adding products');
             e.preventDefault();
             $(this).find('.atc-button--text').hide();
             $(this).find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
@@ -50,6 +49,25 @@
                 $(this).find('.freq-var-select').css('border','');
                 if($(this).find('.freq-check').is(':checked')){
                     if($(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku')){
+
+                        // log ee_addToCart for analytics
+                        window.dataLayer = window.dataLayer || [];
+
+                        window.dataLayer.push({
+                            event: 'ee_addToCart',
+                            product_name: $(this).find('.productitem--title').text().trim(),
+                            product_id : $(this).find('[data-product-item]').attr('id').replace("freq-product-",""),
+                            product_price: $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_price')/100,
+                            product_brand:  $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('brand'),
+                            currency: "USD",
+                            product_type: $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('producttype'),
+                            variant_id: $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id'),
+                            product_sku:  $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku'),
+                            quantity: "1",
+                            atc_loc: "Cart Accessories (Frequently Bought Together)"
+                        });
+                        // console.log(window.dataLayer);
+
                         form_template["properties[_erp_sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_erpsku');
                         form_template["properties[Sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku');
                         form_template["properties[Status]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_status');

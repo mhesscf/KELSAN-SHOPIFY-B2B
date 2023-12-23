@@ -654,6 +654,13 @@
                           data-pcategory_name = "{{ product.collections.first.title | remove: "'" | remove: '"' }}"
                           data-pvtitle = "{{ product.variants.first.title | remove: "'" | remove: '"' }}"
                           data-psku = "{{ product.variants.first.sku }}"
+                          {% if canonical_url contains "/recommendations/" or canonical_url contains "/products/" %}
+                            data-atc_loc = "Product Related Slider"
+                          {% elsif canonical_url contains "/recommendations/" or canonical_url contains "/products/" %}
+                            data-atc_loc = "Dept Featured Slider"
+                          {% else %}
+                            data-atc_loc = "Home Featured Slider"
+                          {% endif %}
                           {% if product == false or product_available == false %}
                             disabled
                           {% endif %}

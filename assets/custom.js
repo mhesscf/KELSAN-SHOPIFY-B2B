@@ -851,7 +851,27 @@ jQuery(document).ready(function($){
                 form_template.quantity = $(this).val() + ""
 
                 form_datas.push({...form_template})
+
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'ee_addToCart',
+                    product_name: $(this).data('title'),
+                    product_id : $(this).data('parentid'),
+                    product_price: $(this).data('price')/100,
+                    product_brand:  $(this).data('brand'),
+                    currency: "USD",
+                    product_type: $(this).data('type'),
+                    category_id: "",
+                    category_title: "",
+                    variant_id: $(this).data('id'),
+                    variant_title: $(this).data('vartitle'),
+                    product_sku: $(this).data('vissku'),
+                    quantity: $(this).val(),
+                    atc_loc: "Bundle Item"
+                });
             });
+            // console.log(window.dataLayer);
+
             form_datas.reverse();
             for(const f of form_datas){
                 await $.ajax({
@@ -904,6 +924,25 @@ jQuery(document).ready(function($){
                         // console.log("tier: "+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing'));
                         // console.log("var id: "+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id'));
                         // console.log("--------");
+
+                        // log ee_addToCart for analytics
+                        window.dataLayer = window.dataLayer || [];
+
+                        window.dataLayer.push({
+                            event: 'ee_addToCart',
+                            product_name: $(this).find('.productitem--title').text().trim(),
+                            product_id : $(this).find('[data-product-item]').attr('id').replace("freq-product-",""),
+                            product_price: $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_price')/100,
+                            product_brand:  $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('brand'),
+                            currency: "USD",
+                            product_type: $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('producttype'),
+                            variant_id: $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id'),
+                            product_sku:  $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku'),
+                            quantity: "1",
+                            atc_loc: "Frequently Bought Together"
+                        });
+                        // console.log(window.dataLayer);
+                        // missingOptions = 1;
 
                         form_template["properties[_erp_sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_erpsku');
                         form_template["properties[_sf_eligible]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('sfeligible');
