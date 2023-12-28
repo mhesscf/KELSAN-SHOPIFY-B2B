@@ -2,9 +2,12 @@
   "sections": {
     "93a7d5e7-ec2f-4457-a011-598d6e3ce14a": {
       "type": "dynamic-html",
+      "custom_css": [
+
+      ],
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.slideshow-slide:nth-child(2) .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n<\/style>"
+        "custom_html": "<style>\n.slideshow-slide:nth-child(2) .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n.slideshow-slide:nth-child(2) .slideshow-slide__heading{\nfont-size:25px}\n<\/style>"
       }
     },
     "dynamic_slideshow": {
