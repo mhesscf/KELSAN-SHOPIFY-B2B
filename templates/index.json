@@ -133,6 +133,9 @@
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
+      "custom_css": [
+        ".slideshow-slide__button--secondary{max-width:140px;}"
+      ],
       "settings": {
         "enable_autoplay": true,
         "autoplay_duration": 9,
