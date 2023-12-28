@@ -154,14 +154,6 @@
             "brand-image": "shopify:\/\/shop_images\/safety-zone-3-ply-blue-face-masks-with-ear-loops-mfb-3-el-2k.jpg"
           }
         },
-        "1d32377a-a460-43f9-8714-6b5dae1a83a1": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Impact®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Respiratory Protection&q=Impact",
-            "brand-image": "shopify:\/\/shop_images\/7312b-20-impact-n95-masks.jpg"
-          }
-        },
         "ffad8ac7-4c02-48b5-a46c-dddbfde3cd14": {
           "type": "brandlink",
           "settings": {
@@ -173,7 +165,6 @@
       },
       "block_order": [
         "b5509132-bc85-43fd-80e8-dc74757f4c3b",
-        "1d32377a-a460-43f9-8714-6b5dae1a83a1",
         "ffad8ac7-4c02-48b5-a46c-dddbfde3cd14"
       ],
       "settings": {
