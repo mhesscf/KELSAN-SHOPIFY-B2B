@@ -180,14 +180,6 @@
             "brand-image": "shopify:\/\/shop_images\/bright-solutions-activate-odor-removing-bioculture-case-with-1-sprayer.jpg"
           }
         },
-        "d1a62d4a-fd05-455d-9f7b-46d6f66689a0": {
-          "type": "brandlink",
-          "settings": {
-            "brand-title": "Claire®",
-            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?refinementList[vendor][0]=Nyco",
-            "brand-image": "shopify:\/\/shop_images\/claire-carpet-upholstery-spoter-c676-case.jpg"
-          }
-        },
         "40cc9644-db98-4c35-b9dd-143203d7fb7b": {
           "type": "brandlink",
           "settings": {
@@ -215,7 +207,6 @@
       },
       "block_order": [
         "b17e6871-e563-4858-b487-ff0da346ddaf",
-        "d1a62d4a-fd05-455d-9f7b-46d6f66689a0",
         "40cc9644-db98-4c35-b9dd-143203d7fb7b",
         "44807488-d7bd-4242-b3ae-c654c386f08a",
         "fe3de80f-8a2f-4f61-8cb6-81021da78935"
