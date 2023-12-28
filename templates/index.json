@@ -4,12 +4,34 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.slideshow-slide::first-child .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n<\/style>"
+        "custom_html": "<style>\n.slideshow-slide:nth-child(2) .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n<\/style>"
       }
     },
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/nov-sotm-desktop-banner-2-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/nov-sotm-mobile-banner-2-800x427.jpg",
+            "title": "CleanFreak® 20&quot; Low Speed Rotary Floor Buffer",
+            "text": "Brilliant Buffer, <br>Budget-Friendly Price!<br>Now $824.99.",
+            "color": "#303e48",
+            "link": "\/products\/clean-freak-20-inch-low-speed-rotary-machine",
+            "promo_link": "",
+            "text_alignment": "left",
+            "button_one_label": "SAVE NOW!",
+            "button_one_link": "\/products\/clean-freak-20-inch-low-speed-rotary-machine",
+            "button_one_style": "secondary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
         "slide-1": {
           "type": "slide",
           "settings": {
@@ -30,29 +52,6 @@
             "show_overlay": false,
             "overlay_color": "#000000",
             "overlay_opacity": 13
-          }
-        },
-        "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "background_image": "shopify:\/\/shop_images\/nov-sotm-desktop-banner-2-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/nov-sotm-mobile-banner-2-800x427.jpg",
-            "title": "CleanFreak® 20&quot; Low Speed Rotary Floor Buffer",
-            "text": "Brilliant Buffer, <br>Budget-Friendly Price!<br>Now $824.99.",
-            "color": "#303e48",
-            "link": "\/products\/clean-freak-20-inch-low-speed-rotary-machine",
-            "promo_link": "",
-            "text_alignment": "left",
-            "button_one_label": "SAVE NOW!",
-            "button_one_link": "\/products\/clean-freak-20-inch-low-speed-rotary-machine",
-            "button_one_style": "secondary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
           }
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
@@ -135,8 +134,8 @@
         }
       },
       "block_order": [
-        "slide-1",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
+        "slide-1",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
