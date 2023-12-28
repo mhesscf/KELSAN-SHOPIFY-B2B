@@ -1,5 +1,12 @@
 {
   "sections": {
+    "93a7d5e7-ec2f-4457-a011-598d6e3ce14a": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<style>\n.slideshow-slide__button--secondary{\nmax-width:140px !important;\n}\n<\/style>"
+      }
+    },
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
@@ -50,6 +57,7 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/dec-sotm-desktop-banner-dura20-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/dec-sotm-mobile-banner-dura20-800x427.jpg",
@@ -72,6 +80,7 @@
         },
         "11a75ad9-3839-4050-bb7f-7cec379b8726": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/dec-sotm-desktop-banner-cfh-3530g-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/dec-sotm-mobile-banner-cfh-3530g-800x427.jpg",
@@ -134,7 +143,7 @@
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
       "custom_css": [
-        ".slideshow-slide__button--secondary{max-width:140px;}"
+
       ],
       "settings": {
         "enable_autoplay": true,
@@ -450,6 +459,7 @@
     }
   },
   "order": [
+    "93a7d5e7-ec2f-4457-a011-598d6e3ce14a",
     "dynamic_slideshow",
     "16608796422ccd9af1",
     "16656050100223fa96",
