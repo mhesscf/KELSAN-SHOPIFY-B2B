@@ -7,7 +7,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.slideshow-slide:nth-child(2) .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n.slideshow-slide:nth-child(2) .slideshow-slide__heading{\nfont-size:25px}\n<\/style>"
+        "custom_html": "<style>\n.slideshow-slide:nth-child(2) .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n.slideshow-slide:nth-child(2) .slideshow-slide__heading{\nfont-size:21px !important}\n<\/style>"
       }
     },
     "dynamic_slideshow": {
