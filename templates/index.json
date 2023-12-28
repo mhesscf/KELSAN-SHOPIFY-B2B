@@ -4,7 +4,7 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.slideshow-slide__button--secondary{\nmax-width:140px !important;\n}\n<\/style>"
+        "custom_html": "<style>\n.slideshow-slide::first-child .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n<\/style>"
       }
     },
     "dynamic_slideshow": {
