@@ -220,7 +220,15 @@
                                                 <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
                                                 {% comment %}<input class="add-to-cart-btn" type="submit" value="ADD TO CART"{% endcomment %}
                                                        {% comment %}class="btn"/>{% endcomment %}
-                                                <button class="add-to-cart-btn" type="submit" value="ADD TO CART"
+                                                <button class="add-to-cart-btn"
+                                                        data-ptitle="{{ product1-title | escape }}"
+                                                        data-pid="{{ all_products[pid].variants.first.id  }}"
+                                                        data-pprice="0.00"
+                                                        data-pbrand="{{ all_products[pid].vendor }}"
+                                                        data-ptype="{{ all_products[pid].type }}"
+                                                        data-pvtitle="{{ all_products[pid].variants.first.title | escape }}"
+                                                        data-psku="{{ all_products[pid].variants.first.sku }}"
+                                                        type="submit" value="ADD TO CART"
                                                         class="btn" ><i class="fa-regular fa-cart-shopping"></i> ADD TO CART</button>
                                             </form>
                                              <div class="p-price">${{ price | money_without_currency }} Value</div>
@@ -438,6 +446,24 @@
 <script>
     $(document).ready(function($) {
         $('#gift-slds form .add-to-cart-btn').on('click', function(){
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'ee_addToCart',
+                product_name: $(this).data('ptitle'),
+                product_id : $(this).data('pid'),
+                product_price: $(this).data('pprice'),
+                product_brand: $(this).data('pbrand'),
+                currency: "USD",
+                product_type: $(this).data('ptype'),
+                category_id:'',
+                category_title: '',
+                variant_id: $(this).data('vid'),
+                variant_title: $(this).data('pvtitle'),
+                product_sku: $(this).data('psku'),
+                quantity: 1,
+                atc_loc: "Free Gift over $1000"
+            });
+
             $('#gift-slds .add-to-cart-btn').not(this).hide();
             $(this).html('<i class="fa-regular fa-cart-shopping"></i> ADDING...');
         });
