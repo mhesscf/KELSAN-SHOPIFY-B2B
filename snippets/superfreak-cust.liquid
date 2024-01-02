@@ -9,7 +9,27 @@
     {% endfor %}
     {%- if sf_customer == 1 -%}
         <div class="sf-account-area">
-            <h2>Welcome back, SuperFreak customer!</h2>
+            <h2><img style="margin: 0 10px -9px 6px" src="{{ 'superfreak-logo-sm.jpg' | file_img_url  }}" alt="SuperFreak Link" />Welcome back, SuperFreak customer!</h2>
+
+
+            {% comment %}Check orders for savings<br/>{% endcomment %}
+            {%- assign totalSFSavings = 0 | plus: 0 -%}
+        {% for order in customer.orders %}
+            {% for line_item in order.line_items %}
+                {% for discount_allocation in line_item.line_level_discount_allocations %}
+                    {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title == "SUPERFREAK-1ST" %}
+                        {%- assign totalSFSavings = totalSFSavings | plus: discount_allocation.amount -%}
+                        {% comment %}{{ order.name }}:{{ line_item.title }} -> {{ discount_allocation.discount_application.title }}(-<span class="money">{{ discount_allocation.amount | money }}</span>)<br/>{% endcomment %}
+                        {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+
+        {% if totalSFSavings > 0 %}
+            <div class="sf-total-savings">You have saved a total of <span class="savings">{{ totalSFSavings | money }}</span> by using your SuperFreak discount!</div>
+        {% endif %}
+
+
             {%- assign sf_items = customer.metafields.custom.superfreak_items_long | split: "," -%}
             <div class="tbl-column">
                 <table class="sf-account">
@@ -38,6 +58,13 @@
                 .sf-account-area h2{
                     font-size:34px;
                     margin-bottom:15px;
+                    font-weight:bold;
+                }
+                .sf-account-area .sf-total-savings{
+                    margin:0 0 10px 0;
+                }
+                .sf-account-area .sf-total-savings .savings{
+                    color:{{ settings.color_button_secondary_background }};
                     font-weight:bold;
                 }
                 .sf-account{
