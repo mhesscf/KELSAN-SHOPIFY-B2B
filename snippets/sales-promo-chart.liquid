@@ -1,4 +1,9 @@
-{%- assign employee = 1 -%}
+
+{%- if template.suffix == "sales-and-promos-admin" -%}
+    {%- assign employee = 1 -%}
+{%- else -%}
+    {%- assign employee = 0 -%}
+{%- endif -%}
 {% comment %}
 Calendar Info
 https://github.com/forink/Monthly-Advanced
@@ -232,7 +237,7 @@ margin-top:76px;
         <script type="text/javascript">
             var promoEvents = {
                 "monthly": [
-                    {% for promo in promoObj %}
+                    {% for promo in promoObjSorted %}
                     {%- assign promo_color = "blue" -%}
 
                     {% case promo.promo_type %}
