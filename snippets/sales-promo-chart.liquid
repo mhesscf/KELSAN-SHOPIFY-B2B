@@ -135,7 +135,11 @@ margin-top:76px;
     border-top:1px solid #ccc;
     margin-top:15px;
 }
-
+.load-products{
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
 /*--- product scroller ---*/
 .promo-details .table-contain{
@@ -148,6 +152,7 @@ margin-top:76px;
 
 .promo-details .promo-products{
   border-collapse: collapse;
+  width:100%;
 }
 .promo-details .promo-products a{
   font-weight:bold;
@@ -480,17 +485,17 @@ margin-top:76px;
                             <div style="cursor:pointer; color:#3C8AA4" title="Click to view promotion link and apply coupon code" onClick="promoRedirect('{{ promo.promo_link }}','{{ promo.banner_link }}')" >View Promo Link</div>
                         {% elsif promo.banner_link %}
                             <a href="{{ promo.banner_link }}" title="promo link">
-                            View Promo Link
+                            Load Promo Link
                             </a>
                         {% endif %}
 
-
-
+                        {% assign prodAvailable = 0 %}
                         {% if promo.products.value or promo.collections.value %}
-                            <div class="table-contain">
+                            <div class="table-contain" style="display:none;">
                                 <table class="promo-products">
                                     {% for product in promo.products.value %}
                                         <tr class="promo-product" data-handle="{{ product.handle }}"><td>Loading...</td></tr>
+                                        {% assign prodAvailable = 1 %}
                                     {% endfor %}
 
                                     {% for collections in promo.collections.value %}
@@ -500,12 +505,16 @@ margin-top:76px;
                                             {% paginate collections.products by 100 %}
                                                 {% for product in collections.products %}
                                                     <tr class="promo-product" data-handle="{{ product.handle }}"><td>Loading...</td></tr>
+                                                    {% assign prodAvailable = 1 %}
                                                 {% endfor %}
                                             {% endpaginate %}
                                         {% endif %}
                                     {% endfor %}
                                 </table>
                             </div>
+                        {% endif %}
+                        {% if prodAvailable != 0 %}
+                            <div onClick="loadProducts('promo-{{ forloop.index0 }}')" class="load-products">View Products <i class="fa-solid fa-arrow-right"></i></div>
                         {% endif %}
                     </div>
                     <div class="promo-right {% if promo.products.value or promo.collections.value %}w-products{% endif %} {% if promo.promo_link or promo.banner_link %}w-link{% endif %}">
@@ -544,8 +553,8 @@ margin-top:76px;
     });
 
 
-    $(document).ready(function($){
-        $( ".promo-product" ).each(function() {
+    function loadProducts(promoid){
+        $( "#"+promoid+" .promo-product" ).each(function() {
             const handle = $(this).data('handle');
             const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=promo-page`;
             $.get(fetchUrl).then(response => {
@@ -559,6 +568,8 @@ margin-top:76px;
                 }
             })
         });
-    });
+        $( "#"+promoid+" .load-products" ).hide();
+        $( "#"+promoid+" .table-contain" ).show();
+    }
 
 </script>
