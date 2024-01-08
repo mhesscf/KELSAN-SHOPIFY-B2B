@@ -263,8 +263,7 @@ margin-top:76px;
                     {% endfor %}
                 ]
             };
-
-            $(window).load( function() {
+            $(document).ready(function($){
                 $('#mycalendar').monthly({
                     mode: 'event',
                     dataType: 'json',
