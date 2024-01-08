@@ -1,0 +1,553 @@
+{%- assign employee = 1 -%}
+{% comment %}
+Calendar Info
+https://github.com/forink/Monthly-Advanced
+Monthly 2.2.1 by Kevin Thornbloom is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+https://creativecommons.org/licenses/by/4.0/
+{% endcomment %}
+<style>
+.sales-promo-container h1{
+    font-weight:bold;
+    font-size:42px;
+}
+.sales-promo-container .calendar-title,
+.sales-promo-container h2{
+    font-weight:bold;
+    font-size:26px;
+}
+.sales-promo-container a{
+    text-decoration: none;
+}
+.sales-promo-container .colorblock{
+    width:15px;
+    height:15px;
+    float:left;
+    clear:left;
+    margin:2px 5px 0 0;
+}
+.colorfilter{
+    cursor:pointer;
+}
+.sales-promo-container .calendar-container{
+    float:left;
+}
+.sales-promo-container .calendar-area-bg{
+    background-color:#DEF1F8;
+    padding:10px;
+    margin-bottom:15px;
+}
+.sales-promo-container .calendar-area{
+    max-width:612px;
+    padding:10px;
+    margin:10px auto 20px auto;
+    background:white;
+    border:1px solid #ccc;
+}
+
+.sales-promo-container .calendar-area .cal-key{
+    float:right;
+    margin-top:50px;
+}
+.past-toggle{
+    cursor: pointer;
+}
+.past-toggle i{
+    font-size:13px;
+}
+.promo-date,
+.past-toggle span{
+    color: #3C8AA4;
+}
+.sales-promo-container .promo-list{
+    float:left;
+    width:50%;
+}
+.sales-promo-container .sotm-area{
+    float:right;
+    width:50%;
+}
+.sales-promo-container .promo-list li .promo-title{
+    color: #303e48;
+}
+
+.sales-promo-container .sotm-area .promo-entry .promo-title{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.sales-promo-container .sotm-area .promo-entry .promo-date{
+    font-weight:normal;
+    font-size:14px;
+}
+.sales-promo-container .sotm-area .promo-entry .sotm-products td a{
+    color: #303e48;
+}
+.sales-promo-container .sotm-area .promo-entry .sotm-products td{
+    vertical-align: middle;
+    padding:0 5px;
+}
+.sales-promo-container .sotm-area .promo-entry .sotm-products .bullet{
+    font-size:6px;
+}
+.sales-promo-container .sotm-area .promo-entry .sotm-products .sotm-prod-price{
+    text-align: center;
+}
+.sales-promo-container .sotm-area .promo-entry .sotm-products .sotm-prod-price .was-price{
+    text-decoration: line-through;
+    font-size:12px;
+}
+.sales-promo-container .sotm-area .promo-entry .sotm-products .sotm-prod-price .sale-price{
+    font-weight:bold;
+    font-size:16px;
+}
+.promo-details .promo-entry {
+    border-top:1px solid #ccc;
+    padding: 15px 0;
+    clear:both;
+}
+.promo-details .promo-entry .promo-left{
+    width:50%;
+    float:left;
+    clear:both;
+}
+.promo-details .promo-entry .promo-right{
+    width:50%;
+    float:right;
+}
+.promo-details .promo-entry .promo-right.w-products{
+margin-top:58px;
+}
+.promo-details .promo-entry .promo-right.w-products.w-link{
+margin-top:76px;
+}
+.promo-details .promo-entry .promo-title{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.past-promo-list{
+    border-top:1px solid #ccc;
+}
+
+
+/*--- product scroller ---*/
+.promo-details .table-contain{
+    width:90%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    max-height:292px;
+    margin-top:15px;
+}
+
+.promo-details .promo-products{
+  border-collapse: collapse;
+}
+.promo-details .promo-products a{
+  font-weight:bold;
+  color:#303e48;
+  text-decoration:none;
+  width:97%;
+  margin:10px 10px 7px 10px;
+  display:block;
+  font-size:14px;
+  text-align: center;
+}
+.promo-details .promo-products .parts-title a{
+  text-align: left;
+}
+.promo-details .promo-products tr{
+  background:#F2F7FB;
+}
+.promo-details .promo-products tr:nth-child(odd){
+  background:#DEF1F8;
+}
+
+.promo-details .promo-products tr:first-child{
+  border-top:1px solid black;
+}
+.promo-details .promo-products tr:last-child{
+  border-bottom:1px solid black;
+}
+.promo-details .link-icon{
+  width:65px;
+}
+.promo-details .promo-products{
+  padding:10px 14px;
+}
+
+
+
+</style>
+
+<div class="sales-promo-container">
+<h1>CleanFreak.com Sales and Promos</h1>
+
+    {% comment %}turn days into seconds{% endcomment %}
+    {%- assign fontendShowStartDateDiff = 5 | times: 86400 -%}
+    {%- assign fontendShowEndDateDiff = 5 | times: 86400 -%}
+
+    {%- assign nowSec = "now" | date: "%s" | plus: 0 -%}
+    {%- if employee == 0 -%}
+        {%- assign startShowDate = "now" | date: "%s" | plus: fontendShowStartDateDiff -%}
+        {%- assign endShowDate = "now" | date: "%s" | minus: fontendShowEndDateDiff -%}
+    {%- elsif employee == 1 -%}
+        {% comment %}2 years{% endcomment %}
+        {%- assign startShowDate = "now" | date: "%s" | plus: 63072000 -%}
+        {%- assign endShowDate = "now" | date: "%s" | minus: 63072000 -%}
+    {%- endif -%}
+
+    <!--
+    Start: {{ startShowDate | date: "%Y-%m-%d" }} <br/>
+    End: {{ endShowDate | date: "%Y-%m-%d" }}
+    -->
+
+    {%- assign promoObj = shop.metaobjects.promotional_campaign.values -%}
+    {%- assign promoObjSorted = promoObj | sort:"end_date_text" | reverse -%}
+    {%- if employee == 1 -%}
+    <div class="calendar-area-bg">
+        <div class="calendar-area">
+            {{ 'monthm-monthly.css' | asset_url | stylesheet_tag }}
+            <script src="{{ 'monthm-jquery.js' | asset_url }}"></script>
+            <script src="{{ 'monthm-monthly.js' | asset_url }}"></script>
+
+            <div class="calendar-title">Promotions Campaign & Calendar</div>
+            <div class="calendar-container cal-small">
+                <div class="monthly" id="mycalendar"></div>
+                <div class="cal-zoom">Zoom out on calendar.</div>
+            </div>
+            <div class="cal-key">
+                <div class="cal-title" style="text-decoration: underline;" ><strong>Promotion Key</strong></div>
+                <div class="colorfilter" data-color="#ff5df2" ><div class="colorblock" style="background-color:#ff5df2;"></div>BOGO</div>
+                <div class="colorfilter" data-color="#5d68ff" ><div class="colorblock" style="background-color:#5d68ff;"></div>Discounts</div>
+                <div class="colorfilter" data-color="#026700" ><div class="colorblock" style="background-color:#026700;"></div>Free Shipping Promo</div>
+                <div class="colorfilter" data-color="#ff00c6" ><div class="colorblock" style="background-color:#ff00c6;"></div>Rebates</div>
+                <div class="colorfilter" data-color="#d1de00" ><div class="colorblock" style="background-color:#d1de00;"></div>Special of the Month</div>
+                <div class="colorfilter" data-color="#00de97" ><div class="colorblock" style="background-color:#00de97;"></div>Other</div>
+                <div class="colorfilter" data-color="#000000" ><div class="colorblock" style="background-color:black;"></div>Show All</div>
+            </div>
+            <div class="clearer"></div>
+        </div>
+    </div>
+        <script type="text/javascript">
+            var promoEvents = {
+                "monthly": [
+                    {% for promo in promoObj %}
+                    {%- assign promo_color = "blue" -%}
+
+                    {% case promo.promo_type %}
+                    {% when 'BOGO' %}
+                        {%- assign promo_color = "#ff5df2" -%}
+                    {% when 'Discounts' %}
+                        {%- assign promo_color = "#5d68ff" -%}
+                    {% when 'Free Shipping Promo' %}
+                        {%- assign promo_color = "#026700" -%}
+                    {% when 'Rebates' %}
+                        {%- assign promo_color = "#ff00c6" -%}
+                    {% when 'Special of the Month' %}
+                        {%- assign promo_color = "#d1de00" -%}
+                    {% when 'Other' %}
+                        {%- assign promo_color = "#00de97" -%}
+                    {% endcase %}
+
+                    {
+                        "id": {{ forloop.index0 }},
+                        "name": "{{  promo.title }}",
+                        "startdate": "{{  promo.start_date_time | date: "%Y-%m-%d"  }}",
+                        "enddate": "{{  promo.end_date_time | date: "%Y-%m-%d" }}",
+                        "starttime": "{{  promo.start_date_time | date: "%H:%M"  }}",
+                        "endtime": "{{  promo.end_date_time | date: "%H:%M" }}",
+                        "color": "{{  promo_color }}",
+                        "url": "#promo-{{ forloop.index0 }}"
+                    },
+                    {% endfor %}
+                ]
+            };
+
+            $(window).load( function() {
+                $('#mycalendar').monthly({
+                    mode: 'event',
+                    dataType: 'json',
+                    events: promoEvents
+                });
+            });
+
+            $(' .cal-zoom').on('click', function(){
+                if($('.calendar-container').hasClass( "cal-small" )){
+                    $('.calendar-container').removeClass('cal-small').addClass('cal-large');
+                    $('.cal-zoom').text('Zoom in on calendar.');
+                }else{
+                    $('.calendar-container').addClass('cal-small').removeClass('cal-large');
+                    $('.cal-zoom').text('Zoom out on calendar.');
+                }
+            });
+
+            $('.colorfilter').on('click', function(){
+                var color = $(this).data('color');
+                $('.colorblock').css({"border":"0px solid black"});
+                $(this).find('.colorblock').css({"border":"2px solid black"});
+
+                if(color == "#000000"){
+                    $('#mycalendar').html('').monthly({
+                        mode: 'event',
+                        dataType: 'json',
+                        events: promoEvents
+                    });
+                }else{
+                    var filteredPromoEvents = promoEvents.monthly.filter(event => event.color === color);
+                    const newPromoEvents = { ...promoEvents, monthly: filteredPromoEvents };
+                    $('#mycalendar').html('').monthly({
+                        mode: 'event',
+                        dataType: 'json',
+                        events: newPromoEvents
+                    });
+                }
+
+            });
+        </script>
+        <div class="clearer"></div>
+    {%- endif -%}
+
+    <div class="promo-list">
+        <div class="current-promo">
+            <h2>Current Promos</h2>
+            <ul>
+                {% for promo in promoObjSorted %}
+                    {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+                    {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+                    {% if startDateSeconds <= nowSec and endDateSeconds >= nowSec %}
+                        <li><a href="#promo-{{ forloop.index0 }}"><span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
+                   {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="future-promo">
+            <h2>Future Promos</h2>
+            <ul>
+                {% assign futurepromoCount = 0 | plus: 0 %}
+                {% for promo in promoObjSorted %}
+                    {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+                    {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+                    {% if startDateSeconds > nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate %}
+                        <li><a href="#promo-{{ forloop.index0 }}"><span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
+                        {% assign futurepromoCount = 0 | plus: 1 %}
+                    {% endif %}
+                {% endfor %}
+
+            </ul>
+            {% if futurepromoCount == 0 %}
+            <div class="notfound">No future promotions found</div>
+            <style>.future-promo{display:none}</style>
+            {% endif %}
+        </div>
+
+        <div class="past-promo">
+            <div class="past-promo-list" style="display:none;">
+                <h2 style="margin-bottom:0px;">Past Promos</h2>
+                <div class="past-toggle-hide past-toggle"><span>Click Here</span> to hide past promotions <i class="fa-solid fa-arrow-right"></i></div>
+                <ul>
+                {% assign pastpromoCount = 0 | plus: 0 %}
+                    {% for promo in promoObjSorted %}
+                        {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+                        {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+                        {% if endDateSeconds < nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate %}
+                        {% assign pastpromoCount = 0 | plus: 1 %}
+                            <li><a href="#promo-{{ forloop.index0 }}"><span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if pastpromoCount == 0 %}
+                        <style>.past-promo{display:none}</style>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="past-toggle-show past-toggle"><span>Click Here</span> to view past promotions <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+    </div>
+    <div class="sotm-area">
+        <div class="sotm-area-banner" style="width:100%" >
+            <img src="{{ 'sotm-promo-banner.jpg' | file_url  }}" class="img-responsive" alt="Special of the month promos" />
+        </div>
+
+        {% for promo in promoObjSorted %}
+            {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+            {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+            {% if startDateSeconds <= nowSec and endDateSeconds >= nowSec and promo.promo_type == "Special of the Month" %}
+                <div id="promo-{{ forloop.index0 }}" class="promo-entry">
+                    <div class="promo-title">{{  promo.title }} <span class="promo-date">(<span>{{  promo.start_date_time | date: "%m/%d/%Y"  }}</span> - <span>{{  promo.end_date_time | date: "%m/%d/%Y" }}</span>)</span></div>
+                    <table style="width:100%">
+                        {% for product in promo.products.value %}
+                            <tr class="sotm-products">
+                                <td class="bullet"><i class="fa-solid fa-circle"></i></td>
+                                <td class="sotm-prod-img" ><a href="{{ product.url }}">{{ product.featured_image | img_url: '30x30' | img_tag: product.featured_image.alt }}</a></div>
+                                <td class="sotm-prod-title" ><a href="{{ product.url }}">{{ product.title }}</a></td>
+                                {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+                                    <td class="sotm-prod-price">
+                                        <div class="was-price" >{{ product.selected_or_first_available_variant.compare_at_price | money}}</div>
+                                        <div class="sale-price">{{ product.selected_or_first_available_variant.price | money }}</div>
+                                    </td>
+                                {% else %}
+                                    <td class="sotm-prod-price soon" >Coming Soon</td>
+                                {% endif %}
+                                <td><a href="{{ product.url }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for promo in promoObjSorted %}
+            {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+            {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+            {% if startDateSeconds > nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate and promo.promo_type == "Special of the Month" %}
+                <div id="promo-{{ forloop.index0 }}" class="promo-entry">
+                    <div class="promo-title">{{  promo.title }} <span class="promo-date">(<span>{{  promo.start_date_time | date: "%m/%d/%Y"  }}</span> - <span>{{  promo.end_date_time | date: "%m/%d/%Y" }}</span>)</span></div>
+                    <table>
+                        {% for product in promo.products.value %}
+                            <tr class="sotm-products">
+                                <td class="bullet"><i class="fa-solid fa-circle"></i></td>
+                                <td class="sotm-prod-img" ><a href="{{ product.url }}">{{ product.featured_image | img_url: '30x30' | img_tag: product.featured_image.alt }}</a></div>
+                                <td class="sotm-prod-title" ><a href="{{ product.url }}">{{ product.title }}</a></td>
+                                {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+                                    <td class="sotm-prod-price">
+                                        <div class="was-price" >{{ product.selected_or_first_available_variant.compare_at_price | money}}</div>
+                                        <div class="sale-price">{{ product.selected_or_first_available_variant.price | money }}</div>
+                                    </td>
+                                {% else %}
+                                    <td class="sotm-prod-price soon" >Coming Soon</td>
+                                {% endif %}
+                                <td><a href="{{ product.url }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="past-promo-list past-sotm-list" style="display:none;">
+            <h2>Past Special of the Months</h2>
+            {% assign pastsotmCount = 0 | plus: 0 %}
+             {% for promo in promoObjSorted %}
+                {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+                {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+                {% if endDateSeconds < nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate and promo.promo_type == "Special of the Month" %}
+                    <div id="promo-{{ forloop.index0 }}" class="promo-entry">
+                        <div class="promo-title">{{  promo.title }} <span class="promo-date">(<span>{{  promo.start_date_time | date: "%m/%d/%Y"  }}</span> - <span>{{  promo.end_date_time | date: "%m/%d/%Y" }}</span>)</span></div>
+                        <table>
+                            {% for product in promo.products.value %}
+                                <tr class="sotm-products">
+                                    <td class="bullet"><i class="fa-solid fa-circle"></i></td>
+                                    <td class="sotm-prod-img" ><a href="{{ product.url }}">{{ product.featured_image | img_url: '30x30' | img_tag: product.featured_image.alt }}</a></div>
+                                    <td class="sotm-prod-title" ><a href="{{ product.url }}">{{ product.title }}</a></td>
+                                    <td><a href="{{ product.url }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                        {% assign pastsotmCount = 0 | plus: 1 %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% if pastsotmCount == 0 %}
+                <style>.past-sotm-list{display:none !important}</style>
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="clearer"></div>
+    <div class="promo-details">
+        <h2>Promotions Details</h2>
+
+        {% for promo in promoObjSorted %}
+            {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+            {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+
+           {% assign pastpromo = 0 %}
+            {% if endDateSeconds < nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate %}
+                {% assign pastpromo = 1 %}
+            {% endif %}
+
+            {% if startDateSeconds <= startShowDate and endDateSeconds >= endShowDate and promo.promo_type != "Special of the Month" %}
+                <div id="promo-{{ forloop.index0 }}" class="promo-entry {% if pastpromo == 1 %}pastpromo{% endif %}">
+                    <div class="promo-left">
+                        <div class="promo-title">{{  promo.title }} {% if pastpromo == 1 %}(Expired Promotion){% endif %}</div>
+                        <div class="promo-date"><strong>Date:</strong> <span>{{  promo.start_date_time | date: "%m/%d/%Y"  }}</span> to <span>{{  promo.end_date_time | date: "%m/%d/%Y" }}</span></div>
+                        {% if promo.promo_link %}
+                            <div style="cursor:pointer" title="promo-link" onClick="promoRedirect('{{ promo.promo_link }}','{{ promo.banner_link }}')" >View Promo Link</div>
+                        {% elsif promo.banner_link %}
+                            <a href="{{ promo.banner_link }}" title="promo link">
+                            View Promo Link
+                            </a>
+                        {% endif %}
+
+
+
+                        {% if promo.products.value or promo.collections.value %}
+                            <div class="table-contain">
+                                <table class="promo-products">
+                                    {% for product in promo.products.value %}
+                                        <tr class="promo-product" data-handle="{{ product.handle }}"><td>Loading...</td></tr>
+                                    {% endfor %}
+
+                                    {% for collections in promo.collections.value %}
+                                        {% for product in collections.products %}
+                                            <tr class="promo-product" data-handle="{{ product.handle }}"><td>Loading...</td></tr>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="promo-right {% if promo.products.value or promo.collections.value %}w-products{% endif %} {% if promo.promo_link or promo.banner_link %}w-link{% endif %}">
+                    {% if promo.banner_desktop %}
+                       {% if promo.promo_link %}
+                            <div style="cursor:pointer" onClick="promoRedirect('{{ promo.promo_link }}','{{ promo.banner_link }}')" class="promo-banner-desktop">{{ promo.banner_desktop | image_url: width: 1400 | image_tag: class: 'img-responsive' }}</div>
+                            <div style="cursor:pointer; display:none;" onClick="promoRedirect('{{ promo.promo_link }}','{{ promo.banner_link }}')" class="promo-banner-mobile">{{ promo.banner_mobile | image_url: width: 1400 | image_tag: class: 'img-responsive' }}</div>
+                        {% elsif promo.banner_link %}
+                            <a href="{{ promo.banner_link }}">
+                            <div class="promo-banner-desktop">{{ promo.banner_desktop | image_url: width: 1400 | image_tag: class: 'img-responsive' }}</div>
+                            <div class="promo-banner-mobile" style="display:none;">{{ promo.banner_mobile | image_url: width: 1400 | image_tag: class: 'img-responsive' }}</div>
+                            </a>
+                        {% else %}
+                            <div class="promo-banner-desktop">{{ promo.banner_desktop | image_url: width: 1400 | image_tag: class: 'img-responsive' }}</div>
+                            <div class="promo-banner-mobile" style="display:none;">{{ promo.banner_mobile | image_url: width: 1400 | image_tag: class: 'img-responsive' }}</div>
+                        {% endif %}
+                    {% else %}
+                        <div class="promo-banner-na"><img src="{{ 'no-promo-banner.jpg' | file_url  }}" class="img-responsive" alt="No Banner Available" /></div>
+                    {% endif %}
+                    </div>
+                    <div class="clearer"></div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    $('.past-toggle-show').on('click', function() {
+            $('.past-promo-list').show();
+            $('.past-toggle-show').hide();
+    });
+    $('.past-toggle-hide').on('click', function() {
+        $('.past-promo-list').hide();
+        $('.past-toggle-show').show();
+    });
+
+
+    $(document).ready(function($){
+        $( ".promo-product" ).each(function() {
+            const handle = $(this).data('handle');
+            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=promo-page`;
+            $.get(fetchUrl).then(response => {
+                if (response) {
+                    if(response.includes("data-prod-title")){
+                        $(this).html("");
+                        $(this).html(response);
+                    }
+                }else{
+                    console.log('product not returned');
+                }
+            })
+        });
+    });
+
+</script>
