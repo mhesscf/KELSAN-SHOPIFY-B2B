@@ -263,15 +263,14 @@ margin-top:76px;
                     {% endfor %}
                 ]
             };
-$(document).ready(function($){
-            
+            $(document).ready(function($){
                 $('#mycalendar').monthly({
                     mode: 'event',
                     dataType: 'json',
                     events: promoEvents
                 });
-           
- });
+            });
+
             $(' .cal-zoom').on('click', function(){
                 if($('.calendar-container').hasClass( "cal-small" )){
                     $('.calendar-container').removeClass('cal-small').addClass('cal-large');
