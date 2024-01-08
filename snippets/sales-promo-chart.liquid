@@ -133,6 +133,7 @@ margin-top:76px;
 
 .past-promo-list{
     border-top:1px solid #ccc;
+    margin-top:15px;
 }
 
 
@@ -476,7 +477,7 @@ margin-top:76px;
                         <div class="promo-title">{{  promo.title }} {% if pastpromo == 1 %}(Expired Promotion){% endif %}</div>
                         <div class="promo-date"><strong>Date:</strong> <span>{{  promo.start_date_time | date: "%m/%d/%Y"  }}</span> to <span>{{  promo.end_date_time | date: "%m/%d/%Y" }}</span></div>
                         {% if promo.promo_link %}
-                            <div style="cursor:pointer" title="promo-link" onClick="promoRedirect('{{ promo.promo_link }}','{{ promo.banner_link }}')" >View Promo Link</div>
+                            <div style="cursor:pointer; color:#3C8AA4" title="Click to view promotion link and apply coupon code" onClick="promoRedirect('{{ promo.promo_link }}','{{ promo.banner_link }}')" >View Promo Link</div>
                         {% elsif promo.banner_link %}
                             <a href="{{ promo.banner_link }}" title="promo link">
                             View Promo Link
