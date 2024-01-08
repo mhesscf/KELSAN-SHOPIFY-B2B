@@ -187,7 +187,13 @@ margin-top:76px;
   padding:10px 14px;
 }
 
-
+.colorbox{
+    width:15px;
+    height:15px;
+    float:left;
+    margin-top:3px;
+    margin-right:5px;
+}
 
 </style>
 
@@ -218,9 +224,6 @@ margin-top:76px;
     {%- if employee == 1 -%}
     <div class="calendar-area-bg">
         <div class="calendar-area">
-            {{ 'monthm-monthly.css' | asset_url | stylesheet_tag }}
-            <script src="{{ 'monthm-jquery.js' | asset_url }}"></script>
-            <script src="{{ 'monthm-monthly.js' | asset_url }}"></script>
 
             <div class="calendar-title">Promotions Campaign & Calendar</div>
             <div class="calendar-container cal-small">
@@ -326,7 +329,22 @@ margin-top:76px;
                     {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
                     {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
                     {% if startDateSeconds <= nowSec and endDateSeconds >= nowSec %}
-                        <li><a href="#promo-{{ forloop.index0 }}"><span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
+
+                        {%- assign promo_color = "" -%}
+                        {%- assign promo_color_code = "" -%}
+                        {% case promo.promo_type %}
+                            {% when 'BOGO' %}{%- assign promo_color = "#ff5df2" -%}
+                            {% when 'Discounts' %}{%- assign promo_color = "#5d68ff" -%}
+                            {% when 'Free Shipping Promo' %}{%- assign promo_color = "#026700" -%}
+                            {% when 'Rebates' %}{%- assign promo_color = "#ff00c6" -%}
+                            {% when 'Special of the Month' %}{%- assign promo_color = "#d1de00" -%}
+                            {% when 'Other' %}{%- assign promo_color = "#00de97" -%}
+                        {% endcase %}
+                        {% if employee == 1 and promo_color != "" %}
+                            {%- capture promo_color_code -%}<div class="colorbox" style="background-color:{{ promo_color }}"></div>{% endcapture %}
+                        {% endif %}
+
+                        <li><a href="#promo-{{ forloop.index0 }}">{{ promo_color_code }}<span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
                    {% endif %}
                 {% endfor %}
             </ul>
@@ -339,7 +357,22 @@ margin-top:76px;
                     {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
                     {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
                     {% if startDateSeconds > nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate %}
-                        <li><a href="#promo-{{ forloop.index0 }}"><span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
+
+                        {%- assign promo_color = "" -%}
+                        {%- assign promo_color_code = "" -%}
+                        {% case promo.promo_type %}
+                            {% when 'BOGO' %}{%- assign promo_color = "#ff5df2" -%}
+                            {% when 'Discounts' %}{%- assign promo_color = "#5d68ff" -%}
+                            {% when 'Free Shipping Promo' %}{%- assign promo_color = "#026700" -%}
+                            {% when 'Rebates' %}{%- assign promo_color = "#ff00c6" -%}
+                            {% when 'Special of the Month' %}{%- assign promo_color = "#d1de00" -%}
+                            {% when 'Other' %}{%- assign promo_color = "#00de97" -%}
+                        {% endcase %}
+                        {% if employee == 1 and promo_color != "" %}
+                            {%- capture promo_color_code -%}<div class="colorbox" style="background-color:{{ promo_color }}"></div>{% endcapture %}
+                        {% endif %}
+
+                        <li><a href="#promo-{{ forloop.index0 }}">{{ promo_color_code }}<span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
                         {% assign futurepromoCount = 0 | plus: 1 %}
                     {% endif %}
                 {% endfor %}
@@ -361,8 +394,23 @@ margin-top:76px;
                         {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
                         {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
                         {% if endDateSeconds < nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate %}
-                        {% assign pastpromoCount = 0 | plus: 1 %}
-                            <li><a href="#promo-{{ forloop.index0 }}"><span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
+                            {% assign pastpromoCount = 0 | plus: 1 %}
+
+                            {%- assign promo_color = "" -%}
+                            {%- assign promo_color_code = "" -%}
+                            {% case promo.promo_type %}
+                                {% when 'BOGO' %}{%- assign promo_color = "#ff5df2" -%}
+                                {% when 'Discounts' %}{%- assign promo_color = "#5d68ff" -%}
+                                {% when 'Free Shipping Promo' %}{%- assign promo_color = "#026700" -%}
+                                {% when 'Rebates' %}{%- assign promo_color = "#ff00c6" -%}
+                                {% when 'Special of the Month' %}{%- assign promo_color = "#d1de00" -%}
+                                {% when 'Other' %}{%- assign promo_color = "#00de97" -%}
+                            {% endcase %}
+                            {% if employee == 1 and promo_color != "" %}
+                                {%- capture promo_color_code -%}<div class="colorbox" style="background-color:{{ promo_color }}"></div>{% endcapture %}
+                            {% endif %}
+
+                            <li><a href="#promo-{{ forloop.index0 }}">{{ promo_color_code }}<span class="promo-title">{{  promo.title }}</span><span class="promo-date"> ({{  promo.start_date_time | date: "%m/%d/%Y"  }} - {{  promo.end_date_time | date: "%m/%d/%Y" }})</span></a></li>
                         {% endif %}
                     {% endfor %}
                     {% if pastpromoCount == 0 %}
@@ -479,7 +527,22 @@ margin-top:76px;
             {% if startDateSeconds <= startShowDate and endDateSeconds >= endShowDate and promo.promo_type != "Special of the Month" %}
                 <div id="promo-{{ forloop.index0 }}" class="promo-entry {% if pastpromo == 1 %}pastpromo{% endif %}">
                     <div class="promo-left">
-                        <div class="promo-title">{{  promo.title }} {% if pastpromo == 1 %}(Expired Promotion){% endif %}</div>
+                     {%- assign promo_color = "" -%}
+
+                        {%- assign promo_color_code = "" -%}
+                        {% case promo.promo_type %}
+                            {% when 'BOGO' %}{%- assign promo_color = "#ff5df2" -%}
+                            {% when 'Discounts' %}{%- assign promo_color = "#5d68ff" -%}
+                            {% when 'Free Shipping Promo' %}{%- assign promo_color = "#026700" -%}
+                            {% when 'Rebates' %}{%- assign promo_color = "#ff00c6" -%}
+                            {% when 'Special of the Month' %}{%- assign promo_color = "#d1de00" -%}
+                            {% when 'Other' %}{%- assign promo_color = "#00de97" -%}
+                        {% endcase %}
+                        {% if employee == 1 and promo_color != "" %}
+                            {%- capture promo_color_code -%}<div class="colorbox" style="background-color:{{ promo_color }}"></div>{% endcapture %}
+                        {% endif %}
+
+                        <div class="promo-title">{{ promo_color_code }}{{  promo.title }} {% if pastpromo == 1 %}(Expired Promotion){% endif %}</div>
                         <div class="promo-date"><strong>Date:</strong> <span>{{  promo.start_date_time | date: "%m/%d/%Y"  }}</span> to <span>{{  promo.end_date_time | date: "%m/%d/%Y" }}</span></div>
                         {% if promo.promo_link %}
                             <div style="cursor:pointer; color:#3C8AA4" title="Click to view promotion link and apply coupon code" onClick="promoRedirect('{{ promo.promo_link }}','{{ promo.banner_link }}')" >View Promo Link</div>
