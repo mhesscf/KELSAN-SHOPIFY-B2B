@@ -36,7 +36,7 @@
     "032695ac-64c7-4ccc-875e-f82abdb3ea9b": {
       "type": "dynamic-custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'sales-promo-chart' %}\ntest"
+        "custom_liquid": "{% render 'sales-promo-chart' %}"
       }
     }
   },
