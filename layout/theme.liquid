@@ -852,6 +852,12 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
 
 {% render 'structured-data' %}
 
+{%- if template.suffix == "sales-and-promos-admin" -%}
+    {{ 'monthm-monthly.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'monthm-jquery.js' | asset_url }}"></script>
+    <script src="{{ 'monthm-monthly.js' | asset_url }}"></script>
+{%- endif -%}
+
 <script>
     (function () {
         function handleFirstTab(e) {
