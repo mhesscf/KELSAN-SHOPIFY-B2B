@@ -494,9 +494,15 @@ margin-top:76px;
                                     {% endfor %}
 
                                     {% for collections in promo.collections.value %}
-                                        {% for product in collections.products %}
-                                            <tr class="promo-product" data-handle="{{ product.handle }}"><td>Loading...</td></tr>
-                                        {% endfor %}
+                                        {% if collections.handle == "all-dynamic" or collections.handle == "all"  %}
+
+                                        {% else %}
+                                            {% paginate collections.products by 100 %}
+                                                {% for product in collections.products %}
+                                                    <tr class="promo-product" data-handle="{{ product.handle }}"><td>Loading...</td></tr>
+                                                {% endfor %}
+                                            {% endpaginate %}
+                                        {% endif %}
                                     {% endfor %}
                                 </table>
                             </div>
