@@ -1,3 +1,40 @@
+
+
+{%- if customer -%}
+    {%- assign sf_customer = 0 -%}
+    {% for tag in customer.tags %}
+        {% if tag == "SuperFreak" or tag == "superfreak" %}
+            {%- assign sf_customer = 1 -%}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+
+    {% if sf_customer == 1 and product.metafields.plytix.superfreak_tech_tip %}
+        <section class="product-single-techtip">
+            <div class="container">
+                <div class="tech-text">
+                    <h3><img style="margin: 0 10px -9px 6px" src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="SuperFreak Logo" />Tips from our SuperFreak Service Technicians</h3>
+                    <p>
+                        {{ product.metafields.plytix.superfreak_tech_tip }}
+                    </p>
+                </div>
+
+        {% if product.metafields.plytix.superfreak_tech_tip_img == "test" %}
+            {%- assign tech_img =  'tip-test-profile.png' -%}
+            {%- assign tech_img_alt =  'SuperFreak Tech Tips' -%}
+        {% else %}
+            {%- assign tech_img =  'default-tech-profile.png' -%}
+            {%- assign tech_img_alt =  'SuperFreak Tech Tips' -%}
+        {% endif %}
+                <div class="tech-image">
+                    <img src="{{ tech_img | file_url  }}" alt="{{ tech_img_alt }}" class="img-responsive" />
+                </div>
+                <div class="clearer"></div>
+            </div>
+        </section>
+    {% endif %}
+{% endif %}
+
 <section class="product-single-spec-manual">
     <div class="container">
         <div class="row {% if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}space-between {% else %}centered-content{% endif %}">

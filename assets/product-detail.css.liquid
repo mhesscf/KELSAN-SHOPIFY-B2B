@@ -330,6 +330,46 @@
     width: 100%;
   }
 }
+
+/* ------------- SuperFreak Tech Tip --------------------- **/
+.product-single-techtip{
+  background: #def5fb;
+  /*background: linear-gradient(180deg, rgba(248,251,254,1) 0%, rgba(234,236,240,1) 23%);*/
+  padding: 0;
+  position: relative;
+
+}
+.product-single-techtip .container{
+  width: 1330px;
+  margin: auto;
+  max-width: 90%;
+  position:relative;
+}
+.product-single-techtip .tech-text {
+  padding-bottom:15px;
+  padding-top:15px;
+  width:68%
+}
+.product-single-techtip .tech-image img{
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+@media (max-width: 1079px) {
+  .product-single-techtip .tech-image img{
+    width:200px;
+  }
+}
+@media (max-width: 679px) {
+  .product-single-techtip .tech-image,
+  .product-single-techtip .tech-text {
+    width:100%
+  }
+  .product-single-techtip .tech-image img {
+    position: relative;
+    margin: auto;
+  }
+}
 /* ------------- Product Information and Spec + Manuals --------------------- **/
 .product-single-spec-manual{
   background: {{ settings.color_section_secondary }};
