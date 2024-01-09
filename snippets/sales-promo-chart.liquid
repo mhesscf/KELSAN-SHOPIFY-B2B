@@ -139,6 +139,7 @@ margin-top:76px;
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
+    padding:10px 0;
 }
 
 /*--- product scroller ---*/
@@ -159,7 +160,7 @@ margin-top:76px;
   color:#303e48;
   text-decoration:none;
   width:97%;
-  margin:10px 10px 7px 10px;
+  margin:10px 5px 7px 5px;
   display:block;
   font-size:14px;
   text-align: center;
@@ -195,6 +196,24 @@ margin-top:76px;
     margin-right:5px;
 }
 
+@media (max-width: 1079px) {
+    .promo-details .promo-products a{
+        font-size:12px;
+    }
+    .promosku{display:none;}
+}
+@media (max-width: 719px) {
+    .promo-details .promo-entry .promo-left,
+    .promo-details .promo-entry .promo-right,
+        .sales-promo-container .sotm-area,
+        .sales-promo-container .promo-list{
+        float:none;
+        width:100%
+        }
+    .promo-banner-desktop{
+    margin-top:10px;
+    }
+}
 </style>
 
 <div class="sales-promo-container">
@@ -277,13 +296,7 @@ margin-top:76px;
                     {% endfor %}
                 ]
             };
-            $(document).ready(function($){
-                $('#mycalendar').monthly({
-                    mode: 'event',
-                    dataType: 'json',
-                    events: promoEvents
-                });
-            });
+
 
             $(' .cal-zoom').on('click', function(){
                 if($('.calendar-container').hasClass( "cal-small" )){
@@ -423,7 +436,7 @@ margin-top:76px;
     </div>
     <div class="sotm-area">
         <div class="sotm-area-banner" style="width:100%" >
-            <img src="{{ 'sotm-promo-banner.jpg' | file_url  }}" class="img-responsive" alt="Special of the month promos" />
+            <img style="border:3px solid #def5fb; border-radius: 10px;" src="{{ 'sotm-promo-banner.jpg' | file_url  }}" class="img-responsive" alt="Special of the month promos" />
         </div>
 
         {% for promo in promoObjSorted %}
