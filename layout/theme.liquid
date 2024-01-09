@@ -280,7 +280,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
                 $('.popup-container').removeClass('hidden');
                 $(".pop-grad").removeClass('hidden');
                 $(".popup-container .close-pop").addClass('sf-off');
-                var newhtml = "<div style='text-align:center'><strong>Welcome Back<br/>SuperFreak Member!</strong><br/><br/>Would you like to apply your SuperFreak 10% discount on parts today?<br><br><button style='width:70px;' onClick='sfApply(1)'><span class='btn-text'>Yes</span></button> <button style='width:70px;' onClick='sfApply(0)'><span class='btn-text'>No</span></button> </div>";
+                var newhtml = "<div style='text-align:center'><div style='margin:auto; width:230px; text-align:left'><strong><img style='float:left; margin: -9px 7px -9px 6px' src='{{ 'superfreak-logo-sm.jpg' | file_img_url  }}' alt='SuperFreak Link' />Welcome Back<br/>SuperFreak Member!</strong></div><br/>Would you like to apply your SuperFreak 10% discount on parts today?<br><br><button style='width:70px;' onClick='sfApply(1)'><span class='btn-text'>Yes</span></button> <button style='width:70px;' onClick='sfApply(0)'><span class='btn-text'>No</span></button> </div>";
                 $('.popup-container .content').html(newhtml);
 
                 $('.popup-container .close-pop.sf-off').on('click', function(e){
