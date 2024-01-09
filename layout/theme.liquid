@@ -856,6 +856,17 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     {{ 'monthm-monthly.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'monthm-jquery.js' | asset_url }}"></script>
     <script src="{{ 'monthm-monthly.js' | asset_url }}"></script>
+    <script>
+        $(document).ready(function($){
+            setTimeout(() => {
+                $('#mycalendar').monthly({
+                    mode: 'event',
+                    dataType: 'json',
+                    events: promoEvents
+                });
+            }, "1000");
+        });
+    </script>
 {%- endif -%}
 
 <script>
