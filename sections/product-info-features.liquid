@@ -287,7 +287,8 @@
                             }
                             .prod-used-pads td .perCase,
                             .prod-used-pads td.pad-desciption{
-                                font-size:12px;
+                                font-size:14px;
+                                line-height:17px;
                             }
                             .prod-used-pads td .button-secondary{
                                 font-weight:bold;
@@ -405,6 +406,9 @@
                             .chemical-guide a:hover tr{
                                 background:#F2F7FB;
                             }
+                            .chemical-guidetr:nth-child(odd){
+                                background:#DEF1F8;
+                            }
                             .chemical-guide tr:first-child{
                                 border-top:1px solid black;
                             }
@@ -413,6 +417,14 @@
                             }
                             .chemical-guide td{
                                 padding: 10px;
+                                font-size:14px;
+                                line-height:17px;
+                            }
+                            .chemical-guide td strong{
+                                font-size:17px;
+                            }
+                            .chemical-guide .chem-type{
+                                width: 124px;
                             }
                             .chem-price .single-price{
                                 font-weight: bold;
@@ -452,9 +464,11 @@
                         <h3 style="padding:10px 0 10px; margin-bottom:10px;" class="prod-block-title">Chemical Recommendations</h3>
                         <hr style="border:0; border-top:1px solid #eee;">
                         <div class="chemical-guide">
+                            <table>
                             {% for chemical in chemicalsArr %}
-                                <div class="chemical-guide-item" data-handle="{{ chemical }}"><td>Loading...</td></div>
+                                <tr class="chemical-guide-item" data-handle="{{ chemical }}"><td>Loading...</td></tr>
                             {% endfor %}
+                            </table>
                         </div>
                               <script>
                                   $(document).ready(function($){

@@ -6,24 +6,38 @@
 {% for variant in product.variants %}
     {% assign variations = variations | plus: 1 %}
 {% endfor %}
+{% comment %}
 <a href="/products/{{ product.handle }}">
     {% assign shortTitle1Arry = product.title | split: '(' %}
     {% assign shortTitle2Arry = product.title | split: ')' %}
 <h4 data-chem-title >{{ shortTitle1Arry[0] }}{{ shortTitle2Arry[1] }}</h4>
-<table>
-    <tr>
+{% endcomment %}
+{% assign desctype = "" %}
+{% if productFirstVar.sku == "MPL-5855-125P" %}
+    {% assign desctype = "Light Duty" %}
+{% elsif productFirstVar.sku == "MPL-5192-125P" %}
+    {% assign desctype = "Light Duty<br/>w/ Scent" %}
+{% elsif productFirstVar.sku == "MPL-0610-125P" %}
+    {% assign desctype = "Medium Duty" %}
+{% elsif productFirstVar.sku == "MPL-5974-125P" %}
+    {% assign desctype = "Heavy Duty" %}
+{% endif %}
+
+        <td class="chem-type" data-chem-title >
+            <a href="/products/{{ product.handle }}"><strong>{{ desctype }}</strong></a>
+        </td>
         <td class="chem-image" >
-            {{ product.featured_image | img_url: '75x75' | img_tag: product.featured_image.alt }}
+            <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '40x40' | img_tag: product.featured_image.alt }}</a>
         </td>
         {% comment %}<td class="chem-qty">{% endcomment %}
             {% comment %}<span class="padCase">{{ productFirstVar.metafields.plytix.qty_per_carton |  floor }}</span><br/><span class="perCase">per case</span>{% endcomment %}
         {% comment %}</td>{% endcomment %}
         <td class="chem-desciption">
-            {{ product.metafields.plytix.single_line_desc }}
+            <a href="/products/{{ product.handle }}">{{ product.metafields.plytix.single_line_desc }}</a>
         </td>
         <td class="chem-price">
             {% if variations == 1 %}
-                <span class="single-price">{{ productFirstVar.price | money }}</span>
+                <a href="/products/{{ product.handle }}"><span class="single-price"><strong>{{ productFirstVar.price | money }}</strong></span></a>
             {% endif %}
         </td>
         <td class="link-arrow" ><a href="/products/{{ product.handle }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
@@ -33,8 +47,6 @@
 
 
 
-    </tr>
-</table>
 
-</a>
+
 
