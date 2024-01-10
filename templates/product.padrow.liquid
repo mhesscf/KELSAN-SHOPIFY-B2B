@@ -36,11 +36,17 @@
     <a href="/products/{{ product.handle }}"><strong>{{ productFirstVar.metafields.plytix.color }}</strong></a>
 </td>
 <td class="pad-image" data-pad-title>
-    <a href="/products/{{ product.handle }}"><img style="padding:2px 5px;" src="{{ padImg | file_img_url }}" alt=" {{ product.title | escape }}" ></a>
+    <a href="/products/{{ product.handle }}">
+        {{ product.featured_image | img_url: '40x40' | img_tag: product.featured_image.alt }}
+        {% comment %}
+        <img style="padding:2px 5px;" src="{{ padImg | file_img_url }}" alt=" {{ product.title | escape }}" ></a>
+        {% endcomment %}
 </td>
+{% comment %}
 <td class="case-qty">
     <a href="/products/{{ product.handle }}"><span class="padCase">{{ productFirstVar.metafields.plytix.qty_per_carton |  floor }}</span><br/><span class="perCase">per case</span></a>
 </td>
+{% endcomment %}
 <td class="pad-desciption">
     <a href="/products/{{ product.handle }}">{{ padDesciption }}</a>
 </td>
