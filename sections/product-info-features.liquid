@@ -373,7 +373,7 @@
                  {%- assign chem_guide = false -%}
                     {% for c in product.collections %}
                         {% comment %} if c.handle == "floor-buffers" or c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" {% endcomment %}
-                        {% if c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" %}
+                        {% if c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" or c.handle == "floor-buffers" %}
                             {%- assign chem_guid = true -%}
                         {% endif %}
                     {% endfor %}
