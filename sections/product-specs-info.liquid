@@ -1,15 +1,6 @@
 
 
-{%- if customer -%}
-    {%- assign sf_customer = 0 -%}
-    {% for tag in customer.tags %}
-        {% if tag == "SuperFreak" or tag == "superfreak" %}
-            {%- assign sf_customer = 1 -%}
-            {% break %}
-        {% endif %}
-    {% endfor %}
-
-    {% if sf_customer == 1 and product.metafields.plytix.superfreak_tech_tip %}
+    {% if product.metafields.plytix.superfreak_tech_tip %}
         <section class="product-single-techtip">
             <div class="container">
                 <div class="tech-text">
@@ -33,7 +24,7 @@
             </div>
         </section>
     {% endif %}
-{% endif %}
+
 
 <section class="product-single-spec-manual">
     <div class="container">
