@@ -290,25 +290,23 @@
                                 font-size:14px;
                                 line-height:17px;
                             }
-                            .prod-used-pads td .button-secondary{
-                                font-weight:bold;
-                                width:130px;
+                            @media screen and (max-width: 1023px) {
+                                .prod-used-pads td{
+                                    padding:7px;
+                                }
+                                .prod-used-pads a, .prod-used-pads td .single-price{
+                                    font-size:13px !important;
+                                }
                             }
-                            @media screen and (max-width: 1079px) {
-                                .prod-used-pads .case-qty{
-                                 display:none;
+                            @media screen and (max-width: 479px) {
+                                .prod-additional{
+                                    margin: 0 -20px 0 -20px;
                                 }
-                                .prod-used-pads td .button-secondary{
-                                    width:75px;
-                                }
-                                .prod-used-pads td, .prod-used-pads td .single-price{
-                                    font-size:14px;
-                                }
-                                .prod-used-pads td.pad-image{
+                                .pad-price{
                                     display:none;
                                 }
-
                             }
+
                         </style>
                           {% if sizeQuery != "" %}
                               {%- assign scrubbingArr = scrubbing | split: "," -%}
@@ -391,10 +389,9 @@
                                 font-weight:bold;
                             }
                             .chemical-guide a{
-                                color: black;
-                                text-decoration: none;
+                                color:#303e48;
+                                text-decoration:none;
                             }
-
 
                             .chemical-guide table{
                                 border-collapse: collapse;
@@ -428,29 +425,22 @@
                             }
 
                             @media screen and (max-width: 1023px) {
+
                                 .chemical-guide td{
                                     padding:7px;
                                 }
-                                .chemical-guide .chem-image img{
-                                    max-width:40px;
-                                }
-                                .chemical-guide .chem-desciption{
-                                    font-size:15px
+                                .chemical-guide a, .chemical-guide td strong{
+                                    font-size:13px !important;
                                 }
                             }
                             @media screen and (max-width: 479px) {
-                                .chemical-guide td{
-                                    padding:4px;
+                                .prod-additional {
+                                    margin: 0 -20px 0 -20px;
                                 }
-                                .chemical-guide .chem-image img{
-                                    max-width:30px;
-                                }
-                                .chemical-guide .chem-desciption{
-                                    font-size:13px
-                                }
-                                .chemical-guide .link-arrow{
+                                .chem-price{
                                     display:none;
                                 }
+
                             }
                         </style>
 
