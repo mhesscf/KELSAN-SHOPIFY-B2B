@@ -1201,6 +1201,101 @@ jQuery(document).ready(function($){
         document.cookie = "applied_discount_code=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
    };
 
+    setTimeout(function(){
+        $('a').on('click', function(e){
+            //ignore any links with onclick events which may handle the trigger instead of this
+            if ($(this).attr("onClick") == undefined) {
+                var linkloc = 'NA';
+                var mainloc = 'NA';
+                var href = $(this).attr('href');
+                if ($(this).closest('.tmenu_item').length > 0) {
+                    //doesn't work
+                    mainloc = 'Header';
+                    linkloc = 'Menu/Nav';
+                } else if ($(this).closest('.site-header-logo').length > 0) {
+                    mainloc = 'Header';
+                    linkloc = 'Logo';
+                } else if ($(this).closest('.site-header-actions').length > 0) {
+                    mainloc = 'Header';
+                    linkloc = 'Action Icons';
+                } else if ($(this).closest('.breadcrumbs-container').length > 0) {
+                    mainloc = 'Header';
+                    linkloc = 'Breadcrumbs';
+                } else if ($(this).closest('.top-menu-container').length > 0) {
+                    mainloc = 'Header';
+                    linkloc = 'Top Mini Menu';
+                } else if ($(this).closest('.description').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'Long Descriptions';
+                } else if ($(this).closest('.product-detail-sku').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'Vendor';
+                } else if ($(this).closest('.freq-bought-items').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'Frequently Bought Together';
+                } else if ($(this).closest('.product-single-techtip').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'SuperFreak Techtip';
+                } else if ($(this).closest('.product-icons').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'Product Icons';
+                } else if ($(this).closest('.data-sheets').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'SDS/Manuals';
+                } else if ($(this).closest('.prod-used-pads-block').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'Pad Capability';
+                } else if ($(this).closest('.padcharacteristics').length > 0) {
+                    mainloc = 'Product Page';
+                    linkloc = 'Pad Characteristics';
+                } else if ($(this).closest('.pad-grid-table').length > 0) {
+                    mainloc = 'Collection';
+                    linkloc = 'Pad Grid Table';
+                }else if ($(this).closest('.collection-main-area .ais-Hits-item .product-description').length > 0) {
+                    mainloc = 'Collection';
+                    linkloc = 'Main Card Desc';
+                }else if ($(this).closest('.collection-main-area .ais-Hits-item').length > 0) {
+                    mainloc = 'Collection';
+                    linkloc = 'Main Card';
+                }else if ($(this).closest('.search-main-area .ais-Hits-item .product-description').length > 0) {
+                    mainloc = 'Search';
+                    linkloc = 'Main Card Desc';
+                }else if ($(this).closest('.search-main-area .ais-Hits-item').length > 0) {
+                    mainloc = 'Search';
+                    linkloc = 'Main Card';
+                }else if ($(this).closest('.site-footer-item .social-icons').length > 0) {
+                    mainloc = 'Footer';
+                    linkloc = 'Social Icons';
+                }else if ($(this).closest('.site-footer-item .about-us-nav').length > 0) {
+                    mainloc = 'Footer';
+                    linkloc = 'About Us';
+                }else if ($(this).closest('.site-footer-item .footer-customer-service-nav').length > 0) {
+                    mainloc = 'Footer';
+                    linkloc = 'Customer Service';
+                }else if ($(this).closest('.site-footer-item .footer-news').length > 0) {
+                    mainloc = 'Footer';
+                    linkloc = 'Newsletter';
+                }else if ($(this).closest('.cartitems .cart-item').length > 0) {
+                    mainloc = 'Cart';
+                    linkloc = 'Cart Items';
+                }else if ($(this).closest('#gift-slds').length > 0) {
+                    mainloc = 'Cart';
+                    linkloc = 'Free Gift';
+                }else if ($(this).closest('.popular-categories-links').length > 0) {
+                    mainloc = 'Homepage';
+                    linkloc = 'Popular Categories';
+                }else if ($(this).closest('.template-index .custom-html--container').length > 0) {
+                    mainloc = 'Homepage';
+                    linkloc = 'Custom HTML';
+                }
+
+
+                    //custom values will have their own onclick. Adding this to avoid accidental double log.
+                    linkdl(mainloc, linkloc, href)
+
+            }
+        });
+    }, 1000);
 });
 
 
@@ -1277,4 +1372,18 @@ function sfApply(enable){
     }else{
         closechildPop('bund-pop-');
     }
+}
+
+
+function linkdl(mainloc,linkloc,href){
+    var cpage = window.location.href;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'ee_linkClick',
+        current_page: cpage,
+        href: href,
+        link_location : linkloc,
+        main_location: mainloc,
+    })
+    console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
 }

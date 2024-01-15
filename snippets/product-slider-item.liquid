@@ -11,6 +11,9 @@
 {% endcomment %}
 {% if 1==1 %}
 
+  {% capture onclick_event %}
+    linkdl('{{ main_loc }}','{{ item_loc }}','/products/{{ product.handle }}')
+  {% endcapture %}
 {% assign recently_viewed = recently_viewed | default: nil %}
 {% assign product_compare = product_compare | default: nil %}
 {% assign product_grid_show_second_image = false %}
@@ -261,6 +264,7 @@
                 tabindex="-1"
                 title="{{ product_title }}"
                 data-product-page-link
+                onclick="{{ onclick_event }}"
         >
           <figure
                   class="productitem--image"
@@ -345,7 +349,7 @@
         {% endif %}
 
         <h2 class="productitem--title">
-          <a href="{{ product_link }}" data-product-page-link>
+          <a href="{{ product_link }}" data-product-page-link onclick="{{ onclick_event }}">
             {{ product_title }}
           </a>
         </h2>
