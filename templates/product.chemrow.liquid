@@ -23,24 +23,28 @@
     {% assign desctype = "Heavy Duty" %}
 {% endif %}
 
+{% capture onclick_event %}
+    linkdl('Product Page','Chemical Recommendations','/products/{{ product.handle }}')
+{% endcapture %}
+
         <td class="chem-type" data-chem-title >
-            <a href="/products/{{ product.handle }}"><strong>{{ desctype }}</strong></a>
+            <a href="/products/{{ product.handle }}" onclick="{{ onclick_event }}"><strong>{{ desctype }}</strong></a>
         </td>
         <td class="chem-image" >
-            <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '40x40' | img_tag: product.featured_image.alt }}</a>
+            <a href="/products/{{ product.handle }}" onclick="{{ onclick_event }}">{{ product.featured_image | img_url: '40x40' | img_tag: product.featured_image.alt }}</a>
         </td>
         {% comment %}<td class="chem-qty">{% endcomment %}
             {% comment %}<span class="padCase">{{ productFirstVar.metafields.plytix.qty_per_carton |  floor }}</span><br/><span class="perCase">per case</span>{% endcomment %}
         {% comment %}</td>{% endcomment %}
         <td class="chem-desciption">
-            <a href="/products/{{ product.handle }}">{{ product.metafields.plytix.single_line_desc }}</a>
+            <a href="/products/{{ product.handle }}" onclick="{{ onclick_event }}">{{ product.metafields.plytix.single_line_desc }}</a>
         </td>
         <td class="chem-price">
             {% if variations == 1 %}
-                <a href="/products/{{ product.handle }}"><span class="single-price"><strong>{{ productFirstVar.price | money }}</strong></span></a>
+                <a href="/products/{{ product.handle }}" onclick="{{ onclick_event }}"><span class="single-price"><strong>{{ productFirstVar.price | money }}</strong></span></a>
             {% endif %}
         </td>
-        <td class="link-arrow" ><a href="/products/{{ product.handle }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
+        <td class="link-arrow" ><a href="/products/{{ product.handle }}" onclick="{{ onclick_event }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></td>
         {% comment %}<td class="chem-atc">{% endcomment %}
             {% comment %}<a href="/products/{{ product.handle }}"><button class="button-secondary">View Details</button></a>{% endcomment %}
         {% comment %}</td>{% endcomment %}

@@ -408,6 +408,7 @@
                         href="{{ product_link }}"
                         class="productitem--link"
                         data-product-page-link
+                        onclick="{{ onclick_event }}"
                 >
                   {{ 'product.buttons.view_details' | t }}
                 </a>
@@ -596,7 +597,7 @@
  
             {% if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button'%}
             <div class="productitem--action atc--button">
-              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
+              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" onclick="{{ onclick_event }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
             </div>
             {% else %}
               {% if atc_button %}
