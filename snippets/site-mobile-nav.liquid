@@ -1,0 +1,118 @@
+<div class="site-mobile-nav" id="site-mobile-nav" data-mobile-nav tabindex="0">
+  <div class="mobile-nav-panel" data-mobile-nav-panel>
+      <div class="mobile-menu-header">
+        <a
+      class="mobile-nav-close"
+      href="#site-header-nav"
+      data-mobile-nav-close>
+      {% render 'icon-menu-close' %}
+      <span class="visually-hidden">{{ 'general.accessibility.close' | t }}</span>
+    </a>
+        <a
+              class="site-logo"
+              href="{{ routes.root_url }}">
+          {% if section.settings.logo %}
+              {% assign logo_alt = section.settings.logo.alt %}
+              {% if logo_alt == '' %}
+                  {% assign logo_alt = shop.name | strip %}
+              {% endif %}
+
+              {%
+                      render 'rimg',
+                      img: section.settings.logo,
+                      class: 'site-logo-image',
+                      alt: logo_alt,
+                      size: logo_size
+              %}
+          {% else %}
+              {% if template == 'index' %}
+                  <h1 class="site-logo-text">
+                      {{ shop.name }}
+                  </h1>
+              {% else %}
+                  <span class="site-logo-text">
+              {{ shop.name }}
+            </span>
+              {% endif %}
+          {% endif %}
+      </a>
+          <a class="top-menu-number" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a>
+          
+      </div>
+      <div class="search-action-icons">
+          {%
+                  render 'live-search-form',
+                  quick_links: linklists[section.settings.quick_links],
+                  enable_images: section.settings.enable_live_search_images,
+                  enable_content: section.settings.enable_live_search_articles_pages
+          %}
+          <ul class="mobile-site-header-actions">
+              {% if shop.customer_accounts_enabled %}
+                  {% unless customer %}
+                      <li class="site-header-actions__account-link account-log_in_out">
+                          <a href="{{ routes.account_login_url }}" class="site-header_account-link-text">
+                              <i class="fa-regular fa-user"></i>
+                          </a>
+                      </li>
+                  {% else %}
+                      <li class="site-header-actions__account-link account-log_in_out">
+                          <i class="fa-regular fa-user"></i>
+                          <span class="site-header__account-links">
+                                <a href="{{ routes.account_url }}" class="site-header__account-link--account">{{ 'header.account.title' | t }}</a>
+                                <a href="{{ routes.account_logout_url }}" class="site-header__account-link--logout" data-no-instant>{{ 'header.account.logout' | t }}</a>
+                            </span>
+                      </li>
+                  {% endunless %}
+              {% endif %}
+              <li class="site-header-cart">
+                  <a class="site-header-cart--button" href="{{ routes.cart_url }}">
+                      <span class="site-header-cart--count {% if cart.item_count > 0 %}visible{% endif %}" data-header-cart-count="{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}"></span>
+                      <span class="site-header-cart-icon site-header-cart-icon--svg">
+                    {% if section.settings.cart_icon == 'icon-bag' %}
+                        {% render 'icon-library', id: 'icon-bag' %}
+                    {% else %}
+                        {% render 'icon-library', id: 'icon-cart' %}
+                    {% endif %}
+                    </span>
+                  </a>
+              </li>
+          </ul>
+      </div>
+    <div class="mobile-nav-content" data-mobile-nav-content>
+      {%
+        render 'mobile-nav-list',
+        menu: section.settings.menu,
+        blocks: blocks
+      %}
+        <div class="gray-bg">
+            <div class="mobile-nav-bottom-content">
+                {% render 'site-header-actions' %}
+                {% if section.settings.secondary_menu != blank %}
+                    <span class="mobile-nav-content__border"></span>
+                    <div class="mobile-nav-content__secondary-menu">
+                        {%
+                                render 'navlist',
+                                menu_list: linklists[section.settings.secondary_menu].links,
+                                depth: 1,
+                                max_depth: 1,
+                                aria_expanded: true
+                        %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mobile-secondary-nav">
+                {%
+                        render 'navlist',
+                        menu_list: linklists['mobile-secondary-nav'].links,
+                        depth: 1,
+                        max_depth: 1,
+                        aria_expanded: true
+                %}
+            </div>
+        </div>
+    </div>
+    <div class="utility-bar__mobile-disclosure" data-utility-mobile></div>
+  </div>
+
+  <div class="mobile-nav-overlay" data-mobile-nav-overlay></div>
+</div>
