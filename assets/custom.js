@@ -1418,5 +1418,5 @@ function linkdl(mainloc,linkloc,href){
         link_location : linkloc,
         main_location: mainloc,
     })
-    console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
+    // console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
 }
