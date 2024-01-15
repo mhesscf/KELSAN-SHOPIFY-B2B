@@ -9,6 +9,8 @@
                 {%- assign  thisprod = all_products[freq] -%}
                 {%-
                         render 'product-slider-item-freq',
+                        main_loc: 'Cart',
+                        item_loc: 'Accessories',
                         product: thisprod
                 -%}
             </div>

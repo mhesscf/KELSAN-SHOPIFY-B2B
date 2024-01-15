@@ -6,6 +6,9 @@
 
 {%- endcomment -%}
 {%- if 1 == 1 -%}
+  {% capture onclick_event %}
+    linkdl('{{ main_loc }}','{{ item_loc }}','/products/{{ product.handle }}')
+  {% endcapture %}
 {%- assign product_grid_show_second_image = false -%}
 {%- assign emphasize_price = false -%}
 {%- assign quick_shop_display = false -%}
@@ -117,6 +120,7 @@
                 tabindex="-1"
                 title="{{ product_title }}"
                 data-product-page-link
+                onclick="{{ onclick_event }}"
         >
           <figure
                   class="productitem--image"
@@ -193,7 +197,7 @@
 
       <div class="productitem--info">
          <h2 class="productitem--title">
-          <a href="{{ product_link }}" data-product-page-link>
+          <a href="{{ product_link }}" data-product-page-link onclick="{{ onclick_event }}">
             {{ product_title }}
           </a>
         </h2>
@@ -382,7 +386,7 @@
           <div class="productitem--actions" data-product-actions>
             {%- if product_type == 'nobuy' %}
               {% comment %}We are not allowing these products{% endcomment %}
-              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
+              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" onclick="{{ onclick_event }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
 
 
             {%- elsif product_type == 'variant' %}

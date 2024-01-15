@@ -1281,18 +1281,39 @@ jQuery(document).ready(function($){
                 }else if ($(this).closest('#gift-slds').length > 0) {
                     mainloc = 'Cart';
                     linkloc = 'Free Gift';
+                }else if ($(this).hasClass('cart-continue')) {
+                    mainloc = 'Cart';
+                    linkloc = 'Continue Shopping';
                 }else if ($(this).closest('.popular-categories-links').length > 0) {
                     mainloc = 'Homepage';
                     linkloc = 'Popular Categories';
+                }else if ($(this).closest('.template-index .image-gradient-section').length > 0) {
+                    mainloc = 'Homepage';
+                    linkloc = 'Gradient Text';
                 }else if ($(this).closest('.template-index .custom-html--container').length > 0) {
                     mainloc = 'Homepage';
                     linkloc = 'Custom HTML';
+                }else if ($(this).closest('.template-index .slideshow-slide').length > 0) {
+                    mainloc = 'Homepage';
+                    linkloc = 'Banner';
+                }else if ($(this).closest('.category-types').length > 0) {
+                    mainloc = 'Department Page';
+                    linkloc = 'By Type Area';
+                }else if ($(this).closest('.category-types-v2').length > 0) {
+                    mainloc = 'Department Page';
+                    linkloc = 'By Type Area';
+                }else if ($(this).closest('.related-cat-types-v2__container').length > 0) {
+                    mainloc = 'Department Page';
+                    linkloc = 'Related Categories';
+                }else if ($(this).closest('.brand-wrapper .brand-slider__content').length > 0) {
+                    mainloc = 'Department Page';
+                    linkloc = 'Featured Brands';
+                }else if ($(this).closest('.category-resources-section__container').length > 0) {
+                    mainloc = 'Department Page';
+                    linkloc = 'Resources';
                 }
-
-
-                    //custom values will have their own onclick. Adding this to avoid accidental double log.
-                    linkdl(mainloc, linkloc, href)
-
+                //custom values will have their own onclick. Adding this to avoid accidental double log.
+                linkdl(mainloc, linkloc, href)
             }
         });
     }, 1000);
@@ -1359,6 +1380,18 @@ function promoRedirect(code,url){
     document.cookie = "applied_discount_code="+code+"; expires=0; path=/";
     var decodedUrl = encodeURIComponent(url);
     var promoUrl = "/discount/"+code+"?redirect="+decodedUrl;
+
+    var cpage = window.location.href;
+    var pageLoc = "NA"
+    if (cpage.includes("/collections/")){
+        pageLoc = "Collection"
+    }else if(cpage.includes("/products/")){
+        pageLoc = "Product Page"
+    }else{
+        pageLoc = "Homepage"
+    }
+
+    linkdl(pageLoc,'Promo Code Link',promoUrl)
     location.href = promoUrl;
 }
 
@@ -1376,7 +1409,7 @@ function sfApply(enable){
 
 
 function linkdl(mainloc,linkloc,href){
-    var cpage = window.location.href;
+    var cpage = window.location.pathname;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         event: 'ee_linkClick',
