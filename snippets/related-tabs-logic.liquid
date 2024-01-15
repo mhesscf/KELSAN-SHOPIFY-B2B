@@ -324,8 +324,16 @@
                                                     {%- endfor -%}
                                                     {%- if  showthisproduct == true -%}
                                                         <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
+                                                            {%- assign location = 'NA' -%}
+                                                            {%- if  tab_rel_id == 'related_products' -%}
+                                                                {%- assign location = 'Related Products' -%}
+                                                            {%- elsif  tab_rel_id == 'similar_items' -%}
+                                                                {%- assign location = 'Similar Items' -%}
+                                                            {%- endif -%}
                                                             {%-
                                                                     render 'product-slider-item',
+                                                                    main_loc: 'Product Page',
+                                                                    item_loc: location,
                                                                     product: item
                                                             -%}
                                                         </div>

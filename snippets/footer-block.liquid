@@ -15,7 +15,7 @@
         </span>
       </h2>
 
-      <div class="site-footer-block-content">
+      <div class="site-footer-block-content {{ block.settings.menu }}-nav">
         {%
           render 'navlist',
           menu_list: linklists[block.settings.menu].links,

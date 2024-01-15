@@ -591,6 +591,8 @@
 								{% assign item = block.settings.product %}
 								{%
 										render 'product-slider-item',
+										main_loc: 'Homepage',
+										item_loc: 'Best Sellers Slider',
 										product: item
 								%}
 
@@ -605,6 +607,8 @@
 					{% assign item = section.settings.featured_product %}
 					{%
 							render 'product-slider-item',
+							main_loc: 'Homepage',
+							item_loc: 'Top Rated',
 							product: item
 					%}
 				</div>
