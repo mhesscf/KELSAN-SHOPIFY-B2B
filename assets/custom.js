@@ -1311,10 +1311,31 @@ jQuery(document).ready(function($){
                 }else if ($(this).closest('.category-resources-section__container').length > 0) {
                     mainloc = 'Department Page';
                     linkloc = 'Resources';
+                }else if ($(this).closest('.template-article .left-sub-nav').length > 0) {
+                    mainloc = 'Blog';
+                    linkloc = 'Left Nav';
+                }else if ($(this).closest('.template-article .article--outer').length > 0) {
+                    mainloc = 'Blog';
+                    linkloc = 'Main Area Link';
+                }else if ($(this).closest('.template-page .left-sub-nav').length > 0) {
+                    mainloc = 'CMS';
+                    linkloc = 'Left Nav';
+                }else if ($(this).closest('.template-page .productitem').length > 0) {
+                    mainloc = 'CMS';
+                    linkloc = 'Product Block';
+                }else if ($(this).closest('.template-page .article--outer').length > 0) {
+                    mainloc = 'CMS';
+                    linkloc = 'Main Area Link';
                 }
                 //custom values will have their own onclick. Adding this to avoid accidental double log.
-                linkdl(mainloc, linkloc, href)
+                linkdl(mainloc, linkloc, href);
             }
+        });
+        $('.template-cart .cart-title .cart-title-button').on('click', function(e){
+            linkdl("Cart", "Top Checkout Button", "/checkout");
+        });
+        $('.template-cart .cart-checkout button').on('click', function(e){
+            linkdl("Cart", "Bottom Checkout Button", "/checkout");
         });
     }, 1000);
 
@@ -1442,5 +1463,5 @@ function linkdl(mainloc,linkloc,href){
         link_location : linkloc,
         main_location: mainloc,
     })
-    // console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
+    console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
 }
