@@ -1317,6 +1317,30 @@ jQuery(document).ready(function($){
             }
         });
     }, 1000);
+
+
+    setTimeout(() => {
+        $('.tmenu_item_link,.tmenu_item_display_header').on('mouseenter', function(e){
+            setTimeout(() => {
+                $(".tmenu_nav a").unbind('click');
+                $('.tmenu_nav a').on('click', function(e){
+                    linkloc = 'Basic Menu';
+                    if ($(this).closest('.cat-shopall').length > 0) {
+                        linkloc = 'Shop All';
+                    }else if ($(this).closest('.cat-brand').length > 0) {
+                        linkloc = 'Brands';
+                    }else if ($(this).closest('.cat-cheater').length > 0) {
+                        linkloc = 'Cheater Nav';
+                    }else if ($(this).closest('.cat-education').length > 0) {
+                        linkloc = 'Education';
+                    }
+                    var href = $(this).attr('href');
+                     linkdl('Header Menu',linkloc,href)
+
+                });
+            }, "500");
+        });
+    }, "500");
 });
 
 
