@@ -12,22 +12,20 @@
 {% if crawlcheck == true %}
     <tr style="display:none;" class="crawlcheck crawlcheck-related"><td><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></td></tr>
 {% endif %}
-
-
 {% for variant in product.variants %}
     {% assign variations = variations | plus: 1 %}
 {% endfor %}
-
-
 <td>
     <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')" >{{ productFirstVar.sku }}</a>
 </td>
         <td class="chem-image" >
             <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '40x40' | img_tag: product.featured_image.alt }}</a>
         </td>
-
+{% if product.metafields.plytix.short_title %}
+    <td class="parts-title" data-part-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.metafields.plytix.short_title }}</a></td>
+{% else %}
         <td class="parts-title" data-part-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }}</a></td>
-
+{% endif %}
         <td class="chem-price">
             {% if variations == 1 %}
                 <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')"><span class="single-price">{{ productFirstVar.price | money }}</span></a>
