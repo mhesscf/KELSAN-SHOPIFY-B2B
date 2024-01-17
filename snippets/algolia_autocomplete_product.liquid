@@ -1,4 +1,8 @@
 <script>
+    function compactpic(orgimglink){
+        var newImg = orgimglink.replace('.jpg','_compact.jpg')
+        return newImg;
+    }
   (function(algolia) {
     'use strict';
 
@@ -10,7 +14,7 @@
       >
           <div class="aa-ItemContent">
               <div class="aa-ItemPicture aa-ItemPicture--loaded">
-                  <img src="${algolia.helpers.compactImage(item)}" alt="${item.title}" />
+                  <img src="${item.variants_count > 1 ? html `${compactpic(item.product_image)}` : html `${algolia.helpers.compactImage(item)}`}" alt="${item.title}" />
               </div>
               <div class="aa-ItemContentBody">
                   {% comment %}<div class="aa-ItemContentBrand">
