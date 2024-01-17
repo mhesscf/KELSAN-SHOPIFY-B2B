@@ -61,6 +61,11 @@
         return savings;
     }
 
+    function mediumpic(orgimglink){
+        var newImg = orgimglink.replace('.jpg','_medium.jpg')
+        return newImg;
+    }
+
     function stocklookup(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false",sku,sxerp_po_date){
         leadtime = Number(leadtime);
         var finalmessage = '';
@@ -280,8 +285,9 @@
         <meta itemprop="position" content="${hit.productPosition}" />
         <div class="productitem" itemprop="item" itemscope itemtype="http://schema.org/Product">
             <div class="cfais-productitem__image-container">
-                <div itemprop="image" content="${algolia.helpers.mediumImage(hit)}" class="ais-hit--picture" style="background-image: url('${algolia.helpers.mediumImage(hit)}')">
+                <div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}')">
                 </div>
+
             </div>
             <div class="ais-hit--details productitem--info">
                 <h2 class="productitem--title ais-hit--title">
@@ -300,7 +306,8 @@
                 </h2>
                 <div class="product-detail-sku">
                     {%- comment -%}SKU: ${hit.sku && html`<span class="algolia-sku">${components.Highlight({ attribute: 'sku', hit })}</span>`}{%- endcomment -%}
-                    SKU: <span itemprop="sku">${hit.sku}</span>
+                    SKU: <span itemprop="sku">${hit.variants_count > 1 ? html `${hit.meta.plytix.main_sku}` : html `${hit.sku}`}</span>
+
                     <meta itemprop="mpn" content="${hit.meta.plytix.manufacturer_sku}" />
                 </div>
 
