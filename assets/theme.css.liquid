@@ -2457,13 +2457,6 @@ footer .footer-icon svg{
 	transform: translateX(-100%);
 }
 
-.rte,
-.pxs-newsletter-text,
-.shoppable-image__text-box-subheading,
-.image-with-text__text {
-	font-size: var(--font-size-body);
-	line-height: 1.625;
-}
 .rte h1,
 .pxs-newsletter-text h1,
 .shoppable-image__text-box-subheading h1,
@@ -3441,7 +3434,8 @@ body {
 	font-family: {{ fonts_type_body_family }};
 	font-style: {{ fonts_type_body_style }};
 	font-weight: {{ fonts_type_body_weight }};
-	font-size: var(--font-size-body);
+	font-size: 17px;
+	line-height:22px;
 	width: 100%;
 	color: {{ settings.color_text }};
 }
@@ -7229,7 +7223,6 @@ nav.breadcrumb span.separator{
 	}
 }
 .blogposts--inner .article--excerpt-wrapper {
-	font-size: var(--font-size-body);
 	width: 16.25rem;
 	min-height: 100%;
 }
@@ -9462,10 +9455,6 @@ nav.breadcrumb span.separator{
 	font-size: var(--font-size-heading-1);
 }
 
-.rich-text-content {
-	line-height: 1.5;
-}
-
 .search-section {
 	position: relative;
 	width: 96%;
@@ -10501,8 +10490,8 @@ nav.breadcrumb span.separator{
 	margin-top: 15px;
 }
 .slideshow__wrapper .slider-category-header .flex-row .col .section-text p{
-	font-size: 20px;
-	line-height: 28px;
+	font-size: 18px;
+	line-height: 26px;
 	color: #303E48;
 	margin: 0;
 }
@@ -14252,7 +14241,6 @@ nav.breadcrumb span.separator{
 }
 
 .site-footer-block-item {
-	font-size: var(--font-size-body);
 	border-bottom: 1px solid {{ settings.color_footer_text | color_modify: 'alpha', 0.15 }};
 }
 @media screen and (min-width: 1024px) {
@@ -14332,9 +14320,7 @@ nav.breadcrumb span.separator{
 }
 
 .site-footer-block-content {
-	font-size: var(--font-size-body-small);
 	padding-bottom: {{ space_medium | divided_by: 16.0 | append: 'rem' }};
-	line-height: 1.6;
 }
 .site-footer-block-newsletter .site-footer-block-content {
 	padding-bottom: 0;
@@ -14362,7 +14348,7 @@ nav.breadcrumb span.separator{
 }
 @media screen and (min-width: 720px) {
 	.site-footer-block-menu .navmenu-item:not(:first-child) {
-		margin-top: 0.3125rem;
+		margin-top: 10px;
 	}
 }
 .site-footer-block-menu .navmenu-item:last-child {
@@ -17461,6 +17447,7 @@ nav.breadcrumb span.separator{
 }
 .product-icons .ship-made a:hover{
 	text-decoration: underline;
+	color: {{ settings.color_text }};
 }
 
 .product-icons .ship-made .sm-row .sm-row-text .sm-text{
@@ -24784,6 +24771,11 @@ img.category-resources-section__image {
 }
 .tmenu_item--root .tmenu_submenu_type_flyout .tmenu_item_link{
 	padding-bottom: 0px !important;
+}
+
+.tmenu_item_link:focus{
+	outline:1px dotted black !important;
+	text-decoration: underline !important;
 }
 
 @media (max-width: 679px){
