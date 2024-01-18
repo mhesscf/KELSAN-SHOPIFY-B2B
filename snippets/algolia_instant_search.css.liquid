@@ -22,22 +22,7 @@ body {background-color:#fff !important;}
   font-weight: bold;
 }
 
-/* Resets */
-.ais-page div,
-.ais-page p,
-.ais-page span,
-.ais-page a,
-.ais-page ul,
-.ais-page li,
-.ais-page input {
-  box-sizing: border-box;
 
-{% comment %}margin: 0;{% endcomment %}
-{% comment %}padding: 0;{% endcomment %}
-
-  line-height: 1;
-  {% comment %}font-size: initial;{% endcomment %}
-}
 
 /* font */
 .ais-h2 {
@@ -54,27 +39,8 @@ body {background-color:#fff !important;}
   padding-left: 24px !important;
 }
 
-/* Links */
-.ais-page .ais-link,
-.ais-page a,
-.ais-page a:hover,
-.ais-page a:focus,
-.ais-page a:active {
-  font-weight: initial;
-  font-style: initial;
-  text-decoration: initial;
 
-  color: var(--main-color);
 
-  cursor: pointer;
-}
-
-.ais-page a:hover,
-.ais-page a:focus,
-.ais-page a:active,
-.ais-page .ais-link:hover {
-  text-decoration: underline;
-}
 
 /* Columns */
 .ais-page .ais-facets {
@@ -182,9 +148,7 @@ body {background-color:#fff !important;}
 .ais-page .ais-facet--item {
   position: relative;
   width: 100%;
-
-  padding: 6px 50px 6px 0;
-
+  padding: 3px 50px 3px 0;
   cursor: pointer;
 }
 
@@ -614,8 +578,6 @@ body {background-color:#fff !important;}
 .ais-page .ais-search-header {
   padding: 0 0.9em 0.4em 0.9em;
   background-color: transparent;
-  {% comment %}color: var(--secondary-color);{% endcomment %}
-  font-size: 0.85em;
   margin-top: 0px;
 }
 
@@ -625,24 +587,12 @@ body {background-color:#fff !important;}
   display: block;
 }
 
-.ais-page .ais-search-header * {
-  font-size: 17px;
-  line-height: 22px;
-}
 .ais-page .ais-search-header .custom-additional-info{
   padding-bottom:15px;
   margin-bottom:15px;
   border-bottom: 1px solid #ccc;
-  font-size:15px;
-  line-height:20px;
 }
-.ais-page .ais-search-header .custom-additional-info a{
-  color: {{ settings.color_links }};
-  text-decoration: underline;
-}
-.ais-page .ais-search-header .custom-additional-info a:hover {
-  color: {{ settings.color_link_hover }};
-}
+
 .ais-page .ais-search-header .custom-additional-info h3{
   font-style: {{ settings.type_body.style }};
   font-weight: 500;
@@ -795,10 +745,6 @@ body {background-color:#fff !important;}
   margin:auto;
   width: 78%;
   float:right;
-  line-height:20px;
-}
-.ais-page .discontinued-link a{
-  color: {{ settings.color_links }};
 }
 
 /****************** Category Pad Table ***********/
@@ -1017,14 +963,13 @@ body {background-color:#fff !important;}
 
 .ais-page .ais-Pagination-link {
   display: inline-block;
-
   width: 100%;
   height: 100%;
-
   padding: 8px 0;
-
   font-size: 0.9em;
   color: var(--main-color);
+  text-decoration: none;
+  line-height: 15px;
 }
 
 {% comment %}New Styles from Cleanfreak ----------------------------------------------------------------------------------------------------- {% endcomment %}
@@ -1212,6 +1157,9 @@ margin-right:0;
 }
 .ais-page .ais-results-as-block .sx-status details{
   display: none;
+}
+.ais-page .sx-status .sx-status-other span{
+  margin: 0;
 }
 .ais-page .ais-results-as-block .product-icons{
   {% comment %}text-align:left;{% endcomment %}
