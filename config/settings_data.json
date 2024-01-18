@@ -8,6 +8,7 @@
     "color_text_medium": "#5b6770",
     "color_icons": "#32758b",
     "color_links": "#32758b",
+    "color_link_hover": "#bb3815",
     "color_button_background": "#303e48",
     "color_button_text": "#ffffff",
     "color_button_secondary_background": "#d74018",
@@ -296,6 +297,7 @@
           "announcement_text_mobile": "Having problems? Give us a call at 888-722-5508 for help.",
           "announcement_link": "\/collections\/all",
           "announcement_promo": "TESTPROMO",
+          "flash": false,
           "announcement_color": "#ffffff",
           "announcement_background": "#123570"
         }
