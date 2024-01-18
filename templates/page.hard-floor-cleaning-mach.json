@@ -20,11 +20,21 @@
             "link": "\/products\/clarke-ca30-20b-battery-powered-automatic-floor-scrubber",
             "coupon-code": ""
           }
+        },
+        "banner_GAtNWr": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/advantage-20-price-drop-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/advantage-20-price-drop-800x427.jpg",
+            "link": "\/products\/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "coupon-code": ""
+          }
         }
       },
       "block_order": [
         "614000bc-cdda-4bdb-9705-8f9bd346f000",
-        "71ea2eaa-3b3a-4aa9-b752-787ed97ad793"
+        "71ea2eaa-3b3a-4aa9-b752-787ed97ad793",
+        "banner_GAtNWr"
       ],
       "settings": {
         "enable_autoplay": true,
