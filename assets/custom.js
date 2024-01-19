@@ -1387,6 +1387,26 @@ function sf_atc(btn,placement){
     // } else if (siteDomain.includes('www.cleanfreak.com')){
     //  var sf_var_id = '42413671612596';
     // }
+
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'ee_addToCart',
+        product_name: "SuperFreak Customer Loyalty Program",
+        product_id : "7431697825972",
+        product_price: "99.99",
+        product_brand:  "CleanFreak",
+        currency: "USD",
+        product_type: "",
+        category_id: "",
+        category_title: "",
+        variant_id: sf_var_id,
+        variant_title: "Default Title",
+        product_sku: "SUPERFREAK",
+        quantity: sf_qty,
+        atc_loc: placement
+    });
+
     data = {
         form_type: 'product',
         utf8: '✓',
