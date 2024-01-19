@@ -126,22 +126,21 @@
             "overlay_opacity": 50
           }
         },
-        "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-desktop-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-email-graphic-800x427.jpg",
-            "link": "\/products\/clarke-ca30-20b-battery-powered-automatic-floor-scrubber",
-            "coupon-code": ""
-          }
-        },
         "banner_fLBUa3": {
           "type": "banner",
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/advantage-20-price-drop-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/advantage-20-price-drop-800x427.jpg",
             "link": "\/products\/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "coupon-code": ""
+          }
+        },
+        "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-desktop-banner-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-email-graphic-800x427.jpg",
+            "link": "\/products\/clarke-ca30-20b-battery-powered-automatic-floor-scrubber",
             "coupon-code": ""
           }
         }
@@ -152,8 +151,8 @@
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
-        "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
-        "banner_fLBUa3"
+        "banner_fLBUa3",
+        "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
       "custom_css": [
 
