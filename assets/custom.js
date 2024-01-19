@@ -1331,6 +1331,35 @@ jQuery(document).ready(function($){
                 linkdl(mainloc, linkloc, href);
             }
         });
+
+        $('.ais-RefinementList-label').on('click', function(e){
+            var linkloc = 'Filter';
+            if ($(this).closest('.search-main-area .ais-facets').length > 0) {
+                var mainloc = 'Search';
+            }else if($(this).closest('.collection-main-area .ais-facets').length > 0) {
+                var mainloc = 'Collection';
+            }
+            //get filter lable
+            var label = $(this).clone();
+            label.children("span").remove();
+
+            linkdl(mainloc, linkloc, "#"+label.text());
+        });
+
+
+        $('.ais-SortBy-select').change(function () {
+            var optionSelected = $(this).find("option:selected").text();
+            var linkloc = 'Sorting';
+            var mainloc = 'na';
+            if ($(this).closest('.search-main-area .ais-block').length > 0) {
+                var mainloc = 'Search';
+            }else if($(this).closest('.collection-main-area .ais-block').length > 0) {
+                var mainloc = 'Collection';
+            }
+            linkdl(mainloc, linkloc, "#"+optionSelected);
+        });
+
+
         $('.template-cart .cart-title .cart-title-button').on('click', function(e){
             linkdl("Cart", "Top Checkout Button", "/checkout");
         });
@@ -1483,5 +1512,5 @@ function linkdl(mainloc,linkloc,href){
         link_location : linkloc,
         main_location: mainloc,
     })
-    console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
+    // console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
 }
