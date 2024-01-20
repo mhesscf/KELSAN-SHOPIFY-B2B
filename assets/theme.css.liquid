@@ -16034,6 +16034,8 @@ nav.breadcrumb span.separator{
 .productitem--action-trigger {
 	display: block;
 	width: 100%;
+	padding-top:10px;
+	padding-bottom:9px;
 	padding-right: {{ space_xxx_small | divided_by: 16.0 | append: 'rem' }};
 	padding-left: {{ space_xxx_small | divided_by: 16.0 | append: 'rem' }};
 	text-align: center;
@@ -24998,6 +25000,13 @@ button.payment-blue.button:hover span {background:#303e48;}
 .finance-link i {color: {{ color_links }}; padding-left: 3px;}
 .finance-wrapper strong{color: {{ color_links }};}
 .finance-wrapper:hover strong{color: {{ color_link_hover  }};}
+
+@media (max-width: 479px) {
+	.product-main .approve-contain {
+		max-width: 260px;
+		margin:auto;
+	}
+}
 
 #payment-request{font-size:14px; width:370px; height:470px; }
 #payment-request hr {margin-top:20px; margin-bottom:20px; border:0; border-top:1px solid #eeeeee;}
