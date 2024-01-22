@@ -1,0 +1,233 @@
+{% style %}
+    .popular-categories-links .container{
+    width: 1400px;
+    max-width: 90%;
+    margin: auto;
+    padding: 40px 0;
+    }
+    .popular-categories-links .section-heading-row {
+    text-align: center;
+    margin-bottom: 25px;
+    }
+    .popular-categories-links .section-heading-row .section-sub-heading{
+    display: inline-block;
+    font-size: 22px;
+    color: {{ settings.color_icons }};
+    }
+    .popular-categories-links .section-heading-row .heading-wrapper{
+    position: relative;
+    width: 100%;
+    }
+    {% if section.settings.linethrough %}
+        .popular-categories-links .section-heading-row .heading-wrapper:before{
+        position: absolute;
+        content: "";
+        height: 1px;
+        background-color: {{ settings.color_icons }};
+        width: 100%;
+        right: 0;
+        left: 0;
+        top: 50%;
+        z-index: 3;
+        }
+    {% endif %}
+    .popular-categories-links .section-heading-row h2{
+    color: {{ settings.color_headings }};
+    font-size: 36px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    z-index: 5;
+    background-color: #fff;
+    padding: 0 20px;
+    margin: 10px;
+    text-align: center;
+    font-weight: 600;
+    }
+
+    .popular-categories-links .flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    }
+    .popular-categories-links .flex-row .column{
+    max-width: 200px;
+    min-width: 200px;
+    width: 200px;
+    text-align: center;
+    }
+    .popular-categories-links .flex-row .link-wrap a{
+    color: {{ settings.color_text_medium }};
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+    transition: all 0.4s ease-in-out;
+    }
+    .popular-categories-links .flex-row .link-wrap:hover a{
+    color: {{ settings.color_link_hover }};
+    }
+    .popular-categories-links .flex-row .link-wrap a:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    }
+    .popular-categories-links .flex-row .link-wrap{
+    position: relative;
+    }
+    .popular-categories-links .flex-row .link-wrap .circle{
+    display: block;
+    max-width: 170px;
+    margin: auto;
+    position: relative;
+    }
+    .popular-categories-links .flex-row .link-wrap .circle .inner{
+    padding-top: 100%;
+    display: block;
+    background-color: {{ settings.color_section_seconday_background }};
+    border-radius: 50%;
+    position: relative;
+    background-size: 80% 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    }
+    .popular-categories-links h2{
+    color: {{ settings.color_headings }};
+    font-size: 30px;
+    }
+    @media (max-width: 1350px){
+    .popular-categories-links .flex-row{
+    justify-content: center;
+    }
+    .popular-categories-links .flex-row .column{
+    max-width: 200px;
+    min-width: 30%;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 24px;
+    }
+    }
+
+    @media (max-width: 1200px){
+    .popular-categories-links .flex-row .link-wrap a{
+    font-size: 18px;
+    }
+    }
+    @media (max-width: 991.98px){
+    .popular-categories-links .section-heading-row .section-sub-heading{
+    font-size: 20px;
+    }
+    .popular-categories-links .section-heading-row h2{
+    font-size: 27px;
+    }
+    .popular-categories-links .flex-row .column{
+    max-width: 200px;
+    min-width: 200px;
+    width: 200px;
+    text-align: center;
+    }
+    .popular-categories-links .container{
+    padding: 20px 0;
+    }
+    .popular-categories-links .flex-row .link-wrap a{
+    font-size: 16px;
+    }
+    }
+    @media (max-width: 640px){
+    .popular-categories-links .flex-row .column{
+    max-width: 46%;
+    min-width: 46%;
+    width: 46%;
+    text-align: center;
+    margin: 2%;
+    }
+    }
+{% endstyle %}
+
+<section class="popular-categories-links">
+    <div class="container">
+        {% if section.settings.sectionheading != blank %}
+            <div class="row section-heading-row">
+                {% if section.settings.sectionSubHeading != blank %}
+                    <span class="section-sub-heading">{{ section.settings.sectionSubHeading }}</span>
+                {% endif %}
+                <div class="heading-wrapper">
+                    <h2>{{ section.settings.sectionheading }}</h2>
+                </div>
+            </div>
+        {% endif %}
+        <div class="row flex-row link-row">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'link' %}
+                        <div class="link-wrap column">
+                            <div class="circle">
+                                <div class="inner" style="background-image: url({{ block.settings.image | img_url: 'master' }});"></div>
+                            </div>
+                            <a href="{{ block.settings.linkurl }}">{{ block.settings.linktext }}</a>
+                        </div>
+                {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "popular-categories-links",
+    "class": "popular-categories-links--section",
+    "settings":[
+        {
+            "type": "text",
+            "label": "Section Heading",
+            "id" : "sectionheading"
+        },
+        {
+            "type": "text",
+            "label": "Section Sub Heading",
+            "id" : "sectionSubHeading"
+        },
+        {
+            "type": "checkbox",
+            "id": "linethrough",
+            "label": "Add Line Through Heading",
+            "default": false
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Link",
+            "type": "link",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "linktext",
+                    "label": "Link Text"
+                },
+                {
+                    "type" : "url",
+                    "id": "linkurl",
+                    "label": "Link URL"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "popular-categories-links-section",
+            "name": "Popular Categories",
+            "settings": {
+            }
+        }
+    ]
+}
+{% endschema %}
