@@ -118,6 +118,12 @@
       },
       {
         "type": "color",
+        "id": "color_link_hover_2",
+        "label": "Alt Link Hover",
+        "default": "#32758b"
+      },
+      {
+        "type": "color",
         "id": "color_button_hover",
         "label": "t:settings_schema.colors.color_primary_button_hover.label",
         "default": "#E64D25"
