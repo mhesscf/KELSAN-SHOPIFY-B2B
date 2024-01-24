@@ -63,6 +63,26 @@ https://creativecommons.org/licenses/by/4.0/
 .past-toggle span{
     color: #3C8AA4;
 }
+
+
+.past-due-block .past-due-item{
+ border:1px solid red;
+ margin-bottom:10px;
+}
+.past-due-block .past-due-title{
+    background-color:Red;
+    color:white;
+}
+.past-due-block .past-due-notes,
+.past-due-block .past-due-title{
+    padding:5px 10px;
+}
+.past-due-block .past-due-item.today{
+    border:1px solid orange;
+}
+.past-due-block .past-due-item.today .past-due-title{
+    background-color:orange;
+}
 .sales-promo-container .promo-list{
     float:left;
     width:50%;
@@ -252,6 +272,38 @@ margin-top:76px;
     {%- assign promoObj = shop.metaobjects.promotional_campaign.values -%}
     {%- assign promoObjSorted = promoObj | sort:"end_date_text" | reverse -%}
     {%- if employee == 1 -%}
+
+    {% comment %}Past Due{% endcomment %}
+    {%- assign hasPastDue = 0 -%}
+    <h2>Past Due</h2>
+    <div class="past-due-block">
+        {%- for promo in promoObjSorted -%}
+            {%- if promo.closed_out != true -%}
+                {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
+                {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
+
+                {% assign formatedEnd = promo.end_date_time | date: "%m/%d/%Y" %}
+                {% assign formatedNow = "now" | date: "%m/%d/%Y" %}
+                {%- if formatedEnd == formatedNow-%}
+                    <div class="past-due-item today">
+                        <div class="past-due-title">{{  promo.title | escape }} (Ending Today: {{  promo.end_date_time | date: "%m/%d/%Y" }})</div>
+                        <div class="past-due-notes">{{ promo.notes | escape }}</div>
+                    </div>
+                {%- elsif endDateSeconds < nowSec and startDateSeconds <= startShowDate and endDateSeconds >= endShowDate -%}
+                    {%- assign hasPastDue = 1 -%}
+                    <div class="past-due-item">
+                        <div class="past-due-title">{{  promo.title | escape }} (Ended: {{  promo.end_date_time | date: "%m/%d/%Y" }})</div>
+                        <div class="past-due-notes">{{ promo.notes | escape }}</div>
+                    </div>
+                 {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- if hasPastDue == 0 -%}
+        <div class="past-due-item"><div class="past-due-notes">No Past Due Promos to Clean Up</div></div>
+        {%- endif -%}
+    </div>
+    <br/><br/>
+    {% comment %}Calendar{% endcomment %}
     <div class="calendar-area-bg">
         <div class="calendar-area">
 
