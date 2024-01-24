@@ -121,6 +121,29 @@
         ],
         "free_gift_product": "1-2-inch-to-3-8-od-solution-tank-hose-conversion-kit"
       }
+    },
+    "17061084261156ec8b": {
+      "type": "apps",
+      "blocks": {
+        "quick_quote_quote_button_ctYmQx": {
+          "type": "shopify:\/\/apps\/quick-quote\/blocks\/quote-button\/ba8168dc-3466-4dff-b544-74f8dd051310",
+          "settings": {
+            "title": "Request a Quote",
+            "btn_classes": "",
+            "btn_width": "",
+            "button_color": "#000000",
+            "text_color": "#fff",
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "quick_quote_quote_button_ctYmQx"
+      ],
+      "settings": {
+        "include_padding": true
+      }
     }
   },
   "order": [
@@ -128,6 +151,7 @@
     "main",
     "cart-gift-with-purchase",
     "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d",
-    "001dcba2-5e2c-4322-acff-00ea07c385d2"
+    "001dcba2-5e2c-4322-acff-00ea07c385d2",
+    "17061084261156ec8b"
   ]
 }
