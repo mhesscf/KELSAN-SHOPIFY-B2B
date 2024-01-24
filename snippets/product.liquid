@@ -191,7 +191,7 @@
                                     {% else %}
                                         {% assign vstep = 1 %}
                                     {% endif %}
-                                    <div class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-tier="{{ variant.metafields.plytix.tiered_pricing }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
+                                    <div style="display:none;" class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-tier="{{ variant.metafields.plytix.tiered_pricing }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
                                     SKU:<span> {{ variant.sku }} </span>&nbsp;&nbsp; {{ vendortext }}
                                     </div>
                                 {% endfor %}
