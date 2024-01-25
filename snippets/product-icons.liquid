@@ -15,6 +15,37 @@
 <div class="product-icons-area">
     <div class="product-icons">
         <div class="ship-made">
+
+
+            {% assign current_variant_id = product.selected_or_first_available_variant.id %}
+
+            {% for variant in product.variants %}
+                <div class="masterqty-container var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                    {% if variant.metafields.plytix.clearance_overstock == 'true' %}
+                        {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                            <a href="/collections/clearance"><div class="sm-row">
+                                    <div class="icon-wrap" style="font-size: 23px;">
+                                        <i class="fa-solid fa-tag"></i>
+                                    </div>
+                                    <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
+                                        <span class="sm-text">Buy now before they are gone!</span></div>
+                                </div></a>
+                        {%- else -%}
+                            <div class="sm-row">
+                                <div class="icon-wrap" style="font-size: 23px;">
+                                    <i class="fa-solid fa-tag"></i>
+                                </div>
+                                <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
+                                    <span class="sm-text">Buy now before they are gone!</span></div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+
+
+
             {% if pdiscontinued == true %}
 
                 {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
@@ -133,7 +164,7 @@
                         </div>
                     {% endif %}
                 {% endif %}
-
+{% comment %}
                 {% if product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/clearance"><div class="sm-row">
@@ -153,7 +184,7 @@
                         </div>
                     {% endif %}
                 {% endif %}
-
+                {% endcomment %}
                 {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">

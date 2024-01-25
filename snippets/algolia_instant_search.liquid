@@ -151,6 +151,9 @@
                     }
                 });
 
+                $( ".approve-contain-collection" ).click(function( e ) {
+                    e.stopPropagation();
+                });
 
                 //watch for changes in dropdown to reload stuff
                 const target = document.querySelector('.ais-facet-dropdown-container');
