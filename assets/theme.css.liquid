@@ -14046,6 +14046,83 @@ nav.breadcrumb a.homebread:hover span,
 		width: 100%
 	}
 }
+
+.template-cart #shopify-block-quick_quote_quote_button_ctYmQx{
+	position:fixed;
+	left:-10000px;
+}
+.template-cart .raq-btn{
+	position:absolute;
+}
+.template-cart .raq-btn a{
+	background-color:green !important;
+	border: 1px solid green !important;
+	color:#fff !important;
+	display:inline-block;
+	padding:10px;
+	border-radius: 7px;
+	margin-left:4px;
+	text-decoration: none;
+	font-size:var(--font-size-button-small) !important;
+}
+.template-cart .raq-btn i{
+	margin-right:4px;
+}
+
+#quick-quote-wrapper table{
+	border-spacing:0 1.328125rem;
+	width:98% !important;
+	margin:auto;
+}
+
+#quick-quote-wrapper .qty{
+	width:unset;
+	border:none;
+}
+#quick-quote-wrapper table tr.cart-item-row td{
+	border-bottom: 1px solid {{ color_border | color_modify: 'alpha', 0.16 }};
+	border-top: 1px solid {{ color_border | color_modify: 'alpha', 0.16 }};
+	padding:1.328125rem;
+}
+#quick-quote-wrapper table tr.cart-item-row td:first-child{
+	border-left: 1px solid {{ color_border | color_modify: 'alpha', 0.16 }};
+}
+#quick-quote-wrapper table tr.cart-item-row td:last-child{
+	border-right: 1px solid {{ color_border | color_modify: 'alpha', 0.16 }};
+}
+#quick-quote-wrapper table tr.cart-item-row td.image{
+	max-width:120px;
+}
+#quick-quote-wrapper table .product_image img{
+	max-height:120px;
+	max-width:120px;
+}
+#quick-quote-wrapper table tr.cart-item-row td.item .sku,
+#quick-quote-wrapper table tr.cart-item-row td.item .sku_title{
+	display:none;
+}
+#quick-quote-wrapper table tr.cart-item-row td.item a{
+	text-decoration:none;
+	margin-top: 0;
+	margin-bottom: {{ space_xx_small | divided_by: 16.0 | append: 'rem' }};
+	display:inline-block;
+}
+#quick-quote-wrapper table tr.cart-item-row td.item a strong{
+	font-weight:normal;
+	text-decoration:none;
+	font-size: var(--font-size-heading-5);
+	color: {{ settings.color_headings }};
+}
+#quick-quote-wrapper .summary .price,
+#quick-quote-wrapper table tr.cart-item-row td.price{
+	text-align:center;
+	font-size:var(--font-size-heading-5);
+}
+#quick-quote-wrapper .quote-form{
+	background-color:#f3f3f3;
+	max-width:445px;
+	padding:30px;
+}
 .sf-promo-link .sf-discount{
 	color:{{ settings.color_button_secondary_background }};
 	font-weight:bold;
