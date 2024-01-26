@@ -141,6 +141,16 @@
               </div>
             </div>
           {% endif %}
+          {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+            <span class="raq-btn"></span>
+            <script>
+              jQuery(document).ready(function($){
+                jQuery('#shopify-block-quick_quote_quote_button_ctYmQx a').prepend('<i class="fa-regular fa-notebook"></i>');
+                var btnHtml = jQuery('#shopify-block-quick_quote_quote_button_ctYmQx').html();
+                jQuery('.raq-btn').html(btnHtml);
+              });
+            </script>
+          {% endif %}
           {% comment %}start of fg break out of form{% endcomment %}
         </div>
     </div>
@@ -153,6 +163,12 @@
         method="post"
         aria-label="cart checkout"
 >
+  {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+    <p class="cart-attribute__field">
+      <label for="po-number">PO Number</label>
+      <input id="po-number" type="text" name="attributes[PONumber]" value="{{ cart.attributes["PONumber"] }}">
+    </p>
+  {% endif %}
   <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
     <div class="cartitems">
         <div class="cart-total">
