@@ -160,10 +160,18 @@
   </div>
 
   {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
-    <p class="cart-attribute__field">
-      <label for="po-number">PO Number</label>
-      <input id="po-number" type="text" name="attributes[PONumber]" value="{{ cart.attributes["PONumber"] }}">
-    </p>
+      {% for tag in customer.tags %}
+        {% if tag == "PO-Approved" %}
+          {%- assign po_user = 1 -%}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {%- if po_user == 1 -%}
+        <p class="cart-attribute__field">
+          <label for="po-number">PO Number</label>
+          <input id="po-number" type="text" name="attributes[PO Number]" value="{{ cart.attributes["PO Number"] }}">
+        </p>
+      {% endif %}
   {% endif %}
   <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
     <div class="cartitems">
