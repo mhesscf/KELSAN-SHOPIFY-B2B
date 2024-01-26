@@ -155,14 +155,10 @@
         </div>
     </div>
   </section>
-</form>
+
   <div class="fg-area">
   </div>
-<form
-        action="{{ routes.cart_url }}"
-        method="post"
-        aria-label="cart checkout"
->
+
   {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
     <p class="cart-attribute__field">
       <label for="po-number">PO Number</label>
