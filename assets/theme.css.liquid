@@ -2399,6 +2399,7 @@ footer .footer-icon svg{
 .button-primary:not(.disabled):hover {
 	background: {{ color_background | color_mix: settings.color_button_background, 10 }};
 	border: 1px solid {{ color_background | color_mix: settings.color_button_background, 10 }};
+	color: {{ settings.color_button_text }};
 }
 .button-primary:active {
 	background: {{ color_button_background_focus }};
@@ -14064,6 +14065,10 @@ nav.breadcrumb a.homebread:hover span,
 	margin-left:4px;
 	text-decoration: none;
 	font-size:var(--font-size-button-small) !important;
+}
+.template-cart .raq-btn a:hover{
+	background-color:#009900 !important;
+	border: 1px solid green !important;
 }
 .template-cart .raq-btn i{
 	margin-right:4px;
