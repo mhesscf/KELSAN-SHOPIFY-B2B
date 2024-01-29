@@ -54,12 +54,16 @@
   <figure class="cart-item--image-wrapper">
     <a href="{{ item.url }}">
       {% if item.image %}
-        {%
-                render 'rimg',
-                img: item.image,
-                alt: item.title,
-                size: '120x'
-        %}
+        {% if sf_addon == 0 %}
+          <img src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="Superfreak" />
+        {% else %}
+          {%
+                  render 'rimg',
+                  img: item.image,
+                  alt: item.title,
+                  size: '120x'
+          %}
+        {% endif %}
       {% else %}
         {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
       {% endif %}
@@ -223,7 +227,7 @@
         {% endif %}
 
         <div class="atc-sf-area" >
-          <div class="sf-main-text">Protect this item with SuperFreak.</div>
+          <div class="sf-main-text"><img src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="Superfreak" />Protect this item with SuperFreak.</div>
           <table class="sf-details">
             <tr>
               <td class="sf-price">$99.99</td>
