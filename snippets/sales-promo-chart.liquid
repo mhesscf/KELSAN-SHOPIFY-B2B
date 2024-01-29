@@ -86,10 +86,12 @@ https://creativecommons.org/licenses/by/4.0/
 .sales-promo-container .promo-list{
     float:left;
     width:50%;
+    padding:5px 15px
 }
 .sales-promo-container .sotm-area{
     float:right;
     width:50%;
+    padding:5px 15px
 }
 .sales-promo-container .promo-list li .promo-title{
     color: #303e48;
@@ -270,7 +272,10 @@ margin-top:76px;
     -->
 
     {%- assign promoObj = shop.metaobjects.promotional_campaign.values -%}
-    {%- assign promoObjSorted = promoObj | sort:"end_date_text" | reverse -%}
+    {%- assign promoObjSorted = promoObj | sort:"end_date_text" -%}
+    {%- assign promoObjSortedRev = promoObj | sort:"end_date_text" | reverse -%}
+
+
     {%- if employee == 1 -%}
 
     {% comment %}Past Due{% endcomment %}
