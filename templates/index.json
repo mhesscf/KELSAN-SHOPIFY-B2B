@@ -7,7 +7,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.slideshow-slide .slideshow-slide__button--secondary{\nmin-width:140px !important;\n}\n.slideshow-slide .slideshow-slide__heading{\nfont-size:25px !important}\n<\/style>"
+        "custom_html": ""
       }
     },
     "dynamic_slideshow": {
@@ -15,6 +15,7 @@
       "blocks": {
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/2024-jan-sotm-14-inch-scrubber-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/2024-jan-sotm-14-inch-scrubber-800x427.jpg",
@@ -37,6 +38,7 @@
         },
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/2024-jan-sotm-spotter-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/2024-jan-sotm-spotter-800x427.jpg",
@@ -59,18 +61,17 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/dec-sotm-desktop-banner-dura20-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/dec-sotm-mobile-banner-dura20-800x427.jpg",
-            "title": "Trusted Clean 'Dura 20' Automatic Floor Scrubber",
-            "text": "Efficient Cleaning,<br>Exceptional Savings!<br>Now $3,599.99.",
+            "background_image": "shopify:\/\/shop_images\/february-2024-sotm-20-floor-buffer-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/february-2024-sotm-20-floor-buffer-800x427.jpg",
+            "title": "Trusted Clean 20&quot; Commercial Grade Floor Buffer w\/ Pad Driver",
+            "text": "Shine Bright,<br>Spend Less!<br>Now $799.99.",
             "color": "#303e48",
-            "link": "\/products\/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "link": "\/products\/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "Save $350!",
-            "button_one_link": "\/products\/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "button_one_label": "Save $100!",
+            "button_one_link": "\/products\/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "\/products\/heated-carpet-spot-cleaner",
@@ -82,18 +83,17 @@
         },
         "11a75ad9-3839-4050-bb7f-7cec379b8726": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/dec-sotm-desktop-banner-cfh-3530g-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/dec-sotm-mobile-banner-cfh-3530g-800x427.jpg",
-            "title": "CleanFreak® #CFH-3530G Hot Water Pressure Washer",
-            "text": "Power, Precision, Price on Point!<br>Now $4,199.99.",
+            "background_image": "shopify:\/\/shop_images\/february-2024-sotm-vac18-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/february-2024-sotm-vac18-800x427.jpg",
+            "title": "Trusted Clean 'Quench' Wet Push Vacuum - 18 Gallons",
+            "text": "Quench your mess for less!<br>Now $724.99.",
             "color": "#ffffff",
-            "link": "\/products\/cleanfreak-clh-3530g-hot-water-pressure-washer",
+            "link": "\/products\/trusted-clean-quench-wet-push-vacuum",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "SAVE $1000!",
-            "button_one_link": "\/products\/cleanfreak-clh-3530g-hot-water-pressure-washer",
+            "button_one_label": "SAVE $75!",
+            "button_one_link": "\/products\/trusted-clean-quench-wet-push-vacuum",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "",
