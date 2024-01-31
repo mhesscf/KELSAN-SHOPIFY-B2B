@@ -1,5 +1,16 @@
 {
   "sections": {
+    "left_nav_on_pages_V9iV4n": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "7100ef8a-e4f1-427e-aa52-a53fa1014e6c": {
       "type": "gradient-text-header",
       "settings": {
@@ -194,7 +205,6 @@
     },
     "166068003735df09fd": {
       "type": "basic-link-grid",
-      "disabled": true,
       "blocks": {
         "d3f2d776-922a-4ead-8596-5a13e53eef73": {
           "type": "link",
@@ -247,13 +257,13 @@
         "8f21017b-4652-4d0c-8536-ba6f6f28073f",
         "dbef67a9-3460-4f81-be1c-924e966ffa54"
       ],
+      "disabled": true,
       "settings": {
         "sectionheading": "Floor Care Troubleshooting Tips"
       }
     },
     "1660680505a9c0052a": {
       "type": "three-column-links",
-      "disabled": true,
       "blocks": {
         "9aa65bd9-0e10-4268-87a3-66cbbaa7bc81": {
           "type": "c1link",
@@ -323,6 +333,7 @@
         "c20203af-1ded-4581-bc2b-bbad28b6c866",
         "5f8448fd-b158-4eef-bd71-f1291199d5a9"
       ],
+      "disabled": true,
       "settings": {
         "sectionheading": "",
         "c1heading": "Carpet Spotting & Stain Removal Tips",
@@ -332,6 +343,7 @@
     }
   },
   "order": [
+    "left_nav_on_pages_V9iV4n",
     "7100ef8a-e4f1-427e-aa52-a53fa1014e6c",
     "main",
     "166067973539459f3b",
