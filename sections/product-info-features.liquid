@@ -526,7 +526,7 @@
                         {% assign pyt = vid | split: "::" %}
                         <div class="container">
                             <div class="video-wrap">
-                                <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0"></iframe>
+                                <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
                             </div>
                             {% if pyt[1] != "None" %}
                                 <div class="info-wrap">

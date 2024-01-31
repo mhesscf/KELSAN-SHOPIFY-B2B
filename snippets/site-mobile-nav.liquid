@@ -50,7 +50,7 @@
               {% if shop.customer_accounts_enabled %}
                   {% unless customer %}
                       <li class="site-header-actions__account-link account-log_in_out">
-                          <a href="{{ routes.account_login_url }}" class="site-header_account-link-text">
+                          <a href="{{ routes.account_login_url }}" class="site-header_account-link-text"  aria-label="Login">
                               <i class="fa-regular fa-user"></i>
                           </a>
                       </li>
@@ -65,7 +65,7 @@
                   {% endunless %}
               {% endif %}
               <li class="site-header-cart">
-                  <a class="site-header-cart--button" href="{{ routes.cart_url }}">
+                  <a class="site-header-cart--button" href="{{ routes.cart_url }}" aria-label="Cart">
                       <span class="site-header-cart--count {% if cart.item_count > 0 %}visible{% endif %}" data-header-cart-count="{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}"></span>
                       <span class="site-header-cart-icon site-header-cart-icon--svg">
                     {% if section.settings.cart_icon == 'icon-bag' %}
