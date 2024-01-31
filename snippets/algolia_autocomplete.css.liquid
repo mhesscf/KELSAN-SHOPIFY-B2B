@@ -291,9 +291,10 @@ body[data-theme='dark'], body.dark {
 
 /* Focus is set and styled on the parent, it isn't necessary here */
 .aa-Input:focus {
-    border-color: none;
     box-shadow: none;
     outline: none;
+    border-radius:10px 0 0 10px;
+    border:1px solid {{ settings.color_input_border }};
 }
 
 /* Remove native appearence */

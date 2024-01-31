@@ -1509,7 +1509,7 @@ function linkdl(mainloc,linkloc,href){
         event: 'ee_linkClick',
         current_page: cpage,
         href: href,
-        link_location : linkloc,
+        link_location: linkloc,
         main_location: mainloc,
     })
     // console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
