@@ -10580,7 +10580,7 @@ nav.breadcrumb span.separator{
 	transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .user-is-tabbing .slideshow-pagination__button:focus {
-	outline: 2px solid var(--slide-text-color);
+	outline: 2px solid {{ settings.color_link_hover }};
 	outline-offset: 2px;
 }
 @media screen and (min-width: 720px) {
@@ -16140,7 +16140,7 @@ nav.breadcrumb a.homebread:hover span,
 }
 
 .productitem--action-trigger {
-	display: block;
+	display: inline-block;
 	width: 100%;
 	padding-top:10px;
 	padding-bottom:9px;
@@ -16153,6 +16153,8 @@ nav.breadcrumb a.homebread:hover span,
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	font-weight: 500;
+	line-height:16px;
+	font-size:14px;
 }
 .productitem--action-trigger.productitem--action-atc {
 	position: relative;
