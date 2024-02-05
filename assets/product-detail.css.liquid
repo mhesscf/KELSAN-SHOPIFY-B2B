@@ -231,7 +231,7 @@
   width: 1330px;
   margin: auto;
   max-width: 90%;
-  border-top: 1px solid {{ settings.color_product_desc_top_border }};
+  {% comment %}border-top: 1px solid {{ settings.color_product_desc_top_border }};{% endcomment %}
   display:block;
 }
 .product-single-desc .container .row{
@@ -1143,7 +1143,8 @@ input.qtyminus {
 }
 .product-video .container .info-wrap{
   display: block;
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-bottom:20px
 }
 .product-video .container .info-wrap, .product-video .container .info-wrap p{
   font-size: 18px;

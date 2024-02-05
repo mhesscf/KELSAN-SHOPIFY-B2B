@@ -516,12 +516,30 @@
             </div>
         </div>
         <div class="video-area-dynamic">
-            {% if product.metafields.plytix.product_video != blank %}
+            {% if product.metafields.plytix.product_video != blank or product.metafields.plytix.local_video != blank%}
                 <section class="product-video">
                     <div class="section-heading">
                         <h2>Videos</h2>
                     </div>
                     {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
+                    {% assign lvideo = product.metafields.plytix.local_video | split: ";" %}
+                    {% for vid in lvideo %}
+                        {% assign pyt = vid | split: "::" %}
+                        <div class="container">
+                            <div class="video-wrap-local">
+                                <video controls="controls" style="width: 100%; height: auto;">
+                                    <source src="https://cdn.shopify.com/videos/c/o/v/{{ pyt[0] }}" type="video/mp4" />
+                                    Your browser does not support our video.
+                                </video>
+                            </div>
+                            {% if pyt[1] != "None" %}
+                                <div class="info-wrap">
+                                    {{ pyt[1] }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
                     {% for vid in pvideo %}
                         {% assign pyt = vid | split: "::" %}
                         <div class="container">
