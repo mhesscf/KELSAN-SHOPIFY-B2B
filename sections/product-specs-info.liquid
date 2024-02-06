@@ -101,7 +101,7 @@
                                 {%- assign pdftitlecheck = 0 -%}
                                 {%- for file_name in pdf_names -%}
                                     {% if basefilename == file_name  %}
-                                        {% if pdf_titles[indexofname]  %}
+                                        {% if pdf_titles[indexofname] and pdf_titles[indexofname] != "" %}
                                             {%- assign filetitle = pdf_titles[indexofname] -%}
                                         {%- endif -%}
                                     {%- endif -%}
