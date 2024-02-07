@@ -21,7 +21,7 @@
           ${data.facets.map( facet =>
                 html`<div class="ais-facet-dropdown-wrapper ais-facet-${facet.type} ais-facet-${facet.escapedName}">
               <label for="${facet.escapedName}" class="ais-range-slider--header ais-facet--header ais-header">
-              ${facet.title}
+              ${facet.title == "Vendor" ? "Brand" : facet.title}
                 <span class="collection-filters__filter-icon open">{% render 'icon-chevron-down-small' %}</span>
               </label>
               <input class="ais-dropdown-checkbox" type="checkbox" id="${facet.escapedName}" name="dropdown" checked />
