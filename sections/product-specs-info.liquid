@@ -34,9 +34,15 @@
                 <div class="spec-table">
                     <div class="inner">
                         {% assign specs = product.metafields.plytix.specs | split: ";;" %}
+                        {% assign brand = "" %}
                         {% for spec in specs %}
                             {% assign attr = spec | split: "::" %}
-                            {% if attr[1] != "None" %}
+                            {% if attr[0] == 'Manufacturer' and attr[1] == brand %}
+                            {% comment %}do not print{% endcomment %}
+                            {% elsif attr[1] != "None" %}
+                                {% if attr[0] == 'Brand' %}
+                                    {% assign brand = attr[1] %}
+                                {% endif %}
                                 <div class="row">
                                     <div class="label">{{ attr[0] }}</div>
                                     {% assign attrVal = attr[1] | remove: "[" | remove: "]" |  remove : "'" %}
@@ -101,7 +107,7 @@
                                 {%- assign pdftitlecheck = 0 -%}
                                 {%- for file_name in pdf_names -%}
                                     {% if basefilename == file_name  %}
-                                        {% if pdf_titles[indexofname]  %}
+                                        {% if pdf_titles[indexofname] and pdf_titles[indexofname] != "" %}
                                             {%- assign filetitle = pdf_titles[indexofname] -%}
                                         {%- endif -%}
                                     {%- endif -%}
