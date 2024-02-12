@@ -14,29 +14,6 @@
         "free_product": "1-5-hp-wall-mount-pressure-washer"
       }
     },
-    "17061084261156ec8b": {
-      "type": "apps",
-      "blocks": {
-        "quick_quote_quote_button_ctYmQx": {
-          "type": "shopify:\/\/apps\/quick-quote\/blocks\/quote-button\/ba8168dc-3466-4dff-b544-74f8dd051310",
-          "settings": {
-            "title": "Request a Quote",
-            "btn_classes": "",
-            "btn_width": "",
-            "button_color": "#000000",
-            "text_color": "#ffffff",
-            "margin_top": 0,
-            "margin_bottom": 0
-          }
-        }
-      },
-      "block_order": [
-        "quick_quote_quote_button_ctYmQx"
-      ],
-      "settings": {
-        "include_padding": true
-      }
-    },
     "main": {
       "type": "static-cart",
       "settings": {
@@ -148,7 +125,6 @@
   },
   "order": [
     "45550fbb-99bf-4d33-90a9-1823708a0964",
-    "17061084261156ec8b",
     "main",
     "cart-gift-with-purchase",
     "ff1e97e5-2f4c-4b9e-83b3-e80cc664679d",
