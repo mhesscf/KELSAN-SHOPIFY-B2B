@@ -1074,6 +1074,56 @@ margin-right:0;
   padding:0;
 {% comment %}flex-wrap: wrap;{% endcomment %}
 }
+.ais-results-as-list .ais-Hits-item .productitem.specialitem{
+  border:3px solid lightblue;
+}
+
+.ais-results-as-list .ais-Hits-item .productitem.specialitem .productitem--info{
+  min-height:300px;
+  justify-content: flex-start;
+}
+.ais-results-as-list .ais-Hits-item .productitem .deal-rib{
+  position:absolute;
+  right:-21px;
+  top:14px;
+  width:250px;
+}
+
+@media screen and (max-width: 1199px) {
+  .ais-results-as-list .ais-Hits-item .productitem .deal-rib{
+    width:200px;
+    right:-15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ais-results-as-list .ais-Hits-item .productitem .deal-rib{
+    width:170px;
+    right:-16px;
+    top:19px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+
+  .ais-results-as-list .productitem.specialitem .ais-hit--picture{
+    margin-top:50px;
+  }
+
+  .ais-results-as-list .productitem.specialitem .deal-rib{
+    position:absolute;
+    right:-21px;
+    top:10px;
+    width:260px;
+  }
+  .ais-results-as-list .productitem.specialitem .productitem--info{
+    margin-top:218px;
+  }
+  .ais-results-as-list .productitem.specialitem .cfais-productitem__image-container{
+    position:relative;
+  }
+}
+
 .ais-results-as-list .ais-Hits-item .cfais-productitem__image-container{
   flex: 0 0 25%;
   order:1;
@@ -1133,6 +1183,27 @@ margin-right:0;
   margin:150px 5px 0 5px;
   width:100%;
 }
+
+.ais-results-as-block .productitem.specialitem{
+  border:3px solid lightblue;
+}
+.ais-results-as-block .productitem.specialitem .ais-hit--picture{
+  margin-top:50px;
+}
+
+.ais-results-as-block .productitem.specialitem .deal-rib{
+  position:absolute;
+  right:-21px;
+  top:10px;
+  width:260px;
+}
+.ais-results-as-block .productitem.specialitem .productitem--info{
+  margin-top:218px;
+}
+.ais-results-as-block .productitem.specialitem .cfais-productitem__image-container{
+  position:relative;
+}
+
 .ais-results-size-lg .ais-page .ais-results-as-block .ais-hit{
   padding:15px 10px;
   margin:0;
