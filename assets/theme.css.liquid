@@ -2046,7 +2046,8 @@ a:hover{
 	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 .spr-summary-actions-newreview:focus, .shopify-payment-button .shopify-payment-button__button--unbranded:focus, .product-form--atc-button:focus, .utils-sortby--modal-button:focus, .live-search-button:focus, .article--excerpt-wrapper--featured .article--excerpt-button:focus, .shopify-challenge__container .btn:focus, .pxs-image-with-text-button:focus, .slideshow-slide__button--secondary:focus, .slideshow-slide__button--primary:focus, .page__content button:focus, .image-with-text__button:focus, .button-secondary:focus, .button-primary:focus, .productgrid--no-results-button:focus {
-	box-shadow: 0 0 0 2px {{ color_background }}, 0 0 0 5px rgba(17, 153, 255, 0.4), 0 3px 8px rgba(0, 0, 0, 0.1);
+	{% comment %}box-shadow: 0 0 0 2px {{ color_background }}, 0 0 0 5px rgba(17, 153, 255, 0.4), 0 3px 8px rgba(0, 0, 0, 0.1);{% endcomment %}
+	border:3px solid blue !important;
 }
 
 .spr-summary-actions-newreview.disabled, .shopify-payment-button .shopify-payment-button__button--unbranded.disabled, .smart-payment-enabled .product-form--atc-button.disabled, .product-form--atc-button.disabled, .utils-sortby--modal-button.disabled, .live-search-button.disabled, .article--excerpt-wrapper--featured .article--excerpt-button.disabled, .shopify-challenge__container .btn.disabled, .pxs-image-with-text-button.disabled, .slideshow-slide__button--secondary.disabled, .slideshow-slide__button--primary.disabled, .page__content button.disabled, .image-with-text__button.disabled, .button-secondary.disabled, .button-primary.disabled, .disabled.productgrid--no-results-button {
