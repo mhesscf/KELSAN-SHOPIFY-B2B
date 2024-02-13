@@ -68,6 +68,16 @@
                             quantity: "1",
                             atc_loc: "Cart Accessories (Frequently Bought Together)"
                         });
+
+                        var name = "atcloc";
+                        var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                        if (thisCookie){
+                            var newCookieVal = thisCookie[2] + "::"+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku')+":"+"Cart Accessories (Frequently Bought Together)";
+                        }else{
+                            var newCookieVal = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku')+":"+"Cart Accessories (Frequently Bought Together)";
+                        }
+                        document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
+
                         // console.log(window.dataLayer);
 
                         form_template["properties[_erp_sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_erpsku');
