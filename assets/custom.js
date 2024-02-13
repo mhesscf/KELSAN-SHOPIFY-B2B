@@ -869,6 +869,17 @@ jQuery(document).ready(function($){
                     quantity: $(this).val(),
                     atc_loc: "Bundle Item"
                 });
+
+
+                var name = "atcloc";
+                var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                if (thisCookie){
+                    var newCookieVal = thisCookie[2] + "::"+$(this).data('vissku')+":"+"Bundle Item";
+                }else{
+                    var newCookieVal = $(this).data('vissku')+":"+"Bundle Item";
+                }
+                document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
+
             });
             // console.log(window.dataLayer);
 
@@ -941,6 +952,17 @@ jQuery(document).ready(function($){
                             quantity: "1",
                             atc_loc: "Frequently Bought Together"
                         });
+
+
+                        var name = "atcloc";
+                        var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                        if (thisCookie){
+                            var newCookieVal = thisCookie[2] + "::"+$(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku')+":"+"Frequently Bought Together";
+                        }else{
+                            var newCookieVal = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku')+":"+"Frequently Bought Together";
+                        }
+                        document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
+
                         // console.log(window.dataLayer);
                         // missingOptions = 1;
 
@@ -1435,6 +1457,16 @@ function sf_atc(btn,placement){
         quantity: sf_qty,
         atc_loc: placement
     });
+
+
+    var name = "atcloc";
+    var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (thisCookie){
+        var newCookieVal = thisCookie[2] + "::"+"SUPERFREAK"+":"+placement;
+    }else{
+        var newCookieVal = "SUPERFREAK"+":"+placement;
+    }
+    document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
 
     data = {
         form_type: 'product',

@@ -828,6 +828,15 @@
             atc_loc: formIdObj.querySelector('input[name="location"]').value
           });
 
+          var name = "atcloc";
+          var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+          if (thisCookie){
+            var newCookieVal = thisCookie[2] + "::"+formIdObj.querySelector('input[name="properties[Sku]"]').value+":"+formIdObj.querySelector('input[name="location"]').value;
+          }else{
+            var newCookieVal = formIdObj.querySelector('input[name="properties[Sku]"]').value+":"+formIdObj.querySelector('input[name="location"]').value;
+          }
+          document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
+
           if (formId) {
             document.getElementById(formId).submit();
           }
