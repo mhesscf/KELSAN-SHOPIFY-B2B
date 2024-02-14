@@ -278,7 +278,7 @@
             return html `
       <div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <meta itemprop="position" content="${hit.productPosition}" />
-        <div class="productitem   ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product">
+        <div class="productitem  ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product">
             <div class="cfais-productitem__image-container">
                 <div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}')">
                 </div>
@@ -408,6 +408,7 @@
             <div class="cfais-productitem--actions" itemprop="offers" itemscope itemtype="${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? 'http://schema.org/AggregateOffer':'http://schema.org/Offer'}">
 
             ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'hot-deal-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Image" /></div>` : ``}
+            ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'hot-deal-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Image" /></div>` : ``}
 
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
