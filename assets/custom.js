@@ -1426,7 +1426,7 @@ function sf_info_pop(){
 };
 
 // superfreak add to cart
-function sf_atc(btn,placement,plan){
+function sf_atc(btn,placement,plan = ""){
     var sf_plan_item = $(btn).data('plan-item');
     var sf_plan_item_handle = $(btn).data('plan-item-handle');
     var sf_price = 99.99;
