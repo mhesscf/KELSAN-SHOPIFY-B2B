@@ -23,6 +23,7 @@
         },
         "71ea2eaa-3b3a-4aa9-b752-787ed97ad793": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-desktop-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/clarke-ca30-bogo-promo-email-graphic-800x427.jpg",
