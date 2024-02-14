@@ -10,10 +10,20 @@
             "cat_title": "Carpet Cleaning",
             "cat_text": "Check out our selection of carpet cleaning and care tools to keep your carpet looking the best. Shop our selection of extractors, carpet chemicals, fans, and extractor accessories."
           }
+        },
+        "banner_WbfMi4": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/cpl-cf-100-bogo-desktop-banner-1400x350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/cpl-cf-100-bogo-mobile-banner-800x427.jpg",
+            "link": "\/products\/cleanfreak-120-psi-carpet-cleaning-extractor",
+            "coupon-code": ""
+          }
         }
       },
       "block_order": [
-        "f99106b9-821e-475f-81ca-0cc8d5a1b428"
+        "f99106b9-821e-475f-81ca-0cc8d5a1b428",
+        "banner_WbfMi4"
       ],
       "settings": {
         "enable_autoplay": true,
