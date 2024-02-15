@@ -1426,7 +1426,7 @@ function sf_info_pop(){
 };
 
 // superfreak add to cart
-function sf_atc(btn,placement){
+function sf_atc(btn,placement,plan = ""){
     var sf_plan_item = $(btn).data('plan-item');
     var sf_plan_item_handle = $(btn).data('plan-item-handle');
     var sf_price = 99.99;
@@ -1474,7 +1474,8 @@ function sf_atc(btn,placement){
         'properties[_erp_sku]': 'SUPERFREAK',
         'properties[SuperFreak Item]': sf_plan_item,
         'id': sf_var_id,
-        'quantity': sf_qty
+        'quantity': sf_qty,
+        'selling_plan': plan
     }
 
     $(btn).addClass("sf-added").html("...");

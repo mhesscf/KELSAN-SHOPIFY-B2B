@@ -14143,6 +14143,18 @@ nav.breadcrumb a.homebread:hover span,
 	background-color:#f3f3f3;
 	max-width:445px;
 	padding:30px;
+	border-radius:30px;
+}
+#quick-quote-wrapper .quote-input-label{
+	text-align:right;
+	padding-right: 10px;
+}
+#quick-quote-wrapper .quote-required-message{
+	text-align:center;
+	padding-bottom:15px;
+}
+.ng-scope[ng-if="field.FieldType=='address'"] div:first-child {
+
 }
 .sf-promo-link .sf-discount{
 	color:{{ settings.color_button_secondary_background }};
@@ -19825,6 +19837,9 @@ shopify-payment-terms {
 .no-js .product-gallery--media-thumbnail {
 	cursor: default;
 }
+.product-gallery--video-thumbnail{
+	margin-top:15px;
+}
 .product-gallery--media-thumbnail:focus {
 	outline: none;
 	box-shadow: 0 0 0 1.5px {{ border_mix | color_modify: 'alpha', 0.15 }};
@@ -19843,8 +19858,8 @@ shopify-payment-terms {
 .product-gallery--media-thumbnail .icon-play-thumb,
 .product-gallery--media-thumbnail .icon-model-thumb {
 	position: absolute;
-	top: 0.1875rem;
-	right: 0.1875rem;
+	top: 15px;
+	right: 32px;
 	z-index: 1;
 	width: 1.25rem;
 	height: 1.25rem;
