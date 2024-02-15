@@ -104,7 +104,11 @@
       {% endif %}
 
       {% if item.selling_plan_allocation.selling_plan %}
-        <span class="cart-item--line-item-subscriptions">{{ item.selling_plan_allocation.selling_plan.name }}</span>
+        {% if item.sku == 'SUPERFREAK' %}
+          <span class="cart-item--line-item-subscriptions">{{ item.selling_plan_allocation.selling_plan.name | replace:"Delivery every year","Renewed every year"}}</span>
+        {% else %}
+          <span class="cart-item--line-item-subscriptions">{{ item.selling_plan_allocation.selling_plan.name }}</span>
+        {% endif %}
       {% endif %}
       {% if item_has_discounts == false -%}
         <div class="cart-item--content-price">
@@ -247,12 +251,7 @@
             </tr>
           </table>
         </div>
-
-
-
       {% endif %}
-
-
     </div>
 
     <div class="cart-item--info {% if product_bundle != '' %} bundle-item {% endif %}">

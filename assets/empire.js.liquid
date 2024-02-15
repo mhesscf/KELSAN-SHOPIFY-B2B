@@ -29023,7 +29023,12 @@ PERFORMANCE OF THIS SOFTWARE.
 
                     if (response.selling_plan_allocation) {
                         const productSubscriptionTitle = flyOut.querySelector('[data-atc-banner-product-subscription-title]');
-                        productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;
+                        {% comment %}productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;{% endcomment %}
+                        if(response.properties['Sku'] == "SUPERFREAK"){
+                            productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name.replace("Delivery every year","Renewed every year");
+                        }else{
+                            productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;
+                        }
                     }
                     /*
         TODO: Bring in variant, and use that to check compare_at_price
