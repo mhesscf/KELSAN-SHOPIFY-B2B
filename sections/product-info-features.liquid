@@ -24,7 +24,7 @@
                 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
                     <div class="padcharacteristics">
                         {% if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  %}
-                            <h3 style="padding:10px 0 10px; margin-bottom:10px;" class="prod-block-title">Pad Characteristics</h3>
+                            <h2 class="prod-block-title">Pad Characteristics</h2>
                         {% endif %}
 
 
@@ -312,7 +312,7 @@
                                   {%- assign scrubbingArr = scrubbing | split: "," -%}
                                   {%- assign polishingArr = polishing | split: "," -%}
                                   {%- assign strippingArr = stripping | split: "," -%}
-                                <h3 style="padding:10px 0 10px; margin-bottom:10px;" class="prod-block-title">Pad Capability</h3>
+                                <h2 class="prod-block-title">Pad Capability</h2>
                                 <hr style="border:0; border-top:1px solid #eee;">
                                 <div class="prod-used-pads-block">
                                     {% if scrubbing != "" %}
@@ -448,9 +448,8 @@
                         {%- assign chemicalsHand = "cleanfreak-neutral-clean-floor-cleaning-solution,cleanfreak-magnifico-lavender-scented-floor-cleaning-solution,cleanfreak-low-foam-floor-cleaning-degreaser,cleanfreak-eliminator-heavy-duty-floor-cleaning-degreaser" -%}
                         {%- assign chemicalsArr = chemicalsHand | split: "," -%}
 
-                        <h3 style="padding:10px 0 10px; margin-bottom:10px;" class="prod-block-title">Chemical Recommendations</h3>
-                        <hr style="border:0; border-top:1px solid #eee;">
-                        <div class="chemical-guide">
+                        <h2 class="prod-block-title">Chemical Recommendations</h2>
+                        <div style="margin-top:17px;" class="chemical-guide">
                             <table>
                             {% for chemical in chemicalsArr %}
                                 <tr class="chemical-guide-item" data-handle="{{ chemical }}"><td>Loading...</td></tr>

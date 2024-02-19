@@ -288,10 +288,6 @@
 .product-single-desc h4,.product-single-desc h3, .product-single-desc h2, .product-single-desc h5, .product-single-desc h6, .product-single-desc h1 {
   color: {{ settings.color_text }};
 }
-.product-single-desc h2{
-  font-size: 30px;
-  font-weight: 600;
-}
 
 .product-single-desc ul{
   padding-left: 20px;
@@ -385,11 +381,6 @@
 }
 .product-single-spec-manual .container .r{
   width: 48%;
-}
-.product-single-spec-manual h2{
-  color: {{ settings.color_section_secondary_heading }};
-  font-size: 30px;
-  font-weight: 600;
 }
 .product-single-spec-manual .container .row.centered-content .product-single-spec-manual h2{
   text-align: center;
@@ -920,6 +911,11 @@ input.qtyminus {
 }
 .product-single-desc h2.jdgm-rev-widg__title{
   text-align:left;
+  font-size:26px;
+  font-weight:600;
+  color:{{ settings.color_text }};
+  line-height:22px;
+  margin:20px 0 15px 0;
 }
 @media (min-width: 1345px) {
 {% comment %}New format for review area (2col){% endcomment %}
@@ -1116,11 +1112,8 @@ input.qtyminus {
   margin: auto;
 }
 .product-video .section-heading h2{
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 40px;
   display: block;
-  color: {{ settings.color_text }};
+  padding-bottom:15px;
 }
 .product-video .container{
   max-width: 90%;
