@@ -9,16 +9,7 @@
 		margin-left: auto;
         overflow: hidden;
 	}
-
-	.f-cat-slider__content .featured-slider-title{
-		color: {{ settings.color_headings }};
-		font-family: Roboto;
-		font-size: 30px;
-		font-weight: 500;
-		letter-spacing: 0;
-		line-height: 32px;
-		margin-bottom: 15px;
-	}
+	
 	.f-cat-slider__content ul.slick-dots {
 		float: left;
 		padding-left: 0;
@@ -159,7 +150,7 @@
 </script>
 <section class="f-cat-wrapper" data-section-id="{{ section.id }}">
     <div class="f-cat-slider__content">
-        <h3 class="featured-slider-title">{{ section.settings.cfpssectionheading }}</h3>
+        <h2 class="featured-slider-title">{{ section.settings.cfpssectionheading }}</h2>
         <div class="category-featured-slider">
             {% for block in section.blocks %}
                 {% case block.type %}
