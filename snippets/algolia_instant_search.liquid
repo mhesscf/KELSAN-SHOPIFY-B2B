@@ -34,12 +34,15 @@
           <div class="ais-search-header">
 
             {% assign thisPadCategory = "" %}
-            {% if collection.handle == "floor-scrubbing-pads" %}
-                {% assign thisPadCategory = "scrubbing" %}
-            {% elsif collection.handle == "floor-polishing-pads" %}
-                {% assign thisPadCategory = "polishing" %}
-            {% elsif collection.handle == "floor-stripping-pads" %}
-                {% assign thisPadCategory = "stripping" %}
+
+            {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+                {% if collection.handle == "floor-scrubbing-pads" %}
+                    {% assign thisPadCategory = "scrubbing" %}
+                {% elsif collection.handle == "floor-polishing-pads" %}
+                    {% assign thisPadCategory = "polishing" %}
+                {% elsif collection.handle == "floor-stripping-pads" %}
+                    {% assign thisPadCategory = "stripping" %}
+                {% endif %}
             {% endif %}
             {% if thisPadCategory != "" %}
                 {%
