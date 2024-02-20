@@ -23577,8 +23577,10 @@ body:not(.user-is-tabbing) .navmenu-meganav-sidenav__item .navmenu-item-text:foc
 	display: inline-block;
 	width: 28px;
 	height: 28px;
-	top:4px;
 	fill:{{ settings.color_icons }};
+}
+.social-link svg:hover {
+	fill:{{ settings.color_link_hover }};
 }
 .social-link:hover:before {
 	transform: scale(1.1);
