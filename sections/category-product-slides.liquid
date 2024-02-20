@@ -10,15 +10,10 @@
         margin: auto;
         max-width: 90%;
     }
-    .category-slider-wrapper .section-title-row{
-        padding-left: 30px;
-    }
     .category-slider-wrapper .featured-slider-title{
         text-align: left;
         margin-bottom: 0;
-        font-size: 30px;
         font-weight: 600;
-        color: {{ settings.color_headings }};
     }
     .category-slider-wrapper .category-link{
         color: {{ settings.warning_text }};
@@ -292,7 +287,7 @@
 <section class="category-slider-wrapper" data-section-id="{{ section.id }}">
     <div class="category-slider-wrapper__content container">
         <div class="section-title-row">
-            <h3 class="featured-slider-title">{{ section.settings.featuredcollection }}</h3>
+            <h2 class="featured-slider-title">{{ section.settings.featuredcollection }}</h2>
             {% if section.settings.link_url != blank %}
                 <a class="category-link" href="{{ section.settings.link_url }}">{{ section.settings.link_text }} <i class="fa fa-arrow-right-long"></i> </a>
             {% endif %}

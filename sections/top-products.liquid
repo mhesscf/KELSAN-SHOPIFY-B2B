@@ -24,9 +24,6 @@
 	.top-product-showcase .featured-slider-title{
 	text-align: left;
 	margin-bottom: 15px;
-	font-size: 30px;
-	font-weight: 600;
-	color: {{ settings.color_headings }};
 	}
 	.top-product-showcase .category-link{
 	color: {{ settings.warning_text }};
@@ -349,11 +346,7 @@
 	border-radius: 29px;
 	}
 	.top-product-showcase .showcase-product .showcase-top-title{
-	font-size: 30px;
-	color: {{ settings.color_headings }};
-	font-weight: 600;
-	line-height: 32px;
-	margin-bottom: 20px;
+	margin-top:0px
 	}
 	.top-product-showcase .showcase-product .product-showcase-item{
 	background-color: #fff;
@@ -536,6 +529,7 @@
 	.top-product-showcase .showcase-product{
 	width: 100%;
 	margin-left: 0;
+	margin-top:15px;
 	}
 	.top-product-showcase .product-showcase-slides .slick-list .slick-track{
 	padding: 20px 0;
@@ -563,7 +557,7 @@
 		<div class="showcase-row">
 			<div class="showcase-slide-wrap">
 				<div class="section-title-row">
-					<h3 class="featured-slider-title">{{ section.settings.featuredcollection }}</h3>
+					<h2 class="featured-slider-title">{{ section.settings.featuredcollection }}</h2>
 					{% if section.settings.link_url != blank %}
 						<a class="category-link" href="{{ section.settings.link_url }}">{{ section.settings.link_text }} <i class="fa fa-arrow-right-long"></i> </a>
 					{% endif %}
@@ -602,7 +596,7 @@
 				<div id="top-slide-arrows" class="cat-slide-arrows-{{ section.id }}"></div>
 			</div>
 			<div class="showcase-product">
-				<h3 class="showcase-top-title">Top Rated <br>Product</h3>
+				<h2 class="showcase-top-title">Top Rated <br>Product</h2>
 				<div style="padding: 0;display: flex;margin: auto;">
 					{% assign item = section.settings.featured_product %}
 					{%
