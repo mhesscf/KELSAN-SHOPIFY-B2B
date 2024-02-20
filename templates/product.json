@@ -14,7 +14,7 @@
           }
         },
         "judgeme_preview_badge_product_page_f9b6a453": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
           }
         },
@@ -22,17 +22,6 @@
           "type": "rating",
           "disabled": true,
           "settings": {
-          }
-        },
-        "41a7893a-eebb-421d-b512-a680458f339c": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
-          "disabled": true,
-          "settings": {
-            "stars_fill_color": "#39798e",
-            "star_size": 15,
-            "text_align": "flex-start",
-            "product": "{{product}}",
-            "stars_text_empty": "No reviews"
           }
         },
         "price": {
@@ -44,8 +33,6 @@
           "type": "shopify:\/\/apps\/hulk-advanced-wishlist\/blocks\/wishlist-btn\/330d9272-08ea-4193-b3e0-475a69fa65fa",
           "disabled": true,
           "settings": {
-            "is_new_icon_settings": false,
-            "theme_color": "#003f72",
             "button_style": "style_4",
             "button_border": 0,
             "button_font_size": 16,
@@ -59,6 +46,7 @@
             "hover_button_text_color": "#ffffff",
             "hover_button_background_color": "#003f72",
             "hover_button_border_color": "#003f72",
+            "is_new_icon_settings": false,
             "icon_type": "outline",
             "icon_size": 16,
             "icon_background_type": "icon_round_background",
@@ -93,7 +81,6 @@
         "vendor",
         "judgeme_preview_badge_product_page_f9b6a453",
         "rating",
-        "41a7893a-eebb-421d-b512-a680458f339c",
         "price",
         "7003d446-734f-49c7-af0b-8d509e436c01",
         "description",
@@ -140,6 +127,14 @@
             "tab_rel_id": "related_products"
           }
         },
+        "cac90bff-26fa-4e04-a472-516032b68d4e": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Replacement Parts",
+            "tab_name_sm": "Parts",
+            "tab_rel_id": "part_items"
+          }
+        },
         "908ae5ae-8f36-43b2-9c13-a3102c783b4a": {
           "type": "tabinfo",
           "settings": {
@@ -147,21 +142,13 @@
             "tab_name_sm": "Similar",
             "tab_rel_id": "similar_items"
           }
-        },
-        "cac90bff-26fa-4e04-a472-516032b68d4e": {
-          "type": "tabinfo",
-          "settings": {
-            "tab_name": "Parts",
-            "tab_name_sm": "Parts",
-            "tab_rel_id": "part_items"
-          }
         }
       },
       "block_order": [
         "f1b95c38-8fb7-4cae-bd6b-2610e41f8acd",
         "b5f685c0-087d-4f5b-82a0-1b3ab914619b",
-        "908ae5ae-8f36-43b2-9c13-a3102c783b4a",
-        "cac90bff-26fa-4e04-a472-516032b68d4e"
+        "cac90bff-26fa-4e04-a472-516032b68d4e",
+        "908ae5ae-8f36-43b2-9c13-a3102c783b4a"
       ],
       "settings": {
         "show_section": true,
@@ -172,7 +159,7 @@
       "type": "product-info-features",
       "blocks": {
         "2c2ceb11-9376-41b8-a6fc-df382fe72bcc": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
           }
         }
@@ -198,7 +185,7 @@
       "type": "apps",
       "blocks": {
         "judgeme_review_widget_0dca22e1": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
           }
         }
@@ -241,16 +228,6 @@
     "1666286255a09a3e65": {
       "type": "apps",
       "disabled": true,
-      "blocks": {
-        "771f4a4a-9fb8-48c4-ba27-fcb43f1d0aff": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "771f4a4a-9fb8-48c4-ba27-fcb43f1d0aff"
-      ],
       "settings": {
         "include_padding": true
       }
