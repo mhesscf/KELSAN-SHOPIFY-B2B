@@ -17,7 +17,7 @@
         {% for order in customer.orders %}
             {% for line_item in order.line_items %}
                 {% for discount_allocation in line_item.line_level_discount_allocations %}
-                    {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title == "SUPERFREAK-1ST" %}
+                    {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title == "SUPERFREAK-1ST" or discount_allocation.discount_application.title == "SF-1ST" %}
                         {%- assign totalSFSavings = totalSFSavings | plus: discount_allocation.amount -%}
                         {% comment %}{{ order.name }}:{{ line_item.title }} -> {{ discount_allocation.discount_application.title }}(-<span class="money">{{ discount_allocation.amount | money }}</span>)<br/>{% endcomment %}
                         {% endif %}
