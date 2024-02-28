@@ -19582,6 +19582,7 @@ shopify-payment-terms {
 	overflow: hidden;
 	transition: height 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	max-width:500px;
+	min-height:500px;
 	margin:auto;
 }
 @media screen and (min-width: 720px) {
@@ -19838,9 +19839,38 @@ shopify-payment-terms {
 .no-js .product-gallery--media-thumbnail {
 	cursor: default;
 }
-.product-gallery--video-thumbnail{
-	margin-top:15px;
+.product-gallery--navigation-slick{
+	height:84px;
 }
+.product-gallery--video-thumbnail {
+	margin-top: 0px;
+}
+
+.product-gallery--media-thumbnail{
+	animation: thumbFadeIn ease 1.5s;
+	-webkit-animation: thumbFadeIn ease 1.5s;
+	-moz-animation: thumbFadeIn ease 1.5s;
+	-o-animation: thumbFadeIn ease 1.5s;
+	-ms-animation: thumbFadeIn ease 1.5s;
+}
+
+@keyframes thumbFadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+@-webkit-keyframes thumbFadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+@-o-keyframes thumbFadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+@-ms-keyframes thumbFadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
 .product-gallery--media-thumbnail:focus {
 	outline: none;
 	box-shadow: 0 0 0 1.5px {{ border_mix | color_modify: 'alpha', 0.15 }};
@@ -19856,10 +19886,14 @@ shopify-payment-terms {
 	display: block;
 	height: 100%;
 }
+.product-gallery--media-thumbnail .product-gallery--media-thumbnail-img-wrapper.video-type{
+	height:81px;
+}
+
 .product-gallery--media-thumbnail .icon-play-thumb,
 .product-gallery--media-thumbnail .icon-model-thumb {
 	position: absolute;
-	top: 15px;
+	top: 17px;
 	right: 32px;
 	z-index: 1;
 	width: 1.25rem;
@@ -19869,6 +19903,18 @@ shopify-payment-terms {
 	background: {{ color_background }};
 	box-shadow: 0 0 0 1px {{ settings.color_headings | color_modify: 'alpha', 0.05 }};
 }
+
+.product-gallery--media-thumbnail .icon-play-thumb.cust{
+	color: #ffffff;
+	background: none;
+	width: 25px;
+	height: 25px;
+	font-size: 26px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-58%, -50%);
+}
+
 .no-js .product-gallery--media-thumbnail .icon-play-thumb,
 .no-js .product-gallery--media-thumbnail .icon-model-thumb {
 	display: none;
@@ -20035,8 +20081,12 @@ shopify-payment-terms {
 .gallery-navigation-horizontal-scroller-slick{
 	max-width:340px;
 	margin:auto;
+	overflow:hidden;
+	max-height:96px;
 }
-
+.gallery-navigation-horizontal-scroller-slick .product-gallery--media-thumbnail{
+	min-height: 81px;
+}
 .gallery-navigation-horizontal-scroller-slick .product-gallery--media-thumbnail[data-gallery-selected="true"]{
 	box-shadow: 0 0 0 0;
 	border: none;
@@ -20107,6 +20157,77 @@ shopify-payment-terms {
 		text-align:center;
 	}
 }
+.product-gallery--viewer .product-gallery--video{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.product-gallery--viewer .product-gallery--video .vid-contain{
+	height:500px;
+}
+.product-gallery--viewer .product-gallery--video iframe{
+	width: 100%;
+	height: 280px;
+	margin-bottom:-5px;
+}
+.product-gallery--viewer .product-gallery--video .alttext{
+	padding:8px 0;
+}
+@media screen and (max-width: 719px) {
+	.product-gallery--viewer .product-gallery--video{
+		transform: translateY(50%);
+	}
+	.product-gallery--viewer .product-gallery--video .vid-contain{
+		height:unset;
+	}
+	.product-gallery--viewer .product-gallery--video iframe{
+		position:relative;
+		height:244px;
+		transform:unset;
+	}
+}
+
+.product-gallery .nav-tabs {
+	border-bottom: 1px solid {{ settings.color_product_desc_top_border }};
+	width:100%;
+	display:flex;
+	margin-top:10px
+}
+.product-gallery .nav-tabs .thumb-show{
+	border:1px solid white;
+	color:white;
+	background-color:{{ settings.color_slide_arrow_background }};
+	padding:2px 10px;
+	font-size:16px;
+	cursor:pointer;
+	margin-bottom:-1px;
+	font-weight:bold;
+}
+
+.product-gallery .nav-tabs .thumb-show:first-child {
+	border-top-left-radius:10px;
+	margin-left:22px;
+}
+.product-gallery .nav-tabs .thumb-show:last-child {
+	border-top-right-radius:10px;
+	border-right:0px solid {{ settings.color_product_desc_top_border }};
+}
+.product-gallery .nav-tabs .thumb-show.active-tab {
+	background-color:white;
+	border:1px solid {{ settings.color_product_desc_top_border }};
+	border-bottom:1px solid white;
+	color: {{ settings.color_text }};
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	cursor: default;
+}
+
+
+
+
+
 
 .product-stock-level-wrapper {
 	line-height: 1;

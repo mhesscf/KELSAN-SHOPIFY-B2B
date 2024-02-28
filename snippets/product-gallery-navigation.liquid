@@ -11,6 +11,15 @@
   @param image_crop {boolean}
     Defines if the image should be cropped or not
 {% endcomment %}
+{% assign mediaSize = product.media | size  %}
+<div class="nav-tabs" {% if mediaSize < 2 %}style="display:none;"{% endif %}>
+  <div class="thumb-show imgs-thumbs active-tab">
+    Images
+  </div>
+  <div class="thumb-show video-thumbs">
+    Videos
+  </div>
+</div>
 
 {% if product.media.size > 0 %}
   {% assign thumb_dimensions = 'x75' %}
@@ -48,9 +57,12 @@
       class="gallery-navigation--scroller gallery-navigation-horizontal-scroller-slick"
       data-gallery-scroller
     >
-      {% assign mediaSize = product.media | size  %}
-
+      {% assign orgCounter = 0  %}
+      {% assign videoCounter = 0  %}
     {% for media in product.media %}
+      {% if media.media_type == "video" %}
+        {% assign videoCounter = videoCounter | plus: 1  %}
+      {%- endif -%}
       <button
         class="
           product-gallery--media-thumbnail
@@ -66,9 +78,10 @@
         data-media-type="{{ media.media_type }}"
         {% if mediaSize < 2 %} style="display:none;" {% endif %}
       >
-        <span class="product-gallery--media-thumbnail-img-wrapper" tabindex="-1">
+        <span class="product-gallery--media-thumbnail-img-wrapper {{ media.media_type }}-type " tabindex="-1">
           {% if media.media_type == 'video' or media.media_type == 'external_video' %}
-            {% render 'icon-library', id: 'icon-play-thumb' %}
+            {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
+            <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
           {% elsif media.media_type == 'model' %}
             {% render 'icon-library', id: 'icon-model-thumb' %}
           {% endif %}
@@ -81,7 +94,92 @@
           %}
         </span>
       </button>
+      {% assign orgCounter = orgCounter | plus: 1  %}
     {% endfor %}
+
+
+
+
+
+      {% comment %}local videos -------------------------------------------------------{% endcomment %}
+      {% assign lvideo = product.metafields.plytix.local_video | split: ";" %}
+      {% for vid in lvideo %}
+        {% assign pyt = vid | split: "::" %}
+        {% assign videoCounter = videoCounter | plus: 1  %}
+        {% assign videoimg = "https://cleanfreak-prod.myshopify.com/cdn/shop/files/preview_images/thumb1_100x75_crop_center.jpg" %}
+
+        {% comment %}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{% endcomment %}
+        <button
+                class="
+            product-gallery--media-thumbnail
+            product-gallery--video-thumbnail
+          "
+                type="button"
+                tab-index="0"
+                aria-label="{{ pyt[1] }} {{ 'general.accessibility.nav_product_thumbnail' | t }}"
+                data-gallery-thumbnail
+                data-gallery-index="{{ orgCounter }}"
+                data-gallery-selected="{%- if 1 == 1 -%}true{%- else -%}false{%- endif -%}"
+                data-media="{{ orgCounter }}"
+                data-media-type="video"
+        >
+          <span class="product-gallery--media-thumbnail-img-wrapper video-type" tabindex="-1">
+              {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
+            <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
+            <img src="{{ videoimg }}" alt="{{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
+          </span>
+        </button>
+        {% assign orgCounter = orgCounter | plus: 1  %}
+      {% endfor %}
+
+
+
+
+      {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
+      {% for vid in pvideo %}
+        {% assign videoCounter = videoCounter | plus: 1  %}
+        {% assign pyt = vid | split: "::" %}
+        {% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}
+
+        {% comment %}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{% endcomment %}
+        <button
+                class="
+            product-gallery--media-thumbnail
+            product-gallery--video-thumbnail
+          "
+
+                type="button"
+                tab-index="0"
+                aria-label="{{ pyt[1] }} {{ 'general.accessibility.nav_product_thumbnail' | t }}"
+                data-gallery-thumbnail
+                data-gallery-index="{{ orgCounter }}"
+                data-gallery-selected="{%- if 1 == 1 -%}true{%- else -%}false{%- endif -%}"
+                data-media="{{ orgCounter }}"
+                data-media-type="video"
+        >
+          <span class="product-gallery--media-thumbnail-img-wrapper video-type" tabindex="-1">
+              {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
+            <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
+            <img src="{{ videoimg }}" alt="{{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
+          </span>
+        </button>
+        {% assign orgCounter = orgCounter | plus: 1  %}
+      {% endfor %}
+
+
     </div>
   </div>
+{% endif %}
+
+<div class="gall-placeholder" style="display:none"></div>
+
+{% if videoCounter < 1  %}
+<style>
+  .product-gallery .nav-tabs .thumb-show.video-thumbs{
+    display:none;
+  }
+  .product-gallery .nav-tabs .thumb-show.imgs-thumbs{
+    border-top-right-radius:10px;
+  }
+</style>
 {% endif %}

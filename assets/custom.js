@@ -702,11 +702,16 @@ jQuery(document).ready(function($){
 
 
     setTimeout(()=>{
+        //first load. show only images
+        var orig_html = $('.gallery-navigation-horizontal-scroller-slick').html();
+        $('.gall-placeholder').html(orig_html);
+        $('.gallery-navigation-horizontal-scroller-slick .product-gallery--video-thumbnail').remove();
+
         $('.gallery-navigation-horizontal-scroller-slick').slick({
             arrows: true,
             autoplay: false,
             dots: false,
-            infinite: true,
+            infinite: false,
             //lazyLoad: 'ondemand',
             slidesToScroll: 3,
             appendArrows: $('.slickbuttons'),
@@ -724,6 +729,56 @@ jQuery(document).ready(function($){
             ]
         });
     },500);
+
+    $('.product-gallery .thumb-show').on('click', function(){
+        $( '.product-gallery .thumb-show' ).removeClass('active-tab');
+        $( this ).addClass('active-tab');
+        $('.product-gallery--media-thumbnail').hide();
+
+        $('.gallery-navigation-horizontal-scroller-slick').slick('unslick');
+
+        if($('.gall-placeholder').html() == ""){
+            var orig_html = $('.gallery-navigation-horizontal-scroller-slick').html();
+            $('.gall-placeholder').html(orig_html);
+        }else{
+            var orig_html = $('.gall-placeholder').html();
+            $('.gallery-navigation-horizontal-scroller-slick').html(orig_html);
+        }
+
+
+        if ( $( this ).hasClass( "video-thumbs" ) ) {
+            $('.gallery-navigation-horizontal-scroller-slick .product-gallery--image-thumbnail').remove();
+        }else if($( this ).hasClass( "imgs-thumbs" )){
+            $('.gallery-navigation-horizontal-scroller-slick .product-gallery--video-thumbnail').remove();
+        }
+        setTimeout(()=>{
+            $('.gallery-navigation-horizontal-scroller-slick').slick({
+                arrows: true,
+                autoplay: false,
+                dots: false,
+                infinite: false,
+                //lazyLoad: 'ondemand',
+                slidesToScroll: 3,
+                appendArrows: $('.slickbuttons'),
+                prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
+                slidesToShow: 4,
+                responsive: [
+                    {
+                        breakpoint: 1079,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 2
+                        }
+                    }
+                ]
+            });
+
+        },10);
+        setTimeout(()=>{
+        $('.product-gallery--media-thumbnail').show();
+        },100);
+    });
 
     $('.js-load-more').on('click', function(){
         var $this =$(this),
