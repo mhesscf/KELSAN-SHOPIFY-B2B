@@ -539,15 +539,16 @@
                             {% endif %}
 
                         {% when '@app' %}
-                            {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
-                                {% if selected_variant.sku == "SUPERFREAK" %}
-                                    <style>
-                                        .shopify_subscriptions_app_container .shopify_subscriptions_app_block_label_children-off {display:none;}
-                                    </style>
-                                {% endif %}
+                            {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true and selected_variant.sku != "SUPERFREAK" %}
                                 <div class="product-app">
                                     {% render block %}
                                 </div>
+                            {% endif %}
+                            {% if selected_variant.sku == "SUPERFREAK" %}
+                                {% comment %}Hide subscription if superfreak{% endcomment %}
+                                <style>
+                                    .shopify_subscriptions_app_container .shopify_subscriptions_app_block_label_children {display:none;}
+                                </style>
                             {% endif %}
                         {% when 'view-product-link' %}
                             <a
