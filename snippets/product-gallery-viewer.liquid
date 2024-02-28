@@ -24,6 +24,8 @@
   "
   data-gallery-viewer
 >
+    {% assign orgCounter = 0  %}
+
   {% for media in product.media %}
     <figure
       class="
@@ -145,6 +147,7 @@
         {{ media | media_tag }}
       {% endcase %}
     </figure>
+      {% assign orgCounter = orgCounter | plus: 1  %}
   {% else %}
     <figure
       class="
@@ -159,7 +162,68 @@
         {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
       {% endif %}
     </figure>
+      {% assign orgCounter = orgCounter | plus: 1  %}
   {% endfor %}
+
+    {% comment %}youtube video -------------------------------------------------------{% endcomment %}
+    {% assign lvideo = product.metafields.plytix.local_video | split: ";" %}
+    {% for vid in lvideo %}
+        {% assign pyt = vid | split: "::" %}
+        {% comment %}{% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}{% endcomment %}
+
+        <figure class="
+                product-gallery--media
+                product-gallery--video
+              " tabindex="-1"
+                aria-hidden="false"
+                data-gallery-figure=""
+                data-gallery-index="{{orgCounter }}"
+                data-gallery-selected="false"
+                data-media="{{orgCounter }}"
+                data-media-type="video"
+               >
+            <video controls="controls" style="width: 100%; height: auto;">
+                <source src="https://cdn.shopify.com/videos/c/o/v/{{ pyt[0] }}" type="video/mp4" />
+                Your browser does not support our video.
+            </video>
+            <div class="alttext">{{ pyt[1] }}</div>
+        </figure>
+        {% assign orgCounter = orgCounter | plus: 1  %}
+    {% endfor %}
+
+    {% comment %}youtube video -------------------------------------------------------{% endcomment %}
+    {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
+    {% for vid in pvideo %}
+        {% assign pyt = vid | split: "::" %}
+        {% comment %}{% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}{% endcomment %}
+
+            <figure class="
+                product-gallery--media
+                product-gallery--video
+              " tabindex="-1"
+                    aria-hidden="false"
+                    data-gallery-figure=""
+                    data-gallery-index="{{orgCounter }}"
+                    data-gallery-selected="false"
+                    data-media="{{orgCounter }}"
+                    data-media-type="video"
+            data-mitch="{{ orgCounter }}">
+            {% comment %}<div class="vid-contain">{% endcomment %}
+                {% comment %}<iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>{% endcomment %}
+                {% comment %}<div class="alttext">{{ pyt[1] }}</div>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+
+
+            <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
+            <div class="alttext">{{ pyt[1] }}</div>
+
+
+
+
+        </figure>
+        {% assign orgCounter = orgCounter | plus: 1  %}
+    {% endfor %}
+
 
   {% assign image_count = product.media | where: "media_type", "image" | size %}
   {% if image_count > 0 and gallery_click_to_zoom != 'disabled' %}
