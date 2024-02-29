@@ -72,11 +72,10 @@
         },
         "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/free-shipping-on-pressure-washers-v2-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/free-shipping-on-pressure-washers-800x427.jpg",
-            "link": "",
+            "banner-lg": "shopify:\/\/shop_images\/pressuremower-spring-promo-banner-1400-350.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/pressuremower-spring-promo-800x427.jpg",
+            "link": "\/products\/pressure-mower-with-hose-reel",
             "coupon-code": ""
           }
         },
