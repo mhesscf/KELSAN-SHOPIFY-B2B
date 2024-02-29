@@ -545,10 +545,9 @@
                                 </div>
                             {% endif %}
                             {% if selected_variant.sku == "SUPERFREAK" %}
-                                {% comment %}Hide subscription if superfreak{% endcomment %}
-                                <style>
-                                    .shopify_subscriptions_app_container .shopify_subscriptions_app_block_label_children {display:none;}
-                                </style>
+                                <div class="product-app">
+                                    {% render block %}
+                                </div>
                             {% endif %}
                         {% when 'view-product-link' %}
                             <a
