@@ -197,14 +197,8 @@
                                     {% assign pkgqnty = pkgqnty | plus: 0 %}
                                     {% if pkgqnty > 1 %}
                                     <div class="full-p">{{ all_products[bundlep].price | times: pkgqnty | money }}</div>
-                                    {% if all_products[bundlep].plytix.list_price != blank %}
-                                        <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | times: pkgqnty | money }}</div>
-                                    {% endif %}
                                     {% else %}
                                         <div class="full-p">{{ all_products[bundlep].price | money }}</div>
-                                        {% if all_products[bundlep].plytix.list_price != blank %}
-                                            <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | money }}</div>
-                                        {% endif %}
                                     {% endif %}
                                 </div>
                                 <a class="add-to-cart-btn" href="{{ all_products[bundlep].url }}">VIEW PRODUCT</a>
@@ -259,14 +253,8 @@
                             <div class="price">
                                 {% if pkgqnty > 1 %}
                                     <div class="full-p">{{ all_products[bundlep].price | times: pkgqnty | money}}</div>
-                                    {% if all_products[bundlep].plytix.list_price != blank %}
-                                        <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | times: pkgqnty | money }}</div>
-                                    {% endif %}
                                 {% else %}
                                     <div class="full-p">{{ all_products[bundlep].price | money }}</div>
-                                    {% if all_products[bundlep].plytix.list_price != blank %}
-                                        <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | money }}</div>
-                                    {% endif %}
                                 {% endif %}
                             </div>
                             {{ all_products[bundlep].metafields.plytix.short_description }}
@@ -489,9 +477,6 @@
                                 <div class="price">
                                     <p class="free">FREE</p>
                                     <div class="full-p">{{ all_products[freeproduct].price | times: fpkgqnty | money }}</div>
-                                    {% if all_products[freeproduct].plytix.list_price != blank %}
-                                        <div class="markdown-p">{{ all_products[freeproduct].plytix.list_price | times: fpkgqnty | money }}</div>
-                                    {% endif %}
                                 </div>
                                 <a class="add-to-cart-btn" href="{{ all_products[freeproduct].url }}">VIEW PRODUCT</a>
                                 <form method="post" action="/cart/add" class="atc-form" style="display: none;">
@@ -529,9 +514,6 @@
                             <div class="price">
                                 <p class="free">FREE</p>
                                 <div class="full-p">{{ all_products[freeproduct].price | times: fpkgqnty | money }}</div>
-                                {% if all_products[freeproduct].plytix.list_price != blank %}
-                                    <div class="markdown-p">{{ all_products[freeproduct].plytix.list_price | times: fpkgqnty | money }}</div>
-                                {% endif %}
                             </div>
                             {{ all_products[freeproduct].metafields.plytix.short_description }}
                             <div class="general-details">

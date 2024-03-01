@@ -58,11 +58,6 @@
                 {% if product.selected_or_first_available_variant.compare_at_price %}
                     {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
                         {% assign specialSavings = product.compare_at_price | minus: product.price %}
-                        {% comment %}{% assign specialSavings = product.compare_at_price | minus: product.price %}
-                        {% assign listprice = product.selected_or_first_available_variant.metafields.plytix.list_price | times: 100 %}
-                        {% assign specialSavings = listprice | minus: product.price %}
-                        {% endcomment %}
-                        {% comment %}{% assign endDate = product.selected_or_first_available_variant.metafields.plytix.sale_end_date %}{% endcomment %}
                         {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
                         {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' %}
                         {% assign nowTimestamp = 'now' | date: '%s' %}
