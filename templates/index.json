@@ -137,6 +137,7 @@
         },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/cpl-cf-100-bogo-desktop-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/cpl-cf-100-bogo-mobile-banner-800x427.jpg",
