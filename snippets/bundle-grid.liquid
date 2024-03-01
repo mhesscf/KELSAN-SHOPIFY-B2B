@@ -204,11 +204,6 @@
                         <div class="price">
                             {% assign pkgqnty = pkgqnty | plus: 0 %}
                                 <div class="full-p">{{ all_products[bundlep].price | times: pkgqnty | money }}</div>
-                            {% comment %}list
-                            {% if all_products[bundlep].plytix.list_price != blank %}
-                                    <div class="markdown-p">{{ all_products[bundlep].plytix.list_price | times: pkgqnty | money }}</div>
-                                {% endif %}
-                            {% endcomment %}
                         </div>
                     </td>
                 </tr>

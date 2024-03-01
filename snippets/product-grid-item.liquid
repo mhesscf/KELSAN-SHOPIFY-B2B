@@ -37,7 +37,6 @@
   {% assign product_description = product.description | strip_html %}
   {% assign product_description_size = product.description | strip_html | size %}
   {% assign product_short_description = product.metafields.plytix.short_description %}
-  {% assign list_price = product.price %}
   {% if recently_viewed == true %}
     {%- capture recently_viewed_header -%}
       <div class="product-recently-viewed-card-time" data-product-handle="{{product.handle}}">
@@ -343,7 +342,6 @@ data-product-quickshop-url="{{ product_link }}"
               product: product,
               class_root: 'productitem',
               price: price,
-              list_price : list_price,
               price_varies: price_varies,
               compare_at_price: compare_at_price,
               compare_at_price_varies: compare_at_price_varies,
