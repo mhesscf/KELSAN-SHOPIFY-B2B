@@ -21,6 +21,80 @@
                 <p>{{ product.description }}</p>
             </div>
             <div class="prod-additional">
+                {% if product.metafields.plytix.in_these_bundles %}
+
+                    <h2 class="inbundle-title" id="bundles">Starter Package<span>s</span></h2>
+                    <div class="inbundle-block">
+                        {%- assign in_bundles_arr = product.metafields.plytix.in_these_bundles | split: ", " -%}
+                        {%- assign bnd_counter = 0 -%}
+                        {% for bundlehandle in in_bundles_arr %}
+                            {% if bundlehandle != "" and bundlehandle != "undefined" %}
+                                <div class="inbundle" data-handle="{{ bundlehandle }}"></div>
+                                {%- assign bnd_counter = bnd_counter | plus: 1 -%}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <style>
+                        {%- if bnd_counter == 1 -%}
+                        .inbundle-title span{display:none;}
+                        {% endif %}
+                        .inbundle{
+                            margin-bottom:15px;
+                            padding-bottom:15px;
+                            border-bottom:1px solid #C0D3D8;
+                        }
+                        .inbundle:last-child{
+                            border-bottom:none;
+                            margin-bottom:10px;
+                            padding-bottom:10px;
+                        }
+                        .inbundle-block .fgtotal{
+                            color:red;
+                        }
+                        .inbundle-block .fgtotal span{
+                            font-weight: bold;
+                        }
+                        .inbundle-block table .inbundle-content{
+                            padding-left: 15px;
+
+                        }
+                        .inbundle-block table .inbundle-image{
+                            vertical-align: top;
+                        }
+                        @media screen and (max-width: 859px) {
+                            .inbundle-block table td{
+                                display:inline-block;
+                                text-align:center;
+                                width:100%;
+                                padding:3px 0!important;
+                                margin:0;
+                            }
+                            .inbundle-block .fgtotal{
+                                display:block;
+                                padding:5px 0;
+                            }
+                        }
+                    </style>
+                    <script>
+                        $(document).ready(function($){
+                        // bundle
+                        $( ".inbundle-block .inbundle" ).each(function() {
+                        const handle = $(this).data('handle');
+                        const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=bundle-paragraph`;
+                        $.get(fetchUrl).then(response => {
+                        if (response) {
+                        if(response.includes("data-bundle-title")){
+                        $(this).html(response);
+
+                        }
+                        }else{
+                        console.log('product not returned');
+                        }
+                        })
+                        });
+                        });
+                    </script>
+                {% endif %}
                 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
                     <div class="padcharacteristics">
                         {% if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  %}
