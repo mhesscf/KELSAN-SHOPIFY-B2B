@@ -270,6 +270,21 @@
             }
         }
     }
+    function checkInBundle(inthisbundle = ""){
+        var productArray = inthisbundle.split(', ');
+        var arrayLength = productArray.length;
+        var count = 0;
+        for (var i = 0; i < arrayLength; i++) {
+            if (productArray[i] != "undefined" && productArray[i] != "") {
+                count++;
+            }
+        }
+        if (count == 0) {
+            return false;
+        }else if(count > 0){
+            return true;
+        }
+    }
 
     (function(algolia) {
         'use strict';
@@ -364,6 +379,7 @@
                                 {% endif %}
                                 ${hit.meta.plytix.clearance_overstock == "true" ? html`<div onclick="stoplink(event);"><a href="/collections/clearance"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-solid fa-tag"></i></div><div class="sm-row-text"><span>Clearance / Overstock</span><br/><span class="sm-text">Buy now before they are gone!</span></div></div></a></div>`:''}
                                 ${hit.sku.includes("-DEMO") ? html `<div onclick="stoplink(event);"><a href="/collections/demoed-refurbished-equipment"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-regular fa-screwdriver-wrench"></i></div><div class="sm-row-text"><span>Used / Refurbished Model</span><br/><span class="sm-text">Tested & approved to be in good working order!</span></div></div></a></div>`:``}
+                                ${checkInBundle(hit.meta.plytix.in_these_bundles) ? html `<div onclick="stoplink(event);"><a href="/products/${hit.handle}#bundles"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i></div><div class="sm-row-text"><span>Product is in Bundle</span><br/><span class="sm-text">Get everything you need with a starter package!</span></div></div></a></div>`:``}
                             `}
                         `}
                    </div>
