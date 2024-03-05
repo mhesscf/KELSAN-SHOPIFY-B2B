@@ -42,9 +42,9 @@
             {{ product.metafields.plytix.bundle_description }}<br/>{{ fgtotaltext }}
         </div>
         {% if product.metafields.plytix.short_title %}
-            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.metafields.plytix.short_title }} <i class="fa-solid fa-arrow-right-to-bracket"></i></a></div>
+            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.metafields.plytix.short_title }}</a></div>
         {% else %}
-            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }} <i class="fa-solid fa-arrow-right-to-bracket"></i></a></div>
+            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }}</a></div>
         {% endif %}
     </td>
     </tr></table>
