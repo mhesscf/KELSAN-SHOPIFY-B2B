@@ -270,20 +270,24 @@
             }
         }
     }
-    function checkInBundle(inthisbundle = ""){
+    function checkInBundle(inthisbundle = "",link = 0){
         var productArray = inthisbundle.split(', ');
         var arrayLength = productArray.length;
         var count = 0;
+        var onlyhandle = "";
         for (var i = 0; i < arrayLength; i++) {
             if (productArray[i] != "undefined" && productArray[i] != "") {
+                onlyhandle = productArray[i];
                 count++;
             }
         }
-        if (count == 0) {
-            return false;
-        }else if(count > 0){
-            return true;
+        if(link == 0){
+            return count;
+        }else if(link == 1){
+            return onlyhandle
         }
+
+
     }
 
     (function(algolia) {
@@ -379,7 +383,20 @@
                                 {% endif %}
                                 ${hit.meta.plytix.clearance_overstock == "true" ? html`<div onclick="stoplink(event);"><a href="/collections/clearance"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-solid fa-tag"></i></div><div class="sm-row-text"><span>Clearance / Overstock</span><br/><span class="sm-text">Buy now before they are gone!</span></div></div></a></div>`:''}
                                 ${hit.sku.includes("-DEMO") ? html `<div onclick="stoplink(event);"><a href="/collections/demoed-refurbished-equipment"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-regular fa-screwdriver-wrench"></i></div><div class="sm-row-text"><span>Used / Refurbished Model</span><br/><span class="sm-text">Tested & approved to be in good working order!</span></div></div></a></div>`:``}
-                                ${checkInBundle(hit.meta.plytix.in_these_bundles) ? html `<div onclick="stoplink(event);"><a href="/products/${hit.handle}#bundles"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i></div><div class="sm-row-text"><span>Product is in Bundle</span><br/><span class="sm-text">Get everything you need with a starter package!</span></div></div></a></div>`:``}
+                                ${checkInBundle(hit.meta.plytix.in_these_bundles,0) == 1 ? html `<div onclick="stoplink(event);"><a href="/products/${checkInBundle(hit.meta.plytix.in_these_bundles,1)}"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i></div><div class="sm-row-text"><span>Available in a Bundle</span><br/><span class="sm-text">Get everything you need with a starter package!</span></div></div></a></div>`:``}
+
+                                ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 1 ? html `
+                                <div onclick="stoplink(event);">
+                                    <div class="sm-row bnd-pop" data-bndhandle="${hit.meta.plytix.in_these_bundles}" >
+                                        <div class="icon-wrap" style="font-size: 23px;">
+                                                             <i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i>
+                                        </div>
+                                        <div class="sm-row-text">
+                                            <span>Available in a Bundle</span><br/><span class="sm-text">Get everything you need with a starter package!</span>
+                                        </div>
+                                    </div></div>`:``}
+
+
                             `}
                         `}
                    </div>
@@ -527,6 +544,7 @@ var newNum = (Math.round(num * 100) / 100).toFixed(2);
 newNum = newNum.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
 return ("$"+newNum.toString());
 }
+
 function stoplink(e){
 //needed to stop product from loading for help tips
 e.stopPropagation();

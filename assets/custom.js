@@ -1229,7 +1229,36 @@ jQuery(document).ready(function($){
         }, 500);
     }
 
-    
+    //Link to bundles from parent popup (code duplicated in algolia_instant_search.js)
+
+    $( ".bnd-pop" ).click(function( e ) {
+        e.stopPropagation();
+        const handleArr = $(this).data('bndhandle').split(", ");
+        $('.popup-container .content').append("<h2>Package Options</h2>");
+        $('.popup-container .content').append("<table></table>");
+        $.each ( handleArr, function (indexes, handle){
+            if(handle != "undefined" && handle != ""){
+                var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=partsrow`;
+                $.get(fetchUrl).then(response => {
+                    if (response) {
+                        $('.popup-container .content table').append("<tr>"+response+"</tr>");
+                    }else{
+                        console.log('product not returned');
+                    }
+                })
+
+            }
+        });
+
+        setTimeout(() => {
+
+            $('.popup-container').addClass('widepop');
+            $('.popup-container').removeClass('hidden');
+            $(".pop-grad").removeClass('hidden');
+        }, "300");
+
+    });
+
     // Cart upsell popup
     $('.cart-upsell-btn').on('click', function(e){
         const handle = $(this).data('handle');
