@@ -158,6 +158,34 @@
                     e.stopPropagation();
                 });
 
+                //Link to bundles from parent popup (code duplicated in custom.js)
+                $( ".bnd-pop" ).click(function( e ) {
+                    e.stopPropagation();
+                    const handleArr = $(this).data('bndhandle').split(", ");
+                    $('.popup-container .content').append("<h2>Package Options</h2>");
+                    $('.popup-container .content').append("<table></table>");
+                    $.each ( handleArr, function (indexes, handle){
+                        if(handle != "undefined" && handle != ""){
+                        var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=partsrow`;
+                        $.get(fetchUrl).then(response => {
+                            if (response) {
+                                $('.popup-container .content table').append("<tr>"+response+"</tr>");
+                            }else{
+                                console.log('product not returned');
+                            }
+                        })
+
+                        }
+                    });
+
+                    setTimeout(() => {
+
+                    $('.popup-container').addClass('widepop');
+                    $('.popup-container').removeClass('hidden');
+                    $(".pop-grad").removeClass('hidden');
+                    }, "300");
+
+                });
                 //watch for changes in dropdown to reload stuff
                 const target = document.querySelector('.ais-facet-dropdown-container');
                 const observer = new MutationObserver(function(mutations) {
@@ -170,7 +198,6 @@
                 // Configure and start the observer
                 const config = { subtree: true, childList: true };
                 observer.observe(target, config);
-
             },300);
 
 
