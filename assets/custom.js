@@ -482,8 +482,8 @@ jQuery(document).ready(function($){
         slidesToShow: 6,
         slidesToScroll: 3,
         appendArrows: $('#sim-slide-arrows'),
-        prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
+        prevArrow: '<div class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></div>',
+        nextArrow: '<div class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></div>',
         variableWidth: false,
         responsive: [
             {
