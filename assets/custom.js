@@ -1234,28 +1234,36 @@ jQuery(document).ready(function($){
     $( ".bnd-pop" ).click(function( e ) {
         e.stopPropagation();
         const handleArr = $(this).data('bndhandle').split(", ");
-        $('.popup-container .content').append("<h2>Package Options</h2>");
-        $('.popup-container .content').append("<table></table>");
+        $('.popup-container .content').append("<h2 style='margin-top:0;'>Package Options</h2>");
+        var counter = 0;
+        if($(this).hasClass("bnd-pop-2col")){
+            var max = 2;
+            $('.popup-container .content').append("<div class='package-option-container contain-2col'></div>");
+        }else{
+            var max = 1;
+            $('.popup-container .content').append("<div class='package-option-container'></div>");
+        }
         $.each ( handleArr, function (indexes, handle){
-            if(handle != "undefined" && handle != ""){
-                var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=partsrow`;
+            if(handle != "undefined" && handle != "" && counter < max){
+                var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=bundle-pop`;
                 $.get(fetchUrl).then(response => {
                     if (response) {
-                        $('.popup-container .content table').append("<tr>"+response+"</tr>");
+                        $('.popup-container .content .package-option-container').append(response);
                     }else{
                         console.log('product not returned');
                     }
                 })
-
+                counter++
             }
         });
 
         setTimeout(() => {
-
-            $('.popup-container').addClass('widepop');
+            if($(this).hasClass("bnd-pop-2col")){
+                $('.popup-container').addClass('widepop');
+            }
             $('.popup-container').removeClass('hidden');
             $(".pop-grad").removeClass('hidden');
-        }, "300");
+        }, "1500");
 
     });
 

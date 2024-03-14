@@ -1,0 +1,43 @@
+{% layout none %}
+{% assign productFirstVar = product.selected_or_first_available_variant %}
+{% assign variations = 0 %}
+    {% assign crawlcheck = false %}
+    {% for c in all_products[product_handle].collections %}
+        {% if c.handle == "discontinued" %}
+            {% assign crawlcheck = true %}
+        {% endif %}
+    {% endfor %}
+    {% if crawlcheck == true %}
+        <div style="display:none;" class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
+    {% endif %}
+    {% for variant in product.variants %}
+        {% assign variations = variations | plus: 1 %}
+    {% endfor %}
+
+<div class="package-col">
+    <div class="bnd-image" >
+      {{ product.featured_image | img_url: '125x125' | img_tag: product.featured_image.alt }}
+    </div>
+    {% if product.metafields.plytix.short_title %}
+        <div class="bnd-title" data-part-title ><strong>{{ product.metafields.plytix.short_title }}</strong></div>
+    {% else %}
+        <div class="bnd-title" data-part-title ><strong>{{ product.title }}</strong></div>
+    {% endif %}
+    <div class="bnd-sku">
+       <strong>SKU:</strong> {{ productFirstVar.sku }}
+    </div>
+
+    {% if product.metafields.plytix.bundle_pricing %}
+        <div class="bnd-price">
+            <strong>{{ product.metafields.plytix.bundle_pricing | times: 100 | money }}</strong>
+        </div>
+    {% endif %}
+
+    <div class="bnd-short-desc" data-part-title >
+        <div class="details"><strong>Details</strong></div>
+        {{ product.metafields.plytix.short_description }}
+    </div>
+
+    <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Link to Bundle','/products/{{ product.handle }}')" ><div class="link-icon" ><button class="button-secondary">VIEW BUNDLE</button></div></a>
+</div>
+

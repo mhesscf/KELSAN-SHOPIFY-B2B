@@ -171,15 +171,8 @@
                         {% endif %}
                     {% endfor %}
 
-                    {% if counter == 1 %}
-                        <a href="/products/{{ onlyhandle }}">
-                                <div class="sm-row">
-                                    <div class="icon-wrap" style="font-size: 23px;"><i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i></div>
-                                    <div class="sm-row-text"><span>Available in a Bundle</span><br/><span class="sm-text">Get everything you need with a starter package!</span></div>
-                                </div>
-                        </a>
-                    {% elsif counter > 1 %}
-                            <div class="sm-row bnd-pop" style="cursor:pointer" data-bndhandle="{{ product.metafields.plytix.in_these_bundles }}">
+                    {% if counter > 0 %}
+                            <div class="sm-row bnd-pop {% if counter == 2 %}bnd-pop-2col{% endif %}" style="cursor:pointer" data-bndhandle="{{ product.metafields.plytix.in_these_bundles }}">
                                 <div class="icon-wrap" style="font-size: 23px;"><i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i></div>
                                 <div class="sm-row-text"><span>Available in a Bundle</span><br/><span class="sm-text">Get everything you need with a starter package!</span></div>
                             </div>
