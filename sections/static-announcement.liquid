@@ -212,13 +212,11 @@
                 class="announcement-bar-link"
                 style="cursor:pointer"
                 onclick="promoRedirect('{{ section.settings.announcement_promo }}','{{ section.settings.announcement_link }}');"
-                aria-label="Announcement Link"
         ></a>
       {% elsif section.settings.announcement_link != blank %}
         <a
           class="announcement-bar-link"
           href="{{ section.settings.announcement_link }}"
-          aria-label="Announcement Link"
           ></a>
       {% endif %}
 
