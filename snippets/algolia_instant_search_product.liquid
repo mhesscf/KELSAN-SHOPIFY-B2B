@@ -383,11 +383,10 @@
                                 {% endif %}
                                 ${hit.meta.plytix.clearance_overstock == "true" ? html`<div onclick="stoplink(event);"><a href="/collections/clearance"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-solid fa-tag"></i></div><div class="sm-row-text"><span>Clearance / Overstock</span><br/><span class="sm-text">Buy now before they are gone!</span></div></div></a></div>`:''}
                                 ${hit.sku.includes("-DEMO") ? html `<div onclick="stoplink(event);"><a href="/collections/demoed-refurbished-equipment"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-regular fa-screwdriver-wrench"></i></div><div class="sm-row-text"><span>Used / Refurbished Model</span><br/><span class="sm-text">Tested & approved to be in good working order!</span></div></div></a></div>`:``}
-                                ${checkInBundle(hit.meta.plytix.in_these_bundles,0) == 1 ? html `<div onclick="stoplink(event);"><a href="/products/${checkInBundle(hit.meta.plytix.in_these_bundles,1)}"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i></div><div class="sm-row-text"><span>Available in a Bundle</span><br/><span class="sm-text">Get everything you need with a starter package!</span></div></div></a></div>`:``}
 
-                                ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 1 ? html `
+                                ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 0 ? html `
                                 <div onclick="stoplink(event);">
-                                    <div class="sm-row bnd-pop" data-bndhandle="${hit.meta.plytix.in_these_bundles}" >
+                                    <div class="sm-row bnd-pop ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 1 ? html `bnd-pop-2col`:``}" data-bndhandle="${hit.meta.plytix.in_these_bundles}" >
                                         <div class="icon-wrap" style="font-size: 23px;">
                                                              <i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i>
                                         </div>

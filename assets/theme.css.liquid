@@ -25351,7 +25351,8 @@ button.payment-blue.button:hover span {background:#303e48;}
 	width: 310px;
 	position:fixed;
 	left: calc(50% - 155px);
-	top: calc(50% - 200px);
+	{% comment %}top: calc(50% - 200px);{% endcomment %}
+	top:60px;
 	border-radius: 10px;
 	background:#fff;
 	border-radius: 10px;
@@ -25367,7 +25368,6 @@ button.payment-blue.button:hover span {background:#303e48;}
 	.popup-container.widepop {
 		width: 310px;
 		left: calc(50% - 155px);
-		top: calc(50% - 200px);
 	}
 }
 
@@ -25401,7 +25401,42 @@ button.payment-blue.button:hover span {background:#303e48;}
 }
 .popup-container .package-option-container .link-icon button{
 	width: 220px;
+	margin-right:0;
 }
+
+@media (max-width: 719px){
+	.popup-container .package-option-container{
+		display:block;
+	}
+	.popup-container .package-option-container.contain-2col .package-col{
+		width:100%;
+	}
+	.popup-container .package-option-container.contain-2col .package-col:first-child{
+		border-right: none;
+		margin-right: 0px;
+		border-bottom: 1px solid #ccc;
+		margin-bottom:15px;
+		padding-bottom:15px;
+	}
+	.popup-container .package-option-container .bnd-image img{
+		 width:100px;
+		float:left;
+		margin-right: 10px;
+	 }
+	.popup-container .package-option-container .bnd-sku,
+	.popup-container .package-option-container .bnd-price{
+		text-align:center;
+		clear:both;
+	}
+	.popup-container .package-option-container .link-icon button{
+		margin-top:10px;
+	}
+	.popup-container .package-option-container .bnd-short-desc{
+		display:none;
+	}
+
+}
+
 .pop-grad{
 	width:100%;
 	height:100%;
