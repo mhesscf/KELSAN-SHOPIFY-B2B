@@ -29025,7 +29025,7 @@ PERFORMANCE OF THIS SOFTWARE.
                         const productSubscriptionTitle = flyOut.querySelector('[data-atc-banner-product-subscription-title]');
                         {% comment %}productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;{% endcomment %}
                         if(response.properties['Sku'] == "SUPERFREAK"){
-                            productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name.replace("Delivery every year","Renewed every year");
+                            productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name.replace("Delivery every year","Renews annually");
                         }else{
                             productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;
                         }
