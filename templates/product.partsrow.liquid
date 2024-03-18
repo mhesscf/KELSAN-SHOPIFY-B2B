@@ -27,7 +27,13 @@
         <td class="parts-title" data-part-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }}</a></td>
 {% endif %}
         <td class="chem-price">
-            {% if variations == 1 %}
+            {% if product.metafields.plytix.package_products %}
+                 {% if product.metafields.plytix.bundle_pricing %}
+                     <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')"><span class="single-price">{{ product.metafields.plytix.bundle_pricing | times: 100 | money}}</span></a>
+                 {% else %}
+                     <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')"><span class="single-price">View Product for Pricing</span></a>
+                 {% endif %}
+            {% elsif variations == 1 %}
                 <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')"><span class="single-price">{{ productFirstVar.price | money }}</span></a>
             {% endif %}
         </td>
