@@ -53,6 +53,7 @@
         },
         "fe9b7c94-76cf-4291-96c5-5686a949596c": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "circleimg": "shopify:\/\/shop_images\/education-youtube.png",
             "linktext": "Visit our Youtube Channel",
@@ -187,6 +188,7 @@
       "block_order": [
         "a6bb0102-f71d-4b7a-a883-e25907f41413"
       ],
+      "disabled": true,
       "settings": {
         "sectionheading": "View Recent Videos",
         "viewalllinkurl": "https:\/\/www.youtube.com\/user\/cleanfreak1",
