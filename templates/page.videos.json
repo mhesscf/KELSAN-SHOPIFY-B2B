@@ -28,14 +28,14 @@
       "type": "dynamic-image-with-text",
       "settings": {
         "section_heading": "",
-        "image": "shopify:\/\/shop_images\/dura17_ol_lt_1.jpg",
+        "image": "shopify:\/\/shop_images\/dura-17-c-with-dust-skirt.jpg",
         "crop": "center",
         "desktop_height": "natural",
         "mobile_height": "natural",
         "desktop_image_alignment": "right",
         "mobile_image_alignment": "bottom",
-        "heading": "CleanFreak YouTube",
-        "subheading": "<p>All the best cleaning videos under one roof. See demonstrations on floor machines, news on the latest eco-friendly cleaning chemicals, the best product assembly videos and much more. View all our videos on our <a href=\"https:\/\/www.youtube.com\/user\/cleanfreak1\" target=\"_blank\" title=\"CleanFreak.com on YouTube\">YouTube Channel<\/a>.<br\/><br\/>Comment and tell us what you would like to see in the future.<\/p>",
+        "heading": "CleanFreak Videos",
+        "subheading": "<p>All the best cleaning videos under one roof. See demonstrations on floor machines, news on the latest eco-friendly cleaning chemicals, the best product assembly videos and much more. Be on the look out for our videos on our CleanFreak and Trusted Clean Machines.<\/p>",
         "text_alignment": "left",
         "button_label": "",
         "button_link": "https:\/\/www.youtube.com\/user\/cleanfreak1"
