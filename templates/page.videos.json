@@ -37,7 +37,7 @@
         "heading": "CleanFreak YouTube",
         "subheading": "<p>All the best cleaning videos under one roof. See demonstrations on floor machines, news on the latest eco-friendly cleaning chemicals, the best product assembly videos and much more. View all our videos on our <a href=\"https:\/\/www.youtube.com\/user\/cleanfreak1\" target=\"_blank\" title=\"CleanFreak.com on YouTube\">YouTube Channel<\/a>.<br\/><br\/>Comment and tell us what you would like to see in the future.<\/p>",
         "text_alignment": "left",
-        "button_label": "CleanFreak YouTube",
+        "button_label": "",
         "button_link": "https:\/\/www.youtube.com\/user\/cleanfreak1"
       }
     },
@@ -54,6 +54,7 @@
     },
     "4d32aacd-aa66-4cda-906d-eab2c6a1b05e": {
       "type": "dynamic-video",
+      "disabled": true,
       "settings": {
         "title": "",
         "url": "https:\/\/youtu.be\/Mh6DJMrFYDs",
@@ -66,6 +67,13 @@
         "background": "#000000",
         "opacity": 50
       }
+    },
+    "dynamic_html_UqXbMt": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<div class=\"video-wrap-local\">\n                                <video controls=\"controls\" style=\"width: 100%; max-width:800px; height: auto;\">\n                                    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b93ca54a476344da9913eea945490bf1.mp4\" type=\"video\/mp4\">\n                                    Your browser does not support our video.\n                                <\/source><\/video>\n                            <\/div>"
+      }
     }
   },
   "order": [
@@ -74,6 +82,7 @@
     "main",
     "85707304-fc0c-4a10-98a0-f0926cd75d78",
     "97ac8cbf-49a3-410a-8fe9-885da970465d",
-    "4d32aacd-aa66-4cda-906d-eab2c6a1b05e"
+    "4d32aacd-aa66-4cda-906d-eab2c6a1b05e",
+    "dynamic_html_UqXbMt"
   ]
 }
