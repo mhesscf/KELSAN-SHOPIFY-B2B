@@ -17,6 +17,7 @@
 {%- assign product_bundle = '' -%}
 {%- assign pstep = '' -%}
 {%- assign fgbogo = false -%}
+{%- assign fgbogo-rule = false -%}
 {%- assign sf_eligible = false -%}
 {% unless item.properties == empty %}
   {% for property in item.properties %}
@@ -32,6 +33,9 @@
     {% if property.first == '_sf_eligible' %}
       {% assign sf_eligible = true %}
     {% endif %}
+    {% if property.first == '_bogorule' %}
+      {%- assign fgbogo-rule = property.last -%}
+    {% endif %}
     {% if property.first == '_tiered_pricing' %}
       {% if property.last == 'fg-bogo' %}
         {%- assign fgbogo = true -%}
@@ -44,7 +48,7 @@
 {% endunless %}
 
 <li
-        class="cart-item {% if sf_addon == 0 %}sf-cart-addon{% elsif sf_addon > 0 %}has-sf-cart-addon{% endif %} {% if product_bundle != '' %}{{ product_bundle | escape  }}{% endif %} {% if pstep != '' %}stepValItem{% endif %}"
+        class="cart-item {% if sf_addon == 0 %}sf-cart-addon{% elsif sf_addon > 0 %}has-sf-cart-addon{% endif %} {% if product_bundle != '' %}{{ product_bundle | escape  }}{% endif %} {% if pstep != '' %}stepValItem{% endif %} {% if fgbogo-rule %}{{ fgbogo-rule }}{% endif %}"
         data-cartitem
         data-cartitem-id="{{ item.variant_id }}"
         data-cartitem-key="{{ item.key }}"
@@ -341,7 +345,7 @@
       </div>
 
       <div class="cart-item--remove">
-        {% if product_bundle == '' %}
+        {% if product_bundle == '' and  fgbogo-rule == false %}
           <a
                   href="{{ routes.cart_change_url }}?line={{ item_index }}&amp;quantity=0"
                   class="cart-item--remove-link"
@@ -349,6 +353,19 @@
                   data-no-instant
                   aria-label="remove {{ item.product.title | escape }}"
           >
+            {%
+                    render 'icon-library',
+                    id: 'icon-remove'
+            %}
+          </a>
+
+        {% elsif fgbogo-rule != false %}
+
+          <a
+                  data-gall="{{ fgbogo-rule }}"
+                  data-name="Free Gift Promo"
+                  class="bundle-remove cart-item--remove-popup cart-item--remove-link"
+                  href="#">
             {%
                     render 'icon-library',
                     id: 'icon-remove'
