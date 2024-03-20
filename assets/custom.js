@@ -1194,6 +1194,9 @@ jQuery(document).ready(function($){
         $('#bundle-remove-alert').toggleClass('show');
         $('#bundle-remove-alert .remove').attr('data-gall', bundleItemClass);
         $('#itemName').text(bundleName);
+        if(bundleName == "Free Gift Promo"){
+            $('#bundle-remove-alert p').text("You are about to remove all items from the Free Gift Promo.")
+        }
     });
     $('#bundle-remove-alert .remove').on('click', async function(e){
         e.preventDefault();
