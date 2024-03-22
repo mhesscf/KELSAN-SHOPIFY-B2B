@@ -127,7 +127,7 @@
           <span class="product-gallery--media-thumbnail-img-wrapper video-type" tabindex="-1">
               {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
             <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
-            <img src="{{ videoimg }}" alt="{{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
+            <img src="{{ videoimg }}" alt="Product Video {{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
           </span>
         </button>
         {% assign orgCounter = orgCounter | plus: 1  %}
@@ -161,7 +161,7 @@
           <span class="product-gallery--media-thumbnail-img-wrapper video-type" tabindex="-1">
               {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
             <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
-            <img src="{{ videoimg }}" alt="{{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
+            <img src="{{ videoimg }}" alt="Youtube External Video {{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
           </span>
         </button>
         {% assign orgCounter = orgCounter | plus: 1  %}
