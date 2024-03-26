@@ -107,7 +107,7 @@
       {% for vid in lvideo %}
         {% assign pyt = vid | split: "::" %}
         {% assign videoCounter = videoCounter | plus: 1  %}
-        {% assign videoimg = "https://cleanfreak-prod.myshopify.com/cdn/shop/files/preview_images/thumb1_100x75_crop_center.jpg" %}
+        {% assign videoimg = 'video-thumbnail.png' | file_img_url %}
 
         {% comment %}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{% endcomment %}
         <button
