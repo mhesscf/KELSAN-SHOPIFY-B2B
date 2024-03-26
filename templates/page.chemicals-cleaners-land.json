@@ -147,14 +147,6 @@
             "url": "\/pages\/automotive-chemicals"
           }
         },
-        "0672e129-eb14-480c-b984-b3062ecb98c0": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/soaps-and-detergents.jpg",
-            "title": "Body Soaps & Detergents (Hand, Body, Dish & Laundry)",
-            "url": "\/pages\/detergent"
-          }
-        },
         "c401604e-93c9-438f-bb4e-7e163c85364a": {
           "type": "categorylink",
           "settings": {
@@ -219,6 +211,14 @@
             "url": "\/collections\/drain-maintenance"
           }
         },
+        "0672e129-eb14-480c-b984-b3062ecb98c0": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/soaps-and-detergents.jpg",
+            "title": "Soaps & Detergents (Hand, Body, Dish & Laundry)",
+            "url": "\/pages\/detergent"
+          }
+        },
         "73bada5e-8c97-436b-93c7-1f8af58cb8ca": {
           "type": "categorylink",
           "settings": {
@@ -230,7 +230,6 @@
       },
       "block_order": [
         "52277ddd-76d0-4598-b932-2f798edf3cc4",
-        "0672e129-eb14-480c-b984-b3062ecb98c0",
         "c401604e-93c9-438f-bb4e-7e163c85364a",
         "567fae25-b416-44fd-b931-d8c283789865",
         "00bce087-30eb-468f-82b4-0dbc4392427b",
@@ -239,6 +238,7 @@
         "adfc27e3-fdb7-476f-b6cf-2e8b96f03323",
         "7da01d1a-8e2f-48b7-9f33-0fa9887ee8ec",
         "8bf9ec0f-60aa-44e3-9064-b102592ba0da",
+        "0672e129-eb14-480c-b984-b3062ecb98c0",
         "73bada5e-8c97-436b-93c7-1f8af58cb8ca"
       ],
       "settings": {
