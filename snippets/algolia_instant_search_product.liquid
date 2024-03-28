@@ -270,6 +270,41 @@
             }
         }
     }
+
+    function bundleHandles(handles,type){
+        if(handles && 1 == 2){
+            alert('lookinto #many .more.selectors h4 + p { ... }')
+            var handleClasses = handles.replaceAll(" ","");
+            var handleClasses = handles.replaceAll(",","");
+            var handleClasses = handleClasses.replace("undefined","");
+            if(type == "handles"){
+                return(handleClasses);
+            }else if(type == "styles"){
+                var handleClasses = handles.replaceAll(" ","");
+                var handleClasses = handleClasses.replace("undefined","");
+                var thisArray = handleClasses.split(",");
+                var arrayLength = thisArray.length;
+                 var styles = "";
+                var handleCounter = 0;
+                for (var i = 0; i < arrayLength; i++) {
+                    if (thisArray[i] != "undefined" && thisArray[i] != "") {
+                        styles = styles+".collection-main-area-off ."+thisArray[i]+" ul:last-child {";
+                        styles = styles+"color:green;";
+                        styles = styles+"}";
+                        handleCounter += 1;
+                    }
+                }
+                // styles = styles+"</styles>";
+                if(handleCounter > 0){
+                    return(styles);
+                }
+
+            }
+        }else{
+            return "";
+        }
+    }
+
     function checkInBundle(inthisbundle = "",link = 0){
         var productArray = inthisbundle.split(', ');
         var arrayLength = productArray.length;
@@ -287,7 +322,6 @@
             return onlyhandle
         }
 
-
     }
 
     (function(algolia) {
@@ -297,12 +331,13 @@
             return html `
       <div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <meta itemprop="position" content="${hit.productPosition}" />
-        <div class="productitem  ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product">
+        <div class="productitem ${hit.handle} ${bundleHandles(hit.meta.plytix.in_these_bundles,"handles")} ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product">
             <div class="cfais-productitem__image-container">
                 <div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}')">
                 </div>
-
             </div>
+            <style>
+            </style>
             <div class="ais-hit--details productitem--info">
                 <h2 class="productitem--title ais-hit--title">
                 <a data-algolia-index="${hit.index}"
