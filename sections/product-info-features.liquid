@@ -42,7 +42,7 @@
                                 {% assign productfg = attr[0] | strip %}
                                 {% assign productqtyfg = attr[1] | strip %}
                                 <div class="bnd-child-ea free-product">
-                                    <div class="fg-header"><strong>FREE Products!</strong></div>
+                                    <div class="fg-header"><strong>FREE Products!</strong><strong class="{{ attr[0] }}-fg-value" style="float:right;"></strong></div>
                                     <div class="bnd-child" data-qty="{{ productqtyfg }}" data-handle="{{ productfg }}"><div style="padding-top:5px; padding-left:10px">Loading...</div></div>
                                 </div>
                             {% endfor %}
@@ -72,6 +72,9 @@
                         .bnd-prod-inc-contain .bnd-child-sku{
                             margin:0 0 3px 0;
                         }
+                        .bnd-prod-inc-contain .bnd-child-price strong{
+                            color:{{ settings.color_button_secondary_background }}
+                        }
                         .bnd-prod-inc-contain .details{
                             font-size:17px;
                             font-weight: bold;
@@ -95,6 +98,30 @@
                             color:#fff;
                             padding:5px 10px;
                         }
+                        .bnd-prod-inc-contain .bnd-child-ea.free-product .bnd-child-price .pricebold{
+                            text-decoration: line-through;
+                            font-weight:normal;
+                            color:black;
+                        }
+                        @media (max-width: 479px){
+                            .bnd-prod-inc-contain .fg-header{
+                                font-size:15px;
+                            }
+                            .bnd-prod-inc-contain table,
+                            .bnd-prod-inc-contain td{
+                                display:block;
+                                width:100%
+                            }
+                            .bnd-prod-inc-contain .bnd-child-image{
+                                text-align:center;
+                            }
+                            .bnd-prod-inc-contain .bnd-child-image img{
+                                padding:5px 0;
+                            }
+                            .bnd-prod-inc-contain table{
+                                padding:0 10px;
+                            }
+                        }
                     </style>
 
                     <script>
@@ -102,17 +129,21 @@
                             // bundle
                             $( ".bnd-prod-inc-contain .bnd-child" ).each(function() {
                                 const childhandle = $(this).data('handle');
-                                const childqty = $(this).data('qty');
-                                const qtyclass = $(this).data('handle')+"-qty"
+                                const childqty = parseFloat($(this).data('qty'));
                                 const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${childhandle}?view=bundle-child-notes`;
+                                var stockhtml = $('.bnd-product-row[data-handle="'+childhandle+'"] .pop-stock').html();
                                 $.get(fetchUrl).then(response => {
                                     if (response) {
                                         if(response.includes("data-child-title")){
                                             $(this).html(response);
                                             setTimeout(() => {
-                                                $("."+qtyclass).html("<strong>Package Quantity:</strong> "+childqty);
+                                                var childprice = parseFloat($("."+childhandle+"-price").data('price'));
+                                                var totalprice = childprice*childqty/100;
+                                                $("."+childhandle+"-qty").html("<strong>Package Quantity:</strong> "+childqty);
+                                                $(".bnd-child-ea.free-product ."+childhandle+"-price span").html("<strong> Free!</strong>");
+                                                $("."+childhandle+"-stock").html(stockhtml);
+                                                $("."+childhandle+"-fg-value").html("$"+totalprice.toFixed(2)+" Value!");
                                             }, 500);
-
                                         }
                                     }else{
                                         console.log('product not returned');

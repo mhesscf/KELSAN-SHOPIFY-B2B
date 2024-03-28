@@ -24,7 +24,7 @@
                     {%- assign sellable = false -%}
                     {%- assign soldoutitems = true -%}
                 {%- endif -%}
-                <tr class="bnd-product-row {% if sellable == false %}sold-product{% endif %}" itemtype="https://schema.org/Product" itemscope>
+                <tr class="bnd-product-row {% if sellable == false %}sold-product{% endif %}" data-handle="{{ all_products[bundlep].handle }}" itemtype="https://schema.org/Product" itemscope>
                     <td class="custom-bundle-col-img">
                         <div class="p-image">
                             <img class="img-responsive" src="{{ all_products[bundlep].featured_image | img_url: '100x100' }}" alt="{{ all_products[bundlep].featured_image.alt }}"/>
@@ -222,7 +222,7 @@
                         {%- assign sellable = false -%}
                         {%- assign soldoutitems = true -%}
                     {%- endif -%}
-                    <tr class="bnd-product-row {% if sellable == false %}sold-product{% else %}freegift{% endif %}" itemtype="https://schema.org/Product" itemscope>
+                    <tr class="bnd-product-row {% if sellable == false %}sold-product{% else %}freegift{% endif %}" data-handle="{{ all_products[bundlep].handle }}" itemtype="https://schema.org/Product" itemscope>
                         <td class="custom-bundle-col-img">
                             <div class="p-image">
                                 <img class="img-responsive" src="{{ all_products[bundlep].featured_image | img_url: '100x100' }}" alt="{{ all_products[bundlep].featured_image.alt }}"/>

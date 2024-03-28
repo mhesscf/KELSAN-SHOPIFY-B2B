@@ -28,6 +28,8 @@
         {% endif %}
         <div class="bnd-child-sku"><strong>Sku:</strong> {{ productFirstVar.sku }}</div>
         <div class="bnd-child-qty {{ product.handle }}-qty"></div>
+        <div class="bnd-child-price {{ product.handle }}-price" data-price="{{ productFirstVar.price }}"><strong class="pricebold">{{ productFirstVar.price | money }}</strong><span>/ea.</span></div>
+        <div class="bnd-child-stock {{ product.handle }}-stock"></div>
         <div class="bnd-child-short-desc">
             <div class="details">Details</div>
             {{ product.metafields.plytix.short_description }}
