@@ -1,0 +1,36 @@
+{% layout none %}
+{% assign productObj =  all_products[product] %}
+{% assign productFirstVar = product.first_available_variant %}
+{% assign variations = 0 %}
+<table><tr>
+    {% assign crawlcheck = false %}
+    {% for c in all_products[product_handle].collections %}
+        {% if c.handle == "discontinued" %}
+            {% assign crawlcheck = true %}
+        {% endif %}
+    {% endfor %}
+    {% if crawlcheck == true %}
+        <div style="display:none;" class="crawlcheck crawlcheck-bundle-par"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
+    {% endif %}
+    {% for variant in product.variants %}
+        {% assign variations = variations | plus: 1 %}
+    {% endfor %}
+
+
+    <td class="bnd-child-image">
+        <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '100x1000' | img_tag: product.featured_image.alt }}</a>
+    </td>
+    <td class="bnd-child-content">
+        {% if product.metafields.plytix.short_title %}
+            <div class="bnd-child-title" data-child-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.metafields.plytix.short_title }}</a></div>
+        {% else %}
+            <div class="bnd-child-title" data-child-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }}</a></div>
+        {% endif %}
+        <div class="bnd-child-sku"><strong>Sku:</strong> {{ productFirstVar.sku }}</div>
+        <div class="bnd-child-qty {{ product.handle }}-qty"></div>
+        <div class="bnd-child-short-desc">
+            <div class="details">Details</div>
+            {{ product.metafields.plytix.short_description }}
+        </div>
+    </td>
+    </tr></table>

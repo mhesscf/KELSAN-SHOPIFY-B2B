@@ -21,6 +21,109 @@
                 <p>{{ product.description }}</p>
             </div>
             <div class="prod-additional">
+                {%- if product.metafields.plytix.package_products != blank -%}
+                    {%- assign bundle_product_arr = product.metafields.plytix.package_products | split: ", " -%}
+                    <div class="bnd-prod-inc-contain">
+                        <h2>Package Includes</h2>
+
+                        {% for bundlehandle in bundle_product_arr %}
+                            {% assign attrbp = bundlehandle | split: "#" %}
+                            {% assign productbp = attrbp[0] | strip %}
+                            {% assign productqtybp = attrbp[1] | strip %}
+                            <div class="bnd-child-ea">
+                                <div class="bnd-child" data-qty="{{ productqtybp }}" data-handle="{{ productbp }}"><div style="padding-left:10px">Loading...</div></div>
+                            </div>
+                        {% endfor %}
+
+                        {% if product.metafields.plytix.packaged_free_product != blank %}
+                            {%- assign free_products_arr = product.metafields.plytix.packaged_free_product | split: "," -%}
+                            {% for freebundlehandle in free_products_arr %}
+                                {% assign attr = freebundlehandle | split: "#" %}
+                                {% assign productfg = attr[0] | strip %}
+                                {% assign productqtyfg = attr[1] | strip %}
+                                <div class="bnd-child-ea free-product">
+                                    <div class="fg-header"><strong>FREE Products!</strong></div>
+                                    <div class="bnd-child" data-qty="{{ productqtyfg }}" data-handle="{{ productfg }}"><div style="padding-top:5px; padding-left:10px">Loading...</div></div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                    </div>
+
+                    <style>
+                        .bnd-prod-inc-contain .bnd-child-ea{
+                            border-top:1px solid #ccc;
+                            padding:10px 0;
+                        }
+
+                        .bnd-prod-inc-contain table{
+                            padding:0 5px;
+                        }
+                        .bnd-prod-inc-contain .bnd-child-image img{
+                            padding-right:10px;
+                        }
+                        .bnd-prod-inc-contain .bnd-child-title{
+                            font-size: 18px;
+                            padding:10px 0 5px 0;
+                        }
+                        .bnd-prod-inc-contain .bnd-child-qty{
+                            margin:3px 0;
+                        }
+                        .bnd-prod-inc-contain .bnd-child-sku{
+                            margin:0 0 3px 0;
+                        }
+                        .bnd-prod-inc-contain .details{
+                            font-size:17px;
+                            font-weight: bold;
+                            margin:3px 0;
+                        }
+                        .bnd-prod-inc-contain ul{
+                            margin:3px;
+                        }
+                        .bnd-prod-inc-contain ul li{
+                            margin:0;
+                            line-height:20px;
+                        }
+                        .bnd-prod-inc-contain .bnd-child-ea.free-product{
+                            border:3px solid {{ settings.color_button_secondary_background }};
+                            border-radius: 10px;
+                            padding:0 0 10px 0;
+                        }
+                        .bnd-prod-inc-contain .fg-header{
+                            background: {{ settings.color_button_secondary_background }};
+                            font-size:18px;
+                            color:#fff;
+                            padding:5px 10px;
+                        }
+                    </style>
+
+                    <script>
+                        $(document).ready(function($){
+                            // bundle
+                            $( ".bnd-prod-inc-contain .bnd-child" ).each(function() {
+                                const childhandle = $(this).data('handle');
+                                const childqty = $(this).data('qty');
+                                const qtyclass = $(this).data('handle')+"-qty"
+                                const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${childhandle}?view=bundle-child-notes`;
+                                $.get(fetchUrl).then(response => {
+                                    if (response) {
+                                        if(response.includes("data-child-title")){
+                                            $(this).html(response);
+                                            setTimeout(() => {
+                                                $("."+qtyclass).html("<strong>Package Quantity:</strong> "+childqty);
+                                            }, 500);
+
+                                        }
+                                    }else{
+                                        console.log('product not returned');
+                                    }
+                                })
+                            });
+                        });
+                    </script>
+
+                {%- endif -%}
+
                 {% if product.metafields.plytix.in_these_bundles %}
 
                     <h2 class="inbundle-title" id="bundles">Starter Package<span>s</span></h2>
@@ -617,7 +720,13 @@
                         {% assign pyt = vid | split: "::" %}
                         <div class="container">
                             <div class="video-wrap">
-                                <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
+                                {% if pyt[0] contains "vimeo" %}
+                                    {% assign vimeoid = pyt[0] | replace: "vimeo-","" %}
+                                    {% comment %}<iframe src="https://player.vimeo.com/video/474973525?h=9cd571a900&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>{% endcomment %}
+                                     <iframe src="https://player.vimeo.com/video/{{ vimeoid }}?title=0&byline=0&portrait=0?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
+                                {% else %}
+                                    <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
+                                {% endif %}
                             </div>
                             {% if pyt[1] != "None" %}
                                 <div class="info-wrap">
