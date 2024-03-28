@@ -213,8 +213,14 @@
                 {% comment %}<div class="alttext">{{ pyt[1] }}</div>{% endcomment %}
             {% comment %}</div>{% endcomment %}
 
+                {% if pyt[0] contains "vimeo" %}
+                    {% assign vimeoid = pyt[0] | replace: "vimeo-","" %}
+                    {% comment %}<iframe src="https://player.vimeo.com/video/474973525?h=9cd571a900&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>{% endcomment %}
+                    <iframe src="https://player.vimeo.com/video/{{ vimeoid }}?title=0&byline=0&portrait=0?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
+                {% else %}
+                    <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
+                {% endif %}
 
-            <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
             <div class="alttext">{{ pyt[1] }}</div>
 
 
