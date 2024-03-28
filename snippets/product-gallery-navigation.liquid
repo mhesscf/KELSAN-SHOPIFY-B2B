@@ -141,7 +141,9 @@
         {% assign videoCounter = videoCounter | plus: 1  %}
         {% assign pyt = vid | split: "::" %}
         {% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}
-
+        {% if pyt[0] contains "vimeo" %}
+          {% assign videoimg = 'video-thumbnail.png' | file_img_url %}
+        {% endif %}
         {% comment %}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{% endcomment %}
         <button
                 class="
