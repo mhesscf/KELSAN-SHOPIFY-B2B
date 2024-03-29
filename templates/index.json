@@ -7,7 +7,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": ""
+        "custom_html": "<style>\n@media screen and (min-width: 720px) {\n.slideshow-slide__content{\npadding-right:60%\n}\n}\n<\/style>"
       }
     },
     "dynamic_slideshow": {
