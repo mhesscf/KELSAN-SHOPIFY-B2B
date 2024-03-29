@@ -15,6 +15,7 @@
       "blocks": {
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/march-2024-floor-scrubber-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/march-2024-floor-scrubber-800x427.jpg",
@@ -37,6 +38,7 @@
         },
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/march-2024-burnisher-sale-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/march-2024-burnisher-sale-800x427.jpg",
@@ -59,18 +61,17 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/february-2024-sotm-20-floor-buffer-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/february-2024-sotm-20-floor-buffer-800x427.jpg",
-            "title": "Trusted Clean 20&quot; Commercial Grade Floor Buffer w\/ Pad Driver",
-            "text": "Shine Bright,<br>Spend Less!<br>Now $799.99.",
+            "background_image": "shopify:\/\/shop_images\/flood-master-april-sotm-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/flood-master-april-sotm-800x427.jpg",
+            "title": "CleanFreak® 'Flood Master' Portable Flood Pumper & Extractor",
+            "text": "Maximize Savings,<br>Minimize Mess.<br>Was: $2389.99<br>Now: $2099.99",
             "color": "#303e48",
-            "link": "\/products\/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "link": "\/products\/flood-pumper-portable-flood-extractor",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "Save $100!",
-            "button_one_link": "\/products\/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "button_one_label": "Save $290!",
+            "button_one_link": "\/products\/flood-pumper-portable-flood-extractor",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "\/products\/heated-carpet-spot-cleaner",
