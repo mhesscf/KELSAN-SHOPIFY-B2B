@@ -7,7 +7,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<style>\n@media screen and (min-width: 720px) {\n.slideshow-slide__content{\npadding-right:60%\n}\n}\n<\/style>"
+        "custom_html": "<style>\n@media screen and (min-width: 720px) {\n.slideshow-slide__content.slideshow-slide__content--text-left{\npadding-right:58%;\n}\n}\n<\/style>"
       }
     },
     "dynamic_slideshow": {
