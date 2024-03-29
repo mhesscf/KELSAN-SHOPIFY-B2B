@@ -15,6 +15,30 @@
     This is the hover zoom setting, which is either 'disabled', 'separate', or 'replace'
 {% endcomment %}
 
+
+{% assign specialclass = "" %}
+{% if product.selected_or_first_available_variant.compare_at_price %}
+    {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+        {% assign specialSavings = product.compare_at_price | minus: product.price %}
+        {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
+        {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' %}
+        {% assign nowTimestamp = 'now' | date: '%s' %}
+
+        {% assign enddiffSeconds = endDate | minus: nowTimestamp %}
+        {% assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 %}
+
+        {% assign startdiffSeconds = startDate | minus: nowTimestamp %}
+        {% assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 %}
+
+        {% if enddiffDays >= -1 and  startdiffDays < 0 %}
+            {% assign specialclass = "isspecial" %}
+        {% endif %}
+    {% endif %}
+{% endif %}
+
+
+
+
 <div
   class="
     product-gallery--viewer
@@ -31,6 +55,7 @@
       class="
         product-gallery--media
         product-gallery--{{ media.media_type }}
+        {{ specialclass }}
       "
       tabindex="-1"
       {% if selected_media.id != media.id %}
@@ -110,6 +135,9 @@
             %}
           {% endif %}
         >
+            {% if specialclass != "" %}
+                <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Image" /></div>
+            {% endif %}
           {%
             render 'rimg',
             img: media,
