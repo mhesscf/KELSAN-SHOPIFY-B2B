@@ -13,6 +13,28 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/flash-sale-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/flash-sale-800x427.jpg",
+            "title": "Get 12% off your entire order for 2 days only!",
+            "text": "Code: FLASH12<br>Valid 4\/4\/24 – 4\/5\/24<br><span>*Restrictions apply<\/span>",
+            "color": "#ffffff",
+            "link": "\/collections\/",
+            "promo_link": "FLASH12",
+            "text_alignment": "left",
+            "button_one_label": "Apply Code",
+            "button_one_link": "\/collections\/",
+            "button_one_style": "secondary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": false,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
           "type": "slide",
           "disabled": true,
@@ -103,28 +125,6 @@
             "overlay_opacity": 50
           }
         },
-        "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify:\/\/shop_images\/flash-sale-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/flash-sale-800x427.jpg",
-            "title": "Get 12% off your entire order for 2 days only!",
-            "text": "Code: FLASH12<br>Valid 4\/4\/24 – 4\/5\/24<br><span>*Restrictions apply<\/span>",
-            "color": "#ffffff",
-            "link": "\/collections\/",
-            "promo_link": "FLASH12",
-            "text_alignment": "left",
-            "button_one_label": "Apply Code",
-            "button_one_link": "\/collections\/",
-            "button_one_style": "secondary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
-          }
-        },
         "banner_fLBUa3": {
           "type": "banner",
           "disabled": true,
@@ -146,11 +146,11 @@
         }
       },
       "block_order": [
+        "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "slide-1",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
-        "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "banner_fLBUa3",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
