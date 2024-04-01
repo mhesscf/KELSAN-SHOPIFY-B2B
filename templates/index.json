@@ -109,7 +109,7 @@
             "background_image": "shopify:\/\/shop_images\/flash-sale-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/flash-sale-800x427.jpg",
             "title": "Get 12% off your entire order for 2 days only!",
-            "text": "Code: FLASH12<br>Valid 4\/4\/24 – 4\/5\/24<br><span style=\"font-size:12px\">*Restrictions apply<\/span>",
+            "text": "Code: FLASH12<br>Valid 4\/4\/24 – 4\/5\/24<br><span>*Restrictions apply<\/span>",
             "color": "#ffffff",
             "link": "\/collections\/",
             "promo_link": "FLASH12",
