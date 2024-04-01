@@ -167,6 +167,19 @@
                         {%- endif -%}
                     </div>
                 </div>
+
+            {% else %}
+            <div class="r">
+                <div class="spec-default-img">
+                    {{ images['spec-default-img.jpg'] | image_url: height: 300 | image_tag: class: 'img-responsive' }}
+                </div>
+            </div>
+                <style>
+                    .r .spec-default-img{
+                        margin-top: 35px;
+                        padding: 25px;
+                    }
+                </style>
             {% endif %}
         </div>
     </div>
