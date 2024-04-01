@@ -565,6 +565,11 @@
         "one": "Search result for \"{{ terms }}\"",
         "other": "Search results for \"{{ terms }}\""
       }
+    },
+    "notices": {
+      "cart": {
+        "all_items_in_cart": "We only have {{ count }} of this item available, and they are in your cart already."
+      }
     }
   }
 }
