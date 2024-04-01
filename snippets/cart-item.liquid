@@ -1,10 +1,14 @@
 {% assign compare_at_price = 0 %}
+{% assign available = 999999 %}
 {% comment %}to style like a superfreak addon{% endcomment %}
 {% assign sf_addon = sf_addon %}
 
 {% for variant in item.product.variants %}
   {% if variant.id == item.variant.id and variant.compare_at_price > item.price %}
     {% assign compare_at_price = variant.compare_at_price %}
+    {% if variant.inventory_management == 'middleware-fulfillment' and  variant.inventory_quantity >  1 %}
+      {% assign available = variant.inventory_quantity %}
+    {% endif %}
     {% break %}
   {% endif %}
 {% endfor %}
@@ -192,7 +196,6 @@
           <strong>Status:</strong> {{ stock_status }}
         </div>
       {% endif %}
-
       {% if item.product.metafields.plytix.freq_bought %}
           {% comment %}check items other than "undefined"{% endcomment %}
           {%- assign freqarray =  item.product.metafields.plytix.freq_bought | split: ", " -%}
@@ -273,15 +276,25 @@
                     aria-label="{{ 'general.general.quantity' | t }}"
                     data-quantity-select
                     data-cartitem-quantity
-            {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}>
-              {% for i in (1..9) %}
-                <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
+                    {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
+                    {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
+            >
+              {% if available < 10 %}
+                {% for i in (1..available) %}
+                  <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
                   {{ i }}
-                </option>
+                  </option>
               {% endfor %}
-              <option value="10">
-                10+
-              </option>
+              {% else %}
+                {% for i in (1..9) %}
+                  <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
+                    {{ i }}
+                  </option>
+                {% endfor %}
+                <option value="10">
+                  10+
+                </option>
+              {% endif %}
             </select>
             <label class="form-field-title" for="quantity_{{ item.key | replace: ':', '_' }}">
               {{ 'general.general.quantity' | t }}
@@ -310,6 +323,7 @@
                   pattern="\d*"
                   {% if item.quantity < 10 %}tabindex="-1"{% endif %}
                   {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
+                  {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
                   aria-label="{{ 'general.general.quantity' | t }}"
                   data-quantity-input
                   data-cartitem-quantity>
@@ -317,6 +331,11 @@
             {{ 'general.general.quantity' | t }}
           </label>
         </div>
+            {% if available < 999999 %}
+              <span class="package-qt-info" style="display:none;">
+                Limited Quantity Available. Please adjust your quantity to or below {{ available }}.
+            </span>
+            {% endif %}
         {% if product_bundle != '' %}
           <span class="package-qt-info">
             Item is not editable because it is part of a package

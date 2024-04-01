@@ -1187,6 +1187,21 @@ jQuery(document).ready(function($){
         }, 1000);
     });
 
+    $('.form-field input[data-available-qty]').on( "blur", function(e) {
+        e.preventDefault();
+        var original = $(this).data('original');
+        var available = $(this).data('available-qty');
+        var newvalue = $(this).val();
+
+
+        if(newvalue > available){
+            $(this).val(original);
+            $(this).closest( ".cart-item--info" ).find(".package-qt-info").show();
+        }else{
+            $(this).closest( ".cart-item--info" ).find(".package-qt-info").hide();
+        }
+    });
+
     $('.cart-item--remove-popup').on('click', function(e){
         e.preventDefault();
         var bundleItemClass = $(this).data('gall');
@@ -1198,6 +1213,7 @@ jQuery(document).ready(function($){
             $('#bundle-remove-alert p').text("You are about to remove all items from the Free Gift Promo.")
         }
     });
+
     $('#bundle-remove-alert .remove').on('click', async function(e){
         e.preventDefault();
         var bundleItemClass = $(this).data('gall');
