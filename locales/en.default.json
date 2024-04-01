@@ -569,7 +569,7 @@
     "notices": {
       "cart": {
         "all_items_in_cart": "We only have {{ count }} of this item available, and they are in your cart already.",
-        "too_many_items_in_cart": "We only have {{ count }} of this item available, please adjust your quantity to {{ count }}."
+        "too_many_items_in_cart": "We have limited quantity of this item, please adjust your quantity to the number available."
       }
     }
   }
