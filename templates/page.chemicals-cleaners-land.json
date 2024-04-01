@@ -155,14 +155,6 @@
             "url": "\/pages\/carpet-solutions"
           }
         },
-        "567fae25-b416-44fd-b931-d8c283789865": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
-            "title": "Pressure Washing Detergents",
-            "url": "\/collections\/detergents"
-          }
-        },
         "00bce087-30eb-468f-82b4-0dbc4392427b": {
           "type": "categorylink",
           "settings": {
@@ -211,6 +203,14 @@
             "url": "\/collections\/drain-maintenance"
           }
         },
+        "567fae25-b416-44fd-b931-d8c283789865": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
+            "title": "Pressure Washing Detergents",
+            "url": "\/collections\/detergents"
+          }
+        },
         "0672e129-eb14-480c-b984-b3062ecb98c0": {
           "type": "categorylink",
           "settings": {
@@ -231,13 +231,13 @@
       "block_order": [
         "52277ddd-76d0-4598-b932-2f798edf3cc4",
         "c401604e-93c9-438f-bb4e-7e163c85364a",
-        "567fae25-b416-44fd-b931-d8c283789865",
         "00bce087-30eb-468f-82b4-0dbc4392427b",
         "989aab83-2f82-4f6c-b0c6-1a60b3006f85",
         "8c26ed4d-6da8-4544-8314-7d7d7a1d53b0",
         "adfc27e3-fdb7-476f-b6cf-2e8b96f03323",
         "7da01d1a-8e2f-48b7-9f33-0fa9887ee8ec",
         "8bf9ec0f-60aa-44e3-9064-b102592ba0da",
+        "567fae25-b416-44fd-b931-d8c283789865",
         "0672e129-eb14-480c-b984-b3062ecb98c0",
         "73bada5e-8c97-436b-93c7-1f8af58cb8ca"
       ],
