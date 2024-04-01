@@ -105,15 +105,14 @@
         },
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/flash-sale-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/flash-sale-800x427.jpg",
-            "title": "Thursday Flash Sale!",
-            "text": "Use the coupon code <br><span>\"FLASHCLEAN\"<\/span><br> to receive 10% off your order.",
+            "title": "Get 12% off your entire order for 2 days only!",
+            "text": "Code: FLASH12<br>Valid 4\/4\/24 – 4\/5\/24<br><span style=\"font-size:12px\">*Restrictions apply<\/span>",
             "color": "#ffffff",
             "link": "",
-            "promo_link": "",
+            "promo_link": "FLASH12",
             "text_alignment": "left",
             "button_one_label": "Apply Coupon Code",
             "button_one_link": "",
