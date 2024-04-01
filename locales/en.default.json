@@ -568,7 +568,8 @@
     },
     "notices": {
       "cart": {
-        "all_items_in_cart": "We only have {{ count }} of this item available, and they are in your cart already."
+        "all_items_in_cart": "We only have {{ count }} of this item available, and they are in your cart already.",
+        "too_many_items_in_cart": "We only have {{ count }} of this item available, please adjust your quantity to {{ count }}."
       }
     }
   }
