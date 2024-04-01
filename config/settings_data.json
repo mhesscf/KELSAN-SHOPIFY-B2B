@@ -294,7 +294,7 @@
           "show_announcement": true,
           "homepage_announcement": false,
           "announcement_text": "Use code “FLASH12” to get 12% off your entire order! Click here to apply the promo.",
-          "announcement_text_mobile": "Use code “FLASH12” to get 12% off your entire order!",
+          "announcement_text_mobile": "",
           "announcement_link": "\/collections\/all",
           "announcement_promo": "FLASH12",
           "flash": true,
