@@ -1,0 +1,52 @@
+{% layout none %}
+{% assign productFirstVar = product.selected_or_first_available_variant %}
+{% assign variations = 0 %}
+    {% assign crawlcheck = false %}
+    {% for c in all_products[product_handle].collections %}
+        {% if c.handle == "discontinued" %}
+            {% assign crawlcheck = true %}
+        {% endif %}
+    {% endfor %}
+    {% if crawlcheck == true %}
+        <div style="display:none;" class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
+    {% endif %}
+    {% for variant in product.variants %}
+        {% assign variations = variations | plus: 1 %}
+    {% endfor %}
+<a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Link to Bundle','/products/{{ product.handle }}')" >
+<div class="package-row">
+    <div class="bnd-image" >
+      {{ product.featured_image | img_url: '125x125' | img_tag: product.featured_image.alt }}
+    </div>
+    <div class="bnd-title-area">
+        {% if product.metafields.plytix.short_title %}
+            <div class="bnd-title" data-part-title ><strong>{{ product.metafields.plytix.short_title }}</strong></div>
+        {% else %}
+            <div class="bnd-title" data-part-title ><strong>{{ product.title }}</strong></div>
+        {% endif %}
+        <div class="bnd-sku">
+            <strong>SKU:</strong> <span>{{ productFirstVar.sku }}</span>
+        </div>
+    </div>
+    <div class="bnd-price-area">
+        {% if product.metafields.plytix.bundle_pricing %}
+            <div class="bnd-price">
+                <strong>{{ product.metafields.plytix.bundle_pricing | times: 100 | money }}</strong>
+            </div>
+        {% endif %}
+
+        {% comment %}<div class="bnd-short-desc" data-part-title >{% endcomment %}
+            {% comment %}<div class="details"><strong>Details</strong></div>{% endcomment %}
+            {% comment %}{{ product.metafields.plytix.short_description }}{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+{% comment %}{% endcomment %}
+        {% comment %}<div class="link-icon" ><button class="button-secondary">VIEW DETAILS</button></div>{% endcomment %}
+
+        <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" type="button" disabled=""><span class="atc-button--text">
+                VIEW DETAILS <i class="fa-sharp fa-solid fa-caret-right"></i>
+            </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
+
+
+    </div>
+</div>
+</a>
