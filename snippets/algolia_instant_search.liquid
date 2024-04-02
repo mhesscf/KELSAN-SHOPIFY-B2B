@@ -208,6 +208,37 @@
                 // Configure and start the observer
                 const config = { subtree: true, childList: true };
                 observer.observe(target, config);
+
+
+                $( ".ais-product[data-inbundles]").each(function( index ) {
+                    var inbundlesArr =$(this).data("inbundles").split(' ');
+                    var inbundlesLength = inbundlesArr.length;
+                    var htmladd = ""
+                    var counter = 1;
+                    for (var i = 0; i < inbundlesLength; i++) {
+                        if (inbundlesArr[i] != "undefined" && inbundlesArr[i] != "") {
+                            // $(".ais-product[data-handle='"+inbundlesArr[i]+"']").addClass('bnd-format');
+                            // htmladd = htmladd+$(".ais-product[data-handle='"+inbundlesArr[i]+"']").html();
+                            var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${inbundlesArr[i]}?view=bundle-algolia-area`;
+                            $.get(fetchUrl).then(response2 => {
+                                if (response2) {
+                                   $(this).find(".bnd-area").addClass('bnd-area-vis').append(response2);
+                                    $(this).addClass('hasbnds');
+                                    if(counter > 1 ){
+                                        $(this).find(".inbndtitle").text('In Bundles')
+                                    }
+                                    counter++;
+                                }else{
+                                    console.log('product not returned');
+                                }
+                            })
+
+                        }
+                    }
+                    // $(this).find(".bnd-area").html(htmladd);
+                    // $(this).addClass('has-bnd-area');
+
+                });
             },300);
 
 

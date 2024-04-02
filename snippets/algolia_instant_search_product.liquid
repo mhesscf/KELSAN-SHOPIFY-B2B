@@ -272,36 +272,20 @@
     }
 
     function bundleHandles(handles,type){
-        if(handles && 1 == 2){
-            alert('lookinto #many .more.selectors h4 + p { ... }')
+        if(handles){
+            //alert('lookinto #many .more.selectors h4 + p { ... }')
             var handleClasses = handles.replaceAll(" ","");
             var handleClasses = handles.replaceAll(",","");
             var handleClasses = handleClasses.replace("undefined","");
             if(type == "handles"){
                 return(handleClasses);
-            }else if(type == "styles"){
-                var handleClasses = handles.replaceAll(" ","");
-                var handleClasses = handleClasses.replace("undefined","");
-                var thisArray = handleClasses.split(",");
-                var arrayLength = thisArray.length;
-                 var styles = "";
-                var handleCounter = 0;
-                for (var i = 0; i < arrayLength; i++) {
-                    if (thisArray[i] != "undefined" && thisArray[i] != "") {
-                        styles = styles+".collection-main-area-off ."+thisArray[i]+" ul:last-child {";
-                        styles = styles+"color:green;";
-                        styles = styles+"}";
-                        handleCounter += 1;
-                    }
+            }else if(type == "count"){
+                if(handleClasses !=""){
+                    return(1);
+                }else{
+                    return(0);
                 }
-                // styles = styles+"</styles>";
-                if(handleCounter > 0){
-                    return(styles);
-                }
-
             }
-        }else{
-            return "";
         }
     }
 
@@ -329,9 +313,9 @@
 
         algolia.instantSearchProductTemplate = function instantSearchProductTemplate(hit, html, components) {
             return html `
-      <div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" data-inbundles="${bundleHandles(hit.meta.plytix.in_these_bundles,"handles")}">
         <meta itemprop="position" content="${hit.productPosition}" />
-        <div class="productitem ${hit.handle} ${bundleHandles(hit.meta.plytix.in_these_bundles,"handles")} ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product">
+        <div class="productitem ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product" >
 
             ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Image" /></div>` : ``}
 
@@ -567,6 +551,7 @@ ${1 == 1 && html`
 
 </div>
 </div>
+${bundleHandles(hit.meta.plytix.in_these_bundles,"count") > 0 ? html `<div class="bnd-area"><div class="inbndtitle">In Bundle:</div></div>` : ``}
 </div>`
 };
 })(window.algoliaShopify);
