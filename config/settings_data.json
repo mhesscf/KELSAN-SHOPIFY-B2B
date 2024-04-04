@@ -291,7 +291,7 @@
       "static-announcement": {
         "type": "static-announcement",
         "settings": {
-          "show_announcement": false,
+          "show_announcement": true,
           "homepage_announcement": false,
           "announcement_text": "Use code “FLASH12” to get 12% off your entire order! Click here to apply the promo.",
           "announcement_text_mobile": "Use code “FLASH12” to get 12% off your entire order!",
