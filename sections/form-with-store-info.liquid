@@ -206,6 +206,59 @@
                 </div>
             </div>
             <div class="grid__item one-half">
+                {% comment %}Add this{% endcomment %}
+                <style>
+                    .form-store-info .container .grid .one-half{
+                        display:block;
+                    }
+                    .form-store-info .container .grid .one-half .contact-us-tabs{
+                        display:flex;
+                    }
+                    .form-store-info .container .grid .one-half .contact-us-tabs .form-tab{
+                        border:1px solid #ccc;
+                        padding:10px;
+                        border-radius: 10px 10px 0 0;
+                        background-color:gray;
+                        color:white;
+                        z-index:1;
+                        margin-bottom:-2px
+                    }
+                    .form-store-info .container .grid .one-half .contact-us-tabs .form-tab.highlight{
+                        border-bottom:0px solid #ccc;
+                        background-color:white;
+                        color:#303e48;
+                        z-index:10;
+                    }
+                    .form-store-info form,
+                    .form-store-info .container .grid .one-half .problem-form{
+                        background-color: {{ setting.colors_section_secondary_background }};
+                        padding: 50px;
+                        width: 100%;
+                        box-shadow: none;
+                        border:1px solid #ccc;
+                        border-radius: 0 20px 20px 20px;
+                        background-color: #fff;
+                    }
+                </style>
+                <script>
+                    jQuery(document).ready(function($){
+                        $('.form-tab').on('click', function(){
+                            $('.form-tab').removeClass('highlight');
+                            $(this).addClass('highlight');
+                            if($(this).hasClass('contact-tab')){
+                                $('.contact-form').show();
+                                $('.problem-form').hide();
+                            }else if($(this).hasClass('problem-tab')){
+                                $('.contact-form').hide();
+                                $('.problem-form').show();
+                            }
+                        });
+                    });
+                </script>
+                <div class="contact-us-tabs">
+                    <div class="form-tab contact-tab highlight">Contact Us</div>
+                    <div class="form-tab problem-tab">Problems</div>
+                </div>
 
                 {% form 'contact' %}
                     <div class="contact-form">
@@ -330,6 +383,13 @@
                         {% endif %}
                     </div>
                 {% endform %}
+
+                <div class="problem-form" style="display:none;">
+                    <p>We’re sorry to hear you’ve bumped into a problem with your cleaning equipment. Fill out this form to request service support and watch your inbox for a confirmation email. Our technicians will follow up with your request within seven business days.</p>
+                    <hr>
+                    <div id="wufoo-w5g7bid0s8y07h">Fill out my <a href="https://jbutchpti.wufoo.com/forms/w5g7bid0s8y07h">online form</a>.</div>
+                    <script type="text/javascript"> var w5g7bid0s8y07h; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'w5g7bid0s8y07h', 'autoResize':true, 'height':'1006', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { w5g7bid0s8y07h = new WufooForm(); w5g7bid0s8y07h.initialize(options); w5g7bid0s8y07h.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                </div>
             </div>
         </div>
     </div>

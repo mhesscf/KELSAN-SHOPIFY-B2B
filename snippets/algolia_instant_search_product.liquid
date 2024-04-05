@@ -315,7 +315,7 @@
             return html `
       <div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" data-inbundles="${bundleHandles(hit.meta.plytix.in_these_bundles,"handles")}">
         <meta itemprop="position" content="${hit.productPosition}" />
-        <div class="productitem ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.custom_hot_deal_to_date ? html `specialitem` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product" >
+        <div class="productitem ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"bool") ? html `specialitem` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``}" itemprop="item" itemscope itemtype="http://schema.org/Product" >
 
             ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Image" /></div>` : ``}
 
@@ -461,7 +461,7 @@
 
             <div class="cfais-productitem--actions" itemprop="offers" itemscope itemtype="${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? 'http://schema.org/AggregateOffer':'http://schema.org/Offer'}">
 
-             ${hit.meta.plytix.custom_hot_deal_message && hit.collections.includes("discontinued") == false && hit.meta.plytix.custom_hot_deal_to_date ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Image" /></div>` : ``}
+             ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"bool") ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Image" /></div>` : ``}
 
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
