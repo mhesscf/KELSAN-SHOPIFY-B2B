@@ -209,20 +209,27 @@
             "url": "\/pages\/pads"
           }
         },
-        "615d33f8-f049-438e-bf6a-4d00ecb50e82": {
+        "categorylink_KUjVRW": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washer-accessories.jpg",
-            "title": "Pressure Washer Accessories",
-            "url": "\/collections\/pressure-washer-accessories"
+            "title": "Pressure Washer Hoses & Hose Reels",
+            "url": "\/collections\/pressure-washer-hoses-hose-reels"
           }
         },
         "976ff6be-9e00-49d0-a2ea-145dfa1bba4d": {
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/pressure-washer-parts.jpg",
-            "title": "Pressure Washer Parts",
+            "title": "Pressure Washer Misc. Parts & Accessories",
             "url": "\/collections\/pressure-washer-parts"
+          }
+        },
+        "615d33f8-f049-438e-bf6a-4d00ecb50e82": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pressure-washer-accessories.jpg",
+            "title": "Pressure Washer Spray Guns & Wands",
+            "url": "\/collections\/pressure-washer-spray-guns-wands"
           }
         },
         "81bb105d-aa04-4456-b2ea-6cfafd7b5f8d": {
@@ -274,8 +281,9 @@
         "3060bb41-ccbb-4ed9-948c-a9207821acac",
         "6d7d76ce-bac5-4cbe-bac8-86426d253760",
         "8feb3982-57f4-41ed-93de-61166a976e4a",
-        "615d33f8-f049-438e-bf6a-4d00ecb50e82",
+        "categorylink_KUjVRW",
         "976ff6be-9e00-49d0-a2ea-145dfa1bba4d",
+        "615d33f8-f049-438e-bf6a-4d00ecb50e82",
         "81bb105d-aa04-4456-b2ea-6cfafd7b5f8d",
         "e78ef57c-ba69-4236-b4d7-98a784cef3a6",
         "d63e4ee6-9077-4678-aec0-10b0be238918",
