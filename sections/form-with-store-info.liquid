@@ -240,6 +240,17 @@
                         border-radius: 0 20px 20px 20px;
                         background-color: #fff;
                     }
+
+                    .contact-form,
+                    .problem-form{
+                        position:absolute;
+                        right: 20000px;
+                    }
+                    .contact-form.formshow,
+                    .problem-form.formshow{
+                        position:relative;
+                        right: 0px;
+                    }
                 </style>
                 <script>
                     jQuery(document).ready(function($){
@@ -247,13 +258,19 @@
                             $('.form-tab').removeClass('highlight');
                             $(this).addClass('highlight');
                             if($(this).hasClass('contact-tab')){
-                                $('.contact-form').show();
-                                $('.problem-form').hide();
+                                $('.contact-form').addClass('formshow');
+                                $('.problem-form').removeClass('formshow');
                             }else if($(this).hasClass('problem-tab')){
-                                $('.contact-form').hide();
-                                $('.problem-form').show();
+                                $('.contact-form').removeClass('formshow');
+                                $('.problem-form').addClass('formshow');
                             }
                         });
+
+                        setTimeout(() => {
+                            $('.contact-form').addClass('formshow');
+                            $('.problem-form').removeClass('formshow');
+                        }, 300);
+
                     });
                 </script>
                 <div class="contact-us-tabs">
@@ -385,7 +402,7 @@
                     </div>
                 {% endform %}
 
-                <div class="problem-form" style="display:none;">
+                <div class="problem-form">
                     <p>We’re sorry to hear you’ve bumped into a problem with your cleaning equipment. Fill out this form to request service support and watch your inbox for a confirmation email. Our technicians will follow up with your request within seven business days.</p>
                     <hr>
                     <div id="wufoo-w5g7bid0s8y07h">Fill out my <a href="https://jbutchpti.wufoo.com/forms/w5g7bid0s8y07h">online form</a>.</div>
