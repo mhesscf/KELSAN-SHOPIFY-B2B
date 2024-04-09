@@ -72,7 +72,7 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"video-wrap-local\">\n                                <video controls=\"controls\" style=\"width: 100%; max-width:800px; margin:auto; height: auto;\">\n                                    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b93ca54a476344da9913eea945490bf1.mp4\" type=\"video\/mp4\">\n                                    Your browser does not support our video.\n                                <\/source><\/video>\n                            <\/div>"
+        "custom_html": "<div class=\"video-wrap-local\">\n                                <video controls=\"controls\" style=\"width: 100%; max-width:800px; margin:auto; height: auto;\">\n                                    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a7ca0da1f7ad4379af6f37a57e8db8d3.mp4\" type=\"video\/mp4\">\n                                    Your browser does not support our video.\n                                <\/source><\/video>\n                            <\/div>"
       }
     }
   },
