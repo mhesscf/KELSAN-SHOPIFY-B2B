@@ -558,6 +558,9 @@
         },
         "shipping_method": "We're having problems calculating a shipping rate for your order.  Please contact us at 888-722-5508 & we'll be able to help.",
         "shipping_method_not_available": "We're having problems calculating a shipping rate for your order.  Please contact us at 888-722-5508 & we'll be able to help."
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Email me with exclusive discounts and promotions"
       }
     },
     "page_titles": {
