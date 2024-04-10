@@ -10,10 +10,20 @@
             "cat_title": "Floor Pads, Bonnets & Sanding Screens",
             "cat_text": "Durable CleanFreak® floor pads outlast the competition when it comes to polishing, scrubbing, and stripping hard floors. We also have carpet bonnets, sanding screens & other floor prep pads in stock & ready to ship!"
           }
+        },
+        "banner_aXcKDK": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/earth-day-pad-sale-2024-1400x350-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/earth-day-pad-sale-2024-800x427.jpg",
+            "link": "\/",
+            "coupon-code": "EARTH24"
+          }
         }
       },
       "block_order": [
-        "c3e04012-d07f-47a4-afeb-ec102c8c19cf"
+        "c3e04012-d07f-47a4-afeb-ec102c8c19cf",
+        "banner_aXcKDK"
       ],
       "settings": {
         "enable_autoplay": true,
