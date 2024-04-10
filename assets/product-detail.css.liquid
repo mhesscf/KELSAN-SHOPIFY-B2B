@@ -332,26 +332,28 @@
 .product-single-techtip .tech-text {
   padding-bottom:15px;
   padding-top:15px;
-  width:68%
+  width:65%;
+  float:left;
 }
-.product-single-techtip .tech-image img{
-  position:absolute;
-  bottom:0;
-  right:0;
+.product-single-techtip .tech-image{
+  width:30%;
+  float:right;
+  padding-top:90px;
 }
-@media (max-width: 1079px) {
-  .product-single-techtip .tech-image img{
-    width:200px;
-  }
-}
+
 @media (max-width: 679px) {
   .product-single-techtip .tech-image,
   .product-single-techtip .tech-text {
     width:100%
   }
+  .product-single-techtip .tech-image{
+    padding-top:0;
+    padding-bottom:30px;
+  }
   .product-single-techtip .tech-image img {
     position: relative;
     margin: auto;
+    max-width:225px;
   }
 }
 /* ------------- Product Information and Spec + Manuals --------------------- **/
