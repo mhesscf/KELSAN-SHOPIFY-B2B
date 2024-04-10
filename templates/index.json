@@ -126,6 +126,15 @@
             "overlay_opacity": 50
           }
         },
+        "banner_J8FYNy": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/earth-day-pad-sale-2024-1400x350-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/earth-day-pad-sale-2024-800x427.jpg",
+            "link": "\/pages\/pads",
+            "coupon-code": "EARTH24"
+          }
+        },
         "banner_fLBUa3": {
           "type": "banner",
           "settings": {
@@ -151,6 +160,7 @@
         "slide-1",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
+        "banner_J8FYNy",
         "banner_fLBUa3",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
