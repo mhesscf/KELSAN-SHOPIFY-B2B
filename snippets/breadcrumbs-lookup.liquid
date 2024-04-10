@@ -548,7 +548,11 @@
 
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <a href="/collections/{{breadcrumblevelobj[2]}}" title="{{collections[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/collections/{{breadcrumblevelobj[2]}}">
-										<span itemprop="name">{{collections[breadcrumblevelobj[2]].title}}</span>
+                                        {%- if collections[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
+                                            <span itemprop="name">{{ collections[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
+                                        {%- else -%}
+                                            <span itemprop="name">{{ collections[breadcrumblevelobj[2]].title }}</span><
+                                        {%- endif -%}
                                     </a>
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
@@ -557,7 +561,13 @@
 
                             {%- else -%}
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                                    <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">{{collections[breadcrumblevelobj[2]].title}}</span></span>
+                                    <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item">
+                                        {%- if collections[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
+                                            <span itemprop="name">{{ collections[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
+                                        {%- else -%}
+                                            <span itemprop="name">{{ collections[breadcrumblevelobj[2]].title }}</span><
+                                        {%- endif -%}
+                                    </span>
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
                             {%- endif -%}
@@ -566,14 +576,24 @@
 
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <a href="/pages/{{breadcrumblevelobj[2]}}" title="{{pages[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/pages/{{breadcrumblevelobj[2]}}">
-                                            <span itemprop="name">{{ pages[breadcrumblevelobj[2]].title }}</span></a>
+                                            {%- if pages[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
+                                                <span itemprop="name">{{ pages[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
+                                            {%- else -%}
+                                                <span itemprop="name">{{ pages[breadcrumblevelobj[2]].title }}</span>
+                                            {%- endif -%}
                                     </a>
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
                                 <span aria-hidden="true" class="separator">›</span>
                             {%- else -%}
                                 <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-                                    <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">{{pages[breadcrumblevelobj[2]].title}}</span></span>
+                                    <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item">
+                                        {%- if pages[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
+                                            <span itemprop="name">{{ pages[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
+                                        {%- else -%}
+                                            <span itemprop="name">{{ pages[breadcrumblevelobj[2]].title }}</span>
+                                        {%- endif -%}
+                                    </span>
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
                             {%- endif -%}
