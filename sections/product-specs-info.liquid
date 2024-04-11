@@ -171,6 +171,19 @@
                                 </div>
                             {%- endfor -%}
                         {%- endif -%}
+
+                        {% if product.metafields.plytix.prop65_text != blank and product.metafields.plytix.prop65_category != blank %}
+                            <div class="prop65">
+                                <h2>Warnings</h2>
+                                <div class="prop65-item">
+                                    <div class="hazard-title">
+                                        <i class="fa-regular fa-triangle-exclamation"></i> <strong>Proposition 65 Warning</strong>: {{ product.metafields.plytix.prop65_category }}
+                                    </div>
+                                    <div class="prop65-text">
+                                        {{ product.metafields.plytix.prop65_text }} For more information go to <a href="https://www.P65Warnings.ca.gov" target="_blank">www.P65Warnings.ca.gov</a>.</div>
+                                </div>
+                            </div>
+                        {%- endif -%}
                     </div>
                 </div>
 
