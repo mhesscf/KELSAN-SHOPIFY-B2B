@@ -44,6 +44,33 @@
                         {% endfor %}
                 </table>
                 <div class="sf-discount-reminder">Get 10% off of <a href="/collections/superfreak-discount-eligible">parts and accessories</a> using promo code <span>"SUPERFREAK"</span>.</div>
+
+                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/65112309972/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/62432706740/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "airmovers-dev.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/66576285978/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "airmovers-prod.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/62556602573/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "carpetextractors-dev1.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/66980970808/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "carpetextractors.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/62997594346/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "floorbuffers-dev.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/66368569623/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "floorbuffers-prod.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/66222620892/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "floorscrubbers-dev.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/66667315493/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- elsif shop.permanent_domain contains "floorscrubbers-prod.myshopify.com" -%}
+                    {%- assign subscript-link = "https://shopify.com/62114103462/account/e/e85ad72a-1b9d-4038-8e07-a4d61164ed72" -%}
+                {%- endif -%}
+
+                <div class="subscription-link" >
+                    <a href="{{ subscript-link }}">If you have a SuperFreak Subscription, you can manage your subscriptions <span>here</span>. <i style="font-size:14px;" class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                </div>
+
             </div>
 
             <style>
@@ -94,6 +121,18 @@
                 }
                 @media screen and (max-width: 390px) {
                     .sf-account .start{display:none;}
+                }
+                .subscription-link{
+                    text-align:center;
+                    margin-bottom:6px;
+                }
+                .subscription-link a{
+                    color:{{ settings.color_text }};
+                    text-decoration: none;
+                }
+                .subscription-link a span{
+                    color:{{ settings.color_links }};
+                    text-decoration: underline;
                 }
             </style>
         </div>
