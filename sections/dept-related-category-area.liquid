@@ -42,7 +42,27 @@
                                             {{ 'collection-1' | placeholder_svg_tag: placeholder_classes }}
                                         {%- endif -%}
                                         <div class="category-link-title">
-                                            {{ title }}
+                                            {%- if block.settings.url contains "/pages/" -%}
+                                                {%- assign truePageHandle =  block.settings.url | replace: "/pages/","" -%}
+                                                {%- if pages[truePageHandle].metafields.custom.short_title != blank -%}
+                                                    <span class="cat-short-title">{{ pages[truePageHandle].metafields.custom.short_title }}</span>
+                                                {%- elsif pages[truePageHandle].title != blank -%}
+                                                    <span class="cat-page-title">{{ pages[truePageHandle].title }}</span>
+                                                {%- else -%}
+                                                    {{ title }}
+                                                {%- endif -%}
+                                            {%- elsif block.settings.url contains "/collections/" -%}
+                                                {%- assign trueColHandle =  block.settings.url | replace: "/collections/","" -%}
+                                                {%- if collections[trueColHandle].metafields.custom.short_title != blank -%}
+                                                    <span class="cat-short-title">{{ collections[trueColHandle].metafields.custom.short_title }}</span>
+                                                {%- elsif collections[trueColHandle].title != blank -%}
+                                                    <span class="cat-col-title">{{ collections[trueColHandle].title }}</span>
+                                                {%- else -%}
+                                                    {{ title }}
+                                                {%- endif -%}
+                                            {%- else -%}
+                                                {{ title }}
+                                            {%- endif -%}
                                         </div>
                                     </a>
                                 </div>
