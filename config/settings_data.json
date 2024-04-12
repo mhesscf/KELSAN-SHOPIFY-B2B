@@ -170,7 +170,7 @@
           "2218a92d-0a39-4dc1-881a-8084314a4d79"
         ],
         "settings": {
-          "sticky_header": true,
+          "sticky_header": false,
           "full_width_header": false,
           "logo": "shopify:\/\/shop_images\/Footer_Logo.png",
           "logo_height": 77,
