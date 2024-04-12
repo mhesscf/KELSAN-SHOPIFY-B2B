@@ -3693,6 +3693,7 @@ body .mdc-ripple-surface:hover:before {
 	z-index: 100;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	height:90px;
 	background-color: {{ color_header_background }};
 	transition: padding 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -3943,12 +3944,12 @@ body .mdc-ripple-surface:hover:before {
 	flex-basis: 120px;
 }
 .site-header-logo a img{
-	max-width: 220px!important;
+	max-width: 150px!important;
 }
 
 @media (max-width: 930px){
 	.site-header-logo a img {
-		max-width: 180px!important;
+		max-width: 150px!important;
 	}
 }
 @media (max-width: 660px){
@@ -6219,7 +6220,7 @@ body .mdc-ripple-surface:hover:before {
 nav.breadcrumb {
 	max-width: 1400px;
 	margin: 10px auto;
-	padding: 0 25px;
+	padding: 10px 25px 0 25px;
 }
 .productgrid--outer-head{
 	 max-width: 1400px;
@@ -25510,6 +25511,11 @@ button.payment-blue.button:hover span {background:#303e48;}
 
 #shopify-section-static-announcement{
 margin-top: 180px;
+}
+@media (max-width: 1129px){
+	#shopify-section-static-announcement{
+		margin-top: 130px;
+	}
 }
 {% comment %}
 ======== Minification ========

@@ -71,7 +71,7 @@ jQuery(document).ready(function($){
 
 
     if (document.cookie.indexOf("AlertClosed") >= 0) {
-        $('#shopify-section-static-announcement').hide();
+        $('#shopify-section-static-announcement #alert-bar').hide();
     }
 
     $('#alert-bar .close').on('click', function(){
@@ -83,7 +83,7 @@ jQuery(document).ready(function($){
         now.setTime(expireTime);
         document.cookie = "AlertClosed=yes; expires=" + now.toGMTString() + "; path=/";
          */
-        $('#shopify-section-static-announcement').hide();
+        $('#shopify-section-static-announcement #alert-bar').hide();
         //console.log(document.cookie);
     });
 
