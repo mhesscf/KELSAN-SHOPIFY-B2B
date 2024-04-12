@@ -1524,6 +1524,29 @@ jQuery(document).ready(function($){
             }, "500");
         });
     }, "500");
+
+    $(document).ready(function() {
+        var lastScrollTop = 0;
+
+        $(window).scroll(function() {
+            var currentScroll = $(this).scrollTop();
+            if (currentScroll < 95) {
+                // Scroll down, hide the header
+                $('.site-header').removeClass('site-header-sticky--scrolled').addClass('site-header-nav--open').css({"position": "fixed", "top": "0"});
+                //$('#shopify-section-static-announcement').css({"margin-top": "0"});
+            } else if (currentScroll > lastScrollTop) {
+                // Scroll down, hide the header
+                $('.site-header').removeClass('site-header-sticky--scrolled').addClass('site-header-nav--open').css({"position": "fixed", "top": "-200px"});
+                //$('#shopify-section-static-announcement').css({"margin-top": "85px"});
+            } else {
+                // Scroll up, show the header and make it sticky
+                $('.site-header').addClass('site-header-sticky--scrolled').removeClass('site-header-nav--open').css({"position": "fixed", "top": "0"});
+                //$('#shopify-section-static-announcement').css({"margin-top": "85px"});
+            }
+            lastScrollTop = currentScroll;
+        });
+    });
+
 });
 
 
