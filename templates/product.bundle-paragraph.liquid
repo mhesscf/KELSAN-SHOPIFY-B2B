@@ -21,7 +21,11 @@
         <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '100x1000' | img_tag: product.featured_image.alt }}</a>
     </td>
     <td class="inbundle-content">
-
+        {% if product.metafields.plytix.short_title %}
+            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.metafields.plytix.short_title }}</a></div>
+        {% else %}
+            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }}</a></div>
+        {% endif %}
         <div class="inbundle-desc">
             {% if product.metafields.plytix.packaged_free_product %}
                 {% assign fgtotal = 0 %}
@@ -41,10 +45,5 @@
 
             {{ product.metafields.plytix.bundle_description }}<br/>{{ fgtotaltext }}
         </div>
-        {% if product.metafields.plytix.short_title %}
-            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.metafields.plytix.short_title }}</a></div>
-        {% else %}
-            <div class="inbundle-title" data-bundle-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }}</a></div>
-        {% endif %}
     </td>
     </tr></table>
