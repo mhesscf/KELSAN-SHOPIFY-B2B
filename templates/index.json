@@ -137,6 +137,7 @@
         },
         "banner_fLBUa3": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/tax-day-special-2024-homepage-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/tax-day-special-2024-homepage-800x427.jpg",
