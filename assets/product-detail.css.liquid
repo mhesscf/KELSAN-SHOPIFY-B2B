@@ -336,10 +336,13 @@
   float:left;
 }
 .product-single-techtip .tech-image{
-  width:30%;
-  float:right;
-  padding-top:90px;
-  padding-bottom:30px;
+  position: absolute;
+  bottom:0;
+  {% comment %}right:0;{% endcomment %}
+  left:70%
+}
+.product-single-techtip .tech-image img {
+  max-height: 400px;
 }
 
 @media (max-width: 679px) {
