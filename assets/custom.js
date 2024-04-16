@@ -1526,22 +1526,35 @@ jQuery(document).ready(function($){
     }, "500");
 
     $(document).ready(function() {
+
+        $('.site-header-menu-toggle').on('click', function(e){
+            if($(this).hasClass("active")){
+                $(this).removeClass("active")
+                $('.site-header').removeClass('site-header-nav--open');
+            }else{
+                $(this).addClass("active")
+                $('.site-header').addClass('site-header-nav--open');
+            }
+        });
         var lastScrollTop = 0;
 
         $(window).scroll(function() {
             var currentScroll = $(this).scrollTop();
             if (currentScroll < 120) {
                 // Scroll down, hide the header
+                console.log("test1");
                 $(".top-menu-wrapper").show();
                 $('.site-header').addClass('site-header-nav--open').removeClass('site-header-sticky--scrolled').css({"position": "fixed", "top": "0"});
                 //$('#shopify-section-static-announcement').css({"margin-top": "0"});
             } else if (currentScroll > lastScrollTop) {
                 // Scroll down, hide the header
+                console.log("test2");
                 $(".top-menu-wrapper").hide();
                 $('.site-header').removeClass('site-header-nav--open').removeClass('site-header-sticky--scrolled').css({"position": "fixed", "top": "-200px"});
                 //$('#shopify-section-static-announcement').css({"margin-top": "85px"});
             } else {
                 // Scroll up, show the header and make it sticky
+                console.log("test3");
                 $(".top-menu-wrapper").hide();
                 $('.site-header').addClass('site-header-sticky--scrolled').removeClass('site-header-nav--open').css({"position": "fixed", "top": "0"});
                 //$('#shopify-section-static-announcement').css({"margin-top": "85px"});
@@ -1549,6 +1562,7 @@ jQuery(document).ready(function($){
             lastScrollTop = currentScroll;
         });
     });
+
 
 });
 
