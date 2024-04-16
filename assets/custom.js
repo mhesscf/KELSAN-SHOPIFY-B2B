@@ -1530,9 +1530,9 @@ jQuery(document).ready(function($){
 
         $(window).scroll(function() {
             var currentScroll = $(this).scrollTop();
-            if (currentScroll < 95) {
+            if (currentScroll < 120) {
                 // Scroll down, hide the header
-                $('.site-header').removeClass('site-header-sticky--scrolled').addClass('site-header-nav--open').css({"position": "fixed", "top": "0"});
+                $('.site-header').addClass('site-header-nav--open').removeClass('site-header-sticky--scrolled').css({"position": "fixed", "top": "0"});
                 //$('#shopify-section-static-announcement').css({"margin-top": "0"});
             } else if (currentScroll > lastScrollTop) {
                 // Scroll down, hide the header
