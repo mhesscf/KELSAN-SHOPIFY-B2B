@@ -795,7 +795,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       </div>
     </div>
     {% if pdiscontinued == false %}
-      <div class="approve-contain"></div>
+      <div class="approve-contain"><div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img src="{{ 'approve-logo-sm.png' | file_img_url  }}" alt="Approve Logo" /></a></div></div>
     {% endif %}
 
     <div data-payment-terms-reference style="display: none;">
@@ -1074,7 +1074,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       </div>
     </div>
     {% if pdiscontinued == false %}
-      <div class="approve-contain"></div>
+      <div class="approve-contain"><div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img src="{{ 'approve-logo-sm.png' | file_img_url  }}" alt="Approve Logo" /></a></div></div>
     {% endif %}
 {% comment %}end of bundle logic -----------------------------------------------------------------------------------{% endcomment %}
 {% endif %}
