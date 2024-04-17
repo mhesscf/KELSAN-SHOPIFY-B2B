@@ -23,11 +23,10 @@
         },
         "71ea2eaa-3b3a-4aa9-b752-787ed97ad793": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/crk-5638548-bogo-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/crk-5638548-bogo-mobile-banner.jpg",
-            "link": "\/products\/clarke-ca60-24b-boost-automatic-floor-scrubber-14x24-inch-head",
+            "banner-lg": "shopify:\/\/shop_images\/tennant-e5-bogo-promo-desktop-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/tennant-e5-bogo-promo-mobile-banner.jpg",
+            "link": "\/products\/tennant-e5-electric-self-contained-carpet-extractor",
             "coupon-code": ""
           }
         }
