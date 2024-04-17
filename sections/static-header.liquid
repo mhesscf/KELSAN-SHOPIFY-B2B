@@ -51,11 +51,46 @@
 {% endstyle %}
 <div class="top-menu-wrapper">
   <div class="top-menu-container">
-    <ul>
-      {% for link in linklists.top-menu.links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
+    <div class="top-menu-welcome">
+
+      {%- if customer -%}
+        {%- assign sf_customer = 0 -%}
+        {%- for tag in customer.tags -%}
+          {%- if tag == "SuperFreak" or tag == "superfreak" -%}
+            {%- assign sf_customer = 1 -%}
+            {% break %}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if sf_customer == 1 -%}
+          <a href="/pages/superfreak"><img src="{{ 'superfreak-logo-sm.jpg' | file_img_url  }}" alt="SuperFreak Link" /></a>
+          Welcome, {{ customer.name }}! (<a href="/account/logout/" class="logout">Logout</a>)
+        {%- elsif customer.name != "" -%}
+          Welcome, {{ customer.name }}! (<a href="/account/logout/" class="logout">Logout</a>)
+        {%- else -%}
+          Welcome to CleanFreak.com
+        {%- endif -%}
+      {%- else -%}
+        Welcome to CleanFreak.com
+      {%- endif -%}
+
+
+
+    </div>
+    <div class="top-menu-links">
+      <ul>
+        {% for link in linklists.top-menu.links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+          {% if cart.total_price > 100000 %}
+            <li class="approve-quicklink"><a href="/pages/financing-options">Financing</a></li>
+          {% else %}
+            <li class="approve-quicklink"><a href="/pages/financing-options">Financing</a></li>
+          {%- endif -%}
+        </li>
+
+      </ul>
+    </div>
   </div>
 </div>
 <div
