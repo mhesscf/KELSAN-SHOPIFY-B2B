@@ -63,6 +63,9 @@
         border-radius: 20px;
         background-color: #fff;
     }
+    .form-store-info .contact-form{
+        display:none !important
+    }
 	.form-store-info .contact-form input{
         height: 50px;
         border: 1px solid #979797;
@@ -231,6 +234,7 @@
                         z-index:10;
                     }
                     .form-store-info form,
+                    .form-store-info .container .grid .one-half .cu-custom-form,
                     .form-store-info .container .grid .one-half .problem-form{
                         background-color: {{ setting.colors_section_secondary_background }};
                         padding: 50px;
@@ -242,11 +246,13 @@
                     }
 
                     .contact-form,
+                    .cu-custom-form,
                     .problem-form{
                         position:absolute;
                         right: 20000px;
                     }
                     .contact-form.formshow,
+                    .cu-custom-form.formshow,
                     .problem-form.formshow{
                         position:relative;
                         right: 0px;
@@ -258,18 +264,18 @@
                             $('.form-tab').removeClass('highlight');
                             $(this).addClass('highlight');
                             if($(this).hasClass('contact-tab')){
-                                $('.contact-form').addClass('formshow');
+                                $('.cu-custom-form').addClass('formshow');
                                 $('.problem-form').removeClass('formshow');
                             }else if($(this).hasClass('problem-tab')){
-                                $('.contact-form').removeClass('formshow');
+                                $('.cu-custom-form').removeClass('formshow');
                                 $('.problem-form').addClass('formshow');
                             }
                         });
 
                         setTimeout(() => {
-                            $('.contact-form').addClass('formshow');
+                            $('.cu-custom-form').addClass('formshow');
                             $('.problem-form').removeClass('formshow');
-                        }, 300);
+                        }, 600);
 
                     });
                 </script>
@@ -402,6 +408,25 @@
                     </div>
                 {% endform %}
 
+
+
+                <div class="cu-custom-form formshow">
+                    {%- assign websiteurl = shop.name -%}
+                    {%- if websiteurl == 'CeanFreak.com' or websiteurl == 'CleanFreak - DEV' -%}
+                        <div id="wufoo-ptkyh920e73pld"> Fill out my <a href="https://jbutchpti.wufoo.com/forms/ptkyh920e73pld">online form</a>. </div> <script type="text/javascript"> var ptkyh920e73pld; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'ptkyh920e73pld', 'autoResize':true, 'height':'782', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { ptkyh920e73pld = new WufooForm(); ptkyh920e73pld.initialize(options); ptkyh920e73pld.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                    {%- elsif websiteurl == 'AirMovers.com' or websiteurl == 'AirMovers - Dev' -%}
+                        <div id="wufoo-pcx4f0ckomgo"> Fill out my <a href="https://jbutchpti.wufoo.com/forms/pcx4f0ckomgo">online form</a>. </div> <script type="text/javascript"> var pcx4f0ckomgo; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'pcx4f0ckomgo', 'autoResize':true, 'height':'663', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { pcx4f0ckomgo = new WufooForm(); pcx4f0ckomgo.initialize(options); pcx4f0ckomgo.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                    {%- elsif websiteurl == 'CarpetExtractors.com' or websiteurl == 'CarpetExtractors - Dev' -%}
+                        <div id="wufoo-pm4vvvl0cv86lp"> Fill out my <a href="https://jbutchpti.wufoo.com/forms/pm4vvvl0cv86lp">online form</a>. </div> <script type="text/javascript"> var pm4vvvl0cv86lp; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'pm4vvvl0cv86lp', 'autoResize':true, 'height':'782', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { pm4vvvl0cv86lp = new WufooForm(); pm4vvvl0cv86lp.initialize(options); pm4vvvl0cv86lp.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                    {%- elsif websiteurl == 'FloorBuffers.com' or websiteurl == 'FloorBuffers - Dev' -%}
+                        <div id="wufoo-p1qn26m20ub9gn9"> Fill out my <a href="https://jbutchpti.wufoo.com/forms/p1qn26m20ub9gn9">online form</a>. </div> <script type="text/javascript"> var p1qn26m20ub9gn9; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'p1qn26m20ub9gn9', 'autoResize':true, 'height':'782', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { p1qn26m20ub9gn9 = new WufooForm(); p1qn26m20ub9gn9.initialize(options); p1qn26m20ub9gn9.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                    {%- elsif websiteurl == 'FloorScrubbers.com' or websiteurl == 'FloorScrubbers - Dev' -%}
+                        <div id="wufoo-p1d9s8up08cyrf9"> Fill out my <a href="https://jbutchpti.wufoo.com/forms/p1d9s8up08cyrf9">online form</a>. </div> <script type="text/javascript"> var p1d9s8up08cyrf9; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'p1d9s8up08cyrf9', 'autoResize':true, 'height':'782', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { p1d9s8up08cyrf9 = new WufooForm(); p1d9s8up08cyrf9.initialize(options); p1d9s8up08cyrf9.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                    {%- else -%}
+                        <div id="wufoo-ptkyh920e73pld"> Fill out my <a href="https://jbutchpti.wufoo.com/forms/ptkyh920e73pld">online form</a>. </div> <script type="text/javascript"> var ptkyh920e73pld; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'ptkyh920e73pld', 'autoResize':true, 'height':'782', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { ptkyh920e73pld = new WufooForm(); ptkyh920e73pld.initialize(options); ptkyh920e73pld.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                    {%- endif -%}
+
+                </div>
                 <div class="problem-form">
                     <p>We’re sorry to hear you’ve bumped into a problem with your cleaning equipment. Fill out this form to request service support and watch your inbox for a confirmation email. Our technicians will follow up with your request within seven business days.</p>
                     <hr>
