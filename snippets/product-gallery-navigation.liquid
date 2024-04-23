@@ -79,7 +79,7 @@
         data-media-type="{{ media.media_type }}"
         {% if mediaSize < 0 %} style="display:none;" {% endif %}
       >
-        <span class="product-gallery--media-thumbnail-img-wrapper {{ media.media_type }}-type " tabindex="-1">
+        <span class="product-gallery--media-thumbnail-img-wrapper {{ media.media_type }}-type ">
           {% if media.media_type == 'video' or media.media_type == 'external_video' %}
             {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
             <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
@@ -124,7 +124,7 @@
                 data-media="{{ orgCounter }}"
                 data-media-type="video"
         >
-          <span class="product-gallery--media-thumbnail-img-wrapper video-type" tabindex="-1">
+          <span class="product-gallery--media-thumbnail-img-wrapper video-type">
               {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
             <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
             <img src="{{ videoimg }}" alt="Product Video {{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
@@ -160,7 +160,7 @@
                 data-media="{{ orgCounter }}"
                 data-media-type="video"
         >
-          <span class="product-gallery--media-thumbnail-img-wrapper video-type" tabindex="-1">
+          <span class="product-gallery--media-thumbnail-img-wrapper video-type">
               {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
             <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
             <img src="{{ videoimg }}" alt="Youtube External Video {{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
