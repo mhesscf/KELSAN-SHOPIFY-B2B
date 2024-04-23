@@ -10349,11 +10349,13 @@ algoliaShopify.externals = function (e) {
             }), _ = f.getLabelProps(i({state: p, props: t.getLabelProps({})}, r)), O = v("button", {
                 class: n.submitButton,
                 type: "submit",
+                ariaLabel: "Search Submit",
                 title: h.submitButtonTitle,
                 children: [(0, s.SearchIcon)({environment: o})]
             }), j = v("label", i({class: n.label, children: [O]}, _)), P = v("button", {
                 class: n.clearButton,
                 type: "reset",
+                ariaLabel: "Search Reset",
                 title: h.clearButtonTitle,
                 children: [(0, s.ClearIcon)({environment: o})]
             }), w = v("div", {class: n.loadingIndicator, children: [(0, s.LoadingIcon)({environment: o})]}),
