@@ -107,7 +107,7 @@
 {%- assign element = 'li' -%}
 
 <section class="{{ classes | strip_newlines }}" id="freq-product-{{ product.id }}" data-product-item data-product-quickshop-url="{{ product_link }}" >
-  <input type="checkbox" class="freq-check" {% unless has_variants %}checked{% endunless %}>
+  <input type="checkbox" class="freq-check" {% unless has_variants %}checked{% endunless %} aria-label="Include {{ product_title | escape }}" >
   <div class="productitem" data-product-item-content>
 
     <div class="productitem__container">
