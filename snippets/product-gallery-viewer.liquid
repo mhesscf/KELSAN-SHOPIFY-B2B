@@ -278,6 +278,7 @@
   {% assign image_count = product.media | where: "media_type", "image" | size %}
   {% if image_count > 0 and gallery_click_to_zoom != 'disabled' %}
     <button
+    tabindex="-1"
       class="
         product-gallery--expand
         {% if gallery_click_to_zoom == 'desktop' %}expand--hide-mobile{% endif %}
@@ -285,11 +286,11 @@
       "
       data-gallery-expand aria-haspopup="true"
     >
-      <span class="click-text" tabindex="-1">
+      <span class="click-text">
         {% render 'icon-library', id: 'icon-zoom' %}
         {{ 'product.general.zoom' | t }}
       </span>
-      <span class="tap-text" tabindex="-1">
+      <span class="tap-text">
         {% render 'icon-library', id: 'icon-tap' %}
         {{ 'product.general.zoomTapMobile' | t }}
       </span>
