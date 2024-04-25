@@ -165,7 +165,8 @@
   {% comment %}
     Try to guess the alt text based off the image if none is provided.
   {% endcomment %}
-  {% assign rimg_alt = alt | escape %}
+  {% assign rimg_alt = alt | escape | append: ' Thumbnail' %}
+
 
   {% comment %}
     Define a URL template. We use this to generate exact-size URLs in JS.
