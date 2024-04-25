@@ -271,7 +271,12 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {% endif %}
 
     {% if isSpecial == false %}
-      <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+      {% if product.metafields.plytix.tiered_pricing_dollar_off != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank %}
+        <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off }}" />
+      {% else %}
+        <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
+    {% endif %}
+
     {% endif %}
     <variant-selection
             {% if variant_selection_id != blank %}id="{{ variant_selection_id }}"{% endif %}
@@ -295,7 +300,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           <input type="hidden" name="properties[Status]" value="{{ stockStatusNote }}" />
         {% endif %}
         {% if isSpecial == false %}
-          <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
+          {% if selected_variant.metafields.plytix.tiered_pricing_dollar_off != blank and selected_variant.metafields.plytix.tiered_pricing_dollar_off != blank %}
+            <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}:{{ selected_variant.metafields.plytix.tiered_pricing_dollar_off }}" />
+          {% else %}
+            <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
+          {% endif %}
         {% endif %}
         {% if pstep > 1 %}
           <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
@@ -323,7 +332,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {% endif %}
         {% endif %}
         {% if isSpecialSelectVar == false %}
-          <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
+          {% if selected_variant.metafields.plytix.tiered_pricing_dollar_off != blank and selected_variant.metafields.plytix.tiered_pricing_dollar_off != blank %}
+            <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}:{{ selected_variant.metafields.plytix.tiered_pricing_dollar_off }}" />
+          {% else %}
+            <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
+          {% endif %}
         {% endif %}
 
         {% comment %}<input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />{% endcomment %}
@@ -482,264 +495,296 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {% for variant in product.variants %}
 
           {% if variant.metafields.plytix.tiered_pricing != blank and pdiscontinued == false and isSpecial == false %}
-            {% comment %}{% assign pprice = product.price | money_without_currency %}{% endcomment %}
-            {% comment %}{% assign pprice = pprice | remove: ","  %}{% endcomment %}
-            {% comment %}{% assign pprice = pprice | plus:0 %}{% endcomment %}
 
-            {% assign pprice = variant.price %}
+            {% if variant.metafields.plytix.tiered_pricing_dollar_off != blank %}
+              {% assign pprice = variant.price | divided_by: 100.00 %}
+              <div class="discount-info-wrap-v2 dollaroff var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                <div class="discount-info-wrap-v2-header">Quantity Discounts</div>
+                <div class="discount-table">
+                  <div class="col first">
+                    <div class="row row1">Quantity</div>
+                    <div class="row row2">Discounts</div>
+                    <div class="row row3">Price</div>
+                  </div>
 
-
-            <div class="discount-info-wrap-v2 var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-              <div class="discount-info-wrap-v2-header">Quantity Discounts</div>
-              <div class="discount-table">
-                <div class="col first">
-                  <div class="row row1">Quantity</div>
-                  <div class="row row2">Discounts</div>
-                  <div class="row row3">Price</div>
-                </div>
-
-                {% if variant.metafields.plytix.tiered_pricing == '2|4|6' %}
-                    {% assign discount = pprice | times: 0.02 %}
-                        {% assign tierPrice = pprice | minus: discount %}
-                        <div class="col">
-                          <div class="row row1">2+</div>
-                          <div class="row row2">2%<span> off</span></div>
-                          <div class="row row3">{{ tierPrice | money }}</div>
-                        </div>
-                    {% assign discount = pprice | times: 0.04 %}
-                        {% assign tierPrice = pprice | minus: discount %}
-                        <div class="col">
-                          <div class="row row1">4+</div>
-                          <div class="row row2">4%<span> off</span></div>
-                          <div class="row row3">{{ tierPrice | money }}</div>
-                        </div>
-                    {% assign discount = pprice | times: 0.06 %}
-                        {% assign tierPrice = pprice | minus: discount %}
-                        <div class="col">
-                          <div class="row row1">6+</div>
-                          <div class="row row2">6%<span> off</span></div>
-                          <div class="row row3">{{ tierPrice | money }}</div>
-                        </div>
-
-
-                  {% elsif variant.metafields.plytix.tiered_pricing == '2|4|6|12' %}
-                    {% assign discount = pprice | times: 0.03 %}
-                        {% assign tierPrice = pprice | minus: discount %}
-                        <div class="col">
-                          <div class="row row1">2+</div>
-                          <div class="row row2">3%<span> off</span></div>
-                          <div class="row row3">{{ tierPrice | money }}</div>
-                        </div>
-                    {% assign discount = pprice | times: 0.06 %}
-                        {% assign tierPrice = pprice | minus: discount %}
-                        <div class="col">
-                          <div class="row row1">4+</div>
-                          <div class="row row2">6%<span> off</span></div>
-                          <div class="row row3">{{ tierPrice | money }}</div>
-                        </div>
-                    {% assign discount = pprice | times: 0.09 %}
-                        {% assign tierPrice = pprice | minus: discount %}
-                        <div class="col">
-                          <div class="row row1">6+</div>
-                          <div class="row row2">9%<span> off</span></div>
-                          <div class="row row3">{{ tierPrice | money }}</div>
-                        </div>
-                  {% assign discount = pprice | times: 0.12 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">12+</div>
-                        <div class="row row2">12%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-
-                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|10|20' %}
-                  {% assign discount = pprice | times: 0.05 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">3+</div>
-                        <div class="row row2">5%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.10 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">6+</div>
-                        <div class="row row2">10%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.15 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">10+</div>
-                        <div class="row row2">15%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.20 %}
-                    {% assign tierPrice = pprice | minus: discount %}
+                  {% assign tierArr = variant.metafields.plytix.tiered_pricing | split: '|' %}
+                  {% assign positionCount = 1 %}
+                  {% for tierNum in tierArr %}
+                    {% assign totalSaved = variant.metafields.plytix.tiered_pricing_dollar_off | times: positionCount %}
                     <div class="col">
-                      <div class="row row1">20+</div>
-                      <div class="row row2">20%<span> off</span></div>
-                      <div class="row row3">{{ tierPrice | money }}</div>
+                      <div class="row row1">{{ tierNum }}+</div>
+                      <div class="row row2">{{ totalSaved | times: 100 | money }}<span> off</span></div>
+                      <div class="row row3">{{ pprice | minus: totalSaved | times: 100 | money }}</div>
                     </div>
+                    {% assign positionCount = positionCount | plus: 1 %}
+                  {% endfor %}
 
-                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|12|24' %}
-                  {% assign discount = pprice | times: 0.05 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">3+</div>
-                        <div class="row row2">5%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.10 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">6+</div>
-                        <div class="row row2">10%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.15 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">12+</div>
-                        <div class="row row2">15%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.20 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">24+</div>
-                        <div class="row row2">20%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
+                </div>
+              </div>
 
-                {% elsif variant.metafields.plytix.tiered_pricing == '10|25|50' %}
-                  {% assign discount = pprice | times: 0.10 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">10+</div>
-                        <div class="row row2">10%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.20 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">25+</div>
-                        <div class="row row2">20%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.30 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">50+</div>
-                        <div class="row row2">30%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
+            {% else %}
+              {% comment %}old percent off way{% endcomment %}
 
-                {% elsif variant.metafields.plytix.tiered_pricing == '6|12|24' %}
-                  {% assign discount = pprice | times: 0.05 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">6+</div>
-                        <div class="row row2">5%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.10 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">12+</div>
-                        <div class="row row2">10%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.20 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">24+</div>
-                        <div class="row row2">20%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
+              {% comment %}{% assign pprice = product.price | money_without_currency %}{% endcomment %}
+              {% comment %}{% assign pprice = pprice | remove: ","  %}{% endcomment %}
+              {% comment %}{% assign pprice = pprice | plus:0 %}{% endcomment %}
+
+              {% assign pprice = variant.price %}
 
 
-                {% elsif variant.metafields.plytix.tiered_pricing == '6|10|20' %}
-                  {% assign discount = pprice | times: 0.06 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">6+</div>
-                        <div class="row row2">6%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.12 %}
-                      {% assign tierPrice = pprice | minus: discount %}
-                      <div class="col">
-                        <div class="row row1">10+</div>
-                        <div class="row row2">12%<span> off</span></div>
-                        <div class="row row3">{{ tierPrice | money }}</div>
-                      </div>
-                  {% assign discount = pprice | times: 0.18 %}
+              <div class="discount-info-wrap-v2 var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                <div class="discount-info-wrap-v2-header">Quantity Discounts</div>
+                <div class="discount-table">
+                  <div class="col first">
+                    <div class="row row1">Quantity</div>
+                    <div class="row row2">Discounts</div>
+                    <div class="row row3">Price</div>
+                  </div>
+
+                  {% if variant.metafields.plytix.tiered_pricing == '2|4|6' %}
+                      {% assign discount = pprice | times: 0.02 %}
+                          {% assign tierPrice = pprice | minus: discount %}
+                          <div class="col">
+                            <div class="row row1">2+</div>
+                            <div class="row row2">2%<span> off</span></div>
+                            <div class="row row3">{{ tierPrice | money }}</div>
+                          </div>
+                      {% assign discount = pprice | times: 0.04 %}
+                          {% assign tierPrice = pprice | minus: discount %}
+                          <div class="col">
+                            <div class="row row1">4+</div>
+                            <div class="row row2">4%<span> off</span></div>
+                            <div class="row row3">{{ tierPrice | money }}</div>
+                          </div>
+                      {% assign discount = pprice | times: 0.06 %}
+                          {% assign tierPrice = pprice | minus: discount %}
+                          <div class="col">
+                            <div class="row row1">6+</div>
+                            <div class="row row2">6%<span> off</span></div>
+                            <div class="row row3">{{ tierPrice | money }}</div>
+                          </div>
+
+
+                    {% elsif variant.metafields.plytix.tiered_pricing == '2|4|6|12' %}
+                      {% assign discount = pprice | times: 0.03 %}
+                          {% assign tierPrice = pprice | minus: discount %}
+                          <div class="col">
+                            <div class="row row1">2+</div>
+                            <div class="row row2">3%<span> off</span></div>
+                            <div class="row row3">{{ tierPrice | money }}</div>
+                          </div>
+                      {% assign discount = pprice | times: 0.06 %}
+                          {% assign tierPrice = pprice | minus: discount %}
+                          <div class="col">
+                            <div class="row row1">4+</div>
+                            <div class="row row2">6%<span> off</span></div>
+                            <div class="row row3">{{ tierPrice | money }}</div>
+                          </div>
+                      {% assign discount = pprice | times: 0.09 %}
+                          {% assign tierPrice = pprice | minus: discount %}
+                          <div class="col">
+                            <div class="row row1">6+</div>
+                            <div class="row row2">9%<span> off</span></div>
+                            <div class="row row3">{{ tierPrice | money }}</div>
+                          </div>
+                    {% assign discount = pprice | times: 0.12 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">12+</div>
+                          <div class="row row2">12%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+
+                  {% elsif variant.metafields.plytix.tiered_pricing == '3|6|10|20' %}
+                    {% assign discount = pprice | times: 0.05 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">3+</div>
+                          <div class="row row2">5%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.10 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">6+</div>
+                          <div class="row row2">10%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.15 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">10+</div>
+                          <div class="row row2">15%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.20 %}
                       {% assign tierPrice = pprice | minus: discount %}
                       <div class="col">
                         <div class="row row1">20+</div>
-                        <div class="row row2">18%<span> off</span></div>
+                        <div class="row row2">20%<span> off</span></div>
                         <div class="row row3">{{ tierPrice | money }}</div>
                       </div>
 
-                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|12' %}
-                  {% assign discount = pprice | times: 0.05 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="col">
-                    <div class="row row1">3+</div>
-                    <div class="row row2">5%<span> off</span></div>
-                    <div class="row row3">{{ tierPrice | money }}</div>
-                  </div>
-                  {% assign discount = pprice | times: 0.10 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="col">
-                    <div class="row row1">6+</div>
-                    <div class="row row2">10%<span> off</span></div>
-                    <div class="row row3">{{ tierPrice | money }}</div>
-                  </div>
-                  {% assign discount = pprice | times: 0.15 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="col">
-                    <div class="row row1">12+</div>
-                    <div class="row row2">15%<span> off</span></div>
-                    <div class="row row3">{{ tierPrice | money }}</div>
-                  </div>
+                  {% elsif variant.metafields.plytix.tiered_pricing == '3|6|12|24' %}
+                    {% assign discount = pprice | times: 0.05 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">3+</div>
+                          <div class="row row2">5%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.10 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">6+</div>
+                          <div class="row row2">10%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.15 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">12+</div>
+                          <div class="row row2">15%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.20 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">24+</div>
+                          <div class="row row2">20%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
 
-                {% elsif variant.metafields.plytix.tiered_pricing == '3|6|10' %}
-                  {% assign discount = pprice | times: 0.05 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="col">
-                    <div class="row row1">3+</div>
-                    <div class="row row2">5%<span> off</span></div>
-                    <div class="row row3">{{ tierPrice | money }}</div>
-                  </div>
-                  {% assign discount = pprice | times: 0.10 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="col">
-                    <div class="row row1">6+</div>
-                    <div class="row row2">10%<span> off</span></div>
-                    <div class="row row3">{{ tierPrice | money }}</div>
-                  </div>
-                  {% assign discount = pprice | times: 0.15 %}
-                  {% assign tierPrice = pprice | minus: discount %}
-                  <div class="col">
-                    <div class="row row1">10+</div>
-                    <div class="row row2">15%<span> off</span></div>
-                    <div class="row row3">{{ tierPrice | money }}</div>
-                  </div>
+                  {% elsif variant.metafields.plytix.tiered_pricing == '10|25|50' %}
+                    {% assign discount = pprice | times: 0.10 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">10+</div>
+                          <div class="row row2">10%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.20 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">25+</div>
+                          <div class="row row2">20%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.30 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">50+</div>
+                          <div class="row row2">30%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+
+                  {% elsif variant.metafields.plytix.tiered_pricing == '6|12|24' %}
+                    {% assign discount = pprice | times: 0.05 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">6+</div>
+                          <div class="row row2">5%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.10 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">12+</div>
+                          <div class="row row2">10%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.20 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">24+</div>
+                          <div class="row row2">20%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+
+
+                  {% elsif variant.metafields.plytix.tiered_pricing == '6|10|20' %}
+                    {% assign discount = pprice | times: 0.06 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">6+</div>
+                          <div class="row row2">6%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.12 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">10+</div>
+                          <div class="row row2">12%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+                    {% assign discount = pprice | times: 0.18 %}
+                        {% assign tierPrice = pprice | minus: discount %}
+                        <div class="col">
+                          <div class="row row1">20+</div>
+                          <div class="row row2">18%<span> off</span></div>
+                          <div class="row row3">{{ tierPrice | money }}</div>
+                        </div>
+
+                  {% elsif variant.metafields.plytix.tiered_pricing == '3|6|12' %}
+                    {% assign discount = pprice | times: 0.05 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="col">
+                      <div class="row row1">3+</div>
+                      <div class="row row2">5%<span> off</span></div>
+                      <div class="row row3">{{ tierPrice | money }}</div>
+                    </div>
+                    {% assign discount = pprice | times: 0.10 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="col">
+                      <div class="row row1">6+</div>
+                      <div class="row row2">10%<span> off</span></div>
+                      <div class="row row3">{{ tierPrice | money }}</div>
+                    </div>
+                    {% assign discount = pprice | times: 0.15 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="col">
+                      <div class="row row1">12+</div>
+                      <div class="row row2">15%<span> off</span></div>
+                      <div class="row row3">{{ tierPrice | money }}</div>
+                    </div>
+
+                  {% elsif variant.metafields.plytix.tiered_pricing == '3|6|10' %}
+                    {% assign discount = pprice | times: 0.05 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="col">
+                      <div class="row row1">3+</div>
+                      <div class="row row2">5%<span> off</span></div>
+                      <div class="row row3">{{ tierPrice | money }}</div>
+                    </div>
+                    {% assign discount = pprice | times: 0.10 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="col">
+                      <div class="row row1">6+</div>
+                      <div class="row row2">10%<span> off</span></div>
+                      <div class="row row3">{{ tierPrice | money }}</div>
+                    </div>
+                    {% assign discount = pprice | times: 0.15 %}
+                    {% assign tierPrice = pprice | minus: discount %}
+                    <div class="col">
+                      <div class="row row1">10+</div>
+                      <div class="row row2">15%<span> off</span></div>
+                      <div class="row row3">{{ tierPrice | money }}</div>
+                    </div>
 
 
 
 
 
-                {% endif %}
+                  {% endif %}
 
 
 
 
 
+                </div>
               </div>
-            </div>
+            {% endif %}
+
           {% endif %}
       {% endfor %}
           {% comment %} Quantity Discount Tieres END{% endcomment %}
