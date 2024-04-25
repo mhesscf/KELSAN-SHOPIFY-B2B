@@ -32,6 +32,57 @@
   {%- endcapture -%}
 {% endif %}
 
+
+{%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+<script>
+  {% comment %}csr tracking for dev only (load via gtm on frontend){% endcomment %}
+  // var name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+  setTimeout(() => {
+  // #Get the IP-Adress and add customer field
+  $.get('http://jsonip.com/', function(r){
+  var csrCookie = "";
+  var cookiesArray = document.cookie.split(";");
+  var cookieName = "csrtracked"
+  // Iterate through the array to find the cookie with the specified name
+  for (var i = 0; i < cookiesArray.length; i++) {
+  var cookie = cookiesArray[i].trim(); // Remove leading and trailing spaces
+
+  // Check if this cookie is the one we're looking for
+  if (cookie.startsWith(cookieName + "=")) {
+  // Extract and return the cookie value
+  var csrCookie = cookie.substring(cookieName.length + 1);
+  }
+  }
+
+  if(r.ip == "135.131.203.150" || r.ip == "74.87.116.150" || csrCookie != ""){
+  var trackingCode = '<div id="csrpop" class="poppin"><div class="csr-inner"><strong>Please enter who is taking this order:</strong><p className="cart-attribute__field"><label>CSR Taking Order</label><br><select style="margin-top:5px;" id="csr-taking-order" name="attributes[CSR Taking Order]"><option value="NA">NA</option><option value="Mitch">Mitch</option><option value="Tim">Tim</option><option value="Taylor">Taylor</option></select><div class="fakebtn">Ok</div></p></div></div>';
+  $('.cart-checkout').append(trackingCode);
+
+  if(csrCookie != ""){
+  $("#csrpop select").val(csrCookie);
+  }
+
+
+  $('#csrpop .fakebtn').on('click', function(e){
+  $('#csrpop').removeClass("poppin").addClass("notpoppin");
+  $('.fakebtn').hide();
+  });
+
+  $('#csrpop select').on('change', function() {
+  var currentDate = new Date();
+  var expirationDate = new Date(currentDate.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+  var expires = expirationDate.toUTCString();
+  document.cookie = "csrtracked="+this.value+"; expires=" + expires + "; path=/";;
+
+  });
+
+  }
+  })
+  }, "1000");
+  </script>
+{%- endif -%}
+{% comment %}end csr tracking on dev{% endcomment %}
+
 <script
   type="application/json"
   data-section-type="static-cart"
