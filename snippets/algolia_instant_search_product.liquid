@@ -73,14 +73,14 @@
             finalmessage += '<span class="status-desc main-notice">See Product Page for Stock Status Details</span>';
             finalmessage += '<span class="status-time"></span>';
             finalmessage += '<details>';
-            finalmessage += '<summary onClick="stoplink(event)" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
+            finalmessage += '<summary onClick="stoplink(event)" tabindex="0" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
             finalmessage += '<p>This product has multiple item offerings. See product page for the stock status of each individual item.</p>';
             finalmessage += '</details>';
         }else if(dropship == "true") {
             finalmessage += '<span class="status-desc main-notice">Ships Direct from Manufacturer</span>';
             finalmessage += '<span class="status-time">May Have Extended Lead Times</span>';
             finalmessage += '<details>';
-            finalmessage += '<summary onClick="stoplink(event)" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
+            finalmessage += '<summary onClick="stoplink(event)" tabindex="0" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
             finalmessage += '<p>We do not currently stock this item. It will ship directly from the manufacturer to you for the quickest delivery time possible. Current inventory levels at the manufacturer are unknown.</p>';
             finalmessage += '</details>';
         }else if(im == "middleware-fulfillment" && inventory < 1){
