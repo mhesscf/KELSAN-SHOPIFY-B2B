@@ -14176,6 +14176,36 @@ nav.breadcrumb a.homebread:hover span,
 	text-align:center;
 	padding-bottom:15px;
 }
+
+#csrpop.poppin{
+	width: 335px;
+	position:fixed;
+	left: calc(50% - 155px);
+{% comment %}top: calc(50% - 200px);{% endcomment %}
+	top:260px;
+	border-radius: 10px;
+	background:#fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 45px 20px rgba(0,0,0,0.14);
+	border:1px solid black;
+	z-index:999;
+	padding:20px;
+	text-align:center;
+}
+#csrpop.poppin .fakebtn{
+	color:white;
+	padding:5px;
+	width:100px;
+	cursor:pointer;
+	background-color:#d74018;
+	border-radius: 10px;
+	margin:auto
+}
+#csrpop.notpoppin .csr-inner{
+	margin-top:15px;
+}
+
+
 .ng-scope[ng-if="field.FieldType=='address'"] div:first-child {
 
 }
