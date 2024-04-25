@@ -10,10 +10,20 @@
             "cat_title": "Deals & Bundles",
             "cat_text": "Check out our different deals on clearance items, refurbished machines, and gold medal winning equipment. We've pre-built several different packages if you don't know where to start."
           }
+        },
+        "banner_jmhUmt": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/spring-demo-sale-2024-desktop-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/spring-demo-sale-2024-mobile-banner.jpg",
+            "link": "\/collections\/demoed-refurbished-equipment",
+            "coupon-code": ""
+          }
         }
       },
       "block_order": [
-        "1b022c65-58d9-4861-acb1-078b9ee03995"
+        "1b022c65-58d9-4861-acb1-078b9ee03995",
+        "banner_jmhUmt"
       ],
       "settings": {
         "enable_autoplay": true,
