@@ -118,7 +118,7 @@
         "c8d60898-cd90-44f7-94d0-208ad004e7c2"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Bundles"
+        "cfpssectionheading": "Featured Packages"
       }
     },
     "main": {
@@ -262,7 +262,7 @@
         "22403f29-5aaa-4ff9-9770-8a38672cf28b"
       ],
       "settings": {
-        "block-title": "Deals & Bundles by Type"
+        "block-title": "Deals & Packages by Type"
       }
     },
     "9dc75e18-4f87-43e1-97b8-9261434ef62c": {
@@ -338,7 +338,7 @@
         "98bf2d36-120b-4554-9c05-70dc5453f3bf"
       ],
       "settings": {
-        "block-title": "Deals & Bundles Resources"
+        "block-title": "Resources"
       }
     }
   },
