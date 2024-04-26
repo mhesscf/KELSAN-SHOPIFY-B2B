@@ -218,25 +218,9 @@
         margin: 0;
         color: {{ settings.color_text_medium  }};
     }
-    .category-slider-wrapper .slide-arrow{
-        width: 41px;
-        height: 41px;
-        border: 2px solid {{ settings.color_slide_arrow_background }};
-        background-color: {{ settings.color_slide_arrow_background }};
-        color: #fff;
-        border-radius: 50%;
-        font-size: 23px;
-        cursor: pointer;
-        transition: all 0.4s ease-in-out;
-    }
     .category-slider-wrapper .slide-arrow svg{
         position: relative;
         top: 2px;
-    }
-    .category-slider-wrapper .slide-arrow:hover{
-        border: 2px solid {{ settings.color_button_hover }};
-        background-color: {{ settings.color_button_hover }};
-        color: #fff;
     }
     .category-slider-wrapper .slide-arrow.prev-arrow{
         position: absolute;
@@ -248,9 +232,6 @@
         position: absolute;
         bottom: 0;
         right: 0;
-    }
-    .category-slider-wrapper .slide-arrow.slick-disabled{
-        opacity: .75;
     }
     @media (max-width: 650px){
         .category-slider-wrapper .slides {
@@ -313,7 +294,7 @@
                 {% endfor %}
             </div>
 
-        <div id="cat-slide-arrows-{{ section.id }}" class="cat-slide-arrows"></div>
+        <div id="cat-slide-arrows-{{ section.id }}" class="round-arrows cat-slide-arrows"></div>
     </div>
 </section>
 {% javascript %}
