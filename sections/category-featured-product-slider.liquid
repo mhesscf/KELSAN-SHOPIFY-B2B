@@ -113,21 +113,8 @@
         margin-top: 20px;
     }
 	.f-cat-wrapper .slide-arrows .slide-arrow{
-        width: 45px;
-        height: 45px;
-        text-align: center;
-        display: block;
-        background-color: {{ settings.color_slide_arrow_background }};
-        color: #fff;
-        border: 0;
-		line-height: 45px;
-		font-size: 22px;
-        border-radius: 50%;
-        cursor: pointer;
+		margin-top:-5px;
     }
-	.f-cat-wrapper .slide-arrows .slide-arrow:hover{
-		background-color: {{ settings.color_slide_arrow_background | color_darken: 10 }};
-	}
 	.f-cat-wrapper .slide-arrows .slide-arrow.prev-arrow{
         margin-right: 10px;
     }
@@ -181,7 +168,7 @@
                 {% endcase %}
             {% endfor %}
         </div>
-        <div class="slide-arrows"></div>
+        <div class="round-arrows slide-arrows"></div>
     </div>
 </section>
 {% schema %}

@@ -213,17 +213,6 @@
 	background-color: {{ settings.color_button_hover }};
 	color: {{ settings.color_button_text }};
 	}
-	.top-product-showcase .slide-arrow{
-	width: 41px;
-	height: 41px;
-	border: 2px solid {{ settings.color_slide_arrow_background }};
-	background-color: {{ settings.color_slide_arrow_background }};
-	color: #fff;
-	border-radius: 50%;
-	font-size: 23px;
-	cursor: pointer;
-	transition: all 0.4s ease-in-out;
-	}
 	.top-product-showcase .slide-arrow svg{
 	position: relative;
 	top: 1px;
@@ -231,11 +220,6 @@
 	.top-product-showcase .slide-arrow svg{
 	position: relative;
 	top: 2px;
-	}
-	.top-product-showcase .slide-arrow:hover{
-	border: 2px solid {{ settings.color_button_hover }};
-	background-color: {{ settings.color_button_hover }};
-	color: #fff;
 	}
 	.top-product-showcase .slide-arrow.prev-arrow{
 	position: absolute;
@@ -247,9 +231,6 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	}
-	.top-product-showcase .slide-arrow.slick-disabled{
-	opacity:.75;
 	}
 	.top-product-showcase .showcase-row{
 	display: flex;
@@ -596,7 +577,7 @@
 						{% endcase %}
 					{% endfor %}
 				</div>
-				<div id="top-slide-arrows" class="cat-slide-arrows-{{ section.id }}"></div>
+				<div id="top-slide-arrows" class="round-arrows cat-slide-arrows-{{ section.id }}"></div>
 			</div>
 			<div class="showcase-product">
 				<h2 class="showcase-top-title">Top Rated <br>Product</h2>
