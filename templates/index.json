@@ -137,6 +137,7 @@
         },
         "banner_J8FYNy": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/earth-day-pad-sale-2024-1400x350-banner.jpg",
             "banner-sm": "shopify:\/\/shop_images\/earth-day-pad-sale-2024-800x427.jpg",
