@@ -83,6 +83,19 @@ https://creativecommons.org/licenses/by/4.0/
 .past-due-block .past-due-item.today .past-due-title{
     background-color:orange;
 }
+.past-due-block .past-due-item.launchtoday{
+    border:1px solid green;
+}
+.past-due-block .past-due-item.launchtoday .past-due-title{
+    background-color:green;
+}
+.past-due-block .past-due-item.launchprep{
+    border:1px solid lime;
+}
+.past-due-block .past-due-item.launchprep .past-due-title{
+    background-color:lime;
+    color:black;
+}
 .sales-promo-container .promo-list{
     float:left;
     width:50%;
@@ -280,16 +293,28 @@ margin-top:76px;
 
     {% comment %}Past Due{% endcomment %}
     {%- assign hasPastDue = 0 -%}
-    <h2>Past Due</h2>
     <div class="past-due-block">
         {%- for promo in promoObjSorted -%}
             {%- if promo.closed_out != true -%}
                 {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
                 {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
 
+                {% assign formatedstart = promo.start_date_time | date: "%m/%d/%Y" %}
                 {% assign formatedEnd = promo.end_date_time | date: "%m/%d/%Y" %}
                 {% assign formatedNow = "now" | date: "%m/%d/%Y" %}
-                {%- if formatedEnd == formatedNow-%}
+                {% assign formatedTomorrow = "now" | date: "%s" | plus: 86400 | date: "%m/%d/%Y" %}
+
+                {%- if formatedstart == formatedNow -%}
+                    <div class="past-due-item launchtoday">
+                        <div class="past-due-title"><strong>Launch Today:</strong> {{  promo.title | escape }} ({{  promo.start_date_time | date: "%m/%d/%Y" }})</div>
+                        <div class="past-due-notes">{{ promo.notes | escape }}</div>
+                    </div>
+                {%- elsif formatedstart == formatedTomorrow  -%}
+                    <div class="past-due-item launchprep">
+                        <div class="past-due-title prep"><strong>Needs Prepping:</strong> {{  promo.title | escape }} (Launch Tomorrow Today: {{  promo.start_date_time | date: "%m/%d/%Y" }})</div>
+                        <div class="past-due-notes">{{ promo.notes | escape }}</div>
+                    </div>
+                {%- elsif formatedEnd == formatedNow-%}
                     <div class="past-due-item today">
                         <div class="past-due-title">{{  promo.title | escape }} (Ending Today: {{  promo.end_date_time | date: "%m/%d/%Y" }})</div>
                         <div class="past-due-notes">{{ promo.notes | escape }}</div>
