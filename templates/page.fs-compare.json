@@ -28,7 +28,7 @@
     "b75c15c7-77d5-4f80-a007-8d06ec2d1abc": {
       "type": "dynamic-custom-liquid",
       "settings": {
-        "custom_liquid": "{%- assign chartproducts = \"CPL-DURA-17C,TPL-DURA-18HD,CPL-DURA-20B,IES-20-SLND,APL-20B-115A-XC,IES-14E-CF,CRK-CLARKE430C,VIP-50000226,VIP-50000243,VIP-56384810,NFA-56384686\" -%}\n{%-\n\trender 'fs-compare-chart-logic',\n\tchartproducts: chartproducts\n-%}"
+        "custom_liquid": "{%- assign chartproducts = \"CPL-DURA-17C,TPL-DURA-18HD,CPL-DURA-20B,IES-20-SLND,APL-20B-115A-XC,IES-14-E-CF,CRK-CLARKE430C,VIP-50000226,VIP-50000243,VIP-56384810,NFA-56384686\" -%}\n{%-\n\trender 'fs-compare-chart-logic',\n\tchartproducts: chartproducts\n-%}"
       }
     }
   },
