@@ -33,12 +33,6 @@
             "product": "floor-stripping-protective-boots"
           }
         },
-        "7b1ea68b-91e2-495c-baef-1bbbebd9888c": {
-          "type": "slide",
-          "settings": {
-            "product": "polyethylene-clear-shoe-covers"
-          }
-        },
         "054ced96-c2bc-4b4b-9325-4c41abbc8064": {
           "type": "slide",
           "settings": {
@@ -66,7 +60,6 @@
       },
       "block_order": [
         "2e1d617a-f322-4506-8f78-34b176528555",
-        "7b1ea68b-91e2-495c-baef-1bbbebd9888c",
         "054ced96-c2bc-4b4b-9325-4c41abbc8064",
         "73b090e4-0ba5-4a9a-9e9f-961d0a790e2f",
         "b166a864-d6a2-4d8a-9fe3-c38844758a68",
