@@ -1249,41 +1249,49 @@ jQuery(document).ready(function($){
     }
 
     //Link to bundles from parent popup (code duplicated in algolia_instant_search.js)
-
+    var bndpopCounter = 0;
     $( ".bnd-pop" ).click(function( e ) {
         e.stopPropagation();
-        const handleArr = $(this).data('bndhandle').split(", ");
-        $('.popup-container .content').append("<h2 style='margin-top:0;'>Package Options</h2>");
-        var counter = 0;
-        if($(this).hasClass("bnd-pop-2col")){
-            var max = 2;
-            $('.popup-container .content').append("<div class='package-option-container contain-2col'></div>");
-        }else{
-            var max = 1;
-            $('.popup-container .content').append("<div class='package-option-container'></div>");
-        }
-        $.each ( handleArr, function (indexes, handle){
-            if(handle != "undefined" && handle != "" && counter < max){
-                var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=bundle-pop`;
-                $.get(fetchUrl).then(response => {
-                    if (response) {
-                        $('.popup-container .content .package-option-container').append(response);
-                    }else{
-                        console.log('product not returned');
-                    }
-                })
-                counter++
-            }
-        });
-
-        setTimeout(() => {
+        if(bndpopCounter == 0){
+            bndpopCounter++
+            const handleArr = $(this).data('bndhandle').split(", ");
+            $('.popup-container .content').append("<h2 style='margin-top:0;'>Package Options</h2>");
+            var counter = 0;
             if($(this).hasClass("bnd-pop-2col")){
-                $('.popup-container').addClass('widepop');
+                var max = 2;
+                $('.popup-container .content').append("<div class='package-option-container contain-2col'></div>");
+            }else{
+                var max = 1;
+                $('.popup-container .content').append("<div class='package-option-container'></div>");
             }
-            $('.popup-container').removeClass('hidden');
-            $(".pop-grad").removeClass('hidden');
-        }, "1500");
+            if($(this).hasClass("bnd-pop-extra")){
+                const currHandle = $(this).data('currhandle')
+                var randomNum = Math.floor(Math.random() * 100);
+                $('.popup-container .content').append("<div class='package-extra'><a href='/products/"+currHandle+"?"+randomNum+"#bundles'>View More <i class='fa-solid fa-arrow-right-to-bracket'></i></a></div>");
+            }
+            $.each ( handleArr, function (indexes, handle){
+                if(handle != "undefined" && handle != "" && counter < max){
+                    var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=bundle-pop`;
+                    $.get(fetchUrl).then(response => {
+                        if (response) {
+                            $('.popup-container .content .package-option-container').append(response);
+                        }else{
+                            console.log('product not returned');
+                        }
+                    })
+                    counter++
+                }
+            });
 
+            setTimeout(() => {
+                if($(this).hasClass("bnd-pop-2col")){
+                    $('.popup-container').addClass('widepop');
+                }
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                bndpopCounter = 0;
+            }, "500");
+        }
     });
 
     // Cart upsell popup
