@@ -158,17 +158,13 @@
                     e.stopPropagation();
                 });
 
-//Link to bundles from parent popup (code duplicated in algolia_instant_search.js)
-
-                $( ".bnd-pop" ).click(function( e ) {
+                //Link to bundles from parent popup (code duplicated in algolia_instant_search.js)
+                var bndpopCounter = 0;
+                $( ".bnd-pop-algolia" ).click(function( e ) {
                     e.stopPropagation();
-                    var totalLoad = $('.popup-container .package-col').length;
-                    $('.popup-container .content .package-option-container').html('');
-                    if ($(this).hasClass('loading') == false) {
-                        $(this).addClass('loading');
-                        // alert($(this).hasClass('loading'));
+                    if(bndpopCounter == 0){
+                        bndpopCounter++
                         const handleArr = $(this).data('bndhandle').split(", ");
-                        var maxPackage = handleArr.length;
                         $('.popup-container .content').append("<h2 style='margin-top:0;'>Package Options</h2>");
                         var counter = 0;
                         if($(this).hasClass("bnd-pop-2col")){
@@ -178,11 +174,14 @@
                             var max = 1;
                             $('.popup-container .content').append("<div class='package-option-container'></div>");
                         }
+                        if($(this).hasClass("bnd-pop-extra")){
+                            const currHandle = $(this).data('currhandle')
+                            var randomNum = Math.floor(Math.random() * 100);
+                            $('.popup-container .content').append("<div class='package-extra'><a href='/products/"+currHandle+"?"+randomNum+"#bundles'>View More <i class='fa-solid fa-arrow-right-to-bracket'></i></a></div>");
+                        }
                         $.each ( handleArr, function (indexes, handle){
-                            if(handle != "undefined" && handle != "" && counter < max && totalLoad <= handleArr.length){
-                                //cachbreaker
-                                var randomnumb = Math.floor(Math.random() * 1000);
-                                var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=bundle-pop&`+randomnumb;
+                            if(handle != "undefined" && handle != "" && counter < max){
+                                var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=bundle-pop`;
                                 $.get(fetchUrl).then(response => {
                                     if (response) {
                                         $('.popup-container .content .package-option-container').append(response);
@@ -200,13 +199,11 @@
                             }
                             $('.popup-container').removeClass('hidden');
                             $(".pop-grad").removeClass('hidden');
-                            setTimeout(() => {
-                            $(this).removeClass('loading');
-                            }, "1000");
-                        }, "300");
-
-                    };
+                            bndpopCounter = 0;
+                        }, "500");
+                    }
                 });
+
                 //watch for changes in dropdown to reload stuff
                 const target = document.querySelector('.ais-facet-dropdown-container');
                 const observer = new MutationObserver(function(mutations) {
