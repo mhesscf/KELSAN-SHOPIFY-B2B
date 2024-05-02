@@ -118,8 +118,22 @@
 	.f-cat-wrapper .slide-arrows .slide-arrow.prev-arrow{
         margin-right: 10px;
     }
-	@media (max-width: 640px){
-
+	.f-cat-wrapper .isspecial{
+		border:3px solid #fdb913;
+		border-radius: 30px;
+	}
+	.f-cat-wrapper .deal-rib{
+		position:absolute;
+		top:-24px;
+		left: -24px;
+		width:100px;
+		z-index:100;
+	}
+	@media (max-width: 720px){
+		.f-cat-wrapper .deal-rib{
+		top:-20px;
+		left: -20px;
+		}
 	}
 {% endstyle %}
 {%- capture section_type -%}

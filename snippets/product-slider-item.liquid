@@ -39,6 +39,44 @@
   {% endif %}
 {% endfor %}
 {% if product %}
+
+  {% assign specialclass = "" %}
+  {% if product.selected_or_first_available_variant.compare_at_price %}
+    {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+      {% assign specialSavings = product.compare_at_price | minus: product.price %}
+      {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
+      {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' %}
+      {% assign nowTimestamp = 'now' | date: '%s' %}
+
+      {% assign enddiffSeconds = endDate | minus: nowTimestamp %}
+      {% assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 %}
+
+      {% assign startdiffSeconds = startDate | minus: nowTimestamp %}
+      {% assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 %}
+
+      {% if enddiffDays >= -1 and  startdiffDays < 0 %}
+        {% assign specialclass = "isspecial" %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+  {% if product.metafields.plytix.custom_hot_deal_message %}
+
+    {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' %}
+    {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' %}
+    {% assign nowTimestamp = 'now' | date: '%s' %}
+    {% assign enddiffSeconds = endDate | minus: nowTimestamp %}
+    {% assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 %}
+
+    {% assign startdiffSeconds = startDate | minus: nowTimestamp %}
+    {% assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 %}
+
+    {% if enddiffDays >= -1 and  startdiffDays < 0 %}
+      {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+        {% assign specialclass = "isspecial" %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
   {% assign compare_at_price = product.compare_at_price %}
   {% assign compare_at_price_varies = product.compare_at_price_varies %}
   {% assign price = product.price %}
@@ -238,7 +276,7 @@
 {% endif %}
 
 <section class="{{ classes | strip_newlines }}" data-product-item data-product-quickshop-url="{{ product_link }}" {% if recently_viewed %}data-recently-viewed-card{% endif %}>
-  <div class="productitem" data-product-item-content>
+  <div class="productitem {{ specialclass }}" data-product-item-content>
     {% comment %}Inject template-allows-compare begin{% endcomment %}
     {% assign template_allows_compare = settings.enable_product_compare %}
     {% if template.name == 'cart' %}
@@ -256,6 +294,10 @@
 
     <div class="productitem__container">
       {{ recently_viewed_header }}
+
+      {% if specialclass != "" %}
+        <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
+      {% endif %}
 
       <div class="productitem__image-container">
         <a
