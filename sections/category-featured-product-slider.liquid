@@ -8,8 +8,11 @@
 		margin-right: auto;
 		margin-left: auto;
         overflow: hidden;
+		position:relative;
 	}
-	
+	.template-index .f-cat-slider__content{
+		margin:20px auto 40px auto;
+	}
 	.f-cat-slider__content ul.slick-dots {
 		float: left;
 		padding-left: 0;
@@ -135,6 +138,10 @@
 		left: -20px;
 		}
 	}
+	.f-cat-wrapper .slider-fade-r{
+	 padding-top:25px;
+	}
+
 {% endstyle %}
 {%- capture section_type -%}
 	static-collection-slider
@@ -183,6 +190,7 @@
             {% endfor %}
         </div>
         <div class="round-arrows slide-arrows"></div>
+		<div class="slider-fade-r"></div>
     </div>
 </section>
 {% schema %}

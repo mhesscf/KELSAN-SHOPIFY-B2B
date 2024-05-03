@@ -9,6 +9,7 @@
         width: 1400px;
         margin: auto;
         max-width: 90%;
+        position: relative;
     }
     .category-slider-wrapper .featured-slider-title{
         text-align: left;
@@ -281,7 +282,7 @@
 <section class="category-slider-wrapper" data-section-id="{{ section.id }}">
     <div class="category-slider-wrapper__content container round-arrows">
         <div class="section-title-row">
-            <h2 class="featured-slider-title">{{ section.settings.featuredcollection }}</h2>
+            <h2 class="featured-slider-title"><span style="font-size:45px">Do Not use, use category featured slider instead</span> {{ section.settings.featuredcollection }}</h2>
             {% if section.settings.link_url != blank %}
                 <a class="category-link" href="{{ section.settings.link_url }}">{{ section.settings.link_text }} <i class="fa fa-arrow-right-long"></i> </a>
             {% endif %}
@@ -305,8 +306,10 @@
             </div>
 
         <div id="cat-slide-arrows-{{ section.id }}" class="round-arrows cat-slide-arrows"></div>
+        <div class="slider-fade-r">aaaaaaaaaa</div>
     </div>
 </section>
+{% comment %}
 {% javascript %}
 jQuery(document).ready(function($){
     $('.category-slider-wrapper .slides').slick({
@@ -346,6 +349,7 @@ jQuery(document).ready(function($){
     });
 });
 {% endjavascript %}
+{% endcomment %}
 {% schema %}
 {
     "name": "category-product-slider",

@@ -95,6 +95,39 @@ jQuery(document).ready(function($){
             $('#bbsTotal').text(pOnly);
         }, 1000);
     });
+
+    $('.top-product-showcase .product-showcase-slides').slick({
+        arrows: true,
+        autoplay: false,
+        dots: false,
+        fade: false,
+        infinite: false,
+//lazyLoad: 'ondemand',
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        appendArrows: $('#top-slide-arrows'),
+        prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
+        variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 960,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
+
     $('.product-slider').slick({
         arrows: false,
         autoplay: false,
@@ -164,35 +197,37 @@ jQuery(document).ready(function($){
     //was org       slidesToShow: 3,
     //         slidesToScroll: 2,
     //variableWidth: true,
-    $('.category-featured-slider').slick({
-        arrows: true,
-        autoplay: false,
-        dots: false,
-        infinite: false,
-        lazyLoad: 'ondemand',
-        slidesToShow: 5,
-        slidesToScroll: 3,
-        appendArrows: $('.f-cat-slider__content .slide-arrows'),
-        prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
-        variableWidth: true,
-        responsive: [
-            {
-                breakpoint: 960,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+    $( ".f-cat-wrapper" ).each(function() {
+        $(this).find('.category-featured-slider').slick({
+            arrows: true,
+            autoplay: false,
+            dots: false,
+            infinite: false,
+            lazyLoad: 'ondemand',
+            slidesToShow: 5,
+            slidesToScroll: 3,
+            appendArrows: $(this).find('.f-cat-slider__content .slide-arrows'),
+            prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
+            variableWidth: true,
+            responsive: [
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
                 }
-            },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    })
+            ]
+        })
+    });
 
     // equalize height
     var highestTitleBox = 0;
@@ -216,6 +251,16 @@ jQuery(document).ready(function($){
         }
     });
     $('.f-cat-slider__content .productgrid--item').height(highestBox);
+
+
+    // equalize height
+    var tileHighestTitleBox = 0;
+    var tileHighestBox = 0;
+
+    //Title Height (exclude frequently bought together)
+    var tileHighestBox = $('.f-cat-slider__content .rel-slider-item').first().height();
+
+    $('.f-cat-slider__content .slider-fade-r').height(tileHighestBox);
 
 
     $('.brand-slider').slick({
