@@ -380,8 +380,6 @@
           {% assign product_item_price = product.metafields.plytix.bundle_pricing %}
         {% endif %}
 
-
-
       <div class="productitem--info">
         {{ product_item_swatches }}
 
@@ -401,13 +399,6 @@
           </div>
         {% endif %}
 
-        {% unless product_compare %}
-          {% if settings.product_show_vendor and product.vendor != blank %}
-            <span class="productitem--vendor">
-              {{ product_vendor | link_to_vendor }}
-            </span>
-          {% endif %}
-        {% endunless %}
         {% if product.metafields.plytix.package_products != blank %}
           <div class="productitem__price">
             <div class="price__current">
@@ -428,9 +419,7 @@
             <span style="font-size:14px; line-height:36px;">View Price in Cart</span>
           {% endif %}
         {% endif %}
-        {% unless product_compare %}
 
-        {% endunless %}
         {% comment %}Start automatically added Judge.me widget{% endcomment %}
         {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
         {% comment %}End automatically added Judge.me widget{% endcomment %}
@@ -482,9 +471,6 @@
             {% assign quick_buy_text = 'product.buttons.sold_out' | t %}
             {% assign quick_buy_classes = quick_buy_classes | append: ' disabled' %}
           {% endunless %}
-
-
-
 
           {% comment %}Get stock status for logging in order at time of order --------------------------------------------------------------------{% endcomment %}
 
