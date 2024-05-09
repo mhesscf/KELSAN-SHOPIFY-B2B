@@ -24,63 +24,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_JckifQ": {
+      "type": "category-tabs",
       "blocks": {
-        "915ffbe5-2410-4f97-880f-9b306d80aed4": {
-          "type": "slide",
+        "tab_azdRqJ": {
+          "type": "tab",
           "settings": {
-            "product": "impact-white-black-3-shelf-janitorial-cart"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "58f5e659-aced-4b39-9962-1b2bf7a2f524": {
-          "type": "slide",
+        "tab_dCp4Ye": {
+          "type": "tab",
           "settings": {
-            "product": "pee-pod-urinal-cleaning-block"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "2dfdea3b-aeca-4295-90de-337363b5cef4": {
-          "type": "slide",
+        "tab_hGTPaK": {
+          "type": "tab",
           "settings": {
-            "product": "yellow-2-sided-wet-floor-sign"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "968af660-604a-4334-b3e2-cd121fbab17e": {
-          "type": "slide",
+        "tab_yLAKWa": {
+          "type": "tab",
           "settings": {
-            "product": "case-of-clorox-disinfecting-wipes"
-          }
-        },
-        "edab24fc-8004-4c97-a3e2-0cff273c5a37": {
-          "type": "slide",
-          "settings": {
-            "product": "scrubs-in-a-bucket-hand-towels"
-          }
-        },
-        "d349d61c-8949-4c1c-a412-f8bbada95d95": {
-          "type": "slide",
-          "settings": {
-            "product": "blue-general-use-microfiber-wipes"
-          }
-        },
-        "da287ef7-528f-4bb1-a730-bfd49a5b3aa5": {
-          "type": "slide",
-          "settings": {
-            "product": "door-pod-restroom-air-freshener"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "915ffbe5-2410-4f97-880f-9b306d80aed4",
-        "58f5e659-aced-4b39-9962-1b2bf7a2f524",
-        "2dfdea3b-aeca-4295-90de-337363b5cef4",
-        "968af660-604a-4334-b3e2-cd121fbab17e",
-        "edab24fc-8004-4c97-a3e2-0cff273c5a37",
-        "d349d61c-8949-4c1c-a412-f8bbada95d95",
-        "da287ef7-528f-4bb1-a730-bfd49a5b3aa5"
+        "tab_azdRqJ",
+        "tab_dCp4Ye",
+        "tab_hGTPaK",
+        "tab_yLAKWa"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -309,6 +294,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "915ffbe5-2410-4f97-880f-9b306d80aed4": {
+          "type": "slide",
+          "settings": {
+            "product": "impact-white-black-3-shelf-janitorial-cart"
+          }
+        },
+        "58f5e659-aced-4b39-9962-1b2bf7a2f524": {
+          "type": "slide",
+          "settings": {
+            "product": "pee-pod-urinal-cleaning-block"
+          }
+        },
+        "2dfdea3b-aeca-4295-90de-337363b5cef4": {
+          "type": "slide",
+          "settings": {
+            "product": "yellow-2-sided-wet-floor-sign"
+          }
+        },
+        "968af660-604a-4334-b3e2-cd121fbab17e": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-clorox-disinfecting-wipes"
+          }
+        },
+        "edab24fc-8004-4c97-a3e2-0cff273c5a37": {
+          "type": "slide",
+          "settings": {
+            "product": "scrubs-in-a-bucket-hand-towels"
+          }
+        },
+        "d349d61c-8949-4c1c-a412-f8bbada95d95": {
+          "type": "slide",
+          "settings": {
+            "product": "blue-general-use-microfiber-wipes"
+          }
+        },
+        "da287ef7-528f-4bb1-a730-bfd49a5b3aa5": {
+          "type": "slide",
+          "settings": {
+            "product": "door-pod-restroom-air-freshener"
+          }
+        }
+      },
+      "block_order": [
+        "915ffbe5-2410-4f97-880f-9b306d80aed4",
+        "58f5e659-aced-4b39-9962-1b2bf7a2f524",
+        "2dfdea3b-aeca-4295-90de-337363b5cef4",
+        "968af660-604a-4334-b3e2-cd121fbab17e",
+        "edab24fc-8004-4c97-a3e2-0cff273c5a37",
+        "d349d61c-8949-4c1c-a412-f8bbada95d95",
+        "da287ef7-528f-4bb1-a730-bfd49a5b3aa5"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "81b3f8ab-4122-466d-b45b-2375f44bc383": {
       "type": "dept-brands-area",
       "blocks": {
@@ -370,11 +414,12 @@
   },
   "order": [
     "d40a038f-aa25-4373-a2b7-118f38976c64",
-    "16636174067db7bd8c",
+    "category_tabs_JckifQ",
     "main",
     "static-recently-viewed",
     "9a1c3e17-0631-4079-8687-306e1e4abd89",
     "37e3cf01-87c6-4f24-8bbf-0f2f661fba61",
+    "16636174067db7bd8c",
     "81b3f8ab-4122-466d-b45b-2375f44bc383",
     "51948144-8659-4dea-891d-43d14912cccb"
   ]
