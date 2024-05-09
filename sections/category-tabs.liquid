@@ -84,10 +84,16 @@
 <script>
 	var firstclass = "{{ firstclass }}";
 	$('.cat-tab-item').click(function(e){
-		$('.cat-tab-item').removeClass('activetab');
-		var showClass = $(this).data('targetclass');
+		if($(this).hasClass('activetab')){
+			var showClass = firstclass;
+			$('.cat-tab-item').removeClass('activetab');
+			$('.cat-tab-item[data-targetclass="{{ firstclass }}"]').addClass('activetab');
+		}else{
+			var showClass = $(this).data('targetclass');
+			$('.cat-tab-item').removeClass('activetab');
+			$(this).addClass('activetab');
+		}
 
-		$(this).addClass('activetab');
 		$('.cat-tab-item').each(function () {
 			var allClass = $(this).data('targetclass');
 			if (showClass == firstclass){
