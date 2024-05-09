@@ -126,71 +126,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_WDMV9W": {
+      "type": "category-tabs",
       "blocks": {
-        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63": {
-          "type": "slide",
+        "tab_nTmHTB": {
+          "type": "tab",
           "settings": {
-            "product": "pressure-mower-with-hose-reel"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "0794dfe6-0cd9-4b57-8034-286788c703be": {
-          "type": "slide",
+        "tab_NpEqXG": {
+          "type": "tab",
           "settings": {
-            "product": "cleanfreak-cf2532k-3200-psi-gas-pressure-washer"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "f3606cea-e255-487e-88c7-13d61eb449c5": {
-          "type": "slide",
+        "tab_7NghiX": {
+          "type": "tab",
           "settings": {
-            "product": "12-inch-flat-surface-cleaning-attachment-for-ar-blue-maxx-series-pressure-washers"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "a52ddc10-c632-4062-984f-46a5db60712d": {
-          "type": "slide",
+        "tab_h3w8LK": {
+          "type": "tab",
           "settings": {
-            "product": "ar-blue-clean-blue-maxx-2300-psi-electric-pressure-washer"
-          }
-        },
-        "d1f28b57-89d6-4d7d-99fc-0abd0bc7059d": {
-          "type": "slide",
-          "settings": {
-            "product": "50-foot-pressure-washer-hose"
-          }
-        },
-        "13a3e250-821c-4d61-9caf-ca123461e51d": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-cf2730hv-heavy-duty-2700-psi-gas-pressure-washer"
-          }
-        },
-        "cbea0b31-a3ac-438a-82fc-67daff5fe73d": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer"
-          }
-        },
-        "ff0b32b6-7f80-4018-816b-258a14112ef7": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "product": "ar-blue-clean-ar675-2000-psi-electric-pressure-washer"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63",
-        "0794dfe6-0cd9-4b57-8034-286788c703be",
-        "f3606cea-e255-487e-88c7-13d61eb449c5",
-        "a52ddc10-c632-4062-984f-46a5db60712d",
-        "d1f28b57-89d6-4d7d-99fc-0abd0bc7059d",
-        "13a3e250-821c-4d61-9caf-ca123461e51d",
-        "cbea0b31-a3ac-438a-82fc-67daff5fe73d",
-        "ff0b32b6-7f80-4018-816b-258a14112ef7"
+        "tab_nTmHTB",
+        "tab_NpEqXG",
+        "tab_7NghiX",
+        "tab_h3w8LK"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -383,6 +360,73 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63": {
+          "type": "slide",
+          "settings": {
+            "product": "pressure-mower-with-hose-reel"
+          }
+        },
+        "0794dfe6-0cd9-4b57-8034-286788c703be": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-cf2532k-3200-psi-gas-pressure-washer"
+          }
+        },
+        "f3606cea-e255-487e-88c7-13d61eb449c5": {
+          "type": "slide",
+          "settings": {
+            "product": "12-inch-flat-surface-cleaning-attachment-for-ar-blue-maxx-series-pressure-washers"
+          }
+        },
+        "a52ddc10-c632-4062-984f-46a5db60712d": {
+          "type": "slide",
+          "settings": {
+            "product": "ar-blue-clean-blue-maxx-2300-psi-electric-pressure-washer"
+          }
+        },
+        "d1f28b57-89d6-4d7d-99fc-0abd0bc7059d": {
+          "type": "slide",
+          "settings": {
+            "product": "50-foot-pressure-washer-hose"
+          }
+        },
+        "13a3e250-821c-4d61-9caf-ca123461e51d": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-cf2730hv-heavy-duty-2700-psi-gas-pressure-washer"
+          }
+        },
+        "cbea0b31-a3ac-438a-82fc-67daff5fe73d": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer"
+          }
+        },
+        "ff0b32b6-7f80-4018-816b-258a14112ef7": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "product": "ar-blue-clean-ar675-2000-psi-electric-pressure-washer"
+          }
+        }
+      },
+      "block_order": [
+        "bb02c8b6-04c5-4d53-aa9f-ec684ed04b63",
+        "0794dfe6-0cd9-4b57-8034-286788c703be",
+        "f3606cea-e255-487e-88c7-13d61eb449c5",
+        "a52ddc10-c632-4062-984f-46a5db60712d",
+        "d1f28b57-89d6-4d7d-99fc-0abd0bc7059d",
+        "13a3e250-821c-4d61-9caf-ca123461e51d",
+        "cbea0b31-a3ac-438a-82fc-67daff5fe73d",
+        "ff0b32b6-7f80-4018-816b-258a14112ef7"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "864df9a0-435e-4cc2-9657-e4ee6d46a626": {
       "type": "dept-brands-area",
       "blocks": {
@@ -428,11 +472,12 @@
     "475144ee-1619-40db-8de5-a06451836ae0",
     "1663617398865396bc",
     "b7587dfe-01d4-43e5-bf53-5e0c58f9cabc",
-    "16636174067db7bd8c",
+    "category_tabs_WDMV9W",
     "main",
     "static-recently-viewed",
     "02508936-78e3-41da-b054-6e9ecca3b173",
     "6cc15e43-cf84-4807-a0fc-063958c2e890",
+    "16636174067db7bd8c",
     "864df9a0-435e-4cc2-9657-e4ee6d46a626",
     "aa50a5ae-5cfa-4ccf-b529-de813ef5d634"
   ]
