@@ -1,0 +1,156 @@
+{% style %}
+
+	.cat-tab__content{
+		max-width:1400px;
+		margin:auto;
+	}
+	.cat-tab__content .tabbed-area{
+		border-bottom: 1px solid {{ settings.color_product_desc_top_border }};
+		width:100%;
+		display:flex;
+	}
+	.cat-tab__content .tabbed-area .cat-tab-item{
+		border:1px solid white;
+		color:white;
+		background-color:{{ settings.color_slide_arrow_background }};
+		padding:10px;
+		font-size:16px;
+		line-height:16px;
+		cursor:pointer;
+		margin-bottom:-1px;
+		font-weight:bold;
+		text-align:center;
+	}
+	.cat-tab__content .tabbed-area .cat-tab-item:first-child {
+		border-top-left-radius:10px;
+		margin-left:22px;
+	}
+	.cat-tab__content .tabbed-area .cat-tab-item:last-child {
+		border-top-right-radius:10px;
+		border-right:0px solid {{ settings.color_product_desc_top_border }};
+	}
+	.cat-tab__content .tabbed-area .cat-tab-item.activetab{
+		background-color:white;
+		border:1px solid {{ settings.color_product_desc_top_border }};
+		border-bottom:1px solid white;
+		color: {{ settings.color_text }};
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		cursor: default;
+	}
+	@media (max-width: 479px){
+		.cat-tab__content .tabbed-area .cat-tab-item{
+			font-size:12px;
+			padding:5px
+		}
+		.cat-tab__content .tabbed-area .cat-tab-item:first-child{
+			margin-left:4px;
+		}
+	}
+{% endstyle %}
+{%- capture section_type -%}
+	static-tabs
+{%- endcapture -%}
+
+
+<script
+		type="application/json"
+		data-section-type="{{ section_type | strip }}"
+		data-section-id="{{ section.id }}"
+		data-section-data
+>
+
+</script>
+<section class="cat-tab-wrapper" data-section-id="{{ section.id }}">
+	<div class="cat-tab__content">
+		{% comment %}<h2 class="tab-title">{{ section.settings.tabheading }}</h2>{% endcomment %}
+		<div class="tabbed-area">
+			{% assign tabcount = 1 %}
+			{% assign firstclass = "" %}
+			{% for block in section.blocks %}
+				{% if tabcount == 1 %}
+					{% assign firstclass = block.settings.targetclass %}
+				{% endif %}
+				<div class="cat-tab-item {% if tabcount == 1 %}activetab{% endif %}" data-targetclass="{{ block.settings.targetclass }}">
+					{{ block.settings.name }}
+				</div>
+				{% assign tabcount = tabcount | plus: 1 %}
+			{% endfor %}
+		</div>
+	</div>
+</section>
+<div class="topcontain"></div>
+<script>
+	var firstclass = "{{ firstclass }}";
+	$('.cat-tab-item').click(function(e){
+		$('.cat-tab-item').removeClass('activetab');
+		var showClass = $(this).data('targetclass');
+
+		$(this).addClass('activetab');
+		$('.cat-tab-item').each(function () {
+			var allClass = $(this).data('targetclass');
+			if (showClass == firstclass){
+				//show all
+				$(allClass).show();
+			}else{
+				$(allClass).hide();
+			}
+		});
+		$(".dept-related").hide();
+		$(showClass).show();
+		if(showClass == ".category-types-v2" || showClass == firstclass ){
+			$(".dept-related").show();
+		}
+	});
+</script>
+
+
+{% schema %}
+{
+	"name": "category-tabs",
+	"class": "category-tabs",
+	"settings":[
+		{
+		"type": "text",
+		"label": "Tab Heading",
+		"id" : "tabheading"
+		},
+		{
+		"type": "text",
+		"label": "Background Color",
+		"id" : "bgcolor"
+		},
+		{
+		"type": "text",
+		"label": "Text Color",
+		"id" : "textcolor"
+		}
+	],
+	"blocks": [
+		{
+		"name": "Tab",
+		"type": "tab",
+		"settings": [
+			{
+			"id":"name",
+			"type":"text",
+			"label":"Tab Name"
+			},
+			{
+			"id":"targetclass",
+			"type":"text",
+			"label":"Target Class"
+			}
+		]
+		}
+	],
+	"presets": [
+		{
+		"category": "category-tabs",
+		"name": "Category Tabs",
+		"settings": {}
+		}
+	]
+}
+{% endschema %}
