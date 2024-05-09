@@ -24,63 +24,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_cqthRT": {
+      "type": "category-tabs",
       "blocks": {
-        "be79d157-8673-4aac-a299-8d64cd8d215e": {
-          "type": "slide",
+        "tab_KXp4EY": {
+          "type": "tab",
           "settings": {
-            "product": "trusted-clean-quench-wet-push-vacuum"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "0dfc1eda-a791-4763-9260-2a3752063f65": {
-          "type": "slide",
+        "tab_erQmy9": {
+          "type": "tab",
           "settings": {
-            "product": "lightweight-air-mover-fan-2800-cfm"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "e2c2bfa2-1650-4b9c-870e-f3830ba820b8": {
-          "type": "slide",
+        "tab_h3xFiH": {
+          "type": "tab",
           "settings": {
-            "product": "flood-pumper-portable-flood-extractor"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "29dc9d40-299f-411f-b551-0133b57e75fa": {
-          "type": "slide",
+        "tab_QLXiVx": {
+          "type": "tab",
           "settings": {
-            "product": "13-x-13-hepa-filter-for-xpower-pro-clean-mini-air-scrubbers"
-          }
-        },
-        "73c64b02-dc1a-4cb4-9615-a6ed70e50a13": {
-          "type": "slide",
-          "settings": {
-            "product": "lgr-7000xli-dehumidifier-by-dri-eaz"
-          }
-        },
-        "8f2605a0-89d3-4a2d-a91c-d7fcd500ea48": {
-          "type": "slide",
-          "settings": {
-            "product": "3m-n95-particulate-respirator-with-cool-flow-valve"
-          }
-        },
-        "1c8ab792-2eea-4e4f-b92f-892b8d274737": {
-          "type": "slide",
-          "settings": {
-            "product": "12-inch-sto-and-go-dri-eaz-air-scrubber-intake-ducting"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "be79d157-8673-4aac-a299-8d64cd8d215e",
-        "0dfc1eda-a791-4763-9260-2a3752063f65",
-        "e2c2bfa2-1650-4b9c-870e-f3830ba820b8",
-        "29dc9d40-299f-411f-b551-0133b57e75fa",
-        "73c64b02-dc1a-4cb4-9615-a6ed70e50a13",
-        "8f2605a0-89d3-4a2d-a91c-d7fcd500ea48",
-        "1c8ab792-2eea-4e4f-b92f-892b8d274737"
+        "tab_KXp4EY",
+        "tab_erQmy9",
+        "tab_h3xFiH",
+        "tab_QLXiVx"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -191,6 +176,65 @@
         "block-title": "Flood Remediation Products by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "be79d157-8673-4aac-a299-8d64cd8d215e": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-quench-wet-push-vacuum"
+          }
+        },
+        "0dfc1eda-a791-4763-9260-2a3752063f65": {
+          "type": "slide",
+          "settings": {
+            "product": "lightweight-air-mover-fan-2800-cfm"
+          }
+        },
+        "e2c2bfa2-1650-4b9c-870e-f3830ba820b8": {
+          "type": "slide",
+          "settings": {
+            "product": "flood-pumper-portable-flood-extractor"
+          }
+        },
+        "29dc9d40-299f-411f-b551-0133b57e75fa": {
+          "type": "slide",
+          "settings": {
+            "product": "13-x-13-hepa-filter-for-xpower-pro-clean-mini-air-scrubbers"
+          }
+        },
+        "73c64b02-dc1a-4cb4-9615-a6ed70e50a13": {
+          "type": "slide",
+          "settings": {
+            "product": "lgr-7000xli-dehumidifier-by-dri-eaz"
+          }
+        },
+        "8f2605a0-89d3-4a2d-a91c-d7fcd500ea48": {
+          "type": "slide",
+          "settings": {
+            "product": "3m-n95-particulate-respirator-with-cool-flow-valve"
+          }
+        },
+        "1c8ab792-2eea-4e4f-b92f-892b8d274737": {
+          "type": "slide",
+          "settings": {
+            "product": "12-inch-sto-and-go-dri-eaz-air-scrubber-intake-ducting"
+          }
+        }
+      },
+      "block_order": [
+        "be79d157-8673-4aac-a299-8d64cd8d215e",
+        "0dfc1eda-a791-4763-9260-2a3752063f65",
+        "e2c2bfa2-1650-4b9c-870e-f3830ba820b8",
+        "29dc9d40-299f-411f-b551-0133b57e75fa",
+        "73c64b02-dc1a-4cb4-9615-a6ed70e50a13",
+        "8f2605a0-89d3-4a2d-a91c-d7fcd500ea48",
+        "1c8ab792-2eea-4e4f-b92f-892b8d274737"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "08ded979-5db1-43ef-a4de-5ee9e726a941": {
       "type": "dept-brands-area",
       "blocks": {
@@ -261,10 +305,11 @@
   },
   "order": [
     "9d621745-33ec-4c85-a3f2-364c16055e46",
-    "16636174067db7bd8c",
+    "category_tabs_cqthRT",
     "main",
     "static-recently-viewed",
     "d4cd80ed-65b8-4c09-831d-ae5f95fd15ce",
+    "16636174067db7bd8c",
     "08ded979-5db1-43ef-a4de-5ee9e726a941",
     "6597d2a2-61d2-40ea-9485-10d3d400c602"
   ]
