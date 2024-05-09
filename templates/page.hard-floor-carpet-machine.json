@@ -24,6 +24,123 @@
         "slideshow_text_below_image": true
       }
     },
+    "category_tabs_HaAAdx": {
+      "type": "category-tabs",
+      "blocks": {
+        "tab_fhpVpA": {
+          "type": "tab",
+          "settings": {
+            "name": "Departments",
+            "targetclass": ".dept-category"
+          }
+        },
+        "tab_3XRFzy": {
+          "type": "tab",
+          "settings": {
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
+          }
+        },
+        "tab_F3i9cy": {
+          "type": "tab",
+          "settings": {
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
+          }
+        },
+        "tab_QzT6gE": {
+          "type": "tab",
+          "settings": {
+            "name": "Resources",
+            "targetclass": ".dept-resources"
+          }
+        }
+      },
+      "block_order": [
+        "tab_fhpVpA",
+        "tab_3XRFzy",
+        "tab_F3i9cy",
+        "tab_QzT6gE"
+      ],
+      "settings": {
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
+      }
+    },
+    "742eb16f-ac48-421d-bd2e-f867fe368979": {
+      "type": "dept-category-area",
+      "blocks": {
+        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/baseboard-edgers.jpg",
+            "title": "BaseBoard Edgers",
+            "url": "\/collections\/baseboard-edgers-portable-handheld-scrubbers"
+          }
+        },
+        "f05d75b2-7018-420b-9bfa-98b62fad2cf6": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carpet-extractors.jpg",
+            "title": "Carpet Extractors",
+            "url": "\/pages\/extractors"
+          }
+        },
+        "c787aac2-a892-4ec9-b1a2-72bb3672ebbb": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hard-floor-cleaning-machines.jpg",
+            "title": "Hard Floor Cleaning Machines",
+            "url": "\/pages\/hard-floor-cleaning-machines"
+          }
+        },
+        "8944d628-68f9-4791-9825-ebf7a34d90f5": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
+            "title": "Industrial Sweepers",
+            "url": "\/pages\/industrial-sweepers"
+          }
+        },
+        "b9b0224c-9eae-417a-8a13-428ddce56e19": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
+            "title": "Pump-up Dispenser & Trigger Sprayers",
+            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+          }
+        },
+        "8e103da5-5a77-4b14-b3a3-8facbcccea34": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/steam-cleaner.jpg",
+            "title": "Steam Cleaners",
+            "url": "\/collections\/steam-cleaners"
+          }
+        },
+        "36864348-c948-496d-b80e-c0a8c7b6297a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vertical-surface-cleaners.jpg",
+            "title": "Vertical Surface Cleaners",
+            "url": "\/collections\/vertical-surface-cleaners"
+          }
+        }
+      },
+      "block_order": [
+        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146",
+        "f05d75b2-7018-420b-9bfa-98b62fad2cf6",
+        "c787aac2-a892-4ec9-b1a2-72bb3672ebbb",
+        "8944d628-68f9-4791-9825-ebf7a34d90f5",
+        "b9b0224c-9eae-417a-8a13-428ddce56e19",
+        "8e103da5-5a77-4b14-b3a3-8facbcccea34",
+        "36864348-c948-496d-b80e-c0a8c7b6297a"
+      ],
+      "settings": {
+        "block-title": "Hard Floor & Carpet Machines by Type"
+      }
+    },
     "16636174067db7bd8c": {
       "type": "category-featured-product-slider",
       "blocks": {
@@ -136,79 +253,6 @@
         "enable_recently_viewed_products": true
       }
     },
-    "742eb16f-ac48-421d-bd2e-f867fe368979": {
-      "type": "dept-category-area",
-      "blocks": {
-        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/baseboard-edgers.jpg",
-            "title": "BaseBoard Edgers",
-            "url": "\/collections\/baseboard-edgers-portable-handheld-scrubbers"
-          }
-        },
-        "f05d75b2-7018-420b-9bfa-98b62fad2cf6": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-extractors.jpg",
-            "title": "Carpet Extractors",
-            "url": "\/pages\/extractors"
-          }
-        },
-        "c787aac2-a892-4ec9-b1a2-72bb3672ebbb": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hard-floor-cleaning-machines.jpg",
-            "title": "Hard Floor Cleaning Machines",
-            "url": "\/pages\/hard-floor-cleaning-machines"
-          }
-        },
-        "8944d628-68f9-4791-9825-ebf7a34d90f5": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
-            "title": "Industrial Sweepers",
-            "url": "\/pages\/industrial-sweepers"
-          }
-        },
-        "b9b0224c-9eae-417a-8a13-428ddce56e19": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
-            "title": "Pump-up Dispenser & Trigger Sprayers",
-            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
-          }
-        },
-        "8e103da5-5a77-4b14-b3a3-8facbcccea34": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/steam-cleaner.jpg",
-            "title": "Steam Cleaners",
-            "url": "\/collections\/steam-cleaners"
-          }
-        },
-        "36864348-c948-496d-b80e-c0a8c7b6297a": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vertical-surface-cleaners.jpg",
-            "title": "Vertical Surface Cleaners",
-            "url": "\/collections\/vertical-surface-cleaners"
-          }
-        }
-      },
-      "block_order": [
-        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146",
-        "f05d75b2-7018-420b-9bfa-98b62fad2cf6",
-        "c787aac2-a892-4ec9-b1a2-72bb3672ebbb",
-        "8944d628-68f9-4791-9825-ebf7a34d90f5",
-        "b9b0224c-9eae-417a-8a13-428ddce56e19",
-        "8e103da5-5a77-4b14-b3a3-8facbcccea34",
-        "36864348-c948-496d-b80e-c0a8c7b6297a"
-      ],
-      "settings": {
-        "block-title": "Hard Floor & Carpet Machines by Type"
-      }
-    },
     "7f5d1566-bccb-480a-80ac-d26728af74b6": {
       "type": "dept-brands-area",
       "blocks": {
@@ -310,10 +354,11 @@
   },
   "order": [
     "fe76ad0d-0220-4f99-b07f-392fc739c499",
+    "category_tabs_HaAAdx",
+    "742eb16f-ac48-421d-bd2e-f867fe368979",
     "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
-    "742eb16f-ac48-421d-bd2e-f867fe368979",
     "7f5d1566-bccb-480a-80ac-d26728af74b6",
     "8facf242-c15c-4bb5-9b7b-fa1ad5f4183a"
   ]
