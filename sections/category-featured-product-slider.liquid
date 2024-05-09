@@ -8,8 +8,11 @@
 		margin-right: auto;
 		margin-left: auto;
         overflow: hidden;
+		position:relative;
 	}
-	
+	.template-index .f-cat-slider__content{
+		margin:20px auto 40px auto;
+	}
 	.f-cat-slider__content ul.slick-dots {
 		float: left;
 		padding-left: 0;
@@ -81,8 +84,15 @@
 	display: inline-block;
 	margin-left: 5px;
 	}
+	.f-cat-slider__content .status-area,
 	.f-cat-slider__content .rel-slider-item .jdgm-widget.jdgm-widget{
 	margin-bottom:0px;
+	font-size:15px;
+	float:left;
+	}
+
+	.f-cat-slider__content .rel-slider-item .jdgm-prev-badge__text{
+		display:none !important;
 	}
 	.f-cat-slider__content .rel-slider-item .price__compare-at-visible-2{
 	display:none;
@@ -135,6 +145,10 @@
 		left: -20px;
 		}
 	}
+	.f-cat-wrapper .slider-fade-r{
+	 padding-top:25px;
+	}
+
 {% endstyle %}
 {%- capture section_type -%}
 	static-collection-slider
@@ -183,6 +197,7 @@
             {% endfor %}
         </div>
         <div class="round-arrows slide-arrows"></div>
+		<div class="slider-fade-r"></div>
     </div>
 </section>
 {% schema %}
