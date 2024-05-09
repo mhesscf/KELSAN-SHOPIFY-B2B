@@ -24,63 +24,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_WhG9er": {
+      "type": "category-tabs",
       "blocks": {
-        "339c16a2-1b31-4797-8b49-f4a047776d06": {
-          "type": "slide",
+        "tab_NcDpAq": {
+          "type": "tab",
           "settings": {
-            "product": "cleanfreak-low-foam-floor-cleaning-degreaser"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "f65b84f1-0a57-466d-a1e1-109c4f5c679f": {
-          "type": "slide",
+        "tab_te4Utc": {
+          "type": "tab",
           "settings": {
-            "product": "midlab-maxim-facility-plus-one-step-disinfectant-cleaner-and-deodorant"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "ca54e069-2daa-4600-9122-53d810ce2d0a": {
-          "type": "slide",
+        "tab_9gRBHY": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-all-purpose-spotter"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "82c0748c-ffcb-46f3-8b26-312480a17da7": {
-          "type": "slide",
+        "tab_EEeLLD": {
+          "type": "tab",
           "settings": {
-            "product": "trushot-mobile-dispensing-system-starter-pack"
-          }
-        },
-        "dcdaa8d5-96f4-41da-903f-e20d2e8338af": {
-          "type": "slide",
-          "settings": {
-            "product": "case-of-armor-all-original-protectant-28oz-spray-bottle"
-          }
-        },
-        "e451ff44-6d76-44de-8df6-5bb7078ab736": {
-          "type": "slide",
-          "settings": {
-            "product": "premium-foam-antibacterial-hand-wash-fresh-fruit-scent-ml-carton"
-          }
-        },
-        "59fe7eb1-31d1-4962-8f85-02ab2736d175": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-deep-extractor-carpet-extraction-cleaner"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "339c16a2-1b31-4797-8b49-f4a047776d06",
-        "f65b84f1-0a57-466d-a1e1-109c4f5c679f",
-        "ca54e069-2daa-4600-9122-53d810ce2d0a",
-        "82c0748c-ffcb-46f3-8b26-312480a17da7",
-        "dcdaa8d5-96f4-41da-903f-e20d2e8338af",
-        "e451ff44-6d76-44de-8df6-5bb7078ab736",
-        "59fe7eb1-31d1-4962-8f85-02ab2736d175"
+        "tab_NcDpAq",
+        "tab_te4Utc",
+        "tab_9gRBHY",
+        "tab_EEeLLD"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -264,6 +249,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "339c16a2-1b31-4797-8b49-f4a047776d06": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-low-foam-floor-cleaning-degreaser"
+          }
+        },
+        "f65b84f1-0a57-466d-a1e1-109c4f5c679f": {
+          "type": "slide",
+          "settings": {
+            "product": "midlab-maxim-facility-plus-one-step-disinfectant-cleaner-and-deodorant"
+          }
+        },
+        "ca54e069-2daa-4600-9122-53d810ce2d0a": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-all-purpose-spotter"
+          }
+        },
+        "82c0748c-ffcb-46f3-8b26-312480a17da7": {
+          "type": "slide",
+          "settings": {
+            "product": "trushot-mobile-dispensing-system-starter-pack"
+          }
+        },
+        "dcdaa8d5-96f4-41da-903f-e20d2e8338af": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-armor-all-original-protectant-28oz-spray-bottle"
+          }
+        },
+        "e451ff44-6d76-44de-8df6-5bb7078ab736": {
+          "type": "slide",
+          "settings": {
+            "product": "premium-foam-antibacterial-hand-wash-fresh-fruit-scent-ml-carton"
+          }
+        },
+        "59fe7eb1-31d1-4962-8f85-02ab2736d175": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-deep-extractor-carpet-extraction-cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "339c16a2-1b31-4797-8b49-f4a047776d06",
+        "f65b84f1-0a57-466d-a1e1-109c4f5c679f",
+        "ca54e069-2daa-4600-9122-53d810ce2d0a",
+        "82c0748c-ffcb-46f3-8b26-312480a17da7",
+        "dcdaa8d5-96f4-41da-903f-e20d2e8338af",
+        "e451ff44-6d76-44de-8df6-5bb7078ab736",
+        "59fe7eb1-31d1-4962-8f85-02ab2736d175"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "9f6314a2-b098-4c35-9aa0-8cd87d6e5e67": {
       "type": "dept-brands-area",
       "blocks": {
@@ -334,11 +378,12 @@
   },
   "order": [
     "65485192-727d-46a8-b337-1bf36c289bcb",
-    "16636174067db7bd8c",
+    "category_tabs_WhG9er",
     "main",
     "static-recently-viewed",
     "89223217-38ea-46e2-a445-2f49e24e825d",
     "e3b28af7-9fc1-409f-8455-e9e7243322bd",
+    "16636174067db7bd8c",
     "9f6314a2-b098-4c35-9aa0-8cd87d6e5e67",
     "15b9453b-5680-4c17-9612-a9a1b330bfa6"
   ]
