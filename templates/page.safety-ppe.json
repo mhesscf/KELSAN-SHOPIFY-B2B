@@ -24,70 +24,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_LCNHfX": {
+      "type": "category-tabs",
       "blocks": {
-        "aa404ca2-b152-490e-a1c5-e2dd2b5ad1aa": {
-          "type": "slide",
+        "tab_rjNJ4K": {
+          "type": "tab",
           "settings": {
-            "product": "meat-cutting-disposable-aprons"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "b929ff7f-3494-4fb8-91ed-fc3fd185601a": {
-          "type": "slide",
+        "tab_8Hdwmq": {
+          "type": "tab",
           "settings": {
-            "product": "floor-stripping-protective-boots"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "d4dec321-8444-4831-8392-373261bf384b": {
-          "type": "slide",
+        "tab_arbamV": {
+          "type": "tab",
           "settings": {
-            "product": "medium-sized-first-aid-kit-metal-case"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "d22557d9-b277-480c-942f-9f7e3a195d54": {
-          "type": "slide",
+        "tab_Ug8rDV": {
+          "type": "tab",
           "settings": {
-            "product": "clean-stride-24x30-sticky-floor-frame"
-          }
-        },
-        "a2ffb4b9-a5ec-485f-a564-7ec3c7b35e7f": {
-          "type": "slide",
-          "settings": {
-            "product": "white-polyester-hairnet-caps"
-          }
-        },
-        "00f5decb-767b-4de7-a09d-96d44dd68386": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-24x36-eversoft-closed-cell-foam-anti-fatigue-floor-mat"
-          }
-        },
-        "6b260fb9-b5a5-4469-93d4-d40d6e8c0f2d": {
-          "type": "slide",
-          "settings": {
-            "product": "yellow-2-sided-wet-floor-sign"
-          }
-        },
-        "cedb8df8-9d4f-4a60-9755-e815bee13409": {
-          "type": "slide",
-          "settings": {
-            "product": "max-earplugs-uncorded"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "aa404ca2-b152-490e-a1c5-e2dd2b5ad1aa",
-        "b929ff7f-3494-4fb8-91ed-fc3fd185601a",
-        "d4dec321-8444-4831-8392-373261bf384b",
-        "d22557d9-b277-480c-942f-9f7e3a195d54",
-        "a2ffb4b9-a5ec-485f-a564-7ec3c7b35e7f",
-        "00f5decb-767b-4de7-a09d-96d44dd68386",
-        "6b260fb9-b5a5-4469-93d4-d40d6e8c0f2d",
-        "cedb8df8-9d4f-4a60-9755-e815bee13409"
+        "tab_rjNJ4K",
+        "tab_8Hdwmq",
+        "tab_arbamV",
+        "tab_Ug8rDV"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -279,6 +257,72 @@
         "block-title": "Safety & PPE Products by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "aa404ca2-b152-490e-a1c5-e2dd2b5ad1aa": {
+          "type": "slide",
+          "settings": {
+            "product": "meat-cutting-disposable-aprons"
+          }
+        },
+        "b929ff7f-3494-4fb8-91ed-fc3fd185601a": {
+          "type": "slide",
+          "settings": {
+            "product": "floor-stripping-protective-boots"
+          }
+        },
+        "d4dec321-8444-4831-8392-373261bf384b": {
+          "type": "slide",
+          "settings": {
+            "product": "medium-sized-first-aid-kit-metal-case"
+          }
+        },
+        "d22557d9-b277-480c-942f-9f7e3a195d54": {
+          "type": "slide",
+          "settings": {
+            "product": "clean-stride-24x30-sticky-floor-frame"
+          }
+        },
+        "a2ffb4b9-a5ec-485f-a564-7ec3c7b35e7f": {
+          "type": "slide",
+          "settings": {
+            "product": "white-polyester-hairnet-caps"
+          }
+        },
+        "00f5decb-767b-4de7-a09d-96d44dd68386": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-24x36-eversoft-closed-cell-foam-anti-fatigue-floor-mat"
+          }
+        },
+        "6b260fb9-b5a5-4469-93d4-d40d6e8c0f2d": {
+          "type": "slide",
+          "settings": {
+            "product": "yellow-2-sided-wet-floor-sign"
+          }
+        },
+        "cedb8df8-9d4f-4a60-9755-e815bee13409": {
+          "type": "slide",
+          "settings": {
+            "product": "max-earplugs-uncorded"
+          }
+        }
+      },
+      "block_order": [
+        "aa404ca2-b152-490e-a1c5-e2dd2b5ad1aa",
+        "b929ff7f-3494-4fb8-91ed-fc3fd185601a",
+        "d4dec321-8444-4831-8392-373261bf384b",
+        "d22557d9-b277-480c-942f-9f7e3a195d54",
+        "a2ffb4b9-a5ec-485f-a564-7ec3c7b35e7f",
+        "00f5decb-767b-4de7-a09d-96d44dd68386",
+        "6b260fb9-b5a5-4469-93d4-d40d6e8c0f2d",
+        "cedb8df8-9d4f-4a60-9755-e815bee13409"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "3af9e454-1529-4cbc-9987-a7a5d51dfb38": {
       "type": "dept-brands-area",
       "blocks": {
@@ -349,10 +393,11 @@
   },
   "order": [
     "efd3179f-3eef-46ae-a180-4900fd7bbf7f",
-    "16636174067db7bd8c",
+    "category_tabs_LCNHfX",
     "main",
     "static-recently-viewed",
     "6949a966-cdd6-403a-9940-3eeaa6f69de6",
+    "16636174067db7bd8c",
     "3af9e454-1529-4cbc-9987-a7a5d51dfb38",
     "c685a816-7e1f-4488-bbb4-725466dba757"
   ]
