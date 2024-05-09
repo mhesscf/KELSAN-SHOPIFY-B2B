@@ -24,77 +24,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_WJ4rix": {
+      "type": "category-tabs",
       "blocks": {
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
-          "type": "slide",
+        "tab_AHViPE": {
+          "type": "tab",
           "settings": {
-            "product": "heated-carpet-spot-cleaner"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
-          "type": "slide",
+        "tab_HqfYFD": {
+          "type": "tab",
           "settings": {
-            "product": "auto-upholstery-stain-removal-package"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
-          "type": "slide",
+        "tab_MTt4Fz": {
+          "type": "tab",
           "settings": {
-            "product": "trusted-clean-quench-wet-push-vacuum"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
-          "type": "slide",
+        "tab_zFDYdf": {
+          "type": "tab",
           "settings": {
-            "product": "commercial-carpet-spot-cleaning-machine"
-          }
-        },
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
-          "type": "slide",
-          "settings": {
-            "product": "mytee-lite-8070-heated-carpet-extractor-and-auto-detailer"
-          }
-        },
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
-          "type": "slide",
-          "settings": {
-            "product": "reliable-brio-plus-400cc-commercial-steam-cleaner"
-          }
-        },
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
-          "type": "slide",
-          "settings": {
-            "product": "round-stainless-steel-mop-bucket"
-          }
-        },
-        "a0073dda-832a-449f-a358-2e2556962853": {
-          "type": "slide",
-          "settings": {
-            "product": "stationary-parts-washer-bin"
-          }
-        },
-        "b0892088-bca1-439d-bc71-c950456dc54a": {
-          "type": "slide",
-          "settings": {
-            "product": "vapamore-amico-handheld-steam-cleaner"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
-        "d0d55955-cf3e-4837-8a9e-53c306acb777",
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36",
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
-        "a0073dda-832a-449f-a358-2e2556962853",
-        "b0892088-bca1-439d-bc71-c950456dc54a"
+        "tab_AHViPE",
+        "tab_HqfYFD",
+        "tab_MTt4Fz",
+        "tab_zFDYdf"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -230,6 +201,79 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
+          "type": "slide",
+          "settings": {
+            "product": "heated-carpet-spot-cleaner"
+          }
+        },
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
+          "type": "slide",
+          "settings": {
+            "product": "auto-upholstery-stain-removal-package"
+          }
+        },
+        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-quench-wet-push-vacuum"
+          }
+        },
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-carpet-spot-cleaning-machine"
+          }
+        },
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-lite-8070-heated-carpet-extractor-and-auto-detailer"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "reliable-brio-plus-400cc-commercial-steam-cleaner"
+          }
+        },
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
+          "type": "slide",
+          "settings": {
+            "product": "round-stainless-steel-mop-bucket"
+          }
+        },
+        "a0073dda-832a-449f-a358-2e2556962853": {
+          "type": "slide",
+          "settings": {
+            "product": "stationary-parts-washer-bin"
+          }
+        },
+        "b0892088-bca1-439d-bc71-c950456dc54a": {
+          "type": "slide",
+          "settings": {
+            "product": "vapamore-amico-handheld-steam-cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
+        "d0d55955-cf3e-4837-8a9e-53c306acb777",
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36",
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
+        "a0073dda-832a-449f-a358-2e2556962853",
+        "b0892088-bca1-439d-bc71-c950456dc54a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "5428e26b-99f7-469c-9b24-a05003f836a2": {
       "type": "dept-brands-area",
       "blocks": {
@@ -309,11 +353,12 @@
   },
   "order": [
     "7796c4bc-8b20-4e80-bf34-71095753a2cd",
-    "16636174067db7bd8c",
+    "category_tabs_WJ4rix",
     "main",
     "static-recently-viewed",
     "80ef6642-8cbc-4122-abc3-81d615c556d7",
     "728646d7-5b75-4775-a83d-17457ccf7f8f",
+    "16636174067db7bd8c",
     "5428e26b-99f7-469c-9b24-a05003f836a2",
     "6fc05447-9a5d-4ad4-8974-a0bae21241f7"
   ]
