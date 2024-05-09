@@ -24,70 +24,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_Q4LBWr": {
+      "type": "category-tabs",
       "blocks": {
-        "a5d0e6aa-831b-477b-bb12-0b7cec0b4a50": {
-          "type": "slide",
+        "tab_YFBpem": {
+          "type": "tab",
           "settings": {
-            "product": "hoover-hvrpwr-6-qt-cordless-backpack-vacuum-ch93619"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "7a9bfcdc-fb4e-44b2-a8e9-e53031b1ec27": {
-          "type": "slide",
+        "tab_pz3bxV": {
+          "type": "tab",
           "settings": {
-            "product": "trusted-clean-quench-wet-push-vacuum"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "55bd9cf2-ff9e-45a9-8539-12d41df0c4e8": {
-          "type": "slide",
+        "tab_4QKXMQ": {
+          "type": "tab",
           "settings": {
-            "product": "6-quart-backpack-vacuum"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "b2183e7d-2139-474f-8043-134e759642e6": {
-          "type": "slide",
+        "tab_U4fBfD": {
+          "type": "tab",
           "settings": {
-            "product": "warehouse-concrete-floor-sweeper"
-          }
-        },
-        "e408d1a6-588b-4ab5-8951-06998f1e47a7": {
-          "type": "slide",
-          "settings": {
-            "product": "tornado-ck-lw-13-1-roam-cordless-upright-vacuum"
-          }
-        },
-        "c51817a0-0b38-49af-bbfa-afffe054e4aa": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-12-upright-hepa-vac"
-          }
-        },
-        "e5397ab5-b05f-4b47-8851-b07bef4f3ad9": {
-          "type": "slide",
-          "settings": {
-            "product": "minuteman-bio-haz-vacuum-w-ulpa-filter-6-gallon"
-          }
-        },
-        "14fd17b9-858c-4aac-a89b-72e727d34bf2": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-super-coach-pro-10-hepa"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "a5d0e6aa-831b-477b-bb12-0b7cec0b4a50",
-        "7a9bfcdc-fb4e-44b2-a8e9-e53031b1ec27",
-        "55bd9cf2-ff9e-45a9-8539-12d41df0c4e8",
-        "b2183e7d-2139-474f-8043-134e759642e6",
-        "e408d1a6-588b-4ab5-8951-06998f1e47a7",
-        "c51817a0-0b38-49af-bbfa-afffe054e4aa",
-        "e5397ab5-b05f-4b47-8851-b07bef4f3ad9",
-        "14fd17b9-858c-4aac-a89b-72e727d34bf2"
+        "tab_YFBpem",
+        "tab_pz3bxV",
+        "tab_4QKXMQ",
+        "tab_U4fBfD"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -262,6 +240,72 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "a5d0e6aa-831b-477b-bb12-0b7cec0b4a50": {
+          "type": "slide",
+          "settings": {
+            "product": "hoover-hvrpwr-6-qt-cordless-backpack-vacuum-ch93619"
+          }
+        },
+        "7a9bfcdc-fb4e-44b2-a8e9-e53031b1ec27": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-quench-wet-push-vacuum"
+          }
+        },
+        "55bd9cf2-ff9e-45a9-8539-12d41df0c4e8": {
+          "type": "slide",
+          "settings": {
+            "product": "6-quart-backpack-vacuum"
+          }
+        },
+        "b2183e7d-2139-474f-8043-134e759642e6": {
+          "type": "slide",
+          "settings": {
+            "product": "warehouse-concrete-floor-sweeper"
+          }
+        },
+        "e408d1a6-588b-4ab5-8951-06998f1e47a7": {
+          "type": "slide",
+          "settings": {
+            "product": "tornado-ck-lw-13-1-roam-cordless-upright-vacuum"
+          }
+        },
+        "c51817a0-0b38-49af-bbfa-afffe054e4aa": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-12-upright-hepa-vac"
+          }
+        },
+        "e5397ab5-b05f-4b47-8851-b07bef4f3ad9": {
+          "type": "slide",
+          "settings": {
+            "product": "minuteman-bio-haz-vacuum-w-ulpa-filter-6-gallon"
+          }
+        },
+        "14fd17b9-858c-4aac-a89b-72e727d34bf2": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-super-coach-pro-10-hepa"
+          }
+        }
+      },
+      "block_order": [
+        "a5d0e6aa-831b-477b-bb12-0b7cec0b4a50",
+        "7a9bfcdc-fb4e-44b2-a8e9-e53031b1ec27",
+        "55bd9cf2-ff9e-45a9-8539-12d41df0c4e8",
+        "b2183e7d-2139-474f-8043-134e759642e6",
+        "e408d1a6-588b-4ab5-8951-06998f1e47a7",
+        "c51817a0-0b38-49af-bbfa-afffe054e4aa",
+        "e5397ab5-b05f-4b47-8851-b07bef4f3ad9",
+        "14fd17b9-858c-4aac-a89b-72e727d34bf2"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "ebebc1ed-3730-44c4-84b6-c529038f0c2c": {
       "type": "dept-brands-area",
       "blocks": {
@@ -350,11 +394,12 @@
   },
   "order": [
     "26570bfd-92cc-439b-8ca5-07248d87232c",
-    "16636174067db7bd8c",
+    "category_tabs_Q4LBWr",
     "main",
     "static-recently-viewed",
     "7076bb82-91dc-4068-a5db-5f7f4f728ca6",
     "f6d5cd4e-dfb4-4e3d-8b1e-c70586c0424d",
+    "16636174067db7bd8c",
     "ebebc1ed-3730-44c4-84b6-c529038f0c2c",
     "6ce44a70-47c6-41ae-8f7d-053db59c6d3b"
   ]
