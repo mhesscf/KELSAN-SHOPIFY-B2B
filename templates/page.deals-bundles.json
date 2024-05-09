@@ -34,91 +34,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_QqxNfr": {
+      "type": "category-tabs",
       "blocks": {
-        "319978c5-e18f-488b-bdca-87d8df12677c": {
-          "type": "slide",
+        "tab_7dayyk": {
+          "type": "tab",
           "settings": {
-            "product": "auto-scrubber-floor-cleaning-kit"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "fb1d4f29-8eba-4d53-a3c5-65c0dfffbc28": {
-          "type": "slide",
+        "tab_hxi9xz": {
+          "type": "tab",
           "settings": {
-            "product": "commercial-floor-buffer-cleaning-package"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "d06cb5f9-0d69-482b-a09c-8d02bedb3c8c": {
-          "type": "slide",
+        "tab_8VtfYW": {
+          "type": "tab",
           "settings": {
-            "product": "heated-carpet-cleaning-extractor-package"
-          }
-        },
-        "710a1d21-d529-4587-8556-0095db7f92f7": {
-          "type": "slide",
-          "settings": {
-            "product": "assorted-carpet-chemical-package"
-          }
-        },
-        "339b2fa5-baa5-4ef6-a117-f93a008cdfb6": {
-          "type": "slide",
-          "settings": {
-            "product": "oreck-orbiter-floor-package"
-          }
-        },
-        "fab26ce3-2774-4ca7-81dc-b028bcd6fa84": {
-          "type": "slide",
-          "settings": {
-            "product": "trusted-clean-dura-18hd-rubberized-floor-cleaning-package"
-          }
-        },
-        "2774d9da-966c-4b1f-af74-fe6c6e66f064": {
-          "type": "slide",
-          "settings": {
-            "product": "commercial-floor-stripping-package"
-          }
-        },
-        "06f62ebe-4f85-4dc9-849f-5bd266aa7bb5": {
-          "type": "slide",
-          "settings": {
-            "product": "powerhead-carpet-cleaning-package"
-          }
-        },
-        "7f0bd26b-8626-4e9a-af2b-de1c6ed4b093": {
-          "type": "slide",
-          "settings": {
-            "product": "advantage-20-inch-battery-powered-auto-scrubber-floor-prep-for-polishing-package"
-          }
-        },
-        "a65c9131-643d-4997-a479-601dbf294a63": {
-          "type": "slide",
-          "settings": {
-            "product": "commercial-floor-burnishing-package"
-          }
-        },
-        "c8d60898-cd90-44f7-94d0-208ad004e7c2": {
-          "type": "slide",
-          "settings": {
-            "product": "encapsulation-carpet-chemical-package"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "319978c5-e18f-488b-bdca-87d8df12677c",
-        "fb1d4f29-8eba-4d53-a3c5-65c0dfffbc28",
-        "d06cb5f9-0d69-482b-a09c-8d02bedb3c8c",
-        "710a1d21-d529-4587-8556-0095db7f92f7",
-        "339b2fa5-baa5-4ef6-a117-f93a008cdfb6",
-        "fab26ce3-2774-4ca7-81dc-b028bcd6fa84",
-        "2774d9da-966c-4b1f-af74-fe6c6e66f064",
-        "06f62ebe-4f85-4dc9-849f-5bd266aa7bb5",
-        "7f0bd26b-8626-4e9a-af2b-de1c6ed4b093",
-        "a65c9131-643d-4997-a479-601dbf294a63",
-        "c8d60898-cd90-44f7-94d0-208ad004e7c2"
+        "tab_7dayyk",
+        "tab_hxi9xz",
+        "tab_8VtfYW"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Packages"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -265,6 +214,93 @@
         "block-title": "Deals & Packages by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "319978c5-e18f-488b-bdca-87d8df12677c": {
+          "type": "slide",
+          "settings": {
+            "product": "auto-scrubber-floor-cleaning-kit"
+          }
+        },
+        "fb1d4f29-8eba-4d53-a3c5-65c0dfffbc28": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-floor-buffer-cleaning-package"
+          }
+        },
+        "d06cb5f9-0d69-482b-a09c-8d02bedb3c8c": {
+          "type": "slide",
+          "settings": {
+            "product": "heated-carpet-cleaning-extractor-package"
+          }
+        },
+        "710a1d21-d529-4587-8556-0095db7f92f7": {
+          "type": "slide",
+          "settings": {
+            "product": "assorted-carpet-chemical-package"
+          }
+        },
+        "339b2fa5-baa5-4ef6-a117-f93a008cdfb6": {
+          "type": "slide",
+          "settings": {
+            "product": "oreck-orbiter-floor-package"
+          }
+        },
+        "fab26ce3-2774-4ca7-81dc-b028bcd6fa84": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-dura-18hd-rubberized-floor-cleaning-package"
+          }
+        },
+        "2774d9da-966c-4b1f-af74-fe6c6e66f064": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-floor-stripping-package"
+          }
+        },
+        "06f62ebe-4f85-4dc9-849f-5bd266aa7bb5": {
+          "type": "slide",
+          "settings": {
+            "product": "powerhead-carpet-cleaning-package"
+          }
+        },
+        "7f0bd26b-8626-4e9a-af2b-de1c6ed4b093": {
+          "type": "slide",
+          "settings": {
+            "product": "advantage-20-inch-battery-powered-auto-scrubber-floor-prep-for-polishing-package"
+          }
+        },
+        "a65c9131-643d-4997-a479-601dbf294a63": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-floor-burnishing-package"
+          }
+        },
+        "c8d60898-cd90-44f7-94d0-208ad004e7c2": {
+          "type": "slide",
+          "settings": {
+            "product": "encapsulation-carpet-chemical-package"
+          }
+        }
+      },
+      "block_order": [
+        "319978c5-e18f-488b-bdca-87d8df12677c",
+        "fb1d4f29-8eba-4d53-a3c5-65c0dfffbc28",
+        "d06cb5f9-0d69-482b-a09c-8d02bedb3c8c",
+        "710a1d21-d529-4587-8556-0095db7f92f7",
+        "339b2fa5-baa5-4ef6-a117-f93a008cdfb6",
+        "fab26ce3-2774-4ca7-81dc-b028bcd6fa84",
+        "2774d9da-966c-4b1f-af74-fe6c6e66f064",
+        "06f62ebe-4f85-4dc9-849f-5bd266aa7bb5",
+        "7f0bd26b-8626-4e9a-af2b-de1c6ed4b093",
+        "a65c9131-643d-4997-a479-601dbf294a63",
+        "c8d60898-cd90-44f7-94d0-208ad004e7c2"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Packages"
+      }
+    },
     "9dc75e18-4f87-43e1-97b8-9261434ef62c": {
       "type": "dept-brands-area",
       "blocks": {
@@ -344,10 +380,11 @@
   },
   "order": [
     "cba53468-db6f-41ec-9ed7-fc3255c70c3e",
-    "16636174067db7bd8c",
+    "category_tabs_QqxNfr",
     "main",
     "static-recently-viewed",
     "026b0119-d79f-45dd-8251-faad1b0109c9",
+    "16636174067db7bd8c",
     "9dc75e18-4f87-43e1-97b8-9261434ef62c",
     "95510011-9ee3-4f59-be6c-838d868e46de"
   ]
