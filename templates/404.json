@@ -1,5 +1,16 @@
 {
   "sections": {
+    "left_nav_on_pages_7YRa63": {
+      "type": "left-nav-on-pages",
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
     "dynamic_custom_liquid_iPbFhP": {
       "type": "dynamic-custom-liquid",
       "settings": {
@@ -14,6 +25,7 @@
     }
   },
   "order": [
+    "left_nav_on_pages_7YRa63",
     "dynamic_custom_liquid_iPbFhP",
     "main"
   ]
