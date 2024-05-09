@@ -24,77 +24,48 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_jU6xhH": {
+      "type": "category-tabs",
       "blocks": {
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
-          "type": "slide",
+        "tab_GV9h6n": {
+          "type": "tab",
           "settings": {
-            "product": "dual-jet-s-bend-carpet-extraction-wand"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
-          "type": "slide",
+        "tab_zgNp43": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-pad-driver-for-175-rpm-scrubbers"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
-          "type": "slide",
+        "tab_UR6MjU": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-red-floor-buffing-scrubbing-pads"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         },
-        "1bb066b3-857a-4586-8244-437bec6cfed9": {
-          "type": "slide",
+        "tab_ntkww9": {
+          "type": "tab",
           "settings": {
-            "product": "proteam-problade-hard-surface-and-carpet-floor-tool-kit"
-          }
-        },
-        "78912121-fc6e-48cf-bb49-59d83072b40f": {
-          "type": "slide",
-          "settings": {
-            "product": "stainless-steel-auto-detailer-tool"
-          }
-        },
-        "8df3c498-da2e-4a8e-bb66-ae81d083a512": {
-          "type": "slide",
-          "settings": {
-            "product": "24-inch-front-mount-squeegee-for-viper-and-task-pro-wet-dry-vacuums"
-          }
-        },
-        "dd322178-651f-40a9-a314-c42819adac08": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-performer-front-squeegee-replacement-blade"
-          }
-        },
-        "2d182bcc-43db-417d-81fc-efc61c8f6c3c": {
-          "type": "slide",
-          "settings": {
-            "product": "pro-charging-systems-24-volt-12-amp-battery-charger-is2412-for-floor-scrubbers"
-          }
-        },
-        "a590673e-7fb1-4f87-998c-5ff24fa940ce": {
-          "type": "slide",
-          "settings": {
-            "product": "power-head-for-heated-box-extractor"
+            "name": "Resources",
+            "targetclass": ".dept-resources"
           }
         }
       },
       "block_order": [
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
-        "1bb066b3-857a-4586-8244-437bec6cfed9",
-        "78912121-fc6e-48cf-bb49-59d83072b40f",
-        "8df3c498-da2e-4a8e-bb66-ae81d083a512",
-        "dd322178-651f-40a9-a314-c42819adac08",
-        "2d182bcc-43db-417d-81fc-efc61c8f6c3c",
-        "a590673e-7fb1-4f87-998c-5ff24fa940ce"
+        "tab_GV9h6n",
+        "tab_zgNp43",
+        "tab_UR6MjU",
+        "tab_ntkww9"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -295,6 +266,79 @@
         "block-title": "Parts & Accesories by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
+          "type": "slide",
+          "settings": {
+            "product": "dual-jet-s-bend-carpet-extraction-wand"
+          }
+        },
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-pad-driver-for-175-rpm-scrubbers"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-red-floor-buffing-scrubbing-pads"
+          }
+        },
+        "1bb066b3-857a-4586-8244-437bec6cfed9": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-problade-hard-surface-and-carpet-floor-tool-kit"
+          }
+        },
+        "78912121-fc6e-48cf-bb49-59d83072b40f": {
+          "type": "slide",
+          "settings": {
+            "product": "stainless-steel-auto-detailer-tool"
+          }
+        },
+        "8df3c498-da2e-4a8e-bb66-ae81d083a512": {
+          "type": "slide",
+          "settings": {
+            "product": "24-inch-front-mount-squeegee-for-viper-and-task-pro-wet-dry-vacuums"
+          }
+        },
+        "dd322178-651f-40a9-a314-c42819adac08": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-performer-front-squeegee-replacement-blade"
+          }
+        },
+        "2d182bcc-43db-417d-81fc-efc61c8f6c3c": {
+          "type": "slide",
+          "settings": {
+            "product": "pro-charging-systems-24-volt-12-amp-battery-charger-is2412-for-floor-scrubbers"
+          }
+        },
+        "a590673e-7fb1-4f87-998c-5ff24fa940ce": {
+          "type": "slide",
+          "settings": {
+            "product": "power-head-for-heated-box-extractor"
+          }
+        }
+      },
+      "block_order": [
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "1bb066b3-857a-4586-8244-437bec6cfed9",
+        "78912121-fc6e-48cf-bb49-59d83072b40f",
+        "8df3c498-da2e-4a8e-bb66-ae81d083a512",
+        "dd322178-651f-40a9-a314-c42819adac08",
+        "2d182bcc-43db-417d-81fc-efc61c8f6c3c",
+        "a590673e-7fb1-4f87-998c-5ff24fa940ce"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "3c5ea8d0-62ef-4edc-a1a9-84747fac77b7": {
       "type": "dept-brands-area",
       "blocks": {
@@ -390,10 +434,11 @@
   },
   "order": [
     "a49feb4a-a340-4a6f-aee3-59d5dbe12d6f",
-    "16636174067db7bd8c",
+    "category_tabs_jU6xhH",
     "main",
     "static-recently-viewed",
     "da934c17-4968-488e-998c-2cefd60abb17",
+    "16636174067db7bd8c",
     "3c5ea8d0-62ef-4edc-a1a9-84747fac77b7",
     "70c56ff7-2515-4315-8dd5-032f23837090",
     "6d43bc46-6824-4a4e-b59b-80459baffda4"
