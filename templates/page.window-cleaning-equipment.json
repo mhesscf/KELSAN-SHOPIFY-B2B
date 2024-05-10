@@ -24,49 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_eKf63X": {
+      "type": "category-tabs",
       "blocks": {
-        "63e12c05-b80d-443a-bb7e-17240d039601": {
-          "type": "slide",
+        "tab_JhWKyY": {
+          "type": "tab",
           "settings": {
-            "product": "ipc-eagle-hydro-cart-compact-water-fed-pole-window-cleaning-cart"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "7023c89f-045b-4170-a67a-a1a1e5168e7c": {
-          "type": "slide",
+        "tab_9BJkQh": {
+          "type": "tab",
           "settings": {
-            "product": "professional-2-story-window-cleaning-kit"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "418015e4-9389-494d-a4e4-1e00e0847394": {
-          "type": "slide",
+        "tab_M7LHh7": {
+          "type": "tab",
           "settings": {
-            "product": "window-washing-t-bar-sleeve"
-          }
-        },
-        "59037c69-5047-4678-9795-6e68034d02d9": {
-          "type": "slide",
-          "settings": {
-            "product": "carbon-sediment-and-di-filters-for-hydrotube-water-fed-window-cleaning-kit"
-          }
-        },
-        "902a56b9-8bac-49b2-874c-3ae215c12998": {
-          "type": "slide",
-          "settings": {
-            "product": "unger-hydropower-purewater-window-washing-kits"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "63e12c05-b80d-443a-bb7e-17240d039601",
-        "7023c89f-045b-4170-a67a-a1a1e5168e7c",
-        "418015e4-9389-494d-a4e4-1e00e0847394",
-        "59037c69-5047-4678-9795-6e68034d02d9",
-        "902a56b9-8bac-49b2-874c-3ae215c12998"
+        "tab_JhWKyY",
+        "tab_9BJkQh",
+        "tab_M7LHh7"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -186,6 +177,51 @@
         "block-title": "Window Cleaning Equipment by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "63e12c05-b80d-443a-bb7e-17240d039601": {
+          "type": "slide",
+          "settings": {
+            "product": "ipc-eagle-hydro-cart-compact-water-fed-pole-window-cleaning-cart"
+          }
+        },
+        "7023c89f-045b-4170-a67a-a1a1e5168e7c": {
+          "type": "slide",
+          "settings": {
+            "product": "professional-2-story-window-cleaning-kit"
+          }
+        },
+        "418015e4-9389-494d-a4e4-1e00e0847394": {
+          "type": "slide",
+          "settings": {
+            "product": "window-washing-t-bar-sleeve"
+          }
+        },
+        "59037c69-5047-4678-9795-6e68034d02d9": {
+          "type": "slide",
+          "settings": {
+            "product": "carbon-sediment-and-di-filters-for-hydrotube-water-fed-window-cleaning-kit"
+          }
+        },
+        "902a56b9-8bac-49b2-874c-3ae215c12998": {
+          "type": "slide",
+          "settings": {
+            "product": "unger-hydropower-purewater-window-washing-kits"
+          }
+        }
+      },
+      "block_order": [
+        "63e12c05-b80d-443a-bb7e-17240d039601",
+        "7023c89f-045b-4170-a67a-a1a1e5168e7c",
+        "418015e4-9389-494d-a4e4-1e00e0847394",
+        "59037c69-5047-4678-9795-6e68034d02d9",
+        "902a56b9-8bac-49b2-874c-3ae215c12998"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "93503292-9487-4e50-b379-f3d8e461f5ba": {
       "type": "dept-related-category-area",
       "blocks": {
@@ -236,10 +272,11 @@
   },
   "order": [
     "5fad70b8-4caa-42ef-a9f5-8779392aab68",
-    "16636174067db7bd8c",
+    "category_tabs_eKf63X",
     "main",
     "static-recently-viewed",
     "9379e9fb-9fad-421a-be7c-92fcabc0fcbe",
+    "16636174067db7bd8c",
     "93503292-9487-4e50-b379-f3d8e461f5ba",
     "bbceef21-39b3-4927-b314-92a1df3303ee"
   ]
