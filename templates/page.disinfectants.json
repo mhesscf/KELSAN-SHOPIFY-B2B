@@ -24,49 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_xWHzkQ": {
+      "type": "category-tabs",
       "blocks": {
-        "f44cbc73-aca6-482b-a2b1-0c597d04a6e1": {
-          "type": "slide",
+        "tab_HctKWt": {
+          "type": "tab",
           "settings": {
-            "product": "midlab-maxim-facility-plus-one-step-disinfectant-cleaner-and-deodorant"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "aeb3dd79-cecf-4582-b4bf-fb714d7792ab": {
-          "type": "slide",
+        "tab_9Tt8nE": {
+          "type": "tab",
           "settings": {
-            "product": "lysol-lemon-and-lime-blossom-scent-disinfecting-wipes"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "24030384-af2f-4460-a4a2-dd94f36dbe59": {
-          "type": "slide",
+        "tab_UJg9af": {
+          "type": "tab",
           "settings": {
-            "product": "purell-advanced-instant-hand-sanitizer-foam"
-          }
-        },
-        "bed65ff3-7156-4b19-81fc-3618a7dc7f21": {
-          "type": "slide",
-          "settings": {
-            "product": "steramine-sanitizing-tablets-900-count"
-          }
-        },
-        "e2c39692-0367-4df1-812f-51225b5bcdd0": {
-          "type": "slide",
-          "settings": {
-            "product": "diversey-oxivir-tb-epa-registered-disinfectant-wipes"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "f44cbc73-aca6-482b-a2b1-0c597d04a6e1",
-        "aeb3dd79-cecf-4582-b4bf-fb714d7792ab",
-        "24030384-af2f-4460-a4a2-dd94f36dbe59",
-        "bed65ff3-7156-4b19-81fc-3618a7dc7f21",
-        "e2c39692-0367-4df1-812f-51225b5bcdd0"
+        "tab_HctKWt",
+        "tab_9Tt8nE",
+        "tab_UJg9af"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -196,6 +187,51 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "f44cbc73-aca6-482b-a2b1-0c597d04a6e1": {
+          "type": "slide",
+          "settings": {
+            "product": "midlab-maxim-facility-plus-one-step-disinfectant-cleaner-and-deodorant"
+          }
+        },
+        "aeb3dd79-cecf-4582-b4bf-fb714d7792ab": {
+          "type": "slide",
+          "settings": {
+            "product": "lysol-lemon-and-lime-blossom-scent-disinfecting-wipes"
+          }
+        },
+        "24030384-af2f-4460-a4a2-dd94f36dbe59": {
+          "type": "slide",
+          "settings": {
+            "product": "purell-advanced-instant-hand-sanitizer-foam"
+          }
+        },
+        "bed65ff3-7156-4b19-81fc-3618a7dc7f21": {
+          "type": "slide",
+          "settings": {
+            "product": "steramine-sanitizing-tablets-900-count"
+          }
+        },
+        "e2c39692-0367-4df1-812f-51225b5bcdd0": {
+          "type": "slide",
+          "settings": {
+            "product": "diversey-oxivir-tb-epa-registered-disinfectant-wipes"
+          }
+        }
+      },
+      "block_order": [
+        "f44cbc73-aca6-482b-a2b1-0c597d04a6e1",
+        "aeb3dd79-cecf-4582-b4bf-fb714d7792ab",
+        "24030384-af2f-4460-a4a2-dd94f36dbe59",
+        "bed65ff3-7156-4b19-81fc-3618a7dc7f21",
+        "e2c39692-0367-4df1-812f-51225b5bcdd0"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "0ba1e376-57cc-45c3-88a0-31559a7a08d1": {
       "type": "dept-brands-area",
       "blocks": {
@@ -245,11 +281,12 @@
   },
   "order": [
     "b55c51b3-14cb-4444-8e15-fd2a0b68b42d",
-    "16636174067db7bd8c",
+    "category_tabs_xWHzkQ",
     "main",
     "static-recently-viewed",
     "ebeb35e9-b732-4c85-a747-a11f18a18b24",
     "4e8b020c-a319-462d-93c9-92f71f0e0d36",
+    "16636174067db7bd8c",
     "0ba1e376-57cc-45c3-88a0-31559a7a08d1"
   ]
 }
