@@ -7,7 +7,7 @@
           "type": "categoryhead",
           "settings": {
             "cat_image": "shopify:\/\/shop_images\/vacuum-accessories-dept-page.jpg",
-            "cat_title": "Vacuum Accessories",
+            "cat_title": "Vacuum Bags & Filters",
             "cat_text": "We want you cleaning as efficiently as possible, so we stock a ton of different attachments, bags, belts, hoses, filters, squeegees, and more to keep your vacuum performing at its best."
           }
         }
@@ -116,14 +116,6 @@
     "13f96a0d-c884-4df4-abd2-5ffe06f21edf": {
       "type": "dept-category-area",
       "blocks": {
-        "2621982f-d1a5-4ca6-9b1a-6eb6289ab797": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vac-attachments-tools.jpg",
-            "title": "Attachments & Tools",
-            "url": "\/collections\/attachments-tools"
-          }
-        },
         "2666a9da-8cdd-4269-9865-d7fbf3fcbca6": {
           "type": "categorylink",
           "settings": {
@@ -135,25 +127,15 @@
         "4af26343-7e50-4a92-8f36-6348967cfcee": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-batteries-chargers.jpg",
-            "title": "Batteries & Chargers",
-            "url": "\/collections\/vacuum-batteries-chargers"
-          }
-        },
-        "a17afbb6-7cba-4eb3-9de7-381eb3d88d0a": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vac-hoses.jpg",
-            "title": "Hoses",
-            "url": "\/collections\/hoses"
+            "image": "shopify:\/\/shop_images\/vac-filters.jpg",
+            "title": "Vacuum Filters",
+            "url": "\/collections\/filters"
           }
         }
       },
       "block_order": [
-        "2621982f-d1a5-4ca6-9b1a-6eb6289ab797",
         "2666a9da-8cdd-4269-9865-d7fbf3fcbca6",
-        "4af26343-7e50-4a92-8f36-6348967cfcee",
-        "a17afbb6-7cba-4eb3-9de7-381eb3d88d0a"
+        "4af26343-7e50-4a92-8f36-6348967cfcee"
       ],
       "settings": {
         "block-title": "Vacuum Accessories by Type"
@@ -219,6 +201,7 @@
         "b78d4666-2522-4b2c-95e9-bddbe1b0b790",
         "2625d1c7-ba10-43d5-9d0f-2df118a03dd0"
       ],
+      "disabled": true,
       "settings": {
         "block-title": "Related Categories"
       }
@@ -226,28 +209,16 @@
     "16636174067db7bd8c": {
       "type": "category-featured-product-slider",
       "blocks": {
-        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-backpack-vac-xover-floor-tool"
-          }
-        },
         "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
           "type": "slide",
           "settings": {
-            "product": "universal-1-1-2-wet-dry-vacuum-tool-kit"
+            "product": "hepa-filter-for-hoover-hushtone-hvrpwr-backpack-vacuums"
           }
         },
         "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
           "type": "slide",
           "settings": {
-            "product": "hvrpwr-40v-8-amp-lithium-ion-battery-for-hoover-cordless-vacuums"
-          }
-        },
-        "a9a846a4-79ac-48cf-b29e-7a2433909d2d": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-problade-hard-surface-and-carpet-floor-tool-kit"
+            "product": "proteam-backpack-vacuum-hepa-dome-filter"
           }
         },
         "b0892088-bca1-439d-bc71-c950456dc54a": {
@@ -259,30 +230,35 @@
         "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
           "type": "slide",
           "settings": {
-            "product": "proteam-backpack-vacuum-replacement-battery"
+            "product": "closed-collar-vacuum-bags-ah10232-for-hoover-hvrpwr-backpack-vacuum"
           }
         },
         "a0073dda-832a-449f-a358-2e2556962853": {
           "type": "slide",
           "settings": {
-            "product": "hoover-40v-fast-charger-for-hvrpwr-vacuum-batteries"
+            "product": "tornado-roam-cleanbreeze-disposable-filter-bags"
+          }
+        },
+        "a9a846a4-79ac-48cf-b29e-7a2433909d2d": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-super-coach-pro-6-qt-vac-bags"
           }
         },
         "7a59ff54-fb3a-471c-95f9-8e6970db8f13": {
           "type": "slide",
           "settings": {
-            "product": "slotted-horse-hair-brush-for-wood-floors"
+            "product": "proteam-backpack-vacuum-foam-filter"
           }
         }
       },
       "block_order": [
-        "d0d55955-cf3e-4837-8a9e-53c306acb777",
         "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
         "b8094b38-e33c-4bf9-9e98-94700b387cf9",
-        "a9a846a4-79ac-48cf-b29e-7a2433909d2d",
         "b0892088-bca1-439d-bc71-c950456dc54a",
         "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
         "a0073dda-832a-449f-a358-2e2556962853",
+        "a9a846a4-79ac-48cf-b29e-7a2433909d2d",
         "7a59ff54-fb3a-471c-95f9-8e6970db8f13"
       ],
       "settings": {
