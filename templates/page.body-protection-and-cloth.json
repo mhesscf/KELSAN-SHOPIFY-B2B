@@ -24,49 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_nhFURp": {
+      "type": "category-tabs",
       "blocks": {
-        "843fbf7f-fe6b-4904-a127-1b2a000e29f9": {
-          "type": "slide",
+        "tab_GjHkAE": {
+          "type": "tab",
           "settings": {
-            "product": "yellow-3-piece-pvc-lightweight-rain-suit"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "76c2b2b4-c122-41e8-a39d-902276df2869": {
-          "type": "slide",
+        "tab_fEqCRD": {
+          "type": "tab",
           "settings": {
-            "product": "18-inch-white-pe-arm-protection-sleeves"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "689428bd-17ee-415f-a0ac-cf5646af9994": {
-          "type": "slide",
+        "tab_AdEFxR": {
+          "type": "tab",
           "settings": {
-            "product": "polypropylene-disposable-lab-coat-white"
-          }
-        },
-        "e72936da-4c1f-4b74-bfd2-5dff2153c552": {
-          "type": "slide",
-          "settings": {
-            "product": "food-processing-protective-suit"
-          }
-        },
-        "5001f707-7edb-4e84-9ade-5ea73eaf046b": {
-          "type": "slide",
-          "settings": {
-            "product": "meat-cutting-disposable-aprons"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "843fbf7f-fe6b-4904-a127-1b2a000e29f9",
-        "76c2b2b4-c122-41e8-a39d-902276df2869",
-        "689428bd-17ee-415f-a0ac-cf5646af9994",
-        "e72936da-4c1f-4b74-bfd2-5dff2153c552",
-        "5001f707-7edb-4e84-9ade-5ea73eaf046b"
+        "tab_GjHkAE",
+        "tab_fEqCRD",
+        "tab_AdEFxR"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -177,6 +168,51 @@
         "block-title": "Body Protection & Clothing by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "843fbf7f-fe6b-4904-a127-1b2a000e29f9": {
+          "type": "slide",
+          "settings": {
+            "product": "yellow-3-piece-pvc-lightweight-rain-suit"
+          }
+        },
+        "76c2b2b4-c122-41e8-a39d-902276df2869": {
+          "type": "slide",
+          "settings": {
+            "product": "18-inch-white-pe-arm-protection-sleeves"
+          }
+        },
+        "689428bd-17ee-415f-a0ac-cf5646af9994": {
+          "type": "slide",
+          "settings": {
+            "product": "polypropylene-disposable-lab-coat-white"
+          }
+        },
+        "e72936da-4c1f-4b74-bfd2-5dff2153c552": {
+          "type": "slide",
+          "settings": {
+            "product": "food-processing-protective-suit"
+          }
+        },
+        "5001f707-7edb-4e84-9ade-5ea73eaf046b": {
+          "type": "slide",
+          "settings": {
+            "product": "meat-cutting-disposable-aprons"
+          }
+        }
+      },
+      "block_order": [
+        "843fbf7f-fe6b-4904-a127-1b2a000e29f9",
+        "76c2b2b4-c122-41e8-a39d-902276df2869",
+        "689428bd-17ee-415f-a0ac-cf5646af9994",
+        "e72936da-4c1f-4b74-bfd2-5dff2153c552",
+        "5001f707-7edb-4e84-9ade-5ea73eaf046b"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "7f9096c6-25e1-405d-8434-e4b18d6f13ce": {
       "type": "dept-brands-area",
       "blocks": {
@@ -217,10 +253,11 @@
   },
   "order": [
     "8f79c41e-cc0d-4748-8c46-078074d6a700",
-    "16636174067db7bd8c",
+    "category_tabs_nhFURp",
     "main",
     "static-recently-viewed",
     "1559b46d-bb98-48cc-b1b1-6540e3817a81",
+    "16636174067db7bd8c",
     "7f9096c6-25e1-405d-8434-e4b18d6f13ce"
   ]
 }
