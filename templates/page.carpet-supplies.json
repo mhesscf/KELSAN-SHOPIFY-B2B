@@ -24,56 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_qmjtkV": {
+      "type": "category-tabs",
       "blocks": {
-        "d9ae905e-2cd0-4148-bced-36366387e2b3": {
-          "type": "slide",
+        "tab_kRn8z8": {
+          "type": "tab",
           "settings": {
-            "product": "power-head-for-heated-box-extractor"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "3288c21a-84d4-4c2f-a447-2921f0fa2654": {
-          "type": "slide",
+        "tab_xzgR8R": {
+          "type": "tab",
           "settings": {
-            "product": "upholstery-tool-for-vertical-surfaces"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "3ad1831e-f872-4919-9d21-c3fa924ec567": {
-          "type": "slide",
+        "tab_xp8rzn": {
+          "type": "tab",
           "settings": {
-            "product": "dual-jet-s-bend-carpet-extraction-wand"
-          }
-        },
-        "472ff6c4-6651-4510-921b-57dc82c517b1": {
-          "type": "slide",
-          "settings": {
-            "product": "stainless-steel-auto-detailer-tool"
-          }
-        },
-        "197b4f0a-e95d-4b75-800a-c0e92a3cfa4b": {
-          "type": "slide",
-          "settings": {
-            "product": "25-foot-extractor-vacuum-solution-hose"
-          }
-        },
-        "4c511914-2d00-4c53-999d-d9f7b1a83111": {
-          "type": "slide",
-          "settings": {
-            "product": "stainless-steel-crevice-detail-tool"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "d9ae905e-2cd0-4148-bced-36366387e2b3",
-        "3288c21a-84d4-4c2f-a447-2921f0fa2654",
-        "3ad1831e-f872-4919-9d21-c3fa924ec567",
-        "472ff6c4-6651-4510-921b-57dc82c517b1",
-        "197b4f0a-e95d-4b75-800a-c0e92a3cfa4b",
-        "4c511914-2d00-4c53-999d-d9f7b1a83111"
+        "tab_kRn8z8",
+        "tab_xzgR8R",
+        "tab_xp8rzn"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -230,6 +214,58 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "d9ae905e-2cd0-4148-bced-36366387e2b3": {
+          "type": "slide",
+          "settings": {
+            "product": "power-head-for-heated-box-extractor"
+          }
+        },
+        "3288c21a-84d4-4c2f-a447-2921f0fa2654": {
+          "type": "slide",
+          "settings": {
+            "product": "upholstery-tool-for-vertical-surfaces"
+          }
+        },
+        "3ad1831e-f872-4919-9d21-c3fa924ec567": {
+          "type": "slide",
+          "settings": {
+            "product": "dual-jet-s-bend-carpet-extraction-wand"
+          }
+        },
+        "472ff6c4-6651-4510-921b-57dc82c517b1": {
+          "type": "slide",
+          "settings": {
+            "product": "stainless-steel-auto-detailer-tool"
+          }
+        },
+        "197b4f0a-e95d-4b75-800a-c0e92a3cfa4b": {
+          "type": "slide",
+          "settings": {
+            "product": "25-foot-extractor-vacuum-solution-hose"
+          }
+        },
+        "4c511914-2d00-4c53-999d-d9f7b1a83111": {
+          "type": "slide",
+          "settings": {
+            "product": "stainless-steel-crevice-detail-tool"
+          }
+        }
+      },
+      "block_order": [
+        "d9ae905e-2cd0-4148-bced-36366387e2b3",
+        "3288c21a-84d4-4c2f-a447-2921f0fa2654",
+        "3ad1831e-f872-4919-9d21-c3fa924ec567",
+        "472ff6c4-6651-4510-921b-57dc82c517b1",
+        "197b4f0a-e95d-4b75-800a-c0e92a3cfa4b",
+        "4c511914-2d00-4c53-999d-d9f7b1a83111"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "7ccaad67-6d7c-4906-b1e4-b3dbb4557fb9": {
       "type": "dept-brands-area",
       "blocks": {
@@ -270,11 +306,12 @@
   },
   "order": [
     "cf60e53b-9058-43ac-90fe-c3a0f66870e1",
-    "16636174067db7bd8c",
+    "category_tabs_qmjtkV",
     "main",
     "static-recently-viewed",
     "cdb1edb6-aa41-4d11-a173-60059d8a2b38",
     "7e98748e-bd9f-4438-89aa-3a234291c093",
+    "16636174067db7bd8c",
     "7ccaad67-6d7c-4906-b1e4-b3dbb4557fb9"
   ]
 }
