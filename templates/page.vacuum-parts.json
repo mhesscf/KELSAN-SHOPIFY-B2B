@@ -132,14 +132,6 @@
             "url": "\/collections\/brush-rolls"
           }
         },
-        "c3fd7618-7cd8-49c3-9eb3-667db7e8f1f5": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vac-filters.jpg",
-            "title": "Filters",
-            "url": "\/collections\/filters"
-          }
-        },
         "7201cdfa-e983-44c4-bb1a-999937c386b4": {
           "type": "categorylink",
           "settings": {
@@ -168,7 +160,6 @@
       "block_order": [
         "a9c09d0e-0fcd-4f6b-a5ef-94f2c75ac211",
         "f3cdc9c5-5563-493d-9f76-3a6361d5f8e3",
-        "c3fd7618-7cd8-49c3-9eb3-667db7e8f1f5",
         "7201cdfa-e983-44c4-bb1a-999937c386b4",
         "239d93d9-45e3-4188-8378-2e55bc0b06c9",
         "e351b689-3bf3-46d0-b6f5-6ccdbb960f9c"
@@ -188,6 +179,14 @@
             "url": "\/collections\/attachments-tools"
           }
         },
+        "c449afa2-a712-4fd6-a109-b5648e4e0083": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-hoses.jpg",
+            "title": "Hoses",
+            "url": "\/collections\/hoses"
+          }
+        },
         "d5f789b0-f631-4a0b-a6f1-7c6a147e59e9": {
           "type": "related_cat_link",
           "settings": {
@@ -204,20 +203,21 @@
             "url": "\/collections\/vacuum-batteries-chargers"
           }
         },
-        "c449afa2-a712-4fd6-a109-b5648e4e0083": {
+        "related_cat_link_BadLG3": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-hoses.jpg",
-            "title": "Hoses",
-            "url": "\/collections\/hoses"
+            "image": "shopify:\/\/shop_images\/vac-filters.jpg",
+            "title": "Vacuum Filters",
+            "url": "\/collections\/filters"
           }
         }
       },
       "block_order": [
         "674474a5-be31-4cf0-b801-b6f224c21af7",
+        "c449afa2-a712-4fd6-a109-b5648e4e0083",
         "d5f789b0-f631-4a0b-a6f1-7c6a147e59e9",
         "be67ba22-acb3-4d81-be20-c48f54b7e034",
-        "c449afa2-a712-4fd6-a109-b5648e4e0083"
+        "related_cat_link_BadLG3"
       ],
       "settings": {
         "block-title": "Related Categories"
