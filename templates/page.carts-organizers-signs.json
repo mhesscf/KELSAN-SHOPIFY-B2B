@@ -24,71 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_C3dWj4": {
+      "type": "category-tabs",
       "blocks": {
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
-          "type": "slide",
+        "tab_bF9RPK": {
+          "type": "tab",
           "settings": {
-            "product": "black-laundry-trash-tilt-truck"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
-          "type": "slide",
+        "tab_jzVHnn": {
+          "type": "tab",
           "settings": {
-            "product": "rubbermaid-black-janitor-cart-6173"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
-          "type": "slide",
+        "tab_DefyEf": {
+          "type": "tab",
           "settings": {
-            "product": "yellow-2-sided-wet-floor-sign"
-          }
-        },
-        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
-          "type": "slide",
-          "settings": {
-            "product": "two-shelf-utility-janitorial-cart"
-          }
-        },
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
-          "type": "slide",
-          "settings": {
-            "product": "hanging-closed-for-cleaning-safety-sign"
-          }
-        },
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
-          "type": "slide",
-          "settings": {
-            "product": "stepon-linen-hamper-bag-w-x-d-x-h-pvclined-nylon-black-rcp-bla"
-          }
-        },
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
-          "type": "slide",
-          "settings": {
-            "product": "mop-handle-holder"
-          }
-        },
-        "b0892088-bca1-439d-bc71-c950456dc54a": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "product": ""
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36",
-        "d0d55955-cf3e-4837-8a9e-53c306acb777",
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
-        "b0892088-bca1-439d-bc71-c950456dc54a"
+        "tab_bF9RPK",
+        "tab_jzVHnn",
+        "tab_DefyEf"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -181,6 +150,73 @@
         "block-title": "Carts, Organizers & Signs by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
+          "type": "slide",
+          "settings": {
+            "product": "black-laundry-trash-tilt-truck"
+          }
+        },
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
+          "type": "slide",
+          "settings": {
+            "product": "rubbermaid-black-janitor-cart-6173"
+          }
+        },
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
+          "type": "slide",
+          "settings": {
+            "product": "yellow-2-sided-wet-floor-sign"
+          }
+        },
+        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
+          "type": "slide",
+          "settings": {
+            "product": "two-shelf-utility-janitorial-cart"
+          }
+        },
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "hanging-closed-for-cleaning-safety-sign"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "stepon-linen-hamper-bag-w-x-d-x-h-pvclined-nylon-black-rcp-bla"
+          }
+        },
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
+          "type": "slide",
+          "settings": {
+            "product": "mop-handle-holder"
+          }
+        },
+        "b0892088-bca1-439d-bc71-c950456dc54a": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36",
+        "d0d55955-cf3e-4837-8a9e-53c306acb777",
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
+        "b0892088-bca1-439d-bc71-c950456dc54a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "ab484847-272d-4c68-9c8a-b0f8baf4c2bb": {
       "type": "dept-brands-area",
       "blocks": {
@@ -230,10 +266,11 @@
   },
   "order": [
     "0622506c-0aec-4eb2-9e5d-88085c452120",
-    "16636174067db7bd8c",
+    "category_tabs_C3dWj4",
     "main",
     "static-recently-viewed",
     "74757088-9b61-4f1c-9d69-0e916612731e",
+    "16636174067db7bd8c",
     "ab484847-272d-4c68-9c8a-b0f8baf4c2bb"
   ]
 }
