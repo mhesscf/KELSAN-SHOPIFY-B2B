@@ -1,32 +1,349 @@
 {
   "sections": {
-    "a475181a-3079-4a36-9edf-37785d0fdb22": {
-      "type": "left-nav-on-pages",
+    "b91b388d-bac0-44aa-8483-a4047ba28302": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "7efb1e4b-afc9-46c0-8cc6-98309d987179": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/vacuum-accessories-dept-page.jpg",
+            "cat_title": "Vacuum Accessories",
+            "cat_text": "We want you cleaning as efficiently as possible, so we stock a ton of different attachments, bags, belts, hoses, filters, squeegees, and more to keep your vacuum performing at its best."
+          }
+        }
+      },
+      "block_order": [
+        "7efb1e4b-afc9-46c0-8cc6-98309d987179"
+      ],
       "settings": {
-        "show_section": true,
-        "navigation": "education",
-        "nav_title": "",
-        "left_classes": "",
-        "hide_lvl_1_links": true,
-        "hide_lvl_2_links": false
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
       }
     },
-    "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
-      "type": "gradient-text-header",
+    "category_tabs_nA4BrL": {
+      "type": "category-tabs",
+      "blocks": {
+        "tab_VaMKwz": {
+          "type": "tab",
+          "settings": {
+            "name": "Departments",
+            "targetclass": ".dept-category"
+          }
+        },
+        "tab_R4Pa4h": {
+          "type": "tab",
+          "settings": {
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
+          }
+        },
+        "tab_aFcL4B": {
+          "type": "tab",
+          "settings": {
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
+          }
+        }
+      },
+      "block_order": [
+        "tab_VaMKwz",
+        "tab_R4Pa4h",
+        "tab_aFcL4B"
+      ],
       "settings": {
-        "chsectionheading": "",
-        "chsectiontext": ""
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
-      "type": "page",
+      "type": "static-collection",
+      "blocks": {
+        "filter-1": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "filter_option": "faceted",
+            "filter_groups": "expand_first",
+            "show_filter_product_count": true,
+            "filter_style": "tags",
+            "filter_limit": "999",
+            "grid_categories": "",
+            "custom_ordered_categories": "",
+            "custom_ordered_tags": "",
+            "excluded_tags": "",
+            "excluded_groups": ""
+          }
+        },
+        "9edeae3d-57e1-44a8-8834-7612f94620ff": {
+          "type": "menu",
+          "settings": {
+            "menu": "",
+            "show_prod_count": true,
+            "menu_depth_range": 2
+          }
+        }
+      },
+      "block_order": [
+        "filter-1",
+        "9edeae3d-57e1-44a8-8834-7612f94620ff"
+      ],
+      "disabled": true,
       "settings": {
+        "show_collection_image": true,
+        "products_per_page_range": 24,
+        "products_per_row": "4",
+        "sort_by": true,
+        "grid_list": true,
+        "default_view": "grid-view",
+        "enable_subcollection": false,
+        "show_product_count": false,
+        "thumbnail_image": "product-image",
+        "image_crop": "original"
+      }
+    },
+    "static-recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "13f96a0d-c884-4df4-abd2-5ffe06f21edf": {
+      "type": "dept-category-area",
+      "blocks": {
+        "2621982f-d1a5-4ca6-9b1a-6eb6289ab797": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-attachments-tools.jpg",
+            "title": "Attachments & Tools",
+            "url": "\/collections\/attachments-tools"
+          }
+        },
+        "2666a9da-8cdd-4269-9865-d7fbf3fcbca6": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-bags.jpg",
+            "title": "Bags",
+            "url": "\/collections\/vacuum-bags"
+          }
+        },
+        "4af26343-7e50-4a92-8f36-6348967cfcee": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-batteries-chargers.jpg",
+            "title": "Batteries & Chargers",
+            "url": "\/collections\/vacuum-batteries-chargers"
+          }
+        },
+        "a17afbb6-7cba-4eb3-9de7-381eb3d88d0a": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-hoses.jpg",
+            "title": "Hoses",
+            "url": "\/collections\/hoses"
+          }
+        }
+      },
+      "block_order": [
+        "2621982f-d1a5-4ca6-9b1a-6eb6289ab797",
+        "2666a9da-8cdd-4269-9865-d7fbf3fcbca6",
+        "4af26343-7e50-4a92-8f36-6348967cfcee",
+        "a17afbb6-7cba-4eb3-9de7-381eb3d88d0a"
+      ],
+      "settings": {
+        "block-title": "Vacuum Accessories by Type"
+      }
+    },
+    "eaeef958-d68c-46ed-9c58-38a301607a21": {
+      "type": "dept-related-category-area",
+      "blocks": {
+        "b275edba-c6cc-4735-aa78-c6a8b83eef5d": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-belts.jpg",
+            "title": "Belts",
+            "url": "\/collections\/belts"
+          }
+        },
+        "ff77e7bb-1690-4727-bdba-6dd2b69eeca7": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-brush-rolls.jpg",
+            "title": "Brush Rolls",
+            "url": "\/collections\/brush-rolls"
+          }
+        },
+        "0157494e-2279-40e1-b8c6-2ac82a225b89": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-filters.jpg",
+            "title": "Filters",
+            "url": "\/collections\/filters"
+          }
+        },
+        "e817ac0d-2bff-4a3f-8ce4-eb6b7bcf0204": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-gaskets-and-misc.jpg",
+            "title": "Gaskets & Miscellaneous Parts",
+            "url": "\/collections\/gaskets-miscellaneous-parts"
+          }
+        },
+        "b78d4666-2522-4b2c-95e9-bddbe1b0b790": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-squeegees.jpg",
+            "title": "Squeegees",
+            "url": "\/collections\/squeegees"
+          }
+        },
+        "2625d1c7-ba10-43d5-9d0f-2df118a03dd0": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-motors.jpg",
+            "title": "Vacuum Motors",
+            "url": "\/collections\/vacuum-motors"
+          }
+        }
+      },
+      "block_order": [
+        "b275edba-c6cc-4735-aa78-c6a8b83eef5d",
+        "ff77e7bb-1690-4727-bdba-6dd2b69eeca7",
+        "0157494e-2279-40e1-b8c6-2ac82a225b89",
+        "e817ac0d-2bff-4a3f-8ce4-eb6b7bcf0204",
+        "b78d4666-2522-4b2c-95e9-bddbe1b0b790",
+        "2625d1c7-ba10-43d5-9d0f-2df118a03dd0"
+      ],
+      "settings": {
+        "block-title": "Related Categories"
+      }
+    },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-backpack-vac-xover-floor-tool"
+          }
+        },
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "universal-1-1-2-wet-dry-vacuum-tool-kit"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "hvrpwr-40v-8-amp-lithium-ion-battery-for-hoover-cordless-vacuums"
+          }
+        },
+        "a9a846a4-79ac-48cf-b29e-7a2433909d2d": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-problade-hard-surface-and-carpet-floor-tool-kit"
+          }
+        },
+        "b0892088-bca1-439d-bc71-c950456dc54a": {
+          "type": "slide",
+          "settings": {
+            "product": "super-coach-pro-10-backpack-vac-bags"
+          }
+        },
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-backpack-vacuum-replacement-battery"
+          }
+        },
+        "a0073dda-832a-449f-a358-2e2556962853": {
+          "type": "slide",
+          "settings": {
+            "product": "hoover-40v-fast-charger-for-hvrpwr-vacuum-batteries"
+          }
+        },
+        "7a59ff54-fb3a-471c-95f9-8e6970db8f13": {
+          "type": "slide",
+          "settings": {
+            "product": "slotted-horse-hair-brush-for-wood-floors"
+          }
+        }
+      },
+      "block_order": [
+        "d0d55955-cf3e-4837-8a9e-53c306acb777",
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "a9a846a4-79ac-48cf-b29e-7a2433909d2d",
+        "b0892088-bca1-439d-bc71-c950456dc54a",
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
+        "a0073dda-832a-449f-a358-2e2556962853",
+        "7a59ff54-fb3a-471c-95f9-8e6970db8f13"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
+    "df58619a-5ac7-466e-8ec3-670cc90022d0": {
+      "type": "dept-brands-area",
+      "blocks": {
+        "755848f9-8e99-4274-8d80-0e722023e767": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "ProTeam®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Vacuum Accessories&q=ProTeam",
+            "brand-image": "shopify:\/\/shop_images\/proteam-100331-super-coachvac-vacuum-bags-bnd.jpg"
+          }
+        },
+        "3cfec4ce-b473-47ce-9dd2-898c6cb8c7c6": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Tornado®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Vacuum Accessories&q=Tornado",
+            "brand-image": "shopify:\/\/shop_images\/tornado-wet-dry-accessory-kit.jpg"
+          }
+        },
+        "c70a2d7e-e403-49ce-820b-09b699cfe70f": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Hoover®",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=Hoover",
+            "brand-image": "shopify:\/\/shop_images\/m-pwr-40v-li-ion-battery-ch90040-front.jpg"
+          }
+        },
+        "72c4e0e2-95c4-4cef-b669-11497608e957": {
+          "type": "brandlink",
+          "settings": {
+            "brand-title": "Viper",
+            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Vacuum Accessories&q=Viper",
+            "brand-image": "shopify:\/\/shop_images\/va20288.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "755848f9-8e99-4274-8d80-0e722023e767",
+        "3cfec4ce-b473-47ce-9dd2-898c6cb8c7c6",
+        "c70a2d7e-e403-49ce-820b-09b699cfe70f",
+        "72c4e0e2-95c4-4cef-b669-11497608e957"
+      ],
+      "settings": {
+        "block-title": "Featured Brands"
       }
     }
   },
   "order": [
-    "a475181a-3079-4a36-9edf-37785d0fdb22",
-    "d567f3fb-0056-4b4a-b887-445ab03fabaa",
-    "main"
+    "b91b388d-bac0-44aa-8483-a4047ba28302",
+    "category_tabs_nA4BrL",
+    "main",
+    "static-recently-viewed",
+    "13f96a0d-c884-4df4-abd2-5ffe06f21edf",
+    "eaeef958-d68c-46ed-9c58-38a301607a21",
+    "16636174067db7bd8c",
+    "df58619a-5ac7-466e-8ec3-670cc90022d0"
   ]
 }
