@@ -24,70 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_449ETr": {
+      "type": "category-tabs",
       "blocks": {
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
-          "type": "slide",
+        "tab_PVMBLW": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-pad-driver-for-175-rpm-scrubbers"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
-          "type": "slide",
+        "tab_QbVTRf": {
+          "type": "tab",
           "settings": {
-            "product": "20-inch-mastic-removal-and-concrete-floor-prep-tool-for-floor-buffers"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
-          "type": "slide",
+        "tab_gQge6t": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-poly-floor-scrubbing-brush"
-          }
-        },
-        "a0073dda-832a-449f-a358-2e2556962853": {
-          "type": "slide",
-          "settings": {
-            "product": "oreck-foodservice-tile-grout-brush"
-          }
-        },
-        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
-          "type": "slide",
-          "settings": {
-            "product": "20-inch-carpet-scrubber-rotary-brush"
-          }
-        },
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
-          "type": "slide",
-          "settings": {
-            "product": "4-gallon-floor-buffer-solution-tank"
-          }
-        },
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
-          "type": "slide",
-          "settings": {
-            "product": "oreck-orbiter-12-inch-pad-driver"
-          }
-        },
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
-          "type": "slide",
-          "settings": {
-            "product": "17-inch-grit-impregnated-concrete-brush"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
-        "a0073dda-832a-449f-a358-2e2556962853",
-        "d0d55955-cf3e-4837-8a9e-53c306acb777",
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36"
+        "tab_PVMBLW",
+        "tab_QbVTRf",
+        "tab_gQge6t"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -226,6 +196,72 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-pad-driver-for-175-rpm-scrubbers"
+          }
+        },
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-mastic-removal-and-concrete-floor-prep-tool-for-floor-buffers"
+          }
+        },
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-poly-floor-scrubbing-brush"
+          }
+        },
+        "a0073dda-832a-449f-a358-2e2556962853": {
+          "type": "slide",
+          "settings": {
+            "product": "oreck-foodservice-tile-grout-brush"
+          }
+        },
+        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-carpet-scrubber-rotary-brush"
+          }
+        },
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
+          "type": "slide",
+          "settings": {
+            "product": "4-gallon-floor-buffer-solution-tank"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "oreck-orbiter-12-inch-pad-driver"
+          }
+        },
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-grit-impregnated-concrete-brush"
+          }
+        }
+      },
+      "block_order": [
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
+        "a0073dda-832a-449f-a358-2e2556962853",
+        "d0d55955-cf3e-4837-8a9e-53c306acb777",
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "9d240fc7-3d19-4b88-80b2-b390dc1df52a": {
       "type": "dept-brands-area",
       "blocks": {
@@ -266,11 +302,12 @@
   },
   "order": [
     "239b79e1-9eb1-4460-9439-e5093c6fa480",
-    "16636174067db7bd8c",
+    "category_tabs_449ETr",
     "main",
     "static-recently-viewed",
     "9223f029-014a-4090-94c5-f6049ab26b6d",
     "0541121f-89a6-42fe-b7b1-c449e013c65c",
+    "16636174067db7bd8c",
     "9d240fc7-3d19-4b88-80b2-b390dc1df52a"
   ]
 }
