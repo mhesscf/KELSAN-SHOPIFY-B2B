@@ -24,77 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_W6HkDD": {
+      "type": "category-tabs",
       "blocks": {
-        "0ac70840-d5d8-42b7-b53d-8f8bc7dcd452": {
-          "type": "slide",
+        "tab_FBGcPb": {
+          "type": "tab",
           "settings": {
-            "product": "dual-jet-s-bend-carpet-extraction-wand"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "3e80aa1d-91f4-4246-a4ef-700ef15e8e10": {
-          "type": "slide",
+        "tab_KQkmtB": {
+          "type": "tab",
           "settings": {
-            "product": "cleanfreak-3-gallon-carpet-spotter-vacuum-motor"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "bb5a0aa4-7b11-41f1-bb92-3852903d68be": {
-          "type": "slide",
+        "tab_pqMKUf": {
+          "type": "tab",
           "settings": {
-            "product": "25-foot-extractor-vacuum-solution-hose"
-          }
-        },
-        "417e3f61-60d7-44c7-a0fb-1234cacf4367": {
-          "type": "slide",
-          "settings": {
-            "product": "glidemaster-brass-valve-for-drag-wand"
-          }
-        },
-        "fbc3c07a-a0a0-4b51-9fc4-d377082a6877": {
-          "type": "slide",
-          "settings": {
-            "product": "stainless-steel-auto-detailer-tool"
-          }
-        },
-        "2e9ca9c2-71d8-49a1-8c23-ad9f34429e0d": {
-          "type": "slide",
-          "settings": {
-            "product": "power-head-for-heated-box-extractor"
-          }
-        },
-        "bfa152eb-0e45-4e90-bf90-d42ef1286fd5": {
-          "type": "slide",
-          "settings": {
-            "product": "mytee-dry-gt-upholstery-tool-8400gt"
-          }
-        },
-        "2bd59e4a-96c3-45df-86c5-91829f375171": {
-          "type": "slide",
-          "settings": {
-            "product": "green-rocker-switch"
-          }
-        },
-        "4e6a42c0-427c-40c6-a60e-9fa8b56b9d87": {
-          "type": "slide",
-          "settings": {
-            "product": "external-heater-for-carpet-extractors"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "0ac70840-d5d8-42b7-b53d-8f8bc7dcd452",
-        "3e80aa1d-91f4-4246-a4ef-700ef15e8e10",
-        "bb5a0aa4-7b11-41f1-bb92-3852903d68be",
-        "417e3f61-60d7-44c7-a0fb-1234cacf4367",
-        "fbc3c07a-a0a0-4b51-9fc4-d377082a6877",
-        "2e9ca9c2-71d8-49a1-8c23-ad9f34429e0d",
-        "bfa152eb-0e45-4e90-bf90-d42ef1286fd5",
-        "2bd59e4a-96c3-45df-86c5-91829f375171",
-        "4e6a42c0-427c-40c6-a60e-9fa8b56b9d87"
+        "tab_FBGcPb",
+        "tab_KQkmtB",
+        "tab_pqMKUf"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -251,6 +214,79 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "0ac70840-d5d8-42b7-b53d-8f8bc7dcd452": {
+          "type": "slide",
+          "settings": {
+            "product": "dual-jet-s-bend-carpet-extraction-wand"
+          }
+        },
+        "3e80aa1d-91f4-4246-a4ef-700ef15e8e10": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-3-gallon-carpet-spotter-vacuum-motor"
+          }
+        },
+        "bb5a0aa4-7b11-41f1-bb92-3852903d68be": {
+          "type": "slide",
+          "settings": {
+            "product": "25-foot-extractor-vacuum-solution-hose"
+          }
+        },
+        "417e3f61-60d7-44c7-a0fb-1234cacf4367": {
+          "type": "slide",
+          "settings": {
+            "product": "glidemaster-brass-valve-for-drag-wand"
+          }
+        },
+        "fbc3c07a-a0a0-4b51-9fc4-d377082a6877": {
+          "type": "slide",
+          "settings": {
+            "product": "stainless-steel-auto-detailer-tool"
+          }
+        },
+        "2e9ca9c2-71d8-49a1-8c23-ad9f34429e0d": {
+          "type": "slide",
+          "settings": {
+            "product": "power-head-for-heated-box-extractor"
+          }
+        },
+        "bfa152eb-0e45-4e90-bf90-d42ef1286fd5": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-dry-gt-upholstery-tool-8400gt"
+          }
+        },
+        "2bd59e4a-96c3-45df-86c5-91829f375171": {
+          "type": "slide",
+          "settings": {
+            "product": "green-rocker-switch"
+          }
+        },
+        "4e6a42c0-427c-40c6-a60e-9fa8b56b9d87": {
+          "type": "slide",
+          "settings": {
+            "product": "external-heater-for-carpet-extractors"
+          }
+        }
+      },
+      "block_order": [
+        "0ac70840-d5d8-42b7-b53d-8f8bc7dcd452",
+        "3e80aa1d-91f4-4246-a4ef-700ef15e8e10",
+        "bb5a0aa4-7b11-41f1-bb92-3852903d68be",
+        "417e3f61-60d7-44c7-a0fb-1234cacf4367",
+        "fbc3c07a-a0a0-4b51-9fc4-d377082a6877",
+        "2e9ca9c2-71d8-49a1-8c23-ad9f34429e0d",
+        "bfa152eb-0e45-4e90-bf90-d42ef1286fd5",
+        "2bd59e4a-96c3-45df-86c5-91829f375171",
+        "4e6a42c0-427c-40c6-a60e-9fa8b56b9d87"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "94ac15c5-4bb4-46ff-b837-03ddd6f36bdf": {
       "type": "dept-brands-area",
       "blocks": {
@@ -291,11 +327,12 @@
   },
   "order": [
     "5af3278b-64fb-4373-9e7a-816a1fde519a",
-    "16636174067db7bd8c",
+    "category_tabs_W6HkDD",
     "main",
     "static-recently-viewed",
     "cc9065fd-6183-4668-a6d3-4ae7a1782eb0",
     "f50b2f6e-d572-4c34-86bf-6f91443776b3",
+    "16636174067db7bd8c",
     "94ac15c5-4bb4-46ff-b837-03ddd6f36bdf"
   ]
 }
