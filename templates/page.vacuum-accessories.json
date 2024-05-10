@@ -126,6 +126,7 @@
         },
         "2666a9da-8cdd-4269-9865-d7fbf3fcbca6": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/vac-bags.jpg",
             "title": "Bags",
@@ -202,6 +203,14 @@
             "url": "\/collections\/squeegees"
           }
         },
+        "related_cat_link_CLjnzG": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-bags.jpg",
+            "title": "Vacuum Bags",
+            "url": ""
+          }
+        },
         "2625d1c7-ba10-43d5-9d0f-2df118a03dd0": {
           "type": "related_cat_link",
           "settings": {
@@ -217,6 +226,7 @@
         "0157494e-2279-40e1-b8c6-2ac82a225b89",
         "e817ac0d-2bff-4a3f-8ce4-eb6b7bcf0204",
         "b78d4666-2522-4b2c-95e9-bddbe1b0b790",
+        "related_cat_link_CLjnzG",
         "2625d1c7-ba10-43d5-9d0f-2df118a03dd0"
       ],
       "settings": {
