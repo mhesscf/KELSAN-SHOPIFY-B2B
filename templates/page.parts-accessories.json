@@ -236,6 +236,14 @@
             "url": "\/pages\/vacuum-accessories"
           }
         },
+        "categorylink_466bfb": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vac-pags-filters-link.jpg",
+            "title": "Vacuum Bags & Filters",
+            "url": "\/pages\/vacuum-bags-filters"
+          }
+        },
         "01c85f9d-f058-49c0-9418-9e5014e16be9": {
           "type": "categorylink",
           "settings": {
@@ -260,6 +268,7 @@
         "e78ef57c-ba69-4236-b4d7-98a784cef3a6",
         "d63e4ee6-9077-4678-aec0-10b0be238918",
         "64121da2-ee28-40a2-90d8-8af87ddc006e",
+        "categorylink_466bfb",
         "01c85f9d-f058-49c0-9418-9e5014e16be9"
       ],
       "settings": {
