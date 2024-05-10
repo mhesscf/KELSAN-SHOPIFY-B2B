@@ -34,63 +34,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_3XcrQe": {
+      "type": "category-tabs",
       "blocks": {
-        "08738b00-0444-41c9-9e43-45e8bc2cecb0": {
-          "type": "slide",
+        "tab_DKCLVc": {
+          "type": "tab",
           "settings": {
-            "product": "ultimate-heated-box-extractor"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "044471d9-3826-4e02-ab69-ec53aa9fedb5": {
-          "type": "slide",
+        "tab_ztdmjw": {
+          "type": "tab",
           "settings": {
-            "product": "mytee-lite-8070-heated-carpet-extractor-and-auto-detailer"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "d76bff54-6329-47b1-b661-845355ba51ed": {
-          "type": "slide",
+        "tab_CMQjhV": {
+          "type": "tab",
           "settings": {
-            "product": "basic-carpet-cleaning-package"
-          }
-        },
-        "a787e186-2711-4eed-be04-bf6db2f3d284": {
-          "type": "slide",
-          "settings": {
-            "product": "heated-carpet-spot-cleaner"
-          }
-        },
-        "7a76ea89-22fb-4c57-a156-0cb064f773f2": {
-          "type": "slide",
-          "settings": {
-            "product": "cimex-triple-brush-premium-carpet-encapsulation-machine"
-          }
-        },
-        "df088985-522c-4ba6-b69b-5104497c020c": {
-          "type": "slide",
-          "settings": {
-            "product": "commercial-carpet-spot-cleaning-machine"
-          }
-        },
-        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f": {
-          "type": "slide",
-          "settings": {
-            "product": "7-gallon-professional-carpet-extractor"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "08738b00-0444-41c9-9e43-45e8bc2cecb0",
-        "044471d9-3826-4e02-ab69-ec53aa9fedb5",
-        "d76bff54-6329-47b1-b661-845355ba51ed",
-        "a787e186-2711-4eed-be04-bf6db2f3d284",
-        "7a76ea89-22fb-4c57-a156-0cb064f773f2",
-        "df088985-522c-4ba6-b69b-5104497c020c",
-        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f"
+        "tab_DKCLVc",
+        "tab_ztdmjw",
+        "tab_CMQjhV"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -274,6 +251,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "08738b00-0444-41c9-9e43-45e8bc2cecb0": {
+          "type": "slide",
+          "settings": {
+            "product": "ultimate-heated-box-extractor"
+          }
+        },
+        "044471d9-3826-4e02-ab69-ec53aa9fedb5": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-lite-8070-heated-carpet-extractor-and-auto-detailer"
+          }
+        },
+        "d76bff54-6329-47b1-b661-845355ba51ed": {
+          "type": "slide",
+          "settings": {
+            "product": "basic-carpet-cleaning-package"
+          }
+        },
+        "a787e186-2711-4eed-be04-bf6db2f3d284": {
+          "type": "slide",
+          "settings": {
+            "product": "heated-carpet-spot-cleaner"
+          }
+        },
+        "7a76ea89-22fb-4c57-a156-0cb064f773f2": {
+          "type": "slide",
+          "settings": {
+            "product": "cimex-triple-brush-premium-carpet-encapsulation-machine"
+          }
+        },
+        "df088985-522c-4ba6-b69b-5104497c020c": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-carpet-spot-cleaning-machine"
+          }
+        },
+        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f": {
+          "type": "slide",
+          "settings": {
+            "product": "7-gallon-professional-carpet-extractor"
+          }
+        }
+      },
+      "block_order": [
+        "08738b00-0444-41c9-9e43-45e8bc2cecb0",
+        "044471d9-3826-4e02-ab69-ec53aa9fedb5",
+        "d76bff54-6329-47b1-b661-845355ba51ed",
+        "a787e186-2711-4eed-be04-bf6db2f3d284",
+        "7a76ea89-22fb-4c57-a156-0cb064f773f2",
+        "df088985-522c-4ba6-b69b-5104497c020c",
+        "9b06702a-1ba3-4f9a-8c6c-7bbbcf58236f"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "0a674ccc-9523-4a66-9ab9-51e056ddd146": {
       "type": "dept-brands-area",
       "blocks": {
@@ -323,11 +359,12 @@
   },
   "order": [
     "29f88aed-5198-4ab8-956f-af2a43a1021d",
-    "16636174067db7bd8c",
+    "category_tabs_3XcrQe",
     "main",
     "static-recently-viewed",
     "fd31970b-b25d-4641-821d-a01bd23aad8e",
     "8d1f5d4a-94a2-4271-a3be-a3895c7a817e",
+    "16636174067db7bd8c",
     "0a674ccc-9523-4a66-9ab9-51e056ddd146"
   ]
 }
