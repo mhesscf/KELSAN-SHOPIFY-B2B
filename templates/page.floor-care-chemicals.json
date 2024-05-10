@@ -24,56 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_TCbtKB": {
+      "type": "category-tabs",
       "blocks": {
-        "7c060ae5-24d5-4b1c-8a61-2b7fd17580a6": {
-          "type": "slide",
+        "tab_Tr7P3a": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-nrs-no-rinse-floor-stripper"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "d4755be9-b22a-4201-902a-def495c02e4e": {
-          "type": "slide",
+        "tab_jU6jnU": {
+          "type": "tab",
           "settings": {
-            "product": "soap-concentrate-gal-bottle-carton-ct"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "a4d83a4b-3bbe-44da-bc02-d7cbbc691e3a": {
-          "type": "slide",
+        "tab_VwE3ji": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-mop-on-restorer-concentrated-spray-buff-for-floors"
-          }
-        },
-        "a12e715c-f099-4021-8e0f-60c144c83583": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-magnifico-lavender-scented-floor-cleaning-solution"
-          }
-        },
-        "b7c3e8c6-d4b9-4c26-b368-1b96fead33e1": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-orange-punch-degreaser-all-purpose-cleaner"
-          }
-        },
-        "034c0c0d-6251-4626-a376-36acc9218cd1": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-classroom-finish-high-gloss-floor-finish"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "7c060ae5-24d5-4b1c-8a61-2b7fd17580a6",
-        "d4755be9-b22a-4201-902a-def495c02e4e",
-        "a4d83a4b-3bbe-44da-bc02-d7cbbc691e3a",
-        "a12e715c-f099-4021-8e0f-60c144c83583",
-        "b7c3e8c6-d4b9-4c26-b368-1b96fead33e1",
-        "034c0c0d-6251-4626-a376-36acc9218cd1"
+        "tab_Tr7P3a",
+        "tab_jU6jnU",
+        "tab_VwE3ji"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -221,6 +205,58 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "7c060ae5-24d5-4b1c-8a61-2b7fd17580a6": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-nrs-no-rinse-floor-stripper"
+          }
+        },
+        "d4755be9-b22a-4201-902a-def495c02e4e": {
+          "type": "slide",
+          "settings": {
+            "product": "soap-concentrate-gal-bottle-carton-ct"
+          }
+        },
+        "a4d83a4b-3bbe-44da-bc02-d7cbbc691e3a": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-mop-on-restorer-concentrated-spray-buff-for-floors"
+          }
+        },
+        "a12e715c-f099-4021-8e0f-60c144c83583": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-magnifico-lavender-scented-floor-cleaning-solution"
+          }
+        },
+        "b7c3e8c6-d4b9-4c26-b368-1b96fead33e1": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-orange-punch-degreaser-all-purpose-cleaner"
+          }
+        },
+        "034c0c0d-6251-4626-a376-36acc9218cd1": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-classroom-finish-high-gloss-floor-finish"
+          }
+        }
+      },
+      "block_order": [
+        "7c060ae5-24d5-4b1c-8a61-2b7fd17580a6",
+        "d4755be9-b22a-4201-902a-def495c02e4e",
+        "a4d83a4b-3bbe-44da-bc02-d7cbbc691e3a",
+        "a12e715c-f099-4021-8e0f-60c144c83583",
+        "b7c3e8c6-d4b9-4c26-b368-1b96fead33e1",
+        "034c0c0d-6251-4626-a376-36acc9218cd1"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "a2585a7c-56e9-4cc9-bb70-f9d4bc8231eb": {
       "type": "dept-brands-area",
       "blocks": {
@@ -261,11 +297,12 @@
   },
   "order": [
     "9004a019-c4f1-409a-a17f-7a7cdf534515",
-    "16636174067db7bd8c",
+    "category_tabs_TCbtKB",
     "main",
     "static-recently-viewed",
     "2417d0a1-1be9-4646-b0a2-05bdbc760e26",
     "77d399a5-24ad-4a23-aed9-00cb42a583e6",
+    "16636174067db7bd8c",
     "a2585a7c-56e9-4cc9-bb70-f9d4bc8231eb"
   ]
 }
