@@ -24,49 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_C4tmAU": {
+      "type": "category-tabs",
       "blocks": {
-        "2e1d617a-f322-4506-8f78-34b176528555": {
-          "type": "slide",
+        "tab_Dw8kEc": {
+          "type": "tab",
           "settings": {
-            "product": "floor-stripping-protective-boots"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "054ced96-c2bc-4b4b-9325-4c41abbc8064": {
-          "type": "slide",
+        "tab_zP6nBm": {
+          "type": "tab",
           "settings": {
-            "product": "floor-stripping-pad-shoes"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "73b090e4-0ba5-4a9a-9e9f-961d0a790e2f": {
-          "type": "slide",
+        "tab_TkFgad": {
+          "type": "tab",
           "settings": {
-            "product": "yellow-heavy-weight-latex-nuke-boot"
-          }
-        },
-        "b166a864-d6a2-4d8a-9fe3-c38844758a68": {
-          "type": "slide",
-          "settings": {
-            "product": "bootiebutler-extra-durable-waterproof-shoe-cover-refills"
-          }
-        },
-        "1bef2cd3-e12e-47d1-bf38-b6167d223267": {
-          "type": "slide",
-          "settings": {
-            "product": "acid-resistant-work-boots"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "2e1d617a-f322-4506-8f78-34b176528555",
-        "054ced96-c2bc-4b4b-9325-4c41abbc8064",
-        "73b090e4-0ba5-4a9a-9e9f-961d0a790e2f",
-        "b166a864-d6a2-4d8a-9fe3-c38844758a68",
-        "1bef2cd3-e12e-47d1-bf38-b6167d223267"
+        "tab_Dw8kEc",
+        "tab_zP6nBm",
+        "tab_TkFgad"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -168,6 +159,51 @@
         "block-title": "Foot Protection by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "2e1d617a-f322-4506-8f78-34b176528555": {
+          "type": "slide",
+          "settings": {
+            "product": "floor-stripping-protective-boots"
+          }
+        },
+        "054ced96-c2bc-4b4b-9325-4c41abbc8064": {
+          "type": "slide",
+          "settings": {
+            "product": "floor-stripping-pad-shoes"
+          }
+        },
+        "73b090e4-0ba5-4a9a-9e9f-961d0a790e2f": {
+          "type": "slide",
+          "settings": {
+            "product": "yellow-heavy-weight-latex-nuke-boot"
+          }
+        },
+        "b166a864-d6a2-4d8a-9fe3-c38844758a68": {
+          "type": "slide",
+          "settings": {
+            "product": "bootiebutler-extra-durable-waterproof-shoe-cover-refills"
+          }
+        },
+        "1bef2cd3-e12e-47d1-bf38-b6167d223267": {
+          "type": "slide",
+          "settings": {
+            "product": "acid-resistant-work-boots"
+          }
+        }
+      },
+      "block_order": [
+        "2e1d617a-f322-4506-8f78-34b176528555",
+        "054ced96-c2bc-4b4b-9325-4c41abbc8064",
+        "73b090e4-0ba5-4a9a-9e9f-961d0a790e2f",
+        "b166a864-d6a2-4d8a-9fe3-c38844758a68",
+        "1bef2cd3-e12e-47d1-bf38-b6167d223267"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "3ed81508-6ae3-4e5c-bdb7-bb15a1406572": {
       "type": "dept-brands-area",
       "blocks": {
@@ -208,10 +244,11 @@
   },
   "order": [
     "d22c9114-d9f7-4696-bbec-b2d5419d7b6b",
-    "16636174067db7bd8c",
+    "category_tabs_C4tmAU",
     "main",
     "static-recently-viewed",
     "5ef2dd83-8ccb-40f7-b72a-641e0836edb2",
+    "16636174067db7bd8c",
     "3ed81508-6ae3-4e5c-bdb7-bb15a1406572"
   ]
 }
