@@ -1,5 +1,29 @@
 {
   "sections": {
+    "b50e1c62-eace-4f33-84e1-f66c735be752": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "7b319128-5b79-4379-aa3e-ba1404cd147a": {
+          "type": "categoryhead",
+          "settings": {
+            "cat_image": "shopify:\/\/shop_images\/febreze-deodorizer-absorbents-dept-page.jpg",
+            "cat_title": "Deodorizers & Absorbents",
+            "cat_text": "A large selection of absorbents, deodorizers, and clean up kits to help you deal with different messes."
+          }
+        }
+      },
+      "block_order": [
+        "7b319128-5b79-4379-aa3e-ba1404cd147a"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "x-large",
+        "slideshow_text_below_image": true
+      }
+    },
     "category_tabs_QYCgUw": {
       "type": "category-tabs",
       "blocks": {
@@ -34,30 +58,6 @@
         "tabheading": "",
         "bgcolor": "",
         "textcolor": ""
-      }
-    },
-    "b50e1c62-eace-4f33-84e1-f66c735be752": {
-      "type": "dynamic-slideshow",
-      "blocks": {
-        "7b319128-5b79-4379-aa3e-ba1404cd147a": {
-          "type": "categoryhead",
-          "settings": {
-            "cat_image": "shopify:\/\/shop_images\/febreze-deodorizer-absorbents-dept-page.jpg",
-            "cat_title": "Deodorizers & Absorbents",
-            "cat_text": "A large selection of absorbents, deodorizers, and clean up kits to help you deal with different messes."
-          }
-        }
-      },
-      "block_order": [
-        "7b319128-5b79-4379-aa3e-ba1404cd147a"
-      ],
-      "settings": {
-        "enable_autoplay": true,
-        "autoplay_duration": 8,
-        "slideshow_width": "full",
-        "slideshow_height": "medium",
-        "slideshow_height_mobile": "x-large",
-        "slideshow_text_below_image": true
       }
     },
     "main": {
@@ -319,8 +319,8 @@
     }
   },
   "order": [
-    "category_tabs_QYCgUw",
     "b50e1c62-eace-4f33-84e1-f66c735be752",
+    "category_tabs_QYCgUw",
     "main",
     "static-recently-viewed",
     "9e970e79-b67d-44fb-873b-1170977e44de",
