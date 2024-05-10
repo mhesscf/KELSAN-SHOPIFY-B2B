@@ -24,49 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_tpPwRN": {
+      "type": "category-tabs",
       "blocks": {
-        "ba33f7f0-75c7-4e84-a73c-19c56800c5fe": {
-          "type": "slide",
+        "tab_Rmb4eU": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-all-purpose-spotter"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "d20a85f6-0372-40ef-82bf-33cb88b08cd1": {
-          "type": "slide",
+        "tab_YB8ybn": {
+          "type": "tab",
           "settings": {
-            "product": "sprayway-sw676-carpet-and-upholstery-spotter"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "da3ff7bd-b268-4286-8bf1-aea3a0f82de5": {
-          "type": "slide",
+        "tab_Kyzfw9": {
+          "type": "tab",
           "settings": {
-            "product": "certified-protect-o-carpet-stain-sealer"
-          }
-        },
-        "feb2790a-2640-4132-8d02-64592db9e4b5": {
-          "type": "slide",
-          "settings": {
-            "product": "pet-patrol-urine-feces-stain-remover"
-          }
-        },
-        "2740c851-c3f9-4355-aff1-03a29836319d": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-activate-odor-removing-bio-enzymatic-cleaner"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "ba33f7f0-75c7-4e84-a73c-19c56800c5fe",
-        "d20a85f6-0372-40ef-82bf-33cb88b08cd1",
-        "da3ff7bd-b268-4286-8bf1-aea3a0f82de5",
-        "feb2790a-2640-4132-8d02-64592db9e4b5",
-        "2740c851-c3f9-4355-aff1-03a29836319d"
+        "tab_Rmb4eU",
+        "tab_YB8ybn",
+        "tab_Kyzfw9"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -169,6 +160,51 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ba33f7f0-75c7-4e84-a73c-19c56800c5fe": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-all-purpose-spotter"
+          }
+        },
+        "d20a85f6-0372-40ef-82bf-33cb88b08cd1": {
+          "type": "slide",
+          "settings": {
+            "product": "sprayway-sw676-carpet-and-upholstery-spotter"
+          }
+        },
+        "da3ff7bd-b268-4286-8bf1-aea3a0f82de5": {
+          "type": "slide",
+          "settings": {
+            "product": "certified-protect-o-carpet-stain-sealer"
+          }
+        },
+        "feb2790a-2640-4132-8d02-64592db9e4b5": {
+          "type": "slide",
+          "settings": {
+            "product": "pet-patrol-urine-feces-stain-remover"
+          }
+        },
+        "2740c851-c3f9-4355-aff1-03a29836319d": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-activate-odor-removing-bio-enzymatic-cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "ba33f7f0-75c7-4e84-a73c-19c56800c5fe",
+        "d20a85f6-0372-40ef-82bf-33cb88b08cd1",
+        "da3ff7bd-b268-4286-8bf1-aea3a0f82de5",
+        "feb2790a-2640-4132-8d02-64592db9e4b5",
+        "2740c851-c3f9-4355-aff1-03a29836319d"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "fe6c0d39-4a0b-4e39-8dd2-d348d5020610": {
       "type": "dept-brands-area",
       "blocks": {
@@ -218,11 +254,12 @@
   },
   "order": [
     "2512f266-e1f4-4198-a298-e86178a4c9fd",
-    "16636174067db7bd8c",
+    "category_tabs_tpPwRN",
     "main",
     "static-recently-viewed",
     "74250fca-dd78-479c-bc4c-86cecc2b032e",
     "7eca499c-268d-48bd-8006-71b809cc4271",
+    "16636174067db7bd8c",
     "fe6c0d39-4a0b-4e39-8dd2-d348d5020610"
   ]
 }
