@@ -24,63 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_637x9V": {
+      "type": "category-tabs",
       "blocks": {
-        "9593d182-fbc4-49ca-b3fb-ad2f0667d90d": {
-          "type": "slide",
+        "tab_DHWicM": {
+          "type": "tab",
           "settings": {
-            "product": "warehouse-concrete-floor-sweeper"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "c5180dad-46d6-4edb-b2b0-822003ce155b": {
-          "type": "slide",
+        "tab_AmcrMU": {
+          "type": "tab",
           "settings": {
-            "product": "ipc-eagle-1280-battery-power-rider-sweeper"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "fdfd2204-1248-48ab-bd42-0fbf6746347a": {
-          "type": "slide",
+        "tab_6grCNH": {
+          "type": "tab",
           "settings": {
-            "product": "viper-ros1300-ride-on-sweeper"
-          }
-        },
-        "24e63855-05eb-45b8-b479-15c6f707a7ae": {
-          "type": "slide",
-          "settings": {
-            "product": "28-inch-walk-behind-battery-sweeper"
-          }
-        },
-        "8d429449-44a7-46bc-babb-73d9f62c3b57": {
-          "type": "slide",
-          "settings": {
-            "product": "manual-push-sweeper-for-parking-lots"
-          }
-        },
-        "ceee8d69-a397-4e5c-96ca-5f1a7c33dfb2": {
-          "type": "slide",
-          "settings": {
-            "product": "battery-indoor-floor-push-sweeper"
-          }
-        },
-        "79c756f5-7536-46ff-8a17-62789fd72fc9": {
-          "type": "slide",
-          "settings": {
-            "product": "advance-terra-4300b-compact-rider-sweeper"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "9593d182-fbc4-49ca-b3fb-ad2f0667d90d",
-        "c5180dad-46d6-4edb-b2b0-822003ce155b",
-        "fdfd2204-1248-48ab-bd42-0fbf6746347a",
-        "24e63855-05eb-45b8-b479-15c6f707a7ae",
-        "8d429449-44a7-46bc-babb-73d9f62c3b57",
-        "ceee8d69-a397-4e5c-96ca-5f1a7c33dfb2",
-        "79c756f5-7536-46ff-8a17-62789fd72fc9"
+        "tab_DHWicM",
+        "tab_AmcrMU",
+        "tab_6grCNH"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -183,6 +160,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "9593d182-fbc4-49ca-b3fb-ad2f0667d90d": {
+          "type": "slide",
+          "settings": {
+            "product": "warehouse-concrete-floor-sweeper"
+          }
+        },
+        "c5180dad-46d6-4edb-b2b0-822003ce155b": {
+          "type": "slide",
+          "settings": {
+            "product": "ipc-eagle-1280-battery-power-rider-sweeper"
+          }
+        },
+        "fdfd2204-1248-48ab-bd42-0fbf6746347a": {
+          "type": "slide",
+          "settings": {
+            "product": "viper-ros1300-ride-on-sweeper"
+          }
+        },
+        "24e63855-05eb-45b8-b479-15c6f707a7ae": {
+          "type": "slide",
+          "settings": {
+            "product": "28-inch-walk-behind-battery-sweeper"
+          }
+        },
+        "8d429449-44a7-46bc-babb-73d9f62c3b57": {
+          "type": "slide",
+          "settings": {
+            "product": "manual-push-sweeper-for-parking-lots"
+          }
+        },
+        "ceee8d69-a397-4e5c-96ca-5f1a7c33dfb2": {
+          "type": "slide",
+          "settings": {
+            "product": "battery-indoor-floor-push-sweeper"
+          }
+        },
+        "79c756f5-7536-46ff-8a17-62789fd72fc9": {
+          "type": "slide",
+          "settings": {
+            "product": "advance-terra-4300b-compact-rider-sweeper"
+          }
+        }
+      },
+      "block_order": [
+        "9593d182-fbc4-49ca-b3fb-ad2f0667d90d",
+        "c5180dad-46d6-4edb-b2b0-822003ce155b",
+        "fdfd2204-1248-48ab-bd42-0fbf6746347a",
+        "24e63855-05eb-45b8-b479-15c6f707a7ae",
+        "8d429449-44a7-46bc-babb-73d9f62c3b57",
+        "ceee8d69-a397-4e5c-96ca-5f1a7c33dfb2",
+        "79c756f5-7536-46ff-8a17-62789fd72fc9"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "715967e6-7ba7-4e56-b065-374ea8120de3": {
       "type": "dept-brands-area",
       "blocks": {
@@ -232,11 +268,12 @@
   },
   "order": [
     "7e54333d-d412-49a4-bdea-6e9b63dbed34",
-    "16636174067db7bd8c",
+    "category_tabs_637x9V",
     "main",
     "static-recently-viewed",
     "fce3e32f-efcd-4d81-bffc-fc15c455ca52",
     "e6c49a8f-5f4a-4635-bd9c-6a7cd2dadf1a",
+    "16636174067db7bd8c",
     "715967e6-7ba7-4e56-b065-374ea8120de3"
   ]
 }
