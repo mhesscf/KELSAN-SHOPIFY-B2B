@@ -24,63 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_Pbdy3B": {
+      "type": "category-tabs",
       "blocks": {
-        "189e95dc-07de-4792-b4db-74a7631d4106": {
-          "type": "slide",
+        "tab_JinNwx": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-deep-extractor-carpet-extraction-cleaner"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "52be1ea2-3dec-46d2-994d-5d4095baaf4e": {
-          "type": "slide",
+        "tab_hGTyrR": {
+          "type": "tab",
           "settings": {
-            "product": "cleanfreak-defoamer-vacuum-motor-protectant"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "b843a535-25bc-40d2-82e8-a19fa773ae71": {
-          "type": "slide",
+        "tab_w7CVWk": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-all-purpose-spotter"
-          }
-        },
-        "9cd2a798-9162-4be0-9ba9-dbcce6556271": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-pre-treat-traffic-lane-carpet-cleaner"
-          }
-        },
-        "c58a769c-d953-4012-822d-e1e5b3607d98": {
-          "type": "slide",
-          "settings": {
-            "product": "pet-patrol-urine-feces-stain-remover"
-          }
-        },
-        "483ee68e-982f-44ac-945a-26267895874a": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-unique-citrus-liquid-deodorizer-and-odor-counteractant"
-          }
-        },
-        "c2bf64cf-0ad7-4753-89a4-40a6bec173d5": {
-          "type": "slide",
-          "settings": {
-            "product": "pet-accident-carpet-spotting-package"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "189e95dc-07de-4792-b4db-74a7631d4106",
-        "52be1ea2-3dec-46d2-994d-5d4095baaf4e",
-        "b843a535-25bc-40d2-82e8-a19fa773ae71",
-        "9cd2a798-9162-4be0-9ba9-dbcce6556271",
-        "c58a769c-d953-4012-822d-e1e5b3607d98",
-        "483ee68e-982f-44ac-945a-26267895874a",
-        "c2bf64cf-0ad7-4753-89a4-40a6bec173d5"
+        "tab_JinNwx",
+        "tab_hGTyrR",
+        "tab_w7CVWk"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -228,6 +205,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "189e95dc-07de-4792-b4db-74a7631d4106": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-deep-extractor-carpet-extraction-cleaner"
+          }
+        },
+        "52be1ea2-3dec-46d2-994d-5d4095baaf4e": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-defoamer-vacuum-motor-protectant"
+          }
+        },
+        "b843a535-25bc-40d2-82e8-a19fa773ae71": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-all-purpose-spotter"
+          }
+        },
+        "9cd2a798-9162-4be0-9ba9-dbcce6556271": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-pre-treat-traffic-lane-carpet-cleaner"
+          }
+        },
+        "c58a769c-d953-4012-822d-e1e5b3607d98": {
+          "type": "slide",
+          "settings": {
+            "product": "pet-patrol-urine-feces-stain-remover"
+          }
+        },
+        "483ee68e-982f-44ac-945a-26267895874a": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-unique-citrus-liquid-deodorizer-and-odor-counteractant"
+          }
+        },
+        "c2bf64cf-0ad7-4753-89a4-40a6bec173d5": {
+          "type": "slide",
+          "settings": {
+            "product": "pet-accident-carpet-spotting-package"
+          }
+        }
+      },
+      "block_order": [
+        "189e95dc-07de-4792-b4db-74a7631d4106",
+        "52be1ea2-3dec-46d2-994d-5d4095baaf4e",
+        "b843a535-25bc-40d2-82e8-a19fa773ae71",
+        "9cd2a798-9162-4be0-9ba9-dbcce6556271",
+        "c58a769c-d953-4012-822d-e1e5b3607d98",
+        "483ee68e-982f-44ac-945a-26267895874a",
+        "c2bf64cf-0ad7-4753-89a4-40a6bec173d5"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "81e0dbef-c482-4f47-be1e-2794fe97b946": {
       "type": "dept-brands-area",
       "blocks": {
@@ -277,11 +313,12 @@
   },
   "order": [
     "2397002a-0ce9-4269-bc08-564b8a895239",
-    "16636174067db7bd8c",
+    "category_tabs_Pbdy3B",
     "main",
     "static-recently-viewed",
     "9f7c5adc-148e-458c-b440-7d7ed115c2ac",
     "01e4e831-cb79-4467-a412-426bcdd4ee9b",
+    "16636174067db7bd8c",
     "81e0dbef-c482-4f47-be1e-2794fe97b946"
   ]
 }
