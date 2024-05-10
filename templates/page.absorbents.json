@@ -1,5 +1,41 @@
 {
   "sections": {
+    "category_tabs_QYCgUw": {
+      "type": "category-tabs",
+      "blocks": {
+        "tab_WhFfBN": {
+          "type": "tab",
+          "settings": {
+            "name": "Departments",
+            "targetclass": ".dept-category"
+          }
+        },
+        "tab_kiPW9j": {
+          "type": "tab",
+          "settings": {
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
+          }
+        },
+        "tab_hmUiUm": {
+          "type": "tab",
+          "settings": {
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
+          }
+        }
+      },
+      "block_order": [
+        "tab_WhFfBN",
+        "tab_kiPW9j",
+        "tab_hmUiUm"
+      ],
+      "settings": {
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
+      }
+    },
     "b50e1c62-eace-4f33-84e1-f66c735be752": {
       "type": "dynamic-slideshow",
       "blocks": {
@@ -22,72 +58,6 @@
         "slideshow_height": "medium",
         "slideshow_height_mobile": "x-large",
         "slideshow_text_below_image": true
-      }
-    },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
-      "blocks": {
-        "7763d877-3ad7-4f77-9bf5-050e954ba826": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-unique-citrus-liquid-deodorizer-and-odor-counteractant"
-          }
-        },
-        "e1a9e54b-06e1-4ffd-85c9-e0a2c54b0c32": {
-          "type": "slide",
-          "settings": {
-            "product": "vomit-absorbent-granules-10-lb-bag"
-          }
-        },
-        "fe15db1b-2386-47df-b09a-790e13627281": {
-          "type": "slide",
-          "settings": {
-            "product": "door-pod-restroom-air-freshener"
-          }
-        },
-        "600cf2f3-8d23-4335-9923-d16029dccc29": {
-          "type": "slide",
-          "settings": {
-            "product": "case-of-febreze-fabric-refresher-odor-eliminator"
-          }
-        },
-        "63b04f17-b982-4e71-bcd0-a58367ad9b16": {
-          "type": "slide",
-          "settings": {
-            "product": "fresh-wave-iaq-natural-odor-eliminator"
-          }
-        },
-        "9ce3a23c-7d19-4222-8253-e601c84ac06f": {
-          "type": "slide",
-          "settings": {
-            "product": "spilfyter-gray-standard-universal-high-absorbent-pads-16-x18"
-          }
-        },
-        "f6ac310d-d1c9-46a3-9b9a-64f39c88e2d1": {
-          "type": "slide",
-          "settings": {
-            "product": "supersorb-liquid-spills-absorbent-oz-shaker-can-ss"
-          }
-        },
-        "3b3aef60-7a05-4de6-a1e0-d55b06ebae6e": {
-          "type": "slide",
-          "settings": {
-            "product": "deodorizing-carpet-cleaning-powder-fresh-oz-cdc"
-          }
-        }
-      },
-      "block_order": [
-        "7763d877-3ad7-4f77-9bf5-050e954ba826",
-        "e1a9e54b-06e1-4ffd-85c9-e0a2c54b0c32",
-        "fe15db1b-2386-47df-b09a-790e13627281",
-        "600cf2f3-8d23-4335-9923-d16029dccc29",
-        "63b04f17-b982-4e71-bcd0-a58367ad9b16",
-        "9ce3a23c-7d19-4222-8253-e601c84ac06f",
-        "f6ac310d-d1c9-46a3-9b9a-64f39c88e2d1",
-        "3b3aef60-7a05-4de6-a1e0-d55b06ebae6e"
-      ],
-      "settings": {
-        "cfpssectionheading": "Featured Products"
       }
     },
     "main": {
@@ -216,6 +186,72 @@
         "block-title": "Deodorizers & Absorbents by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "7763d877-3ad7-4f77-9bf5-050e954ba826": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-unique-citrus-liquid-deodorizer-and-odor-counteractant"
+          }
+        },
+        "e1a9e54b-06e1-4ffd-85c9-e0a2c54b0c32": {
+          "type": "slide",
+          "settings": {
+            "product": "vomit-absorbent-granules-10-lb-bag"
+          }
+        },
+        "fe15db1b-2386-47df-b09a-790e13627281": {
+          "type": "slide",
+          "settings": {
+            "product": "door-pod-restroom-air-freshener"
+          }
+        },
+        "600cf2f3-8d23-4335-9923-d16029dccc29": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-febreze-fabric-refresher-odor-eliminator"
+          }
+        },
+        "63b04f17-b982-4e71-bcd0-a58367ad9b16": {
+          "type": "slide",
+          "settings": {
+            "product": "fresh-wave-iaq-natural-odor-eliminator"
+          }
+        },
+        "9ce3a23c-7d19-4222-8253-e601c84ac06f": {
+          "type": "slide",
+          "settings": {
+            "product": "spilfyter-gray-standard-universal-high-absorbent-pads-16-x18"
+          }
+        },
+        "f6ac310d-d1c9-46a3-9b9a-64f39c88e2d1": {
+          "type": "slide",
+          "settings": {
+            "product": "supersorb-liquid-spills-absorbent-oz-shaker-can-ss"
+          }
+        },
+        "3b3aef60-7a05-4de6-a1e0-d55b06ebae6e": {
+          "type": "slide",
+          "settings": {
+            "product": "deodorizing-carpet-cleaning-powder-fresh-oz-cdc"
+          }
+        }
+      },
+      "block_order": [
+        "7763d877-3ad7-4f77-9bf5-050e954ba826",
+        "e1a9e54b-06e1-4ffd-85c9-e0a2c54b0c32",
+        "fe15db1b-2386-47df-b09a-790e13627281",
+        "600cf2f3-8d23-4335-9923-d16029dccc29",
+        "63b04f17-b982-4e71-bcd0-a58367ad9b16",
+        "9ce3a23c-7d19-4222-8253-e601c84ac06f",
+        "f6ac310d-d1c9-46a3-9b9a-64f39c88e2d1",
+        "3b3aef60-7a05-4de6-a1e0-d55b06ebae6e"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "06a2ab73-b6b8-44a0-9633-08e6b4816915": {
       "type": "dept-brands-area",
       "blocks": {
@@ -283,11 +319,12 @@
     }
   },
   "order": [
+    "category_tabs_QYCgUw",
     "b50e1c62-eace-4f33-84e1-f66c735be752",
-    "16636174067db7bd8c",
     "main",
     "static-recently-viewed",
     "9e970e79-b67d-44fb-873b-1170977e44de",
+    "16636174067db7bd8c",
     "06a2ab73-b6b8-44a0-9633-08e6b4816915",
     "595171db-fc9e-4dd0-9530-0ee34021956e"
   ]
