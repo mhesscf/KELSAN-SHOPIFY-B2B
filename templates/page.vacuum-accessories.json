@@ -24,70 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_nA4BrL": {
+      "type": "category-tabs",
       "blocks": {
-        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
-          "type": "slide",
+        "tab_VaMKwz": {
+          "type": "tab",
           "settings": {
-            "product": "proteam-backpack-vac-xover-floor-tool"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
-          "type": "slide",
+        "tab_R4Pa4h": {
+          "type": "tab",
           "settings": {
-            "product": "universal-1-1-2-wet-dry-vacuum-tool-kit"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
-          "type": "slide",
+        "tab_aFcL4B": {
+          "type": "tab",
           "settings": {
-            "product": "hvrpwr-40v-8-amp-lithium-ion-battery-for-hoover-cordless-vacuums"
-          }
-        },
-        "a9a846a4-79ac-48cf-b29e-7a2433909d2d": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-problade-hard-surface-and-carpet-floor-tool-kit"
-          }
-        },
-        "b0892088-bca1-439d-bc71-c950456dc54a": {
-          "type": "slide",
-          "settings": {
-            "product": "super-coach-pro-10-backpack-vac-bags"
-          }
-        },
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-backpack-vacuum-replacement-battery"
-          }
-        },
-        "a0073dda-832a-449f-a358-2e2556962853": {
-          "type": "slide",
-          "settings": {
-            "product": "hoover-40v-fast-charger-for-hvrpwr-vacuum-batteries"
-          }
-        },
-        "7a59ff54-fb3a-471c-95f9-8e6970db8f13": {
-          "type": "slide",
-          "settings": {
-            "product": "slotted-horse-hair-brush-for-wood-floors"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "d0d55955-cf3e-4837-8a9e-53c306acb777",
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
-        "a9a846a4-79ac-48cf-b29e-7a2433909d2d",
-        "b0892088-bca1-439d-bc71-c950456dc54a",
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
-        "a0073dda-832a-449f-a358-2e2556962853",
-        "7a59ff54-fb3a-471c-95f9-8e6970db8f13"
+        "tab_VaMKwz",
+        "tab_R4Pa4h",
+        "tab_aFcL4B"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -253,6 +223,72 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-backpack-vac-xover-floor-tool"
+          }
+        },
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "universal-1-1-2-wet-dry-vacuum-tool-kit"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "hvrpwr-40v-8-amp-lithium-ion-battery-for-hoover-cordless-vacuums"
+          }
+        },
+        "a9a846a4-79ac-48cf-b29e-7a2433909d2d": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-problade-hard-surface-and-carpet-floor-tool-kit"
+          }
+        },
+        "b0892088-bca1-439d-bc71-c950456dc54a": {
+          "type": "slide",
+          "settings": {
+            "product": "super-coach-pro-10-backpack-vac-bags"
+          }
+        },
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-backpack-vacuum-replacement-battery"
+          }
+        },
+        "a0073dda-832a-449f-a358-2e2556962853": {
+          "type": "slide",
+          "settings": {
+            "product": "hoover-40v-fast-charger-for-hvrpwr-vacuum-batteries"
+          }
+        },
+        "7a59ff54-fb3a-471c-95f9-8e6970db8f13": {
+          "type": "slide",
+          "settings": {
+            "product": "slotted-horse-hair-brush-for-wood-floors"
+          }
+        }
+      },
+      "block_order": [
+        "d0d55955-cf3e-4837-8a9e-53c306acb777",
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "a9a846a4-79ac-48cf-b29e-7a2433909d2d",
+        "b0892088-bca1-439d-bc71-c950456dc54a",
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
+        "a0073dda-832a-449f-a358-2e2556962853",
+        "7a59ff54-fb3a-471c-95f9-8e6970db8f13"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "df58619a-5ac7-466e-8ec3-670cc90022d0": {
       "type": "dept-brands-area",
       "blocks": {
@@ -302,11 +338,12 @@
   },
   "order": [
     "b91b388d-bac0-44aa-8483-a4047ba28302",
-    "16636174067db7bd8c",
+    "category_tabs_nA4BrL",
     "main",
     "static-recently-viewed",
     "13f96a0d-c884-4df4-abd2-5ffe06f21edf",
     "eaeef958-d68c-46ed-9c58-38a301607a21",
+    "16636174067db7bd8c",
     "df58619a-5ac7-466e-8ec3-670cc90022d0"
   ]
 }
