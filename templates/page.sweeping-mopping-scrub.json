@@ -24,77 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_t9Mzqj": {
+      "type": "category-tabs",
       "blocks": {
-        "6a5adbf7-dcc2-4b93-af10-59d55abc947d": {
-          "type": "slide",
+        "tab_3QdgHA": {
+          "type": "tab",
           "settings": {
-            "product": "cleanfreak-easydust-cleaning-and-dusting-sheets"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "650279f9-a8aa-40c6-86f0-cf43cce0ab09": {
-          "type": "slide",
+        "tab_rxRmLf": {
+          "type": "tab",
           "settings": {
-            "product": "36-inch-microfiber-washable-dust-mop"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "7154d8ec-ee4a-4284-89cd-0746e5843ebd": {
-          "type": "slide",
+        "tab_PMG9ri": {
+          "type": "tab",
           "settings": {
-            "product": "side-press-mop-bucket-wringer-combo"
-          }
-        },
-        "3d010317-ad29-489f-a6c7-c4db2b43c77c": {
-          "type": "slide",
-          "settings": {
-            "product": "floor-finish-flat-wax-applicator-mop"
-          }
-        },
-        "fdf8bcb5-7511-4db4-8668-5f117f06a162": {
-          "type": "slide",
-          "settings": {
-            "product": "maxiplus-lobby-dust-pan"
-          }
-        },
-        "9a80cf52-e5e2-4320-9250-3f5c29dcfeb9": {
-          "type": "slide",
-          "settings": {
-            "product": "white-handheld-utility-scrub-pad"
-          }
-        },
-        "763ec0b7-dbfe-4b1d-8001-7bca134a3d31": {
-          "type": "slide",
-          "settings": {
-            "product": "the-super-jaws-wet-mop-handle"
-          }
-        },
-        "bb3c532f-cab3-4d33-b5f5-bbd1c4dab897": {
-          "type": "slide",
-          "settings": {
-            "product": "unger-excella-floor-wax-backpack-applicator"
-          }
-        },
-        "e1a8a685-8000-4da4-a787-94b6a5918ec2": {
-          "type": "slide",
-          "settings": {
-            "product": "large-green-wet-mop-looped-narrow-band"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "6a5adbf7-dcc2-4b93-af10-59d55abc947d",
-        "650279f9-a8aa-40c6-86f0-cf43cce0ab09",
-        "7154d8ec-ee4a-4284-89cd-0746e5843ebd",
-        "3d010317-ad29-489f-a6c7-c4db2b43c77c",
-        "fdf8bcb5-7511-4db4-8668-5f117f06a162",
-        "9a80cf52-e5e2-4320-9250-3f5c29dcfeb9",
-        "763ec0b7-dbfe-4b1d-8001-7bca134a3d31",
-        "bb3c532f-cab3-4d33-b5f5-bbd1c4dab897",
-        "e1a8a685-8000-4da4-a787-94b6a5918ec2"
+        "tab_3QdgHA",
+        "tab_rxRmLf",
+        "tab_PMG9ri"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -323,6 +286,79 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "6a5adbf7-dcc2-4b93-af10-59d55abc947d": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-easydust-cleaning-and-dusting-sheets"
+          }
+        },
+        "650279f9-a8aa-40c6-86f0-cf43cce0ab09": {
+          "type": "slide",
+          "settings": {
+            "product": "36-inch-microfiber-washable-dust-mop"
+          }
+        },
+        "7154d8ec-ee4a-4284-89cd-0746e5843ebd": {
+          "type": "slide",
+          "settings": {
+            "product": "side-press-mop-bucket-wringer-combo"
+          }
+        },
+        "3d010317-ad29-489f-a6c7-c4db2b43c77c": {
+          "type": "slide",
+          "settings": {
+            "product": "floor-finish-flat-wax-applicator-mop"
+          }
+        },
+        "fdf8bcb5-7511-4db4-8668-5f117f06a162": {
+          "type": "slide",
+          "settings": {
+            "product": "maxiplus-lobby-dust-pan"
+          }
+        },
+        "9a80cf52-e5e2-4320-9250-3f5c29dcfeb9": {
+          "type": "slide",
+          "settings": {
+            "product": "white-handheld-utility-scrub-pad"
+          }
+        },
+        "763ec0b7-dbfe-4b1d-8001-7bca134a3d31": {
+          "type": "slide",
+          "settings": {
+            "product": "the-super-jaws-wet-mop-handle"
+          }
+        },
+        "bb3c532f-cab3-4d33-b5f5-bbd1c4dab897": {
+          "type": "slide",
+          "settings": {
+            "product": "unger-excella-floor-wax-backpack-applicator"
+          }
+        },
+        "e1a8a685-8000-4da4-a787-94b6a5918ec2": {
+          "type": "slide",
+          "settings": {
+            "product": "large-green-wet-mop-looped-narrow-band"
+          }
+        }
+      },
+      "block_order": [
+        "6a5adbf7-dcc2-4b93-af10-59d55abc947d",
+        "650279f9-a8aa-40c6-86f0-cf43cce0ab09",
+        "7154d8ec-ee4a-4284-89cd-0746e5843ebd",
+        "3d010317-ad29-489f-a6c7-c4db2b43c77c",
+        "fdf8bcb5-7511-4db4-8668-5f117f06a162",
+        "9a80cf52-e5e2-4320-9250-3f5c29dcfeb9",
+        "763ec0b7-dbfe-4b1d-8001-7bca134a3d31",
+        "bb3c532f-cab3-4d33-b5f5-bbd1c4dab897",
+        "e1a8a685-8000-4da4-a787-94b6a5918ec2"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "0511c49d-be00-47d8-9b4d-d9618f032dfc": {
       "type": "dept-brands-area",
       "blocks": {
@@ -363,11 +399,12 @@
   },
   "order": [
     "a8d09b5a-4990-4983-8ada-26ec3821973e",
-    "16636174067db7bd8c",
+    "category_tabs_t9Mzqj",
     "main",
     "static-recently-viewed",
     "e0b07be9-3947-40c6-b2f4-ad05c1ae3dcb",
     "bd8f5731-1cff-4eb1-9461-1a00dfde4c03",
+    "16636174067db7bd8c",
     "0511c49d-be00-47d8-9b4d-d9618f032dfc"
   ]
 }
