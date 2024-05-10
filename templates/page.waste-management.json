@@ -47,12 +47,20 @@
             "name": "Brands",
             "targetclass": ".dept-brand-brands"
           }
+        },
+        "tab_DqyFyh": {
+          "type": "tab",
+          "settings": {
+            "name": "Resources",
+            "targetclass": ".dept-resources"
+          }
         }
       },
       "block_order": [
         "tab_DifH9g",
         "tab_Fqm9CT",
-        "tab_c8YhwC"
+        "tab_c8YhwC",
+        "tab_DqyFyh"
       ],
       "settings": {
         "tabheading": "",
