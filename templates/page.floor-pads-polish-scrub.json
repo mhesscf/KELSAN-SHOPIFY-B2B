@@ -35,63 +35,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_PHKFp4": {
+      "type": "category-tabs",
       "blocks": {
-        "74dc6e46-ef79-43b9-ac00-ab5e2e4e3dbc": {
-          "type": "slide",
+        "tab_FFAUtw": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-red-floor-buffing-scrubbing-pads"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "8ec019a1-76c5-47ee-92e2-436a0593e74f": {
-          "type": "slide",
+        "tab_7ffiGr": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-carpet-cleaning-bonnet"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "a0b52811-6ea3-425a-b6bc-595353bc6528": {
-          "type": "slide",
+        "tab_X97kBx": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-round-floor-sanding-screens"
-          }
-        },
-        "f6f51ab7-472c-4bb4-9dea-f7b665325726": {
-          "type": "slide",
-          "settings": {
-            "product": "smartscrub-1-step-clean-and-shine-floor-conditioning-pads"
-          }
-        },
-        "fa963954-7fee-4b2c-8751-3843a1fd44bc": {
-          "type": "slide",
-          "settings": {
-            "product": "20-inch-high-gloss-floor-burnishing-pad"
-          }
-        },
-        "733c10b0-e8e0-4ff0-bd2e-365a2a23dc18": {
-          "type": "slide",
-          "settings": {
-            "product": "20-inch-rectangular-dry-strip-pads"
-          }
-        },
-        "b25a130a-3fda-4187-8df8-7a0981bd72b8": {
-          "type": "slide",
-          "settings": {
-            "product": "20-inch-black-floor-wax-stripping-pads"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "74dc6e46-ef79-43b9-ac00-ab5e2e4e3dbc",
-        "8ec019a1-76c5-47ee-92e2-436a0593e74f",
-        "a0b52811-6ea3-425a-b6bc-595353bc6528",
-        "f6f51ab7-472c-4bb4-9dea-f7b665325726",
-        "fa963954-7fee-4b2c-8751-3843a1fd44bc",
-        "733c10b0-e8e0-4ff0-bd2e-365a2a23dc18",
-        "b25a130a-3fda-4187-8df8-7a0981bd72b8"
+        "tab_FFAUtw",
+        "tab_7ffiGr",
+        "tab_X97kBx"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -248,6 +225,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "74dc6e46-ef79-43b9-ac00-ab5e2e4e3dbc": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-red-floor-buffing-scrubbing-pads"
+          }
+        },
+        "8ec019a1-76c5-47ee-92e2-436a0593e74f": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-carpet-cleaning-bonnet"
+          }
+        },
+        "a0b52811-6ea3-425a-b6bc-595353bc6528": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-round-floor-sanding-screens"
+          }
+        },
+        "f6f51ab7-472c-4bb4-9dea-f7b665325726": {
+          "type": "slide",
+          "settings": {
+            "product": "smartscrub-1-step-clean-and-shine-floor-conditioning-pads"
+          }
+        },
+        "fa963954-7fee-4b2c-8751-3843a1fd44bc": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-high-gloss-floor-burnishing-pad"
+          }
+        },
+        "733c10b0-e8e0-4ff0-bd2e-365a2a23dc18": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-rectangular-dry-strip-pads"
+          }
+        },
+        "b25a130a-3fda-4187-8df8-7a0981bd72b8": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-black-floor-wax-stripping-pads"
+          }
+        }
+      },
+      "block_order": [
+        "74dc6e46-ef79-43b9-ac00-ab5e2e4e3dbc",
+        "8ec019a1-76c5-47ee-92e2-436a0593e74f",
+        "a0b52811-6ea3-425a-b6bc-595353bc6528",
+        "f6f51ab7-472c-4bb4-9dea-f7b665325726",
+        "fa963954-7fee-4b2c-8751-3843a1fd44bc",
+        "733c10b0-e8e0-4ff0-bd2e-365a2a23dc18",
+        "b25a130a-3fda-4187-8df8-7a0981bd72b8"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "e01d7337-3871-41bd-b604-87ced8d6dab7": {
       "type": "dept-brands-area",
       "blocks": {
@@ -288,11 +324,12 @@
   },
   "order": [
     "60c7608d-9fb8-4faa-9d5a-b055655dec84",
-    "16636174067db7bd8c",
+    "category_tabs_PHKFp4",
     "main",
     "static-recently-viewed",
     "4a4387d2-b9c1-4346-9cc3-55fc69d39db4",
     "a71960da-5008-467a-926c-a4457920be7c",
+    "16636174067db7bd8c",
     "e01d7337-3871-41bd-b604-87ced8d6dab7"
   ]
 }
