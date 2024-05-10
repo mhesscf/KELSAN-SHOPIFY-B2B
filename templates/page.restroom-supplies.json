@@ -24,63 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_KBQ4Hh": {
+      "type": "category-tabs",
       "blocks": {
-        "3e235bbb-536b-41ad-80b9-82cfdcebd4db": {
-          "type": "slide",
+        "tab_Njx4hg": {
+          "type": "tab",
           "settings": {
-            "product": "pee-pod-urinal-cleaning-block"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "f51d9f43-95b1-48bf-8e8d-27db3a2c38b2": {
-          "type": "slide",
+        "tab_JNYX7X": {
+          "type": "tab",
           "settings": {
-            "product": "urinal-floor-mat"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "75245463-fbfb-4983-9c0a-965e0f836d2f": {
-          "type": "slide",
+        "tab_GYwVCM": {
+          "type": "tab",
           "settings": {
-            "product": "time-release-aerosol-deodorize-dispenser"
-          }
-        },
-        "48f78e13-4e92-4137-acbb-5a88b5b4b569": {
-          "type": "slide",
-          "settings": {
-            "product": "febreze-air-effects-spring-and-renewal"
-          }
-        },
-        "c0e6c006-9911-45ae-84bc-f69125197a1d": {
-          "type": "slide",
-          "settings": {
-            "product": "georgia-pacific-enmotion-black-10-automated-touchless-towel-dispenser"
-          }
-        },
-        "396a363e-8f5f-4b51-af69-f91abb316ceb": {
-          "type": "slide",
-          "settings": {
-            "product": "deb-refresh-1-liter-azure-foam-hand-wash"
-          }
-        },
-        "ab228456-0c04-4291-a3e0-4239745db31a": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-12-inch-cone-bowl-mop"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "3e235bbb-536b-41ad-80b9-82cfdcebd4db",
-        "f51d9f43-95b1-48bf-8e8d-27db3a2c38b2",
-        "75245463-fbfb-4983-9c0a-965e0f836d2f",
-        "48f78e13-4e92-4137-acbb-5a88b5b4b569",
-        "c0e6c006-9911-45ae-84bc-f69125197a1d",
-        "396a363e-8f5f-4b51-af69-f91abb316ceb",
-        "ab228456-0c04-4291-a3e0-4239745db31a"
+        "tab_Njx4hg",
+        "tab_JNYX7X",
+        "tab_GYwVCM"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -390,6 +367,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "3e235bbb-536b-41ad-80b9-82cfdcebd4db": {
+          "type": "slide",
+          "settings": {
+            "product": "pee-pod-urinal-cleaning-block"
+          }
+        },
+        "f51d9f43-95b1-48bf-8e8d-27db3a2c38b2": {
+          "type": "slide",
+          "settings": {
+            "product": "urinal-floor-mat"
+          }
+        },
+        "75245463-fbfb-4983-9c0a-965e0f836d2f": {
+          "type": "slide",
+          "settings": {
+            "product": "time-release-aerosol-deodorize-dispenser"
+          }
+        },
+        "48f78e13-4e92-4137-acbb-5a88b5b4b569": {
+          "type": "slide",
+          "settings": {
+            "product": "febreze-air-effects-spring-and-renewal"
+          }
+        },
+        "c0e6c006-9911-45ae-84bc-f69125197a1d": {
+          "type": "slide",
+          "settings": {
+            "product": "georgia-pacific-enmotion-black-10-automated-touchless-towel-dispenser"
+          }
+        },
+        "396a363e-8f5f-4b51-af69-f91abb316ceb": {
+          "type": "slide",
+          "settings": {
+            "product": "deb-refresh-1-liter-azure-foam-hand-wash"
+          }
+        },
+        "ab228456-0c04-4291-a3e0-4239745db31a": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-12-inch-cone-bowl-mop"
+          }
+        }
+      },
+      "block_order": [
+        "3e235bbb-536b-41ad-80b9-82cfdcebd4db",
+        "f51d9f43-95b1-48bf-8e8d-27db3a2c38b2",
+        "75245463-fbfb-4983-9c0a-965e0f836d2f",
+        "48f78e13-4e92-4137-acbb-5a88b5b4b569",
+        "c0e6c006-9911-45ae-84bc-f69125197a1d",
+        "396a363e-8f5f-4b51-af69-f91abb316ceb",
+        "ab228456-0c04-4291-a3e0-4239745db31a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "60b84b7b-705f-49c7-acdf-3b20716203a9": {
       "type": "dept-brands-area",
       "blocks": {
@@ -439,11 +475,12 @@
   },
   "order": [
     "d1809acb-9d81-4f5e-aa07-b848ba81dab2",
-    "16636174067db7bd8c",
+    "category_tabs_KBQ4Hh",
     "main",
     "static-recently-viewed",
     "e79ff4f1-a161-4bb7-805c-5b4a1374b855",
     "f4d90ecf-0256-4b95-9efe-9de00eca9af3",
+    "16636174067db7bd8c",
     "60b84b7b-705f-49c7-acdf-3b20716203a9"
   ]
 }
