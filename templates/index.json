@@ -15,6 +15,7 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/spring-demo-sale-2024-desktop-banner.jpg",
             "banner-sm": "shopify:\/\/shop_images\/spring-demo-sale-2024-mobile-banner.jpg",
