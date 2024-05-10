@@ -24,63 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_6QDkND": {
+      "type": "category-tabs",
       "blocks": {
-        "6b98546b-3dc7-4671-b6fa-456e4f51ed50": {
-          "type": "slide",
+        "tab_Ddmm3N": {
+          "type": "tab",
           "settings": {
-            "product": "midlab-maxim-facility-plus-one-step-disinfectant-cleaner-and-deodorant"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "e969af9f-2e47-4a6c-88f1-0b93dd34503b": {
-          "type": "slide",
+        "tab_pKzyyC": {
+          "type": "tab",
           "settings": {
-            "product": "emerel-multisurface-creme-cleanser-fresh-scent-oz-bottle-carton-drk"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "2e5bcffa-5a91-4d5a-805b-2a3dea6c4393": {
-          "type": "slide",
+        "tab_cpr4g8": {
+          "type": "tab",
           "settings": {
-            "product": "trushot-mobile-dispensing-system-starter-pack"
-          }
-        },
-        "e6b33f52-3ed4-4e2d-b9c1-8d37731027b7": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-sno-brite-clinging-toilet-bowl-cleaner"
-          }
-        },
-        "3acf59b3-af9c-46c6-b53e-f4f4a17fc8a1": {
-          "type": "slide",
-          "settings": {
-            "product": "case-of-pledge-furniture-polish-lemon-clean"
-          }
-        },
-        "3df9dcc4-639b-4827-ad7e-8ee6694297c0": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-reflection-floral-multi-purpose-floor-cleaner"
-          }
-        },
-        "d855fc9a-4d59-422c-8263-3a2c56dcfdb5": {
-          "type": "slide",
-          "settings": {
-            "product": "claire-gleme-aerosol-glass-cleaner-just-spray-and-wipe"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "6b98546b-3dc7-4671-b6fa-456e4f51ed50",
-        "e969af9f-2e47-4a6c-88f1-0b93dd34503b",
-        "2e5bcffa-5a91-4d5a-805b-2a3dea6c4393",
-        "e6b33f52-3ed4-4e2d-b9c1-8d37731027b7",
-        "3acf59b3-af9c-46c6-b53e-f4f4a17fc8a1",
-        "3df9dcc4-639b-4827-ad7e-8ee6694297c0",
-        "d855fc9a-4d59-422c-8263-3a2c56dcfdb5"
+        "tab_Ddmm3N",
+        "tab_pKzyyC",
+        "tab_cpr4g8"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -255,6 +232,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "6b98546b-3dc7-4671-b6fa-456e4f51ed50": {
+          "type": "slide",
+          "settings": {
+            "product": "midlab-maxim-facility-plus-one-step-disinfectant-cleaner-and-deodorant"
+          }
+        },
+        "e969af9f-2e47-4a6c-88f1-0b93dd34503b": {
+          "type": "slide",
+          "settings": {
+            "product": "emerel-multisurface-creme-cleanser-fresh-scent-oz-bottle-carton-drk"
+          }
+        },
+        "2e5bcffa-5a91-4d5a-805b-2a3dea6c4393": {
+          "type": "slide",
+          "settings": {
+            "product": "trushot-mobile-dispensing-system-starter-pack"
+          }
+        },
+        "e6b33f52-3ed4-4e2d-b9c1-8d37731027b7": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-sno-brite-clinging-toilet-bowl-cleaner"
+          }
+        },
+        "3acf59b3-af9c-46c6-b53e-f4f4a17fc8a1": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-pledge-furniture-polish-lemon-clean"
+          }
+        },
+        "3df9dcc4-639b-4827-ad7e-8ee6694297c0": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-reflection-floral-multi-purpose-floor-cleaner"
+          }
+        },
+        "d855fc9a-4d59-422c-8263-3a2c56dcfdb5": {
+          "type": "slide",
+          "settings": {
+            "product": "claire-gleme-aerosol-glass-cleaner-just-spray-and-wipe"
+          }
+        }
+      },
+      "block_order": [
+        "6b98546b-3dc7-4671-b6fa-456e4f51ed50",
+        "e969af9f-2e47-4a6c-88f1-0b93dd34503b",
+        "2e5bcffa-5a91-4d5a-805b-2a3dea6c4393",
+        "e6b33f52-3ed4-4e2d-b9c1-8d37731027b7",
+        "3acf59b3-af9c-46c6-b53e-f4f4a17fc8a1",
+        "3df9dcc4-639b-4827-ad7e-8ee6694297c0",
+        "d855fc9a-4d59-422c-8263-3a2c56dcfdb5"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "936c746e-bf18-4cc8-9c01-aeca70b50d23": {
       "type": "dept-brands-area",
       "blocks": {
@@ -304,11 +340,12 @@
   },
   "order": [
     "d8751039-56e2-471b-bbdd-7b73f7ff78c2",
-    "16636174067db7bd8c",
+    "category_tabs_6QDkND",
     "main",
     "static-recently-viewed",
     "bc5c3fff-b412-41fd-9546-a127f49d6586",
     "06eb4df0-b47a-44a2-a08b-edd3ebb956c9",
+    "16636174067db7bd8c",
     "936c746e-bf18-4cc8-9c01-aeca70b50d23"
   ]
 }
