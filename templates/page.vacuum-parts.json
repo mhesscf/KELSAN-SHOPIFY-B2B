@@ -24,49 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_E7e3hi": {
+      "type": "category-tabs",
       "blocks": {
-        "05328c6d-efc0-4146-8cbb-c81d469268dc": {
-          "type": "slide",
+        "tab_3qai9j": {
+          "type": "tab",
           "settings": {
-            "product": "proteam-backpack-vacuum-hepa-dome-filter"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "81de9377-9f73-4bc6-b51f-19a58ceab8b9": {
-          "type": "slide",
+        "tab_yiTqFh": {
+          "type": "tab",
           "settings": {
-            "product": "1000-watt-2-stage-replacement-vac-motor-for-wet-dry-vacuums"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "dc243b0a-3150-45b1-b631-2a724b7f0565": {
-          "type": "slide",
+        "tab_k9AiHp": {
+          "type": "tab",
           "settings": {
-            "product": "24-inch-front-mount-squeegee-for-viper-and-task-pro-wet-dry-vacuums"
-          }
-        },
-        "c9ed9249-555a-483f-be43-e80fd3f0a0ba": {
-          "type": "slide",
-          "settings": {
-            "product": "hepa-filter-cartridge-for-the-tornado-pac-vac-6-qt-backpack-vacuums"
-          }
-        },
-        "a8013095-78f4-401d-b713-353cb68b6e4a": {
-          "type": "slide",
-          "settings": {
-            "product": "switch-assembly-for-viper-and-clarke-machines"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "05328c6d-efc0-4146-8cbb-c81d469268dc",
-        "81de9377-9f73-4bc6-b51f-19a58ceab8b9",
-        "dc243b0a-3150-45b1-b631-2a724b7f0565",
-        "c9ed9249-555a-483f-be43-e80fd3f0a0ba",
-        "a8013095-78f4-401d-b713-353cb68b6e4a"
+        "tab_3qai9j",
+        "tab_yiTqFh",
+        "tab_k9AiHp"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -232,6 +223,51 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "05328c6d-efc0-4146-8cbb-c81d469268dc": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-backpack-vacuum-hepa-dome-filter"
+          }
+        },
+        "81de9377-9f73-4bc6-b51f-19a58ceab8b9": {
+          "type": "slide",
+          "settings": {
+            "product": "1000-watt-2-stage-replacement-vac-motor-for-wet-dry-vacuums"
+          }
+        },
+        "dc243b0a-3150-45b1-b631-2a724b7f0565": {
+          "type": "slide",
+          "settings": {
+            "product": "24-inch-front-mount-squeegee-for-viper-and-task-pro-wet-dry-vacuums"
+          }
+        },
+        "c9ed9249-555a-483f-be43-e80fd3f0a0ba": {
+          "type": "slide",
+          "settings": {
+            "product": "hepa-filter-cartridge-for-the-tornado-pac-vac-6-qt-backpack-vacuums"
+          }
+        },
+        "a8013095-78f4-401d-b713-353cb68b6e4a": {
+          "type": "slide",
+          "settings": {
+            "product": "switch-assembly-for-viper-and-clarke-machines"
+          }
+        }
+      },
+      "block_order": [
+        "05328c6d-efc0-4146-8cbb-c81d469268dc",
+        "81de9377-9f73-4bc6-b51f-19a58ceab8b9",
+        "dc243b0a-3150-45b1-b631-2a724b7f0565",
+        "c9ed9249-555a-483f-be43-e80fd3f0a0ba",
+        "a8013095-78f4-401d-b713-353cb68b6e4a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "271eb046-986b-4a14-90ae-be209d32da1e": {
       "type": "dept-brands-area",
       "blocks": {
@@ -281,11 +317,12 @@
   },
   "order": [
     "efc26d18-e4d9-4690-8a76-6a9c585685f4",
-    "16636174067db7bd8c",
+    "category_tabs_E7e3hi",
     "main",
     "static-recently-viewed",
     "bcb1c562-bdfb-4715-b82d-85da72757477",
     "ba31f530-8b82-4742-b22f-02bfde92520a",
+    "16636174067db7bd8c",
     "271eb046-986b-4a14-90ae-be209d32da1e"
   ]
 }
