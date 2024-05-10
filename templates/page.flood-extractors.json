@@ -24,63 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_Lyk6Ww": {
+      "type": "category-tabs",
       "blocks": {
-        "ee6c3e44-c932-45e8-bfca-607cd212373c": {
-          "type": "slide",
+        "tab_GzU7fJ": {
+          "type": "tab",
           "settings": {
-            "product": "flood-pumper-portable-flood-extractor"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "f853d852-fd4e-4afb-83bc-4a2210e5be32": {
-          "type": "slide",
+        "tab_nF8YXh": {
+          "type": "tab",
           "settings": {
-            "product": "trusted-clean-quench-wet-push-vacuum"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "23b6923a-e63b-4428-b68e-e63f42f9d06d": {
-          "type": "slide",
+        "tab_dkyaj3": {
+          "type": "tab",
           "settings": {
-            "product": "poly-auto-discharge-wet-vacuum"
-          }
-        },
-        "f672c510-2edd-4a6c-a916-381b353bbccf": {
-          "type": "slide",
-          "settings": {
-            "product": "mytee-water-extracting-flood-pumper"
-          }
-        },
-        "61eb9667-09a7-4754-9134-cf2b57fe3f1e": {
-          "type": "slide",
-          "settings": {
-            "product": "dri-eaz-14-inch-flood-water-extractor-wand-w-2-in-vac-hook-up"
-          }
-        },
-        "b2f2289d-a754-4a2b-9000-0a994c91617f": {
-          "type": "slide",
-          "settings": {
-            "product": "chromed-steel-16-gallon-wet-pickup-vacuum"
-          }
-        },
-        "f576ecee-d71b-4479-9d90-22093880a932": {
-          "type": "slide",
-          "settings": {
-            "product": "proteam-proguard-wet-vacuum-w-squeegee"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "ee6c3e44-c932-45e8-bfca-607cd212373c",
-        "f853d852-fd4e-4afb-83bc-4a2210e5be32",
-        "23b6923a-e63b-4428-b68e-e63f42f9d06d",
-        "f672c510-2edd-4a6c-a916-381b353bbccf",
-        "61eb9667-09a7-4754-9134-cf2b57fe3f1e",
-        "b2f2289d-a754-4a2b-9000-0a994c91617f",
-        "f576ecee-d71b-4479-9d90-22093880a932"
+        "tab_GzU7fJ",
+        "tab_nF8YXh",
+        "tab_dkyaj3"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -164,6 +141,65 @@
         "block-title": "Flood Restoration Equipment & Extractors by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ee6c3e44-c932-45e8-bfca-607cd212373c": {
+          "type": "slide",
+          "settings": {
+            "product": "flood-pumper-portable-flood-extractor"
+          }
+        },
+        "f853d852-fd4e-4afb-83bc-4a2210e5be32": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-quench-wet-push-vacuum"
+          }
+        },
+        "23b6923a-e63b-4428-b68e-e63f42f9d06d": {
+          "type": "slide",
+          "settings": {
+            "product": "poly-auto-discharge-wet-vacuum"
+          }
+        },
+        "f672c510-2edd-4a6c-a916-381b353bbccf": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-water-extracting-flood-pumper"
+          }
+        },
+        "61eb9667-09a7-4754-9134-cf2b57fe3f1e": {
+          "type": "slide",
+          "settings": {
+            "product": "dri-eaz-14-inch-flood-water-extractor-wand-w-2-in-vac-hook-up"
+          }
+        },
+        "b2f2289d-a754-4a2b-9000-0a994c91617f": {
+          "type": "slide",
+          "settings": {
+            "product": "chromed-steel-16-gallon-wet-pickup-vacuum"
+          }
+        },
+        "f576ecee-d71b-4479-9d90-22093880a932": {
+          "type": "slide",
+          "settings": {
+            "product": "proteam-proguard-wet-vacuum-w-squeegee"
+          }
+        }
+      },
+      "block_order": [
+        "ee6c3e44-c932-45e8-bfca-607cd212373c",
+        "f853d852-fd4e-4afb-83bc-4a2210e5be32",
+        "23b6923a-e63b-4428-b68e-e63f42f9d06d",
+        "f672c510-2edd-4a6c-a916-381b353bbccf",
+        "61eb9667-09a7-4754-9134-cf2b57fe3f1e",
+        "b2f2289d-a754-4a2b-9000-0a994c91617f",
+        "f576ecee-d71b-4479-9d90-22093880a932"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "534f37a0-4828-479d-9303-ae308891af7d": {
       "type": "dept-brands-area",
       "blocks": {
@@ -204,10 +240,11 @@
   },
   "order": [
     "d404dee2-5ef4-4b0c-b548-b9f4ecd9d445",
-    "16636174067db7bd8c",
+    "category_tabs_Lyk6Ww",
     "main",
     "static-recently-viewed",
     "c0acf549-ff7e-4f63-82df-d2dc8ebffc8d",
+    "16636174067db7bd8c",
     "534f37a0-4828-479d-9303-ae308891af7d"
   ]
 }
