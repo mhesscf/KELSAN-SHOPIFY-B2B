@@ -24,42 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_RnJK3R": {
+      "type": "category-tabs",
       "blocks": {
-        "edf9f31c-a1d9-4dcb-9fbd-85bcdf5ba13a": {
-          "type": "slide",
+        "tab_Cw8zHP": {
+          "type": "tab",
           "settings": {
-            "product": "niosh-particulate-dust-mask-valve"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "caf0bcce-9849-4d6b-8066-e146a7b5b423": {
-          "type": "slide",
+        "tab_hBJNgc": {
+          "type": "tab",
           "settings": {
-            "product": "3m-6000-series-half-face-respirator-mask"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "0f24393d-3278-4762-8543-2f7600cad4a1": {
-          "type": "slide",
+        "tab_ErEhV4": {
+          "type": "tab",
           "settings": {
-            "product": "blue-medical-cone-face-mask"
-          }
-        },
-        "d612f99f-a841-4703-a9c2-025c9ece3745": {
-          "type": "slide",
-          "settings": {
-            "product": "3m-n95-particulate-respirator-with-cool-flow-valve"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "edf9f31c-a1d9-4dcb-9fbd-85bcdf5ba13a",
-        "caf0bcce-9849-4d6b-8066-e146a7b5b423",
-        "0f24393d-3278-4762-8543-2f7600cad4a1",
-        "d612f99f-a841-4703-a9c2-025c9ece3745"
+        "tab_Cw8zHP",
+        "tab_hBJNgc",
+        "tab_ErEhV4"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -143,6 +141,44 @@
         "block-title": "Respiratory Protection by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "edf9f31c-a1d9-4dcb-9fbd-85bcdf5ba13a": {
+          "type": "slide",
+          "settings": {
+            "product": "niosh-particulate-dust-mask-valve"
+          }
+        },
+        "caf0bcce-9849-4d6b-8066-e146a7b5b423": {
+          "type": "slide",
+          "settings": {
+            "product": "3m-6000-series-half-face-respirator-mask"
+          }
+        },
+        "0f24393d-3278-4762-8543-2f7600cad4a1": {
+          "type": "slide",
+          "settings": {
+            "product": "blue-medical-cone-face-mask"
+          }
+        },
+        "d612f99f-a841-4703-a9c2-025c9ece3745": {
+          "type": "slide",
+          "settings": {
+            "product": "3m-n95-particulate-respirator-with-cool-flow-valve"
+          }
+        }
+      },
+      "block_order": [
+        "edf9f31c-a1d9-4dcb-9fbd-85bcdf5ba13a",
+        "caf0bcce-9849-4d6b-8066-e146a7b5b423",
+        "0f24393d-3278-4762-8543-2f7600cad4a1",
+        "d612f99f-a841-4703-a9c2-025c9ece3745"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "cada603e-bedb-4c4b-b1ea-89f3ae5fe5d8": {
       "type": "dept-brands-area",
       "blocks": {
@@ -174,10 +210,11 @@
   },
   "order": [
     "5a07689d-a005-4870-8bc8-b7f63c48a2df",
-    "16636174067db7bd8c",
+    "category_tabs_RnJK3R",
     "main",
     "static-recently-viewed",
     "a6126d70-119f-4f37-9259-ed2f6ae761cb",
+    "16636174067db7bd8c",
     "cada603e-bedb-4c4b-b1ea-89f3ae5fe5d8"
   ]
 }
