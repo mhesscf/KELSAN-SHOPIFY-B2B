@@ -24,49 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_NazE7m": {
+      "type": "category-tabs",
       "blocks": {
-        "affee31c-b68b-418c-909b-51f7ca30d5b5": {
-          "type": "slide",
+        "tab_4RhqKC": {
+          "type": "tab",
           "settings": {
-            "product": "disposable-nitrile-powdered-gloves"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "35df7b5c-84b9-4bb9-b96d-a1e4421e8325": {
-          "type": "slide",
+        "tab_x3qKEA": {
+          "type": "tab",
           "settings": {
-            "product": "brown-jersey-clute-knit-wrist-gloves"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "a1e12cac-6116-4339-9d3f-4e153760d40d": {
-          "type": "slide",
+        "tab_VL6Wab": {
+          "type": "tab",
           "settings": {
-            "product": "disposable-latex-powdered-gloves"
-          }
-        },
-        "1b244dce-69b1-4001-ad6a-ce3e32b071b5": {
-          "type": "slide",
-          "settings": {
-            "product": "blaze-orange-food-prep-nitrile-gloves"
-          }
-        },
-        "a707cd19-ed5e-4c28-bc77-342a4bdc8b7e": {
-          "type": "slide",
-          "settings": {
-            "product": "disposable-vinyl-powdered-gloves"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "affee31c-b68b-418c-909b-51f7ca30d5b5",
-        "35df7b5c-84b9-4bb9-b96d-a1e4421e8325",
-        "a1e12cac-6116-4339-9d3f-4e153760d40d",
-        "1b244dce-69b1-4001-ad6a-ce3e32b071b5",
-        "a707cd19-ed5e-4c28-bc77-342a4bdc8b7e"
+        "tab_4RhqKC",
+        "tab_x3qKEA",
+        "tab_VL6Wab"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -177,6 +168,51 @@
         "block-title": "Glove & Hand Protection by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "affee31c-b68b-418c-909b-51f7ca30d5b5": {
+          "type": "slide",
+          "settings": {
+            "product": "disposable-nitrile-powdered-gloves"
+          }
+        },
+        "35df7b5c-84b9-4bb9-b96d-a1e4421e8325": {
+          "type": "slide",
+          "settings": {
+            "product": "brown-jersey-clute-knit-wrist-gloves"
+          }
+        },
+        "a1e12cac-6116-4339-9d3f-4e153760d40d": {
+          "type": "slide",
+          "settings": {
+            "product": "disposable-latex-powdered-gloves"
+          }
+        },
+        "1b244dce-69b1-4001-ad6a-ce3e32b071b5": {
+          "type": "slide",
+          "settings": {
+            "product": "blaze-orange-food-prep-nitrile-gloves"
+          }
+        },
+        "a707cd19-ed5e-4c28-bc77-342a4bdc8b7e": {
+          "type": "slide",
+          "settings": {
+            "product": "disposable-vinyl-powdered-gloves"
+          }
+        }
+      },
+      "block_order": [
+        "affee31c-b68b-418c-909b-51f7ca30d5b5",
+        "35df7b5c-84b9-4bb9-b96d-a1e4421e8325",
+        "a1e12cac-6116-4339-9d3f-4e153760d40d",
+        "1b244dce-69b1-4001-ad6a-ce3e32b071b5",
+        "a707cd19-ed5e-4c28-bc77-342a4bdc8b7e"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "2a80b226-ef8f-41cf-85fd-49f5cc1d32d6": {
       "type": "dept-brands-area",
       "blocks": {
@@ -199,10 +235,11 @@
   },
   "order": [
     "b15c812f-be30-44cc-a749-5b495a518711",
-    "16636174067db7bd8c",
+    "category_tabs_NazE7m",
     "main",
     "static-recently-viewed",
     "847f93bd-c7df-4d98-bb86-a933dbb53376",
+    "16636174067db7bd8c",
     "2a80b226-ef8f-41cf-85fd-49f5cc1d32d6"
   ]
 }
