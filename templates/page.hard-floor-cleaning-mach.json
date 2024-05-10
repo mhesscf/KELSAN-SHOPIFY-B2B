@@ -45,70 +45,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_rUWajz": {
+      "type": "category-tabs",
       "blocks": {
-        "be8cece4-bfc1-4d1e-938e-45fecff7b0af": {
-          "type": "slide",
+        "tab_QdNe9M": {
+          "type": "tab",
           "settings": {
-            "product": "hard-surface-floor-scrubber-package"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "24b4aa8a-7dfd-4088-90b3-762aca7978c2": {
-          "type": "slide",
+        "tab_3Wqw7b": {
+          "type": "tab",
           "settings": {
-            "product": "trusted-clean-20-inch-heavy-duty-floor-buffer"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "3d29424a-dc15-4b00-8b6e-69aaf4cad280": {
-          "type": "slide",
+        "tab_RYJjMi": {
+          "type": "tab",
           "settings": {
-            "product": "17-inch-electric-auto-scrubber"
-          }
-        },
-        "d4f0691f-bc0d-4c96-9611-9330e70de410": {
-          "type": "slide",
-          "settings": {
-            "product": "1-5-hp-high-speed-20-inch-burnisher"
-          }
-        },
-        "dfe26588-32bb-46c6-93dd-003803108f93": {
-          "type": "slide",
-          "settings": {
-            "product": "17-inch-rotary-floor-buffer"
-          }
-        },
-        "9851529e-6310-429a-863b-1c716942f175": {
-          "type": "slide",
-          "settings": {
-            "product": "14-inch-reliable-compact-walk-behind-floor-scrubber"
-          }
-        },
-        "34c220a2-7a77-41b3-b11c-16d9e0629eb6": {
-          "type": "slide",
-          "settings": {
-            "product": "trusted-clean-dura-18hd-electric-auto-scrubber-bundle-with-pads"
-          }
-        },
-        "eeddbe78-006b-4053-adcf-cba760a0415d": {
-          "type": "slide",
-          "settings": {
-            "product": "21-cleanfreak-propane-floor-burnisher"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "be8cece4-bfc1-4d1e-938e-45fecff7b0af",
-        "24b4aa8a-7dfd-4088-90b3-762aca7978c2",
-        "3d29424a-dc15-4b00-8b6e-69aaf4cad280",
-        "d4f0691f-bc0d-4c96-9611-9330e70de410",
-        "dfe26588-32bb-46c6-93dd-003803108f93",
-        "9851529e-6310-429a-863b-1c716942f175",
-        "34c220a2-7a77-41b3-b11c-16d9e0629eb6",
-        "eeddbe78-006b-4053-adcf-cba760a0415d"
+        "tab_QdNe9M",
+        "tab_3Wqw7b",
+        "tab_RYJjMi"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -319,6 +289,72 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "be8cece4-bfc1-4d1e-938e-45fecff7b0af": {
+          "type": "slide",
+          "settings": {
+            "product": "hard-surface-floor-scrubber-package"
+          }
+        },
+        "24b4aa8a-7dfd-4088-90b3-762aca7978c2": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-20-inch-heavy-duty-floor-buffer"
+          }
+        },
+        "3d29424a-dc15-4b00-8b6e-69aaf4cad280": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-electric-auto-scrubber"
+          }
+        },
+        "d4f0691f-bc0d-4c96-9611-9330e70de410": {
+          "type": "slide",
+          "settings": {
+            "product": "1-5-hp-high-speed-20-inch-burnisher"
+          }
+        },
+        "dfe26588-32bb-46c6-93dd-003803108f93": {
+          "type": "slide",
+          "settings": {
+            "product": "17-inch-rotary-floor-buffer"
+          }
+        },
+        "9851529e-6310-429a-863b-1c716942f175": {
+          "type": "slide",
+          "settings": {
+            "product": "14-inch-reliable-compact-walk-behind-floor-scrubber"
+          }
+        },
+        "34c220a2-7a77-41b3-b11c-16d9e0629eb6": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-dura-18hd-electric-auto-scrubber-bundle-with-pads"
+          }
+        },
+        "eeddbe78-006b-4053-adcf-cba760a0415d": {
+          "type": "slide",
+          "settings": {
+            "product": "21-cleanfreak-propane-floor-burnisher"
+          }
+        }
+      },
+      "block_order": [
+        "be8cece4-bfc1-4d1e-938e-45fecff7b0af",
+        "24b4aa8a-7dfd-4088-90b3-762aca7978c2",
+        "3d29424a-dc15-4b00-8b6e-69aaf4cad280",
+        "d4f0691f-bc0d-4c96-9611-9330e70de410",
+        "dfe26588-32bb-46c6-93dd-003803108f93",
+        "9851529e-6310-429a-863b-1c716942f175",
+        "34c220a2-7a77-41b3-b11c-16d9e0629eb6",
+        "eeddbe78-006b-4053-adcf-cba760a0415d"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "98b16032-31db-47eb-8e93-88120664ee70": {
       "type": "dept-brands-area",
       "blocks": {
@@ -377,11 +413,12 @@
   },
   "order": [
     "e0fe7cfc-4f06-46b6-ba6f-ea6e2fa5d717",
-    "16636174067db7bd8c",
+    "category_tabs_rUWajz",
     "main",
     "static-recently-viewed",
     "57d423fa-788b-45c5-aedf-748a91c4b11a",
     "ee711244-a4fe-4591-b4a1-b0a48b29ce85",
+    "16636174067db7bd8c",
     "98b16032-31db-47eb-8e93-88120664ee70"
   ]
 }
