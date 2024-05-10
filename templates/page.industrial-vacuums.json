@@ -24,42 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_9a4JDP": {
+      "type": "category-tabs",
       "blocks": {
-        "9a0da6d8-5486-4510-83ed-8964527e4af4": {
-          "type": "slide",
+        "tab_xxPW3A": {
+          "type": "tab",
           "settings": {
-            "product": "metal-grinding-recovery-vacuum"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "ad572150-5b83-41a1-86f3-5f0a28f4cc0a": {
-          "type": "slide",
+        "tab_CUcLKV": {
+          "type": "tab",
           "settings": {
-            "product": "minuteman-bio-haz-vacuum-w-ulpa-filter-6-gallon"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "f4dc5c83-d2d9-4a57-987c-bf654312701a": {
-          "type": "slide",
+        "tab_VfGDWj": {
+          "type": "tab",
           "settings": {
-            "product": "55-gallon-barrel-vacuum-head"
-          }
-        },
-        "087c4e6f-5251-4807-b68a-1e565a8abab4": {
-          "type": "slide",
-          "settings": {
-            "product": "compressed-air-wet-pick-up-vacuum"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "9a0da6d8-5486-4510-83ed-8964527e4af4",
-        "ad572150-5b83-41a1-86f3-5f0a28f4cc0a",
-        "f4dc5c83-d2d9-4a57-987c-bf654312701a",
-        "087c4e6f-5251-4807-b68a-1e565a8abab4"
+        "tab_xxPW3A",
+        "tab_CUcLKV",
+        "tab_VfGDWj"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -152,6 +150,44 @@
         "block-title": "Industrial Vacuums by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "9a0da6d8-5486-4510-83ed-8964527e4af4": {
+          "type": "slide",
+          "settings": {
+            "product": "metal-grinding-recovery-vacuum"
+          }
+        },
+        "ad572150-5b83-41a1-86f3-5f0a28f4cc0a": {
+          "type": "slide",
+          "settings": {
+            "product": "minuteman-bio-haz-vacuum-w-ulpa-filter-6-gallon"
+          }
+        },
+        "f4dc5c83-d2d9-4a57-987c-bf654312701a": {
+          "type": "slide",
+          "settings": {
+            "product": "55-gallon-barrel-vacuum-head"
+          }
+        },
+        "087c4e6f-5251-4807-b68a-1e565a8abab4": {
+          "type": "slide",
+          "settings": {
+            "product": "compressed-air-wet-pick-up-vacuum"
+          }
+        }
+      },
+      "block_order": [
+        "9a0da6d8-5486-4510-83ed-8964527e4af4",
+        "ad572150-5b83-41a1-86f3-5f0a28f4cc0a",
+        "f4dc5c83-d2d9-4a57-987c-bf654312701a",
+        "087c4e6f-5251-4807-b68a-1e565a8abab4"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "b7ebe36d-bf00-4167-aff6-dd14a93f1274": {
       "type": "dept-brands-area",
       "blocks": {
@@ -183,10 +219,11 @@
   },
   "order": [
     "88a705e7-65d2-4d01-bb65-b7a022a8c51f",
-    "16636174067db7bd8c",
+    "category_tabs_9a4JDP",
     "main",
     "static-recently-viewed",
     "6ebb3192-d7ea-45e3-88f2-723346351f85",
+    "16636174067db7bd8c",
     "b7ebe36d-bf00-4167-aff6-dd14a93f1274"
   ]
 }
