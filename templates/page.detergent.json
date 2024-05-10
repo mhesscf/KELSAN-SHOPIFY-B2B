@@ -24,56 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_zkgjyG": {
+      "type": "category-tabs",
       "blocks": {
-        "39febf33-7534-4a27-b67b-46aa83151307": {
-          "type": "slide",
+        "tab_txX8QN": {
+          "type": "tab",
           "settings": {
-            "product": "manual-pot-pan-dish-detergent-lemon-oz-bottle-carton"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "47f5eeb0-7185-45a0-bbb8-f618a8e1c084": {
-          "type": "slide",
+        "tab_9TCzWU": {
+          "type": "tab",
           "settings": {
-            "product": "green-certified-foam-soap-fragrancefree-clear-oz-pump-bottle-ct"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "5fc3616c-847b-4e06-8ad9-b5cef723d359": {
-          "type": "slide",
+        "tab_jgVcwU": {
+          "type": "tab",
           "settings": {
-            "product": "shower-up-soap-shampoo-rose-colored-pleasant-scent-ml-refill-carton-goj"
-          }
-        },
-        "f92b26b8-ae04-4ef2-9974-95ce38a2c288": {
-          "type": "slide",
-          "settings": {
-            "product": "palmolive-ultra-strength-dishwashing-liquid-20-oz-bottles"
-          }
-        },
-        "8851c651-7d5c-45e4-81a7-90c280d80be4": {
-          "type": "slide",
-          "settings": {
-            "product": "case-of-dial-gold-bar-soap"
-          }
-        },
-        "cfa95988-6a26-4e06-8cc6-a3381c82f5a9": {
-          "type": "slide",
-          "settings": {
-            "product": "case-of-tide-ultra-liquid-tide-laundry-detergent-46oz-bottles"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "39febf33-7534-4a27-b67b-46aa83151307",
-        "47f5eeb0-7185-45a0-bbb8-f618a8e1c084",
-        "5fc3616c-847b-4e06-8ad9-b5cef723d359",
-        "f92b26b8-ae04-4ef2-9974-95ce38a2c288",
-        "8851c651-7d5c-45e4-81a7-90c280d80be4",
-        "cfa95988-6a26-4e06-8cc6-a3381c82f5a9"
+        "tab_txX8QN",
+        "tab_9TCzWU",
+        "tab_jgVcwU"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -194,6 +178,58 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "39febf33-7534-4a27-b67b-46aa83151307": {
+          "type": "slide",
+          "settings": {
+            "product": "manual-pot-pan-dish-detergent-lemon-oz-bottle-carton"
+          }
+        },
+        "47f5eeb0-7185-45a0-bbb8-f618a8e1c084": {
+          "type": "slide",
+          "settings": {
+            "product": "green-certified-foam-soap-fragrancefree-clear-oz-pump-bottle-ct"
+          }
+        },
+        "5fc3616c-847b-4e06-8ad9-b5cef723d359": {
+          "type": "slide",
+          "settings": {
+            "product": "shower-up-soap-shampoo-rose-colored-pleasant-scent-ml-refill-carton-goj"
+          }
+        },
+        "f92b26b8-ae04-4ef2-9974-95ce38a2c288": {
+          "type": "slide",
+          "settings": {
+            "product": "palmolive-ultra-strength-dishwashing-liquid-20-oz-bottles"
+          }
+        },
+        "8851c651-7d5c-45e4-81a7-90c280d80be4": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-dial-gold-bar-soap"
+          }
+        },
+        "cfa95988-6a26-4e06-8cc6-a3381c82f5a9": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-tide-ultra-liquid-tide-laundry-detergent-46oz-bottles"
+          }
+        }
+      },
+      "block_order": [
+        "39febf33-7534-4a27-b67b-46aa83151307",
+        "47f5eeb0-7185-45a0-bbb8-f618a8e1c084",
+        "5fc3616c-847b-4e06-8ad9-b5cef723d359",
+        "f92b26b8-ae04-4ef2-9974-95ce38a2c288",
+        "8851c651-7d5c-45e4-81a7-90c280d80be4",
+        "cfa95988-6a26-4e06-8cc6-a3381c82f5a9"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "3e718b34-34ed-49df-9c97-daaba983025f": {
       "type": "dept-brands-area",
       "blocks": {
@@ -234,11 +270,12 @@
   },
   "order": [
     "0eeba151-e2f1-4a6a-a446-c344151f30b8",
-    "16636174067db7bd8c",
+    "category_tabs_zkgjyG",
     "main",
     "static-recently-viewed",
     "88292e72-775b-4056-bd28-8b90c21250e5",
     "92d4eb1d-c712-45c6-a7be-b0b39f476776",
+    "16636174067db7bd8c",
     "3e718b34-34ed-49df-9c97-daaba983025f"
   ]
 }
