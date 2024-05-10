@@ -24,56 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_UkJCPC": {
+      "type": "category-tabs",
       "blocks": {
-        "ba9a3938-7631-4bb9-b152-de6011625d96": {
-          "type": "slide",
+        "tab_Y8mRmK": {
+          "type": "tab",
           "settings": {
-            "product": "malish-diamabrush-floor-buffer-splash-guard"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "b3b6a7be-e9e2-4d6e-be86-9018a6043141": {
-          "type": "slide",
+        "tab_mqE3KA": {
+          "type": "tab",
           "settings": {
-            "product": "hs-floor-burnisher-pad-centering-device"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "3de85cdd-127c-45ff-bb07-4624a4dc7d8e": {
-          "type": "slide",
+        "tab_BNE4e3": {
+          "type": "tab",
           "settings": {
-            "product": "clutch-plate-for-floor-buffers"
-          }
-        },
-        "d7d37437-f567-4286-bfef-349b2bef6d5e": {
-          "type": "slide",
-          "settings": {
-            "product": "20-inch-square-scrub-isolator-replacement-kit"
-          }
-        },
-        "38868f2a-3837-4fd7-99ca-d598fb8f4cd7": {
-          "type": "slide",
-          "settings": {
-            "product": "20-inch-3450-rpm-square-scrub-machine-motor"
-          }
-        },
-        "21c50826-0e4f-40e2-981a-b0774529219d": {
-          "type": "slide",
-          "settings": {
-            "product": "27-pound-weight-kit-for-cleanfreak-225fp-rotary-floor-buffers"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "ba9a3938-7631-4bb9-b152-de6011625d96",
-        "b3b6a7be-e9e2-4d6e-be86-9018a6043141",
-        "3de85cdd-127c-45ff-bb07-4624a4dc7d8e",
-        "d7d37437-f567-4286-bfef-349b2bef6d5e",
-        "38868f2a-3837-4fd7-99ca-d598fb8f4cd7",
-        "21c50826-0e4f-40e2-981a-b0774529219d"
+        "tab_Y8mRmK",
+        "tab_mqE3KA",
+        "tab_BNE4e3"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -212,6 +196,58 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "ba9a3938-7631-4bb9-b152-de6011625d96": {
+          "type": "slide",
+          "settings": {
+            "product": "malish-diamabrush-floor-buffer-splash-guard"
+          }
+        },
+        "b3b6a7be-e9e2-4d6e-be86-9018a6043141": {
+          "type": "slide",
+          "settings": {
+            "product": "hs-floor-burnisher-pad-centering-device"
+          }
+        },
+        "3de85cdd-127c-45ff-bb07-4624a4dc7d8e": {
+          "type": "slide",
+          "settings": {
+            "product": "clutch-plate-for-floor-buffers"
+          }
+        },
+        "d7d37437-f567-4286-bfef-349b2bef6d5e": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-square-scrub-isolator-replacement-kit"
+          }
+        },
+        "38868f2a-3837-4fd7-99ca-d598fb8f4cd7": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-3450-rpm-square-scrub-machine-motor"
+          }
+        },
+        "21c50826-0e4f-40e2-981a-b0774529219d": {
+          "type": "slide",
+          "settings": {
+            "product": "27-pound-weight-kit-for-cleanfreak-225fp-rotary-floor-buffers"
+          }
+        }
+      },
+      "block_order": [
+        "ba9a3938-7631-4bb9-b152-de6011625d96",
+        "b3b6a7be-e9e2-4d6e-be86-9018a6043141",
+        "3de85cdd-127c-45ff-bb07-4624a4dc7d8e",
+        "d7d37437-f567-4286-bfef-349b2bef6d5e",
+        "38868f2a-3837-4fd7-99ca-d598fb8f4cd7",
+        "21c50826-0e4f-40e2-981a-b0774529219d"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "8e594012-b285-448b-964e-b6288e02e255": {
       "type": "dept-brands-area",
       "blocks": {
@@ -252,11 +288,12 @@
   },
   "order": [
     "c468a4d3-de88-424d-95ef-f27e5ba4be48",
-    "16636174067db7bd8c",
+    "category_tabs_UkJCPC",
     "main",
     "static-recently-viewed",
     "9d53e52b-d00b-4f54-813c-fe0339d29bec",
     "0dbe2ea1-22d5-4b57-8271-19e21771f44e",
+    "16636174067db7bd8c",
     "8e594012-b285-448b-964e-b6288e02e255"
   ]
 }
