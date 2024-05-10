@@ -24,70 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_GNaHB7": {
+      "type": "category-tabs",
       "blocks": {
-        "2aad76fa-6b1b-46f0-80c2-f03636a71b0f": {
-          "type": "slide",
+        "tab_qjP9HV": {
+          "type": "tab",
           "settings": {
-            "product": "lysol-lemon-and-lime-blossom-scent-disinfecting-wipes"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "6cd4cd4d-ab52-486f-bfed-7029594a8ac1": {
-          "type": "slide",
+        "tab_E7fYXJ": {
+          "type": "tab",
           "settings": {
-            "product": "case-of-mr-clean-extra-power-magic-erasers"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "0be30dac-aa1a-4999-9aac-1d92a51a73ac": {
-          "type": "slide",
+        "tab_RqqrmQ": {
+          "type": "tab",
           "settings": {
-            "product": "blue-general-use-microfiber-wipes"
-          }
-        },
-        "70d5d8ae-dfd4-4e8f-8713-7d8511cda5e8": {
-          "type": "slide",
-          "settings": {
-            "product": "scrubs-in-a-bucket-hand-towels"
-          }
-        },
-        "54ea4a67-5efc-4120-953e-90fdbe9c3202": {
-          "type": "slide",
-          "settings": {
-            "product": "merfin-exclusive-white-paper-towl-role"
-          }
-        },
-        "76daab95-88c1-4c3e-9a97-2281eefe74d5": {
-          "type": "slide",
-          "settings": {
-            "product": "purell-fresh-citrus-scent-hand-sanitizing-wipes-9113-06"
-          }
-        },
-        "b0ad7bb1-abae-4b44-8337-c1c61f7e1430": {
-          "type": "slide",
-          "settings": {
-            "product": "enmotion-white-roll-towels"
-          }
-        },
-        "c3b3a918-dcc9-45aa-9e00-bf74dd3bf189": {
-          "type": "slide",
-          "settings": {
-            "product": "maxiclean-eraser-sponge-6-bags-of-4"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "2aad76fa-6b1b-46f0-80c2-f03636a71b0f",
-        "6cd4cd4d-ab52-486f-bfed-7029594a8ac1",
-        "0be30dac-aa1a-4999-9aac-1d92a51a73ac",
-        "70d5d8ae-dfd4-4e8f-8713-7d8511cda5e8",
-        "54ea4a67-5efc-4120-953e-90fdbe9c3202",
-        "76daab95-88c1-4c3e-9a97-2281eefe74d5",
-        "b0ad7bb1-abae-4b44-8337-c1c61f7e1430",
-        "c3b3a918-dcc9-45aa-9e00-bf74dd3bf189"
+        "tab_qjP9HV",
+        "tab_E7fYXJ",
+        "tab_RqqrmQ"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -216,6 +186,72 @@
         "block-title": "Rags, Towels & Wipes by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "2aad76fa-6b1b-46f0-80c2-f03636a71b0f": {
+          "type": "slide",
+          "settings": {
+            "product": "lysol-lemon-and-lime-blossom-scent-disinfecting-wipes"
+          }
+        },
+        "6cd4cd4d-ab52-486f-bfed-7029594a8ac1": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-mr-clean-extra-power-magic-erasers"
+          }
+        },
+        "0be30dac-aa1a-4999-9aac-1d92a51a73ac": {
+          "type": "slide",
+          "settings": {
+            "product": "blue-general-use-microfiber-wipes"
+          }
+        },
+        "70d5d8ae-dfd4-4e8f-8713-7d8511cda5e8": {
+          "type": "slide",
+          "settings": {
+            "product": "scrubs-in-a-bucket-hand-towels"
+          }
+        },
+        "54ea4a67-5efc-4120-953e-90fdbe9c3202": {
+          "type": "slide",
+          "settings": {
+            "product": "merfin-exclusive-white-paper-towl-role"
+          }
+        },
+        "76daab95-88c1-4c3e-9a97-2281eefe74d5": {
+          "type": "slide",
+          "settings": {
+            "product": "purell-fresh-citrus-scent-hand-sanitizing-wipes-9113-06"
+          }
+        },
+        "b0ad7bb1-abae-4b44-8337-c1c61f7e1430": {
+          "type": "slide",
+          "settings": {
+            "product": "enmotion-white-roll-towels"
+          }
+        },
+        "c3b3a918-dcc9-45aa-9e00-bf74dd3bf189": {
+          "type": "slide",
+          "settings": {
+            "product": "maxiclean-eraser-sponge-6-bags-of-4"
+          }
+        }
+      },
+      "block_order": [
+        "2aad76fa-6b1b-46f0-80c2-f03636a71b0f",
+        "6cd4cd4d-ab52-486f-bfed-7029594a8ac1",
+        "0be30dac-aa1a-4999-9aac-1d92a51a73ac",
+        "70d5d8ae-dfd4-4e8f-8713-7d8511cda5e8",
+        "54ea4a67-5efc-4120-953e-90fdbe9c3202",
+        "76daab95-88c1-4c3e-9a97-2281eefe74d5",
+        "b0ad7bb1-abae-4b44-8337-c1c61f7e1430",
+        "c3b3a918-dcc9-45aa-9e00-bf74dd3bf189"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "48045df6-17ba-4f9c-ab25-f1ff52b2c63b": {
       "type": "dept-brands-area",
       "blocks": {
@@ -247,10 +283,11 @@
   },
   "order": [
     "7ab906ec-3b57-4e96-9a5c-a2651828cf30",
-    "16636174067db7bd8c",
+    "category_tabs_GNaHB7",
     "main",
     "static-recently-viewed",
     "21daa33a-8a37-4564-ab48-5723599d0dcf",
+    "16636174067db7bd8c",
     "48045df6-17ba-4f9c-ab25-f1ff52b2c63b"
   ]
 }
