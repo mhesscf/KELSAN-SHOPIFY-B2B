@@ -24,56 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_BxfD3Q": {
+      "type": "category-tabs",
       "blocks": {
-        "d784aa52-8ab0-4008-a6c9-fc910696a837": {
-          "type": "slide",
+        "tab_Gf6BjV": {
+          "type": "tab",
           "settings": {
-            "product": "lightweight-air-mover-fan-2800-cfm"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "ebac4389-687a-4951-a2bd-46df58611a87": {
-          "type": "slide",
+        "tab_YdNHWt": {
+          "type": "tab",
           "settings": {
-            "product": "viking-pds-21-heated-21-port-pressurized-wall-drying-air-mover"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "a92bb8dc-25b9-4c85-8934-269a4ce1c932": {
-          "type": "slide",
+        "tab_pHqWdb": {
+          "type": "tab",
           "settings": {
-            "product": "dri-eaz-stealth-av3000-axial-fan-2600-cfm"
-          }
-        },
-        "608fd692-c6d4-48bf-a9dc-376096249355": {
-          "type": "slide",
-          "settings": {
-            "product": "airmaster-30-in-commercial-pedestal-fan"
-          }
-        },
-        "33952e03-685a-4d9b-b4a6-51b3fcc0382f": {
-          "type": "slide",
-          "settings": {
-            "product": "powr-flite-deluxe-axial-carpet-dryer"
-          }
-        },
-        "e0051e9d-548f-4db7-bc2a-b60a21e2692a": {
-          "type": "slide",
-          "settings": {
-            "product": "tennant-3-speed-air-mover"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "d784aa52-8ab0-4008-a6c9-fc910696a837",
-        "ebac4389-687a-4951-a2bd-46df58611a87",
-        "a92bb8dc-25b9-4c85-8934-269a4ce1c932",
-        "608fd692-c6d4-48bf-a9dc-376096249355",
-        "33952e03-685a-4d9b-b4a6-51b3fcc0382f",
-        "e0051e9d-548f-4db7-bc2a-b60a21e2692a"
+        "tab_Gf6BjV",
+        "tab_YdNHWt",
+        "tab_pHqWdb"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -166,6 +150,58 @@
         "block-title": "Carpet Fans by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "d784aa52-8ab0-4008-a6c9-fc910696a837": {
+          "type": "slide",
+          "settings": {
+            "product": "lightweight-air-mover-fan-2800-cfm"
+          }
+        },
+        "ebac4389-687a-4951-a2bd-46df58611a87": {
+          "type": "slide",
+          "settings": {
+            "product": "viking-pds-21-heated-21-port-pressurized-wall-drying-air-mover"
+          }
+        },
+        "a92bb8dc-25b9-4c85-8934-269a4ce1c932": {
+          "type": "slide",
+          "settings": {
+            "product": "dri-eaz-stealth-av3000-axial-fan-2600-cfm"
+          }
+        },
+        "608fd692-c6d4-48bf-a9dc-376096249355": {
+          "type": "slide",
+          "settings": {
+            "product": "airmaster-30-in-commercial-pedestal-fan"
+          }
+        },
+        "33952e03-685a-4d9b-b4a6-51b3fcc0382f": {
+          "type": "slide",
+          "settings": {
+            "product": "powr-flite-deluxe-axial-carpet-dryer"
+          }
+        },
+        "e0051e9d-548f-4db7-bc2a-b60a21e2692a": {
+          "type": "slide",
+          "settings": {
+            "product": "tennant-3-speed-air-mover"
+          }
+        }
+      },
+      "block_order": [
+        "d784aa52-8ab0-4008-a6c9-fc910696a837",
+        "ebac4389-687a-4951-a2bd-46df58611a87",
+        "a92bb8dc-25b9-4c85-8934-269a4ce1c932",
+        "608fd692-c6d4-48bf-a9dc-376096249355",
+        "33952e03-685a-4d9b-b4a6-51b3fcc0382f",
+        "e0051e9d-548f-4db7-bc2a-b60a21e2692a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "c4ff9546-9aef-4837-a112-f16c15a02ec4": {
       "type": "dept-brands-area",
       "blocks": {
@@ -206,10 +242,11 @@
   },
   "order": [
     "fc4003e3-c045-4536-85fb-543521219560",
-    "16636174067db7bd8c",
+    "category_tabs_BxfD3Q",
     "main",
     "static-recently-viewed",
     "ce3dd810-f6de-40b6-af8e-6410083a6d39",
+    "16636174067db7bd8c",
     "c4ff9546-9aef-4837-a112-f16c15a02ec4"
   ]
 }
