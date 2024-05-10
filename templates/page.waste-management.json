@@ -24,63 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_FnCq6q": {
+      "type": "category-tabs",
       "blocks": {
-        "fcb1c367-247d-470e-8147-b2cf41e10d6b": {
-          "type": "slide",
+        "tab_DifH9g": {
+          "type": "tab",
           "settings": {
-            "product": "sak-it-30x37-30-gallon-10-micron-hi-density-trash-can-liners"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "9b9df9b1-1367-43e4-8a4f-eb1c18415dce": {
-          "type": "slide",
+        "tab_Fqm9CT": {
+          "type": "tab",
           "settings": {
-            "product": "collapsible-outdoor-waste-bag-holder"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "3370b16e-9242-4a26-8e90-85f8331e34cd": {
-          "type": "slide",
+        "tab_c8YhwC": {
+          "type": "tab",
           "settings": {
-            "product": "wall-hugger-recycling-receptacle"
-          }
-        },
-        "46779ab6-6a35-4845-ac74-f3416f324937": {
-          "type": "slide",
-          "settings": {
-            "product": "tilt-truck-utility-duty-cart"
-          }
-        },
-        "f083bb30-e1af-485d-b7ff-f85df37fb166": {
-          "type": "slide",
-          "settings": {
-            "product": "unger-nifty-nabber-trash-grabber"
-          }
-        },
-        "fda2a41d-7c9e-455d-a066-d18f387ad857": {
-          "type": "slide",
-          "settings": {
-            "product": "44-gallon-rubbermaid-brute-trash-can"
-          }
-        },
-        "795cc5dc-7703-4a60-a622-257ec7ad2bea": {
-          "type": "slide",
-          "settings": {
-            "product": "sak-it-43x47-low-density-56-gallon-black-trash-can-liners"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "fcb1c367-247d-470e-8147-b2cf41e10d6b",
-        "9b9df9b1-1367-43e4-8a4f-eb1c18415dce",
-        "3370b16e-9242-4a26-8e90-85f8331e34cd",
-        "46779ab6-6a35-4845-ac74-f3416f324937",
-        "f083bb30-e1af-485d-b7ff-f85df37fb166",
-        "fda2a41d-7c9e-455d-a066-d18f387ad857",
-        "795cc5dc-7703-4a60-a622-257ec7ad2bea"
+        "tab_DifH9g",
+        "tab_Fqm9CT",
+        "tab_c8YhwC"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -182,6 +159,65 @@
         "block-title": "Waste Management by Type"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "fcb1c367-247d-470e-8147-b2cf41e10d6b": {
+          "type": "slide",
+          "settings": {
+            "product": "sak-it-30x37-30-gallon-10-micron-hi-density-trash-can-liners"
+          }
+        },
+        "9b9df9b1-1367-43e4-8a4f-eb1c18415dce": {
+          "type": "slide",
+          "settings": {
+            "product": "collapsible-outdoor-waste-bag-holder"
+          }
+        },
+        "3370b16e-9242-4a26-8e90-85f8331e34cd": {
+          "type": "slide",
+          "settings": {
+            "product": "wall-hugger-recycling-receptacle"
+          }
+        },
+        "46779ab6-6a35-4845-ac74-f3416f324937": {
+          "type": "slide",
+          "settings": {
+            "product": "tilt-truck-utility-duty-cart"
+          }
+        },
+        "f083bb30-e1af-485d-b7ff-f85df37fb166": {
+          "type": "slide",
+          "settings": {
+            "product": "unger-nifty-nabber-trash-grabber"
+          }
+        },
+        "fda2a41d-7c9e-455d-a066-d18f387ad857": {
+          "type": "slide",
+          "settings": {
+            "product": "44-gallon-rubbermaid-brute-trash-can"
+          }
+        },
+        "795cc5dc-7703-4a60-a622-257ec7ad2bea": {
+          "type": "slide",
+          "settings": {
+            "product": "sak-it-43x47-low-density-56-gallon-black-trash-can-liners"
+          }
+        }
+      },
+      "block_order": [
+        "fcb1c367-247d-470e-8147-b2cf41e10d6b",
+        "9b9df9b1-1367-43e4-8a4f-eb1c18415dce",
+        "3370b16e-9242-4a26-8e90-85f8331e34cd",
+        "46779ab6-6a35-4845-ac74-f3416f324937",
+        "f083bb30-e1af-485d-b7ff-f85df37fb166",
+        "fda2a41d-7c9e-455d-a066-d18f387ad857",
+        "795cc5dc-7703-4a60-a622-257ec7ad2bea"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "15a6d254-d39a-4285-b83a-a4e2f35bb7a1": {
       "type": "dept-brands-area",
       "blocks": {
@@ -243,10 +279,11 @@
   },
   "order": [
     "28aefd69-01f3-43a8-9f1e-85703b47122f",
-    "16636174067db7bd8c",
+    "category_tabs_FnCq6q",
     "main",
     "static-recently-viewed",
     "92679af6-0bed-48d0-9d35-8a2a3fe116c9",
+    "16636174067db7bd8c",
     "15a6d254-d39a-4285-b83a-a4e2f35bb7a1",
     "348ba469-70f4-4e97-b0c2-e3133147f4e6"
   ]
