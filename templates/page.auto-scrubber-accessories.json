@@ -24,77 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_YgMzip": {
+      "type": "category-tabs",
       "blocks": {
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
-          "type": "slide",
+        "tab_Phcjxz": {
+          "type": "tab",
           "settings": {
-            "product": "dura-17-brush"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "3ad14737-d7b6-4050-9b31-dab469d7508f": {
-          "type": "slide",
+        "tab_ecYqmm": {
+          "type": "tab",
           "settings": {
-            "product": "cleanfreak-performer-front-squeegee-replacement-blade"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
-          "type": "slide",
+        "tab_jD3raF": {
+          "type": "tab",
           "settings": {
-            "product": "viper-as5160-auto-scrubber-pad-driver"
-          }
-        },
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-performer-20-nylon-brush"
-          }
-        },
-        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
-          "type": "slide",
-          "settings": {
-            "product": "clarke-ca30-20b-auto-scrubber-20-inch-poly-floor-scrubbing-brush"
-          }
-        },
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
-          "type": "slide",
-          "settings": {
-            "product": "trusted-clean-dura-18hd-floor-scrubbing-brush"
-          }
-        },
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
-          "type": "slide",
-          "settings": {
-            "product": "powr-flite-multiwash-blue-aggressive-hard-floor-scrubbing-brush"
-          }
-        },
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-performer-20-auto-scrubber-pad-driver"
-          }
-        },
-        "a0073dda-832a-449f-a358-2e2556962853": {
-          "type": "slide",
-          "settings": {
-            "product": "ipc-eagle-ct30-scrubber-front-squeegee"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
-        "3ad14737-d7b6-4050-9b31-dab469d7508f",
-        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
-        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
-        "d0d55955-cf3e-4837-8a9e-53c306acb777",
-        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36",
-        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
-        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
-        "a0073dda-832a-449f-a358-2e2556962853"
+        "tab_Phcjxz",
+        "tab_ecYqmm",
+        "tab_jD3raF"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -224,6 +187,79 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9": {
+          "type": "slide",
+          "settings": {
+            "product": "dura-17-brush"
+          }
+        },
+        "3ad14737-d7b6-4050-9b31-dab469d7508f": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-performer-front-squeegee-replacement-blade"
+          }
+        },
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
+          "type": "slide",
+          "settings": {
+            "product": "viper-as5160-auto-scrubber-pad-driver"
+          }
+        },
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-performer-20-nylon-brush"
+          }
+        },
+        "d0d55955-cf3e-4837-8a9e-53c306acb777": {
+          "type": "slide",
+          "settings": {
+            "product": "clarke-ca30-20b-auto-scrubber-20-inch-poly-floor-scrubbing-brush"
+          }
+        },
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36": {
+          "type": "slide",
+          "settings": {
+            "product": "trusted-clean-dura-18hd-floor-scrubbing-brush"
+          }
+        },
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2": {
+          "type": "slide",
+          "settings": {
+            "product": "powr-flite-multiwash-blue-aggressive-hard-floor-scrubbing-brush"
+          }
+        },
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-performer-20-auto-scrubber-pad-driver"
+          }
+        },
+        "a0073dda-832a-449f-a358-2e2556962853": {
+          "type": "slide",
+          "settings": {
+            "product": "ipc-eagle-ct30-scrubber-front-squeegee"
+          }
+        }
+      },
+      "block_order": [
+        "21b2775a-c39a-4ea1-b706-a71e5e4218c9",
+        "3ad14737-d7b6-4050-9b31-dab469d7508f",
+        "b8094b38-e33c-4bf9-9e98-94700b387cf9",
+        "6fbeeb67-55ee-42b1-a7fa-71de7282eeb9",
+        "d0d55955-cf3e-4837-8a9e-53c306acb777",
+        "c41a6270-21ef-4bde-8a9e-b00e57ab5e36",
+        "ad5fd26e-92bb-4e70-af8d-cc1cd62bcbe2",
+        "861d9b4b-288a-4071-b695-c1f3e32a8bbd",
+        "a0073dda-832a-449f-a358-2e2556962853"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "cd06b5fc-1871-406d-ba52-76ce6873befd": {
       "type": "dept-brands-area",
       "blocks": {
@@ -273,11 +309,12 @@
   },
   "order": [
     "80917749-cac3-43ca-aad5-b9b678b6b9d1",
-    "16636174067db7bd8c",
+    "category_tabs_YgMzip",
     "main",
     "static-recently-viewed",
     "a792edec-ad1c-4930-bc16-59dbdd1df7a7",
     "21bf886d-3f09-42d3-88d8-e3a5bddbf3bf",
+    "16636174067db7bd8c",
     "cd06b5fc-1871-406d-ba52-76ce6873befd"
   ]
 }
