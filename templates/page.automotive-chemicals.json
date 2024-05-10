@@ -24,63 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_YVriWT": {
+      "type": "category-tabs",
       "blocks": {
-        "331777e0-201d-42e1-86f7-076d220ff874": {
-          "type": "slide",
+        "tab_8WzR8t": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-all-purpose-spotter"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "ac937430-3226-4239-b5bf-18b25c383c50": {
-          "type": "slide",
+        "tab_w9eJLH": {
+          "type": "tab",
           "settings": {
-            "product": "case-of-armor-all-original-protectant-28oz-spray-bottle"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "c7cf6d57-ffc0-4938-b1d9-37ab1f72a39f": {
-          "type": "slide",
+        "tab_CpgeHg": {
+          "type": "tab",
           "settings": {
-            "product": "bright-solutions-orange-punch-degreaser-all-purpose-cleaner"
-          }
-        },
-        "b87be4a6-b1a0-44b3-88c8-9117fa2050b9": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-deep-extractor-carpet-extraction-cleaner"
-          }
-        },
-        "7f6b3609-f3c5-40bd-9888-becb38fcedb1": {
-          "type": "slide",
-          "settings": {
-            "product": "claire-degreaser-and-brake-parts-cleaner-cl070"
-          }
-        },
-        "28f19a00-5389-40c2-8c3d-2f642e6daa62": {
-          "type": "slide",
-          "settings": {
-            "product": "bright-solutions-fireball-rtu-cleaner-degreaser"
-          }
-        },
-        "c4e25a4a-43e4-44c5-b7bd-63082b75157a": {
-          "type": "slide",
-          "settings": {
-            "product": "wd-40-smart-straw-spray-lubricant"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "331777e0-201d-42e1-86f7-076d220ff874",
-        "ac937430-3226-4239-b5bf-18b25c383c50",
-        "c7cf6d57-ffc0-4938-b1d9-37ab1f72a39f",
-        "b87be4a6-b1a0-44b3-88c8-9117fa2050b9",
-        "7f6b3609-f3c5-40bd-9888-becb38fcedb1",
-        "28f19a00-5389-40c2-8c3d-2f642e6daa62",
-        "c4e25a4a-43e4-44c5-b7bd-63082b75157a"
+        "tab_8WzR8t",
+        "tab_w9eJLH",
+        "tab_CpgeHg"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -219,6 +196,65 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "331777e0-201d-42e1-86f7-076d220ff874": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-all-purpose-spotter"
+          }
+        },
+        "ac937430-3226-4239-b5bf-18b25c383c50": {
+          "type": "slide",
+          "settings": {
+            "product": "case-of-armor-all-original-protectant-28oz-spray-bottle"
+          }
+        },
+        "c7cf6d57-ffc0-4938-b1d9-37ab1f72a39f": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-orange-punch-degreaser-all-purpose-cleaner"
+          }
+        },
+        "b87be4a6-b1a0-44b3-88c8-9117fa2050b9": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-deep-extractor-carpet-extraction-cleaner"
+          }
+        },
+        "7f6b3609-f3c5-40bd-9888-becb38fcedb1": {
+          "type": "slide",
+          "settings": {
+            "product": "claire-degreaser-and-brake-parts-cleaner-cl070"
+          }
+        },
+        "28f19a00-5389-40c2-8c3d-2f642e6daa62": {
+          "type": "slide",
+          "settings": {
+            "product": "bright-solutions-fireball-rtu-cleaner-degreaser"
+          }
+        },
+        "c4e25a4a-43e4-44c5-b7bd-63082b75157a": {
+          "type": "slide",
+          "settings": {
+            "product": "wd-40-smart-straw-spray-lubricant"
+          }
+        }
+      },
+      "block_order": [
+        "331777e0-201d-42e1-86f7-076d220ff874",
+        "ac937430-3226-4239-b5bf-18b25c383c50",
+        "c7cf6d57-ffc0-4938-b1d9-37ab1f72a39f",
+        "b87be4a6-b1a0-44b3-88c8-9117fa2050b9",
+        "7f6b3609-f3c5-40bd-9888-becb38fcedb1",
+        "28f19a00-5389-40c2-8c3d-2f642e6daa62",
+        "c4e25a4a-43e4-44c5-b7bd-63082b75157a"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "f55c7ec1-8165-407c-a219-c09e3207f945": {
       "type": "dept-brands-area",
       "blocks": {
@@ -268,11 +304,12 @@
   },
   "order": [
     "da7207a6-2463-4f95-858b-68a72ef893c9",
-    "16636174067db7bd8c",
+    "category_tabs_YVriWT",
     "main",
     "static-recently-viewed",
     "85771e13-292a-4bc3-bd9e-07169c2de970",
     "50430a45-f80c-45f3-b692-cbc67d510d29",
+    "16636174067db7bd8c",
     "f55c7ec1-8165-407c-a219-c09e3207f945"
   ]
 }
