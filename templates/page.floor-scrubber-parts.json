@@ -24,65 +24,40 @@
         "slideshow_text_below_image": true
       }
     },
-    "16636174067db7bd8c": {
-      "type": "category-featured-product-slider",
+    "category_tabs_hwBcMw": {
+      "type": "category-tabs",
       "blocks": {
-        "03e7d2c6-2c73-44d4-98e9-18fdc8d27323": {
-          "type": "slide",
-          "disabled": true,
+        "tab_9EAMir": {
+          "type": "tab",
           "settings": {
-            "product": "cleanfreak-performer-front-squeegee-replacement-blade"
+            "name": "Departments",
+            "targetclass": ".dept-category"
           }
         },
-        "51f3a372-6258-4ebe-9390-86ebaa11f053": {
-          "type": "slide",
+        "tab_HzjnqE": {
+          "type": "tab",
           "settings": {
-            "product": "viper-fang-18c-replacement-2-stage-vacuum-motor"
+            "name": "Featured Products",
+            "targetclass": ".category-featured-slider--section"
           }
         },
-        "11dc93be-0adb-40e6-b954-46ab875dfa8b": {
-          "type": "slide",
+        "tab_4FnFBJ": {
+          "type": "tab",
           "settings": {
-            "product": "pro-charging-systems-24-volt-12-amp-battery-charger-is2412-for-floor-scrubbers"
-          }
-        },
-        "ab2bf9ee-af11-4aab-9a20-7c84b163271d": {
-          "type": "slide",
-          "settings": {
-            "product": "viper-auto-scrubber-inline-solution-line-filter-and-strainer-with-removable-stainless-screen-vf82168a"
-          }
-        },
-        "b45c59de-ed5d-41cf-93bb-206001ad9f89": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "product": "ipc-eagle-ct30-scrubber-front-squeegee"
-          }
-        },
-        "b15d9b41-cc91-4dbe-8ba1-090a45247a6b": {
-          "type": "slide",
-          "settings": {
-            "product": "thumb-nut-knob-for-viper-and-clarke-auto-scrubbers"
-          }
-        },
-        "b7ddcfc8-63ab-4cc8-bf21-37575caefc84": {
-          "type": "slide",
-          "settings": {
-            "product": "cleanfreak-auto-scrubber-vac-motor"
+            "name": "Brands",
+            "targetclass": ".dept-brand-brands"
           }
         }
       },
       "block_order": [
-        "03e7d2c6-2c73-44d4-98e9-18fdc8d27323",
-        "51f3a372-6258-4ebe-9390-86ebaa11f053",
-        "11dc93be-0adb-40e6-b954-46ab875dfa8b",
-        "ab2bf9ee-af11-4aab-9a20-7c84b163271d",
-        "b45c59de-ed5d-41cf-93bb-206001ad9f89",
-        "b15d9b41-cc91-4dbe-8ba1-090a45247a6b",
-        "b7ddcfc8-63ab-4cc8-bf21-37575caefc84"
+        "tab_9EAMir",
+        "tab_HzjnqE",
+        "tab_4FnFBJ"
       ],
       "settings": {
-        "cfpssectionheading": "Featured Products"
+        "tabheading": "",
+        "bgcolor": "",
+        "textcolor": ""
       }
     },
     "main": {
@@ -212,6 +187,67 @@
         "block-title": "Related Categories"
       }
     },
+    "16636174067db7bd8c": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "03e7d2c6-2c73-44d4-98e9-18fdc8d27323": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "product": "cleanfreak-performer-front-squeegee-replacement-blade"
+          }
+        },
+        "51f3a372-6258-4ebe-9390-86ebaa11f053": {
+          "type": "slide",
+          "settings": {
+            "product": "viper-fang-18c-replacement-2-stage-vacuum-motor"
+          }
+        },
+        "11dc93be-0adb-40e6-b954-46ab875dfa8b": {
+          "type": "slide",
+          "settings": {
+            "product": "pro-charging-systems-24-volt-12-amp-battery-charger-is2412-for-floor-scrubbers"
+          }
+        },
+        "ab2bf9ee-af11-4aab-9a20-7c84b163271d": {
+          "type": "slide",
+          "settings": {
+            "product": "viper-auto-scrubber-inline-solution-line-filter-and-strainer-with-removable-stainless-screen-vf82168a"
+          }
+        },
+        "b45c59de-ed5d-41cf-93bb-206001ad9f89": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "product": "ipc-eagle-ct30-scrubber-front-squeegee"
+          }
+        },
+        "b15d9b41-cc91-4dbe-8ba1-090a45247a6b": {
+          "type": "slide",
+          "settings": {
+            "product": "thumb-nut-knob-for-viper-and-clarke-auto-scrubbers"
+          }
+        },
+        "b7ddcfc8-63ab-4cc8-bf21-37575caefc84": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-auto-scrubber-vac-motor"
+          }
+        }
+      },
+      "block_order": [
+        "03e7d2c6-2c73-44d4-98e9-18fdc8d27323",
+        "51f3a372-6258-4ebe-9390-86ebaa11f053",
+        "11dc93be-0adb-40e6-b954-46ab875dfa8b",
+        "ab2bf9ee-af11-4aab-9a20-7c84b163271d",
+        "b45c59de-ed5d-41cf-93bb-206001ad9f89",
+        "b15d9b41-cc91-4dbe-8ba1-090a45247a6b",
+        "b7ddcfc8-63ab-4cc8-bf21-37575caefc84"
+      ],
+      "settings": {
+        "cfpssectionheading": "Featured Products"
+      }
+    },
     "f6affc7e-6e40-4be0-a838-2ed2a2445076": {
       "type": "dept-brands-area",
       "blocks": {
@@ -262,11 +298,12 @@
   },
   "order": [
     "d073e89e-15eb-4dca-aab5-b7b92fe99297",
-    "16636174067db7bd8c",
+    "category_tabs_hwBcMw",
     "main",
     "static-recently-viewed",
     "b1e0ab68-50bd-4987-b7b9-230f0ef28748",
     "d1da1fe5-30ca-473f-a600-0516d1f4322c",
+    "16636174067db7bd8c",
     "f6affc7e-6e40-4be0-a838-2ed2a2445076"
   ]
 }
