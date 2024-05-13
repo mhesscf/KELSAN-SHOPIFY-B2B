@@ -623,6 +623,10 @@ jQuery(document).ready(function($){
             $('.' + slideritemId + ' .productgrid--item').height(highestBox);
 
 
+            $('.related-fade-r').addClass("sliderhidden");
+            $('#' + slideritemId + '-slider-fade-r').height(highestBox+20).removeClass("sliderhidden");;
+
+
             if(slideritemId == "part_items-rel-item") {
                 $( ".parts-data-area .part-item" ).each(function() {
                     const handle = $(this).data('handle');
