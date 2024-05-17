@@ -148,11 +148,10 @@
         },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/tennant-e5-bogo-promo-desktop-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/tennant-e5-bogo-promo-mobile-banner.jpg",
-            "link": "\/products\/tennant-e5-electric-self-contained-carpet-extractor",
+            "banner-lg": "shopify:\/\/shop_images\/cpl-pe400bu-21-cf-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/cpl-pe400bu-21-cf-bogo-mobile-banner.jpg",
+            "link": "\/products\/21-cleanfreak-propane-floor-burnisher",
             "coupon-code": ""
           }
         }
