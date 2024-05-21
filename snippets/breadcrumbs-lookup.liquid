@@ -547,7 +547,7 @@
                         {%- if breadcrumblevelobj[1] == "collections" -%}
                             {%- if forloop.last != true or productpage == 1 -%}
 
-                                <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                                <span class="collections-bread" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <a href="/collections/{{breadcrumblevelobj[2]}}" title="{{collections[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/collections/{{breadcrumblevelobj[2]}}">
                                         {%- if collections[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
                                             <span itemprop="name">{{ collections[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
@@ -561,7 +561,7 @@
 
 
                             {%- else -%}
-                                <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                                <span class="unknown-bread" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item">
                                         {%- if collections[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
                                             <span itemprop="name">{{ collections[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
@@ -575,7 +575,7 @@
                         {%- elsif breadcrumblevelobj[1] == "pages" -%}
                             {%- if forloop.last != true or productpage == 1 -%}
 
-                                <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                                <span class="pages-bread" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <a href="/pages/{{breadcrumblevelobj[2]}}" title="{{pages[breadcrumblevelobj[2]].title}}" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item" itemid="/pages/{{breadcrumblevelobj[2]}}">
                                             {%- if pages[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
                                                 <span itemprop="name">{{ pages[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
@@ -585,9 +585,9 @@
                                     </a>
                                     <meta itemprop="position" content="{{ structureposition }}">
                                 </span>
-                                <span aria-hidden="true" class="separator">›</span>
+                                <span aria-hidden="true" class="pages-bread-separator separator">›</span>
                             {%- else -%}
-                                <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                                <span class="current-bread" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                                     <span class="current" itemscope="" itemtype="https://schema.org/WebPage" itemprop="item">
                                         {%- if pages[breadcrumblevelobj[2]].metafields.custom.short_title != blank -%}
                                             <span itemprop="name">{{ pages[breadcrumblevelobj[2]].metafields.custom.short_title }}</span>
@@ -602,7 +602,7 @@
                         {%- assign structureposition = structureposition | plus: 1 -%}
                     {%- endfor -%}
                     {%- if productpage == 1 -%}
-                        <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                        <span class="product2-bread" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                             <span class="current"  itemscope="" itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">{{ product.title }}</span></span>
                             <meta itemprop="position" content="{{ structureposition }}">
                         </span>
@@ -640,7 +640,8 @@
 
 
     <nav class="breadcrumb breadcrumbs-container breadcrumb2point0" role="navigation" aria-label="breadcrumbs"  itemscope itemtype="https://schema.org/BreadcrumbList">
-        <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span class="mobile-bread">...</span>
+        <span class="home-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             <a href="/" title="home" class="homebread" itemscope itemtype="https://schema.org/WebPage"
            itemprop="item" itemid="/"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a>
             <meta itemprop="position" content="1" />
@@ -651,7 +652,7 @@
         {%- else -%}
             {%- if template contains 'product' -%}
 
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="product-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <span title="home" itemscope itemtype="https://schema.org/WebPage" itemprop="item" ><span itemprop="name">
                             <span class="current nobreadhere">{{  product.title }}</span>
                     </span></span>
@@ -660,7 +661,7 @@
 
             {%- elsif template contains 'collection' and collection.handle -%}
 
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="collection-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <span title="home" itemscope itemtype="https://schema.org/WebPage" itemprop="item" ><span itemprop="name">
                             <span class="current nobreadhere">{{ collection.title }}</span>
                     </span></span>
@@ -669,7 +670,7 @@
 
             {%- elsif template contains 'page' -%}
 
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="collection-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <span title="home" itemscope itemtype="https://schema.org/WebPage" itemprop="item" ><span itemprop="name">
                             <span class="current nobreadhere">{{ page.title }}</span>
                     </span></span>
@@ -677,7 +678,7 @@
                 </span>
 
             {%- elsif template == 'blog' -%}
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="blog-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a href="/pages/blog" title="The Janitor’s Closet | A Blog on Everything Cleaning " itemscope itemtype="https://schema.org/WebPage"
                        itemprop="item" itemid="/pages/blog">
                         <span itemprop="name">
@@ -691,7 +692,7 @@
 
                 {%- if current_tags -%}
 
-                    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="tag-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <span title="blog.title" itemscope itemtype="https://schema.org/WebPage" itemprop="item">
                             <span itemprop="name">
                                     <span class="current">
@@ -705,7 +706,7 @@
 
                 {%- else -%}
 
-                    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="unknown-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <span title="blog.title" itemscope itemtype="https://schema.org/WebPage" itemprop="item">
                             <span itemprop="name">
                                     <span class="current">{{  blog.title }}</span>
@@ -718,7 +719,7 @@
 
             {%- elsif template == 'article' -%}
                 {%- comment -%}blog posts{%- endcomment -%}
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="article-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a href="/pages/blog" title="The Janitor’s Closet | A Blog on Everything Cleaning " itemscope itemtype="https://schema.org/WebPage"
                        itemprop="item" itemid="/pages/blog">
                         <span itemprop="name">
@@ -729,7 +730,7 @@
                 </span>
 
                 <span aria-hidden="true" class="separator">›</span>
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="article-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a href="{{ blog.url }}" title="{{ blog.title }}" itemscope itemtype="https://schema.org/WebPage"
                        itemprop="item" itemid="{{ blog.url }}"><span itemprop="name">
                                 {{ blog.title }}
@@ -739,7 +740,7 @@
 
                 <span aria-hidden="true" class="separator">›</span>
 
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="unknown2-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <span title="{{ article.title }}" itemscope itemtype="https://schema.org/WebPage" itemprop="item"><span itemprop="name">
                                 <span class="current">{{ article.title }}</span>
                     </span></span>
@@ -792,5 +793,12 @@
     </nav>
 
 {%- endunless -%}
+
+<script>
+    $('.mobile-bread').click(function(e){
+        $('.mobile-bread').hide();
+        $('nav.breadcrumb .home-bread, nav.breadcrumb .pages-bread, nav.breadcrumb .pages-bread-separator').show();
+    });
+</script>
 
 
