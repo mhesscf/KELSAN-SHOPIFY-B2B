@@ -390,6 +390,58 @@
         "custom_html": "<style>\n.clear-container{margin: -40px -25px -30px;}\n\n@media only screen and (max-width:1023px){\n.clear-container{margin: 0px 0px -30px;}\n}\n\n.clear-container .clear-mobile{display:none;}\n\n@media only screen and (max-width:600px){\n\t.clear-container .clear-desktop{display:none;}\n\t.clear-container .clear-mobile{display:block;}\n\t.clear-container{margin: -40px 0 -60px;}\n}\n<\/style>\n\n<div class=\"clear-container\">\n\t<div class=\"clear-desktop\">\n\t\t<a href=\"\/collections\/clearance\"><img alt=\"Interested in saving up to 60%. Check out our clearance items!\" class=\"img-resonsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/cleanfreak-clearance-banner.jpg?v=1689345025\"><\/a>\n\t<\/div>\n\n\t<div class=\"clear-mobile\">\n\t\t<a href=\"\/collections\/clearance\"><img alt=\"Interested in saving up to 60%. Check out our clearance items!\" class=\"img-resonsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/cleanfreak-clearance-banner-sm.jpg?v=1689186025\"><\/a>\n\t<\/div>\n<\/div>"
       }
     },
+    "category_featured_product_slider_wMpKN8": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "slide_yqjWay": {
+          "type": "slide",
+          "settings": {
+            "product": "ultimate-heated-box-extractor"
+          }
+        },
+        "slide_Vh7RWL": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-120-psi-carpet-cleaning-extractor"
+          }
+        },
+        "slide_MzXYBh": {
+          "type": "slide",
+          "settings": {
+            "product": "basic-carpet-cleaning-package"
+          }
+        },
+        "slide_TLABXm": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-carpet-spot-cleaning-machine"
+          }
+        },
+        "slide_af3Qhq": {
+          "type": "slide",
+          "settings": {
+            "product": "sandia-sniper-steamer-carpet-cleaner"
+          }
+        },
+        "slide_VQ8Eqa": {
+          "type": "slide",
+          "settings": {
+            "product": "mytee-carpet-cleaner-extractor"
+          }
+        }
+      },
+      "block_order": [
+        "slide_yqjWay",
+        "slide_Vh7RWL",
+        "slide_MzXYBh",
+        "slide_TLABXm",
+        "slide_af3Qhq",
+        "slide_VQ8Eqa"
+      ],
+      "settings": {
+        "cfpssectionheading": "Carpet Cleaning"
+      }
+    },
     "7570dd72-245a-4407-b4f1-5256c213dd39": {
       "type": "category-product-slides",
       "blocks": {
@@ -438,6 +490,7 @@
         "7e587050-b32d-4721-8ea4-897d326ee94d",
         "f0e9db50-04fa-47c2-ab60-2e0545fa1ef8"
       ],
+      "disabled": true,
       "settings": {
         "featuredcollection": "Carpet Cleaning",
         "link_url": "",
@@ -493,6 +546,7 @@
     "8981d1be-fc21-47e3-b3ad-1f8ed0b69edb",
     "16608835856531165c",
     "87aaf9cd-846c-4906-9363-af5bea376908",
+    "category_featured_product_slider_wMpKN8",
     "7570dd72-245a-4407-b4f1-5256c213dd39",
     "16602454181ee0bd22",
     "1660757697279cb66e",
