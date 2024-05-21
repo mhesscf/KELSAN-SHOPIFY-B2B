@@ -319,6 +319,58 @@
         "rmv_top_mgn": false
       }
     },
+    "category_featured_product_slider_hwfbJQ": {
+      "type": "category-featured-product-slider",
+      "blocks": {
+        "slide_M9RMFB": {
+          "type": "slide",
+          "settings": {
+            "product": "20-inch-hard-floor-scrubbing-machine"
+          }
+        },
+        "slide_P4YH9V": {
+          "type": "slide",
+          "settings": {
+            "product": "auto-scrubber-floor-cleaning-kit"
+          }
+        },
+        "slide_xpTxQn": {
+          "type": "slide",
+          "settings": {
+            "product": "commercial-floor-buffer-cleaning-package"
+          }
+        },
+        "slide_43c36U": {
+          "type": "slide",
+          "settings": {
+            "product": "dura-18-cord-electric-automatic-floor-scrubber"
+          }
+        },
+        "slide_q79awY": {
+          "type": "slide",
+          "settings": {
+            "product": "cleanfreak-dry-surface-strip-machine"
+          }
+        },
+        "slide_qmgLai": {
+          "type": "slide",
+          "settings": {
+            "product": "1-5-hp-high-speed-20-inch-burnisher"
+          }
+        }
+      },
+      "block_order": [
+        "slide_M9RMFB",
+        "slide_P4YH9V",
+        "slide_xpTxQn",
+        "slide_43c36U",
+        "slide_q79awY",
+        "slide_qmgLai"
+      ],
+      "settings": {
+        "cfpssectionheading": "Floor Cleaning"
+      }
+    },
     "8981d1be-fc21-47e3-b3ad-1f8ed0b69edb": {
       "type": "category-product-slides",
       "blocks": {
@@ -367,6 +419,7 @@
         "be107eba-509c-42e1-a1dd-3eb6a736aa2e",
         "10186080-9c5e-4124-9d99-105c7b0f632c"
       ],
+      "disabled": true,
       "settings": {
         "featuredcollection": "Floor Cleaning",
         "link_url": "",
@@ -543,6 +596,7 @@
     "6c655d11-18fa-405d-95ec-82cea7bbd8ee",
     "16607671217d5bae88",
     "7e713208-a54a-4d6c-a7d6-6e7e7bbe0d3d",
+    "category_featured_product_slider_hwfbJQ",
     "8981d1be-fc21-47e3-b3ad-1f8ed0b69edb",
     "16608835856531165c",
     "87aaf9cd-846c-4906-9363-af5bea376908",
