@@ -58,7 +58,7 @@
                                         {% assign attrValfinal = attr[1] | replace: '&deg;' ,'°' | replace: '&sup2;' ,'²' | replace: '&#178;' ,'²' %}
                                         {% assign attrValfinal = attrValfinal | replace: '&amp;' ,'&' | replace: '&#38;' ,'&' %}
                                         {% assign attrValfinal = attrValfinal | replace: '&trade;' ,'™' | replace: '&reg;' ,'®' %}
-                                        {% if attr[0] == 'Operating Weight' or attr[0] == 'Packaged Weight (lbs)' %}
+                                        {% if attr[0] == 'Operating Weight off' or attr[0] == 'Packaged Weight (lbs) off' %}
                                             <div class="value">{{ attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }} lbs.</div>
                                         {% else %}
                                             <div class="value">{{ attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }}</div>
