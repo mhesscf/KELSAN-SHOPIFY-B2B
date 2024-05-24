@@ -295,9 +295,9 @@
           "homepage_announcement": false,
           "announcement_text": "In observance of Memorial Day, we will be closed on Monday, May 27th. We will reopen Tuesday, May 28th.",
           "announcement_text_mobile": "In observance of Memorial Day, we will be closed on Monday, May 27th. We will reopen Tuesday, May 28th.",
-          "announcement_link": "\/",
+          "announcement_link": "",
           "announcement_promo": "",
-          "flash": true,
+          "flash": false,
           "announcement_color": "#ffffff",
           "announcement_background": "#123570"
         }
