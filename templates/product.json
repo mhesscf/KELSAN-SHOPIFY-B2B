@@ -153,7 +153,7 @@
         "tabinfo_cxCXnA": {
           "type": "tabinfo",
           "settings": {
-            "tab_name": "Used On",
+            "tab_name": "Part Used On",
             "tab_name_sm": "Used On",
             "tab_rel_id": "part_used_on"
           }
