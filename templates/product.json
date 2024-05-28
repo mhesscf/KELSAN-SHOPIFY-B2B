@@ -150,6 +150,14 @@
             "tab_rel_id": "part_items"
           }
         },
+        "tabinfo_cxCXnA": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Used On",
+            "tab_name_sm": "Used On",
+            "tab_rel_id": "part_used_on"
+          }
+        },
         "908ae5ae-8f36-43b2-9c13-a3102c783b4a": {
           "type": "tabinfo",
           "settings": {
@@ -163,6 +171,7 @@
         "f1b95c38-8fb7-4cae-bd6b-2610e41f8acd",
         "b5f685c0-087d-4f5b-82a0-1b3ab914619b",
         "cac90bff-26fa-4e04-a472-516032b68d4e",
+        "tabinfo_cxCXnA",
         "908ae5ae-8f36-43b2-9c13-a3102c783b4a"
       ],
       "settings": {
