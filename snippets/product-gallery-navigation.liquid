@@ -169,7 +169,70 @@
         {% assign orgCounter = orgCounter | plus: 1  %}
       {% endfor %}
 
+{% comment %}----------------------image addon via metaobjects------------------{% endcomment %}
+      {% assign today_date = 'now' | date: '%s' %}
+      {%- assign bannerObj = shop.metaobjects.product_banner_in_image_carousel.values  -%}
+      {% for banner in bannerObj %}
+        {% assign start = banner.startdate | date: '%s' %}
 
+        {% comment %}//add one day to the end date{% endcomment %}
+        {% assign date = banner.enddate | date: '%s' %}
+        {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
+        {% assign end = date | date: "%s" | plus: seconds | date: "%s" %}
+
+        {% comment %}if not active, skip{% endcomment %}
+        {% if today_date < start or today_date > end %}
+          {% continue %}
+        {% endif %}
+
+        {%- assign showBanner = false -%}
+        {% comment %}// check collections{% endcomment %}
+        {% for bannerColl in banner.collections.value  %}
+          {% for collection in product.collections %}
+            {% if collection.id == bannerColl.id  %}
+              {%- assign showBanner = true -%}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% if showBanner == true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment %}// check products{% endcomment %}
+        {% if showBanner == false  %}
+          {% for bannerProd in banner.products.value  %}
+            {% if product.id == bannerProd.id  %}
+              {%- assign showBanner = true -%}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if showBanner == true %}
+
+          <button
+                  class="
+          product-gallery--media-thumbnail
+          product-gallery--image-thumbnail
+        "
+                  type="button"
+                  tab-index="0"
+                  aria-label="default text to update later"
+                  data-gallery-thumbnail
+                  data-gallery-index="{{ orgCounter }}"
+                  data-gallery-selected="{%- if 1 == 1 -%}true{%- else -%}false{%- endif -%}"
+                  data-media="{{ orgCounter }}"
+                  data-media-type="image"
+          >
+        <span class="product-gallery--media-thumbnail-img-wrapper image-type ">
+          {{ banner.image | image_url: width: 75 | image_tag: class: 'product-gallery--image-thumbnail-img' }}
+        </span>
+          </button>
+
+
+          {% assign orgCounter = orgCounter | plus: 1  %}
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 {% endif %}
