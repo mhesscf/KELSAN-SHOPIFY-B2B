@@ -20643,13 +20643,13 @@ shopify-payment-terms {
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.1), (-webkit-min-device-pixel-ratio: 1.09375), (min-resolution: 105dpi), (min-resolution: 1.1dppx) {
-	/* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi */
+	/* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi
 	.pswp--svg .pswp__button,
 	.pswp--svg .pswp__button--arrow--left:before,
 	.pswp--svg .pswp__button--arrow--right:before {
 		background-image: url({{ '' | asset_url }}default-skin.svg);
 	}
-
+	*/
 	.pswp--svg .pswp__button--arrow--left,
 	.pswp--svg .pswp__button--arrow--right {
 		background: none;
@@ -21093,6 +21093,29 @@ a.pswp__share--download:hover {
 	background: none;
 }
 
+
+{% comment %}cleanfreak pswp modifications{% endcomment %}
+.pswp__button--arrow--left:before {
+	background: url({{ 'left-arrow-default.png' | file_url }}) 0 0 no-repeat;
+}
+.pswp__button--arrow--right:before {
+	background: url({{ 'right-arrow-default.png' | file_url }}) 0 0 no-repeat;
+}
+@media screen and (min-width: 680px) {
+	.pswp {
+		width: 90%;
+		height: 90%;
+		margin: auto;
+		border: 1px solid #ccc;
+		border-radius: 30px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+	}
+}
 .product-gallery--expand {
 	font-family: {{ fonts_type_body_family }};
 	font-style: {{ fonts_type_body_style }};
