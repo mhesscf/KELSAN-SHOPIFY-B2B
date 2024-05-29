@@ -275,6 +275,86 @@
     {% endfor %}
 
 
+    {% comment %}----------------------image addon via metaobjects------------------{% endcomment %}
+
+    {% assign today_date = 'now' | date: '%s' %}
+    {%- assign bannerObj = shop.metaobjects.product_banner_in_image_carousel.values  -%}
+    {% for banner in bannerObj %}
+        {% assign start = banner.startdate | date: '%s' %}
+
+        {% comment %}//add one day to the end date{% endcomment %}
+        {% assign date = banner.enddate | date: '%s' %}
+        {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
+        {% assign end = date | date: "%s" | plus: seconds | date: "%s" %}
+
+        {% comment %}if not active, skip{% endcomment %}
+        {% if today_date < start or today_date > end %}
+            {% continue %}
+        {% endif %}
+
+        {%- assign showBanner = false -%}
+        {% comment %}// check collections{% endcomment %}
+        {% for bannerColl in banner.collections.value  %}
+            {% for collection in product.collections %}
+                {% if collection.id == bannerColl.id  %}
+                    {%- assign showBanner = true -%}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+            {% if showBanner == true %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+
+        {% comment %}// check products{% endcomment %}
+        {% if showBanner == false  %}
+            {% for bannerProd in banner.products.value  %}
+                {% if product.id == bannerProd.id  %}
+                    {%- assign showBanner = true -%}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% if showBanner == true %}
+
+            <figure class="
+        product-gallery--media
+        product-gallery--image
+
+      "
+                    tabindex="-1"
+                    aria-hidden="false"
+                    data-gallery-figure=""
+                    data-gallery-index="{{orgCounter }}"
+                    data-gallery-selected="false"
+                    data-media="{{orgCounter }}"
+                    data-media-type="image"
+                    data-mitch="{{ orgCounter }}"
+                    data-zoom="{{ banner.image | image_url: width: 700 }}"
+                    data-image-height="1200"
+                    data-image-width="1200">
+
+                <div class="product-gallery--image-background">
+                    <noscript data-rimg-noscript="">
+                        <img
+                                src="{{ banner.image | image_url: width: 700 }}"
+                                alt="{{ banner.name }} Thumbnail"
+                                data-rimg="noscript"
+                                srcset="{{ banner.image | image_url: width: 700 }} 1x, {{ banner.image | image_url: width: 1200 }} 1.71x"
+                                class="product-gallery--loaded-image img-responsive"
+                        >
+                    </noscript>
+                    <img src="{{ banner.image | image_url: width: 700 }}" alt="{{ banner.name }}" data-rimg="loaded" data-rimg-scale="1" data-rimg-template="{{ banner.image | image_url: width: 700 }}" data-rimg-max="1200x1200" data-rimg-crop="false" srcset="{{ banner.image | image_url: width: 1000 }} 2.00x" class="product-gallery--loaded-image img-responsive" data-rimg-template-svg="data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'%20width='700'%20height='700'></svg>">
+                    <div data-rimg-canvas=""></div>
+                </div>
+                {% if banner.linkurl %}
+                    <div class="alttext"><a href="{{ banner.linkurl }}">{{ banner.name }}</a></div>
+                {% endif %}
+            </figure>
+            {% assign orgCounter = orgCounter | plus: 1  %}
+        {% endif %}
+    {% endfor %}
+
   {% assign image_count = product.media | where: "media_type", "image" | size %}
   {% if image_count > 0 and gallery_click_to_zoom != 'disabled' %}
     <button
