@@ -9,40 +9,182 @@
     {% endfor %}
     {%- if sf_customer == 1 -%}
         <div class="sf-account-area">
-            <h2><img style="margin: 0 10px -9px 6px" src="{{ 'superfreak-logo-sm.jpg' | file_img_url  }}" alt="SuperFreak Link" />Welcome back, SuperFreak customer!</h2>
-
 
             {% comment %}Check orders for savings<br/>{% endcomment %}
-            {%- assign totalSFSavings = 0 | plus: 0 -%}
-        {% for order in customer.orders %}
-            {% for line_item in order.line_items %}
-                {% for discount_allocation in line_item.line_level_discount_allocations %}
-                    {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title == "SUPERFREAK-1ST" or discount_allocation.discount_application.title == "SF-1ST" %}
-                        {%- assign totalSFSavings = totalSFSavings | plus: discount_allocation.amount -%}
+            {%- assign yearlySFSavings = 0 | plus: 0 -%}
+            {%- assign lifetimeSFSavings = 0 | plus: 0 -%}
+            {%- assign totalSFactive = 0 | plus: 0 -%}
+            {% for order in customer.orders %}
+                {% comment %}total sf discount for order only{% endcomment %}
+                {%- assign order_discount_amount = 0 | plus: 0 -%}
+                {% for line_item in order.line_items %}
+                    {% assign seconds = 31536000 %}
+                    {% assign yearago = 'now' | date: '%s' | minus: seconds %}
+                    {% assign orderDate = order.created_at | date: '%s' | plus:0 %}
+
+                    {% if orderDate > yearago and line_item.sku == "SUPERFREAK" %}
+                        {%- assign totalSFactive = totalSFactive | plus: 1 -%}
+                    {% endif %}
+
+                    {% for discount_allocation in line_item.line_level_discount_allocations %}
+                        {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title == "SUPERFREAK-1ST" or discount_allocation.discount_application.title contains "SF-1ST" %}
+                            {%- assign order_discount_amount = order_discount_amount | plus: discount_allocation.amount -%}
+                            {%- assign lifetimeSFSavings = lifetimeSFSavings | plus: discount_allocation.amount -%}
+                            {% if orderDate > yearago %}
+                                {%- assign yearlySFSavings = yearlySFSavings | plus: discount_allocation.amount -%}
+                            {% endif %}
                         {% comment %}{{ order.name }}:{{ line_item.title }} -> {{ discount_allocation.discount_application.title }}(-<span class="money">{{ discount_allocation.amount | money }}</span>)<br/>{% endcomment %}
                         {% endif %}
+                    {% endfor %}
                 {% endfor %}
+
             {% endfor %}
-        {% endfor %}
 
-        {% if totalSFSavings > 0 %}
-            <div class="sf-total-savings">You have saved a total of <span class="savings">{{ totalSFSavings | money }}</span> by using your SuperFreak discount!</div>
-        {% endif %}
+            {% comment %}override test{% endcomment %}
+            {% comment %}{%- assign yearlySFSavings = 399.97 | times: 100.00 | plus: 0.00 -%}{% endcomment %}
 
+            <div class="table-contain">
 
-            {%- assign sf_items = customer.metafields.custom.superfreak_items_long | split: "," -%}
-            <div class="tbl-column">
-                <table class="sf-account">
-                    <tr><th>SuperFreak Item</th><th class="start" >Start Date</th><th>End Date</th></tr>
-                    {% for sf_item in sf_items %}
-                    {%- assign sf_item_arr = sf_item | split: "||" -%}
-                    {% comment %}seconds in a year to give the user the end date{% endcomment %}
-                    {% assign seconds = 31536000 %}
-                    {%- assign buydate = sf_item_arr[1] -%}
-                    {%- assign enddate = sf_item_arr[1] | date: "%s" | plus: seconds -%}
-                    <tr><td>{{ sf_item_arr[0] }}</td><td class="start" >{{ buydate | date: "%m-%d-%Y" }}</td><td>{{ enddate | date: "%m-%d-%Y" }}</td>
+                <div class="graph-column">
+                    {%- assign targetAmount = totalSFactive | times: 99.99 | times: 100.00 -%}
+                    {%- assign sfscale = 100 | plus: 0 -%}
+
+                    {%- assign showPrice = 1 -%}
+                     {% if targetAmount < yearlySFSavings %}
+                         <div class="chart-title maxsplat"><div class="max-contain"><strong>Goal<br/>Exceeded</strong></div></div>
+                     {% else %}
+                        <div class="chart-title">
+                            <strong>Savings<br/>Goal*<br/></strong>
+                            <div class="popout hidden pop-chart-title">Total amount needed to earn back the purchase amount of your current SuperFreak membership.</div>
+                        </div>
+                     {% endif %}
+                    <div class="thermometer-contain {% if targetAmount < yearlySFSavings %}maxed-out{% endif %}">
+                        <table class="thermometer">
+                        {% for num in (0..sfscale) %}
+
+                            {%- assign scalePoint = 100 | minus: num -%}
+                            {%- assign yearlySFSavingsPer = yearlySFSavings | divided_by: targetAmount | times:100.00 -%}
+
+                            {% if num == 0 %}
+                                <tr class="filled-top very-top scale-{{ scalePoint }} {% if scalePoint <= yearlySFSavingsPer %}scale-filled{% endif %}">
+                                    <td></td>
+                                    <td  class="sliver">
+                                        <div class="scale-saved top">{{ targetAmount | money }}</div>
+                                    </td>
+                                </tr>
+                            {% elsif scalePoint <= yearlySFSavingsPer and showPrice == 1 %}
+                                <tr class="filled-top {% if targetAmount > yearlySFSavings %}currentsavings{% endif %} scale-{{ scalePoint }} {% if scalePoint <= yearlySFSavingsPer %}scale-filled{% endif %}">
+                                    <td></td>
+                                    <td  class="sliver">
+                                           {% if targetAmount >= yearlySFSavings %} <div class="scale-saved" data-savings="{{ yearlySFSavingsPer }}">{{ yearlySFSavings | money }}</div>{% endif %}
+                                    </td>
+                                </tr>
+                                {%- assign showPrice = 0 -%}
+                            {% else %}
+                                <tr class="scale-{{ scalePoint }} {% if scalePoint <= yearlySFSavingsPer %}scale-filled{% endif %}">
+                                    <td>
+                                    </td>
+                                    <td class="sliver"></td>
+                                </tr>
+                            {% endif %}
                         {% endfor %}
-                </table>
+                        </table>
+                        <div class="thermometer-bottom"></div>
+                        <div class="bubbles"><div class="bubble-big"></div><div class="bubble-small"></div></div>
+                    </div>
+                    <div class="thermo-bottom-text">
+                        <strong>Total<br/>SuperFreak<br/>Savings<span>*</span></strong>
+                        <div class="popout hidden thermo-bottom-text">Total amount saved on consumables due to your current SuperFreak membership.</div>
+                    </div>
+                </div>
+
+                {%- assign sf_items = customer.metafields.custom.superfreak_items_long | split: "," -%}
+                <div class="tbl-column">
+                    <h2><img style="margin: 0 10px -9px 6px" src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="SuperFreak Link" />Welcome back, SuperFreak customer!</h2>
+
+                    {% if targetAmount < yearlySFSavings %}
+                        <div class="sf-total-savings"><i class="fa-solid fa-party-horn"></i> Congratulations!<br/>You have saved a total of <span class="savings">{{ yearlySFSavings | money }}</span> during your SuperFreak Membership and have made SuperFreak pay for itself (Cost: <span class="savings">{{ targetAmount | money }}</span>)!</div>
+                        <br/>
+                    {% endif %}
+
+                    {% if lifetimeSFSavings > 0  and targetAmount > yearlySFSavings %}
+                        <div class="sf-total-savings"><i class="fa-sharp fa-solid fa-crown"></i> You have saved a total of <span class="savings">{{ lifetimeSFSavings | money }}</span> over your lifetime of using the SuperFreak discount!</div>
+                    {% endif %}
+
+                    <h3>SuperFreak Savings</h3>
+                    <table class="sf-account saved-orders">
+
+                        <tr><th>Order</th><th>Date</th><th>Saved through SuperFreak</th></tr>
+
+                        {% for order in customer.orders %}
+                            {% comment %}total sf discount for order only{% endcomment %}
+                            {%- assign order_discount_amount = 0 | plus: 0 -%}
+                            {% assign seconds = 31536000 %}
+                            {% assign yearago = 'now' | date: '%s' | minus: seconds %}
+                            {% assign orderDate = order.created_at | date: '%s' | plus:0 %}
+
+                            {% for line_item in order.line_items %}
+
+
+                                {% for discount_allocation in line_item.line_level_discount_allocations %}
+                                    {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title contains "SUPERFREAK-1ST" or discount_allocation.discount_application.title contains "SF-1ST" %}
+                                         {%- assign order_discount_amount = order_discount_amount | plus: discount_allocation.amount -%}
+                                     {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+
+                            {%- if order_discount_amount > 0 -%}
+                                <tr class="{% if orderDate > yearago %}active{% else %}expired{% endif %}"><td><div class="roundtd">{{ order.name | strip_newlines | link_to: order.customer_url, order.name }}</div></td><td><div class="roundtd">{{ order.created_at | date: "%m-%d-%Y"  }}</div></td><td><div class="roundtd">{{ order_discount_amount | money}}</div></td></tr>
+                            {% endif %}
+
+                        {% endfor %}
+                    </table>
+
+                    <h3>SuperFreak Purchases</h3>
+
+                    <table class="sf-account sfpurchases">
+                        <tr><th>SuperFreak Item</th><th class="start" >Start Date</th><th>End Date</th></tr>
+
+
+                        {% for order in customer.orders %}
+                            {% for line_item in order.line_items %}
+                                {% if line_item.sku == "SUPERFREAK"  %}
+
+                                    {% comment %}get loaded sku from orders{% endcomment %}
+                                    {% comment %}seconds in a year to give the user the end date{% endcomment %}
+
+                                    {% assign seconds = 31536000 %}
+                                    {%- assign buydate = order.created_at | date: "%s" | plus: 0 -%}
+                                    {%- assign enddate = order.created_at | date: "%s" | plus: seconds -%}
+                                    {%- assign sfItemFound = 0 -%}
+
+                                    {%- capture order_link -%}
+                                    <div class="roundtd blue">View Order <i class="fa-solid fa-caret-right"></i></div>
+                                    {%- endcapture -%}
+
+                                    {% comment %}load sf attached sku{% endcomment %}
+                                    {% for line_item2nd in  order.line_items %}
+                                        {% if line_item2nd.sku == line_item.properties["SuperFreak Item"]  %}
+                                            <tr class="{% if buydate > yearago %}active{% else %}expired{% endif %}" data-order="{{ order.name }}"><td rowspan="2"><div class="roundtd tworow"><a href="{{ line_item2nd.url }}">{{ line_item2nd.sku  }}<br/>{{ line_item2nd.title  }}</a></div></td><td class="start" ><div class="roundtd">{{ buydate | date: "%m-%d-%Y" }}</div></td><td class="end" ><div class="roundtd">{{ enddate | date: "%m-%d-%Y" }}</div></td></tr>
+                                            <tr class="{% if buydate > yearago %}active{% else %}expired{% endif %}" data-order="{{ order.name }}"><td colspan="2" >{{ order_link | strip_newlines | link_to: order.customer_url, order.name }}</td></tr>
+                                            {%- assign sfItemFound = 1 -%}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% comment %}show "unassigned" if not attached{% endcomment %}
+                                    {% if sfItemFound == 0   %}
+                                        <tr data-order="{{ order.name }}"><td rowspan="2"><div class="roundtd tworow unassigned">&nbsp;<br/>Unassigned<br/>&nbsp;</div></td><td class="start" ><div class="roundtd">{{ buydate | date: "%m-%d-%Y" }}</div></td><td class="end" ><div class="roundtd">{{ enddate | date: "%m-%d-%Y" }}</div></td></tr>
+                                        <tr data-order="{{ order.name }}"><td colspan="2" >{{ order_link | strip_newlines | link_to: order.customer_url, order.name }}</td></tr>
+                                    {% endif %}
+
+                                    {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="bottom-links">
                 <div class="sf-discount-reminder">Get 10% off of <a href="/collections/superfreak-discount-eligible">parts and accessories</a> using promo code <span>"SUPERFREAK"</span>.</div>
 
                 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
@@ -68,31 +210,58 @@
                 {%- endif -%}
 
                 <div class="subscription-link" >
-                    <a href="{{ subscript-link }}">If you have a SuperFreak Subscription, you can manage your subscriptions <span>here</span>. <i style="font-size:14px;" class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                    If you have a SuperFreak Subscription, you can manage your subscriptions <a href="{{ subscript-link }}"><span>here</span>. <i style="font-size:14px;" class="fa-solid fa-arrow-right-to-bracket"></i></a>
                 </div>
-
             </div>
+
+
 
             <style>
                 .sf-account-area{
-                    border-bottom:1px solid #ccc;
+                    border-bottom:1px solid white;
                     padding-top:10px;
                     width: 1320px;
                     max-width: 90%;
                     margin: 0 auto 10px;
-                    padding: 10px 0;
+                    padding: 2px 30px 30px 30px;
+                    background-color: #303e48;
+                    color: white;
+                    border-radius: 30px;
                 }
                 .sf-account-area h2{
                     font-size:34px;
                     margin-bottom:15px;
                     font-weight:bold;
+                    color: white;
+                }
+                .sf-account-area h3{
+                    font-size:24px;
+                    margin-bottom:0;
+                    font-weight:bold;
+                    color: white;
+                    border-bottom:1px solid #dcecf1;
                 }
                 .sf-account-area .sf-total-savings{
-                    margin:0 0 10px 0;
+                    font-size:18px;
+                    padding:10px 20px;
+                    background-color: #dcecf1;
+                    border-radius: 25px;
+                    color: #303e48;
+                    font-weight:bold;
                 }
+                .sf-account-area .sf-total-savings i,
                 .sf-account-area .sf-total-savings .savings{
                     color:{{ settings.color_button_secondary_background }};
-                    font-weight:bold;
+                }
+                .sf-account-area .table-contain{
+                    display:flex;
+                }
+                .sf-account-area .graph-column{
+                    width: 175px;
+                    position: relative;
+                }
+                .sf-account-area .tbl-column{
+                    width:100%;
                 }
                 .sf-account{
                      border-collapse: collapse;
@@ -106,17 +275,43 @@
                     border-radius: 0 10px 0 0;
                 }
                 .sf-account th{
-                    background:#303e49;
                     padding:10px 15px;
-                    color:#fff;
                 }
-                .sf-account td{
-                    border-bottom:1px solid #ccc;
-                    padding:5px 15px;
+                .sf-account tr{
+                    padding:15px 0;
+                }
+                .sf-account td .roundtd{
+                    border:1px solid white;
+                    padding:8px 15px;
+                    margin:0 4px 15px 4px;
                     text-align:center;
+                    border-radius: 25px;
+                }
+                .sf-account td.start .roundtd,
+                .sf-account td.end .roundtd{
+                    margin-bottom:0;
+                    white-space: nowrap;
+                }
+                .sf-account td .roundtd.blue{
+                    border:1px solid #54bddd;
+                    background-color:#54bddd;
+                    color:white;
+                    margin-top:5px;
+                }
+                .sf-account td .roundtd.blue:hover{
+                    border:1px solid {{ settings.color_button_secondary_background }};
+                    background-color:{{ settings.color_button_secondary_background }};
+                    cursor: pointer;
+                }
+                .sf-account td .tworow{
+                    min-height:87px;
+                }
+                .sf-account td a{
+                    text-decoration: none;
+                    color:white;
                 }
                 .sf-discount-reminder{
-                    padding:15px 0;
+                    padding:5px 0;
                     text-align: center;
                 }
                 @media screen and (max-width: 390px) {
@@ -127,16 +322,261 @@
                     margin-bottom:6px;
                 }
                 .subscription-link a{
-                    color:{{ settings.color_text }};
                     text-decoration: none;
                 }
                 .subscription-link a span{
                     color:{{ settings.color_links }};
                     text-decoration: underline;
                 }
+
+                .chart-title{
+                    text-align:center;
+                    font-size:20px;
+                    margin: 30px 0 5px 6px;
+                    width:70px;
+                    position: relative;
+                }
+                .chart-title.maxsplat{
+                    background-image: url('{{ 'thermo-splat.png' | file_img_url: '194x' }}');
+                    width:194px;
+                    height:174px;
+                    position:absolute;
+                    background-size:194px 174px;
+                    left:-72px;
+                    top:-54px;
+                    z-index:5;
+                }
+                .chart-title.maxsplat .max-contain{
+                    padding-top:58px;
+                    text-shadow: -3px -1px 6px black;
+                    line-height:20px;
+                    padding-left:21px;
+                    margin-top:22px;
+                }
+                .thermometer-contain{
+                    padding:15px;
+                    position: relative;
+                }
+                .thermometer-contain.maxed-out{
+                    margin-top:105px;
+                }
+                .thermometer{
+                    border-collapse: collapse;
+                    border-left:1px  solid white;
+                    border-right:1px  solid white;
+                }
+                .thermometer td{
+                    padding:2px 20px;
+                    position:relative;
+                }
+                .thermometer td.sliver{
+                    padding:2px 5px;
+                }
+                .thermometer tr:nth-child(10n + 1) td.sliver,
+                .thermometer tr:nth-child(10n + 1) .scale-filled td.sliver{
+                    border-top:2px solid white;
+                }
+                .thermometer .scale-filled td{
+                    background-color:#54bddd;
+                }
+                .thermometer .currentsavings{
+                    background-image: url('{{ 'swish-sf.png' | file_img_url }}');
+                    background-size:50px 5px;
+                }
+                .thermometer .scale-filled.currentsavings td{
+                    background-color:unset;
+                }
+
+                .thermometer .filled-top td .scale-saved{
+                    position: absolute;
+                    right:-58px;
+                    top:-7px;
+                    width:50px
+                }
+                .thermometer .filled-top td .scale-saved.top{
+                    top:-20px;
+                }
+                .thermometer-bottom{
+                    background-color:#54bddd;
+                    border-radius: 0 0 90px 90px;
+                    border:1px solid white;
+                    border-top:0px solid white;
+                    height:30px;
+                    width:52px;
+                }
+                .bubbles{
+                    position: absolute;
+                    bottom:45px;
+                    left:25px;
+                }
+                .bubbles div{
+                    background-color:white;
+                    width:10px;
+                    border-radius: 15px;
+                    height:15px;
+                    margin-bottom:15px;
+                }
+                .bubbles div.bubble-big{
+                    height:50px;
+                }
+                .thermo-bottom-text{
+                    text-align: center;
+                    margin-left:-8px;
+                    width:100px;
+                    margin-top:0;
+                    margin-bottom:14px;
+                    position: relative;
+                }
+                .sf-account-area .popout{
+                    background-color:white;
+                    border:1px solid black;
+                    width:250px;
+                    position: absolute;
+                    color:black;
+                    top:5px;
+                    font-size:13px;
+                    line-height:16px;
+                    border-radius: 10px;
+                    padding:3px;
+                    box-shadow:2px 2px 9px 0px;
+                    display:block;
+                }
+                .sf-account-area .popout.hidden{
+                    display:none;
+                }
+                .sf-account-area .chart-title .popout{
+                    left:80px;
+                }
+                .sf-account-area .thermo-bottom-text .popout {
+                    left:110px;
+                }
+
+                .sf-account-area .bottom-links{
+                    font-size:18px;
+                    padding:10px 20px;
+                    background-color: #dcecf1;
+                    border-radius: 25px;
+                    color: #303e48;
+                }
+
+                @media screen and (max-width: 1080px) {
+                    .sf-account-area{
+                        padding: 2px 15px 15px 5px;
+                    }
+
+                    .sf-account-area h2{
+                        font-size:26px;
+                    }
+
+                    .thermometer td{
+                        padding:2px 10px;
+                    }
+                    .sf-account-area .sf-total-savings{
+                        font-size: 14px;
+                    }
+                    .sf-account th{
+                        font-size:14px;
+                        line-height:17px;
+                    }
+                    .sf-account td .tworow{
+                        font-size:12px;
+                        line-height:16px;
+                    }
+                    .thermometer-bottom{
+                        width:32px;
+                        height:20px;
+                        margin-top:-2px;
+                    }
+                    .chart-title,
+                    .thermometer .filled-top td .scale-saved,
+                    .thermometer .filled-top td .scale-saved.top,
+                    .thermo-bottom-text{
+                        font-size: 12px;
+                        line-height:16px;
+                    }
+                    .chart-title{
+                        width:50px;
+                    }
+                    .thermo-bottom-text{
+                        width:78px;
+                    }
+                    .bubbles div{
+                        width:5px;
+                    }
+                    .sf-account-area .graph-column{
+                        padding-left:21px;
+                    }
+                    .sf-account-area .tbl-column{
+                        margin-left:32px;
+                    }
+                    .sf-account-area .bottom-links{
+                        font-size:15px;
+                    }
+                }
+                @media screen and (min-width: 768px) and (max-width: 950px) {
+                    .sf-account-area{
+                        padding:2px 10px 15px 5px;
+                        max-width:100%;
+                    }
+                    .sf-account-area .graph-column{
+                        padding-left:21px;
+                    }
+                    .sf-account-area .tbl-column{
+                        width:73%;
+                    }
+                    .sf-account td .roundtd{
+                        font-size:11px;
+                        line-height:16px;
+                        padding:8px 10px;
+                    }
+                }
+
+                @media screen and (max-width: 580px) {
+                    .sf-account-area{
+                        padding:2px 10px 15px 5px;
+                        max-width:100%;
+                    }
+                    .sf-account-area .graph-column{
+                        padding-left:21px;
+                    }
+                    .sf-account-area .tbl-column{
+                        width:73%;
+                    }
+                    .sf-account td .roundtd{
+                        font-size:11px;
+                        line-height:16px;
+                        padding:8px 10px;
+                    }
+                }
+                @media screen and (max-width: 450px) {
+                    .sf-account-area .tbl-column{
+                        width:95%;
+                    }
+                    .sf-account-area{
+                        padding:0 5px 15px 5px;
+                    }
+                    .sf-account-area .graph-column{
+                        display:none;
+                    }
+                    .sf-account-area .tbl-column{
+                        width:95%;
+                        margin: 0 8px;
+                    }
+                }
+
             </style>
         </div>
 
     {%- endif -%}
 
 {%- endif -%}
+<script>
+    $('.thermo-bottom-text, .chart-title').hover(
+        function () {
+            $(this).find('.popout').removeClass('hidden');
+        },
+        function () {
+            $(this).find('.popout').addClass('hidden');
+        }
+    );
+</script>
