@@ -378,7 +378,7 @@ margin-top:76px;
 
                     {
                         "id": {{ forloop.index0 }},
-                        "name": "{{  promo.title }}",
+                        "name": "{{  promo.title | escape}}",
                         "startdate": "{{  promo.start_date_time | date: "%Y-%m-%d"  }}",
                         "enddate": "{{  promo.end_date_time | date: "%Y-%m-%d" }}",
                         "starttime": "{{  promo.start_date_time | date: "%H:%M"  }}",
