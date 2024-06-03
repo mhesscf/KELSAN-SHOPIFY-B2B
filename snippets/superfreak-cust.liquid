@@ -549,18 +549,36 @@
                     }
                 }
                 @media screen and (max-width: 450px) {
+                    .custom-liquid--container{
+                        margin:0 -16px;
+                    }
                     .sf-account-area .tbl-column{
                         width:95%;
                     }
                     .sf-account-area{
                         padding:0 5px 15px 5px;
+                        max-width:unset;
+                        width:117%;
+                    }
+                    .sf-account-area h2{
+                        font-size:25px;
+                    }
+                    .sf-account-area .table-contain{
+                        display: block;
                     }
                     .sf-account-area .graph-column{
-                        display:none;
+                        float:left;
+                        width:27%;
+                        padding-left:1px;
                     }
                     .sf-account-area .tbl-column{
-                        width:95%;
+                        width:68%;
+                        float:right;
                         margin: 0 8px;
+                    }
+                    .sf-account-area .bottom-links{
+                        clear:both;
+
                     }
                 }
 
