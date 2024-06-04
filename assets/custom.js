@@ -126,6 +126,31 @@ jQuery(document).ready(function($){
             }
         ]
     });
+    // equalize height
+    var highestTitleBox = 0;
+    var highestBox = 0;
+
+    //Title Height (exclude frequently bought together)
+    $('.top-product-showcase .productitem--title').css({'height': ''});
+    $('.top-product-showcase .productitem--title').each(function () {
+        // If this box is higher than the cached highest then store it
+        if ($(this).height() > highestTitleBox) {
+            highestTitleBox = $(this).height();
+        }
+    });
+    $('.top-product-showcase .productitem--title').height(highestTitleBox);
+    //box height (exclude frequently bought together)
+    $('.top-product-showcase .productgrid--item').css({'height': ''});
+    $('.top-product-showcase .productgrid--item').each(function () {
+        // If this box is higher than the cached highest then store it
+        if ($(this).height() > highestBox) {
+            highestBox = $(this).height();
+        }
+    });
+    $('.top-product-showcase .productgrid--item').height(highestBox);
+
+
+
 
 
     $('.product-slider').slick({
