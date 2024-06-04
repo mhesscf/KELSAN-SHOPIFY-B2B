@@ -512,6 +512,17 @@
                     .sf-account-area .bottom-links{
                         font-size:15px;
                     }
+                    .chart-title.maxsplat{
+                        width:122px;
+                        height:122px;
+                        left:-21px;
+                        background-size:121px 127px;
+                        top:-25px;
+                    }
+                    .chart-title.maxsplat .max-contain{
+                        padding-left:15px;
+                        margin-top:-1px;
+                    }
                 }
                 @media screen and (min-width: 768px) and (max-width: 950px) {
                     .sf-account-area{
@@ -549,18 +560,46 @@
                     }
                 }
                 @media screen and (max-width: 450px) {
+                    .custom-liquid--container{
+                        margin:0 -16px;
+                    }
                     .sf-account-area .tbl-column{
                         width:95%;
                     }
                     .sf-account-area{
                         padding:0 5px 15px 5px;
+                        max-width:unset;
+                        width:117%;
+                    }
+                    .sf-account-area h2{
+                        font-size:25px;
+                    }
+                    .sf-account-area .table-contain{
+                        display: block;
                     }
                     .sf-account-area .graph-column{
-                        display:none;
+                        float:left;
+                        width:27%;
+                        padding-left:1px;
                     }
                     .sf-account-area .tbl-column{
-                        width:95%;
+                        width:68%;
+                        float:right;
                         margin: 0 8px;
+                    }
+                    .sf-account-area .bottom-links{
+                        clear:both;
+
+                    }
+                    .chart-title.maxsplat{
+                        width:120px;
+                        height:120px;
+                        left:-41px;
+                        background-size:121px 126px;
+                        top:-27px;
+                    }
+                    .chart-title.maxsplat .max-contain{
+                        padding-top:20px;
                     }
                 }
 
