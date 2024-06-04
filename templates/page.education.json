@@ -90,6 +90,7 @@
         },
         "30ce29d5-28bd-46d9-84ae-431a9cb222e7": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "linktext": "Product Brochures",
             "linkurl": ""
@@ -97,6 +98,7 @@
         },
         "6e0643d5-6aa7-4635-8435-1c5fcc34888b": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "linktext": "Owner’s Manuals",
             "linkurl": ""
@@ -104,6 +106,7 @@
         },
         "3d5ae239-dab6-4dd6-8aff-d20683f68ab2": {
           "type": "link",
+          "disabled": true,
           "settings": {
             "linktext": "Safety Data Sheets (SDS)",
             "linkurl": ""
