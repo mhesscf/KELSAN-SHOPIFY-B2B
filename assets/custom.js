@@ -652,7 +652,7 @@ jQuery(document).ready(function($){
             $('#' + slideritemId + '-slider-fade-r').height(highestBox+20).removeClass("sliderhidden");;
 
 
-            if(slideritemId == "part_items-rel-item") {
+            if(slideritemId == "part_items-rel-item" || slideritemId == "part_used_on-rel-item") {
                 $( ".parts-data-area .part-item" ).each(function() {
                     const handle = $(this).data('handle');
                     const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=partsrow`;
@@ -678,7 +678,7 @@ jQuery(document).ready(function($){
 
     //tabbed sliders:
     function sliderGo() {
-        $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, #part_items-slider')").each(function (index) {
+        $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, #part_items-slider, #part_used_on-slider')").each(function (index) {
             var itemId = $(this).attr('id');
             var sliderArrows = '#' + itemId + '-arrows';
             $('#' + itemId).slick({
