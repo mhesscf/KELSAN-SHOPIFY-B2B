@@ -263,7 +263,7 @@
                         {% endif %}
                         {% comment %}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{% endcomment %}
                         {% comment %}Do not show as as freq_bought functionality if this is the case{% endcomment %}
-                        {%- if tab_rel_id == "part_items" -%}
+                        {%- if tab_rel_id == "part_items" or tab_rel_id == "part_used_on" -%}
                             <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
                                 <div class="parts-data-area">
                                     <div class="loading-text">Loading.....</div>
