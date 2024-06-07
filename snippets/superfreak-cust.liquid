@@ -103,12 +103,12 @@
                     <h2><img style="margin: 0 10px -9px 6px" src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="SuperFreak Link" />Welcome back, SuperFreak customer!</h2>
 
                     {% if targetAmount < yearlySFSavings %}
-                        <div class="sf-total-savings"><i class="fa-solid fa-party-horn"></i> Congratulations!<br/>You have saved a total of <span class="savings">{{ yearlySFSavings | money }}</span> during your SuperFreak Membership and have made SuperFreak pay for itself (Cost: <span class="savings">{{ targetAmount | money }}</span>)!</div>
+                        <div class="sf-total-savings"><i class="fa-solid fa-party-horn"></i> Congratulations!<br/>You have saved a total of <span class="savings">{{ yearlySFSavings | money }}</span> during your membership and have made SuperFreak pay for itself (Cost: <span class="savings">{{ targetAmount | money }}</span>)!</div>
                         <br/>
                     {% endif %}
 
                     {% if lifetimeSFSavings > 0  and targetAmount > yearlySFSavings %}
-                        <div class="sf-total-savings"><i class="fa-sharp fa-solid fa-crown"></i> You have saved a total of <span class="savings">{{ lifetimeSFSavings | money }}</span> over your lifetime of using the SuperFreak discount!</div>
+                        <div class="sf-total-savings"><i class="fa-sharp fa-solid fa-crown"></i> You have saved a total of <span class="savings">{{ lifetimeSFSavings | money }}</span> over your the lifetime of utilizing the SuperFreak membership!</div>
                     {% endif %}
 
                     <h3>SuperFreak Savings</h3>
