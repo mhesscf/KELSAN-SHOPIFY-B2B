@@ -283,6 +283,18 @@
                             </div>
                         {%- elsif tab_rel_id != "freq_bought" -%}
                             <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
+                                {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+                                    {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                    {%- for product in rel_products_arr -%}
+                                        {%- assign product_handle = product |  strip -%}
+                                        <div class="{{ tab_rel_id }}-rel-item rel-slider-item rel-slider-item-ajax " data-handle="{{ product_handle }}">
+                                            {{ product_handle }}
+                                        </div>
+                                    {%- endfor -%}
+                                {%- endif -%}
+                            </div>
+                            {% comment %} Old way before Ajax loading
+                            <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
                                     {%- assign noProducts = true -%}
                                     {%- if product.metafields.plytix[tab_rel_id] != blank -%}
                                         {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
@@ -346,7 +358,7 @@
                                             {%- endif -%}
                                         {%- endfor -%}
                                     {%- endif -%}
-                            </div>
+                            </div>{% endcomment %}
                         {%- endif -%}
 
 

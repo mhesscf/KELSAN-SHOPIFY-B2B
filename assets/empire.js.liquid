@@ -34853,38 +34853,44 @@ const RULES = `
 
         class NavDesktopMenu {
             constructor(_ref) {
-                let {
-                    children
-                } = _ref;
-                this.parents = [];
-                this.children = children; // Meganav, if any, that is fully open (not animating).
+                if (_ref == null){
+                    console.log("ref is null");
+                }else{
+                    console.log("ref is not null");
 
-                this._openMeganav = null; // Meganav, if any, that is selected for editing in the TE.
+                    let {
+                        children
+                    } = _ref;
+                    this.parents = [];
+                    this.children = children; // Meganav, if any, that is fully open (not animating).
 
-                this._selectedBlock = null;
-                this._megaNavs = null;
+                    this._openMeganav = null; // Meganav, if any, that is selected for editing in the TE.
 
-                this.closeSiblings = current => {
-                    this.parents.forEach(parent => {
-                        if (parent !== current) {
-                            parent.close();
+                    this._selectedBlock = null;
+                    this._megaNavs = null;
+
+                    this.closeSiblings = current => {
+                        this.parents.forEach(parent => {
+                            if (parent !== current) {
+                                parent.close();
+                            }
+                        });
+                    };
+
+                    for (let i = 0; i < this.children.length; i++) {
+                        const child = this.children[i];
+
+                        if (child.dataset.navmenuMeganavTrigger !== undefined) {
+                            this.parents.push(new NavDesktopMeganavParent(child, {
+                                parentMenu: this
+                            }));
+                        } else if (child.dataset.navmenuParent !== undefined) {
+                            this.parents.push(new NavDesktopParent(child, {
+                                parentMenu: this
+                            }));
+                        } else if (child.classList.contains('navmenu-item')) {
+                            child.addEventListener('focusin', this.closeSiblings);
                         }
-                    });
-                };
-
-                for (let i = 0; i < this.children.length; i++) {
-                    const child = this.children[i];
-
-                    if (child.dataset.navmenuMeganavTrigger !== undefined) {
-                        this.parents.push(new NavDesktopMeganavParent(child, {
-                            parentMenu: this
-                        }));
-                    } else if (child.dataset.navmenuParent !== undefined) {
-                        this.parents.push(new NavDesktopParent(child, {
-                            parentMenu: this
-                        }));
-                    } else if (child.classList.contains('navmenu-item')) {
-                        child.addEventListener('focusin', this.closeSiblings);
                     }
                 }
             }
@@ -37333,7 +37339,7 @@ const RULES = `
                     let {
                         html
                     } = _ref;
-                    this.recommendationContainer.innerHTML = html;
+                    {% comment %}this.recommendationContainer.innerHTML = html;{% endcomment %}
                     dist_index_es.watch(this.recommendationContainer);
                     const productItems = this.recommendationContainer.querySelectorAll('[data-product-item]');
                     const productItemLazyLoad = Layout.isGreaterThanBreakpoint('L', true);
@@ -38107,7 +38113,7 @@ const RULES = `
                 let view = 'grid-view';
                 const $productItems = this.$el.find('[data-product-item]');
                 $productItems.each((i, productItem) => {
-                    this.productItems.push(new ProductGridItem({
+                    this.productItems.push(new data-product-recommendations({
                         el: productItem,
                         id: this.section.id,
                         lazy: true,
@@ -45156,6 +45162,14 @@ const RULES = `
         } else {
             initEmpire();
         }
+
+        $('.rel-product-tab-header').on('click', function() {
+            setTimeout(() => {
+                var sections = new Sections(); // Static sections
+                sections.register('static-product-recommendations', section => new StaticProductRecommendations(section));
+            }, 500);
+        });
+
     })();
 
     /******/ })()
