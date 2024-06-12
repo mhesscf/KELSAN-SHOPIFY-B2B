@@ -605,6 +605,27 @@ jQuery(document).ready(function($){
         });
     },1500);
 
+
+    // load related sliders
+    setTimeout(()=>{
+        $( ".rel-slider-item-ajax" ).each(function() {
+            const handle = $(this).data('handle');
+            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=slider-card`;
+            $.get(fetchUrl).then(response => {
+                if (response) {
+                    if(response.includes("data-product-item")){
+                        $( ".parts-data-area .loading-text" ).hide();
+                        $(this).html(response);
+                    }
+                }else{
+                    console.log('product not returned');
+                }
+            })
+        });
+    },500);
+
+
+
     // tabbed related products code
     $('.rel-product-tab-header').on('click', function(){
         var itemId = $(this).attr('id').replace('tab-','').replace('-header','');
