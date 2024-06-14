@@ -45164,6 +45164,35 @@ const RULES = `
         } else {
             initEmpire();
         }
+
+        setTimeout(()=>{
+            var counter = 0;
+            var totalAjax = $( ".rel-slider-item-ajax" ).length;
+            $( ".rel-slider-item-ajax" ).each(function() {
+                const handle = $(this).data('handle');
+                const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=slider-card`;
+                $.get(fetchUrl).then(response => {
+                    if (response) {
+                        if(response.includes("data-product-item")){
+                            $( ".parts-data-area .loading-text" ).hide();
+                            $(this).html(response);
+                            counter = counter + 1;
+                            if (counter == totalAjax){
+                                setTimeout(() => {
+                                    var sections = new Sections(); // Static sections
+                                    sections.register('static-product-recommendations', section => new StaticProductRecommendations(section));
+                                    console.log("binding btns");
+                                }, 100);
+                            }
+                        }
+                    }else{
+                        console.log('product not returned');
+                    }
+                })
+            });
+        },100);
+
+        {% comment %}
         $( document ).ready(function() {
             setTimeout(() => {
                 var sections = new Sections(); // Static sections
@@ -45176,7 +45205,7 @@ const RULES = `
                 sections.register('static-product-recommendations', section => new StaticProductRecommendations(section));
             }, 500);
         });
-
+        {% endcomment %}
     })();
 
     /******/ })()

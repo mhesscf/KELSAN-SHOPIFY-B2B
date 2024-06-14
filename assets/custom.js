@@ -607,6 +607,7 @@ jQuery(document).ready(function($){
 
 
     // load related sliders
+    /* Moved to empire to allow for button binding
     setTimeout(()=>{
         $( ".rel-slider-item-ajax" ).each(function() {
             const handle = $(this).data('handle');
@@ -623,7 +624,7 @@ jQuery(document).ready(function($){
             })
         });
     },500);
-
+*/
 
 
     // tabbed related products code
