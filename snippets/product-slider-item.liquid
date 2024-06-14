@@ -1,5 +1,4 @@
-
-{% comment %}
+{%- comment -%}
   @param product {Object}
     Required to show product information
 
@@ -8,124 +7,104 @@
 
   @param product_compare {Boolean}
     Render card in product compare style
-{% endcomment %}
-{% if 1 == 1 %}
+{%- endcomment -%}
+{%- if 1 == 1 -%}
+  {%- capture onclick_event -%}linkdl('{{ main_loc }}','{{ item_loc }}','/products/{{ product.handle }}'){%- endcapture %}
+{%- assign recently_viewed = recently_viewed | default: nil -%}
+{%- assign product_compare = product_compare | default: nil -%}
+{%- assign product_grid_show_second_image = false -%}
+{%- assign emphasize_price = false -%}
+{%- assign quick_shop_display = false -%}
+{%- assign enable_quickshop = false -%}
+{%- assign atc_display = true -%}
+{%- assign atc_button = true -%}
+{%- assign money_format = shop.money_format | strip_html -%}
+{%- if product_compare -%}
+  {%- assign enable_quickshop = false -%}
+  {%- assign atc_button = true -%}
+{%- endif -%}
+{%- assign pstep = 1 -%}
+{%- if product.metafields.plytix.product_step != blank -%}
+  {%- assign pstep = product.metafields.plytix.product_step -%}
+{%- endif -%}
+{%- for variant in product.variants -%}
+  {%- if variant.metafields.plytix.product_step -%}
+    {%- assign pstep = variant.metafields.plytix.product_step -%}
+  {%- endif %}
+{%- endfor -%}
+{%- if product -%}
+  {%- assign specialclass = "" -%}
+  {%- if product.selected_or_first_available_variant.compare_at_price -%}
+    {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
+      {%- assign specialSavings = product.compare_at_price | minus: product.price -%}
+      {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
+      {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' -%}
+      {%- assign nowTimestamp = 'now' | date: '%s' -%}
 
-  {% capture onclick_event %}
-    linkdl('{{ main_loc }}','{{ item_loc }}','/products/{{ product.handle }}')
-  {% endcapture %}
-{% assign recently_viewed = recently_viewed | default: nil %}
-{% assign product_compare = product_compare | default: nil %}
-{% assign product_grid_show_second_image = false %}
-{% assign emphasize_price = false %}
-{% assign quick_shop_display = false %}
-{% assign enable_quickshop = false %}
-{% assign atc_display = true %}
-{% assign atc_button = true %}
-{% assign money_format = shop.money_format | strip_html %}
+      {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+      {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-{% if product_compare %}
-  {% assign enable_quickshop = false %}
-  {% assign atc_button = true %}
-{% endif %}
+      {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+      {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-{% assign pstep = 1 %}
-{% if product.metafields.plytix.product_step != blank %}
-  {% assign pstep = product.metafields.plytix.product_step %}
-{% endif %}
-{% for variant in product.variants %}
-  {% if variant.metafields.plytix.product_step %}
-    {% assign pstep = variant.metafields.plytix.product_step %}
-  {% endif %}
-{% endfor %}
-{% if product %}
+      {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
+        {%- assign specialclass = "isspecial" -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if product.metafields.plytix.custom_hot_deal_message -%}
 
-  {% assign specialclass = "" %}
-  {% if product.selected_or_first_available_variant.compare_at_price %}
-    {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
-      {% assign specialSavings = product.compare_at_price | minus: product.price %}
-      {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
-      {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' %}
-      {% assign nowTimestamp = 'now' | date: '%s' %}
+    {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' -%}
+    {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' -%}
+    {%- assign nowTimestamp = 'now' | date: '%s' -%}
+    {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+    {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-      {% assign enddiffSeconds = endDate | minus: nowTimestamp %}
-      {% assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 %}
+    {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+    {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-      {% assign startdiffSeconds = startDate | minus: nowTimestamp %}
-      {% assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 %}
-
-      {% if enddiffDays >= -1 and  startdiffDays < 0 %}
-        {% assign specialclass = "isspecial" %}
-      {% endif %}
-    {% endif %}
-  {% endif %}
-  {% if product.metafields.plytix.custom_hot_deal_message %}
-
-    {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' %}
-    {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' %}
-    {% assign nowTimestamp = 'now' | date: '%s' %}
-    {% assign enddiffSeconds = endDate | minus: nowTimestamp %}
-    {% assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 %}
-
-    {% assign startdiffSeconds = startDate | minus: nowTimestamp %}
-    {% assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 %}
-
-    {% if enddiffDays >= -1 and  startdiffDays < 0 %}
+    {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
       {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
         {% assign specialclass = "isspecial" %}
-      {% endif %}
-    {% endif %}
-  {% endif %}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
 
-  {% assign compare_at_price = product.compare_at_price %}
-  {% assign compare_at_price_varies = product.compare_at_price_varies %}
-  {% assign price = product.price %}
-  {% assign price_varies = product.price_varies %}
-  {% assign product_available = product.available %}
-  {% assign product_title = product.title %}
-  {% assign product_vendor = product.vendor %}
-  {% assign product_link = product.url | within: collection %}
-  {% assign product_description = product.description | strip_html %}
-  {% assign product_description_size = product.description | strip_html | size %}
-  {% if recently_viewed == true %}
-    {% capture recently_viewed_header %}
-      <div class="product-recently-viewed-card-time" data-product-handle="{{product.handle}}">
-        <button
-                class="product-recently-viewed-card-remove" aria-label="close" data-remove-recently-viewed >
-          {%
-                  render 'icon-library',
-                  id: 'icon-remove',
-          %}
-        </button>
-      </div>
-    {% endcapture %}
-  {% endif %}
-{% else %}
-  {% assign onboarding = true %}
-  {% assign compare_at_price = 1999 %}
-  {% assign compare_at_price_varies = false %}
-  {% assign price = 1999 %}
-  {% assign price_varies = false %}
-  {% assign product_available = true %}
-  {% assign product_title = 'onboarding.product.title' | t %}
-  {% assign product_vendor = 'onboarding.product.vendor' | t %}
-  {% assign product_link = '#' %}
-{% endif %}
-
-{% assign on_sale = false %}
-{% for variant in product.variants %}
-  {% if variant.compare_at_price > variant.price %}
-    {% assign on_sale = true %}
+  {%- assign compare_at_price = product.compare_at_price -%}
+  {%- assign compare_at_price_varies = product.compare_at_price_varies -%}
+  {%- assign price = product.price -%}
+  {%- assign price_varies = product.price_varies -%}
+  {%- assign product_available = product.available -%}
+  {%- assign product_title = product.title -%}
+  {%- assign product_vendor = product.vendor -%}
+  {%- assign product_link = product.url | within: collection -%}
+  {%- assign product_description = product.description | strip_html -%}
+  {%- assign product_description_size = product.description | strip_html | size -%}
+{%- else -%}
+  {%- assign onboarding = true -%}
+  {%- assign compare_at_price = 1999 -%}
+  {%- assign compare_at_price_varies = false -%}
+  {%- assign price = 1999 -%}
+  {%- assign price_varies = false -%}
+  {%- assign product_available = true -%}
+  {%- assign product_title = 'onboarding.product.title' | t -%}
+  {%- assign product_vendor = 'onboarding.product.vendor' | t -%}
+  {%- assign product_link = '#' -%}
+{%- endif -%}
+{%- assign on_sale = false -%}
+{%- for variant in product.variants -%}
+  {%- if variant.compare_at_price > variant.price -%}
+    {%- assign on_sale = true -%}
     {% break %}
-  {% endif %}
-{% endfor %}
+  {%- endif -%}
+{%- endfor -%}
 
-{% assign has_variants = false %}
-{% unless product.has_only_default_variant %}
-  {% assign has_variants = true %}
-{% endunless %}
+{%- assign has_variants = false -%}
+{%- unless product.has_only_default_variant -%}
+  {%- assign has_variants = true -%}
+{%- endunless -%}
 
-{% assign consistent_saved = false %}
+{%- assign consistent_saved = false -%}
 {% capture consistent_savings %}
   {%
           render 'consistent-savings',
@@ -133,9 +112,10 @@
           on_sale: on_sale
   %}
 {% endcapture %}
-{% if consistent_savings contains 'true' %}
-  {% assign consistent_saved = true %}
-{% endif %}
+{%- if consistent_savings contains 'true' -%}
+  {%- assign consistent_saved = true -%}
+{%- endif -%}
+
 {% capture classes %}
   productgrid--item
   imagestyle--{% if settings.product_grid_image_crop and settings.product_grid_image_style != 'natural' %}cropped-{% endif %}{{ settings.product_grid_image_style }}
@@ -146,46 +126,47 @@
   {% if product_compare %}product-compare-card{% endif %}
   {% if atc_display == 'always' or quick_shop_display == 'always' %}show-actions--mobile{% endif %}
 {% endcapture %}
-{% assign show_swatches = false %}
-{% assign initial_image = product.featured_media.preview_image.src %}
-{% if settings.swatches_enable and recently_viewed != true %}
+
+{%- assign show_swatches = false -%}
+{%- assign initial_image = product.featured_media.preview_image.src -%}
+{%- if settings.swatches_enable and recently_viewed != true -%}
   {% comment %} Check if product should show swatches {% endcomment %}
-  {% for option in product.options_with_values %}
-    {% assign swatch_trigger = settings.swatches_swatch_trigger | strip | downcase %}
-    {% assign option_name = option.name | downcase %}
-    {% if option_name == swatch_trigger %}
-      {% assign show_swatches = true %}
-      {% assign swatch_values = option.values %}
-      {% assign swatch_values_count = option.values.size %}
-      {% assign swatch_option_key = 'option' | append: forloop.index %}
+  {%- for option in product.options_with_values -%}
+    {%- assign swatch_trigger = settings.swatches_swatch_trigger | strip | downcase -%}
+    {%- assign option_name = option.name | downcase -%}
+    {%- if option_name == swatch_trigger -%}
+      {%- assign show_swatches = true -%}
+      {%- assign swatch_values = option.values -%}
+      {%- assign swatch_values_count = option.values.size -%}
+      {%- assign swatch_option_key = 'option' | append: forloop.index -%}
       {% break %}
-    {% endif %}
-  {% endfor %}
+    {%- endif -%}
+  {%- endfor -%}
 
-  {% if section.settings.filter_style == 'groups' and current_tags and show_swatches %}
-    {% comment %} We are filtered by tags, so check and see if it's filtering by swatch {% endcomment %}
-    {% for tag in current_tags %}
-      {% assign tag_group = tag | split: '_' | first | downcase %}
-      {% if tag_group == swatch_trigger %}
-        {% assign active_swatch_name = tag | split: '_' | last | downcase %}
+  {%- if section.settings.filter_style == 'groups' and current_tags and show_swatches -%}
+    {%- comment -%} We are filtered by tags, so check and see if it's filtering by swatch {%- endcomment %}
+    {%- for tag in current_tags -%}
+      {%- assign tag_group = tag | split: '_' | first | downcase -%}
+      {%- if tag_group == swatch_trigger -%}
+        {%- assign active_swatch_name = tag | split: '_' | last | downcase -%}
 
-        {% comment %} Filter variants by swatch (for ex. where color == blue). Can't use | where due to case sensitivity {% endcomment %}
-        {% for variant in product.variants %}
-          {% assign option_value = variant[swatch_option_key] | downcase %}
-          {% if option_value == active_swatch_name %}
-            {% if variant.image %}
-              {% assign initial_image = variant.image %}
-            {% endif %}
+        {%- comment -%} Filter variants by swatch (for ex. where color == blue). Can't use | where due to case sensitivity {%- endcomment -%}
+        {%- for variant in product.variants -%}
+          {%- assign option_value = variant[swatch_option_key] | downcase -%}
+          {%- if option_value == active_swatch_name -%}
+            {%- if variant.image -%}
+              {%- assign initial_image = variant.image -%}
+            {%- endif -%}
             {% break %}
-          {% endif %}
-        {% endfor %}
+          {%- endif -%}
+        {%- endfor -%}
         {% break %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
 
   {% capture product_item_swatches %}
-    {% if show_swatches %}
+    {%- if show_swatches -%}
       <div
               class="
             productitem--swatches
@@ -266,38 +247,37 @@
           <div class="productitem--swatches-count" data-swatch-count>+</div>
         </button>
       </div>
-    {% endif %}
+    {%- endif -%}
   {% endcapture %}
-{% endif %}
+{%- endif -%}
 
-{% assign element = 'li' %}
-{% if product_compare %}
-  {% assign element = 'div' %}
-{% endif %}
+{%- assign element = 'li' -%}
+{%- if product_compare -%}
+  {%- assign element = 'div' -%}
+{%- endif -%}
 
 <section class="{{ classes | strip_newlines }}" data-product-item data-product-quickshop-url="{{ product_link }}" {% if recently_viewed %}data-recently-viewed-card{% endif %}>
   <div class="productitem {{ specialclass }}" data-product-item-content>
-    {% comment %}Inject template-allows-compare begin{% endcomment %}
-    {% assign template_allows_compare = settings.enable_product_compare %}
-    {% if template.name == 'cart' %}
+    {%- comment %}Inject template-allows-compare begin{% endcomment -%}
+    {%- assign template_allows_compare = settings.enable_product_compare -%}
+    {%- if template.name == 'cart' -%}
+      {%- assign template_allows_compare = false -%}
+    {%- elsif template.name == 'product' and template.suffix contains 'compare' -%}
       {% assign template_allows_compare = false %}
-    {% elsif template.name == 'product' and template.suffix contains 'compare' %}
-      {% assign template_allows_compare = false %}
-    {% endif %}
-    {% comment %}Inject template-allows-compare end{% endcomment %}
+    {%- endif -%}
+    {%- comment -%}Inject template-allows-compare end{%- endcomment -%}
 
-    {% if onboarding %}
-      {% assign template_allows_compare = false %}
-    {% endif %}
-
+    {%- if onboarding -%}
+      {%- assign template_allows_compare = false -%}
+    {%- endif -%}
 
 
     <div class="productitem__container">
       {{ recently_viewed_header }}
 
-      {% if specialclass != "" %}
+      {%- if specialclass != "" -%}
         <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
-      {% endif %}
+      {%- endif -%}
 
       <div class="productitem__image-container">
         <a
@@ -315,33 +295,33 @@
                     style="--product-grid-item-image-aspect-ratio: {{ initial_image.aspect_ratio }};"
                   {% endif %}
           >
-            {% if initial_image %}
-              {% if product_grid_show_second_image and product.media.size > 1 %}
-                {% assign second_image = product.media[1].preview_image.src %}
+            {%- if initial_image -%}
+              {%- if product_grid_show_second_image and product.media.size > 1 -%}
+                {%- assign second_image = product.media[1].preview_image.src -%}
                 {%
                         render 'rimg',
                         img: second_image,
                         size: '208x',
                         class: 'productitem--image-alternate'
                 %}
-              {% endif %}
+              {%- endif -%}
               {%
                       render 'rimg',
                       img: initial_image
                       size: '208x',
                       class: 'productitem--image-primary'
               %}
-            {% else %}
-              {% if product %}
+            {%- else -%}
+              {%- if product -%}
                 {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
-              {% else %}
+              {%- else -%}
                 {% capture index %}
                   {% cycle '1', '2', '3', '4', '5', '6' %}
                 {% endcapture %}
                 {{ 'product-' | append: index | placeholder_svg_tag: 'placeholder--image' }}
-              {% endif %}
-            {% endif %}
-            {% comment %}
+              {%- endif -%}
+            {%- endif -%}
+            {%- comment -%}
             {%
                     render 'product-badge',
                     class_root: 'productitem',
@@ -354,86 +334,86 @@
                     include_range: false,
                     compare_at_price_varies: compare_at_price_varies,
             %}
-            {% endcomment %}
+            {%- endcomment -%}
           </figure>
         </a>
       </div>
-      {% if product.metafields.plytix.package_products == blank %}
-          {% capture product_item_price %}
-            {%
-                    render 'product-price',
-                    product: product,
-                    class_root: 'productitem',
-                    price: price,
-                    price_varies: price_varies,
-                    compare_at_price: compare_at_price,
-                    compare_at_price_varies: compare_at_price_varies,
-                    on_sale: on_sale,
-                    emphasize_price: emphasize_price,
-                    show_original: true,
-                    show_range: false,
-                    include_unit_price: true,
-                    include_hidden_price: falsec
-            %}
-          {% endcapture %}
-        {% elsif product.metafields.plytix.bundle_pricing != blank %}
-          {% assign product_item_price = product.metafields.plytix.bundle_pricing %}
-        {% endif %}
+      {%- if product.metafields.plytix.package_products == blank -%}
+        {% capture product_item_price %}
+          {%
+                  render 'product-price',
+                  product: product,
+                  class_root: 'productitem',
+                  price: price,
+                  price_varies: price_varies,
+                  compare_at_price: compare_at_price,
+                  compare_at_price_varies: compare_at_price_varies,
+                  on_sale: on_sale,
+                  emphasize_price: emphasize_price,
+                  show_original: true,
+                  show_range: false,
+                  include_unit_price: true,
+                  include_hidden_price: falsec
+          %}
+        {% endcapture %}
+      {%- elsif product.metafields.plytix.bundle_pricing != blank -%}
+        {%- assign product_item_price = product.metafields.plytix.bundle_pricing -%}
+      {%- endif -%}
 
       <div class="productitem--info">
         {{ product_item_swatches }}
 
-        {% if emphasize_price %}
+        {%- if emphasize_price -%}
           {{ product_item_price }}
-        {% endif %}
+        {%- endif -%}
 
         <h2 class="productitem--title">
           <a href="{{ product_link }}" data-product-page-link onclick="{{ onclick_event }}">
             {{ product_title }}
           </a>
         </h2>
-        {% assign current_variant = product.selected_or_first_available_variant %}
-        {% if current_variant.sku != blank %}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        {%- if current_variant.sku != blank -%}
           <div class="product-detail-sku grid-itmen">
             SKU:<span>{{ current_variant.sku }}</span>
           </div>
-        {% endif %}
+        {%- endif -%}
 
-        {% if product.metafields.plytix.package_products != blank %}
+        {%- if product.metafields.plytix.package_products != blank -%}
           <div class="productitem__price">
             <div class="price__current">
-              {% if product.metafields.plytix.bundle_pricing != blank %}
-                {% assign bundleprice = product.metafields.plytix.bundle_pricing | times: 100 %}
+              {%- if product.metafields.plytix.bundle_pricing != blank -%}
+                {%- assign bundleprice = product.metafields.plytix.bundle_pricing | times: 100 -%}
                 <div class="see-item">{{ bundleprice| money }}</div>
-              {% else %}
+              {%- else -%}
                 <div class="see-item">See Product for Pricing</div>
-              {% endif %}
+              {%- endif -%}
             </div>
           </div>
-        {% else %}
-          {% if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' %}
-            {% unless emphasize_price %}
+        {%- else -%}
+          {%- if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
+            {%- unless emphasize_price -%}
               {{ product_item_price }}
-            {% endunless %}
-          {% elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' %}
+            {%- endunless -%}
+          {%- elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' -%}
             <span style="font-size:14px; line-height:36px;">View Price in Cart</span>
-          {% endif %}
-        {% endif %}
+          {%- endif -%}
+        {%- endif -%}
 
-        {% comment %}Start automatically added Judge.me widget{% endcomment %}
+        {%- comment -%}Start automatically added Judge.me widget{%- endcomment -%}
         {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
-        {% comment %}End automatically added Judge.me widget{% endcomment %}
+        {%- comment -%}End automatically added Judge.me widget{%- endcomment -%}
 
-        {% if product_short_description %}
+        {%- if product_short_description -%}
           <div class="productitem--description">
             {{ product_short_description }}
           </div>
-        {% else %}
-          {% if product_description %}
+        {%- else -%}
+          {%- if product_description -%}
             <div class="productitem--description">
               <p>{{ product_description | truncate: 150 }}</p>
 
-              {% if product_description_size > 150 and product_link %}
+              {%- if product_description_size > 150 and product_link -%}
                 <a
                         href="{{ product_link }}"
                         class="productitem--link"
@@ -442,137 +422,134 @@
                 >
                   {{ 'product.buttons.view_details' | t }}
                 </a>
-              {% endif %}
+              {%- endif -%}
             </div>
-          {% endif %}
-        {% endif %}
+          {%- endif -%}
+        {%- endif -%}
       </div>
-
-      {% unless recently_viewed %}
-        {% if enable_quickshop or atc_button %}
-          {% comment %}
+      {%- unless recently_viewed -%}
+        {%- if enable_quickshop or atc_button -%}
+          {%- comment -%}
             Default button appearance and text
-          {% endcomment %}
-          {% assign quick_shop_text = 'product.buttons.quick_shop' | t %}
-          {% assign quick_buy_text = 'product.buttons.add_to_cart' | t %}
+          {%- endcomment -%}
+          {%- assign quick_shop_text = 'product.buttons.quick_shop' | t -%}
+          {%- assign quick_buy_text = 'product.buttons.add_to_cart' | t -%}
 
-          {% assign quick_shop_classes = 'productitem--action-trigger button-secondary' %}
-          {% assign quick_buy_classes = 'productitem--action-trigger productitem--action-atc button-secondary' %}
+          {%- assign quick_shop_classes = 'productitem--action-trigger button-secondary' -%}
+          {%- assign quick_buy_classes = 'productitem--action-trigger productitem--action-atc button-secondary' -%}
 
-          {% if has_variants %}
-            {% assign quick_buy_text = 'product.buttons.choose_options' | t %}
-          {% else %}
-            {% if product.template_suffix contains 'pre-order' %}
-              {% assign quick_buy_text = 'product.buttons.pre_order' | t %}
-            {% endif %}
-          {% endif %}
+          {%- if has_variants -%}
+            {%- assign quick_buy_text = 'product.buttons.choose_options' | t -%}
+          {%- else -%}
+            {%- if product.template_suffix contains 'pre-order' -%}
+              {%- assign quick_buy_text = 'product.buttons.pre_order' | t -%}
+            {%- endif -%}
+          {%- endif -%}
 
-          {% unless product_available %}
-            {% assign quick_buy_text = 'product.buttons.sold_out' | t %}
-            {% assign quick_buy_classes = quick_buy_classes | append: ' disabled' %}
-          {% endunless %}
+          {%- unless product_available -%}
+            {% assign quick_buy_text = 'product.buttons.sold_out' | t -%}
+            {% assign quick_buy_classes = quick_buy_classes | append: ' disabled' -%}
+          {%- endunless -%}
 
-          {% comment %}Get stock status for logging in order at time of order --------------------------------------------------------------------{% endcomment %}
+          {%- comment -%}Get stock status for logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
 
-          {% assign stockStatusMain = "" %}
-          {% assign stockStatusSub = "" %}
-          {% assign fservice = current_variant.fulfillment_service %}
-          {% assign leadTime = current_variant.metafields.plytix.sxerp_lead_time %}
-          {% assign inventoryQuantity = current_variant.inventory_quantity %}
-          {% assign inventoryQuantity = inventoryQuantity | plus: 0 %}
-          {% assign leadTime = leadTime | plus: 0 %}
+          {%- assign stockStatusMain = "" -%}
+          {%- assign stockStatusSub = "" -%}
+          {%- assign fservice = current_variant.fulfillment_service -%}
+          {%- assign leadTime = current_variant.metafields.plytix.sxerp_lead_time -%}
+          {%- assign inventoryQuantity = current_variant.inventory_quantity -%}
+          {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
+          {%- assign leadTime = leadTime | plus: 0 -%}
 
-          {% if current_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' %}
-            {% assign stockStatusMain = "Ships Direct from Manufacturer" %}
-            {% assign stockStatusSub = "May Have Extended Lead Times" %}
-          {% elsif current_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
+          {%- if current_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+            {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
+            {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
+          {%- elsif current_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
 
-            {% comment %}Look at po date instead of lead time{% endcomment %}
+            {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
             {%- if current_variant.metafields.plytix.sxerp_po_date -%}
-              {% assign dateStart = current_variant.metafields.plytix.sxerp_po_date | date: '%s' %}
-              {% assign nowTimestamp = 'now' | date: '%s' %}
-              {% assign diffSeconds = dateStart | minus: nowTimestamp %}
-              {% assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+              {%- assign dateStart = current_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}
+              {%- assign nowTimestamp = 'now' | date: '%s' -%}
+              {%- assign diffSeconds = dateStart | minus: nowTimestamp -%}
+              {%- assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
             {%- endif -%}
 
-            {% assign stockStatusMain = "Temporarily On Backorder" %}
-            {% if leadTime < 22  %}
-              {% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
-            {% elsif leadTime < 29 %}
-              {% assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" %}
-            {% elsif leadTime < 36 %}
-              {% assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" %}
-            {% elsif leadTime < 43 %}
-              {% assign stockStatusSub = "Estimated Ship Date 4 –6 wks" %}
-            {% elsif leadTime < 50 %}
-              {% assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" %}
-            {% elsif leadTime < 57 %}
-              {% assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" %}
-            {% elsif leadTime < 64 %}
-              {% assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" %}
-            {% elsif leadTime < 71 %}
-              {% assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" %}
-            {% elsif leadTime < 78 %}
-              {% assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" %}
-            {% elsif leadTime < 85 %}
-              {% assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" %}
-            {% elsif leadTime < 121 %}
-              {% assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" %}
-            {% elsif leadTime < 151 %}
-              {% assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" %}
-            {% elsif leadTime < 181 %}
-              {% assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" %}
-            {% elsif leadTime < 211 %}
-              {% assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" %}
-            {% elsif leadTime < 1000 %}
-              {% assign stockStatusSub = "Estimated Ship Date over 7 mths" %}
-            {% endif %}
-          {% elsif current_variant.inventory_management == nil and leadTime %}
-            {% assign stockStatusMain = "Special Order Item" %}
-            {% if leadTime < 22  %}
-              {% assign stockStatusSub = "Expected to ship in 1 – 3 wks" %}
-            {% elsif leadTime < 29 %}
-              {% assign stockStatusSub = "Expected to ship in 2 – 4 wks" %}
-            {% elsif leadTime < 36 %}
-              {% assign stockStatusSub = "Expected to ship in 3 – 5 wks" %}
-            {% elsif leadTime < 43 %}
-              {% assign stockStatusSub = "Expected to ship in 4 – 6 wks" %}
-            {% elsif leadTime < 50 %}
-              {% assign stockStatusSub = "Expected to ship in 5 – 7 wks" %}
-            {% elsif leadTime < 57 %}
-              {% assign stockStatusSub = "Expected to ship in 6 – 8 wks" %}
-            {% elsif leadTime < 64 %}
-              {% assign stockStatusSub = "Expected to ship in 7 – 9 wks" %}
-            {% elsif leadTime < 71 %}
-              {% assign stockStatusSub = "Expected to ship in 8 – 10 wks" %}
-            {% elsif leadTime < 78 %}
-              {% assign stockStatusSub = "Expected to ship in 9 – 11 wks" %}
-            {% elsif leadTime < 85 %}
-              {% assign stockStatusSub = "Expected to ship in 10 – 12 wks" %}
-            {% elsif leadTime < 121 %}
-              {% assign stockStatusSub = "Expected to ship in 3 – 4 mths" %}
-            {% elsif leadTime < 151 %}
-              {% assign stockStatusSub = "Expected to ship in 4 – 5 mths" %}
-            {% elsif leadTime < 181 %}
-              {% assign stockStatusSub = "Expected to ship in 5 – 6 mths" %}
-            {% elsif leadTime < 211 %}
-              {% assign stockStatusSub = "Expected to ship in 6 – 7 mths" %}
-            {% elsif leadTime < 1000 %}
-              {% assign stockStatusSub = "Expected to ship in over 7 mths" %}
-            {% endif %}
-          {% elsif current_variant.inventory_quantity > 0 %}
-            {% assign stockStatusMain = "In Stock" %}
-          {% endif %}
+            {%- assign stockStatusMain = "Temporarily On Backorder" -%}
+            {%- if leadTime < 22  -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" -%}
+            {%- elsif leadTime < 29 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" -%}
+            {%- elsif leadTime < 36 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" -%}
+            {%- elsif leadTime < 43 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 4 –6 wks" -%}
+            {%- elsif leadTime < 50 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" -%}
+            {%- elsif leadTime < 57 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" -%}
+            {%- elsif leadTime < 64 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" -%}
+            {%- elsif leadTime < 71 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" -%}
+            {%- elsif leadTime < 78 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" -%}
+            {%- elsif leadTime < 85 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" -%}
+            {%- elsif leadTime < 121 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" -%}
+            {%- elsif leadTime < 151 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" -%}
+            {%- elsif leadTime < 181 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" -%}
+            {%- elsif leadTime < 211 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" -%}
+            {%- elsif leadTime < 1000 -%}
+              {%- assign stockStatusSub = "Estimated Ship Date over 7 mths" -%}
+            {%- endif -%}
+          {%- elsif current_variant.inventory_management == nil and leadTime -%}
+            {%- assign stockStatusMain = "Special Order Item" -%}
+            {%- if leadTime < 22  %}
+              {%- assign stockStatusSub = "Expected to ship in 1 – 3 wks" -%}
+            {%- elsif leadTime < 29 -%}
+              {%- assign stockStatusSub = "Expected to ship in 2 – 4 wks" -%}
+            {%- elsif leadTime < 36 -%}
+              {%- assign stockStatusSub = "Expected to ship in 3 – 5 wks" -%}
+            {%- elsif leadTime < 43 -%}
+              {%- assign stockStatusSub = "Expected to ship in 4 – 6 wks" -%}
+            {%- elsif leadTime < 50 -%}
+              {%- assign stockStatusSub = "Expected to ship in 5 – 7 wks" -%}
+            {%- elsif leadTime < 57 -%}
+              {%- assign stockStatusSub = "Expected to ship in 6 – 8 wks" -%}
+            {%- elsif leadTime < 64 -%}
+              {%- assign stockStatusSub = "Expected to ship in 7 – 9 wks" -%}
+            {%- elsif leadTime < 71 -%}
+              {%- assign stockStatusSub = "Expected to ship in 8 – 10 wks" -%}
+            {%- elsif leadTime < 78 -%}
+              {%- assign stockStatusSub = "Expected to ship in 9 – 11 wks" -%}
+            {%- elsif leadTime < 85 -%}
+              {%- assign stockStatusSub = "Expected to ship in 10 – 12 wks" -%}
+            {%- elsif leadTime < 121 -%}
+              {%- assign stockStatusSub = "Expected to ship in 3 – 4 mths" -%}
+            {%- elsif leadTime < 151 -%}
+              {%- assign stockStatusSub = "Expected to ship in 4 – 5 mths" -%}
+            {%- elsif leadTime < 181 -%}
+              {%- assign stockStatusSub = "Expected to ship in 5 – 6 mths" -%}
+            {%- elsif leadTime < 211 -%}
+              {%- assign stockStatusSub = "Expected to ship in 6 – 7 mths" -%}
+            {%- elsif leadTime < 1000 -%}
+              {%- assign stockStatusSub = "Expected to ship in over 7 mths" -%}
+            {%- endif -%}
+          {%- elsif current_variant.inventory_quantity > 0 -%}
+            {%- assign stockStatusMain = "In Stock" -%}
+          {%- endif -%}
 
-          {% if stockStatusSub != "" %}
+          {%- if stockStatusSub != "" -%}
             {% capture stockStatusNote %}{{ stockStatusMain }} ({{ stockStatusSub }}){% endcapture %}
-          {% else %}
+          {%- else -%}
             {% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
-          {% endif %}
+          {%- endif -%}
           <div style="display:none">{{ stockStatusNote }}</div>
-          {% comment %}End of stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
-
-
+          {%- comment -%}End of stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
 
           <div class="productitem--actions" data-product-actions>
@@ -598,7 +575,7 @@
               %}
             </div>
 
-            {% if enable_quickshop %}
+            {%- if enable_quickshop -%}
               <div
                       class="
                   productitem--action
@@ -620,26 +597,26 @@
                   {{ quick_shop_text }}
                 </button>
               </div>
-            {% endif %}
+            {%- endif -%}
  
-            {% if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button'%}
-            <div class="productitem--action atc--button">
-              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" onclick="{{ onclick_event }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
-            </div>
-            {% else %}
-              {% if atc_button %}
-                {% assign isSpecial = false %}
-                {% if product.selected_or_first_available_variant.compare_at_price %}
-                  {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
-                    {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
-                    {% assign nowTimestamp = 'now' | date: '%s' %}
-                    {% assign diffSeconds = endDate | minus: nowTimestamp %}
-                    {% assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 %}
-                    {% if diffDays >= -1 %}
-                      {% assign isSpecial = true %}
-                    {% endif %}
-                  {% endif %}
-                {% endif %}
+            {%- if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
+              <div class="productitem--action atc--button">
+                <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" onclick="{{ onclick_event }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
+              </div>
+            {%- else -%}
+              {%- if atc_button -%}
+                {%- assign isSpecial = false -%}
+                {%- if product.selected_or_first_available_variant.compare_at_price -%}
+                  {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
+                    {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
+                    {%- assign nowTimestamp = 'now' | date: '%s' -%}
+                    {%- assign diffSeconds = endDate | minus: nowTimestamp -%}
+                    {%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
+                    {%- if diffDays >= -1 %}
+                      {%- assign isSpecial = true -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endif -%}
 
 
                 <div
@@ -705,12 +682,12 @@
                   </span>
                   </button>
                 </div>
-              {% endif %}
-            {% endif %}
+              {%- endif -%}
+            {%- endif -%}
           </div>
-        {% endif %}
-      {% endunless %}
-      {% if template_allows_compare %}
+        {%- endif -%}
+      {%- endunless -%}
+      {%- if template_allows_compare -%}
         {% capture product_compare_image %}
           {% if initial_image %}
             {%
@@ -727,7 +704,7 @@
           {% endif %}
         {% endcapture %}
 
-        {% unless product_compare or recently_viewed %}
+        {%- unless product_compare or recently_viewed -%}
           <script type="application/json" data-product-compare-data>
           {
             "title": {{ product.title | json }},
@@ -767,18 +744,18 @@
               </label>
             </div>
           </div>
-        {% endunless %}
-      {% endif %}
+        {%- endunless -%}
+      {%- endif -%}
     </div>
   </div>
 
-  {% if atc_button %}
+  {%- if atc_button -%}
     <script type="application/json" data-quick-buy-settings>
       {
         "cart_redirection": {{ settings.enable_cart_redirection | json }},
        "money_format": {{ shop.money_format | strip_html | json }}
       }
     </script>
-  {% endif %}
+  {%- endif -%}
 </section>
-{% endif %}
+{%- endif -%}

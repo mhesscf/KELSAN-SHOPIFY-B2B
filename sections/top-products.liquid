@@ -295,23 +295,19 @@
 	}
 
 	@media (max-width: 650px){
-	.top-product-showcase .product-showcase-slides {
-	width: 270px;
+		.top-product-showcase .product-showcase-slides {
+		width: 270px;
+		}
+		.top-product-showcase h2{
+		font-size: 28px;
+		}
+		.top-product-showcase h2 a{
+		font-size: 18px;
+		}
+		.top-product-showcase .productitem--title a{
+		font-size: 18px;
+		}
 	}
-	.top-product-showcase h2{
-	font-size: 28px;
-	}
-	.top-product-showcase h2 a{
-	font-size: 18px;
-	}
-	.top-product-showcase .productitem--title a{
-	font-size: 18px;
-	}
-	}
-
-
-
-
 
 
 	#top-slide-arrows{
@@ -558,26 +554,25 @@
 					{% endif %}
 				</div>
 				<div class="product-showcase-slides">
-					{% for block in section.blocks %}
-						{% case block.type %}
-							{% when 'product_slide' %}
+					{%- for block in section.blocks -%}
+						{%- case block.type -%}
+							{%- when 'product_slide' -%}
 
-								{% assign crawlcheck = false %}
-								{% for c in block.settings.product.collections %}
-									{% if c.handle == "discontinued" %}
-										{% assign crawlcheck = true %}
-									{% endif %}
-								{% endfor %}
-								{% if block.settings.product != "" %}
-									{% if block.settings.product.title == nil %}
-										{% assign crawlcheck = true %}
-									{% endif %}
+								{%- assign crawlcheck = false -%}
+								{%- for c in block.settings.product.collections -%}
+									{%- if c.handle == "discontinued" -%}
+										{%- assign crawlcheck = true -%}
+									{%- endif -%}
+								{%- endfor -%}
+								{%- if block.settings.product != "" -%}
+									{%- if block.settings.product.title == nil -%}
+										{%- assign crawlcheck = true -%}
+									{%- endif -%}
 								{% endif %}
-								{% if crawlcheck == true %}
+								{%- if crawlcheck == true -%}
 									<div class="crawlcheck crawlcheck-slider"><!-- check product that is supposed to be here for discontinued or broken handle --></div>
-								{% endif %}
-
-								{% assign item = block.settings.product %}
+								{%- endif -%}
+								{%- assign item = block.settings.product -%}
 								{%
 										render 'product-slider-item',
 										main_loc: 'Homepage',
@@ -585,8 +580,8 @@
 										product: item
 								%}
 
-						{% endcase %}
-					{% endfor %}
+						{%- endcase -%}
+					{%- endfor -%}
 				</div>
 				<div id="top-slide-arrows" class="round-arrows cat-slide-arrows-{{ section.id }}"></div>
 			</div>
