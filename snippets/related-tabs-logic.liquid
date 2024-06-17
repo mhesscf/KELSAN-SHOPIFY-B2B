@@ -1,14 +1,14 @@
 {%- comment -%}Made by Cleanfreak{%- endcomment -%}
 {%- assign debugHelp = section.settings.debugme -%}
 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" and debugHelp == true -%}
-{% comment %}New Related Product Tabs:<br/>{% endcomment %}
+{%- comment -%}New Related Product Tabs:<br/>{%- endcomment -%}
 {%- endif -%}
 {%- assign maxproducts = 19 -%}
 {%- assign maxproductscounter = 0 -%}
 {%- assign maxhandleholder = "" -%}
 
 
-{% comment %}do not show freq if main item is discontinued, or there is no valid product{% endcomment %}
+{%- comment -%}do not show freq if main item is discontinued, or there is no valid product{%- endcomment -%}
 {%- assign showfreq = true -%}
 {%- for c in product.collections -%}
     {%- if c.handle == "discontinued" -%}
@@ -39,7 +39,7 @@
                     {%- when 'tabinfo' -%}
                         {%- if product.metafields.plytix[block.settings.tab_rel_id] != blank -%}
 
-                            {% comment %}check for atleast 1 item{% endcomment %}
+                            {%- comment -%}check for atleast 1 item{%- endcomment -%}
                             {%- assign prod_check_arr = product.metafields.plytix[block.settings.tab_rel_id] | split: ", " -%}
                             {% assign show = 0 %}
                             {%- for product in prod_check_arr -%}
@@ -53,13 +53,13 @@
                                 {%- if product_handle != 'undefined' and all_products[product_handle].title != '' and discontinued == false -%}
                                     {%- assign show = 1 -%}
                                     {%- break -%}
-                                {% endif %}
-                            {% endfor %}
+                                {%- endif -%}
+                            {%- endfor -%}
                             {%- if show == 0 -%}
                                 {%- continue -%}
-                            {% endif %}
+                            {%- endif -%}
 
-                            {% comment %}hide freq if discontinued{% endcomment %}
+                            {%- comment -%}hide freq if discontinued{%- endcomment -%}
                             {%- if block.settings.tab_rel_id == "freq_bought" and showfreq -%}
                                 {%- if firstBlockId == "" -%}
                                     {%- assign firstBlockId = block.settings.tab_rel_id -%}
@@ -83,7 +83,7 @@
         </div>
     <div class="clearer"></div>
 
-        {% comment %}FREQ AREA Needs to be split out due to the add to cart bug with sections or else js won't work{% endcomment %}
+        {%- comment -%}FREQ AREA Needs to be split out due to the add to cart bug with sections or else js won't work{%- endcomment -%}
 
         {%- for block in section.blocks -%}
             {%- case block.type -%}
@@ -94,15 +94,13 @@
                     {%- if firstBlockId == tab_rel_id -%}
                         {%- assign hideSliderDefault = false -%}
                     {%- endif -%}
-
-
-                    {% assign pstep = 1 %}
-                    {% if product.metafields.plytix.product_step != blank %}
-                        {% assign pstep = product.metafields.plytix.product_step %}
-                    {% endif %}
-                    {% comment %}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{% endcomment %}
-                    {% comment %}Do not show as as freq_bought functionality if this is the case{% endcomment %}
-                    {% comment %}hide freq if discontinued{% endcomment %}
+                    {%- assign pstep = 1 -%}
+                    {%- if product.metafields.plytix.product_step != blank -%}
+                        {%- assign pstep = product.metafields.plytix.product_step -%}
+                    {%- endif -%}
+                    {%- comment -%}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{%- endcomment -%}
+                    {%- comment -%}Do not show as as freq_bought functionality if this is the case{%- endcomment -%}
+                    {%- comment -%}hide freq if discontinued{%- endcomment -%}
                     {%- if tab_rel_id == "freq_bought" and product.metafields.plytix.package_products == blank and pstep < 2 and showfreq -%}
                         <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-freq tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}" >
                             <div class="freq-bought-items">
@@ -122,12 +120,12 @@
 
 
                                     {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
-                                    {% assign total = 1 %}
+                                    {%- assign total = 1 -%}
                                     {%- for product in rel_products_arr -%}
 
                                         {%- assign product_handle = product |  strip -%}
 
-                                        {% comment %}check if under 20 and add to list to check{% endcomment %}
+                                        {%- comment -%}check if under 20 and add to list to check{%- endcomment -%}
                                         {%- assign show = false -%}
                                         {%- if maxhandleholder contains product_handle -%}
                                             {%- assign show = true -%}
@@ -145,16 +143,16 @@
                                             {%- assign show = false -%}
                                         {%- endif -%}
 
-                                        {% assign crawlcheck = false %}
-                                        {% for c in all_products[product_handle].collections %}
-                                            {% if c.handle == "discontinued" %}
-                                                {% assign crawlcheck = true %}
+                                        {%- assign crawlcheck = false -%}
+                                        {%- for c in all_products[product_handle].collections -%}
+                                            {%- if c.handle == "discontinued" -%}
+                                                {%- assign crawlcheck = true -%}
                                                 {%- assign show = false -%}
-                                            {% endif %}
-                                        {% endfor %}
-                                        {% if crawlcheck == true %}
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                        {%- if crawlcheck == true -%}
                                             <div class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle (({{ product_handle }})) --></div>
-                                        {% endif %}
+                                        {%- endif -%}
 
                                         {%- if show == true -%}
                                             {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
@@ -169,7 +167,7 @@
                                                 {%- assign showthisproduct = true -%}
                                                 {%- for c in product.collections -%}
                                                     {%- if c.handle == "discontinued" -%}
-                                                        {% assign showthisproduct = false -%}
+                                                        {%- assign showthisproduct = false -%}
                                                     {%- endif -%}
                                                 {%- endfor -%}
                                                 {%- if  showthisproduct == true and total < 4 -%}
@@ -192,9 +190,9 @@
                             <div class="freq-sum-area">
                                 <div class="freq-total-price">Total Price: <span class="freq-price">$<span>0.00</span></span></div>
                                 <div class="freq-cart-button">
-                                    {% comment %}Org Bundle cart
+                                    {%- comment -%}Org Bundle cart
                                         <button class="product-form--atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
-                                    {% endcomment %}
+                                    {%- endcomment -%}
                                     <button class="product-form--atc-button" id="p-atc-freq" type="submit" data-freqbundle-product-atc data-freqbundle="{{ product.handle }}">
                                             <span class="atc-button--text">
                                               <i class="fa-regular fa-cart-shopping"></i>
@@ -213,12 +211,12 @@
         {%- endfor -%}
 
 
-        {% assign product_limit = 10 %}
+        {%- assign product_limit = 10 -%}
         {%- capture section_type -%}
             static-collection-slider
         {%- endcapture -%}
-        {% comment %}This was all thrown together to get add to cart to work after we found out it broke on launch{% endcomment %}
-        {% comment %}need to keep "data-section-type="static-product-recommendations" and sections or else the add to cart will break (line 45039 empire.js){% endcomment %}
+        {%- comment -%}This was all thrown together to get add to cart to work after we found out it broke on launch{%- endcomment -%}
+        {%- comment -%}need to keep "data-section-type="static-product-recommendations" and sections or else the add to cart will break (line 45039 empire.js){%- endcomment -%}
         <script
                 type="application/json"
                 data-section-type="static-product-recommendations"
@@ -257,12 +255,12 @@
                         {%- endif -%}
 
 
-                        {% assign pstep = 1 %}
-                        {% if product.metafields.plytix.product_step != blank %}
-                            {% assign pstep = product.metafields.plytix.product_step %}
-                        {% endif %}
-                        {% comment %}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{% endcomment %}
-                        {% comment %}Do not show as as freq_bought functionality if this is the case{% endcomment %}
+                        {%- assign pstep = 1 -%}
+                        {%- if product.metafields.plytix.product_step != blank -%}
+                            {%- assign pstep = product.metafields.plytix.product_step -%}
+                        {%- endif -%}
+                        {%- comment -%}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{%- endcomment -%}
+                        {%- comment -%}Do not show as as freq_bought functionality if this is the case{%- endcomment -%}
                         {%- if tab_rel_id == "part_items" or tab_rel_id == "part_used_on" -%}
                             <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
                                 <div class="parts-data-area">
@@ -293,7 +291,7 @@
                                     {%- endfor -%}
                                 {%- endif -%}
                             </div>
-                            {% comment %} Old way before Ajax loading
+                            {%- comment -%} Old way before Ajax loading
                             <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
                                     {%- assign noProducts = true -%}
                                     {%- if product.metafields.plytix[tab_rel_id] != blank -%}
@@ -301,7 +299,7 @@
                                         {%- for product in rel_products_arr -%}
                                             {%- assign product_handle = product |  strip -%}
 
-                                            {% comment %}check if under 20 and add to list to check{% endcomment %}
+                                            {%- comment -%}check if under 20 and add to list to check{%- endcomment -%}
                                             {%- assign show = false -%}
                                             {%- if maxhandleholder contains product_handle -%}
                                                 {%- assign show = true -%}
@@ -331,7 +329,7 @@
                                                     {%- assign noProducts = false -%}
                                                     {%- assign item = all_products[product_handle] -%}
 
-                                                    {% comment %}filter discontinued{% endcomment %}
+                                                    {%- comment -%}filter discontinued{%- endcomment -%}
                                                     {%- assign showthisproduct = true -%}
                                                     {%- for c in item.collections -%}
                                                         {%- if c.handle == "discontinued" -%}
@@ -358,7 +356,7 @@
                                             {%- endif -%}
                                         {%- endfor -%}
                                     {%- endif -%}
-                            </div>{% endcomment %}
+                            </div>{%- endcomment -%}
                         {%- endif -%}
 
 

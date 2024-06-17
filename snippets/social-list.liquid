@@ -1,35 +1,35 @@
-{% assign social_networks = 'behance|clubhouse|discord|dribbble|email|facebook|flickr|houzz|instagram|kickstarter|linkedin|medium|messenger|opensea|pinterest|reddit|rss|snapchat|spotify|tiktok|tumblr|twitch|twitter|vimeo|whatsapp|youtube' %}
-{% assign social_networks = social_networks | split: '|' %}
+{%- assign social_networks = 'behance|clubhouse|discord|dribbble|email|facebook|flickr|houzz|instagram|kickstarter|linkedin|medium|messenger|opensea|pinterest|reddit|rss|snapchat|spotify|tiktok|tumblr|twitch|twitter|vimeo|whatsapp|youtube' -%}
+{%- assign social_networks = social_networks | split: '|' -%}
 
-{% assign has_social_icons = false %}
+{%- assign has_social_icons = false -%}
 
-{% for network in social_networks %}
-  {% assign setting = 'social_' | append: network %}
-  {% if settings[setting] != blank %}
-    {% assign has_social_icons = true %}
-    {% break %}
-  {% endif %}
-{% endfor %}
+{%- for network in social_networks -%}
+  {%- assign setting = 'social_' | append: network -%}
+  {%- if settings[setting] != blank -%}
+    {%- assign has_social_icons = true -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
 
 
-{% if has_social_icons %}
-  {% if context == 'footer' %}
+{%- if has_social_icons -%}
+  {%- if context == 'footer' -%}
     <div class="site-footer-block-content">
-  {% endif %}
+  {%- endif -%}
 
   <div class="store-info">
-    {% if settings.footer_logo %}
+    {%- if settings.footer_logo -%}
       <img src="{{ settings.footer_logo  | img_url: '170x' }}" class="footer-logo" alt="CleanFreak"/>
-    {% endif %}
-    {% comment %}
+    {%- endif -%}
+    {%- comment -%}
     <p>
       <b>Visit Us</b><br/>
       {{ settings.store_address }}
     </p>
-    {% endcomment %}
+    {%- endcomment -%}
     <p>
       <strong>Call Us Toll Free:</strong><br/>
-      {% assign cleanphone = settings.phone_number | replace: "(","" | replace: ")","" | replace: "-","" | replace: " ","" %}
+      {%- assign cleanphone = settings.phone_number | replace: "(","" | replace: ")","" | replace: "-","" | replace: " ","" -%}
       <a href="tel:{{ cleanphone }}" style="color:unset; text-decoration: none;" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a>
     </p>
     <p>
@@ -38,7 +38,7 @@
     </p>
   </div>
 
-      {% assign thisSite = "" %}
+      {%- assign thisSite = "" -%}
       {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
         {%- assign thisSite = "cf" -%}
       {%- endif -%}
@@ -282,7 +282,7 @@
     {%- endif -%}
   </div>
 
-  {% if context == 'footer' %}
+  {%- if context == 'footer' -%}
     </div>
-  {% endif %}
-{% endif %}
+  {%- endif -%}
+{%- endif -%}

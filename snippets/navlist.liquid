@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   This component is just a standard list of navigation items. It acts recursively
   so that navigation can be nested. This navigation is always a submenu of another
   parent navigation link.
@@ -36,22 +36,22 @@
 
   @param navmenu_classes {String}
     Additional classes to apply to the nav menu element.
-{% endcomment %}
+{%- endcomment -%}
 
-{% assign menu_title = menu_title | default: nil %}
-{% assign show_arrows = show_arrows | default: false %}
-{% assign show_prod_count = show_prod_count | default: false %}
-{% assign accordion_level = accordion_level | default: nil %}
-{% assign show_item_images = show_item_images | default: false %}
-{% assign include_accordion = false %}
+{%- assign menu_title = menu_title | default: nil -%}
+{%- assign show_arrows = show_arrows | default: false -%}
+{%- assign show_prod_count = show_prod_count | default: false -%}
+{%- assign accordion_level = accordion_level | default: nil -%}
+{%- assign show_item_images = show_item_images | default: false -%}
+{%- assign include_accordion = false -%}
 
-{% if depth >= accordion_level %}
-  {% assign include_accordion = true %}
-{% endif %}
+{%- if depth >= accordion_level %}
+  {%- assign include_accordion = true -%}
+{%- endif -%}
 
-{% if is_mobile == blank %}
-  {% assign is_mobile = false %}
-{% endif %}
+{%- if is_mobile == blank -%}
+  {%- assign is_mobile = false -%}
+{%- endif -%}
 
 <ul
   class="
@@ -65,43 +65,43 @@
   {% if depth > 1 %}data-navmenu-submenu{% endif %}
   {% if menu_title %}aria-label="{{ menu_title }}"{% endif %}
 >
-  {% for menu_item in menu_list %}
-    {% assign d = depth | plus: 1 %}
+  {%- for menu_item in menu_list -%}
+    {%- assign d = depth | plus: 1 -%}
 
-    {% assign show_subnav = true %}
-    {% if d > max_depth or linklists[menu_item.handle] == blank %}
-      {% assign show_subnav = false %}
-    {% endif %}
+    {%- assign show_subnav = true -%}
+    {%- if d > max_depth or linklists[menu_item.handle] == blank -%}
+      {%- assign show_subnav = false -%}
+    {%- endif -%}
 
-    {% assign product_count = false %}
-    {% if show_prod_count and menu_item.type == 'collection_link' or menu_item.type == 'catalog_link' %}
-      {% if menu_item.type == 'collection_link' %}
+    {%- assign product_count = false -%}
+    {%- if show_prod_count and menu_item.type == 'collection_link' or menu_item.type == 'catalog_link' -%}
+      {%- if menu_item.type == 'collection_link' -%}
         {% capture product_count %}
           ({{ menu_item.object.products_count }})
         {% endcapture %}
-      {% else if menu_item.type == 'catalog_link' %}
+      {%- elsif menu_item.type == 'catalog_link' -%}
         {% capture product_count %}
           ({{ shop.products_count }})
         {% endcapture %}
-      {% endif %}
-    {% endif %}
+      {%- endif -%}
+    {%- endif -%}
 
-    {% if show_images_for contains menu_item.type %}
-      {% case menu_item.type %}
-        {% when 'collection_link' %}
-          {% if menu_item.object.image %}
-            {% assign menu_item_image = menu_item.object.image %}
-          {% else %}
-            {% assign menu_item_image = menu_item.object.products.first.featured_media.preview_image %}
-          {% endif %}
-        {% when 'product_link' %}
-          {% assign menu_item_image = menu_item.object.featured_media.preview_image %}
-        {% else %}
-          {% assign menu_item_image = blank %}
-      {% endcase %}
+    {%- if show_images_for contains menu_item.type -%}
+      {%- case menu_item.type -%}
+        {%- when 'collection_link' -%}
+          {%- if menu_item.object.image -%}
+            {%- assign menu_item_image = menu_item.object.image -%}
+          {%- else -%}
+            {%- assign menu_item_image = menu_item.object.products.first.featured_media.preview_image -%}
+          {%- endif -%}
+        {%- when 'product_link' -%}
+          {%- assign menu_item_image = menu_item.object.featured_media.preview_image -%}
+        {%- else -%}
+          {%- assign menu_item_image = blank -%}
+      {%- endcase -%}
 
       {% capture menu_item_image_markup %}
-        {% if menu_item_image != blank %}
+        {%- if menu_item_image != blank -%}
           <div class="navmenu-item__image-wrapper">
             {%
               render 'rimg',
@@ -111,12 +111,12 @@
               alt: menu_item.title,
             %}
           </div>
-        {% endif %}
+        {%- endif -%}
       {% endcapture %}
-    {% else %}
-      {% assign menu_item_image_markup = '' %}
-    {% endif %}
-    {% unless show_subnav %}
+    {%- else -%}
+      {%- assign menu_item_image_markup = '' -%}
+    {%- endif -%}
+    {%- unless show_subnav -%}
       <li
         class="navmenu-item navmenu-id-{{ menu_item.handle }}"
       >
@@ -124,12 +124,11 @@
         class="
           navmenu-link
           navmenu-link-depth-{{ depth }}
-          {% if menu_item.active %}navmenu-link-active{% endif %}
+          {%- if menu_item.active -%}navmenu-link-active{%- endif -%}
         "
         href="{{ menu_item.url }}"
         >
-          {{ menu_item_image_markup }}
-          {{ menu_item.title }}
+          {{ menu_item_image_markup }} {{ menu_item.title }}
           <span class="colored-count">
           {%- if product_count -%}
             {{ product_count }}
@@ -137,7 +136,7 @@
             </span>
         </a>
       </li>
-    {% else %}
+    {%- else -%}
       {%- capture navmenu_item_classes -%}
         navmenu-item
         navmenu-item-parent
@@ -183,15 +182,15 @@
           </a>
         {% endif %}
 
-        {% if show_arrows and is_mobile == true %}
+        {%- if show_arrows and is_mobile == true -%}
           {%
             render 'mobile-navmenu-button',
             button_label: menu_item.title,
             depth: depth,
           %}
-        {% endif %}
+        {%- endif -%}
 
-        {% unless d > max_depth %}
+        {%- unless d > max_depth -%}
           {%
             render 'navlist',
             menu_list: linklists[menu_item.handle].links,
@@ -205,11 +204,11 @@
             accordion_level: accordion_level,
             show_item_images: show_item_images,
           %}
-        {% endunless %}
+        {%- endunless -%}
         {% if is_mobile != true %}
           </details>
         {% endif %}
       </li>
-    {% endunless %}
-  {% endfor %}
+    {%- endunless -%}
+  {%- endfor -%}
 </ul>

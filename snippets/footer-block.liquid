@@ -6,7 +6,7 @@
 
 <div class="{{ block_class | strip_newlines }}" {{ block.shopify_attributes }}>
 
-  {% if block.type == 'menu' %}
+  {%- if block.type == 'menu' -%}
       <h2 class="site-footer-block-title" data-accordion-trigger>
         {{ linklists[block.settings.menu].title | escape }}
 
@@ -25,34 +25,34 @@
           accordion_level: 1
         %}
       </div>
-  {% elsif block.type == 'rich_text' or block.type == 'newsletter' %}
-    {% if block.settings.title != blank %}
+  {%- elsif block.type == 'rich_text' or block.type == 'newsletter' -%}
+    {%- if block.settings.title != blank -%}
       <h2 class="site-footer-block-title">
         {{ block.settings.title | escape }}
       </h2>
-    {% endif %}
+    {%- endif -%}
 
-    {% if block.settings.text != blank %}
+    {%- if block.settings.text != blank -%}
       <div class="site-footer-block-content rte">
         {{ block.settings.text }}
       </div>
-    {% endif %}
+    {%- endif -%}
 
-    {% if block.type == 'newsletter' %}
-      {% assign form_id = 'footer_newsletter_' | append: block.id %}
+    {%- if block.type == 'newsletter' -%}
+      {%- assign form_id = 'footer_newsletter_' | append: block.id -%}
       {%
         render 'newsletter',
         form_id: form_id,
         input_id: 'footer_newsletter_email'
       %}
-    {% endif %}
-  {% elsif block.type == 'social_accounts' %}
+    {%- endif -%}
+  {%- elsif block.type == 'social_accounts' -%}
     {%
       render 'social-list',
       context: 'footer',
       logo: block.settings.logo
     %}
-  {% elsif block.type == 'custom-liquid' %}
+  {%- elsif block.type == 'custom-liquid' -%}
     {{ block.settings.custom_liquid }}
-  {% endif %}
+  {%- endif -%}
 </div>
