@@ -1,13 +1,9 @@
-{% comment %}
+{%- comment -%}
   @param filter
   @param filter_group_classes
-{% endcomment %}
-
+{%- endcomment -%}
 <div
-  class="
-    collection-filters__filter-group
-    {{ filter_group_classes }}
-  "
+  class="collection-filters__filter-group  {{ filter_group_classes }} "
   aria-label="{{ 'product_grid.filters.title_count.zero' | t }}"
   data-filter-group
 >
@@ -43,37 +39,25 @@
         >
         {%- for value in filter.values -%}
           <li
-            class="
-              collection-filters__filter-list-item
-              {% if value.active %}
-                collection-filters__filter-list-item--active
-              {% endif %}
-            "
-            {% if value.active -%}
-              data-filter-open="true"
-            {% else %}
-              data-filter-open="false"
-            {% endif %}
+            class="collection-filters__filter-list-item {% if value.active %}collection-filters__filter-list-item--active{% endif %}"
+            {% if value.active -%}data-filter-open="true"{% else %}data-filter-open="false"{% endif %}
           >
             <a
               class="collection-filters__filter-link"
               data-name="{{ value.param_name }}"
               data-value="{{ value.value }}"
               data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}"
-
               {% if value.active -%}
-                {% assign animation_state = 'checked' %}
+                {%- assign animation_state = 'checked' -%}
                 data-filter-active
                 data-url="{{ value.url_to_remove | url_encode }}"
                 href="{{ value.url_to_remove }}"
               {% else %}
-                {% assign animation_state = 'unchecked' %}
+                {%- assign animation_state = 'unchecked' -%}
                 data-url="{{ value.url_to_add | url_encode }}"
                 href="{{ value.url_to_add }}"
               {%- endif %}
-              {% if value.count == 0 and value.active == false -%}
-                data-disabled
-              {%- endif %}
+              {% if value.count == 0 and value.active == false -%}data-disabled{%- endif %}
               data-filter-input
             >
               <span class="filter-icon--checkbox" data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}">
@@ -82,9 +66,9 @@
               <span class="collection-filters__filter-list-item-text">
                 {{ value.label | escape }}
                 <span class="colored-count">
-                {% if show_product_count %}
+                {%- if show_product_count -%}
                   ({{ value.count }})
-                {% endif %}
+                {%- endif -%}
                   </span>
               </span>
             </a>

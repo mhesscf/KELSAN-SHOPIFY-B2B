@@ -38,26 +38,22 @@
         </div>
       </div>
     </div>
-    {% if section.blocks.size %}
+    {%- if section.blocks.size -%}
       <div class="site-footer-item">
         <div class="site-footer-blocks column-count-{{ section.blocks.size }}">
-          {% for block in section.blocks %}
-
+          {%- for block in section.blocks -%}
                 <div class="site-footer-block-item-wrapper">
-
-            {% render 'footer-block' with block as block %}
-
+                  {% render 'footer-block' with block as block %}
                 </div>
-
-          {% endfor %}
+          {%- endfor -%}
         </div>
       </div>
-    {% endif %}
+    {%- endif -%}
 
     <div class="site-footer-item">
       <div class="site-footer-information">
         <div class="site-footer-left">
-          {% comment %}
+          {%- comment -%}
           {% if linklists[section.settings.additional_menu].links != blank %}
             <nav
               class="site-footer-navigation"
@@ -71,7 +67,7 @@
                 aria_expanded: true,
               %}
             </nav>
-          {% endif %}
+          {%- endif %}
 
           <p class="site-footer-credits">
             {% assign year = 'now' | date: '%Y' %}
@@ -81,7 +77,7 @@
           <p class="site-footer-credits">
             {{ powered_by_link }}
           </p>
-          {% endcomment %}
+          {%- endcomment -%}
         </div>
 
         {%- assign country_selector = section.settings.show_currency_selector -%}
@@ -104,7 +100,7 @@
                         </span>
                       </summary>
                       <div class="disclosure-list disclosure-list--visible">
-                        {% for locale in form.available_locales %}
+                        {%- for locale in form.available_locales -%}
                           <div class="disclosure-list__item-wrapper disclosure-list__item">
                             <input
                               type="radio"
@@ -115,7 +111,7 @@
                             >
                             <label class="disclosure-list__item--label" for="{{ locale.iso_code }}">{{ locale.endonym_name | capitalize }}</label>
                           </div>
-                        {% endfor %}
+                        {%- endfor -%}
                         <button class="disclosure__submit" type="submit">{{ 'general.language.submit_button_label' | t }}</button>
                       </div>
                     </details>
@@ -140,7 +136,7 @@
                         {{ form.current_locale.endonym_name | capitalize }}
                       </button>
                       <ul id="lang-list-{{ unique_id }}" class="disclosure-list" data-disclosure-list>
-                        {% for locale in form.available_locales %}
+                        {%- for locale in form.available_locales -%}
                           <li>
                             <a class="disclosure-list__item {% if locale.iso_code == form.current_locale.iso_code %}disclosure-list__item--current{% endif %}" href="#" lang="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %} data-value="{{ locale.iso_code }}" data-disclosure-option>
                               <span class="disclosure-list__option">{{ locale.endonym_name | capitalize }}</span>
@@ -154,12 +150,12 @@
                 {%- endform -%}
                 {% comment %}Inject @pixelunion/shopify-cross-border/multi-language end{% endcomment %}
 
-              {% endif %}
+              {%- endif -%}
 
-              {% if country_selector and localization.available_countries.size > 1 %}
+              {%- if country_selector and localization.available_countries.size > 1 -%}
                 {% comment %}Inject @pixelunion/shopify-cross-border/multi-country begin{% endcomment %}
                 {% comment %} Generate a "random" number so ids are unique {% endcomment %}
-                {% assign unique_id = "now" | date: "%N" | modulo: 1000 %}
+                {%- assign unique_id = "now" | date: "%N" | modulo: 1000 -%}
                 <noscript>
                   {%- form 'localization' -%}
                     <details class="disclosure">
@@ -209,7 +205,7 @@
                         </span>
                       </button>
                       <ul id="country-list-{{ unique_id }}" class="disclosure-list" data-disclosure-list>
-                        {% for country in localization.available_countries %}
+                        {%- for country in localization.available_countries -%}
                           <li>
                             <a class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}" href="#" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
                               <span class="disclosure-list__option">{{ country.name }}</span>
@@ -225,11 +221,11 @@
                     </div>
                   </div>
                 {%- endform -%}
-                {% comment %}Inject @pixelunion/shopify-cross-border/multi-country end{% endcomment %}
+                {%- comment -%}Inject @pixelunion/shopify-cross-border/multi-country end{%- endcomment -%}
 
-              {% endif %}
+              {%- endif -%}
             </div>
-            {% comment %}Inject @pixelunion/shopify-cross-border/cross-border end{% endcomment %}
+            {%- comment -%}Inject @pixelunion/shopify-cross-border/cross-border end{%- endcomment -%}
 
             {% if section.settings.payment_icons and shop.enabled_payment_types.size > 0 %}
               <ul class="payment-icons">
