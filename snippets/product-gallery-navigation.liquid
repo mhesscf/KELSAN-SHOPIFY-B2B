@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   @param product {Product}
     The product object in question
 
@@ -10,8 +10,8 @@
 
   @param image_crop {boolean}
     Defines if the image should be cropped or not
-{% endcomment %}
-{% assign mediaSize = product.media | size  %}
+{%- endcomment -%}
+{%- assign mediaSize = product.media | size  -%}
 
 <div class="nav-tabs" {% if mediaSize < 0 %}style="display:none;"{% endif %}>
   <div class="thumb-show imgs-thumbs active-tab">
@@ -22,19 +22,19 @@
   </div>
 </div>
 
-{% if product.media.size > 0 %}
-  {% assign thumb_dimensions = 'x75' %}
-  {% if image_crop %}
-    {% case aspect_ratio %}
-    {% when 'short' %}
-      {% assign thumb_dimensions = '100x75' %}
-    {% when 'tall' %}
-      {% assign thumb_dimensions = '50x75' %}
-    {% when 'square' %}
-      {% assign thumb_dimensions = '75x75' %}
-    {% endcase %}
-  {% endif %}
-{% comment %}turned off this class since I couldn't figure out what the empire theme was doing{% endcomment %}
+{%- if product.media.size > 0 -%}
+  {%- assign thumb_dimensions = 'x75' -%}
+  {%- if image_crop -%}
+    {%- case aspect_ratio -%}
+    {%- when 'short' -%}
+      {%- assign thumb_dimensions = '100x75' -%}
+    {%- when 'tall' -%}
+      {%- assign thumb_dimensions = '50x75' -%}
+    {%- when 'square' -%}
+      {%- assign thumb_dimensions = '75x75' -%}
+    {%- endcase -%}
+  {%- endif -%}
+  {%- comment -%}turned off this class since I couldn't figure out what the empire theme was doing{%- endcomment -%}
   <div
     class="product-gallery--navigation-off product-gallery--navigation-slick loading"
     data-gallery-navigation
@@ -58,11 +58,11 @@
       class="gallery-navigation--scroller gallery-navigation-horizontal-scroller-slick"
       data-gallery-scroller
     >
-      {% assign orgCounter = 0  %}
-      {% assign videoCounter = 0  %}
-    {% for media in product.media %}
-      {% if media.media_type == "video" %}
-        {% assign videoCounter = videoCounter | plus: 1  %}
+      {%- assign orgCounter = 0  -%}
+      {%- assign videoCounter = 0  -%}
+    {%- for media in product.media -%}
+      {%- if media.media_type == "video" -%}
+        {%- assign videoCounter = videoCounter | plus: 1  -%}
       {%- endif -%}
       <button
         class="
@@ -80,12 +80,12 @@
         {% if mediaSize < 0 %} style="display:none;" {% endif %}
       >
         <span class="product-gallery--media-thumbnail-img-wrapper {{ media.media_type }}-type ">
-          {% if media.media_type == 'video' or media.media_type == 'external_video' %}
-            {% comment %}{% render 'icon-library', id: 'icon-play-thumb' %}{% endcomment %}
+          {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+            {%- comment -%}{% render 'icon-library', id: 'icon-play-thumb' %}{%- endcomment -%}
             <i class="icon-play-thumb cust fa-brands fa-youtube"></i>
-          {% elsif media.media_type == 'model' %}
+          {%- elsif media.media_type == 'model' -%}
             {% render 'icon-library', id: 'icon-model-thumb' %}
-          {% endif %}
+          {%- endif -%}
           {%
             render 'rimg',
             class: 'product-gallery--media-thumbnail-img',
@@ -95,21 +95,18 @@
           %}
         </span>
       </button>
-      {% assign orgCounter = orgCounter | plus: 1  %}
-    {% endfor %}
+      {%- assign orgCounter = orgCounter | plus: 1 -%}
+    {%- endfor -%}
 
 
+      {%- comment -%}local videos -------------------------------------------------------{%- endcomment -%}
+      {%- assign lvideo = product.metafields.plytix.local_video | split: ";" -%}
+      {%- for vid in lvideo -%}
+        {%- assign pyt = vid | split: "::" -%}
+        {%- assign videoCounter = videoCounter | plus: 1  -%}
+        {%- assign videoimg = 'video-thumbnail.png' | file_img_url -%}
 
-
-
-      {% comment %}local videos -------------------------------------------------------{% endcomment %}
-      {% assign lvideo = product.metafields.plytix.local_video | split: ";" %}
-      {% for vid in lvideo %}
-        {% assign pyt = vid | split: "::" %}
-        {% assign videoCounter = videoCounter | plus: 1  %}
-        {% assign videoimg = 'video-thumbnail.png' | file_img_url %}
-
-        {% comment %}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{% endcomment %}
+        {%- comment -%}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{%- endcomment -%}
         <button
                 class="
             product-gallery--media-thumbnail
@@ -130,21 +127,18 @@
             <img src="{{ videoimg }}" alt="Product Video {{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
           </span>
         </button>
-        {% assign orgCounter = orgCounter | plus: 1  %}
-      {% endfor %}
+        {%- assign orgCounter = orgCounter | plus: 1  -%}
+      {%- endfor -%}
 
-
-
-
-      {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
-      {% for vid in pvideo %}
-        {% assign videoCounter = videoCounter | plus: 1  %}
-        {% assign pyt = vid | split: "::" %}
-        {% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}
-        {% if pyt[0] contains "vimeo" %}
-          {% assign videoimg = 'video-thumbnail.png' | file_img_url %}
-        {% endif %}
-        {% comment %}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{% endcomment %}
+      {%- assign pvideo = product.metafields.plytix.product_video | split: ";" -%}
+      {%- for vid in pvideo -%}
+        {%- assign videoCounter = videoCounter | plus: 1  -%}
+        {%- assign pyt = vid | split: "::" -%}
+        {%- assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" -%}
+        {%- if pyt[0] contains "vimeo" -%}
+          {%- assign videoimg = 'video-thumbnail.png' | file_img_url -%}
+        {%- endif -%}
+        {%- comment -%}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{%- endcomment -%}
         <button
                 class="
             product-gallery--media-thumbnail
@@ -166,49 +160,49 @@
             <img src="{{ videoimg }}" alt="Youtube External Video {{ pyt[1] }}" data-rimg="" srcset="" class="product-gallery--media-thumbnail-img">
           </span>
         </button>
-        {% assign orgCounter = orgCounter | plus: 1  %}
-      {% endfor %}
+        {%- assign orgCounter = orgCounter | plus: 1  -%}
+      {%- endfor -%}
 
-{% comment %}----------------------image addon via metaobjects------------------{% endcomment %}
-      {% assign today_date = 'now' | date: '%s' %}
+{%- comment -%}----------------------image addon via metaobjects------------------{%- endcomment -%}
+      {%- assign today_date = 'now' | date: '%s' -%}
       {%- assign bannerObj = shop.metaobjects.product_banner_in_image_carousel.values  -%}
-      {% for banner in bannerObj %}
-        {% assign start = banner.startdate | date: '%s' %}
+      {%- for banner in bannerObj -%}
+        {%- assign start = banner.startdate | date: '%s' -%}
 
-        {% comment %}//add one day to the end date{% endcomment %}
-        {% assign date = banner.enddate | date: '%s' %}
-        {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
-        {% assign end = date | date: "%s" | plus: seconds | date: "%s" %}
+        {%- comment -%}//add one day to the end date{%- endcomment -%}
+        {%- assign date = banner.enddate | date: '%s' -%}
+        {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+        {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
 
-        {% comment %}if not active, skip{% endcomment %}
-        {% if today_date < start or today_date > end %}
+        {%- comment -%}if not active, skip{%- endcomment -%}
+        {%- if today_date < start or today_date > end -%}
           {% continue %}
-        {% endif %}
+        {%- endif -%}
 
         {%- assign showBanner = false -%}
-        {% comment %}// check collections{% endcomment %}
-        {% for bannerColl in banner.collections.value  %}
-          {% for collection in product.collections %}
-            {% if collection.id == bannerColl.id  %}
+        {%- comment -%}// check collections{%- endcomment -%}
+        {%- for bannerColl in banner.collections.value  -%}
+          {%- for collection in product.collections -%}
+            {%- if collection.id == bannerColl.id  -%}
               {%- assign showBanner = true -%}
               {% break %}
-            {% endif %}
-          {% endfor %}
-          {% if showBanner == true %}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if showBanner == true -%}
             {% break %}
-          {% endif %}
-        {% endfor %}
+          {%- endif -%}
+        {%- endfor -%}
 
-        {% comment %}// check products{% endcomment %}
-        {% if showBanner == false  %}
-          {% for bannerProd in banner.products.value  %}
-            {% if product.id == bannerProd.id  %}
+        {%- comment -%}// check products{%- endcomment -%}
+        {%- if showBanner == false  -%}
+          {%- for bannerProd in banner.products.value  -%}
+            {%- if product.id == bannerProd.id  -%}
               {%- assign showBanner = true -%}
               {% break %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-        {% if showBanner == true %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if showBanner == true -%}
 
           <button
                   class="
@@ -230,15 +224,15 @@
           </button>
 
 
-          {% assign orgCounter = orgCounter | plus: 1  %}
-        {% endif %}
-      {% endfor %}
+          {%- assign orgCounter = orgCounter | plus: 1  -%}
+        {%- endif -%}
+      {%- endfor -%}
     </div>
   </div>
-{% endif %}
+{%- endif -%}
 
 <div class="gall-placeholder" style="display:none"></div>
-{% if videoCounter < 1  %}
+{%- if videoCounter < 1  -%}
 <style>
   .product-gallery .nav-tabs .thumb-show.video-thumbs{
     display:none;
@@ -247,13 +241,13 @@
     border-top-right-radius:10px;
   }
 </style>
-{% endif %}
+{%- endif -%}
 
-{% if mediaSize < 2 and videoCounter < 1  %}
+{%- if mediaSize < 2 and videoCounter < 1  -%}
   <style>
   .product-gallery .nav-tabs,
       product-gallery--navigation-off{
         display:none;
       }
   </style>
-{% endif %}
+{%- endif -%}

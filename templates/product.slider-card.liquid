@@ -1,17 +1,17 @@
 {% layout none %}
-{% assign crawlcheck = false %}
-{% for c in all_products[product_handle].collections %}
-    {% if c.handle == "discontinued" %}
-        {% assign crawlcheck = true %}
+{%- assign crawlcheck = false -%}
+{%- for c in all_products[product_handle].collections -%}
+    {%- if c.handle == "discontinued" -%}
+        {%- assign crawlcheck = true -%}
     {% endif %}
-{% endfor %}
-{% if crawlcheck == true %}
+{%- endfor -%}
+{%- if crawlcheck == true -%}
     <div class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
-{% else %}
+{%- else -%}
     {%-
             render 'product-slider-item',
             main_loc: 'Product Page',
             item_loc: "Related Products",
             product: product
     -%}
-{% endif %}
+{%- endif -%}

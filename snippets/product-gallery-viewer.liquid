@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   @param product {Product}
     The product object in question
 
@@ -13,46 +13,46 @@
 
   @param gallery_hover_zoom {String}
     This is the hover zoom setting, which is either 'disabled', 'separate', or 'replace'
-{% endcomment %}
+{%- endcomment -%}
 
 
-{% assign specialclass = "" %}
-{% if product.selected_or_first_available_variant.compare_at_price %}
-    {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
-        {% assign specialSavings = product.compare_at_price | minus: product.price %}
-        {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' %}
-        {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' %}
-        {% assign nowTimestamp = 'now' | date: '%s' %}
+{%- assign specialclass = "" -%}
+{%- if product.selected_or_first_available_variant.compare_at_price -%}
+    {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
+        {%- assign specialSavings = product.compare_at_price | minus: product.price -%}
+        {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
+        {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' -%}
+        {%- assign nowTimestamp = 'now' | date: '%s' -%}
 
-        {% assign enddiffSeconds = endDate | minus: nowTimestamp %}
-        {% assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 %}
+        {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+        {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-        {% assign startdiffSeconds = startDate | minus: nowTimestamp %}
-        {% assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 %}
+        {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+        {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-        {% if enddiffDays >= -1 and  startdiffDays < 0 %}
-            {% assign specialclass = "isspecial" %}
-        {% endif %}
-    {% endif %}
-{% endif %}
+        {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
+            {%- assign specialclass = "isspecial" -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endif -%}
 
-{% if product.metafields.plytix.custom_hot_deal_message %}
+{%- if product.metafields.plytix.custom_hot_deal_message -%}
 
-    {% assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' %}
-    {% assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' %}
-    {% assign nowTimestamp = 'now' | date: '%s' %}
-    {% assign enddiffSeconds = endDate | minus: nowTimestamp %}
-    {% assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 %}
+    {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' -%}
+    {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' -%}
+    {%- assign nowTimestamp = 'now' | date: '%s' -%}
+    {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+    {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-    {% assign startdiffSeconds = startDate | minus: nowTimestamp %}
-    {% assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 %}
+    {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+    {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-    {% if enddiffDays >= -1 and  startdiffDays < 0 %}
+    {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
         {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-            {% assign specialclass = "isspecial" %}
-        {% endif %}
-    {% endif %}
-{% endif %}
+            {%- assign specialclass = "isspecial" -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endif -%}
 
 
 <div
@@ -64,7 +64,7 @@
   "
   data-gallery-viewer
 >
-    {% assign orgCounter = 0  %}
+    {%- assign orgCounter = 0  -%}
 
   {% for media in product.media %}
     <figure
@@ -85,48 +85,48 @@
       data-media="{{ media.id }}"
       data-media-type="{{ media.media_type }}"
       {% if media.media_type == 'image' %}
-        {% assign max_zoom = 2400 %}
-        {% assign zoom_height = media.height %}
-        {% assign zoom_width = media.width %}
-        {% if image_crop %}
-          {% case aspect_ratio %}
-          {% when 'short' %}
-            {% assign min_width = media.height | times: 4 | divided_by: 3 %}
-            {% if media.width > min_width %}
-              {% assign zoom_width = min_width %}
-            {% else %}
-              {% assign zoom_height = media.width | times: 3 | divided_by: 4 %}
-            {% endif %}
-          {% when 'square' %}
-            {% comment %} Square crop {% endcomment %}
-            {% if media.height > media.width %}
-              {% assign zoom_height = media.width %}
-            {% else %}
-              {% assign zoom_width = media.height %}
-            {% endif %}
-          {% when 'tall' %}
-            {% assign min_width = media.height | times: 2 | divided_by: 3 %}
-            {% if media.width > min_width %}
-              {% assign zoom_width = min_width %}
-            {% else %}
-              {% assign zoom_height = media.width | times: 3 | divided_by: 2 %}
-            {% endif %}
-          {% endcase %}
-        {% endif %}
+        {%- assign max_zoom = 2400 -%}
+        {%- assign zoom_height = media.height -%}
+        {%- assign zoom_width = media.width -%}
+        {%- if image_crop -%}
+          {%- case aspect_ratio -%}
+          {%- when 'short' -%}
+            {%- assign min_width = media.height | times: 4 | divided_by: 3 -%}
+            {%- if media.width > min_width -%}
+              {%- assign zoom_width = min_width -%}
+            {%- else -%}
+              {%- assign zoom_height = media.width | times: 3 | divided_by: 4 -%}
+            {%- endif -%}
+          {%- when 'square' -%}
+            {%- comment -%} Square crop {%- endcomment -%}
+            {%- if media.height > media.width -%}
+              {%- assign zoom_height = media.width -%}
+            {%- else -%}
+              {%- assign zoom_width = media.height -%}
+            {%- endif -%}
+          {%- when 'tall' -%}
+            {%- assign min_width = media.height | times: 2 | divided_by: 3 -%}
+            {%- if media.width > min_width -%}
+              {%- assign zoom_width = min_width -%}
+            {%- else -%}
+              {%- assign zoom_height = media.width | times: 3 | divided_by: 2 -%}
+            {%- endif -%}
+          {%- endcase -%}
+        {%- endif -%}
 
-        {% comment %} Adjust the image dimensions to be within the maximum zoom size {% endcomment %}
-        {% if zoom_height > max_zoom or zoom_width > max_zoom %}
-          {% assign crop_aspect_ratio = zoom_width | times: 1000 | divided_by: zoom_height %}
-          {% if zoom_width > zoom_height %}
-            {% assign zoom_width = max_zoom %}
-            {% assign zoom_height = max_zoom | times: 1000 | divided_by: crop_aspect_ratio %}
-          {% else %}
-            {% assign zoom_height = max_zoom %}
-            {% assign zoom_width = max_zoom | times: crop_aspect_ratio | divided_by: 1000 %}
-          {% endif %}
-        {% endif %}
+        {%- comment -%} Adjust the image dimensions to be within the maximum zoom size {%- endcomment -%}
+        {%- if zoom_height > max_zoom or zoom_width > max_zoom -%}
+          {%- assign crop_aspect_ratio = zoom_width | times: 1000 | divided_by: zoom_height -%}
+          {%- if zoom_width > zoom_height -%}
+            {%- assign zoom_width = max_zoom -%}
+            {%- assign zoom_height = max_zoom | times: 1000 | divided_by: crop_aspect_ratio -%}
+          {%- else -%}
+            {%- assign zoom_height = max_zoom -%}
+            {%- assign zoom_width = max_zoom | times: crop_aspect_ratio | divided_by: 1000 -%}
+          {%- endif -%}
+        {%- endif -%}
 
-        {% assign image_dimensions = zoom_width | append: 'x' | append: zoom_height %}
+        {%- assign image_dimensions = zoom_width | append: 'x' | append: zoom_height -%}
 
         {% if image_crop %}
           data-zoom="{{ media | img_url: image_dimensions, crop: 'center' }}"
@@ -151,9 +151,9 @@
             %}
           {% endif %}
         >
-            {% if specialclass != "" %}
+            {%- if specialclass != "" -%}
                 <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
-            {% endif %}
+            {%- endif -%}
           {%
             render 'rimg',
             img: media,
@@ -164,7 +164,7 @@
           %}
         </div>
       {% when 'external_video' %}
-        {% assign external_video_url = media | external_video_url %}
+        {%- assign external_video_url = media | external_video_url -%}
         <div class="product-gallery--external-video">
           {%
             render 'video'
@@ -210,10 +210,10 @@
   {% endfor %}
 
     {% comment %}youtube video -------------------------------------------------------{% endcomment %}
-    {% assign lvideo = product.metafields.plytix.local_video | split: ";" %}
-    {% for vid in lvideo %}
-        {% assign pyt = vid | split: "::" %}
-        {% comment %}{% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}{% endcomment %}
+    {%- assign lvideo = product.metafields.plytix.local_video | split: ";" -%}
+    {%- for vid in lvideo -%}
+        {%- assign pyt = vid | split: "::" -%}
+        {%- comment -%}{% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}{%- endcomment -%}
 
         <figure class="
                 product-gallery--media
@@ -232,13 +232,13 @@
             </video>
             <div class="alttext">{{ pyt[1] }}</div>
         </figure>
-        {% assign orgCounter = orgCounter | plus: 1  %}
-    {% endfor %}
+        {%- assign orgCounter = orgCounter | plus: 1  -%}
+    {%- endfor -%}
 
-    {% comment %}youtube video -------------------------------------------------------{% endcomment %}
-    {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
-    {% for vid in pvideo %}
-        {% assign pyt = vid | split: "::" %}
+    {%- comment -%}youtube video -------------------------------------------------------{%- endcomment -%}
+    {%- assign pvideo = product.metafields.plytix.product_video | split: ";" -%}
+    {%- for vid in pvideo -%}
+        {%- assign pyt = vid | split: "::" -%}
         {% comment %}{% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}{% endcomment %}
 
             <figure class="
@@ -252,70 +252,67 @@
                     data-media="{{orgCounter }}"
                     data-media-type="video"
             data-mitch="{{ orgCounter }}">
-            {% comment %}<div class="vid-contain">{% endcomment %}
-                {% comment %}<iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>{% endcomment %}
-                {% comment %}<div class="alttext">{{ pyt[1] }}</div>{% endcomment %}
-            {% comment %}</div>{% endcomment %}
+            {%- comment -%}<div class="vid-contain">{%- endcomment -%}
+                {%- comment -%}<iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>{%- endcomment -%}
+                {%- comment -%}<div class="alttext">{{ pyt[1] }}</div>{%- endcomment -%}
+            {%- comment -%}</div>{%- endcomment -%}
 
-                {% if pyt[0] contains "vimeo" %}
-                    {% assign vimeoid = pyt[0] | replace: "vimeo-","" %}
+                {%- if pyt[0] contains "vimeo" -%}
+                    {%- assign vimeoid = pyt[0] | replace: "vimeo-","" -%}
                     {% comment %}<iframe src="https://player.vimeo.com/video/474973525?h=9cd571a900&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>{% endcomment %}
                     <iframe src="https://player.vimeo.com/video/{{ vimeoid }}?title=0&byline=0&portrait=0?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
-                {% else %}
+                {%- else -%}
                     <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
-                {% endif %}
+                {%- endif -%}
 
             <div class="alttext">{{ pyt[1] }}</div>
 
-
-
-
         </figure>
-        {% assign orgCounter = orgCounter | plus: 1  %}
-    {% endfor %}
+        {%- assign orgCounter = orgCounter | plus: 1  -%}
+    {%- endfor -%}
 
 
-    {% comment %}----------------------image addon via metaobjects------------------{% endcomment %}
+    {%- comment -%}----------------------image addon via metaobjects------------------{%- endcomment -%}
 
-    {% assign today_date = 'now' | date: '%s' %}
+    {%- assign today_date = 'now' | date: '%s' -%}
     {%- assign bannerObj = shop.metaobjects.product_banner_in_image_carousel.values  -%}
-    {% for banner in bannerObj %}
-        {% assign start = banner.startdate | date: '%s' %}
+    {%- for banner in bannerObj -%}
+        {%- assign start = banner.startdate | date: '%s' -%}
 
-        {% comment %}//add one day to the end date{% endcomment %}
-        {% assign date = banner.enddate | date: '%s' %}
-        {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
-        {% assign end = date | date: "%s" | plus: seconds | date: "%s" %}
+        {%- comment -%}//add one day to the end date{%- endcomment -%}
+        {%- assign date = banner.enddate | date: '%s' -%}
+        {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+        {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
 
-        {% comment %}if not active, skip{% endcomment %}
-        {% if today_date < start or today_date > end %}
+        {%- comment -%}if not active, skip{%- endcomment -%}
+        {%- if today_date < start or today_date > end -%}
             {% continue %}
-        {% endif %}
+        {%- endif -%}
 
         {%- assign showBanner = false -%}
-        {% comment %}// check collections{% endcomment %}
-        {% for bannerColl in banner.collections.value  %}
-            {% for collection in product.collections %}
-                {% if collection.id == bannerColl.id  %}
+        {%- comment -%}// check collections{%- endcomment -%}
+        {%- for bannerColl in banner.collections.value  -%}
+            {%- for collection in product.collections -%}
+                {%- if collection.id == bannerColl.id  -%}
                     {%- assign showBanner = true -%}
                     {% break %}
-                {% endif %}
-            {% endfor %}
-            {% if showBanner == true %}
+                {%- endif -%}
+            {%- endfor -%}
+            {%- if showBanner == true -%}
                 {% break %}
-            {% endif %}
-        {% endfor %}
+            {%- endif -%}
+        {%- endfor -%}
 
-        {% comment %}// check products{% endcomment %}
-        {% if showBanner == false  %}
-            {% for bannerProd in banner.products.value  %}
-                {% if product.id == bannerProd.id  %}
+        {%- comment -%}// check products{%- endcomment -%}
+        {%- if showBanner == false  -%}
+            {%- for bannerProd in banner.products.value  -%}
+                {%- if product.id == bannerProd.id  -%}
                     {%- assign showBanner = true -%}
                     {% break %}
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-        {% if showBanner == true %}
+                {%- endif -%}
+            {%- endfor -%}
+        {%- endif -%}
+        {%- if showBanner == true -%}
 
             <figure class="
         product-gallery--media
@@ -347,16 +344,16 @@
                     <img src="{{ banner.image | image_url: width: 700 }}" alt="{{ banner.name }}" data-rimg="loaded" data-rimg-scale="1" data-rimg-template="{{ banner.image | image_url: width: 700 }}" data-rimg-max="1200x1200" data-rimg-crop="false" srcset="{{ banner.image | image_url: width: 1000 }} 2.00x" class="product-gallery--loaded-image img-responsive" data-rimg-template-svg="data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'%20width='700'%20height='700'></svg>">
                     <div data-rimg-canvas=""></div>
                 </div>
-                {% if banner.linkurl %}
+                {%- if banner.linkurl -%}
                     <div class="alttext"><a href="{{ banner.linkurl }}">{{ banner.name }}</a></div>
-                {% endif %}
+                {%- endif -%}
             </figure>
-            {% assign orgCounter = orgCounter | plus: 1  %}
-        {% endif %}
-    {% endfor %}
+            {%- assign orgCounter = orgCounter | plus: 1  -%}
+        {%- endif -%}
+    {%- endfor -%}
 
-  {% assign image_count = product.media | where: "media_type", "image" | size %}
-  {% if image_count > 0 and gallery_click_to_zoom != 'disabled' %}
+  {%- assign image_count = product.media | where: "media_type", "image" | size -%}
+  {%- if image_count > 0 and gallery_click_to_zoom != 'disabled' -%}
     <button
     tabindex="-1"
       class="
@@ -375,9 +372,9 @@
         {{ 'product.general.zoomTapMobile' | t }}
       </span>
     </button>
-  {% endif %}
+  {%- endif -%}
 </div>
 
-{% if gallery_hover_zoom == 'separate' %}
+{%- if gallery_hover_zoom == 'separate' -%}
   <div class="product-gallery--zoomed-image" data-zoomed-image></div>
-{% endif %}
+{%- endif -%}
