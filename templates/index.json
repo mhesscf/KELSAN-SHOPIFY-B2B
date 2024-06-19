@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "93a7d5e7-ec2f-4457-a011-598d6e3ce14a": {
@@ -17,9 +26,9 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/2024-memorial-day-sale-homepage-banner-desktop.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/2024-memorial-day-sale-homepage-banner-mobile.jpg",
-            "link": "https:\/\/www.cleanfreak.com\/collections\/all?refinementList%5Btags%5D%5B0%5D=Memorial%20Day%20Sale",
+            "banner-lg": "shopify:\/\/shop_images\/2024-start-of-summer-blowout-desktop-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/2024-start-of-summer-blowout-mobile-banner.jpg",
+            "link": "\/collections\/clearance",
             "coupon-code": ""
           }
         },
