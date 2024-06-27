@@ -50,7 +50,14 @@
                 category: thisPadCategory
                 %}
             {% endif %}
-          {% if collection.metafields.custom.question %}
+
+
+          {% if collection.metafields.custom.brand_description %}
+          <div class="brand-desc-area">
+            <div class="brand-img"><img src="{{ collection.metafields.custom.brand_logo.value | image_url }}" alt="{{ collection.title }} Logo"/></div>
+            <div class="brand-desc">{{ collection.metafields.custom.brand_description }}</div>
+          </div>
+          {% elsif collection.metafields.custom.question %}
           <div class="custom-additional-info">
             <div class="left-col">
                 <div class="question"><h3>{{ collection.metafields.custom.question }}</h3></div>
