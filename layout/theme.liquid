@@ -443,40 +443,42 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
                 </div>
 
                 <div class="atc-banner--cart">
-                    <div class="atc-banner--cart-subtotal">
-                <span class="atc-subtotal--label">
-                  {{ 'add_to_cart_banner.general.sub_total' | t }}
-                </span>
-                        <span class="atc-subtotal--price money" data-atc-banner-cart-subtotal></span>
+                    <div class="atc-subtotal-contain">
+                        <div class="atc-banner--cart-subtotal">
+                            <div class="atc-subtotal--label">
+                                {% comment %}{{ 'add_to_cart_banner.general.sub_total' | t }}{% endcomment %}
+                                Subtotal:
+                            </div>
+                            <div class="atc-subtotal--price money" data-atc-banner-cart-subtotal></div>
+                        </div>
+                        <footer class="atc-banner--cart-footer">
+                            <a class="button-secondary atc-button--viewcart" href="{{ routes.cart_url }}"
+                               data-atc-banner-cart-button>
+                                {{ 'add_to_cart_banner.general.view_cart_html' | t: count: '<span></span>' }}
+                            </a>
+                            {% comment %}
+                            <form
+                                    action="{{ routes.cart_url }}"
+                                    method="post"
+                                    aria-label="cart checkout"
+                            >
+                                <button class="button-primary atc-button--checkout" type="submit" name="checkout">
+                                    {% if settings.enable_checkout_lock_icon %}
+                                        {% render 'icon-checkout-lock' %}
+                                    {% endif %}
+                                    <span>{{ 'add_to_cart_banner.general.checkout' | t }}</span>
+                                </button>
+                            </form>
+                            {% endcomment %}
+                        </footer>
                     </div>
-
-                    <footer class="atc-banner--cart-footer">
-                        <a class="button-secondary atc-button--viewcart" href="{{ routes.cart_url }}"
-                           data-atc-banner-cart-button>
-                            {{ 'add_to_cart_banner.general.view_cart_html' | t: count: '<span></span>' }}
-                        </a>
-                        {% comment %}
-                        <form
-                                action="{{ routes.cart_url }}"
-                                method="post"
-                                aria-label="cart checkout"
-                        >
-                            <button class="button-primary atc-button--checkout" type="submit" name="checkout">
-                                {% if settings.enable_checkout_lock_icon %}
-                                    {% render 'icon-checkout-lock' %}
-                                {% endif %}
-                                <span>{{ 'add_to_cart_banner.general.checkout' | t }}</span>
-                            </button>
-                        </form>
-                        {% endcomment %}
-                    </footer>
-                </div>
-                <div class="fg-area-minicart">
-                    <div class="under-threshold" data-fgarea-under style="display:none;" >
-                        <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 24 | image_tag }}</span><span data-fgarea-total class="fg-thresh-away"></span> away from a Free Gift!
-                    </div>
-                    <div class="over-threshold" data-fgarea-over style="display:none;" >
-                        <a href="/cart/#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 24 | image_tag }}</span> You qualify for a Free Gift!<br/><span class="view" >View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
+                    <div class="fg-area-minicart">
+                        <div class="under-threshold" data-fgarea-under style="display:none;" >
+                            <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 24 | image_tag }}</span><span data-fgarea-total class="fg-thresh-away"></span> away from a Free Gift!
+                        </div>
+                        <div class="over-threshold" data-fgarea-over style="display:none;" >
+                            <a href="/cart/#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 24 | image_tag }}</span> You qualify for a Free Gift!<br/><span class="view" >View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -856,9 +858,9 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
         )()
     </script>
 {%- endunless -%}
-{%- comment -%}org-> src="{{ 'empire.min.js' | asset_url }}"{%- endcomment -%}
+{%- comment -%}org-> src="{{ 'empire.js' | asset_url }}"{%- endcomment -%}
 <script
-        src="{{ 'empire.js' | asset_url }}"
+        src="{{ 'empire.min.js' | asset_url }}"
         data-scripts
         data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
         data-shopify-countries="/services/javascripts/countries.js"
