@@ -33,7 +33,7 @@
 {% endif %}
 
 
-{%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+{%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com-of" -%}
 <script>
   {% comment %}csr tracking for dev only (load via gtm on frontend){% endcomment %}
   // var name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
@@ -149,6 +149,26 @@
             {% endif %}
             {{ 'cart.general.checkout' | t }}
           </button>
+
+
+          {% if shop.name contains "CleanFreak" %}
+            {% assign cart-size = cart.total_price | divided_by: 100.00 %}
+            {% assign threshold-1 = 1000 | minus: 0.01 %}
+            {% if cart-size < threshold-1 %}
+              {% assign threshold-left =  1000 |  minus: cart-size %}
+              {% assign threshold-left =  threshold-left | times:100 %}
+
+                <div class="fg-notice fg-notice-thresh">
+                  <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
+                </div>
+
+            {% else %}
+              <div class="fg-notice fg-notice-link">
+                <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+            {% endif %}
+          {% endif %}
+
         {% elsif show_continue_link %}
           {{ continue_link_html }}
         {% endif %}

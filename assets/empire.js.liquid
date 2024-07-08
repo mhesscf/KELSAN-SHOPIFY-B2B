@@ -29121,6 +29121,25 @@ PERFORMANCE OF THIS SOFTWARE.
                         subTotal.innerHTML = Shopify.formatMoney(secondResponse.total_price, this.settings.moneyFormat);
                         const itemCount = flyOut.querySelector('[data-atc-banner-cart-button] span');
                         itemCount.innerHTML = secondResponse.item_count;
+
+
+                        /* Free Gift Area */
+
+                        const fgAreaOver = flyOut.querySelector('[data-fgarea-over]');
+                        const fgAreaUnder = flyOut.querySelector('[data-fgarea-under]');
+                        var fgAreaTotal = flyOut.querySelector('[data-fgarea-total]');
+                        var fgAway = 100000 - secondResponse.total_price;
+
+                        fgAreaTotal.innerHTML = Shopify.formatMoney(fgAway, this.settings.moneyFormat);;
+
+                        if(secondResponse.total_price > 99999){
+                            fgAreaOver.style.display = "block";
+                            fgAreaUnder.style.display = "none";
+                        }else{
+                            fgAreaUnder.style.display = "block";
+                            fgAreaOver.style.display = "none";
+                        }
+
                         this.header.appendChild(flyOut);
                         this.flyOut = flyOut;
                         setupRippleEffect(this.flyOut); // Notifiy Header of new cart count
