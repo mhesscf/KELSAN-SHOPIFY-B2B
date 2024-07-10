@@ -1,20 +1,20 @@
 
-{% comment %}
+{%- comment -%}
   @param product
 
   @param selected_variant
 
   @param show_dynamic_checkout_button {Boolean}
     If true, show dynamic checkout button
-{% endcomment %}
+{%- endcomment -%}
 {% assign isBundle = false %}
 {% if product.metafields.plytix.package_products != blank %}
   {% assign isBundle = true %}
 {% endif %}
 
-{% comment %}
+{%- comment -%}
 Cleanfreak update: remove default functionality for add to cart on bundles (remove from) and add just a button. Fixes issue with bundles adding to cart at $0 when JS is turned off.
-{% endcomment %}
+{%- endcomment -%}
 {% if isBundle == false %}
   {% if is_product_modal and show_dynamic_checkout_button %}
     {% assign quickshop_smart_buttons = true %}
@@ -61,7 +61,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     <input type="hidden" class="pvtitle" value="{{ product.variants.first.title | remove: "'" | remove: '"' }}">
     <input type="hidden" class="psku" value="{{ product.variants.first.sku }}">
     <input type="hidden" class="atc_loc" value="Product Page">
-    {% comment %}
+    {%- comment -%}
       Display variant options for a product
 
       @param product
@@ -95,7 +95,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       @param option_swatch_wrapper_classes
       @param option_swatch_classes
       @param option_swatch_inner_classes
-    {% endcomment %}
+    {%- endcomment -%}
     {% assign product = product %}
     {% assign selected_variant = selected_variant %}
     {% assign style = settings.product_option_style %}
@@ -125,7 +125,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {% assign option_swatch_classes = 'swatch' %}
     {% assign option_swatch_inner_classes = 'swatch-inner' %}
 
-    {% comment %}Get stock status for logging in order at time of order --------------------------------------------------------------------{% endcomment %}
+    {%- comment -%}Get stock status for logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
 
     {% assign stockStatusMain = "" %}
     {% assign stockStatusSub = "" %}
@@ -140,7 +140,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       {% assign stockStatusSub = "May Have Extended Lead Times" %}
     {% elsif selected_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 %}
 
-      {% comment %}Look at po date instead of lead time{% endcomment %}
+      {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
       {%- if selected_variant.metafields.plytix.sxerp_po_date -%}
         {% assign dateStart = selected_variant.metafields.plytix.sxerp_po_date | date: '%s' %}
         {% assign nowTimestamp = 'now' | date: '%s' %}
@@ -226,10 +226,10 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       {% assign stockStatusNote = ""  %}
     {% endif %}
 
-    {% comment %}End of stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
+    {%- comment -%}End of stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
-    {% comment %}Inject @pixelunion/shopify-variants-ui/variant-selection begin{% endcomment %}
-    {% comment %}
+    {%- comment -%}Inject @pixelunion/shopify-variants-ui/variant-selection begin{%- endcomment -%}
+    {%- comment -%}
       Display variant options for a product
 
       @param product
@@ -244,7 +244,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       @param swatches_option_style
       @param swatches_product_page_size
       @param swatches_custom_colors
-    {% endcomment %}
+    {%- endcomment -%}
     {% if pstep > 1 %}
       <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
     {% endif %}
@@ -339,7 +339,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {% endif %}
         {% endif %}
 
-        {% comment %}<input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />{% endcomment %}
+        {%- comment -%}<input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />{%- endcomment -%}
 
         {% if pstep > 1 %}
           <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
@@ -377,8 +377,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {% endfor %}
         </select>
 
-        {% comment %}Inject @pixelunion/shopify-variants-ui/options-selection begin{% endcomment %}
-        {% comment %}
+        {%- comment -%}Inject @pixelunion/shopify-variants-ui/options-selection begin{%- endcomment -%}
+        {%- comment -%}
           Display variant options for a product
 
           @param product
@@ -394,7 +394,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           @param swatches_product_page_size
           @param swatches_custom_colors
           @param swatch_file_type
-        {% endcomment %}
+        {%- endcomment -%}
 
         <options-selection
                 {% if variant_selection_id != blank %}variant-selection="{{ variant_selection_id }}"{% endif %}
@@ -451,11 +451,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% endif %}
           {% endfor %}
         </options-selection>
-        {% comment %}Inject @pixelunion/shopify-variants-ui/options-selection end{% endcomment %}
+        {%- comment -%}Inject @pixelunion/shopify-variants-ui/options-selection end{%- endcomment -%}
 
       {% endif %}
     </variant-selection>
-    {% comment %}Inject @pixelunion/shopify-variants-ui/variant-selection end{% endcomment %}
+    {%- comment -%}Inject @pixelunion/shopify-variants-ui/variant-selection end{%- endcomment -%}
 
     <div class="qtyMsg" style="font-weight: 900;"></div>
     <div class="product-form--atc">
@@ -481,7 +481,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           </div>
         </div>
         <div class="rside">
-          {% comment %} Quantity Discount Tieres{% endcomment %}
+          {%- comment -%} Quantity Discount Tieres{%- endcomment -%}
 
           {% assign pdiscontinued = false %}
           {% for c in product.collections %}
@@ -523,11 +523,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
               </div>
 
             {% else %}
-              {% comment %}old percent off way{% endcomment %}
+              {%- comment -%}old percent off way{%- endcomment -%}
 
-              {% comment %}{% assign pprice = product.price | money_without_currency %}{% endcomment %}
-              {% comment %}{% assign pprice = pprice | remove: ","  %}{% endcomment %}
-              {% comment %}{% assign pprice = pprice | plus:0 %}{% endcomment %}
+              {%- comment -%}{% assign pprice = product.price | money_without_currency %}{%- endcomment -%}
+              {%- comment -%}{% assign pprice = pprice | remove: ","  %}{%- endcomment -%}
+              {%- comment -%}{% assign pprice = pprice | plus:0 %}{%- endcomment -%}
 
               {% assign pprice = variant.price %}
 
@@ -770,16 +770,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                       <div class="row row2">15%<span> off</span></div>
                       <div class="row row3">{{ tierPrice | money }}</div>
                     </div>
-
-
-
-
-
                   {% endif %}
-
-
-
-
 
                 </div>
               </div>
@@ -787,9 +778,92 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
           {% endif %}
       {% endfor %}
-          {% comment %} Quantity Discount Tieres END{% endcomment %}
+          {%- comment -%} Quantity Discount Tieres END{%- endcomment -%}
         </div>
       </div>
+
+{%- comment -%}start of inventory check for qty notice: check with AME-403020{%- endcomment -%}
+      {%- for variant in product.variants -%}
+          {%- assign fservice = variant.fulfillment_service -%}
+          {%- assign leadTime = variant.metafields.plytix.sxerp_lead_time -%}
+          {%- assign inventoryQuantity = variant.inventory_quantity -%}
+          {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
+          {%- assign leadTime = leadTime | plus: 0 -%}
+
+          {%- comment -%}get instock{%- endcomment -%}
+          {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+              {%- comment -%}<span class="status-desc main-notice">Ships Direct from Manufacturer</span>{%- endcomment -%}
+          {%- elsif variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
+              {%- comment -%}<span class="status-desc main-notice">Temporarily On Backorder</span>{%- endcomment -%}
+          {%- elsif variant.inventory_management == nil and leadTime -%}
+              {%- comment -%}<span class="status-desc main-notice">Special Order Item</span>{%- endcomment -%}
+          {%- elsif variant.inventory_quantity > 0 -%}
+
+              {%- assign totalItems = 0 -%}
+              {%- for cartitem in cart.items -%}
+                  {%- if cartitem.id == variant.id -%}
+                    {%- assign totalItems = totalItems | plus: cartitem.quantity -%}
+                  {%- endif -%}
+                {%- comment -%}In cart: {{ cartitem.id }}/{{ cartitem.quantity }}<br/>{%- endcomment -%}
+              {%- endfor -%}
+
+            <div style="display:none;" id="qtyavail-v{{ variant.id }}" data-incart="{{ totalItems }}" data-qtyavailable="{{ variant.inventory_quantity }}"></div>
+
+          {%- endif -%}
+      {%- endfor -%}
+      <div id="stock-backorder-notice" style="display:none"></div>
+      <script>
+        $(document).ready(function() {
+          checkQty();
+          $('#qtybox input').on('click', function(){
+              checkQty();
+          });
+
+          $('.product-form--atc-button').on('click', function(){
+            // update stock on data element
+            var addedStock = $('#qtybox #product-quantity-input').val();
+            var getstockqtyid = "#qtyavail-" + $('.product-block .product-detail-sku:visible').attr('id');
+            var getCartStock= $(getstockqtyid).attr('data-incart');
+            var newCartStock = parseInt(getCartStock) + parseInt(addedStock);
+            $(getstockqtyid).attr('data-incart', newCartStock);
+            checkQty();
+          });
+
+          $('.options-selection__input-select').change(function(e){
+            setTimeout(()=>{
+              checkQty();
+            }, 200)
+          });
+
+        });
+
+        function checkQty(newCartStock){
+          setTimeout(()=>{
+            var getstockqtyid = "#qtyavail-" + $('.product-block .product-detail-sku:visible').attr('id');
+            var getcurrentstock = $(getstockqtyid).data('qtyavailable');
+
+            if (getcurrentstock === undefined) {
+              $('#stock-backorder-notice').hide().text("");
+            }else{
+              var requestStock = $('#qtybox #product-quantity-input').val();
+              if(newCartStock){
+                var getCartStock= newCartStock;
+              }else{
+                var getCartStock= $(getstockqtyid).attr('data-incart');
+              }
+              var totalRequest = parseInt(requestStock) + parseInt(getCartStock);
+              // console.log("Request:" + totalRequest + "("+ requestStock+"/"+getCartStock +")" + "/Current stock:" + getcurrentstock);
+              if (totalRequest > getcurrentstock) {
+                $('#stock-backorder-notice').show().text("This item has limited stock. Your order may be split into multiple shipments.");
+              } else {
+                $('#stock-backorder-notice').hide().text("");
+              }
+            }
+          }, 200)
+        }
+      </script>
+
+{%- comment -%}end of inventory check for qty notice{%- endcomment -%}
 
       <div class="cart-buttons">
         <div data-prod-upd>
@@ -802,6 +876,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                  data-step="{{ pstep }}"
                  data-tieredPricing=""/>
         </div>
+
+
+
 
         {% if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" %}
           <button class=" product-form--atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
@@ -856,7 +933,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {% endif %}
   {% endform %}
 {% else %}
-{% comment %}Start of bundle logic ---------------------------------------------------------------------------{% endcomment %}
+{%- comment -%}Start of bundle logic ---------------------------------------------------------------------------{%- endcomment -%}
 
     {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}
     {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
@@ -868,7 +945,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
 
 
-        {% comment %}Get stock status for bundle non-free logging in order at time of order --------------------------------------------------------------------{% endcomment %}
+        {%- comment -%}Get stock status for bundle non-free logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
         {% assign stockStatusBunMain = "" %}
         {% assign stockStatusBunSub = "" %}
         {% assign fserviceBun = bundle_product.selected_or_first_available_variant.fulfillment_service %}
@@ -882,7 +959,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {% assign stockStatusBunSub = "May Have Extended Lead Times" %}
         {% elsif bundle_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityBun <  1 %}
 
-          {% comment %}Look at po date instead of lead time{% endcomment %}
+          {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
           {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
             {% assign dateStart = bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' %}
             {% assign nowTimestamp = 'now' | date: '%s' %}
@@ -964,7 +1041,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         {% else %}
           {% capture stockStatusBunNote %}{{ stockStatusBunMain }}{% endcapture %}
         {% endif %}
-        {% comment %}End of bundle non-free stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
+        {%- comment -%}End of bundle non-free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
 
         <input type="hidden"
@@ -995,7 +1072,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         {%- assign free_product = all_products[free_product_handle] %}
 
 
-        {% comment %}Get stock status for bundle free logging in order at time of order --------------------------------------------------------------------{% endcomment %}
+        {%- comment -%}Get stock status for bundle free logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
         {% assign stockStatusFreeMain = "" %}
         {% assign stockStatusFreeSub = "" %}
         {% assign fserviceFree = free_product.selected_or_first_available_variant.fulfillment_service %}
@@ -1008,7 +1085,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {% assign stockStatusFreeMain = "Ships Direct from Manufacturer" %}
           {% assign stockStatusFreeSub = "May Have Extended Lead Times" %}
         {% elsif free_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityFree <  1 %}
-          {% comment %}Look at po date instead of lead time{% endcomment %}
+          {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
           {%- if free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
             {% assign dateStart = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' %}
             {% assign nowTimestamp = 'now' | date: '%s' %}
@@ -1090,7 +1167,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         {% else %}
           {% capture stockStatusFreeNote %}{{ stockStatusFreeMain }}{% endcapture %}
         {% endif %}
-        {% comment %}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {% endcomment %}
+        {%- comment -%}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
 
         <input type="hidden"
@@ -1125,11 +1202,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {% if pdiscontinued == false %}
       <div class="approve-contain"></div>
     {% endif %}
-{% comment %}end of bundle logic -----------------------------------------------------------------------------------{% endcomment %}
+{%- comment -%}end of bundle logic -----------------------------------------------------------------------------------{%- endcomment -%}
 {% endif %}
-{% comment %} shoppay finaincing link
+{%- comment -%} shoppay finaincing link
 {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
 <form data-payment-terms-target class="shoppay-financing" style="display: none;"></form>
 {% endif %}
-{% endcomment %}
+{%- endcomment -%}
 
