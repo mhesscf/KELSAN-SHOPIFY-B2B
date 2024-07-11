@@ -24,11 +24,10 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/2024-start-of-summer-blowout-desktop-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/2024-start-of-summer-blowout-mobile-banner.jpg",
-            "link": "\/collections\/clearance",
+            "banner-lg": "shopify:\/\/shop_images\/2024-made-in-the-usa-desktop-homepage-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/2024-made-in-the-usa-mobile-homepage-banner.jpg",
+            "link": "\/collections\/made-in-the-usa",
             "coupon-code": ""
           }
         },
