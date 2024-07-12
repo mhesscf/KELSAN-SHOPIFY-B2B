@@ -285,9 +285,11 @@
                                     {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
                                     {%- for product in rel_products_arr -%}
                                         {%- assign product_handle = product |  strip -%}
-                                        <div class="{{ tab_rel_id }}-rel-item rel-slider-item rel-slider-item-ajax " data-handle="{{ product_handle }}">
-                                            {{ product_handle }}
-                                        </div>
+                                        {%- if product_handle != "undefined" -%}
+                                            <div class="{{ tab_rel_id }}-rel-item rel-slider-item rel-slider-item-ajax " data-handle="{{ product_handle }}">
+                                                {% comment %}{{ product_handle }}{% endcomment %}
+                                            </div>
+                                        {%- endif -%}
                                     {%- endfor -%}
                                 {%- endif -%}
                             </div>
