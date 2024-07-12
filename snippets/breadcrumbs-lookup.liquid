@@ -38,7 +38,7 @@
             {%- for collection in product.collections -%}
                 {%- comment -%}ignore-bread tagged collections, ignore all{%- endcomment -%}
                 {%- unless collection.metafields.custom.ignore_in_breadcrumbs -%}
-                    {{collection.url }}|
+                    {{collection.url }}||
                 {%- endunless -%}
             {%- endfor -%}
         {%- endcapture -%}
@@ -530,7 +530,7 @@
         " | split: ","%}
     {%- endif -%}
 
-    {%- assign urlstolookupobj = urlstolookup | split: '|' -%}
+    {%- assign urlstolookupobj = urlstolookup | split: '||' -%}
     {%- for urltolookup in urlstolookupobj -%}
         {%- assign urlpostion = 1 -%}
         {%- for breadcrumbitem in breadcrumbslookup -%}
@@ -609,16 +609,16 @@
                     {%- endif -%}
                     </span>
                 {%- endcapture -%}
-                {%- assign breadcrumbs = breadcrumbs | append: finalbreadtemp | append: '|' -%}
-                {%- assign breadposition = breadposition | append: urlpostion | append: '|' -%}
+                {%- assign breadcrumbs = breadcrumbs | append: finalbreadtemp | append: '||' -%}
+                {%- assign breadposition = breadposition | append: urlpostion | append: '||' -%}
                 {%- break -%}
             {%- endif -%}
             {%- assign urlpostion = urlpostion | plus: 1 -%}
         {%- endfor -%}
     {%- endfor -%}
 
-    {%- assign breadcrumbs = breadcrumbs | split: '|' -%}
-    {%- assign breadposition = breadposition | split: '|' -%}
+    {%- assign breadcrumbs = breadcrumbs | split: '||' -%}
+    {%- assign breadposition = breadposition | split: '||' -%}
 
     {%- assign lowestPostion = 1000000 -%}
     {%- comment -%} get the lowest postion and display the correct breadcrumb {%- endcomment -%}
