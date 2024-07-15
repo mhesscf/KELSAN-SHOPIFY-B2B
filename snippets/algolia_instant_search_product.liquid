@@ -141,6 +141,9 @@
     };
 
     function backorderLeadtimeLookup(leadTime = 0){
+        if (isNaN(leadTime)){
+            leadTime = 1;
+        }
         var leadtext = ""
         if (leadTime < 22){
             leadtext = "Estimated Ship Date 1 – 3 wks"
