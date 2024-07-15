@@ -195,8 +195,13 @@
                                     </div>
                                 {% endfor %}
                             {%- else -%}
-                                <div class="product-detail-sku">
-                                    SKU:<span> {{ sku }} </span>&nbsp;&nbsp; {{ vendortext }}
+                                {%- if selected_variant.metafields.plytix.product_step -%}
+                                    {%- assign vstep = selected_variant.metafields.plytix.product_step -%}
+                                {%- else -%}
+                                    {%- assign vstep = 1 -%}
+                                {%- endif -%}
+                                <div class="product-detail-sku variant-sku current" id="v{{ selected_variant.id }}" data-vid="{{ selected_variant.id }}" data-tier="{{ selected_variant.metafields.plytix.tiered_pricing }}" data-erpsku="{{ selected_variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
+                                SKU:<span> {{ sku }} </span>&nbsp;&nbsp; {{ vendortext }}
                                 </div>
                            {%- endif -%}
                         {%- comment -%}{% when 'vendor' %}

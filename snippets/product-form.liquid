@@ -799,6 +799,14 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
               {%- comment -%}<span class="status-desc main-notice">Special Order Item</span>{%- endcomment -%}
           {%- elsif variant.inventory_quantity > 0 -%}
 
+            {%- assign showWarning = 1 -%}
+            {% if variant.metafields.plytix.clearance_overstock == 'true' %}
+              {%- assign showWarning = 0 -%}
+            {% elsif variant.sku contains "-DEMO"  %}
+              {%- assign showWarning = 0 -%}
+            {% endif %}
+
+            {%- if showWarning == 1 -%}
               {%- assign totalItems = 0 -%}
               {%- for cartitem in cart.items -%}
                   {%- if cartitem.id == variant.id -%}
@@ -807,7 +815,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                 {%- comment -%}In cart: {{ cartitem.id }}/{{ cartitem.quantity }}<br/>{%- endcomment -%}
               {%- endfor -%}
 
-            <div style="display:none;" id="qtyavail-v{{ variant.id }}" data-incart="{{ totalItems }}" data-qtyavailable="{{ variant.inventory_quantity }}"></div>
+              <div style="display:none;" id="qtyavail-v{{ variant.id }}" data-incart="{{ totalItems }}" data-qtyavailable="{{ variant.inventory_quantity }}"></div>
+            {%- endif -%}
 
           {%- endif -%}
       {%- endfor -%}
