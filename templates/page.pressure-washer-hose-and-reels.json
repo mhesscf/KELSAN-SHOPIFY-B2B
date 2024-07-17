@@ -238,35 +238,35 @@
     "02508936-78e3-41da-b054-6e9ecca3b173": {
       "type": "dept-category-area",
       "blocks": {
-        "edbfab3c-56d9-4148-91aa-3761d52fee9e": {
+        "45d203af-bc0c-4595-ab4a-70accfc8c1a0": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cold-electric-pressure-washers.jpg",
-            "title": "Softwash Hoses",
-            "url": "\/collections\/softwash-hoses"
+            "image": "shopify:\/\/shop_images\/pressure-washer-hose-reels.jpg",
+            "title": "Hose Reels",
+            "url": "\/collections\/hose-reels"
           }
         },
         "6216137a-2b4c-43a5-821c-c28e0c093f9c": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cold-gas-powered-pressure-washer.jpg",
+            "image": "shopify:\/\/shop_images\/pressure-washer-hoses-dept.jpg",
             "title": "Pressure Washer Hoses",
             "url": "\/collections\/pressure-washer-hoses"
           }
         },
-        "45d203af-bc0c-4595-ab4a-70accfc8c1a0": {
+        "edbfab3c-56d9-4148-91aa-3761d52fee9e": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
-            "title": "Hose Reels",
-            "url": "\/collections\/hose-reels"
+            "image": "shopify:\/\/shop_images\/pressure-washer-softwash-hoses-dept.jpg",
+            "title": "Softwash Hoses",
+            "url": "\/collections\/softwash-hoses"
           }
         }
       },
       "block_order": [
-        "edbfab3c-56d9-4148-91aa-3761d52fee9e",
+        "45d203af-bc0c-4595-ab4a-70accfc8c1a0",
         "6216137a-2b4c-43a5-821c-c28e0c093f9c",
-        "45d203af-bc0c-4595-ab4a-70accfc8c1a0"
+        "edbfab3c-56d9-4148-91aa-3761d52fee9e"
       ],
       "settings": {
         "block-title": "Pressure Washers by Type"
