@@ -75,8 +75,8 @@
           "type": "categoryhead",
           "settings": {
             "cat_image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
-            "cat_title": "Pressure Washers",
-            "cat_text": "Shop a wide selection of pressure washers for any application. Choose from hot or cold water pressure washers with gasoline engine or electric power."
+            "cat_title": "Pressure Washers Hoses",
+            "cat_text": "Shop a selection of lengths of  pressure washer hoses and hose reels to store your hoses on. Choose from high pressure hoses or softwash hoses."
           }
         },
         "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf": {
@@ -91,6 +91,7 @@
         },
         "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/got-a-big-job-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/got-a-big-job-banner-800x427.jpg",
@@ -100,6 +101,7 @@
         },
         "1bbb33c2-2444-465d-8285-f1a6681bee8b": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/hot-water-press-washer-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/hot-water-press-washer-banner-800x427.jpg",
@@ -109,6 +111,7 @@
         },
         "55c96410-9583-4bcd-9414-2823d5265d9f": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/pressure-mower-banner-1400x350.jpg",
             "banner-sm": "shopify:\/\/shop_images\/pressure-mower-banner-800x427.jpg",
