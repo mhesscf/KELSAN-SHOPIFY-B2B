@@ -242,85 +242,31 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/cold-electric-pressure-washers.jpg",
-            "title": "Cold Water Electric",
-            "url": "\/collections\/cold-water-electric-pressure-washers"
+            "title": "Softwash Hoses",
+            "url": "\/collections\/softwash-hoses"
           }
         },
         "6216137a-2b4c-43a5-821c-c28e0c093f9c": {
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/cold-gas-powered-pressure-washer.jpg",
-            "title": "Cold Water Gas Engine",
-            "url": "\/collections\/cold-water-gas-engine-pressure-washers"
+            "title": "Pressure Washer Hoses",
+            "url": "\/collections\/pressure-washer-hoses"
           }
         },
         "45d203af-bc0c-4595-ab4a-70accfc8c1a0": {
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/detergents-category.jpg",
-            "title": "Detergents",
-            "url": "\/collections\/detergents"
-          }
-        },
-        "0c3e5a7a-1a1d-4d2b-bb5f-2991977e571a": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/drain-jetters.jpg",
-            "title": "Drain Jetters",
-            "url": "\/collections\/drain-jetters"
-          }
-        },
-        "b795079d-d2c7-485d-b049-2aa01a830b43": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hot-gas-pressure-washers.jpg",
-            "title": "Hot Water Gas Engine",
-            "url": "\/collections\/hot-water-gas-engine-pressure-washers"
-          }
-        },
-        "170a8bf8-9d6d-474a-b55c-eee6dc161442": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hto-electric-pressure-washers.jpg",
-            "title": "Hot Water Electric",
-            "url": "\/collections\/hot-water-electric-pressure-washers"
-          }
-        },
-        "62c887d0-92ff-4e2d-87de-968a815c860b": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/softwash-system-dept.jpg",
-            "title": "Softwash Systems",
-            "url": "\/collections\/softwash-systems"
-          }
-        },
-        "b0c688b8-3bf4-4751-b863-86b45272103c": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/flat-surfaces-cleaners.jpg",
-            "title": "Specialty Attachments",
-            "url": "\/collections\/specialty-attachments-for-pressure-washers"
-          }
-        },
-        "90e76373-00dc-4d7b-98bf-f8ead2c9ab48": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/truck-trailer-mount-portable-pressure-washer-systems.jpg",
-            "title": "Truck & Trailer Mount",
-            "url": "\/collections\/truck-mount"
+            "title": "Hose Reels",
+            "url": "\/collections\/hose-reels"
           }
         }
       },
       "block_order": [
         "edbfab3c-56d9-4148-91aa-3761d52fee9e",
         "6216137a-2b4c-43a5-821c-c28e0c093f9c",
-        "45d203af-bc0c-4595-ab4a-70accfc8c1a0",
-        "0c3e5a7a-1a1d-4d2b-bb5f-2991977e571a",
-        "b795079d-d2c7-485d-b049-2aa01a830b43",
-        "170a8bf8-9d6d-474a-b55c-eee6dc161442",
-        "62c887d0-92ff-4e2d-87de-968a815c860b",
-        "b0c688b8-3bf4-4751-b863-86b45272103c",
-        "90e76373-00dc-4d7b-98bf-f8ead2c9ab48"
+        "45d203af-bc0c-4595-ab4a-70accfc8c1a0"
       ],
       "settings": {
         "block-title": "Pressure Washers by Type"
@@ -339,6 +285,7 @@
         },
         "2eaa0edc-6777-4bb7-81e5-1229d10c83d8": {
           "type": "related_cat_link",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/pressure-washer-hoses-hose-reels-dept.jpg",
             "title": "Pressure Washer Hoses & Hose Reels",
@@ -444,6 +391,7 @@
       "blocks": {
         "db34ef1e-046a-410d-96c6-4ff0bc8e4d00": {
           "type": "brandlink",
+          "disabled": true,
           "settings": {
             "brand-title": "CleanFreak®",
             "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers&q=CleanFreak",
@@ -475,6 +423,7 @@
       "block_order": [
         "81b61309-2377-4eec-862e-f3c9b8075b89"
       ],
+      "disabled": true,
       "settings": {
         "block-title": "Resources"
       }
