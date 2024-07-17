@@ -156,11 +156,10 @@
         },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/viper-as510b-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/viper-as510b-bogo-mobile-banner.jpg",
-            "link": "\/products\/viper-as510b-20-inch-battery-powered-auto-scrubber",
+            "banner-lg": "shopify:\/\/shop_images\/carpet-spotter-bogo-promo-desktop-banner.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/carpet-spotter-bogo-promo-mobile-banner.jpg",
+            "link": "\/search?q=SAN-CF-3",
             "coupon-code": ""
           }
         }
