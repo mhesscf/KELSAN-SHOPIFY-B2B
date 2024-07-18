@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "65485192-727d-46a8-b337-1bf36c289bcb": {
@@ -164,14 +173,6 @@
             "url": "\/pages\/floor-care-chemicals"
           }
         },
-        "adfc27e3-fdb7-476f-b6cf-2e8b96f03323": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/hard-surface-cleaners.jpg",
-            "title": "Window & Hard Surface Cleaners",
-            "url": "\/pages\/hard-surface-cleaners"
-          }
-        },
         "7da01d1a-8e2f-48b7-9f33-0fa9887ee8ec": {
           "type": "categorylink",
           "settings": {
@@ -211,6 +212,14 @@
             "title": "Stain Removal & Prevention",
             "url": "\/pages\/stain-removal"
           }
+        },
+        "adfc27e3-fdb7-476f-b6cf-2e8b96f03323": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hard-surface-cleaners.jpg",
+            "title": "Window & Hard Surface Cleaners",
+            "url": "\/pages\/hard-surface-cleaners"
+          }
         }
       },
       "block_order": [
@@ -219,12 +228,12 @@
         "00bce087-30eb-468f-82b4-0dbc4392427b",
         "989aab83-2f82-4f6c-b0c6-1a60b3006f85",
         "8c26ed4d-6da8-4544-8314-7d7d7a1d53b0",
-        "adfc27e3-fdb7-476f-b6cf-2e8b96f03323",
         "7da01d1a-8e2f-48b7-9f33-0fa9887ee8ec",
         "8bf9ec0f-60aa-44e3-9064-b102592ba0da",
         "567fae25-b416-44fd-b931-d8c283789865",
         "0672e129-eb14-480c-b984-b3062ecb98c0",
-        "73bada5e-8c97-436b-93c7-1f8af58cb8ca"
+        "73bada5e-8c97-436b-93c7-1f8af58cb8ca",
+        "adfc27e3-fdb7-476f-b6cf-2e8b96f03323"
       ],
       "settings": {
         "block-title": "Chemicals & Cleaners by Type"
