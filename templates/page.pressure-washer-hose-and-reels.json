@@ -157,6 +157,7 @@
         },
         "tab_7NghiX": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "name": "Brands",
             "targetclass": ".dept-brand-brands"
@@ -164,6 +165,7 @@
         },
         "tab_h3w8LK": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "name": "Resources",
             "targetclass": ".dept-resources"
