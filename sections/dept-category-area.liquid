@@ -13,7 +13,14 @@
                     {%- endif -%}
                 </div>
                 <div class="flex-row">
+                    {% assign blockFill = 0 %}
+
                     {% for block in section.blocks %}
+                        {% if blockFill == 4 %}
+                            {% assign blockFill = 1 %}
+                        {% else %}
+                            {% assign blockFill = blockFill | plus: 1 %}
+                        {% endif %}
                         {% assign image = block.settings.image %}
                         {% assign title = block.settings.title %}
                         {% assign url = block.settings.url %}
@@ -91,6 +98,39 @@
                                 </div>
                             </div>
                     {%  endfor %}
+
+
+                    {%-  if blockFill != 4 and shop.name contains "CleanFreak" -%}
+                        <div class="category-link-wrapper blockfill blockfill-{{ blockFill | plus: 1 }}">
+                            <a href="/pages/superfreak">
+                                <div class="blockfill-contain">
+                                    <div class="blockfill-left">
+                                        <img class="img-responsive" src="{{ shop.url }}/cdn/shop/files/superfreak-logo.png" alt="SuperFreak Logo" />
+                                    </div>
+                                    <div class="blockfill-right">
+                                        <div class="blockfill-cf-title">Join Our SuperFreak Program!</div>
+                                        <div class="blockfill-cf-notes">
+                                            <div class="blockfill-cf-price"><img class="img-responsive" src="{{ shop.url }}/cdn/shop/files/sf-annual-price.png" alt="$99.99 Annual Price" /></div>
+                                            <table class="cf-note-list">
+                                                <tr>
+                                                    <td> <img src="{{ shop.url }}/cdn/shop/files/sf-checkmark.jpg" alt="checkmark" /></td>
+                                                    <td>Exclusive Offers</td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <img src="{{ shop.url }}/cdn/shop/files/sf-checkmark.jpg" alt="checkmark" /></td>
+                                                    <td>10% Off All Parts & Consumables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <img src="{{ shop.url }}/cdn/shop/files/sf-checkmark.jpg" alt="checkmark" /></td>
+                                                    <td>Unlimited support via phone and/or video</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {%- endif -%}
                 </div>
             </div>
         </div>

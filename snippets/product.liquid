@@ -359,7 +359,7 @@
                             {%- for variant in product.variants -%}
                                 <div class="masterqty-container var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
                                     {%- if variant.metafields.plytix.package_products != blank -%}
-                                        <div class="individually-sold">Sold as a Bundle</div>
+                                        <div class="individually-sold">Sold as a Package</div>
                                     {%- else -%}
                                         {%- if variant.metafields.plytix.master_quantity != blank -%}
                                             {%- assign qntyinfo = variant.metafields.plytix.master_quantity -%}
