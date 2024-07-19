@@ -142,6 +142,9 @@
                             {% if property.last == 'fg-bogo' and cartitem.product.handle == section.settings.free_gift_product.handle  %}
                                 {% assign freegiftItem = 1 %}
                                 {% assign freeGiftLineId = cartitem.id %}
+                            {% elsif property.last == 'fg' and cartitem.product.handle == section.settings.free_gift_product.handle  %}
+                                {% assign freegiftItem = 1 %}
+                                {% assign freeGiftLineId = cartitem.id %}
                             {% endif %}
                         {% endif %}
                     {% endfor %}
