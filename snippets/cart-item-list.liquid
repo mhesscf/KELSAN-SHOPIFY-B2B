@@ -129,3 +129,27 @@
     </div>
     <span class="cancel close-x">✕</span>
 </div>
+
+<script>
+    setTimeout(() => {
+        $('.cart-stock-backorder-notice').each(function(){
+            var getStockQtyId = $(this).attr('data-itemid');
+            var getQtyAvailable = $(this).attr('data-qtyavailable');
+            var totalInCart = 0;
+            $('.cart-item[data-cartitem-id="'+getStockQtyId+'"] input.form-field-input').each(function(){
+                var getQtyOnLine = $(this).val();
+                totalInCart = parseInt(totalInCart) + parseInt(getQtyOnLine) ;
+                console.log("line:"+getStockQtyId+"/"+getQtyOnLine+'/'+totalInCart);
+            });
+            console.log("total:"+getStockQtyId+"/"+getQtyAvailable+"/"+totalInCart);
+            if(parseInt(getQtyAvailable) < parseInt(totalInCart)){
+                // alert(getStockQtyId);
+                $(this).html("<div style='background-color:#fce2e2; line-height:15px; width:74%; font-size:13px; padding:5px 10px;'><span style='color:#f05d5d'>This item has limited stock. Your order may be split into multiple shipments.</span></div>").show();
+            }
+            console.log('------------------')
+        });
+    }, "1000");
+
+
+
+</script>

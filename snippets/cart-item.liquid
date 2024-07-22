@@ -177,7 +177,6 @@
         </div>
       {% endif %}
 
-
       {% comment %} Using other stock status instead
       {% if settings.inventory_status %}
         {% if item.variant.inventory_quantity > 0 and item.variant.inventory_quantity <= settings.low_stock_threshold %}
@@ -195,6 +194,23 @@
         <div class="cart-item--stockstatus">
           <strong>Status:</strong> {{ stock_status }}
         </div>
+
+        {% comment %}----------------------start of in stock qty check <br/>{% endcomment %}
+        {%- comment -%}get instock{%- endcomment -%}
+        {%- if stock_status == 'In Stock' -%}
+          {%- assign showWarning = 1 -%}
+          {% if item.metafields.plytix.clearance_overstock == 'true' %}
+            {%- assign showWarning = 0 -%}
+          {% elsif item.sku contains "-DEMO"  %}
+            {%- assign showWarning = 0 -%}
+          {% endif %}
+
+          {%- if showWarning == 1 -%}
+            <div style="display:none" class="cart-stock-backorder-notice qtyavail-{{ item.id }}" data-itemid="{{ item.id }}" data-qtyavailable="{{ item.variant.inventory_quantity  }}"></div>
+          {%- endif -%}
+        {%- endif -%}
+        {% comment %}--------------------------------------------------------end of in stock qty check {% endcomment %}
+
       {% endif %}
       {% if item.product.metafields.plytix.freq_bought %}
           {% comment %}check items other than "undefined"{% endcomment %}
