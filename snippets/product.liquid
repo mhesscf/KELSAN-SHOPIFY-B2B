@@ -351,7 +351,7 @@
                                 {%- assign savingsp = savingsp | plus: fprice -%}
                             {%- endfor -%}
                             {%- assign savingsp = savingsp | times:100 -%}
-                            <div class="free-product-savings">FREE {{ savingsp | money }} in Included Products</div>
+                            <div class="free-product-savings">FREE {{ savingsp | money }} Included in FREE Products w/ this Package</div>
                         {%- endif -%}
 
                             {%- assign current_variant_id = product.selected_or_first_available_variant.id -%}
