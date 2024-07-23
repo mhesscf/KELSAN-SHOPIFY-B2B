@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "efd3179f-3eef-46ae-a180-4900fd7bbf7f": {
@@ -168,8 +177,8 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/first-aid-kits.jpg",
-            "title": "First Aid Kits & Thermometers",
-            "url": "\/collections\/first-aid-kits-thermometers"
+            "title": "First Aid Kits",
+            "url": "\/collections\/first-aid-kits"
           }
         },
         "5718462f-e0a1-4424-8e2e-61ed550f942b": {
