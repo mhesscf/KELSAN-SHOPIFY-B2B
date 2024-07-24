@@ -524,8 +524,9 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
                     <tr>
                         <td class="sf-price">$99.99</td>
                         <td class="sf-details-text">Get peace of mind with virtual technical assistance & save on future purchases. Renews annually. <span class="sf-info-pop" onclick="sf_info_pop()" >Learn more <i class="fa-solid fa-arrow-right"></i></span></td>
-                        <td class="sf-atc"><div onclick="sf_atc(this,'cart',{{ sf_plan }});" data-at="{{ sf_item_id }}" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
-                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="sf-atc"><div onclick="sf_atc(this,'header',{{ sf_plan }});" data-at="{{ sf_item_id }}" data-plan-qty="" data-plan-item="" data-plan-item-handle="" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
                     </tr>
                 </table>
             </div>
@@ -548,6 +549,10 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
                         <br/>
                         Check out the SuperFreak membership <a href="/pages/superfreak">benefits</a>, as well as the <a href="/pages/superfreak-terms">terms & conditions</a> for more info.</div>
                 </div>
+            </div>
+
+            <div class="dropdown-productaccessories" data-dropaccessories data-handles="" >
+                <div class="prodacc-placeholder" data-prodacc-placeholder ></div>
             </div>
 
             <button
