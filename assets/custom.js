@@ -1667,6 +1667,110 @@ jQuery(document).ready(function($){
 
 });
 
+function accdropSelect(selectObject,productid){
+    var value = selectObject.value;
+    var productelementid = "#accdrop-product-"+productid;
+
+    $(productelementid+" .accdrop-var-variables").hide().removeClass("accdrop-var-variables-current");
+
+    if( value == ""){
+        $(productelementid+" .accdrop-var-select").addClass('notselected');
+    }else {
+        $(productelementid + " .accdrop-var-select").removeClass('notselected');
+        $(productelementid+" .accdrop-var"+value).show().addClass("accdrop-var-variables-current");
+    }
+}
+
+
+function accdropATC(productid){
+    var productelementid = "#accdrop-product-"+productid;
+    var dataid = $(productelementid+" .accdrop-var-variables-current .data-accdrop-var");
+    var thisBtn = $(productelementid+" .accdropAtcBtn")
+
+    if (dataid.length ){
+
+    }else{
+        $(productelementid+" .accdrop-var-select").addClass('notselected')
+        return false;
+    }
+
+
+    // values for atc
+    var atcVarId = $(dataid).attr('data-var_id');
+    var atcSku = $(dataid).attr('data-var_vissku');
+    var atcName = $(dataid).attr('data-productname');
+    var atcStatus = $(dataid).attr('data-var_status');
+    var atcERPSku = $(dataid).attr('data-var_erpsku');
+    var atcType = $(dataid).attr('data-producttype');
+    var atcBrand = $(dataid).attr('data-brand');
+    var atcTier = $(dataid).attr('data-var_tieredpricing');
+    var atcPrice = $(dataid).attr('data-var_price');
+    var atcPrice = atcPrice/100;
+
+    var placement = "Minicart Upsell";
+     window.dataLayer = window.dataLayer || [];
+     window.dataLayer.push({
+         event: 'ee_addToCart',
+         product_name: atcName,
+         product_id : productid,
+         product_price: atcPrice,
+         product_brand:  atcBrand,
+         currency: "USD",
+         product_type: "",
+         category_id: "",
+         category_title: "",
+         variant_id: atcVarId,
+         variant_title: "Default Title",
+         product_sku: atcSku,
+         quantity: 1,
+         atc_loc: placement
+     });
+
+
+    var cookname = "atcloc";
+    var thisCookie = document.cookie.match(new RegExp('(^| )' + cookname + '=([^;]+)'));
+    if (thisCookie){
+        var newCookieVal = thisCookie[2] + "::"+"CartDrop"+":"+placement;
+    }else{
+        var newCookieVal = "CartDrop"+":"+placement;
+    }
+    document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
+
+     data = {
+         form_type: 'product',
+         utf8: '✓',
+         'properties[_erp_sku]': atcERPSku,
+         'properties[_tiered_pricing]': atcTier,
+         'properties[Status]': atcStatus,
+         'properties[SKU]': atcSku,
+         'id': atcVarId,
+         'quantity': 1,
+     }
+
+    $(thisBtn).html("Adding...");
+
+    // alert(atcVarId+"/"+productid+"/"+atcName+"/"+atcSku+"/"+atcStatus+"/"+atcERPSku+"/"+atcType+"/"+atcBrand+"/"+atcTier+"/"+atcPrice);
+    $.ajax({
+        type: 'POST',
+        url: `${window.Theme.routes.cart_add_url}.js`,
+        data: data,
+        dataType: 'json',
+        success: function () {
+            console.log('upsell added to cart');
+            $(thisBtn).addClass("upsell-added").html("Item Added!").attr('onClick',"");
+            var newCartTotal = parseInt($('[data-header-cart-count]').attr("data-header-cart-count")) + 1;
+            $('[data-header-cart-count]').attr("data-header-cart-count", newCartTotal);
+            $('[data-atc-banner-cart-button] span').text(newCartTotal)
+            var newCartPrice = parseFloat($('.atc-subtotal--price').text().replace(/[$,]/g, '')) + (atcPrice);
+            $('.atc-subtotal--price').text("$" + newCartPrice.toLocaleString());
+            //if(placement == "cart"){
+              //  location.href = window.Theme.routes.cart_url
+            //}
+
+        }
+    });
+}
+
 
 // superfreak infopop
 function sf_info_pop(){

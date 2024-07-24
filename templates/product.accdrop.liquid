@@ -1,0 +1,42 @@
+{% layout none %}
+
+{%- assign freqarray =  product.metafields.plytix.freq_bought | split: ", " -%}
+<div class="accdrop--upsell">
+    <div class="upsell-header"><span>Accessories</span><br/>for {{ product.title }}</div>
+    {%- assign counter = 1 -%}
+    {%- for freq in freqarray -%}
+        {%- if freq != "" and freq !="undefined" and counter < 4 -%}
+            <div class="accdrop--item" data-freqbundle-subproducts >
+                {%- assign  thisprod = all_products[freq] -%}
+                {%-
+                        render 'accdrop-items',
+                        main_loc: 'Cart',
+                        item_loc: 'Accessories',
+                        product: thisprod
+                -%}
+            </div>
+            {%- assign counter = counter | plus: 1 -%}
+        {% endif %}
+    {% endfor %}
+
+    {%- if counter == 1 -%}
+        {%- assign relatedcounter = 1 -%}
+        {%- assign relatedarray =  product.metafields.plytix.related_products | split: ", " -%}
+        {% comment %}if not freq, sub with related{% endcomment %}
+        {%- for related in relatedarray -%}
+            {%- if related != "" and related !="undefined" and relatedcounter < 4 -%}
+            <div class="accdrop--item" data-freqbundle-subproducts >
+                {%- assign  thisprod = all_products[related] -%}
+                {%-
+                        render 'accdrop-items',
+                        main_loc: 'Cart',
+                        item_loc: 'Accessories',
+                        product: thisprod
+                -%}
+            </div>
+            {%- assign relatedcounter = relatedcounter | plus: 1 -%}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+
