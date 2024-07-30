@@ -1603,8 +1603,26 @@ jQuery(document).ready(function($){
         $('.template-cart .cart-checkout button').on('click', function(e){
             linkdl("Cart", "Bottom Checkout Button", "/checkout");
         });
-    }, 1000);
+    }, 700);
 
+    // qikify nav menu tracking
+    setTimeout(() => {
+        $('.tmenu_nav > .tmenu_item > a').hover(function(e) {
+            console.log('hovertrig2');
+            setTimeout(() => {
+                $('.tmenu_nav a').on('click', function(e) {
+                    var navlinkloc = 'Main Nav';
+                    var navmainloc = 'Header';
+                    var navhref = $(this).attr('href');
+                    if ($(this).closest('.cat-shopall').length > 0) {
+                        navlinkloc = 'Shop All Main Nav';
+                        navmainloc = 'Header';
+                    }
+                    linkdl(mainloc, linkloc, href);
+                });
+            }, 300);
+        });
+    }, 200);
 
     setTimeout(() => {
         $('.tmenu_item_link,.tmenu_item_display_header').on('mouseenter', function(e){

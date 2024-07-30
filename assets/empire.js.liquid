@@ -29035,6 +29035,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                 });
 
                             productAcc.style.display = "block";
+                        $(".pop-grad").removeClass('hidden');
                     }
 
 
@@ -29258,6 +29259,7 @@ PERFORMANCE OF THIS SOFTWARE.
 
 
             _closeFlyOut() {
+                $(".pop-grad").addClass('hidden');
                 if (!this.flyOut) {
                     return;
                 }
@@ -32896,6 +32898,9 @@ const RULES = `
                 const variantERPSKUName = atcButton.getAttribute('data-erpsku-name');
                 const variantERPSKU = atcButton.getAttribute('data-erp-sku');
 
+                const variantavailQtyName= atcButton.getAttribute('data-availqty-name');
+                const variantavailQty = atcButton.getAttribute('data-availqty');
+
                 const variantSFeligibleName = atcButton.getAttribute('data-sfeligible-name');
                 const variantSFeligible = atcButton.getAttribute('data-sfeligible');
 
@@ -32917,6 +32922,9 @@ const RULES = `
                 },{
                     name: variantERPSKUName,
                     value: variantERPSKU
+                },{
+                    name: variantavailQtyName,
+                    value: variantavailQty
                 },{
                     name: variantSFeligibleName,
                     value: variantSFeligible
