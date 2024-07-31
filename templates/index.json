@@ -57,6 +57,7 @@
         },
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/july-cf-20-inch-floor-burisher-special-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/july-cf-oscillating-floor-machine-special-1400x350.jpg",
@@ -79,6 +80,7 @@
         },
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/july-cf-oscillating-floor-machine-special-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/july-cf-oscillating-floor-machine-special-800x427.jpg",
@@ -101,18 +103,17 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/dura-20hd-june-2024-sotm-banner-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/dura-20hd-june-2024-sotm-banner-800x427.jpg",
-            "title": "Trusted Clean 'Dura 20' Automatic Floor Scrubber",
-            "text": "Dura-ble, Dependable & Affordable. <br>Was: $3,949.99<br>Now: $3,599.99",
+            "background_image": "shopify:\/\/shop_images\/august-2024-sotm-cpl-cf-100-heat-banner-1400x350.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/august-2024-sotm-cpl-cf-100-heat-banner-800x427.jpg",
+            "title": "CleanFreak® 120 PSI Hot Water Heated Carpet Extractor",
+            "text": "Hot water meets a hot deal!<br>Was: $2,349.99<br>Now: $,2099.99",
             "color": "#303e48",
-            "link": "\/products\/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "link": "\/products\/hot-water-heated-carpet-extractor",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "Save $350!",
-            "button_one_link": "\/products\/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "button_one_label": "Save $250!",
+            "button_one_link": "\/products\/hot-water-heated-carpet-extractor",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "\/products\/heated-carpet-spot-cleaner",
