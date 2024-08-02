@@ -77,7 +77,7 @@
   {%- assign product_available = product.available -%}
   {%- assign product_title = product.title -%}
   {%- assign product_vendor = product.vendor -%}
-  {%- assign product_link = product.url | within: collection -%}
+  {%- assign product_link = product.url -%}
   {%- assign product_description = product.description | strip_html -%}
   {%- assign product_description_size = product.description | strip_html | size -%}
 {%- else -%}
@@ -282,7 +282,7 @@
       <div class="productitem__image-container">
         <a
                 class="productitem--image-link"
-                href="{{ product.url | within: collection }}"
+                href="{{ product.url }}"
                 tabindex="-1"
                 title="{{ product_title }}"
                 data-product-page-link
