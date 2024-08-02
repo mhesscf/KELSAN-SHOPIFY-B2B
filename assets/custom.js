@@ -337,6 +337,7 @@ jQuery(document).ready(function($){
             var vstep = $('#v' + param).data('increment');
             var erpsku = $('#v' + param).data('erpsku');
             var tier = $('#v' + param).data('tier');
+            var availqty = $('#v' + param).data('available-qty');
             var sku = $('#v' + param + " span").html(); //needed to show sku on checkout
             if($('.var' + param + ".status-area .status-time").html()){
                 var status = $('.var' + param + ".status-area .main-notice").html()+" ("+$('.var' + param + ".status-area .status-time").html()+")";
@@ -348,6 +349,7 @@ jQuery(document).ready(function($){
                 $('input[name="properties[Sku]"]').attr('value', sku);
                 $('input[name="properties[Status]"]').attr('value', status);
                 $('input[name="properties[_tiered_pricing]"]').attr('value', tier);
+                $('input[name="properties[_available_qty]"]').attr('value', availqty);
                 $('#product-quantity-input').data('step', vstep);
                 $('.qtyminus').data('step', vstep);
                 $('.qtyplus').data('step', vstep);
@@ -1069,6 +1071,7 @@ jQuery(document).ready(function($){
                 'properties[_sf_eligible]': '',
                 'properties[Sku]': '',
                 'properties[_tiered_pricing]': '',
+                'properties[_available_qty]': '',
                 'id': '',
                 'quantity': 0
             }
@@ -1122,6 +1125,7 @@ jQuery(document).ready(function($){
                         form_template["properties[Sku]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_vissku');
                         form_template["properties[Status]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_status');
                         form_template["properties[_tiered_pricing]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing');
+                        form_template["properties[_available_qty]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_availqty');
                         form_template.id = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id') + ""
                         form_template.quantity = "1" + ""
 
@@ -1197,6 +1201,7 @@ jQuery(document).ready(function($){
             $("#freq-product-"+thisProductId+" .product-data").attr('data-vissku', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_vissku'));
             $("#freq-product-"+thisProductId+" .product-data").attr('data-status', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_status'));
             $("#freq-product-"+thisProductId+" .product-data").attr('data-erpsku', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_erpsku'));
+            $("#freq-product-"+thisProductId+" .product-data").attr('data-availqty', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_availqty'));
             $("#freq-product-"+thisProductId+" .product-data").attr('data-tieredpricing', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_tieredpricing'));
             $("#freq-product-"+thisProductId+" .product-data").attr('data-price', $("#freq-product-"+thisProductId+" #data-freq-var"+thisVariantId).attr('data-var_price'));
         }
@@ -1384,7 +1389,7 @@ jQuery(document).ready(function($){
                     $('.popup-container').addClass('widepop');
                 }
                 $('.popup-container').removeClass('hidden');
-                $(".pop-grad").removeClass('hidden');
+                $(".pop-grad-head").removeClass('hidden');
                 bndpopCounter = 0;
             }, "500");
         }
@@ -1719,6 +1724,7 @@ function accdropATC(productid){
     var atcName = $(dataid).attr('data-productname');
     var atcStatus = $(dataid).attr('data-var_status');
     var atcERPSku = $(dataid).attr('data-var_erpsku');
+    var atcAvailQty = $(dataid).attr('data-var_availqty');
     var atcType = $(dataid).attr('data-producttype');
     var atcBrand = $(dataid).attr('data-brand');
     var atcTier = $(dataid).attr('data-var_tieredpricing');
@@ -1761,7 +1767,8 @@ function accdropATC(productid){
          'properties[_tiered_pricing]': atcTier,
          'properties[Status]': atcStatus,
          'properties[SKU]': atcSku,
-         'id': atcVarId,
+         'properties[_available_qty]': atcAvailQty,
+         'id': atcVarId,a
          'quantity': 1,
      }
 
