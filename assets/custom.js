@@ -781,6 +781,21 @@ jQuery(document).ready(function($){
     function checkRelSlider(){
         if($('.rel-product-tabbed-area .slick-initialized').length) {
             // console.log('slider found');
+            $(".rel-product-tabbed-area .tabbed-rel-freq").each(function (index) {
+                var itemId = $(this).attr('id');
+
+                // Equalize Box and Title Height
+                var slideritemId = itemId.replace('-slider', '-rel-item');
+
+                //Title Height
+                var highestTitleBox = 0;
+                $('.' + slideritemId + ' .productitem--title', this).each(function () {
+                    if ($(this).height() > highestTitleBox) {
+                        highestTitleBox = $(this).height();
+                    }
+                });
+                $('.' + slideritemId + ' .productitem--title', this).height(highestTitleBox);
+            });
         }else{
             // console.log('slider not found');
             sliderGo();
