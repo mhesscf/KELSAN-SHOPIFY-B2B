@@ -636,6 +636,7 @@
                             data-quickshop-slim
                           {% endunless %}
                           data-erpsku-name="properties[_erp_sku]"
+                          data-availqty-name="properties[_available_qty]"
                           {% if product.metafields.plytix.general_product_type == "Machine" %}
                               data-sfeligible-name="properties[_sf_eligible]"
                               data-sfeligible="true"
@@ -646,7 +647,8 @@
                           data-vissku-name="properties[Sku]"
                           data-status-name="properties[Status]"
                           data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
-                          data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
+                          data-erpSku="{{ selected_or_first_available_variant.metafields.plytix.erp_sku }}"
+                          data-availqty="{{ product.selected_or_first_available_variant.inventory_quantity }}"
                           {% if isSpecial == false %}
                             data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
                           {% endif %}

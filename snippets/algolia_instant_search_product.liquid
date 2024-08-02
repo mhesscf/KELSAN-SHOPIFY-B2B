@@ -523,6 +523,7 @@ ${1 == 1 && html`
     <input type="hidden" name="location" value="Search" />
 {%- endif -%}
     <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
+    <input type="hidden" name="properties[_available_qty]" value="${hit.inventory_quantity}" /> blahblahblah
      ${hit.meta.plytix.general_product_type == "Machine" ? html `<input type="hidden" name="properties[_sf_eligible]" value="true" />` : ``}
      ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `` : html `<input type="hidden" name="properties[_tiered_pricing]" value="${hit.meta.plytix.tiered_pricing}" />`}
      ${hit.sku != "SUPERFREAK" ? html `

@@ -306,6 +306,10 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
           {% endif %}
         {% endif %}
+
+        {%- comment -%}lineitem for available qty at time of cart to pass for email notice if shipments are split{%- endcomment -%}
+        <input type="hidden" name="properties[_available_qty]" value="{{ selected_variant.inventory_quantity }}" />
+
         {% if pstep > 1 %}
           <input type="hidden" name="properties[_product_step]" value="{{ pstep }}" />
         {% endif %}
@@ -338,6 +342,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />
           {% endif %}
         {% endif %}
+
+        {%- comment -%}lineitem for available qty at time of cart to pass for email notice if shipments are split{%- endcomment -%}
+        <input type="hidden" name="properties[_available_qty]" value="{{ selected_variant.inventory_quantity }}" />
 
         {%- comment -%}<input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}" />{%- endcomment -%}
 
