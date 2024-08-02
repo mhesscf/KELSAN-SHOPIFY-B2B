@@ -796,7 +796,7 @@ jQuery(document).ready(function($){
         if(i==5) {
             clearInterval(myfunc);
         }
-    }, 2000);
+    }, 3000);
 
 
     setTimeout(()=>{
