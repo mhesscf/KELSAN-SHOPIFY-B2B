@@ -1768,7 +1768,7 @@ function accdropATC(productid){
          'properties[Status]': atcStatus,
          'properties[SKU]': atcSku,
          'properties[_available_qty]': atcAvailQty,
-         'id': atcVarId,a
+         'id': atcVarId,
          'quantity': 1,
      }
 
