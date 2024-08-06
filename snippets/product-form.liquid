@@ -1069,6 +1069,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                 {% endif %}
                data-step="{{ pstep }}"
                data-tieredPricing=""
+               data-availqty="{{ bundle_product.selected_or_first_available_variant.inventory_quantity }}"
                data-qty="{{ bundle_product_entry_parts[1] }}"
                data-price="{{ bundle_product.price }}"
                data-parentid="{{ bundle_product.id }}"
@@ -1190,6 +1191,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                data-id="{{ free_product.selected_or_first_available_variant.id }}"
                data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
                data-vissku="{{ free_product.selected_or_first_available_variant.sku }}"
+               data-availqty="{{ free_product.selected_or_first_available_variant.inventory_quantity }}"
                data-status="{{ stockStatusFreeNote }}"
                data-tieredPricing="fg"
                data-qty="{{ free_product_entry_parts[1] }}"

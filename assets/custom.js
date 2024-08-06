@@ -1004,6 +1004,7 @@ jQuery(document).ready(function($){
                 'properties[Sku]': '',
                 'properties[_tiered_pricing]': '',
                 'properties[_bundle_product]': bundle,
+                'properties[_available_qty]': '',
                 'id': '',
                 'quantity': 0
             }
@@ -1015,6 +1016,7 @@ jQuery(document).ready(function($){
                 form_template["properties[Sku]"] = $(this).data('vissku')
                 form_template["properties[Status]"] = $(this).data('status')
                 form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
+                form_template["properties[_available_qty]"] = $(this).data('availqty')
                 form_template.id = $(this).data('id') + ""
                 form_template.quantity = $(this).val() + ""
 
