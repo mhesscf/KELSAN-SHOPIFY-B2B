@@ -4284,9 +4284,8 @@ body .mdc-ripple-surface:hover:before {
 
 .site-footer-wrapper {
 	z-index: 500;
-	padding-top: {{ space_x_small | divided_by: 16.0 | append: 'rem' }};
-	padding-bottom: {{ space_large | divided_by: 16.0 | append: 'rem' }};
-	margin-top: {{ space_xx_large | divided_by: 16.0 | append: 'rem' }};
+	padding-top: 15px;
+	padding-bottom: 15px;
 	color: {{ settings.color_footer_text }};
 	background: {{ color_footer_background }};
 }
@@ -4306,11 +4305,25 @@ body .mdc-ripple-surface:hover:before {
 .site-footer-wrapper .rte a {
 	text-decoration: underline;
 }
-@media screen and (min-width: 1024px) {
-	.site-footer-wrapper {
-		padding-top: {{ space_xxx_large | minus: space_small | divided_by: 16.0 | append: 'rem' }};
-		padding-bottom: {{ space_xx_large | divided_by: 16.0 | append: 'rem' }};
-	}
+
+{% comment %}trustpilot areas{% endcomment %}
+.trustpilot-footer-contain{
+	max-width:1400px;
+	padding-left:25px;
+	padding-right:25px;
+	margin:auto;
+}
+
+
+.trustpilot-footer-contain.trustpilot-horizontal{
+	margin:15px auto 30px auto;
+	padding: 20px 10px 15px 10px;
+	border-top: 1px solid #d1dfe2;
+	border-bottom:1px solid #d1dfe2;
+}
+
+.trustpilot-footer-contain.trustpilot-carousel{
+	padding-top:15px;
 }
 
 .site-footer-information {

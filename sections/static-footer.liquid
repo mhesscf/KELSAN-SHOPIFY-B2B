@@ -6,38 +6,52 @@
 
 <footer role="contentinfo" aria-label="Footer">
   <section class="site-footer-wrapper">
-    <div class="site-footer-item icon-bar">
-      <div class="footer-icon-grid">
-        <div class="footer-icon">
-            <i class="fa-light fa-truck-fast"></i>
-          <div class="footer-text">
-            <strong>Flexible Shipping</strong><br/>
-            Live cost calculator
+
+
+
+
+      {%- if shop.permanent_domain contains "cleanfreak" -%}
+        <!-- TrustBox widget - Horizontal -->
+        <div class="trustpilot-footer-contain trustpilot-horizontal">
+          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5406e65db0d04a09e042d5fc" data-businessunit-id="48f26645000064000503cd0d" data-style-height="28px" data-style-width="100%" data-theme="light">
+            <a href="https://www.trustpilot.com/review/www.cleanfreak.com" target="_blank" rel="noopener">Trustpilot</a>
           </div>
         </div>
-        <div class="footer-icon">
-          <i class="fa-light fa-box"></i>
-          <div class="footer-text">
-            <strong>Bundle + Save</strong><br/>
-            Buying in bulk saves<br/> you time and money
+        <!-- End TrustBox widget -->
+      {%- else -%}
+        <div class="site-footer-item icon-bar">
+          <div class="footer-icon-grid">
+            <div class="footer-icon">
+                <i class="fa-light fa-truck-fast"></i>
+              <div class="footer-text">
+                <strong>Flexible Shipping</strong><br/>
+                Live cost calculator
+              </div>
+            </div>
+            <div class="footer-icon">
+              <i class="fa-light fa-box"></i>
+              <div class="footer-text">
+                <strong>Bundle + Save</strong><br/>
+                Buying in bulk saves<br/> you time and money
+              </div>
+            </div>
+            <div class="footer-icon">
+              <i class="fa-light fa-tags"></i>
+              <div class="footer-text">
+                <strong>Amazing Value</strong><br/>
+                We offer daily<br/> rotating sales
+              </div>
+            </div>
+            <div class="footer-icon">
+              <i class="fa-light fa-dollar-circle"></i>
+              <div class="footer-text">
+                <strong>Financing</strong><br/>
+                Multiple payment<br/>methods available
+              </div>
+            </div>
           </div>
         </div>
-        <div class="footer-icon">
-          <i class="fa-light fa-tags"></i>
-          <div class="footer-text">
-            <strong>Amazing Value</strong><br/>
-            We offer daily<br/> rotating sales
-          </div>
-        </div>
-        <div class="footer-icon">
-          <i class="fa-light fa-dollar-circle"></i>
-          <div class="footer-text">
-            <strong>Financing</strong><br/>
-            Multiple payment<br/>methods available
-          </div>
-        </div>
-      </div>
-    </div>
+      {%- endif -%}
     {%- if section.blocks.size -%}
       <div class="site-footer-item">
         <div class="site-footer-blocks column-count-{{ section.blocks.size }}">
