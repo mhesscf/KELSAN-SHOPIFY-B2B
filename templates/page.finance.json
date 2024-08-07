@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -64,7 +73,7 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<div style=\"padding-top:15px;\">\n<div class=\"rich-text-content rte\" data-rte=\"\" style=\"font-size:14px;\">\n            <p>*Please note that orders financed through Approve or Credit Key are a binding contract and cannot be cancelled or altered after the lender has funded CleanFreak.com. There are no returns on orders placed through a financing company and there is no financing offered on any demo equipment listed on our site. Exceptions may be made for extreme circumstances. For questions concerning financing and monthly payments please contact Credit Key at 844-334-3636 or EquipMoney at 800-325-2605.<\/p>\n\t\t\t<p><\/p>\n<div style=\"padding-top:20px;\">**Rates from 0%-36% APR. Payment options through Shop Pay Installments, are subject to an eligibility check and are provided by these lending partners: affirm.com\/lenders. Options depend on your purchase amount, and a down payment may be required. State notices to consumers <a href=\"https:\/\/www.affirm.com\/licenses\">https:\/\/www.affirm.com\/licenses<\/a>.<\/div>\n          <\/div>\n<\/div>"
+        "custom_html": "<div style=\"padding-top:15px;\">\n<div class=\"rich-text-content rte\" data-rte=\"\" style=\"font-size:14px;\">\n            <p>*Please note that orders financed through Approve or Credit Key are a binding contract and cannot be cancelled or altered after the lender has funded CleanFreak.com. There are no returns on orders placed through a financing company and there is no financing offered on any demo equipment listed on our site. Exceptions may be made for extreme circumstances. For questions concerning financing and monthly payments please contact Credit Key at 844-334-3636 or Approve at 800-273-8404.<\/p>\n\t\t\t<p><\/p>\n<div style=\"padding-top:20px;\">**Rates from 0%-36% APR. Payment options through Shop Pay Installments, are subject to an eligibility check and are provided by these lending partners: affirm.com\/lenders. Options depend on your purchase amount, and a down payment may be required. State notices to consumers <a href=\"https:\/\/www.affirm.com\/licenses\">https:\/\/www.affirm.com\/licenses<\/a>.<\/div>\n          <\/div>\n<\/div>"
       }
     }
   },
