@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "fe76ad0d-0220-4f99-b07f-392fc739c499": {
@@ -350,6 +359,11 @@
       "settings": {
         "block-title": "Hard Floor & Carpet Machine Guides"
       }
+    },
+    "trustpilot_review_carousel_RtUjNW": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -360,6 +374,7 @@
     "main",
     "static-recently-viewed",
     "7f5d1566-bccb-480a-80ac-d26728af74b6",
-    "8facf242-c15c-4bb5-9b7b-fa1ad5f4183a"
+    "8facf242-c15c-4bb5-9b7b-fa1ad5f4183a",
+    "trustpilot_review_carousel_RtUjNW"
   ]
 }
