@@ -318,6 +318,11 @@
       "settings": {
         "block-title": "Featured Brands"
       }
+    },
+    "trustpilot_review_carousel_49kKAL": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -328,6 +333,7 @@
     "9f7c5adc-148e-458c-b440-7d7ed115c2ac",
     "01e4e831-cb79-4467-a412-426bcdd4ee9b",
     "16636174067db7bd8c",
-    "81e0dbef-c482-4f47-be1e-2794fe97b946"
+    "81e0dbef-c482-4f47-be1e-2794fe97b946",
+    "trustpilot_review_carousel_49kKAL"
   ]
 }
