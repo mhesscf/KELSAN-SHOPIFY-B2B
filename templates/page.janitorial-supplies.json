@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "d40a038f-aa25-4373-a2b7-118f38976c64": {
@@ -410,6 +419,11 @@
       "settings": {
         "block-title": "Resources"
       }
+    },
+    "trustpilot_review_carousel_aTEyJL": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -421,6 +435,7 @@
     "37e3cf01-87c6-4f24-8bbf-0f2f661fba61",
     "16636174067db7bd8c",
     "81b3f8ab-4122-466d-b45b-2375f44bc383",
-    "51948144-8659-4dea-891d-43d14912cccb"
+    "51948144-8659-4dea-891d-43d14912cccb",
+    "trustpilot_review_carousel_aTEyJL"
   ]
 }
