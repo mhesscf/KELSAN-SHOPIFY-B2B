@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "26570bfd-92cc-439b-8ca5-07248d87232c": {
@@ -390,6 +399,11 @@
       "settings": {
         "block-title": "Vacuum Resources"
       }
+    },
+    "trustpilot_review_carousel_fpwRXJ": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -401,6 +415,7 @@
     "f6d5cd4e-dfb4-4e3d-8b1e-c70586c0424d",
     "16636174067db7bd8c",
     "ebebc1ed-3730-44c4-84b6-c529038f0c2c",
-    "6ce44a70-47c6-41ae-8f7d-053db59c6d3b"
+    "6ce44a70-47c6-41ae-8f7d-053db59c6d3b",
+    "trustpilot_review_carousel_fpwRXJ"
   ]
 }
