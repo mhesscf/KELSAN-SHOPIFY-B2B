@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "7796c4bc-8b20-4e80-bf34-71095753a2cd": {
@@ -349,6 +358,11 @@
       "settings": {
         "block-title": "Auto Detailing Resources"
       }
+    },
+    "trustpilot_review_carousel_JmgPhi": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -360,6 +374,7 @@
     "728646d7-5b75-4775-a83d-17457ccf7f8f",
     "16636174067db7bd8c",
     "5428e26b-99f7-469c-9b24-a05003f836a2",
-    "6fc05447-9a5d-4ad4-8974-a0bae21241f7"
+    "6fc05447-9a5d-4ad4-8974-a0bae21241f7",
+    "trustpilot_review_carousel_JmgPhi"
   ]
 }
