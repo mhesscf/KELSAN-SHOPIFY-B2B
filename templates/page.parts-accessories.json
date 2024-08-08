@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "a49feb4a-a340-4a6f-aee3-59d5dbe12d6f": {
@@ -439,6 +448,11 @@
         "title": "CleanFreak.com uses several different avenues to help you repair your cleaning & janitorial equipment.",
         "custom_html": "<p><strong>Qualified Technicians<\/strong><br> You can reach our qualified technicians for service, repairs and troubleshooting of the equipment you purchased from us at <strong>888-722-5508<\/strong>. Please give them a call when you are near the machine so they can best diagnose the problem at the time of the call.<br><br> <strong>Smaller Equipment Repair:<\/strong><br> For small UPS equipment, we ask that you ship the machine back to us for repair. Our qualified technicians will diagnose, repair, and thoroughly test your machine before it's return, to assure that your problem has been taken care of. Unfortunately no shipping fees are covered under warranty.<br><br> <strong>Larger Equipment Service:<\/strong><br> For larger equipment, we will originally try and diagnose the problem through e-mail, fax, or over the phone, whichever is most convenient for you at the time. If a technician is needed to repair the machine, we will first see if we have a service center in your area. If there is no technician available, we will pick the machine up from you, and have one of our qualified in-house technicians repair the defective unit. (We ask that you keep all boxes, pallets, and shipping materials for 30 days, or until the machine is fully tested. Please keep all auto scrubber pallets for the life of the machine.) If the machine is covered under warranty, the machine will be shipped back to you, free of charge. If the repair is not covered under warranty, you will be responsible for the cost of the return of the machine, as well as labor and replacement parts. Please give us a call at <strong>888-722-5508<\/strong> for the best course of repair for your individual machine. Unfortunately, travel costs are not covered by warranty.<br><br> <strong>Replacement Parts:<\/strong><br> We can supply all parts for all the machines we carry. We have a unique relationship with all manufacturers to try and service, you, the end customer, in the best way possible. You can call us directly for parts diagrams, schematics, and general diagnosing problems.<br><br> <strong>Warranty Parts:<\/strong><br> Parts that have failed during the active warranty period must first be inspected before a replacement can be sent out at no charge. If the replacement part is needed immediately, it must purchased up front. The defective part must then be returned for inspection and approval of warranty conditions. If the defective part is accepted for warranty, the cost of the part will then be credited towards your account.<\/p>"
       }
+    },
+    "trustpilot_review_carousel_KLDL6n": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -450,6 +464,7 @@
     "16636174067db7bd8c",
     "3c5ea8d0-62ef-4edc-a1a9-84747fac77b7",
     "70c56ff7-2515-4315-8dd5-032f23837090",
-    "6d43bc46-6824-4a4e-b59b-80459baffda4"
+    "6d43bc46-6824-4a4e-b59b-80459baffda4",
+    "trustpilot_review_carousel_KLDL6n"
   ]
 }
