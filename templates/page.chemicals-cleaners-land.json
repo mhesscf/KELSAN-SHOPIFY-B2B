@@ -383,6 +383,11 @@
       "settings": {
         "block-title": "Chemicals & Cleaners Resources"
       }
+    },
+    "trustpilot_review_carousel_4XHGVg": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -394,6 +399,7 @@
     "e3b28af7-9fc1-409f-8455-e9e7243322bd",
     "16636174067db7bd8c",
     "9f6314a2-b098-4c35-9aa0-8cd87d6e5e67",
-    "15b9453b-5680-4c17-9612-a9a1b330bfa6"
+    "15b9453b-5680-4c17-9612-a9a1b330bfa6",
+    "trustpilot_review_carousel_4XHGVg"
   ]
 }
