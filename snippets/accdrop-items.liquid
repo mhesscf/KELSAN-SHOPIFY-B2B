@@ -101,6 +101,7 @@
         <a
                 class="productitem--image-link"
                 href="{{ product.url | within: collection }}"
+                target="_blank"
                 tabindex="-1"
                 title="{{ product_title }}"
                 data-product-page-link
@@ -147,7 +148,7 @@
       <div class="productitem__info-container">
         <div class="productitem--info">
            <h2 class="productitem--title">
-            <a href="{{ product_link }}" data-product-page-link onclick="{{ onclick_event }}">
+            <a href="{{ product_link }}" target="_blank" data-product-page-link onclick="{{ onclick_event }}">
               {{ product_title }}
             </a>
           </h2>
