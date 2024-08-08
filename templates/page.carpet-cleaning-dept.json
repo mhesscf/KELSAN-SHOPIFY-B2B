@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "29f88aed-5198-4ab8-956f-af2a43a1021d": {
@@ -382,6 +391,11 @@
       "settings": {
         "block-title": "Carpet Cleaning Resources"
       }
+    },
+    "trustpilot_review_carousel_FkyXJj": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -392,6 +406,7 @@
     "main",
     "static-recently-viewed",
     "0a674ccc-9523-4a66-9ab9-51e056ddd146",
-    "5011ca16-9cd0-41ba-adc5-fc953d96644c"
+    "5011ca16-9cd0-41ba-adc5-fc953d96644c",
+    "trustpilot_review_carousel_FkyXJj"
   ]
 }
