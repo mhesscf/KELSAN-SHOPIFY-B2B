@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "9d621745-33ec-4c85-a3f2-364c16055e46": {
@@ -301,6 +310,11 @@
       "settings": {
         "block-title": "Flood Remediation Resources"
       }
+    },
+    "trustpilot_review_carousel_nFqeaC": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -311,6 +325,7 @@
     "d4cd80ed-65b8-4c09-831d-ae5f95fd15ce",
     "16636174067db7bd8c",
     "08ded979-5db1-43ef-a4de-5ee9e726a941",
-    "6597d2a2-61d2-40ea-9485-10d3d400c602"
+    "6597d2a2-61d2-40ea-9485-10d3d400c602",
+    "trustpilot_review_carousel_nFqeaC"
   ]
 }
