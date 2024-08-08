@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "b55c51b3-14cb-4444-8e15-fd2a0b68b42d": {
@@ -277,6 +286,11 @@
       "settings": {
         "block-title": "Featured Brands"
       }
+    },
+    "trustpilot_review_carousel_wz99UE": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -287,6 +301,7 @@
     "ebeb35e9-b732-4c85-a747-a11f18a18b24",
     "4e8b020c-a319-462d-93c9-92f71f0e0d36",
     "16636174067db7bd8c",
-    "0ba1e376-57cc-45c3-88a0-31559a7a08d1"
+    "0ba1e376-57cc-45c3-88a0-31559a7a08d1",
+    "trustpilot_review_carousel_wz99UE"
   ]
 }
