@@ -1415,12 +1415,18 @@ jQuery(document).ready(function($){
     // Cart upsell popup
     $('.cart-upsell-btn').on('click', function(e){
         const handle = $(this).data('handle');
-        const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=itemcard`;
+        const lineid = $(this).data('lineid');
+
+        const linetitle = $('.cart-item[data-cartitem-id="'+lineid+'"] .cart-item--content-title').html();
+        const linepic = $('.cart-item[data-cartitem-id="'+lineid+'"] .cart-item--image-wrapper').html();
+        const orglinehtml = '<div class="org-lineitem"><div class="org-image">'+linepic+'</div><div class="org-title"><h2>'+linetitle+'</h2></div></div>';
+        // const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=itemcard`;
+        const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=accdrop`;
         $.get(fetchUrl).then(response => {
             if (response) {
                 if(response.includes("data-product-quickshop-url")){
-                    $('.popup-container .content').html(response);
-                    $('.popup-container').addClass('widepop');
+                    $('.popup-container .content').html(orglinehtml+response);
+                    $('.popup-container').addClass('rightpop');
                 }else{
                     $('.popup-container .content').html('<div class="noproducts">No accessories found for this product.</div>');
                 }
@@ -1723,6 +1729,10 @@ function accdropSelect(selectObject,productid){
 
 
 function accdropATC(productid){
+
+    if (window.location.pathname.includes("/cart")){
+        $(".close-pop").attr("onclick","location.reload()");
+    }
     var productelementid = "#accdrop-product-"+productid;
     var dataid = $(productelementid+" .accdrop-var-variables-current .data-accdrop-var");
     var thisBtn = $(productelementid+" .accdropAtcBtn")
