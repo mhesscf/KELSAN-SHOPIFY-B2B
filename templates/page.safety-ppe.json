@@ -398,6 +398,11 @@
       "settings": {
         "block-title": "Safety & PPE Resources"
       }
+    },
+    "trustpilot_review_carousel_F3QnCN": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -408,6 +413,7 @@
     "6949a966-cdd6-403a-9940-3eeaa6f69de6",
     "16636174067db7bd8c",
     "3af9e454-1529-4cbc-9987-a7a5d51dfb38",
-    "c685a816-7e1f-4488-bbb4-725466dba757"
+    "c685a816-7e1f-4488-bbb4-725466dba757",
+    "trustpilot_review_carousel_F3QnCN"
   ]
 }
