@@ -474,6 +474,11 @@
       "settings": {
         "block-title": "Resources"
       }
+    },
+    "trustpilot_review_carousel_KJ9rGm": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -487,6 +492,7 @@
     "6cc15e43-cf84-4807-a0fc-063958c2e890",
     "16636174067db7bd8c",
     "864df9a0-435e-4cc2-9657-e4ee6d46a626",
-    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634"
+    "aa50a5ae-5cfa-4ccf-b529-de813ef5d634",
+    "trustpilot_review_carousel_KJ9rGm"
   ]
 }
