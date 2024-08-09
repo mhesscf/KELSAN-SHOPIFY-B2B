@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "28aefd69-01f3-43a8-9f1e-85703b47122f": {
@@ -283,6 +292,11 @@
       "settings": {
         "block-title": "Waste Management Resources"
       }
+    },
+    "trustpilot_review_carousel_PQwz84": {
+      "type": "trustpilot-review-carousel",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -293,6 +307,7 @@
     "92679af6-0bed-48d0-9d35-8a2a3fe116c9",
     "16636174067db7bd8c",
     "15a6d254-d39a-4285-b83a-a4e2f35bb7a1",
-    "348ba469-70f4-4e97-b0c2-e3133147f4e6"
+    "348ba469-70f4-4e97-b0c2-e3133147f4e6",
+    "trustpilot_review_carousel_PQwz84"
   ]
 }
