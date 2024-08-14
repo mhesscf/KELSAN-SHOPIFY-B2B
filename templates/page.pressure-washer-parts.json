@@ -75,8 +75,8 @@
           "type": "categoryhead",
           "settings": {
             "cat_image": "shopify:\/\/shop_images\/pressure-washer-hoses-and-reels.jpg",
-            "cat_title": "Pressure Washer Hoses & Hose Reels",
-            "cat_text": "Shop a selection of lengths of  pressure washer hoses and hose reels to store your hoses on. Choose from high pressure hoses or softwash hoses."
+            "cat_title": "Pressure Washer Parts & Accessories",
+            "cat_text": "Explore our extensive range of pressure washer parts and accessories, designed to enhance the performance and longevity of your equipment. From replacement nozzles to durable hoses, we have everything you need to tackle any cleaning job with ease."
           }
         },
         "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf": {
@@ -88,46 +88,13 @@
             "link": "\/products\/pressure-mower-with-hose-reel",
             "coupon-code": ""
           }
-        },
-        "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/got-a-big-job-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/got-a-big-job-banner-800x427.jpg",
-            "link": "",
-            "coupon-code": ""
-          }
-        },
-        "1bbb33c2-2444-465d-8285-f1a6681bee8b": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/hot-water-press-washer-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/hot-water-press-washer-banner-800x427.jpg",
-            "link": "\/products\/cleanfreak-clh-3530g-hot-water-pressure-washer",
-            "coupon-code": ""
-          }
-        },
-        "55c96410-9583-4bcd-9414-2823d5265d9f": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/pressure-mower-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/pressure-mower-banner-800x427.jpg",
-            "link": "\/products\/pressure-mower-with-hose-reel",
-            "coupon-code": ""
-          }
         }
       },
       "block_order": [
         "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-1",
         "template--16671985533140__b7587dfe-01d4-43e5-bf53-5e0c58f9cabc-slide-2",
         "942a18a7-53dd-44b7-b13d-69ed6b63aa8e",
-        "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf",
-        "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca",
-        "1bbb33c2-2444-465d-8285-f1a6681bee8b",
-        "55c96410-9583-4bcd-9414-2823d5265d9f"
+        "0f2aec02-5dfc-4d71-8fef-8dba8fc709cf"
       ],
       "settings": {
         "enable_autoplay": true,
