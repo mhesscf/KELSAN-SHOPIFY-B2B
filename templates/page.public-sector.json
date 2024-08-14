@@ -61,11 +61,125 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "dept_category_area_TGxnRT": {
+      "type": "dept-category-area",
+      "blocks": {
+        "categorylink_UnBr4J": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Net 30 Payment Terms",
+            "url": ""
+          }
+        },
+        "categorylink_EFyMTM": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Tax Exempt Purchasing",
+            "url": ""
+          }
+        },
+        "categorylink_aBiegW": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Exclusive Pricing",
+            "url": ""
+          }
+        },
+        "categorylink_TwaCAg": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Dedicated Sales Rep",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "categorylink_UnBr4J",
+        "categorylink_EFyMTM",
+        "categorylink_aBiegW",
+        "categorylink_TwaCAg"
+      ],
+      "settings": {
+        "block-title": "What We Offer"
+      }
+    },
+    "dept_resource_area_weUqUq": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "resourcelink_YGH6da": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Government Agencies",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_gQAtmU": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Education",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_jWMGt8": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Military",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_qbDeqP": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Healthcare",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_AezEDj": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Emergency Services",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_4t9JEF": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Building Service Contractors",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "resourcelink_YGH6da",
+        "resourcelink_gQAtmU",
+        "resourcelink_jWMGt8",
+        "resourcelink_qbDeqP",
+        "resourcelink_AezEDj",
+        "resourcelink_4t9JEF"
+      ],
+      "settings": {
+        "block-title": "Resources"
+      }
     }
   },
   "order": [
     "a475181a-3079-4a36-9edf-37785d0fdb22",
     "dynamic_slideshow_DLJTYP",
-    "main"
+    "main",
+    "dept_category_area_TGxnRT",
+    "dept_resource_area_weUqUq"
   ]
 }
