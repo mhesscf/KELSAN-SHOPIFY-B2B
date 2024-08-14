@@ -74,7 +74,7 @@
         "942a18a7-53dd-44b7-b13d-69ed6b63aa8e": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/pressure-washer-hoses-and-reels.jpg",
+            "cat_image": "shopify:\/\/shop_images\/pressure-washer-parts-dept.jpg",
             "cat_title": "Pressure Washer Parts & Accessories",
             "cat_text": "Explore our extensive range of pressure washer parts and accessories, designed to enhance the performance and longevity of your equipment. From replacement nozzles to durable hoses, we have everything you need to tackle any cleaning job with ease."
           }
@@ -211,34 +211,34 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/pressure-washer-hose-reels.jpg",
-            "title": "Hose Reels",
-            "url": "\/collections\/hose-reels"
-          }
-        },
-        "6216137a-2b4c-43a5-821c-c28e0c093f9c": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washer-hoses-dept.jpg",
-            "title": "Pressure Washer Hoses",
-            "url": "\/collections\/pressure-washer-hoses"
+            "title": "Components",
+            "url": "\/collections\/pressure-washer-components"
           }
         },
         "edbfab3c-56d9-4148-91aa-3761d52fee9e": {
           "type": "categorylink",
           "settings": {
             "image": "shopify:\/\/shop_images\/pressure-washer-softwash-hoses-dept.jpg",
-            "title": "Softwash Hoses",
-            "url": "\/collections\/softwash-hoses"
+            "title": "Quick Connects & Fittings",
+            "url": "\/collections\/pressure-washer-quick-connects-fittings"
+          }
+        },
+        "6216137a-2b4c-43a5-821c-c28e0c093f9c": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pressure-washer-hoses-dept.jpg",
+            "title": "Spray Nozzles & Tips",
+            "url": "\/collections\/pressure-washer-spray-nozzles-tips"
           }
         }
       },
       "block_order": [
         "45d203af-bc0c-4595-ab4a-70accfc8c1a0",
-        "6216137a-2b4c-43a5-821c-c28e0c093f9c",
-        "edbfab3c-56d9-4148-91aa-3761d52fee9e"
+        "edbfab3c-56d9-4148-91aa-3761d52fee9e",
+        "6216137a-2b4c-43a5-821c-c28e0c093f9c"
       ],
       "settings": {
-        "block-title": "Pressure Washers Hoses and Hose Reels by Type"
+        "block-title": "Pressure Washers Parts & Accessories by Type"
       }
     },
     "6cc15e43-cf84-4807-a0fc-063958c2e890": {
