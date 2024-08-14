@@ -82,7 +82,7 @@
                                 and button_link != blank
                         -%}
                             <a
-                                    class="{{ base_name }}__button"
+                                    class="{{ base_name }}__button main-default-button"
                                     href="{{ button_link }}"
                             >
                                 {{ button_label }}
@@ -97,25 +97,11 @@
 {% comment %}Inject @pixelunion/pxs-image-with-text/image-with-text end{% endcomment %}
 
 {% style %}
-    .image-gradient-section--wrapper .image-gradient-section__button{
-    color: #fff;
+    .image-gradient-section--wrapper .main-default-button{
     display: inline-block;
-    text-decoration: none;
-    background:  {{ settings.color_button_background }};
-    text-transform: uppercase;
-    transition: all 0.4s ease-in-out;
-    padding: 20px 10px;
-    font-size: 17px;
-    line-height: 1;
-    border-radius: 15px;
-    transition: all 0.4s ease-in-out;
-    text-align: center;
     min-width: 200px;
-    font-weight: 600;
     }
-    .image-gradient-section--wrapper .image-gradient-section__button:hover{
-    background:  {{ settings.color_button_hover }};
-    }
+
     .image-gradient-section--wrapper.{{ section.id }}{
     background-size: contain;
     padding-top: 85px;
@@ -261,11 +247,6 @@
         --layout-container-gutter: 15px;
         padding-right: 15px;
         padding-left: 15px;
-        }
-        .image-gradient-section__button;
-        border-radius: 15px;
-        padding: 15px 30px;
-        font-size: 17px;
         }
     }
     @media (max-width: 720px){

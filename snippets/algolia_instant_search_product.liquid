@@ -536,15 +536,15 @@ ${1 == 1 && html`
 
     ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.meta.plytix.inventory_manage_for_algolia,hit.inventory_quantity,hit.collections,hit.meta.plytix.package_products,hit.inventory_policy) ? html`
         ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing) == "addToCart"  ? html`
-            <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}"><i class="fa-regular fa-cart-shopping"></i> ${ algolia.translations.addToCart }</button>
+            <button class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}"><span class="atc-plus">+</span> ${ algolia.translations.addToCart }</button>
         `:html`
-            <button class="ais-hit--cart-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" type="button" disabled=""><span class="atc-button--text">
+            <button class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" type="button" disabled=""><span class="atc-button--text">
                 View Product <i class="fa-sharp fa-solid fa-caret-right"></i>
             </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
         `}
         <div class="approve-contain-collection" style="clear:both"></div>
       `: html`
-      <button class="ais-hit--cart-button ais-hit--cart-button__disabled productitem--action-trigger productitem--action-atc button-secondary disabled soldout" type="button" disabled=""><span class="atc-button--text">
+      <button class="ais-hit--cart-button ais-hit--cart-button__disabled main-atc-button productitem--action-trigger productitem--action-atc button-secondary disabled soldout" type="button" disabled=""><span class="atc-button--text">
             View Product
       </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
     `}
