@@ -220,7 +220,7 @@
                                                 <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
                                                 {% comment %}<input class="add-to-cart-btn" type="submit" value="ADD TO CART"{% endcomment %}
                                                        {% comment %}class="btn"/>{% endcomment %}
-                                                <button class="add-to-cart-btn"
+                                                <button class="add-to-cart-btn main-atc-button thinbtn"
                                                         data-ptitle="{{ product1-title | escape }}"
                                                         data-pid="{{ all_products[pid].variants.first.id  }}"
                                                         data-pprice="0.00"
@@ -229,11 +229,11 @@
                                                         data-pvtitle="{{ all_products[pid].variants.first.title | escape }}"
                                                         data-psku="{{ all_products[pid].variants.first.sku }}"
                                                         type="submit" value="ADD TO CART"
-                                                        class="btn" ><i class="fa-regular fa-cart-shopping"></i> ADD TO CART</button>
+                                                        class="btn" ><span class="atc-plus">+</span> Add to cart</button>
                                             </form>
                                              <div class="p-price">${{ price | money_without_currency }} Value</div>
                                          {% else %}
-                                             <button class="add-to-cart-btn" style="background-color:dimgray" value="Sold Out" class="btn" >SOLD OUT</button>
+                                             <button class="add-to-cart-btn main-atc-button thinbtn" style="border-color:dimgray; background-color:dimgray" value="Sold Out" class="btn" >Sold Out</button>
                                          {% endif %}
                                     </div>
                                 </div>

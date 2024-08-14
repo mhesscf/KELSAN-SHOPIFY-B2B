@@ -223,7 +223,7 @@
           {% endfor %}
           {% if hasitems == true %}
             {% if item.product.metafields.plytix.general_product_type == "Machine" %}
-              <div data-prod="{{ item.product.id }}" data-lineid="{{ item.id }}" data-handle="{{ item.product.handle }}" class="cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0" ><span>+</span> Accessories</div>
+              <div data-prod="{{ item.product.id }}" data-lineid="{{ item.id }}" data-handle="{{ item.product.handle }}" class="cart-upsell-btn main-atc-button outlinebtn thinbtn productitem--action-trigger productitem--action-atc" tabindex="0" ><span>+</span> Accessories</div>
             {% endif %}
           {% endif %}
        {% endif %}
@@ -269,7 +269,7 @@
             <tr>
               <td class="sf-price">$99.99</td>
               <td class="sf-details-text">Get peace of mind with virtual technical assistance & save on future purchases. Renews annually. <span class="sf-info-pop" onclick="sf_info_pop()" >Learn more <i class="fa-solid fa-arrow-right"></i></span></td>
-              <td class="sf-atc"><div onclick="sf_atc(this,'cart',{{ sf_plan }});" data-at="{{ sf_item_id }}" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-orange-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
+              <td class="sf-atc"><div onclick="sf_atc(this,'cart',{{ sf_plan }});" data-at="{{ sf_item_id }}" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn main-atc-button thinbtn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
               </td>
             </tr>
           </table>

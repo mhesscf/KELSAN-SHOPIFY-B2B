@@ -897,7 +897,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
 
         {% if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" %}
-          <button class=" product-form--atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
+          <button class=" product-form--atc-button main-atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
                   id="p-atc"
                   type="submit"
                   {% if selected_variant and selected_variant.available == false %}
@@ -910,7 +910,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           >
 
             <span class="atc-button--text">
-              <i class="fa-regular fa-cart-shopping"></i>
+              {% comment %}<i class="fa-regular fa-cart-shopping"></i>{% endcomment %}
+              <span class="atc-plus">+</span>
               {% unless selected_variant and selected_variant.available == false %}
                 {% if product.template_suffix contains 'pre-order' %}
                   {{ 'product.buttons.pre_order' | t }}
@@ -1201,16 +1202,17 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     </div>
     <div class="product-form--atc">
       <div class="cart-buttons">
-        <button class="product-form--atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
+        <button class="product-form--atc-button main-atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
                 <span class="atc-button--text">
-                  <i class="fa-regular fa-cart-shopping"></i>
+                  {% comment %}<i class="fa-regular fa-cart-shopping"></i>{% endcomment %}
+                  <span class="atc-plus">+</span>
                   {{ 'product.buttons.add_to_cart' | t }}
                 </span>
           <span class="atc-button--icon">
                   {%- render 'icon-spinner' -%}
                 </span>
         </button>
-        <button class="product-form--finance-atc-button" style="display:none;"></button>
+        <button class="product-form--finance-atc-button main-atc-button" style="display:none;"></button>
       </div>
     </div>
     {% if pdiscontinued == false %}
