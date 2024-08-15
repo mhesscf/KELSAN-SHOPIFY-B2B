@@ -19,10 +19,20 @@
             "cat_title": "Wet Dry Vacuums",
             "cat_text": "Shop a wide range of wet dry vacuums including auto discharge vacs, shop vacs, and tank vacs."
           }
+        },
+        "banner_8kenXN": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify:\/\/shop_images\/wet-dry-vac-bogo-promo-homepage-banner-desktop.jpg",
+            "banner-sm": "shopify:\/\/shop_images\/wet-dry-vac-bogo-promo-homepage-banner-mobile.jpg",
+            "link": "\/products\/19-gallon-wet-dry-vac-with-front-mount-squeegee",
+            "coupon-code": ""
+          }
         }
       },
       "block_order": [
-        "12b5e135-5ff0-4e2c-a065-173260b50108"
+        "12b5e135-5ff0-4e2c-a065-173260b50108",
+        "banner_8kenXN"
       ],
       "settings": {
         "enable_autoplay": true,
