@@ -52,6 +52,13 @@
       context: 'footer',
       logo: block.settings.logo
     %}
+
+   {% comment %}Equalweb Accessibility button override{% endcomment %}
+
+    <div aria-label="" aria-pressed="false" role="button" tabindex="0" id="INDmenu-btn2" class="main-atc-button thinbtn outlinebtn" tools="" onclick="window.interdeal.a11y.openMenu()"><i class="fa-regular fa-universal-access"></i> Accessibility</div>
+
+
+
   {%- elsif block.type == 'custom-liquid' -%}
     {{ block.settings.custom_liquid }}
   {%- endif -%}
