@@ -827,6 +827,10 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
           {%- endif -%}
       {%- endfor -%}
+
+
+      {% comment %}Removing this for now. may add back later{% endcomment %}
+      {% comment %}
       <div id="stock-backorder-notice" style="display:none"></div>
       <script>
         $(document).ready(function() {
@@ -878,6 +882,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           }, 200)
         }
       </script>
+{% endcomment %}
 
 {%- comment -%}end of inventory check for qty notice{%- endcomment -%}
 

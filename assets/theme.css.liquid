@@ -4911,6 +4911,51 @@ body .mdc-ripple-surface:hover:before {
 	margin-left: 0;
 }
 
+.cart-error-link{
+	text-decoration: none;
+	color: {{ settings.color_text }};
+}
+.cart-warnings-lineitem,
+.cart-warnings .cart-warning-item{
+	border:1px solid #ebbc4e;
+	display:flex;
+	border-radius:10px;
+	overflow:hidden;
+}
+
+.cart-warnings-lineitem .icon-area,
+.cart-warnings .cart-warning-item .icon-area{
+	background-color: #ebbc4e;
+	color:white;
+	text-align:center;
+	padding:10px;
+}
+.cart-warnings .cart-warning-item .text-area {
+	align-self: center;
+	padding-top:2px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:14px;
+}
+.cart-warnings .cart-warning-item{
+	margin-top:5px;
+}
+.cart-warnings-lineitem{
+	max-width:460px;
+	margin-top:5px;
+}
+.cart-warnings-lineitem .icon-area{
+	padding:2px 7px 1px 7px;
+	font-size:12px;
+}
+.cart-warnings-lineitem .text-area {
+	align-self: center;
+	padding-top:1px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:12px;
+}
+
 @media screen and (min-width: 860px) {
 	.cartitems--container.has-sidebar {
 		display: flex;
