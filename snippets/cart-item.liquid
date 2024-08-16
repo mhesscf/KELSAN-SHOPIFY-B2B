@@ -53,6 +53,7 @@
 
 <li
         class="cart-item {% if sf_addon == 0 %}sf-cart-addon{% elsif sf_addon > 0 %}has-sf-cart-addon{% endif %} {% if product_bundle != '' %}{{ product_bundle | escape  }}{% endif %} {% if pstep != '' %}stepValItem{% endif %} {% if fgbogo-rule %}{{ fgbogo-rule }}{% endif %}"
+        id="lineitem-{{ item.variant_id }}"
         data-cartitem
         data-cartitem-id="{{ item.variant_id }}"
         data-cartitem-key="{{ item.key }}"

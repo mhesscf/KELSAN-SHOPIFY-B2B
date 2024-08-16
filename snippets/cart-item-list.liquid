@@ -139,14 +139,19 @@
             $('.cart-item[data-cartitem-id="'+getStockQtyId+'"] input.form-field-input').each(function(){
                 var getQtyOnLine = $(this).val();
                 totalInCart = parseInt(totalInCart) + parseInt(getQtyOnLine) ;
-                console.log("line:"+getStockQtyId+"/"+getQtyOnLine+'/'+totalInCart);
+                // console.log("line:"+getStockQtyId+"/"+getQtyOnLine+'/'+totalInCart);
             });
             console.log("total:"+getStockQtyId+"/"+getQtyAvailable+"/"+totalInCart);
             if(parseInt(getQtyAvailable) < parseInt(totalInCart)){
                 // alert(getStockQtyId);
-                $(this).html("<div style='background-color:#fce2e2; line-height:15px; width:74%; font-size:13px; padding:5px 10px;'><span style='color:#f05d5d'>This item has limited stock. Your order may be split into multiple shipments.</span></div>").show();
+                var getlineid = "#lineitem-"+getStockQtyId;
+                var getSku = $(getlineid+" .cart-item--sku span").text();
+                $(".cart-warnings").append("<a class='cart-error-link' href='"+getlineid+"'><div class='cart-warning-item'><div class='icon-area'><i class='fa-solid fa-triangle-exclamation'></i></div><div class='text-area'>We are sorry. The quantity requested for " + getSku + " exceeds our current stock. We will ship out what we have available ASAP, and the remainder when it is back in stock.</div></div><a>").show();
+
+                $(this).html("<div class='cart-warnings-lineitem'><div class='icon-area'><i class='fa-solid fa-triangle-exclamation'></i></div><div class='text-area'>This item has limited stock. Your order may be split into multiple shipments.</div></div>").show();
+
+
             }
-            console.log('------------------')
         });
     }, "1000");
 
