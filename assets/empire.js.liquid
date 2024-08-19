@@ -28986,220 +28986,228 @@ PERFORMANCE OF THIS SOFTWARE.
                     data: jquery_default().param(this.formData),
                     dataType: 'json'
                 }).done(response => {
-                    this.itemId = response.id;
+                    if (typeof response.id  === 'undefined'){
+                        //added this if response doesn't come back populated which kills the dropdown cart. Only seems to happen when a second of the same item is added from a different area.
 
-                    if (response.image) {
-                        const imageUrl = this.Images.getSizedImageUrl(response.image, '200x');
-                        this.Images.loadImage(imageUrl);
-                        const productImage = flyOut.querySelector('[data-atc-banner-product-image]');
-                        productImage.innerHTML = `<img src="${imageUrl}" alt="${response.product_title}">`;
-                    }
+                        console.log("undefined!");
+                        window.location.href = "/cart";
+                    }else {
+                        this.itemId = response.id;
 
-                    const productTitle = flyOut.querySelector('[data-atc-banner-product-title]');
-                    productTitle.innerHTML = response.product_title;
-
-                    /* check for superfreak: if _sf_eligible lineitem attribute is true */
-                    const productSF = flyOut.querySelector('[data-atc-sf-banner]');
-                    if (productSF){
-                        productSF.style.display = "none";
-                        if(response.properties['_sf_eligible']) {
-                            const SFbtn = flyOut.querySelector('.sf-atc-btn');
-                            SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
-                            SFbtn.setAttribute("data-plan-item-handle", response.handle);
-                            SFbtn.setAttribute("data-plan-qty", quantity);
-                            productSF.style.display = "block";
+                        if (response.image) {
+                            const imageUrl = this.Images.getSizedImageUrl(response.image, '200x');
+                            this.Images.loadImage(imageUrl);
+                            const productImage = flyOut.querySelector('[data-atc-banner-product-image]');
+                            productImage.innerHTML = `<img src="${imageUrl}" alt="${response.product_title}">`;
                         }
-                    }
 
-                    const productAcc = flyOut.querySelector('[data-dropaccessories]');
-                    if (productAcc){
-                        productAcc.style.display = "none";
+                        const productTitle = flyOut.querySelector('[data-atc-banner-product-title]');
+                        productTitle.innerHTML = response.product_title;
 
-                        const placeholder = flyOut.querySelector('[data-prodacc-placeholder]');
+                        /* check for superfreak: if _sf_eligible lineitem attribute is true */
+                        const productSF = flyOut.querySelector('[data-atc-sf-banner]');
+                        if (productSF) {
+                            productSF.style.display = "none";
+                            if (response.properties && response.properties['_sf_eligible']) {
+                                const SFbtn = flyOut.querySelector('.sf-atc-btn');
+                                SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
+                                SFbtn.setAttribute("data-plan-item-handle", response.handle);
+                                SFbtn.setAttribute("data-plan-qty", quantity);
+                                productSF.style.display = "block";
+                            }
+                        }
+
+                        const productAcc = flyOut.querySelector('[data-dropaccessories]');
+                        if (productAcc) {
+                            productAcc.style.display = "none";
+
+                            const placeholder = flyOut.querySelector('[data-prodacc-placeholder]');
 
 
-                                var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${response.handle}?view=accdrop`;
+                            var fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${response.handle}?view=accdrop`;
 
-                                $.get(fetchUrl).then(response => {
-                                    if (response) {
-                                        placeholder.innerHTML = response;
-                                        if(response.includes("data-product-quickshop-url")){
+                            $.get(fetchUrl).then(response => {
+                                if (response) {
+                                    placeholder.innerHTML = response;
+                                    if (response.includes("data-product-quickshop-url")) {
 
-                                            {% comment %}placeholder.innerHTML = response;{% endcomment %}
-                                        }else{
-                                            console.log('no product found');
-                                        }
-                                    }else{
-                                        console.log('product not returned');
+                                        {% comment %}placeholder.innerHTML = response;{% endcomment %}
+                                    } else {
+                                        console.log('no product found');
                                     }
-                                });
+                                } else {
+                                    console.log('product not returned');
+                                }
+                            });
 
                             productAcc.style.display = "block";
-                        $(".pop-grad").removeClass('hidden');
-                    }
-
-
-                    /*
-        TODO: Bring in `variant.options`, iterate through to get option
-          name for: <strong>Option name:</strong> Option
-      */
-
-                    if (response.variant_options[0] !== 'Title' && response.variant_options[0] !== 'Default Title') {
-                        const productOptions = flyOut.querySelector('[data-atc-banner-product-options]');
-                        productOptions.innerHTML = response.variant_options.join(', ');
-                    }
-
-                    if (response.selling_plan_allocation) {
-                        const productSubscriptionTitle = flyOut.querySelector('[data-atc-banner-product-subscription-title]');
-                        {% comment %}productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;{% endcomment %}
-                        if(response.properties['Sku'] == "SUPERFREAK"){
-                            productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name.replace("Delivery every year","Renews annually");
-                        }else{
-                            productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;
-                        }
-                    }
-                    /*
-        TODO: Bring in variant, and use that to check compare_at_price
-          to see if the item is on sale
-      */
-
-
-                    const productPriceQuantity = flyOut.querySelector('[data-atc-banner-product-price-quantity]');
-                    productPriceQuantity.innerHTML = `${quantity} × `;
-                    jquery_default().ajax({
-                        type: 'GET',
-                        url: `${window.Theme.routes.cart_url}.js`,
-                        dataType: 'json'
-                    }).done(secondResponse => {
-                        if (this.settings.cartRedirection || document.body.classList.contains('template-cart')) {
-                            location.href = window.Theme.routes.cart_url;
-                            return;
+                            $(".pop-grad").removeClass('hidden');
                         }
 
-                        this.callbacks.onSuccess(); // Reset formData in case instance is never cleared
 
-                        this.formData = {};
-                        let lineItem = null;
-                        secondResponse.items.forEach(item => {
-                            // item info added to cart
-                            //console.log(item);
-                            if (item.id === this.itemId) {
-                                if (!lineItem) {
-                                    lineItem = item;
-                                } else {
-                                    // If there are 2 lineItems with the same id, it means that there is
-                                    // likely a BOGO offer on the product. We need to grab the highest discounted
-                                    // price (BOGO will be 0) while also combining with the different discounts on
-                                    // the product in the discounts array.
-                                    lineItem.line_level_discount_allocations = lineItem.line_level_discount_allocations.concat(item.line_level_discount_allocations);
-                                    lineItem.final_price = lineItem.final_price > item.final_price ? lineItem.final_price : item.final_price;
-                                    lineItem.quantity += item.quantity;
-                                }
-                            }
-                        });
-                        const productPriceValue = flyOut.querySelector('[data-atc-banner-product-price-value]');
-                        productPriceValue.innerHTML = Shopify.formatMoney(lineItem.original_price, this.settings.moneyFormat);
-                        const productPriceDiscounted = flyOut.querySelector('[data-atc-banner-product-price-discounted]');
-
-                        if (lineItem.final_price < lineItem.original_price) {
-                            productPriceDiscounted.innerHTML = Shopify.formatMoney(lineItem.final_price, this.settings.moneyFormat);
-                            productPriceDiscounted.classList.remove('hidden');
-                            productPriceValue.classList.add('original-price');
-                        } else {
-                            productPriceDiscounted.classList.add('hidden');
-                            productPriceValue.classList.remove('original-price');
-                        }
-
-                        const productDiscounts = flyOut.querySelector('[data-atc-banner-product-discounts]'); // Price Per Unit
-
-                        const unitPrice = flyOut.querySelector('[data-atc-banner-unit-price]');
-                        let unitPriceString = unitPrice.innerHTML;
-
-                        if (unitPrice && lineItem.unit_price_measurement) {
-                            unitPriceString = unitPriceString.replace('** total_quantity **', `${lineItem.unit_price_measurement.quantity_value}${lineItem.unit_price_measurement.quantity_unit}`);
-                            unitPriceString = unitPriceString.replace('** unit_price **', Shopify.formatMoney(lineItem.unit_price, this.settings.moneyFormat));
-
-                            if (lineItem.unit_price_measurement.reference_value === 1) {
-                                unitPriceString = unitPriceString.replace('** unit_measure **', lineItem.unit_price_measurement.reference_unit);
-                            } else {
-                                unitPriceString = unitPriceString.replace('** unit_measure **', `${lineItem.unit_price_measurement.reference_value}${lineItem.unit_price_measurement.reference_unit}`);
-                            }
-
-                            unitPrice.innerHTML = unitPriceString;
-                            unitPrice.classList.remove('hidden');
-                        }
-
-                        if (lineItem.line_level_discount_allocations.length > 0) {
-                            const discountItemTemplate = productDiscounts.firstElementChild.cloneNode(true);
-                            productDiscounts.innerHTML = '';
-                            lineItem.line_level_discount_allocations.forEach(discount => {
-                                const listItem = discountItemTemplate.cloneNode(true);
-                                const title = listItem.querySelector('.discount-title');
-                                const amount = listItem.querySelector('.discount-amount');
-                                title.innerHTML = discount.discount_application.title;
-                                amount.innerHTML = Shopify.formatMoney(discount.amount, this.settings.moneyFormat);
-                                productDiscounts.appendChild(listItem);
-                            });
-                            productDiscounts.classList.remove('hidden');
-                        } else {
-                            productDiscounts.classList.add('hidden');
-                        }
-
-                        const subTotal = flyOut.querySelector('[data-atc-banner-cart-subtotal]');
-                        subTotal.innerHTML = Shopify.formatMoney(secondResponse.total_price, this.settings.moneyFormat);
-                        const itemCount = flyOut.querySelector('[data-atc-banner-cart-button] span');
-                        itemCount.innerHTML = secondResponse.item_count;
-
-
-                        /* Free Gift Area */
-
-                        const fgAreaOver = flyOut.querySelector('[data-fgarea-over]');
-                        const fgAreaUnder = flyOut.querySelector('[data-fgarea-under]');
-                        var fgAreaTotal = flyOut.querySelector('[data-fgarea-total]');
-                        var fgAway = 100000 - secondResponse.total_price;
-
-                        fgAreaTotal.innerHTML = Shopify.formatMoney(fgAway, this.settings.moneyFormat);;
-
-                        if(secondResponse.total_price > 99999){
-                            fgAreaOver.style.display = "block";
-                            fgAreaUnder.style.display = "none";
-                        }else{
-                            fgAreaUnder.style.display = "block";
-                            fgAreaOver.style.display = "none";
-                        }
-
-                        this.header.appendChild(flyOut);
-                        this.flyOut = flyOut;
-                        setupRippleEffect(this.flyOut); // Notifiy Header of new cart count
-
-                        const countEvent = new CustomEvent('cartcount:update', {
-                            detail: secondResponse
-                        });
-                        window.dispatchEvent(countEvent);
                         /*
-        If user has initiated a new ATC Flow before the first has finished,
-        the first FlyOut could have opened after the first attempt to close open flyouts so
-        we need to send out an event to close any open flyouts.
-        */
+            TODO: Bring in `variant.options`, iterate through to get option
+              name for: <strong>Option name:</strong> Option
+          */
 
-                        document.dispatchEvent(new Event('closeFlyouts'));
-                        const closeButton = flyOut.querySelector('[data-atc-banner-close]');
-                        this.events.register(closeButton, 'click', e => this._closeFlyOut(e));
-                        this.events.register(document, 'click', e => this._handleDocumentClick(e));
-                        this.events.register(document, 'touchstart', e => this._handleDocumentClick(e));
-                        this.events.register(document, 'closeFlyouts', e => this._closeFlyOut(e));
-                        this.events.register(window, 'keydown', e => this._closeEsc(e));
+                        if (response.variant_options[0] !== 'Title' && response.variant_options[0] !== 'Default Title') {
+                            const productOptions = flyOut.querySelector('[data-atc-banner-product-options]');
+                            productOptions.innerHTML = response.variant_options.join(', ');
+                        }
 
-                        this._enableAtcButton();
+                        if (response.selling_plan_allocation) {
+                            const productSubscriptionTitle = flyOut.querySelector('[data-atc-banner-product-subscription-title]');
+                            {% comment %}productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;{% endcomment %}
+                            if (response.properties && response.properties['Sku'] == "SUPERFREAK") {
+                                productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name.replace("Delivery every year", "Renews annually");
+                            } else {
+                                productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;
+                            }
+                        }
+                        /*
+            TODO: Bring in variant, and use that to check compare_at_price
+              to see if the item is on sale
+          */
 
-                        this.atcAnimation = transition({
-                            el: this.flyOut,
-                            state: 'closed'
+
+                        const productPriceQuantity = flyOut.querySelector('[data-atc-banner-product-price-quantity]');
+                        productPriceQuantity.innerHTML = `${quantity} × `;
+                        jquery_default().ajax({
+                            type: 'GET',
+                            url: `${window.Theme.routes.cart_url}.js`,
+                            dataType: 'json'
+                        }).done(secondResponse => {
+                            if (this.settings.cartRedirection || document.body.classList.contains('template-cart')) {
+                                location.href = window.Theme.routes.cart_url;
+                                return;
+                            }
+
+                            this.callbacks.onSuccess(); // Reset formData in case instance is never cleared
+
+                            this.formData = {};
+                            let lineItem = null;
+                            secondResponse.items.forEach(item => {
+                                // item info added to cart
+                                //console.log(item);
+                                if (item.id === this.itemId) {
+                                    if (!lineItem) {
+                                        lineItem = item;
+                                    } else {
+                                        // If there are 2 lineItems with the same id, it means that there is
+                                        // likely a BOGO offer on the product. We need to grab the highest discounted
+                                        // price (BOGO will be 0) while also combining with the different discounts on
+                                        // the product in the discounts array.
+                                        lineItem.line_level_discount_allocations = lineItem.line_level_discount_allocations.concat(item.line_level_discount_allocations);
+                                        lineItem.final_price = lineItem.final_price > item.final_price ? lineItem.final_price : item.final_price;
+                                        lineItem.quantity += item.quantity;
+                                    }
+                                }
+                            });
+                            const productPriceValue = flyOut.querySelector('[data-atc-banner-product-price-value]');
+                            productPriceValue.innerHTML = Shopify.formatMoney(lineItem.original_price, this.settings.moneyFormat);
+                            const productPriceDiscounted = flyOut.querySelector('[data-atc-banner-product-price-discounted]');
+
+                            if (lineItem.final_price < lineItem.original_price) {
+                                productPriceDiscounted.innerHTML = Shopify.formatMoney(lineItem.final_price, this.settings.moneyFormat);
+                                productPriceDiscounted.classList.remove('hidden');
+                                productPriceValue.classList.add('original-price');
+                            } else {
+                                productPriceDiscounted.classList.add('hidden');
+                                productPriceValue.classList.remove('original-price');
+                            }
+
+                            const productDiscounts = flyOut.querySelector('[data-atc-banner-product-discounts]'); // Price Per Unit
+
+                            const unitPrice = flyOut.querySelector('[data-atc-banner-unit-price]');
+                            let unitPriceString = unitPrice.innerHTML;
+
+                            if (unitPrice && lineItem.unit_price_measurement) {
+                                unitPriceString = unitPriceString.replace('** total_quantity **', `${lineItem.unit_price_measurement.quantity_value}${lineItem.unit_price_measurement.quantity_unit}`);
+                                unitPriceString = unitPriceString.replace('** unit_price **', Shopify.formatMoney(lineItem.unit_price, this.settings.moneyFormat));
+
+                                if (lineItem.unit_price_measurement.reference_value === 1) {
+                                    unitPriceString = unitPriceString.replace('** unit_measure **', lineItem.unit_price_measurement.reference_unit);
+                                } else {
+                                    unitPriceString = unitPriceString.replace('** unit_measure **', `${lineItem.unit_price_measurement.reference_value}${lineItem.unit_price_measurement.reference_unit}`);
+                                }
+
+                                unitPrice.innerHTML = unitPriceString;
+                                unitPrice.classList.remove('hidden');
+                            }
+
+                            if (lineItem.line_level_discount_allocations.length > 0) {
+                                const discountItemTemplate = productDiscounts.firstElementChild.cloneNode(true);
+                                productDiscounts.innerHTML = '';
+                                lineItem.line_level_discount_allocations.forEach(discount => {
+                                    const listItem = discountItemTemplate.cloneNode(true);
+                                    const title = listItem.querySelector('.discount-title');
+                                    const amount = listItem.querySelector('.discount-amount');
+                                    title.innerHTML = discount.discount_application.title;
+                                    amount.innerHTML = Shopify.formatMoney(discount.amount, this.settings.moneyFormat);
+                                    productDiscounts.appendChild(listItem);
+                                });
+                                productDiscounts.classList.remove('hidden');
+                            } else {
+                                productDiscounts.classList.add('hidden');
+                            }
+
+                            const subTotal = flyOut.querySelector('[data-atc-banner-cart-subtotal]');
+                            subTotal.innerHTML = Shopify.formatMoney(secondResponse.total_price, this.settings.moneyFormat);
+                            const itemCount = flyOut.querySelector('[data-atc-banner-cart-button] span');
+                            itemCount.innerHTML = secondResponse.item_count;
+
+
+                            /* Free Gift Area */
+
+                            const fgAreaOver = flyOut.querySelector('[data-fgarea-over]');
+                            const fgAreaUnder = flyOut.querySelector('[data-fgarea-under]');
+                            var fgAreaTotal = flyOut.querySelector('[data-fgarea-total]');
+                            var fgAway = 100000 - secondResponse.total_price;
+
+                            fgAreaTotal.innerHTML = Shopify.formatMoney(fgAway, this.settings.moneyFormat);
+                            ;
+
+                            if (secondResponse.total_price > 99999) {
+                                fgAreaOver.style.display = "block";
+                                fgAreaUnder.style.display = "none";
+                            } else {
+                                fgAreaUnder.style.display = "block";
+                                fgAreaOver.style.display = "none";
+                            }
+
+                            this.header.appendChild(flyOut);
+                            this.flyOut = flyOut;
+                            setupRippleEffect(this.flyOut); // Notifiy Header of new cart count
+
+                            const countEvent = new CustomEvent('cartcount:update', {
+                                detail: secondResponse
+                            });
+                            window.dispatchEvent(countEvent);
+                            /*
+            If user has initiated a new ATC Flow before the first has finished,
+            the first FlyOut could have opened after the first attempt to close open flyouts so
+            we need to send out an event to close any open flyouts.
+            */
+
+                            document.dispatchEvent(new Event('closeFlyouts'));
+                            const closeButton = flyOut.querySelector('[data-atc-banner-close]');
+                            this.events.register(closeButton, 'click', e => this._closeFlyOut(e));
+                            this.events.register(document, 'click', e => this._handleDocumentClick(e));
+                            this.events.register(document, 'touchstart', e => this._handleDocumentClick(e));
+                            this.events.register(document, 'closeFlyouts', e => this._closeFlyOut(e));
+                            this.events.register(window, 'keydown', e => this._closeEsc(e));
+
+                            this._enableAtcButton();
+
+                            this.atcAnimation = transition({
+                                el: this.flyOut,
+                                state: 'closed'
+                            });
+                            this.atcAnimation.animateTo('open').then(() => {
+                                trapFocus(this.flyOut);
+                            });
                         });
-                        this.atcAnimation.animateTo('open').then(() => {
-                            trapFocus(this.flyOut);
-                        });
-                    });
+                    }
                 }).fail(response => {
                     let errorText;
 
