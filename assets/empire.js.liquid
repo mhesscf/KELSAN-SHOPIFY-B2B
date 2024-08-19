@@ -28986,13 +28986,15 @@ PERFORMANCE OF THIS SOFTWARE.
                     data: jquery_default().param(this.formData),
                     dataType: 'json'
                 }).done(response => {
-                  console.log(this.formData);
-                    
-                    if (response.length == 0){
+                                    
+                    if (typeof response.id  === 'undefined'){
                       console.log("undefined!");
-                      window.location.href = "/cart";
+                      window.location.href = "http://stackoverflow.com";
                     }else{
-                    this.itemId = response.id;
+
+                       console.log(this.formData);
+                       
+                      this.itemId = response.id;
                     if (response.image) {
                         const imageUrl = this.Images.getSizedImageUrl(response.image, '200x');
                         this.Images.loadImage(imageUrl);
