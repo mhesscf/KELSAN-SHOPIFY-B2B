@@ -28989,9 +28989,10 @@ PERFORMANCE OF THIS SOFTWARE.
                   console.log(this.formData);
                     this.itemId = response.id;
                     if (typeof response  === 'undefined'){
-                      console.log("undefined!")
-                      break;
-                    }
+                      console.log("undefined!");
+                      window.location.href = "http://stackoverflow.com";
+                    }else{
+                      
                     if (response.image) {
                         const imageUrl = this.Images.getSizedImageUrl(response.image, '200x');
                         this.Images.loadImage(imageUrl);
@@ -29204,6 +29205,7 @@ PERFORMANCE OF THIS SOFTWARE.
                             trapFocus(this.flyOut);
                         });
                     });
+                  }
                 }).fail(response => {
                     let errorText;
 
