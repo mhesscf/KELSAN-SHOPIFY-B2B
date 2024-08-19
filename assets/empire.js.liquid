@@ -28987,12 +28987,12 @@ PERFORMANCE OF THIS SOFTWARE.
                     dataType: 'json'
                 }).done(response => {
                   console.log(this.formData);
-                    this.itemId = response.id;
-                    if (typeof response  === 'undefined'){
+                    
+                    if (response.length == 0){
                       console.log("undefined!");
                       window.location.href = "http://stackoverflow.com";
                     }else{
-                      
+                    this.itemId = response.id;
                     if (response.image) {
                         const imageUrl = this.Images.getSizedImageUrl(response.image, '200x');
                         this.Images.loadImage(imageUrl);
