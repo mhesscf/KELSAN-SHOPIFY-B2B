@@ -29002,7 +29002,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     const productSF = flyOut.querySelector('[data-atc-sf-banner]');
                     if (productSF){
                         productSF.style.display = "none";
-                        if(response.properties && response.properties['_sf_eligible']) {
+                        if(response.properties['_sf_eligible']) {
                             const SFbtn = flyOut.querySelector('.sf-atc-btn');
                             SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
                             SFbtn.setAttribute("data-plan-item-handle", response.handle);
@@ -29052,7 +29052,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     if (response.selling_plan_allocation) {
                         const productSubscriptionTitle = flyOut.querySelector('[data-atc-banner-product-subscription-title]');
                         {% comment %}productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;{% endcomment %}
-                        if(response.properties && response.properties['Sku'] == "SUPERFREAK"){
+                        if(response.properties['Sku'] == "SUPERFREAK"){
                             productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name.replace("Delivery every year","Renews annually");
                         }else{
                             productSubscriptionTitle.innerHTML = response.selling_plan_allocation.selling_plan.name;
