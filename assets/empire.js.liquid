@@ -28988,7 +28988,10 @@ PERFORMANCE OF THIS SOFTWARE.
                 }).done(response => {
                   console.log(this.formData);
                     this.itemId = response.id;
-
+                    if (typeof response  === 'undefined'){
+                      console.log("undefined!")
+                      break;
+                    }
                     if (response.image) {
                         const imageUrl = this.Images.getSizedImageUrl(response.image, '200x');
                         this.Images.loadImage(imageUrl);
