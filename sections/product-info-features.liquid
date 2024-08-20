@@ -6,14 +6,14 @@
             <div class="container">
 {% endif %}
 
-        {% comment %} Org Layout
+        {%- comment -%} Org Layout
         <div class="row">
             <div class="full">
                 <h2>Product Description</h2>
                 <p>{{ product.description }}</p>
             </div>
         </div>
-        {% endcomment %}
+        {%- endcomment -%}
 
         <div class="desc-col-1">
             <div class="description">
@@ -235,44 +235,44 @@
                 {% endif %}
                 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
                     <div class="padcharacteristics">
-                        {% if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  %}
+                        {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  -%}
                             <h2 class="prod-block-title">Pad Characteristics</h2>
-                        {% endif %}
+                        {%- endif -%}
 
 
-                        {% if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping and product.has_only_default_variant %}
+                        {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping and product.has_only_default_variant -%}
                             {%
                                     render 'pad-life',
                                     location: 'product',
                                     padtype: product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping,
                                     padsize: product.first_available_variant.metafields.plytix.brush_pad_diameter
                             %}
-                        {% elsif product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping == "Black Diamond Pads" %}
-                            {% assign padcolor = product.first_available_variant.metafields.plytix.color %}
-                            {% assign diamondcat = "" %}
-                            {% if padcolor == "White" or padcolor == "Yellow" or padcolor == "Green" %}
-                                {% assign diamondcat = "diamondhilo" %}
-                            {% elsif padcolor == "Red" %}
-                                {% assign diamondcat = "diamondlo" %}
-                            {% endif %}
-                            {% if diamondcat != "" %}
+                        {%- elsif product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping == "Black Diamond Pads" -%}
+                            {%- assign padcolor = product.first_available_variant.metafields.plytix.color -%}
+                            {%- assign diamondcat = "" -%}
+                            {%- if padcolor == "White" or padcolor == "Yellow" or padcolor == "Green" -%}
+                                {%- assign diamondcat = "diamondhilo" -%}
+                            {%- elsif padcolor == "Red" %}
+                                {%- assign diamondcat = "diamondlo" -%}
+                            {%- endif -%}
+                            {%- if diamondcat != "" -%}
                                 {%
                                         render 'pad-life',
                                         location: 'product',
                                         padtype: diamondcat,
                                         padsize: ""
                                 %}
-                            {% endif %}
-                        {% endif %}
+                            {%- endif -%}
+                        {%- endif -%}
 
 
-                        {% if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping and product.metafields.plytix.eco_friendly %}
-                            {% assign case_qty = product.first_available_variant.metafields.plytix.qty_per_carton | times: 1 %}
+                        {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping and product.metafields.plytix.eco_friendly -%}
+                            {%- assign case_qty = product.first_available_variant.metafields.plytix.qty_per_carton | times: 1 -%}
 
 
-                            {% if product.first_available_variant.metafields.plytix.brush_pad_diameter %}
+                            {%- if product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 <hr style="border:0; border-top:1px solid #eee;" />
-                                {% assign padsize = product.first_available_variant.metafields.plytix.brush_pad_diameter | replace: " inches", "" %}
+                                {%- assign padsize = product.first_available_variant.metafields.plytix.brush_pad_diameter | replace: " inches", "" -%}
                                 {%- assign bottleSavedLookup = "
                                     6.5:0.85;
                                     8:1.14;
@@ -296,10 +296,10 @@
                                     28:14.9
                                 " | split: ";"%}
                                 {%- assign found = false -%}
-                                {% for sizeValue in bottleSavedLookup  %}
+                                {%- for sizeValue in bottleSavedLookup  -%}
                                     {%- assign sizeValueArray = sizeValue | split: ":" -%}
                                     {%- assign sizeValueCheck = sizeValueArray[0] | strip -%}
-                                    {% if padsize == sizeValueCheck and case_qty > 0 %}
+                                    {%- if padsize == sizeValueCheck and case_qty > 0 -%}
                                         {%- assign bottlesSaved = sizeValueArray[1] | times: case_qty -%}
                                         {%- assign bottlesSaved = bottlesSaved | floor -%}
                                         <div style="display:flex">
@@ -315,9 +315,9 @@
                                          {%- assign found = true -%}
                                         {% break %}
                                     {% endif %}
-                                {% endfor %}
+                                {%- endfor -%}
 
-                                {% if found == false %}
+                                {%- if found == false -%}
                                     <div style="display:flex">
                                         <div>
                                             <a href="/pages/environmental-savings-calculator"><img style="float:left; padding-right:15px; padding-top:3px; width:75px;" src="{{ 'recycle-bottles.jpg' | file_img_url }}" alt="Bottles Saved"/></a>
@@ -327,8 +327,8 @@
                                             <div style="font-size:12px;">Calculate how many bottles you save when using this pad with our handy <a href="/pages/environmental-savings-calculator">savings calculator</a>.</div>
                                         </div>
                                     </div>
-                                {% endif %}
-                            {% endif %}
+                                {%- endif -%}
+                            {%- endif -%}
 
 
 
@@ -343,108 +343,108 @@
                                     </div>
                                 </div>
                             </div>
-                        {% endif %}
+                        {%- endif -%}
 
                         {%- assign padDriver = false -%}
-                        {% for c in product.collections %}
-                            {% if c.handle == "auto-scrubber-pad-drivers" or c.handle == "floor-buffer-pad-drivers" %}
+                        {%- for c in product.collections -%}
+                            {%- if c.handle == "auto-scrubber-pad-drivers" or c.handle == "floor-buffer-pad-drivers" -%}
                                 {%- assign padDriver = true -%}
-                            {% endif %}
-                        {% endfor %}
+                            {%- endif -%}
+                        {%- endfor -%}
 
-                        {% if padDriver == true and product.first_available_variant.metafields.plytix.brush_pad_diameter != blank %}
+                        {%- if padDriver == true and product.first_available_variant.metafields.plytix.brush_pad_diameter != blank -%}
                             {%- assign sizeQuery = "" -%}
-                            {% if product.first_available_variant.metafields.plytix.brush_pad_diameter == "6.5 inches" %}
+                            {%- if product.first_available_variant.metafields.plytix.brush_pad_diameter == "6.5 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '6.5"' -%}
                                 {%- assign scrubbing = "pacific-6-inch-red-baseboard-buffing-pads,pacific-6-inch-green-baseboard-scrubbing-pads" -%}
                                 {%- assign polishing = "pacific-6-inch-white-baseboard-buffing-pads" -%}
                                 {%- assign stripping = "pacific-6-inch-black-baseboard-wax-stripping-pads" -%}
-                                {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "8 inches" %}
-                            {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "8 inches" -%}
+                                {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '8"' -%}
                                 {%- assign scrubbing = "motorscrubber-8-inch-red-floor-buffing-pads,motorscrubber-8-inch-blue-medium-duty-floor-scrubbing-pads,motorscrubber-8-inch-green-heavy-duty-floor-scrubbing-pads" -%}
                                 {%- assign polishing = "motorscrubber-8-inch-white-floor-buffing-and-polishing-pads" -%}
                                 {%- assign stripping = "motorscrubber-8-inch-black-floor-stripping-pads-case-of-10" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "10 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "10 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '10"' -%}
                                 {%- assign scrubbing = "10-inch-red-scrubbing-floor-pads,blue-floor-scrubbing-10-inch-pads,10-inch-deep-scrubbing-green-floor-pads" -%}
                                 {%- assign polishing = "10-inch-white-polishing-and-buffing-pads" -%}
                                 {%- assign stripping = "10-inch-black-strip-pads" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "12 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "12 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '12"' -%}
                                 {%- assign scrubbing = "12-inch-red-floor-wax-buffing-pads,12-inch-blue-cleaning-pad,12-inch-green-top-layer-removal-pad" -%}
                                 {%- assign polishing = "12-inch-white-floor-polish-buff-pads" -%}
                                 {%- assign stripping = "12-inch-black-commercial-floor-strip-pad" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "13 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "13 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '13"' -%}
                                 {%- assign scrubbing = "13-inch-red-commercial-floor-buffing-pad,13-inch-blue-floor-wax-cleaning-pad,13-inch-green-deep-scrubbing-pad" -%}
                                 {%- assign polishing = "rotary-floor-machine-polishing-pad" -%}
                                 {%- assign stripping = "13-inch-buffer-black-stripping-pads" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "14 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "14 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '14"' -%}
                                 {%- assign scrubbing = "14-inch-red-buffing-pad,14-inch-blue-floor-scrubbing-pad,14-inch-green-commercial-hd-scrub-pads" -%}
                                 {%- assign polishing = "14-inch-white-scrub-polish-pads" -%}
                                 {%- assign stripping = "14-inch-black-stripping-pads" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "15 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "15 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '15"' -%}
                                 {%- assign scrubbing = "15-inch-red-buffing-scrubbing-pads,15-inch-blue-floor-clean-scrub-pad,15-inch-175-rpm-green-scrubbing-pad" -%}
                                 {%- assign polishing = "15-inch-175-rpm-floor-buffing-pads" -%}
                                 {%- assign stripping = "15-inch-black-rotary-floor-stripping-pad" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "16 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "16 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '16"' -%}
                                 {%- assign scrubbing = "16-inch-red-floor-scrubbing-pads,16-inch-blue-175-rpm-cleaning-pad,16-inch-green-deep-scrubbing-floor-pads" -%}
                                 {%- assign polishing = "" -%}
                                 {%- assign stripping = "16-inch-black-stripping-pad" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "17 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "17 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '17"' -%}
                                 {%- assign scrubbing = "17-inch-red-floor-buffing-scrubbing-pads,17-inch-blue-cleaning-scrubbing-pads,17-inch-green-deep-scrubbing-buffer-pads" -%}
                                 {%- assign polishing = "17-inch-white-commercial-floor-buff-pads" -%}
                                 {%- assign stripping = "cleanfreak-17-inch-brown-wet-and-dry-floor-stripping-pads,17-inch-black-stripping-floor-pads" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "18 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "18 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '18"' -%}
                                 {%- assign scrubbing = "18-inch-red-light-duty-scrub-pads,18-inch-blue-auto-scrubber-floor-pads,18-inch-green-heavy-duty-floor-scrub-pad" -%}
                                 {%- assign polishing = "18-inch-white-floor-maintenance-pad" -%}
                                 {%- assign stripping = "18-inch-black-floor-stripping-pads" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "20 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "20 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '20"' -%}
                                 {%- assign scrubbing = "20-inch-red-floor-buffing-pad,20-inch-blue-floor-scrubbing-pads,20-inch-green-rotary-scrubbing-pad" -%}
                                 {%- assign polishing = "20-inch-floor-scrubber-polishing-pads" -%}
                                 {%- assign stripping = "cleanfreak-20-inch-brown-wet-and-dry-floor-stripping-pads,20-inch-black-floor-wax-stripping-pads" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "21 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "21 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '21"' -%}
                                 {%- assign scrubbing = "" -%}
                                 {%- assign polishing = "21-inch-white-propane-floor-polishing-pads" -%}
                                 {%- assign stripping = "" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "24 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "24 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '24"' -%}
                                 {%- assign scrubbing = "" -%}
                                 {%- assign polishing = "24-inch-white-propane-burnisher-floor-polishing-pads" -%}
                                 {%- assign stripping = "24-inch-black-floor-stripping-pads" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "27 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "27 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '27"' -%}
                                 {%- assign scrubbing = "" -%}
                                 {%- assign polishing = "27-inch-white-high-speed-floor-burnishing-pads" -%}
                                 {%- assign stripping = "" -%}
-                            {% elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "28 inches" %}
+                            {%- elsif product.first_available_variant.metafields.plytix.brush_pad_diameter == "28 inches" -%}
                                 {%- assign sizeQuery = product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
                                 {%- assign sizelable = '28"' -%}
                                 {%- assign scrubbing = "" -%}
                                 {%- assign polishing = "28-white-propane-floor-burnisher-pads" -%}
                                 {%- assign stripping = "" -%}
-                            {% endif %}
+                            {%- endif -%}
                             <style>
                                 .pad-used-grp-title{
                                     margin-top:10px;
@@ -520,24 +520,24 @@
                                 }
 
                             </style>
-                              {% if sizeQuery != "" %}
+                              {%- if sizeQuery != "" -%}
                                   {%- assign scrubbingArr = scrubbing | split: "," -%}
                                   {%- assign polishingArr = polishing | split: "," -%}
                                   {%- assign strippingArr = stripping | split: "," -%}
                                 <h2 class="prod-block-title">Pad Capability</h2>
                                 <hr style="border:0; border-top:1px solid #eee;">
                                 <div class="prod-used-pads-block">
-                                    {% if scrubbing != "" %}
+                                    {%- if scrubbing != "" -%}
                                         <div class="pad-used-grp-title"><a href="/collections/floor-scrubbing-pads?refinementList[meta.plytix.brush_pad_diameter][0]={{ sizeQuery }}">{{ sizelable }} Scrubbing Pads</a></div>
                                         <table class="prod-used-pads">
                                             <tbody>
-                                                {% for scrubbingHandle in scrubbingArr %}
+                                                {%- for scrubbingHandle in scrubbingArr -%}
                                                     <tr class="pad-row" data-handle="{{ scrubbingHandle }}"><td>Loading...</td></tr>
-                                                {% endfor %}
+                                                {%- endfor -%}
                                             </tbody>
                                         </table>
-                                    {% endif %}
-                                    {% if polishing != "" %}
+                                    {%- endif -%}
+                                    {%- if polishing != "" -%}
                                         <div class="pad-used-grp-title"><a href="/collections/floor-polishing-pads?refinementList[meta.plytix.brush_pad_diameter][0]={{ sizeQuery }}">{{ sizelable }} Polishing Pads</a></div>
                                         <table class="prod-used-pads">
                                             <tbody>
@@ -546,8 +546,8 @@
                                             {% endfor %}
                                             </tbody>
                                         </table>
-                                    {% endif %}
-                                    {% if stripping != "" %}
+                                    {%- endif -%}
+                                    {%- if stripping != "" -%}
                                     <div class="pad-used-grp-title"><a href="/collections/floor-stripping-pads?refinementList[meta.plytix.brush_pad_diameter][0]={{ sizeQuery }}">{{ sizelable }} Stripping Pads</a></div>
                                         <table class="prod-used-pads">
                                             <tbody>
@@ -556,7 +556,7 @@
                                             {% endfor %}
                                             </tbody>
                                         </table>
-                                    {% endif %}
+                                    {%- endif -%}
                                 </div>
                                   <script>
                                       $(document).ready(function($){
@@ -580,15 +580,15 @@
                             {% endif %}
                         {% endif %}
                     </div>
-                {% endif %}
+                {%- endif -%}
 
                  {%- assign chem_guide = false -%}
-                    {% for c in product.collections %}
-                        {% comment %} if c.handle == "floor-buffers" or c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" {% endcomment %}
+                    {%- for c in product.collections -%}
+                        {%- comment -%} if c.handle == "floor-buffers" or c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" {%- endcomment -%}
                         {% if c.handle == "walk-behind-auto-scrubbers" or c.handle == "ride-on-auto-scrubbers" or c.handle == "floor-buffers" %}
                             {%- assign chem_guid = true -%}
                         {% endif %}
-                    {% endfor %}
+                    {%- endfor -%}
 
                     {% if chem_guid == true %}
                         <style>
@@ -757,7 +757,7 @@
                             <div class="video-wrap">
                                 {% if pyt[0] contains "vimeo" %}
                                     {% assign vimeoid = pyt[0] | replace: "vimeo-","" %}
-                                    {% comment %}<iframe src="https://player.vimeo.com/video/474973525?h=9cd571a900&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>{% endcomment %}
+                                    {%- comment -%}<iframe src="https://player.vimeo.com/video/474973525?h=9cd571a900&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>{%- endcomment -%}
                                      <iframe src="https://player.vimeo.com/video/{{ vimeoid }}?title=0&byline=0&portrait=0?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
                                 {% else %}
                                     <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>

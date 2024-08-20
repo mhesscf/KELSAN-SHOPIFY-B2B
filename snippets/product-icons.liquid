@@ -49,7 +49,7 @@
             {% if pdiscontinued == true %}
 
                 {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
-                    {% comment %}on discontinued demos, replace wording with diff than normal discontinued{% endcomment %}
+                    {%- comment -%}on discontinued demos, replace wording with diff than normal discontinued{%- endcomment -%}
                     <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>
                 {% else %}
                     <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>
@@ -179,7 +179,7 @@
 
                 {% endif %}
 
-{% comment %}
+{%- comment -%}
                 {% if product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/clearance"><div class="sm-row">
@@ -199,7 +199,7 @@
                         </div>
                     {% endif %}
                 {% endif %}
-                {% endcomment %}
+                {%- endcomment -%}
                 {% if product.selected_or_first_available_variant.sku contains "-DEMO" %}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">
@@ -231,66 +231,66 @@
         </div>
     </div>
     <div class="prod-promo-image">
-        {% assign today_date = 'now' | date: '%s' %}
+        {%- assign today_date = 'now' | date: '%s' %}
         {%- assign bannerObj = shop.metaobjects.product_banner.values | sort: 'prioritystring'  -%}
-        {% for banner in bannerObj %}
-            {% assign start = banner.startdate | date: '%s' %}
+        {%- for banner in bannerObj -%}
+            {%- assign start = banner.startdate | date: '%s' -%}
 
-            {% comment %}//add one day to the end date{% endcomment %}
-            {% assign date = banner.enddate | date: '%s' %}
-            {% assign seconds = 1 | times: 24 | times: 60 | times: 60 %}
-            {% assign end = date | date: "%s" | plus: seconds | date: "%s" %}
+            {%- comment -%}//add one day to the end date{%- endcomment -%}
+            {%- assign date = banner.enddate | date: '%s' -%}
+            {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+            {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
 
-                {% comment %}if not active, skip{% endcomment %}
-            {% if today_date < start or today_date > end %}
+                {%- comment -%}if not active, skip{%- endcomment -%}
+            {%- if today_date < start or today_date > end -%}
                 {% continue %}
-            {% endif %}
+            {%- endif -%}
 
 
             {%- assign showBanner = false -%}
-            {% comment %}// check collections{% endcomment %}
-            {% for bannerColl in banner.collections.value  %}
-                {% for collection in product.collections %}
-                    {% if collection.id == bannerColl.id  %}
+            {%- comment -%}// check collections{%- endcomment -%}
+            {%- for bannerColl in banner.collections.value  -%}
+                {%- for collection in product.collections -%}
+                    {%- if collection.id == bannerColl.id  -%}
                         {%- assign showBanner = true -%}
-                        {% break %}
-                    {% endif %}
-                {% endfor %}
-                {% if showBanner == true %}
-                    {% break %}
-                {% endif %}
-            {% endfor %}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                {%- if showBanner == true -%}
+                    {%- break -%}
+                {%- endif -%}
+            {%- endfor -%}
 
-            {% comment %}// check products{% endcomment %}
-            {% if showBanner == false  %}
-                {% for bannerProd in banner.products.value  %}
-                    {% if product.id == bannerProd.id  %}
+            {%- comment -%}// check products{%- endcomment -%}
+            {%- if showBanner == false  %}
+                {%- for bannerProd in banner.products.value  -%}
+                    {%- if product.id == bannerProd.id  -%}
                         {%- assign showBanner = true -%}
-                        {% break %}
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            {% if showBanner == true %}
-                {% if banner.linkurl  %}
-                    {% if banner.promo_code  %}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- endfor -%}
+            {%- endif -%}
+            {%- if showBanner == true -%}
+                {%- if banner.linkurl  -%}
+                    {%- if banner.promo_code  -%}
                         <a style="cursor:pointer;" title="Apply '{{ banner.promo_code }}' Promo" onclick="promoRedirect('{{ banner.promo_code }}','{{ banner.linkurl }}')" >{{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}</a>
-                    {% else %}
+                    {%- else -%}
                         <a href="{{ banner.linkurl }}">{{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}</a>
-                    {% endif %}
-                {% else %}
+                    {%- endif -%}
+                {%- else -%}
                     {{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}
-                {% endif %}
-                {% comment %}Name: {{ banner.name }}<br/>
+                {%- endif -%}
+                {%- comment -%}Name: {{ banner.name }}<br/>
                 Link: {{ banner.linkurl }}<br/>
                 Products: {{ banner.products }}<br/>
                 Collections: {{ banner.collections }}<br/>
                 Priority: {{ banner.prioritystring }}<br/>
                 Start: {{ banner.startdate }}<br/>
-                End: {{ banner.enddate }}<br/><br/><br/>{% endcomment %}
-                {% break %}
-            {% endif %}
+                End: {{ banner.enddate }}<br/><br/><br/>{%- endcomment -%}
+                {%- break -%}
+            {%- endif -%}
 
-        {% endfor %}
+        {%- endfor -%}
     </div>
     <div class="clearer"></div>
 </div>
