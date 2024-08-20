@@ -1,18 +1,16 @@
 
 
-{% liquid
-  assign block_slide_type = block.type
-%}
+{%- liquid  assign block_slide_type = block.type -%}
 
 
 {% if block_slide_type == "banner" %}
-  {% liquid
+  {%- liquid
     assign banner_lg = block.settings.banner-lg
     assign banner_sm = block.settings.banner-sm
     assign link = block.settings.link
     assign slide_number = block_index | plus: 1
     assign coupon_code = block.settings.coupon-code
-  %}
+  -%}
   <div
           class="slideshow-slide banner-slideshow-slide {{ block_class }}"
           aria-label="{{ 'sections.slideshow.slide_counter' | t: count: slide_number, total: section.blocks.size }}"
@@ -24,30 +22,30 @@
 
     <div class="slideshow-slide__image-wrapper" data-slide-image-wrapper >
       <div class="slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
-        {% if link == blank and coupon_code == blank %}
+        {%- if link == blank and coupon_code == blank -%}
           <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
           <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
-        {% elsif coupon_code == blank %}
+        {%- elsif coupon_code == blank -%}
           <a href="{{ link }}">
             <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
             <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
           </a>
-        {% else %}
+        {%- else -%}
           <a style="cursor:pointer;" title="Apply '{{ coupon_code }}' Promo" onclick="promoRedirect('{{ coupon_code }}','{{ link }}')">
             <div class="banner-lg"><img src="{{ banner_lg | img_url: '1400x450' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
             <div class="banner-sm"><img src="{{ banner_sm | img_url: '800x427' }}" alt="{{ banner_sm.alt }}" class="img-responsive"></div>
           </a>
-        {% endif %}
+        {%- endif -%}
       </div>
     </div>
 
   </div>
-{% elsif block_slide_type == "categoryhead" %}
-  {% comment %}http://127.0.0.1:9292/pages/hard-floor-cleaning-machines{% endcomment %}
-    {% liquid
+{%- elsif block_slide_type == "categoryhead" -%}
+  {%- comment -%}http://127.0.0.1:9292/pages/hard-floor-cleaning-machines{%- endcomment -%}
+    {%- liquid
       assign link = block.settings.link
       assign slide_number = block_index | plus: 1
-    %}
+    -%}
     <div
             class="slideshow-slide banner-slideshow-slide {{ block_class }}"
             aria-label="{{ 'sections.slideshow.slide_counter' | t: count: slide_number, total: section.blocks.size }}"
@@ -63,14 +61,14 @@
           <div class="flex-row">
             <div class="col col-left">
               <div class="inner text-inner">
-                {% if block.settings.cat_title != blank %}
+                {%- if block.settings.cat_title != blank -%}
                   <h1>{{ block.settings.cat_title }}</h1>
-                {% endif %}
-                {% if block.settings.cat_text != blank %}
+                {%- endif -%}
+                {%- if block.settings.cat_text != blank -%}
                   <div class="section-text">
                     <p>{{ block.settings.cat_text }}</p>
                   </div>
-                {% endif %}
+                {%- endif -%}
               </div>
             </div>
             <div class="col col-right img-col">
@@ -84,12 +82,12 @@
     </div>
 
 
-{% elsif block_slide_type == "custom_liquid" %}
-  {% liquid
+{%- elsif block_slide_type == "custom_liquid" -%}
+  {%- liquid
     assign cust_block_css = block.settings.custom_css
     assign cust_block_liquid = block.settings.custom_liquid
     assign slide_number = block_index | plus: 1
-  %}
+  -%}
 
   <div
           class="slideshow-slide custom-slideshow-slide {{ block_class }}"
@@ -107,8 +105,8 @@
     </div>
   </div>
 
-{% elsif block_slide_type == "slide" %}
-  {% liquid
+{%- elsif block_slide_type == "slide" -%}
+  {%- liquid
     assign block_slide_image = block.settings.background_image
     assign block_slide_image_mobile = block.settings.mobile_background_image
     assign block_slide_title = block.settings.title
@@ -135,9 +133,9 @@
 
     assign block_button_1_class = 'slideshow-slide__button--' | append: block.settings.button_one_style
     assign block_button_2_class = 'slideshow-slide__button--' | append: block.settings.button_two_style
-  %}
+  -%}
 
-  {% comment %}Inject @pixelunion/pxs-slideshow/slideshow-slide begin{% endcomment %}
+  {%- comment -%}Inject @pixelunion/pxs-slideshow/slideshow-slide begin{%- endcomment -%}
   {%- comment -%}
     @param block_index {Number}
       The 0-based index of the current block
@@ -342,4 +340,4 @@
     </div>
   </div>
   {% endif %}
-{% comment %}Inject @pixelunion/pxs-slideshow/slideshow-slide end{% endcomment %}
+{%- comment -%}Inject @pixelunion/pxs-slideshow/slideshow-slide end{%- endcomment -%}

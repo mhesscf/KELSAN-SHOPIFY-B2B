@@ -1,10 +1,10 @@
-{% if product.metafields.plytix.package_products != blank %}
+{%- if product.metafields.plytix.package_products != blank -%}
 <section class="product-single-desc bundle-specs" id="product-single-desc" style="padding-top: 0;">
     <div class="container" style="border: 0;">
-{% else %}
+{%- else -%}
         <section class="product-single-desc" id="product-single-desc">
             <div class="container">
-{% endif %}
+{%- endif -%}
 
         {%- comment -%} Org Layout
         <div class="row">
@@ -26,27 +26,27 @@
                     <div class="bnd-prod-inc-contain">
                         <h2>Package Includes</h2>
 
-                        {% for bundlehandle in bundle_product_arr %}
-                            {% assign attrbp = bundlehandle | split: "#" %}
-                            {% assign productbp = attrbp[0] | strip %}
-                            {% assign productqtybp = attrbp[1] | strip %}
+                        {%- for bundlehandle in bundle_product_arr -%}
+                            {%- assign attrbp = bundlehandle | split: "#" -%}
+                            {%- assign productbp = attrbp[0] | strip -%}
+                            {%- assign productqtybp = attrbp[1] | strip -%}
                             <div class="bnd-child-ea">
                                 <div class="bnd-child" data-qty="{{ productqtybp }}" data-handle="{{ productbp }}"><div style="padding-left:10px">Loading...</div></div>
                             </div>
-                        {% endfor %}
+                        {%- endfor -%}
 
-                        {% if product.metafields.plytix.packaged_free_product != blank %}
+                        {%- if product.metafields.plytix.packaged_free_product != blank -%}
                             {%- assign free_products_arr = product.metafields.plytix.packaged_free_product | split: "," -%}
-                            {% for freebundlehandle in free_products_arr %}
-                                {% assign attr = freebundlehandle | split: "#" %}
-                                {% assign productfg = attr[0] | strip %}
-                                {% assign productqtyfg = attr[1] | strip %}
+                            {%- for freebundlehandle in free_products_arr -%}
+                                {%- assign attr = freebundlehandle | split: "#" -%}
+                                {%- assign productfg = attr[0] | strip -%}
+                                {%- assign productqtyfg = attr[1] | strip -%}
                                 <div class="bnd-child-ea free-product">
                                     <div class="fg-header"><strong>FREE Products!</strong><strong class="{{ attr[0] }}-fg-value" style="float:right;"></strong></div>
                                     <div class="bnd-child" data-qty="{{ productqtyfg }}" data-handle="{{ productfg }}"><div style="padding-top:5px; padding-left:10px">Loading...</div></div>
                                 </div>
-                            {% endfor %}
-                        {% endif %}
+                            {%- endfor -%}
+                        {%- endif -%}
 
                     </div>
 
@@ -156,18 +156,18 @@
 
                 {%- endif -%}
 
-                {% if product.metafields.plytix.in_these_bundles %}
+                {%- if product.metafields.plytix.in_these_bundles -%}
 
                     <h2 class="inbundle-title" id="bundles">Starter Package<span>s</span></h2>
                     <div class="inbundle-block">
                         {%- assign in_bundles_arr = product.metafields.plytix.in_these_bundles | split: ", " -%}
                         {%- assign bnd_counter = 0 -%}
-                        {% for bundlehandle in in_bundles_arr %}
-                            {% if bundlehandle != "" and bundlehandle != "undefined" %}
+                        {%- for bundlehandle in in_bundles_arr -%}
+                            {%- if bundlehandle != "" and bundlehandle != "undefined" -%}
                                 <div class="inbundle" data-handle="{{ bundlehandle }}"></div>
                                 {%- assign bnd_counter = bnd_counter | plus: 1 -%}
-                            {% endif %}
-                        {% endfor %}
+                            {%- endif -%}
+                        {%- endfor -%}
                     </div>
                     <style>
                         {%- if bnd_counter == 1 -%}
@@ -232,7 +232,7 @@
                         });
                         });
                     </script>
-                {% endif %}
+                {%- endif -%}
                 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
                     <div class="padcharacteristics">
                         {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  -%}
@@ -727,15 +727,15 @@
             </div>
         </div>
         <div class="video-area-dynamic">
-            {% if product.metafields.plytix.product_video != blank or product.metafields.plytix.local_video != blank%}
+            {%- if product.metafields.plytix.product_video != blank or product.metafields.plytix.local_video != blank -%}
                 <section class="product-video">
                     <div class="section-heading">
                         <h2>Videos</h2>
                     </div>
-                    {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
-                    {% assign lvideo = product.metafields.plytix.local_video | split: ";" %}
-                    {% for vid in lvideo %}
-                        {% assign pyt = vid | split: "::" %}
+                    {%- assign pvideo = product.metafields.plytix.product_video | split: ";" -%}
+                    {%- assign lvideo = product.metafields.plytix.local_video | split: ";" -%}
+                    {%- for vid in lvideo -%}
+                        {%- assign pyt = vid | split: "::" -%}
                         <div class="container">
                             <div class="video-wrap-local">
                                 <video controls="controls" style="width: 100%; height: auto;">
@@ -743,35 +743,31 @@
                                     Your browser does not support our video.
                                 </video>
                             </div>
-                            {% if pyt[1] != "None" %}
-                                <div class="info-wrap">
-                                    {{ pyt[1] }}
-                                </div>
-                            {% endif %}
+                            {%- if pyt[1] != "None" -%}
+                                <div class="info-wrap">{{ pyt[1] }}</div>
+                            {%- endif -%}
                         </div>
-                    {% endfor %}
+                    {%- endfor -%}
 
-                    {% for vid in pvideo %}
-                        {% assign pyt = vid | split: "::" %}
+                    {%- for vid in pvideo -%}
+                        {%- assign pyt = vid | split: "::" -%}
                         <div class="container">
                             <div class="video-wrap">
-                                {% if pyt[0] contains "vimeo" %}
-                                    {% assign vimeoid = pyt[0] | replace: "vimeo-","" %}
+                                {%- if pyt[0] contains "vimeo" -%}
+                                    {%- assign vimeoid = pyt[0] | replace: "vimeo-","" -%}
                                     {%- comment -%}<iframe src="https://player.vimeo.com/video/474973525?h=9cd571a900&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>{%- endcomment -%}
                                      <iframe src="https://player.vimeo.com/video/{{ vimeoid }}?title=0&byline=0&portrait=0?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
-                                {% else %}
+                                {%- else -%}
                                     <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
-                                {% endif %}
+                                {%- endif -%}
                             </div>
-                            {% if pyt[1] != "None" %}
-                                <div class="info-wrap">
-                                    {{ pyt[1] }}
-                                </div>
-                            {% endif %}
+                            {%- if pyt[1] != "None" -%}
+                                <div class="info-wrap">{{ pyt[1] }}</div>
+                            {%- endif -%}
                         </div>
-                    {% endfor %}
+                    {%- endfor -%}
                 </section>
-            {% endif %}
+            {%- endif -%}
         </div>
     </div>
 </section>
