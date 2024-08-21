@@ -270,6 +270,7 @@
         "categorylink_APLUb4": {
           "type": "categorylink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/healthcare.jpg",
             "title": "Healthcare",
             "url": ""
           }
@@ -277,6 +278,7 @@
         "categorylink_e4JdxR": {
           "type": "categorylink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/emergencey-service.jpg",
             "title": "Emergency Services",
             "url": ""
           }
