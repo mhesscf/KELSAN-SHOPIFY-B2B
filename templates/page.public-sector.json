@@ -77,6 +77,7 @@
         "resourcelink_GCwfwe": {
           "type": "resourcelink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/net-30-payments-icon.gif",
             "heading": "Net 30 Payment Terms",
             "subheading": "",
             "button_label": "Button",
@@ -95,6 +96,7 @@
         "resourcelink_93Eyb3": {
           "type": "resourcelink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/exclusive-pricing.gif",
             "heading": "Exclusive Pricing",
             "subheading": "",
             "button_label": "Button",
@@ -104,6 +106,7 @@
         "resourcelink_hKMAnk": {
           "type": "resourcelink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/sales-rep-icon.gif",
             "heading": "Dedicated Sales Rep",
             "subheading": "",
             "button_label": "Button",
