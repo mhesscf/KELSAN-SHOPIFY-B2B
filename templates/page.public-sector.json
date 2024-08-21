@@ -247,6 +247,7 @@
         "categorylink_fm9fgm": {
           "type": "categorylink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/government-agencies.jpg",
             "title": "Government Agencies",
             "url": ""
           }
