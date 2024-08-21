@@ -127,12 +127,12 @@
 {%- assign include_tax_line = include_tax_line | default: false -%}
 {%- assign include_compare_price = include_compare_price | default: true -%}
 
-{% assign pdiscontinued = false %}
-{% for c in product.collections %}
-    {% if c.handle == "discontinued" %}
-        {% assign pdiscontinued = true %}
-    {% endif %}
-{% endfor %}
+{%- assign pdiscontinued = false -%}
+{%- for c in product.collections -%}
+    {%- if c.handle == "discontinued" -%}
+        {%- assign pdiscontinued = true -%}
+    {%- endif -%}
+{%- endfor -%}
 
 {%- if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
   <div class="price {{ class_root }}__price {% if compare_at_price_varies %}price--varies{% endif %}">

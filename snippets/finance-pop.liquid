@@ -24,7 +24,7 @@
         <div class="creditkeylink optionlink">
             <div class="step1-logo">{{ images['credit-key-logo.jpg'] | image_url: height: 40 | image_tag }}</div>
 
-            {% comment %}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{% endcomment %}
+            {%- comment -%}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{%- endcomment -%}
             <ul>
                 <li>Limit up to $50,000</li>
                 <li>Terms up to 12 months</li>
@@ -34,7 +34,7 @@
         <hr class="logo-line" />
         <div class="equipmoneylink optionlink">
             <div class="step1-logo">{{ images['equipmoney-logo.jpg'] | image_url: height: 40 | image_tag }}</div>
-                {% comment %}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{% endcomment %}
+                {%- comment -%}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{%- endcomment -%}
                 <ul>
                     <li>Limit up to $1,000,000</li>
                     <li>Terms up to 60 months</li>
@@ -44,7 +44,7 @@
         <hr class="logo-line" />
         <div class="shoplink optionlink">
             <div class="step1-logo">{{ images['shop-pay-trans.png'] | image_url: height: 40 | image_tag }}</div>
-            {% comment %}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{% endcomment %}
+            {%- comment -%}<div class="default-text">Enter the loan amount below for your estimate and click the button to apply for credit today!</div>{%- endcomment -%}
             <ul>
                 <li>Limit up to $17,500</li>
                 <li>Terms up to 12 months</li>
@@ -109,7 +109,7 @@
     </div>
 
 <fieldset class="loanamount" style="max-height:280px; overflow:hidden;">
-
+    <legend class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">Lone Amount</legend>
     <div class="payment-option-amount">
         <label for="loan-amount">Loan Amount: </label><input name="Loan Amount" id="loan-amount" type="text" class="input-text required-entry" /><br />
         <div id="requestedskus" class="hidden"></div>
@@ -124,7 +124,7 @@
         <a id="ck-appLink" target="_blank" class="" href="{{ creditKeyUrl }}">
             <button class="button payment-blue ck-application"><span><span>Apply Now</span></span></button>
         </a>
-        {% comment %}<div class="ck-pop-footer pop-footer equipmoneylink"><strong>Looking for a lower rate of <span class="rate-full">$<span class="lowestrate"></span>/month</span>?<br/><span  class="fake-link" >Click here</span> to check out our EquipMoney plans.</strong></div>{% endcomment %}
+        {%- comment -%}<div class="ck-pop-footer pop-footer equipmoneylink"><strong>Looking for a lower rate of <span class="rate-full">$<span class="lowestrate"></span>/month</span>?<br/><span  class="fake-link" >Click here</span> to check out our EquipMoney plans.</strong></div>{%- endcomment -%}
         <div class="pop-footer defaultlink"><strong><span class="fake-link" >Click here</span> to view all financing options.</strong></div>
     </div>
 
@@ -135,7 +135,6 @@
             <div class="payment-option-length">
                 <label class="payment-label" for="em-terms">Months:</label>
                 <select name="em-terms" id="em-terms" title="Equip Money Terms">
-                    <?php // <option class="em-select" ratedata="" id="em-bb-12-select" value="12">12</option> ?>
                     <option class="em-select" ratedata="" id="em-bd-13-select" value="13">13</option>
                     <option class="em-select" ratedata="" id="em-bb-24-select" value="24">24</option>
                     <option class="em-select" ratedata="" id="em-bb-36-select" value="36">36</option>
@@ -157,7 +156,7 @@
         <a id="em-appLink" target="_blank" class="hidden" href="">
             <button class="button payment-blue em-application"><span><span>Apply Now</span></span></button>
         </a>
-        {% comment %}<div class="pop-footer creditkeylink"><strong>Need to apply for a revolving line of credit<br/>at 12 month payments?<br/><span class="fake-link" >Click here</span> to check out our Credit Key plan.</strong></div>{% endcomment %}
+        {%- comment -%}<div class="pop-footer creditkeylink"><strong>Need to apply for a revolving line of credit<br/>at 12 month payments?<br/><span class="fake-link" >Click here</span> to check out our Credit Key plan.</strong></div>{%- endcomment -%}
         <div class="pop-footer defaultlink"><strong><span class="fake-link" >Click here</span> to view all financing options.</strong></div>
     </div>
 
@@ -212,7 +211,7 @@
                 </div>
             </div>
         </div>
-        {% comment %}<div class="subnotes">The estimated payment amount excludes taxes and shipping. Rates range from 0-36% APR. Payment options through Shop Pay Installments are subject to an eligibility check and are provided by these lending partners: <a href="https://www.affirm.com/lenders">affirm.com/lenders</a>. Options depend on your purchase amount, and a down payment may be required. More options may be available upon approval. State notices to consumers: <a href="https://www.affirm.com/licenses">affirm.com/licenses</a>.</div>{% endcomment %}
+        {%- comment -%}<div class="subnotes">The estimated payment amount excludes taxes and shipping. Rates range from 0-36% APR. Payment options through Shop Pay Installments are subject to an eligibility check and are provided by these lending partners: <a href="https://www.affirm.com/lenders">affirm.com/lenders</a>. Options depend on your purchase amount, and a down payment may be required. More options may be available upon approval. State notices to consumers: <a href="https://www.affirm.com/licenses">affirm.com/licenses</a>.</div>{%- endcomment -%}
         <div style="padding-top:5px;">
             <button id="shop-instruct" class="button payment-blue"><span><span>How to Apply</span></span></button>
         </div>

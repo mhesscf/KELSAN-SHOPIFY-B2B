@@ -112,6 +112,101 @@
           class="slideshow__wrapper {{ wrapper_classes }}"
           data-slideshow-wrapper
   >
+
+{% comment %}check for additional banners before doing all the metaobject banner work. Also count total valid for bullets{% endcomment %}
+    {%- assign today_date = 'now' | date: '%s' -%}
+    {%- assign bannerObj = shop.metaobjects.dept_page_banners.values  -%}
+
+    {%- assign validBanners = 0  -%}
+    {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+    {%- for banner in bannerObj -%}
+        {%- assign start = banner.startdate | date: '%s' -%}
+
+        {%- comment -%}//add one day to the end date{%- endcomment -%}
+        {%- assign date = banner.enddate | date: '%s' -%}
+        {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+        {%- comment -%}if not active, skip{%- endcomment -%}
+        {%- if today_date < start or today_date > end -%}
+          {% continue %}
+        {%- endif -%}
+
+        {%- comment -%}// check pages{%- endcomment -%}
+        {%- assign showBanner = true -%}
+        {%- if banner.department_pages -%}
+          {%- assign showBanner = false -%}
+          {%- for bannerDept in banner.department_pages.value  -%}
+            {%- if page.id == bannerDept.id  -%}
+              {%- assign showBanner = true -%}
+              {% break %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- if showBanner == true -%}
+          {%- assign validBanners = validBanners | plus: 1  -%}
+        {%- endif -%}
+    {%- endfor -%}
+
+
+
+    {%- comment -%}----------------------image addon via metaobjects------------------{%- endcomment -%}
+    {%- assign orgCounter =  0 -%}
+
+    {%- for banner in bannerObj -%}
+      {%- if banner.boost_to_front == true -%}
+        {%- assign start = banner.startdate | date: '%s' -%}
+
+        {%- comment -%}//add one day to the end date{%- endcomment -%}
+        {%- assign date = banner.enddate | date: '%s' -%}
+        {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+        {%- comment -%}if not active, skip{%- endcomment -%}
+        {%- if today_date < start or today_date > end -%}
+          {% continue %}
+        {%- endif -%}
+
+        {%- comment -%}// check pages{%- endcomment -%}
+        {%- assign showBanner = true -%}
+        {%- if banner.department_pages -%}
+          {%- assign showBanner = false -%}
+          {%- for bannerDept in banner.department_pages.value  -%}
+              {%- if page.id == bannerDept.id  -%}
+                {%- assign showBanner = true -%}
+                {% break %}
+              {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- if showBanner == true -%}
+          <div
+                  class="slideshow-slide banner-slideshow-slide "
+                  aria-label="Slide 0 of 4"
+                  tabindex="{{ orgCounter }}"
+                  data-slideshow-slide
+                  data-slide-index="{{ orgCounter }}"
+
+          >
+            <div class="slideshow-slide__image-wrapper" data-slide-image-wrapper >
+              <div class="slideshow-slide__content  slideshow-slide__content--banner_fLBUa3"  data-slide-content>
+                <a href="/collections/demoed-refurbished-equipment">mitch
+                  <div class="banner-lg"><img src="{{ banner.desktop_image | image_url: width: 1400 }}" alt="{{ banner.name }}" class="img-responsive"></div>
+                  <div class="banner-sm"><img src="{{ banner.mobile_image | image_url: width: 800 }}" alt="{{ banner.name }}" class="img-responsive"></div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          {%- assign orgCounter = orgCounter | minus: 1  -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+
+
+
+
+
     {%- for block in section.blocks -%}
       {%
               render 'slideshow-slide',
@@ -120,13 +215,70 @@
               block_index: forloop.index0
       %}
     {%- endfor -%}
+
+
+    {%- comment -%}----------------------image addon via metaobjects------------------{%- endcomment -%}
+    {%- assign orgendCounter =  section.blocks.size | plus: 1 -%}
+    {%- for banner in bannerObj -%}
+      {%- if banner.boost_to_front == false -%}
+        {%- assign start = banner.startdate | date: '%s' -%}
+
+        {%- comment -%}//add one day to the end date{%- endcomment -%}
+        {%- assign date = banner.enddate | date: '%s' -%}
+        {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+        {%- comment -%}if not active, skip{%- endcomment -%}
+        {%- if today_date < start or today_date > end -%}
+          {% continue %}
+        {%- endif -%}
+
+        {%- comment -%}// check pages{%- endcomment -%}
+        {%- assign showBanner = true -%}
+        {%- if banner.department_pages -%}
+          {%- assign showBanner = false -%}
+          {%- for bannerDept in banner.department_pages.value  -%}
+            {%- if page.id == bannerDept.id  -%}
+              {%- assign showBanner = true -%}
+              {% break %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- if showBanner == true -%}
+          <div
+                  class="slideshow-slide banner-slideshow-slide "
+                  aria-label="Slide {{ orgendCounter }} of 4"
+                  tabindex="{{ orgendCounter }}"
+                  data-slideshow-slide
+                  data-slide-index="{{ orgendCounter }}"
+
+          >
+            <div class="slideshow-slide__image-wrapper" data-slide-image-wrapper >
+              <div class="slideshow-slide__content  slideshow-slide__content--banner_fLBUa3"  data-slide-content>
+                <a href="/collections/demoed-refurbished-equipment">mitch
+                  <div class="banner-lg"><img src="{{ banner.desktop_image | image_url: width: 1400 }}" alt="{{ banner.name }}" class="img-responsive"></div>
+                  <div class="banner-sm"><img src="{{ banner.mobile_image | image_url: width: 800 }}" alt="{{ banner.name }}" class="img-responsive"></div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          {%- assign orgendCounter = orgendCounter | minus: 1  -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+
   </div>
 
-  {%- if section.blocks.size > 1 and show_pagination -%}
+  {%- assign totalbanners = section.blocks.size | plus: validBanners -%}
+
+  {%- if totalbanners > 1 and show_pagination -%}
     <ol
             class="slideshow-pagination"
             data-slideshow-pagination
     >
+
       {%- for block in section.blocks -%}
         <li class="slideshow-pagination__dot">
           <button
@@ -138,6 +290,51 @@
           </button>
         </li>
       {%- endfor -%}
+
+      {% comment %}add extra blocks from metaobject additions{% endcomment %}
+      {%- assign bulletCounter =  section.blocks.size -%}
+      {%- for banner in bannerObj -%}
+        {%- if banner.boost_to_front == false or banner.boost_to_front == true -%}
+          {%- assign start = banner.startdate | date: '%s' -%}
+
+          {%- comment -%}//add one day to the end date{%- endcomment -%}
+          {%- assign date = banner.enddate | date: '%s' -%}
+          {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+          {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+          {%- comment -%}if not active, skip{%- endcomment -%}
+          {%- if today_date < start or today_date > end -%}
+            {% continue %}
+          {%- endif -%}
+
+          {%- comment -%}// check pages{%- endcomment -%}
+          {%- assign showBanner = true -%}
+          {%- if banner.department_pages -%}
+            {%- assign showBanner = false -%}
+            {%- for bannerDept in banner.department_pages.value  -%}
+              {%- if page.id == bannerDept.id  -%}
+                {%- assign showBanner = true -%}
+                {% break %}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+
+          {%- if showBanner == true -%}
+            <li class="slideshow-pagination__dot">
+              <button
+                      class="slideshow-pagination__button"
+                      data-selected="false"
+                      data-slide-button="{{ bulletCounter }}"
+              >
+                <span class="visually-hidden">{{ 'sections.slideshow.slide_index' | t: count: forloop.index }}</span>
+              </button>
+            </li>
+            {%- assign bulletCounter = bulletCounter | plus: 1  -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+
     </ol>
   {%- endif -%}
 

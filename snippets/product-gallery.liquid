@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   @param product {Product}
     The product object in question or false. Onboards if false or blank.
 
@@ -19,20 +19,20 @@
 
   @param gallery_click_to_zoom {String}
     This is the click to zoom setting, which is either 'disabled', 'mobile', 'desktop', or 'always'
-{% endcomment %}
+{%- endcomment -%}
 
-{% assign onboarding = false %}
-{% if product == false or product == blank %}
-  {% assign onboarding = true %}
-{% endif %}
+{%- assign onboarding = false -%}
+{%- if product == false or product == blank -%}
+  {%- assign onboarding = true -%}
+{%- endif -%}
 
-{% assign selected_variant = product.selected_or_first_available_variant %}
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
 
-{% if select_first_available_variant %}
-  {% assign selected_media = selected_variant.featured_media | default: product.featured_media %}
-{% else %}
-  {% assign selected_media = product.featured_media %}
-{% endif %}
+{%- if select_first_available_variant -%}
+  {%- assign selected_media = selected_variant.featured_media | default: product.featured_media -%}
+{%- else -%}
+  {%- assign selected_media = product.featured_media -%}
+{%- endif -%}
 
 <div
   class="
@@ -65,13 +65,13 @@
     image_crop: image_crop
   %}
 
-  {% assign first_model = product.media | where: "media_type", "model" | first %}
-  {% if selected_media.media_type == 'model' %}
-    {% assign model = selected_media %}
-  {% else %}
-    {% assign model = first_model %}
-  {% endif %}
-  {% if model %}
+  {%- assign first_model = product.media | where: "media_type", "model" | first -%}
+  {%- if selected_media.media_type == 'model' -%}
+    {%- assign model = selected_media -%}
+  {%- else -%}
+    {%- assign model = first_model -%}
+  {%- endif -%}
+  {%- if model -%}
     <script>
       window.ShopifyXR=window.ShopifyXR||function(){(ShopifyXR.q=ShopifyXR.q||[]).push(arguments)}
       {% assign models = product.media | where: 'media_type', 'model' | json %}
@@ -88,6 +88,6 @@
       {% render 'icon-library', id: 'icon-3D' %}
       {{ 'product.media.view_in_your_space' | t }}
     </button>
-  {% endif %}
+  {%- endif -%}
 </div>
 </div>

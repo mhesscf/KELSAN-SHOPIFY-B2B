@@ -11,7 +11,7 @@
 
 {% assign isScrubber = false %}
 {% assign pdiscontinued = false %}
-{% for c in product.collections %}
+{%- for c in product.collections -%}
     {% if c.handle == "walk-behind-auto-scrubbers" %}
         {% assign isScrubber = true %}
     {% elsif c.handle == "ride-on-auto-scrubbers" %}
@@ -19,7 +19,7 @@
     {% elsif c.handle == "discontinued" %}
         {% assign pdiscontinued = true %}
     {% endif %}
-{% endfor %}
+{%- endfor -%}
 
 {% if isScrubber == true %}
 

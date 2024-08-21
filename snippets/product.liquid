@@ -309,6 +309,7 @@
                                     data-product-pricing
                             >
                                 {%- if product.metafields.plytix.package_products == blank -%}
+                                    {% comment %}
                                     {%
                                             render 'product-badge',
                                             class_root: 'product',
@@ -321,6 +322,7 @@
                                             include_range: false,
                                             selected_variant: selected_variant,
                                     %}
+                                    {% endcomment %}
                                 {%- endif -%}
                                 {%
                                         render 'product-price',
