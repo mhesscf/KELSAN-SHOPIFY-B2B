@@ -79,7 +79,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/net-30-icon.png",
             "heading": "Net 30 Payment Terms",
-            "subheading": "",
+            "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamorum.<\/p>",
             "button_label": "Button",
             "button_link": ""
           }
@@ -89,7 +89,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/except-icon.png",
             "heading": "Tax Exempt Purchasing",
-            "subheading": "",
+            "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamorum.<\/p>",
             "button_label": "Button",
             "button_link": ""
           }
@@ -99,7 +99,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/exclusive-pricing-icon.png",
             "heading": "Exclusive Pricing",
-            "subheading": "",
+            "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamorum.<\/p>",
             "button_label": "Button",
             "button_link": ""
           }
@@ -109,7 +109,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/sales-rep-icon.png",
             "heading": "Dedicated Sales Representative",
-            "subheading": "",
+            "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamorum.<\/p>",
             "button_label": "Button",
             "button_link": ""
           }
