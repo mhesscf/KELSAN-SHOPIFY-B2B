@@ -20,6 +20,13 @@
         "hide_lvl_2_links": false
       }
     },
+    "dynamic_html_WUrd8b": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<style>\n.slideshow-slide__heading,\n.slideshow-slide__text{color:white;}\n<\/style>"
+      }
+    },
     "dynamic_slideshow_DLJTYP": {
       "type": "dynamic-slideshow",
       "blocks": {
@@ -178,6 +185,7 @@
   },
   "order": [
     "a475181a-3079-4a36-9edf-37785d0fdb22",
+    "dynamic_html_WUrd8b",
     "dynamic_slideshow_DLJTYP",
     "main",
     "dept_category_area_TGxnRT",
