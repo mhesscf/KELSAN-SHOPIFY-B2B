@@ -34,6 +34,7 @@
           "type": "slide",
           "settings": {
             "background_image": "shopify:\/\/shop_images\/american-flag-sized.jpg",
+            "mobile_background_image": "shopify:\/\/shop_images\/american-flag-sized-800x427.jpg",
             "title": "CleanFreak.com Public Sector",
             "text": "Whether you're in education, government, or any other sector, we provide the cleaning products and solutions to keep your agency pristine and running smoothly.",
             "color": "#ffffff",
