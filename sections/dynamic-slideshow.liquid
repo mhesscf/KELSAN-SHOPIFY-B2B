@@ -48,7 +48,7 @@
   {% endif %}
 {% endstyle %}
 
-{% comment %}Inject @pixelunion/pxs-slideshow/slideshow begin{% endcomment %}
+{%- comment -%}Inject @pixelunion/pxs-slideshow/slideshow begin{%- endcomment -%}
 {%- comment -%}
   @param section {Object}
     The section object with all section data.
@@ -113,7 +113,7 @@
           data-slideshow-wrapper
   >
 
-{% comment %}check for additional banners before doing all the metaobject banner work. Also count total valid for bullets{% endcomment %}
+{%- comment -%}check for additional banners before doing all the metaobject banner work. Also count total valid for bullets{%- endcomment -%}
     {%- assign today_date = 'now' | date: '%s' -%}
     {%- assign bannerObj = shop.metaobjects.dept_page_banners.values  -%}
 
@@ -291,7 +291,7 @@
         </li>
       {%- endfor -%}
 
-      {% comment %}add extra blocks from metaobject additions{% endcomment %}
+      {%- comment -%}add extra blocks from metaobject additions{%- endcomment -%}
       {%- assign bulletCounter =  section.blocks.size -%}
       {%- for banner in bannerObj -%}
         {%- if banner.boost_to_front == false or banner.boost_to_front == true -%}
@@ -347,7 +347,7 @@
   >
   </div>
 </section>
-{% comment %}Inject @pixelunion/pxs-slideshow/slideshow end{% endcomment %}
+{%- comment -%}Inject @pixelunion/pxs-slideshow/slideshow end{%- endcomment -%}
 
 
 {% schema %}
