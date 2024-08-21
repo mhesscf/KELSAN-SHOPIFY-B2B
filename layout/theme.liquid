@@ -358,6 +358,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
         class="site-header site-header-nav--open"
         role="banner"
         data-site-header
+        aria-label="header"
 >
     <div class="pop-grad hidden"></div>
     {% section 'static-header' %}
@@ -455,7 +456,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
                             </div>
                             <div class="atc-subtotal--price money" data-atc-banner-cart-subtotal></div>
                         </div>
-                        <footer class="atc-banner--cart-footer">
+                        <footer class="atc-banner--cart-footer" aria-label="Cart Footer">
                             <a class="button-secondary atc-button--viewcart main-atc-button" href="{{ routes.cart_url }}"
                                data-atc-banner-cart-button><i class="fa-regular fa-cart-shopping"></i>
                                 {{ 'add_to_cart_banner.general.view_cart_html' | t: count: '<span></span>' }}
