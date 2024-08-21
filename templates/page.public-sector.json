@@ -255,6 +255,7 @@
         "categorylink_w3FgqY": {
           "type": "categorylink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/class-room-education.jpg",
             "title": "Education",
             "url": ""
           }
