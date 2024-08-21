@@ -11,6 +11,7 @@
   "sections": {
     "a475181a-3079-4a36-9edf-37785d0fdb22": {
       "type": "left-nav-on-pages",
+      "disabled": true,
       "settings": {
         "show_section": true,
         "navigation": "education",
