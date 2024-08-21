@@ -48,7 +48,7 @@
             "button_two_link": "",
             "button_two_style": "primary",
             "show_overlay": true,
-            "overlay_color": "#303E48",
+            "overlay_color": "#303e48",
             "overlay_opacity": 70
           }
         }
@@ -87,6 +87,7 @@
         "resourcelink_63QUtP": {
           "type": "resourcelink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/except-icon.png",
             "heading": "Tax Exempt Purchasing",
             "subheading": "",
             "button_label": "Button",
@@ -96,7 +97,7 @@
         "resourcelink_93Eyb3": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/exclusive-pricing.gif",
+            "image": "shopify:\/\/shop_images\/exclusive-pricing-icon.png",
             "heading": "Exclusive Pricing",
             "subheading": "",
             "button_label": "Button",
