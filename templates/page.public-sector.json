@@ -263,6 +263,7 @@
         "categorylink_NNCMCG": {
           "type": "categorylink",
           "settings": {
+            "image": "shopify:\/\/shop_images\/flag-military.jpg",
             "title": "Military",
             "url": ""
           }
