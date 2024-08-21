@@ -79,7 +79,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/net-30-icon.png",
             "heading": "Net 30 Payment Terms",
-            "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamorum.<\/p>",
+            "subheading": "<p>Net 30 payments give you flexibility to buy what you need when you need it, and pay later.<\/p>",
             "button_label": "Button",
             "button_link": ""
           }
@@ -89,7 +89,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/except-icon.png",
             "heading": "Tax Exempt Purchasing",
-            "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamorum.<\/p>",
+            "subheading": "<p>We offer tax-exempt purchasing to help your business save on costs and enhance profitability.<\/p>",
             "button_label": "Button",
             "button_link": ""
           }
@@ -99,7 +99,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/exclusive-pricing-icon.png",
             "heading": "Exclusive Pricing",
-            "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamorum.<\/p>",
+            "subheading": "<p>Unlock exclusive pricing through bulk purchases, regular orders, and customized pricing contracts tailored to your needs.<\/p>",
             "button_label": "Button",
             "button_link": ""
           }
