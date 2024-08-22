@@ -299,6 +299,9 @@
       },
       "static-announcement": {
         "type": "static-announcement",
+        "custom_css": [
+          ".alert-bar.show{border-bottom:1px solid white;}"
+        ],
         "settings": {
           "show_announcement": true,
           "homepage_announcement": false,
