@@ -300,15 +300,15 @@
       "static-announcement": {
         "type": "static-announcement",
         "settings": {
-          "show_announcement": false,
+          "show_announcement": true,
           "homepage_announcement": false,
-          "announcement_text": "In observance of Memorial Day, we will be closed on Monday, May 27th. We will reopen Tuesday, May 28th.",
+          "announcement_text": "Labor Day Sale! Free Shipping on all products! No Coupon Needed. Ends 9\/15",
           "announcement_text_mobile": "In observance of Memorial Day, we will be closed on Monday, May 27th. We will reopen Tuesday, May 28th.",
           "announcement_link": "",
           "announcement_promo": "",
           "flash": false,
           "announcement_color": "#ffffff",
-          "announcement_background": "#123570"
+          "announcement_background": "#d74018"
         }
       },
       "static-product-recommendations": {
