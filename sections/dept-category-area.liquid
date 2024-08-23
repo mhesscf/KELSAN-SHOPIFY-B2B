@@ -1,6 +1,6 @@
-{% if section.blocks.size > 0 %}
-    {% assign heading = section.settings.block-title %}
-    {% assign section_classes = "category-types-v2" %}
+{%- if section.blocks.size > 0 -%}
+    {%- assign heading = section.settings.block-title -%}
+    {%- assign section_classes = "category-types-v2" -%}
     {%- assign base_name = base_name | default: 'category-types-v2' -%}
     <section class="category-types-v2" data-section-id="{{ section.id }}">
         <div class="category-links-section--wrapper">
@@ -13,22 +13,22 @@
                     {%- endif -%}
                 </div>
                 <div class="flex-row">
-                    {% assign blockFill = 0 %}
+                    {%- assign blockFill = 0 -%}
 
-                    {% for block in section.blocks %}
-                        {% if blockFill == 4 %}
-                            {% assign blockFill = 1 %}
-                        {% else %}
-                            {% assign blockFill = blockFill | plus: 1 %}
-                        {% endif %}
-                        {% assign image = block.settings.image %}
-                        {% assign title = block.settings.title %}
-                        {% assign url = block.settings.url %}
+                    {%- for block in section.blocks -%}
+                        {%- if blockFill == 4 -%}
+                            {%- assign blockFill = 1 -%}
+                        {%- else -%}
+                            {%- assign blockFill = blockFill | plus: 1 -%}
+                        {%- endif -%}
+                        {%- assign image = block.settings.image -%}
+                        {%- assign title = block.settings.title -%}
+                        {%- assign url = block.settings.url -%}
                             <div class="category-link-wrapper resource-{{ block.id }}">
                                 <div class="category-link-border">
                                     <a class="category-link" href="{{ block.settings.url }}" title="{{ title }}">
                                         {%- if image != blank -%}
-                                            {% assign alt = image.alt | default: heading %}
+                                            {%- assign alt = image.alt | default: heading -%}
                                             {% capture image_classes %}{{ base_name }}__image{% endcapture %}
                                             {%
                                                     render 'rimg'
@@ -97,7 +97,7 @@
 
                                 </div>
                             </div>
-                    {%  endfor %}
+                    {%-  endfor -%}
 
 
                     {%-  if blockFill != 4 and shop.name contains "CleanFreak" -%}
@@ -135,7 +135,7 @@
             </div>
         </div>
     </section>
-{% endif %}
+{%- endif -%}
 
 <script>
     jQuery('.moreinfo-btn').on( "click", function() {
