@@ -53,6 +53,29 @@
   <div class="top-menu-container">
     <div class="top-menu-welcome">
 
+      {%- assign websiteName = "CleanFreak.com" -%}
+      {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+        {%- assign websiteName = "CleanFreak.com" -%}
+      {%- elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+        {%- assign websiteName = "CleanFreak.com" -%}
+      {%- elsif shop.permanent_domain contains "airmovers-dev.myshopify.com" -%}
+        {%- assign websiteName = "AirMovers.com" -%}
+      {%- elsif shop.permanent_domain contains "airmovers-prod.myshopify.com" -%}
+        {%- assign websiteName = "AirMovers.com" -%}
+      {%- elsif shop.permanent_domain contains "carpetextractors-dev1.myshopify.com" -%}
+        {%- assign websiteName = "CarpetExtractors.com" -%}
+      {%- elsif shop.permanent_domain contains "carpetextractors.myshopify.com" -%}
+        {%- assign websiteName = "CarpetExtractors.com" -%}
+      {%- elsif shop.permanent_domain contains "floorbuffers-dev.myshopify.com" -%}
+        {%- assign websiteName = "FloorBuffers.com" -%}
+      {%- elsif shop.permanent_domain contains "floorbuffers-prod.myshopify.com" -%}
+        {%- assign websiteName = "FloorBuffers.com" -%}
+      {%- elsif shop.permanent_domain contains "floorscrubbers-dev.myshopify.com" -%}
+        {%- assign websiteName = "FloorScrubbers.com" -%}
+      {%- elsif shop.permanent_domain contains "floorscrubbers-prod.myshopify.com" -%}
+        {%- assign websiteName = "FloorScrubbers.com" -%}
+      {%- endif -%}
+
       {%- if customer -%}
         {%- assign sf_customer = 0 -%}
         {%- for tag in customer.tags -%}
@@ -68,10 +91,10 @@
         {%- elsif customer.name != "" -%}
           Welcome, {{ customer.name }}! (<a href="/account/logout/" class="logout">Logout</a>)
         {%- else -%}
-          Welcome to CleanFreak.com
+          Welcome to {{ websiteName }}
         {%- endif -%}
       {%- else -%}
-        Welcome to CleanFreak.com
+        Welcome to {{ websiteName }}
       {%- endif -%}
 
 
