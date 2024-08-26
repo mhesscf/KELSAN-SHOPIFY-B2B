@@ -676,9 +676,9 @@
             var name = "atcloc";
             var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
             if (thisCookie){
-                var newCookieVal = thisCookie[2] + "::"+$(this).data('psku')+":"+$(this).data('psku');
+                var newCookieVal = thisCookie[2] + "::"+$(this).data('psku')+":Free Gift";
             }else{
-                var newCookieVal = $(this).data('psku')+":"+$(this).data('psku');
+                var newCookieVal = $(this).data('psku')+":"+":Free Gift";
             }
             document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
 
