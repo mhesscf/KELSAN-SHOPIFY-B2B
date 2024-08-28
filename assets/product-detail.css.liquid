@@ -634,6 +634,7 @@
 .qtydiv .quantity-selector i{
   color: {{ settings.color_text_medium }};
 }
+.qtybox,
 #qtybox{
   text-align: center;
   display: inline-block;
@@ -642,7 +643,13 @@
   border-radius: 8px;
   overflow: hidden;
   display: flex;
+  max-width:144px;
+  min-height:48px;
 }
+.qtybox.qtyonly input{
+  cursor:not-allowed !important;
+}
+
 .qty {
   width: 50px;
   height: 50px;
@@ -659,19 +666,21 @@
   border-radius: 0px;
 }
 input.qtyplus {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   font-size: 26px;
   text-align: center;
   padding: 0;
   border: 0;
   background-color: #fff;
   cursor: pointer;
-  min-width: 50px;
+  min-width: 48px;
 }
+.qtybox .product-quantity-input,
 .qtybox #product-quantity-input{
-  width: 50px;
-  min-width: 50px;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
   border-left: 1px solid {{ settings.color_text_medium }};
   border-right: 1px solid {{ settings.color_text_medium }};
   border-top: 0;
@@ -681,18 +690,34 @@ input.qtyplus {
   align-items: center;
   font-weight: 600;
   border-radius: 0;
+  text-align:center;
 }
 input.qtyminus {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   font-size: 26px;
   text-align: center;
   padding: 0;
   border: 0;
   background-color: #fff;
   cursor: pointer;
-  min-width: 50px;
+  min-width: 48px;
 }
+
+.cart-item--quantity .qtybox{
+  height:32px;
+  min-height:32px;
+  max-width:96px;
+  margin:auto;
+}
+.cart-item--quantity .qtybox .qtyminus,
+.cart-item--quantity .qtybox .qtyplus,
+.cart-item--quantity .qtybox .product-quantity-input{
+  min-width:32px;
+  width:32px;
+  height:32px;
+}
+
 /* ------------- Quantity discount infobox Style ------------------------ */
 .qtydiv .rside .discount-info-wrap .quantity-discount-infobox.hidden{
   display: none;

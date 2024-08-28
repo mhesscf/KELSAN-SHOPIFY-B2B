@@ -113,6 +113,7 @@
   action="{{ routes.cart_url }}"
   method="post"
   aria-label="cart checkout"
+  id="update-cart"
 >
   <header class="cart-title">
     <div class="cart-title-left">
@@ -196,9 +197,10 @@
           cart: cart
         %}
         <div class="cart-total">
-          <a data-href="/cart/clear" class="btn main-default-button button-primary" id="empty-cart" style="margin-bottom:10px;">Empty Cart</a>
+          <a data-href="/cart/clear" class="btn main-default-button button-primary" id="empty-cart" style="margin-bottom:10px;"><i class="fa-regular fa-trash"></i> Empty Cart</a>
           {% comment %}<a href="/cart" class="btn button-primary" id="update-cart" style="margin-bottom:10px;">Update Cart</a>{% endcomment %}
-          <a class="btn button-primary main-default-button" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;">Update Cart</a>
+          <a class="btn button-primary main-default-button" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;"><i class="fa-solid fa-arrows-rotate"></i> Update Cart</a>
+
           {% if section.settings.enable_order_notes %}
             <div class="cart-ordernote">
               <span class="cart-ordernote-heading">{{ 'cart.general.enter_order_note' | t }}</span>
@@ -454,4 +456,35 @@
     $(".gwp-section").hide().prependTo(".fg-area");
     $(".fg-area .gwp-section").show();
   });
+
+
+  let timeoutId;
+  function qtyAdjust(key,plusminus, step){
+    step = parseInt(step)
+    if(isNaN(step)){
+      step = 1;
+    }
+
+    var inputId ="updates_"+key;
+    var quantityNumber = document.getElementById(inputId);
+    var currentValue = parseInt(quantityNumber.value);
+
+    if(plusminus == "minus"){
+      currentValue -= step;
+    }else{
+      currentValue += step;
+    }
+
+      quantityNumber.value = currentValue;
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      // console.log('updating');
+      window.Shopify.changeItem(key, currentValue, response => {
+        console.log("item updated");
+      });
+    }, "300");
+
+  }
+
 </script>
