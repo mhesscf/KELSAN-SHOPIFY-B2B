@@ -283,6 +283,7 @@
               class="cart-item--quantity form-fields--qty"
               data-quantity-wrapper
       >
+        {% comment %}
         {% if pstep == '' %}
         <div class="form-field form-field--qty-select {% if item.quantity < 10 %}visible{% else %}hidden{% endif %}">
           <div class="form-field-select-wrapper ">
@@ -301,7 +302,7 @@
                   <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
                   {{ i }}
                   </option>
-              {% endfor %}
+                {% endfor %}
               {% else %}
                 {% for i in (1..9) %}
                   <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
@@ -348,6 +349,43 @@
             {{ 'general.general.quantity' | t }}
           </label>
         </div>
+           {% endcomment %}
+          {% assign editable = true %}
+          {% if product_bundle != '' %}
+              {% assign editable = false %}
+          {% elsif fgbogo == true %}
+              {% assign editable = false %}
+          {% endif %}
+
+
+            <div class="qtybox cart-qty-form-field form-field form-field--qty-input visible {% if editable == false %}qtyonly{% endif %}">
+                <input type="button" {% if editable == true %}onClick="qtyAdjust('{{ item.key }}','minus','{{ pstep }}')"{% endif %} value="−" data-step="{{ pstep }}" class="qtyminus" data-field="quantity">
+              <input
+                      class="product-quantity-input form-field-input form-field-number form-field-filled"
+                      value="{{ item.quantity }}"
+                      name="updates[]"
+                      id="updates_{{ item.key }}"
+                      data-qtkey="qtInfo{{ item.key }}"
+                      data-original="{{ item.quantity }}"
+                      data-step="{{ pstep }}"
+                      type="text"
+                      pattern="\d*"
+                      {% if item.quantity < 10 %}tabindex="-1"{% endif %}
+                      {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
+                      {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
+                      aria-label="{{ 'general.general.quantity' | t }}"
+                      data-quantity-input
+                      data-cartitem-quantity>
+                <input type="button" {% if editable == true %}onClick="qtyAdjust('{{ item.key }}','plus','{{ pstep }}')"{% endif %} value="+" class="qtyplus" data-step="{{ pstep }}" data-field="quantity">
+
+              {% comment %}<label class="form-field-title" for="updates_{{ item.key }}">
+                {{ 'general.general.quantity' | t }}
+              </label>{% endcomment %}
+            </div>
+          {% if editable == true %}<a class="line-update" onClick="updateCart();"><i class="fa-solid fa-arrows-rotate"></i> Update</a>{% endif %}
+
+
+
             {% if available < 999999 %}
               <span class="package-qt-info" style="display:none;">
                 Limited Quantity Available. Please adjust your quantity to or below {{ available }}.
