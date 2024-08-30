@@ -4396,6 +4396,70 @@ body .mdc-ripple-surface:hover:before {
 	}
 }
 
+
+.start-talk-area{
+	background-color: #E6F6FB;
+	margin-top:25px;
+	margin-bottom:30px;
+	padding:15px;
+}
+
+.start-talk-footer-contain{
+	max-width:1400px;
+	padding:30px 25px;
+	margin:auto;
+	display:flex;
+}
+.start-talk-area .talk-col{
+	display:flex;
+	flex-basis:33%;
+}
+
+.start-talk-area .talk-col-icon{
+	font-size:55px;
+	margin: 7px 20px;
+	color:{{ settings.color_button_secondary_background }};
+}
+.start-talk-area .talk-col-content{
+	position: relative;
+	padding-bottom:60px;
+}
+.start-talk-area .talk-col-heading{
+	font-size: var(--font-size-heading-5);
+	position: relative;
+	padding-top: 0;
+	padding-bottom: 10px;
+	font-weight: bold;
+	color: #303E48;
+	letter-spacing: 0.58px;
+	line-height: 15px;
+}
+.start-talk-area .talk-col-btn{
+	position: absolute;
+	bottom:1px;
+}
+
+@media screen and (max-width: 859px) {
+	.start-talk-area .talk-col-icon{
+		font-size:30px;
+	}
+	.start-talk-area .main-default-button{
+		font-size:12px;
+	}
+}
+@media screen and (max-width: 859px) {
+	.start-talk-footer-contain{
+		display:block;
+	}
+	.start-talk-area .talk-col{
+		padding:24px 0;
+		border-top:1px solid #ccc;
+	}
+	.start-talk-area .talk-col-phone{
+		padding-top:0;
+		border:none;
+	}
+}
 .site-footer-information {
 	display: flex;
 	flex-wrap: wrap;
