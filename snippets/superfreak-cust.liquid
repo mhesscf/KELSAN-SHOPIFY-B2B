@@ -1,47 +1,54 @@
 {%- comment -%}Made by Cleanfreak{%- endcomment -%}
 {%- if customer -%}
     {%- assign sf_customer = 0 -%}
-    {% for tag in customer.tags %}
-        {% if tag == "SuperFreak" or tag == "superfreak" %}
+    {%- for tag in customer.tags -%}
+        {%- if tag == "SuperFreak" or tag == "superfreak" -%}
             {%- assign sf_customer = 1 -%}
-        {% break %}
-        {% endif %}
-    {% endfor %}
+            {%- break -%}
+        {%- endif -%}
+    {%- endfor -%}
     {%- if sf_customer == 1 -%}
         <div class="sf-account-area">
 
-            {% comment %}Check orders for savings<br/>{% endcomment %}
+            {%- comment -%}Check orders for savings<br/>{%- endcomment -%}
             {%- assign yearlySFSavings = 0 | plus: 0 -%}
             {%- assign lifetimeSFSavings = 0 | plus: 0 -%}
             {%- assign totalSFactive = 0 | plus: 0 -%}
-            {% for order in customer.orders %}
-                {% comment %}total sf discount for order only{% endcomment %}
+            {%- for order in customer.orders -%}
+                {%- comment -%}total sf discount for order only{%- endcomment -%}
                 {%- assign order_discount_amount = 0 | plus: 0 -%}
-                {% for line_item in order.line_items %}
-                    {% assign seconds = 31536000 %}
-                    {% assign yearago = 'now' | date: '%s' | minus: seconds %}
-                    {% assign orderDate = order.created_at | date: '%s' | plus:0 %}
+                {%- for line_item in order.line_items -%}
+                    {%- assign seconds = 31536000 -%}
+                    {%- assign yearago = 'now' | date: '%s' | minus: seconds -%}
+                    {%- assign orderDate = order.created_at | date: '%s' | plus:0 -%}
 
-                    {% if orderDate > yearago and line_item.sku == "SUPERFREAK" %}
+                    {%- if orderDate > yearago and line_item.sku == "SUPERFREAK" -%}
                         {%- assign totalSFactive = totalSFactive | plus: 1 -%}
-                    {% endif %}
+                    {%- endif -%}
 
-                    {% for discount_allocation in line_item.line_level_discount_allocations %}
-                        {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title == "SUPERFREAK-1ST" or discount_allocation.discount_application.title contains "SF-1ST" %}
+                    {%- for discount_allocation in line_item.line_level_discount_allocations -%}
+                        {%- if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title == "SUPERFREAK-1ST" or discount_allocation.discount_application.title contains "SF-1ST" -%}
                             {%- assign order_discount_amount = order_discount_amount | plus: discount_allocation.amount -%}
                             {%- assign lifetimeSFSavings = lifetimeSFSavings | plus: discount_allocation.amount -%}
-                            {% if orderDate > yearago %}
+                            {%- if orderDate > yearago -%}
                                 {%- assign yearlySFSavings = yearlySFSavings | plus: discount_allocation.amount -%}
-                            {% endif %}
-                        {% comment %}{{ order.name }}:{{ line_item.title }} -> {{ discount_allocation.discount_application.title }}(-<span class="money">{{ discount_allocation.amount | money }}</span>)<br/>{% endcomment %}
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
+                            {%- endif -%}
+                        {%- comment -%}{{ order.name }}:{{ line_item.title }} -> {{ discount_allocation.discount_application.title }}(-<span class="money">{{ discount_allocation.amount | money }}</span>)<br/>{%- endcomment -%}
+                        {%- endif -%}
+                    {%- endfor -%}
 
-            {% endfor %}
+                    {%- if orderDate > yearago -%}
+                        {%- if line_item.sku == "SVCCALL30-SF" -%}
+                            {%- assign yearlySFSavings = yearlySFSavings | plus: 5999 -%}
+                        {%- endif -%}
+                    {%- endif -%}
 
-            {% comment %}override test{% endcomment %}
-            {% comment %}{%- assign yearlySFSavings = 399.97 | times: 100.00 | plus: 0.00 -%}{% endcomment %}
+                {%- endfor -%}
+
+            {%- endfor -%}
+
+            {%- comment -%}override test{%- endcomment -%}
+            {%- comment -%}{%- assign yearlySFSavings = 399.97 | times: 100.00 | plus: 0.00 -%}{%- endcomment -%}
 
             <div class="table-contain">
 
@@ -50,29 +57,29 @@
                     {%- assign sfscale = 100 | plus: 0 -%}
 
                     {%- assign showPrice = 1 -%}
-                     {% if targetAmount < yearlySFSavings %}
+                     {%- if targetAmount < yearlySFSavings -%}
                          <div class="chart-title maxsplat"><div class="max-contain"><strong>Goal<br/>Exceeded</strong></div></div>
-                     {% else %}
+                     {%- else -%}
                         <div class="chart-title">
                             <strong>Savings<br/>Goal*<br/></strong>
                             <div class="popout hidden pop-chart-title">Total amount needed to earn back the purchase amount of your current SuperFreak membership.</div>
                         </div>
-                     {% endif %}
+                     {%- endif -%}
                     <div class="thermometer-contain {% if targetAmount < yearlySFSavings %}maxed-out{% endif %}">
                         <table class="thermometer">
-                        {% for num in (0..sfscale) %}
+                        {%- for num in (0..sfscale) -%}
 
                             {%- assign scalePoint = 100 | minus: num -%}
                             {%- assign yearlySFSavingsPer = yearlySFSavings | divided_by: targetAmount | times:100.00 -%}
 
-                            {% if num == 0 %}
+                            {%- if num == 0 -%}
                                 <tr class="filled-top very-top scale-{{ scalePoint }} {% if scalePoint <= yearlySFSavingsPer %}scale-filled{% endif %}">
                                     <td></td>
                                     <td  class="sliver">
                                         <div class="scale-saved top">{{ targetAmount | money }}</div>
                                     </td>
                                 </tr>
-                            {% elsif scalePoint <= yearlySFSavingsPer and showPrice == 1 %}
+                            {%- elsif scalePoint <= yearlySFSavingsPer and showPrice == 1 -%}
                                 <tr class="filled-top {% if targetAmount > yearlySFSavings %}currentsavings{% endif %} scale-{{ scalePoint }} {% if scalePoint <= yearlySFSavingsPer %}scale-filled{% endif %}">
                                     <td></td>
                                     <td  class="sliver">
@@ -80,14 +87,14 @@
                                     </td>
                                 </tr>
                                 {%- assign showPrice = 0 -%}
-                            {% else %}
+                            {%- else -%}
                                 <tr class="scale-{{ scalePoint }} {% if scalePoint <= yearlySFSavingsPer %}scale-filled{% endif %}">
                                     <td>
                                     </td>
                                     <td class="sliver"></td>
                                 </tr>
-                            {% endif %}
-                        {% endfor %}
+                            {%- endif -%}
+                        {%- endfor -%}
                         </table>
                         <div class="thermometer-bottom"></div>
                         <div class="bubbles"><div class="bubble-big"></div><div class="bubble-small"></div></div>
@@ -102,42 +109,49 @@
                 <div class="tbl-column">
                     <h2><img style="margin: 0 10px -9px 6px" src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="SuperFreak Link" />Welcome back, SuperFreak customer!</h2>
 
-                    {% if targetAmount < yearlySFSavings %}
+                    {%- if targetAmount < yearlySFSavings -%}
                         <div class="sf-total-savings"><i class="fa-solid fa-party-horn"></i> Congratulations!<br/>You have saved a total of <span class="savings">{{ yearlySFSavings | money }}</span> during your membership and have made SuperFreak pay for itself (Cost: <span class="savings">{{ targetAmount | money }}</span>)!</div>
                         <br/>
-                    {% endif %}
+                    {%- endif -%}
 
-                    {% if lifetimeSFSavings > 0  and targetAmount > yearlySFSavings %}
+                    {%- if lifetimeSFSavings > 0  and targetAmount > yearlySFSavings -%}
                         <div class="sf-total-savings"><i class="fa-sharp fa-solid fa-crown"></i> You have saved a total of <span class="savings">{{ lifetimeSFSavings | money }}</span> over your the lifetime of utilizing the SuperFreak membership!</div>
-                    {% endif %}
+                    {%- endif -%}
 
                     <h3>SuperFreak Savings</h3>
                     <table class="sf-account saved-orders">
 
                         <tr><th>Order</th><th>Date</th><th>Saved through SuperFreak</th></tr>
 
-                        {% for order in customer.orders %}
-                            {% comment %}total sf discount for order only{% endcomment %}
+                        {%- for order in customer.orders -%}
+                            {%- comment -%}total sf discount for order only{%- endcomment -%}
                             {%- assign order_discount_amount = 0 | plus: 0 -%}
-                            {% assign seconds = 31536000 %}
-                            {% assign yearago = 'now' | date: '%s' | minus: seconds %}
-                            {% assign orderDate = order.created_at | date: '%s' | plus:0 %}
+                            {%- assign seconds = 31536000 -%}
+                            {%- assign yearago = 'now' | date: '%s' | minus: seconds -%}
+                            {%- assign orderDate = order.created_at | date: '%s' | plus:0 -%}
 
-                            {% for line_item in order.line_items %}
+                            {%- for line_item in order.line_items -%}
 
 
-                                {% for discount_allocation in line_item.line_level_discount_allocations %}
-                                    {% if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title contains "SUPERFREAK-1ST" or discount_allocation.discount_application.title contains "SF-1ST" %}
+                                {%- for discount_allocation in line_item.line_level_discount_allocations -%}
+                                    {%- if discount_allocation.discount_application.title == "SUPERFREAK" or discount_allocation.discount_application.title contains "SUPERFREAK-1ST" or discount_allocation.discount_application.title contains "SF-1ST" -%}
                                          {%- assign order_discount_amount = order_discount_amount | plus: discount_allocation.amount -%}
-                                     {% endif %}
-                                {% endfor %}
-                            {% endfor %}
+                                     {%- endif -%}
+                                {%- endfor -%}
+
+
+                                {%- if line_item.sku == "SVCCALL30-SF" -%}
+                                    {%- assign order_discount_amount = order_discount_amount | plus: 5999 -%}
+                                {%- endif -%}
+
+
+                            {%- endfor -%}
 
                             {%- if order_discount_amount > 0 -%}
                                 <tr class="{% if orderDate > yearago %}active{% else %}expired{% endif %}"><td><div class="roundtd">{{ order.name | strip_newlines | link_to: order.customer_url, order.name }}</div></td><td><div class="roundtd">{{ order.created_at | date: "%m-%d-%Y"  }}</div></td><td><div class="roundtd">{{ order_discount_amount | money}}</div></td></tr>
                             {% endif %}
 
-                        {% endfor %}
+                        {%- endfor -%}
                     </table>
 
                     <h3>SuperFreak Purchases</h3>
@@ -146,12 +160,12 @@
                         <tr><th>SuperFreak Item</th><th class="start" >Start Date</th><th>End Date</th></tr>
 
 
-                        {% for order in customer.orders %}
+                        {%- for order in customer.orders -%}
                             {% for line_item in order.line_items %}
                                 {% if line_item.sku == "SUPERFREAK"  %}
 
-                                    {% comment %}get loaded sku from orders{% endcomment %}
-                                    {% comment %}seconds in a year to give the user the end date{% endcomment %}
+                                    {%- comment -%}get loaded sku from orders{%- endcomment -%}
+                                    {%- comment -%}seconds in a year to give the user the end date{%- endcomment -%}
 
                                     {% assign seconds = 31536000 %}
                                     {%- assign buydate = order.created_at | date: "%s" | plus: 0 -%}
@@ -162,23 +176,23 @@
                                     <div class="roundtd blue">View Order <i class="fa-solid fa-caret-right"></i></div>
                                     {%- endcapture -%}
 
-                                    {% comment %}load sf attached sku{% endcomment %}
-                                    {% for line_item2nd in  order.line_items %}
-                                        {% if line_item2nd.sku == line_item.properties["SuperFreak Item"]  %}
+                                    {%- comment -%}load sf attached sku{%- endcomment -%}
+                                    {%- for line_item2nd in  order.line_items -%}
+                                        {%- if line_item2nd.sku == line_item.properties["SuperFreak Item"]  -%}
                                             <tr class="{% if buydate > yearago %}active{% else %}expired{% endif %}" data-order="{{ order.name }}"><td rowspan="2"><div class="roundtd tworow"><a href="{{ line_item2nd.url }}">{{ line_item2nd.sku  }}<br/>{{ line_item2nd.title  }}</a></div></td><td class="start" ><div class="roundtd">{{ buydate | date: "%m-%d-%Y" }}</div></td><td class="end" ><div class="roundtd">{{ enddate | date: "%m-%d-%Y" }}</div></td></tr>
                                             <tr class="{% if buydate > yearago %}active{% else %}expired{% endif %}" data-order="{{ order.name }}"><td colspan="2" >{{ order_link | strip_newlines | link_to: order.customer_url, order.name }}</td></tr>
                                             {%- assign sfItemFound = 1 -%}
-                                        {% endif %}
-                                    {% endfor %}
-                                    {% comment %}show "unassigned" if not attached{% endcomment %}
-                                    {% if sfItemFound == 0   %}
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                    {%- comment -%}show "unassigned" if not attached{%- endcomment -%}
+                                    {%- if sfItemFound == 0   -%}
                                         <tr data-order="{{ order.name }}"><td rowspan="2"><div class="roundtd tworow unassigned">&nbsp;<br/>Unassigned<br/>&nbsp;</div></td><td class="start" ><div class="roundtd">{{ buydate | date: "%m-%d-%Y" }}</div></td><td class="end" ><div class="roundtd">{{ enddate | date: "%m-%d-%Y" }}</div></td></tr>
                                         <tr data-order="{{ order.name }}"><td colspan="2" >{{ order_link | strip_newlines | link_to: order.customer_url, order.name }}</td></tr>
-                                    {% endif %}
+                                    {%- endif -%}
 
-                                    {% endif %}
-                            {% endfor %}
-                        {% endfor %}
+                                    {%- endif -%}
+                            {%- endfor -%}
+                        {%- endfor -%}
                     </table>
                 </div>
             </div>
