@@ -235,6 +235,13 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
 
 <body class="template-{{ template.name }}" data-instant-allow-query-string
       {% if settings.reduce_animations %}data-reduce-animations{% endif %}>
+{% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
+    <!-- Google Tag Manager (noscript) for testing -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M69PQFJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+{% endif %}
+
 <script>
     document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
     if (window.Shopify && window.Shopify.designMode) document.documentElement.className += ' in-theme-editor';
