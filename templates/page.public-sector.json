@@ -42,7 +42,7 @@
             "link": "",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "Find Out More",
+            "button_one_label": "Fill Out Form",
             "button_one_link": "#tax-form-contain-id",
             "button_one_style": "secondary",
             "button_two_label": "",
