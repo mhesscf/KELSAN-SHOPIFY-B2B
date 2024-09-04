@@ -11,6 +11,7 @@
   "sections": {
     "a475181a-3079-4a36-9edf-37785d0fdb22": {
       "type": "left-nav-on-pages",
+      "disabled": true,
       "settings": {
         "show_section": true,
         "navigation": "education",
@@ -35,7 +36,7 @@
           "settings": {
             "background_image": "shopify:\/\/shop_images\/tax-exempt-501c3-doc-1400x350.jpg",
             "mobile_background_image": "shopify:\/\/shop_images\/tax-exempt-501c3-doc.jpg",
-            "title": "CleanFreak.com<br>Tax Exempt Program",
+            "title": "CleanFreak.comTax Exempt Program",
             "text": "Whether you're in education, government, or any other sector, we provide the cleaning products and solutions to keep your agency pristine and running smoothly.",
             "color": "#ffffff",
             "link": "",
@@ -304,6 +305,12 @@
       "settings": {
         "block-title": "Resources"
       }
+    },
+    "dynamic_custom_liquid_PGVPqf": {
+      "type": "dynamic-custom-liquid",
+      "settings": {
+        "custom_liquid": "<div id=\"wufoo-p1sg5w0x1r7glen\">Fill out my <a href=\"https:\/\/jbutchpti.wufoo.com\/forms\/p1sg5w0x1r7glen\">online form<\/a>.<\/div>\n<script type=\"text\/javascript\"> var p1sg5w0x1r7glen; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'p1sg5w0x1r7glen', 'autoResize':true, 'height':'666', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https:\/\/':'http:\/\/') + 'secure.wufoo.com\/scripts\/embed\/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { p1sg5w0x1r7glen = new WufooForm(); p1sg5w0x1r7glen.initialize(options); p1sg5w0x1r7glen.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); <\/script>"
+      }
     }
   },
   "order": [
@@ -314,6 +321,7 @@
     "dept_resource_area_LJrK3Y",
     "dept_category_area_TGxnRT",
     "dept_resource_area_weUqUq",
-    "dept_category_area_dg6njW"
+    "dept_category_area_dg6njW",
+    "dynamic_custom_liquid_PGVPqf"
   ]
 }
