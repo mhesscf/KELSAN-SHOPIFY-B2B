@@ -4411,7 +4411,35 @@ body .mdc-ripple-surface:hover:before {
 	margin-bottom:30px;
 	padding:15px;
 }
+.start-talk-area .start-talk-header-contain{
+	max-width:800px;
+	margin:auto;
+}
+.start-talk-area .start-talk-header{
+	text-align:center;
+	position: relative;
 
+}
+.start-talk-area .start-talk-header h2{
+	background-color: #E6F6FB;
+	z-index: 4;
+	position:relative;
+	max-width:350px;
+	margin:20px auto 20px;
+	font-size:36px;
+
+}
+.start-talk-area .start-talk-header:before{
+	position: absolute;
+	content: "";
+	height: 1px;
+	background-color: {{ settings.color_button_secondary_background }};
+	width: 100%;
+	right: 0;
+	left: 0;
+	top: 50%;
+	z-index: 3;
+}
 .start-talk-footer-contain{
 	max-width:1400px;
 	padding:30px 25px;
