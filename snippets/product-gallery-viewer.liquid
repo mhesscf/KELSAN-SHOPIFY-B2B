@@ -30,7 +30,8 @@
         {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
         {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-        {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
+        {% comment %}{%- if enddiffDays >= -1 and  startdiffDays < 0 -%}{% endcomment %}
+        {%- if product.selected_or_first_available_variant.metafields.plytix.special_enddate -%}
             {%- assign specialclass = "isspecial" -%}
         {%- endif -%}
     {%- endif -%}
