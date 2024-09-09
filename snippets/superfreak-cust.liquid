@@ -129,7 +129,7 @@
                             {%- assign seconds = 31536000 -%}
                             {%- assign yearago = 'now' | date: '%s' | minus: seconds -%}
                             {%- assign orderDate = order.created_at | date: '%s' | plus:0 -%}
-
+                            {%- assign servicecall = 0 %}
                             {%- for line_item in order.line_items -%}
 
 
@@ -142,13 +142,13 @@
 
                                 {%- if line_item.sku == "SVCCALL30-SF" -%}
                                     {%- assign order_discount_amount = order_discount_amount | plus: 5999 -%}
+                                    {%- assign servicecall = 1 %}
                                 {%- endif -%}
-
-
                             {%- endfor -%}
 
+
                             {%- if order_discount_amount > 0 -%}
-                                <tr class="{% if orderDate > yearago %}active{% else %}expired{% endif %}"><td><div class="roundtd">{{ order.name | strip_newlines | link_to: order.customer_url, order.name }}</div></td><td><div class="roundtd">{{ order.created_at | date: "%m-%d-%Y"  }}</div></td><td><div class="roundtd">{{ order_discount_amount | money}}</div></td></tr>
+                                <tr class="{% if orderDate > yearago %}active{% else %}expired{% endif %}"><td><div class="roundtd">{{ order.name | strip_newlines | link_to: order.customer_url, order.name }}</div></td><td><div class="roundtd">{{ order.created_at | date: "%m-%d-%Y"  }}</div></td><td><div class="roundtd">{{ order_discount_amount | money}} {% if servicecall == 1 %}(Service Call){% else %}(Order Discount){% endif %}</div></td></tr>
                             {% endif %}
 
                         {%- endfor -%}

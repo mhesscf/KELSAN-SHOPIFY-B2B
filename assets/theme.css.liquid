@@ -2831,6 +2831,14 @@ footer .footer-icon svg{
 	background-color: {{ settings.color_button_hover }};
 	border: 1px solid {{ settings.color_button_hover }};
 }
+.main-default-button a{
+	color: {{ settings.color_button_secondary_text }};
+	text-decoration:none;
+}
+.main-default-button a:hover{
+	color: {{ settings.color_button_secondary_text }};
+	text-decoration:none;
+}
 .main-atc-button.thinbtn{
 	height:32px;
 	line-height:32px;
@@ -4403,7 +4411,35 @@ body .mdc-ripple-surface:hover:before {
 	margin-bottom:30px;
 	padding:15px;
 }
+.start-talk-area .start-talk-header-contain{
+	max-width:800px;
+	margin:auto;
+}
+.start-talk-area .start-talk-header{
+	text-align:center;
+	position: relative;
 
+}
+.start-talk-area .start-talk-header h2{
+	background-color: #E6F6FB;
+	z-index: 4;
+	position:relative;
+	max-width:350px;
+	margin:20px auto 20px;
+	font-size:36px;
+
+}
+.start-talk-area .start-talk-header:before{
+	position: absolute;
+	content: "";
+	height: 1px;
+	background-color: {{ settings.color_button_secondary_background }};
+	width: 100%;
+	right: 0;
+	left: 0;
+	top: 50%;
+	z-index: 3;
+}
 .start-talk-footer-contain{
 	max-width:1400px;
 	padding:30px 25px;
@@ -4932,7 +4968,7 @@ body .mdc-ripple-surface:hover:before {
 	align-items: center;
 	flex-basis: auto;
 	flex-grow: 0;
-	{% comment %}flex-shrink: 0;{% endcomment %}
+	{% comment %}flex-shrink: 0;;{% endcomment %}
 
 	flex-direction: row;
 	flex-wrap:wrap;
