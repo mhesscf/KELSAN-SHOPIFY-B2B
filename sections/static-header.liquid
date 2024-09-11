@@ -281,6 +281,71 @@
   id="site-header-nav"
 >
   <style type="text/css">
+
+
+    .cat-shopall .tmenu_item{
+      position:unset !important;
+    }
+
+    .cat-shopall .type_flyout{
+      position:relative !important;
+    }
+
+
+    .cat-shopall .tmenu_submenu_type_automatic{
+      position:absolute !important;
+      top:0px !important;
+    }
+
+    .tmenu_item--root .tmenu_item_level_1 .tmenu_item_link > .tmenu_item_text{
+      display:inline-block !important;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow: ellipsis;
+      width:300px;
+    }
+    .cat-shopall .tmenu_submenu_type_flyout{
+      background-color: {{ settings.color_button_background }} !important;
+      height:350px !important;
+      min-height:350px !important;
+    }
+
+    .cat-shopall ul.tmenu_submenu li.tmenu_item_level_1:not(.tmenu_item_mobile) > .tmenu_item_link{
+      color:white !important;
+    }
+    .cat-shopall.tmenu_item > .tmenu_submenu{
+      padding-top:7px !important;
+      padding-bottom:7px !important;
+    }
+    .cat-shopall.tmenu_item .tmenu_submenu{
+      -webkit-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.31) !important;
+      -moz-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.31) !important;
+      box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.31) !important;
+      min-height:450px;
+    }
+
+
+    .cat-shopall .tmenu_submenu_type_flyout .tmenu_item_level_1:hover{
+      background-color:white !important;
+      color: {{ settings.color_button_background }} !important;
+    }
+
+    .cat-shopall ul.tmenu_submenu li.tmenu_item_level_1:not(.tmenu_item_mobile):hover > .tmenu_item_link{
+      color:{{ settings.color_button_background }}  !important;
+    }
+
+    .tmenu_submenu_flyout_position_left .tmenu_indicator_icon{
+      display:block !important;
+      height:14px !important;
+      width:14px !important;
+      line-height:14px !important;
+    }
+    .tmenu_submenu_flyout_position_left .tmenu_indicator_icon svg{
+      height:14px !important;
+      width:14px !important;
+      line-height:14px !important;
+    }
+
     .tmenu_submenu_tab_control {
       background-color: {{ settings.color_button_background }} !important;
     }
@@ -324,10 +389,6 @@
 
     .tmenu_submenu_tab_content ul ul li > a, .tmenu_submenu_tab_content ul ul li.tmenu_submenu{
       padding: 20px 10px;
-    }
-
-    .tmenu_item > .tmenu_submenu {
-      padding-left: 10px !important;
     }
 
     .tmenu_item--root .tmenu_item_display_header>.tmenu_item_link {
