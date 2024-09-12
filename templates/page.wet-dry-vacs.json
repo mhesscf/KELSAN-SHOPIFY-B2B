@@ -22,6 +22,7 @@
         },
         "banner_8kenXN": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify:\/\/shop_images\/wet-dry-vac-bogo-promo-homepage-banner-desktop.jpg",
             "banner-sm": "shopify:\/\/shop_images\/wet-dry-vac-bogo-promo-homepage-banner-mobile.jpg",
