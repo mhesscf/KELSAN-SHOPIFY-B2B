@@ -303,7 +303,7 @@
           ".alert-bar.show {border-bottom: 1px solid white;}"
         ],
         "settings": {
-          "show_announcement": true,
+          "show_announcement": false,
           "homepage_announcement": false,
           "announcement_text": "<img alt=\"Labor Day Banner\" style=\"margin:-15px 0 -20px -306px\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/laborday-mini-ban2.png?v=172434740\">Labor Day Sale! Free Shipping on All Products! No Coupon Needed. Ends 9\/15.",
           "announcement_text_mobile": "Labor Day Sale! Free Shipping on All Products! No Coupon Needed. Ends 9\/15.",
