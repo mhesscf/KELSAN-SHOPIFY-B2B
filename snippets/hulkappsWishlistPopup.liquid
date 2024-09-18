@@ -434,6 +434,7 @@
                         {% endif %}
                     </div>
                     {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'set_1') %}
+                        {% comment %}
                     <ul class="social-list-icon">
                         {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.facebook) %}
                         <li><a href="#" data-productShareFacebook target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/meta1.svg.svg" alt="Facebook Share" /></a></li>
@@ -448,6 +449,7 @@
                         <li><a href="#" data-copyProductShareURLButton target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/share_link.svg" alt="Copy text" title="Copy wishlist link"/></a></li>
                         {% endif %}
                     </ul>
+                        {% endcomment %}
                     {% elsif(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'set_2') %}
                     <ul class="social-list-icon">
                         {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.facebook) %}
