@@ -176,7 +176,9 @@
               {% capture image_size %}{{ section.settings.logo_max_width | escape }}{% endcapture %}
               <img src="{{ 'logo.svg' | asset_url }}"
                    alt="{{ shop.name }}"
-                   style="max-width: 150px;width: 100%;">
+                   class="img-responsive"
+                   style="max-width:225px;"
+              >
             </a>
     </div>
     <a class="top-mobile-phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a>
