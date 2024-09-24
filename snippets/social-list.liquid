@@ -18,8 +18,21 @@
   {%- endif -%}
 
   <div class="store-info">
-    {%- if settings.footer_logo -%}
-      <img src="{{ settings.footer_logo  | img_url: '170x' }}" class="footer-logo" alt="CleanFreak"/>
+    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
+    <div style="max-width:110px; margin:auto; padding-left:10px"><img class="img-responsive" src="{{ 'cleanfreak-favicon-100x100.png' | file_url }}" class="footer-logo" alt="{{ shop.name }}"/></div>
+
+    {% comment %}style to center everything for cf only{% endcomment %}
+    <style>
+      .site-footer-block-social-accounts .site-footer-block-content{
+        text-align:center;
+        padding-bottom:0px;
+      }
+      #INDmenu-btn2{
+        margin:15px auto 10px;
+      }
+    </style>
+    {%- elsif settings.footer_logo -%}
+      <img src="{{ settings.footer_logo  | img_url: '170x' }}" class="footer-logo" alt="{{ shop.name }}"/>
     {%- endif -%}
     {%- comment -%}
     <p>
