@@ -318,6 +318,56 @@
       jQuery(".close-pop.sf-off").removeClass('sf-off');
     }, "500");
   }
+
+  {% comment %}add sf to notes on quick quotes when url has ?page=accept "{% endcomment %}
+  {%- if canonical_url contains "/apps/request-quote" -%}
+  $(document).ready(function() {
+    if (window.location.href.indexOf("/apps/request-quote?page=accept&note=sf") > -1) {
+      $('#pnlQuote').prepend("<div class='waitblock' style='border-bottom:1px solid #303e48; padding:5px 10px;'><i class='fa-solid fa-hourglass-start'></i> Please wait... </div>")
+
+      setTimeout(function(){
+        var note_box = $('#quote-txt-comment');
+        var note_send = $('#send-comment');
+        var quote_comments = $('#quote-comments p');
+        var superfreak_note = "Please add SuperFreak to this quote.";
+        var run_sf_add = 1;
+        var show_confirm_note = 1;
+
+        // check if superfreak note is there already
+        quote_comments.each(function () {
+          if ($(this).text() == superfreak_note) {
+            run_sf_add = 0;
+          }
+        });
+
+        // check if cf is in quote already
+        $(".qq-product-col .item-title").each(function () {
+          if($(this).text().indexOf('SuperFreak') > -1 ){
+            show_confirm_note = 0;
+          }
+        });
+
+        if(show_confirm_note == 1 && run_sf_add == 0){
+          $('.waitblock').hide();
+          $('#quote-bottom-buttons').hide();
+          $('#pnlQuote').prepend("<div style='border-bottom:1px solid #303e48; padding:5px 10px;'><i class='fa-sharp fa-regular fa-notebook'></i> Thank you for your reply! A customer service representative will update your quote and notify you when it has been updated.</div>")
+        }else if(run_sf_add == 1){
+          // check for comment before adding comment
+          note_box.val(superfreak_note);
+          $('#send-comment').click();
+          $('#quote-bottom-buttons').hide();
+
+        }else{
+          $('.waitblock').hide();
+        }
+
+      }, 2000);
+    }
+  });
+  {%- endif -%}
+
+
+
 </script>
 <div class="pop-grad hidden"></div>
 {%
