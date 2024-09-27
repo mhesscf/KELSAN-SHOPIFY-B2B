@@ -357,7 +357,7 @@
               {% assign editable = false %}
           {% endif %}
 
-
+          {% if editable == true %}
             <div class="qtybox cart-qty-form-field form-field form-field--qty-input visible {% if editable == false %}qtyonly{% endif %}">
                 <input type="button" {% if editable == true %}onClick="qtyAdjust('{{ item.key }}','minus','{{ pstep }}')"{% endif %} value="−" data-step="{{ pstep }}" class="qtyminus" data-field="quantity">
               <input
@@ -382,6 +382,12 @@
                 {{ 'general.general.quantity' | t }}
               </label>{% endcomment %}
             </div>
+          {% else %}
+              <div class="product-quantity-disabled">
+                {{ item.quantity }}
+              </div>
+          {% endif %}
+
           {% if editable == true %}<a class="line-update" onClick="updateCart();"><i class="fa-solid fa-arrows-rotate"></i> Update</a>{% endif %}
 
 
