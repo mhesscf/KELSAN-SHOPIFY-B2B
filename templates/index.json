@@ -16,7 +16,7 @@
       ],
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.slideshow-slide__text span{\nfont-size:12px;\n}\n\n@media screen and (min-width: 720px) {\n.slideshow-slide__content.slideshow-slide__content--text-left{\npadding-right:58%;\n}\n}\n<\/style>"
+        "custom_html": "<style>\n.slideshow-slide__text span{\nfont-size:12px;\n}\n\n@media screen and (min-width: 720px) {\n.slideshow-slide__content.slideshow-slide__content--text-left{\npadding-right:58%;\n}\n}\n</style>"
       }
     },
     "dynamic_slideshow": {
@@ -26,9 +26,9 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/2024-back-to-school-sale-homepage-desktop-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/2024-back-to-school-sale-homepage-mobile-banner.jpg",
-            "link": "\/collections\/current-sales?refinementList%5Btags%5D%5B0%5D=Back%20To%20School%20Sale",
+            "banner-lg": "shopify://shop_images/2024-back-to-school-sale-homepage-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2024-back-to-school-sale-homepage-mobile-banner.jpg",
+            "link": "/collections/current-sales?refinementList%5Btags%5D%5B0%5D=Back%20To%20School%20Sale",
             "coupon-code": ""
           }
         },
@@ -36,16 +36,16 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/flash-sale-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/flash-sale-800x427.jpg",
+            "background_image": "shopify://shop_images/flash-sale-1400x350.jpg",
+            "mobile_background_image": "shopify://shop_images/flash-sale-800x427.jpg",
             "title": "Get 12% off your entire order for 2 days only!",
-            "text": "Code: FLASH12<br>Valid 4\/4\/24 – 4\/5\/24<br><span>*Restrictions apply<\/span>",
+            "text": "Code: FLASH12<br>Valid 4/4/24 – 4/5/24<br><span>*Restrictions apply</span>",
             "color": "#ffffff",
-            "link": "\/",
+            "link": "/",
             "promo_link": "FLASH12",
             "text_alignment": "left",
             "button_one_label": "Apply Code",
-            "button_one_link": "\/",
+            "button_one_link": "/",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "",
@@ -57,20 +57,21 @@
         },
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/september-2024--floor-scrubber-sale-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/september-2024--floor-scrubber-sale-800x427.jpg",
+            "background_image": "shopify://shop_images/september-2024--floor-scrubber-sale-1400x350.jpg",
+            "mobile_background_image": "shopify://shop_images/september-2024--floor-scrubber-sale-800x427.jpg",
             "title": "Trusted Clean &#39;Dura 18HD&#39; Cord Electric 18 &quot; Automatic Floor Scrubber",
             "text": "Superior Scrubbing at a Sensational Price!<br>Was: $1,999.99<br>Now: $1,849.99",
             "color": "#303e48",
-            "link": "\/products\/dura-18-cord-electric-automatic-floor-scrubber",
+            "link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
             "promo_link": "",
             "text_alignment": "left",
             "button_one_label": "Save $150.00",
-            "button_one_link": "\/products\/dura-18-cord-electric-automatic-floor-scrubber",
+            "button_one_link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
             "button_one_style": "secondary",
             "button_two_label": "",
-            "button_two_link": "\/products\/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315544756",
+            "button_two_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315544756",
             "button_two_style": "secondary",
             "show_overlay": false,
             "overlay_color": "#000000",
@@ -79,20 +80,21 @@
         },
         "slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/september-2024--floor-buffer-sale-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/september-2024--floor-buffer-sale-800x427.jpg",
+            "background_image": "shopify://shop_images/september-2024--floor-buffer-sale-1400x350.jpg",
+            "mobile_background_image": "shopify://shop_images/september-2024--floor-buffer-sale-800x427.jpg",
             "title": "Trusted Clean 20&quot; Commercial Grade Floor Buffer",
             "text": "Commercial Grade, Cost Effective.<br>Was: $899.99<br>Now: $799.99",
             "color": "#303e48",
-            "link": "\/products\/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
             "promo_link": "",
             "text_alignment": "left",
             "button_one_label": "Save $100",
-            "button_one_link": "\/products\/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "button_one_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
             "button_one_style": "secondary",
             "button_two_label": "",
-            "button_two_link": "\/products\/commercial-carpet-spot-cleaning-machine",
+            "button_two_link": "/products/commercial-carpet-spot-cleaning-machine",
             "button_two_style": "secondary",
             "show_overlay": false,
             "overlay_color": "#000000",
@@ -101,21 +103,20 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/august-2024-sotm-cpl-cf-100-heat-banner-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/august-2024-sotm-cpl-cf-100-heat-banner-800x427.jpg",
-            "title": "CleanFreak® 120 PSI Hot Water Heated Carpet Extractor",
-            "text": "Hot water meets a hot deal!<br>Was: $2,349.99<br>Now: $2,099.99",
+            "background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-carpet-extractor-1400x350.jpg",
+            "mobile_background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-carpet-extractor-800x427.jpg",
+            "title": "CleanFreak® 500 PSI Commercial Carpet Extractor",
+            "text": "Deep Clean Carpets at a Discount.<br>Was: $2,439.99<br>Now: $2,199.99",
             "color": "#303e48",
-            "link": "\/products\/hot-water-heated-carpet-extractor",
+            "link": "/products/500-psi-commercial-carpet-cleaner",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "Save $250!",
-            "button_one_link": "\/products\/hot-water-heated-carpet-extractor",
+            "button_one_label": "Save $240!",
+            "button_one_link": "/products/500-psi-commercial-carpet-cleaner",
             "button_one_style": "secondary",
             "button_two_label": "",
-            "button_two_link": "\/products\/heated-carpet-spot-cleaner",
+            "button_two_link": "/products/heated-carpet-spot-cleaner",
             "button_two_style": "primary",
             "show_overlay": false,
             "overlay_color": "#000000",
@@ -124,18 +125,17 @@
         },
         "11a75ad9-3839-4050-bb7f-7cec379b8726": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify:\/\/shop_images\/august-2024-sotm-wet-cf4240hv-banner-1400x350.jpg",
-            "mobile_background_image": "shopify:\/\/shop_images\/august-2024-sotm-wet-cf4240hv-banner-800x427.jpg",
-            "title": "CleanFreak® Honda GX390 Engine 4.0 GPM Pressure Washer",
-            "text": "Premium Power, Practical Price.<br>Was: $1,399.99<br>Now $1,299.99",
+            "background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-quench-1400x350.jpg",
+            "mobile_background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-quench-800x427.jpg",
+            "title": "Trusted Clean 'Quench' Wet Push Vacuum - 18 Gallons",
+            "text": "Quench your mess for less!<br>Was: $799.99<br>Now $724.99",
             "color": "#ffffff",
-            "link": "\/products\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer",
+            "link": "/products/trusted-clean-quench-wet-push-vacuum",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "SAVE $100!",
-            "button_one_link": "\/products\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer",
+            "button_one_label": "SAVE $750!",
+            "button_one_link": "/products/trusted-clean-quench-wet-push-vacuum",
             "button_one_style": "secondary",
             "button_two_label": "",
             "button_two_link": "",
@@ -149,18 +149,18 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/save-20-pressure-washers-desktop-homepage-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/save-20-pressure-washers-mobile-homepage-banner.jpg",
-            "link": "\/search?q=wet-cfh-3",
+            "banner-lg": "shopify://shop_images/save-20-pressure-washers-desktop-homepage-banner.jpg",
+            "banner-sm": "shopify://shop_images/save-20-pressure-washers-mobile-homepage-banner.jpg",
+            "link": "/search?q=wet-cfh-3",
             "coupon-code": "BLAST20"
           }
         },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/viper-vn1715-buffer-bogo-homepage-banner-desktop.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/viper-vn1715-buffer-bogo-homepage-banner-mobile.jpg",
-            "link": "\/products\/17-inch-viper-low-speed-floor-buffer",
+            "banner-lg": "shopify://shop_images/viper-vn1715-buffer-bogo-homepage-banner-desktop.jpg",
+            "banner-sm": "shopify://shop_images/viper-vn1715-buffer-bogo-homepage-banner-mobile.jpg",
+            "link": "/products/17-inch-viper-low-speed-floor-buffer",
             "coupon-code": ""
           }
         }
@@ -193,49 +193,49 @@
         "c7f7a697-d2de-44d6-8ab3-a70a935fe432": {
           "type": "link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Hard_Floor_Cleaning_Machines.png",
+            "image": "shopify://shop_images/Hard_Floor_Cleaning_Machines.png",
             "linktext": "Hard Floor Machines",
-            "linkurl": "https:\/\/www.cleanfreak.com\/pages\/hard-floor-cleaning-machines"
+            "linkurl": "https://www.cleanfreak.com/pages/hard-floor-cleaning-machines"
           }
         },
         "5eb580ae-20c9-43a3-ba93-776be183fb26": {
           "type": "link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Carpet_Extractors.png",
+            "image": "shopify://shop_images/Carpet_Extractors.png",
             "linktext": "Carpet Extractors",
-            "linkurl": "https:\/\/www.cleanfreak.com\/pages\/extractors"
+            "linkurl": "https://www.cleanfreak.com/pages/extractors"
           }
         },
         "394224bb-4a0b-49e0-9288-ca267562c12b": {
           "type": "link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Industrial_Sweepers.png",
+            "image": "shopify://shop_images/Industrial_Sweepers.png",
             "linktext": "Industrial Sweepers",
-            "linkurl": "https:\/\/www.cleanfreak.com\/pages\/industrial-sweepers"
+            "linkurl": "https://www.cleanfreak.com/pages/industrial-sweepers"
           }
         },
         "e8e5e8f4-24b5-47fe-9ae5-6dc599a28eff": {
           "type": "link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Wet_Dry_Vacs.png",
+            "image": "shopify://shop_images/Wet_Dry_Vacs.png",
             "linktext": "Wet Dry Vacuums",
-            "linkurl": "https:\/\/www.cleanfreak.com\/pages\/wet-dry-vaccums"
+            "linkurl": "https://www.cleanfreak.com/pages/wet-dry-vaccums"
           }
         },
         "3ae20fa1-e14c-4fef-a982-d54fdb671cfc": {
           "type": "link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Pressure_Washers.png",
+            "image": "shopify://shop_images/Pressure_Washers.png",
             "linktext": "Pressure Washers",
-            "linkurl": "https:\/\/www.cleanfreak.com\/pages\/pressure-washers"
+            "linkurl": "https://www.cleanfreak.com/pages/pressure-washers"
           }
         },
         "1d30e765-1970-4ced-a33a-f7457fb2addc": {
           "type": "link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Flood_Restoration.png",
+            "image": "shopify://shop_images/Flood_Restoration.png",
             "linktext": "Flood Restoration",
-            "linkurl": "\/pages\/flood-remediation"
+            "linkurl": "/pages/flood-remediation"
           }
         }
       },
@@ -264,7 +264,7 @@
       "disabled": true,
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.ryic-container{margin: -80px -25px 20px;}\n.ryic-container .ryic-mobile{display:none;}\n@media only screen and (max-width:1023px){\n.ryic-container{margin: 0px 0px 20px;}\n}\n@media only screen and (max-width:679px){\n\t.ryic-container .ryic-desktop{display:none;}\n\t.ryic-container .ryic-mobile{display:block;}\n}\n<\/style>\n\n<div class=\"ryic-container\">\n\t<div class=\"ryic-desktop\">\n\t\t<a href=\"\/pages\/release-your-inner-cleanfreak\"><img alt=\"Release your inner CleanFreak, Fall Edition. Tell Us Your Story, Boost Your Cleaning Business\" class=\"img-resonsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/ryic-homepage-banner-2023-desktop.jpg?v=1697556706\"><\/a>\n\t<\/div>\n\n\t<div class=\"ryic-mobile\">\n\t\t<a href=\"\/pages\/release-your-inner-cleanfreak\"><img alt=\"Release your inner CleanFreak, Fall Edition. Tell Us Your Story, Boost Your Cleaning Business\" class=\"img-resonsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/ryic-header-2023-mobile.jpg?v=1697556707\"><\/a>\n\t<\/div>\n<\/div>"
+        "custom_html": "<style>\n.ryic-container{margin: -80px -25px 20px;}\n.ryic-container .ryic-mobile{display:none;}\n@media only screen and (max-width:1023px){\n.ryic-container{margin: 0px 0px 20px;}\n}\n@media only screen and (max-width:679px){\n\t.ryic-container .ryic-desktop{display:none;}\n\t.ryic-container .ryic-mobile{display:block;}\n}\n</style>\n\n<div class=\"ryic-container\">\n\t<div class=\"ryic-desktop\">\n\t\t<a href=\"/pages/release-your-inner-cleanfreak\"><img alt=\"Release your inner CleanFreak, Fall Edition. Tell Us Your Story, Boost Your Cleaning Business\" class=\"img-resonsive\" src=\"https://www.cleanfreak.com/cdn/shop/files/ryic-homepage-banner-2023-desktop.jpg?v=1697556706\"></a>\n\t</div>\n\n\t<div class=\"ryic-mobile\">\n\t\t<a href=\"/pages/release-your-inner-cleanfreak\"><img alt=\"Release your inner CleanFreak, Fall Edition. Tell Us Your Story, Boost Your Cleaning Business\" class=\"img-resonsive\" src=\"https://www.cleanfreak.com/cdn/shop/files/ryic-header-2023-mobile.jpg?v=1697556707\"></a>\n\t</div>\n</div>"
       }
     },
     "16607671217d5bae88": {
@@ -318,12 +318,12 @@
     "7e713208-a54a-4d6c-a7d6-6e7e7bbe0d3d": {
       "type": "image-gradient-section",
       "settings": {
-        "image": "shopify:\/\/shop_images\/cleanfreak-team-crop.jpg",
+        "image": "shopify://shop_images/cleanfreak-team-crop.jpg",
         "heading": "ABOUT US",
         "subheading": "",
-        "textcontent": "<p>We opened for business back in 1995 with a mission to serve clean freaks the world over. To us, that means being stocked with all the right cleaning stuff, and providing good, clean advice along the way.<\/p>",
+        "textcontent": "<p>We opened for business back in 1995 with a mission to serve clean freaks the world over. To us, that means being stocked with all the right cleaning stuff, and providing good, clean advice along the way.</p>",
         "button_label": "Read Our Story",
-        "button_link": "shopify:\/\/pages\/about-us",
+        "button_link": "shopify://pages/about-us",
         "content_right": false,
         "rmv_top_mgn": false
       }
@@ -442,14 +442,14 @@
         "sectionTextBold": "Interested in saving up to 60% on select items?",
         "sectionTextRegular": "Check out our clearance items!",
         "linktext": "Shop Now",
-        "linkurl": "shopify:\/\/collections\/clearance"
+        "linkurl": "shopify://collections/clearance"
       }
     },
     "87aaf9cd-846c-4906-9363-af5bea376908": {
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<style>\n.clear-container{margin: -40px -25px -30px;}\n\n@media only screen and (max-width:1023px){\n.clear-container{margin: 0px 0px -30px;}\n}\n\n.clear-container .clear-mobile{display:none;}\n\n@media only screen and (max-width:600px){\n\t.clear-container .clear-desktop{display:none;}\n\t.clear-container .clear-mobile{display:block;}\n\t.clear-container{margin: -40px 0 -60px;}\n}\n<\/style>\n\n<div class=\"clear-container\">\n\t<div class=\"clear-desktop\">\n\t\t<a href=\"\/collections\/clearance\"><img alt=\"Interested in saving up to 60%. Check out our clearance items!\" class=\"img-resonsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/cleanfreak-clearance-banner.jpg?v=1689345025\"><\/a>\n\t<\/div>\n\n\t<div class=\"clear-mobile\">\n\t\t<a href=\"\/collections\/clearance\"><img alt=\"Interested in saving up to 60%. Check out our clearance items!\" class=\"img-resonsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/cleanfreak-clearance-banner-sm.jpg?v=1689186025\"><\/a>\n\t<\/div>\n<\/div>"
+        "custom_html": "<style>\n.clear-container{margin: -40px -25px -30px;}\n\n@media only screen and (max-width:1023px){\n.clear-container{margin: 0px 0px -30px;}\n}\n\n.clear-container .clear-mobile{display:none;}\n\n@media only screen and (max-width:600px){\n\t.clear-container .clear-desktop{display:none;}\n\t.clear-container .clear-mobile{display:block;}\n\t.clear-container{margin: -40px 0 -60px;}\n}\n</style>\n\n<div class=\"clear-container\">\n\t<div class=\"clear-desktop\">\n\t\t<a href=\"/collections/clearance\"><img alt=\"Interested in saving up to 60%. Check out our clearance items!\" class=\"img-resonsive\" src=\"https://www.cleanfreak.com/cdn/shop/files/cleanfreak-clearance-banner.jpg?v=1689345025\"></a>\n\t</div>\n\n\t<div class=\"clear-mobile\">\n\t\t<a href=\"/collections/clearance\"><img alt=\"Interested in saving up to 60%. Check out our clearance items!\" class=\"img-resonsive\" src=\"https://www.cleanfreak.com/cdn/shop/files/cleanfreak-clearance-banner-sm.jpg?v=1689186025\"></a>\n\t</div>\n</div>"
       }
     },
     "category_featured_product_slider_wMpKN8": {
@@ -564,14 +564,14 @@
       "disabled": true,
       "settings": {
         "background_color": "#C0D3D8",
-        "image": "shopify:\/\/shop_images\/1800x805.png",
+        "image": "shopify://shop_images/1800x805.png",
         "crop": "center",
         "heading": "Plant a Tree",
         "subheading": "Our Initiatives",
-        "content": "<p>Since CleanFreak floor pads are made from recycled fibers, we decided to give back by planting a tree for every case of pads sold through a partnership with One Tree Planted<\/p>",
+        "content": "<p>Since CleanFreak floor pads are made from recycled fibers, we decided to give back by planting a tree for every case of pads sold through a partnership with One Tree Planted</p>",
         "text_alignment": "left",
         "button_label": "Read our Story",
-        "button_link": "shopify:\/\/pages\/about-us"
+        "button_link": "shopify://pages/about-us"
       }
     },
     "1660757697279cb66e": {
@@ -579,19 +579,19 @@
       "disabled": true,
       "settings": {
         "featuredcollection": "Floor Cleaning",
-        "link_url": "shopify:\/\/collections",
+        "link_url": "shopify://collections",
         "link_text": "View all Popular Products"
       }
     },
     "e020b3b7-65c8-4957-bcc2-137ec433b1f3": {
       "type": "image-gradient-section",
       "settings": {
-        "image": "shopify:\/\/shop_images\/plant-trees.jpg",
+        "image": "shopify://shop_images/plant-trees.jpg",
         "heading": "Plant a Tree",
         "subheading": "Our Initiatives",
-        "textcontent": "<p>Since CleanFreak floor pads are made from recycled fibers, we decided to give back by planting a tree for every case of pads sold through a partnership with One Tree Planted. <\/p>",
+        "textcontent": "<p>Since CleanFreak floor pads are made from recycled fibers, we decided to give back by planting a tree for every case of pads sold through a partnership with One Tree Planted. </p>",
         "button_label": "Tree Program",
-        "button_link": "shopify:\/\/blogs\/life\/buy-floor-pads-plant-trees-progress-update",
+        "button_link": "shopify://blogs/life/buy-floor-pads-plant-trees-progress-update",
         "content_right": true,
         "rmv_top_mgn": false
       }
