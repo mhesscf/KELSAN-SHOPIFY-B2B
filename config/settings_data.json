@@ -73,24 +73,24 @@
     "product_grid_image_crop": true,
     "enable_product_compare": false,
     "product_grid_enable_quickshop": false,
-    "social_facebook": "https:\/\/www.facebook.com\/cleanfreakcom",
+    "social_facebook": "https://www.facebook.com/cleanfreakcom",
     "social_linkedin": "",
     "social_tumblr": "",
-    "social_twitter": "https:\/\/twitter.com\/CleanFreak",
+    "social_twitter": "https://twitter.com/CleanFreak",
     "social_vimeo": "",
     "social_youtube": "",
-    "footer_logo": "shopify:\/\/shop_images\/CFlogo.png",
+    "footer_logo": "shopify://shop_images/CFlogo.png",
     "store_address": "5109 N National Dr. <br> \nKnoxville TN 37914",
     "business_hours": "8AM - 5PM EST",
-    "favicon": "shopify:\/\/shop_images\/cleanfreak-favicon-32x32.png",
+    "favicon": "shopify://shop_images/cleanfreak-favicon-32x32.png",
     "enable_checkout_lock_icon": false,
-    "bundle_remove_text": "<p>You are about to remove all items from the <span id=\"itemName\"><\/span> bundle.<\/p>",
-    "continue_shopping_url": "shopify:\/\/collections\/all",
+    "bundle_remove_text": "<p>You are about to remove all items from the <span id=\"itemName\"></span> bundle.</p>",
+    "continue_shopping_url": "shopify://collections/all",
     "continue_url_cart": true,
     "continue_url_404": true,
-    "global_header_script": "<script async type=\"text\/javascript\" src=\"\/\/cdn.callrail.com\/companies\/343412235\/03c358a5022d830ef5ca\/12\/swap.js\"><\/script> \n<meta name=\"facebook-domain-verification\" content=\"h2rnc8wlhen7259usyok0q26z6cdxa\">\n<script type=\"text\/javascript\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/t\/6\/assets\/jquery-2.2.4.min.js\"><\/script>\n\n<script>\n\/\/spoof check\n\/\/ <![CDATA[\nvar abc = \"wwwbobcleannatafreakbobcom\";\nvar abcd = \"devbobcleannatafreakbobcom\";\nvar sabc = \"cleanfreak-devbobmynatashopifybobcom\";\nvar sabcd = \"cleanfreak-prodbobmynatashopifybobcom\";\n\nvar efg = abc.replaceAll('bob','').replaceAll('nata','');\nvar efgd = abcd.replaceAll('bob','').replaceAll('nata','');\nvar sefg = sabc.replaceAll('bob','').replaceAll('nata','');\nvar sefgd = sabcd.replaceAll('bob','').replaceAll('nata','');\n\nvar hij = abc.replaceAll('bob','.').replaceAll('nata','');\n\nif (window.location.hostname !=\"127.0.0.1\" && window.location.hostname.replaceAll('.','') !== efg && window.location.hostname.replaceAll('.','') !== efgd && window.location.hostname.replaceAll('.','') !== sefg && window.location.hostname.replaceAll('.','') !== sefgd) {\n  if (window.location.hostname == \"{{ shop.permanent_domain }}\") {\n    console.log(\"{{ shop.permanent_domain }}\");\n  } else {\n  var abc =\n    window.location.replace('https:\/\/'+hij+'?currpag='+window.location);\n  }\n};\n\/\/ ]]><\/script>",
-    "global_footer_script": "<!-- Start of LiveChat (www.livechat.com) code -->\n<script async>\n    window.__lc = window.__lc || {};\n    window.__lc.license = 14667759;\n    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:\"2.0\",on:function(){i([\"on\",c.call(arguments)])},once:function(){i([\"once\",c.call(arguments)])},off:function(){i([\"off\",c.call(arguments)])},get:function(){if(!e._h)throw new Error(\"[LiveChatWidget] You can't use getters before load.\");return i([\"get\",c.call(arguments)])},call:function(){i([\"call\",c.call(arguments)])},init:function(){var n=t.createElement(\"script\");n.async=!0,n.type=\"text\/javascript\",n.src=\"https:\/\/cdn.livechatinc.com\/tracking.js\",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))\n<\/script>\n<noscript>\n<a href=\"https:\/\/www.livechat.com\/chat-with\/14667759\/\" rel=\"nofollow\">Chat with us<\/a>, powered by <a href=\"https:\/\/www.livechat.com\/?welcome\" rel=\"noopener nofollow\" target=\"_blank\">LiveChat<\/a>\n<\/noscript>\n<!-- End of LiveChat code -->",
-    "checkout_logo_image": "shopify:\/\/shop_images\/CFlogo.png",
+    "global_header_script": "<script async type=\"text/javascript\" src=\"//cdn.callrail.com/companies/343412235/03c358a5022d830ef5ca/12/swap.js\"></script> \n<meta name=\"facebook-domain-verification\" content=\"h2rnc8wlhen7259usyok0q26z6cdxa\">\n<script type=\"text/javascript\" src=\"https://cdn.shopify.com/s/files/1/0624/3270/6740/t/6/assets/jquery-2.2.4.min.js\"></script>\n\n<script>\n//spoof check\n// <![CDATA[\nvar abc = \"wwwbobcleannatafreakbobcom\";\nvar abcd = \"devbobcleannatafreakbobcom\";\nvar sabc = \"cleanfreak-devbobmynatashopifybobcom\";\nvar sabcd = \"cleanfreak-prodbobmynatashopifybobcom\";\n\nvar efg = abc.replaceAll('bob','').replaceAll('nata','');\nvar efgd = abcd.replaceAll('bob','').replaceAll('nata','');\nvar sefg = sabc.replaceAll('bob','').replaceAll('nata','');\nvar sefgd = sabcd.replaceAll('bob','').replaceAll('nata','');\n\nvar hij = abc.replaceAll('bob','.').replaceAll('nata','');\n\nif (window.location.hostname !=\"127.0.0.1\" && window.location.hostname.replaceAll('.','') !== efg && window.location.hostname.replaceAll('.','') !== efgd && window.location.hostname.replaceAll('.','') !== sefg && window.location.hostname.replaceAll('.','') !== sefgd) {\n  if (window.location.hostname == \"{{ shop.permanent_domain }}\") {\n    console.log(\"{{ shop.permanent_domain }}\");\n  } else {\n  var abc =\n    window.location.replace('https://'+hij+'?currpag='+window.location);\n  }\n};\n// ]]></script>",
+    "global_footer_script": "<!-- Start of LiveChat (www.livechat.com) code -->\n<script async>\n    window.__lc = window.__lc || {};\n    window.__lc.license = 14667759;\n    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:\"2.0\",on:function(){i([\"on\",c.call(arguments)])},once:function(){i([\"once\",c.call(arguments)])},off:function(){i([\"off\",c.call(arguments)])},get:function(){if(!e._h)throw new Error(\"[LiveChatWidget] You can't use getters before load.\");return i([\"get\",c.call(arguments)])},call:function(){i([\"call\",c.call(arguments)])},init:function(){var n=t.createElement(\"script\");n.async=!0,n.type=\"text/javascript\",n.src=\"https://cdn.livechatinc.com/tracking.js\",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))\n</script>\n<noscript>\n<a href=\"https://www.livechat.com/chat-with/14667759/\" rel=\"nofollow\">Chat with us</a>, powered by <a href=\"https://www.livechat.com/?welcome\" rel=\"noopener nofollow\" target=\"_blank\">LiveChat</a>\n</noscript>\n<!-- End of LiveChat code -->",
+    "checkout_logo_image": "shopify://shop_images/CFlogo.png",
     "checkout_heading_font": "Roboto",
     "checkout_body_font": "Roboto",
     "checkout_accent_color": "#32758b",
@@ -181,7 +181,7 @@
         "settings": {
           "sticky_header": false,
           "full_width_header": false,
-          "logo": "shopify:\/\/shop_images\/Footer_Logo.png",
+          "logo": "shopify://shop_images/Footer_Logo.png",
           "logo_height": 77,
           "logo_width": 222,
           "filter_search_by": "disabled",
@@ -241,7 +241,7 @@
           "3a02ed06-1436-4ecf-a69c-d4aa2a3162ac": {
             "type": "custom-liquid",
             "settings": {
-              "custom_liquid": "<style>\n.footer-news{\ntext-align:center;\nbackground-color: #f3f3f3;\npadding:45px 15px;\nborder:1px solid #ccc;\nborder-radius:10px;\nbox-shadow:1px 4px 7px 0 #ccc;\n}\n.footer-news .news-title{\ncolor:#d74018;\nfont-size:26px;\nfont-weight:bold;\n}\n.footer-news .new-sub{\npadding:5px 0;\n}\n.footer-news .newsbtn-row{\nmargin-top:5px;\ntext-align:center\n}\n.footer-news .newsbtn{\ndisplay:block;\nmax-width:150px;\nmargin:auto;\n}\n@media (max-width: 1023px){\n.footer-news{\npadding:30px 15px;\n}\n}\n\n\n<\/style>\n<div class=\"footer-news\">\n<div class=\"news-title\">Want The Latest Deals?<\/div>\n<div class=\"new-sub\">Sign up for our Newsletter.<\/div>\n<div class=\"newsbtn-row\"><a class=\"newsbtn main-atc-button thinbtn\" href=\"\/pages\/newsletter\" title=\"Newsletter Signup\">Sign Up<\/a><\/div>\n<\/div>"
+              "custom_liquid": "<style>\n.footer-news{\ntext-align:center;\nbackground-color: #f3f3f3;\npadding:45px 15px;\nborder:1px solid #ccc;\nborder-radius:10px;\nbox-shadow:1px 4px 7px 0 #ccc;\n}\n.footer-news .news-title{\ncolor:#d74018;\nfont-size:26px;\nfont-weight:bold;\n}\n.footer-news .new-sub{\npadding:5px 0;\n}\n.footer-news .newsbtn-row{\nmargin-top:5px;\ntext-align:center\n}\n.footer-news .newsbtn{\ndisplay:block;\nmax-width:150px;\nmargin:auto;\n}\n@media (max-width: 1023px){\n.footer-news{\npadding:30px 15px;\n}\n}\n\n\n</style>\n<div class=\"footer-news\">\n<div class=\"news-title\">Want The Latest Deals?</div>\n<div class=\"new-sub\">Sign up for our Newsletter.</div>\n<div class=\"newsbtn-row\"><a class=\"newsbtn main-atc-button thinbtn\" href=\"/pages/newsletter\" title=\"Newsletter Signup\">Sign Up</a></div>\n</div>"
             }
           }
         },
@@ -305,8 +305,8 @@
         "settings": {
           "show_announcement": false,
           "homepage_announcement": false,
-          "announcement_text": "<img alt=\"Labor Day Banner\" style=\"margin:-15px 0 -20px -306px\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0624\/3270\/6740\/files\/laborday-mini-ban2.png?v=172434740\">Labor Day Sale! Free Shipping on All Products! No Coupon Needed. Ends 9\/15.",
-          "announcement_text_mobile": "Labor Day Sale! Free Shipping on All Products! No Coupon Needed. Ends 9\/15.",
+          "announcement_text": "<img alt=\"Labor Day Banner\" style=\"margin:-15px 0 -20px -306px\" src=\"https://cdn.shopify.com/s/files/1/0624/3270/6740/files/laborday-mini-ban2.png?v=172434740\">Labor Day Sale! Free Shipping on All Products! No Coupon Needed. Ends 9/15.",
+          "announcement_text_mobile": "Labor Day Sale! Free Shipping on All Products! No Coupon Needed. Ends 9/15.",
           "announcement_link": "",
           "announcement_promo": "",
           "flash": false,
@@ -365,33 +365,43 @@
     ],
     "blocks": {
       "judgeme_core_46962039": {
-        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "type": "shopify://apps/judge-me-product-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {
         }
       },
       "1744347199190486471": {
-        "type": "shopify:\/\/apps\/advanced-wishlist\/blocks\/app\/330d9272-08ea-4193-b3e0-475a69fa65fa",
+        "type": "shopify://apps/advanced-wishlist/blocks/app/330d9272-08ea-4193-b3e0-475a69fa65fa",
         "disabled": false,
         "settings": {
         }
       },
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {
         }
       },
       "qikify-tmenu-1701320627": {
-        "type": "shopify:\/\/apps\/qikify-smart-menu-mega-menu\/blocks\/app-embed\/19d2f1cd-1836-4a32-8937-03df3c601dc8",
+        "type": "shopify://apps/qikify-smart-menu-mega-menu/blocks/app-embed/19d2f1cd-1836-4a32-8937-03df3c601dc8",
         "disabled": false,
         "settings": {
         }
       },
       "12512365888938011351": {
-        "type": "shopify:\/\/apps\/analyzify-ga4-ads-tracking\/blocks\/app-embed\/69637cfd-dd6f-4511-aa97-7037cfb5515c",
+        "type": "shopify://apps/analyzify-ga4-ads-tracking/blocks/app-embed/69637cfd-dd6f-4511-aa97-7037cfb5515c",
         "disabled": false,
         "settings": {
+        }
+      },
+      "3576686563519644491": {
+        "type": "shopify://apps/vwo/blocks/vwo-smartcode/2ce905b2-3842-4d20-b6b0-8c51fc208426",
+        "disabled": false,
+        "settings": {
+          "vwoAccountId": "968594",
+          "settingsTolerance": 2000,
+          "libraryTolerance": 2500,
+          "existingJquery": "false"
         }
       }
     }
@@ -465,7 +475,7 @@
       "social_youtube": "",
       "social_linkedin": "",
       "enable_checkout_lock_icon": false,
-      "continue_shopping_url": "shopify:\/\/collections\/all",
+      "continue_shopping_url": "shopify://collections/all",
       "continue_url_cart": true,
       "continue_url_404": true,
       "product_enable_recently_viewed_products": true,
@@ -667,7 +677,7 @@
       "swatches_option_style": "color_swatch",
       "swatches_custom_colors": "",
       "enable_checkout_lock_icon": false,
-      "continue_shopping_url": "shopify:\/\/collections\/all",
+      "continue_shopping_url": "shopify://collections/all",
       "continue_url_cart": true,
       "continue_url_404": true,
       "product_enable_recently_viewed_products": true,
@@ -898,7 +908,7 @@
       "swatches_product_page_size": 64,
       "swatches_option_style": "color_swatch",
       "enable_checkout_lock_icon": false,
-      "continue_shopping_url": "shopify:\/\/collections\/all",
+      "continue_shopping_url": "shopify://collections/all",
       "continue_url_cart": true,
       "continue_url_404": true,
       "product_enable_recently_viewed_products": true,
