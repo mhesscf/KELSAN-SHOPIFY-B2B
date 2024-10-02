@@ -386,7 +386,7 @@
           <div class="productitem--actions" data-product-actions>
             {%- if product_type == 'nobuy' %}
               {% comment %}We are not allowing these products{% endcomment %}
-              <a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" onclick="{{ onclick_event }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>
+              {% comment %}<a class="add-to-cart-btn productitem--action-trigger productitem--action-atc button-primary mdc-ripple-surface mdc-ripple-upgraded toproduct button-secondary" href="{{ product_link }}" onclick="{{ onclick_event }}" >View Product <i class="fa-sharp fa-solid fa-caret-right"></i></a>{% endcomment %}
 
 
             {%- elsif product_type == 'variant' %}

@@ -143,6 +143,11 @@
                                             {%- assign show = false -%}
                                         {%- endif -%}
 
+                                        {%- if all_products[product_handle].price <= 0 or all_products[product_handle].metafields.plytix.hide_pricing == 'Hide Price and Button'%}
+                                            {%- assign show = false -%}
+                                            {%- assign crawlcheck = true -%}
+                                        {%- endif -%}
+
                                         {%- assign crawlcheck = false -%}
                                         {%- for c in all_products[product_handle].collections -%}
                                             {%- if c.handle == "discontinued" -%}
