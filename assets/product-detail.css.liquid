@@ -710,6 +710,17 @@ input.qtyminus {
   width:32px;
   height:32px;
 }
+.product-quantity-disabled{
+  border: 1px solid {{ settings.color_text_medium }};
+  background-color: #e6e6e6;
+  width: 32px;
+  height:32px;
+  line-height:32px;
+  margin:auto;
+  font-weight:600;
+  text-align: center;
+
+}
 
 /* ------------- Quantity discount infobox Style ------------------------ */
 .qtydiv .rside .discount-info-wrap .quantity-discount-infobox.hidden{
@@ -969,10 +980,16 @@ input.qtyminus {
 .product-form--atc .cart-buttons .shopify-payment-button{
   width: 50%;
   margin-top: 0;
+
+}
+.shopify-payment-button{
+  border-radius: 10px !important;
+  overflow: hidden;
 }
 .product-form--atc .cart-buttons .shopify-payment-button div{
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px !important;
+  overflow:hidden;
 }
 .product-form--atc .cart-buttons .shopify-payment-button button{
   width: 100%;
