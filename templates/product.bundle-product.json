@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -20,19 +29,8 @@
           }
         },
         "2ae8ae39-f40e-42fe-8891-5f4966df3b19": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-          }
-        },
-        "48a869b3-9a72-45c4-8c34-d19cc98140e7": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
-          "disabled": true,
-          "settings": {
-            "stars_fill_color": "#000000",
-            "star_size": 15,
-            "text_align": "center",
-            "product": "{{product}}",
-            "stars_text_empty": "No reviews"
           }
         },
         "price": {
@@ -68,7 +66,6 @@
         "vendor",
         "rating",
         "2ae8ae39-f40e-42fe-8891-5f4966df3b19",
-        "48a869b3-9a72-45c4-8c34-d19cc98140e7",
         "price",
         "description",
         "form",
@@ -118,12 +115,21 @@
             "tab_name_sm": "Parts",
             "tab_rel_id": "part_items"
           }
+        },
+        "tabinfo_3NPU7W": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Part Used On",
+            "tab_name_sm": "Used On",
+            "tab_rel_id": "part_used_on"
+          }
         }
       },
       "block_order": [
         "ba75282e-273f-4af0-8bdd-082b138fd25e",
         "4472ec50-623f-4f19-8514-7df96f2c356a",
-        "e873d89a-43e3-49bd-be9e-0a3907de279f"
+        "e873d89a-43e3-49bd-be9e-0a3907de279f",
+        "tabinfo_3NPU7W"
       ],
       "settings": {
         "show_section": true,
@@ -134,7 +140,7 @@
       "type": "product-info-features",
       "blocks": {
         "1984145a-f3f4-4800-a839-af4653eaefe1": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
           }
         }
@@ -154,7 +160,7 @@
       "type": "apps",
       "blocks": {
         "f9ae4694-c701-4477-8fb4-c5efd864a56e": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
           }
         }
