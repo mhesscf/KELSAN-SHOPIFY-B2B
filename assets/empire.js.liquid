@@ -45308,7 +45308,9 @@ const RULES = `
                     }else{
                         console.log('product not returned');
                     }
-                })
+                }).fail((jqXHR, textStatus, errorThrown) => {
+                    $(this).html(" <div class='crawlcheck crawlcheck-related'><!-- check handle "+ handle +" product_handle }})) --></div>").hide();
+                });
             });
         },100);
 
