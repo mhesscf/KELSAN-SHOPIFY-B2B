@@ -238,7 +238,10 @@
                 {%- endif -%}
                 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
                     <div class="padcharacteristics">
-                        {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  -%}
+
+                        {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  and product.first_available_variant.metafields.plytix.brush_pad_diameter -%}
+                            <h2 class="prod-block-title">Pad Characteristics</h2>
+                        {%- elsif product.metafields.plytix.eco_friendly -%}
                             <h2 class="prod-block-title">Pad Characteristics</h2>
                         {%- endif -%}
 
