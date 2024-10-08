@@ -461,7 +461,7 @@
           {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
           {%- assign leadTime = leadTime | plus: 0 -%}
 
-          {%- if current_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+          {%- if current_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
             {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
             {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
           {%- elsif current_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}

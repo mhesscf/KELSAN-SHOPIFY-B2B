@@ -76,14 +76,14 @@
             finalmessage += '<summary onClick="stoplink(event)" tabindex="0" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
             finalmessage += '<p>This product has multiple item offerings. See product page for the stock status of each individual item.</p>';
             finalmessage += '</details>';
-        }else if(dropship == "true") {
+        }else if(dropship == "true"  && inventory < 1 ) {
             finalmessage += '<span class="status-desc main-notice">Ships Direct from Manufacturer</span>';
             finalmessage += '<span class="status-time">May Have Extended Lead Times</span>';
             finalmessage += '<details>';
             finalmessage += '<summary onClick="stoplink(event)" tabindex="0" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
             finalmessage += '<p>We do not currently stock this item. It will ship directly from the manufacturer to you for the quickest delivery time possible. Current inventory levels at the manufacturer are unknown.</p>';
             finalmessage += '</details>';
-        }else if(im == "middleware-fulfillment" && inventory < 1){
+        }else if(im == "middleware-fulfillment" && inventory < 1 ){
             if(sxerp_po_date){
                 var currentDate = new Date();
                 var targetDate = new Date(sxerp_po_date);

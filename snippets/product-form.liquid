@@ -134,7 +134,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
     {%- assign leadTime = leadTime | plus: 0 -%}
 
-    {%- if selected_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+    {%- if selected_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
       {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
       {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
     {%- elsif selected_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
@@ -969,7 +969,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         {%- assign inventoryQuantityBun = inventoryQuantityBun | plus: 0 -%}
         {%- assign leadTimeBun = leadTimeBun | plus: 0 -%}
 
-        {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+        {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityBun <  1 -%}
           {%- assign stockStatusBunMain = "Ships Direct from Manufacturer" -%}
           {%- assign stockStatusBunSub = "May Have Extended Lead Times" -%}
         {%- elsif bundle_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityBun <  1 -%}
@@ -1096,7 +1096,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         {%- assign inventoryQuantityFree = inventoryQuantityFree | plus: 0 -%}
         {%- assign leadTimeFree = leadTimeFree | plus: 0 -%}
 
-        {%- if free_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+        {%- if free_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityFree <  1 -%}
           {%- assign stockStatusFreeMain = "Ships Direct from Manufacturer" -%}
           {%- assign stockStatusFreeSub = "May Have Extended Lead Times" -%}
         {%- elsif free_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityFree <  1 -%}
