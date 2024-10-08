@@ -14,7 +14,7 @@
       "disabled": true,
       "settings": {
         "title": "",
-        "custom_html": "<style>\n#shopify-section-template--16671985533140__475144ee-1619-40db-8de5-a06451836ae0 .custom-html--container{\npadding-left:0; \npadding-right:0;\n}\n\n.mobile-banner{display:none;}\n@media (max-width: 800px){\n\t.mobile-banner{display:block;}\n\t.desk-banner{display:none;}\n}\n\n<\/style>\n<h1 style=\"color:#303E48; font-weight:700; padding-left:25px; font-size:55px; line-height:65px;\">Pressure Washers<\/h1>\n<div class=\"desk-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-2000x639.jpg?v=1690392030\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>\n<div class=\"mobile-banner\"><img class=\"img-responsive\" src=\"https:\/\/www.cleanfreak.com\/cdn\/shop\/files\/free-shipping-on-pressure-washers-800x427.jpg?v=1690392030\" alt=\"Free Shipping on Pressure Washers till 8\/31\"><\/div>"
+        "custom_html": "<style>\n#shopify-section-template--16671985533140__475144ee-1619-40db-8de5-a06451836ae0 .custom-html--container{\npadding-left:0; \npadding-right:0;\n}\n\n.mobile-banner{display:none;}\n@media (max-width: 800px){\n\t.mobile-banner{display:block;}\n\t.desk-banner{display:none;}\n}\n\n</style>\n<h1 style=\"color:#303E48; font-weight:700; padding-left:25px; font-size:55px; line-height:65px;\">Pressure Washers</h1>\n<div class=\"desk-banner\"><img class=\"img-responsive\" src=\"https://www.cleanfreak.com/cdn/shop/files/free-shipping-on-pressure-washers-2000x639.jpg?v=1690392030\" alt=\"Free Shipping on Pressure Washers till 8/31\"></div>\n<div class=\"mobile-banner\"><img class=\"img-responsive\" src=\"https://www.cleanfreak.com/cdn/shop/files/free-shipping-on-pressure-washers-800x427.jpg?v=1690392030\" alt=\"Free Shipping on Pressure Washers till 8/31\"></div>"
       }
     },
     "1663617398865396bc": {
@@ -23,7 +23,7 @@
       "settings": {
         "chsectionheading": "Pressure Washers",
         "chsectiontext": "Shop a wide selection of pressure washers for any application. Choose from hot or cold water pressure washers with gasoline engine or electric power.",
-        "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg"
+        "image": "shopify://shop_images/pressure-washers-dept-page.jpg"
       }
     },
     "b7587dfe-01d4-43e5-bf53-5e0c58f9cabc": {
@@ -75,16 +75,16 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/save-20-pressure-washers-desktop-homepage-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/save-20-pressure-washers-mobile-homepage-banner.jpg",
-            "link": "\/search?q=wet-cfh-3",
+            "banner-lg": "shopify://shop_images/save-20-pressure-washers-desktop-homepage-banner.jpg",
+            "banner-sm": "shopify://shop_images/save-20-pressure-washers-mobile-homepage-banner.jpg",
+            "link": "/search?q=wet-cfh-3",
             "coupon-code": "BLAST20"
           }
         },
         "942a18a7-53dd-44b7-b13d-69ed6b63aa8e": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
+            "cat_image": "shopify://shop_images/pressure-washers-dept-page.jpg",
             "cat_title": "Pressure Washers",
             "cat_text": "Shop a wide selection of pressure washers for any application. Choose from hot or cold water pressure washers with gasoline engine or electric power."
           }
@@ -92,27 +92,27 @@
         "bfd9a3eb-83fd-4e57-8634-2f422f1a62ca": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/got-a-big-job-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/got-a-big-job-banner-800x427.jpg",
-            "link": "\/products\/cleanfreak-cfh-3530g-hot-water-pressure-washer",
+            "banner-lg": "shopify://shop_images/got-a-big-job-banner-1400x350.jpg",
+            "banner-sm": "shopify://shop_images/got-a-big-job-banner-800x427.jpg",
+            "link": "/products/cleanfreak-cfh-3530g-hot-water-pressure-washer",
             "coupon-code": ""
           }
         },
         "1bbb33c2-2444-465d-8285-f1a6681bee8b": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/hot-water-press-washer-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/hot-water-press-washer-banner-800x427.jpg",
-            "link": "\/products\/cleanfreak-clh-3530g-hot-water-pressure-washer",
+            "banner-lg": "shopify://shop_images/hot-water-press-washer-banner-1400x350.jpg",
+            "banner-sm": "shopify://shop_images/hot-water-press-washer-banner-800x427.jpg",
+            "link": "/products/cleanfreak-cfh-3530g-hot-water-pressure-washer",
             "coupon-code": ""
           }
         },
         "55c96410-9583-4bcd-9414-2823d5265d9f": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/pressure-mower-banner-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/pressure-mower-banner-800x427.jpg",
-            "link": "\/products\/pressure-mower-with-hose-reel",
+            "banner-lg": "shopify://shop_images/pressure-mower-banner-1400x350.jpg",
+            "banner-sm": "shopify://shop_images/pressure-mower-banner-800x427.jpg",
+            "link": "/products/pressure-mower-with-hose-reel",
             "coupon-code": ""
           }
         }
@@ -238,73 +238,73 @@
         "edbfab3c-56d9-4148-91aa-3761d52fee9e": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cold-electric-pressure-washers.jpg",
+            "image": "shopify://shop_images/cold-electric-pressure-washers.jpg",
             "title": "Cold Water Electric",
-            "url": "\/collections\/cold-water-electric-pressure-washers"
+            "url": "/collections/cold-water-electric-pressure-washers"
           }
         },
         "6216137a-2b4c-43a5-821c-c28e0c093f9c": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cold-gas-powered-pressure-washer.jpg",
+            "image": "shopify://shop_images/cold-gas-powered-pressure-washer.jpg",
             "title": "Cold Water Gas Engine",
-            "url": "\/collections\/cold-water-gas-engine-pressure-washers"
+            "url": "/collections/cold-water-gas-engine-pressure-washers"
           }
         },
         "45d203af-bc0c-4595-ab4a-70accfc8c1a0": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
+            "image": "shopify://shop_images/detergents-category.jpg",
             "title": "Detergents",
-            "url": "\/collections\/detergents"
+            "url": "/collections/detergents"
           }
         },
         "0c3e5a7a-1a1d-4d2b-bb5f-2991977e571a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/drain-jetters.jpg",
+            "image": "shopify://shop_images/drain-jetters.jpg",
             "title": "Drain Jetters",
-            "url": "\/collections\/drain-jetters"
+            "url": "/collections/drain-jetters"
           }
         },
         "b795079d-d2c7-485d-b049-2aa01a830b43": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hot-gas-pressure-washers.jpg",
+            "image": "shopify://shop_images/hot-gas-pressure-washers.jpg",
             "title": "Hot Water Gas Engine",
-            "url": "\/collections\/hot-water-gas-engine-pressure-washers"
+            "url": "/collections/hot-water-gas-engine-pressure-washers"
           }
         },
         "170a8bf8-9d6d-474a-b55c-eee6dc161442": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hto-electric-pressure-washers.jpg",
+            "image": "shopify://shop_images/hto-electric-pressure-washers.jpg",
             "title": "Hot Water Electric",
-            "url": "\/collections\/hot-water-electric-pressure-washers"
+            "url": "/collections/hot-water-electric-pressure-washers"
           }
         },
         "62c887d0-92ff-4e2d-87de-968a815c860b": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/softwash-system-dept.jpg",
+            "image": "shopify://shop_images/softwash-system-dept.jpg",
             "title": "Softwash Systems",
-            "url": "\/collections\/softwash-systems"
+            "url": "/collections/softwash-systems"
           }
         },
         "b0c688b8-3bf4-4751-b863-86b45272103c": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/flat-surfaces-cleaners.jpg",
+            "image": "shopify://shop_images/flat-surfaces-cleaners.jpg",
             "title": "Specialty Attachments",
-            "url": "\/collections\/specialty-attachments-for-pressure-washers"
+            "url": "/collections/specialty-attachments-for-pressure-washers"
           }
         },
         "90e76373-00dc-4d7b-98bf-f8ead2c9ab48": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/truck-trailer-mount-portable-pressure-washer-systems.jpg",
+            "image": "shopify://shop_images/truck-trailer-mount-portable-pressure-washer-systems.jpg",
             "title": "Truck & Trailer Mount",
-            "url": "\/collections\/truck-mount"
+            "url": "/collections/truck-mount"
           }
         }
       },
@@ -329,33 +329,33 @@
         "f21a1c19-e085-4fa3-8e30-57b4a65a13ca": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/detergents-category.jpg",
+            "image": "shopify://shop_images/detergents-category.jpg",
             "title": "Detergents",
-            "url": "\/collections\/detergents"
+            "url": "/collections/detergents"
           }
         },
         "2eaa0edc-6777-4bb7-81e5-1229d10c83d8": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washer-hoses-hose-reels-dept.jpg",
+            "image": "shopify://shop_images/pressure-washer-hoses-hose-reels-dept.jpg",
             "title": "Pressure Washer Hoses & Hose Reels",
-            "url": "\/pages\/pressure-washer-hoses-and-hose-reels"
+            "url": "/pages/pressure-washer-hoses-and-hose-reels"
           }
         },
         "176e6ec1-c3b5-453d-badf-c828eb6bf41b": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washer-parts-dept2.jpg",
+            "image": "shopify://shop_images/pressure-washer-parts-dept2.jpg",
             "title": "Pressure Washer Misc. Parts & Accessories",
-            "url": "\/pages\/pressure-washer-parts-and-accessories"
+            "url": "/pages/pressure-washer-parts-and-accessories"
           }
         },
         "related_cat_link_ccfMe7": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washer-spray-guns-wands-dept.jpg",
+            "image": "shopify://shop_images/pressure-washer-spray-guns-wands-dept.jpg",
             "title": "Pressure Washer Spray Guns & Wands",
-            "url": "\/collections\/pressure-washer-spray-guns-wands"
+            "url": "/collections/pressure-washer-spray-guns-wands"
           }
         }
       },
@@ -443,8 +443,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Pressure Washers&q=CleanFreak",
+            "brand-image": "shopify://shop_images/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer.jpg"
           }
         }
       },
@@ -461,11 +461,11 @@
         "81b61309-2377-4eec-862e-f3c9b8075b89": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pressure-washers-dept-page.jpg",
+            "image": "shopify://shop_images/pressure-washers-dept-page.jpg",
             "heading": "Choosing the Right Pressure Washer for Commercial Use: Interview with an Expert",
-            "subheading": "<p> right pressure washer for commercial use is difficult. So, we brought in an expert!<\/p>",
+            "subheading": "<p> right pressure washer for commercial use is difficult. So, we brought in an expert!</p>",
             "button_label": "Read the Guide",
-            "button_link": "\/blogs\/news\/choosing-the-right-pressure-washer-for-commercial-use-interview-with-an-expert"
+            "button_link": "/blogs/news/choosing-the-right-pressure-washer-for-commercial-use-interview-with-an-expert"
           }
         }
       },
