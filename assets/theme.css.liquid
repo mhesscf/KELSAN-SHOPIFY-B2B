@@ -3858,7 +3858,12 @@ body .mdc-ripple-surface:hover:before {
 .site-header__logo-image{
 	min-width: 100px;
 }
-
+@media screen and (max-width: 479px) {
+	.site-header-logo img{
+		width:132px;
+		float:left;
+	}
+}
 @media screen and (max-width: 679px) {
 	.site-header-logo {
 		display: table;
