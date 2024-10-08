@@ -19,6 +19,9 @@
             <div class="description">
                 <h2>Product Description</h2>
                 <p>{{ product.description }}</p>
+                {%- if product.metafields.plytix.product_specific_scripts != blank -%}
+                {{ product.metafields.plytix.product_specific_scripts }}
+                {%- endif -%}
             </div>
             <div class="prod-additional">
                 {%- if product.metafields.plytix.package_products != blank -%}
