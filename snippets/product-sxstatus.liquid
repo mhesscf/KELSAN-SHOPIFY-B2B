@@ -18,7 +18,7 @@
     {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
     {%- assign leadTime = leadTime | plus: 0 -%}
     {% comment %}{%- assign pclearance = false -%}{% endcomment %}
-    {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+    {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
       <div class="sx-status">
         <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
         <span class="status-time">May Have Extended Lead Times</span>

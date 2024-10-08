@@ -71,7 +71,7 @@
                             {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
                             {%- assign leadTime = leadTime | plus: 0 -%}
 
-                            {%- if all_products[bundlep].selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+                            {%- if all_products[bundlep].selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
                                 {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
                                 {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
                             {%- elsif all_products[bundlep].selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
@@ -266,7 +266,7 @@
                                 {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
                                 {%- assign leadTime = leadTime | plus: 0 -%}
 
-                                {%- if all_products[bundlep].selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
+                                {%- if all_products[bundlep].selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
                                     {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
                                     {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
                                 {%- elsif all_products[bundlep].selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
