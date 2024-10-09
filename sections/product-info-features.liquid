@@ -162,23 +162,54 @@
                 {%- if product.metafields.plytix.in_these_bundles -%}
                     {%- assign in_bundles_arr = product.metafields.plytix.in_these_bundles | split: ", " -%}
                     {%- assign bnd_counter = 0 -%}
-                {%- for bundlehandle in in_bundles_arr -%}
-                    {%- if bundlehandle != "" and bundlehandle != "undefined" -%}
-                        {%- assign bnd_counter = bnd_counter | plus: 1 -%}
-                    {%- endif -%}
-                {%- endfor -%}
-
+                    {%- for bundlehandle in in_bundles_arr -%}
+                        {%- if bundlehandle != "" and bundlehandle != "undefined" -%}
+                            {%- assign bnd_counter = bnd_counter | plus: 1 -%}
+                        {%- endif -%}
+                    {%- endfor -%}
                     {%- if bnd_counter > 0 -%}
+                        {%- assign bnd_counter2 = 1 -%}
                         <h2 class="inbundle-title" id="bundles">Starter Package<span>s</span></h2>
                         <div class="inbundle-block">
 
                             {%- for bundlehandle in in_bundles_arr -%}
                                 {%- if bundlehandle != "" and bundlehandle != "undefined" -%}
-                                    <div class="inbundle" data-handle="{{ bundlehandle }}"></div>
+                                    <div class="inbundle {% if bnd_counter2 > 4 %}inbundlehide{% endif %}" data-handle="{{ bundlehandle }}"></div>
+                                    {%- assign bnd_counter2 = bnd_counter2 | plus: 1 -%}
                                 {%- endif -%}
                             {%- endfor -%}
 
                         </div>
+
+                        {% if bnd_counter2 > 5 %}
+                        <div class="view-more-package viewmore fake-link">View More Packages</div>
+
+                        <style>
+                            .view-more-package.fake-link{color:#32758b; cursor:pointer; margin-top: -14px; text-align:right;}
+                        </style>
+                        <script>
+                            $(document).ready(function($){
+                                $('.view-more-package').on('click', function() {
+                                    if ($('.view-more-package').hasClass('viewmore')){
+                                        $('.inbundle').show();
+                                        $(this).removeClass('viewmore').addClass('viewless').text('View Less Packages');
+                                    }else if ($('.view-more-package').hasClass('viewless')){
+                                            $('.inbundlehide').hide();
+                                            $('.view-more-package').removeClass('viewless').addClass('viewmore').text('View More Packages');
+                                    }
+                                });
+
+                                $('.view-more-package').on('click', function() {
+                                    // if ($(this).hasClass("viewless")) {
+                                    //     $('.inbundlehide').hide();
+                                    //     $('.view-more-package').removeClass('viewless').addClass('viewmore').text('View More Packages');
+                                    // }
+                                });
+                            });
+                        </script>
+                        {% endif %}
+
+
                         <style>
                             {%- if bnd_counter == 1 -%}
                                 .inbundle-title span{display:none;}
@@ -186,12 +217,22 @@
                             .inbundle{
                                 margin-bottom:15px;
                                 padding-bottom:15px;
-                                border-bottom:1px solid #C0D3D8;
+                                padding-top:15px;
+                                border-top:1px solid #C0D3D8;
                             }
                             .inbundle:last-child{
                                 border-bottom:none;
                                 margin-bottom:10px;
                                 padding-bottom:10px;
+                            }
+                            .inbundle:first-child{
+                                border-bottom:none;
+                                margin-bottom:10px;
+                                padding-bottom:10px;
+                            }
+
+                            .inbundlehide{
+                                display:none;
                             }
                             .inbundle-block .fgtotal{
                                 color:red;
