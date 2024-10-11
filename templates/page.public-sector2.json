@@ -1,0 +1,327 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "a475181a-3079-4a36-9edf-37785d0fdb22": {
+      "type": "left-nav-on-pages",
+      "disabled": true,
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
+    "dynamic_html_WUrd8b": {
+      "type": "dynamic-html",
+      "settings": {
+        "title": "",
+        "custom_html": "<style>\n.slideshow-slide__heading,\n.slideshow-slide__text{\ncolor:#303e48; \nbackground-color:white;\nmargin:0;\npadding:15px;\nborder-radius:15px 15px 0 0;\nanimation:none !important;\n}\n\n.slideshow-slide__text{\nfont-size:18px;\nborder-radius:0 0 15px 15px;\npadding-top:2px;\nmargin-top:-2px;\n}\n\n.slideshow-slide__content{\npadding-right:45%;\n}\n\nimg.category-resources-section__image{\nmax-width:200px;\nmargin:auto;\n}\n.resource-content-wrapper .main-default-button{\ndisplay:none;\n}\n.category-resources-section__image-wrapper{\ntext-align:center;\n}\n.resource-content-wrapper {\npadding-top:0px;\n}\n.resource-excerpt p,\n.resource-content-wrapper{\ntext-align:left;\nfont-size:18px;\nline-height:20px;\n}\n.resource-content-wrapper h3{\ntext-align:left;\nfont-size:22px;\nline-height:22px;\nmargin:-5px 0 5px 0;\n}\n\n.category-types-v2 .blockfill-3 .blockfill-contain{\nbackground-repeat:repeat;\n}\n\n</style>"
+      }
+    },
+    "dynamic_slideshow_DLJTYP": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "slide_zUVBUB": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/tax-exempt-501c3-doc-1400x350.jpg",
+            "mobile_background_image": "shopify://shop_images/tax-exempt-501c3-doc.jpg",
+            "title": "CleanFreak.comTax Exempt Program",
+            "text": "Whether you're in education, government, or any other sector, we provide the cleaning products and solutions to keep your agency pristine and running smoothly.",
+            "color": "#ffffff",
+            "link": "",
+            "promo_link": "",
+            "text_alignment": "left",
+            "button_one_label": "Fill Out Form",
+            "button_one_link": "#tax-form-contain-id",
+            "button_one_style": "secondary",
+            "button_two_label": "",
+            "button_two_link": "#tax-form-contain-id",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#303e48",
+            "overlay_opacity": 70
+          }
+        }
+      },
+      "block_order": [
+        "slide_zUVBUB"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "full",
+        "slideshow_height": "medium",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "dept_resource_area_LJrK3Y": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "resourcelink_GCwfwe": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify://shop_images/net-30-icon.png",
+            "heading": "Net 30 Payment Terms",
+            "subheading": "<p>Net 30 payments give you flexibility to buy what you need when you need it, and pay later.</p>",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_63QUtP": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify://shop_images/except-icon.png",
+            "heading": "Tax Exempt Purchasing",
+            "subheading": "<p>We offer tax-exempt purchasing to help your business save on costs and enhance profitability.</p>",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_93Eyb3": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify://shop_images/exclusive-pricing-icon.png",
+            "heading": "Exclusive Pricing",
+            "subheading": "<p>Unlock exclusive pricing through bulk purchases, regular orders, and customized pricing contracts tailored to your needs.</p>",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_hKMAnk": {
+          "type": "resourcelink",
+          "settings": {
+            "image": "shopify://shop_images/sales-rep-icon.png",
+            "heading": "Dedicated Sales Representative",
+            "subheading": "<p>Experience personalized service with a dedicated sales representative who is committed to understanding your needs and providing tailored solutions for your business.</p>",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "resourcelink_GCwfwe",
+        "resourcelink_63QUtP",
+        "resourcelink_93Eyb3",
+        "resourcelink_hKMAnk"
+      ],
+      "settings": {
+        "block-title": "What We Offer"
+      }
+    },
+    "dept_category_area_TGxnRT": {
+      "type": "dept-category-area",
+      "blocks": {
+        "categorylink_UnBr4J": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/net-30-icon.png",
+            "title": "Net 30 Payment Terms",
+            "url": ""
+          }
+        },
+        "categorylink_EFyMTM": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/except-icon.png",
+            "title": "Tax Exempt Purchasing",
+            "url": ""
+          }
+        },
+        "categorylink_aBiegW": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Exclusive Pricing",
+            "url": ""
+          }
+        },
+        "categorylink_TwaCAg": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Dedicated Sales Rep",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "categorylink_UnBr4J",
+        "categorylink_EFyMTM",
+        "categorylink_aBiegW",
+        "categorylink_TwaCAg"
+      ],
+      "disabled": true,
+      "settings": {
+        "block-title": "What We Offer"
+      }
+    },
+    "dept_resource_area_weUqUq": {
+      "type": "dept-resource-area",
+      "blocks": {
+        "resourcelink_YGH6da": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Government Agencies",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_gQAtmU": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Education",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_jWMGt8": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Military",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_qbDeqP": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Healthcare",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_AezEDj": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Emergency Services",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        },
+        "resourcelink_4t9JEF": {
+          "type": "resourcelink",
+          "settings": {
+            "heading": "Building Service Contractors",
+            "subheading": "",
+            "button_label": "Button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "resourcelink_YGH6da",
+        "resourcelink_gQAtmU",
+        "resourcelink_jWMGt8",
+        "resourcelink_qbDeqP",
+        "resourcelink_AezEDj",
+        "resourcelink_4t9JEF"
+      ],
+      "disabled": true,
+      "settings": {
+        "block-title": "Resources"
+      }
+    },
+    "dept_category_area_dg6njW": {
+      "type": "dept-category-area",
+      "blocks": {
+        "categorylink_fm9fgm": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/government-agencies.jpg",
+            "title": "Government Agencies",
+            "url": ""
+          }
+        },
+        "categorylink_w3FgqY": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/class-room-education.jpg",
+            "title": "Education",
+            "url": ""
+          }
+        },
+        "categorylink_NNCMCG": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/flag-military.jpg",
+            "title": "Military",
+            "url": ""
+          }
+        },
+        "categorylink_APLUb4": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/healthcare.jpg",
+            "title": "Healthcare",
+            "url": ""
+          }
+        },
+        "categorylink_e4JdxR": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/emergencey-service.jpg",
+            "title": "Emergency Services",
+            "url": ""
+          }
+        },
+        "categorylink_mXrfaF": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/contractors.jpg",
+            "title": "Building Service Contractors",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "categorylink_fm9fgm",
+        "categorylink_w3FgqY",
+        "categorylink_NNCMCG",
+        "categorylink_APLUb4",
+        "categorylink_e4JdxR",
+        "categorylink_mXrfaF"
+      ],
+      "settings": {
+        "block-title": "Resources"
+      }
+    },
+    "dynamic_custom_liquid_PGVPqf": {
+      "type": "dynamic-custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.tax-form-container{\nbackground-color:#f7f7f7;\nborder:1px solid #ccc;\nborder-radius:30px;\nmax-width:800px;\nmargin:auto;\npadding:0 25px\n}\n</style>\n<div id=\"tax-form-contain-id\" class=\"tax-form-container\"><div id=\"wufoo-p1sg5w0x1r7glen\">Fill out my <a href=\"https://jbutchpti.wufoo.com/forms/p1sg5w0x1r7glen\">online form</a>.</div>\n<script type=\"text/javascript\"> var p1sg5w0x1r7glen; (function(d, t) { var s = d.createElement(t), options = { 'userName':'jbutchpti', 'formHash':'p1sg5w0x1r7glen', 'autoResize':true, 'height':'666', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { p1sg5w0x1r7glen = new WufooForm(); p1sg5w0x1r7glen.initialize(options); p1sg5w0x1r7glen.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script></div>"
+      }
+    }
+  },
+  "order": [
+    "a475181a-3079-4a36-9edf-37785d0fdb22",
+    "dynamic_html_WUrd8b",
+    "dynamic_slideshow_DLJTYP",
+    "main",
+    "dept_resource_area_LJrK3Y",
+    "dept_category_area_TGxnRT",
+    "dept_resource_area_weUqUq",
+    "dept_category_area_dg6njW",
+    "dynamic_custom_liquid_PGVPqf"
+  ]
+}
