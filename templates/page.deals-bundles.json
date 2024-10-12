@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "cba53468-db6f-41ec-9ed7-fc3255c70c3e": {
@@ -15,7 +15,7 @@
         "1b022c65-58d9-4861-acb1-078b9ee03995": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/floor-scrubber-package-deals-and-bundles-dept-page.jpg",
+            "cat_image": "shopify://shop_images/floor-scrubber-package-deals-and-bundles-dept-page.jpg",
             "cat_title": "Deals & Packages",
             "cat_text": "Check out our different deals on clearance items, refurbished machines, and gold medal winning equipment. We've pre-built several different packages if you don't know where to start."
           }
@@ -24,9 +24,9 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/spring-demo-sale-2024-desktop-banner.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/spring-demo-sale-2024-mobile-banner.jpg",
-            "link": "\/collections\/demoed-refurbished-equipment",
+            "banner-lg": "shopify://shop_images/spring-demo-sale-2024-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/spring-demo-sale-2024-mobile-banner.jpg",
+            "link": "/collections/demoed-refurbished-equipment",
             "coupon-code": ""
           }
         }
@@ -147,73 +147,73 @@
         "20c39ad6-02d9-4d2c-b28b-4303a09d0beb": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/specials-category.jpg",
+            "image": "shopify://shop_images/specials-category.jpg",
             "title": "Clearance and Overstock",
-            "url": "\/collections\/clearance"
+            "url": "/collections/clearance"
           }
         },
         "331a6eca-3397-43e4-8ad7-75d4fa234636": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gold-medal-winners.jpg",
+            "image": "shopify://shop_images/gold-medal-winners.jpg",
             "title": "Gold Medal Winners",
-            "url": "\/collections\/gold-medal-winners"
+            "url": "/collections/gold-medal-winners"
           }
         },
         "9aaaf909-3594-49e0-8341-75454ff53916": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/refurbished-returns.jpg",
+            "image": "shopify://shop_images/refurbished-returns.jpg",
             "title": "Used & Refurbished",
-            "url": "\/collections\/demoed-refurbished-equipment"
+            "url": "/collections/demoed-refurbished-equipment"
           }
         },
         "2924fcc3-53a9-4c55-857b-1f30e6d02e76": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/auto-scrubber-packages.jpg",
+            "image": "shopify://shop_images/auto-scrubber-packages.jpg",
             "title": "Auto Scrubber Packages",
-            "url": "\/collections\/auto-scrubber-packages"
+            "url": "/collections/auto-scrubber-packages"
           }
         },
         "fd65e796-f6ea-4c5a-b2ff-898d75009b1b": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-cleaning-packages.jpg",
+            "image": "shopify://shop_images/carpet-cleaning-packages.jpg",
             "title": "Carpet Cleaning Packages",
-            "url": "\/collections\/carpet-cleaning-packages"
+            "url": "/collections/carpet-cleaning-packages"
           }
         },
         "f0273d0c-4ade-4f85-b017-9ac229368db9": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/chemical-packages.jpg",
+            "image": "shopify://shop_images/chemical-packages.jpg",
             "title": "Chemical Packages",
-            "url": "\/collections\/chemical-packages"
-          }
-        },
-        "2b1ae648-c45a-47d4-8e7b-92fd6c12979d": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/mopping-packages.jpg",
-            "title": "Mopping Packages",
-            "url": "\/collections\/mopping-packages"
+            "url": "/collections/chemical-packages"
           }
         },
         "8158985d-aae9-4834-9290-ca5342ebcbc1": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rotary-floor-buffer-packages.jpg",
-            "title": "Rotary Floor Buffer Machine Packages",
-            "url": "\/collections\/rotary-floor-buffer-machine-packages"
+            "image": "shopify://shop_images/rotary-floor-buffer-packages.jpg",
+            "title": "Floor Buffer Packages",
+            "url": "/collections/rotary-floor-buffer-machine-packages"
+          }
+        },
+        "2b1ae648-c45a-47d4-8e7b-92fd6c12979d": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/mopping-packages.jpg",
+            "title": "Mopping Packages",
+            "url": "/collections/mopping-packages"
           }
         },
         "22403f29-5aaa-4ff9-9770-8a38672cf28b": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-cleaner-packages.jpg",
+            "image": "shopify://shop_images/vacuum-cleaner-packages.jpg",
             "title": "Vacuum Cleaner Packages",
-            "url": "\/collections\/vacuum-cleaner-packages"
+            "url": "/collections/vacuum-cleaner-packages"
           }
         }
       },
@@ -224,8 +224,8 @@
         "2924fcc3-53a9-4c55-857b-1f30e6d02e76",
         "fd65e796-f6ea-4c5a-b2ff-898d75009b1b",
         "f0273d0c-4ade-4f85-b017-9ac229368db9",
-        "2b1ae648-c45a-47d4-8e7b-92fd6c12979d",
         "8158985d-aae9-4834-9290-ca5342ebcbc1",
+        "2b1ae648-c45a-47d4-8e7b-92fd6c12979d",
         "22403f29-5aaa-4ff9-9770-8a38672cf28b"
       ],
       "settings": {
@@ -326,8 +326,8 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "https:\/\/www.cleanfreak.com\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=CleanFreak&refinementList%5Btags%5D%5B0%5D=Package&refinementList%5Btags%5D%5B1%5D=Gold%20Medal%20Winner&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/orbital-floor-buffer-package-for-vinyl-tile-cleaning-and-grout-concrete-scrubbing-v3.jpg"
+            "brand-link": "https://www.cleanfreak.com/collections/vendors?refinementList%5Bvendor%5D%5B0%5D=CleanFreak&refinementList%5Btags%5D%5B0%5D=Package&refinementList%5Btags%5D%5B1%5D=Gold%20Medal%20Winner&q=CleanFreak",
+            "brand-image": "shopify://shop_images/orbital-floor-buffer-package-for-vinyl-tile-cleaning-and-grout-concrete-scrubbing-v3.jpg"
           }
         },
         "28b21e50-bd4b-49fb-9fd5-d6262374a4e3": {
@@ -342,16 +342,16 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Trusted Clean",
-            "brand-image": "shopify:\/\/shop_images\/flr-package2-v6.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Trusted Clean",
+            "brand-image": "shopify://shop_images/flr-package2-v6.jpg"
           }
         },
         "edaba4f8-1776-4600-a78b-808e8d4d4e3e": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Oreck&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Oreck",
-            "brand-image": "shopify:\/\/shop_images\/oreck-orbiter-rotary-floor-machine-package-v2.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Oreck&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Oreck",
+            "brand-image": "shopify://shop_images/oreck-orbiter-rotary-floor-machine-package-v2.jpg"
           }
         },
         "248ee9d5-51d7-4f17-936b-ea32fb54e514": {
@@ -380,11 +380,11 @@
         "98bf2d36-120b-4554-9c05-70dc5453f3bf": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cleanfreak-team-crop.jpg",
+            "image": "shopify://shop_images/cleanfreak-team-crop.jpg",
             "heading": "The Complete Guide to Starting a Cleaning Business",
-            "subheading": "<p>Are you considering starting your own cleaning business? This guide is a must-have resource for those interested in starting a residential or commercial cleaning business, but aren't sure where to start.<\/p>",
+            "subheading": "<p>Are you considering starting your own cleaning business? This guide is a must-have resource for those interested in starting a residential or commercial cleaning business, but aren't sure where to start.</p>",
             "button_label": "Read The Guide",
-            "button_link": "\/pages\/complete-guide-to-starting-a-cleaning-business"
+            "button_link": "/pages/complete-guide-to-starting-a-cleaning-business"
           }
         }
       },
