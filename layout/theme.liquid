@@ -176,7 +176,8 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     {% include 'wiser' %}{% include 'wiser_popup' %}
     {%- comment -%}{% render 'judgeme_core' %}{%- endcomment -%}
 
-
+  {%- comment -%}keep for cleanfreak's atc tracking. Shouldn't interfere with analyzify's new code{%- endcomment -%}
+{% include 'cf-analyzify-gtm-body' %}
 
     {%- if settings.global_header_script != blank -%}
         {{ settings.global_header_script }}
