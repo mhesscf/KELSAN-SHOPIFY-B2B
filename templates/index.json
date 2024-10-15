@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "93a7d5e7-ec2f-4457-a011-598d6e3ce14a": {
@@ -158,9 +158,9 @@
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify://shop_images/viper-vn1715-buffer-bogo-homepage-banner-desktop.jpg",
-            "banner-sm": "shopify://shop_images/viper-vn1715-buffer-bogo-homepage-banner-mobile.jpg",
-            "link": "/products/17-inch-viper-low-speed-floor-buffer",
+            "banner-lg": "shopify://shop_images/cf-14x20-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/cf-14x20-bogo-mobile-banner.jpg",
+            "link": "/products/cleanfreak-dry-surface-strip-machine",
             "coupon-code": ""
           }
         }
