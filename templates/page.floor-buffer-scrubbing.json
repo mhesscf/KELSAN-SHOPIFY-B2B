@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "6caaba46-734f-4d2d-a6d0-8e553030ed27": {
@@ -32,63 +41,63 @@
           "type": "link",
           "settings": {
             "linktext": "Rotary Floor Buffers",
-            "linkurl": "shopify:\/\/collections\/floor-buffers"
+            "linkurl": "shopify://collections/floor-buffers"
           }
         },
         "eb615e5c-7196-49de-bef1-53d652d184b5": {
           "type": "link",
           "settings": {
             "linktext": "Floor Buffer Shampoo Tanks",
-            "linkurl": "shopify:\/\/collections\/solution-tanks"
+            "linkurl": "shopify://collections/solution-tanks"
           }
         },
         "8ed7900b-0bf8-48cb-ba1a-c3c1011b00c0": {
           "type": "link",
           "settings": {
             "linktext": "Floor Cleaning Solutions",
-            "linkurl": "shopify:\/\/collections\/floor-cleaning-soaps-solutions"
+            "linkurl": "shopify://collections/floor-cleaning-soaps-solutions"
           }
         },
         "5b68879a-40b3-402b-8798-b8423e2306c0": {
           "type": "link",
           "settings": {
             "linktext": "Floor Degreasers",
-            "linkurl": "shopify:\/\/collections\/floor-cleaning-degreasers"
+            "linkurl": "shopify://collections/floor-cleaning-degreasers"
           }
         },
         "4d213553-abcf-4b38-8542-cd65e1e248a6": {
           "type": "link",
           "settings": {
             "linktext": "Floor Drying Fans",
-            "linkurl": "shopify:\/\/collections\/axial-fans"
+            "linkurl": "shopify://collections/axial-fans"
           }
         },
         "928ecefc-7cb8-4a4f-bb19-3ba177192af1": {
           "type": "link",
           "settings": {
             "linktext": "Floor Scrubbing Pads",
-            "linkurl": "shopify:\/\/collections\/floor-scrubbing-pads"
+            "linkurl": "shopify://collections/floor-scrubbing-pads"
           }
         },
         "9649e2b9-0739-4554-9b53-d58391b329cb": {
           "type": "link",
           "settings": {
             "linktext": "Handheld & Utility Strip Pads",
-            "linkurl": "shopify:\/\/collections\/handheld-scrubbing-pads"
+            "linkurl": "shopify://collections/handheld-scrubbing-pads"
           }
         },
         "8706f2f4-5823-4efe-9d4a-0c82c61974fc": {
           "type": "link",
           "settings": {
             "linktext": "Push Squeegees for Floors",
-            "linkurl": "shopify:\/\/collections\/floor-squeegees"
+            "linkurl": "shopify://collections/floor-squeegees"
           }
         },
         "30f74441-ee7c-4cbd-92c7-4097ba25e9ef": {
           "type": "link",
           "settings": {
             "linktext": "Wet Recovery Vacuums",
-            "linkurl": "shopify:\/\/collections\/shop-vacuums"
+            "linkurl": "shopify://collections/shop-vacuums"
           }
         }
       },
@@ -106,7 +115,7 @@
       "settings": {
         "chsectionheading": "",
         "chsectiontext": "",
-        "image": "shopify:\/\/shop_images\/how-to-action-scrubbing-hard-floor-surfaces.jpg"
+        "image": "shopify://shop_images/how-to-action-scrubbing-hard-floor-surfaces.jpg"
       }
     },
     "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
@@ -117,7 +126,7 @@
           "settings": {
             "stepnumber": "1",
             "stepheading": " Prep your Machine -",
-            "steptext": "<p>Mix the proper amount of chemical into the solution\/shampoo tank. Follow the directions on the label of the bottle exactly. Using too much solution can leave residue on the floor and make it look worse than when you started. Tilt the buffer back and place the necessary <a href=\"\/collections\/floor-scrubbing-pads\" title=\"\/collections\/floor-scrubbing-pads\">floor scrubbing pad<\/a> on the pad driver. (Red for everyday scrubbing, Blue for medium duty scrubbing, and Green for heavy duty scrubbing). You can also use <a href=\"\/collections\/floor-buffer-brushes\" title=\"\/collections\/floor-buffer-brushes\">floor scrubbing brushes<\/a> instead of pads. This will depend on the surface that needs scrubbing. Pads are great for smooth resilient tiles, while brushes work great on uneven tiled floors with grout lines.<\/p><p><a href=\"\/collections\/floor-scrubbing-pads\" title=\"Floor Scrubbing Pads\">Scrubbing pads<\/a> are best for scrubbing smooth surfaces.<\/p><p><a href=\"\/collections\/floor-buffer-brushes\" title=\"Floor Buffer Brushes\">Scrubbing brushes<\/a> are best for uneven surfaces like with grout.<\/p>",
+            "steptext": "<p>Mix the proper amount of chemical into the solution/shampoo tank. Follow the directions on the label of the bottle exactly. Using too much solution can leave residue on the floor and make it look worse than when you started. Tilt the buffer back and place the necessary <a href=\"/collections/floor-scrubbing-pads\" title=\"/collections/floor-scrubbing-pads\">floor scrubbing pad</a> on the pad driver. (Red for everyday scrubbing, Blue for medium duty scrubbing, and Green for heavy duty scrubbing). You can also use <a href=\"/collections/floor-buffer-brushes\" title=\"/collections/floor-buffer-brushes\">floor scrubbing brushes</a> instead of pads. This will depend on the surface that needs scrubbing. Pads are great for smooth resilient tiles, while brushes work great on uneven tiled floors with grout lines.</p><p><a href=\"/collections/floor-scrubbing-pads\" title=\"Floor Scrubbing Pads\">Scrubbing pads</a> are best for scrubbing smooth surfaces.</p><p><a href=\"/collections/floor-buffer-brushes\" title=\"Floor Buffer Brushes\">Scrubbing brushes</a> are best for uneven surfaces like with grout.</p>",
             "img_placement": "right",
             "product": ""
           }
@@ -127,7 +136,7 @@
           "settings": {
             "stepnumber": "2",
             "stepheading": "Prep the Scrubbing Area -",
-            "steptext": "<p>Set up your caution, restroom closed, or <a href=\"\/collections\/signs\" title=\"\/collections\/signs\">wet floor signs<\/a> to alert individuals of the work that is about to be done, and that the floor may be slippery. Move any obstacles that will hinder your scrubbing. It is a good idea to have a wide open area since the machine continuously swings from side to side. Follow the <a href=\"\/pages\/dust-mopping\" title=\"\/pages\/dust-mopping\">dust mopping procedure<\/a> to remove all debris, dirt, and large objects (i.e. pallet chips), from the mopping area before you start scrubbing.<\/p>",
+            "steptext": "<p>Set up your caution, restroom closed, or <a href=\"/collections/signs\" title=\"/collections/signs\">wet floor signs</a> to alert individuals of the work that is about to be done, and that the floor may be slippery. Move any obstacles that will hinder your scrubbing. It is a good idea to have a wide open area since the machine continuously swings from side to side. Follow the <a href=\"/pages/dust-mopping\" title=\"/pages/dust-mopping\">dust mopping procedure</a> to remove all debris, dirt, and large objects (i.e. pallet chips), from the mopping area before you start scrubbing.</p>",
             "img_placement": "right",
             "product": ""
           }
@@ -137,7 +146,7 @@
           "settings": {
             "stepnumber": "3",
             "stepheading": "Operating Your Floor Buffer -",
-            "steptext": "<p>Uncoil the power cord and make sure it is behind the machine and out of your way. Some people prefer to sling the power cord over one shoulder to assist in moving the cord as you scrub. Place the handle of the buffer into your belt line. Use both your hands to pull down on the safety lever and start the machine. Do not fight with the buffer, as it is a powerful machine and will win every time. Instead learn to flow with the machine. A simple down pressure on the handle will cause the machine to scrub to the left. Once the machine comes to about a 45° angle from where you started, lift slightly up on the handle and the machine will scrub to the right. Repeat these steps as you slowly start to move forward, all the while pulling the handle on the solution tank to dispense solution as you go. The video below shows not only the difference between a high speed burnisher and a <a href=\"\/products\/17-inch-rotary-floor-buffer\" title=\"\/products\/17-inch-rotary-floor-buffer\">low speed floor buffer<\/a>, but it nicely demonstrates the use of both types of machines.<\/p><p>Pads can be used on both sides and need to be changed often so they don't become oversaturated with dirt and debris. <strong>Do not run the more aggressive pads dry,<\/strong> or they could do serious damage to your floor or even your machine.<\/p><p>Since the head of the buffer is circular, it will not be able to get into corners of rooms, so a handheld scrub pad like our <a href=\"\/products\/medium-duty-blue-octopus-scrub-pads\" title=\"\/products\/medium-duty-blue-octopus-scrub-pads\">medium duty blue Octopus scrub pad<\/a> is recommended for touching up those areas. Be extremely careful when approaching baseboards, furniture, and other fixed objects.<\/p>",
+            "steptext": "<p>Uncoil the power cord and make sure it is behind the machine and out of your way. Some people prefer to sling the power cord over one shoulder to assist in moving the cord as you scrub. Place the handle of the buffer into your belt line. Use both your hands to pull down on the safety lever and start the machine. Do not fight with the buffer, as it is a powerful machine and will win every time. Instead learn to flow with the machine. A simple down pressure on the handle will cause the machine to scrub to the left. Once the machine comes to about a 45° angle from where you started, lift slightly up on the handle and the machine will scrub to the right. Repeat these steps as you slowly start to move forward, all the while pulling the handle on the solution tank to dispense solution as you go. The video below shows not only the difference between a high speed burnisher and a <a href=\"/products/17-inch-rotary-floor-buffer\" title=\"/products/17-inch-rotary-floor-buffer\">low speed floor buffer</a>, but it nicely demonstrates the use of both types of machines.</p><p>Pads can be used on both sides and need to be changed often so they don't become oversaturated with dirt and debris. <strong>Do not run the more aggressive pads dry,</strong> or they could do serious damage to your floor or even your machine.</p><p>Since the head of the buffer is circular, it will not be able to get into corners of rooms, so a handheld scrub pad like our <a href=\"/products/medium-duty-blue-octopus-scrub-pads\" title=\"/products/medium-duty-blue-octopus-scrub-pads\">medium duty blue Octopus scrub pad</a> is recommended for touching up those areas. Be extremely careful when approaching baseboards, furniture, and other fixed objects.</p>",
             "img_placement": "right",
             "product": "17-inch-rotary-floor-buffer"
           }
@@ -148,7 +157,7 @@
           "settings": {
             "stepnumber": "4",
             "stepheading": "Solution Removal -",
-            "steptext": "<p>Wipe down any walls or baseboards that may have gotten some overspray. Use a wet\/dry vacuum like our <a href=\"\/products\/trot-mop-wet-dry-vacuum-squeegee\" title=\"\/products\/trot-mop-wet-dry-vacuum-squeegee\">trot mop wet vacuum<\/a> with squeegee. Vacuums with a front mounted squeegee will simplify the process greatly, but any vacuum with a tool kit that is approved for wet recovery can be used. An auto scrubber could also be used to recover the solution.<\/p><p>If a floor drain is present you can use something similar to our <a href=\"\/collections\/floor-squeegees\" title=\"\/collections\/floor-squeegees\">floor squeegee<\/a> to push the solution towards a drain or outdoors. If floors are still damp, they can be extremely slippery, so it is a good idea to leave your wet floor signs out and place a <a href=\"\/products\/lightweight-air-mover-fan-2800-cfm\" title=\"\/products\/lightweight-air-mover-fan-2800-cfm\">3-speed floor dryer<\/a> or two out to eliminate the moisture.<\/p>",
+            "steptext": "<p>Wipe down any walls or baseboards that may have gotten some overspray. Use a wet/dry vacuum like our <a href=\"/products/trot-mop-wet-dry-vacuum-squeegee\" title=\"/products/trot-mop-wet-dry-vacuum-squeegee\">trot mop wet vacuum</a> with squeegee. Vacuums with a front mounted squeegee will simplify the process greatly, but any vacuum with a tool kit that is approved for wet recovery can be used. An auto scrubber could also be used to recover the solution.</p><p>If a floor drain is present you can use something similar to our <a href=\"/collections/floor-squeegees\" title=\"/collections/floor-squeegees\">floor squeegee</a> to push the solution towards a drain or outdoors. If floors are still damp, they can be extremely slippery, so it is a good idea to leave your wet floor signs out and place a <a href=\"/products/lightweight-air-mover-fan-2800-cfm\" title=\"/products/lightweight-air-mover-fan-2800-cfm\">3-speed floor dryer</a> or two out to eliminate the moisture.</p>",
             "img_placement": "right",
             "product": "lightweight-air-mover-fan-2800-cfm"
           }
@@ -159,7 +168,7 @@
           "settings": {
             "stepnumber": "5",
             "stepheading": "Clean Up -",
-            "steptext": "<p>Dump out any unused solution from the shampoo tank and rinse it out thoroughly. Remove pad holder\/brush from the bottom of the machine. If a machine is left to rest on a brush or pad driver, the bristles can become bent and rendered unusable. Take all pads and rinse them out. If you allow them to sit in clean water, much of the dirt will loosen out of the pad in a day or so. Once clean, leave the pads in an upright position to air dry.<\/p><p>Remove the wet floor\/caution signs and air movers when the floors are 100% dry. Return all items like tables, chairs, and other furniture to their original places. Wipe down all machinery and other items.<\/p>",
+            "steptext": "<p>Dump out any unused solution from the shampoo tank and rinse it out thoroughly. Remove pad holder/brush from the bottom of the machine. If a machine is left to rest on a brush or pad driver, the bristles can become bent and rendered unusable. Take all pads and rinse them out. If you allow them to sit in clean water, much of the dirt will loosen out of the pad in a day or so. Once clean, leave the pads in an upright position to air dry.</p><p>Remove the wet floor/caution signs and air movers when the floors are 100% dry. Return all items like tables, chairs, and other furniture to their original places. Wipe down all machinery and other items.</p>",
             "img_placement": "right",
             "product": ""
           }
@@ -179,7 +188,7 @@
       "type": "dynamic-html",
       "settings": {
         "title": "",
-        "custom_html": "<div class=\"ht-youtube\" style=\"max-width:600px; margin:-20px auto 0 auto\">\n<div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/QPqkTZfvq5E?amp;rel=0\" width=\"320\" height=\"240\" frameborder=\"0\"><\/iframe><\/div>\n<\/div>"
+        "custom_html": "<div style=\"max-width:600px; margin:auto; text-align:center; width: 100%; height: auto;\" class=\"video-wrap-local\">\n                                <video controls=\"controls\" style=\"width: 100%; height: auto;\">\n                                    <source src=\"https://cdn.shopify.com/videos/c/o/v/47cbd3ec39dc44db9c01489d604ad041.mp4\" type=\"video/mp4\">\n                                    Your browser does not support our video.\n                                </source></video>\n                            </div>"
       }
     },
     "16f33f75-3255-4dc6-9bf8-e1a546ed00c8": {
@@ -190,7 +199,7 @@
           "settings": {
             "stepnumber": "4",
             "stepheading": "Solution Removal -",
-            "steptext": "<p>Wipe down any walls or baseboards that may have gotten some overspray. Use a wet\/dry vacuum like our trot mop wet vacuum with squeegee. Vacuums with a front mounted squeegee will simplify the process greatly, but any vacuum with a tool kit that is approved for wet recovery can be used. An auto scrubber could also be used to recover the solution.<\/p><p>If a floor drain is present you can use something similar to our floor squeegee to push the solution towards a drain or outdoors. If floors are still damp, they can be extremely slippery, so it is a good idea to leave your wet floor signs out and place a 3-speed floor dryer or two out to eliminate the moisture.<\/p>",
+            "steptext": "<p>Wipe down any walls or baseboards that may have gotten some overspray. Use a wet/dry vacuum like our trot mop wet vacuum with squeegee. Vacuums with a front mounted squeegee will simplify the process greatly, but any vacuum with a tool kit that is approved for wet recovery can be used. An auto scrubber could also be used to recover the solution.</p><p>If a floor drain is present you can use something similar to our floor squeegee to push the solution towards a drain or outdoors. If floors are still damp, they can be extremely slippery, so it is a good idea to leave your wet floor signs out and place a 3-speed floor dryer or two out to eliminate the moisture.</p>",
             "img_placement": "right",
             "product": ""
           }
@@ -200,7 +209,7 @@
           "settings": {
             "stepnumber": "5",
             "stepheading": "Clean Up -",
-            "steptext": "<p>Dump out any unused solution from the shampoo tank and rinse it out thoroughly. Remove pad holder\/brush from the bottom of the machine. If a machine is left to rest on a brush or pad driver, the bristles can become bent and rendered unusable. Take all pads and rinse them out. If you allow them to sit in clean water, much of the dirt will loosen out of the pad in a day or so. Once clean, leave the pads in an upright position to air dry.<\/p><p>Remove the wet floor\/caution signs and air movers when the floors are 100% dry. Return all items like tables, chairs, and other furniture to their original places. Wipe down all machinery and other items.<\/p>",
+            "steptext": "<p>Dump out any unused solution from the shampoo tank and rinse it out thoroughly. Remove pad holder/brush from the bottom of the machine. If a machine is left to rest on a brush or pad driver, the bristles can become bent and rendered unusable. Take all pads and rinse them out. If you allow them to sit in clean water, much of the dirt will loosen out of the pad in a day or so. Once clean, leave the pads in an upright position to air dry.</p><p>Remove the wet floor/caution signs and air movers when the floors are 100% dry. Return all items like tables, chairs, and other furniture to their original places. Wipe down all machinery and other items.</p>",
             "img_placement": "right",
             "product": ""
           }
