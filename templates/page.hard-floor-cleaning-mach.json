@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "e0fe7cfc-4f06-46b6-ba6f-ea6e2fa5d717": {
@@ -15,7 +15,7 @@
         "614000bc-cdda-4bdb-9705-8f9bd346f000": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/hard-floor-cleaning-machines-dept-page.jpg",
+            "cat_image": "shopify://shop_images/hard-floor-cleaning-machines-dept-page.jpg",
             "cat_title": "Hard Floor Cleaning Machines",
             "cat_text": "We stock a ton of auto scrubbers, floor buffers, burnishers & more to make sure we have the equipment you need, when you need it."
           }
@@ -24,18 +24,18 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/advantage-20-price-drop-1400x350.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/advantage-20-price-drop-800x427.jpg",
-            "link": "\/products\/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "banner-lg": "shopify://shop_images/advantage-20-price-drop-1400x350.jpg",
+            "banner-sm": "shopify://shop_images/advantage-20-price-drop-800x427.jpg",
+            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
             "coupon-code": ""
           }
         },
         "71ea2eaa-3b3a-4aa9-b752-787ed97ad793": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/viper-vn1715-buffer-bogo-homepage-banner-desktop.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/viper-vn1715-buffer-bogo-homepage-banner-mobile.jpg",
-            "link": "\/products\/17-inch-viper-low-speed-floor-buffer",
+            "banner-lg": "shopify://shop_images/cf-14x20-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/cf-14x20-bogo-mobile-banner.jpg",
+            "link": "/products/cleanfreak-dry-surface-strip-machine",
             "coupon-code": ""
           }
         }
@@ -149,73 +149,73 @@
         "0481d056-93aa-455b-8c6b-b0faac15d3fe": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/counter-rotating-brushes-scrubbers.jpg",
+            "image": "shopify://shop_images/counter-rotating-brushes-scrubbers.jpg",
             "title": "Counter Rotating Brush (CRB) Scrubbers",
-            "url": "\/collections\/counter-rotating-brushes-crb-carpet-floor-scrubbers"
+            "url": "/collections/counter-rotating-brushes-crb-carpet-floor-scrubbers"
           }
         },
         "1ccbf5c9-bed6-4b30-ad3b-ddd7061bc65a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/escalator-cleaners.jpg",
+            "image": "shopify://shop_images/escalator-cleaners.jpg",
             "title": "Escalator Cleaners",
-            "url": "\/collections\/escalator-cleaners"
+            "url": "/collections/escalator-cleaners"
           }
         },
         "c2608ce9-35f5-497f-a7ee-7b3f21d95347": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-buffers_38a3a9ea-60ae-453e-ab9d-e3c0e895123d.jpg",
+            "image": "shopify://shop_images/floor-buffers_38a3a9ea-60ae-453e-ab9d-e3c0e895123d.jpg",
             "title": "Floor Buffers",
-            "url": "\/collections\/floor-buffers"
+            "url": "/collections/floor-buffers"
           }
         },
         "1a6572ee-26f9-47e7-9950-4f81f39c4c1e": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-burnishers.jpg",
+            "image": "shopify://shop_images/floor-burnishers.jpg",
             "title": "Floor Burnishers",
-            "url": "\/collections\/floor-burnishers"
+            "url": "/collections/floor-burnishers"
           }
         },
         "fe7bb8e3-ad6c-411d-83c9-aa2c53bb5b92": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/multi-surface-scrubbers.jpg",
+            "image": "shopify://shop_images/multi-surface-scrubbers.jpg",
             "title": "Multi-Surface (Tile & Carpet) Machines",
-            "url": "\/collections\/multi-surface-tile-carpet"
+            "url": "/collections/multi-surface-tile-carpet"
           }
         },
         "3da1c72e-23ab-4454-b4fe-5bbf74084be7": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ride-on-floor-scrubbers.jpg",
+            "image": "shopify://shop_images/ride-on-floor-scrubbers.jpg",
             "title": "Ride On Floor Scrubbers",
-            "url": "\/collections\/ride-on-auto-scrubbers"
+            "url": "/collections/ride-on-auto-scrubbers"
           }
         },
         "87015220-2af2-4ca0-9d32-0e74aecc275c": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/small-area-floor-washing-machines-dept.jpg",
+            "image": "shopify://shop_images/small-area-floor-washing-machines-dept.jpg",
             "title": "Small Area Floor Washing Machines",
-            "url": "\/collections\/small-area-floor-washing-machines"
+            "url": "/collections/small-area-floor-washing-machines"
           }
         },
         "dae2e653-bde1-4561-bf7a-d224b90883cf": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/walk-behind-floor-scrubbers.jpg",
+            "image": "shopify://shop_images/walk-behind-floor-scrubbers.jpg",
             "title": "Walk Behind Floor Scrubbers",
-            "url": "\/collections\/walk-behind-auto-scrubbers"
+            "url": "/collections/walk-behind-auto-scrubbers"
           }
         },
         "bac758dd-ea18-4dbf-bcca-b563db71d998": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Wax-Stripper-applicators.jpg",
+            "image": "shopify://shop_images/Wax-Stripper-applicators.jpg",
             "title": "Wax & Stripper Applicators",
-            "url": "\/collections\/wax-stripper-applicators"
+            "url": "/collections/wax-stripper-applicators"
           }
         }
       },
@@ -240,49 +240,49 @@
         "b9d3192e-b54d-4e49-a1e6-3914e8905630": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/auto-scrubber-accessories.jpg",
+            "image": "shopify://shop_images/auto-scrubber-accessories.jpg",
             "title": "Auto Scrubber Accessories",
-            "url": "\/pages\/auto-scrubber-accessories"
+            "url": "/pages/auto-scrubber-accessories"
           }
         },
         "f1ddc939-5fa7-4246-893b-37a08875df6a": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/automatic-scrubber-parts_1ff8f7b2-0b92-4f04-8c36-e2c2630ff82b.jpg",
+            "image": "shopify://shop_images/automatic-scrubber-parts_1ff8f7b2-0b92-4f04-8c36-e2c2630ff82b.jpg",
             "title": "Auto Scrubber Parts",
-            "url": "\/pages\/floor-scrubber-parts"
+            "url": "/pages/floor-scrubber-parts"
           }
         },
         "7013ec16-4250-44d8-98ca-c2ee3beea884": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-buffer-accessories.jpg",
+            "image": "shopify://shop_images/floor-buffer-accessories.jpg",
             "title": "Floor Buffer Accessories",
-            "url": "\/pages\/floor-buffer-accessories"
+            "url": "/pages/floor-buffer-accessories"
           }
         },
         "6faaf029-646e-4149-aa25-d176b3cb8dba": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-burnisher-parts-2.jpg",
+            "image": "shopify://shop_images/buffer-burnisher-parts-2.jpg",
             "title": "Floor Buffer & Burnisher Parts",
-            "url": "\/pages\/buffer-burnisher-parts"
+            "url": "/pages/buffer-burnisher-parts"
           }
         },
         "16c89b79-8040-4007-a613-320dd7b78eca": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-care-chemicals.jpg",
+            "image": "shopify://shop_images/floor-care-chemicals.jpg",
             "title": "Floor Care Chemicals",
-            "url": "\/pages\/floor-care-chemicals"
+            "url": "/pages/floor-care-chemicals"
           }
         },
         "26d392a6-c7b5-4a5a-bbf5-5e8f8f30298a": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-pads-sanding-bonnets.jpg",
+            "image": "shopify://shop_images/floor-pads-sanding-bonnets.jpg",
             "title": "Floor Pads, Bonnets & Sanding Screens",
-            "url": "\/pages\/pads"
+            "url": "/pages/pads"
           }
         }
       },
@@ -371,40 +371,40 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Trusted Clean",
-            "brand-image": "shopify:\/\/shop_images\/dura-17-c-with-dust-skirt.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Trusted Clean",
+            "brand-image": "shopify://shop_images/dura-17-c-with-dust-skirt.jpg"
           }
         },
         "8a97ceab-755d-42fb-8c1d-36a142f58b62": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Viper",
-            "brand-image": "shopify:\/\/shop_images\/viper-as430c-17-inch-electric-auto-scrubber.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Viper",
+            "brand-image": "shopify://shop_images/viper-as430c-17-inch-electric-auto-scrubber.jpg"
           }
         },
         "fe3b09fd-1a25-46c1-a77e-4e6a51a1bc25": {
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=IPC Eagle",
-            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=IPC Eagle",
+            "brand-image": "shopify://shop_images/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
           }
         },
         "3b237663-c98e-4967-8b14-0198e0addd1f": {
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/kob-00-4497-4-01_dept.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=CleanFreak",
+            "brand-image": "shopify://shop_images/kob-00-4497-4-01_dept.jpg"
           }
         },
         "ef5fef08-fa82-46e8-8d7b-2a37f3c24d6d": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Advance®",
-            "brand-link": "https:\/\/www.cleanfreak.com\/collections\/advance?refinementList%5Bvendor%5D%5B0%5D=Advance&refinementList%5Bproduct_type%5D%5B0%5D=Hard%20Floor%20Cleaning%20Machines",
-            "brand-image": "shopify:\/\/shop_images\/advance-adfinity-x20c-scrubber.jpg"
+            "brand-link": "https://www.cleanfreak.com/collections/advance?refinementList%5Bvendor%5D%5B0%5D=Advance&refinementList%5Bproduct_type%5D%5B0%5D=Hard%20Floor%20Cleaning%20Machines",
+            "brand-image": "shopify://shop_images/advance-adfinity-x20c-scrubber.jpg"
           }
         }
       },
