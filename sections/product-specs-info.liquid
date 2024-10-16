@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row {% if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}space-between {% else %}centered-content{% endif %}">
             <div class="l">
-                <h2>Product Information + Specs</h2>
+                <h2>Product Specs</h2>
                 <div class="spec-table">
                     <div class="inner">
                         {%- assign specs = product.metafields.plytix.specs | split: ";;" -%}
@@ -72,7 +72,7 @@
                 {%- assign pdf_names = product.metafields.plytix.pdf_file_names | split: "::"  -%}
                 {%- assign pdf_titles = product.metafields.plytix.pdf_file_titles | split: "::"  -%}
                 <div class="r">
-                    <h2>Safety, Warranty + User Manuals</h2>
+                    <h2>Documents</h2>
                     <div class="data-sheets">
                         {%- if product.metafields.plytix.sds_file != blank  -%}
                             <div class="sheet-row">
