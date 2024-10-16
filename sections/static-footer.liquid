@@ -322,7 +322,24 @@
   {% comment %}add sf to notes on quick quotes when url has ?page=accept "{% endcomment %}
   {%- if canonical_url contains "/apps/request-quote" -%}
   $(document).ready(function() {
-    if (window.location.href.indexOf("/apps/request-quote?page=accept&note=sf") > -1) {
+
+    if (window.location.href.indexOf("/apps/request-quote?page=request") > -1) {
+      setTimeout(function(){
+        if($('#cart-empty h2').text().indexOf('Your cart is empty') > -1 ){
+          var emptyInstruction = '<div>';
+          emptyInstruction += '<div>To get started on your quote:</div>';
+          emptyInstruction += '<ul>';
+          emptyInstruction += '<li>Step 1 - Add the items you are interested in to your cart.</li>';
+          emptyInstruction += '<li>Step 2 - Scroll down to the footer of the cart and click the Request a Quote button?</li>';
+          emptyInstruction += '</ul>';
+          emptyInstruction += ' <img style="border: 1px solid #ccc; max-width: 1000px; width:100%" src="https://cdn.shopify.com/s/files/1/0624/3270/6740/files/quote-request.jpg?v=1729104851" alt="Request a Quote Location">';
+          emptyInstruction += '</div>';
+
+
+          $('#cart-empty').append(emptyInstruction);
+        }
+      }, 2000);
+    }else if (window.location.href.indexOf("/apps/request-quote?page=accept&note=sf") > -1) {
       $('#pnlQuote').prepend("<div class='waitblock' style='border-bottom:1px solid #303e48; padding:5px 10px;'><i class='fa-solid fa-hourglass-start'></i> Please wait... </div>")
 
       setTimeout(function(){
