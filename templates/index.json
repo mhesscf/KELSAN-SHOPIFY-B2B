@@ -24,7 +24,6 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/15-percent-off-1000-orders-extended-desktop-homepage-banner.jpg",
             "banner-sm": "shopify://shop_images/15-percent-off-1000-orders-extended-mobile-banner.jpg",
