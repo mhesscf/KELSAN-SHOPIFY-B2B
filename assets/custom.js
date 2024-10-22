@@ -1457,9 +1457,9 @@ jQuery(document).ready(function($){
         $('.popup-container').removeClass('hidden');
         $(".pop-grad").removeClass('hidden');
         if(readCookie('discount_code') == "SUPERFREAK"){
-            var newhtml = "<div style='text-align:center'><div style='text-align:left; font-weight:bold' ><img style='width:50px; height:50px; float:left; margin:-6px 7px 0 12px;' src='https://cdn.shopify.com/s/files/1/0624/3270/6740/files/superfreak-logo-sm.jpg' alt='SuperFreak Link' />The SuperFreak promo code has been applied.</div><br/>Your discount will be applied at the checkout.<br/><br/><button style='width:70px;' onClick='event.stopPropagation(); closechildPop(\"bund-pop-\")'><span class='btn-text'>OK</span></button></div>";
+            var newhtml = "<div style='text-align:center'><div style='text-align:left; font-weight:bold' ><img style='width:50px; height:50px; float:left; margin:-6px 7px 0 12px;' src='https://cdn.shopify.com/s/files/1/0624/3270/6740/files/superfreak-logo-sm.jpg' alt='SuperFreak Link' />The SuperFreak promo code has been applied.</div><br/>Your discount will be applied at the checkout.<br/><br/><button class='main-atc-button' style='width:70px;' onClick='event.stopPropagation(); closechildPop(\"bund-pop-\")'><span class='btn-text'>OK</span></button></div>";
         }else{
-            var newhtml = "<div style='text-align:center'>The promo code<br/><span style='color:#d74018'>&quot;"+readCookie('discount_code')+"&quot;</span><br/>has been applied.<br/><br/>Your discount will be applied at the checkout.<br/><br/><button style='width:70px;' onClick='event.stopPropagation(); closechildPop(\"bund-pop-\")'><span class='btn-text'>OK</span></button></div>";
+            var newhtml = "<div style='text-align:center'>The promo code<br/><span style='color:#d74018'>&quot;"+readCookie('discount_code')+"&quot;</span><br/>has been applied.<br/><br/>Your discount will be applied at the checkout.<br/><br/><button class='main-atc-button' style='width:70px;' onClick='event.stopPropagation(); closechildPop(\"bund-pop-\")'><span class='btn-text'>OK</span></button></div>";
         }
         $('.popup-container .content').html(newhtml);
         //remove cookie
