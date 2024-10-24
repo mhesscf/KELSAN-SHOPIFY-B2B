@@ -29008,12 +29008,14 @@ PERFORMANCE OF THIS SOFTWARE.
                         const productSF = flyOut.querySelector('[data-atc-sf-banner]');
                         if (productSF) {
                             productSF.style.display = "none";
-                            if (response.properties && response.properties['_sf_eligible']) {
-                                const SFbtn = flyOut.querySelector('.sf-atc-btn');
-                                SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
-                                SFbtn.setAttribute("data-plan-item-handle", response.handle);
-                                SFbtn.setAttribute("data-plan-qty", quantity);
-                                productSF.style.display = "block";
+                            if (response.properties['Sku'].includes("DEMO") == false){
+                                if (response.properties && response.properties['_sf_eligible']) {
+                                    const SFbtn = flyOut.querySelector('.sf-atc-btn');
+                                    SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
+                                    SFbtn.setAttribute("data-plan-item-handle", response.handle);
+                                    SFbtn.setAttribute("data-plan-qty", quantity);
+                                    productSF.style.display = "block";
+                                }
                             }
                         }
 
