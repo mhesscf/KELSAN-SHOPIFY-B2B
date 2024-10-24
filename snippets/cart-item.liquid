@@ -35,7 +35,11 @@
       {% assign pstep = property.last %}
     {% endif %}
     {% if property.first == '_sf_eligible' %}
-      {% assign sf_eligible = true %}
+        {% if item.sku contains "DEMO" %}
+            {% assign sf_eligible = false %}
+        {% else %}
+            {% assign sf_eligible = true %}
+        {% endif %}
     {% endif %}
     {% if property.first == '_bogorule' %}
       {%- assign fgbogo-rule = property.last -%}
