@@ -24,7 +24,6 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/2024-ryicf-desktop-homepage-banner.jpg",
             "banner-sm": "shopify://shop_images/2024-ryicf-mobile-homepage-banner.jpg",
