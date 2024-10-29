@@ -22,6 +22,15 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "banner_J8FYNy": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify://shop_images/2024-halloween-superfreak-offer-desktop-homepage-banner.jpg",
+            "banner-sm": "shopify://shop_images/2024-halloween-superfreak-offer-mobile-homepage-banner.jpg",
+            "link": "/collections/demoed-refurbished-equipment",
+            "coupon-code": ""
+          }
+        },
         "banner_fLBUa3": {
           "type": "banner",
           "settings": {
@@ -144,16 +153,6 @@
             "overlay_opacity": 50
           }
         },
-        "banner_J8FYNy": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify://shop_images/save-20-pressure-washers-desktop-homepage-banner.jpg",
-            "banner-sm": "shopify://shop_images/save-20-pressure-washers-mobile-homepage-banner.jpg",
-            "link": "/search?q=wet-cfh-3",
-            "coupon-code": "BLAST20"
-          }
-        },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
@@ -165,13 +164,13 @@
         }
       },
       "block_order": [
+        "banner_J8FYNy",
         "banner_fLBUa3",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "slide-1",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
-        "banner_J8FYNy",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
       "custom_css": [
