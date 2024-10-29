@@ -24,6 +24,7 @@
       "blocks": {
         "banner_J8FYNy": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/2024-halloween-superfreak-offer-desktop-homepage-banner.jpg",
             "banner-sm": "shopify://shop_images/2024-halloween-superfreak-offer-mobile-homepage-banner.jpg",
