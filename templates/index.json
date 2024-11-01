@@ -66,14 +66,13 @@
         },
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify://shop_images/september-2024--floor-scrubber-sale-1400x350.jpg",
-            "mobile_background_image": "shopify://shop_images/september-2024--floor-scrubber-sale-800x427.jpg",
-            "title": "Trusted Clean &#39;Dura 18HD&#39; Cord Electric 18 &quot; Automatic Floor Scrubber",
-            "text": "Superior Scrubbing at a Sensational Price!<br>Was: $1,999.99<br>Now: $1,849.99",
+            "background_image": "shopify://shop_images/november-sotm-2024-homepage-desktop-banner-1.jpg",
+            "mobile_background_image": "shopify://shop_images/november-sotm-2024-homepage-mobile-banner-1.jpg",
+            "title": "Trusted Clean &#39;Dura 17&#39; Electric Auto Floor Scrubber",
+            "text": "Electric, Efficient, Economical.<br>Was: $1,699.99<br>Now: $1,549.99",
             "color": "#303e48",
-            "link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
+            "link": "/products/17-inch-electric-auto-scrubber",
             "promo_link": "",
             "text_alignment": "left",
             "button_one_label": "Save $150.00",
@@ -89,17 +88,16 @@
         },
         "slide-1": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "background_image": "shopify://shop_images/september-2024--floor-buffer-sale-1400x350.jpg",
-            "mobile_background_image": "shopify://shop_images/september-2024--floor-buffer-sale-800x427.jpg",
-            "title": "Trusted Clean 20&quot; Commercial Grade Floor Buffer",
-            "text": "Commercial Grade, Cost Effective.<br>Was: $899.99<br>Now: $799.99",
+            "background_image": "shopify://shop_images/november-sotm-2024-homepage-desktop-banner-2.jpg",
+            "mobile_background_image": "shopify://shop_images/november-sotm-2024-homepage-mobile-banner-2.jpg",
+            "title": "Trusted Clean 'Pro-7' Self-Contained Carpet Extractor",
+            "text": "agline: Pro Results, Priced Right!<br>Was: $3,089.99<br>Now: $2,749.99",
             "color": "#303e48",
-            "link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "link": "/products/7-gallon-professional-carpet-extractor",
             "promo_link": "",
             "text_alignment": "left",
-            "button_one_label": "Save $100",
+            "button_one_label": "Save $340",
             "button_one_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
             "button_one_style": "secondary",
             "button_two_label": "",
@@ -112,6 +110,7 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-carpet-extractor-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-carpet-extractor-800x427.jpg",
@@ -134,6 +133,7 @@
         },
         "11a75ad9-3839-4050-bb7f-7cec379b8726": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-quench-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/october-sotm-2024-cleanfreak-quench-800x427.jpg",
