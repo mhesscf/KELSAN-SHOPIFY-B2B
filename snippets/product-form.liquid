@@ -1214,8 +1214,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                 </span>
         </button>
         {%- if isBundle == true -%}
-          <button class="product-form--finance-atc-button2 main-atc-button" onclick="window.location.href = '/pages/financing-options'" style="">Financing Available</button>
-        {% endif %}
+        {%- assign bundleprice = product.metafields.plytix.bundle_pricing | plus: 0.00 -%}
+          {%- if bundleprice > 1000 -%}
+            <button class="product-form--finance-atc-button2 main-atc-button" onclick="window.location.href = '/pages/financing-options'" style="">Financing Available</button>
+          {%- endif -%}
+        {%- endif -%}
       </div>
     </div>
     {% if pdiscontinued == false %}
