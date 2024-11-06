@@ -1213,7 +1213,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- render 'icon-spinner' -%}
                 </span>
         </button>
-        <button class="product-form--finance-atc-button main-atc-button" style="display:none;"></button>
+        {%- if isBundle == true -%}
+          <button class="product-form--finance-atc-button2 main-atc-button" onclick="window.location.href = '/pages/financing-options'" style="">Financing Available</button>
+        {% endif %}
       </div>
     </div>
     {% if pdiscontinued == false %}
