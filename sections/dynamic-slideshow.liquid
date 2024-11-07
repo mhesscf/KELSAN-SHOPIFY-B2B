@@ -181,7 +181,7 @@
         {%- if showBanner == true -%}
           <div
                   class="slideshow-slide banner-slideshow-slide "
-                  aria-label="Slide 0 of 4"
+                  {% comment %}aria-label="Slide 0 of 4"{% endcomment %}
                   tabindex="{{ orgCounter }}"
                   data-slideshow-slide
                   data-slide-index="{{ orgCounter }}"
@@ -247,7 +247,7 @@
         {%- if showBanner == true -%}
           <div
                   class="slideshow-slide banner-slideshow-slide "
-                  aria-label="Slide {{ orgendCounter }} of 4"
+                  {% comment %}aria-label="Slide {{ orgendCounter }} of 4"{% endcomment %}
                   tabindex="{{ orgendCounter }}"
                   data-slideshow-slide
                   data-slide-index="{{ orgendCounter }}"
