@@ -289,7 +289,19 @@
                       data-sfeligible="true"
                     {% endif %}
                     {% if isSpecial == false %}
+
+
+
+                {%- if variant.metafields.plytix.tiered_pricing != blank and variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+                    data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}:{{ variant.metafields.plytix.tiered_pricing_dollar_off }}"
+                {%- else -%}
+                  data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
+                {%- endif -%}
+
+
                       data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
+
+
                     {% endif %}
                      data-var_price="{{ variant.price }}"
                      style="display: none" ></div>

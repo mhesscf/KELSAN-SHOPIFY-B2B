@@ -216,6 +216,13 @@
         return leadtext;
     }
 
+    function tierpricing(tier_pricing,tier_dollar_off){
+        if(tier_dollar_off > 0){
+            return(tier_pricing+":"+tier_dollar_off);
+        }else{
+            return("");
+        }
+    }
     function specialDateCheck(rawdate,salePrice,orgPrice,youWantWhat){
         // youWantWhat == bool, enddate, or savings
         if (rawdate && salePrice && orgPrice){
@@ -522,10 +529,11 @@ ${1 == 1 && html`
     <input type="hidden" name="category_id" value="NA" />
     <input type="hidden" name="location" value="Search" />
 {%- endif -%}
+    <input type="hidden" name="properties[_org_price]" value="${hit.price*100}" />
     <input type="hidden" name="properties[_erp_sku]" value="${hit.meta.plytix.erp_sku}" />
-    <input type="hidden" name="properties[_available_qty]" value="${hit.inventory_quantity}" /> blahblahblah
+    <input type="hidden" name="properties[_available_qty]" value="${hit.inventory_quantity}" />
      ${hit.meta.plytix.general_product_type == "Machine" ? html `<input type="hidden" name="properties[_sf_eligible]" value="true" />` : ``}
-     ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `` : html `<input type="hidden" name="properties[_tiered_pricing]" value="${hit.meta.plytix.tiered_pricing}" />`}
+     ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `` : html `<input type="hidden" name="properties[_tiered_pricing]" value="${tierpricing(hit.meta.plytix.tiered_pricing,hit.meta.plytix.tiered_pricing_dollar_off)}" />`}
      ${hit.sku != "SUPERFREAK" ? html `
 <input type="hidden" name="properties[Status]" value="${stocklookupLineItem(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.meta.plytix.sxerp_po_date)}" />
 ` : ``}

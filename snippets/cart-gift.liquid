@@ -217,6 +217,7 @@
                                                 <input type="hidden" name="id"
                                                        value="{{ all_products[pid].variants.first.id }}"/>
                                                 <input type="hidden" name="properties[_tiered_pricing]" value="fg-1000" />
+                                                <input type="hidden" name="properties[_org_price]" value="{{ price }}" />
                                                 <input min="1" type="hidden" id="quantity" name="quantity" value="1"/>
                                                 {% comment %}<input class="add-to-cart-btn" type="submit" value="ADD TO CART"{% endcomment %}
                                                        {% comment %}class="btn"/>{% endcomment %}

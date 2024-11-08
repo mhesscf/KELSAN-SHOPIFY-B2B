@@ -560,6 +560,13 @@
             <div class="productitem--property" data-properties-erpsku="{{ product.metafields.plytix.erp_sku }}" />
             <div class="productitem--property" data-properties-tierdprice="{{ product.metafields.plytix.tiered_pricing }}" />
 
+
+            {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+              <div class="productitem--property" data-properties-tierdprice="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off }}" />
+            {%- else -%}
+              <div class="productitem--property" data-properties-tierdprice="{{ product.metafields.plytix.tiered_pricing }}" />
+            {%- endif -%}
+
             <div class="productitem--listview-badge">
               {%
                       render 'product-badge',
@@ -642,14 +649,20 @@
                           {% if isSpecial == false %}
                             data-tp-name="properties[_tiered_pricing]"
                           {% endif %}
+                          data-org-price-name="properties[_org_price]"
                           data-vissku-name="properties[Sku]"
                           data-status-name="properties[Status]"
                           data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
                           data-erpSku="{{ selected_or_first_available_variant.metafields.plytix.erp_sku }}"
                           data-availqty="{{ product.selected_or_first_available_variant.inventory_quantity }}"
                           {% if isSpecial == false %}
-                            data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
+                            {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off }}"
+                            {%- else -%}
+                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
+                            {%- endif -%}
                           {% endif %}
+                          data-org-price="{{product.variants.first.price}}"
                           data-vissku="{{ product.selected_or_first_available_variant.sku }}"
                           data-status="{{ stockStatusNote }}"
                           data-variant-id="{{ product.variants.first.id }}"

@@ -337,6 +337,7 @@ jQuery(document).ready(function($){
             var vstep = $('#v' + param).data('increment');
             var erpsku = $('#v' + param).data('erpsku');
             var tier = $('#v' + param).data('tier');
+            var org_price = $('#v' + param).data('orgprice');
             var availqty = $('#v' + param).data('available-qty');
             var sku = $('#v' + param + " span").html(); //needed to show sku on checkout
             if($('.var' + param + ".status-area .status-time").html()){
@@ -349,6 +350,7 @@ jQuery(document).ready(function($){
                 $('input[name="properties[Sku]"]').attr('value', sku);
                 $('input[name="properties[Status]"]').attr('value', status);
                 $('input[name="properties[_tiered_pricing]"]').attr('value', tier);
+                $('input[name="properties[_org_price]"]').attr('value', org_price);
                 $('input[name="properties[_available_qty]"]').attr('value', availqty);
                 $('#product-quantity-input').data('step', vstep);
                 $('.qtyminus').data('step', vstep);
@@ -544,6 +546,39 @@ jQuery(document).ready(function($){
         if ( ! $frequent_slider.hasClass('slick-initialized'))
             return $frequent_slider.slick(freqsettings);
     });
+
+    $('.related-blog-product-contain').slick({
+        arrows: true,
+        autoplay: false,
+        dots: false,
+        infinite: false,
+        lazyLoad: 'ondemand',
+        //slide: '.brand-slide',
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        fade: false,
+        variableWidth: true,
+        appendArrows: $('.brand-slider__content .slide-arrows'),
+        prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
+        nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 4,
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 2,
+                }
+            },
+        ]
+    });
+
 
     $('#gift-slds').slick({
         arrows: true,
@@ -1005,6 +1040,7 @@ jQuery(document).ready(function($){
                 'properties[_tiered_pricing]': '',
                 'properties[_bundle_product]': bundle,
                 'properties[_available_qty]': '',
+                'properties[_org_price]': '',
                 'id': '',
                 'quantity': 0
             }
@@ -1017,6 +1053,7 @@ jQuery(document).ready(function($){
                 form_template["properties[Status]"] = $(this).data('status')
                 form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
                 form_template["properties[_available_qty]"] = $(this).data('availqty')
+                form_template["properties[_org_price]"] = $(this).data('price')
                 form_template.id = $(this).data('id') + ""
                 form_template.quantity = $(this).val() + ""
 
@@ -1088,6 +1125,7 @@ jQuery(document).ready(function($){
                 'properties[_sf_eligible]': '',
                 'properties[Sku]': '',
                 'properties[_tiered_pricing]': '',
+                'properties[_org_price]': '',
                 'properties[_available_qty]': '',
                 'id': '',
                 'quantity': 0
@@ -1143,6 +1181,7 @@ jQuery(document).ready(function($){
                         form_template["properties[Status]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_status');
                         form_template["properties[_tiered_pricing]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing');
                         form_template["properties[_available_qty]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_availqty');
+                        form_template["properties[_org_price]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_price');
                         form_template.id = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id') + ""
                         form_template.quantity = "1" + ""
 
@@ -1268,6 +1307,8 @@ jQuery(document).ready(function($){
             form_template["properties[Sku]"] = $(this).data('vissku')
             form_template["properties[Status]"] = $(this).data('status')
             form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
+            form_template["properties[_available_qty]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_availqty');
+            form_template["properties[_org_price]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_price');
             form_template.id = $(this).data('id') + ""
             form_template.quantity = $(this).val() + ""
 
@@ -1756,7 +1797,8 @@ function accdropATC(productid){
     var atcBrand = $(dataid).attr('data-brand');
     var atcTier = $(dataid).attr('data-var_tieredpricing');
     var atcPrice = $(dataid).attr('data-var_price');
-    var atcPrice = atcPrice/100;
+    atcPrice = atcPrice/100;
+    var atcOrgPrice = $(dataid).attr('data-var_price');
 
     var placement = "Minicart Upsell";
      window.dataLayer = window.dataLayer || [];
@@ -1792,13 +1834,14 @@ function accdropATC(productid){
          utf8: '✓',
          'properties[_erp_sku]': atcERPSku,
          'properties[_tiered_pricing]': atcTier,
+         'properties[_org_price]': atcOrgPrice,
          'properties[Status]': atcStatus,
          'properties[SKU]': atcSku,
          'properties[_available_qty]': atcAvailQty,
          'id': atcVarId,
          'quantity': 1,
      }
-
+// alert(atcTier);
     $(thisBtn).html("Adding...");
 
     // alert(atcVarId+"/"+productid+"/"+atcName+"/"+atcSku+"/"+atcStatus+"/"+atcERPSku+"/"+atcType+"/"+atcBrand+"/"+atcTier+"/"+atcPrice);
@@ -1955,3 +1998,4 @@ function linkdl(mainloc,linkloc,href){
     })
     // console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
 }
+

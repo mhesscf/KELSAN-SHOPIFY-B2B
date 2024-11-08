@@ -35,23 +35,23 @@
       {% assign pstep = property.last %}
     {% endif %}
     {% if property.first == '_sf_eligible' %}
-        {% if item.sku contains "DEMO" %}
             {% assign sf_eligible = false %}
-        {% else %}
-            {% assign sf_eligible = true %}
-        {% endif %}
     {% endif %}
     {% if property.first == '_bogorule' %}
       {%- assign fgbogo-rule = property.last -%}
     {% endif %}
     {% if property.first == '_tiered_pricing' %}
-      {% if property.last == 'fg-bogo' %}
-        {%- assign fgbogo = true -%}
-      {% endif %}
-      {% if property.last == 'fg-1000' %}
-        {%- assign fgbogo = true -%}
-      {% endif %}
+        {%- assign tiered_pricing = property.last -%}
+          {% if property.last == 'fg-bogo' %}
+            {%- assign fgbogo = true -%}
+          {% endif %}
+          {% if property.last == 'fg-1000' %}
+            {%- assign fgbogo = true -%}
+          {% endif %}
     {% endif %}
+      {% if property.first == '_org_price' %}
+          {%- assign org_price = property.last -%}
+      {% endif %}
   {% endfor %}
 {% endunless %}
 
@@ -176,6 +176,82 @@
         </ul>
       {% endif %}
 
+        {%- if settings.enable_transform_discount_code or 1 == 1 -%}
+
+
+            {%- assign valid_tier = 0  -%}
+            {%- assign valid_tier_count = 0  -%}
+            {%- assign tiermessage = ""  -%}
+
+            {%- if tiered_pricing contains ":" -%}
+                {% comment %}dollar pricing---------------------------------------------------------------------------{% endcomment %}
+                {%- assign tiered_pricing_sections_arr = tiered_pricing | split: ":"  -%}
+                {%- assign tiered_pricing_arry = tiered_pricing_sections_arr[0] | split: "|"  -%}
+
+                {%- for tier in tiered_pricing_arry -%}
+                    {%- assign tier_int = tier | plus: 0  -%}
+                    {%- if item.quantity >=  tier_int -%}
+                        {%- assign valid_tier = tier  -%}
+                        {%- assign valid_tier_count = forloop.index0 | plus: 1  -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                {%- assign tier_doll_off = tiered_pricing_sections_arr[1] | times: valid_tier_count -%}
+                {%- assign discount = tier_doll_off | times: item.quantity -%}
+
+                {%- capture tiermessage -%}
+                    {{  tier_doll_off | times:100 | money}} off for {{ valid_tier }}+ (you saved <span class="money">{{ discount | times: 100 | money }}</span>)
+                {%- endcapture -%}
+                {% comment %} {%- elsif tiered_pricing contains "|" -%}
+                 {% comment %}   percent pricing---------------------------------------------------------------------------{% endcomment %}
+
+                    {%- assign tiered_pricing_arry = tiered_pricing | split: "|"  -%}
+                    {%- assign tier_percent_arr = item.product.metafields.plytix.tiered_pricing_percent_off | split: "|" -%}
+                    {%- for tier in tiered_pricing_arry -%}
+                        {%- assign tier_int = tier | plus: 0  -%}
+                        {%- if item.quantity >=  tier_int -%}
+                            {%- assign valid_tier = tier  -%}
+                            {%- assign valid_tier_percent = tier_percent_arr[forloop.index0] | divided_by: 100.00 -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    {%- assign discount = org_price  | times: valid_tier_percent | times: item.quantity -%}
+
+                    {%- capture tiermessage -%}
+                        {{ valid_tier_percent | times: 100 | floor }}% off for {{ valid_tier }}+ (you saved <span class="money">{{ discount | money }}</span> NEW)
+                    {%- endcapture -%}
+                {% endcomment %}
+            {%- elsif tiered_pricing contains "fg" and product_bundle != '' -%}
+                {%- assign discount = org_price  | times: item.quantity -%}
+                {%- capture tiermessage -%}
+                    Free gift with bundle! (you saved <span class="money">{{ discount | money }}</span>)
+                {%- endcapture -%}
+            {%- elsif tiered_pricing contains "fg" -%}
+                {%- assign discount = org_price  | times: item.quantity -%}
+                {%- capture tiermessage -%}
+                    Free gift! (you saved <span class="money">{{ discount | money }}</span>)
+                {%- endcapture -%}
+            {%- endif -%}
+
+            {% comment %}<div style="color:red; font-weight:bold">TESTING {{ tiered_pricing }}: (_org_price = {{ org_price | money}})</div>{% endcomment %}
+
+            {%- if valid_tier != 0 and  tiermessage != "" -%}
+                <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                    <li class="discount-list-item">
+                        {% render 'icon-library', id: 'icon-sale-tag' %}
+                        {{ tiermessage }}
+                    </li>
+                </ul>
+            {%- elsif tiered_pricing contains "fg" and  tiermessage != "" -%}
+                    <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                        <li class="discount-list-item">
+                            {% render 'icon-library', id: 'icon-sale-tag' %}
+                            {{ tiermessage }}
+                        </li>
+                    </ul>
+            {%- endif -%}
+
+        {%- endif -%}
+
       {% if show_sku %}
         <div class="cart-item--sku {% if item.sku == empty %}cart-item--sku-empty{% endif %}">
           {{ 'product.general.sku_html' | t: sku: item.sku | strip_newlines }}
@@ -195,6 +271,7 @@
         {% endif %}
       {% endif %}
       {% endcomment %}
+
       {% if stock_status %}
         <div class="cart-item--stockstatus">
           <strong>Status:</strong> {{ stock_status }}

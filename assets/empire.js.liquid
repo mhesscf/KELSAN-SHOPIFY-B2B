@@ -29008,7 +29008,6 @@ PERFORMANCE OF THIS SOFTWARE.
                         const productSF = flyOut.querySelector('[data-atc-sf-banner]');
                         if (productSF) {
                             productSF.style.display = "none";
-                            if (response.properties['Sku'].includes("DEMO") == false){
                                 if (response.properties && response.properties['_sf_eligible']) {
                                     const SFbtn = flyOut.querySelector('.sf-atc-btn');
                                     SFbtn.setAttribute("data-plan-item", response.properties['Sku']);
@@ -29016,7 +29015,6 @@ PERFORMANCE OF THIS SOFTWARE.
                                     SFbtn.setAttribute("data-plan-qty", quantity);
                                     productSF.style.display = "block";
                                 }
-                            }
                         }
 
                         const productAcc = flyOut.querySelector('[data-dropaccessories]');
@@ -29090,8 +29088,10 @@ PERFORMANCE OF THIS SOFTWARE.
                             let lineItem = null;
                             secondResponse.items.forEach(item => {
                                 // item info added to cart
-                                //console.log(item);
-                                if (item.id === this.itemId) {
+                                {% comment %}console.log(item);{% endcomment %}
+                                {% comment %}console.log("response "+response.properties['_tiered_pricing']+"/"+ item.properties['_tiered_pricing']);{% endcomment %}
+                                {% comment %}Need to check response.properties['_tiered_pricing'] here as well as id to make sure bundle and non bundles read as different products{% endcomment %}
+                                if (item.id === this.itemId && response.properties['_tiered_pricing'] == item.properties['_tiered_pricing'] ) {
                                     if (!lineItem) {
                                         lineItem = item;
                                     } else {
@@ -29137,7 +29137,13 @@ PERFORMANCE OF THIS SOFTWARE.
                                 unitPrice.classList.remove('hidden');
                             }
 
-                            if (lineItem.line_level_discount_allocations.length > 0) {
+                            var transform_discount_code = 1;
+
+                            {% comment %}new tier work from ds work--------------------------------------------------------{% endcomment %}
+
+
+
+                            if (transform_discount_code != 1 && lineItem.line_level_discount_allocations.length > 0) {
                                 const discountItemTemplate = productDiscounts.firstElementChild.cloneNode(true);
                                 productDiscounts.innerHTML = '';
                                 lineItem.line_level_discount_allocations.forEach(discount => {
@@ -29149,6 +29155,91 @@ PERFORMANCE OF THIS SOFTWARE.
                                     productDiscounts.appendChild(listItem);
                                 });
                                 productDiscounts.classList.remove('hidden');
+                            }else if(transform_discount_code == 1 && response.properties && response.properties['_org_price'] && response.properties['_tiered_pricing'] ) {
+                                {% comment %}new tier work from ds work--------------------------------------------------------{% endcomment %}
+                                const discountItemTemplate = productDiscounts.firstElementChild.cloneNode(true);
+                                productDiscounts.innerHTML = '';
+                                const listItem = discountItemTemplate.cloneNode(true);
+                                const tierprop = response.properties['_tiered_pricing'];
+                                const orgprice = response.properties['_org_price'];
+                                const lineitemqty = lineItem.quantity;
+                                var discountSavings = 0;
+                                var valid_tier = 0;
+
+                                // percent off
+                                if (tierprop.includes(":")) {
+                                    //  dollar off
+                                    const tierSplitArry = tierprop.split(":");
+                                    const tierLevelArry = tierSplitArry[0].split("|");
+                                    const dollarOff = tierSplitArry[1];
+
+                                    var counter = 0;
+                                    tierLevelArry.forEach((tierLevel) => {
+                                        if ( lineitemqty >=  tierLevel ){
+                                            valid_tier = tierLevel;
+                                            counter = counter + 1;
+                                        }
+                                    });
+                                    var dollarOffTotal = dollarOff * counter;
+                                    var discountTitle = "$"+dollarOffTotal + " off for +" + valid_tier;
+                                    var discountSavings = dollarOffTotal * 100 * lineitemqty;
+
+                                } else if (tierprop.includes("|")) {
+                                    // percent off for DS work
+                                    const tierSplitArry = tierprop.split(":");
+                                    const tierLevelArry = tierSplitArry[0].split("|");
+                                    var discountPercent = 0;
+
+                                    if (tierprop == "3|6|10|20"){
+                                        discountPercent = "5|10|15|20"
+                                    } else if (tierprop == "3|6|12|24"){
+                                        discountPercent = "5|10|15|20";
+                                    } else if (tierprop == "10|25|50"){
+                                        discountPercent = "10|20|30";
+                                    } else if (tierprop == "6|12|24"){
+                                        discountPercent = "5|10|20";
+                                    } else if (tierprop == "6|10|20"){
+                                        discountPercent = "6|12|18";
+                                    } else if (tierprop == "3|6|12"){
+                                        discountPercent = "5|10|15";
+                                    } else if (tierprop == "3|6|10"){
+                                        discountPercent = "5|10|15";
+                                    } else if (tierprop == "2|4|6"){
+                                        discountPercent = "2|4|6";
+                                    } else if (tierprop == "3|6|10"){
+                                        discountPercent = "5|10|15";
+                                    } else if (tierprop == "2|4|6|12"){
+                                        discountPercent = "3|6|9|12";
+                                    }
+
+                                    var valid_tier_percent = 0;
+                                    var discountPercentArry = discountPercent.split("|");
+                                    tierLevelArry.forEach((tierLevel, index) => {
+                                        if (lineitemqty >=  tierLevel ){
+                                            valid_tier = tierLevel;
+                                            valid_tier_percent = discountPercentArry[index];
+                                        }
+                                    });
+                                    var discountTitle = valid_tier_percent + "% off for +" + valid_tier;
+                                    var discountSavings = (orgprice * valid_tier_percent * lineitemqty)/100;
+
+
+                                }
+
+
+
+
+
+                                if(discountSavings > 0){
+                                    const title = listItem.querySelector('.discount-title');
+                                    const amount = listItem.querySelector('.discount-amount');
+                                    title.innerHTML =  discountTitle;
+                                    amount.innerHTML = Shopify.formatMoney(discountSavings, this.settings.moneyFormat);
+                                    productDiscounts.appendChild(listItem)
+                                } else {
+                                    productDiscounts.classList.add('hidden');
+                                }
+
                             } else {
                                 productDiscounts.classList.add('hidden');
                             }
@@ -32919,7 +33010,9 @@ const RULES = `
                 const variantStatusName = atcButton.getAttribute('data-status-name');
                 const variantStatus = atcButton.getAttribute('data-status');
                 const variantTPName = atcButton.getAttribute('data-tp-name');
+                const variantOrgPriceName = atcButton.getAttribute('data-org-price-name');
                 const variantTieredPricing = atcButton.getAttribute('data-tiered-pricing');
+                const variantOrgPrice = atcButton.getAttribute('data-org-price');
                 const formData = [{
                     name: 'id',
                     value: variantID
@@ -32944,6 +33037,9 @@ const RULES = `
                 },{
                     name: variantTPName,
                     value: variantTieredPricing
+                },{
+                    name: variantOrgPriceName,
+                    value: variantOrgPrice
                 }
                 ];
                 const options = {
