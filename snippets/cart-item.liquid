@@ -176,7 +176,7 @@
         </ul>
       {% endif %}
 
-        {%- if settings.enable_transform_discount_code -%}
+        {%- if settings.enable_transform_discount_code or 1 == 1 -%}
 
 
             {%- assign valid_tier = 0  -%}

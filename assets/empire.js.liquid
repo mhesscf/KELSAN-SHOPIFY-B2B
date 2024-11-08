@@ -29137,11 +29137,11 @@ PERFORMANCE OF THIS SOFTWARE.
                                 unitPrice.classList.remove('hidden');
                             }
 
-                            var transform_discount_code = 0;
-                            {%- if settings.enable_transform_discount_code -%}
+                            var transform_discount_code = 1;
+
                             {% comment %}new tier work from ds work--------------------------------------------------------{% endcomment %}
-                            transform_discount_code = 1;
-                            {%- endif -%}
+
+
 
                             if (transform_discount_code != 1 && lineItem.line_level_discount_allocations.length > 0) {
                                 const discountItemTemplate = productDiscounts.firstElementChild.cloneNode(true);
