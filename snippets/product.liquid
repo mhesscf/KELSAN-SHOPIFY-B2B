@@ -190,7 +190,7 @@
                                     {%- else -%}
                                         {%- assign vstep = 1 -%}
                                     {%- endif -%}
-                                    <div style="display:none;" class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-tier="{{ variant.metafields.plytix.tiered_pricing }}" data-available-qty="{{ variant.inventory_quantity }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
+                                    <div style="display:none;" class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-tier="{{ variant.metafields.plytix.tiered_pricing }}" data-orgprice="{{ variant.price }}" data-available-qty="{{ variant.inventory_quantity }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
                                     SKU:<span> {{ variant.sku }} </span>&nbsp;&nbsp; {{ vendortext }}
                                     </div>
                                 {% endfor %}
@@ -410,6 +410,30 @@
                                             assign enable_local_pickup = block.settings.enable_local_pickup
                                         endif
                                     -%}
+
+                                    {%- if product.metafields.plytix.show_quote == "true" -%}
+                                        <div class="product-inquiry">Click here for quote</div>
+                                        {% assign full_url = request.host | append: request.path %}
+                                        <div class="request-quote-form" style="display:none;"><iframe height="1064" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x11ki5611oyeseg/def/Field60={{ selected_variant.sku }}&Field63={{ product.title }}&Field62={{ full_url }}"> <a href="https://jbutchpti.wufoo.com/forms/x11ki5611oyeseg/">Fill out my Wufoo form!</a> </iframe></div>
+
+                                        <script>
+
+                                            jQuery(document).ready(function($) {
+                                                $('.product-inquiry').on('click', function (e) {
+
+                                                    var formhtml = $('.request-quote-form').html();
+
+                                                    $('.popup-container .content').html(formhtml);
+                                                    $('.popup-container').addClass('rightpop');
+
+                                                    $('.popup-container').removeClass('hidden');
+                                                    $(".pop-grad").removeClass('hidden');
+
+                                                });
+                                            });
+                                        </script>
+                                    {%- endif -%}
+
 
                                     {%- unless onboarding -%}
                                         {%

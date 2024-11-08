@@ -1973,12 +1973,16 @@ h2 {
 h4 {
 	font-size: var(--font-size-heading-4);
 }
+.fake-link,
 a{
 	color: {{ color_links }};
 	transition: all 0.4s ease-in-out;
 }
+
+.fake-link:hover,
 a:hover{
 	color: {{ settings.color_link_hover }};
+	cursor: pointer;
 }
 .highlights-banner__heading, h5 {
 	font-size: var(--font-size-heading-5);
@@ -4865,6 +4869,19 @@ body .mdc-ripple-surface:hover:before {
 }
 .article--tags a:hover {
 	color: {{ settings.color_text | color_modify: 'alpha', 0.6 }};
+}
+
+.related-blog-product-contain{
+	display:flex;
+	max-width:1800px;
+	width:100%
+}
+.related-blog-product-contain .productgrid--item{
+	width: 245px;
+	min-width: 245px;
+	padding: 8px;
+	display: flex;
+	height: inherit;
 }
 
 .article--pagination {

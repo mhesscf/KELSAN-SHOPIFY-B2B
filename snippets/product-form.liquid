@@ -268,12 +268,13 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {%- endif -%}
 
     {%- if isSpecial == false -%}
-      {%- if product.metafields.plytix.tiered_pricing_dollar_off != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+      {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
         <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off }}" />
       {%- else -%}
         <input type="hidden" name="properties[_tiered_pricing]" value="{{ product.metafields.plytix.tiered_pricing }}" />
       {%- endif -%}
     {%- endif -%}
+    <input type="hidden" name="properties[_org_price]" value="{{ selected_variant.price }}" />
     <variant-selection
             {% if variant_selection_id != blank %}id="{{ variant_selection_id }}"{% endif %}
             class="variant-selection"
@@ -462,34 +463,14 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
     <div class="qtyMsg" style="font-weight: 900;"></div>
     <div class="product-form--atc">
-      <div class="qtydiv" data-quantity-wrapper>
-        <div class="lside">
-          <label for="Quantity" class="quantity-selector">Quantity</label>
-          <div class="qtybox" id="qtybox">
-            <input type='button' value='−' data-step="{{ pstep }}" class='qtyminus' data-field='quantity' />
-
-
-            <input
-                    type='text'
-                    name='quantity'
-                    id="product-quantity-input"
-                    class="form-field-input form-field-number form-field-filled qty"
-                    value="{{ pstep }}"
-                    data-step="{{ pstep }}"
-                    pattern="\d*"
-                    aria-label="{{ 'general.general.quantity' | t }}"
-                    data-quantity-input
-            />
-            <input type='button' value='+' class='qtyplus' data-step="{{ pstep }}" data-field='quantity' />
-          </div>
-        </div>
+      <div class="tierqtydiv qtydiv" data-quantity-wrapper>
         <div class="rside">
           {%- comment -%} Quantity Discount Tieres{%- endcomment -%}
 
           {%- assign pdiscontinued = false -%}
           {%- for c in product.collections -%}
             {%- if c.handle == "discontinued" -%}
-              {%- assign pdiscontinued = true- %}
+              {%- assign pdiscontinued = true %}
             {%- endif -%}
           {%- endfor -%}
 
@@ -500,24 +481,26 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {%- if variant.metafields.plytix.tiered_pricing != blank and pdiscontinued == false and isSpecial == false -%}
 
             {%- if variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+              {% comment %}new dollar off way{% endcomment %}
               {%- assign pprice = variant.price | divided_by: 100.00 -%}
-              <div class="discount-info-wrap-v2 dollaroff var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+              <div class="discount-info-wrap-v3 dollaroff var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
                 <div class="discount-info-wrap-v2-header">Quantity Discounts</div>
-                <div class="discount-table">
-                  <div class="col first">
-                    <div class="row row1">Quantity</div>
-                    <div class="row row2">Discounts</div>
-                    <div class="row row3">Price</div>
+                {%- assign tierArr = variant.metafields.plytix.tiered_pricing | split: '|' -%}
+                <div class="tier-area tier-{{ tierArr.size | plus: 1 }}-levels">
+                  {%- assign positionCount = 1 -%}
+
+                  <div class="tierlevel selected default" data-tierprice="{{ pprice | times: 100 | money }}" data-tierSaved="0" data-tierNum="1">
+                    <div class="tierNum">Buy 1+</div><div class="at-text"> at </div>
+                    <div class="tierPerItem"><strong>{{ pprice | times: 100 | money }}/ea</strong></div>
                   </div>
 
-                  {%- assign tierArr = variant.metafields.plytix.tiered_pricing | split: '|' -%}
-                  {%- assign positionCount = 1 -%}
                   {%- for tierNum in tierArr -%}
                     {%- assign totalSaved = variant.metafields.plytix.tiered_pricing_dollar_off | times: positionCount -%}
-                    <div class="col">
-                      <div class="row row1">{{ tierNum }}+</div>
-                      <div class="row row2">{{ totalSaved | times: 100 | money }}<span> off</span></div>
-                      <div class="row row3">{{ pprice | minus: totalSaved | times: 100 | money }}</div>
+                    <div class="tierlevel {% if forloop.last %}lastTier{% endif %}" data-tierprice="{{ pprice | minus: totalSaved | times: 100 | money }}" data-tierSaved="{{ totalSaved | times: 100 | money }}" data-tierNum="{{ tierNum }}">
+                      <div class="tierNum">Buy {{ tierNum }}+</div><div class="at-text"> at </div>
+                      <div class="tierPerItem"><strong>{{ pprice | minus: totalSaved | times: 100 | money }}/ea</strong></div>
+                      <div class="tierSaved">({{ totalSaved | times: 100 | money }}<span> off</span>)</div>
+
                     </div>
                     {%- assign positionCount = positionCount | plus: 1 -%}
                   {%- endfor -%}
@@ -883,6 +866,31 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 {%- comment -%}end of inventory check for qty notice{%- endcomment -%}
 
       <div class="cart-buttons">
+
+        <div class="qtydiv" data-quantity-wrapper>
+          <div class="lside">
+            <label for="Quantity" class="quantity-selector">Quantity</label>
+            <div class="qtybox" id="qtybox">
+              <input type='button' value='−' data-step="{{ pstep }}" class='qtyminus' data-field='quantity' />
+
+
+              <input
+                      type='text'
+                      name='quantity'
+                      id="product-quantity-input"
+                      class="form-field-input form-field-number form-field-filled qty"
+                      value="{{ pstep }}"
+                      data-step="{{ pstep }}"
+                      pattern="\d*"
+                      aria-label="{{ 'general.general.quantity' | t }}"
+                      data-quantity-input
+              />
+              <input type='button' value='+' class='qtyplus' data-step="{{ pstep }}" data-field='quantity' />
+            </div>
+          </div>
+
+        </div>
+
         <div data-prod-upd>
           <input type="hidden"
                  name="updates[{{ product.handle }}]"
@@ -1231,3 +1239,66 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 <form data-payment-terms-target class="shoppay-financing" style="display: none;"></form>
 {% endif %}
 {%- endcomment -%}
+{%- comment -%}  script for tier switching {%- endcomment -%}
+<script>
+  $(document).ready(function() {
+    $('.tierlevel ').on('click', function(e){
+      var tierPrice = $(this).data('tierprice');
+      var tierSaved = $(this).data('tiersaved');
+      var tierNum = $(this).data('tiernum');
+      var orgPrice = $('.tierlevel[data-tiernum="1"] ').data('tierprice');
+
+      $('.tierlevel ').removeClass("selected");
+      $(this).addClass("selected");
+      $("#product-quantity-input").val(tierNum);
+      $(".product-block--price .money").html(tierPrice);
+
+      $(".updated-tier-compare,.updated-tier-strike").remove();
+      if(tierSaved != "0"){
+        $(".product-block--price").prepend('<div class="updated-tier-strike price__compare-at-visible-2 strikethrough"><div class="strikeprice">'+orgPrice+'</div></div>');
+        $(".product-block--price .price__current ").append('<div class="updated-tier-compare price__compare-at-visible-2 var-specs var41986143289524"><div class="yousave">You Save: '+tierSaved+'</div></div>');
+      }
+    });
+
+    $('.qtyminus, .qtyplus ').on('click', function(e){
+        qtyTierHighlight();
+    });
+
+    $('#product-quantity-input').on('input', function() {
+        qtyTierHighlight();
+    });
+
+    function qtyTierHighlight(){
+      setTimeout(function() {
+        var orgPrice = $('.tierlevel[data-tiernum="1"] ').data('tierprice');
+        var currentQty = $("#product-quantity-input").val();
+        var validLevel = 1;
+        $('.tierlevel').each(function () {
+          var tierNum = $(this).data('tiernum');
+          if (currentQty >= tierNum){
+            validLevel = tierNum;
+          }
+
+
+        });
+        // alert("Valid level="+validLevel);
+        $('.tierlevel ').removeClass("selected");
+        var targetLevelElement = '.tierlevel[data-tiernum="'+validLevel+'"]';
+        $(targetLevelElement).addClass("selected");
+
+        var newPrice = $(targetLevelElement).data('tierprice');
+        var newSaved = $(targetLevelElement).data('tiersaved');
+        $(".product-block--price .money").html(newPrice);
+
+        $(".updated-tier-compare,.updated-tier-strike").remove();
+        if(newSaved != "0"){
+          $(".product-block--price").prepend('<div class="updated-tier-strike price__compare-at-visible-2 strikethrough"><div class="strikeprice">'+orgPrice+'</div></div>');
+          $(".product-block--price .price__current ").append('<div class="updated-tier-compare price__compare-at-visible-2 var-specs var41986143289524"><div class="yousave">You Save: '+newSaved+'</div></div>');
+        }
+
+
+      }, 150);
+    };
+
+  });
+</script>

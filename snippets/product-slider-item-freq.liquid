@@ -373,7 +373,11 @@
                     data-sfeligible="true"
                   {% endif %}
                   {% if isSpecial == false %}
-                    data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
+                    {%- if variant.metafields.plytix.tiered_pricing != blank and variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+                      data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}:{{ variant.metafields.plytix.tiered_pricing_dollar_off }}"
+                    {%- else -%}
+                      data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
+                    {%- endif -%}
                   {% endif %}
                    data-var_availqty = "{{ variant.inventory_quantity }}"
                    data-var_price="{{ variant.price }}"
@@ -405,8 +409,14 @@
             {%- endif -%}
 
             {% comment %}Values for custom.js to pull to add to cart: changes on variation select{% endcomment %}
-
-            <input type="hidden" name="updates[{{ product.handle }}]" class="product-data" data-brand="{{ product.vendor }}" data-producttype="{{ product.type }}" data-freqbundle-subproduct data-id="{{ current_variant.id }}" data-availqty="{{ current_variant.inventory_quantity }}" data-vissku="{{ current_variant.sku }}" data-status="{{ stockStatusNote }}" data-erpsku="{{ current_variant.metafields.plytix.erp_sku }}" data-step="" data-tieredpricing="{{ current_variant.metafields.plytix.tiered_pricing }}" data-qty="1" data-price="{{ current_variant.price }}"
+        {%- capture tiervalue -%}
+            {%- if current_variant.metafields.plytix.tiered_pricing != blank and current_variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+              {{ current_variant.metafields.plytix.tiered_pricing }}:{{ current_variant.metafields.plytix.tiered_pricing_dollar_off }}
+            {%- else -%}
+              {{ current_variant.metafields.plytix.tiered_pricing }}
+            {%- endif -%}
+          {%- endcapture -%}
+            <input type="hidden" name="updates[{{ product.handle }}]" class="product-data" data-brand="{{ product.vendor }}" data-producttype="{{ product.type }}" data-freqbundle-subproduct data-id="{{ current_variant.id }}" data-availqty="{{ current_variant.inventory_quantity }}" data-vissku="{{ current_variant.sku }}" data-status="{{ stockStatusNote }}" data-erpsku="{{ current_variant.metafields.plytix.erp_sku }}" data-step="" data-tieredpricing="{{ tiervalue }}" data-qty="1" data-price="{{ current_variant.price }}"
                     {% if product.metafields.plytix.general_product_type == "Machine" %}
                       data-sfeligible="true"
                    {% endif %}

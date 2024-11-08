@@ -99,6 +99,7 @@
                 'properties[_tiered_pricing]': '',
                 'properties[_bogorule]': '',
                 'properties[BOGO PROMO]': '',
+                'properties[_org_price]': '',
                 'id': '',
                 'quantity': 0
                 }
@@ -108,6 +109,7 @@
                     form_template["properties[_erp_sku]"] = '{{ fp1.metafields.plytix.erp_sku}}';
                     form_template["properties[Sku]"] = '{{ fp1.variants.first.sku}}';
                     form_template["properties[_tiered_pricing]"] = 'fg-bogo';
+                    form_template["properties[_org_price]"] = '{{ fp1.variants.first.price }}';
                     form_template["properties[_bogorule]"] = 'fgdata{{ rulecounter }}';
                     form_template["properties[BOGO PROMO]"] = '{{ ruleName }}';
                     form_template.id = '{{ fp1.variants.first.id }}' + "";
@@ -119,6 +121,7 @@
                     form_template["properties[_erp_sku]"] = '{{ fp2.metafields.plytix.erp_sku}}';
                     form_template["properties[Sku]"] = '{{ fp2.variants.first.sku}}';
                     form_template["properties[_tiered_pricing]"] = 'fg-bogo';
+                    form_template["properties[_org_price]"] = '{{ fp2.variants.first.price }}';
                     form_template["properties[_bogorule]"] = 'fgdata{{ rulecounter }}';
                     form_template["properties[BOGO PROMO]"] = '{{ ruleName }}';
                     form_template.id = '{{ fp2.variants.first.id }}' + "";
@@ -130,6 +133,7 @@
                     form_template["properties[_erp_sku]"] = '{{ fp3.metafields.plytix.erp_sku}}';
                     form_template["properties[Sku]"] = '{{ fp3.variants.first.sku}}';
                     form_template["properties[_tiered_pricing]"] = 'fg-bogo';
+                    form_template["properties[_org_price]"] = '{{ fp3.variants.first.price }}';
                     form_template["properties[_bogorule]"] = 'fgdata{{ rulecounter }}';
                     form_template["properties[BOGO PROMO]"] = '{{ ruleName }}';
                     form_template.id = '{{ fp3.variants.first.id }}' + "";
