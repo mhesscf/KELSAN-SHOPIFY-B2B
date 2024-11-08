@@ -50,7 +50,7 @@
           {% endif %}
     {% endif %}
       {% if property.first == '_org_price' %}
-          {%- assign org_price = property.last -%}
+          {%- assign org_price = property.last | plus: 0 -%}
       {% endif %}
   {% endfor %}
 {% endunless %}
@@ -129,11 +129,13 @@
           {{ 'cart.general.price' | t }}
         </span>
 
-          {% if compare_at_price > item.price or item.original_price > item.final_price %}
+          {% if compare_at_price > item.price or item.original_price > item.final_price or org_price > item.price %}
             <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
             <s class="cart-item--sale-price money">
               {%- if item_has_discounts -%}
                 {{ item.original_price | money }}
+            {%- elsif org_price > item.price -%}
+                    {{ org_price  | money }}
               {%- else -%}
                 {{ compare_at_price | money }}
               {%- endif %}
@@ -495,6 +497,10 @@
           <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
           <s class="original-price money">{{ item.original_line_price | money }}</s>
           <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
+        {%- elsif org_price > item.price -%}
+
+            <s class="original-price money">{{ org_price | times: item.quantity | money }}</s>
+
         {%- endif -%}
         <div
                 class="money {% if item_has_discounts %}cart-item--discount-price{% endif %}"
