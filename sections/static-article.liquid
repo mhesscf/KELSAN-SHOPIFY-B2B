@@ -164,6 +164,33 @@
     </div>
   </div>
 </section>
+{%- if article.metafields.custom.products_to_show_on_blog_post.value  -%}
+  <div id="blog-products" class="related-blog-product">
+
+    {%- assign relatedProducts = article.metafields.custom.products_to_show_on_blog_post.value  -%}
+    <h2>Featured Products</h2>
+    <div class="related-blog-product-contain">
+    {%- for product in relatedProducts -%}
+      {%- for c in all_products[product.handle].collections -%}
+        {%- if c.handle == "discontinued" -%}
+          {%- assign crawlcheck = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if crawlcheck == true -%}
+        <div class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
+      {%- endif -%}
+
+      {%-
+              render 'product-cms-block-item',
+              product: product
+      -%}
+
+    {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
 
 {% schema %}
 {
@@ -207,3 +234,16 @@
   ]
 }
 {% endschema %}
+
+<script>
+
+  $(document).ready(function() {
+
+    $('.blog-product').each(function () {
+      var productID = $(this).attr('id');
+      var productblock = $(".block-"+productID).html();
+      $(this).html(productblock)
+    });
+
+  })
+</script>

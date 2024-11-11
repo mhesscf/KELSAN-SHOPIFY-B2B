@@ -32,7 +32,7 @@
 
 <section class="product-single-spec-manual">
     <div class="container">
-        <div class="row {% if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank %}space-between {% else %}centered-content{% endif %}">
+        <div class="row space-between">
             <div class="l">
                 <h2>Product Specs</h2>
                 <div class="spec-table">
@@ -68,9 +68,14 @@
                     </div>
                 </div>
             </div>
-            {%- if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank -%}
+
+
+            {%- assign blogsclean = product.metafields.plytix.related_blogs | remove: ", " | remove: "," | remove: "NA" -%}
+            {%- assign blogscleansize = blogsclean | size -%}
+            {%- if 1==1 or product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank or blogscleansize > 3 -%}
                 {%- assign pdf_names = product.metafields.plytix.pdf_file_names | split: "::"  -%}
                 {%- assign pdf_titles = product.metafields.plytix.pdf_file_titles | split: "::"  -%}
+                {%- assign docCount = 0 -%}
                 <div class="r">
                     <h2>Documents</h2>
                     <div class="data-sheets">
@@ -92,6 +97,8 @@
                                     {%- endif -%}
                                     {%- assign indexofname = indexofname | plus: 1 -%}
                                 {%- endfor -%}
+
+                                {%- assign docCount = docCount | plus: 1 -%}
                                 <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
                                         <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                         {% comment %}<a target="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
@@ -118,6 +125,7 @@
                                     {%- assign indexofname = indexofname | plus: 1 -%}
                                 {%- endfor -%}
 
+                                {%- assign docCount = docCount | plus: 1 -%}
                                 <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
                                         <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                         {% comment %}<a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
@@ -138,6 +146,7 @@
                                     {%- assign indexofname = indexofname | plus: 1 -%}
                                 {%- endfor -%}
 
+                                {%- assign docCount = docCount | plus: 1 -%}
                                 <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
                                     <a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                 </div>
@@ -163,6 +172,7 @@
                                     {%- endif -%}
                                     {%- assign indexofname = indexofname | plus: 1 -%}
                                 {%- endfor -%}
+                                {%- assign docCount = docCount | plus: 1 -%}
                                 <div class="sheet-row sheet-name {%- if pdftitlecheck == 0 -%}orgfile{% endif %}">
                                         <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
                                         {% comment %}<a target="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
@@ -170,17 +180,85 @@
                             {%- endfor -%}
                         {%- endif -%}
 
-                        {%- if product.metafields.plytix.prop65_text != blank and product.metafields.plytix.prop65_category != blank -%}
-                            <div class="prop65">
-                                <h2>Warnings</h2>
-                                <div class="prop65-item">
-                                    <div class="hazard-title">
-                                        <i class="fa-regular fa-triangle-exclamation"></i> <strong>Proposition 65 Warning</strong>: {{ product.metafields.plytix.prop65_category }}
-                                    </div>
-                                    <div class="prop65-text">
-                                        {{ product.metafields.plytix.prop65_text }} For more information go to <a href="https://www.P65Warnings.ca.gov" target="_blank">www.P65Warnings.ca.gov</a>.</div>
+                        {%- if docCount == 0 -%}
+
+                            <div class="sheet-row sheet-name"><i class="fa-solid fa-ban"></i> No documents found.</div>
+
+                            {%- liquid
+                                assign selected_variant = product.selected_variant
+                                if product.variants.size == 1 or select_first_available_variant or product_form == false
+                                    assign selected_variant = product.selected_or_first_available_variant
+                                endif
+                            -%}
+
+                            <div class="sheet-row sheet-name document-inquiry" style="padding-left:21px; margin-top:-10px"> Are you looking for a specific document for this product?<br/><strong class="fake-link">Click here</strong> to make a request.</div>
+                            {% assign full_url = request.host | append: request.path %}
+
+                            <div class="document-inquiry-form" style="display:none;"><iframe height="722" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x17n92om0rqevnr/"> <a href="https://jbutchpti.wufoo.com/forms/x17n92om0rqevnr/">Fill out my Wufoo form!</a> </iframe></div>
+                            <script>
+
+                                jQuery(document).ready(function($) {
+                                    $('.document-inquiry').on('click', function (e) {
+
+                                        var formhtml = $('.document-inquiry-form').html();
+
+                                        $('.popup-container .content').html(formhtml);
+                                        $('.popup-container').addClass('rightpop');
+
+                                        $('.popup-container').removeClass('hidden');
+                                        $(".pop-grad").removeClass('hidden');
+
+                                    });
+                                });
+                            </script>
+
+                        {%- endif -%}
+                    </div>
+
+
+                    {%- assign blog_handles = product.metafields.plytix.related_blogs | split: "," -%}
+
+                    {%- assign blogcoutner = 0 -%}
+                    {%- assign pagecoutner = 0 -%}
+                    {%- for handle in blog_handles -%}
+                        {% assign thishandle = handle | strip %}
+                        {%- if thishandle != "NA" and thishandle !="" -%}
+                            {%- assign blogcoutner = coutner | plus: 1 -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    {%- if blogcoutner > 0 or pagecoutner > 0 -%}
+                        <h2 style="margin-top:30px;" >Related Links</h2>
+                        <div class="data-sheets">
+
+                            {%- if blogcoutner > 0 -%}
+                                <div class="sheet-row">
+                                    <div id="blog-area" class="sheet-label"><strong>Related Blogs</strong></div>
                                 </div>
-                            </div>
+
+                                {%- for handle in blog_handles -%}
+                                    {%- assign thishandle = handle | strip -%}
+                                    {%- if thishandle != "NA" and thishandle !="" -%}
+                                        {% assign thisarticle = articles[thishandle] %}
+                                        <div class="sheet-row sheet-name">
+                                            <a target="_blank" href="{{ thishandle }}"><i class="fa-solid fa-blog"></i></i> {{ thisarticle.title }}</a>
+                                        </div>
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            {%- endif -%}
+
+                            {%- if product.metafields.plytix.prop65_text != blank and product.metafields.plytix.prop65_category != blank -%}
+                                <div class="prop65">
+                                    <h2>Warnings</h2>
+                                    <div class="prop65-item">
+                                        <div class="hazard-title">
+                                            <i class="fa-regular fa-triangle-exclamation"></i> <strong>Proposition 65 Warning</strong>: {{ product.metafields.plytix.prop65_category }}
+                                        </div>
+                                        <div class="prop65-text">
+                                            {{ product.metafields.plytix.prop65_text }} For more information go to <a href="https://www.P65Warnings.ca.gov" target="_blank">www.P65Warnings.ca.gov</a>.</div>
+                                    </div>
+                                </div>
+                            {%- endif -%}
                         {%- endif -%}
                     </div>
                 </div>
