@@ -90,6 +90,7 @@
 {% endif %}
 {% capture classes %}
   productgrid--item
+  block-product-{{ product.metafields.plytix.erp_unique_id  }}
   imagestyle--{% if settings.product_grid_image_crop and settings.product_grid_image_style != 'natural' %}cropped-{% endif %}{{ settings.product_grid_image_style }}
   {% unless product.featured_media.preview_image %}imagestyle--no-image{% endunless %}
   {% if on_sale %}productitem--sale{% endif %}
