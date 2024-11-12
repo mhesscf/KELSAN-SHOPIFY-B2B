@@ -412,7 +412,9 @@
                                     -%}
 
                                     {%- if product.metafields.plytix.show_quote == "true" -%}
-                                        <div class="product-inquiry">Click here for quote</div>
+
+                                        <button class="product-form--finance-atc-button2 main-atc-button product-inquiry" style="width:250px;">Request Quote</button>
+
                                         {% assign full_url = request.host | append: request.path %}
                                         <div class="request-quote-form" style="display:none;"><iframe height="1064" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x11ki5611oyeseg/def/Field60={{ selected_variant.sku }}&Field63={{ product.title }}&Field62={{ full_url }}"> <a href="https://jbutchpti.wufoo.com/forms/x11ki5611oyeseg/">Fill out my Wufoo form!</a> </iframe></div>
 
@@ -434,16 +436,18 @@
                                         </script>
                                     {%- endif -%}
 
+                                    {%- unless onboarding and product.metafields.plytix.show_quote != "true" -%}
+                                        {%- if product.metafields.plytix.show_quote != "true"-%}
 
-                                    {%- unless onboarding -%}
-                                        {%
-                                                render 'product-form',
-                                                product: product,
-                                                enable_local_pickup: enable_local_pickup,
-                                                show_dynamic_checkout_button: show_dynamic_checkout_button,
-                                                selected_variant: selected_variant,
-                                                is_product_modal: is_product_modal,
-                                        %}
+                                            {%
+                                                        render 'product-form',
+                                                        product: product,
+                                                        enable_local_pickup: enable_local_pickup,
+                                                        show_dynamic_checkout_button: show_dynamic_checkout_button,
+                                                        selected_variant: selected_variant,
+                                                        is_product_modal: is_product_modal,
+                                                %}
+                                        {%- endif -%}
                                     {%- endunless -%}
 
                                     {%- if product.metafields.plytix.package_products != blank -%}
