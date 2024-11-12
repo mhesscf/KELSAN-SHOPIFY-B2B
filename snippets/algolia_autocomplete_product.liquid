@@ -12,8 +12,8 @@
               class="aa-ItemLink aa-ProductItem"
               onClick="${(event) => getConversionData(event, item)}"
       >
-          <div class="aa-ItemContent">
-              <div class="aa-ItemPicture aa-ItemPicture--loaded">
+          <div class="aa-ItemContent ${item.collections.includes("discontinued") == true ? html `discontinued-item` : html ``}">
+              <div class="aa-ItemPicture aa-ItemPicture--loaded ">
                   <img src="${item.variants_count > 1 ? html `${compactpic(item.product_image)}` : html `${algolia.helpers.compactImage(item)}`}" alt="${item.title}" />
               </div>
               <div class="aa-ItemContentBody">
@@ -32,9 +32,11 @@
                   </div>
                   <div class="aa-ItemContentPrice">
                       <div class="aa-ItemContentPriceCurrent">
+                      ${item.collections.includes("discontinued") == true ? html `<span class="discontinued-text">Discontinued</div>` : html `
                       ${item.meta.plytix.package_products ? html`
                         ${item.meta.plytix.bundle_pricing > 0 ? html `<span class="bundle-price">${priceFormat(item.meta.plytix.bundle_pricing)}</span>`: html `<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`}
                       `: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
+                      `}
                           {% comment %}${algolia.helpers.displayPrice(item, distinct)}{% endcomment %}
                       </div>
                   </div>
