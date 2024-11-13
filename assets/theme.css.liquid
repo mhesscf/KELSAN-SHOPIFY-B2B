@@ -4838,16 +4838,30 @@ body .mdc-ripple-surface:hover:before {
 .article--inner .blog-product .status-area{
 	display:none !important;
 }
-.article--inner .blog-product.placement-right{
-	float:right;
-	clear:right;
-	padding: 0 0 15px 25px;
+
+.article--inner .blog-product.placement-center{
+	display:inline-block;
+	max-width:200px;
 }
+.article--inner .blog-product.placement-right,
 .article--inner .blog-product.placement-left{
-	float:left;
-	clear:left;
-	padding: 0 25px 15px 0;
+	padding: 15px;
+	margin:auto;
 }
+@media screen and (min-width: 480px) {
+	.article--inner .blog-product.placement-right {
+		float: right;
+		clear: right;
+		padding: 0 0 15px 25px;
+	}
+
+	.article--inner .blog-product.placement-left {
+		float: left;
+		clear: left;
+		padding: 0 25px 15px 0;
+	}
+}
+
 .article--meta {
 	font-size: 0;
 	color: {{ settings.color_text_light }};
