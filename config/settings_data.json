@@ -216,8 +216,7 @@
         "blocks": {
           "1493171899575": {
             "type": "social_accounts",
-            "settings": {
-            }
+            "settings": {}
           },
           "1498182586280": {
             "type": "menu",
@@ -269,8 +268,7 @@
         "blocks": {
           "1498186879532": {
             "type": "filter",
-            "settings": {
-            }
+            "settings": {}
           }
         },
         "block_order": [
@@ -360,39 +358,32 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "judgeme_core_46962039": {
         "type": "shopify://apps/judge-me-product-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "1744347199190486471": {
         "type": "shopify://apps/advanced-wishlist/blocks/app/330d9272-08ea-4193-b3e0-475a69fa65fa",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "qikify-tmenu-1701320627": {
         "type": "shopify://apps/qikify-smart-menu-mega-menu/blocks/app-embed/19d2f1cd-1836-4a32-8937-03df3c601dc8",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "12512365888938011351": {
         "type": "shopify://apps/analyzify-ga4-ads-tracking/blocks/app-embed/69637cfd-dd6f-4511-aa97-7037cfb5515c",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "3576686563519644491": {
         "type": "shopify://apps/vwo/blocks/vwo-smartcode/2ce905b2-3842-4d20-b6b0-8c51fc208426",
@@ -402,12 +393,6 @@
           "settingsTolerance": 2000,
           "libraryTolerance": 2500,
           "existingJquery": "false"
-        }
-      },
-      "16212576608872179499": {
-        "type": "shopify://apps/sa-request-a-quote/blocks/app-embed-block/56d84fcb-37c7-4592-bb51-641b7ec5eef0",
-        "disabled": false,
-        "settings": {
         }
       }
     }
@@ -550,28 +535,23 @@
           "blocks": {
             "1493171899575": {
               "type": "social_accounts",
-              "settings": {
-              }
+              "settings": {}
             },
             "static-footer-0": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "1498182586280": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "1498182572847": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "static-footer-1": {
               "type": "newsletter",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -592,8 +572,7 @@
           "blocks": {
             "1498186879532": {
               "type": "filter",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -722,8 +701,7 @@
             },
             "1572476394007": {
               "type": "multi_column_menu",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -758,23 +736,19 @@
           "blocks": {
             "static-footer-0": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "1498182586280": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "1498182572847": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "1493171899575": {
               "type": "social_accounts",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -795,8 +769,7 @@
           "blocks": {
             "1498186879532": {
               "type": "filter",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -953,8 +926,7 @@
             },
             "1572476394007": {
               "type": "multi_column_menu",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -990,28 +962,23 @@
           "blocks": {
             "1493171899575": {
               "type": "social_accounts",
-              "settings": {
-              }
+              "settings": {}
             },
             "static-footer-0": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "1498182586280": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "1498182572847": {
               "type": "menu",
-              "settings": {
-              }
+              "settings": {}
             },
             "static-footer-1": {
               "type": "newsletter",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -1032,8 +999,7 @@
           "blocks": {
             "1498186879532": {
               "type": "filter",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
