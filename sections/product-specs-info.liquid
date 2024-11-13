@@ -194,7 +194,7 @@
                             <div class="sheet-row sheet-name document-inquiry" style="padding-left:21px; margin-top:-10px"> Are you looking for a specific document for this product?<br/><strong class="fake-link">Click here</strong> to make a request.</div>
                             {% assign full_url = request.host | append: request.path %}
 
-                            <div class="document-inquiry-form" style="display:none;"><iframe height="722" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x17n92om0rqevnr/"> <a href="https://jbutchpti.wufoo.com/forms/x17n92om0rqevnr/">Fill out my Wufoo form!</a> </iframe></div>
+                            <div class="document-inquiry-form" style="display:none;"><iframe height="722" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x17n92om0rqevnr/def/Field60={{ selected_variant.sku }}&Field63={{ product.title }}&Field62={{ full_url }}"> <a href="https://jbutchpti.wufoo.com/forms/x17n92om0rqevnr/">Fill out my Wufoo form!</a> </iframe></div>
                             <script>
 
                                 jQuery(document).ready(function($) {
