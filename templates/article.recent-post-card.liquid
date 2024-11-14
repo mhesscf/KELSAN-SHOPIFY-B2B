@@ -2,8 +2,24 @@
 {% comment %}<div class="sheet-row sheet-name">{% endcomment %}
   {% comment %}<i class="fa-solid fa-blog"></i></i> {{ article.title }} -> {{ article.published_at | date: "%Y-%m-%d" }}{% endcomment %}
 {% comment %}</div>{% endcomment %}
+
+{% if article.url contains "/news/" %}
+    {% assign catcolor = "#51ddf2" %}
+    {% assign category = "The News" %}
+{% elsif article.url contains "/clean/" %}
+    {% assign catcolor = "#a5ed92" %}
+    {% assign category = "The Clean" %}
+{% elsif article.url contains "/goods/" %}
+    {% assign catcolor = "#ffe763" %}
+    {% assign category = "The Goods" %}
+{% elsif article.url contains "/life/" %}
+    {% assign catcolor = "#f26ca5" %}
+    {% assign category = "The Life" %}
+{% endif %}
+
     <div class="recent-excerpt-container">
         <div class="recent-excerpt-img" style="background-image: url('{{ article.image | img_url: '465x465' }}'); ">
+            <div class="cat-block" style="background-color:{{ catcolor }}">{{ category }}</div>
         </div>
         <div class="recent-excerpt-text">
 
