@@ -1,0 +1,36 @@
+{% layout none %}
+{% comment %}<div class="sheet-row sheet-name">{% endcomment %}
+  {% comment %}<i class="fa-solid fa-blog"></i></i> {{ article.title }} -> {{ article.published_at | date: "%Y-%m-%d" }}{% endcomment %}
+{% comment %}</div>{% endcomment %}
+    <div class="recent-excerpt-container">
+        <div class="recent-excerpt-img" style="background-image: url('{{ article.image | img_url: '465x465' }}'); ">
+        </div>
+        <div class="recent-excerpt-text">
+
+            <div class="recent-excerpt-published">
+                <span class="published-date article--excerpt-meta-item">{{ article.published_at | date: format: 'month_day_year' }}</span><span class="article--excerpt-meta-item published-author">{{ article.author }}</span>
+            </div>
+
+
+            <div class="article--excerpt-title">
+                <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+            </div>
+
+            {% if article.excerpt_or_content != blank and 1==0 %}
+                <div class="article--excerpt-text rte">
+                    {% if article.excerpt == blank %}
+                        <p>{{ article.content | strip_html | truncatewords: 30 }}</p>
+                    {% else %}
+                        {{ article.excerpt }}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <a class="article--excerpt-button" href="{{ article.url }}" aria-label="read {{ article.title }}">
+                {{ 'blog.general.read_more' | t }}
+            </a>
+
+        </div>
+    </div>
+
+
