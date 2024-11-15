@@ -172,6 +172,14 @@
     "eaeef958-d68c-46ed-9c58-38a301607a21": {
       "type": "dept-related-category-area",
       "blocks": {
+        "related_cat_link_CLjnzG": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify://shop_images/vac-bags.jpg",
+            "title": "Vacuum Bags",
+            "url": "/collections/vacuum-bags"
+          }
+        },
         "b275edba-c6cc-4735-aa78-c6a8b83eef5d": {
           "type": "related_cat_link",
           "settings": {
@@ -204,22 +212,6 @@
             "url": "/collections/gaskets-miscellaneous-parts"
           }
         },
-        "b78d4666-2522-4b2c-95e9-bddbe1b0b790": {
-          "type": "related_cat_link",
-          "settings": {
-            "image": "shopify://shop_images/vac-squeegees.jpg",
-            "title": "Squeegees",
-            "url": "/collections/squeegees"
-          }
-        },
-        "related_cat_link_CLjnzG": {
-          "type": "related_cat_link",
-          "settings": {
-            "image": "shopify://shop_images/vac-bags.jpg",
-            "title": "Vacuum Bags",
-            "url": "/collections/vacuum-bags"
-          }
-        },
         "2625d1c7-ba10-43d5-9d0f-2df118a03dd0": {
           "type": "related_cat_link",
           "settings": {
@@ -227,16 +219,24 @@
             "title": "Vacuum Motors",
             "url": "/collections/vacuum-motors"
           }
+        },
+        "b78d4666-2522-4b2c-95e9-bddbe1b0b790": {
+          "type": "related_cat_link",
+          "settings": {
+            "image": "shopify://shop_images/vac-squeegees.jpg",
+            "title": "Squeegees",
+            "url": "/collections/squeegees"
+          }
         }
       },
       "block_order": [
+        "related_cat_link_CLjnzG",
         "b275edba-c6cc-4735-aa78-c6a8b83eef5d",
         "ff77e7bb-1690-4727-bdba-6dd2b69eeca7",
         "0157494e-2279-40e1-b8c6-2ac82a225b89",
         "e817ac0d-2bff-4a3f-8ce4-eb6b7bcf0204",
-        "b78d4666-2522-4b2c-95e9-bddbe1b0b790",
-        "related_cat_link_CLjnzG",
-        "2625d1c7-ba10-43d5-9d0f-2df118a03dd0"
+        "2625d1c7-ba10-43d5-9d0f-2df118a03dd0",
+        "b78d4666-2522-4b2c-95e9-bddbe1b0b790"
       ],
       "settings": {
         "block-title": "Related Categories"
