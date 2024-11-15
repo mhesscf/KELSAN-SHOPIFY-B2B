@@ -33,9 +33,9 @@
         "71ea2eaa-3b3a-4aa9-b752-787ed97ad793": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify://shop_images/cf-14x20-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/cf-14x20-bogo-mobile-banner.jpg",
-            "link": "/products/cleanfreak-dry-surface-strip-machine",
+            "banner-lg": "shopify://shop_images/cleanfreak-20-inch-burnisher-bogo-homepage-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/cleanfreak-20-inch-burnisher-bogo-homepage-mobile-banner.jpg",
+            "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
             "coupon-code": ""
           }
         }
@@ -421,8 +421,7 @@
     },
     "trustpilot_review_carousel_h8McnG": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
