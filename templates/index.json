@@ -11,9 +11,7 @@
   "sections": {
     "93a7d5e7-ec2f-4457-a011-598d6e3ce14a": {
       "type": "dynamic-html",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "title": "",
         "custom_html": "<style>\n.slideshow-slide__text span{\nfont-size:12px;\n}\n\n@media screen and (min-width: 720px) {\n.slideshow-slide__content.slideshow-slide__content--text-left{\npadding-right:58%;\n}\n}\n</style>"
@@ -157,9 +155,9 @@
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify://shop_images/cf-14x20-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/cf-14x20-bogo-mobile-banner.jpg",
-            "link": "/products/cleanfreak-dry-surface-strip-machine",
+            "banner-lg": "shopify://shop_images/cleanfreak-20-inch-burnisher-bogo-homepage-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/cleanfreak-20-inch-burnisher-bogo-homepage-mobile-banner.jpg",
+            "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
             "coupon-code": ""
           }
         }
@@ -174,9 +172,7 @@
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "enable_autoplay": true,
         "autoplay_duration": 9,
