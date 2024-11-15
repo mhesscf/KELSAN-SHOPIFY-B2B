@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "b91b388d-bac0-44aa-8483-a4047ba28302": {
@@ -15,7 +15,7 @@
         "7efb1e4b-afc9-46c0-8cc6-98309d987179": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/vacuum-accessories-dept-page.jpg",
+            "cat_image": "shopify://shop_images/vacuum-accessories-dept-page.jpg",
             "cat_title": "Vacuum Accessories",
             "cat_text": "We want you cleaning as efficiently as possible, so we stock a ton of different attachments, bags, belts, hoses, filters, squeegees, and more to keep your vacuum performing at its best."
           }
@@ -128,34 +128,34 @@
         "2621982f-d1a5-4ca6-9b1a-6eb6289ab797": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-attachments-tools.jpg",
+            "image": "shopify://shop_images/vac-attachments-tools.jpg",
             "title": "Attachments & Tools",
-            "url": "\/collections\/attachments-tools"
+            "url": "/collections/attachments-tools"
           }
         },
         "2666a9da-8cdd-4269-9865-d7fbf3fcbca6": {
           "type": "categorylink",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-bags.jpg",
-            "title": "Bags",
-            "url": "\/collections\/vacuum-bags"
+            "image": "shopify://shop_images/vac-bags.jpg",
+            "title": "Vacuum Bags",
+            "url": "/collections/vacuum-bags"
           }
         },
         "4af26343-7e50-4a92-8f36-6348967cfcee": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-batteries-chargers.jpg",
+            "image": "shopify://shop_images/vac-batteries-chargers.jpg",
             "title": "Batteries & Chargers",
-            "url": "\/collections\/vacuum-batteries-chargers"
+            "url": "/collections/vacuum-batteries-chargers"
           }
         },
         "a17afbb6-7cba-4eb3-9de7-381eb3d88d0a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-hoses.jpg",
+            "image": "shopify://shop_images/vac-hoses.jpg",
             "title": "Hoses",
-            "url": "\/collections\/hoses"
+            "url": "/collections/hoses"
           }
         }
       },
@@ -175,57 +175,57 @@
         "b275edba-c6cc-4735-aa78-c6a8b83eef5d": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-belts.jpg",
+            "image": "shopify://shop_images/vac-belts.jpg",
             "title": "Belts",
-            "url": "\/collections\/belts"
+            "url": "/collections/belts"
           }
         },
         "ff77e7bb-1690-4727-bdba-6dd2b69eeca7": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-brush-rolls.jpg",
+            "image": "shopify://shop_images/vac-brush-rolls.jpg",
             "title": "Brush Rolls",
-            "url": "\/collections\/brush-rolls"
+            "url": "/collections/brush-rolls"
           }
         },
         "0157494e-2279-40e1-b8c6-2ac82a225b89": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-filters.jpg",
+            "image": "shopify://shop_images/vac-filters.jpg",
             "title": "Filters",
-            "url": "\/collections\/filters"
+            "url": "/collections/filters"
           }
         },
         "e817ac0d-2bff-4a3f-8ce4-eb6b7bcf0204": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-gaskets-and-misc.jpg",
+            "image": "shopify://shop_images/vac-gaskets-and-misc.jpg",
             "title": "Gaskets & Miscellaneous Parts",
-            "url": "\/collections\/gaskets-miscellaneous-parts"
+            "url": "/collections/gaskets-miscellaneous-parts"
           }
         },
         "b78d4666-2522-4b2c-95e9-bddbe1b0b790": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-squeegees.jpg",
+            "image": "shopify://shop_images/vac-squeegees.jpg",
             "title": "Squeegees",
-            "url": "\/collections\/squeegees"
+            "url": "/collections/squeegees"
           }
         },
         "related_cat_link_CLjnzG": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-bags.jpg",
+            "image": "shopify://shop_images/vac-bags.jpg",
             "title": "Vacuum Bags",
-            "url": ""
+            "url": "/collections/vacuum-bags"
           }
         },
         "2625d1c7-ba10-43d5-9d0f-2df118a03dd0": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vac-motors.jpg",
+            "image": "shopify://shop_images/vac-motors.jpg",
             "title": "Vacuum Motors",
-            "url": "\/collections\/vacuum-motors"
+            "url": "/collections/vacuum-motors"
           }
         }
       },
@@ -315,32 +315,32 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Vacuum Accessories&q=ProTeam",
-            "brand-image": "shopify:\/\/shop_images\/proteam-100331-super-coachvac-vacuum-bags-bnd.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Vacuum Accessories&q=ProTeam",
+            "brand-image": "shopify://shop_images/proteam-100331-super-coachvac-vacuum-bags-bnd.jpg"
           }
         },
         "3cfec4ce-b473-47ce-9dd2-898c6cb8c7c6": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Tornado®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Vacuum Accessories&q=Tornado",
-            "brand-image": "shopify:\/\/shop_images\/tornado-wet-dry-accessory-kit.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Vacuum Accessories&q=Tornado",
+            "brand-image": "shopify://shop_images/tornado-wet-dry-accessory-kit.jpg"
           }
         },
         "c70a2d7e-e403-49ce-820b-09b699cfe70f": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Hoover®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=Hoover",
-            "brand-image": "shopify:\/\/shop_images\/m-pwr-40v-li-ion-battery-ch90040-front.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=Hoover",
+            "brand-image": "shopify://shop_images/m-pwr-40v-li-ion-battery-ch90040-front.jpg"
           }
         },
         "72c4e0e2-95c4-4cef-b669-11497608e957": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Vacuum Accessories&q=Viper",
-            "brand-image": "shopify:\/\/shop_images\/va20288.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Vacuum Accessories&q=Viper",
+            "brand-image": "shopify://shop_images/va20288.jpg"
           }
         }
       },
@@ -356,8 +356,7 @@
     },
     "trustpilot_review_carousel_73MgaJ": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
