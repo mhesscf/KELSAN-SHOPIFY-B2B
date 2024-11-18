@@ -243,7 +243,13 @@
                             <meta itemprop="sku" content="{{ all_products[bundlep].metafields.plytix.erp_sku }}" />
 
                             <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
-                                <meta itemprop="price" content="0" />
+                            {% comment %}test for FLR-PACKAGE10 on bing{% endcomment %}
+                                {% if product.handle == "14-inch-x-20-inch-orbital-floor-buffer-package" %}
+                                    <meta itemprop="price" content="{{ all_products[bundlep].price | money_without_currency | remove: ',' }}" />
+                                {% else %}
+                                    <meta itemprop="price" content="0" />
+                                {% endif %}
+
                                 <meta itemprop="priceCurrency" content="USD" />
                             </div>
 
