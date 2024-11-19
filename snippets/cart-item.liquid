@@ -35,7 +35,7 @@
       {% assign pstep = property.last %}
     {% endif %}
     {% if property.first == '_sf_eligible' %}
-            {% assign sf_eligible = false %}
+            {% assign sf_eligible = true %}
     {% endif %}
     {% if property.first == '_bogorule' %}
       {%- assign fgbogo-rule = property.last -%}
