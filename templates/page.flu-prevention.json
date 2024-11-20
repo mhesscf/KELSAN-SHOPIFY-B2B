@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "c7b526bb-6209-4ec6-a99c-eb4f109311d9": {
@@ -188,7 +188,7 @@
           "settings": {
             "stepnumber": "8",
             "stepheading": " Overview -",
-            "steptext": "<p>All of these steps will help prevent the spreading of viruses and flu like symptoms, but you'll have to decide which steps are the most important to you. Take care and be cautious of what you touch and especially who you come in contact with if you are not feeling well. Sometimes the best choice is to stay home and let yourself rest, instead of spreading the virus or flu.</p><p><strong>Read more information at the </strong><em><strong>Center for Disease Control</strong></em><strong> on </strong><a href=\"https://www.cdc.gov/flu/prevent/index.html\" title=\"preventing seasonal influenza\"><strong>preventing seasonal influenza</strong></a><strong>.</strong></p>",
+            "steptext": "<p>All of these steps will help prevent the spreading of viruses and flu like symptoms, but you'll have to decide which steps are the most important to you. Take care and be cautious of what you touch and especially who you come in contact with if you are not feeling well. Sometimes the best choice is to stay home and let yourself rest, instead of spreading the virus or flu.</p><p><strong>Read more information at the </strong><em><strong>Center for Disease Control</strong></em><strong> on </strong><a href=\"https://www.cdc.gov/flu/prevention/?CDC_AAref_Val=https://www.cdc.gov/flu/prevent/index.html\" title=\"https://www.cdc.gov/flu/prevention/?CDC_AAref_Val=https://www.cdc.gov/flu/prevent/index.html\"><strong>preventing seasonal influenza</strong></a><strong>.</strong></p>",
             "img_placement": "right",
             "product": ""
           }
@@ -204,14 +204,12 @@
         "98c93357-d483-46ff-bf4f-e2c818590bdc",
         "f57a98fe-801d-41af-913b-e517af2a474d"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "main": {
       "type": "page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
