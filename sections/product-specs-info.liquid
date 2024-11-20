@@ -241,7 +241,7 @@
                                     {%- if thishandle != "NA" and thishandle !="" -%}
                                         {% assign thisarticle = articles[thishandle] %}
                                         <div class="sheet-row sheet-name">
-                                            <a target="_blank" href="/{{ thishandle }}"><i class="fa-solid fa-blog"></i></i> {{ thisarticle.title }}</a>
+                                            <a target="_blank" href="/blogs/{{ thishandle }}"><i class="fa-solid fa-blog"></i></i> {{ thisarticle.title }}</a>
                                         </div>
                                     {%- endif -%}
                                 {%- endfor -%}
