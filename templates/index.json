@@ -22,12 +22,11 @@
       "blocks": {
         "banner_J8FYNy": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify://shop_images/2024-halloween-superfreak-offer-desktop-homepage-banner.jpg",
-            "banner-sm": "shopify://shop_images/2024-halloween-superfreak-offer-mobile-homepage-banner.jpg",
+            "banner-lg": "shopify://shop_images/2024-countdown-black-friday-sale-25-off-demo-desktop-homepage-banner.png",
+            "banner-sm": "shopify://shop_images/2024-countdown-black-friday-sale-25-off-demo-mobile-homepage-banner.png",
             "link": "/collections/demoed-refurbished-equipment",
-            "coupon-code": ""
+            "coupon-code": "DEMO25"
           }
         },
         "banner_fLBUa3": {
