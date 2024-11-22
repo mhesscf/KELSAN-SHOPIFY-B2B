@@ -77,12 +77,8 @@
         "rule_name": "Free 1/4 inch Male Quick Connect Brass Fitting",
         "rule_message": "You have added a tool and a machine that needs a 1/4 quick connect to be used together. Please click below to add one to your cart free of charge.",
         "promo-rule-version": "version2",
-        "required_product_list_1": [
-
-        ],
-        "required_product_list_2": [
-
-        ],
+        "required_product_list_1": [],
+        "required_product_list_2": [],
         "v2_list1_required_prefix": "TPL",
         "v2_list1_excluded_prefix": "",
         "v2_list1_collections_required": [
@@ -110,7 +106,7 @@
         "required_product_list_1": [
           "17-inch-rotary-floor-buffer",
           "cleanfreak-17-inch-rotary-floor-buffer-demo",
-          "clean-freak-20-inch-low-speed-rotary-machine"
+          "cleanfreak-20-inch-heavy-duty-floor-buffer"
         ],
         "required_product_list_2": [
           "20-inch-floor-machine-solution-tank",
@@ -120,14 +116,10 @@
         ],
         "v2_list1_required_prefix": "",
         "v2_list1_excluded_prefix": "",
-        "v2_list1_collections_required": [
-
-        ],
+        "v2_list1_collections_required": [],
         "v2_list2_required_prefix": "",
         "v2_list2_excluded_prefix": "",
-        "v2_list2_collections_required": [
-
-        ],
+        "v2_list2_collections_required": [],
         "free_gift_product": "1-2-inch-to-3-8-od-solution-tank-hose-conversion-kit"
       }
     }
