@@ -293,7 +293,7 @@
 
 
                 {%- if variant.metafields.plytix.tiered_pricing != blank and variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
-                    data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}:{{ variant.metafields.plytix.tiered_pricing_dollar_off }}"
+                    data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}:{{ variant.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",","" }}"
                 {%- else -%}
                   data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
                 {%- endif -%}
