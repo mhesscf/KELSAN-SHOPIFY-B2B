@@ -2,7 +2,7 @@
 
 {%- liquid  assign block_slide_type = block.type -%}
 
-
+{%- assign block_class = block.type -%}
 {% if block_slide_type == "banner" %}
   {%- liquid
     assign banner_lg = block.settings.banner-lg
@@ -104,6 +104,80 @@
       </div>
     </div>
   </div>
+{%- elsif block_slide_type == "slide_v2" -%}
+
+            {%- liquid
+                assign sotm_icon = block.settings.sotm_icon
+                assign background_image = block.settings.background_image
+                assign middle_image = block.settings.middle_image
+                assign right_image = block.settings.right_image
+                assign middle_image_alt = block.settings.middle_image_alt
+                assign right_image_alt = block.settings.right_image_alt
+                assign cust_block_css = block.settings.text_area_css
+                assign cust_block_liquid = block.settings.text_area_html
+                assign promo_link = block.settings.promo_link
+                assign button_one_label = block.settings.button_one_label
+                assign button_one_link = block.settings.button_one_link
+                assign button_two_label = block.settings.button_two_label
+                assign button_two_link = block.settings.button_two_link
+                assign button_color_override = block.settings.button_color_override
+
+                assign slide_number = block_index | plus: 1
+            -%}
+
+            <div
+                    class="slideshow-slide slideshow-v2 {{ block_class }}"
+                    aria-label="{{ 'sections.slideshow.slide_counter' | t: count: slide_number, total: section.blocks.size }}"
+                    tabindex="-1"
+                    data-slideshow-slide
+                    data-slide-index="{{ block_index }}"
+                    {{ block.shopify_attributes }}
+            >
+                <div class="slideshow-slide-v2__image-wrapper" data-slide-image-wrapper >
+                    <style>
+                        .slideshow-slide__content--{{ block.id }} .middle-image-col{
+                            {% if background_image %} background-image: url('{{ background_image }}'){% endif %}
+                        }
+
+                        @media screen and (min-width: 719px) {
+                            .slideshow-slide__content--{{ block.id }} {
+                                {% if background_image %} background-image: url('{{ background_image }}'){% endif %}
+                            }
+                            .slideshow-slide__content--{{ block.id }} .middle-image-col{
+                                background:none;
+                            }
+                        }
+                        {{ cust_block_css }}
+                    </style>
+
+                    <div class="slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
+                        <div class="slide-inner-contain">
+                            <div class="slide-col-middle middle-image-col"><div class="img-contain"><img class="img-responsive middle-image" alt="{{ middle_image_alt }}" src="{{ middle_image }}"/></div></div>
+                            <div class="slide-col-right right-image-col"><div class="img-contain">
+
+                                {%- if block.settings.sotm_icon != "NA" -%}
+                                    <img class="img-responsive right-image" alt="{{ right_image_alt }}" src="https://cdn.shopify.com/s/files/1/0624/3270/6740/files/sotm-logo-{{ block.settings.sotm_icon  }}.png"/>
+                                {%- else -%}
+                                    <img class="img-responsive right-image" alt="{{ right_image_alt }}" src="{{ right_image }}"/>
+                                {%- endif -%}
+                                </div></div>
+                            <div class="slide-col-left">
+                                <div class="slide-col-left-contain">
+                                    <div class="custom-text">{{ cust_block_liquid }}</div>
+                                    {%- if button_one_link -%}
+                                    <div class="btn-area">
+                                        <div class="slide-btn slide-btn-1"><a href="{{ button_one_link }}" class="main-atc-button" tabindex="0" style="">{{ button_one_label }}</a></div>
+                                        {%- if button_two_link -%}
+                                            <div class="slide-btn slide-btn-2"><a href="{{ button_two_link }}" class="main-atc-button" tabindex="0" style="">{{ button_two_label }}</a></div>
+                                        {%- endif -%}
+                                    </div>
+                                    {%- endif -%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 {%- elsif block_slide_type == "slide" -%}
   {%- liquid

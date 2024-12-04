@@ -10651,6 +10651,128 @@ display:none;
 	background-color: {{ settings.color_button_secondary_text }};
 }
 
+.slideshow-v2 .custom-text{
+	font-size:18px;
+	line-height:18px;
+	color: black;
+	margin-bottom:15px;
+}
+.slideshow-v2 .custom-text h1{
+	font-weight:bold;
+	font-size:26px;
+	line-height:26px;
+	margin:10px 0;
+}
+.slideshow-v2 .middle-image-col{
+	height:350px;
+}
+.slideshow-v2 .middle-image{
+	max-width:266px;
+	padding-top:15px;
+}
+.slideshow-v2 .slide-col-left-contain{
+	padding-top:15px;
+}
+.slideshow-v2 .slide-col-right{
+	position:absolute;
+	right:0px;
+	top:25px;
+	max-width:150px;
+}
+.slideshow-v2 .btn-area{
+	display:flex;
+}
+.slideshow-v2 .btn-area .slide-btn {
+	margin: 5px 30px 5px 0;
+}
+
+.slideshow-v2 .btn-area .slide-btn a {
+	padding-left: 15px;
+	padding-right: 15px;
+	display: inline-block;
+	min-width: 175px;
+}
+
+@media screen and (min-width: 719px) {
+	.slideshow-v2 .slide-col-left-contain{
+		padding-top:0;
+	}
+	.slideshow-v2 .custom-text{
+		color: white;
+	}
+	.slideshow-v2 .custom-text h1{
+		color:black;
+	}
+	.slideshow-slide-v2__image-wrapper{
+		height:350px;
+	}
+	.slideshow-v2 .slideshow-slide__content .slide-inner-contain{
+		display: flex;
+		align-items:center;
+		margin:auto;
+		max-width:1200px;
+	}
+
+	.slideshow-v2 .slide-col-left {
+		flex-basis: 50%;
+		padding: 30px 10px 30px 30px;
+		order:1;
+	}
+
+	.slideshow-v2 .slide-col-middle {
+		flex-basis: 50%;
+		order:2;
+	}
+	.slideshow-v2 .middle-image{
+		max-width:unset;
+		padding:0
+	}
+	.slideshow-v2 .slide-col-right{
+		order:3;
+	}
+
+	.slideshow-v2 .btn-area{
+		flex-wrap:wrap;
+	}
+
+}
+@media screen and (min-width: 859px) {
+	.slideshow-v2 .slide-col-left {
+		flex-basis: 46%;
+	}
+
+	.slideshow-v2 .slide-col-middle {
+		flex-basis: 27%;
+	}
+	.slideshow-v2 .slide-col-right{
+		position:relative;
+		flex-basis: 27%;
+		max-width:unset;
+		top:0;
+		right:0;
+	}
+}
+@media screen and (min-width: 1279px) {
+	.slideshow-v2 .slide-col-left {
+		flex-basis: 43.3%;
+	}
+	.slideshow-v2 .slide-col-middle {
+		flex-basis: 25%;
+	}
+	.slideshow-v2 .slide-col-right{
+		flex-basis: 32%;
+	}
+	.slideshow-v2 .custom-text{
+		font-size:22px;
+		line-height:22px;
+	}
+	.slideshow-v2 .custom-text h1{
+		font-size:36px;
+		line-height:38px;
+	}
+
+}
+
 .slideshow-pagination {
 	position: absolute;
 	bottom: 0px;
