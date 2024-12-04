@@ -1,6 +1,6 @@
 {% layout none %}
 {%- assign crawlcheck = false -%}
-{%- for c in all_products[product_handle].collections -%}
+{%- for c in product.collections -%}
     {%- if c.handle == "discontinued" -%}
         {%- assign crawlcheck = true -%}
     {% endif %}

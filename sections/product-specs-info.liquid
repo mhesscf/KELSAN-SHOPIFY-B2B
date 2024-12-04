@@ -217,15 +217,22 @@
 
 
                     {%- assign blog_handles = product.metafields.plytix.related_blogs | split: "," -%}
-
+                    {%- assign page_handles = product.metafields.plytix.related_pages | split: "," -%}
                     {%- assign blogcoutner = 0 -%}
                     {%- assign pagecoutner = 0 -%}
                     {%- for handle in blog_handles -%}
                         {% assign thishandle = handle | strip %}
                         {%- if thishandle != "NA" and thishandle !="" -%}
-                            {%- assign blogcoutner = coutner | plus: 1 -%}
+                            {%- assign blogcoutner = blogcoutner | plus: 1 -%}
                         {%- endif -%}
                     {%- endfor -%}
+                    {%- for handle in page_handles -%}
+                        {% assign thishandle = handle | strip %}
+                        {%- if thishandle != "NA" and thishandle !="" -%}
+                            {%- assign pagecoutner = pagecoutner | plus: 1 -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+
 
                     {%- if blogcoutner > 0 or pagecoutner > 0 -%}
                         <h2 style="margin-top:30px;" >Related Links</h2>
@@ -241,7 +248,23 @@
                                     {%- if thishandle != "NA" and thishandle !="" -%}
                                         {% assign thisarticle = articles[thishandle] %}
                                         <div class="sheet-row sheet-name">
-                                            <a target="_blank" href="/blogs/{{ thishandle }}"><i class="fa-solid fa-blog"></i></i> {{ thisarticle.title }}</a>
+                                            <a target="_blank" href="/blogs/{{ thishandle }}"><i class="fa-solid fa-blog"></i> {{ thisarticle.title }}</a>
+                                        </div>
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            {%- endif -%}
+
+                            {%- if pagecoutner > 0 -%}
+                                <div class="sheet-row">
+                                    <div id="blog-area" class="sheet-label"><strong>Related Pages</strong></div>
+                                </div>
+
+                                {%- for handle in page_handles -%}
+                                    {%- assign thishandle = handle | strip -%}
+                                    {%- if thishandle != "NA" and thishandle !="" -%}
+                                        {% assign thisarticle = pages[thishandle] %}
+                                        <div class="sheet-row sheet-name">
+                                            <a target="_blank" href="/pages/{{ thishandle }}"><i class="fa-solid fa-link"></i> {{ thisarticle.title }}</a>
                                         </div>
                                     {%- endif -%}
                                 {%- endfor -%}

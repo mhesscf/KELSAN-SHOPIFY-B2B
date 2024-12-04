@@ -374,7 +374,7 @@
                   {% endif %}
                   {% if isSpecial == false %}
                     {%- if variant.metafields.plytix.tiered_pricing != blank and variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
-                      data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}:{{ variant.metafields.plytix.tiered_pricing_dollar_off }}"
+                      data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}:{{ variant.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",","" }}"
                     {%- else -%}
                       data-var_tieredpricing="{{ variant.metafields.plytix.tiered_pricing }}"
                     {%- endif -%}
@@ -411,7 +411,7 @@
             {% comment %}Values for custom.js to pull to add to cart: changes on variation select{% endcomment %}
         {%- capture tiervalue -%}
             {%- if current_variant.metafields.plytix.tiered_pricing != blank and current_variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
-              {{ current_variant.metafields.plytix.tiered_pricing }}:{{ current_variant.metafields.plytix.tiered_pricing_dollar_off }}
+              {{ current_variant.metafields.plytix.tiered_pricing }}:{{ current_variant.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",",""  }}
             {%- else -%}
               {{ current_variant.metafields.plytix.tiered_pricing }}
             {%- endif -%}

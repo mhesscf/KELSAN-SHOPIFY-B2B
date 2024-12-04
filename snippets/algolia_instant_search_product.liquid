@@ -220,7 +220,7 @@
 
     function tierpricing(tier_pricing,tier_dollar_off){
         if(tier_dollar_off > 0){
-            return(tier_pricing+":"+tier_dollar_off);
+            return(tier_pricing+":"+Number(tier_dollar_off).toFixed(2));
         }else{
             return("");
         }

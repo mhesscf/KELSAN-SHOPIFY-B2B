@@ -562,7 +562,7 @@
 
 
             {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
-              <div class="productitem--property" data-properties-tierdprice="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off }}" />
+              <div class="productitem--property" data-properties-tierdprice="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",",""  }}" />
             {%- else -%}
               <div class="productitem--property" data-properties-tierdprice="{{ product.metafields.plytix.tiered_pricing }}" />
             {%- endif -%}
@@ -657,7 +657,7 @@
                           data-availqty="{{ product.selected_or_first_available_variant.inventory_quantity }}"
                           {% if isSpecial == false %}
                             {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
-                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off }}"
+                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",","" }}"
                             {%- else -%}
                               data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
                             {%- endif -%}
