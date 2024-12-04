@@ -2204,8 +2204,10 @@ footer .footer-icon svg{
 .pxs-newsletter-text table,
 .shoppable-image__text-box-subheading table,
 .image-with-text__text table {
+	border: 1px solid rgba(128, 128, 128, 0.16)
+	{% comment %}
 	border: 1px solid {{ color_border | color_modify: 'alpha', 0.16 }};
-	{% comment %}box-shadow: 0 1px 4px {{ color_border | color_modify: 'alpha', 0.11 }};{% endcomment %}
+	box-shadow: 0 1px 4px {{ color_border | color_modify: 'alpha', 0.11 }};{% endcomment %}
 }
 
 .pagination--chevron-right,

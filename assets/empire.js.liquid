@@ -29185,7 +29185,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                     var discountSavings = dollarOffTotal * 100 * lineitemqty;
 
                                 } else if (tierprop.includes("|")) {
-                                    // percent off for DS work
+                                    {%- comment -%}// percent off for DS work
                                     const tierSplitArry = tierprop.split(":");
                                     const tierLevelArry = tierSplitArry[0].split("|");
                                     var discountPercent = 0;
@@ -29222,7 +29222,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                     });
                                     var discountTitle = valid_tier_percent + "% off for +" + valid_tier;
                                     var discountSavings = (orgprice * valid_tier_percent * lineitemqty)/100;
-
+                                    {%- endcomment -%}
 
                                 }
 
