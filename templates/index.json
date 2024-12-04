@@ -20,6 +20,25 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "slide_v2_nhVKm9": {
+          "type": "slide_v2",
+          "settings": {
+            "sotm_icon": "1",
+            "background_image": "https://www.cleanfreak.com/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
+            "middle_image": "https://www.cleanfreak.com/cdn/shop/files/test-image-4-banner.jpg?v=1733326204",
+            "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machines",
+            "right_image": "",
+            "right_image_alt": "",
+            "text_area_html": "<h2>CleanFreak® Commercial Carpet Spot Cleaning Machine</h2>\nNow Only $something",
+            "text_area_css": "",
+            "promo_link": "",
+            "button_one_label": "Heated",
+            "button_one_link": "/products/heated-carpet-spot-cleaner",
+            "button_two_label": "Un-Heated",
+            "button_two_link": "/products/commercial-carpet-spot-cleaning-machine",
+            "button_color_override": ""
+          }
+        },
         "banner_J8FYNy": {
           "type": "banner",
           "settings": {
@@ -162,6 +181,7 @@
         }
       },
       "block_order": [
+        "slide_v2_nhVKm9",
         "banner_J8FYNy",
         "banner_fLBUa3",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
