@@ -149,32 +149,60 @@
                         }
                         {{ cust_block_css }}
                     </style>
+                    {%- assign click_event = "" -%}
+                    {%- assign additional_classes = "" -%}
+                    {%- if block.settings.bg_link != blank -%}
+                        {%- capture click_event -%}
+                            {%- if promo_link != blank -%}
+                                onclick="promoRedirect('{{ promo_link }}','{{ block.settings.bg_link }}');"
+                            {%- else -%}
+                                onclick="window.location.href = '{{ block.settings.bg_link }}';"
+                            {%- endif-%}
+                        {%- endcapture -%}
+                        {%- assign additional_classes = "fake-link-pointer" -%}
+                    {%- endif -%}
 
-                    <div class="slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
-                        <div class="slide-inner-contain">
-                            <div class="slide-col-middle middle-image-col"><div class="img-contain"><img class="img-responsive middle-image" alt="{{ middle_image_alt }}" src="{{ middle_image }}"/></div></div>
-                            <div class="slide-col-right right-image-col"><div class="img-contain">
+                    <div {{ click_event }} class="{{ additional_classes }} slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
+                            <div class="slide-inner-contain">
+                                <div class="slide-col-middle middle-image-col"><div class="img-contain"><img class="img-responsive middle-image" alt="{{ middle_image_alt }}" src="{{ middle_image }}"/></div></div>
+                                <div class="slide-col-right right-image-col"><div class="img-contain">
 
-                                {%- if block.settings.sotm_icon != "NA" -%}
-                                    <img class="img-responsive right-image" alt="{{ right_image_alt }}" src="https://cdn.shopify.com/s/files/1/0624/3270/6740/files/sotm-logo-{{ block.settings.sotm_icon  }}.png"/>
-                                {%- else -%}
-                                    <img class="img-responsive right-image" alt="{{ right_image_alt }}" src="{{ right_image }}"/>
-                                {%- endif -%}
-                                </div></div>
-                            <div class="slide-col-left">
-                                <div class="slide-col-left-contain">
-                                    <div class="custom-text">{{ cust_block_liquid }}</div>
-                                    {%- if button_one_link -%}
-                                    <div class="btn-area">
-                                        <div class="slide-btn slide-btn-1"><a href="{{ button_one_link }}" class="main-atc-button" tabindex="0" style="">{{ button_one_label }}</a></div>
-                                        {%- if button_two_link -%}
-                                            <div class="slide-btn slide-btn-2"><a href="{{ button_two_link }}" class="main-atc-button" tabindex="0" style="">{{ button_two_label }}</a></div>
+                                    {%- if block.settings.sotm_icon != "NA" -%}
+                                        <img class="img-responsive right-image" alt="{{ right_image_alt }}" src="https://cdn.shopify.com/s/files/1/0624/3270/6740/files/sotm-logo-{{ block.settings.sotm_icon  }}.png"/>
+                                    {%- else -%}
+                                        <img class="img-responsive right-image" alt="{{ right_image_alt }}" src="{{ right_image }}"/>
+                                    {%- endif -%}
+                                    </div></div>
+                                <div class="slide-col-left">
+                                    <div class="slide-col-left-contain">
+                                        <div class="custom-text">{{ cust_block_liquid }}</div>
+                                        {%- if button_one_link -%}
+                                        <div class="btn-area">
+
+                                            {%- capture btn1_click_event -%}
+                                                {%- if promo_link != blank -%}
+                                                    onclick="promoRedirect('{{ promo_link }}','{{ button_one_link }}');"
+                                                {%- else -%}
+                                                    onclick="window.location.href = '{{ button_one_link }}';"
+                                                {%- endif-%}
+                                            {%- endcapture -%}
+
+                                            <div {{ btn1_click_event }} class="slide-btn slide-btn-1 fake-link-pointer main-atc-button" tabindex="0" style="">{{ button_one_label }}</div>
+                                            {%- if button_two_link -%}
+                                                {%- capture btn2_click_event -%}
+                                                    {%- if promo_link != blank -%}
+                                                        onclick="promoRedirect('{{ promo_link }}','{{ button_two_link }}');"
+                                                    {%- else -%}
+                                                        onclick="window.location.href = '{{ button_two_link }}';"
+                                                    {%- endif-%}
+                                                {%- endcapture -%}
+                                                <div {{ btn2_click_event }} class="slide-btn slide-btn-2 main-atc-button fake-link-pointer" tabindex="0" style="">{{ button_two_label }}</div>
+                                            {%- endif -%}
+                                        </div>
                                         {%- endif -%}
                                     </div>
-                                    {%- endif -%}
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
