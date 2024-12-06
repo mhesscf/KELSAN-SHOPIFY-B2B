@@ -24,8 +24,8 @@
           "type": "slide_v2",
           "settings": {
             "sotm_icon": "1",
-            "background_image": "https://www.cleanfreak.com/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "https://www.cleanfreak.com/cdn/shop/files/carpet-spot-cleaner-jan-special.png?v=1733326204",
+            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
+            "middle_image": "/cdn/shop/files/carpet-spot-cleaner-jan-special.png?v=1733326204",
             "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machines",
             "right_image": "",
             "right_image_alt": "",
