@@ -22,6 +22,7 @@
       "blocks": {
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
@@ -42,6 +43,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
