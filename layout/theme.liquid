@@ -399,7 +399,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
 {% section 'static-announcement' %}
 <div class="intersection-target" data-header-intersection-target></div>
 <div class="site-main-dimmer" data-site-main-dimmer></div>
-<main id="site-main" class="site-main" aria-label="Main content" tabindex="-1">
+<main id="site-main" class="site-main sitemain-{{ template.name }}" aria-label="Main content" tabindex="-1">
     {%- comment -%}
     {%- if template contains 'product' or template contains 'collection' or page.url == '/blogs/news' or template contains 'article'  -%}
     {% render 'breadcrumbs' %}
