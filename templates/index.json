@@ -64,12 +64,11 @@
         },
         "banner_J8FYNy": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify://shop_images/2024-countdown-black-friday-sale-25-off-demo-desktop-homepage-banner.png",
-            "banner-sm": "shopify://shop_images/2024-countdown-black-friday-sale-25-off-demo-mobile-homepage-banner.png",
-            "link": "/collections/demoed-refurbished-equipment",
-            "coupon-code": "DEMO25"
+            "banner-lg": "shopify://shop_images/2024-12-days-of-xmas-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2024-12-days-of-xmas-mobile-banner.jpg",
+            "link": "https://www.facebook.com/cleanfreakcom",
+            "coupon-code": ""
           }
         },
         "banner_fLBUa3": {
@@ -88,7 +87,7 @@
             "background_image": "shopify://shop_images/flash-sale-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/flash-sale-800x427.jpg",
             "title": "Get 12% off your entire order for 2 days only!",
-            "text": "Code: FLASH12<br>Valid 4/4/24 – 4/5/24<br><span>*Restrictions apply</span>",
+            "text": "Code: FLASH12Valid 4/4/24 – 4/5/24*Restrictions apply",
             "color": "#ffffff",
             "link": "/",
             "promo_link": "FLASH12",
