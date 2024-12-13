@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "5af3278b-64fb-4373-9e7a-816a1fde519a": {
@@ -15,7 +15,7 @@
         "d5af6ae8-054d-4cca-93a1-3191a82a1911": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/carpet-extractor-parts-dept-page.jpg",
+            "cat_image": "shopify://shop_images/carpet-extractor-parts-dept-page.jpg",
             "cat_title": "Carpet Extractor Parts",
             "cat_text": "Many tools, parts & accessories in stock for major brands like CleanFreak®, Mytee®, Sandia, Trusted Clean & more."
           }
@@ -128,41 +128,49 @@
         "5bb3ee5c-6f02-45d8-8120-6f6920283b23": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/components.jpg",
+            "image": "shopify://shop_images/components.jpg",
             "title": "Carpet Extractor Components",
-            "url": "\/collections\/extractor-components"
+            "url": "/collections/extractor-components"
           }
         },
         "4f0b1094-61a6-4981-a54c-ffd0a11f5f60": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-extractor-heaters.jpg",
+            "image": "shopify://shop_images/carpet-extractor-heaters.jpg",
             "title": "Carpet Extractor Heaters",
-            "url": "\/collections\/carpet-extractor-heaters"
+            "url": "/collections/carpet-extractor-heaters"
           }
         },
         "46dc11ce-96e0-46ab-a61f-5bf888701702": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pumps-for-carpet-extractors.jpg",
+            "image": "shopify://shop_images/pumps-for-carpet-extractors.jpg",
             "title": "Carpet Extractor Pumps",
-            "url": "\/collections\/pumps"
+            "url": "/collections/pumps"
           }
         },
         "91f20a04-5de6-4559-8167-c722672ebd23": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/extractor-vacuum-motors.jpg",
+            "image": "shopify://shop_images/extractor-vacuum-motors.jpg",
             "title": "Carpet Extractor Vacuum Motors",
-            "url": "\/collections\/extractor-vacuum-motors"
+            "url": "/collections/extractor-vacuum-motors"
           }
         },
         "723e14a9-f3d1-45ad-b133-190999937017": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/drag-wand-jets-parts.jpg",
+            "image": "shopify://shop_images/drag-wand-jets-parts.jpg",
             "title": "Drag Wand Jets & Parts",
-            "url": "\/collections\/drag-wand-jets-parts"
+            "url": "/collections/drag-wand-jets-parts"
+          }
+        },
+        "categorylink_FzAHz6": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/extractor-cylindrical-scrub-brushes-dept.jpg",
+            "title": "Self-Contained Carpet Extractor Brushes",
+            "url": "/collections/self-contained-carpet-extractor-brushes"
           }
         }
       },
@@ -171,7 +179,8 @@
         "4f0b1094-61a6-4981-a54c-ffd0a11f5f60",
         "46dc11ce-96e0-46ab-a61f-5bf888701702",
         "91f20a04-5de6-4559-8167-c722672ebd23",
-        "723e14a9-f3d1-45ad-b133-190999937017"
+        "723e14a9-f3d1-45ad-b133-190999937017",
+        "categorylink_FzAHz6"
       ],
       "settings": {
         "block-title": "Carpet Extractor Parts by Type"
@@ -183,33 +192,33 @@
         "ebd662a3-c210-4cd3-a0ad-51b63c7c78cb": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/drag-wands.jpg",
+            "image": "shopify://shop_images/drag-wands.jpg",
             "title": "Drag Wands",
-            "url": "\/collections\/drag-wands"
+            "url": "/collections/drag-wands"
           }
         },
         "b2d358f5-4efe-4434-aabd-1fa1b2808c58": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/extractor-hoses.jpg",
+            "image": "shopify://shop_images/extractor-hoses.jpg",
             "title": "Extractor Hoses",
-            "url": "\/collections\/extractor-hoses"
+            "url": "/collections/extractor-hoses"
           }
         },
         "0888881f-6e55-4fac-81b8-9fb6274369b9": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/power-brushes.jpg",
+            "image": "shopify://shop_images/power-brushes.jpg",
             "title": "Power Brushes",
-            "url": "\/collections\/power-brushes"
+            "url": "/collections/power-brushes"
           }
         },
         "4a469a04-f0a7-4df9-b00d-9b4fd8fd61bc": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/upholstery-tools.jpg",
+            "image": "shopify://shop_images/upholstery-tools.jpg",
             "title": "Upholstery Tools",
-            "url": "\/collections\/upholstery-tools"
+            "url": "/collections/upholstery-tools"
           }
         }
       },
@@ -303,24 +312,24 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Trusted%20Clean&refinementList%5Bproduct_type%5D%5B0%5D=Carpet%20Extractor%20Parts&q=Trusted%20Clean",
-            "brand-image": "shopify:\/\/shop_images\/2-stage-vac-motor.jpg"
+            "brand-link": "/collections/vendors?refinementList%5Bvendor%5D%5B0%5D=Trusted%20Clean&refinementList%5Bproduct_type%5D%5B0%5D=Carpet%20Extractor%20Parts&q=Trusted%20Clean",
+            "brand-image": "shopify://shop_images/2-stage-vac-motor.jpg"
           }
         },
         "19529c50-a18b-49af-a081-1f6fbb4f3ee8": {
           "type": "brandlink",
           "settings": {
             "brand-title": "EDIC",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Edic&refinementList[product_type][0]=Carpet Extractor Parts&q=Edic",
-            "brand-image": "shopify:\/\/shop_images\/1-4-male.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Edic&refinementList[product_type][0]=Carpet Extractor Parts&q=Edic",
+            "brand-image": "shopify://shop_images/1-4-male.jpg"
           }
         },
         "982f2aea-b8fd-44ac-b80d-1f9e079c28fe": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Carpet Extractor Parts&q=Mytee",
-            "brand-image": "shopify:\/\/shop_images\/a949_mufflers.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Carpet Extractor Parts&q=Mytee",
+            "brand-image": "shopify://shop_images/a949_mufflers.jpg"
           }
         }
       },
@@ -335,8 +344,7 @@
     },
     "trustpilot_review_carousel_XFaTFL": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
