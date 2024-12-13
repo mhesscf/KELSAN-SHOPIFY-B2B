@@ -125,6 +125,14 @@
     "cc9065fd-6183-4668-a6d3-4ae7a1782eb0": {
       "type": "dept-category-area",
       "blocks": {
+        "categorylink_FzAHz6": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/extractor-cylindrical-scrub-brushes-dept.jpg",
+            "title": "Self-Contained Carpet Extractor Brushes",
+            "url": "/collections/self-contained-carpet-extractor-brushes"
+          }
+        },
         "5bb3ee5c-6f02-45d8-8120-6f6920283b23": {
           "type": "categorylink",
           "settings": {
@@ -139,6 +147,14 @@
             "image": "shopify://shop_images/carpet-extractor-heaters.jpg",
             "title": "Carpet Extractor Heaters",
             "url": "/collections/carpet-extractor-heaters"
+          }
+        },
+        "723e14a9-f3d1-45ad-b133-190999937017": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/drag-wand-jets-parts.jpg",
+            "title": "Drag Wand Jets & Parts",
+            "url": "/collections/drag-wand-jets-parts"
           }
         },
         "46dc11ce-96e0-46ab-a61f-5bf888701702": {
@@ -156,31 +172,15 @@
             "title": "Carpet Extractor Vacuum Motors",
             "url": "/collections/extractor-vacuum-motors"
           }
-        },
-        "723e14a9-f3d1-45ad-b133-190999937017": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify://shop_images/drag-wand-jets-parts.jpg",
-            "title": "Drag Wand Jets & Parts",
-            "url": "/collections/drag-wand-jets-parts"
-          }
-        },
-        "categorylink_FzAHz6": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify://shop_images/extractor-cylindrical-scrub-brushes-dept.jpg",
-            "title": "Self-Contained Carpet Extractor Brushes",
-            "url": "/collections/self-contained-carpet-extractor-brushes"
-          }
         }
       },
       "block_order": [
+        "categorylink_FzAHz6",
         "5bb3ee5c-6f02-45d8-8120-6f6920283b23",
         "4f0b1094-61a6-4981-a54c-ffd0a11f5f60",
-        "46dc11ce-96e0-46ab-a61f-5bf888701702",
-        "91f20a04-5de6-4559-8167-c722672ebd23",
         "723e14a9-f3d1-45ad-b133-190999937017",
-        "categorylink_FzAHz6"
+        "46dc11ce-96e0-46ab-a61f-5bf888701702",
+        "91f20a04-5de6-4559-8167-c722672ebd23"
       ],
       "settings": {
         "block-title": "Carpet Extractor Parts by Type"
