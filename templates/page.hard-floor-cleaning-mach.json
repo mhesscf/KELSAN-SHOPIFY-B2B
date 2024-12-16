@@ -33,9 +33,9 @@
         "71ea2eaa-3b3a-4aa9-b752-787ed97ad793": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify://shop_images/cleanfreak-20-inch-burnisher-bogo-homepage-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/cleanfreak-20-inch-burnisher-bogo-homepage-mobile-banner.jpg",
-            "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
+            "banner-lg": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-mobile-banner.jpg",
+            "link": "/products/trusted-clean-17-inch-commercial-grade-floor-buffer",
             "coupon-code": ""
           }
         }
