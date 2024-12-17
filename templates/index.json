@@ -22,7 +22,6 @@
       "blocks": {
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
@@ -43,7 +42,6 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
@@ -64,6 +62,7 @@
         },
         "banner_J8FYNy": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/2024-12-days-of-xmas-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/2024-12-days-of-xmas-mobile-banner.jpg",
