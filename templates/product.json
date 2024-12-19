@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,32 +14,27 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "vendor": {
           "type": "vendor",
-          "settings": {
-          }
+          "settings": {}
         },
         "judgeme_preview_badge_product_page_f9b6a453": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
         "rating": {
           "type": "rating",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "7003d446-734f-49c7-af0b-8d509e436c01": {
-          "type": "shopify:\/\/apps\/hulk-advanced-wishlist\/blocks\/wishlist-btn\/330d9272-08ea-4193-b3e0-475a69fa65fa",
+          "type": "shopify://apps/advanced-wishlist/blocks/wishlist-btn/330d9272-08ea-4193-b3e0-475a69fa65fa",
           "disabled": true,
           "settings": {
             "button_style": "style_4",
@@ -60,11 +64,10 @@
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "subscriptions_app_block_8Vn9dM": {
-          "type": "shopify:\/\/apps\/subscriptions\/blocks\/app-block\/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
           "settings": {
             "color_text_title": "#6d7175",
             "color_text_body": "#6d7175",
@@ -86,8 +89,7 @@
         "share": {
           "type": "share",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -115,13 +117,11 @@
     "1663861234f6954415": {
       "type": "product-frequently-bought",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "16639438241c11df3b": {
       "type": "product-manufacturer-info",
-      "settings": {
-      }
+      "settings": {}
     },
     "d10cdd15-1629-4449-91e1-ec84724ecc7d": {
       "type": "related-tabs",
@@ -183,35 +183,31 @@
       "type": "product-info-features",
       "blocks": {
         "2c2ceb11-9376-41b8-a6fc-df382fe72bcc": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
         "2c2ceb11-9376-41b8-a6fc-df382fe72bcc"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "1663947190a886277c": {
       "type": "product-video",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "16638604598b87d9a0": {
       "type": "product-specs-info",
-      "settings": {
-      }
+      "settings": {}
     },
     "judgeme_section_review_widget_0f5e": {
       "type": "apps",
       "blocks": {
         "judgeme_review_widget_0dca22e1": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
         }
       },
       "block_order": [
@@ -239,8 +235,7 @@
     "166387146685195dfc": {
       "type": "product-bottom-strap",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "166257625372457859": {
       "type": "apps",
