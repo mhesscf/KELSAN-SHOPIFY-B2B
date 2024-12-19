@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -14,34 +14,28 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "vendor": {
           "type": "vendor",
-          "settings": {
-          }
+          "settings": {}
         },
         "rating": {
           "type": "rating",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "2ae8ae39-f40e-42fe-8891-5f4966df3b19": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "form": {
           "type": "form",
@@ -51,14 +45,12 @@
         },
         "fcf2b793-e43b-41ab-8b67-4309e4eca5e6": {
           "type": "bundlegrid",
-          "settings": {
-          }
+          "settings": {}
         },
         "share": {
           "type": "share",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -141,28 +133,25 @@
       "blocks": {
         "1984145a-f3f4-4800-a839-af4653eaefe1": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
         "1984145a-f3f4-4800-a839-af4653eaefe1"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "1664585068f32052d4": {
       "type": "product-specs-info",
-      "settings": {
-      }
+      "settings": {}
     },
     "1671046106be9c0e4f": {
       "type": "apps",
       "blocks": {
         "f9ae4694-c701-4477-8fb4-c5efd864a56e": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "disabled": true,
+          "settings": {}
         }
       },
       "block_order": [
