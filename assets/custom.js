@@ -87,7 +87,7 @@ jQuery(document).ready(function($){
         //console.log(document.cookie);
     });
 
-    $('.template-product select').on('change', function(){
+    $('.sitemain-product select').on('change', function(){
         setTimeout(function(){
             var updPrice = $('.template-product .product-pricing .price__current .money').text();
             var pOnly = updPrice.replace("$", "");
