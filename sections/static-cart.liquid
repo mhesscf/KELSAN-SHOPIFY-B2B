@@ -180,8 +180,41 @@
     {% comment %}calculate total discount of 10% SF discount{% endcomment %}
     {% for cartitem in cart.items %}
       {% if cartitem.product.tags contains 'SuperFreak Discount Eligible' %}
-        {% assign total_sf_savings = total_sf_savings | plus: cartitem.final_line_price %}
-      {% endif %}
+
+        {% unless cartitem.properties == empty %}
+          {%- assign org_price = 0 -%}
+          {%- assign itemtier = "" -%}
+          {% if cartitem.price > 0 %}
+            {% for property in cartitem.properties %}
+
+              {% if property.first == '_org_price' %}
+                    {%- assign org_price = property.last | plus: 0 | times: cartitem.quantity -%}
+              {% endif %}
+              {% if property.first == '_tiered_pricing' %}
+                {%- assign itemtier = property.last -%}
+              {% endif %}
+            {% endfor %}
+
+            {% if itemtier contains ":" %}
+
+              {%- assign tiered_pricing_sections_arr = itemtier | split: ":"  -%}
+              {%- assign tiered_pricing_arry = tiered_pricing_sections_arr[0] | split: "|"  -%}
+
+              {%- for tier in tiered_pricing_arry -%}
+                {%- assign tier_int = tier | plus: 0  -%}
+                {%- if cartitem.quantity >=  tier_int -%}
+                  {%- assign valid_tier = tier  -%}
+                  {%- assign valid_tier_count = forloop.index0 | plus: 1  -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- assign tier_doll_off = tiered_pricing_sections_arr[1] | times: valid_tier_count -%}
+              {%- assign discount = tier_doll_off | times: cartitem.quantity | times: 100 -%}
+              {%- assign org_price = org_price | minus: discount -%}
+            {% endif %}
+            {% assign total_sf_savings = total_sf_savings | plus: org_price %}
+          {% endif %}
+          {% endunless %}
+       {% endif %}
     {% endfor %}
     {% if total_sf_savings > 0 %}
       <div class="sf-promo-link promo-needed" style="display:none;" ><div>As a SuperFreak member, you can save <span class="sf-discount">{{ total_sf_savings | times: 0.1 | floor | money  }}</span> on this order. <br><a style="cursor:pointer" onClick="sfApply(1);">Click here to apply the promo code for this discount.</a></div></div>
