@@ -251,13 +251,13 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {%- assign isSpecial = false -%}
     {%- if product.selected_or_first_available_variant.compare_at_price -%}
       {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
-        {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
-        {%- assign nowTimestamp = 'now' | date: '%s' -%}
-        {%- assign diffSeconds = endDate | minus: nowTimestamp -%}
-        {%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
-        {%- if diffDays >= -1 -%}
+        {% comment %}{%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}{% endcomment %}
+        {% comment %}{%- assign nowTimestamp = 'now' | date: '%s' -%}{% endcomment %}
+        {% comment %}{%- assign diffSeconds = endDate | minus: nowTimestamp -%}{% endcomment %}
+        {% comment %}{%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}{% endcomment %}
+        {% comment %}{%- if diffDays >= -1 -%}{% endcomment %}
           {%- assign isSpecial = true -%}
-        {%- endif -%}
+        {% comment %}{%- endif -%}{% endcomment %}
       {%- endif -%}
     {%- endif -%}
 
@@ -322,13 +322,13 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         {%- assign isSpecialSelectVar = false -%}
         {%- if selected_variant.compare_at_price -%}
           {%- if selected_variant.price < selected_variant.compare_at_price -%}
-            {%- assign endDate = selected_variant.metafields.plytix.special_enddate | date: '%s' -%}
-            {%- assign nowTimestamp = 'now' | date: '%s' -%}
-            {%- assign diffSeconds = endDate | minus: nowTimestamp -%}
-            {%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
-            {%- if diffDays >= -1 -%}
+            {% comment %}{%- assign endDate = selected_variant.metafields.plytix.special_enddate | date: '%s' -%}{% endcomment %}
+            {% comment %}{%- assign nowTimestamp = 'now' | date: '%s' -%}{% endcomment %}
+            {% comment %}{%- assign diffSeconds = endDate | minus: nowTimestamp -%}{% endcomment %}
+            {% comment %}{%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}{% endcomment %}
+            {% comment %}{%- if diffDays >= -1 -%}{% endcomment %}
               {%- assign isSpecialSelectVar = true -%}
-            {%- endif -%}
+            {% comment %}{%- endif -%}{% endcomment %}
           {%- endif -%}
         {%- endif -%}
         {%- if isSpecialSelectVar == false -%}

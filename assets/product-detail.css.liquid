@@ -16,38 +16,38 @@
   display: block!important;
 }
 
-.template-product #site-main{
+.sitemain-product{
   {% comment %}overflow-x: hidden;{% endcomment %}
 }
-.template-product .product-title{
+.sitemain-product .product-title{
   color: {{ settings.color_product_detail_title }};
 }
-.template-product #site-main .product--section{
+.sitemain-product #site-main .product--section{
   max-width: 90%;
   margin: auto;
 }
 @media (min-width: 720px ) and ( max-width: 1023px){
-  .template-product #site-main .product--section{max-width:100%;}
+  .sitemain-product #site-main .product--section{max-width:100%;}
 }
 @media ( max-width: 479px){
-  .template-product #site-main .product--section{max-width:100%;}
+  .sitemain-product #site-main .product--section{max-width:100%;}
 }
 
-.template-product .lb-upsell-ppa .ppa-prod-container .ppa-add-radio-cont{
+.sitemain-product .lb-upsell-ppa .ppa-prod-container .ppa-add-radio-cont{
   display: flex;
 }
-.template-product .product-detail-sku{
+.sitemain-product .product-detail-sku{
   color: {{ settings.color_text_medium }};
   font-weight: 700;
   display: block;
 }
-.template-product .product-detail-sku span{
+.sitemain-product .product-detail-sku span{
   color: {{ settings.color_text_medium }};
   font-weight: 400;
   display: inline-block;
   margin-left: 5px;
 }
-.template-product .form-field-title, .template-product .options-selection__select-label{
+.sitemain-product .form-field-title, .sitemain-product .options-selection__select-label{
   position: relative !important;
   color: {{ settings.color_text }} !important;
   font-weight: 700 !important;
@@ -57,24 +57,24 @@
   top: 0 !important;
   size: 16px;
 }
-.template-product .options-selection__input-select{
+.sitemain-product .options-selection__input-select{
   padding: 13px;
 }
-.template-product .product-pricing .product__price{
+.sitemain-product .product-pricing .product__price{
   display: flex;
   flex-wrap: wrap;
 }
-.template-product .product-pricing .product__price .price__compare-at{
+.sitemain-product .product-pricing .product__price .price__compare-at{
   order: 2;
   color: {{ settings.color_text_medium }};
   font-size: 15px;
   align-self: center;
   margin-left: 15px;
 }
-.template-product .product-pricing .product__price .price__current{
+.sitemain-product .product-pricing .product__price .price__current{
   order: 1;
 }
-.template-product .product-pricing .product__price .price__current span{
+.sitemain-product .product-pricing .product__price .price__current span{
   order: 0;
   color: {{ settings.color_text }};
   font-size: 33px;
@@ -83,7 +83,7 @@
   width: 100%;
   clear: both;
 }
-.template-product .product-pricing .product__price .price__current .visually-hidden{
+.sitemain-product .product-pricing .product__price .price__current .visually-hidden{
   position: relative !important;
 }
 .price__compare-at-visible {
@@ -144,7 +144,7 @@
 .product-single__description .more-text{
   display: none;
 }
-.template-product .quick-overview .sect-h {
+.sitemain-product .quick-overview .sect-h {
   margin-bottom: 0;
   font-size: 17px;
   font-weight: 700;
@@ -152,23 +152,23 @@
   display: block;
   line-height: 24px;
 }
-.template-product .quick-overview ul{
+.sitemain-product .quick-overview ul{
   margin-top: 0;
   padding-left: 20px;
   list-style-type: none;
 }
-.template-product .quick-overview ul li{
+.sitemain-product .quick-overview ul li{
   color: {{ settings.color_text_medium }};
   font-size: 17px;
   line-height: 24px;
   position: relative;
 }
-.template-product .quick-overview ul li:before{
+.sitemain-product .quick-overview ul li:before{
   content: "•";
   position: absolute;
   left: -15px;
 }
-.template-product .product-description{
+.sitemain-product .product-description{
   color: {{ settings.color_text_medium }};
   font-size: 17px;
   line-height: 24px;
@@ -954,7 +954,7 @@ input.qtyminus {
 .jdgm-write-rev-link.jdgm-write-rev-link:hover{
   background-color: {{ settings.color_button_hover }};
 }
-.template-product .jdgm-write-rev-link.jdgm-write-rev-link{
+.sitemain-product .jdgm-write-rev-link.jdgm-write-rev-link{
   text-transform: capitalize;
   font-weight: 600;
   font-size: 15px;
@@ -968,14 +968,14 @@ input.qtyminus {
   letter-spacing: {{ settings.type_button_spacing | divided_by: 100.0 | append: 'em' }};
   transition: all 0.4s ease-in-out;
 }
-.template-product .jdgm-write-rev-link.jdgm-write-rev-link, .jdgm-write-rev-link.jdgm-write-rev-link {
+.sitemain-product .jdgm-write-rev-link.jdgm-write-rev-link, .jdgm-write-rev-link.jdgm-write-rev-link {
   transition: all 0.4s ease-in-out;
 }
-.template-product .jdgm-write-rev-link.jdgm-write-rev-link:not([disabled]):hover, .jdgm-write-rev-link.jdgm-write-rev-link:focus{
+.sitemain-product .jdgm-write-rev-link.jdgm-write-rev-link:not([disabled]):hover, .jdgm-write-rev-link.jdgm-write-rev-link:focus{
   background-color: {{ settings.color_button_hover }};
   border: 1px solid {{ settings.color_button_hover }};
 }
-.template-product .jdgm-write-rev-link.jdgm-write-rev-link:hover{
+.sitemain-product .jdgm-write-rev-link.jdgm-write-rev-link:hover{
   opacity: 1;
 }
 .jdgm-ask-question-btn.jdgm-ask-question-btn{
@@ -990,6 +990,54 @@ input.qtyminus {
   border: 1px solid {{ settings.color_button_secondary_background }} !important;
   letter-spacing: {{ settings.type_button_spacing | divided_by: 100.0 | append: 'em' }};
   transition: all 0.4s ease-in-out;
+}
+.sitemain-product .jdgm-quest__answers,
+.sitemain-product .jdgm-rev__reply,
+.sitemain-product .jdgm-rev__content{
+  position: relative;
+  border-radius: .4em;
+  padding:8px 15px 1px 15px
+}
+.sitemain-product .jdgm-quest__answers,
+.sitemain-product .jdgm-rev__reply{
+  background: #DEF1F8;
+  margin-right:20px;
+  margin-left:12%
+}
+.sitemain-product .jdgm-quest__answers:after,
+.sitemain-product .jdgm-rev__reply:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-left-color: #DEF1F8;
+  border-right: 0;
+  border-top: 0;
+  margin-top: -10px;
+  margin-right: -20px;
+  }
+
+.sitemain-product .jdgm-rev__content{
+  background: #EBEBEB;
+  margin-left:20px;
+  margin-right:12%;
+}
+.sitemain-product .jdgm-rev__content:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-right-color: #EBEBEB;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -10px;
+  margin-left: -20px;
 }
 
 
