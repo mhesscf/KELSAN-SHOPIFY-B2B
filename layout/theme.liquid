@@ -256,6 +256,23 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     <!-- TrustBox script -->
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
     <!-- End TrustBox script -->
+
+
+    <!-- BEGIN MerchantWidget Code -->
+    <script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
+    <script type="text/javascript">
+        merchantWidgetScript.addEventListener('load', function () {
+            merchantwidget.start({
+                position: 'LEFT_BOTTOM',
+                sideMargin: 21,
+                bottomMargin: 33,
+                mobileSideMargin: 11,
+                mobileBottomMargin: 19
+            });
+        });
+    </script>
+    <!-- END MerchantWidget Code -->
+    
 </head>
 
 <body class="template-{{ template.name }}" data-instant-allow-query-string
