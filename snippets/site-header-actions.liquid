@@ -17,12 +17,15 @@
             </li>
         {% endunless %}
     {% endif %}
+
+    {%- comment -%}
     <li class="site-header-actions__account-link site-header-actions__wishlist">
     <span class="site-header__account-icon">
       {% render 'icon-library', id:'icon-heart' %}
     </span>
         <a href="/apps/advanced-wishlist" class="site-header__account-icon">Lists</a>
     </li>
+    {%- endcomment -%}
     <li class="site-header-actions__site-header-cart">
         <a class="site-header-cart--button" href="{{ routes.cart_url }}">
         <span
