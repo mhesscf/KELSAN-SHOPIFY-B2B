@@ -20,26 +20,6 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "slide_v2_nhVKm9": {
-          "type": "slide_v2",
-          "settings": {
-            "sotm_icon": "1",
-            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/carpet-spot-cleaner-jan-special.png?v=1733326204",
-            "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machines",
-            "right_image": "",
-            "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Spot On Savings.</div>\n<h1>CleanFreak® Commercial Carpet Spot Cleaning Machine</h1>\n<div>Now Only<br/>$489.99 (Non-Heated) & $789.99 (Heated)</div>",
-            "text_area_css": "",
-            "bg_link": "",
-            "promo_link": "",
-            "button_one_label": "Heated",
-            "button_one_link": "/products/heated-carpet-spot-cleaner",
-            "button_two_label": "Non-Heated",
-            "button_two_link": "/products/commercial-carpet-spot-cleaning-machine",
-            "button_color_override": ""
-          }
-        },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
           "settings": {
@@ -57,6 +37,26 @@
             "button_one_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315544756",
             "button_two_label": "Battery",
             "button_two_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315577524",
+            "button_color_override": ""
+          }
+        },
+        "slide_v2_nhVKm9": {
+          "type": "slide_v2",
+          "settings": {
+            "sotm_icon": "1",
+            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
+            "middle_image": "/cdn/shop/files/carpet-spot-cleaner-jan-special.png?v=1733326204",
+            "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machines",
+            "right_image": "",
+            "right_image_alt": "",
+            "text_area_html": "<div class=\"top-text\">Spot On Savings.</div>\n<h1>CleanFreak® Commercial Carpet Spot Cleaning Machine</h1>\n<div>Now Only<br/>$489.99 (Non-Heated) & $789.99 (Heated)</div>",
+            "text_area_css": "",
+            "bg_link": "",
+            "promo_link": "",
+            "button_one_label": "Heated",
+            "button_one_link": "/products/heated-carpet-spot-cleaner",
+            "button_two_label": "Non-Heated",
+            "button_two_link": "/products/commercial-carpet-spot-cleaning-machine",
             "button_color_override": ""
           }
         },
@@ -206,8 +206,8 @@
         }
       },
       "block_order": [
-        "slide_v2_nhVKm9",
         "slide_v2_cqVtUz",
+        "slide_v2_nhVKm9",
         "banner_J8FYNy",
         "banner_fLBUa3",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
