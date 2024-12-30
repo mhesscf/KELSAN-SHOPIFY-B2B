@@ -29,7 +29,7 @@
             "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machines",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Bring in the New Years with Savings!</div>\n<h1>CleanFreak® Commercial Carpet Spot Cleaning Machine</h1>\n<div>Now Only<br/>$489.99 (Non-Heated) & $789.99 (Heated)</div>",
+            "text_area_html": "<div class=\"top-text\">Spot On Savings.</div>\n<h1>CleanFreak® Commercial Carpet Spot Cleaning Machine</h1>\n<div>Now Only<br/>$489.99 (Non-Heated) & $789.99 (Heated)</div>",
             "text_area_css": "",
             "bg_link": "",
             "promo_link": "",
@@ -49,7 +49,7 @@
             "middle_image_alt": "IES-14 Floor Scrubber",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Bring in the New Years with Savings!</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Now Only<br/>$2,299.99 (Electric) & $2.699.99 (Battery)</div>",
+            "text_area_html": "<div class=\"top-text\">Reliable Results, Remarkable Savings.</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Now Only<br/>$2,299.99 (Electric) & $2.699.99 (Battery)</div>",
             "text_area_css": "",
             "bg_link": "",
             "promo_link": "",
@@ -151,11 +151,12 @@
         },
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/2024-dec-sotm-extractor-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/2024-dec-sotm-extractor-800x427.jpg",
             "title": "Trusted Clean 'Deluxe' Non-Heated 12-Gallon Box Extracto",
-            "text": "Deluxe Power<br>at a Discounted Price.<br>Was: $1,999.99<br>Now: $1,749.99",
+            "text": "Deluxe Powerat a Discounted Price.Was: $1,999.99Now: $1,749.99",
             "color": "#303e48",
             "link": "/products/non-heated-12-gallon-box-extractor",
             "promo_link": "",
@@ -173,6 +174,7 @@
         },
         "11a75ad9-3839-4050-bb7f-7cec379b8726": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/2024-dec-sotm-floor-buffer-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/2024-dec-sotm-floor-buffer-800x427.jpg",
