@@ -53,10 +53,10 @@
             "text_area_css": "",
             "bg_link": "",
             "promo_link": "",
-            "button_one_label": "Heated",
-            "button_one_link": "/products/heated-carpet-spot-cleaner",
-            "button_two_label": "Non-Heated",
-            "button_two_link": "/products/commercial-carpet-spot-cleaning-machine",
+            "button_one_label": "Non-Heated",
+            "button_one_link": "/products/commercial-carpet-spot-cleaning-machine",
+            "button_two_label": "Heated",
+            "button_two_link": "/products/heated-carpet-spot-cleaner",
             "button_color_override": ""
           }
         },
