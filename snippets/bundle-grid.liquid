@@ -244,7 +244,7 @@
 
                             <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
                             {% comment %}test for FLR-PACKAGE10 on bing{% endcomment %}
-                                {% if product.handle == "14-inch-x-20-inch-orbital-floor-buffer-package" %}
+                                {% if product.handle == "14-inch-x-20-inch-orbital-floor-buffer-package-off" %}
                                     <meta itemprop="price" content="{{ all_products[bundlep].price | money_without_currency | remove: ',' }}" />
                                 {% else %}
                                     <meta itemprop="price" content="0" />
