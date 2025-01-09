@@ -29181,6 +29181,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                         }
                                     });
                                     var dollarOffTotal = dollarOff * counter;
+                                    dollarOffTotal = (dollarOffTotal).toFixed(2);
                                     var discountTitle = "$"+dollarOffTotal + " off for +" + valid_tier;
                                     var discountSavings = dollarOffTotal * 100 * lineitemqty;
 
