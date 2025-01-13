@@ -1033,7 +1033,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         $(".product-block--price .money").html(newPrice);
 
         $(".updated-tier-compare,.updated-tier-strike").remove();
-        if(newSaved != "0"){
+        if(newSaved != "0" && typeof newSaved !== 'undefined'){
           $(".product-block--price").prepend('<div class="updated-tier-strike price__compare-at-visible-2 strikethrough"><div class="strikeprice">'+orgPrice+'</div></div>');
           $(".product-block--price .price__current ").append('<div class="updated-tier-compare price__compare-at-visible-2 var-specs var41986143289524"><div class="yousave">You Save: '+newSaved+'</div></div>');
         }
