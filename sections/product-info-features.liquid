@@ -583,7 +583,7 @@
                                 <hr style="border:0; border-top:1px solid #eee;">
                                 <div class="prod-used-pads-block">
                                     {%- if scrubbing != "" -%}
-                                        <div class="pad-used-grp-title"><a href="/collections/floor-scrubbing-pads?refinementList[meta.plytix.brush_pad_diameter][0]={{ sizeQuery }}">{{ sizelable }} Scrubbing Pads</a></div>
+                                        <div class="pad-used-grp-title"><a href="/collections/floor-scrubbing-pads?refinementList[meta.plytix.brush_pad_size][0]={{ sizeQuery }}">{{ sizelable }} Scrubbing Pads</a></div>
                                         <table class="prod-used-pads">
                                             <tbody>
                                                 {%- for scrubbingHandle in scrubbingArr -%}
@@ -593,7 +593,7 @@
                                         </table>
                                     {%- endif -%}
                                     {%- if polishing != "" -%}
-                                        <div class="pad-used-grp-title"><a href="/collections/floor-polishing-pads?refinementList[meta.plytix.brush_pad_diameter][0]={{ sizeQuery }}">{{ sizelable }} Polishing Pads</a></div>
+                                        <div class="pad-used-grp-title"><a href="/collections/floor-polishing-pads?refinementList[meta.plytix.brush_pad_size][0]={{ sizeQuery }}">{{ sizelable }} Polishing Pads</a></div>
                                         <table class="prod-used-pads">
                                             <tbody>
                                             {% for polishingHandle in polishingArr %}
@@ -603,7 +603,7 @@
                                         </table>
                                     {%- endif -%}
                                     {%- if stripping != "" -%}
-                                    <div class="pad-used-grp-title"><a href="/collections/floor-stripping-pads?refinementList[meta.plytix.brush_pad_diameter][0]={{ sizeQuery }}">{{ sizelable }} Stripping Pads</a></div>
+                                    <div class="pad-used-grp-title"><a href="/collections/floor-stripping-pads?refinementList[meta.plytix.brush_pad_size][0]={{ sizeQuery }}">{{ sizelable }} Stripping Pads</a></div>
                                         <table class="prod-used-pads">
                                             <tbody>
                                             {% for strippingHandle in strippingArr %}
