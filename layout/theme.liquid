@@ -125,9 +125,11 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
             render 'social-meta-tags',
             twitter_handle: twitter_handle
     %}
+    {%- comment -%}
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap"
           media="print" onload="this.media='all'"/>
+    {%- endcomment -%}
     <link rel="preload" href="{{ settings.type_menu | font_url }}" as="font" crossorigin="anonymous">
     <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
 
