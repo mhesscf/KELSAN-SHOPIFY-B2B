@@ -60,16 +60,6 @@
             "button_color_override": ""
           }
         },
-        "banner_J8FYNy": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify://shop_images/2024-12-days-of-xmas-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2024-12-days-of-xmas-mobile-banner.jpg",
-            "link": "https://www.facebook.com/cleanfreakcom",
-            "coupon-code": ""
-          }
-        },
         "banner_fLBUa3": {
           "type": "banner",
           "disabled": true,
@@ -195,6 +185,16 @@
             "overlay_opacity": 50
           }
         },
+        "banner_J8FYNy": {
+          "type": "banner",
+          "disabled": true,
+          "settings": {
+            "banner-lg": "shopify://shop_images/advantage-save-500-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/advantage-save-500-mobile-banner.jpg",
+            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "coupon-code": ""
+          }
+        },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
@@ -208,13 +208,13 @@
       "block_order": [
         "slide_v2_cqVtUz",
         "slide_v2_nhVKm9",
-        "banner_J8FYNy",
         "banner_fLBUa3",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "slide-1",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
+        "banner_J8FYNy",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
       ],
       "custom_css": [],
