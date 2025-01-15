@@ -198,8 +198,8 @@
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
-            "banner-lg": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-mobile-banner.jpg",
+            "banner-lg": "shopify://shop_images/ultimate-extractor-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/ultimate-extractor-bogo-mobile-banner.jpg",
             "link": "/products/trusted-clean-17-inch-commercial-grade-floor-buffer",
             "coupon-code": ""
           }
