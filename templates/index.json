@@ -20,6 +20,16 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "banner_fLBUa3": {
+          "type": "banner",
+          "disabled": true,
+          "settings": {
+            "banner-lg": "shopify://shop_images/national-clean-off-your-desk-day-2025-desktop-homepage-banner.jpg",
+            "banner-sm": "shopify://shop_images/national-clean-off-your-desk-day-2025-mobile-homepage-banner.jpg",
+            "link": "/",
+            "coupon-code": "DESK25"
+          }
+        },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
           "settings": {
@@ -58,16 +68,6 @@
             "button_two_label": "Heated",
             "button_two_link": "/products/heated-carpet-spot-cleaner",
             "button_color_override": ""
-          }
-        },
-        "banner_fLBUa3": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify://shop_images/2024-ryicf-desktop-homepage-banner.jpg",
-            "banner-sm": "shopify://shop_images/2024-ryicf-mobile-homepage-banner.jpg",
-            "link": "https://www.cleanfreak.com/pages/release-your-inner-cleanfreak",
-            "coupon-code": ""
           }
         },
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a": {
@@ -206,9 +206,9 @@
         }
       },
       "block_order": [
+        "banner_fLBUa3",
         "slide_v2_cqVtUz",
         "slide_v2_nhVKm9",
-        "banner_fLBUa3",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "slide-1",
