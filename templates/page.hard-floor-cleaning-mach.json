@@ -32,6 +32,7 @@
         },
         "71ea2eaa-3b3a-4aa9-b752-787ed97ad793": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-mobile-banner.jpg",
