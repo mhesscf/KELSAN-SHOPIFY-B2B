@@ -7,50 +7,7 @@
 <footer role="contentinfo" aria-label="Footer">
   <section class="site-footer-wrapper">
 
-    {%- if shop.permanent_domain contains "cleanfreak" -%}
-      <div class="t2u-slideout" style="display:none;">
-        <div class="t2u-slideout-contain">
-          <h2>Reach Out to Us!</h2>
-          <div class="t2u-slideout-banner-contain"><img class="img-responsive t2u-slideout-banner" src="{{ 'typer-800x.jpg' | file_url }}" alt="Contact Us" /></div>
-          <div class="t2u-slideout-text">
-            At CleanFreak.com, our team of cleaning enthusiasts is trained to help you find the perfect product or tackle any cleaning conundrum.
-            <br/><br/>
-            Got questions? Chat with us for instant answers or call to talk to a real human who gets it. We’re here to make your day cleaner and brighter—one conversation at a time!
-          </div>
-          <div class="t2u-contact-info-slideout">
-            <div class="t2u-phone"><i class="fa-regular fa-phone"></i><a class="phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a></div>
-            <div class="t2u-chat"><i class="fa-regular fa-comment"></i><span class="atc-button--text">Live Chat2</span></div>
-            <script>
-              $('.t2u-chat').on('click', function (e) {
-                $('.main-default-button.livechat_button').trigger("click");
-                console.log('triggerchat2');
-                $('.main-default-button.livechat_button a').trigger("click");
-              });
-            </script>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <script>
-
-        jQuery(document).ready(function($) {
-          $('.launch-t2u-side').on('click', function (e) {
-
-            var formhtml = $('.t2u-slideout').html();
-
-            $('.popup-container .content').html(formhtml);
-            $('.popup-container').addClass('rightpop');
-
-            $('.popup-container').removeClass('hidden');
-            $(".pop-grad").removeClass('hidden');
-
-          });
-        });
-      </script>
-    {%- endif -%}
-
-    {%- if shop.permanent_domain contains "cleanfreak" -%}
+      {%- if shop.permanent_domain contains "cleanfreak" -%}
         <!-- TrustBox widget - Horizontal -->
         <div class="trustpilot-footer-contain trustpilot-horizontal">
           <div class="trustpilot-widget" data-locale="en-US" data-template-id="5406e65db0d04a09e042d5fc" data-businessunit-id="48f26645000064000503cd0d" data-style-height="28px" data-style-width="100%" data-theme="light">
@@ -344,6 +301,46 @@
     </div>
   </section>
 </footer>
+
+
+<div class="t2u-slideout" style="display:none;">
+  <div class="t2u-slideout-contain">
+    <h2>Reach Out to Us!</h2>
+    <div class="t2u-slideout-banner-contain"><img class="img-responsive t2u-slideout-banner" src="{{ 'typer-800x.jpg' | file_url }}" alt="Contact Us" /></div>
+    <div class="t2u-slideout-text">
+      At CleanFreak.com, our team of cleaning enthusiasts is trained to help you find the perfect product or tackle any cleaning conundrum.
+      <br/><br/>
+      Got questions? Chat with us for instant answers or call to talk to a real human who gets it. We’re here to make your day cleaner and brighter—one conversation at a time!
+    </div>
+    <div class="t2u-contact-info-slideout">
+      <div class="t2u-phone"><i class="fa-regular fa-phone"></i><a class="phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a></div>
+      <div class="t2u-chat" onClick="triggerChat()"><i class="fa-regular fa-comment"></i><span class="atc-button--text">Live Chat</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $('.launch-t2u-side').on('click', function (e) {
+
+      var formhtml = $('.t2u-slideout').html();
+
+      $('.popup-container .content').html(formhtml);
+      $('.popup-container').addClass('rightpop');
+
+      $('.popup-container').removeClass('hidden');
+      $(".pop-grad").removeClass('hidden');
+    });
+  });
+
+  function triggerChat(){
+    document.getElementById('thischat').click(); // Works!
+  }
+
+</script>
 
 
 
