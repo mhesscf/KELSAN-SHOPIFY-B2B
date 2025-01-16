@@ -184,22 +184,21 @@
             "overlay_opacity": 50
           }
         },
-        "banner_J8FYNy": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "banner-lg": "shopify://shop_images/advantage-save-500-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/advantage-save-500-mobile-banner.jpg",
-            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
-            "coupon-code": ""
-          }
-        },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
             "banner-lg": "shopify://shop_images/ultimate-extractor-bogo-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/ultimate-extractor-bogo-mobile-banner.jpg",
             "link": "/products/ultimate-heated-box-extractor",
+            "coupon-code": ""
+          }
+        },
+        "banner_J8FYNy": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify://shop_images/advantage-save-500-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/advantage-save-500-mobile-banner.jpg",
+            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
             "coupon-code": ""
           }
         }
@@ -213,8 +212,8 @@
         "slide-1",
         "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
         "11a75ad9-3839-4050-bb7f-7cec379b8726",
-        "banner_J8FYNy",
-        "ea789a59-8d75-4954-9fa4-6bb1739a3b62"
+        "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
+        "banner_J8FYNy"
       ],
       "custom_css": [],
       "settings": {
