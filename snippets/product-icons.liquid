@@ -15,7 +15,22 @@
     <!-- Code for floor1 tag -->
     {%- assign noreturn = true -%}
 {% endif %}
-
+{%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+<div class="talk-2-us-area">
+    <div class="t2u-contain">
+       <div class="t2u-rep-img-col"><img class="img-responsive launch-t2u-side" src="{{ 'csr-shot-1.png' | file_url }}" alt="Here to help you" /></div>
+        <div class="t2u-text-col">
+            <div class="t2u-header launch-t2u-side">Get your questions answered quickly!</div>
+            <div class="t2u-subtext launch-t2u-side">Experts ready and trained to help.</div>
+            <div class="t2u-contact-info">
+                <div class="t2u-phone"><i class="fa-regular fa-phone"></i><a class="phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a></div>
+                <div class="t2u-chat"><i class="fa-regular fa-comment"></i><div data-id="eTfn5A8fCFQ" class="livechat_button"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759"><span class="atc-button--text">Live Chat</span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 
 <div class="product-icons-area">

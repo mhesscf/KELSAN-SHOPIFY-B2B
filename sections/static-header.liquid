@@ -101,7 +101,10 @@
 
     </div>
     <div class="top-menu-links">
-      <ul>
+      {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+        <div class="header-t2u launch-t2u-side"><i class="fa-regular fa-comments-question"></i> Get help from an expert!</div>
+      {%- endif -%}
+      <ul class="top-menu-link-list">
         {% for link in linklists.top-menu.links %}
           <li><a href="{{ link.url }}">{{ link.title }}</a></li>
         {% endfor %}
@@ -110,8 +113,6 @@
           {% else %}
             <li class="approve-quicklink"><a href="/pages/financing-options">Financing</a></li>
           {%- endif -%}
-        </li>
-
       </ul>
     </div>
   </div>
