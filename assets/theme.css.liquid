@@ -18153,37 +18153,45 @@ nav.breadcrumb a.homebread:hover span,
 .t2u-slideout-contain .t2u-slideout-text{
 	margin-top:15px;
 }
-.t2u-slideout-contain  .t2u-contact-info-slideout{
+.t2u-slideout-contain .t2u-contact-info-slideout{
 	margin-top:30px;
 	text-align:center;
 }
-.t2u-slideout-contain  .t2u-contact-info-slideout  .t2u-chat .livechat_button,
-.t2u-slideout-contain  .t2u-contact-info-slideout .t2u-phone,
-.t2u-slideout-contain  .t2u-contact-info-slideout .t2u-chat{
+.t2u-slideout-contain .t2u-contact-info-slideout  .t2u-chat .livechat_button,
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-phone,
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-chat{
 	display: inline;
 }
-.t2u-slideout-contain  .t2u-contact-info-slideout .t2u-phone,
-.t2u-slideout-contain  .t2u-contact-info-slideout .t2u-chat{
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-phone,
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-chat{
 	border: 1px solid {{ settings.color_button_secondary_background }};
 	border-radius: 10px;
 	padding:10px 25px;
+	cursor:pointer;
+	transition: all 0.4s ease-in-out;
+}
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-chat .a,
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-chat .atc-button--text:hover {
+	color: {{ settings.color_button_secondary_background }}
+}
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-phone:hover,
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-chat:hover{
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-.t2u-slideout-contain  .t2u-contact-info-slideout .t2u-phone{
+.t2u-slideout-contain .t2u-contact-info-slideout .t2u-phone{
 	margin-right:25px;
 }
 
-.t2u-slideout-contain  .t2u-contact-info-slideout ,
-.t2u-slideout-contain  .t2u-contact-info-slideout  a{
+.t2u-slideout-contain .t2u-contact-info-slideout ,
+.t2u-slideout-contain .t2u-contact-info-slideout  a{
 	color: {{ settings.color_button_secondary_background }};
 	font-size:18px;
 	text-decoration: none;
 }
-.t2u-slideout-contain  .t2u-contact-info-slideout i{
+.t2u-slideout-contain .t2u-contact-info-slideout i{
 	padding-right:5px;
 }
-
-
 
 .product-icons .ship-made .sm-row{
 	display: flex;
