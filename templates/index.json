@@ -22,6 +22,7 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/national-clean-off-your-desk-day-2025-desktop-homepage-banner.jpg",
             "banner-sm": "shopify://shop_images/national-clean-off-your-desk-day-2025-mobile-homepage-banner.jpg",
