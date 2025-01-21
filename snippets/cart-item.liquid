@@ -124,6 +124,7 @@
         {% endif %}
       {% endif %}
       {% if item_has_discounts == false -%}
+          {%- comment -%} Old way
         <div class="cart-item--content-price">
         <span class="cart-item--price-title">
           {{ 'cart.general.price' | t }}
@@ -155,6 +156,7 @@
 
         </span>
         </div>
+          {%- endcomment -%}
       {% endif %}
       {% capture total_quantity %}<span class="cart-item--total-quantity" data-total-quantity>{{ item.unit_price_measurement.quantity_value }}{{ item.unit_price_measurement.quantity_unit }}</span>{% endcapture %}
       {% capture unit_price %}<span class="cart-item--unit-price-amount money" data-unit-price-amount>{{ item.unit_price | money }}</span>{% endcapture %}
@@ -165,94 +167,6 @@
           {{ 'product.general.price_per_unit_html' | t: total_quantity: total_quantity, unit_price: unit_price, unit_measure: unit_measure | strip_newlines }}
         </div>
       {% endif %}
-
-      {%- if item_has_discounts -%}
-        <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
-          {% for discount_allocation in item.line_level_discount_allocations %}
-            <li class="discount-list-item">
-              {% render 'icon-library', id: 'icon-sale-tag' %}
-              {{ discount_allocation.discount_application.title }}
-              (you saved <span class="money">{{ discount_allocation.amount | money }}</span>)
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-
-        {%- if settings.enable_transform_discount_code or 1 == 1 -%}
-
-
-            {%- assign valid_tier = 0  -%}
-            {%- assign valid_tier_count = 0  -%}
-            {%- assign tiermessage = ""  -%}
-
-            {%- if tiered_pricing contains ":" -%}
-                {% comment %}dollar pricing---------------------------------------------------------------------------{% endcomment %}
-                {%- assign tiered_pricing_sections_arr = tiered_pricing | split: ":"  -%}
-                {%- assign tiered_pricing_arry = tiered_pricing_sections_arr[0] | split: "|"  -%}
-
-                {%- for tier in tiered_pricing_arry -%}
-                    {%- assign tier_int = tier | plus: 0  -%}
-                    {%- if item.quantity >=  tier_int -%}
-                        {%- assign valid_tier = tier  -%}
-                        {%- assign valid_tier_count = forloop.index0 | plus: 1  -%}
-                    {%- endif -%}
-                {%- endfor -%}
-                {%- assign tier_doll_off = tiered_pricing_sections_arr[1] | times: valid_tier_count -%}
-                {%- assign discount = tier_doll_off | times: item.quantity -%}
-
-                {%- capture tiermessage -%}
-                    {{  tier_doll_off | times:100 | money}} off for {{ valid_tier }}+ (you saved <span class="money">{{ discount | times: 100 | money }}</span>)
-                {%- endcapture -%}
-                {% comment %} {%- elsif tiered_pricing contains "|" -%}
-                 {% comment %}   percent pricing---------------------------------------------------------------------------{% endcomment %}
-
-                    {%- assign tiered_pricing_arry = tiered_pricing | split: "|"  -%}
-                    {%- assign tier_percent_arr = item.product.metafields.plytix.tiered_pricing_percent_off | split: "|" -%}
-                    {%- for tier in tiered_pricing_arry -%}
-                        {%- assign tier_int = tier | plus: 0  -%}
-                        {%- if item.quantity >=  tier_int -%}
-                            {%- assign valid_tier = tier  -%}
-                            {%- assign valid_tier_percent = tier_percent_arr[forloop.index0] | divided_by: 100.00 -%}
-                        {%- endif -%}
-                    {%- endfor -%}
-
-                    {%- assign discount = org_price  | times: valid_tier_percent | times: item.quantity -%}
-
-                    {%- capture tiermessage -%}
-                        {{ valid_tier_percent | times: 100 | floor }}% off for {{ valid_tier }}+ (you saved <span class="money">{{ discount | money }}</span> NEW)
-                    {%- endcapture -%}
-                {% endcomment %}
-            {%- elsif tiered_pricing contains "fg" and product_bundle != '' -%}
-                {%- assign discount = org_price  | times: item.quantity -%}
-                {%- capture tiermessage -%}
-                    Free gift with bundle! (you saved <span class="money">{{ discount | money }}</span>)
-                {%- endcapture -%}
-            {%- elsif tiered_pricing contains "fg" -%}
-                {%- assign discount = org_price  | times: item.quantity -%}
-                {%- capture tiermessage -%}
-                    Free gift! (you saved <span class="money">{{ discount | money }}</span>)
-                {%- endcapture -%}
-            {%- endif -%}
-
-            {% comment %}<div style="color:red; font-weight:bold">TESTING {{ tiered_pricing }}: (_org_price = {{ org_price | money}})</div>{% endcomment %}
-
-            {%- if valid_tier != 0 and  tiermessage != "" -%}
-                <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
-                    <li class="discount-list-item">
-                        {% render 'icon-library', id: 'icon-sale-tag' %}
-                        {{ tiermessage }}
-                    </li>
-                </ul>
-            {%- elsif tiered_pricing contains "fg" and  tiermessage != "" -%}
-                    <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
-                        <li class="discount-list-item">
-                            {% render 'icon-library', id: 'icon-sale-tag' %}
-                            {{ tiermessage }}
-                        </li>
-                    </ul>
-            {%- endif -%}
-
-        {%- endif -%}
 
       {% if show_sku %}
         <div class="cart-item--sku {% if item.sku == empty %}cart-item--sku-empty{% endif %}">
@@ -278,6 +192,140 @@
         <div class="cart-item--stockstatus">
           <strong>Status:</strong> {{ stock_status }}
         </div>
+      {% endif %}
+        {% if 1==1 %}
+          <div class="cart-item--pricing-details cart-item--content-price">
+              {%- assign display_orgprice = item.original_price -%}
+              {%- assign discounted = false -%}
+              {%- comment -%}
+              item.price: {{ item.price }}<br/>
+              item.original_price: {{ item.original_price }}<br/>
+              product_price.price.original: {{ product_price.price.original }}<br/>
+              Compare_at_price: {{ compare_at_price }}<br/>
+              org_price: {{ org_price }}<br/><br/>
+              {%- endcomment -%}
+              {% if org_price > item.price %}
+                  {%- assign display_orgprice = org_price -%}
+                  {%- assign discounted = true -%}
+              {% elsif item.original_price > item.price %}
+                  {%- assign display_orgprice = item.original_price -%}
+                  {%- assign discounted = true -%}
+              {% elsif compare_at_price > item.price %}
+                  {%- assign display_orgprice = compare_at_price -%}
+                  {%- assign discounted = true -%}
+              {% endif %}
+
+              <div class="cart-item--content-price">
+                <span class="cart-item--price-title">
+                  Price:
+                </span>
+
+                  {%- if discounted -%}
+                      <span class="visually-hidden">Original price</span>
+                      <s class="cart-item--sale-price money">{{ display_orgprice | money }}</s>
+                  {%- endif -%}
+                  <span class="visually-hidden">Current price</span>
+                  <span class="money ">{{  item.price | money }} x {{ item.quantity }}</span>
+              </div>
+          </div>
+
+        {%- if compare_at_price > item.price -%}
+            {%- assign specialDiscount = compare_at_price | minus: item.price -%}
+            <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                <li class="discount-list-item">
+                    {% render 'icon-library', id: 'icon-sale-tag' %}
+                    Special Discount (-{{ specialDiscount |  money }})
+                </li>
+            </ul>
+        {% endif %}
+
+          {%- if settings.enable_transform_discount_code or 1 == 1 -%}
+
+
+              {%- assign valid_tier = 0  -%}
+              {%- assign valid_tier_count = 0  -%}
+              {%- assign tiermessage = ""  -%}
+
+              {%- if tiered_pricing contains ":" -%}
+                  {% comment %}dollar pricing---------------------------------------------------------------------------{% endcomment %}
+                  {%- assign tiered_pricing_sections_arr = tiered_pricing | split: ":"  -%}
+                  {%- assign tiered_pricing_arry = tiered_pricing_sections_arr[0] | split: "|"  -%}
+
+                  {%- for tier in tiered_pricing_arry -%}
+                      {%- assign tier_int = tier | plus: 0  -%}
+                      {%- if item.quantity >=  tier_int -%}
+                          {%- assign valid_tier = tier  -%}
+                          {%- assign valid_tier_count = forloop.index0 | plus: 1  -%}
+                      {%- endif -%}
+                  {%- endfor -%}
+                  {%- assign tier_doll_off = tiered_pricing_sections_arr[1] | times: valid_tier_count -%}
+                  {%- assign discount = tier_doll_off | times: item.quantity -%}
+
+                  {%- capture tiermessage -%}
+                      {{  tier_doll_off | times:100 | money}} off for {{ valid_tier }}+ (you saved <span class="money">{{ discount | times: 100 | money }}</span>)
+                  {%- endcapture -%}
+                  {% comment %} {%- elsif tiered_pricing contains "|" -%}
+                   {% comment %}   percent pricing---------------------------------------------------------------------------{% endcomment %}
+
+                      {%- assign tiered_pricing_arry = tiered_pricing | split: "|"  -%}
+                      {%- assign tier_percent_arr = item.product.metafields.plytix.tiered_pricing_percent_off | split: "|" -%}
+                      {%- for tier in tiered_pricing_arry -%}
+                          {%- assign tier_int = tier | plus: 0  -%}
+                          {%- if item.quantity >=  tier_int -%}
+                              {%- assign valid_tier = tier  -%}
+                              {%- assign valid_tier_percent = tier_percent_arr[forloop.index0] | divided_by: 100.00 -%}
+                          {%- endif -%}
+                      {%- endfor -%}
+
+                      {%- assign discount = org_price  | times: valid_tier_percent | times: item.quantity -%}
+
+                      {%- capture tiermessage -%}
+                          {{ valid_tier_percent | times: 100 | floor }}% off for {{ valid_tier }}+ (you saved <span class="money">{{ discount | money }}</span> NEW)
+                      {%- endcapture -%}
+                  {% endcomment %}
+              {%- elsif tiered_pricing contains "fg" and product_bundle != '' -%}
+                  {%- assign discount = org_price  | times: item.quantity -%}
+                  {%- capture tiermessage -%}
+                      Free gift with bundle! (you saved <span class="money">{{ discount | money }}</span>)
+                  {%- endcapture -%}
+              {%- elsif tiered_pricing contains "fg" -%}
+                  {%- assign discount = org_price  | times: item.quantity -%}
+                  {%- capture tiermessage -%}
+                      Free gift! (you saved <span class="money">{{ discount | money }}</span>)
+                  {%- endcapture -%}
+              {%- endif -%}
+
+              {% comment %}<div style="color:red; font-weight:bold">TESTING {{ tiered_pricing }}: (_org_price = {{ org_price | money}})</div>{% endcomment %}
+
+              {%- if valid_tier != 0 and  tiermessage != "" -%}
+                  <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                      <li class="discount-list-item">
+                          {% render 'icon-library', id: 'icon-sale-tag' %}
+                          {{ tiermessage }}
+                      </li>
+                  </ul>
+              {%- elsif tiered_pricing contains "fg" and  tiermessage != "" -%}
+                  <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                      <li class="discount-list-item">
+                          {% render 'icon-library', id: 'icon-sale-tag' %}
+                          {{ tiermessage }}
+                      </li>
+                  </ul>
+              {%- endif -%}
+
+          {%- endif -%}
+
+          {%- if item_has_discounts -%}
+              <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                  {% for discount_allocation in item.line_level_discount_allocations %}
+                      <li class="discount-list-item">
+                          {% render 'icon-library', id: 'icon-sale-tag' %}
+                          {{ discount_allocation.discount_application.title }}
+                          (you saved <span class="money">{{ discount_allocation.amount | money }}</span>)
+                      </li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
 
         {% comment %}----------------------start of in stock qty check <br/>{% endcomment %}
         {%- comment -%}get instock{%- endcomment -%}
@@ -493,15 +541,18 @@
 
       <div class="cart-item--total">
         <span class="visually-hidden">{{ 'cart.general.total_line_price' | t }}</span>
-        {%- if item_has_discounts -%}
-          <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
-          <s class="original-price money">{{ item.original_line_price | money }}</s>
-          <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
-        {%- elsif org_price > item.price -%}
+          {% comment %}
+          {%- if org_price > item.price -%}
+                <s class="original-price money">{{ org_price | times: item.quantity | money }}</s>
 
-            <s class="original-price money">{{ org_price | times: item.quantity | money }}</s>
-
-        {%- endif -%}
+          {%- elsif compare_at_price > item.price -%}
+              <s class="original-price money">{{ compare_at_price | times: item.quantity | money }}</s>
+          {%- elsif item_has_discounts -%}
+                <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
+                <s class="original-price money">{{ item.original_line_price | money }}</s>
+                <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
+            {%- endif -%}
+            {% endcomment %}
         <div
                 class="money {% if item_has_discounts %}cart-item--discount-price{% endif %}"
                 aria-live="polite"
