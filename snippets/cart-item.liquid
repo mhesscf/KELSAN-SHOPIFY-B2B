@@ -234,7 +234,7 @@
             <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
                 <li class="discount-list-item">
                     {% render 'icon-library', id: 'icon-sale-tag' %}
-                    Special Discount (-{{ specialDiscount |  money }})
+                    Special Discount (you saved {{ specialDiscount |  money }})
                 </li>
             </ul>
         {% endif %}
