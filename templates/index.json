@@ -25,7 +25,7 @@
           "settings": {
             "banner-lg": "shopify://shop_images/winter-sale-2025-1400x350.jpg",
             "banner-sm": "shopify://shop_images/winter-sale-2025-800x427.jpg",
-            "link": "/",
+            "link": "https://www.cleanfreak.com/collections/flash-sale",
             "coupon-code": "SNOW20"
           }
         },
