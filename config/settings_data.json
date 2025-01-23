@@ -303,9 +303,9 @@
         "settings": {
           "show_announcement": true,
           "homepage_announcement": false,
-          "announcement_text": "Winter Sale! Save 20% on select machines when you use the coupon code \"SNOW20\".",
-          "announcement_text_mobile": "Winter Sale! Save 20% on select machines when you use the coupon code \"SNOW20\".",
-          "announcement_link": "",
+          "announcement_text": "Winter Sale! Save 20% on select machines when you use the coupon code \"SNOW20\". Valid 1/23/25 - 2/07/25.",
+          "announcement_text_mobile": "Winter Sale! Save 20% on select machines when you use the coupon code \"SNOW20\". Valid 1/23/25 - 2/07/25.",
+          "announcement_link": "/collections/flash-sale",
           "announcement_promo": "SNOW20",
           "flash": false,
           "announcement_color": "#ffffff",
