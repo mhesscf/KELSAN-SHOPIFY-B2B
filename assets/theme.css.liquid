@@ -11041,19 +11041,38 @@ display:none;
 .top-menu-wrapper .header-t2u{
 	float:right;
 }
-.top-menu-wrapper .header-t2u{
+
+.top-menu-wrapper .header-t2u,
+.site-announcement .header-t2u{
 	background:url({{ 't2u-bg-2.gif' | file_url }}) 0 0px no-repeat;
-	background-size: 187px 38px;
 	border-left:3px solid #d74018;
 	border-right:3px solid #d74018;
 	border-radius: 10px;
-	margin-top:-7px;
-	line-height:38px;
 	padding:0 10px;
-	margin-left:10px;
-	font-size: 13px;
 	color:#d74018;
 }
+.top-menu-wrapper .header-t2u{
+	background-size: 187px 38px;
+	margin-top:-7px;
+	line-height:38px;
+	margin-left:10px;
+	font-size: 13px;
+}
+.site-announcement .header-t2u-contain{
+	padding:7px 2px;
+}
+@media screen and (min-width:680px) {
+	.site-announcement .header-t2u-contain{
+		display:none !important;
+	}
+}
+.site-announcement .header-t2u{
+	background-size: 100% 38px;
+	line-height:38px;
+	font-size: 20px;
+	text-align:center;
+}
+
 .top-menu-wrapper .header-t2u i{
 	display:block;
 	margin:9px 5px 0 0;
@@ -18097,19 +18116,33 @@ nav.breadcrumb a.homebread:hover span,
 .talk-2-us-area .t2u-contain {
 	display:flex;
 	background:url({{ 't2u-bg-2.gif' | file_url }}) 0 0px no-repeat;
-	height:120px;
 	border-left:5px solid #d74018;
 	border-right:5px solid #d74018;
 	border-radius: 15px;
+	align-items: center;
+	justify-content: center;
 }
-.talk-2-us-area .t2u-contain .t2u-rep-img-col{
-	flex-basis:20%;
-	padding:3px 10px;
+.talk-2-us-area .t2u-contain .t2u-rep-img-col {
+	flex-basis: 26%;
+	padding: 3px 5px;
 }
+
 .talk-2-us-area .t2u-contain .t2u-text-col {
-	flex-basis:80%;
-	text-align:right;
-	padding:15px 40px 15px 5px;
+	flex-basis: 74%;
+	text-align: right;
+	padding: 15px 40px 15px 5px;
+}
+@media screen and (min-width: 1279px) {
+	.talk-2-us-area .t2u-contain .t2u-rep-img-col {
+		flex-basis: 20%;
+		padding: 3px 10px;
+	}
+
+	.talk-2-us-area .t2u-contain .t2u-text-col {
+		flex-basis: 80%;
+		text-align: right;
+		padding: 15px 40px 15px 5px;
+	}
 }
 .talk-2-us-area .t2u-contact-info .t2u-phone,
 .talk-2-us-area .t2u-contact-info .t2u-chat{
@@ -18120,14 +18153,25 @@ nav.breadcrumb a.homebread:hover span,
 }
 .talk-2-us-area .t2u-header{
 	font-weight:bold;
-	font-size:26px;
-	line-height:26px;
+	font-size:20px;
+	line-height:22px;
 	margin-bottom:5px;
 }
+
 .talk-2-us-area .t2u-subtext{
-	font-size:20px;
-	line-height:20px;
+	font-size:16px;
+	line-height:16px;
 	margin-bottom:10px;
+}
+@media screen and (min-width: 1279px) {
+	.talk-2-us-area .t2u-header{
+		font-size:26px;
+		line-height:26px;
+	}
+	.talk-2-us-area .t2u-subtext{
+		font-size:20px;
+		line-height:20px;
+	}
 }
 .talk-2-us-area .t2u-contact-info{
 	padding-right:2px;
@@ -18141,8 +18185,11 @@ nav.breadcrumb a.homebread:hover span,
 .talk-2-us-area .t2u-contact-info i{
 	padding-right:5px;
 }
-.talk-2-us-area .t2u-contact-info .t2u-phone{
-	margin-right:20px;
+.talk-2-us-area .t2u-contact-info .t2u-phone {
+	margin-bottom: 5px;
+}
+.talk-2-us-area .t2u-contact-info .t2u-chat {
+	margin-left: 20px;
 }
 
 .t2u-slideout-contain .t2u-slideout-banner-contain{
@@ -18161,7 +18208,8 @@ nav.breadcrumb a.homebread:hover span,
 .t2u-slideout-contain .t2u-contact-info-slideout  .t2u-chat .livechat_button,
 .t2u-slideout-contain .t2u-contact-info-slideout .t2u-phone,
 .t2u-slideout-contain .t2u-contact-info-slideout .t2u-chat{
-	display: inline;
+	display: inline-block;
+	margin-bottom:15px;
 }
 .t2u-slideout-contain .t2u-contact-info-slideout .t2u-phone,
 .t2u-slideout-contain .t2u-contact-info-slideout .t2u-chat{
@@ -18181,7 +18229,7 @@ nav.breadcrumb a.homebread:hover span,
 }
 
 .t2u-slideout-contain .t2u-contact-info-slideout .t2u-phone{
-	margin-right:25px;
+	margin:10px 25px;
 }
 
 .t2u-slideout-contain .t2u-contact-info-slideout ,

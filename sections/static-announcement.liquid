@@ -8,6 +8,12 @@
   {%- assign alerttxt = "white" -%}
 {%- endif -%}
 
+
+{%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+  <div class="header-t2u-contain"><div class="header-t2u launch-t2u-side mobile"><i class="fa-regular fa-comments-question"></i> Get help from an expert!</div></div>
+{%- endif -%}
+
+
 {% style %}
   #shopify-section-static-announcement{
     position: relative;
