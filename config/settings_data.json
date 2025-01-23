@@ -301,12 +301,12 @@
           ".alert-bar.show {border-bottom: 1px solid white;}"
         ],
         "settings": {
-          "show_announcement": false,
+          "show_announcement": true,
           "homepage_announcement": false,
-          "announcement_text": "In observance of Thanksgiving, we will be closed on Thursday, Nov. 28th & Friday, Nov 29th. We will reopen on Monday, Dec. 2nd.",
-          "announcement_text_mobile": "In observance of Thanksgiving, we will be closed on Thursday, Nov. 28th & Friday, Nov 29th. We will reopen on Monday, Dec. 2nd.",
+          "announcement_text": "Winter Sale! Save 20% on select machines when you use the coupon code \"SNOW20\".",
+          "announcement_text_mobile": "Winter Sale! Save 20% on select machines when you use the coupon code \"SNOW20\".",
           "announcement_link": "",
-          "announcement_promo": "",
+          "announcement_promo": "SNOW20",
           "flash": false,
           "announcement_color": "#ffffff",
           "announcement_background": "#5d9db9"
