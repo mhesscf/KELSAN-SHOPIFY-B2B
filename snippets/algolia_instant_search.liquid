@@ -132,27 +132,28 @@
                 $( ".ais-facet-dropdown-wrapper" ).each(function( index ) {
 
                     if($(this).find( ".ais-facet--header" ).text() == "Tags"){
-
-                        {%- if request.path == '/collections/discontinued' -%}
-                            $(this).find( ".ais-RefinementList-item" ).each(function( index ) {
-                                var labelTextcheck = $(this).clone().find('.ais-RefinementList-count').remove().end().text().trim();
-                                if(labelTextcheck == "Discontinued"){
-                                    showallicons = "false";
-                                    if ($('.ais-page .ais-key-area .icon-filtering[data-filtername="' + "Discontinued" + '"]').length) {
-                                        $('.ais-page .ais-key-area').addClass('showicon');
-                                        $('.ais-page .ais-key-area .icon-filtering[data-filtername="' + "Discontinued" + '"]').addClass('showicon');
+                        setTimeout(()=> {
+                            {%- if request.path == '/collections/discontinued' -%}
+                                $(this).find( ".ais-RefinementList-item" ).each(function( index ) {
+                                    var labelTextcheck = $(this).clone().find('.ais-RefinementList-count').remove().end().text().trim();
+                                    if(labelTextcheck == "Discontinued"){
+                                        showallicons = "false";
+                                        if ($('.ais-page .ais-key-area .icon-filtering[data-filtername="' + "Discontinued" + '"]').length) {
+                                            $('.ais-page .ais-key-area').addClass('showicon');
+                                            $('.ais-page .ais-key-area .icon-filtering[data-filtername="' + "Discontinued" + '"]').addClass('showicon');
+                                        }
                                     }
-                                }
-                            });
-                        {%- else -%}
-                            $(this).find(".ais-RefinementList-item").each(function (index) {
-                                var labelText = $(this).clone().find('.ais-RefinementList-count').remove().end().text().trim();
-                                if ($('.ais-page .ais-key-area .icon-filtering[data-filtername="' + labelText + '"]').length) {
-                                    $('.ais-page .ais-key-area').addClass('showicon');
-                                    $('.ais-page .ais-key-area .icon-filtering[data-filtername="' + labelText + '"]').addClass('showicon');
-                                }
-                            });
-                        {%- endif -%}
+                                });
+                            {%- else -%}
+                                $(this).find(".ais-RefinementList-item").each(function (index) {
+                                    var labelText = $(this).clone().find('.ais-RefinementList-count').remove().end().text().trim();
+                                    if ($('.ais-page .ais-key-area .icon-filtering[data-filtername="' + labelText + '"]').length) {
+                                        $('.ais-page .ais-key-area').addClass('showicon');
+                                        $('.ais-page .ais-key-area .icon-filtering[data-filtername="' + labelText + '"]').addClass('showicon');
+                                    }
+                                });
+                            {%- endif -%}
+                        }, "800");
                     }
 
                     if(counter <= 3){
