@@ -677,10 +677,12 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
               {%- render 'icon-spinner' -%}
             </span>
           </button>
-          {%- if show_dynamic_checkout_button -%}
-            {{ form | payment_button }}
-          {%- endif -%}
+          {% comment %}\
 
+            {%- if show_dynamic_checkout_button -%}
+              {{ form | payment_button }}
+            {%- endif -%}
+          {% endcomment %}
         {%- endif -%}
       </div>
     </div>
