@@ -31,6 +31,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
@@ -51,6 +52,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
@@ -66,6 +68,46 @@
             "button_one_link": "/products/commercial-carpet-spot-cleaning-machine",
             "button_two_label": "Heated",
             "button_two_link": "/products/heated-carpet-spot-cleaner",
+            "button_color_override": ""
+          }
+        },
+        "slide_v2_8YK4yh": {
+          "type": "slide_v2",
+          "settings": {
+            "sotm_icon": "2",
+            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
+            "middle_image": "/cdn/shop/files/trusted-clean-quench-vacuum-special.png?v=17333236204",
+            "middle_image_alt": "Trusted Clean Quench Wet Push Vacuum Special",
+            "right_image": "",
+            "right_image_alt": "",
+            "text_area_html": "<div class=\"top-text\">Reliable Results, Remarkable Savings.</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Now Only<br/>$2,299.99 (Electric) & $2,699.99 (Battery)</div>",
+            "text_area_css": "",
+            "bg_link": "/products/trusted-clean-quench-wet-push-vacuum",
+            "promo_link": "",
+            "button_one_label": "Save $75",
+            "button_one_link": "/products/trusted-clean-quench-wet-push-vacuum",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_color_override": ""
+          }
+        },
+        "slide_v2_AQhw3c": {
+          "type": "slide_v2",
+          "settings": {
+            "sotm_icon": "2",
+            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
+            "middle_image": "/cdn/shop/files/trusted-clean-20-inch-floor-buffer-special.png?v=17333236204",
+            "middle_image_alt": "Trusted Clean 20\" Commercial Grade Floor Buffer",
+            "right_image": "",
+            "right_image_alt": "",
+            "text_area_html": "<div class=\"top-text\">Reliable Results, Remarkable Savings.</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Now Only<br/>$2,299.99 (Electric) & $2,699.99 (Battery)</div>",
+            "text_area_css": "",
+            "bg_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "promo_link": "",
+            "button_one_label": "Save $100",
+            "button_one_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "button_two_label": "",
+            "button_two_link": "",
             "button_color_override": ""
           }
         },
@@ -207,6 +249,8 @@
         "banner_fLBUa3",
         "slide_v2_cqVtUz",
         "slide_v2_nhVKm9",
+        "slide_v2_8YK4yh",
+        "slide_v2_AQhw3c",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
         "slide-1",
