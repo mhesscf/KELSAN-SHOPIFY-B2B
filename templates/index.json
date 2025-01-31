@@ -80,7 +80,7 @@
             "middle_image_alt": "Trusted Clean Quench Wet Push Vacuum Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Quench Spills, Capture Deals!</div>\n<h1>Trusted Clean 'Quench' Wet Push Vacuum </h1>\n<div>Was: <br/>$799.99<br/>Now: $724.99</div>",
+            "text_area_html": "<div class=\"top-text\">Quench Spills, Capture Deals!</div>\n<h1>Trusted Clean 'Quench' Wet Push Vacuum </h1>\n<div>Was: $799.99<br/>Now: $724.99</div>",
             "text_area_css": "",
             "bg_link": "/products/trusted-clean-quench-wet-push-vacuum",
             "promo_link": "",
@@ -237,6 +237,7 @@
         },
         "banner_J8FYNy": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/advantage-save-500-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/advantage-save-500-mobile-banner.jpg",
