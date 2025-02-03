@@ -1836,7 +1836,7 @@ function accdropATC(productid){
          'properties[_tiered_pricing]': atcTier,
          'properties[_org_price]': atcOrgPrice,
          'properties[Status]': atcStatus,
-         'properties[SKU]': atcSku,
+         'properties[Sku]': atcSku,
          'properties[_available_qty]': atcAvailQty,
          'id': atcVarId,
          'quantity': 1,
