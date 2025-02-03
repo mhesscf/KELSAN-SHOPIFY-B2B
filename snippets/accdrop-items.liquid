@@ -283,6 +283,7 @@
                      data-var_vissku="{{ variant.sku }}"
                      data-var_status="{{ stockStatusNote }}"
                      data-var_erpsku="{{ variant.metafields.plytix.erp_sku }}"
+                     data-var_availqty="{{ variant.inventory_quantity }}"
                      data-producttype="{{ product.type }}"
                      data-brand="{{ product.vendor }}"
                     {% if variant.metafields.plytix.general_product_type == "Machine" %}
