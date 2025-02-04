@@ -14507,6 +14507,113 @@ nav.breadcrumb a.homebread:hover span,
 	.cart-item--upsell .upsell-atc-container{padding-top:8px;}
 }
 
+{% comment %}cart a/b test for ".sticky-layout" addition to "sitemain-cart"{% endcomment %}
+.cart-total-title {
+	display: none;
+}
+
+@media (min-width: 1100px) {
+
+
+	.sticky-layout .cart-title {
+		margin: 15px 0;
+	}
+
+	.sticky-layout #update-cart:not(.btm-update-cart) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.sticky-layout .cart-warnings,
+	.sticky-layout .cart-title {
+		flex-basis: 100%;
+	}
+
+	.sticky-layout .cart-title-right {
+		display: none;
+	}
+
+
+	.sticky-layout .cart-checkout .fg-notice {
+		flex-basis: 100%;
+		text-align: right;
+		line-height: 15px;
+	}
+
+	.sticky-layout .cart-checkout .fg-notice a {
+		text-decoration: none;
+		color: #666666;
+	}
+
+	.sticky-layout .cart-checkout .fg-notice span {
+		font-size: 14px;
+	}
+
+	.sticky-layout .cart-checkout .fg-notice .mini-box img {
+		position: relative;
+		top: 7px;
+		right: 3px;
+	}
+
+
+	.sticky-layout .fg-area {
+		order: 3;
+		max-width: 100%
+	}
+
+	.sticky-layout .cartitems-contain {
+		order: 1;
+		flex-basis: 75%;
+		clear: left;
+	}
+
+	.sticky-layout .total-area {
+		flex-basis: 25%;
+		order: 2;
+	}
+
+	.sticky-layout .total-area .cartitems {
+		position: relative;
+		height: 100%
+	}
+
+	.sticky-layout .total-area .cart-total {
+		position: sticky;
+		top: 105px;
+		border: 1px solid rgba(128, 128, 128, 0.16);
+		margin: 16px 0 46px 15px;
+		overflow: hidden;
+	}
+
+	.sticky-layout .cart-total-title {
+		display: block;
+		background-color: {{ settings.color_input_border }};
+		color: #fff;
+		font-size: 24px;
+		text-align: center;
+		padding: 15px;
+	}
+
+	.sticky-layout .cart-total-contain {
+		padding: 20px;
+	}
+
+	.sticky-layout .cart-item {
+		margin-bottom: 15px;
+	}
+
+	.sticky-layout .total-area .cart-total,
+	.sticky-layout .cart-item {
+		border-radius: 30px;
+	}
+
+	.sticky-layout .cart-final-total {
+		padding-top: 0;
+		margin: 0 0 15px 0;
+		border: none;
+	}
+}
+
 {% comment %}superfreak in the cart{% endcomment %}
 
 .sf-atc .sf-atc-btn{
