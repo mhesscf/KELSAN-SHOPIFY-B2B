@@ -284,10 +284,13 @@ margin-top:76px;
     End: {{ endShowDate | date: "%Y-%m-%d" }}
     -->
 
+{% paginate shop.metaobjects.promotional_campaign.values by 1500 %}
+
     {%- assign promoObj = shop.metaobjects.promotional_campaign.values -%}
     {%- assign promoObjSorted = promoObj | sort:"end_date_text" -%}
     {%- assign promoObjSortedRev = promoObj | sort:"end_date_text" | reverse -%}
 
+{% endpaginate %}
 
     {%- if employee == 1 -%}
 
