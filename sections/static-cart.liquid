@@ -222,7 +222,7 @@
     {% endif %}
   {% endif %}
 
-  <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
+  <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %} cartitems-contain">
     <div class="cartitems">
       {% if has_items %}
         {%
@@ -233,7 +233,7 @@
         <div class="cart-total">
           <a data-href="/cart/clear" class="btn main-default-button button-primary" id="empty-cart" style="margin-bottom:10px;"><i class="fa-regular fa-trash"></i> Empty Cart</a>
           {% comment %}<a href="/cart" class="btn button-primary" id="update-cart" style="margin-bottom:10px;">Update Cart</a>{% endcomment %}
-          <a class="btn button-primary main-default-button" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;"><i class="fa-solid fa-arrows-rotate"></i> Update Cart</a>
+          <a class="btn button-primary main-default-button btm-update-cart" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;"><i class="fa-solid fa-arrows-rotate"></i> Update Cart</a>
 
           {% if section.settings.enable_order_notes %}
             <div class="cart-ordernote">
@@ -276,81 +276,108 @@
         </p>
       {% endif %}
   {% endif %}
-  <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
+  <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %} total-area">
     <div class="cartitems">
         <div class="cart-total">
           {% comment %}end fg break out of form{% endcomment %}
-          <div class="cart-final-total">
+          <div class="cart-total-title">Order Totals</div>
+          <div class="cart-total-contain">
+            <div class="cart-final-total">
 
-            <noscript>
-              <button
-                class="cart-update"
-                type="submit"
-                aria-label="{{ 'cart.general.update' | t }}"
-              >
-                {{ 'cart.general.update' | t }}
-              </button>
-            </noscript>
+              <noscript>
+                <button
+                  class="cart-update"
+                  type="submit"
+                  aria-label="{{ 'cart.general.update' | t }}"
+                >
+                  {{ 'cart.general.update' | t }}
+                </button>
+              </noscript>
 
-            <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}">
-              {%
-                render 'cart-discounts',
-                cart: cart
-              %}
-            </ul>
+              <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}">
+                {%
+                  render 'cart-discounts',
+                  cart: cart
+                %}
+              </ul>
 
-            <div class="cart-subtotal">
-              <span>{{ 'cart.general.subtotal' | t }}</span>
-              <span class="money" data-cart-total>{{ cart.total_price | money }}</span>
-            </div>
-          </div>
-
-          <div class="cart-shipping">
-            {%- capture taxes_shipping_checkout -%}
-              {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
-              {%- elsif cart.taxes_included -%}
-                {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
-              {%- elsif shop.shipping_policy.body != blank -%}
-                {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
-              {%- else -%}
-                {{ 'cart.general.tax_and_shipping' | t }}
-              {%- endif -%}
-            {%- endcapture -%}
-
-            <p class="cart-message meta">{{ taxes_shipping_checkout }}</p>
-
-            {% comment %}
-              snippets/cart-shipping.liquid has an internal check to see if shipping is required
-            {% endcomment %}
-            {% if section.settings.enable_shipping_calc and shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
-              {% render 'cart-shipping' %}
-            {% endif %}
-
-          </div>
-
-          <div class="cart-checkout">
-            <button
-              class="button-primary main-atc-button checkout-btn"
-              style="width:200px"
-              type="submit"
-              name="checkout"
-              aria-label="{{ 'cart.general.checkout' | t }}"
-            >
-                <i class="fa-regular fa-cart-shopping checkout-btn"></i>
-              {{ 'cart.general.checkout' | t }}
-            </button>
-            <div class="approve-contain-cart"></div>
-           
-            {% if additional_checkout_buttons %}
-              <div class="additional-checkout-buttons">
-                {{ content_for_additional_checkout_buttons }}
+              <div class="cart-subtotal">
+                <span>{{ 'cart.general.subtotal' | t }}</span>
+                <span class="money" data-cart-total>{{ cart.total_price | money }}</span>
               </div>
-            {% endif %}
+            </div>
 
-            {% if show_continue_link %}
-              {{ continue_link_html }}
-            {% endif %}
+            <div class="cart-shipping">
+              {%- capture taxes_shipping_checkout -%}
+                {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                  {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {%- elsif cart.taxes_included -%}
+                  {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+                {%- elsif shop.shipping_policy.body != blank -%}
+                  {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                {%- else -%}
+                  {{ 'cart.general.tax_and_shipping' | t }}
+                {%- endif -%}
+              {%- endcapture -%}
+
+              <p class="cart-message meta">{{ taxes_shipping_checkout }}</p>
+
+              {% comment %}
+                snippets/cart-shipping.liquid has an internal check to see if shipping is required
+              {% endcomment %}
+              {% if section.settings.enable_shipping_calc and shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
+                {% render 'cart-shipping' %}
+              {% endif %}
+
+            </div>
+
+            <div class="cart-checkout">
+              <button
+                class="button-primary main-atc-button checkout-btn"
+                style="width:150px"
+                type="submit"
+                name="checkout"
+                aria-label="{{ 'cart.general.checkout' | t }}"
+              >
+                  <i class="fa-regular fa-cart-shopping checkout-btn"></i>
+                {{ 'cart.general.checkout' | t }}
+              </button>
+              <div class="approve-contain-cart"></div>
+              {% comment %}
+              <script>
+                jQuery(document).ready(function($){
+                  jQuery(".sitemain-cart").addClass('sticky-layout')
+                });
+              </script>
+              {% endcomment %}
+              {% if shop.name contains "CleanFreak" %}
+                {% assign cart-size = cart.total_price | divided_by: 100.00 %}
+                {% assign threshold-1 = 1000 | minus: 0.01 %}
+                {% if cart-size < threshold-1 %}
+                  {% assign threshold-left =  1000 |  minus: cart-size %}
+                  {% assign threshold-left =  threshold-left | times:100 %}
+
+                  <div class="fg-notice fg-notice-thresh">
+                    <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
+                  </div>
+
+                {% else %}
+                  <div class="fg-notice fg-notice-link">
+                    <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              {% if additional_checkout_buttons %}
+                <div class="additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {% endif %}
+
+              {% if show_continue_link %}
+                {{ continue_link_html }}
+              {% endif %}
+            </div>
           </div>
         </div>
       {% else %}
