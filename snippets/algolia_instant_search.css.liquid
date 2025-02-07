@@ -230,6 +230,7 @@ content: '';
   cursor: pointer;
   line-height: 1.3;
   font-size:15px;
+  color:{{ settings.color_text }}
 }
 
 .ais-page .ais-facet--checkbox{
@@ -256,18 +257,23 @@ content: '';
   right: 0px;
   color: var(--secondary-color);
 }
-
-.ais-page .ais-RefinementList-item--selected {
-  font-weight: bold;
-}
-
+.ais-page .ais-facet--item:hover .ais-facet--label,
+.ais-page .ais-key-area .icon-filtering:hover .icon-name,
 .ais-page .ais-RefinementList-item--selected,
 .ais-page .ais-facet--item:hover {
+  padding-right: 42px;
+  {% comment %}
+  border-left: 4px solid var(--main-color);
   margin-left: -8px;
   padding-left: 4px;
-  padding-right: 42px;
+  {% endcomment %}
+  color: {{ settings.color_links }};
+  text-decoration: underline;
+}
 
-  border-left: 4px solid var(--main-color);
+.ais-page .ais-RefinementList-item--selected label,
+.ais-page .ais-facet--item:hover label{
+  text-decoration: underline;
 }
 
 .ais-page .ais-RefinementList-item--selected .ais-facet--count,
@@ -1120,6 +1126,7 @@ content: '';
 }
 .ais-page .productitem:hover .productitem--title a {
   color:{{ settings.color_link_hover_2 }};
+  text-decoration:underline;
 }
 .ais-page .is-review .jdgm-prev-badge{
   margin-bottom:10px;

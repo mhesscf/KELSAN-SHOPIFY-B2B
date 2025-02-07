@@ -611,24 +611,26 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
         <div class="qtydiv" data-quantity-wrapper>
           <div class="lside">
-            <label for="Quantity" class="quantity-selector">Quantity</label>
-            <div class="qtybox" id="qtybox">
-              <input type='button' value='−' data-step="{{ pstep }}" class='qtyminus' data-field='quantity' />
+            {%- if pdiscontinued == false -%}
+              <label for="Quantity" class="quantity-selector">Quantity</label>
+              <div class="qtybox" id="qtybox">
+                <input type='button' value='−' data-step="{{ pstep }}" class='qtyminus' data-field='quantity' />
 
 
-              <input
-                      type='text'
-                      name='quantity'
-                      id="product-quantity-input"
-                      class="form-field-input form-field-number form-field-filled qty"
-                      value="{{ pstep }}"
-                      data-step="{{ pstep }}"
-                      pattern="\d*"
-                      aria-label="{{ 'general.general.quantity' | t }}"
-                      data-quantity-input
-              />
-              <input type='button' value='+' class='qtyplus' data-step="{{ pstep }}" data-field='quantity' />
-            </div>
+                <input
+                        type='text'
+                        name='quantity'
+                        id="product-quantity-input"
+                        class="form-field-input form-field-number form-field-filled qty"
+                        value="{{ pstep }}"
+                        data-step="{{ pstep }}"
+                        pattern="\d*"
+                        aria-label="{{ 'general.general.quantity' | t }}"
+                        data-quantity-input
+                />
+                <input type='button' value='+' class='qtyplus' data-step="{{ pstep }}" data-field='quantity' />
+              </div>
+            {%- endif -%}
           </div>
 
         </div>
