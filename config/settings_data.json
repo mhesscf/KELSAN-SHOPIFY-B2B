@@ -303,13 +303,13 @@
         "settings": {
           "show_announcement": true,
           "homepage_announcement": false,
-          "announcement_text": "Save 20% on select machines with coupon \"SNOW20\" - Valid until 2/7/25.",
+          "announcement_text": "Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/5/25.",
           "announcement_text_mobile": "Winter Sale! Save 20% on select machines when you use the coupon code \"SNOW20\". Valid 1/23/25 - 2/07/25.",
           "announcement_link": "/collections/flash-sale",
           "announcement_promo": "SNOW20",
           "flash": false,
-          "announcement_color": "#ffffff",
-          "announcement_background": "#5d9db9"
+          "announcement_color": "#000000",
+          "announcement_background": "#ffbbba"
         }
       },
       "static-product-recommendations": {
