@@ -303,8 +303,8 @@
         "settings": {
           "show_announcement": true,
           "homepage_announcement": false,
-          "announcement_text": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/5/25.",
-          "announcement_text_mobile": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/5/25.",
+          "announcement_text": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
+          "announcement_text_mobile": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
           "announcement_link": "/collections/flash-sale",
           "announcement_promo": "SNOW20",
           "flash": false,
