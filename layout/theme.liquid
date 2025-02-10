@@ -169,12 +169,14 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     {% render 'qikify-apps' %}
 
     {{ 'qikify-auto-hide.js' | asset_url | script_tag }}
+    {%- comment -%}
     <script type="text/javascript">if (typeof window.hulkappsWishlist === 'undefined') {
             window.hulkappsWishlist = {};
         }
         window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
         window.hulkappsWishlist.hasAppBlockSupport = '1';
     </script>
+    {%- endcomment -%}
     {% include 'wiser' %}{% include 'wiser_popup' %}
     {%- comment -%}{% render 'judgeme_core' %}{%- endcomment -%}
 
@@ -184,12 +186,6 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     {%- if settings.global_header_script != blank -%}
         {{ settings.global_header_script }}
     {%- endif -%}
-<script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
-        window.hulkappsWishlist = {};
-        }
-        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
-        window.hulkappsWishlist.hasAppBlockSupport = '1';
-        </script>
 
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Starts.  uninstalled 10/17 -->
       {%- comment -%}<script src='https://upsell-app.logbase.io/lb-upsell.js?shop=cleanfreak-prod.myshopify.com' defer></script>{%- endcomment -%}
@@ -977,7 +973,9 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
         defer
 >
 </script>
+{%- comment -%}
 {% render 'hulkappsWishlistPopup' %}
+{%- endcomment -%}
 {%- if settings.global_footer_script != blank -%}
     {{ settings.global_footer_script }}
 {%- endif -%}
