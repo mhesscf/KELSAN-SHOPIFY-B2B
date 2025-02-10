@@ -306,7 +306,7 @@
           "announcement_text": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
           "announcement_text_mobile": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
           "announcement_link": "/collections/flash-sale",
-          "announcement_promo": "SNOW20",
+          "announcement_promo": "VDAY20",
           "flash": false,
           "announcement_color": "#ffffff",
           "announcement_background": "#cf1735"
