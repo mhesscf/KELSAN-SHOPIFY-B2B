@@ -302,24 +302,24 @@
   </section>
 </footer>
 
-
-<div class="t2u-slideout" style="display:none;">
-  <div class="t2u-slideout-contain">
-    <h2>Reach Out to Us!</h2>
-    <div class="t2u-slideout-banner-contain"><img class="img-responsive t2u-slideout-banner" src="{{ 'typer-800x.jpg' | file_url }}" alt="Contact Us" /></div>
-    <div class="t2u-slideout-text">
-      At CleanFreak.com, our team of cleaning enthusiasts is trained to help you find the perfect product or tackle any cleaning conundrum.
-      <br/><br/>
-      Got questions? Chat with us for instant answers or call to talk to a real human who gets it. We’re here to make your day cleaner and brighter—one conversation at a time!
-    </div>
-    <div class="t2u-contact-info-slideout">
-      <div class="t2u-phone"><i class="fa-regular fa-phone"></i><a class="phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a></div>
-      <div class="t2u-chat" onClick="triggerChat()"><i class="fa-regular fa-comment"></i><span class="atc-button--text">Live Chat</span></div>
+{%- if shop.permanent_domain contains "cleanfreak" -%}
+  <div class="t2u-slideout" style="display:none;">
+    <div class="t2u-slideout-contain">
+      <h2>Reach Out to Us!</h2>
+      <div class="t2u-slideout-banner-contain"><img class="img-responsive t2u-slideout-banner" src="{{ 'typer-800x.jpg' | file_url }}" alt="Contact Us" /></div>
+      <div class="t2u-slideout-text">
+        At CleanFreak.com, our team of cleaning enthusiasts is trained to help you find the perfect product or tackle any cleaning conundrum.
+        <br/><br/>
+        Got questions? Chat with us for instant answers or call to talk to a real human who gets it. We’re here to make your day cleaner and brighter—one conversation at a time!
+      </div>
+      <div class="t2u-contact-info-slideout">
+        <div class="t2u-phone"><i class="fa-regular fa-phone"></i><a class="phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a></div>
+        <div class="t2u-chat" onClick="triggerChat()"><i class="fa-regular fa-comment"></i><span class="atc-button--text">Live Chat</span></div>
       </div>
     </div>
-
   </div>
-</div>
+{%- endif -%}
+
 
 <script>
 
