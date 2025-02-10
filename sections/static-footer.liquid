@@ -302,7 +302,7 @@
   </section>
 </footer>
 
-{%- if shop.permanent_domain contains "cleanfreak" -%}
+
 <div class="t2u-slideout" style="display:none;">
   <div class="t2u-slideout-contain">
     <h2>Reach Out to Us!</h2>
@@ -319,29 +319,29 @@
     </div>
 
   </div>
-  <script>
-
-    jQuery(document).ready(function($) {
-      $('.launch-t2u-side').on('click', function (e) {
-
-        var formhtml = $('.t2u-slideout').html();
-
-        $('.popup-container .content').html(formhtml);
-        $('.popup-container').addClass('rightpop');
-
-        $('.popup-container').removeClass('hidden');
-        $(".pop-grad").removeClass('hidden');
-      });
-    });
-
-    function triggerChat(){
-      document.querySelector('#thischat a').click();
-    }
-
-  </script>
-{%- endif -%}
-
 </div>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $('.launch-t2u-side').on('click', function (e) {
+
+      var formhtml = $('.t2u-slideout').html();
+
+      $('.popup-container .content').html(formhtml);
+      $('.popup-container').addClass('rightpop');
+
+      $('.popup-container').removeClass('hidden');
+      $(".pop-grad").removeClass('hidden');
+    });
+  });
+
+  function triggerChat(){
+    document.querySelector('#thischat a').click();
+  }
+
+</script>
+
 
 
 <div class="popup-container hidden">
