@@ -26455,9 +26455,16 @@ margin-top: 179px;
 #chat-widget-container{
 	z-index: 3147483640 !important
 }
-approve-widget{
-	z-index:900;
-	position:relative;
+@media (max-width: 679px) {
+	.klaviyo-close-form {
+		top: -10px !important;
+		left: unset !important;
+		right: -8px !important;
+	}
+}
+approve-widget {
+	z-index: 900;
+	position: relative;
 }
 {% comment %}
 ======== Minification ========
