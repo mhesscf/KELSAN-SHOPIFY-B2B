@@ -1977,12 +1977,14 @@ h4 {
 a{
 	color: {{ color_links }};
 	transition: all 0.4s ease-in-out;
+	text-decoration:none;
 }
 
 .fake-link:hover,
 a:hover{
 	color: {{ settings.color_link_hover }};
 	cursor: pointer;
+	text-decoration:underline;
 }
 .highlights-banner__heading, h5 {
 	font-size: var(--font-size-heading-5);
@@ -2175,7 +2177,7 @@ footer .footer-icon svg{
 .rte .tabs li > a:hover, .site-navigation .navmenu-meganav-standard__image-link:hover, .site-navigation .navmenu-depth-2 .navmenu-link:hover, .productgrid--sidebar-menu .navmenu-link:hover, .filter-item:hover, .productitem--title a:hover, .cart-item--remove-link:hover, .tweet--footer:hover, .tweet--header-screenname:hover, .hotspot__tooltip:hover, .menulist-menu__link:hover {
 	color: {{ color_links }};
 }
-
+{% comment %}
 .spr-content .spr-pagination a, .spr-content .spr-review .spr-review-footer a, .spr-summary-caption a.spr-summary-actions-togglereviews, .product-recently-viewed__clear, .shopify-payment-button .shopify-payment-button__more-options, .product-vendor a, .utils-sortby-button,
 .utils-filter-button, .productgrid--sidebar-menu .navmenu-link--active, .productgrid-listview .productitem--link, .productgrid--footer-results-list a, .filter-item-clear-all, .active-filters__clear-link, .collection-filters__filter-link[data-filter-active], .filter-item--grid-simple .filter-item-clear-all, [data-filter-active=true], .filter-item a.filter-text--link, .pagination--inner a, .search-flydown--content-item a, .search-flydown--continue, .live-search-takeover-cancel, .collection__item-title, .breadcrumbs-container a, .article--excerpt-readmore, .account-page-content a, .tweet--content a, .menulist-menu__show-more-trigger, .blogposts--footer-link, .subcollections__container a, .subcollections-featured-collection__subcollection-cta, .subcollections-featured-collection__subcollection-menu-link, .product-compare__placeholder-link, .product-compare__clear-all, .product-link, .passwordentry-contents a, .password-page-footer--item a, .cart-continue, .cart-shipping .cart-shipping-toggle, .cart-update, .article--pagination .article--pagination-item-left > a,
 .article--pagination .article--pagination-item-right > a, .article--tags a, .rte a,
@@ -2197,7 +2199,7 @@ footer .footer-icon svg{
 .image-with-text__text a:hover {
 	color: {{ color_link_hover }};
 }
-
+{% endcomment %}
 .productitem, .product-compare-drawer__item,
 .product-compare-drawer__item-placeholder, .disclosure-list, .cart-item, .article--excerpt-wrapper, .account-address, .pxs-map-card, .pxs-map-section-layout-x-outside-left .pxs-map-card-wrapper, .pxs-map-section-layout-x-outside-right .pxs-map-card-wrapper, .pxs-map-wrapper, .testimonial, .twitter--inner:not(.flickity-enabled),
 .twitter--inner .flickity-slider, .hotspot__tooltip-wrapper, .menulist-inner, .featured-product--container .featured-product--inner, .subcollections-list__content[data-subcollections-layout=menu] .subcollections-menu__item, .product-compare__product-card-placeholder, #shopify-product-reviews, .rte table,
@@ -13394,6 +13396,10 @@ display:none;
 .article--excerpt-title a {
 	color: currentColor;
 	text-decoration: none;
+}
+.article--excerpt-title:hover a {
+	color: {{ color_links }};
+	text-decoration: underline;
 }
 
 .article--excerpt-text {
@@ -25179,14 +25185,17 @@ img.category-resources-section__image {
 }
 .category-types-v2 .category-link-wrapper .category-link-title{
 	padding:3px 15px;
-	color: #303E48;
+	color: {{ settings.color_text }};
 	font-size: 20px;
 	line-height: 24px;
 }
 .category-types-v2 .category-link-wrapper a{
 	text-decoration: none;
 }
-
+.category-types-v2 .category-link-wrapper:hover .category-link-title{
+	color: {{ color_links }};
+	text-decoration:underline;
+}
 .category-types-v2 .category-link-wrapper .moreinfo-btn{
 	max-height:0px;
 	position:absolute;
@@ -26455,9 +26464,16 @@ margin-top: 179px;
 #chat-widget-container{
 	z-index: 3147483640 !important
 }
-approve-widget{
-	z-index:900;
-	position:relative;
+@media (max-width: 679px) {
+	.klaviyo-close-form {
+		top: -10px !important;
+		left: unset !important;
+		right: -8px !important;
+	}
+}
+approve-widget {
+	z-index: 900;
+	position: relative;
 }
 {% comment %}
 ======== Minification ========
