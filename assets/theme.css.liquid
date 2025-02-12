@@ -2176,6 +2176,7 @@ footer .footer-icon svg{
 .rte .tabs li:hover,
 .rte .tabs li > a:hover, .site-navigation .navmenu-meganav-standard__image-link:hover, .site-navigation .navmenu-depth-2 .navmenu-link:hover, .productgrid--sidebar-menu .navmenu-link:hover, .filter-item:hover, .productitem--title a:hover, .cart-item--remove-link:hover, .tweet--footer:hover, .tweet--header-screenname:hover, .hotspot__tooltip:hover, .menulist-menu__link:hover {
 	color: {{ color_links }};
+	text-decoration: none !important;
 }
 {% comment %}
 .spr-content .spr-pagination a, .spr-content .spr-review .spr-review-footer a, .spr-summary-caption a.spr-summary-actions-togglereviews, .product-recently-viewed__clear, .shopify-payment-button .shopify-payment-button__more-options, .product-vendor a, .utils-sortby-button,
@@ -2425,6 +2426,7 @@ footer .footer-icon svg{
 	background: {{ color_background | color_mix: settings.color_button_background, 10 }};
 	border: 1px solid {{ color_background | color_mix: settings.color_button_background, 10 }};
 	color: {{ settings.color_button_text }};
+	text-decoration:none !important;
 }
 .button-primary:active {
 	background: {{ color_button_background_focus }};
