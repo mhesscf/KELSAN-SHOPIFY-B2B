@@ -22,6 +22,7 @@
         },
         "banner_awrQYF": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "banner-lg": "shopify://shop_images/ultimate-extractor-bogo-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/ultimate-extractor-bogo-mobile-banner.jpg",
