@@ -25,8 +25,8 @@
           "settings": {
             "banner-lg": "shopify://shop_images/mosquito-super-vac-bogo-homepage-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/mosquito-super-vac-bogo-homepage-mobile-banner.jpg",
-            "link": "",
-            "coupon-code": "/products/mosquito-super-vac-10-quart-hepa-backpack-vacuum"
+            "link": "/products/mosquito-super-vac-10-quart-hepa-backpack-vacuum",
+            "coupon-code": ""
           }
         }
       },
