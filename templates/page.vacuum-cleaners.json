@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "26570bfd-92cc-439b-8ca5-07248d87232c": {
@@ -15,14 +15,24 @@
         "c967777d-cb4a-48f2-bfb8-a8605e67c3e5": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/vacuum-cleaners-dept-page.jpg",
+            "cat_image": "shopify://shop_images/vacuum-cleaners-dept-page.jpg",
             "cat_title": "Vacuum Cleaners",
             "cat_text": "From standard upright vacuums to powerful industrial models, we have the best-selling vacuums for your specific needs."
+          }
+        },
+        "banner_EWnPnw": {
+          "type": "banner",
+          "settings": {
+            "banner-lg": "shopify://shop_images/mosquito-super-vac-bogo-homepage-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/mosquito-super-vac-bogo-homepage-mobile-banner.jpg",
+            "link": "",
+            "coupon-code": "/products/mosquito-super-vac-10-quart-hepa-backpack-vacuum"
           }
         }
       },
       "block_order": [
-        "c967777d-cb4a-48f2-bfb8-a8605e67c3e5"
+        "c967777d-cb4a-48f2-bfb8-a8605e67c3e5",
+        "banner_EWnPnw"
       ],
       "settings": {
         "enable_autoplay": true,
@@ -136,57 +146,57 @@
         "38da43d0-2947-44e4-960c-c0b18e02645f": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/backpack-vacs.jpg",
+            "image": "shopify://shop_images/backpack-vacs.jpg",
             "title": "Backpack Vacuums",
-            "url": "\/collections\/backpack-vacuums"
+            "url": "/collections/backpack-vacuums"
           }
         },
         "5ca0d1a9-aeb3-47a5-ada2-1ab1f5058d56": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/canister-portable-vac.jpg",
+            "image": "shopify://shop_images/canister-portable-vac.jpg",
             "title": "Canister & Portable",
-            "url": "\/collections\/canister-portable-vacuums"
+            "url": "/collections/canister-portable-vacuums"
           }
         },
         "c3263c39-bfa5-4d99-94c0-a8a2aa4ff83b": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cordless-vacuums.jpg",
+            "image": "shopify://shop_images/cordless-vacuums.jpg",
             "title": "Cordless",
-            "url": "\/collections\/cordless-battery-powered-vacuums"
+            "url": "/collections/cordless-battery-powered-vacuums"
           }
         },
         "343a8666-fefa-4742-94d0-283823060110": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/industrial-vacuums.jpg",
+            "image": "shopify://shop_images/industrial-vacuums.jpg",
             "title": "Industrial Vacuums",
-            "url": "\/pages\/industrial-vacuums"
+            "url": "/pages/industrial-vacuums"
           }
         },
         "a0d0ea81-1c54-4b9c-8d3a-a40bb4cb33d7": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hip-style-vacs.jpg",
+            "image": "shopify://shop_images/hip-style-vacs.jpg",
             "title": "Hip Style",
-            "url": "\/collections\/hip-style-vacuums"
+            "url": "/collections/hip-style-vacuums"
           }
         },
         "f80fcf1f-f373-4582-a88b-221f247757ab": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/upright-vacuums.jpg",
+            "image": "shopify://shop_images/upright-vacuums.jpg",
             "title": "Upright",
-            "url": "\/pages\/upright-vacuums"
+            "url": "/pages/upright-vacuums"
           }
         },
         "154bdddf-36ec-47ba-8528-6d46fca94de2": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/wet-dry-vacuums.jpg",
+            "image": "shopify://shop_images/wet-dry-vacuums.jpg",
             "title": "Wet Dry Vacuums",
-            "url": "\/pages\/wet-dry-vaccums"
+            "url": "/pages/wet-dry-vaccums"
           }
         }
       },
@@ -209,33 +219,33 @@
         "2eab39d3-e178-444b-bc75-3f0ba1b38e82": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/counter-rotating-brushes-scrubbers.jpg",
+            "image": "shopify://shop_images/counter-rotating-brushes-scrubbers.jpg",
             "title": "Counter Rotating Brush (CRB) Scrubbers",
-            "url": "\/collections\/counter-rotating-brushes-crb-carpet-floor-scrubbers"
+            "url": "/collections/counter-rotating-brushes-crb-carpet-floor-scrubbers"
           }
         },
         "9ae0feb3-4a9f-4b83-8ab8-6dff143d1dde": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
+            "image": "shopify://shop_images/industrial-sweepers.jpg",
             "title": "Industrial Sweepers",
-            "url": "\/pages\/industrial-sweepers"
+            "url": "/pages/industrial-sweepers"
           }
         },
         "b33bdd5a-3e25-4d5f-8f7a-787412a73ec5": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-accessories-1.jpg",
+            "image": "shopify://shop_images/vacuum-accessories-1.jpg",
             "title": "Vacuum Accessories",
-            "url": "\/pages\/vacuum-accessories"
+            "url": "/pages/vacuum-accessories"
           }
         },
         "e3c412c2-950a-4016-92ba-a73224e488b6": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-parts-1.jpg",
+            "image": "shopify://shop_images/vacuum-parts-1.jpg",
             "title": "Vacuum Parts",
-            "url": "\/pages\/vacuum-parts"
+            "url": "/pages/vacuum-parts"
           }
         }
       },
@@ -322,48 +332,48 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bissell®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bissell&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Canister %26 Portable Vacuums&refinementList[product_type][2]=Upright Vacuums&q=Bissell",
-            "brand-image": "shopify:\/\/shop_images\/bissell_vac_3822_lg_sq.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Bissell&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Canister %26 Portable Vacuums&refinementList[product_type][2]=Upright Vacuums&q=Bissell",
+            "brand-image": "shopify://shop_images/bissell_vac_3822_lg_sq.jpg"
           }
         },
         "01b0d4a2-129c-498d-a3eb-70cf8a052b85": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Hoover®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Upright Vacuums&refinementList[product_type][2]=Canister %26 Portable Vacuums&q=Hoover",
-            "brand-image": "shopify:\/\/shop_images\/ch93619-hoover-mpwr-40v-backpack-vacuum.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Upright Vacuums&refinementList[product_type][2]=Canister %26 Portable Vacuums&q=Hoover",
+            "brand-image": "shopify://shop_images/ch93619-hoover-mpwr-40v-backpack-vacuum.jpg"
           }
         },
         "eb480988-a50f-4e36-8d96-56d7eef0670c": {
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Wet Dry Vacs&refinementList[product_type][2]=Upright Vacuums&refinementList[product_type][3]=Industrial Vacuums&q=ProTeam",
-            "brand-image": "shopify:\/\/shop_images\/proteam-super-coach-pro-10-quart-backpack-vacuum-107304-with-tool-kit.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Wet Dry Vacs&refinementList[product_type][2]=Upright Vacuums&refinementList[product_type][3]=Industrial Vacuums&q=ProTeam",
+            "brand-image": "shopify://shop_images/proteam-super-coach-pro-10-quart-backpack-vacuum-107304-with-tool-kit.jpg"
           }
         },
         "79cd1b85-e2b7-4295-aad7-b8a272590d3e": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Tornado®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Wet Dry Vacs&refinementList[product_type][2]=Upright Vacuums&refinementList[product_type][3]=Industrial Vacuums&q=Tornado",
-            "brand-image": "shopify:\/\/shop_images\/tornado-roam-cordless-upight-vacuum.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Wet Dry Vacs&refinementList[product_type][2]=Upright Vacuums&refinementList[product_type][3]=Industrial Vacuums&q=Tornado",
+            "brand-image": "shopify://shop_images/tornado-roam-cordless-upight-vacuum.jpg"
           }
         },
         "8aa25004-dbd4-4ad0-9afe-f550a85609a4": {
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Canister %26 Portable Vacuums&refinementList[product_type][1]=Wet Dry Vacs&refinementList[product_type][2]=Industrial Vacuums&q=IPC Eagle",
-            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-single-motor-gp172-19-gallon-poly-wet-dry-vac.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Canister %26 Portable Vacuums&refinementList[product_type][1]=Wet Dry Vacs&refinementList[product_type][2]=Industrial Vacuums&q=IPC Eagle",
+            "brand-image": "shopify://shop_images/ipc-eagle-single-motor-gp172-19-gallon-poly-wet-dry-vac.jpg"
           }
         },
         "149a5a02-7ef6-46df-b925-8abc892ede30": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Hip Style Vacuums&refinementList[product_type][2]=Wet Dry Vacs&q=Trusted Clean",
-            "brand-image": "shopify:\/\/shop_images\/trusted-clean-quench-wet-dry-vacuum.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Backpack Vacuums&refinementList[product_type][1]=Hip Style Vacuums&refinementList[product_type][2]=Wet Dry Vacs&q=Trusted Clean",
+            "brand-image": "shopify://shop_images/trusted-clean-quench-wet-dry-vacuum.jpg"
           }
         }
       },
@@ -385,11 +395,11 @@
         "eaaa2bd0-d7f3-4019-8466-1503385f5261": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-cleaners-dept-page.jpg",
+            "image": "shopify://shop_images/vacuum-cleaners-dept-page.jpg",
             "heading": "Carpet Vacuuming Guide",
-            "subheading": "<p>How to improve carpet cleanliness and longevity with routine vacuuming.<\/p>",
+            "subheading": "<p>How to improve carpet cleanliness and longevity with routine vacuuming.</p>",
             "button_label": "Read The Guide",
-            "button_link": "\/pages\/vacuum-carpets"
+            "button_link": "/pages/vacuum-carpets"
           }
         }
       },
@@ -402,8 +412,7 @@
     },
     "trustpilot_review_carousel_fpwRXJ": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
