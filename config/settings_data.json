@@ -301,7 +301,7 @@
           ".alert-bar.show {border-bottom: 1px solid white;}"
         ],
         "settings": {
-          "show_announcement": true,
+          "show_announcement": false,
           "homepage_announcement": false,
           "announcement_text": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
           "announcement_text_mobile": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
