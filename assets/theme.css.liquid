@@ -18358,6 +18358,28 @@ nav.breadcrumb a.homebread:hover span,
 	padding-right:5px;
 }
 
+{% comment %}icon colors{% endcomment %}
+.fa-solid.fa-ban{
+	color:#808080;
+}
+.fa-solid.fa-tags{
+	color: #fdb913;
+	margin-left:-2px;
+}
+.fa-duotone.fa-solid.fa-screwdriver-wrench{
+	--fa-primary-color: #000000;
+	--fa-secondary-color: #000000;
+}
+.fa-duotone.fa-solid.fa-truck-fast{
+	--fa-primary-color: #000000;
+	--fa-secondary-color: #000000;
+}
+
+.fa-duotone.fa-solid.fa-medal{
+	--fa-primary-color: #ffd940;
+	--fa-secondary-color: #000000;
+	--fa-secondary-opacity: 1;
+}
 .product-icons .ship-made .sm-row{
 	display: flex;
 	align-items: center;
@@ -18385,16 +18407,6 @@ nav.breadcrumb a.homebread:hover span,
 .product-icons .ship-made .sm-row .icon-wrap{
 	margin-right: 10px;
 	width: 20px;
-}
-
-.product-icons .ship-made .sm-row .icon-wrap i,
-.product-icons .ship-made .sm-row .icon-wrap svg{
-	color: {{ settings.color_icons }};
-}
-.product-icons .ship-made .sm-row.sale-icon .icon-wrap i,
-.product-icons .ship-made .sm-row.sale-icon .icon-wrap svg{
-	color: #fdb913;
-	margin-left:-2px;
 }
 .productgrid-listview .productgrid--item .product-icons{
 	display: flex;

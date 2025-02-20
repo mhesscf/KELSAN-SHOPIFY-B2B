@@ -472,10 +472,10 @@ data-product-quickshop-url="{{ product_link }}"
             <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <span class="sm-row-text"><span>Discontinued</span> <span class="sm-text">This Product has Been Discontinued</span></span></div>
           {%- else -%}
             {%- if product.metafields.plytix.made_in_USA -%}
-              <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+              <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
             {%- endif -%}
             {%- if product.metafields.plytix.free_shipping -%}
-              <div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
+              <div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
             {%- endif -%}
             {%- if product.metafields.plytix.eco_friendly -%}
               <div class="sm-row">
@@ -487,7 +487,7 @@ data-product-quickshop-url="{{ product_link }}"
             {%- if product.metafields.plytix.gold_medal_winner -%}
               <div class="sm-row">
                 <div class="icon-wrap">
-                  <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                  <i class="fa-duotone fa-solid fa-medal"></i>
                 </div>
                 <span class="sm-row-text"><span>Gold Medal Winner</span>
                 <span class="sm-text">It's that Awesome!</span></span>
