@@ -76,7 +76,7 @@
             {% if currentfp1qty == 0 and currentfp2qty == 0 and fp1qtyToAddDiff != 0 and fp2qtyToAddDiff != 0 and fp3qtyToAddDiff != 0 %}
                 $('.popup-container').removeClass('hidden');
                 $(".pop-grad").removeClass('hidden');
-                var newhtml = "<div style='text-align:center'><h2 style='font-weight:bold; font-size:18px;'>{{ header }}</h2>{{ message }}<br/><br/> <div class='atc-action'><button class='main-atc-button' onClick='bogoPromo{{ rulecounter }}()'><span class='btn-text'>UPDATE CART</span></button>  <button class='main-atc-button' onClick='event.stopPropagation(); closechildPop(\"bund-pop-\")'><span class='btn-text'>NO THANKS</span></button></div></div>";
+                var newhtml = "<div style='text-align:center'><h2 style='font-weight:bold; font-size:18px;'>{{ header }}</h2>{{ message }}<br/><br/> <div class='atc-action'><button class='main-atc-button' onClick='bogoPromo{{ rulecounter }}()'><span class='btn-text'>Update Cart</span></button>  <button class='main-atc-button' onClick='event.stopPropagation(); closechildPop(\"bund-pop-\")'><span class='btn-text'>No Thanks</span></button></div></div>";
                 $('.popup-container .content').html(newhtml);
                 {% comment %}bogoPromo{{ rulecounter }}();{% endcomment %}
             {% elsif fp1qtyToAddDiff != 0 and fp2qtyToAddDiff != 0 and fp3qtyToAddDiff != 0 %}

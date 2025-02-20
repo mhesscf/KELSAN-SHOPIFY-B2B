@@ -63,7 +63,7 @@
         <div class="site-footer-item icon-bar">
           <div class="footer-icon-grid">
             <div class="footer-icon">
-                <i class="fa-light fa-truck-fast"></i>
+              <i class="fa-duotone fa-solid fa-truck-fast"></i>
               <div class="footer-text">
                 <strong>Flexible Shipping</strong><br/>
                 Live cost calculator
@@ -322,8 +322,19 @@
 
 
 <script>
-
   jQuery(document).ready(function($) {
+    {% if shop.permanent_domain contains "carpetextractors" %}
+      // popup for "origins=am" param for customers coming from airmovers.com
+      const params = new URLSearchParams(window.location.search);
+      // Check if "origins" is set to "am"
+      if (params.get("origins") === "am") {
+        $('.popup-container').removeClass('hidden');
+        $(".pop-grad").removeClass('hidden');
+        var newhtml = $("<div><div style='text-align:center;'><img style='margin-bottom:-8px' src='https://cdn.shopify.com/s/files/1/0669/8097/0808/files/am-logo.jpg?v=1740084309' alt='airmovers.com'><br/>is now<br/><img src='https://cdn.shopify.com/s/files/1/0669/8097/0808/files/ce-logo.jpg?v=1740084309' alt='carpetextractors.com'><br/><br/>You can view all the products from AirMovers.com in our <a href='/pages/flood-restoration'>Flood Restoration Department</a>.</div></div>").html();
+        $('.popup-container .content').html(newhtml);
+      }
+    {% endif %}
+
     $('.launch-t2u-side').on('click', function (e) {
 
       var formhtml = $('.t2u-slideout').html();

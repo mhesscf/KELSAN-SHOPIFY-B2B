@@ -129,13 +129,13 @@
 
                 {%- endif -%}
                 {%- if product.metafields.plytix.made_in_USA -%}
-                    <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><i class="fa-solid fa-flag-usa"></i></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div></a>
+                    <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-left:-3px" width="25" height="25" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div></a>
                 {%- endif -%}
                 {%- if product.metafields.plytix.free_shipping -%}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                        <a href="/collections/free-shipping"><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a>
+                        <a href="/collections/free-shipping"><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a>
                     {%- else -%}
-                        <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Free%20Shipping "><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a>
+                        <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Free%20Shipping "><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a>
                     {%- endif -%}
                 {%- endif -%}
                 {%- if product.metafields.plytix.custom_free_shipping -%}
@@ -165,14 +165,14 @@
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/gold-medal-winners"><div class="sm-row">
                             <div class="icon-wrap">
-                                <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                                <i class="fa-duotone fa-solid fa-medal"></i>
                             </div>
                             <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">Reliable machines at affordable prices.</span></div>
                         </div></a>
                     {%- else -%}
                         <div class="sm-row">
                             <div class="icon-wrap">
-                                <img width="20" height="25" src="https://files.plytix.com/api/v1.1/file/public_files/pim/assets/87/f0/a9/62/62a9f0875d155f1bc7e49b84/images/07/c2/52/63/6352c2072fc607028a3dd10b/gold-medal.png" alt="gold medal winner">
+                                <i class="fa-duotone fa-solid fa-medal"></i>
                             </div>
                             <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">Reliable machines at affordable prices.</span></div>
                         </div>
@@ -237,7 +237,7 @@
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">
                             <div class="icon-wrap" style="font-size: 23px;">
-                                <i class="fa-regular fa-screwdriver-wrench"></i>
+                                <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i>
                             </div>
                             <div class="sm-row-text"><span>Refurbished / Used Model</span><br/>
                                 <span class="sm-text">Tested & approved to be in good working order!</span>
@@ -246,7 +246,7 @@
                     {%- else -%}
                         <div class="sm-row">
                             <div class="icon-wrap" style="font-size: 23px;">
-                                <i class="fa-regular fa-screwdriver-wrench"></i>
+                                <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i>
                             </div>
                             <div class="sm-row-text"><span>Refurbished / Used Model</span><br/>
                                 <span class="sm-text">Tested & approved to be in good working order!</span>
