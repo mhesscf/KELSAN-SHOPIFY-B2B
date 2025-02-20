@@ -37,6 +37,7 @@
     .howto-steps .flex-row .col .step-content .step-additional{
         margin-top:16px;
         flex: 0 0 30%;
+        max-width:200px;
     }
 
     .content-col.prodplace .productgrid--item{
@@ -81,6 +82,12 @@
     }
     .howto-steps .flex-row .col .step-heading p{
         color: {{ settings.color_text }};
+    }
+    .howto-steps .product-detail-sku,
+    .howto-steps .productitem--actions,
+    .howto-steps .productitem__price,
+    .howto-steps .jdgm-widget{
+        display:none !important;
     }
     @media (max-width: 1200px){
         .howto-steps .flex-row .col .step-content{
