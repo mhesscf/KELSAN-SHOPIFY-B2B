@@ -287,10 +287,13 @@
                 {%- endif -%}
                 {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
                     <div class="padcharacteristics">
-
-                        {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping  and product.first_available_variant.metafields.plytix.brush_pad_size -%}
-                            <h2 class="prod-block-title">Pad Characteristics</h2>
-                        {%- elsif product.metafields.plytix.eco_friendly -%}
+                        {%- if product.first_available_variant.metafields.plytix.pad_life_expectancy_grouping and product.first_available_variant.metafields.plytix.brush_pad_size -%}
+                             {%- if product.first_available_variant.metafields.plytix.brush_pad_size contains " x " and product.metafields.plytix.eco_friendly != true -%}
+                                 {%- comment -%}show nothing{%- endcomment -%}
+                             {%- else -%}
+                                <h2 class="prod-block-title">Pad Characteristics</h2>
+                            {%- endif -%}
+                        {%- elsif product.metafields.plytix.eco_friendly and product.type == "Floor Pads, Bonnets & Sanding Screens" -%}
                             <h2 class="prod-block-title">Pad Characteristics</h2>
                         {%- endif -%}
 
