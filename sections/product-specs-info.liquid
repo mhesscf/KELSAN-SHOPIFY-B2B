@@ -233,7 +233,6 @@
                         {%- endif -%}
                     {%- endfor -%}
 
-
                     {%- if blogcoutner > 0 or pagecoutner > 0 -%}
                         <h2 style="margin-top:30px;" >Related Links</h2>
                         <div class="data-sheets">
@@ -269,29 +268,35 @@
                                     {%- endif -%}
                                 {%- endfor -%}
                             {%- endif -%}
+                        </div>
+                    {%- endif -%}
 
-                            {%- if product.metafields.plytix.prop65_text != blank and product.metafields.plytix.prop65_category != blank -%}
-                                <div class="prop65">
-                                    <h2>Warnings</h2>
-                                    <div class="prop65-item">
-                                        <div class="hazard-title">
-                                            <i class="fa-regular fa-triangle-exclamation"></i> <strong>Proposition 65 Warning</strong>: {{ product.metafields.plytix.prop65_category }}
-                                        </div>
-                                        <div class="prop65-text">
-                                            {{ product.metafields.plytix.prop65_text }} For more information go to <a href="https://www.P65Warnings.ca.gov" target="_blank">www.P65Warnings.ca.gov</a>.</div>
-                                    </div>
+                    {%
+                            render 'troubleshoot-docs',
+                            product: product,
+                            location: 'product'
+                    %}
+
+                    {%- if product.metafields.plytix.prop65_text != blank and product.metafields.plytix.prop65_category != blank -%}
+                        <div class="prop65" style="padding-top:5px;">
+                            <h2>Warnings</h2>
+                            <div class="prop65-item">
+                                <div class="hazard-title">
+                                    <i class="fa-regular fa-triangle-exclamation"></i> <strong>Proposition 65 Warning</strong>: {{ product.metafields.plytix.prop65_category }}
                                 </div>
-                            {%- endif -%}
-                        {%- endif -%}
+                                <div class="prop65-text">
+                                    {{ product.metafields.plytix.prop65_text }} For more information go to <a href="https://www.P65Warnings.ca.gov" target="_blank">www.P65Warnings.ca.gov</a>.</div>
+                            </div>
+                        </div>
+                    {%- endif -%}
 
-                        {%
-                                render 'troubleshoot-docs',
-                                product: product,
-                                location: 'product'
-                        %}
 
-                    </div>
                 </div>
+
+
+
+
+
 
             {%- else -%}
             <div class="r">
