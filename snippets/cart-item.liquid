@@ -325,6 +325,9 @@
                 {%- if item.product.metafields.plytix.free_shipping -%}
                     <li><i class="fa-duotone fa-solid fa-truck-fast"></i> Free Shipping</li>
                 {%- endif -%}
+                {%- if item.product.metafields.plytix.gold_medal_winner -%}
+                    <li><i class="fa-duotone fa-solid fa-medal"></i> Gold Medal Winner</li>
+                {%- endif -%}
                 {%- if item.product.metafields.plytix.made_in_USA -%}
                     <li><img style="margin-left:-1px; margin-bottom:-2px" width="15" height="15" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/> Made in USA</li>
                 {%- endif -%}
