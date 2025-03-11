@@ -407,7 +407,7 @@
         "subheading": "",
         "textcontent": "<p>We opened for business back in 1995 with a mission to serve clean freaks the world over. To us, that means being stocked with all the right cleaning stuff, and providing good, clean advice along the way.</p>",
         "button_label": "Read Our Story",
-        "button_link": "shopify://pages/about-us",
+        "button_link": "shopify://pages/about-us-off",
         "content_right": false,
         "rmv_top_mgn": false
       }
@@ -655,7 +655,7 @@
         "content": "<p>Since CleanFreak floor pads are made from recycled fibers, we decided to give back by planting a tree for every case of pads sold through a partnership with One Tree Planted</p>",
         "text_alignment": "left",
         "button_label": "Read our Story",
-        "button_link": "shopify://pages/about-us"
+        "button_link": "shopify://pages/about-us-off"
       }
     },
     "1660757697279cb66e": {
