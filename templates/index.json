@@ -22,58 +22,56 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify://shop_images/valentines-sale-1400x350.jpg",
-            "banner-sm": "shopify://shop_images/valentines-sale-800x500.jpg",
-            "link": "/collections/flash-sale",
-            "coupon-code": "VDAY20"
+            "banner-lg": "shopify://shop_images/2025-clearance-cleanout-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-clearance-cleanout-sale-mobile-banner.jpg",
+            "link": "/collections/clearance",
+            "coupon-code": "EXTRA25"
           }
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
-            "sotm_icon": "1",
+            "sotm_icon": "3",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
-            "middle_image": "/cdn/shop/files/ies-14-floor-scrubber-sotm.png?v=17333236204",
-            "middle_image_alt": "IES-14 Floor Scrubber",
+            "middle_image": "/cdn/shop/files/IES-20-SLND.png?v=17333236204",
+            "middle_image_alt": "CleanFreak® Performer 20 Automatic Floor Scrubber March Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Reliable Results, Remarkable Savings.</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Now Only<br/>$2,299.99 (Electric) & $2,699.99 (Battery)</div>",
+            "text_area_html": "<div class=\"top-text\">Top-Notch Performance, Bottom-Line Savings.</div>\n<h1>CleanFreak® 'Performer 20' Automatic Floor Scrubber</h1>\n<div>Was $4,349.99<br/> Now: $3,899.99</div>",
             "text_area_css": "",
-            "bg_link": "",
+            "bg_link": "/products/20-inch-hard-floor-scrubbing-machine",
             "promo_link": "",
-            "button_one_label": "Electric",
-            "button_one_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315544756",
+            "button_one_label": "Save $450",
+            "button_one_link": "/products/20-inch-hard-floor-scrubbing-machine",
             "button_two_label": "Battery",
-            "button_two_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315577524",
+            "button_two_link": "",
             "button_color_override": ""
           }
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
-            "sotm_icon": "1",
+            "sotm_icon": "3",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/carpet-spot-cleaner-jan-special.png?v=1733326204",
-            "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machines",
+            "middle_image": "/cdn/shop/files/TPL-BK-20-1500HS-TC.png?v=17333262",
+            "middle_image_alt": "Trusted Clean 20\" High Speed Floor Burnisher March Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Spot On Savings.</div>\n<h1>CleanFreak® Commercial Carpet Spot Cleaning Machine</h1>\n<div>Now Only<br/>$489.99 (Non-Heated) & $789.99 (Heated)</div>",
-            "text_area_css": "",
-            "bg_link": "",
+            "text_area_html": "<div class=\"top-text\">Burnishing Brilliance on a Budget!</div>\n<h1>Trusted Clean 20\" High Speed Floor Burnisher</h1>\n<div>Was: $1,074.99<br/>Now: $974.99</div>",
+            "text_area_css": ".slideshow-v2 .middle-image{\nmargin-top:8px\n}",
+            "bg_link": "/products/trusted-clean-20-inch-high-speed-burnisher-1500-rpm",
             "promo_link": "",
-            "button_one_label": "Non-Heated",
-            "button_one_link": "/products/commercial-carpet-spot-cleaning-machine",
-            "button_two_label": "Heated",
-            "button_two_link": "/products/heated-carpet-spot-cleaner",
+            "button_one_label": "Save $100",
+            "button_one_link": "/products/trusted-clean-20-inch-high-speed-burnisher-1500-rpm",
+            "button_two_label": "",
+            "button_two_link": "",
             "button_color_override": ""
           }
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "sotm_icon": "2",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
@@ -94,6 +92,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "sotm_icon": "2",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",

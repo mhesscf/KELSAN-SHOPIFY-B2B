@@ -1,0 +1,142 @@
+{%- comment -%}Location is where this is rendered ("cms" or "product"){%- endcomment -%}
+{%- comment -%}testing this on "/pages/about-us" on local on cf dev{%- endcomment -%}
+{%- assign location = location -%}
+{%- assign product = product -%}
+{%- assign showarea = false -%}
+{%- assign showtsdocs = false -%}
+{%- assign showtsvids = false -%}
+{%- assign docObj1 = shop.metaobjects.troubleshooting_docs_and_videos.values | sort: 'title'  -%}
+{%- assign docObj2 = shop.metaobjects.troubleshooting_docs_and_videos.values | sort: 'title'  -%}
+
+
+
+<div class="troubleshooting-area" style="display:none;">
+    <h2>Troubleshooting</h2>
+
+    <div class="data-sheets troubleshooting">
+        <div class="sheet-row ts-docs" style="display:none;">
+            <div class="sheet-label"><strong>Documents</strong></div>
+        </div>
+
+        {%- for thisdoc in docObj1 -%}
+            {%- if thisdoc.document_type == "Document"  -%}
+                {%- assign showdoc = false -%}
+                {%- comment -%}// check collections{%- endcomment -%}
+                {%- for docColl in thisdoc.products_to_show_on_by_collection.value  -%}
+                    {%- for collection in product.collections -%}
+                        {%- if collection.id == docColl.id  -%}
+                            {%- assign showdoc = true -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- if showdoc == true -%}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- endfor -%}
+
+                {%- comment -%}// check products{%- endcomment -%}
+                {%- if showdoc == false  %}
+                    {%- for docProd in thisdoc.products_to_show_on_by_product.value  -%}
+                        {%- if product.id == docProd.id  -%}
+                            {%- assign showdoc = true -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+
+                {%- if showdoc == true -%}
+                    {%- if thisdoc.document_pdf  -%}
+                        {%- assign showarea = true -%}
+                        {%- assign showtsdocs = true -%}
+                        {%- comment -%}Pdfs{%- endcomment -%}
+                        <div class="sheet-row sheet-name orgfile">
+                            <a target="_blank" href="{{ thisdoc.document_pdf | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ thisdoc.title }}</a>
+                        </div>
+                    {%- elsif thisdoc.document_image  -%}
+                        {%- assign showarea = true -%}
+                        {%- assign showtsdocs = true -%}
+                        {%- comment -%}image file{%- endcomment -%}
+                        <div class="sheet-row sheet-name orgfile">
+                            <a target="_blank" href="{{ thisdoc.document_image | file_url }}"><i class="fa-solid fa-image"></i> {{ thisdoc.title }}</a>
+                        </div>
+                    {%- endif -%}
+
+                        {%- comment -%}{{ banner.banner | image_url: width: 300 | image_tag: class: 'img-responsive' }}{%- endcomment -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+
+
+
+    {%- comment -%}For Videos only{%- endcomment -%}
+
+    <div class="data-sheets troubleshooting">
+        <div class="sheet-row ts-vids" style="display:none;">
+            <div class="sheet-label"><strong>Videos</strong></div>
+        </div>
+
+
+        {%- for thisdoc in docObj2 -%}
+            {%- if thisdoc.document_type == "Video"  -%}
+                {%- assign showdoc = false -%}
+                {%- comment -%}// check collections{%- endcomment -%}
+                {%- for docColl in thisdoc.products_to_show_on_by_collection.value  -%}
+                    {%- for collection in product.collections -%}
+                        {%- if collection.id == docColl.id  -%}
+                            {%- assign showdoc = true -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- if showdoc == true -%}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- endfor -%}
+
+                {%- comment -%}// check products{%- endcomment -%}
+                {%- if showdoc == false  %}
+                    {%- for docProd in thisdoc.products_to_show_on_by_product.value  -%}
+                        {%- if product.id == docProd.id  -%}
+                            {%- assign showdoc = true -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+
+                {%- if showdoc == true -%}
+                    {%- if thisdoc.video_youtube_id  -%}
+                        {%- assign showarea = true -%}
+                        {%- assign showtsvids = true -%}
+                        {%- comment -%}youtube video{%- endcomment -%}
+                        <div class="sheet-row sheet-name orgfile">
+                            <a target="_blank" href="https://www.youtube.com/watch?v={{ thisdoc.video_youtube_id }}"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</a>
+                        </div>
+                    {%- elsif thisdoc.videos_local  -%}
+                        {%- assign showarea = true -%}
+                        {%- assign showtsvids = true -%}
+                        {%- comment -%}local video{%- endcomment -%}
+                        <div class="sheet-row sheet-name orgfile">
+                            <a target="_blank" href="{{ thisdoc.videos_local | file_url }}"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</a>
+                        </div>
+                    {%- endif -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+</div>
+
+
+
+    {%- if showarea == true -%}
+        <style>
+            .product-specs-info--section .troubleshooting-area{display:block !important; padding-top:5px;}
+            {% if showtsdocs == true %}
+                .product-specs-info--section .ts-docs{display:block !important;}
+            {% endif %}
+
+            {% if showtsvids == true %}
+                .product-specs-info--section .ts-vids{display:block !important;}
+            {% endif %}
+        </style>
+    {%- endif -%}
+
