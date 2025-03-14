@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "1663617398865396bc": {
@@ -5,7 +14,7 @@
       "settings": {
         "chsectionheading": "Floor Scrubbers",
         "chsectiontext": "We have a wide selection of walk behind floor scrubbers in all different brands to suit your particular floor care needs.",
-        "image": "shopify:\/\/shop_images\/floor-scrubbers.jpg"
+        "image": "shopify://shop_images/floor-scrubbers.jpg"
       }
     },
     "16636174067db7bd8c": {
@@ -55,7 +64,6 @@
     },
     "main": {
       "type": "static-collection",
-      "disabled": true,
       "blocks": {
         "filter-1": {
           "type": "filter",
@@ -86,6 +94,7 @@
         "filter-1",
         "9edeae3d-57e1-44a8-8834-7612f94620ff"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "products_per_page_range": 24,
@@ -126,17 +135,17 @@
         "48dc13e1-dfc3-4756-a082-12f18ac9fb83": {
           "type": "types",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ies-20-slnd-01.jpg",
+            "image": "shopify://shop_images/ies-20-slnd-01.jpg",
             "linktext": "Automatic Walk Behind Floor Scrubbers",
-            "linkurl": "shopify:\/\/collections\/walk-behind-floor-scrubbers"
+            "linkurl": "shopify://collections/walk-behind-auto-scrubbers"
           }
         },
         "159a2b1f-8d76-471e-84de-975a6d48fa11": {
           "type": "types",
           "settings": {
-            "image": "shopify:\/\/shop_images\/advance-advenger-with-ecoflex.jpg",
+            "image": "shopify://shop_images/advance-advenger-with-ecoflex.jpg",
             "linktext": "Ride-On Floor Scrubbers",
-            "linkurl": "shopify:\/\/collections\/ride-on-floor-scrubbers"
+            "linkurl": "shopify://collections/ride-on-floor-scrubbers"
           }
         }
       },
