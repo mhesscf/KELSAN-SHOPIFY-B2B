@@ -240,7 +240,7 @@
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
-            "show_on": "b2b",
+            "show_on": "both",
             "banner-lg": "shopify://shop_images/kob-00-4403-2-bogo-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/kob-00-4403-2-bogo-mobile-banner.jpg",
             "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
