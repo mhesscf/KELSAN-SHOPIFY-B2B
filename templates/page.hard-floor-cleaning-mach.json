@@ -22,11 +22,10 @@
         },
         "banner_GAtNWr": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify://shop_images/advantage-20-price-drop-1400x350.jpg",
-            "banner-sm": "shopify://shop_images/advantage-20-price-drop-800x427.jpg",
-            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "banner-lg": "shopify://shop_images/kob-00-4403-2-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/kob-00-4403-2-bogo-mobile-banner.jpg",
+            "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
             "coupon-code": ""
           }
         },
