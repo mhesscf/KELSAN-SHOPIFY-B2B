@@ -24,6 +24,7 @@
           "type": "banner",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "banner-lg": "shopify://shop_images/2025-clearance-cleanout-sale-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/2025-clearance-cleanout-sale-mobile-banner.jpg",
             "link": "/collections/clearance",
@@ -33,6 +34,7 @@
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
           "settings": {
+            "show_on": "both",
             "sotm_icon": "3",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
             "middle_image": "/cdn/shop/files/IES-20-SLND.png?v=17333236204",
@@ -53,6 +55,7 @@
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
           "settings": {
+            "show_on": "both",
             "sotm_icon": "3",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/TPL-BK-20-1500HS-TC.png?v=17333262",
@@ -74,6 +77,7 @@
           "type": "slide_v2",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "sotm_icon": "2",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/trusted-clean-quench-vacuum-special.png?v=17333236204",
@@ -95,6 +99,7 @@
           "type": "slide_v2",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "sotm_icon": "2",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/trusted-clean-20-inch-floor-buffer-special.png?v=173336204",
@@ -116,6 +121,7 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "background_image": "shopify://shop_images/flash-sale-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/flash-sale-800x427.jpg",
             "title": "Get 12% off your entire order for 2 days only!",
@@ -139,6 +145,7 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "background_image": "shopify://shop_images/november-sotm-2024-homepage-desktop-banner-1.jpg",
             "mobile_background_image": "shopify://shop_images/november-sotm-2024-homepage-mobile-banner-1.jpg",
             "title": "Trusted Clean 'Dura 17' Electric Auto Floor Scrubber",
@@ -162,6 +169,7 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "background_image": "shopify://shop_images/november-sotm-2024-homepage-desktop-banner-2.jpg",
             "mobile_background_image": "shopify://shop_images/november-sotm-2024-homepage-mobile-banner-2.jpg",
             "title": "Trusted Clean 'Pro-7' Self-Contained Carpet Extractor",
@@ -185,6 +193,7 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "background_image": "shopify://shop_images/2024-dec-sotm-extractor-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/2024-dec-sotm-extractor-800x427.jpg",
             "title": "Trusted Clean 'Deluxe' Non-Heated 12-Gallon Box Extracto",
@@ -208,6 +217,7 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "background_image": "shopify://shop_images/2024-dec-sotm-floor-buffer-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/2024-dec-sotm-floor-buffer-800x427.jpg",
             "title": "CleanFreak® 17&quot; Rotary Floor Buffer w/ Pad Driver",
@@ -230,6 +240,7 @@
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
+            "show_on": "b2b",
             "banner-lg": "shopify://shop_images/kob-00-4403-2-bogo-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/kob-00-4403-2-bogo-mobile-banner.jpg",
             "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
@@ -240,6 +251,7 @@
           "type": "banner",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "banner-lg": "shopify://shop_images/advantage-save-500-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/advantage-save-500-mobile-banner.jpg",
             "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
