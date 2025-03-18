@@ -233,7 +233,7 @@
                     {% endif %}
                 {% endif %}
                 {%- endcomment -%}
-                {%- if product.selected_or_first_available_variant.sku contains "-DEMO" -%}
+                {%- if product.selected_or_first_available_variant.sku contains "-DEMO" or product.selected_or_first_available_variant.sku contains "-REFURB" -%}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">
                             <div class="icon-wrap" style="font-size: 23px;">
