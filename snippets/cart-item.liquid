@@ -247,7 +247,7 @@
                             {% elsif item.product.selected_or_first_available_variant.sku contains "-DEMO" -%}
                                 <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i> Refurbished / Used Model (you saved {{ specialDiscount |  money }})
                             {% else %}
-                                <i class="fa-sharp fa-solid fa-tags"></i> Special Discount (you saved {{ specialDiscount |  money }})
+                                <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i> Hot Deal (you saved {{ specialDiscount |  money }})
                             {% endif %}
                         </li>
                 {% endif %}
@@ -291,7 +291,7 @@
                     {%- if valid_tier != 0 and  tiermessage != "" -%}
                         <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
                             <li class="discount-list-item">
-                                <i class="fa-sharp fa-solid fa-tags"></i>
+                                <i class="fa-solid fa-sack-dollar" style="color:#8F6A46;"></i>
                                 {{ tiermessage }}
                             </li>
                         </ul>
