@@ -650,6 +650,75 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
 
         {%- if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" -%}
+
+          {% if product.metafields.plytix.warning_title %}
+          <div onclick="warningpop()" class="product-form--atc-button main-atc-button mdc-ripple-surface mdc-ripple-upgraded" id="p-atc-agree">
+
+            <span class="atc-button--text"><span class="atc-plus">+</span> Add to cart</span>
+            <span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></span>
+          </div>
+          <div class="warningpop-text" style="display:none;">
+            <h2>{{ product.metafields.plytix.warning_title }}</h2>
+            <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">{{ product.metafields.plytix.warning_body }}</div>
+            <div class="warning-actions">
+              <div style="margin-top:10px; text-align:center">
+                <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="event.stopPropagation(); closechildPop('bund-pop-')" >Cancel</div>
+                <div style="max-width:200px" class="product-form--atc-button main-atc-button agree-btn" onclick="agreecheck()" >Agree</div>
+              </div>
+            </div>
+          </div>
+
+            <style>
+              .cart-buttons #p-atc{display:none !important;}
+              .cart-buttons #p-atc-agree{max-width:350px;}
+              
+              @media (min-width: 720px) and (max-width: 1172px){
+
+                .cart-buttons #p-atc-agree{
+                  margin:0px 0 10px 0;
+                  flex-basis:100%;
+                }
+              }
+              @media (max-width: 550px){
+                .cart-buttons #p-atc-agree{
+                  margin:0px 0 10px 0;
+                  flex-basis:100%;
+                }
+
+              }
+
+              @media (max-width: 719px) {
+                .warning-actions .agree-btn{margin-top:10px;}
+              }
+            </style>
+            <script>
+              function warningpop(){
+                // alert('thestme');
+
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                var newhtml = $(".warningpop-text").html();
+                $('.popup-container .content').html(newhtml);
+                $('.popup-container').addClass('widepop');
+              }
+
+              function agreecheck(){
+                    $('.warning-actions .agree-btn').html("Adding To the Cart....");
+                    $('.product-form--regular form').prepend('<input type="hidden" name="properties[Notification]" value="Accepted {{ product.metafields.plytix.warning_title }}">');
+                    setTimeout(function() {
+                      $('.product-form--atc #p-atc').click();
+                      setTimeout(function() {
+                        closechildPop('bund-pop-');
+                      }, 1000);
+                    }, 1000);
+
+                    // closechildPop('bund-pop-');
+              }
+            </script>
+
+          {% endif %}
+
+
           <button class=" product-form--atc-button main-atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
                   id="p-atc"
                   type="submit"
