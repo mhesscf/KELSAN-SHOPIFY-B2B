@@ -90,9 +90,9 @@
 
                         {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
                             {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                                <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div></a>
+                                <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div></a>
                             {%- else -%}
-                                <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div>
+                                <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div>
                             {%- endif -%}
                         {%- endif -%}
                     {%- endif -%}
@@ -110,7 +110,7 @@
 
                     {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
                         {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                           {{ diffDays }} <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and {{ product.metafields.plytix.custom_hot_deal_message }}</span></div></div></a>
+                           {{ diffDays }} <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and {{ product.metafields.plytix.custom_hot_deal_message }}</span></div></div></a>
                         {%- endif -%}
                     {%- endif -%}
 
@@ -122,9 +122,9 @@
                     {%- assign bundsavings = bundle_spec_data_array[0] | times: 100 -%}
 
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                        <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div></a>
+                        <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div></a>
                     {%- else -%}
-                        <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div>
+                        <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div>
                     {%- endif -%}
 
                 {%- endif -%}
@@ -233,7 +233,7 @@
                     {% endif %}
                 {% endif %}
                 {%- endcomment -%}
-                {%- if product.selected_or_first_available_variant.sku contains "-DEMO" -%}
+                {%- if product.selected_or_first_available_variant.sku contains "-DEMO" or product.selected_or_first_available_variant.sku contains "-REFURB" -%}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                         <a href="/collections/demoed-refurbished-equipment"><div class="sm-row">
                             <div class="icon-wrap" style="font-size: 23px;">

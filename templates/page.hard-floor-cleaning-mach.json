@@ -15,6 +15,7 @@
         "614000bc-cdda-4bdb-9705-8f9bd346f000": {
           "type": "categoryhead",
           "settings": {
+            "show_on": "both",
             "cat_image": "shopify://shop_images/hard-floor-cleaning-machines-dept-page.jpg",
             "cat_title": "Hard Floor Cleaning Machines",
             "cat_text": "We stock a ton of auto scrubbers, floor buffers, burnishers & more to make sure we have the equipment you need, when you need it."
@@ -22,11 +23,11 @@
         },
         "banner_GAtNWr": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify://shop_images/advantage-20-price-drop-1400x350.jpg",
-            "banner-sm": "shopify://shop_images/advantage-20-price-drop-800x427.jpg",
-            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "show_on": "both",
+            "banner-lg": "shopify://shop_images/kob-00-4403-2-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/kob-00-4403-2-bogo-mobile-banner.jpg",
+            "link": "/products/1500-rpm-dust-control-burnisher",
             "coupon-code": ""
           }
         },
@@ -34,6 +35,7 @@
           "type": "banner",
           "disabled": true,
           "settings": {
+            "show_on": "both",
             "banner-lg": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/tpl-bk-17-tc-bogo-promo-mobile-banner.jpg",
             "link": "/products/trusted-clean-17-inch-commercial-grade-floor-buffer",

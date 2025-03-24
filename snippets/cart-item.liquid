@@ -247,7 +247,7 @@
                             {% elsif item.product.selected_or_first_available_variant.sku contains "-DEMO" -%}
                                 <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i> Refurbished / Used Model (you saved {{ specialDiscount |  money }})
                             {% else %}
-                                <i class="fa-sharp fa-solid fa-tags"></i> Special Discount (you saved {{ specialDiscount |  money }})
+                                <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i> Hot Deal (you saved {{ specialDiscount |  money }})
                             {% endif %}
                         </li>
                 {% endif %}
@@ -259,19 +259,44 @@
                     {%- assign valid_tier_count = 0  -%}
                     {%- assign tiermessage = ""  -%}
 
+                    {%- assign next_tier = "NA"  -%}
+                    {%- assign next_tier_price = 0 -%}
+                    {%- assign next_tier_trigger = 0 -%}
+                    {%- assign next_valid_tier_count = 0  -%}
+
                     {%- if tiered_pricing contains ":" -%}
                         {%- assign tiered_pricing_sections_arr = tiered_pricing | split: ":"  -%}
                         {%- assign tiered_pricing_arry = tiered_pricing_sections_arr[0] | split: "|"  -%}
 
                         {%- for tier in tiered_pricing_arry -%}
                             {%- assign tier_int = tier | plus: 0  -%}
+
+                            {%- if forloop.index0 == 0 -%}
+                                {% comment %}get next tier for first tier{% endcomment %}
+                                {%- assign next_tier = tier  -%}
+                                {%- assign next_valid_tier_count = forloop.index0 | plus: 1  -%}
+                                {%- assign next_tier_trigger = 2 -%}
+                            {%- endif -%}
+
                             {%- if item.quantity >=  tier_int -%}
                                 {%- assign valid_tier = tier  -%}
                                 {%- assign valid_tier_count = forloop.index0 | plus: 1  -%}
+                                {%- assign next_tier_trigger = 1 -%}
+
+                            {%- elsif next_tier_trigger == 1 -%}
+                                {% comment %}get values for next tier to show deal notice{% endcomment %}
+                                {%- assign next_tier = tier  -%}
+                                {%- assign next_valid_tier_count = forloop.index0 | plus: 1  -%}
+                                {%- assign next_tier_trigger = 2 -%}
                             {%- endif -%}
+
+
+
                         {%- endfor -%}
                         {%- assign tier_doll_off = tiered_pricing_sections_arr[1] | times: valid_tier_count -%}
                         {%- assign discount = tier_doll_off | times: item.quantity -%}
+                        {%- assign next_tier_doll_off = tiered_pricing_sections_arr[1] | times: next_valid_tier_count -%}
+                        {%- assign next_discount = tier_doll_off | times: next_tier -%}
 
                         {%- capture tiermessage -%}
                             {{  tier_doll_off | times:100 | money}} off for {{ valid_tier }}+ (you saved <span class="money">{{ discount | times: 100 | money }}</span>)
@@ -291,7 +316,7 @@
                     {%- if valid_tier != 0 and  tiermessage != "" -%}
                         <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
                             <li class="discount-list-item">
-                                <i class="fa-sharp fa-solid fa-tags"></i>
+                                <i class="fa-solid fa-sack-dollar" style="color:#8F6A46;"></i>
                                 {{ tiermessage }}
                             </li>
                         </ul>
@@ -543,74 +568,95 @@
               Item is not editable because it is a free gift.
           </span>
         {% endif %}
-      </div>
 
-      <div class="cart-item--total">
-        <span class="visually-hidden">{{ 'cart.general.total_line_price' | t }}</span>
-          {% comment %}
-          {%- if org_price > item.price -%}
-                <s class="original-price money">{{ org_price | times: item.quantity | money }}</s>
+          {%- assign buy_x_more = next_tier | minus: item.quantity -%}
+          {% if buy_x_more > 0  %}
 
-          {%- elsif compare_at_price > item.price -%}
-              <s class="original-price money">{{ compare_at_price | times: item.quantity | money }}</s>
-          {%- elsif item_has_discounts -%}
-                <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
-                <s class="original-price money">{{ item.original_line_price | money }}</s>
-                <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
-            {%- endif -%}
-            {% endcomment %}
-        <div
-                class="money {% if item_has_discounts %}cart-item--discount-price{% endif %}"
-                aria-live="polite"
-                data-cartitem-total
-        >
-          {{ item.final_line_price | money }}
-        </div>
-      </div>
+              {%- assign addsavings = tiered_pricing_sections_arr[1] | times: 100 -%}
+              <div class="tier_upsell">
+                  Buy <strong>{{ buy_x_more }}</strong> more &<br/>Save an Additional<br/><strong>{{ addsavings | money }}</strong> per Item
+              </div>
+              <a class="line-update" onclick="updateQtyTo({{ next_tier }},'{{ item.key }}');"><i class="fa-solid fa-plus"></i> Add {{ buy_x_more }} More</a>
+          {% endif %}
+        {%- comment -%}
+             for testing
+             next_discount {{ next_discount }}<br/>
+             next_tier_doll_off {{ next_tier_doll_off }}<br/>
+             next_tier {{ next_tier }}<br/>
+             next_valid_tier_count: {{ next_valid_tier_count }}<br/>
+        {%- endcomment -%}
 
-      <div class="cart-item--remove">
-        {% if product_bundle == '' and  fgbogo-rule == false %}
-          <a
-                  href="{{ routes.cart_change_url }}?line={{ item_index }}&amp;quantity=0"
-                  class="cart-item--remove-link"
-                  data-cartitem-remove
-                  data-no-instant
-                  aria-label="remove {{ item.product.title | escape }}"
-          >
-            {%
-                    render 'icon-library',
-                    id: 'icon-remove'
-            %}
-          </a>
+     </div>
 
-        {% elsif fgbogo-rule != false %}
+     <div class="cart-item--total">
+       <span class="visually-hidden-cart">
+           Price:
+           {% comment %}{{ 'cart.general.total_line_price' | t }}{% endcomment %}
+       </span>
+         {%- comment -%}
+         {%- if org_price > item.price -%}
+               <s class="original-price money">{{ org_price | times: item.quantity | money }}</s>
 
-          <a
-                  data-gall="{{ fgbogo-rule }}"
-                  data-name="Free Gift Promo"
-                  class="bundle-remove cart-item--remove-popup cart-item--remove-link"
-                  href="#">
-            {%
-                    render 'icon-library',
-                    id: 'icon-remove'
-            %}
-          </a>
+         {%- elsif compare_at_price > item.price -%}
+             <s class="original-price money">{{ compare_at_price | times: item.quantity | money }}</s>
+         {%- elsif item_has_discounts -%}
+               <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
+               <s class="original-price money">{{ item.original_line_price | money }}</s>
+               <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
+           {%- endif -%}
+       {%- endcomment -%}
+       <span
+               class="money {% if item_has_discounts %}cart-item--discount-price{% endif %}"
+               aria-live="polite"
+               data-cartitem-total
+       >
+         {{ item.final_line_price | money }}
+       </span>
+     </div>
 
-        {% else %}
-          {%- assign bName = all_products[product_bundle].title | remove: '"' -%}
-          <a
-                  data-gall="{{ product_bundle | escape  }}"
-                  data-name="{{ bName }}"
-                  class="bundle-remove cart-item--remove-popup cart-item--remove-link"
-                  href="#">
-            {%
-                    render 'icon-library',
-                    id: 'icon-remove'
-            %}
-          </a>
-        {% endif %}
-      </div>
+     <div class="cart-item--remove">
+       {% if product_bundle == '' and  fgbogo-rule == false %}
+         <a
+                 href="{{ routes.cart_change_url }}?line={{ item_index }}&amp;quantity=0"
+                 class="cart-item--remove-link"
+                 data-cartitem-remove
+                 data-no-instant
+                 aria-label="remove {{ item.product.title | escape }}"
+         >
+           {%
+                   render 'icon-library',
+                   id: 'icon-remove'
+           %}
+         </a>
 
-    </div>
-  </div>
+       {% elsif fgbogo-rule != false %}
+
+         <a
+                 data-gall="{{ fgbogo-rule }}"
+                 data-name="Free Gift Promo"
+                 class="bundle-remove cart-item--remove-popup cart-item--remove-link"
+                 href="#">
+           {%
+                   render 'icon-library',
+                   id: 'icon-remove'
+           %}
+         </a>
+
+       {% else %}
+         {%- assign bName = all_products[product_bundle].title | remove: '"' -%}
+         <a
+                 data-gall="{{ product_bundle | escape  }}"
+                 data-name="{{ bName }}"
+                 class="bundle-remove cart-item--remove-popup cart-item--remove-link"
+                 href="#">
+           {%
+                   render 'icon-library',
+                   id: 'icon-remove'
+           %}
+         </a>
+       {% endif %}
+     </div>
+
+   </div>
+ </div>
 </li>
