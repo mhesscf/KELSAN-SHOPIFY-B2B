@@ -202,18 +202,31 @@
       {%- endif -%}
     {%- endfor -%}
 
-
-
-
-
-
     {%- for block in section.blocks -%}
-      {%
-              render 'slideshow-slide',
-              section: section,
-              block: block,
-              block_index: forloop.index0
-      %}
+        {% comment %}show on b2b logic{% endcomment %}
+        {%- assign show_on = block.settings.show_on -%}
+        {%- assign show_this_slide = false -%}
+        {%- if show_on == "both" -%}
+          {%- assign show_this_slide = true -%}
+        {%- elsif show_on == "b2b" -%}
+          {%- if shop.name contains "CleanFreak B2B"-%}
+            {%- assign show_this_slide = true -%}
+          {%- endif -%}
+        {%- elsif show_on == "normal" -%}
+          {%- unless shop.name contains "CleanFreak B2B"-%}
+            {%- assign show_this_slide = true -%}
+          {%- endunless -%}
+        {%- endif -%}
+
+      {%- if show_this_slide -%}
+        {%
+                render 'slideshow-slide',
+                section: section,
+                block: block,
+                block_index: forloop.index0
+        %}
+      {%- endif -%}
+
     {%- endfor -%}
 
 
@@ -278,17 +291,37 @@
             class="slideshow-pagination"
             data-slideshow-pagination
     >
-
+      {%- assign counter = 0 -%}
       {%- for block in section.blocks -%}
-        <li class="slideshow-pagination__dot">
-          <button
-                  class="slideshow-pagination__button"
-                  data-selected="{% if forloop.index == 1 %}true{% else %}false{% endif %}"
-                  data-slide-button="{{ forloop.index0 }}"
-          >
-            <span class="visually-hidden">{{ 'sections.slideshow.slide_index' | t: count: forloop.index }}</span>
-          </button>
-        </li>
+        {%- assign show_on = block.settings.show_on -%}
+        {%- assign show_this_slide = false -%}
+
+          {%- if show_on == "both" -%}
+            {%- assign show_this_slide = true -%}
+          {%- elsif show_on == "b2b" -%}
+            {%- if shop.name contains "CleanFreak B2B"-%}
+              {%- assign show_this_slide = true -%}
+            {%- endif -%}
+          {%- elsif show_on == "normal" -%}
+            {%- unless shop.name contains "CleanFreak B2B"-%}
+              {%- assign show_this_slide = true -%}
+            {%- endunless -%}
+          {%- endif -%}
+
+        {%- if show_this_slide -%}
+          <li class="slideshow-pagination__dot" style="">
+            <button
+                    class="slideshow-pagination__button"
+                    data-selected="{% if counter == 0 %}true{% else %}false{% endif %}"
+                    data-slide-button="{{ counter }}"
+            >
+              <span class="visually-hidden">{{ 'sections.slideshow.slide_index' | t: count: counter }}</span>
+            </button>
+          </li>
+
+          {%- assign counter = counter | plus: 1 -%}
+        {%- endif -%}
+
       {%- endfor -%}
 
       {%- comment -%}add extra blocks from metaobject additions{%- endcomment -%}
@@ -476,6 +509,26 @@
       "name": "t:sections.slideshow.blocks.slide.name",
       "settings": [
         {
+          "type": "select",
+          "id": "show_on",
+          "label": "Show on B2B?",
+          "options": [
+            {
+              "label": "Both Sites",
+              "value": "both"
+            },
+            {
+              "label": "Normal Site Only",
+              "value": "normal"
+            },
+            {
+              "label": "B2B Only",
+              "value": "b2b"
+            }
+          ],
+          "default":"both"
+        },
+        {
           "id": "background_image",
           "type": "image_picker",
           "label": "t:sections.slideshow.blocks.slide.background_image.label",
@@ -625,6 +678,26 @@
       "name": "Slide Version 2",
       "settings": [
         {
+          "type": "select",
+          "id": "show_on",
+          "label": "Show on B2B?",
+          "options": [
+            {
+              "label": "Both Sites",
+              "value": "both"
+            },
+            {
+              "label": "Normal Site Only",
+              "value": "normal"
+            },
+            {
+              "label": "B2B Only",
+              "value": "b2b"
+            }
+          ],
+          "default":"both"
+        },
+        {
           "id": "sotm_icon",
           "type": "select",
           "label": "SOTM ICON",
@@ -770,6 +843,26 @@
       "name": "Custom Liquid",
       "settings": [
         {
+          "type": "select",
+          "id": "show_on",
+          "label": "Show on B2B?",
+          "options": [
+            {
+              "label": "Both Sites",
+              "value": "both"
+            },
+            {
+              "label": "Normal Site Only",
+              "value": "normal"
+            },
+            {
+              "label": "B2B Only",
+              "value": "b2b"
+            }
+          ],
+          "default":"both"
+        },
+        {
         "type": "liquid",
         "id": "custom_css",
         "label": "Custom Liquid CSS",
@@ -787,6 +880,26 @@
       "type": "banner",
       "name": "Image Banner",
       "settings": [
+        {
+          "type": "select",
+          "id": "show_on",
+          "label": "Show on B2B?",
+          "options": [
+            {
+              "label": "Both Sites",
+              "value": "both"
+            },
+            {
+              "label": "Normal Site Only",
+              "value": "normal"
+            },
+            {
+              "label": "B2B Only",
+              "value": "b2b"
+            }
+          ],
+          "default":"both"
+        },
         {
         "id": "banner-lg",
         "type": "image_picker",
@@ -813,6 +926,26 @@
       "type": "categoryhead",
       "name": "Category Header Banner",
       "settings": [
+        {
+          "type": "select",
+          "id": "show_on",
+          "label": "Show on B2B?",
+          "options": [
+            {
+              "label": "Both Sites",
+              "value": "both"
+            },
+            {
+              "label": "Normal Site Only",
+              "value": "normal"
+            },
+            {
+              "label": "B2B Only",
+              "value": "b2b"
+            }
+          ],
+          "default":"both"
+        },
         {
         "id": "cat_image",
         "type": "image_picker",

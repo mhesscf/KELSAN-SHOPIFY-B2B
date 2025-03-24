@@ -549,4 +549,30 @@
 
   }
 
+  function updateQtyTo(qty, key){
+
+    var inputId ="updates_"+key;
+    var quantityNumber = document.getElementById(inputId);
+    var newValue = parseInt(qty);
+
+
+
+    quantityNumber.value = newValue;
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      // console.log('updating');
+      window.Shopify.changeItem(key, newValue, response => {
+        console.log("item updated");
+      });
+    }, "300");
+
+    setTimeout(() => {
+      $('#update-cart').attr('href',"/cart");
+      window.location = $('#update-cart').attr('href');
+    }, "1000");
+
+
+  }
+
 </script>
