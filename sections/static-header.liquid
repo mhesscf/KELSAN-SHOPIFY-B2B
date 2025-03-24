@@ -59,9 +59,11 @@
       {%- elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" -%}
         {%- assign websiteName = "CleanFreak.com" -%}
       {%- elsif shop.permanent_domain contains "airmovers-dev.myshopify.com" -%}
-        {%- assign websiteName = "AirMovers.com" -%}
+        {% comment %}{%- assign websiteName = "AirMovers.com" -%}{% endcomment %}
+        {%- assign websiteName = "CleanFreak.com B2B" -%}
       {%- elsif shop.permanent_domain contains "airmovers-prod.myshopify.com" -%}
-        {%- assign websiteName = "AirMovers.com" -%}
+        {% comment %}{%- assign websiteName = "AirMovers.com" -%}{% endcomment %}
+        {%- assign websiteName = "CleanFreak.com B2B" -%}
       {%- elsif shop.permanent_domain contains "carpetextractors-dev1.myshopify.com" -%}
         {%- assign websiteName = "CarpetExtractors.com" -%}
       {%- elsif shop.permanent_domain contains "carpetextractors.myshopify.com" -%}
@@ -175,11 +177,20 @@
     <div class="site-header-logo">
       <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
               {% capture image_size %}{{ section.settings.logo_max_width | escape }}{% endcapture %}
+
+        {%- if websiteName == "CleanFreak.com B2B" -%}
+          <img src="{{ 'logo-b2b.svg' | asset_url }}"
+               alt="{{ shop.name }}"
+               class="img-responsive b2blogo"
+               style="max-width:225px; max-height:76px"
+          >
+        {%- else -%}
               <img src="{{ 'logo.svg' | asset_url }}"
                    alt="{{ shop.name }}"
                    class="img-responsive"
                    style="max-width:225px; max-height:94px"
               >
+        {%- endif -%}
             </a>
     </div>
     <a class="top-mobile-phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a>
