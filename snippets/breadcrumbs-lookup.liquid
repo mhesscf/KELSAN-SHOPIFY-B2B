@@ -6,6 +6,8 @@
 
 {%- unless template == 'index' or template == 'cart'  or template == '404' or template == null -%}
     {%- assign current_website = 'cf' -%}
+    {%- if shop.name contains "CleanFreak B2B"-%}
+        {%- assign current_website = 'cf' -%}
     {%- if request.host contains 'airmovers'  -%}
         {%- assign current_website = 'am' -%}
     {%- elsif request.host contains 'carpetextractors'  -%}
