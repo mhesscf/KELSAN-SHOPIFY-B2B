@@ -623,6 +623,12 @@
                   {%- endif -%}
                 {%- endif -%}
 
+                {% comment %}B2b pricing{% endcomment %}
+                {%- assign varorgprice = product.selected_or_first_available_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+                {%- if varorgprice > product.selected_or_first_available_variant.price -%}
+                  {%- assign isSpecial = true -%}
+                {%- endif -%}
+
 
                 <div
                         class="
@@ -631,6 +637,71 @@
                   {% if atc_display == 'desktop' %}productitem-action--desktop{% endif %}
                 "
                 >
+
+                  {% if product.metafields.plytix.warning_title %}
+
+                    <div
+                            onclick="warningpop{{ product.variants.first.id }}()"
+                            class="{{ quick_buy_classes }}"
+                            aria-label="{{ quick_buy_text }}"
+                    >
+                  <span class="atc-button--text">
+                    <span class="atc-plus">+</span> {{ quick_buy_text }}
+                  </span>
+                      <span class="atc-button--icon">
+                    {% render 'icon-spinner' %}
+                  </span>
+                    </div>
+
+
+                    <div class="warningpop-text-{{ product.variants.first.id }}" style="display:none;">
+                      <h2>{{ product.metafields.plytix.warning_title }}</h2>
+                      <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">{{ product.metafields.plytix.warning_body }}</div>
+                      <div class="warning-actions">
+                        <div style="margin-top:10px; text-align:center">
+                          <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="event.stopPropagation(); closechildPop('bund-pop-')" >Cancel</div>
+                          <div style="max-width:200px" class="product-form--atc-button main-atc-button agree-btn" onclick="agreecheck{{ product.variants.first.id }}()" >Agree</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <style>
+                      .productitem--action-trigger[data-id="{{ product.variants.first.id }}"]{display:none !important;}
+
+
+                      @media (max-width: 719px) {
+                        .warning-actions .agree-btn{margin-top:10px;}
+                      }
+                    </style>
+
+                    <script>
+                      function warningpop{{ product.variants.first.id }}(){
+                        // alert('thestme');
+
+                        $('.popup-container').removeClass('hidden');
+                        $(".pop-grad").removeClass('hidden');
+                        var newhtml = $(".warningpop-text-{{ product.variants.first.id }}").html();
+                        $('.popup-container .content').html(newhtml);
+                        $('.popup-container').addClass('widepop');
+                      }
+
+                      function agreecheck{{ product.variants.first.id }}(){
+                        $('.warning-actions .agree-btn').html("Adding To the Cart....");
+                        $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').attr('data-notification-name', 'properties[Notification]').attr('data-notification', 'Accepted {{ product.metafields.plytix.warning_title }}');
+                        setTimeout(function() {
+                          $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').click();
+                          setTimeout(function() {
+                            closechildPop('bund-pop-');
+                          }, 1000);
+                        }, 1000);
+
+                        // closechildPop('bund-pop-');
+                      }
+                    </script>
+
+                  {% endif %}
+
+
                   <button
                           class="{{ quick_buy_classes }}"
                           type="button"

@@ -33003,8 +33003,11 @@ const RULES = `
                 const variantavailQtyName= atcButton.getAttribute('data-availqty-name');
                 const variantavailQty = atcButton.getAttribute('data-availqty');
 
-                const variantSFeligibleName = atcButton.getAttribute('data-sfeligible-name');
-                const variantSFeligible = atcButton.getAttribute('data-sfeligible');
+                const variantSFeligibleName = atcButton.getAttribute('data-notification-name');
+                const variantSFeligible = atcButton.getAttribute('data-notification');
+
+                const variantNotificationName = atcButton.getAttribute('data-sfeligible-name');
+                const variantNotification = atcButton.getAttribute('data-sfeligible');
 
                 const variantVisSKUName = atcButton.getAttribute('data-vissku-name');
                 const variantVisSKU = atcButton.getAttribute('data-vissku');
@@ -33041,6 +33044,9 @@ const RULES = `
                 },{
                     name: variantOrgPriceName,
                     value: variantOrgPrice
+                },{
+                    name: variantNotificationName,
+                    value: variantNotification
                 }
                 ];
                 const options = {
