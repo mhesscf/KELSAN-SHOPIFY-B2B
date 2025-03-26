@@ -201,7 +201,12 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
        <!-- Algolia prod version -->
       {{ 'algolia_config_prod.js' | asset_url | script_tag }}
       
-       {%- elsif shop.name contains "CleanFreak B2B" -%}
+       {%- elsif shop.name contains "CleanFreak B2B - Dev" -%}
+
+        <!-- Algolia prod version -->
+        {{ 'algolia_config_b2bprod.js' | asset_url | script_tag }}
+
+      {%- elsif shop.name contains "CleanFreak B2B" -%}
 
         <!-- Algolia prod version -->
         {{ 'algolia_config_b2bprod.js' | asset_url | script_tag }}
