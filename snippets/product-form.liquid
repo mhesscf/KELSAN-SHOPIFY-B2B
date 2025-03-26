@@ -261,6 +261,12 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
       {%- endif -%}
     {%- endif -%}
 
+    {% comment %}B2b pricing{% endcomment %}
+    {%- assign varorgprice = product.selected_or_first_available_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+    {%- if varorgprice > product.selected_or_first_available_variant.price -%}
+      {%- assign isSpecial = true -%}
+    {%- endif -%}
+
     <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
 
     {%- if product.metafields.plytix.general_product_type == "Machine" -%}
@@ -331,6 +337,15 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
             {% comment %}{%- endif -%}{% endcomment %}
           {%- endif -%}
         {%- endif -%}
+
+        {% comment %}B2b pricing{% endcomment %}
+
+          {%- assign varorgprice = selected_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+          {%- if varorgprice > selected_variant.price -%}
+            {%- assign isSpecialSelectVar = true -%}
+          {%- endif -%}
+
+
         {%- if isSpecialSelectVar == false -%}
           {%- if selected_variant.metafields.plytix.tiered_pricing_dollar_off != blank and selected_variant.metafields.plytix.tiered_pricing_dollar_off != blank -%}
             <input type="hidden" name="properties[_tiered_pricing]" value="{{ selected_variant.metafields.plytix.tiered_pricing }}:{{ selected_variant.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",",""  }}" />

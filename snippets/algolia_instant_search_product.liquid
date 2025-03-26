@@ -13,12 +13,19 @@
     }
     function showBtn(variants_count,bundleitems = "",hide_price = "",show_quote = ""){
         var showButton = "addToCart";
+
         if (variants_count != "1" || bundleitems != ""|| hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" ){
             showButton = "viewProduct";
         }else if(show_quote == "true"){
             showButton = "viewProduct";
         }
-        return showButton;
+
+        {%- if shop.name contains "CleanFreak B2B"-%}
+            return "viewProduct";
+        {%- else -%}
+            return showButton;
+        {%- endif -%}
+
     }
     function showPrice(hide_price){
         if(hide_price == "Hide Price Only (View in cart)" || hide_price == "Hide Price and Button") {
@@ -550,7 +557,11 @@
             <div class="cfais-productitem--actions" itemprop="offers" itemscope itemtype="${isPriceRange(algolia.helpers.displayPrice(hit, hit._distinct))? 'http://schema.org/AggregateOffer':'http://schema.org/Offer'}">
 
              ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"bool") ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="On Sale" /></div>` : ``}
-
+                    {%- if shop.name contains "CleanFreak B2B"-%}
+                        <div class="price__compare-at-visible-2 cf-price-label">
+                            <div class="">CleanFreak Price:</div>
+                        </div>
+                    {%- endif -%}
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
                             ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
