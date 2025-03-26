@@ -8,7 +8,7 @@
     {%- assign current_website = 'cf' -%}
     {%- if shop.name contains "CleanFreak B2B"-%}
         {%- assign current_website = 'cf' -%}
-    {%- if request.host contains 'airmovers'  -%}
+    {%- elsif request.host contains 'airmovers'  -%}
         {%- assign current_website = 'am' -%}
     {%- elsif request.host contains 'carpetextractors'  -%}
         {%- assign current_website = 'ce' -%}
