@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "7796c4bc-8b20-4e80-bf34-71095753a2cd": {
@@ -15,7 +15,7 @@
         "ad3d8d75-1ed2-44ed-b4f8-9579510258b2": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/mytee-8070-auto-detailing-extractor-dept-page.jpg",
+            "cat_image": "shopify://shop_images/mytee-8070-auto-detailing-extractor-dept-page.jpg",
             "cat_title": "Auto Detailing",
             "cat_text": "Machines & chemicals to clean auto exteriors and deeply embedded dirt in auto upholstery and carpet."
           }
@@ -136,57 +136,57 @@
         "556d9754-4e12-4593-8c38-4aa3a1351307": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/auto-detailing-chemicals.jpg",
+            "image": "shopify://shop_images/auto-detailing-chemicals.jpg",
             "title": "Auto Detailing Chemicals",
-            "url": "\/pages\/automotive-chemicals"
+            "url": "/pages/automotive-chemicals"
           }
         },
         "91bfa59d-6342-4d4a-8682-2cc7c90e2dcc": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/auto-buckets.jpg",
+            "image": "shopify://shop_images/auto-buckets.jpg",
             "title": "Buckets",
-            "url": "\/collections\/buckets"
+            "url": "/collections/buckets"
           }
         },
         "56f385c7-49fd-453c-924d-269f990340e7": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/auto-detailing-extractors.jpg",
+            "image": "shopify://shop_images/auto-detailing-extractors.jpg",
             "title": "Detailing Extractors",
-            "url": "\/collections\/detailing-extractors"
+            "url": "/collections/detailing-extractors"
           }
         },
         "191afa71-3c89-4b5d-8027-0a6a7a4ebd5c": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/microfiber-rags.jpg",
+            "image": "shopify://shop_images/microfiber-rags.jpg",
             "title": "Microfiber Rags",
-            "url": "\/collections\/microfiber-rags"
+            "url": "/collections/microfiber-rags"
           }
         },
         "30eddd01-5364-474a-a7be-fb21e9699a70": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/part-washing-tanks.jpg",
+            "image": "shopify://shop_images/part-washing-tanks.jpg",
             "title": "Parts Washing Tanks & Sinks",
-            "url": "\/collections\/parts-washing-tanks"
+            "url": "/collections/parts-washing-tanks"
           }
         },
         "07373a37-ee5c-4b25-9675-805cda493186": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/safety-supplies.jpg",
+            "image": "shopify://shop_images/safety-supplies.jpg",
             "title": "Safety Supplies",
-            "url": "\/pages\/safety-ppe"
+            "url": "/pages/safety-ppe"
           }
         },
         "38d9f74d-d029-458a-bae0-a0bb711ebc9d": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/steam-cleaners.jpg",
+            "image": "shopify://shop_images/steam-cleaners.jpg",
             "title": "Steam Cleaners",
-            "url": "\/collections\/steam-cleaners"
+            "url": "/collections/steam-cleaners"
           }
         }
       },
@@ -246,7 +246,7 @@
         "b8094b38-e33c-4bf9-9e98-94700b387cf9": {
           "type": "slide",
           "settings": {
-            "product": "reliable-brio-plus-400cc-commercial-steam-cleaner"
+            "product": "reliable-brio-plus-410cc-steam-cleaner"
           }
         },
         "861d9b4b-288a-4071-b695-c1f3e32a8bbd": {
@@ -290,40 +290,40 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Carpet %26 Upholstery&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/san-cf-3-h-01.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Carpet %26 Upholstery&q=CleanFreak",
+            "brand-image": "shopify://shop_images/san-cf-3-h-01.jpg"
           }
         },
         "cf2cbf0d-a670-473b-955a-94d1dd637662": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Mytee&refinementList%5Bproduct_type%5D%5B0%5D=Carpet%20Extractors&refinementList%5Bproduct_type%5D%5B1%5D=Carpet%20Extractor%20Hoses%2C%20Wands%20%26%20Accessories&q=Mytee",
-            "brand-image": "shopify:\/\/shop_images\/mytee-8070-carpet-extractor-spotter-w-new-hose.jpg"
+            "brand-link": "/collections/vendors?refinementList%5Bvendor%5D%5B0%5D=Mytee&refinementList%5Bproduct_type%5D%5B0%5D=Carpet%20Extractors&refinementList%5Bproduct_type%5D%5B1%5D=Carpet%20Extractor%20Hoses%2C%20Wands%20%26%20Accessories&q=Mytee",
+            "brand-image": "shopify://shop_images/mytee-8070-carpet-extractor-spotter-w-new-hose.jpg"
           }
         },
         "d00b1869-f114-45ed-ae1a-241f073f25d7": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Armor All®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Armor All&refinementList[product_type][0]=Auto Detailing Chemicals&q=Armor All",
-            "brand-image": "shopify:\/\/shop_images\/144680.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Armor All&refinementList[product_type][0]=Auto Detailing Chemicals&q=Armor All",
+            "brand-image": "shopify://shop_images/144680.jpg"
           }
         },
         "fdf3e9db-e456-4b37-884f-0652ff4c6b40": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Carpet Extractors&q=Trusted Clean",
-            "brand-image": "shopify:\/\/shop_images\/trusted-clean-quench-wet-dry-vacuum.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Carpet Extractors&q=Trusted Clean",
+            "brand-image": "shopify://shop_images/trusted-clean-quench-wet-dry-vacuum.jpg"
           }
         },
         "6b4f656b-a877-480e-ba78-1fc5a1e38f10": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Vapamore®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Vapamore&refinementList[product_type][0]=Steam Cleaners&q=Vapamore",
-            "brand-image": "shopify:\/\/shop_images\/vapamore-mr-75-amico-handheld-steamer-with-hose.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Vapamore&refinementList[product_type][0]=Steam Cleaners&q=Vapamore",
+            "brand-image": "shopify://shop_images/vapamore-mr-75-amico-handheld-steamer-with-hose.jpg"
           }
         }
       },
@@ -344,11 +344,11 @@
         "6df0d581-342b-41b9-a10d-537c887d4eb7": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-stain-removal-prevention-dept-page.jpg",
+            "image": "shopify://shop_images/carpet-stain-removal-prevention-dept-page.jpg",
             "heading": "Stain Removal",
-            "subheading": "<p>Tips on removing spots & stains from carpet and upholstery.<\/p>",
+            "subheading": "<p>Tips on removing spots & stains from carpet and upholstery.</p>",
             "button_label": "Read The Guide",
-            "button_link": "\/pages\/stain-removal-directions"
+            "button_link": "/pages/stain-removal-directions"
           }
         }
       },
@@ -361,8 +361,7 @@
     },
     "trustpilot_review_carousel_JmgPhi": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
