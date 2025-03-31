@@ -108,10 +108,10 @@
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Pumped Up Deal.</div>\n<h1>CleanFreak® 'Flood Master' Portable Flood Pumper & Extractor</h1>\n<div>Was: $2,499.99<br/>Now: $2,199.99</div>",
             "text_area_css": "@media screen and (max-width: 718px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image{\nmax-width:302px;\npadding-top:56px;\n}\n}\n@media screen and (min-width: 1279px) {\n  .slideshow-v2 .custom-text h1 {\n    font-size: 35px;\n    line-height: 38px;\n  }\n}",
-            "bg_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "bg_link": "/products/flood-pumper-portable-flood-extractor",
             "promo_link": "",
-            "button_one_label": "Save $100",
-            "button_one_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "button_one_label": "Save $300",
+            "button_one_link": "/products/flood-pumper-portable-flood-extractor",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
