@@ -75,13 +75,12 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "both",
             "sotm_icon": "2",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/trusted-clean-quench-vacuum-special.png?v=17333236204",
-            "middle_image_alt": "Trusted Clean Quench Wet Push Vacuum Special",
+            "middle_image": "/cdn/shop/files/cpl-00-5792-7-wet-dry-vac-special.png?v=17333236204",
+            "middle_image_alt": "CleanFreak Wet / Dry Vacuum w/ Front Mount Squeegee - 19 Gallons Special",
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Quench Spills, Capture Deals!</div>\n<h1>Trusted Clean 'Quench' Wet Push Vacuum </h1>\n<div>Was: $799.99<br/>Now: $724.99</div>",
@@ -97,7 +96,6 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "both",
             "sotm_icon": "2",
