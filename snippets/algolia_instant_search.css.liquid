@@ -1441,28 +1441,36 @@ margin-right:0;
   margin:0;
   height:100%;
 }
+
+.ais-results-as-block .product-description,
 .ais-results-size-lg .ais-page .ais-results-as-block .ais-hit .product--description{
   display:none !important;
 }
+
 .ais-page .ais-results-as-block .ais-hit--title{
   {% comment %}text-align:center;{% endcomment %}
 }
 .ais-page .ais-results-as-block .ais-hit--title a {
   font-size:16px;
 }
-.ais-page .ais-results-as-block .price__current,
-.ais-page .ais-results-as-block .price__compare-at-visible-2{
-  text-align:center;
-}
 .ais-page .productitem__price .price__current span{
   line-height:40px;
 }
+.ais-page .ais-results-as-block .productitem__price .price__current span,
+.ais-page .ais-results-as-block .price__current,
+.ais-page .ais-results-as-block .price__compare-at-visible-2{
+  text-align:center;
+  line-height:25px;
+  font-size:23px;
+}
+
 .ais-page .ais-results-as-block .productitem__price .price__current span.bundle-price{
   font-size:16px;
   line-height:18px;
 }
 .ais-page .ais-results-as-block .sx-status{
   padding:5px 0;
+  display:none !important;
 }
 .ais-page .ais-results-as-block .sx-status details{
   display: none;
