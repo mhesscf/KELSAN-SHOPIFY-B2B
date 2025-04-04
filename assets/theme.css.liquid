@@ -10482,10 +10482,13 @@ display:none;
 	z-index: 1;
 	width: 100%;
 	max-width: 90%;
-	margin: 50px auto;
+	margin: 0 auto 50px auto;
 	color: {{ settings.color_text }};
 }
 @media screen and (min-width: 720px) {
+	.slideshow-slide__content {
+		margin: 0 auto 50px auto;
+	}
 	.slideshow--height-fit_screen .slideshow-slide__content {
 		position: absolute;
 		top: 50%;
