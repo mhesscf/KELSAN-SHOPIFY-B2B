@@ -86,7 +86,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Wet or Dry, A Great Buy!</div>\n<h1>CleanFreak® Wet / Dry Vacuum w/ Front Mount Squeegee</h1>\n<div>Was: $739.99<br/>Now: $639.99</div>",
-            "text_area_css": "@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}",
+            "text_area_css": "@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 50px auto;\n\t}\n}",
             "bg_link": "/products/19-gallon-wet-dry-vac-with-front-mount-squeegee",
             "promo_link": "",
             "button_one_label": "Save $100",
