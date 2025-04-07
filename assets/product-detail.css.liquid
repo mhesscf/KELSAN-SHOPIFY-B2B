@@ -112,7 +112,6 @@
   color: {{ settings.warning_text }};
 }
 
-
 .product-detail-desc{
   color: {{ settings.color_text_medium }};
   font-size: 17px;
@@ -747,11 +746,17 @@ input.qtyminus {
   }
 }
 /* ---------- Hot Deal Gallery Icon -------------- */
+.product--container .isclearance,
 .product--container .isspecial{
   padding:5px;
 }
-.product--container .isspecial .product-gallery--image-background{
+.product--container .isclearance .product-gallery--image-background{
   border:3px solid #fdb913;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.product--container .isspecial .product-gallery--image-background{
+  border:3px solid #FF8000;
   border-radius: 30px;
   overflow: hidden;
 }
@@ -1954,6 +1959,10 @@ background:none;
 }
 
 .rel-product-tabbed-area .isspecial{
+  border:3px solid #FF8000;
+  border-radius: 30px;
+}
+.rel-product-tabbed-area .isclearance{
   border:3px solid #fdb913;
   border-radius: 30px;
 }

@@ -222,6 +222,14 @@
             "url": "/collections/matting"
           }
         },
+        "categorylink_GddKQR": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/poly-sheet-dept.jpg",
+            "title": "Poly Sheeting",
+            "url": "/collections/poly-sheeting"
+          }
+        },
         "f2d7bde6-6171-4a0d-bef4-4025ae22713f": {
           "type": "categorylink",
           "settings": {
@@ -259,6 +267,7 @@
         "056f3d33-d8e1-4748-bb7e-bd354eebc4b3",
         "094641ff-aaa3-414b-868d-d762fca682fe",
         "767fab66-39e0-48f9-b011-4e55a1c17105",
+        "categorylink_GddKQR",
         "f2d7bde6-6171-4a0d-bef4-4025ae22713f",
         "e50fe474-546a-493d-859f-8bbabc5d2d14",
         "fd6bbc4c-45cb-49f3-85d2-78bf2b9ebd4b"

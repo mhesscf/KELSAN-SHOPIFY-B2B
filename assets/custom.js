@@ -330,7 +330,7 @@ jQuery(document).ready(function($){
             //console.log(param)
             $('#v' + param).css('display', 'block');
             //other var specs like stock status and master qty. FYI Var-specs and Var are uses in more than one place for this functionality
-            $('.var-specs').css('display', 'none');
+            $('.product--outer .var-specs').css('display', 'none');
             $('.var' + param).css('display', 'block');
 
             var vid = $('#v' + param).data('vid');
