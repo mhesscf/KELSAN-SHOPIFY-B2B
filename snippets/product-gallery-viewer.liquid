@@ -17,6 +17,8 @@
 
 
 {%- assign specialclass = "" -%}
+
+
 {%- if product.selected_or_first_available_variant.compare_at_price -%}
     {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
         {%- assign specialSavings = product.compare_at_price | minus: product.price -%}
@@ -36,6 +38,22 @@
         {%- endif -%}
     {%- endif -%}
 {%- endif -%}
+
+{%- if shop.name contains "CleanFreak B2B"-%}
+    {%- assign varorgprice = product.selected_or_first_available_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+    {%- assign varorgpriceb4special = product.selected_or_first_available_variant.metafields.plytix.org-price-b4-special | times: 100 -%}
+    {%- if varorgprice > product.selected_or_first_available_variant.price -%}
+        {%- assign specialclass = "isspecial" -%}
+    {%- elsif varorgpriceb4special > product.selected_or_first_available_variant.price -%}
+        {%- assign specialclass = "isspecial" -%}
+    {%- endif -%}
+{%- endif -%}
+
+{%- for c in product.collections -%}
+    {%- if c.handle == "clearance" -%}
+        {%- assign specialclass = "isclearance" -%}
+    {%- endif -%}
+{%- endfor -%}
 
 {%- if product.metafields.plytix.custom_hot_deal_message -%}
 
@@ -152,8 +170,10 @@
             %}
           {% endif %}
         >
-            {%- if specialclass != "" -%}
-                <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
+            {%- if specialclass == "isspecial" -%}
+                <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
+            {%- elsif specialclass == "isclearance" -%}
+                <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon-clearance.png' | file_img_url: '260x' }}" alt="Clearance Item" /></div>
             {%- endif -%}
           {%
             render 'rimg',

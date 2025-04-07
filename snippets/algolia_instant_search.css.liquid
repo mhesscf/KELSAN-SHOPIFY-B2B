@@ -894,6 +894,7 @@ content: '';
   .ais-page .is-review .jdgm-prev-badge{margin-bottom:2px}
   .ais-page .ais-hit--cart{margin:10px 0 0 0;}
   .ais-results-as-list .ais-Hits-item .cfais-productitem__image-container-col{padding:5px;  }
+  .ais-results-as-list .ais-Hits-item .productitem.clearanceitem .productitem--info,
   .ais-results-as-list .ais-Hits-item .productitem.specialitem .productitem--info{padding:5px;}
 }
 @media screen and (max-width: 500px) {
@@ -1198,9 +1199,13 @@ margin-right:0;
 {% comment %}flex-wrap: wrap;{% endcomment %}
 }
 .ais-results-as-list .ais-Hits-item .productitem.specialitem{
+  border:3px solid #FF8000;
+}
+.ais-results-as-list .ais-Hits-item .productitem.clearanceitem{
   border:3px solid #fdb913;
 }
 
+.ais-results-as-list .ais-Hits-item .productitem.clearanceitem .productitem--info,
 .ais-results-as-list .ais-Hits-item .productitem.specialitem .productitem--info{
   min-height:300px;
   justify-content: flex-start;
@@ -1298,7 +1303,9 @@ margin-right:0;
   padding:15px 10px;
   z-index:unset;
 }
-
+.ais-Hits-item .cfais-productitem--actions .cf-price-label{
+  display:none !important;
+}
 .ais-results-as-list .ais-Hits-item .cfais-productitem--actions{
   flex: 0 0 25%;
   order:3;
@@ -1441,28 +1448,36 @@ margin-right:0;
   margin:0;
   height:100%;
 }
+
+.ais-results-as-block .product-description,
 .ais-results-size-lg .ais-page .ais-results-as-block .ais-hit .product--description{
   display:none !important;
 }
+
 .ais-page .ais-results-as-block .ais-hit--title{
   {% comment %}text-align:center;{% endcomment %}
 }
 .ais-page .ais-results-as-block .ais-hit--title a {
   font-size:16px;
 }
-.ais-page .ais-results-as-block .price__current,
-.ais-page .ais-results-as-block .price__compare-at-visible-2{
-  text-align:center;
-}
 .ais-page .productitem__price .price__current span{
   line-height:40px;
 }
+.ais-page .ais-results-as-block .productitem__price .price__current span,
+.ais-page .ais-results-as-block .price__current,
+.ais-page .ais-results-as-block .price__compare-at-visible-2{
+  text-align:center;
+  line-height:25px;
+  font-size:23px;
+}
+
 .ais-page .ais-results-as-block .productitem__price .price__current span.bundle-price{
   font-size:16px;
   line-height:18px;
 }
 .ais-page .ais-results-as-block .sx-status{
   padding:5px 0;
+  display:none !important;
 }
 .ais-page .ais-results-as-block .sx-status details{
   display: none;
