@@ -19691,6 +19691,80 @@ body:not(.user-is-tabbing) .shopify-model-viewer-ui .shopify-model-viewer-ui__bu
 	min-width: 150px;
 	display: inline-block;
 }
+
+{% comment %}b2b pricing{% endcomment %}
+.sitemain-product .b2b-price-contain{
+	display:flex;
+	margin:0 0 6px -1px;
+}
+
+.b2b-price-contain .b2b-price-col{
+	margin:5px 10px 5px 0;
+	max-width:400px;
+	border-radius:15px;
+	text-align:center;
+	flex-basis:50%;
+	overflow:hidden;
+	max-width:175px;
+}
+
+.b2b-price-contain .b2b-price-col.b2b-compare-price{
+	border:1px solid #EBEBEA;
+}
+.b2b-price-contain .b2b-price-col.b2b-current-price{
+	border:1px solid {{ settings.color_button_secondary_background }};
+}
+.b2b-price-contain.b2b-current-price{
+	order:1;
+}
+.price__compare-at-visible-2.strikethrough.b2b-compare-price{
+	order:0
+}
+.b2b-price-contain .price-text{
+	font-size:15px;
+	font-weight:bold;
+}
+.b2b-price-contain .b2b-compare-price .price-text{
+	background-color:#EBEBEA;
+}
+.b2b-price-contain .b2b-current-price .price-text{
+	background-color:{{ settings.color_button_secondary_background }};
+	color:#FFFFFF;
+}
+.b2b-price-contain .norm-price,
+.b2b-price-contain .contract-price{
+	font-size:26px;
+	line-height:28px;
+	padding:5px 5px 0 5px;
+	font-weight:bold;
+}
+@media (min-width: 860px){
+	.b2b-price-contain .norm-price,
+	.b2b-price-contain .contract-price{
+		font-size:30px;
+		line-height:34px;
+	}
+}
+.b2b-price-contain .price__compare-at-visible-2.strikethrough .norm-price{
+	text-decoration: line-through;
+}
+.b2b-price-contain .contract-price {
+	color:{{ settings.color_button_secondary_background }};
+}
+.b2b-price-contain .b2b-yousave{
+	font-weight:bold;
+	font-size:14px;
+	color: {{ settings.color_product_detail_title }};
+}
+
+.sitemain-product .productgrid--item .b2b-price-contain{
+	display:block;
+	margin: 2px auto;
+}
+.productgrid--item .b2b-price-contain .b2b-price-col.b2b-current-price{
+	margin: 0 auto;
+}
+
 .product-section--container {
 	margin-top: {{ space_xx_large | divided_by: 16.0 | append: 'rem' }};
 }
