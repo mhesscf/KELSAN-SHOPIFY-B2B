@@ -151,7 +151,7 @@
                         {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
                          {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
-                             <a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and get <strong>Free Shipping</strong></span></div></div></a>
+                             <a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and get <strong>Free Shipping</strong></span></div></div></a>
                          {%- endif -%}
                     {%- endif -%}
                 {%- endif -%}
