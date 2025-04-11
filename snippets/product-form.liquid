@@ -262,10 +262,16 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {%- endif -%}
 
     {% comment %}B2b pricing{% endcomment %}
-    {%- assign varorgprice = product.selected_or_first_available_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
-    {%- if varorgprice > product.selected_or_first_available_variant.price -%}
-      {%- assign isSpecial = true -%}
+    {%- if shop.name contains "CleanFreak B2B"-%}
+      {%- assign varorgprice = product.selected_or_first_available_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+      {%- assign varorgpriceb4special = product.selected_or_first_available_variant.metafields.plytix.org-price-b4-special | times: 100 -%}
+      {%- if varorgprice > product.selected_or_first_available_variant.price -%}
+        {%- assign isSpecial = true -%}
+      {%- elsif varorgpriceb4special > product.selected_or_first_available_variant.price -%}
+        {%- assign isSpecial = true -%}
+      {%- endif -%}
     {%- endif -%}
+
 
     <input type="hidden" name="properties[_erp_sku]" value="{{ product.metafields.plytix.erp_sku }}" />
 
