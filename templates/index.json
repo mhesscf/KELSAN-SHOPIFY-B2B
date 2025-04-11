@@ -22,13 +22,12 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "both",
-            "banner-lg": "shopify://shop_images/2025-clearance-cleanout-sale-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-clearance-cleanout-sale-mobile-banner.jpg",
-            "link": "/collections/clearance",
-            "coupon-code": "EXTRA25"
+            "banner-lg": "shopify://shop_images/spring-demo-sale-2025-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/spring-demo-sale-2025-mobile-banner.jpg",
+            "link": "/collections/demoed-refurbished-equipment",
+            "coupon-code": ""
           }
         },
         "slide_v2_cqVtUz": {
@@ -241,9 +240,9 @@
           "type": "banner",
           "settings": {
             "show_on": "both",
-            "banner-lg": "shopify://shop_images/kob-00-4403-2-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/kob-00-4403-2-bogo-mobile-banner.jpg",
-            "link": "/products/1500-rpm-dust-control-burnisher",
+            "banner-lg": "shopify://shop_images/tpl-bk-17vs-tc-april-2025-bogo-deal-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/tpl-bk-17vs-tc-april-2025-bogo-deal-mobile-banner.jpg",
+            "link": "/products/trusted-clean-17-inch-dual-speed-floor-buffer",
             "coupon-code": ""
           }
         },
