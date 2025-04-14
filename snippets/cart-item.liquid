@@ -14,11 +14,26 @@
 {% for variant in item.product.variants %}
   {% if variant.id == item.variant.id and variant.compare_at_price > item.price %}
     {% assign compare_at_price = variant.compare_at_price %}
+
+      {%- if shop.name contains "CleanFreak B2B"-%}
+          {%- assign compare_at_price = item.product.metafields.plytix.org-price-b4-special | times: 100 -%}
+      {%- endif -%}
+
     {% if variant.inventory_management == 'middleware-fulfillment' and  variant.inventory_quantity >  1 %}
       {% assign available = variant.inventory_quantity %}
     {% endif %}
     {% break %}
+  {% elsif variant.id == item.variant.id and shop.name contains "CleanFreak B2B" %}
+      {%- assign compare_at_price = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
+       {% if compare_at_price > item.price %}
+            {%- assign compare_at_price = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
+            {% if variant.inventory_management == 'middleware-fulfillment' and  variant.inventory_quantity >  1 %}
+                {% assign available = variant.inventory_quantity %}
+            {% endif %}
+            {% break %}
+    {% endif %}
   {% endif %}
+
 {% endfor %}
 
 {%- assign item_has_discounts = false -%}
@@ -362,7 +377,7 @@
         {%- comment -%}get instock{%- endcomment -%}
         {%- if stock_status == 'In Stock' -%}
           {%- assign showWarning = 1 -%}
-          {% if item.metafields.plytix.clearance_overstock == 'true' %}
+          {% if item.product.metafields.plytix.clearance_overstock == 'true' %}
             {%- assign showWarning = 0 -%}
           {% elsif item.sku contains "-DEMO"  %}
             {%- assign showWarning = 0 -%}
