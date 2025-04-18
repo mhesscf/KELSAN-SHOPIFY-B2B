@@ -22,6 +22,7 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "both",
             "banner-lg": "shopify://shop_images/spring-demo-sale-2025-desktop-banner.jpg",
