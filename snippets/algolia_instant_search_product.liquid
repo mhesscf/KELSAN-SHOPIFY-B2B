@@ -71,8 +71,10 @@
     }
 
     function mediumpic(orgimglink){
+
         if (orgimglink !== null) {
-             var newImg = orgimglink.replace('.jpg', '_medium.jpg')
+             var newImg = orgimglink.replace('.jpg', '_medium.jpg').replace('.png', '_medium.png');
+
             // return newImg;
 
             var filename = newImg.split("/").pop().split("?")[0];
