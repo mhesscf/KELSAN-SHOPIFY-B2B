@@ -71,9 +71,22 @@
     }
 
     function mediumpic(orgimglink){
+
         if (orgimglink !== null) {
-            var newImg = orgimglink.replace('.jpg', '_medium.jpg')
-            return newImg;
+             var newImg = orgimglink.replace('.jpg', '_medium.jpg').replace('.png', '_medium.png');
+
+            // return newImg;
+
+            var filename = newImg.split("/").pop().split("?")[0];
+            // console.log(filename); // "cleanfreak-225fp-rh-20-inch-removable-handle-floor-buffer_medium.jpg"
+
+            if (orgimglink.includes("/products/")) {
+                var currentdomain = window.location.origin + "/cdn/shop/products/";
+            }else{
+                var currentdomain = window.location.origin + "/cdn/shop/files/";
+            }
+            filename = currentdomain + filename;
+            return filename;
         }
     }
 
@@ -350,7 +363,10 @@
 
             <div class="cfais-productitem__image-container-col">
                 <div class="cfais-productitem__image-container">
-                    <div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}')">
+                    {%- comment -%}<div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}')">{%- endcomment -%}
+
+                    <div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${mediumpic(hit.product_image)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${mediumpic(hit.product_image)}`}')">
+
                     </div>
                 </div>
                 <div class="product-icons-algolia underpic">
