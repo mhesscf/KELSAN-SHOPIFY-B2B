@@ -12,28 +12,30 @@
     "cba53468-db6f-41ec-9ed7-fc3255c70c3e": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "1b022c65-58d9-4861-acb1-078b9ee03995": {
-          "type": "categoryhead",
-          "settings": {
-            "cat_image": "shopify://shop_images/floor-scrubber-package-deals-and-bundles-dept-page.jpg",
-            "cat_title": "Deals & Packages",
-            "cat_text": "Check out our different deals on clearance items, refurbished machines, and gold medal winning equipment. We've pre-built several different packages if you don't know where to start."
-          }
-        },
         "banner_jmhUmt": {
           "type": "banner",
           "disabled": true,
           "settings": {
-            "banner-lg": "shopify://shop_images/spring-demo-sale-2024-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/spring-demo-sale-2024-mobile-banner.jpg",
+            "show_on": "both",
+            "banner-lg": "shopify://shop_images/spring-demo-sale-2025-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/spring-demo-sale-2025-mobile-banner.jpg",
             "link": "/collections/demoed-refurbished-equipment",
             "coupon-code": ""
+          }
+        },
+        "1b022c65-58d9-4861-acb1-078b9ee03995": {
+          "type": "categoryhead",
+          "settings": {
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/floor-scrubber-package-deals-and-bundles-dept-page.jpg",
+            "cat_title": "Deals & Packages",
+            "cat_text": "Check out our different deals on clearance items, refurbished machines, and gold medal winning equipment. We've pre-built several different packages if you don't know where to start."
           }
         }
       },
       "block_order": [
-        "1b022c65-58d9-4861-acb1-078b9ee03995",
-        "banner_jmhUmt"
+        "banner_jmhUmt",
+        "1b022c65-58d9-4861-acb1-078b9ee03995"
       ],
       "settings": {
         "enable_autoplay": true,
@@ -397,8 +399,7 @@
     },
     "trustpilot_review_carousel_UEXAMf": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

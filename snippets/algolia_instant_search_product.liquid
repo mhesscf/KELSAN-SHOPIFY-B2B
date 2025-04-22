@@ -16,7 +16,7 @@
 
         if (variants_count != "1" || bundleitems != ""|| hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" || warning_title !="" ){
             showButton = "viewProduct";
-        }else if(show_quote == "true"){
+        }else if(show_quote == "True"){
             showButton = "viewProduct";
         }
 
@@ -71,9 +71,22 @@
     }
 
     function mediumpic(orgimglink){
+
         if (orgimglink !== null) {
-            var newImg = orgimglink.replace('.jpg', '_medium.jpg')
-            return newImg;
+             var newImg = orgimglink.replace('.jpg', '_medium.jpg').replace('.png', '_medium.png');
+
+            // return newImg;
+
+            var filename = newImg.split("/").pop().split("?")[0];
+            // console.log(filename); // "cleanfreak-225fp-rh-20-inch-removable-handle-floor-buffer_medium.jpg"
+
+            if (orgimglink.includes("/products/")) {
+                var currentdomain = window.location.origin + "/cdn/shop/products/";
+            }else{
+                var currentdomain = window.location.origin + "/cdn/shop/files/";
+            }
+            filename = currentdomain + filename;
+            return filename;
         }
     }
 
@@ -350,7 +363,10 @@
 
             <div class="cfais-productitem__image-container-col">
                 <div class="cfais-productitem__image-container">
-                    <div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}')">
+                    {%- comment -%}<div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${algolia.helpers.mediumImage(hit)}`}')">{%- endcomment -%}
+
+                    <div itemprop="image" content="${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${mediumpic(hit.product_image)}`}" class="ais-hit--picture" style="background-image: url('${hit.variants_count > 1 ? html `${mediumpic(hit.product_image)}` : html `${mediumpic(hit.product_image)}`}')">
+
                     </div>
                 </div>
                 <div class="product-icons-algolia underpic">
@@ -366,28 +382,28 @@
                                 <div onclick="stoplink(event);">
                                     <div class="sm-row bnd-pop-algolia ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 2 ? html `bnd-pop-extra`:``} ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 1 ? html `bnd-pop-2col`:``}" data-currhandle="${hit.handle}" data-bndhandle="${hit.meta.plytix.in_these_bundles}" >
                                         <div class="icon-wrap" style="font-size: 23px;">
-                                                             <i style="color:#d48c00; margin-top:3px; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i>
+                                                             <i style="color:#d48c00; margin-top:2px; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i>
                                         </div>
                                         <div class="sm-row-text" style="">
                                             <span>Available in a Package</span><br/><span class="sm-text">Get everything you need with a starter package!</span>
                                         </div>
                                     </div></div>`:``}
-                                 ${hit.meta.plytix.clearance_overstock == "true" ? html`<div onclick="stoplink(event);"><a href="/collections/clearance"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div><div class="sm-row-text"><span>Clearance / Overstock</span><br/><span class="sm-text">Buy now before they are gone!</span></div></div></a></div>`:''}
+                                 ${hit.meta.plytix.clearance_overstock == "true" ? html`<div onclick="stoplink(event);"><a href="/collections/clearance"><div class="sm-row"><div class="icon-wrap" style="margin-top:3px; font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div><div class="sm-row-text"><span>Clearance / Overstock</span><br/><span class="sm-text">Buy now before they are gone!</span></div></div></a></div>`:''}
 
 
                                  ${hit.tags.includes("Environmentally Responsible") ? html`<div onclick="stoplink(event);"><a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Environmentally%20Responsible "><div class="sm-row greenproduct"><div class="icon-wrap" style="margin-top:2px; font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div><div class="sm-row-text"><span>Environmentally Responsible</span><br/><span class="sm-text">Reduced impact on the environment</span></div></div></a></div>`:''}
 
                                 {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
                                     ${hit.tags.includes("Free Shipping") ? html`<div onclick="stoplink(event);"><a href="/collections/free-shipping"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 20px; margin-top:3px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a></div>`:''}
-                                    ${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special"),"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special"),"enddate") }</strong> and get <strong>Free Shipping</strong></span></div></div></a></div>` : ``}
+                                    ${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special-off"),"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special-off"),"enddate") }</strong> and get <strong>Free Shipping</strong></span></div></div></a></div>` : ``}
                                     {% else %}
                                      ${hit.tags.includes("Free Shipping") ? html`<div onclick="stoplink(event);"><a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Free%20Shipping"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a></div>`:''}
                                 {% endif %}
 
                                 {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
-                                    ${hit.tags.includes("Gold Medal Winner") ? html`<div onclick="stoplink(event);"><a href="/collections/gold-medal-winners"><div class="sm-row goldmedal"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-medal"></i></div><div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">Reliable machines at affordable prices.</span></div></div></a></div>`:''}
+                                    ${hit.tags.includes("Gold Medal Winner") ? html`<div onclick="stoplink(event);"><a href="/collections/gold-medal-winners"><div class="sm-row goldmedal"><div class="icon-wrap" style="margin-top:2px; font-size: 23px;"><i class="fa-duotone fa-solid fa-medal"></i></div><div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">Reliable machines at affordable prices.</span></div></div></a></div>`:''}
                                 {% else %}
-                                    ${hit.tags.includes("Gold Medal Winner") ? html`<div class="sm-row goldmedal"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-medal"></i></div><div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">Reliable machines at affordable prices.</span></div></div>`:''}
+                                    ${hit.tags.includes("Gold Medal Winner") ? html`<div class="sm-row goldmedal"><div class="icon-wrap" style="margin-top:2px; font-size: 23px;"><i class="fa-duotone fa-solid fa-medal"></i></div><div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">Reliable machines at affordable prices.</span></div></div>`:''}
                                 {% endif %}
 
                                 ${hit.tags.includes("Not Returnable") ? html`<div onclick="stoplink(event);"><div class="sm-row notreturn"><div class="icon-wrap"><img width="25" height="25" src="{{ 'not-returnable-icon.png' | file_img_url }}" alt="Can not be returned." /></div><div class="sm-row-text"><span>Not Returnable</span><br/><span class="sm-text">Due to the nature of this product, it can not be returned.</span></div></div></div>`:''}
@@ -472,9 +488,9 @@
                                     <div class="customhot-raw" data-objid="${hit.objectID}" style="display:none">${hit.meta.plytix.custom_hot_deal_message}</div>
                                     ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"enddate") }</strong> and <span class="customhot" data-objid="${hit.objectID}"></span></span></div></div></a></div>` : ``}
 
-                                    ${hit.meta.plytix.bundle_special_data ? html `<div onclick="stoplink(event);"><a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>On Sale</span><br/><span class="sm-text">Buy Before <strong>${bundlespecialdata(hit.meta.plytix.bundle_special_data,1)}</strong> and <strong>Save ${bundlespecialdata(hit.meta.plytix.bundle_special_data,0)}</strong></span></div></div></a></div>` : ``}
+                                    ${hit.meta.plytix.bundle_special_data ? html `<div onclick="stoplink(event);"><a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="margin-top:3px; font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>On Sale</span><br/><span class="sm-text">Buy Before <strong>${bundlespecialdata(hit.meta.plytix.bundle_special_data,1)}</strong> and <strong>Save ${bundlespecialdata(hit.meta.plytix.bundle_special_data,0)}</strong></span></div></div></a></div>` : ``}
                                   {% else %}
-                                    ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>On Sale</span><br/><span class="sm-text">Buy Before <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"enddate")}</strong> and <strong>Save ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"savings")}</strong></span></div></div>` : ``}
+                                    ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `<div class="sm-row sale-icon"><div class="icon-wrap" style="margin-top:3px; font-size: 23px;"><i class="fa-sharp fa-solid fa-tags"></i></div> <div class="sm-row-text"><span>On Sale</span><br/><span class="sm-text">Buy Before <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"enddate")}</strong> and <strong>Save ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"savings")}</strong></span></div></div>` : ``}
                                  {% endif %}
 
 

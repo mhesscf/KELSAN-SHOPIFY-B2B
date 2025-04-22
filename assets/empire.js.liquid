@@ -30983,7 +30983,7 @@ const RULES = `
                     };
 
                     this.events.register(this.zoomButton, 'click', e => onZoomButtonClick(e));
-                    this.events.register(this.viewer, 'click', e => onZoomButtonClick(e));
+                    {% comment %}this.events.register(this.viewer, 'click', e => onZoomButtonClick(e));{% endcomment %}
                 }
 
                 this._onResize = this._onResize.bind(this);
@@ -31273,7 +31273,7 @@ const RULES = `
                     initialIndex: parseInt(this.selected.figure.dataset.galleryIndex, 10),
                     lazyLoad: false,
                     percentPosition: false,
-                    prevNextButtons: false,
+                    prevNextButtons: true,
                     pageDots: false,
                     selectedAttraction: 0.1,
                     setGallerySize: false,

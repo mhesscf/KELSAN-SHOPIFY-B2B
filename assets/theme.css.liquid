@@ -20468,7 +20468,7 @@ shopify-payment-terms {
 	}
 }
 .click-to-zoom-enabled .product-gallery--viewer {
-	cursor: pointer;
+	cursor: default;
 }
 .product-gallery--viewer.product-gallery--has-media .product-gallery--media:not([data-gallery-selected=true]) {
 	position: absolute;
@@ -21107,7 +21107,14 @@ shopify-payment-terms {
 	cursor: default;
 }
 
-
+@media screen and (max-width: 719px) {
+	.product-gallery .nav-tabs{
+		display:none;
+	}
+	.product-gallery--navigation-off.product-gallery--navigation-slick{
+		display:none !important;
+	}
+}
 
 
 
