@@ -154,7 +154,7 @@
                             {%- endif -%}
 
                             {%- if stockStatusSub != "" -%}
-                                {%- capture stockStatusNote -%}<span class="status"><strong>{{ stockStatusMain }}</strong></span><br/><span class="substatus">({{ stockStatusSub }})</span>{%- endcapture -%}
+                                {%- capture stockStatusNote -%}<span class="status"><strong>{{ stockStatusMain }}</strong></span><br/><span class="substatus">({{ stockStatusSub }})<br/>Products will ship as one once all items are in stock.</span>{%- endcapture -%}
                             {%- else -%}
                                 {%- capture stockStatusNote -%}<span class="status"><strong>{{ stockStatusMain }}</strong></span>{%- endcapture -%}
                             {%- endif -%}
@@ -355,7 +355,7 @@
                                 {%- endif -%}
 
                                 {%- if stockStatusSub != "" -%}
-                                    {%- capture stockStatusNote -%}<span class="status"><strong>{{ stockStatusMain }}</strong></span><br/><span class="substatus">({{ stockStatusSub }})</span>{%- endcapture -%}
+                                    {%- capture stockStatusNote -%}<span class="status"><strong>{{ stockStatusMain }}</strong></span><br/><span class="substatus">({{ stockStatusSub }}.<br/>Products will ship as one once all items are in stock.)</span>{%- endcapture -%}
                                 {%- else -%}
                                     {%- capture stockStatusNote -%} <span class="status"><strong>{{ stockStatusMain }}</strong></span>{%- endcapture -%}
                                 {%- endif -%}
@@ -412,7 +412,7 @@
             </tbody></table>
     </section>
 <style>
-    .bundled-products-grid table .stock-status{height: 0; overflow: hidden; transition: all 1.5s ease-in-out;}
+    .bundled-products-grid table .stock-status{height: 0; overflow: hidden; }
     .bundled-products-grid table .stock-status.showme{height: unset; }
     .stock-gen-bundle{cursor:pointer};
 </style>
@@ -426,7 +426,10 @@
 {% else %}
     <script>
         $(document).ready(function($) {
-            $('.bundle-status-area').html('<div class="stock-gen-bundle" onclick="showstock();"><strong>Click to display individual stock status details.</strong></div>');
+            $('.bundle-status-area').html('<div class="stock-gen-bundle" onclick="showstock();"><strong>View below for individual stock status details.</strong></div>');
+            setTimeout(function(){
+                showstock('nogo');
+            }, 1000);
         });
     </script>
 {% endif %}
@@ -449,7 +452,7 @@
         $('.product-form--regular .product-form--atc').css("font-size","17px").html('<div style="background-color:#fff4c7; padding:10px; border:1px solid #ccc; border-radius: 10px;"><div><strong>Sold Out</strong></div><div class="soldoutbundle-dir">Please contact support at <strong>{{ shop.phone }}</strong> to order the bundle with an available replacement item.</div></div>');
         {%- endif -%}
     });
-    function showstock(){
+    function showstock(goto = "yesgo"){
         if($('.stock-gen-bundle strong').hasClass('hidestock')){
             $('.stock-gen-bundle strong').removeClass('hidestock');
             $('.stock-gen-bundle strong').text('Click to display individual stock status details.');
@@ -457,7 +460,7 @@
             $('.bundled-products-grid table .bnd-product-row').removeClass('sold-product');
 
         }else{
-            $('.stock-gen-bundle strong').text('Click to hide stock status details.');
+            $('.stock-gen-bundle strong').text('View below for individual stock status details.');
             $('.stock-gen-bundle strong').addClass('hidestock');
 
             $('.bundled-products-grid table .stock-status').addClass('showme');
@@ -466,9 +469,11 @@
                     $(this).addClass('sold-product');
                 }
             });
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $(".bundled-products-grid").offset().top -100
-            }, 1000);
+            if(goto != "nogo") {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".bundled-products-grid").offset().top - 100
+                }, 1000);
+            }
         }
     }
 </script>
