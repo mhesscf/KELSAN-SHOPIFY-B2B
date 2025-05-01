@@ -360,7 +360,10 @@
   <div class="content"></div>
 </div>
 <script>
-  function closechildPop(el){
+  function closechildPop(el, clear = false){
+    if(clear){
+      $('.freq-item-fgwp').remove();
+    }
     jQuery(".popup-container").removeClass('widepop');
     jQuery(".popup-container").addClass('hidden');
     jQuery(".pop-grad").addClass('hidden');

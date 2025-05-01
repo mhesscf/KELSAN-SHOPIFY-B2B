@@ -32994,21 +32994,18 @@ const RULES = `
                     this.addToCartFlyout.unload();
                 }
 
-
                 const atcButton = event.currentTarget;
                 const variantID = atcButton.getAttribute('data-variant-id');
                 const variantERPSKUName = atcButton.getAttribute('data-erpsku-name');
                 const variantERPSKU = atcButton.getAttribute('data-erp-sku');
-
                 const variantavailQtyName= atcButton.getAttribute('data-availqty-name');
                 const variantavailQty = atcButton.getAttribute('data-availqty');
-
-                const variantSFeligibleName = atcButton.getAttribute('data-notification-name');
-                const variantSFeligible = atcButton.getAttribute('data-notification');
-
-                const variantNotificationName = atcButton.getAttribute('data-sfeligible-name');
-                const variantNotification = atcButton.getAttribute('data-sfeligible');
-
+                const variantNotificationName = atcButton.getAttribute('data-notification-name');
+                const variantNotification = atcButton.getAttribute('data-notification');
+                const variantBundleName = atcButton.getAttribute('data-bundle-name');
+                const variantBundle = atcButton.getAttribute('data-bundle');
+                const variantSFeligibleName = atcButton.getAttribute('data-sfeligible-name');
+                const variantSFeligible = atcButton.getAttribute('data-sfeligible');
                 const variantVisSKUName = atcButton.getAttribute('data-vissku-name');
                 const variantVisSKU = atcButton.getAttribute('data-vissku');
                 const variantStatusName = atcButton.getAttribute('data-status-name');
@@ -33047,7 +33044,10 @@ const RULES = `
                 },{
                     name: variantNotificationName,
                     value: variantNotification
-                }
+                },{
+                        name: variantBundleName,
+                        value: variantBundle
+                    }
                 ];
                 const options = {
                     atcButton,
