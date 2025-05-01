@@ -22,6 +22,7 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "both",
             "banner-lg": "shopify://shop_images/2025-earth-day-sale-desktop-banner.jpg",
