@@ -1,0 +1,611 @@
+{%- assign product = product -%}
+{%- assign area = area -%}
+{%- assign varid = varid -%}
+
+{%- assign show_warning = false -%}
+{%- assign show_fgwp = false -%}
+
+
+
+
+
+{% comment %}product free gift popup----------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+{%- assign today_date = 'now' | date: '%s' %}
+{%- assign fgwp_Obj = shop.metaobjects.free_gift_with_product.values  -%}
+{%- for fgwp in fgwp_Obj -%}
+
+    {%- assign start = fgwp.start_date | date: '%s' -%}
+    {%- comment -%}//add one day to the end date{%- endcomment -%}
+    {%- assign date = fgwp.end_date | date: '%s' -%}
+    {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+    {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+    {%- comment -%}if not active, skip{%- endcomment -%}
+    {%- if today_date < start or today_date > end -%}
+        {% continue %}
+    {%- endif -%}
+
+    {% comment %}find by product{% endcomment %}
+    {%- for find_product in fgwp.buy_this_product.value -%}
+        {% if find_product.url == product.url %}
+            {%- assign show_fgwp = true -%}
+        {% endif %}
+    {% endfor %}
+    {% comment %}find by tag{% endcomment %}
+    {%- for this_tag in fgwp.buy_product_tagged_as.value -%}
+        {% if product.tags contains this_tag %}
+            {%- assign show_fgwp = true -%}
+        {% endif %}
+    {% endfor %}
+
+
+    {%- if show_fgwp == true -%}
+
+        {%- assign total_options = fgwp.total_options -%}
+        {%- assign final_total_options = fgwp.total_options -%}
+        {%- assign total_options_counter = 0 -%}
+
+        <div class="fgwp-text-{{ varid }} fgwp-text-area-{{ area }} " style="display:none;">
+            <div class="fgwp-pop-content">
+                <div class="fgwp-pop-contain">
+                    <div class="fgwp-pop-title" style="display:block; font-size:26px;">{{ fgwp.name }}</div>
+                    <div style="font-size:12px; margin-bottom:15px; ">Notice for {{ product.metafields.plytix.main_sku }}</div>
+                    <div class="fgwp-card-container fgwp-card-container-{{ varid }}-{{ area }}">
+
+
+
+                        {%- for free_gift in fgwp.free_product_options.value -%}
+                            {%- if total_options_counter < total_options -%}
+                                <div class="fgwp-card">
+                                    <div class="inner">
+                                        <div class="fgwp-card-imge image-wrap">
+                                            <img src="{{ free_gift.featured_media.preview_image.src | img_url: '100x' }}" class="img-responsive" alt="{{ free_gift.featured_media.alt }}" />
+                                        </div>
+                                        <div class="fgwp-title">
+                                            {{ free_gift.title }}
+                                        </div>
+                                        <div class="fgwp-bottom">
+                                            <div class="fgwp-sku" style="display:none;">{{ free_gift.selected_or_first_available_variant.sku }}</div>
+                                            <div class="fgwp-value-price"><span>${{ free_gift.selected_or_first_available_variant.price | money_without_currency }}</span> Value</div>
+
+                                            <div id="data-fgwp-var{{ free_gift.variants.first.id }}"
+                                                 class="data-fgwp-var"
+                                                 data-productname="{{ free_gift.title }}"
+                                                 data-producturl="{{ free_gift.url }}"
+                                                 data-var_id="{{ free_gift.variants.first.id }}"
+                                                 data-var_vissku="{{ free_gift.variants.first.sku }}"
+                                                 data-var_status=""
+                                                 data-var_erpsku="{{ free_gift.variants.first.metafields.plytix.erp_sku }}"
+                                                 data-var_availqty="{{ free_gift.variants.first.inventory_quantity }}"
+                                                 data-producttype="{{ free_gift.type }}"
+                                                 data-brand="{{ free_gift.vendor }}"
+                                                    {% if free_gift.variants.first.metafields.plytix.general_product_type == "Machine" %}
+                                                        data-sfeligible="true"
+                                                    {% endif %}
+                                                 data-var_tieredpricing="{{ free_gift.variants.first.metafields.plytix.tiered_pricing }}"
+                                                 data-var_price="{{ free_gift.variants.first.price }}"
+                                                 style="display: none" >
+                                            </div>
+
+                                            <div style="width:150px" class="fgwp-var-btn{{ free_gift.variants.first.id }} fgwp-select-{{ area }} product-form--atc-button main-atc-button thinbtn" onclick="fgwpatc{{ varid }}({{ free_gift.variants.first.id }})" >Select</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {%- assign total_options_counter = total_options_counter | plus: 1 -%}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% comment %}coupon codes---------------------------------------------------------------------------------------------{% endcomment %}
+                        {%- if fgwp.coupon_code_option_1 and 1==2 -%}
+                            <div class="fgwp-card">
+                                <div class="inner">
+                                    <div class="fgwp-card-imge image-wrap">
+                                        {% comment %}<img src="{{ free_gift.featured_media.preview_image.src | img_url: '100x' }}" class="img-responsive" alt="{{ free_gift.featured_media.alt }}" />{% endcomment %}
+                                    </div>
+                                    <div class="fgwp-title">
+                                        {{ fgwp.coupon_code_1_title }}
+                                    </div>
+                                    <div class="fgwp-bottom">
+                                        <div class="fgwp-sku" style="display:none;">Discount 1</div>
+                                        <div class="fgwp-value-price"><span></span></div>
+                                        <div style="width:150px" class="fgwp-var-btn-coupon product-form--atc-button main-atc-button thinbtn" onclick="fgwpatc{{ varid }}('{{ fgwp.coupon_code_option_1 }}','coupon')" >Select</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {%- assign final_total_options = final_total_options | plus: 1 -%}
+                        {%- endif -%}
+                        {%- if fgwp.coupon_code_option_2 and 1==2 -%}
+                            <div class="fgwp-card">
+                                <div class="inner">
+                                    <div class="fgwp-card-imge image-wrap">
+                                        {% comment %}<img src="{{ free_gift.featured_media.preview_image.src | img_url: '100x' }}" class="img-responsive" alt="{{ free_gift.featured_media.alt }}" />{% endcomment %}
+                                    </div>
+                                    <div class="fgwp-title">
+                                        {{ fgwp.coupon_code_2_title }}
+                                    </div>
+                                    <div class="fgwp-bottom">
+                                        <div class="fgwp-sku" style="display:none;">Discount 2</div>
+                                        <div class="fgwp-value-price"><span></span></div>
+                                        <div style="width:150px" class="fgwp-var-btn-coupon product-form--atc-button main-atc-button thinbtn" onclick="fgwpatc{{ varid }}('{{ fgwp.coupon_code_option_2 }}','coupon')" >Select</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {%- assign final_total_options = final_total_options | plus: 1 -%}
+                        {%- endif -%}
+                        {% comment %}end coupon codes---------------------------------------------------------------------------------------------{% endcomment %}
+
+                    </div>
+                    <div class="fgwp-btns" style="text-align:center;">
+                        {% if area == "mainfreq" %}
+                        <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="nextfgwpatc{{ varid }}()" >No Thanks</div>
+                        {% else %}
+                        <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="closefgwpatc{{ varid }}()" >No Thanks</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .fgwp-pop-content .grayout{
+                opacity:0.3;
+            }
+            .fgwp-pop-content .fgwp-card-container{
+                display:flex;
+            }
+
+            .fgwp-pop-content .fgwp-card-container .fgwp-card .inner{
+                position: relative;
+                padding:0 0 70px 0;
+                box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14);
+                border-radius: 30px;
+                text-align:center;
+                height:100%;
+            }
+            .fgwp-pop-content .fgwp-title{
+                padding:4px 10px 0 10px;
+            }
+            .fgwp-pop-content .fgwp-card-container .fgwp-card .fgwp-value-price{
+                font-size:20px;
+                font-weight:bold;
+                padding:5px 10px;
+            }
+            .fgwp-pop-content .fgwp-bottom{
+                position: absolute;
+                bottom:0px;
+                padding: 0 10px 10px 10px;
+                text-align:center;
+                width:100%;
+            }
+            .fgwp-pop-content .main-atc-button{
+                margin:auto;
+            }
+            @media (min-width: 720px) and (max-width: 1172px){
+
+            }
+            {%- if final_total_options == 2 -%}
+
+            {%- elsif final_total_options == 3 -%}
+            .fgwp-pop-content .fgwp-card-container .fgwp-card{
+                padding:10px;
+                flex-basis: 33.3%
+            }
+            {%- elsif final_total_options == 4 -%}
+
+            {%- elsif final_total_options == 5 -%}
+
+            {%- endif -%}
+
+        </style>
+        <script>
+            function closefgwpatc{{ varid }}() {
+                event.stopPropagation();
+                setTimeout(function() {
+                    {% if area == "main" %}
+                    $('.product-form--atc #p-atc').click();
+                    {% elsif area == "slider" %}
+                    $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').click();
+                    {% endif %}
+                    setTimeout(function() {
+                        closechildPop('bund-pop-');
+                    }, 500);
+                }, 500);
+
+            }
+
+
+
+            function nextfgwpatc{{ varid }}() {
+                var thisbtn= ".popup-container .product-form--atc-button";
+                var currentpopnum = $(thisbtn).closest('.fgwp-pop-content').data('popnum');
+                var newpopnum = parseInt(currentpopnum) + 1;
+                closechildPop('bund-pop-');
+                setTimeout(function() {
+                    if($('.freq-pops[data-popnum="'+newpopnum+'"]').length){
+                        $('.freq-pops[data-popnum="'+newpopnum+'"]').click();
+                    }else{
+                        $('#p-atc-agree-freq .atc-button--text').text('Adding...')
+                        $('.freq-cart-button #p-atc-freq').click();
+                    }
+                }, 600);
+            }
+
+
+
+
+            async function fgwpatc{{ varid }}(varid,type = "item"){
+                var item_class = "#data-fgwp-var"+varid;
+                var thisbtn= ".popup-container .fgwp-card .fgwp-var-btn"+varid;
+
+
+                {% if area == "mainfreq" %}
+                    {% comment %} Handling Freq FGWP{% endcomment %}
+                    $(thisbtn).text('Selected');
+                    $(".fgwp-card-container-{{ varid }}-{{ area }} .fgwp-card .thinbtn, .fgwp-card-container-{{ varid }}-{{ area }} .fgwp-btns .outlinebtn").not(thisbtn).addClass("grayout");
+                    $(thisbtn).text('Adding...');
+                    $(thisbtn).show();
+
+                {% comment %}add bundle data to main product{% endcomment %}
+                $('#freq-product-{{ product.id }}').find('.current-freq-var [data-freqbundle-subproduct]').attr('data-bundle-name', 'properties[_bundle_product]').attr('data-bundle', '{{ product.handle }}::gpack');
+
+                {% comment %}add a spoof item which basically mirrors a card to frequently bought together {% endcomment %}
+                var toadd = "";
+                toadd += '<div class="freq_bought-rel-item rel-slider-item freq-item freq-item-fgwp" style="display:none !important" data-freqbundle-subproducts="">';
+                toadd += '<section class="productgrid--item  imagestyle--natural" ' +
+                    'id="freq-product-'+$(item_class).data('var_id')+'" ' +
+                    'data-product-item="" ' +
+                    'data-product-quickshop-url="'+$(item_class).data('producturl')+'">';
+                toadd += '<input type="checkbox" class="freq-check" checked="" >';
+                toadd += '<div class="productitem" data-product-item-content="">';
+                toadd += '<div class="productitem__container">';
+                toadd += '<div class="freq-var'+$(item_class).data('var_id')+' freq-var-variables current-freq-var">';
+                toadd += '<div id="data-freq-var'+$(item_class).data('var_id')+'" class="freq-data addon" ' +
+                    'data-var_id="'+$(item_class).data('var_id')+'" ' +
+                    'data-var_vissku="'+$(item_class).data('var_vissku')+'" ' +
+                    'data-var_status="'+$(item_class).data('var_status')+'" ' +
+                    'data-var_erpsku="'+$(item_class).data('var_erpsku')+'" ' +
+                    'data-producttype="" ' +
+                    'data-bundle="{{ product.handle }}::gpack"' +
+                    'data-brand="" ' +
+                    'data-var_tieredpricing="fg" ' +
+                    'data-var_availqty="'+$(item_class).data('var_availqty')+'" ' +
+                    'data-var_price="'+$(item_class).data('var_price')+'"' +
+                    'data-freqbundle-subproduct="" ' +
+                    'style="display: none" ' +
+                    '></div>';
+                toadd += '</div>';
+                toadd += '</div>';
+                toadd += '</div>';
+                toadd += '</section>';
+                toadd += '</div>'
+
+
+                $('.freq-bought-items').append(toadd);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    {% comment %} trigger find next pop or add freq to the cart{% endcomment %}
+                    setTimeout(function() {
+                        {% comment %} trigger find next pop{% endcomment %}
+                        var currentpopnum = $(thisbtn).closest('.fgwp-pop-content').data('popnum');
+                        var newpopnum = parseInt(currentpopnum) + 1;
+
+                        closechildPop('bund-pop-');
+                        setTimeout(function() {
+                            if($('.freq-pops[data-popnum="'+newpopnum+'"]').length){
+                                $('.freq-pops[data-popnum="'+newpopnum+'"]').click();
+                            }else{
+                                $('#p-atc-agree-freq .atc-button--text').text('Adding...')
+                                $('.freq-cart-button #p-atc-freq').click();
+                            }
+                        }, 600);
+                    }, 1000);
+
+
+                {% else %}
+                {% comment %} Handling other FGWP{% endcomment %}
+
+                    $('.fgwp-card-container-{{ varid }}-{{ area }} .fgwp-card .thinbtn, .fgwp-card-container-{{ varid }}-{{ area }} .fgwp-btns .outlinebtn').removeAttr('onclick');
+
+                    //--------------------------------------------------------------------------------------------------------
+
+
+
+                    {% if area == "main" %}
+                    const addqty = $('#product-quantity-input').val();
+                    {% elsif area == "slider" %}
+                    const addqty = '1';
+                    {% endif %}
+
+                    // e.preventDefault();
+
+                    $(".fgwp-card-container-{{ varid }}-{{ area }} .fgwp-card .thinbtn, .fgwp-card-container-{{ varid }}-{{ area }} .fgwp-btns .outlinebtn").not(thisbtn).addClass("grayout");
+                    $(thisbtn).text('Adding...');
+                    $(thisbtn).show();
+
+
+                    if(type == "coupon"){
+
+                        var code = varid;
+                        alert(code+". What should we do for the redirect?");
+                        document.cookie = "applied_discount_code="+code+"; expires=0; path=/";
+                        // var decodedUrl = encodeURIComponent(url);
+                        var promoUrl = "/discount/"+code+"?redirect=/";
+
+
+                        $.ajax({
+                            url: promoUrl,
+                            cache: false
+                        })
+                            .done(function( html ) {
+
+                                setTimeout(function() {
+                                    $(thisbtn).text('Selected');
+                                    {% if area == "main" %}
+                                    $('.product-form--atc #p-atc').click();
+                                    {% elsif area == "slider" %}
+                                    $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').click();
+                                    {% endif %}
+                                    setTimeout(function() {
+                                        closechildPop('bund-pop-');
+                                        $(".fgwp-card .thinbtn, .fgwp-btns .outlinebtn").text("Please Refresh Page");
+                                    }, 1000);
+                                }, 1000);
+
+                            });
+                        return;
+                    }else{
+                        // add for grouping fg when not a code
+                        {% if area == "main" %}
+                            $('.product-form--regular form').prepend('<input type="hidden" name="properties[_bundle_product]" value="{{ product.handle }}::gpack">');
+                        {% elsif area == "slider" %}
+                            $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').attr('data-bundle-name', 'properties[_bundle_product]').attr('data-bundle', '{{ product.handle }}::gpack');
+                        {% endif %}
+                    }
+
+                    console.log("ERP: "+$(item_class).data('var_erpsku'));
+                    console.log("vissku: "+$(item_class).data('var_vissku'));
+                    console.log("status: "+$(item_class).data('var_status'));
+                    console.log("tier: "+$(item_class).data('var_tieredpricing'));
+                    console.log("var id: "+$(item_class).data('var_id'));
+                    console.log("var_availqty: "+$(item_class).data('var_availqty'));
+                    console.log("var_price: "+$(item_class).data('var_price'));
+                    console.log("sfeligible: "+$(item_class).data('sfeligible'));
+                    console.log("orgprice: "+$(item_class).data('var_price'));
+                    console.log("qty: "+addqty);
+                    console.log("--------");
+
+
+                    const form_template = {
+                        form_type: 'product',
+                        utf8: '✓',
+                        'properties[_erp_sku]': '',
+                        'properties[_sf_eligible]': '',
+                        'properties[Sku]': '',
+                        'properties[_tiered_pricing]': '',
+                        'properties[_org_price]': '',
+                        'properties[_available_qty]': '',
+                        'properties[_bundle_product]': '',
+                        'id': '',
+                        'quantity': 0
+                    }
+
+                    const form_datas = []
+
+                    form_template["properties[_erp_sku]"] = $(item_class).data('var_erpsku');
+                    form_template["properties[_sf_eligible]"] = $(item_class).data('sfeligible');
+                    form_template["properties[Sku]"] = $(item_class).data('var_vissku');
+                    form_template["properties[Status]"] = $(item_class).data('var_status');
+                    form_template["properties[_tiered_pricing]"] = "fg";
+                    form_template["properties[_available_qty]"] = $(item_class).data('var_availqty');
+                    form_template["properties[_org_price]"] = $(item_class).data('var_price');
+                    form_template["properties[_bundle_product]"] = "{{ product.handle }}::gpack";
+                    form_template.id = varid.toString() + ""
+                    form_template.quantity = addqty.toString() + ""
+
+                    form_datas.push({...form_template})
+
+
+                    form_datas.reverse();
+                    for (const f of form_datas) {
+                        await $.ajax({
+                            type: 'POST',
+                            url: `${window.Theme.routes.cart_add_url}.js`,
+                            data: f,
+                            dataType: 'json'
+                        })
+                    }
+
+                    //-----------------------------------------------------------------------------------------------------------------
+                    setTimeout(function() {
+                        $(thisbtn).text('Selected');
+                        {% if area == "main" %}
+                        $('.product-form--atc #p-atc').click();
+                        {% elsif area == "slider" %}
+                        $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').click();
+                        {% endif %}
+                        setTimeout(function() {
+                            closechildPop('bund-pop-');
+                            $(".fgwp-card-container-{{ varid }}-{{ area }} .fgwp-card .thinbtn, .fgwp-card-container-{{ varid }}-{{ area }} .fgwp-btns .outlinebtn").text("Please Refresh Page");
+                        }, 1000);
+                    }, 1000);
+                {% endif %}
+            }
+            //end of fgwpatc
+        </script>
+
+    {%- endif -%}
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}start if warning pop ---------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+{% if product.metafields.plytix.warning_title %}
+    {%- assign show_warning = true -%}
+    {% if area == "mainfreq" %}
+        <div class="warningpop-text-freq-itemdata" style="display:none;">
+        <div class="item-warning-sku">{{ product.metafields.plytix.main_sku }}</div>
+        <div class="item-warning-title">{{ product.metafields.plytix.warning_title }}</div>
+        <div class="item-warning-body">{{ product.metafields.plytix.warning_body }}</div>
+        </div>
+    {% else %}
+
+        <div class="warningpop-text-{{ varid }}" style="display:none;">
+            <h2 style="margin-bottom:0">{{ product.metafields.plytix.warning_title }}</h2>
+            <div style="font-size:12px; margin-bottom:15px; ">Notice for {{ product.metafields.plytix.main_sku }}</div>
+            <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">{{ product.metafields.plytix.warning_body }}</div>
+            <div class="warning-actions">
+                <div style="margin-top:10px; text-align:center">
+                    <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="event.stopPropagation(); closechildPop('bund-pop-')" >Cancel</div>
+
+                    <div style="max-width:200px" class="product-form--atc-button main-atc-button agree-btn" onclick="agreecheck{{ varid }}({{ show_fgwp }})" >Agree</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function agreecheck{{ varid }}(fgwpcontinue = false){
+                $('.warning-actions .agree-btn').html("Adding To the Cart....");
+                {% if area == "main" %}
+                    $('.product-form--regular form').prepend('<input type="hidden" name="properties[Notification]" value="Accepted {{ product.metafields.plytix.warning_title }}">');
+                {% elsif area == "slider" %}
+                    $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').attr('data-notification-name', 'properties[Notification]').attr('data-notification', 'Accepted {{ product.metafields.plytix.warning_title }}');
+                {% endif %}
+
+                $('.product-form--regular form').prepend('<input type="hidden" name="properties[Notification]" value="Accepted {{ product.metafields.plytix.warning_title }}">');
+
+                setTimeout(function() {
+                    if(fgwpcontinue){
+                        checkpop{{ varid }}("fgwp");
+                    }else{
+                        {% if area == "main" %}
+                        $('.product-form--atc #p-atc').click();
+                        {% elsif area == "slider" %}
+                        $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').click();
+                        {% endif %}
+                        setTimeout(function() {
+                            closechildPop('bund-pop-');
+                            $('.warning-actions .agree-btn').html("Add to Cart");
+                        }, 1000);
+                    }
+                }, 1000);
+
+                // closechildPop('bund-pop-');
+            }
+        </script>
+    {% endif %}
+{% endif %}
+{% comment %}end if warning pop{% endcomment %}
+
+
+
+
+
+
+
+
+
+{% comment %}ATC spoof buttons{% endcomment %}
+{%- assign poptoshow = "none" -%}
+{%- if show_fgwp == true and show_warning == true -%}
+    {%- assign poptoshow = "both" -%}
+{%- elsif show_warning == true -%}
+    {%- assign poptoshow = "warning" -%}
+{%- elsif show_fgwp == true -%}
+    {%- assign poptoshow = "fgwp" -%}
+{% endif %}
+
+{%- if poptoshow != "none" -%}
+    {% if area == "main" %}
+        <div onclick="checkpop{{ varid }}('{{ poptoshow }}')" class="product-form--atc-button main-atc-button mdc-ripple-surface mdc-ripple-upgraded" id="p-atc-agree-{{ varid }}">
+            <span class="atc-button--text"><span class="atc-plus">++</span> Add to cart</span>
+            <span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" /></span>
+        </div>
+        <style>
+            .cart-buttons #p-atc{display:none !important;}
+            .cart-buttons #p-atc-agree-{{ varid }}{max-width:350px;}
+
+            @media (min-width: 720px) and (max-width: 1172px){
+                .cart-buttons #p-atc-agree-{{ varid }}{
+                    margin:0px 0 10px 0;
+                    flex-basis:100%;
+                }
+            }
+            @media (max-width: 550px){
+                .cart-buttons #p-atc-agree-{{ varid }}{
+                    margin:0px 0 10px 0;
+                    flex-basis:100%;
+                }
+            }
+            @media (max-width: 719px) {
+                .warning-actions .agree-btn-{{ varid }}{margin-top:10px;}
+            }
+        </style>
+    {% elsif area == "slider" %}
+        <div onclick="checkpop{{ varid }}('{{ poptoshow }}')" class="productitem--action-trigger productitem--action-atc main-atc-button thinbtn" type="button" aria-label="Add to cart">
+                  <span class="atc-button--text">
+                    <span class="atc-plus">++</span> Add to cart
+                  </span>
+        </div>
+        <style>
+            .productitem--action-trigger[data-id="{{ product.variants.first.id }}"]{display:none !important;}
+            @media (max-width: 719px) {
+                .warning-actions .agree-btn{margin-top:10px;}
+            }
+        </style>
+    {% elsif area == "mainfreq" %}
+        {%- if poptoshow == "fgwp" or poptoshow == "both"-%}
+        <div onclick="checkpop{{ varid }}('fgwp')" class="freq-pops" style="display:none!important"></div>
+        {%- endif -%}
+    {% endif %}
+
+    <script>
+        function checkpop{{ varid }}(popstoshow){
+
+            $('.popup-container').removeClass('hidden');
+            $(".pop-grad").removeClass('hidden');
+            if (popstoshow == "both"){
+                var newhtml = $(".warningpop-text-{{ varid }}").html();
+            }else if (popstoshow == "warning"){
+                var newhtml = $(".warningpop-text-{{ varid }}").html();
+            }else if (popstoshow == "fgwp") {
+                var newhtml = $(".fgwp-text-{{ varid }}").html();
+            }
+
+            $('.popup-container .content').html('');
+            $('.popup-container .content').html(newhtml);
+            $('.popup-container').addClass('widepop');
+        }
+    </script>
+{% endif %}
+
+
+
+
