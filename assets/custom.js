@@ -1127,6 +1127,7 @@ jQuery(document).ready(function($){
                 'properties[_tiered_pricing]': '',
                 'properties[_org_price]': '',
                 'properties[_available_qty]': '',
+                'properties[Notification]': '',
                 'id': '',
                 'quantity': 0
             }
@@ -1182,6 +1183,8 @@ jQuery(document).ready(function($){
                         form_template["properties[_tiered_pricing]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_tieredpricing');
                         form_template["properties[_available_qty]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_availqty');
                         form_template["properties[_org_price]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_price');
+                        form_template["properties[Notification]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('notification');
+                        form_template["properties[_bundle_product]"] = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('bundle');
                         form_template.id = $(this).find('.current-freq-var [data-freqbundle-subproduct]').data('var_id') + ""
                         form_template.quantity = "1" + ""
 

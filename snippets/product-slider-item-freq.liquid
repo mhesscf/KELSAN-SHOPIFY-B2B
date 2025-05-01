@@ -15,6 +15,7 @@
 {%- assign enable_quickshop = false -%}
 {%- assign atc_display = true -%}
 {%- assign atc_button = true -%}
+{%- assign typeofitem = typeofitem -%}
 {%- assign money_format = shop.money_format | strip_html -%}
 
 {%- assign pstep = 1 -%}
@@ -361,7 +362,7 @@
                     {%- endif -%}
                   {%- endif -%}
                   <div class="freq-status" style="display:none;">{{ stockStatusNote }}</div>
-              <div id="data-freq-var{{ variant.id }}"
+              <div id="data-freq-var{{ variant.id }}" class="freq-data {{ typeofitem }}"
 
                    data-var_id="{{ variant.id }}"
                    data-var_vissku="{{ variant.sku }}"

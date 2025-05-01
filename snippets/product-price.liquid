@@ -85,8 +85,7 @@
 {%- assign price_varies = false -%}
 {%- assign compare_at_price_varies = false -%}
 {%- assign lp = nil -%}
-{%- assign b2bprice = false -%}
-{%- assign specialprice = false -%}
+
 {%- assign b2bshop = false -%}
 {%- if shop.name contains "CleanFreak B2B"-%}
     {%- assign b2bshop = true -%}
@@ -337,6 +336,9 @@
       {% comment %}b2b pricing{% endcomment %}
       <div class="b2b-price-contain productitem__price">
           {%- for variant in product.variants -%}
+              {%- assign b2bprice = false -%}
+              {%- assign specialprice = false -%}
+              
               {% comment %}b2b strike price{% endcomment %}
               {%- assign varorgprice = variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
               {%- assign varorgpriceb4special = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
