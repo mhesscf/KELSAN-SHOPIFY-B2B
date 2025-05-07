@@ -672,473 +672,415 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
         {%- if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" -%}
 
-          {% if product.metafields.plytix.warning_title %}
-          <div onclick="warningpop()" class="product-form--atc-button main-atc-button mdc-ripple-surface mdc-ripple-upgraded" id="p-atc-agree">
+          {%
+                  render 'warning-pop',
+                  product: product,
+                  area:'main',
+                  varid:'mainatc'
+          %}
 
-            <span class="atc-button--text"><span class="atc-plus">+</span> Add to cart</span>
-            <span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></span>
-          </div>
-          <div class="warningpop-text" style="display:none;">
-            <h2>{{ product.metafields.plytix.warning_title }}</h2>
-            <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">{{ product.metafields.plytix.warning_body }}</div>
-            <div class="warning-actions">
-              <div style="margin-top:10px; text-align:center">
-                <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="event.stopPropagation(); closechildPop('bund-pop-')" >Cancel</div>
-                <div style="max-width:200px" class="product-form--atc-button main-atc-button agree-btn" onclick="agreecheck()" >Agree</div>
+                    <button class=" product-form--atc-button main-atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
+                            id="p-atc"
+                            type="submit"
+                            {% if selected_variant and selected_variant.available == false %}
+                              disabled
+                            {% endif %}
+                            data-product-atc
+                            {% if product.template_suffix contains 'pre-order' %}
+                              data-product-atc-preorder
+                            {% endif %}
+                    >
+
+                      <span class="atc-button--text">
+                        {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
+                        <span class="atc-plus">+</span>
+                        {% unless selected_variant and selected_variant.available == false %}
+                          {% if product.template_suffix contains 'pre-order' %}
+                            {{ 'product.buttons.pre_order' | t }}
+                          {% else %}
+                            {{ 'product.buttons.add_to_cart' | t }}
+                          {% endif %}
+                        {% else %}
+                          {{ 'product.buttons.sold_out' | t }}
+                        {% endunless %}
+                      </span>
+                      <span class="atc-button--icon">
+                        {%- render 'icon-spinner' -%}
+                      </span>
+                    </button>
+                    {% comment %}\
+
+                      {%- if show_dynamic_checkout_button -%}
+                        {{ form | payment_button }}
+                      {%- endif -%}
+                    {% endcomment %}
+                  {%- endif -%}
+                </div>
               </div>
-            </div>
-          </div>
+              {%- if pdiscontinued == false -%}
+                {%- if shop.name contains "CleanFreak B2B"-%}
+                  {% comment %}do nothing{% endcomment %}
+                {%- else -%}
+                  <div class="approve-contain">
+                    {%- if selected_variant.price < 100000 -%}
+                      <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img src="{{ 'approve-logo-sm.png' | file_img_url  }}" alt="Approve Logo" /></a></div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
 
-            <style>
-              .cart-buttons #p-atc{display:none !important;}
-              .cart-buttons #p-atc-agree{max-width:350px;}
-              
-              @media (min-width: 720px) and (max-width: 1172px){
+              <div data-payment-terms-reference style="display: none;">
+                {{ form | payment_terms }}
+              </div>
 
-                .cart-buttons #p-atc-agree{
-                  margin:0px 0 10px 0;
-                  flex-basis:100%;
-                }
-              }
-              @media (max-width: 550px){
-                .cart-buttons #p-atc-agree{
-                  margin:0px 0 10px 0;
-                  flex-basis:100%;
-                }
+              {%- if enable_local_pickup -%}
+                <div class="surface-pick-up" data-surface-pick-up></div>
+              {%- endif -%}
+            {% endform %}
+          {%- else -%}
+          {%- comment -%}Start of bundle logic ---------------------------------------------------------------------------{%- endcomment -%}
 
-              }
+              {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}
+              {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
+              <div data-bundle-subproducts>
+                {%- for bundle_product_entry in bundle_products -%}
+                  {%- assign bundle_product_entry_parts = bundle_product_entry | split: "#" -%}
+                  {%- assign bundle_product_handle = bundle_product_entry_parts[0] | strip -%}
+                  {%- assign bundle_product = all_products[bundle_product_handle] -%}
+                  {%- comment -%}Get stock status for bundle non-free logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
+                  {%- assign stockStatusBunMain = "" -%}
+                  {%- assign stockStatusBunSub = "" -%}
+                  {%- assign fserviceBun = bundle_product.selected_or_first_available_variant.fulfillment_service -%}
+                  {%- assign leadTimeBun = bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time -%}
+                  {%- assign inventoryQuantityBun = bundle_product.selected_or_first_available_variant.inventory_quantity -%}
+                  {%- assign inventoryQuantityBun = inventoryQuantityBun | plus: 0 -%}
+                  {%- assign leadTimeBun = leadTimeBun | plus: 0 -%}
 
-              @media (max-width: 719px) {
-                .warning-actions .agree-btn{margin-top:10px;}
-              }
-            </style>
-            <script>
-              function warningpop(){
-                // alert('thestme');
+                  {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityBun <  1 -%}
+                    {%- assign stockStatusBunMain = "Ships Direct from Manufacturer" -%}
+                    {%- assign stockStatusBunSub = "May Have Extended Lead Times" -%}
+                  {%- elsif bundle_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityBun <  1 -%}
 
-                $('.popup-container').removeClass('hidden');
-                $(".pop-grad").removeClass('hidden');
-                var newhtml = $(".warningpop-text").html();
-                $('.popup-container .content').html(newhtml);
-                $('.popup-container').addClass('widepop');
-              }
+                    {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
+                    {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
+                      {%- assign dateStart = bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}
+                      {%- assign nowTimestamp = 'now' | date: '%s' -%}
+                      {%- assign diffSeconds = dateStart | minus: nowTimestamp -%}
+                      {%- assign leadTimeBun = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
+                    {%- endif -%}
 
-              function agreecheck(){
-                    $('.warning-actions .agree-btn').html("Adding To the Cart....");
-                    $('.product-form--regular form').prepend('<input type="hidden" name="properties[Notification]" value="Accepted {{ product.metafields.plytix.warning_title }}">');
-                    setTimeout(function() {
-                      $('.product-form--atc #p-atc').click();
-                      setTimeout(function() {
-                        closechildPop('bund-pop-');
-                      }, 1000);
-                    }, 1000);
-
-                    // closechildPop('bund-pop-');
-              }
-            </script>
-
-          {% endif %}
-
-
-          <button class=" product-form--atc-button main-atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
-                  id="p-atc"
-                  type="submit"
-                  {% if selected_variant and selected_variant.available == false %}
-                    disabled
+                    {%- assign stockStatusBunMain = "Temporarily On Backorder" -%}
+                    {%- if leadTimeBun < 22  -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 1 – 3 wks" -%}
+                    {%- elsif leadTimeBun < 29 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 2 – 4 wks" -%}
+                    {%- elsif leadTimeBun < 36 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 3 – 5 wks" -%}
+                    {%- elsif leadTimeBun < 43 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 4 –6 wks" -%}
+                    {%- elsif leadTimeBun < 50 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 5 – 7 wks" -%}
+                    {%- elsif leadTimeBun < 57 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 6 – 8 wks" -%}
+                    {%- elsif leadTimeBun < 64 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 7 – 9 wks" -%}
+                    {%- elsif leadTimeBun < 71 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 8 – 10 wks" -%}
+                    {%- elsif leadTimeBun < 78 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 9 – 11 wks" -%}
+                    {%- elsif leadTimeBun < 85 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 10 – 12 wks" -%}
+                    {%- elsif leadTimeBun < 121 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 3 – 4 mths" -%}
+                    {%- elsif leadTimeBun < 151 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 4 – 5 mths" -%}
+                    {%- elsif leadTimeBun < 181 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 5 – 6 mths" -%}
+                    {%- elsif leadTimeBun < 211 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date 6 – 7 mths" -%}
+                    {%- elsif leadTimeBun < 1000 -%}
+                      {%- assign stockStatusBunSub = "Estimated Ship Date over 7 mths" -%}
+                    {%- endif -%}
+                  {% elsif bundle_product.selected_or_first_available_variant.inventory_management == nil and leadTimeBun %}
+                    {%- assign stockStatusBunMain = "Special Order Item" -%}
+                    {%- if leadTimeBun < 22  -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 1 – 3 wks" -%}
+                    {%- elsif leadTimeBun < 29 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 2 – 4 wks" -%}
+                    {%- elsif leadTimeBun < 36 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 3 – 5 wks" -%}
+                    {%- elsif leadTimeBun < 43 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 4 – 6 wks" -%}
+                    {%- elsif leadTimeBun < 50 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 5 – 7 wks" -%}
+                    {%- elsif leadTimeBun < 57 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 6 – 8 wks" -%}
+                    {%- elsif leadTimeBun < 64 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 7 – 9 wks" -%}
+                    {%- elsif leadTimeBun < 71 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 8 – 10 wks" -%}
+                    {%- elsif leadTimeBun < 78 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 9 – 11 wks" -%}
+                    {%- elsif leadTimeBun < 85 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 10 – 12 wks" -%}
+                    {%- elsif leadTimeBun < 121 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 3 – 4 mths" -%}
+                    {%- elsif leadTimeBun < 151 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 4 – 5 mths" -%}
+                    {%- elsif leadTimeBun < 181 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 5 – 6 mths" -%}
+                    {%- elsif leadTimeBun < 211 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in 6 – 7 mths" -%}
+                    {%- elsif leadTimeBun < 1000 -%}
+                      {%- assign stockStatusBunSub = "Expected to ship in over 7 mths" -%}
+                    {% endif %}
+                  {% elsif bundle_product.selected_or_first_available_variant.inventory_quantity > 0 %}
+                    {% assign stockStatusBunMain = "In Stock" %}
                   {% endif %}
-                  data-product-atc
-                  {% if product.template_suffix contains 'pre-order' %}
-                    data-product-atc-preorder
-                  {% endif %}
-          >
 
-            <span class="atc-button--text">
-              {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
-              <span class="atc-plus">+</span>
-              {% unless selected_variant and selected_variant.available == false %}
-                {% if product.template_suffix contains 'pre-order' %}
-                  {{ 'product.buttons.pre_order' | t }}
-                {% else %}
-                  {{ 'product.buttons.add_to_cart' | t }}
-                {% endif %}
-              {% else %}
-                {{ 'product.buttons.sold_out' | t }}
-              {% endunless %}
-            </span>
-            <span class="atc-button--icon">
-              {%- render 'icon-spinner' -%}
-            </span>
-          </button>
-          {% comment %}\
+                  {%- if stockStatusBunSub != "" -%}
+                    {% capture stockStatusBunNote %}{{ stockStatusBunMain }} ({{ stockStatusBunSub }}){% endcapture %}
+                  {%- else -%}
+                    {% capture stockStatusBunNote %}{{ stockStatusBunMain }}{% endcapture %}
+                  {%- endif -%}
+                  {%- comment -%}End of bundle non-free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
-            {%- if show_dynamic_checkout_button -%}
-              {{ form | payment_button }}
-            {%- endif -%}
-          {% endcomment %}
-        {%- endif -%}
-      </div>
-    </div>
-    {%- if pdiscontinued == false -%}
-      {%- if shop.name contains "CleanFreak B2B"-%}
-        {% comment %}do nothing{% endcomment %}
-      {%- else -%}
-        <div class="approve-contain">
-          {%- if selected_variant.price < 100000 -%}
-            <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img src="{{ 'approve-logo-sm.png' | file_img_url  }}" alt="Approve Logo" /></a></div>
+                  <input type="hidden"
+                         name="updates[{{ bundle_product_handle }}]"
+                         class="quantity field"
+                         data-bundle-subproduct
+                         data-id="{{ bundle_product.selected_or_first_available_variant.id }}"
+                         data-vissku="{{ bundle_product.selected_or_first_available_variant.sku }}"
+                         data-status="{{ stockStatusBunNote}}"
+                         data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
+                          {% if bundle_product.metafields.plytix.general_product_type == "Machine" %}
+                            data-sfeligible="true"
+                          {% endif %}
+                         data-step="{{ pstep }}"
+                         data-tieredPricing=""
+                         data-availqty="{{ bundle_product.selected_or_first_available_variant.inventory_quantity }}"
+                         data-qty="{{ bundle_product_entry_parts[1] }}"
+                         data-price="{{ bundle_product.price }}"
+                         data-parentid="{{ bundle_product.id }}"
+                         data-title="{{ bundle_product.title | escape }}"
+                         data-vartitle="{{ bundle_product.selected_or_first_available_variant.title | escape }}"
+                         data-type="{{ bundle_product.type | escape }}"
+                         data-brand="{{ bundle_product.vendor | escape }}"
+                         value="{{ bundle_product_entry_parts[1] }}" />
+                {%- endfor -%}
+                {%- for free_product_entry in free_products -%}
+                  {%- assign free_product_entry_parts = free_product_entry | split: "#" -%}
+                  {%- assign free_product_handle = free_product_entry_parts[0] | strip -%}
+                  {%- assign free_product = all_products[free_product_handle] -%}
+
+
+                  {%- comment -%}Get stock status for bundle free logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
+                  {%- assign stockStatusFreeMain = "" -%}
+                  {%- assign stockStatusFreeSub = "" -%}
+                  {%- assign fserviceFree = free_product.selected_or_first_available_variant.fulfillment_service -%}
+                  {%- assign leadTimeFree = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time -%}
+                  {%- assign inventoryQuantityFree = free_product.selected_or_first_available_variant.inventory_quantity -%}
+                  {%- assign inventoryQuantityFree = inventoryQuantityFree | plus: 0 -%}
+                  {%- assign leadTimeFree = leadTimeFree | plus: 0 -%}
+
+                  {%- if free_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityFree <  1 -%}
+                    {%- assign stockStatusFreeMain = "Ships Direct from Manufacturer" -%}
+                    {%- assign stockStatusFreeSub = "May Have Extended Lead Times" -%}
+                  {%- elsif free_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityFree <  1 -%}
+                    {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
+                    {%- if free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
+                      {%- assign dateStart = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}
+                      {%- assign nowTimestamp = 'now' | date: '%s' -%}
+                      {%- assign diffSeconds = dateStart | minus: nowTimestamp -%}
+                      {%- assign leadTimeFree = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
+                    {%- endif -%}
+
+                    {%- assign stockStatusFreeMain = "Temporarily On Backorder" -%}
+                    {%- if leadTimeFree < 22  -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 1 – 3 wks" -%}
+                    {%- elsif leadTimeFree < 29 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 2 – 4 wks" -%}
+                    {%- elsif leadTimeFree < 36 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 3 – 5 wks" -%}
+                    {%- elsif leadTimeFree < 43 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 4 –6 wks" -%}
+                    {%- elsif leadTimeFree < 50 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 5 – 7 wks" -%}
+                    {%- elsif leadTimeFree < 57 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 6 – 8 wks" -%}
+                    {%- elsif leadTimeFree < 64 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 7 – 9 wks" -%}
+                    {%- elsif leadTimeFree < 71 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 8 – 10 wks" -%}
+                    {%- elsif leadTimeFree < 78 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 9 – 11 wks" -%}
+                    {%- elsif leadTimeFree < 85 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 10 – 12 wks" -%}
+                    {%- elsif leadTimeFree < 121 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 3 – 4 mths" -%}
+                    {%- elsif leadTimeFree < 151 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 4 – 5 mths" -%}
+                    {%- elsif leadTimeFree < 181 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 5 – 6 mths" -%}
+                    {%- elsif leadTimeFree < 211 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date 6 – 7 mths" -%}
+                    {%- elsif leadTimeFree < 1000 -%}
+                      {%- assign stockStatusFreeSub = "Estimated Ship Date over 7 mths" -%}
+                    {%- endif -%}
+                  {%- elsif free_product.selected_or_first_available_variant.inventory_management == nil and leadTimeFree -%}
+                    {%- assign stockStatusFreeMain = "Special Order Item" -%}
+                    {%- if leadTimeFree < 22  -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 1 – 3 wks" -%}
+                    {%- elsif leadTimeFree < 29 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 2 – 4 wks" -%}
+                    {%- elsif leadTimeFree < 36 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 3 – 5 wks" -%}
+                    {%- elsif leadTimeFree < 43 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 4 – 6 wks" -%}
+                    {%- elsif leadTimeFree < 50 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 5 – 7 wks" -%}
+                    {%- elsif leadTimeFree < 57 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 6 – 8 wks" -%}
+                    {%- elsif leadTimeFree < 64 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 7 – 9 wks" -%}
+                    {%- elsif leadTimeFree < 71 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 8 – 10 wks" -%}
+                    {%- elsif leadTimeFree < 78 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 9 – 11 wks" -%}
+                    {%- elsif leadTimeFree < 85 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 10 – 12 wks" -%}
+                    {%- elsif leadTimeFree < 121 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 3 – 4 mths" -%}
+                    {%- elsif leadTimeFree < 151 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 4 – 5 mths" -%}
+                    {%- elsif leadTimeFree < 181 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 5 – 6 mths" -%}
+                    {%- elsif leadTimeFree < 211 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in 6 – 7 mths" -%}
+                    {%- elsif leadTimeFree < 1000 -%}
+                      {%- assign stockStatusFreeSub = "Expected to ship in over 7 mths" -%}
+                    {%- endif -%}
+                  {%- elsif free_product.selected_or_first_available_variant.inventory_quantity > 0 -%}
+                    {%- assign stockStatusFreeMain = "In Stock" -%}
+                  {%- endif -%}
+
+                  {%- if stockStatusFreeSub != "" -%}
+                    {%- capture stockStatusFreeNote -%}{{ stockStatusFreeMain }} ({{ stockStatusFreeSub }}){%- endcapture -%}
+                  {%- else -%}
+                    {%- capture stockStatusFreeNote -%}{{ stockStatusFreeMain }}{%- endcapture -%}
+                  {%- endif -%}
+                  {%- comment -%}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
+
+
+                  <input type="hidden"
+                         name="updates[{{ free_product_handle }}]"
+                         class="quantity field"
+                         data-bundle-subproduct-free
+                         data-step="{{ pstep }}"
+                         data-id="{{ free_product.selected_or_first_available_variant.id }}"
+                         data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
+                         data-vissku="{{ free_product.selected_or_first_available_variant.sku }}"
+                         data-availqty="{{ free_product.selected_or_first_available_variant.inventory_quantity }}"
+                         data-status="{{ stockStatusFreeNote }}"
+                         data-tieredPricing="fg"
+                         data-qty="{{ free_product_entry_parts[1] }}"
+                         data-price="{{ free_product.price }}"
+                         value="{{ free_product_entry_parts[1] }}" />
+                {%- endfor -%}
+              </div>
+              <div class="product-form--atc">
+                <div class="cart-buttons">
+                  <button class="product-form--atc-button main-atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
+                          <span class="atc-button--text">
+                            {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
+                            <span class="atc-plus">+</span>
+                            {{ 'product.buttons.add_to_cart' | t }}
+                          </span>
+                    <span class="atc-button--icon">
+                            {%- render 'icon-spinner' -%}
+                          </span>
+                  </button>
+                  {%- if isBundle == true -%}
+                  {%- assign bundleprice = product.metafields.plytix.bundle_pricing | plus: 0.00 -%}
+                    {%- if bundleprice > 1000 -%}
+                      <button class="product-form--finance-atc-button2 main-atc-button" onclick="window.location.href = '/pages/financing-options'" style="">Financing Available</button>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </div>
+              {% if pdiscontinued == false %}
+                <div class="approve-contain"></div>
+              {% endif %}
+          {%- comment -%}end of bundle logic -----------------------------------------------------------------------------------{%- endcomment -%}
           {%- endif -%}
-        </div>
-      {%- endif -%}
-    {%- endif -%}
 
-    <div data-payment-terms-reference style="display: none;">
-      {{ form | payment_terms }}
-    </div>
 
-    {%- if enable_local_pickup -%}
-      <div class="surface-pick-up" data-surface-pick-up></div>
-    {%- endif -%}
-  {% endform %}
-{%- else -%}
-{%- comment -%}Start of bundle logic ---------------------------------------------------------------------------{%- endcomment -%}
 
-    {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}
-    {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
-    <div data-bundle-subproducts>
-      {%- for bundle_product_entry in bundle_products -%}
-        {%- assign bundle_product_entry_parts = bundle_product_entry | split: "#" -%}
-        {%- assign bundle_product_handle = bundle_product_entry_parts[0] | strip -%}
-        {%- assign bundle_product = all_products[bundle_product_handle] -%}
-        {%- comment -%}Get stock status for bundle non-free logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
-        {%- assign stockStatusBunMain = "" -%}
-        {%- assign stockStatusBunSub = "" -%}
-        {%- assign fserviceBun = bundle_product.selected_or_first_available_variant.fulfillment_service -%}
-        {%- assign leadTimeBun = bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time -%}
-        {%- assign inventoryQuantityBun = bundle_product.selected_or_first_available_variant.inventory_quantity -%}
-        {%- assign inventoryQuantityBun = inventoryQuantityBun | plus: 0 -%}
-        {%- assign leadTimeBun = leadTimeBun | plus: 0 -%}
-
-        {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityBun <  1 -%}
-          {%- assign stockStatusBunMain = "Ships Direct from Manufacturer" -%}
-          {%- assign stockStatusBunSub = "May Have Extended Lead Times" -%}
-        {%- elsif bundle_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityBun <  1 -%}
-
-          {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
-          {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
-            {%- assign dateStart = bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}
-            {%- assign nowTimestamp = 'now' | date: '%s' -%}
-            {%- assign diffSeconds = dateStart | minus: nowTimestamp -%}
-            {%- assign leadTimeBun = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
-          {%- endif -%}
-
-          {%- assign stockStatusBunMain = "Temporarily On Backorder" -%}
-          {%- if leadTimeBun < 22  -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 1 – 3 wks" -%}
-          {%- elsif leadTimeBun < 29 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 2 – 4 wks" -%}
-          {%- elsif leadTimeBun < 36 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 3 – 5 wks" -%}
-          {%- elsif leadTimeBun < 43 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 4 –6 wks" -%}
-          {%- elsif leadTimeBun < 50 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 5 – 7 wks" -%}
-          {%- elsif leadTimeBun < 57 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 6 – 8 wks" -%}
-          {%- elsif leadTimeBun < 64 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 7 – 9 wks" -%}
-          {%- elsif leadTimeBun < 71 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 8 – 10 wks" -%}
-          {%- elsif leadTimeBun < 78 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 9 – 11 wks" -%}
-          {%- elsif leadTimeBun < 85 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 10 – 12 wks" -%}
-          {%- elsif leadTimeBun < 121 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 3 – 4 mths" -%}
-          {%- elsif leadTimeBun < 151 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 4 – 5 mths" -%}
-          {%- elsif leadTimeBun < 181 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 5 – 6 mths" -%}
-          {%- elsif leadTimeBun < 211 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date 6 – 7 mths" -%}
-          {%- elsif leadTimeBun < 1000 -%}
-            {%- assign stockStatusBunSub = "Estimated Ship Date over 7 mths" -%}
-          {%- endif -%}
-        {% elsif bundle_product.selected_or_first_available_variant.inventory_management == nil and leadTimeBun %}
-          {%- assign stockStatusBunMain = "Special Order Item" -%}
-          {%- if leadTimeBun < 22  -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 1 – 3 wks" -%}
-          {%- elsif leadTimeBun < 29 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 2 – 4 wks" -%}
-          {%- elsif leadTimeBun < 36 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 3 – 5 wks" -%}
-          {%- elsif leadTimeBun < 43 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 4 – 6 wks" -%}
-          {%- elsif leadTimeBun < 50 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 5 – 7 wks" -%}
-          {%- elsif leadTimeBun < 57 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 6 – 8 wks" -%}
-          {%- elsif leadTimeBun < 64 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 7 – 9 wks" -%}
-          {%- elsif leadTimeBun < 71 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 8 – 10 wks" -%}
-          {%- elsif leadTimeBun < 78 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 9 – 11 wks" -%}
-          {%- elsif leadTimeBun < 85 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 10 – 12 wks" -%}
-          {%- elsif leadTimeBun < 121 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 3 – 4 mths" -%}
-          {%- elsif leadTimeBun < 151 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 4 – 5 mths" -%}
-          {%- elsif leadTimeBun < 181 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 5 – 6 mths" -%}
-          {%- elsif leadTimeBun < 211 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in 6 – 7 mths" -%}
-          {%- elsif leadTimeBun < 1000 -%}
-            {%- assign stockStatusBunSub = "Expected to ship in over 7 mths" -%}
+          {%- comment -%} shoppay finaincing link
+          {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
+          <form data-payment-terms-target class="shoppay-financing" style="display: none;"></form>
           {% endif %}
-        {% elsif bundle_product.selected_or_first_available_variant.inventory_quantity > 0 %}
-          {% assign stockStatusBunMain = "In Stock" %}
-        {% endif %}
+          {%- endcomment -%}
+          {%- comment -%}  script for tier switching {%- endcomment -%}
+          <script>
+            $(document).ready(function() {
+              $('.tierlevel ').on('click', function(e){
+                var tierPrice = $(this).data('tierprice');
+                var tierSaved = $(this).data('tiersaved');
+                var tierNum = $(this).data('tiernum');
+                var orgPrice = $('.tierlevel[data-tiernum="1"] ').data('tierprice');
 
-        {%- if stockStatusBunSub != "" -%}
-          {% capture stockStatusBunNote %}{{ stockStatusBunMain }} ({{ stockStatusBunSub }}){% endcapture %}
-        {%- else -%}
-          {% capture stockStatusBunNote %}{{ stockStatusBunMain }}{% endcapture %}
-        {%- endif -%}
-        {%- comment -%}End of bundle non-free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
-        
-        <input type="hidden"
-               name="updates[{{ bundle_product_handle }}]"
-               class="quantity field"
-               data-bundle-subproduct
-               data-id="{{ bundle_product.selected_or_first_available_variant.id }}"
-               data-vissku="{{ bundle_product.selected_or_first_available_variant.sku }}"
-               data-status="{{ stockStatusBunNote}}"
-               data-erpSku="{{ bundle_product.metafields.plytix.erp_sku }}"
-                {% if bundle_product.metafields.plytix.general_product_type == "Machine" %}
-                  data-sfeligible="true"
-                {% endif %}
-               data-step="{{ pstep }}"
-               data-tieredPricing=""
-               data-availqty="{{ bundle_product.selected_or_first_available_variant.inventory_quantity }}"
-               data-qty="{{ bundle_product_entry_parts[1] }}"
-               data-price="{{ bundle_product.price }}"
-               data-parentid="{{ bundle_product.id }}"
-               data-title="{{ bundle_product.title | escape }}"
-               data-vartitle="{{ bundle_product.selected_or_first_available_variant.title | escape }}"
-               data-type="{{ bundle_product.type | escape }}"
-               data-brand="{{ bundle_product.vendor | escape }}"
-               value="{{ bundle_product_entry_parts[1] }}" />
-      {%- endfor -%}
-      {%- for free_product_entry in free_products -%}
-        {%- assign free_product_entry_parts = free_product_entry | split: "#" -%}
-        {%- assign free_product_handle = free_product_entry_parts[0] | strip -%}
-        {%- assign free_product = all_products[free_product_handle] -%}
+                $('.tierlevel ').removeClass("selected");
+                $(this).addClass("selected");
+                $("#product-quantity-input").val(tierNum);
+                $(".product-block--price .money").html(tierPrice);
 
+                $(".updated-tier-compare,.updated-tier-strike").remove();
+                if(tierSaved != "0"){
+                  $(".product-block--price").prepend('<div class="updated-tier-strike price__compare-at-visible-2 strikethrough"><div class="strikeprice">'+orgPrice+'</div></div>');
+                  $(".product-block--price .price__current ").append('<div class="updated-tier-compare price__compare-at-visible-2 var-specs var41986143289524"><div class="yousave">You Save: '+tierSaved+'</div></div>');
+                }
+              });
 
-        {%- comment -%}Get stock status for bundle free logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
-        {%- assign stockStatusFreeMain = "" -%}
-        {%- assign stockStatusFreeSub = "" -%}
-        {%- assign fserviceFree = free_product.selected_or_first_available_variant.fulfillment_service -%}
-        {%- assign leadTimeFree = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time -%}
-        {%- assign inventoryQuantityFree = free_product.selected_or_first_available_variant.inventory_quantity -%}
-        {%- assign inventoryQuantityFree = inventoryQuantityFree | plus: 0 -%}
-        {%- assign leadTimeFree = leadTimeFree | plus: 0 -%}
+              $('.qtyminus, .qtyplus ').on('click', function(e){
+                  qtyTierHighlight();
+              });
 
-        {%- if free_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityFree <  1 -%}
-          {%- assign stockStatusFreeMain = "Ships Direct from Manufacturer" -%}
-          {%- assign stockStatusFreeSub = "May Have Extended Lead Times" -%}
-        {%- elsif free_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityFree <  1 -%}
-          {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
-          {%- if free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
-            {%- assign dateStart = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}
-            {%- assign nowTimestamp = 'now' | date: '%s' -%}
-            {%- assign diffSeconds = dateStart | minus: nowTimestamp -%}
-            {%- assign leadTimeFree = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
-          {%- endif -%}
+              $('#product-quantity-input').on('input', function() {
+                  qtyTierHighlight();
+              });
 
-          {%- assign stockStatusFreeMain = "Temporarily On Backorder" -%}
-          {%- if leadTimeFree < 22  -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 1 – 3 wks" -%}
-          {%- elsif leadTimeFree < 29 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 2 – 4 wks" -%}
-          {%- elsif leadTimeFree < 36 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 3 – 5 wks" -%}
-          {%- elsif leadTimeFree < 43 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 4 –6 wks" -%}
-          {%- elsif leadTimeFree < 50 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 5 – 7 wks" -%}
-          {%- elsif leadTimeFree < 57 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 6 – 8 wks" -%}
-          {%- elsif leadTimeFree < 64 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 7 – 9 wks" -%}
-          {%- elsif leadTimeFree < 71 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 8 – 10 wks" -%}
-          {%- elsif leadTimeFree < 78 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 9 – 11 wks" -%}
-          {%- elsif leadTimeFree < 85 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 10 – 12 wks" -%}
-          {%- elsif leadTimeFree < 121 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 3 – 4 mths" -%}
-          {%- elsif leadTimeFree < 151 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 4 – 5 mths" -%}
-          {%- elsif leadTimeFree < 181 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 5 – 6 mths" -%}
-          {%- elsif leadTimeFree < 211 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date 6 – 7 mths" -%}
-          {%- elsif leadTimeFree < 1000 -%}
-            {%- assign stockStatusFreeSub = "Estimated Ship Date over 7 mths" -%}
-          {%- endif -%}
-        {%- elsif free_product.selected_or_first_available_variant.inventory_management == nil and leadTimeFree -%}
-          {%- assign stockStatusFreeMain = "Special Order Item" -%}
-          {%- if leadTimeFree < 22  -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 1 – 3 wks" -%}
-          {%- elsif leadTimeFree < 29 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 2 – 4 wks" -%}
-          {%- elsif leadTimeFree < 36 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 3 – 5 wks" -%}
-          {%- elsif leadTimeFree < 43 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 4 – 6 wks" -%}
-          {%- elsif leadTimeFree < 50 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 5 – 7 wks" -%}
-          {%- elsif leadTimeFree < 57 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 6 – 8 wks" -%}
-          {%- elsif leadTimeFree < 64 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 7 – 9 wks" -%}
-          {%- elsif leadTimeFree < 71 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 8 – 10 wks" -%}
-          {%- elsif leadTimeFree < 78 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 9 – 11 wks" -%}
-          {%- elsif leadTimeFree < 85 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 10 – 12 wks" -%}
-          {%- elsif leadTimeFree < 121 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 3 – 4 mths" -%}
-          {%- elsif leadTimeFree < 151 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 4 – 5 mths" -%}
-          {%- elsif leadTimeFree < 181 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 5 – 6 mths" -%}
-          {%- elsif leadTimeFree < 211 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in 6 – 7 mths" -%}
-          {%- elsif leadTimeFree < 1000 -%}
-            {%- assign stockStatusFreeSub = "Expected to ship in over 7 mths" -%}
-          {%- endif -%}
-        {%- elsif free_product.selected_or_first_available_variant.inventory_quantity > 0 -%}
-          {%- assign stockStatusFreeMain = "In Stock" -%}
-        {%- endif -%}
-
-        {%- if stockStatusFreeSub != "" -%}
-          {%- capture stockStatusFreeNote -%}{{ stockStatusFreeMain }} ({{ stockStatusFreeSub }}){%- endcapture -%}
-        {%- else -%}
-          {%- capture stockStatusFreeNote -%}{{ stockStatusFreeMain }}{%- endcapture -%}
-        {%- endif -%}
-        {%- comment -%}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
+              function qtyTierHighlight(){
+                setTimeout(function() {
+                  var orgPrice = $('.tierlevel[data-tiernum="1"] ').data('tierprice');
+                  var currentQty = $("#product-quantity-input").val();
+                  var validLevel = 1;
+                  $('.tierlevel').each(function () {
+                    var tierNum = $(this).data('tiernum');
+                    if (currentQty >= tierNum){
+                      validLevel = tierNum;
+                    }
 
 
-        <input type="hidden"
-               name="updates[{{ free_product_handle }}]"
-               class="quantity field"
-               data-bundle-subproduct-free
-               data-step="{{ pstep }}"
-               data-id="{{ free_product.selected_or_first_available_variant.id }}"
-               data-erpSku="{{ free_product.metafields.plytix.erp_sku }}"
-               data-vissku="{{ free_product.selected_or_first_available_variant.sku }}"
-               data-availqty="{{ free_product.selected_or_first_available_variant.inventory_quantity }}"
-               data-status="{{ stockStatusFreeNote }}"
-               data-tieredPricing="fg"
-               data-qty="{{ free_product_entry_parts[1] }}"
-               data-price="{{ free_product.price }}"
-               value="{{ free_product_entry_parts[1] }}" />
-      {%- endfor -%}
-    </div>
-    <div class="product-form--atc">
-      <div class="cart-buttons">
-        <button class="product-form--atc-button main-atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
-                <span class="atc-button--text">
-                  {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
-                  <span class="atc-plus">+</span>
-                  {{ 'product.buttons.add_to_cart' | t }}
-                </span>
-          <span class="atc-button--icon">
-                  {%- render 'icon-spinner' -%}
-                </span>
-        </button>
-        {%- if isBundle == true -%}
-        {%- assign bundleprice = product.metafields.plytix.bundle_pricing | plus: 0.00 -%}
-          {%- if bundleprice > 1000 -%}
-            <button class="product-form--finance-atc-button2 main-atc-button" onclick="window.location.href = '/pages/financing-options'" style="">Financing Available</button>
-          {%- endif -%}
-        {%- endif -%}
-      </div>
-    </div>
-    {% if pdiscontinued == false %}
-      <div class="approve-contain"></div>
-    {% endif %}
-{%- comment -%}end of bundle logic -----------------------------------------------------------------------------------{%- endcomment -%}
-{%- endif -%}
-{%- comment -%} shoppay finaincing link
-{% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}
-<form data-payment-terms-target class="shoppay-financing" style="display: none;"></form>
-{% endif %}
-{%- endcomment -%}
-{%- comment -%}  script for tier switching {%- endcomment -%}
-<script>
-  $(document).ready(function() {
-    $('.tierlevel ').on('click', function(e){
-      var tierPrice = $(this).data('tierprice');
-      var tierSaved = $(this).data('tiersaved');
-      var tierNum = $(this).data('tiernum');
-      var orgPrice = $('.tierlevel[data-tiernum="1"] ').data('tierprice');
+                  });
+                  // alert("Valid level="+validLevel);
+                  $('.tierlevel ').removeClass("selected");
+                  var targetLevelElement = '.tierlevel[data-tiernum="'+validLevel+'"]';
+                  $(targetLevelElement).addClass("selected");
 
-      $('.tierlevel ').removeClass("selected");
-      $(this).addClass("selected");
-      $("#product-quantity-input").val(tierNum);
-      $(".product-block--price .money").html(tierPrice);
+                  var newPrice = $(targetLevelElement).data('tierprice');
+                  var newSaved = $(targetLevelElement).data('tiersaved');
+                  $(".product-block--price .money").html(newPrice);
 
-      $(".updated-tier-compare,.updated-tier-strike").remove();
-      if(tierSaved != "0"){
-        $(".product-block--price").prepend('<div class="updated-tier-strike price__compare-at-visible-2 strikethrough"><div class="strikeprice">'+orgPrice+'</div></div>');
-        $(".product-block--price .price__current ").append('<div class="updated-tier-compare price__compare-at-visible-2 var-specs var41986143289524"><div class="yousave">You Save: '+tierSaved+'</div></div>');
-      }
-    });
-
-    $('.qtyminus, .qtyplus ').on('click', function(e){
-        qtyTierHighlight();
-    });
-
-    $('#product-quantity-input').on('input', function() {
-        qtyTierHighlight();
-    });
-
-    function qtyTierHighlight(){
-      setTimeout(function() {
-        var orgPrice = $('.tierlevel[data-tiernum="1"] ').data('tierprice');
-        var currentQty = $("#product-quantity-input").val();
-        var validLevel = 1;
-        $('.tierlevel').each(function () {
-          var tierNum = $(this).data('tiernum');
-          if (currentQty >= tierNum){
-            validLevel = tierNum;
-          }
+                  $(".updated-tier-compare,.updated-tier-strike").remove();
+                  if(newSaved != "0" && typeof newSaved !== 'undefined'){
+                    $(".product-block--price").prepend('<div class="updated-tier-strike price__compare-at-visible-2 strikethrough"><div class="strikeprice">'+orgPrice+'</div></div>');
+                    $(".product-block--price .price__current ").append('<div class="updated-tier-compare price__compare-at-visible-2 var-specs var41986143289524"><div class="yousave">You Save: '+newSaved+'</div></div>');
+                  }
 
 
-        });
-        // alert("Valid level="+validLevel);
-        $('.tierlevel ').removeClass("selected");
-        var targetLevelElement = '.tierlevel[data-tiernum="'+validLevel+'"]';
-        $(targetLevelElement).addClass("selected");
+                }, 150);
+              };
 
-        var newPrice = $(targetLevelElement).data('tierprice');
-        var newSaved = $(targetLevelElement).data('tiersaved');
-        $(".product-block--price .money").html(newPrice);
-
-        $(".updated-tier-compare,.updated-tier-strike").remove();
-        if(newSaved != "0" && typeof newSaved !== 'undefined'){
-          $(".product-block--price").prepend('<div class="updated-tier-strike price__compare-at-visible-2 strikethrough"><div class="strikeprice">'+orgPrice+'</div></div>');
-          $(".product-block--price .price__current ").append('<div class="updated-tier-compare price__compare-at-visible-2 var-specs var41986143289524"><div class="yousave">You Save: '+newSaved+'</div></div>');
-        }
-
-
-      }, 150);
-    };
-
-  });
-</script>
+            });
+          </script>

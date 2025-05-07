@@ -121,7 +121,12 @@
 
     if (!widget.useDefault) {
       params.templates.item = (item, {html}) => {
-        return algolia.instantSearchFacetItem(item, html)
+        if(facet.title == "Tags" && item.label == "search-view-product-btn"){
+          {% comment %}alert(facet.title+"/"+item.label);{% endcomment %}
+          return false;
+        }else{
+          return algolia.instantSearchFacetItem(item, html)
+        }
       }
     }
 

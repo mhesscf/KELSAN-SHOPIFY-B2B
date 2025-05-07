@@ -1738,7 +1738,7 @@ background:none;
   margin-top:130px;
   float:left;
 }
-.rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-add:last-child{
+.rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-add:nth-last-child(1 of .freq-add){
   display:none;
 }
 .rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items .freq-item .freq-var-variables{
@@ -2169,8 +2169,10 @@ background:none;
   margin:10px 0;
   width:100%;
 }
-.bundled-products-grid table.custom-bundle tr.sold-product{
+.bundled-products-grid table.custom-bundle tr.sold-product .stock-status.showme{
   background: #fff4c7;
+  padding:3px 12px;
+  border-radius: 10px;
 }
 .bundled-products-grid table.custom-bundle .stock-status .soldout{
   color:{{ settings.warning_text }};
@@ -2189,6 +2191,8 @@ background:none;
 }
 .bundled-products-grid table.custom-bundle td.custom-bundle-col-img{
   width:55px;
+  vertical-align: top;
+  padding-top:10px;
 }
 .bundled-products-grid table.custom-bundle td.custom-bundle-col-price{
   font-size:16px;

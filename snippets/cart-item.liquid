@@ -49,7 +49,12 @@
 {% unless item.properties == empty %}
   {% for property in item.properties %}
     {% if property.first == '_bundle_product' %}
-      {% assign product_bundle = property.last %}
+        {% assign bnd_parts = property.last | split: '::' %}
+        {% assign product_bundle_details = "" %}
+        {% if bnd_parts[1]  %}
+            {% assign product_bundle_details = bnd_parts[1] %}
+        {% endif %}
+        {% assign product_bundle = bnd_parts[0] %}
     {% endif %}
     {% if property.first == 'Status' %}
       {% assign stock_status = property.last %}
@@ -133,9 +138,13 @@
         {% endfor %}
       {% endunless %}
       {% if product_bundle != '' %}
-        <div class="cart-item--product-options">
+        <div class="cart-item--product-options" data-details="{{ product_bundle_details }}">
           {%- assign current_variant = all_products[product_bundle].selected_or_first_available_variant -%}
-          Part of package <a style="color: inherit;" href="{{ all_products[product_bundle].url }}">{{ current_variant.sku }}</a>
+            {% if product_bundle_details == 'gpack' %}
+                Part of free gift package for <a style="color: inherit;" href="{{ all_products[product_bundle].url }}">{{ all_products[product_bundle].metafields.plytix.main_sku }}</a>.
+            {% else %}
+                Part of package <a style="color: inherit;" href="{{ all_products[product_bundle].url }}">{{ current_variant.sku }}</a>.
+            {% endif %}
         </div>
       {% endif %}
 
@@ -211,7 +220,7 @@
       {% endif %}
       {% endcomment %}
 
-      {% if stock_status %}
+      {% if stock_status and stock_status != "" %}
         <div class="cart-item--stockstatus">
           <strong>Status:</strong> {{ stock_status }}
         </div>
@@ -253,7 +262,7 @@
           </div>
 
             <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
-                {%- if compare_at_price > item.price -%}
+                {%- if compare_at_price > item.price and item.price > 0-%}
                     {%- assign specialDiscount = compare_at_price | minus: item.price -%}
                         <li class="discount-list-item">
                             {% comment %}{% render 'icon-library', id: 'icon-sale-tag' %}{% endcomment %}
@@ -319,7 +328,7 @@
                     {%- elsif tiered_pricing contains "fg" and product_bundle != '' -%}
                         {%- assign discount = org_price  | times: item.quantity -%}
                         {%- capture tiermessage -%}
-                            Free gift with bundle! (you saved <span class="money">{{ discount | money }}</span>)
+                            Free gift with package! (you saved <span class="money">{{ discount | money }}</span>)
                         {%- endcapture -%}
                     {%- elsif tiered_pricing contains "fg" -%}
                         {%- assign discount = org_price  | times: item.quantity -%}
@@ -585,7 +594,7 @@
         {% endif %}
 
           {%- assign buy_x_more = next_tier | minus: item.quantity -%}
-          {% if buy_x_more > 0  %}
+          {% if buy_x_more > 0 and product_bundle == '' %}
 
               {%- assign addsavings = tiered_pricing_sections_arr[1] | times: 100 -%}
               <div class="tier_upsell">

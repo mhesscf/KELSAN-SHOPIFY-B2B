@@ -11,12 +11,14 @@
             return true;
         }
     }
-    function showBtn(variants_count,bundleitems = "",hide_price = "",show_quote = "",warning_title = ""){
+    function showBtn(variants_count,bundleitems = "",hide_price = "",show_quote = "",warning_title = "",tag = "" ){
         var showButton = "addToCart";
 
         if (variants_count != "1" || bundleitems != ""|| hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" || warning_title !="" ){
             showButton = "viewProduct";
         }else if(show_quote == "True"){
+            showButton = "viewProduct";
+        }else if(tag.includes("search-view-product-btn")){
             showButton = "viewProduct";
         }
 
@@ -581,7 +583,7 @@
                     {%- endif -%}
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
-                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
+                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
                                 <div class="strikeprice">${numberScrub(hit.compare_at_price)}</div>
                             </div>`:''}
                         ` : html ``}
@@ -604,7 +606,7 @@
                     </div>
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
-                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
+                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
                                 <div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.compare_at_price)}</div>
                             </div>`:''}
                         ` : html ``}
@@ -649,7 +651,7 @@ ${1 == 1 && html`
     {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
 
     ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.meta.plytix.inventory_manage_for_algolia,hit.inventory_quantity,hit.collections,hit.meta.plytix.package_products,hit.inventory_policy) ? html`
-        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title) == "addToCart"  ? html`
+        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html`
             <button class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}"><span class="atc-plus">+</span> ${ algolia.translations.addToCart }</button>
         `:html`
             <button class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" type="button" disabled=""><span class="atc-button--text">
