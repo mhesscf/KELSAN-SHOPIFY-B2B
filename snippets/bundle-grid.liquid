@@ -4,8 +4,15 @@
 {%- assign stockisthesame = true -%}
 {%- assign soldoutitems = false -%}
 
+{%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
 
-    {%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
+    {%- if product.metafields.plytix.package_products != blank -%}
+        {%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
+    {%- else -%}
+        {% comment %}add main item if no main items found{% endcomment %}
+        {%- assign bproducts = product.handle | append: "#1" -%}
+    {%- endif -%}
+
     {%- assign freeproducts = product.metafields.plytix.packaged_free_product | split: "," -%}
 
     <section class="bundled-products-grid">
