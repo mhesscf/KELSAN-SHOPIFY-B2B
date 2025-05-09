@@ -2,17 +2,17 @@
 var bestFinanceRate = .025; //which currently is 60 month financing via equipmoney
 
 var webSiteUrl = window.location.hostname;
-var webSite = "na";
+var currentSite = "na";
 if (webSiteUrl.indexOf("cleanfreak.com") >= 0){
-    website = "www.cleanfreak.com";
+    currentSite = "www.cleanfreak.com";
 }else if (webSiteUrl.indexOf("airmovers.com") >= 0){
-    website = "am"
+    currentSite = "am"
 }else if (webSiteUrl.indexOf("carpetextractors.com") >= 0){
-    website = "www.carpetextractors.com"
+    currentSite = "www.carpetextractors.com"
 }else if (webSiteUrl.indexOf("floorbuffers.com") >= 0){
-    website = "www.floorbuffers.com";
+    currentSite = "www.floorbuffers.com";
 }else if (webSiteUrl.indexOf("floorscrubbers.com") >= 0){
-    website = "www.floorscrubbers.com";
+    currentSite = "www.floorscrubbers.com";
 }
 
 
@@ -246,12 +246,13 @@ function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, title, appt
     }
     var quotecost = amount;
 
-    var thislink ='https://secure.financ.ing/app?dealercode=PVX3E&id=&ref=&apptype=B&version=1.0.0&module=smartapply&cost='+quotecost+'&productname='+itemtitle+'&pv=&officecode=&extra=&website='+website+'&applicationurl=https%3A%2F%2Fsecure.financ.ing%2Fapp&qs=apply&step=1';
+    var thislink ='https://secure.financ.ing/app?dealercode=PVX3E&id=&ref=&apptype=B&version=1.0.0&module=smartapply&cost='+quotecost+'&productname='+itemtitle+'&pv=&officecode=&extra=&website='+currentSite+'&applicationurl=https%3A%2F%2Fsecure.financ.ing%2Fapp&qs=apply&step=1';
     //window.open(thislink, "_blank");
 
 //open in iframe in rightpop
     var formhtml = '';
     {% comment %}var formhtml = '<h2>Quickspark Financing Form</h2>';{% endcomment %}
+    alert(currentSite);
     formhtml += '<div class="iframe-contain"><iframe style="border:none;" id="inlineFrameExample" title="Inline Frame Example" width="475" height="1200" src="'+thislink+'"></iframe></div>';
     $('.popup-container').addClass('rightpop');
     $('.popup-container .content').html(formhtml);
