@@ -7,7 +7,7 @@
     If true, show dynamic checkout button
 {%- endcomment -%}
 {% assign isBundle = false %}
-{% if product.metafields.plytix.package_products != blank %}
+{% if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank %}
   {% assign isBundle = true %}
 {% endif %}
 
@@ -724,6 +724,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   <div class="approve-contain">
                     {%- if selected_variant.price < 100000 -%}
                       <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img src="{{ 'approve-logo-sm.png' | file_img_url  }}" alt="Approve Logo" /></a></div>
+                    {%- else -%}
+                      <div class="finance-wrapper"></div>
                     {%- endif -%}
                   </div>
                 {%- endif -%}
@@ -740,7 +742,16 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {%- else -%}
           {%- comment -%}Start of bundle logic ---------------------------------------------------------------------------{%- endcomment -%}
 
-              {%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}
+              {% comment %}{%- assign bundle_products = product.metafields.plytix.package_products | split: "," %}{% endcomment %}
+
+                {%- if product.metafields.plytix.package_products != blank -%}
+                  {%- assign bundle_products = product.metafields.plytix.package_products | split: "," -%}
+                {%- else -%}
+                  {% comment %}add main item if no main items found{% endcomment %}
+                  {%- assign bundle_products = product.handle | append: "#1" -%}
+                {%- endif -%}
+
+
               {%- assign free_products = product.metafields.plytix.packaged_free_product | split: "," %}
               <div data-bundle-subproducts>
                 {%- for bundle_product_entry in bundle_products -%}

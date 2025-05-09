@@ -1,5 +1,20 @@
 {% comment %}var $j = jQuery.noConflict();   have to turn this off. was killing algolia's js{% endcomment %}
-var bestFinanceRate = .0237; //which currently is 60 month financing via equipmoney
+var bestFinanceRate = .025; //which currently is 60 month financing via equipmoney
+
+var webSiteUrl = window.location.hostname;
+var webSite = "na";
+if (webSiteUrl.indexOf("cleanfreak.com") >= 0){
+    website = "www.cleanfreak.com";
+}else if (webSiteUrl.indexOf("airmovers.com") >= 0){
+    website = "am"
+}else if (webSiteUrl.indexOf("carpetextractors.com") >= 0){
+    website = "www.carpetextractors.com"
+}else if (webSiteUrl.indexOf("floorbuffers.com") >= 0){
+    website = "www.floorbuffers.com";
+}else if (webSiteUrl.indexOf("floorscrubbers.com") >= 0){
+    website = "www.floorscrubbers.com";
+}
+
 
 jQuery(document).ready(function() {
 
@@ -168,7 +183,7 @@ function runRates(){
     }
 }
 
-
+{% comment %}
 function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, apptype='unset'){
     if(apptype == 'unset' || apptype == ''){
         apptype = 'default';
@@ -211,6 +226,42 @@ function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, apptype='un
         jQuery(".default-text").removeClass('hidden');
     }
 }
+{% endcomment %}
+
+
+function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, title, apptype='unset'){
+    {% comment %}reworked for quickspark{% endcomment %}
+    var itemtitle = "";
+    if(apptype == "unset"){
+        itemtitle = title + "%20("+requestedsku+")%20-%20Quantity%20"+requestedqty;
+    }else if(apptype == "cart"){
+
+        {% comment %}ignore passed variables and get new{% endcomment %}
+        jQuery( ".cart-item" ).each( function( i ) {
+            var tempsku = jQuery(this).find('.cart-item--sku span').text().trim();
+            var tempqty = jQuery(this).find('.product-quantity-input').val();
+            var temptitle = encodeURIComponent(jQuery(this).find('.cart-item--content-title').text().trim());
+            itemtitle += "%0D%0AProduct%3A%20"+temptitle + "%20("+tempsku+")%20-%20Quantity%20"+tempqty+"%0D%0A";
+        });
+    }
+    var quotecost = amount;
+
+    var thislink ='https://secure.financ.ing/app?dealercode=PVX3E&id=&ref=&apptype=B&version=1.0.0&module=smartapply&cost='+quotecost+'&productname='+itemtitle+'&pv=&officecode=&extra=&website='+website+'&applicationurl=https%3A%2F%2Fsecure.financ.ing%2Fapp&qs=apply&step=1';
+    //window.open(thislink, "_blank");
+
+//open in iframe in rightpop
+    var formhtml = '';
+    {% comment %}var formhtml = '<h2>Quickspark Financing Form</h2>';{% endcomment %}
+    formhtml += '<div class="iframe-contain"><iframe style="border:none;" id="inlineFrameExample" title="Inline Frame Example" width="475" height="1200" src="'+thislink+'"></iframe></div>';
+    $('.popup-container').addClass('rightpop');
+    $('.popup-container .content').html(formhtml);
+    $('.popup-container').addClass('rightpop');
+
+    $('.popup-container').removeClass('hidden');
+    $(".pop-grad").removeClass('hidden');
+
+}
+
 
 function closePaymentPop(el){
     if (jQuery('#acp-overlay').hasClass('ajaxcartpro-box-show')){
