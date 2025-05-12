@@ -31,7 +31,7 @@ if (webSiteUrl.indexOf("cleanfreak.com") >= 0){
     wsc = "scrubber";
     utm_source = "rcwe9em";
 }
-
+{%- comment -%}
 function getLinkv2(sku,cost,title, qty=1){
     title = encodeURIComponent(title.trim());
     title = title.replace(/'/g, '%27');
@@ -47,6 +47,24 @@ function getLinkv2(sku,cost,title, qty=1){
     };
 
     LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong><i class="fa-solid fa-calculator"></i></div><div class="clearer"></div>';
+
+    return LSlink;
+}
+{%- endcomment -%}
+
+function getLinkv3(sku,cost,title, qty=1){
+    title = encodeURIComponent(title.trim());
+    title = title.replace(/'/g, '%27');
+
+    var LowestRateTotal = cost*lowestRate ;
+    var PaymentOptionPopCall = 'getPaymentOptions(event,'+cost+',\''+sku+'\',\''+qty+'\',\''+title+'\');';
+
+    //pop the popup if finance equals pop in url
+    const urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.get('finance') == 'pop'){
+        //getPaymentOptions(event,cost,sku,qty,'');
+    };
+    var LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:2px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"></div><div class="clearer"></div>';
 
     return LSlink;
 }
@@ -81,9 +99,9 @@ function productPageCheck(type){
 
             {% comment %}alert(itemSku + " + " + itemqty + " + "+ itempricing + " + " + itemtitle );{% endcomment %}
 
-            jQuery(".product-main .finance-wrapper").append(getLinkv2(itemSku, itempricing, itemtitle, itemqty));
+            jQuery(".product-main .finance-wrapper").append(getLinkv3(itemSku, itempricing, itemtitle, itemqty));
 
-        jQuery(".product-main .product-form--finance-atc-button").html(getLinkv2(itemSku, itempricing, itemtitle, itemqty)).show();
+        jQuery(".product-main .product-form--finance-atc-button").html(getLinkv3(itemSku, itempricing, itemtitle, itemqty)).show();
         jQuery(".product-main .product-form--finance-atc-button .finance-link").html("Financing Available");
     }
 }
@@ -94,21 +112,27 @@ function cartPageCheck(){
     var cartCost = checkCost(jQuery(".cart-final-total .cart-subtotal .money").first().text());
     var cartSkus = "";
     var cartQtys = "";
-    var firstTrigger = 1;
+    var carttitles = "";
+    {% comment %} Moved this logic into financing-pop.js due to issues with title char creating on click errors
+     var firstTrigger = 1;
     jQuery( ".cart-item" ).each( function( i ) {
         if(firstTrigger){
             cartSkus += jQuery(this).find('.cart-item--sku span').text().trim();
-            cartQtys += jQuery(this).find('.form-field-select-wrapper select option:selected').text().trim();
+            cartQtys += jQuery(this).find('.product-quantity-input').val();
+            carttitles += encodeURIComponent(jQuery(this).find('.cart-item--content-title').text().trim());
             firstTrigger = 0;
         }else{
-            cartSkus += "_"+jQuery(this).find('.cart-item--sku span').text().trim();
-            cartQtys += "_"+jQuery(this).find('.form-field-select-wrapper select option:selected').text().trim();
+            cartSkus += "::"+jQuery(this).find('.cart-item--sku span').text().trim();
+            cartQtys += "::"+jQuery(this).find('.product-quantity-input').val();
+            var title = encodeURIComponent(jQuery(this).find('.cart-item--content-title').text().trim())
+            carttitles += "::"+title;
         }
-
     } );
+{% endcomment %}
     var cartLowestRateTotal = cartCost*lowestRate ;
-    var cartPaymentOptionPopCall = 'getPaymentOptions(event,'+cartCost+',\''+cartSkus+'\',\''+cartQtys+'\',\'\');';
-    var cartLink = '<div onclick="'+cartPaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(cartLowestRateTotal)+'/month</strong><i class="fa-solid fa-calculator"></i></div><div class="clearer"></div></div>';
+    var cartPaymentOptionPopCall = 'getPaymentOptions(event,'+cartCost+',\''+cartSkus+'\',\''+cartQtys+'\',\''+carttitles+'\',\'cart\');';
+
+    var cartLink = '<div onclick="'+cartPaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(cartLowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:2px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"></div><div class="clearer"></div>';
 
     if (cartCost >= 1000){
         jQuery(".cart-checkout .finance-wrapper").html("");
@@ -122,7 +146,6 @@ function cartPageCheck(){
 jQuery(document).ready(function() {
     /*Product pages***/
     if (jQuery('.sitemain-product').length > 0) {
-
         /*Simple, Variation, bundle checks***/
         if (jQuery('.options-selection__select').length > 0) {
             // Variation/variant
@@ -152,45 +175,32 @@ jQuery(document).ready(function() {
     }
 
     /*Solr and category pages***/
-    /* if (jQuery('.catalog-category-view').length > 0 || jQuery('.pti-solr-index-index').length > 0 || jQuery('.catalogsearch-result-index').length > 0) {
-        jQuery( ".item" ).each(function() {
-            var itempricing = false;
-            if (website == "ri-off"){
-                if (jQuery(this).find('.price-box-v2 .special-price .price').length > 0) {
-                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .special-price .price").text());
-                } else if (jQuery(this).find(".price-box-v2 .regular-price .price .price").length > 0) {
-                    console.log('chekcing');
-                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .regular-price .price .price").text());
-                } else if (jQuery(this).find(".price-box-v2 .minimal-price .price").length > 0) {
-                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .minimal-price .price").text());
-                } else if (jQuery(this).find(".price-box-v2 .price-from .price").length > 0) {
-                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .price-from .price").text());
-                }
-            }else {
-                if (jQuery(this).find(".price-box-v2 .regular-price .price").length > 0) {
-                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .regular-price .price").text());
-                    if (jQuery(this).find('.price-box-v2 .special-price .price').length > 0) {
-                        itempricing = checkCost(jQuery(this).find(".price-box-v2 .special-price .price").text());
+    if (jQuery('.catalog-category-view').length > 0 || jQuery('.collection--section').length > 0 || jQuery('.catalogsearch-result-index').length > 0) {
+        setTimeout(function(){
+            jQuery( ".ais-hit.ais-product" ).each(function() {
+                var itempricing = false;
+                    if (jQuery(this).find(".norm-price span").length > 0) {
+                        itempricing = checkCost(jQuery(this).find(".norm-price span").text());
+                        if (jQuery(this).find('.norm-price span').length > 0) {
+                            itempricing = checkCost(jQuery(this).find(".norm-price span").text());
+                        }
                     }
-                } else if (jQuery(this).find(".price-box-v2 .minimal-price .price").length > 0) {
-                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .minimal-price .price").text());
-                } else if (jQuery(this).find(".price-box-v2 .price-from .price").length > 0) {
-                    itempricing = checkCost(jQuery(this).find(".price-box-v2 .price-from .price").text());
-                }
-            }
+                    {% comment %}
+                    else if (jQuery(this).find(".price-box-v2 .minimal-price .price").length > 0) {
+                        itempricing = checkCost(jQuery(this).find(".price-box-v2 .minimal-price .price").text());
+                    } else if (jQuery(this).find(".price-box-v2 .price-from .price").length > 0) {
+                        itempricing = checkCost(jQuery(this).find(".price-box-v2 .price-from .price").text());
+                    }
+                    {% endcomment %}
 
-            if (itempricing != false) {
-                if (website == "ri"){
-                    itemSku = jQuery(this).find(".list-info .sku-brand").text().trim();
-                    itemtitle = jQuery(this).find(".list-info .product-name span").text().trim();
-                }else {
-                    itemSku = jQuery(this).find(".product-shop h5:contains('SKU') span").text().trim();
-                    itemtitle = jQuery(this).find(".product-shop .product-name span").text().trim();
+                if (itempricing != false) {
+                        itemSku = jQuery(this).find(".product-detail-sku span").text().trim();
+                        itemtitle = jQuery(this).find(".ais-hit--title span").text().trim();
+                    jQuery(this).find(".search-finance-wrapper").append(getLinkv3(itemSku, itempricing, itemtitle,1));
                 }
-                jQuery(this).find(".finance-wrapper").append(getLink(itemSku, itempricing, itemtitle,1));
-            }
-        });
-    }  */
+            });
+        },2050);
+    }
 
     /*Cart page***/
     if (jQuery('.template-cart').length > 0){
