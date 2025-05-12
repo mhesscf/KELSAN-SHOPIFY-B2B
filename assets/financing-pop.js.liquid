@@ -252,7 +252,7 @@ function getPaymentOptions(e,amount = 0, requestedsku, requestedqty, title, appt
 //open in iframe in rightpop
     var formhtml = '';
     {% comment %}var formhtml = '<h2>Quickspark Financing Form</h2>';{% endcomment %}
-    formhtml += '<div class="iframe-contain"><iframe style="border:none;" id="inlineFrameExample" title="Inline Frame Example" width="475" height="1200" src="'+thislink+'"></iframe></div>';
+    formhtml += '<div class="iframe-contain" style="padding-top:20px;"><iframe style="border:none;" id="inlineFrameExample" title="Inline Frame Example" width="475" height="1200" src="'+thislink+'"></iframe></div>';
     $('.popup-container').addClass('rightpop');
     $('.popup-container .content').html(formhtml);
     $('.popup-container').addClass('rightpop');
