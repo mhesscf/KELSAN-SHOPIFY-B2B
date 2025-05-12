@@ -723,7 +723,10 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                 {%- else -%}
                   <div class="financing-contain">
                     {%- if selected_variant.price < 100000 -%}
-                      <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img src="{{ 'approve-logo-sm.png' | file_img_url  }}" alt="Approve Logo" /></a></div>
+                      {% comment %}<div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img src="{{ 'approve-logo-sm.png' | file_img_url  }}" alt="Approve Logo" /></a></div>{% endcomment %}
+
+                      <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"/></a></div>
+
                     {%- else -%}
                       <div class="finance-wrapper"></div>
                     {%- endif -%}
