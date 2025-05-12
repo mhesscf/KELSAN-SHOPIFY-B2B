@@ -64,7 +64,7 @@ function getLinkv3(sku,cost,title, qty=1){
     if(urlParams.get('finance') == 'pop'){
         //getPaymentOptions(event,cost,sku,qty,'');
     };
-    var LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:2px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"></div><div class="clearer"></div>';
+    var LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing" /></div><div class="clearer"></div>';
 
     return LSlink;
 }
@@ -132,7 +132,7 @@ function cartPageCheck(){
     var cartLowestRateTotal = cartCost*lowestRate ;
     var cartPaymentOptionPopCall = 'getPaymentOptions(event,'+cartCost+',\''+cartSkus+'\',\''+cartQtys+'\',\''+carttitles+'\',\'cart\');';
 
-    var cartLink = '<div onclick="'+cartPaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(cartLowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:2px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"></div><div class="clearer"></div>';
+    var cartLink = '<div onclick="'+cartPaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(cartLowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing" /></div><div class="clearer"></div>';
 
     if (cartCost >= 1000){
         jQuery(".cart-checkout .finance-wrapper").html("");
