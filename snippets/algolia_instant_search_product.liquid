@@ -11,10 +11,10 @@
             return true;
         }
     }
-    function showBtn(variants_count,bundleitems = "",hide_price = "",show_quote = "",warning_title = "",tag = "" ){
+    function showBtn(variants_count,bundleitems = "",freeitems = "",hide_price = "",show_quote = "",warning_title = "",tag = "" ){
         var showButton = "addToCart";
 
-        if (variants_count != "1" || bundleitems != ""|| hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" || warning_title !="" ){
+        if (variants_count != "1" || bundleitems != "" || freeitems != "" || hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" || warning_title !="" ){
             showButton = "viewProduct";
         }else if(show_quote == "True"){
             showButton = "viewProduct";
@@ -397,7 +397,7 @@
 
                                 {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
                                     ${hit.tags.includes("Free Shipping") ? html`<div onclick="stoplink(event);"><a href="/collections/free-shipping"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 20px; margin-top:3px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a></div>`:''}
-                                    ${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special-off"),"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special-off"),"enddate") }</strong> and get <strong>Free Shipping</strong></span></div></div></a></div>` : ``}
+                                    ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.tags.includes("Free Shipping Special"),"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.tags.includes("Free Shipping Special"),"enddate") }</strong> and get <strong>Free Shipping</strong></span></div></div></a></div>` : ``}
                                     {% else %}
                                      ${hit.tags.includes("Free Shipping") ? html`<div onclick="stoplink(event);"><a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Free%20Shipping"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a></div>`:''}
                                 {% endif %}
@@ -583,7 +583,7 @@
                     {%- endif -%}
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
-                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
+                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
                                 <div class="strikeprice">${numberScrub(hit.compare_at_price)}</div>
                             </div>`:''}
                         ` : html ``}
@@ -606,7 +606,7 @@
                     </div>
                     ${showPrice(hit.meta.plytix.hide_pricing) ? html `
                         ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
-                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
+                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
                                 <div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.compare_at_price)}</div>
                             </div>`:''}
                         ` : html ``}
@@ -651,7 +651,7 @@ ${1 == 1 && html`
     {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
 
     ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.meta.plytix.inventory_manage_for_algolia,hit.inventory_quantity,hit.collections,hit.meta.plytix.package_products,hit.inventory_policy) ? html`
-        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html`
+        ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html`
             <button class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}"><span class="atc-plus">+</span> ${ algolia.translations.addToCart }</button>
         `:html`
             <button class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" type="button" disabled=""><span class="atc-button--text">

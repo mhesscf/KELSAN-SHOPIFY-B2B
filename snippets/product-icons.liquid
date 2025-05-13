@@ -140,8 +140,8 @@
                 {%- endif -%}
                 {%- if product.metafields.plytix.custom_free_shipping -%}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                        {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
-                        {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' -%}
+                        {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' -%}
+                        {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' -%}
                         {%- assign nowTimestamp = 'now' | date: '%s' -%}
 
                         {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
