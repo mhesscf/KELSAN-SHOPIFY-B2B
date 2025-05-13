@@ -26,6 +26,8 @@
 {%- endfor -%}
 {%- if freqitemcount < 1 -%}
     {% assign showfreq = false -%}
+{%- elsif product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank-%}
+        {% assign showfreq = false -%}
 {%- endif -%}
 
 <div class="rel-product-tabbed-area tabbed-area">
@@ -100,7 +102,7 @@
                     {%- comment -%}Show slider as normal if freq_bought is on a bundle or a product with product increments > 1{%- endcomment -%}
                     {%- comment -%}Do not show as as freq_bought functionality if this is the case{%- endcomment -%}
                     {%- comment -%}hide freq if discontinued{%- endcomment -%}
-                    {%- if tab_rel_id == "freq_bought" and product.metafields.plytix.package_products == blank and pstep < 2 and showfreq -%}
+                    {%- if tab_rel_id == "freq_bought" and product.metafields.plytix.package_products == blank and product.metafields.plytix.packaged_free_product == blank and pstep < 2 and showfreq -%}
                         <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-freq tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}" >
                             <div class="freq-bought-items">
                                 {%- assign noProducts = true -%}
@@ -184,7 +186,7 @@
                                                 <div class="crawlcheck crawlcheck-maxprod"><!-- check this for 20+ related/freq product calls (({{ product_handle }})) --></div>
                                             {%- endif -%}
                                         {%- endif -%}
-                                        {%- if all_products[product_handle].metafields.plytix.package_products -%}
+                                        {%- if all_products[product_handle].metafields.plytix.package_products or product.metafields.plytix.packaged_free_product -%}
                                             {%- assign show = false -%}
                                         {%- endif -%}
 

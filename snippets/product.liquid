@@ -54,7 +54,7 @@
 {%- endif -%}
 
 {%- assign productType = 'simple' -%}
-{%- if product.metafields.plytix.package_products != blank -%}
+{%- if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank -%}
     {%- assign productType = 'bundle' -%}
 {%- elsif product.variants.size > 1 -%}
     {%- assign productType = 'variation' -%}
@@ -133,7 +133,7 @@
     %}
 
     <div class="product-main">
-        <div class="product-details {% if product.metafields.plytix.package_products != blank %}product-is-bundle{% endif %}" data-product-details>
+        <div class="product-details {% if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank %}product-is-bundle{% endif %}" data-product-details>
             {%- for block in section.blocks -%}
                 <div
                         class="
@@ -360,7 +360,7 @@
 
                             {%- for variant in product.variants -%}
                                 <div class="masterqty-container var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                                    {%- if variant.metafields.plytix.package_products != blank -%}
+                                    {%- if variant.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank -%}
                                         <div class="individually-sold">Sold as a Package</div>
                                     {%- else -%}
                                         {%- if variant.metafields.plytix.master_quantity != blank -%}
@@ -450,7 +450,7 @@
                                         {%- endif -%}
                                     {%- endunless -%}
 
-                                    {%- if product.metafields.plytix.package_products != blank -%}
+                                    {%- if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank -%}
                                         {%
                                                 render 'bundle-grid',
                                                 product: product
