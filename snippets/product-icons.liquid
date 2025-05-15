@@ -75,6 +75,7 @@
                     <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>
                 {%- endif -%}
             {%- else -%}
+                {% comment %} Moving to under icon
                 {%- if product.selected_or_first_available_variant.compare_at_price -%}
                     {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
                         {%- assign specialSavings = product.compare_at_price | minus: product.price -%}
@@ -128,6 +129,7 @@
                     {%- endif -%}
 
                 {%- endif -%}
+                {% endcomment %}
                 {%- if product.metafields.plytix.made_in_USA -%}
                     <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-left:-3px" width="25" height="25" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div></a>
                 {%- endif -%}
