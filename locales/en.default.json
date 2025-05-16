@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin language editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "404": {
     "general": {
@@ -575,6 +575,10 @@
         "subscription_delivery_description": {
           "subscription_free_with_frequency_label": "Free"
         }
+      },
+      "order_summary": {
+        "estimated_taxes_label": "Taxes",
+        "estimated_taxes_finalization_tooltip_content": "Taxes are calculated based on your shipping address and applicable state laws."
       }
     },
     "page_titles": {

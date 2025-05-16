@@ -367,7 +367,7 @@
               {% comment %}b2b current price{% endcomment %}
               {%- if b2bprice == true or specialprice == true -%}
                   <div class="var-specs b2b-price-col b2b-current-price var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                      <div class="price-text contract-price-text">Contract Price:</div><div class="contract-price">{{ variant.price | money }}</div>
+                      <div class="price-text contract-price-text">Contract Price</div><div class="contract-price">{{ variant.price | money }}</div>
 
                       {% comment %}you save area{% endcomment %}
                       {% if pdiscontinued == false %}

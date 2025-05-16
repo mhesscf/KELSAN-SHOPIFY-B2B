@@ -242,6 +242,31 @@
                                     <div id="blog-area" class="sheet-label"><strong>Related Blogs</strong></div>
                                 </div>
 
+
+                                {% assign blog_array = "" %}
+                                {% for handle in blog_handles %}
+                                    {% assign thishandle = handle | strip %}
+                                    {% if thishandle != "NA" and thishandle != "" %}
+                                        {% assign thisarticle = articles[thishandle] %}
+                                        {% capture blog_array %}{{ blog_array }}{% if blog_array != blank %},{% endif %}{{ thisarticle.title }}::{{ thishandle }}{% endcapture %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% assign blog_array = blog_array | split: ',' %}
+                                {% assign sorted_pages = blog_array | sort %}
+
+                                {% for page_entry in sorted_pages %}
+                                    {% assign parts = page_entry | split: '::' %}
+                                    {% assign title = parts[0] %}
+                                    {% assign handle = parts[1] %}
+
+                                    <div class="sheet-row sheet-name">
+                                        <a target="_blank" href="/blogs/{{ handle }}"><i class="fa-solid fa-blog"></i> {{ title }}</a>
+                                    </div>
+
+                                {% endfor %}
+
+                                {%- comment -%}
                                 {%- for handle in blog_handles -%}
                                     {%- assign thishandle = handle | strip -%}
                                     {%- if thishandle != "NA" and thishandle !="" -%}
@@ -251,13 +276,40 @@
                                         </div>
                                     {%- endif -%}
                                 {%- endfor -%}
+                                {%- endcomment -%}
+
+
+
                             {%- endif -%}
 
                             {%- if pagecoutner > 0 -%}
                                 <div class="sheet-row">
-                                    <div id="blog-area" class="sheet-label"><strong>Related Pages</strong></div>
+                                    <div id="blog-area" class="sheet-label"><strong>Related Resources</strong></div>
                                 </div>
 
+
+                                {% assign pages_array = "" %}
+                                {% for handle in page_handles %}
+                                    {% assign thishandle = handle | strip %}
+                                    {% if thishandle != "NA" and thishandle != "" %}
+                                        {% assign thisarticle = pages[thishandle] %}
+                                        {% capture pages_array %}{{ pages_array }}{% if pages_array != blank %},{% endif %}{{ thisarticle.title }}::{{ thishandle }}{% endcapture %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% assign pages_array = pages_array | split: ',' %}
+                                {% assign sorted_pages = pages_array | sort %}
+
+                                {% for page_entry in sorted_pages %}
+                                    {% assign parts = page_entry | split: '::' %}
+                                    {% assign title = parts[0] %}
+                                    {% assign handle = parts[1] %}
+                                    <div class="sheet-row sheet-name">
+                                        <a target="_blank" href="/pages/{{ handle }}"><i class="fa-solid fa-link"></i> {{ title }}</a>
+                                    </div>
+                                {% endfor %}
+
+                                {%- comment -%}
                                 {%- for handle in page_handles -%}
                                     {%- assign thishandle = handle | strip -%}
                                     {%- if thishandle != "NA" and thishandle !="" -%}
@@ -267,6 +319,7 @@
                                         </div>
                                     {%- endif -%}
                                 {%- endfor -%}
+                                {%- endcomment -%}
                             {%- endif -%}
                         </div>
                     {%- endif -%}

@@ -418,12 +418,13 @@
   border-bottom: 1px solid #C0D3D8;
   display: flex;
   justify-content: space-between;
+  font-size:15px;
 }
 .product-single-spec-manual .spec-table .inner .row:last-of-type{
   border-bottom: 0;
 }
 .product-single-spec-manual .spec-table .inner .row div{
-  padding: 8px 15px 8px 10px;
+  padding: 5px 15px 5px 10px;
   width: 48%;
 }
 .product-single-spec-manual .spec-table .inner .row .label{
@@ -775,6 +776,28 @@ input.qtyminus {
     width:110px;
   }
 }
+
+/* ---------- hot deal under the image -------------- */
+.sale-icon-by-pic-link{
+  color: {{ settings.color_text }};
+}
+.sale-icon-by-pic-link:hover {
+  text-decoration: underline;
+  color: {{ settings.color_link_hover_2 }};
+}
+.sale-icon-by-pic{
+  text-align:center;
+}
+.sale-icon-by-pic .sale-icon-by-pic-title i{
+  padding: 0 5px;
+}
+.sale-icon-by-pic .sale-icon-by-pic-text{
+  font-size:14px;
+  line-height:15px;
+}
+.sale-icon-by-pic .sale-icon-by-pic-text strong{
+  color:{{ settings.color_button_secondary_background }};
+}
 /* ---------- Product Made In Section -------------- */
 .product-main .product-details .ship-made{
   display: block;
@@ -1045,7 +1068,7 @@ background:none;
 
 .product-form--atc .cart-buttons button.product-form--atc-button{
   margin-left: 0;
-  margin-right: 10px;
+  margin-right: 0px;
   max-width: 350px;
 }
 .product-form--atc .cart-buttons button.product-form--atc-button:hover{
