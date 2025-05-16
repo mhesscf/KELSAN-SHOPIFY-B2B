@@ -241,9 +241,9 @@
           "type": "banner",
           "settings": {
             "show_on": "both",
-            "banner-lg": "shopify://shop_images/tpl-bk-17vs-tc-april-2025-bogo-deal-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/tpl-bk-17vs-tc-april-2025-bogo-deal-mobile-banner.jpg",
-            "link": "/products/trusted-clean-17-inch-dual-speed-floor-buffer",
+            "banner-lg": "shopify://shop_images/ies-18e-cf-may-2025-bogo-deal-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/ies-18e-cf-may-2025-bogo-deal-mobile-banner.jpg",
+            "link": "/products/18-inch-reliable-electric-auto-scrubber",
             "coupon-code": ""
           }
         },
