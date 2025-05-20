@@ -159,8 +159,22 @@
     </div>
 {%- endif -%}
     {% comment %}end of hot deal area -----------------------------------------------------------------------------------------{% endcomment %}
+      {% comment %}Start of shipping restriction icon ----------------------------------------------------------{% endcomment %}
+        {%- if product.metafields.plytix.shipping_exclusions -%}
+            {% assign states = product.metafields.plytix.shipping_exclusions | remove: "[" | remove: "]"  | remove: '"' | replace: ",", ", " %}
+          <div class="sale-icon-by-pic">
+              <div class="sale-icon-by-pic-title">
+                  <i class="fa-duotone fa-solid fa-location-pin-slash" style="--fa-primary-color: #EA4335; --fa-secondary-color: #EA4335; --fa-secondary-opacity: 1;"></i><strong>Shipping Restrictions</strong><i class="fa-duotone fa-solid fa-location-pin-slash" style="--fa-primary-color: #EA4335; --fa-secondary-color: #EA4335; --fa-secondary-opacity: 1;"></i>
+              </div>
+              <div class="sale-icon-by-pic-text">
+                  Can not be shipped to: {{ states | join: ', ' }}
+              </div>
+          </div>
+        {%- endif -%}
 
-  {%
+      {% comment %}end of shipping restriction icon ----------------------------------------------------------{% endcomment %}
+
+      {%
     render 'product-gallery-navigation'
     product: product,
     selected_media: selected_media,
