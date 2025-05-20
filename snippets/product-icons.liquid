@@ -48,7 +48,8 @@
                                         <i class="fa-sharp fa-solid fa-tags"></i>
                                     </div>
                                     <div class="sm-row-text"><span>Clearance / Overstock</span><br/>
-                                        <span class="sm-text">Buy now before they are gone!</span></div>
+                                        <span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span>
+                                        <span class="tooltip-desc sm-text">Buy now before they are gone!</span></div>
                                 </div></a>
                         {%- else -%}
                             <div class="sm-row">
@@ -131,11 +132,11 @@
                 {%- endif -%}
                 {% endcomment %}
                 {%- if product.metafields.plytix.made_in_USA -%}
-                    <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-left:-3px" width="25" height="25" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div></a>
+                    <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-left:-3px" width="25" height="25" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <div class="sm-row-text"><span>Made in USA</span><br/><span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span><span class="tooltip-desc sm-text">Supporting American Workers</span></div></div></a>
                 {%- endif -%}
                 {%- if product.metafields.plytix.free_shipping -%}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                        <a href="/collections/free-shipping"><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a>
+                        <a href="/collections/free-shipping"><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span><span class="tooltip-desc sm-text">Anywhere in the continental US</span></div></div></a>
                     {%- else -%}
                         <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Free%20Shipping "><div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a>
                     {%- endif -%}
@@ -160,7 +161,7 @@
                 {%- if product.metafields.plytix.eco_friendly -%}
                     <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Environmentally%20Responsible "><div class="sm-row">
                         <div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div>
-                        <div class="sm-row-text"><span>Environmentally Responsible</span><br/><span class="sm-text">Reduced impact on the environment</span></div>
+                        <div class="sm-row-text"><span>Environmentally Responsible</span><br/><span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span><span class="tooltip-desc sm-text">Reduced impact on the environment</span></div>
                     </div></a>
                 {%- endif -%}
                 {%- if product.metafields.plytix.gold_medal_winner -%}
@@ -169,7 +170,8 @@
                             <div class="icon-wrap">
                                 <i class="fa-duotone fa-solid fa-medal"></i>
                             </div>
-                            <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span class="sm-text">Reliable machines at affordable prices.</span></div>
+                            <div class="sm-row-text"><span>Gold Medal Winner</span><br/><span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span>
+                                <span class="tooltip-desc sm-text">Reliable machines at affordable prices.</span></div>
                         </div></a>
                     {%- else -%}
                         <div class="sm-row">
@@ -195,7 +197,7 @@
                     {%- if counter > 0 -%}
                             <div class="sm-row bnd-pop {% if counter > 2 %}bnd-pop-2col{% endif %} {% if counter > 2 %}bnd-pop-extra{% endif %}" style="cursor:pointer" data-currhandle="{{ product.handle }}" data-bndhandle="{{ product.metafields.plytix.in_these_bundles }}">
                                 <div class="icon-wrap" style="font-size: 23px;"><i style="color:#d48c00; margin-left:-5px;" class="fa-sharp fa-regular fa-box-open"></i></div>
-                                <div class="sm-row-text"><span>Available in a Package</span><br/><span class="sm-text">Get everything you need with a starter package!</span></div>
+                                <div class="sm-row-text"><span>Available in a Package</span><br/><span  class="sm-text" >View Packages <i class="fa-solid fa-arrow-right"></i></span><span class="tooltip-desc sm-text">Get everything you need with a starter package!</span></div>
                             </div>
                     {%- endif -%}
 
@@ -241,7 +243,8 @@
                                 <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i>
                             </div>
                             <div class="sm-row-text"><span>Refurbished / Used Model</span><br/>
-                                <span class="sm-text">Tested & approved to be in good working order!</span>
+                                <span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span>
+                                <span class="tooltip-desc sm-text">Tested & approved to be in good working order!</span>
                             </div>
                         </div></a>
                     {%- else -%}
