@@ -22,13 +22,12 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "both",
-            "banner-lg": "shopify://shop_images/2025-earth-day-sale-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-earth-day-sale-mobile-banner.jpg",
-            "link": "/collections/environmentally-responsible-products",
-            "coupon-code": "EARTH25"
+            "banner-lg": "shopify://shop_images/2025-memorial-day-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-memorial-day-sale-mobile-banner.jpg",
+            "link": "/collections/memorial-day-sale",
+            "coupon-code": ""
           }
         },
         "slide_v2_cqVtUz": {
