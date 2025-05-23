@@ -1041,6 +1041,7 @@ jQuery(document).ready(function($){
                 'properties[_bundle_product]': bundle,
                 'properties[_available_qty]': '',
                 'properties[_org_price]': '',
+                'properties[Notification]': '',
                 'id': '',
                 'quantity': 0
             }
@@ -1054,6 +1055,7 @@ jQuery(document).ready(function($){
                 form_template["properties[_tiered_pricing]"] = $(this).data('tieredpricing')
                 form_template["properties[_available_qty]"] = $(this).data('availqty')
                 form_template["properties[_org_price]"] = $(this).data('price')
+                form_template["properties[Notification]"] = $(this).data('notification')
                 form_template.id = $(this).data('id') + ""
                 form_template.quantity = $(this).val() + ""
 
