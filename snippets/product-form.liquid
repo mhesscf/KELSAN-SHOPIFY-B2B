@@ -1074,7 +1074,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- if warning_pops_avaliable > 0 -%}
                     <div onclick="warningpopbundle()" class="product-form--atc-button main-atc-button mdc-ripple-surface mdc-ripple-upgraded" id="p-atc-agree-bundle">
                       <span class="atc-button--text"><span class="atc-plus">+</span> Add to cart</span>
-                      <span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" /></span>
+                      <span class="atc-button--icon">{%- render 'icon-spinner' -%}</span>
                     </div>
                     <div class="warningpop-text-freq" style="display:none;">
                       <div class="warning-pop-freq-data"></div>
@@ -1088,7 +1088,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- elsif fgwp_pops_avaliable > 0-%}
                     <div onclick="fgwpopbundle()" class="product-form--atc-button main-atc-button mdc-ripple-surface mdc-ripple-upgraded" id="p-atc-agree-bundle">
                       <span class="atc-button--text"><span class="atc-plus">+</span> Add to cart</span>
-                      <span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" /></span>
+                      <span class="atc-button--icon">{%- render 'icon-spinner' -%}</span>
                     </div>
                   {%- endif -%}
 
@@ -1245,7 +1245,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                           fgwpopbundle();
                         }else{
                           setTimeout(function() {
-                            $('#p-atc-agree-bundle .atc-button--text').text('Adding...');
+                            $('.product-form--atc #p-atc-agree-bundle').find('.atc-button--text').hide();
+                            $('.product-form--atc #p-atc-agree-bundle').find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
                             $('.product-form--atc #p-atc').click();
                             setTimeout(function() {
                               closechildPop('bund-pop-');
