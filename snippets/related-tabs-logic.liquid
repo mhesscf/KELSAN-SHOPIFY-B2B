@@ -468,9 +468,9 @@
                                                 $('.warning-actions .agree-btn').html("Adding To the Cart....");
 
                                                 $( ".warningpop-text-freq-itemdata" ).each(function() {
+                                                    var warningitem = $( this ).find('.item-warning-sku').text();
                                                     var atcwarningtitle = $( this ).find('.item-warning-title').html();
-                                                    var atc_att = $( this ).prev().find('.freq-data').attr('data-notification','Accepted '+atcwarningtitle);
-                                                    {%- comment -%}$('.freq-data.mainitem').attr('data-notification','Accepted {{ product.metafields.plytix.warning_title }}');{%- endcomment -%}
+                                                    $('.freq-data[data-var_vissku="'+warningitem+'"]').attr('data-notification','Accepted '+atcwarningtitle);
                                                 });
 
                                                 if(morepop){

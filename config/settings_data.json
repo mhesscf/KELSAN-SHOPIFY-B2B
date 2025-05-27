@@ -304,13 +304,13 @@
         "settings": {
           "show_announcement": false,
           "homepage_announcement": false,
-          "announcement_text": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
-          "announcement_text_mobile": "<i class=\"fa-solid fa-heart\"></i> Save 20% on select machines with coupon \"VDAY20\" - Valid until 2/15/25.",
+          "announcement_text": "In observance of Memorial Day, we will be closed on Monday, May 26th. We will reopen Tuesday, May 27th.",
+          "announcement_text_mobile": "In observance of Memorial Day, we will be closed on Monday, May 26th. We will reopen Tuesday, May 27th.",
           "announcement_link": "/collections/flash-sale",
-          "announcement_promo": "VDAY20",
+          "announcement_promo": "",
           "flash": false,
           "announcement_color": "#ffffff",
-          "announcement_background": "#cf1735"
+          "announcement_background": "#0a3161"
         }
       },
       "static-product-recommendations": {
