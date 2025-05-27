@@ -13,7 +13,7 @@
 {%- endcomment -%}
 {%- assign mediaSize = product.media | size  -%}
 
-<div class="nav-tabs" {% if mediaSize < 0 %}style="display:none;"{% endif %}>
+<div class="nav-tabs nav-tabs2" {% if mediaSize < 0 %}style=""{% endif %}>
   <div class="thumb-show imgs-thumbs active-tab">
     Images
   </div>
@@ -242,7 +242,7 @@
   }
 </style>
 {%- endif -%}
-
+{%- comment -%}
 {%- if mediaSize < 2 and videoCounter < 1  -%}
   <style>
   .product-gallery .nav-tabs,
@@ -251,3 +251,4 @@
       }
   </style>
 {%- endif -%}
+{%- endcomment -%}
