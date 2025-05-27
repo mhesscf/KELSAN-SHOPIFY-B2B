@@ -9,6 +9,13 @@
 {% assign isBundle = false %}
 {% if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank %}
   {% assign isBundle = true %}
+
+  {% comment %}for fgwp and warning pop{% endcomment %}
+  {%- assign today_date = 'now' | date: '%s' %}
+  {%- assign fgwp_Obj = shop.metaobjects.free_gift_with_product.values  -%}
+  {%- assign warning_pops_avaliable = 0 -%}
+  {%- assign fgwp_pops_avaliable = 0 -%}
+
 {% endif %}
 
 {%- comment -%}
@@ -878,6 +885,56 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                          data-type="{{ bundle_product.type | escape }}"
                          data-brand="{{ bundle_product.vendor | escape }}"
                          value="{{ bundle_product_entry_parts[1] }}" />
+
+
+                  {% comment %}free gift and warning pop{% endcomment %}
+                  {%- for fgwp in fgwp_Obj -%}
+                    {%- assign show_fgwp = false -%}
+                    {%- assign start = fgwp.start_date | date: '%s' -%}
+                    {%- comment -%}//add one day to the end date{%- endcomment -%}
+                    {%- assign date = fgwp.end_date | date: '%s' -%}
+                    {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+                    {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+                    {%- comment -%}if not active, skip{%- endcomment -%}
+                    {%- if today_date < start or today_date > end -%}
+                      {% continue %}
+                    {%- endif -%}
+
+                    {%- comment -%}find by product{%- endcomment -%}
+
+                    {%- for find_product in fgwp.buy_this_product.value -%}
+                      {% if find_product.url == bundle_product.url %}
+                        {%- assign show_fgwp = true -%}
+                      {% endif %}
+                    {% endfor %}
+                    {%- comment -%}find by tag{%- endcomment -%}
+                    {%- for this_tag in fgwp.buy_product_tagged_as.value -%}
+                      {% if bundle_product.tags contains this_tag %}
+                        {%- assign show_fgwp = true -%}
+                      {% endif %}
+                    {% endfor %}
+
+                    {%- if show_fgwp == true -%}
+                      {%- assign fgwp_pops_avaliable = fgwp_pops_avaliable | plus: 1 -%}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if bundle_product.metafields.plytix.warning_title %}
+                    {%- assign warning_pops_avaliable = warning_pops_avaliable | plus: 1 -%}
+                  {% endif %}
+
+                  {% capture packagevarid %}{{ bundle_product.variants.first.id }}bundle{% endcapture %}
+                  <div class="bundle-warn-fgwp-pop">
+                  {%
+                          render 'warning-pop',
+                          product: bundle_product,
+                          area:'mainbundle',
+                          varid: packagevarid
+                  %}
+                  </div>
+                  {% comment %}end free gift and warning pop{% endcomment %}
+
                 {%- endfor -%}
                 {%- for free_product_entry in free_products -%}
                   {%- assign free_product_entry_parts = free_product_entry | split: "#" -%}
@@ -1011,6 +1068,199 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                             {%- render 'icon-spinner' -%}
                           </span>
                   </button>
+
+                  {%- comment -%}start if warning pop -------------------------------------------------------------------------------{%- endcomment -%}
+                  {%- if warning_pops_avaliable > 0 or fgwp_pops_avaliable > 0-%}
+                  {%- if warning_pops_avaliable > 0 -%}
+                    <div onclick="warningpopbundle()" class="product-form--atc-button main-atc-button mdc-ripple-surface mdc-ripple-upgraded" id="p-atc-agree-bundle">
+                      <span class="atc-button--text"><span class="atc-plus">+</span> Add to cart</span>
+                      <span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" /></span>
+                    </div>
+                    <div class="warningpop-text-freq" style="display:none;">
+                      <div class="warning-pop-freq-data"></div>
+                      <div class="warning-actions">
+                        <div style="margin-top:10px; text-align:center">
+                          <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="event.stopPropagation(); closechildPop('bund-pop-')" >Cancel</div>
+                          <div style="max-width:200px" class="product-form--atc-button main-atc-button agree-btn agree-freq" onclick="agreecheckbundle()" >Agree</div>
+                        </div>
+                      </div>
+                    </div>
+                  {%- elsif fgwp_pops_avaliable > 0-%}
+                    <div onclick="fgwpopbundle()" class="product-form--atc-button main-atc-button mdc-ripple-surface mdc-ripple-upgraded" id="p-atc-agree-bundle">
+                      <span class="atc-button--text"><span class="atc-plus">+</span> Add to cart</span>
+                      <span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" /></span>
+                    </div>
+                  {%- endif -%}
+
+                    <style>
+                      .product-form--atc #p-atc{display:none !important;}
+                      .product-form--atc #p-atc-agree-bundle{max-width:350px; margin:0 10px 0 0 !important}
+                      .warning-pop-freq-data .viewnotice{position: absolute; top:10px; right:10px;}
+
+
+                      @media (min-width: 720px) and (max-width: 1172px){
+
+                        .cart-buttons #p-atc-agree{
+                          margin:0px 0 10px 0;
+                          flex-basis:100%;
+                        }
+                      }
+                      @media (max-width: 550px){
+                        .cart-buttons #p-atc-agree{
+                          margin:0px 0 10px 0;
+                          flex-basis:100%;
+                        }
+
+                      }
+
+                      @media (max-width: 719px) {
+                        .warning-actions .agree-btn{margin-top:10px;}
+                      }
+                    </style>
+
+                    <script>
+                      jQuery(document).ready(function($){
+                        if($('.fgwp-text-area-mainbundle').length > 0){
+                          $( ".agree-freq").attr("onClick","agreecheckbundle(true)");
+                        }
+
+                        var totalpops = 0;
+                        var warningtitles = [];
+                        var warningbody = [];
+                        var warningskus = [];
+                        $( ".warningpop-text-freq-itemdata" ).each(function() {
+                          var thissku = $( this ).find('.item-warning-sku').html();
+                          var thiswarningtitle = $( this ).find('.item-warning-title').html();
+                          var thiswarning = $( this ).find('.item-warning-body').html();
+
+                          if(totalpops == 0){
+                            warningskus.push(thissku);
+                            warningtitles.push(thiswarningtitle);
+                            warningbody.push(thiswarning);
+                            totalpops++;
+                          }else{
+                            var addtoarr = 1;
+                            warningtitles.forEach(function(element, index, array) {
+                              if(thiswarningtitle != element ){
+                              }else{
+                                var newsku =  warningskus[index] + ", "+thissku;
+                                warningskus[index] = newsku;
+                                addtoarr = 0;
+                              }
+                            });
+                            if(addtoarr == 1){
+                              warningskus.push(thissku);
+                              warningtitles.push(thiswarningtitle);
+                              warningbody.push(thiswarning);
+                              totalpops++;
+                            }
+                          }
+                        });
+
+                        if(totalpops > 0) {
+                          //update popuptext
+                          var popupHtml="";
+                          if(totalpops == 1 ) {
+                            popupHtml+='<div>';
+                            popupHtml+='<h2 style="margin-bottom:0">'+warningtitles[0]+'</h2>';
+                            popupHtml+='<div style="font-size:12px; margin-bottom:15px; ">Notice for '+warningskus[0]+'</div>';
+                            popupHtml+='<div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">'+warningbody[0]+'</div>';
+                            popupHtml+='<div>';
+                          }else if(totalpops > 1 ) {
+                            popupHtml+='<div>';
+                            popupHtml+='<h2 style="">Notices on Products</h2>';
+                            warningtitles.forEach(function(element, index, array) {
+                              popupHtml+='<div style="border-top:1px solid #ccc; position: relative; padding:5px">';
+                              popupHtml+='<div style="font-size:16px; text-decoration:underline; marrgin-bottom:0">'+warningtitles[index]+'</div>';
+                              popupHtml+='<div style="font-size:12px; margin-bottom:15px; ">Notice for '+warningskus[index]+'</div>';
+                              popupHtml+='<div class="noticebody" style="margin-bottom:10px; max-height:300px; overflow-y:scroll; display:none;">'+warningbody[index]+'</div>';
+                              popupHtml+='<div class="viewnotice" onclick="viewnotice(this)"><a><span class="viewtext">View Notice</span><span class="viewicon"> -></span></a></div>';
+                              popupHtml+='</div>';
+                            });
+                            popupHtml+='</div>';
+                          }
+                          $(".warning-pop-freq-data").html(popupHtml);
+                        }
+                      });
+                      function viewnotice(element){
+                        var thisnotice = $(element).prev();
+                        var viewnoticetext = $(element).find('.viewtext');
+                        $(".noticebody").hide();
+                        if(viewnoticetext.text() == "View Notice"){
+                          $(".viewtext").text("View Notice");
+                          viewnoticetext.text("Hide Notice");
+                          thisnotice.show();
+                        }else{
+                          $(".viewtext").text("View Notice");
+                        }
+                      }
+                      function warningpopbundle(){
+                        $('.popup-container').removeClass('hidden');
+                        $(".pop-grad").removeClass('hidden');
+                        $( ".agree-freq").text("Agree");
+                        var newhtml = $(".warningpop-text-freq").html();
+                        $('.popup-container .content').html(newhtml);
+                        $('.popup-container').addClass('widepop');
+                      }
+
+
+                      function fgwpopbundle(){
+                        var counter = 0;
+                        {%- comment -%} get number of popups and add data{%- endcomment -%}
+                        $( ".bundle-warn-fgwp-pop" ).each(function() {
+
+                            if ($(this).find(".freq-pops").length){
+                              $(this).find('.freq-pops').attr('data-popnum', counter);
+                              $(this).find('.fgwp-pop-content').attr('data-popnum', counter);
+                              counter++;
+                            }
+
+                        });
+                        {%- comment -%} pop first fgwp{%- endcomment -%}
+                        $( ".bundle-warn-fgwp-pop" ).each(function() {
+
+                            var poptotrigger = $(this).find(".freq-pops");
+                            if (poptotrigger.length){
+                              {%- comment -%}update closing button to clear out added fgwp{%- endcomment -%}
+
+                              $(".popup-container .close-pop").attr("onclick","event.stopPropagation(); closechildPop('bund-pop-',true)");
+
+                              poptotrigger.click();
+                              return false;
+                            }
+
+                        });
+                      }
+
+                      function agreecheckbundle(morepop = false){
+                        $('.warning-actions .agree-btn').html("Adding To the Cart....");
+
+                        $( ".warningpop-text-freq-itemdata" ).each(function() {
+                          var warningitem = $( this ).find('.item-warning-sku').text();
+                          var atcwarningtitle = $( this ).find('.item-warning-title').html();
+                          $('input[data-vissku="'+warningitem+'"]').attr('data-notification','Accepted '+atcwarningtitle);
+                        });
+
+                        if(morepop){
+                          fgwpopbundle();
+                        }else{
+                          setTimeout(function() {
+                            $('#p-atc-agree-bundle .atc-button--text').text('Adding...');
+                            $('.product-form--atc #p-atc').click();
+                            setTimeout(function() {
+                              closechildPop('bund-pop-');
+                            }, 1000);
+                          }, 1000);
+                        }
+                      }
+
+                    </script>
+                  {%- endif -%}
+                  {%- comment -%}end if warning pop -------------------------------------------------------------------------------{%- endcomment -%}
+
+
+
+
                   {%- if isBundle == true -%}
                   {%- assign bundleprice = product.metafields.plytix.bundle_pricing | plus: 0.00 -%}
                     {%- if bundleprice > 1000 -%}
@@ -1024,8 +1274,6 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
               {% endif %}
           {%- comment -%}end of bundle logic -----------------------------------------------------------------------------------{%- endcomment -%}
           {%- endif -%}
-
-
 
           {%- comment -%} shoppay finaincing link
           {% if product.metafields.plytix.hide_product != 'true' and pdiscontinued != true %}

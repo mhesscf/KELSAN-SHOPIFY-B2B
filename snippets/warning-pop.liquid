@@ -71,8 +71,10 @@
                                             <div id="data-fgwp-var{{ free_gift.variants.first.id }}"
                                                  class="data-fgwp-var"
                                                  data-productname="{{ free_gift.title }}"
+                                                 data-producthandle="{{ free_gift.handle }}"
                                                  data-producturl="{{ free_gift.url }}"
                                                  data-var_id="{{ free_gift.variants.first.id }}"
+                                                 data-parent_id="{{ free_gift.id }}"
                                                  data-var_vissku="{{ free_gift.variants.first.sku }}"
                                                  data-var_status=""
                                                  data-var_erpsku="{{ free_gift.variants.first.metafields.plytix.erp_sku }}"
@@ -136,7 +138,7 @@
 
                     </div>
                     <div class="fgwp-btns" style="text-align:center;">
-                        {% if area == "mainfreq" %}
+                        {% if area == "mainfreq" or area == "mainbundle"%}
                         <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="nextfgwpatc{{ varid }}()" >No Thanks</div>
                         {% else %}
                         <div style="max-width:200px" class="product-form--atc-button outlinebtn main-atc-button" onclick="closefgwpatc{{ varid }}()" >No Thanks</div>
@@ -280,25 +282,6 @@
 
 
                 $('.freq-bought-items').append(toadd);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     {% comment %} trigger find next pop or add freq to the cart{% endcomment %}
                     setTimeout(function() {
                         {% comment %} trigger find next pop{% endcomment %}
@@ -315,6 +298,56 @@
                             }
                         }, 600);
                     }, 1000);
+                {% elsif area == "mainbundle" %}
+
+
+                {% comment %} Handling bundle FGWP{% endcomment %}
+                $(thisbtn).text('Selected');
+                $(".fgwp-card-container-{{ varid }}-{{ area }} .fgwp-card .thinbtn, .fgwp-card-container-{{ varid }}-{{ area }} .fgwp-btns .outlinebtn").not(thisbtn).addClass("grayout");
+                $(thisbtn).text('Adding...');
+                $(thisbtn).show();
+
+                {% comment %}add a spoof item which basically mirrors a card to frequently bought together {% endcomment %}
+                var toadd = "";
+                toadd += '<input type="hidden" ' +
+                    'name="updates['+$(item_class).data('producthandle')+']" ' +
+                    'class="quantity field" ' +
+                    'data-bundle-subproduct ' +
+                    'data-id="'+$(item_class).data('var_id')+'" ' +
+                    'data-vissku="'+$(item_class).data('var_vissku')+'" ' +
+                    'data-status="'+$(item_class).data('var_status')+'" ' +
+                    'data-erpsku="'+$(item_class).data('var_erpsku')+'" ' +
+                    'data-step="" ' +
+                    'data-tieredpricing="fg" ' +
+                    'data-availqty="'+$(item_class).data('var_availqty')+'" ' +
+                    'data-qty="1" ' +
+                    'data-price="'+$(item_class).data('var_price')+'"' +
+                    'data-parentid="'+$(item_class).data('data-parent_id')+'" ' +
+                    'data-title="Free Gift Temp" ' +
+                    'data-vartitle="Default Title" ' +
+                    'data-type="Free Gift" ' +
+                    'data-brand="" ' +
+                    'value="1" ' +
+                    '>';
+
+
+                $('div[data-bundle-subproducts]').append(toadd);
+                {% comment %} trigger find next pop or add freq to the cart{% endcomment %}
+                setTimeout(function() {
+                    {% comment %} trigger find next pop{% endcomment %}
+                    var currentpopnum = $(thisbtn).closest('.fgwp-pop-content').data('popnum');
+                    var newpopnum = parseInt(currentpopnum) + 1;
+
+                    closechildPop('bund-pop-');
+                    setTimeout(function() {
+                        if($('.freq-pops[data-popnum="'+newpopnum+'"]').length){
+                            $('.freq-pops[data-popnum="'+newpopnum+'"]').click();
+                        }else{
+                            $('#p-atc-agree-freq .atc-button--text').text('Adding...')
+                            $('.product-form--atc #p-atc').click();
+                        }
+                    }, 600);
+                }, 1000);
 
 
                 {% else %}
@@ -342,7 +375,7 @@
                     if(type == "coupon"){
 
                         var code = varid;
-                        alert(code+". What should we do for the redirect?");
+                        //alert(code+". What should we do for the redirect?");
                         document.cookie = "applied_discount_code="+code+"; expires=0; path=/";
                         // var decodedUrl = encodeURIComponent(url);
                         var promoUrl = "/discount/"+code+"?redirect=/";
@@ -469,7 +502,7 @@
 {% comment %}start if warning pop ---------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
 {% if product.metafields.plytix.warning_title %}
     {%- assign show_warning = true -%}
-    {% if area == "mainfreq" %}
+    {% if area == "mainfreq" or area == "mainbundle"%}
         <div class="warningpop-text-freq-itemdata" style="display:none;">
         <div class="item-warning-sku">{{ product.metafields.plytix.main_sku }}</div>
         <div class="item-warning-title">{{ product.metafields.plytix.warning_title }}</div>
@@ -580,7 +613,7 @@
                 .warning-actions .agree-btn{margin-top:10px;}
             }
         </style>
-    {% elsif area == "mainfreq" %}
+    {% elsif area == "mainfreq" or area == "mainbundle" %}
         {%- if poptoshow == "fgwp" or poptoshow == "both"-%}
         <div onclick="checkpop{{ varid }}('fgwp')" class="freq-pops" style="display:none!important"></div>
         {%- endif -%}

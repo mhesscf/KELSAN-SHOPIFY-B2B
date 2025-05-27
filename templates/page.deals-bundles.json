@@ -14,12 +14,11 @@
       "blocks": {
         "banner_jmhUmt": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "both",
-            "banner-lg": "shopify://shop_images/spring-demo-sale-2025-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/spring-demo-sale-2025-mobile-banner.jpg",
-            "link": "/collections/demoed-refurbished-equipment",
+            "banner-lg": "shopify://shop_images/2025-memorial-day-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-memorial-day-sale-mobile-banner.jpg",
+            "link": "/collections/memorial-day-sale",
             "coupon-code": ""
           }
         },

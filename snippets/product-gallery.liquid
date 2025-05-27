@@ -80,7 +80,7 @@
                 <a class="sale-icon-by-pic-link" href="/collections/current-sales">
                     <div class="sale-icon-by-pic">
                         <div class="sale-icon-by-pic-title">
-                            <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>
+                            <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
                         </div>
                         <div class="sale-icon-by-pic-text">
                             Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong>
@@ -90,7 +90,7 @@
             {%- else -%}
                 <div class="sale-icon-by-pic">
                     <div class="sale-icon-by-pic-title">
-                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>
+                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
                     </div>
                     <div class="sale-icon-by-pic-text">
                         Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong>
@@ -116,7 +116,7 @@
             <a class="sale-icon-by-pic-link" href="/collections/current-sales">
                 <div class="sale-icon-by-pic">
                     <div class="sale-icon-by-pic-title">
-                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>
+                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
                     </div>
                     <div class="sale-icon-by-pic-text">
                         Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and {{ product.metafields.plytix.custom_hot_deal_message }}
@@ -137,7 +137,7 @@
             <a class="sale-icon-by-pic-link" href="/collections/current-sales">
                 <div class="sale-icon-by-pic">
                     <div class="sale-icon-by-pic-title">
-                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>
+                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
                     </div>
                     <div class="sale-icon-by-pic-text">
                         Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong>
@@ -147,7 +147,7 @@
         {%- else -%}
             <div class="sale-icon-by-pic">
                 <div class="sale-icon-by-pic-title">
-                    <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>
+                    <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
                 </div>
                 <div class="sale-icon-by-pic-text">
                     Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong>
@@ -159,8 +159,22 @@
     </div>
 {%- endif -%}
     {% comment %}end of hot deal area -----------------------------------------------------------------------------------------{% endcomment %}
+      {% comment %}Start of shipping restriction icon ----------------------------------------------------------{% endcomment %}
+        {%- if product.metafields.plytix.shipping_exclusions -%}
+            {% assign states = product.metafields.plytix.shipping_exclusions | remove: "[" | remove: "]"  | remove: '"' | replace: ",", ", " %}
+          <div class="sale-icon-by-pic">
+              <div class="sale-icon-by-pic-title">
+                  <i class="fa-duotone fa-solid fa-location-pin-slash" style="--fa-primary-color: #EA4335; --fa-secondary-color: #EA4335; --fa-secondary-opacity: 1;"></i><strong>Shipping Restrictions</strong>
+              </div>
+              <div class="sale-icon-by-pic-text">
+                  Can not be shipped to: {{ states | join: ', ' }}
+              </div>
+          </div>
+        {%- endif -%}
 
-  {%
+      {% comment %}end of shipping restriction icon ----------------------------------------------------------{% endcomment %}
+
+      {%
     render 'product-gallery-navigation'
     product: product,
     selected_media: selected_media,
