@@ -225,8 +225,14 @@
                     if($('.freq-pops[data-popnum="'+newpopnum+'"]').length){
                         $('.freq-pops[data-popnum="'+newpopnum+'"]').click();
                     }else{
-                        $('#p-atc-agree-freq .atc-button--text').text('Adding...')
-                        $('.freq-cart-button #p-atc-freq').click();
+                        {% if area == "mainbundle" %}
+                            $('.product-form--atc #p-atc-agree-bundle').find('.atc-button--text').hide();
+                            $('.product-form--atc #p-atc-agree-bundle').find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
+                            $('.product-form--atc #p-atc').click();
+                        {% else %}
+                            $('#p-atc-agree-freq .atc-button--text').text('Adding...')
+                            $('.freq-cart-button #p-atc-freq').click();
+                        {% endif %}
                     }
                 }, 600);
             }
@@ -343,7 +349,10 @@
                         if($('.freq-pops[data-popnum="'+newpopnum+'"]').length){
                             $('.freq-pops[data-popnum="'+newpopnum+'"]').click();
                         }else{
-                            $('#p-atc-agree-freq .atc-button--text').text('Adding...')
+                            $('#p-atc-agree-freq .atc-button--text').text('Adding...');
+                            // $('.product-form--atc #p-atc-agree-bundle .atc-button--text').hide();
+                            $('.product-form--atc #p-atc-agree-bundle').find('.atc-button--text').hide();
+                            $('.product-form--atc #p-atc-agree-bundle').find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
                             $('.product-form--atc #p-atc').click();
                         }
                     }, 600);

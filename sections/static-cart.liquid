@@ -396,7 +396,6 @@
         </div>
       {% endif %}
     </div>
-
     {% if has_sidebar %}
       <div class="cart-sidebar" data-cart-sidebar>
         {% for block in section.blocks %}
@@ -436,6 +435,49 @@
       </div>
     {% endif %}
   </section>
+
+{% if has_items == false %}
+  {% comment %}empty cart sidebar{% endcomment %}
+  <section class="cartitems--container  total-area">
+    <div class="cartitems">
+      <div class="cart-total">
+        <div class="cart-total-title">Order Totals</div>
+        <div class="cart-total-contain">
+          <div class="cart-final-total">
+            <div class="cart-subtotal">
+              <span>Subtotal</span>
+              <span class="money" data-cart-total="">$0.00</span>
+            </div>
+          </div>
+
+          <div class="cart-shipping"><p class="cart-message meta">Taxes and shipping calculated at checkout
+            </p>
+          </div>
+
+          <div class="cart-checkout">
+            <div class="button-primary main-atc-button checkout-btn mdc-ripple-surface mdc-ripple-upgraded disabled" style="width:150px">
+              <i class="fa-regular fa-cart-shopping checkout-btn"></i>
+              Check out
+            </div>
+            <style>
+              .button-primary.mdc-ripple-surface.mdc-ripple-upgraded.disabled{
+                pointer-events: none;
+              }
+            </style>
+
+            <div class="fg-notice fg-notice-link">
+              <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> $1000.00 away from a Free Gift!
+              </span>
+            </div>
+
+            {{ continue_link_html }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
 </form>
 {% schema %}
 {
