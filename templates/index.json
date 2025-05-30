@@ -33,6 +33,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "both",
             "sotm_icon": "5",
@@ -54,6 +55,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "both",
             "sotm_icon": "5",
@@ -75,10 +77,9 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "both",
-            "sotm_icon": "4",
+            "sotm_icon": "6",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/cpl-00-5792-7-wet-dry-vac-special.png?v=173336204",
             "middle_image_alt": "CleanFreak Wet / Dry Vacuum w/ Front Mount Squeegee - 19 Gallons Special",
@@ -97,10 +98,9 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "both",
-            "sotm_icon": "4",
+            "sotm_icon": "6",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/cpl-cf-fm-flood-master-special.png?v=173336204",
             "middle_image_alt": "CleanFreak® 'Flood Master' Portable Flood Pumper & Extractor Special",
