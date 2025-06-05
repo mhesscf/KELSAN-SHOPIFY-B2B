@@ -5167,8 +5167,9 @@ body .mdc-ripple-surface:hover:before {
 	height: 358px;
 	padding: {{ space_medium | divided_by: 16.0 | append: 'rem' }};
 	text-align: center;
-	border: 1px solid {{ border_mix | color_modify: 'alpha', 0.15 }};
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+	border: 1px solid rgba(128, 128, 128, 0.16);
+	border-radius:30px;
+	margin-top:16px;
 }
 
 .cartitems-empty--inner p {
