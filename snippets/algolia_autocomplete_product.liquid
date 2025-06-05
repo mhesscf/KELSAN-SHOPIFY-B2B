@@ -12,9 +12,13 @@
               class="aa-ItemLink aa-ProductItem"
               onClick="${(event) => getConversionData(event, item)}"
       >
-          <div class="aa-ItemContent ${item.collections.includes("discontinued") == true ? html `discontinued-item` : html ``}">
+          <div class="aa-ItemContent ${item.collections.includes("discontinued") == true ? html `discontinued-item` : html ``} ${specialtype(item) ? html `${specialtype(item)}`: html ``} ">
               <div class="aa-ItemPicture aa-ItemPicture--loaded ">
                   <img src="${item.variants_count > 1 ? html `${compactpic(item.product_image)}` : html `${algolia.helpers.compactImage(item)}`}" alt="${item.title}" />
+                  <div class="ac-icon">
+                            ${specialtype(item) == "clearance" ? html `<i class="fa-sharp fa-solid fa-tags"></i>`: html ``}
+                            ${specialtype(item) == "hotdeal" ? html `<i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>`: html ``}
+                        </div>
               </div>
               <div class="aa-ItemContentBody">
                   {% comment %}<div class="aa-ItemContentBrand">
@@ -30,13 +34,25 @@
                           </span>
                       </div>
                   </div>
+
                   <div class="aa-ItemContentPrice">
                       <div class="aa-ItemContentPriceCurrent">
                       ${item.collections.includes("discontinued") == true ? html `<span class="discontinued-text">Discontinued</div>` : html `
+                        ${specialtype(item) == "hotdeal" || specialtype(item) == "clearance" ? html `
+                            ${item.compare_at_price > item.price ? html `<span class="cross-price">${numberScrubAC(item.compare_at_price)}</span><br/>`: html ``}
+                        `: html ``}
+
+                        {% comment %}
+                        <span class="ac-icon">
+                            ${specialtype(item) == "clearance" ? html `<i class="fa-sharp fa-solid fa-tags"></i>`: html ``}
+                            ${specialtype(item) == "hotdeal" ? html `<i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>`: html ``}
+                        </span>
+                        {% endcomment %}
                       ${item.meta.plytix.package_products ? html`
                         ${item.meta.plytix.bundle_pricing > 0 ? html `<span class="bundle-price">${priceFormat(item.meta.plytix.bundle_pricing)}</span>`: html `<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`}
                       `: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
                       `}
+
                           {% comment %}${algolia.helpers.displayPrice(item, distinct)}{% endcomment %}
                       </div>
                   </div>
@@ -46,6 +62,46 @@
     };
   })(window.algoliaShopify);
 
+    function numberScrubAC(num){
+        var newNum = (Math.round(num * 100) / 100).toFixed(2);
+        newNum = parseFloat(newNum);
+        newNum = newNum.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        return ("$"+newNum.toString());
+    }
+
+  function specialtype(thisitem){
+      if (thisitem.meta.plytix.clearance_overstock == "true"){
+          return "clearance";
+      }else if(thisitem.compare_at_price > thisitem.price) {
+          var rawdate = thisitem.meta.plytix.special_enddate;
+          if (rawdate){
+              var currentDate = new Date();
+              var targetDate = new Date(rawdate);
+              if (currentDate <= targetDate) {
+                  return "hotdeal";
+              }
+          }else{
+              return "sale";
+          }
+      }else if(thisitem.meta.plytix.custom_hot_deal_to_date && thisitem.meta.plytix.custom_hot_deal_message) {
+          //custom hot deal
+          var rawenddate = thisitem.meta.plytix.custom_hot_deal_to_date;
+          var rawstartdate = thisitem.meta.plytix.custom_hot_deal_from_date;
+          var customMessage = thisitem.meta.plytix.custom_hot_deal_message;
+
+          if (rawenddate && rawstartdate) {
+              var currentDate = new Date();
+              var targetDate = new Date(rawenddate);
+              targetDate.setDate(targetDate.getDate() + 1);
+              var startDate = new Date(rawstartdate);
+              startDate.setHours(startDate.getHours() + 6);
+              if (currentDate <= targetDate && currentDate >= startDate) {
+                  return "hotdeal";
+              }
+          }
+      }
+      return false;
+  }
 
   function priceFormat(bundleprice){
       thisPrice = parseFloat(bundleprice);
