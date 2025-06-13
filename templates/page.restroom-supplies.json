@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "d1809acb-9d81-4f5e-aa07-b848ba81dab2": {
@@ -15,7 +15,7 @@
         "2a7b1cfa-bf10-470b-9bca-f64bed743d00": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/restroom-supplies-dept-page.jpg",
+            "cat_image": "shopify://shop_images/restroom-supplies-dept-page.jpg",
             "cat_title": "Restroom Supplies",
             "cat_text": "Products and supplies to keep your restrooms sanitary, odor-free and stocked up for guests. Shop cleaning chemicals, paper toweling, wall mount dispensers, stands, hand soaps, deodorizers and more."
           }
@@ -128,153 +128,153 @@
         "26a22137-b588-43c2-907d-8157b8b0bde6": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/air-freshener-dispensers.jpg",
+            "image": "shopify://shop_images/air-freshener-dispensers.jpg",
             "title": "Air Freshener Dispensers",
-            "url": "\/collections\/air-freshener-dispensers"
+            "url": "/collections/air-freshener-dispensers"
           }
         },
         "0a938762-0bb4-4fe6-b42e-a9a200506e33": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/air-fresheners-odor-eliminators.jpg",
+            "image": "shopify://shop_images/air-fresheners-odor-eliminators.jpg",
             "title": "Air Fresheners & Odor Eliminators",
-            "url": "\/collections\/air-fresheners-odor-eliminators"
+            "url": "/collections/air-fresheners-odor-eliminators"
           }
         },
         "17d67080-2451-496f-9ca8-848d6d89448e": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/disinfectant-wipe-dispensers.jpg",
+            "image": "shopify://shop_images/disinfectant-wipe-dispensers.jpg",
             "title": "Disinfectant Wipe Dispensers",
-            "url": "\/collections\/disinfectant-wipe-dispensers"
+            "url": "/collections/disinfectant-wipe-dispensers"
           }
         },
         "3fde840c-eb34-441c-972d-bc57e3bc2ea2": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/facial-tissues.jpg",
+            "image": "shopify://shop_images/facial-tissues.jpg",
             "title": "Facial Tissues",
-            "url": "\/collections\/facial-tissue"
+            "url": "/collections/facial-tissue"
           }
         },
         "16d36557-0698-4b1c-8c50-fd3e5956cf68": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/feminine-hygiene-supplies.jpg",
+            "image": "shopify://shop_images/feminine-hygiene-supplies.jpg",
             "title": "Feminine Hygiene Supplies",
-            "url": "\/collections\/feminine-hygiene-supplies"
+            "url": "/collections/feminine-hygiene-supplies"
           }
         },
         "118206ed-7157-4de0-855a-3729a95f1c02": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-dryers.jpg",
+            "image": "shopify://shop_images/hand-dryers.jpg",
             "title": "Hand Dryers",
-            "url": "\/collections\/hand-dryers"
+            "url": "/collections/hand-dryers"
           }
         },
         "f0e7fcc3-c065-4ae8-896e-e2046a1fd482": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-sanitizer-dispensers.jpg",
+            "image": "shopify://shop_images/hand-sanitizer-dispensers.jpg",
             "title": "Hand Sanitizer Dispensers & Stands",
-            "url": "\/collections\/hand-sanitizer-dispensers-stands"
+            "url": "/collections/hand-sanitizer-dispensers-stands"
           }
         },
         "e76758dc-15fc-49de-a3f9-fc02c8a977f6": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-sanitizers_881953dd-fa89-495f-89ae-e538b2e24929.jpg",
+            "image": "shopify://shop_images/hand-sanitizers_881953dd-fa89-495f-89ae-e538b2e24929.jpg",
             "title": "Hand Sanitizers",
-            "url": "\/collections\/hand-sanitizers"
+            "url": "/collections/hand-sanitizers"
           }
         },
         "af297062-fc94-4900-b306-9111630b5425": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-soap.jpg",
+            "image": "shopify://shop_images/hand-soap.jpg",
             "title": "Hand Soaps & Lotions",
-            "url": "\/collections\/hand-soaps-lotions"
+            "url": "/collections/hand-soaps-lotions"
           }
         },
         "476ebd2f-2a9f-4b4b-9228-93cdae46fa86": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/paper-towel-dispensers.jpg",
+            "image": "shopify://shop_images/paper-towel-dispensers.jpg",
             "title": "Paper Towel Dispensers",
-            "url": "\/collections\/paper-towel-dispensers"
+            "url": "/collections/paper-towel-dispensers"
           }
         },
         "0e4db2e6-8aa5-47f7-80bf-caf9e067d61a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/paper-towels_04919aca-b68b-4c7a-b017-db05f7bf5d35.jpg",
+            "image": "shopify://shop_images/paper-towels_04919aca-b68b-4c7a-b017-db05f7bf5d35.jpg",
             "title": "Paper Towels",
-            "url": "\/collections\/paper-toweling"
+            "url": "/collections/paper-toweling"
           }
         },
         "da3eb280-7cba-49c3-a736-43c3c83f9bb8": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sanitary-receptacles-lines.jpg",
+            "image": "shopify://shop_images/sanitary-receptacles-lines.jpg",
             "title": "Sanitary Receptacles & Liners",
-            "url": "\/collections\/sanitary-receptacles-liners"
+            "url": "/collections/sanitary-receptacles-liners"
           }
         },
         "059e2713-3f17-4312-abf3-d0f1f0e115d6": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/soap-dispensers.jpg",
+            "image": "shopify://shop_images/soap-dispensers.jpg",
             "title": "Soap Dispensers (Wall & Counter Mount)",
-            "url": "\/collections\/soap-dispensers-wall-counter-mount"
+            "url": "/collections/soap-dispensers-wall-counter-mount"
           }
         },
         "e5a6dd40-0392-4e8e-9274-56d87f572f94": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/toilet-urinal-mats.jpg",
+            "image": "shopify://shop_images/toilet-urinal-mats.jpg",
             "title": "Toilet & Urinal Mats",
-            "url": "\/collections\/toilet-urinal-floor-mats"
+            "url": "/collections/toilet-urinal-floor-mats"
           }
         },
         "0699412d-6cfd-4aa7-b419-e3ebfd3ab917": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/toilet-brushes.jpg",
+            "image": "shopify://shop_images/toilet-brushes.jpg",
             "title": "Toilet Brushes",
-            "url": "\/collections\/toilet-brushes"
+            "url": "/collections/toilet-brushes"
           }
         },
         "6e7072e0-272f-4fa1-a74e-44577be00345": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/toilet-paper.jpg",
+            "image": "shopify://shop_images/toilet-paper.jpg",
             "title": "Toilet Paper",
-            "url": "\/collections\/toilet-paper"
+            "url": "/collections/toilet-paper"
           }
         },
         "cf8fb03b-e083-40ea-8d44-d69dff390052": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/toilet-paper-dispensers.jpg",
+            "image": "shopify://shop_images/toilet-paper-dispensers.jpg",
             "title": "Toilet Paper Dispensers",
-            "url": "\/collections\/toilet-paper-dispensers"
+            "url": "/collections/toilet-paper-dispensers"
           }
         },
         "9efc8e05-6010-41d5-9aa0-7177b6182d9e": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/toilet-seat-covers.jpg",
+            "image": "shopify://shop_images/toilet-seat-covers.jpg",
             "title": "Toilet Seat Covers & Sanitizers",
-            "url": "\/collections\/toilet-seat-covers-sanitizers"
+            "url": "/collections/toilet-seat-covers-sanitizers"
           }
         },
         "ad6c09ff-093d-4344-88c3-cba513b051d4": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/urinal-screens.jpg",
+            "image": "shopify://shop_images/urinal-screens.jpg",
             "title": "Urinal Screens & Blocks",
-            "url": "\/collections\/urinal-screens-blocks"
+            "url": "/collections/urinal-screens-blocks"
           }
         }
       },
@@ -309,57 +309,57 @@
         "6db60f0f-f586-4f19-9b74-0ad061f73e6d": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/soaps-and-detergents.jpg",
+            "image": "shopify://shop_images/soaps-and-detergents.jpg",
             "title": "Body Soaps & Detergents (Hand, Body, Dish & Laundry)",
-            "url": "\/pages\/detergent"
+            "url": "/pages/detergent"
           }
         },
         "704714bf-27ec-4be2-aa1e-210ce77c4e6f": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/deodorizers-and-absorbents-chemicals.jpg",
+            "image": "shopify://shop_images/deodorizers-and-absorbents-chemicals.jpg",
             "title": "Deodorizers & Absorbents",
-            "url": "\/pages\/absorbents"
+            "url": "/pages/absorbents"
           }
         },
         "9485b7a3-57cb-45f1-ba23-42440e1d66b7": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/disinfectants-and-sanitizers.jpg",
+            "image": "shopify://shop_images/disinfectants-and-sanitizers.jpg",
             "title": "Disinfectants & Sanitizers",
-            "url": "\/pages\/disinfectants"
+            "url": "/pages/disinfectants"
           }
         },
         "45d72935-943c-42e3-a0e6-9f47c9c4e9ff": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/electrostatic-disinfecting-sprayers.jpg",
+            "image": "shopify://shop_images/electrostatic-disinfecting-sprayers.jpg",
             "title": "Electrostatic Disinfecting & Sanitizing Sprayers",
-            "url": "\/collections\/electrostatic-disinfecting-sanitizing-sprayers"
+            "url": "/collections/electrostatic-disinfecting-sanitizing-sprayers"
           }
         },
         "41ce7834-9c76-402b-b70f-611333117224": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gloves-hand-protection.jpg",
+            "image": "shopify://shop_images/gloves-hand-protection.jpg",
             "title": "Gloves & Hand Protection",
-            "url": "\/pages\/glove-and-hand-protection"
+            "url": "/pages/glove-and-hand-protection"
           }
         },
         "67412cb0-4e04-4d0f-8739-6d33ab697049": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/signs.jpg",
+            "image": "shopify://shop_images/signs.jpg",
             "title": "Signs",
-            "url": "\/collections\/signs"
+            "url": "/collections/signs"
           }
         },
         "f5745f40-4d2f-4c97-ac9b-5df9a1f0dcd0": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hard-surface-cleaners.jpg",
+            "image": "shopify://shop_images/hard-surface-cleaners.jpg",
             "title": "Window & Hard Surface Cleaners",
-            "url": "\/pages\/hard-surface-cleaners"
+            "url": "/pages/hard-surface-cleaners"
           }
         }
       },
@@ -400,7 +400,7 @@
         "48f78e13-4e92-4137-acbb-5a88b5b4b569": {
           "type": "slide",
           "settings": {
-            "product": "febreze-air-effects-spring-and-renewal"
+            "product": "febreze-air-mist-refresh-and-energize"
           }
         },
         "c0e6c006-9911-45ae-84bc-f69125197a1d": {
@@ -442,32 +442,32 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Nyco",
-            "brand-image": "shopify:\/\/shop_images\/csd-8007-w-white-nyco-dispenser.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Nyco",
+            "brand-image": "shopify://shop_images/csd-8007-w-white-nyco-dispenser.jpg"
           }
         },
         "d69407a8-a57a-4531-ba58-57a7ed8b09f8": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Bright Solutions",
-            "brand-image": "shopify:\/\/shop_images\/bright-solutions-wave-3d-mango-urinal-screen-wds10mg-with-box.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Bright Solutions",
+            "brand-image": "shopify://shop_images/bright-solutions-wave-3d-mango-urinal-screen-wds10mg-with-box.jpg"
           }
         },
         "acb904cc-e70a-4027-b46e-a0c2ee8ac022": {
           "type": "brandlink",
           "settings": {
             "brand-title": "GOJO®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=GOJO",
-            "brand-image": "shopify:\/\/shop_images\/gojo-multi-green-hand-cleaner-case-4-jpg.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=GOJO",
+            "brand-image": "shopify://shop_images/gojo-multi-green-hand-cleaner-case-4-jpg.jpg"
           }
         },
         "bb305ca5-67db-4933-bb41-d3b3588d2e58": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Hospeco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hospeco&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Hospeco",
-            "brand-image": "shopify:\/\/shop_images\/hospeco-wall-mount-gym-equipment-and-surface-wipes-dispenser.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Hospeco&refinementList[product_type][0]=Restroom Supplies&refinementList[product_type][1]=Disinfectants %26 Sanitizers&refinementList[product_type][2]=Body Soaps %26 Detergents&q=Hospeco",
+            "brand-image": "shopify://shop_images/hospeco-wall-mount-gym-equipment-and-surface-wipes-dispenser.jpg"
           }
         }
       },
@@ -483,8 +483,7 @@
     },
     "trustpilot_review_carousel_RDtjRr": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
