@@ -600,7 +600,7 @@ Each source can be styled independently
     gap: var(--aa-spacing-half);
     grid-auto-flow: column;
     line-height: 1.25em;
-    overflow: hidden;
+    overflow: visible;
 }
 .aa-ItemContent.discontinued-item .aa-ItemPicture{
     opacity: 20%;
@@ -1077,7 +1077,8 @@ Each source can be styled independently
     width: 100%;
     height: 100%;
     border-radius: 3px;
-    overflow: hidden;
+    overflow: visible;
+    position:relative;
 }
 
 .aa-ItemPicture img {
@@ -1131,7 +1132,7 @@ Each source can be styled independently
 .aa-Source[data-autocomplete-source-id='products'] .aa-ItemContent {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    {% comment %}height: 100%;{% endcomment %}
 }
 
 .aa-Source[data-autocomplete-source-id='products'] .aa-ItemContent mark {
@@ -1182,6 +1183,7 @@ Each source can be styled independently
 
 .aa-Source[data-autocomplete-source-id='products'] .aa-ItemContentPriceCurrent {
     font-weight: bold;
+    max-width:100px;
 }
 
 .aa-Source[data-autocomplete-source-id='products'] .aa-ItemContentPriceDiscounted {
@@ -1269,19 +1271,38 @@ Each source can be styled independently
 
 {% comment %} CF updates to change grid to list {% endcomment %}
 .aa-Source[data-autocomplete-source-id="products"] .aa-Item{
-    padding:5px;
+    padding:0;
 }
 .aa-Source[data-autocomplete-source-id="products"] .aa-List{
     display:block;
 }
 .aa-Source[data-autocomplete-source-id="products"] .aa-ItemContent{
     flex-direction:row;
+    padding:1px 10px 1px 2px;
+    margin:2px 0;
 }
 .aa-ItemPicture {
     width:10%;
+    max-width:60px;
+}
+
+.aa-Source[data-autocomplete-source-id="products"] .aa-ItemContent.hotdeal img{
+    border:1px solid #FF8000;
+    border-radius: 10px;
+}
+.aa-Source[data-autocomplete-source-id="products"] .aa-ItemContent.clearance img{
+    border:1px solid #fdb913;
+    border-radius: 8px;
+}
+.aa-Source[data-autocomplete-source-id="products"] .aa-ItemContent .ac-icon{
+    padding-left:5px;
+    position: absolute;
+    top:-5px;
+    left:-7px;
 }
 .aa-Source[data-autocomplete-source-id="products"] .aa-ItemContentBody{
     flex-direction:row;
+    align-items:center;
 }
 .aa-ItemContentTitleWrapper{
     flex: 1 1 73%;
@@ -1301,6 +1322,12 @@ Each source can be styled independently
     -webkit-line-clamp: 2;
     white-space: normal;
     line-height:1.2em;
+}
+
+.aa-Source[data-autocomplete-source-id='products'] .cross-price{
+    text-decoration: line-through;
+    font-weight:normal;
+    font-size:12px;
 }
 @media screen and (max-width: 1129px) {
     .aa-PanelSections{

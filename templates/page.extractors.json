@@ -15,6 +15,7 @@
         "f99106b9-821e-475f-81ca-0cc8d5a1b428": {
           "type": "categoryhead",
           "settings": {
+            "show_on": "both",
             "cat_image": "shopify://shop_images/trusted-clean-carpet-extractor-in-use-dept-page.jpg",
             "cat_title": "Carpet Cleaning Extractors",
             "cat_text": "Carpet cleaning extractors are the workhorse of the industry. We offer many different types (self-contained, portable, spotters, rotary scrubbers, CRBs & more) & have them in stock."
@@ -22,11 +23,11 @@
         },
         "banner_awrQYF": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify://shop_images/ultimate-extractor-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/ultimate-extractor-bogo-mobile-banner.jpg",
-            "link": "/products/ultimate-heated-box-extractor",
+            "show_on": "both",
+            "banner-lg": "shopify://shop_images/tpl-12-100-ud-heat-tcp-bogo-deal-2025-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/tpl-12-100-ud-heat-tcp-bogo-deal-2025-mobile-banner.jpg",
+            "link": "/products/car-detailer-upholstery-cleaner",
             "coupon-code": ""
           }
         }
