@@ -215,18 +215,20 @@
     </figure>
       {% assign orgCounter = orgCounter | plus: 1  %}
   {% else %}
-    <figure
+    <a
       class="
         product-gallery--media
         product-gallery--image
         product-gallery--image-placeholder
       "
     >
-      {% if onboarding %}
-        {{ 'product-1' | placeholder_svg_tag: 'placeholder--image' }}
-      {% else %}
-        {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
-      {% endif %}
+        <a href="/noimagefound"/>
+          {% if onboarding %}
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder--image' }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
+          {% endif %}
+        </a>
     </figure>
       {% assign orgCounter = orgCounter | plus: 1  %}
   {% endfor %}
