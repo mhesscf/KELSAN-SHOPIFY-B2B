@@ -24,7 +24,7 @@
           "type": "banner",
           "disabled": true,
           "settings": {
-            "show_on": "both",
+            "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-memorial-day-sale-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/2025-memorial-day-sale-mobile-banner.jpg",
             "link": "/collections/memorial-day-sale",
@@ -35,7 +35,7 @@
           "type": "slide_v2",
           "disabled": true,
           "settings": {
-            "show_on": "both",
+            "show_on": "normal",
             "sotm_icon": "5",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
             "middle_image": "/cdn/shop/files/tpl-bk-17-tc-special.png?v=17333236204",
@@ -57,7 +57,7 @@
           "type": "slide_v2",
           "disabled": true,
           "settings": {
-            "show_on": "both",
+            "show_on": "normal",
             "sotm_icon": "5",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/tpl-12-100-ce-heat-tcp-special.png?v=17333262",
@@ -78,7 +78,7 @@
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
           "settings": {
-            "show_on": "both",
+            "show_on": "normal",
             "sotm_icon": "6",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/cpl-dura-20b-special.png?v=173336204",
@@ -99,7 +99,7 @@
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
           "settings": {
-            "show_on": "both",
+            "show_on": "normal",
             "sotm_icon": "6",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/ies-tk464-y2-special.png?v=173336204",
@@ -121,7 +121,7 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "show_on": "both",
+            "show_on": "normal",
             "background_image": "shopify://shop_images/flash-sale-1400x350.jpg",
             "mobile_background_image": "shopify://shop_images/flash-sale-800x427.jpg",
             "title": "Get 12% off your entire order for 2 days only!",
@@ -141,106 +141,10 @@
             "overlay_opacity": 50
           }
         },
-        "9cb64af3-41a8-4a1e-95d0-adb296a6bd75": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "show_on": "both",
-            "background_image": "shopify://shop_images/november-sotm-2024-homepage-desktop-banner-1.jpg",
-            "mobile_background_image": "shopify://shop_images/november-sotm-2024-homepage-mobile-banner-1.jpg",
-            "title": "Trusted Clean 'Dura 17' Electric Auto Floor Scrubber",
-            "text": "Electric, Efficient, Economical.Was: $1,699.99Now: $1,549.99",
-            "color": "#303e48",
-            "link": "/products/17-inch-electric-auto-scrubber",
-            "promo_link": "",
-            "text_alignment": "left",
-            "button_one_label": "Save $150.00",
-            "button_one_link": "/products/17-inch-electric-auto-scrubber",
-            "button_one_style": "secondary",
-            "button_two_label": "",
-            "button_two_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315544756",
-            "button_two_style": "secondary",
-            "show_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
-          }
-        },
-        "slide-1": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "show_on": "both",
-            "background_image": "shopify://shop_images/november-sotm-2024-homepage-desktop-banner-2.jpg",
-            "mobile_background_image": "shopify://shop_images/november-sotm-2024-homepage-mobile-banner-2.jpg",
-            "title": "Trusted Clean 'Pro-7' Self-Contained Carpet Extractor",
-            "text": "Pro Results, Priced Right!Was: $3,089.99Now: $2,749.99",
-            "color": "#303e48",
-            "link": "/products/7-gallon-professional-carpet-extractor",
-            "promo_link": "",
-            "text_alignment": "left",
-            "button_one_label": "Save $340",
-            "button_one_link": "/products/7-gallon-professional-carpet-extractor",
-            "button_one_style": "secondary",
-            "button_two_label": "",
-            "button_two_link": "/products/commercial-carpet-spot-cleaning-machine",
-            "button_two_style": "secondary",
-            "show_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 13
-          }
-        },
-        "b208e0f0-54a1-4304-9ca0-4e24e5a33de4": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "show_on": "both",
-            "background_image": "shopify://shop_images/2024-dec-sotm-extractor-1400x350.jpg",
-            "mobile_background_image": "shopify://shop_images/2024-dec-sotm-extractor-800x427.jpg",
-            "title": "Trusted Clean 'Deluxe' Non-Heated 12-Gallon Box Extracto",
-            "text": "Deluxe Powerat a Discounted Price.Was: $1,999.99Now: $1,749.99",
-            "color": "#303e48",
-            "link": "/products/non-heated-12-gallon-box-extractor",
-            "promo_link": "",
-            "text_alignment": "left",
-            "button_one_label": "Save $250!",
-            "button_one_link": "/products/non-heated-12-gallon-box-extractor",
-            "button_one_style": "secondary",
-            "button_two_label": "",
-            "button_two_link": "/products/heated-carpet-spot-cleaner",
-            "button_two_style": "primary",
-            "show_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
-          }
-        },
-        "11a75ad9-3839-4050-bb7f-7cec379b8726": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "show_on": "both",
-            "background_image": "shopify://shop_images/2024-dec-sotm-floor-buffer-1400x350.jpg",
-            "mobile_background_image": "shopify://shop_images/2024-dec-sotm-floor-buffer-800x427.jpg",
-            "title": "CleanFreak® 17&quot; Rotary Floor Buffer w/ Pad Driver",
-            "text": "Flawless Floors,<br>Festive Savings!<br>Was: $874.99<br>Now: $799.99",
-            "color": "#ffffff",
-            "link": "/products/17-inch-rotary-floor-buffer",
-            "promo_link": "",
-            "text_alignment": "left",
-            "button_one_label": "SAVE $75!",
-            "button_one_link": "/products/17-inch-rotary-floor-buffer",
-            "button_one_style": "secondary",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_two_style": "primary",
-            "show_overlay": false,
-            "overlay_color": "#000000",
-            "overlay_opacity": 50
-          }
-        },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
-            "show_on": "both",
+            "show_on": "normal",
             "banner-lg": "shopify://shop_images/tpl-12-100-ud-heat-tcp-bogo-deal-2025-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/tpl-12-100-ud-heat-tcp-bogo-deal-2025-mobile-banner.jpg",
             "link": "/products/car-detailer-upholstery-cleaner",
@@ -249,12 +153,11 @@
         },
         "banner_J8FYNy": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "show_on": "both",
-            "banner-lg": "shopify://shop_images/advantage-save-500-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/advantage-save-500-mobile-banner.jpg",
-            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "show_on": "b2b",
+            "banner-lg": "shopify://shop_images/b2b-welcome-banner-1400x350.png",
+            "banner-sm": "shopify://shop_images/b2b-welcome-banner-800x427.png",
+            "link": "/pages/about-us",
             "coupon-code": ""
           }
         }
@@ -266,10 +169,6 @@
         "slide_v2_8YK4yh",
         "slide_v2_AQhw3c",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
-        "9cb64af3-41a8-4a1e-95d0-adb296a6bd75",
-        "slide-1",
-        "b208e0f0-54a1-4304-9ca0-4e24e5a33de4",
-        "11a75ad9-3839-4050-bb7f-7cec379b8726",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
         "banner_J8FYNy"
       ],
