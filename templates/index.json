@@ -35,7 +35,7 @@
           "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "5",
+            "sotm_icon": "7",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
             "middle_image": "/cdn/shop/files/tpl-bk-17-tc-special.png?v=17333236204",
             "middle_image_alt": "Trusted Clean 17\" Commercial Grade Floor Buffer May Special",
@@ -43,11 +43,11 @@
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Commercial Clean, Competitive Price.</div>\n<h1>Trusted Clean 17\" Commercial Grade Floor Buffer</h1>\n<div>Was $974.99<br/> Now: $874.99</div>",
             "text_area_css": "",
-            "bg_link": "/products/trusted-clean-17-inch-commercial-grade-floor-buffer",
+            "bg_link": "/products/cleanfreak-dry-surface-strip-machine",
             "promo_link": "",
-            "button_one_label": "Save $100",
-            "button_one_link": "/products/trusted-clean-17-inch-commercial-grade-floor-buffer",
-            "button_two_label": "Battery",
+            "button_one_label": "Save $150",
+            "button_one_link": "/products/cleanfreak-dry-surface-strip-machine",
+            "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
           }
