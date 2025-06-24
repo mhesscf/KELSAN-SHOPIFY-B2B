@@ -32,6 +32,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
@@ -53,6 +54,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
