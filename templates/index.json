@@ -155,7 +155,7 @@
           "settings": {
             "show_on": "b2b",
             "banner-lg": "shopify://shop_images/b2b-welcome-banner-1400x350-2.jpg",
-            "banner-sm": "shopify://shop_images/b2b-welcome-banner-800x427.jpg",
+            "banner-sm": "shopify://shop_images/b2b-welcome-banner-800x427-2.jpg",
             "link": "/pages/about-us",
             "coupon-code": ""
           }
