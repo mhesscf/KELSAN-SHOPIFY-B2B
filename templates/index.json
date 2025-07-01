@@ -140,6 +140,16 @@
             "overlay_opacity": 50
           }
         },
+        "banner_KcaJqE": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-national-carpet-cleaning-month-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-national-carpet-cleaning-month-mobile-banner.jpg",
+            "link": "/collections/box-extractors?refinementList[tags][0]=Free Gift Sale",
+            "coupon-code": ""
+          }
+        },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
           "settings": {
@@ -168,6 +178,7 @@
         "slide_v2_8YK4yh",
         "slide_v2_AQhw3c",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
+        "banner_KcaJqE",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
         "banner_J8FYNy"
       ],
