@@ -24,9 +24,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-summer-blowout-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-summer-blowout-mobile-banner.jpg",
-            "link": "/collections/clearance",
+            "banner-lg": "shopify://shop_images/2025-made-in-usa-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-made-in-usa-sale-mobile-banner.jpg",
+            "link": "/collections/made-in-the-usa",
             "coupon-code": ""
           }
         },
