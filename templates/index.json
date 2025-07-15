@@ -154,9 +154,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/tpl-12-100-ud-heat-tcp-bogo-deal-2025-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/tpl-12-100-ud-heat-tcp-bogo-deal-2025-mobile-banner.jpg",
-            "link": "/products/car-detailer-upholstery-cleaner",
+            "banner-lg": "shopify://shop_images/as430c-scrubber-bogo-deal-desktop-banner.png",
+            "banner-sm": "shopify://shop_images/as430c-scrubber-bogo-deal-mobile-banner.jpg",
+            "link": "/products/viper-as430c-17-inch-electric-auto-scrubber",
             "coupon-code": ""
           }
         },
