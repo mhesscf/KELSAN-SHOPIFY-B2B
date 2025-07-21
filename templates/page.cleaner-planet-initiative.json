@@ -56,7 +56,6 @@
     },
     "dynamic_custom_liquid_mWRh9N": {
       "type": "dynamic-custom-liquid",
-      "disabled": true,
       "name": "t:sections.custom_liquid.presets.custom_liquid.name",
       "settings": {
         "custom_liquid": "{% \nrender 'bottle-savings-chart'                                 %}"
