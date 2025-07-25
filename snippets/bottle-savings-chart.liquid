@@ -1,0 +1,515 @@
+{% comment %}overall styles{% endcomment %}
+<style>
+    .cleaner-planet-initiative-graphs{
+        border-bottom:1px solid white;
+        margin: 0 auto 10px;
+        padding: 15px 30px 30px 30px;
+        background-color: #303e48;
+        color: white;
+        border-radius: 30px;
+    }
+</style>
+
+{% assign current_year = 'now' | date: "%Y" %}
+{% assign lowest_year = current_year %}
+
+{% assign yearlyGoal = 175000 %}
+{% assign overallGoal = 1000000 %}
+{% assign graphstep = 100 %}
+{% comment %}total overall{% endcomment %}
+{% assign goal2tracking = 0 %}
+
+{% assign current_year = 'now' | date: "%Y" |  minus: 0 %}
+{% assign minus1year = 'now' | date: "%Y" |  minus: 1 %}
+{% assign minus2year = 'now' | date: "%Y" |  minus: 2 %}
+{% assign minus3year = 'now' | date: "%Y" |  minus: 3 %}
+{% assign minus4year = 'now' | date: "%Y" |  minus: 4 %}
+
+{% assign current_yeartotal = 0 %}
+{% assign minus1yeartotal = 0 %}
+{% assign minus2yeartotal = 0 %}
+{% assign minus3yeartotal = 0 %}
+{% assign minus4yeartotal = 0 %}
+{% assign fiveyearmax = 0 %}
+
+
+
+
+{% paginate shop.metaobjects.bottles_saved_per_year.values by 1500 %}
+    {%- assign bottleperObj = shop.metaobjects.bottles_saved_per_year.values -%}
+    {%- assign bottleperjSorted = bottleperObj | sort:"datetextforsorting" -%}
+{% endpaginate %}
+
+{%- for bottleper in bottleperjSorted -%}
+    {%- if  bottleper.year < lowest_year-%}
+        {% assign lowest_year = bottleper.year | plus: 0 %}
+    {%- endif -%}
+    {%- comment -%}
+        Group: {{ bottleper.group }} <br/>
+        Year: {{ bottleper.year }}<br/>
+        Month: {{ bottleper.month }}<br/>
+        Data: {{ bottleper.data }}<br/>
+        DATE: {{ bottleper.date_field }}
+    {%- endcomment -%}
+{%- endfor -%}
+
+<style>
+    .cleaner-planet-initiative-graphs{ display:flex; }
+    .cleaner-planet-initiative-graphs .center-col{flex-basis:75%}
+    .cleaner-planet-initiative-graphs .right-col{flex-basis:25%; padding:0 15px;}
+</style>
+<div class="cleaner-planet-initiative-graphs">
+    <div class="graph-page-col center-col">
+        {% assign goal_year = 175000 %}
+        {% assign overall_goal = 1000000 %}
+
+        <style>
+            .goaltable-heading{font-size:18px; font-weight:bold; padding:5px 0;}
+            .goaltable-filter{text-align:right; padding:5px 0; }
+            #goaltable{border-spacing:0; width:100%}
+            #goaltable th{font-weight: bold;  text-align:center;}
+            #goaltable td{border-top:1px solid #ccc; text-align:center; padding:4px 8px;}
+            #goaltable tr:nth-child(even) {background-color: #F9F9F9; color:black}
+        </style>
+
+        <div class="goaltable-heading">Bottles Saved in {{ current_year }}</div>
+        <div class="goaltable-filter">
+            <select id="year-drop" onchange="runFilter();">
+                <option selected>View Year</option>
+
+                {% assign year_select = current_year | plus: 0 %}
+
+                {% for i in (1..40) %}
+
+                    {% if year_select < lowest_year %}
+                        {%- break -%}
+                    {% endif %}
+                    <option>{{ year_select }}</option>
+                    {% assign year_select = year_select | minus: 1 %}
+                {% endfor %}
+
+            </select>
+        </div>
+
+
+        <table id="goaltable" class="table table-striped">
+            <thead>
+            <tr style="border-top:1px solid #ccc;">
+                <th style="font-weight: bold;  text-align:center;">Year</th>
+                <th style="font-weight: bold;  text-align:center;">Month</th>
+                <th style="font-weight: bold;  text-align:center;">Bottles Saved</th>
+                <th style="font-weight: bold;  text-align:center;">Total Bottles Saved (YTD)</th>
+            </tr>
+            </thead>
+            <tbody style="">
+
+            {%- assign yeartotal = 0 -%}
+            {%- assign yeartrack = 0000 -%}
+            {%- for bottleper in bottleperjSorted -%}
+                {%- assign thistotal = bottleper.data | strip | strip_newlines | plus: 0 -%}
+                {%- if  bottleper.year == yeartrack -%}
+                    {%- assign yeartotal = yeartotal | plus: thistotal -%}
+                {%- else -%}
+                    {% comment %}reset{% endcomment %}
+                    {%- assign yeartotal = thistotal -%}
+                    {%- assign yeartrack = bottleper.year -%}
+                {%- endif -%}
+
+
+                {% comment %}total for later{% endcomment %}
+                {% assign bottleperyearint = bottleper.year | plus: 0 %}
+
+                {%- if bottleperyearint > minus4year  -%}
+                    {%- if fiveyearmax < yeartotal -%}
+                        {% assign fiveyearmax = yeartotal | plus: 0 %}
+                    {%- endif -%}
+                {%- endif -%}
+
+                {% comment %}last five years totals{% endcomment %}
+                {%- if bottleperyearint == current_year -%}
+                    {% assign current_yeartotal = yeartotal %}
+                {%- elsif bottleperyearint == minus1year -%}
+                    {% assign minus1yeartotal = yeartotal %}
+                {%- elsif bottleperyearint == minus2year -%}
+                    {% assign minus2yeartotal = yeartotal %}
+                {%- elsif bottleperyearint == minus3year -%}
+                    {% assign minus3yeartotal = yeartotal %}
+                {%- elsif bottleperyearint == minus4year -%}
+                    {% assign minus4yeartotal = yeartotal %}
+                {%- endif -%}
+
+                {% comment %}all time total{% endcomment %}
+                {% assign goal2tracking = goal2tracking | plus: thistotal %}
+
+                <tr data-subdata="{{ bottleper.year }}" style="{% if bottleperyearint != current_year %}display:none;{% endif %}" ><td>{{ bottleper.year }}</td><td>{{ bottleper.month }}</td><td class="add-commas">{{ thistotal | round }}</td><td class="add-commas">{{ yeartotal | round }}</td></tr>
+
+
+
+            {%- endfor -%}
+
+
+
+            </tbody>
+        </table>
+
+        <div class="year-graph-heading">Last 5 Year Total Comparison</div>
+
+        {% comment %}//Global variables for year graphs{% endcomment %}
+        {% assign stepHeight = 2 %}
+        {% comment %}for 3 row min/max key;{% endcomment %}
+        {% assign keyHeight = stepHeight | times: graphstep | divided_by: 3 %}
+
+
+        <style>
+            .year-graph-heading{font-size:18px; font-weight:bold; padding:25px 5px 0 5px; border-bottom:1px solid #ccc;}
+
+            .x-year-col{float: left; clear:none; text-align:center; padding-top:10px;}
+            .year-key-side td{vertical-align: top;  font-size: 14px; height:{{ keyHeight }}px; width:75px; text-align:right; padding-right:5px;}
+            .year-key-side td.mid{vertical-align: middle;}
+            .year-key-side td.min{vertical-align: bottom;}
+
+            .year-graph{border:1px solid #000; margin:auto; border-spacing:0;}
+            .year-graph td{height:{{ stepHeight }}px; width:120px;}
+            .year-key, .year-value{padding-right:5px;}
+            .year-col-key,
+            .year-col-key td{font-weight:bold; text-align:right;}
+            .year-key-side td{height:{{ keyHeight }}px; width:75px;}
+            .year-graph td.filled{background-color:#54bddd;}
+
+            @media only screen and (max-width:1199px) {
+                .year-graph td{width:80px;}
+            }
+            @media only screen and (max-width:991px) {
+                .year-key-side td{width:50px; font-size:12px;}
+                .year-graph td{width:60px; font-size:12px;}
+            }
+            @media only screen and (max-width:767px) {
+                .year-key-side{width:100%}
+                .year-key-side td{width:auto;}
+                .year-graph{width:100%}
+                .year-graph td{width:auto;}
+                .x-year-col{width:16%;}
+            }
+
+        </style>
+
+
+                {% comment %}Goal = 25% of larges of the past years (not used as goal any more, just the top of graph){% endcomment %}
+        {% assign thisgoal = 0 %}
+        {% comment %}
+                foreach ($yearTotalArray as $key => $value){
+                    if($goal < $value & $key != date("Y")) {
+                    $goal = $value;
+                    }
+                }
+        {% endcomment %}
+        {% assign thisgoal = fiveyearmax | times: 1.25 %}
+
+        <div class="x-year-col year-col-key">
+            <table class="year-key-side">
+                <tr><td class="max add-commas">{{ thisgoal | round }}</td></tr>
+                <tr><td class="mid add-commas">{{ thisgoal | round }}</td></tr>
+                <tr><td class="min">0</td></tr>
+            </table>
+            <div class="year-key">Year:</div>
+            <div class="year-value">Totals:</div>
+        </div>
+
+
+
+
+        {% assign percentToGoFilled = minus4yeartotal | divided_by: thisgoal | times: graphstep %}
+        {% assign percentToGoFilled = 100 | minus: percentToGoFilled %}
+        {% assign graphCounter = 0 %}
+        <div class="x-year-col year-col-{{ minus4year }}">
+            <table class="year-graph">
+                {% for i in (1..10000) %}
+                    <tr><td class="{% if percentToGoFilled < graphCounter %}filled{% endif %}" ></td></tr>
+                    {% if graphCounter > graphstep %}
+                        {%- break -%}
+                    {% endif %}
+                    {% assign graphCounter = graphCounter | plus: 1 %}
+                {% endfor %}
+            </table>
+            <div class="year-key">{{ minus4year }}</div>
+            <div class="year-value add-commas">{{ minus4yeartotal | round }}</div>
+        </div>
+
+        {% assign percentToGoFilled = minus3yeartotal | divided_by: thisgoal | times: graphstep %}
+        {% assign percentToGoFilled = 100 | minus: percentToGoFilled %}
+        {% assign graphCounter = 0 %}
+        <div class="x-year-col year-col-{{ minus3year }}">
+            <table class="year-graph">
+                {% for i in (1..10000) %}
+                    <tr><td class="{% if percentToGoFilled < graphCounter %}filled{% endif %}" ></td></tr>
+                    {% if graphCounter > graphstep %}
+                        {%- break -%}
+                    {% endif %}
+                    {% assign graphCounter = graphCounter | plus: 1 %}
+                {% endfor %}
+            </table>
+            <div class="year-key">{{ minus3year }}</div>
+            <div class="year-value add-commas">{{ minus3yeartotal | round }}</div>
+        </div>
+
+        {% assign percentToGoFilled = minus2yeartotal | divided_by: thisgoal | times: graphstep %}
+        {% assign percentToGoFilled = 100 | minus: percentToGoFilled %}
+        {% assign graphCounter = 0 %}
+        <div class="x-year-col year-col-{{ minus1year }}">
+            <table class="year-graph">
+                {% for i in (1..10000) %}
+                    <tr><td class="{% if percentToGoFilled < graphCounter %}filled{% endif %}" ></td></tr>
+                    {% if graphCounter > graphstep %}
+                        {%- break -%}
+                    {% endif %}
+                    {% assign graphCounter = graphCounter | plus: 1 %}
+                {% endfor %}
+            </table>
+            <div class="year-key">{{ minus2year }}</div>
+            <div class="year-value add-commas">{{ minus2yeartotal | round }}</div>
+        </div>
+
+
+        {% assign percentToGoFilled = minus1yeartotal | divided_by: thisgoal | times: graphstep %}
+        {% assign percentToGoFilled = 100 | minus: percentToGoFilled %}
+        {% assign graphCounter = 0 %}
+        <div class="x-year-col year-col-{{ minus1year }}">
+            <table class="year-graph">
+                {% for i in (1..10000) %}
+                    <tr><td class="{% if percentToGoFilled < graphCounter %}filled{% endif %}" ></td></tr>
+                    {% if graphCounter > graphstep %}
+                        {%- break -%}
+                    {% endif %}
+                    {% assign graphCounter = graphCounter | plus: 1 %}
+                {% endfor %}
+            </table>
+            <div class="year-key">{{ minus1year }}</div>
+            <div class="year-value add-commas">{{ minus1yeartotal | round }}</div>
+        </div>
+
+        {% assign percentToGoFilled = current_yeartotal | divided_by: thisgoal | times: graphstep %}
+        {% assign percentToGoFilled = 100 | minus: percentToGoFilled %}
+        {% assign graphCounter = 0 %}
+        <div class="x-year-col year-col-{{ current_year }}">
+            <table class="year-graph">
+                {% for i in (1..10000) %}
+                    <tr><td class="{% if percentToGoFilled < graphCounter %}filled{% endif %}" ></td></tr>
+                    {% if graphCounter > graphstep %}
+                        {%- break -%}
+                    {% endif %}
+                    {% assign graphCounter = graphCounter | plus: 1 %}
+                {% endfor %}
+            </table>
+            <div class="year-key">{{ current_year }}</div>
+            <div class="year-value add-commas">{{ current_yeartotal | round }}</div>
+        </div>
+
+
+        <div class="clearer"></div>
+
+        {% comment %}-------------bottles saved in total -------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
+
+        <style>
+            .total-main-graph-container{padding-top:15px;}
+            .total-main-graph-container .totals{padding:10px 0;}
+            .total-main-graph{border:2px solid #c3c3c3; margin:auto; width:100%; height:24px}
+            .total-main-graph .steps{height:20px; min-width:1px; width:1%; float:left;}
+            .total-main-graph .steps.filled{background-color:#54bddd;}
+            .total-main-graph .steps.step-25,
+            .total-main-graph .steps.step-50,
+            .total-main-graph .steps.step-75{border-left:1px solid #c3c3c3;}
+            .total-graph-key{width:100%}
+            .total-graph-key .start{float:left;}
+            .total-graph-key .end{float:right;}
+            .total-graph-key .midtext{text-align:center; clear:both; width:100%; top:-18px; position:relative}
+            .total-graph-key .midtext span{color:#54bddd; font-weight:bold;}
+        </style>
+
+        {% comment %}reset counter{% endcomment %}
+        {% assign graphCounter = 0 %}
+        {% comment %}Old way with total goal{% endcomment %}
+        {% assign percentFilledOverall = goal2tracking | divided_by: overallGoal | times: graphstep %}
+        {% assign percentToGoOverall = graphstep | minus: percentFilledOverall %}
+
+        {% assign graphCounter = 0 %}
+
+        <div class="total-main-graph-container">
+            <div class="year-graph-heading">Bottles Saved in Total</div>
+            <div class="totals">
+                <div class="goal"><strong>Goal:</strong> <span class="add-commas">{{ overallGoal }}</span> Bottles Saved</div>
+                <div class="current"><strong>Current Total:</strong> <span class="add-commas">{{ goal2tracking | round }}</span>  Bottles Saved</div>
+            </div>
+            <div class="total-graph total-graph-main">
+               <div class="total-main-graph">
+                   {% for i in (1..1000) %}
+                       <div class="steps step-{{ graphCounter }} {% if graphCounter < percentFilledOverall %}filled"{% endif %} ></div>
+                       {% if graphCounter > graphstep %}
+                           {%- break -%}
+                       {% endif %}
+                       {% assign graphCounter = graphCounter | plus: 1 %}
+
+                    {% endfor %}
+                   <div class="clearer"></div>
+               </div>
+            </div>
+            <div class="total-graph-key">
+                <div class="start">0</div><div class="end add-commas">{{ overallGoal }}</div>
+                <div class="midtext">Total: <span class="add-commas">{{ goal2tracking | round }}</span></div>
+            </div>
+        </div>
+        <div class="clearer"></div>
+    </div>
+    {% comment %}end of main page{% endcomment %}
+    {% comment %}start of right column with year goal graph{% endcomment %}
+    <div class="graph-page-col right-col">
+        {% comment %}<?php /*------------- Goal Graph -----------------*/ ?>{% endcomment %}
+        <style>
+            .side-graph-title{text-align:center; font-weight:bold; border-bottom:1px solid #ccc; margin-bottom:10px;}
+            .side-graph-title span{font-size:20px;}
+            .side-graph.graph-top{font-size:12px; line-height:16px; margin-bottom:5px;}
+            .side-graph.graph-top span{font-size:18px; font-weight:bold;}
+            .main-graph{border-spacing:0; border-left:5px solid #c3c3c3; border-right:6px solid #c3c3c3; margin:auto;}
+            .main-graph td{height:3px; width:22px;}
+            .main-graph td.filled{background-color:#54bddd;}
+            /*.main-graph td.step-99,*/
+            /*.main-graph td.step-25,*/
+            /*.main-graph td.step-50,*/
+            /*.main-graph td.step-75{border-top:1px solid #c3c3c3;}*/
+            .side-graph{position: relative; width:100px; text-align:center; margin:auto;}
+            .graph-bottom{font-weight:bold; color:#fff; font-size:14px; padding-top: 12px; background:#fff url(//www.cleanfreak.com/cf/images/cms/goal-tracker.jpg) no-repeat -1px -4px; height:91px; }
+            .graph-bottom .smalltext{font-size:12px;}
+
+
+            .thermometer{
+                border-collapse: collapse;
+                border-left:1px  solid white;
+                border-right:1px  solid white;
+                position: relative;
+            }
+            .thermometer td{
+                padding:2px 20px;
+                position:relative;
+            }
+            .thermometer td.sliver{
+                padding:2px 5px;
+            }
+            .thermometer tr:nth-child(25n + 1) td.sliver,
+            .thermometer tr:nth-child(25n + 1) .scale-filled td.sliver{
+                border-top:2px solid white;
+            }
+            .thermometer .scale-filled td{
+                background-color:#54bddd;
+            }
+            .thermometer .currentsavings{
+                background-image: url('{{ 'swish-sf.png' | file_img_url }}');
+                background-size:61px 5px;
+            }
+            .thermometer .currentsavings td{
+                background-color:unset !important;
+            }
+
+            .thermometer .filled-top td .scale-saved{
+                position: absolute;
+                right:-58px;
+                top:-7px;
+                width:50px
+            }
+            .thermometer .filled-top td .scale-saved.top{
+                top:-20px;
+            }
+            .thermometer-bottom{
+                background-color:#54bddd;
+                border-radius: 0 0 90px 90px;
+                border:1px solid white;
+                border-top:0px solid white;
+                height:34px;
+                width:63px;
+                margin:auto;
+            }
+
+            .bubbles{
+                position: absolute;
+                bottom:45px;
+                left:25px;
+            }
+            .bubbles div{
+                background-color:white;
+                width:10px;
+                border-radius: 15px;
+                height:15px;
+                margin-bottom:15px;
+            }
+            .bubbles div.bubble-big{
+                height:50px;
+            }
+
+        </style>
+        {% assign graphCounter = 0 %}
+        {% assign toptrigger = 1 %}
+        {% assign percentFilled = current_yeartotal | divided_by: yearlyGoal | times: graphstep %}
+        {% assign percentToGo = graphstep | minus: percentFilled %}
+
+        <div class="side-graph-title">Bottles Saved This Year</div>
+
+        <div class="side-graph graph-top">Goal:<br/><span>{{ yearlyGoal }}</span></div>
+        <div class="side-graph graph-main">
+            <table class="main-graph thermometer">
+
+                {% for i in (1..10000) %}
+
+                    <tr class="{% if percentToGo < graphCounter and  toptrigger == 1 %}currentsavings{% endif %}" ><td class="step-{{ graphCounter }} {% if percentToGo < graphCounter %}filled{% endif %}" ></td><td class="step-{{ graphCounter }} {% if percentToGo < graphCounter %}filled{% endif %} sliver" ></td></tr>
+                    {% if percentToGo < graphCounter and toptrigger == 1 %}
+                        {% assign toptrigger = 0 %}
+                    {% endif %}
+
+                    {% if graphCounter > graphstep %}
+                        {%- break -%}
+                    {% endif %}
+                    {% assign graphCounter = graphCounter | plus: 1 %}
+                {% endfor %}
+
+            </table>
+            <div class="thermometer-bottom"></div>
+            <div class="bubbles"><div class="bubble-big"></div><div class="bubble-small"></div></div>
+        </div>
+        {% comment %}<div class="side-graph graph-bottom">{% endcomment %}
+        {% comment %}{% endcomment %}
+            {% comment %}<?php //echo number_format($goal2tracking); ?>{% endcomment %}
+            {% comment %}<?php echo number_format($yearTotal); ?>{% endcomment %}
+            {% comment %}<div class="smalltext">Bottles<br/>Saved</div>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+        {% comment %}<?php /*------------- End of right col -----------------*/ ?>{% endcomment %}
+    </div>
+
+
+
+    <script>
+        function runFilter() {
+            var selectedYear = jQuery("#year-drop").find('option:selected').text();
+            jQuery('#goaltable tbody tr').hide();
+            jQuery("#goaltable tbody tr[data-subdata='"+selectedYear+"']").show();
+            jQuery('.goaltable-heading').html('Bottles Saved in '+selectedYear);
+        }
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to format numbers with commas
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            // Select all elements with the class `product-count`
+            var productCountElements = document.querySelectorAll('.add-commas');
+
+            // Loop through all the elements and format their text content
+            productCountElements.forEach(function(element) {
+                var count = element.textContent.trim();
+                element.textContent = numberWithCommas(count);
+            });
+        });
+
+
+
+    </script>
+</div>

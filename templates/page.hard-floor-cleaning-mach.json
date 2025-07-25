@@ -23,12 +23,11 @@
         },
         "banner_GAtNWr": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "both",
-            "banner-lg": "shopify://shop_images/ies-18e-cf-may-2025-bogo-deal-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/ies-18e-cf-may-2025-bogo-deal-mobile-banner.jpg",
-            "link": "/products/18-inch-reliable-electric-auto-scrubber",
+            "banner-lg": "shopify://shop_images/as430c-scrubber-bogo-deal-desktop-banner.png",
+            "banner-sm": "shopify://shop_images/as430c-scrubber-bogo-deal-mobile-banner.jpg",
+            "link": "/products/viper-as430c-17-inch-electric-auto-scrubber",
             "coupon-code": ""
           }
         },

@@ -108,16 +108,48 @@
                         {%- assign showarea = true -%}
                         {%- assign showtsvids = true -%}
                         {%- comment -%}youtube video{%- endcomment -%}
-                        <div class="sheet-row sheet-name orgfile">
-                            <a target="_blank" href="https://www.youtube.com/watch?v={{ thisdoc.video_youtube_id }}"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</a>
+                        {% comment %}
+                            <div class="sheet-row sheet-name orgfile">
+                                <a target="_blank" href="https://www.youtube.com/watch?v={{ thisdoc.video_youtube_id }}"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</a>
+                            </div>
+                        {% endcomment %}
+                        <div class="sheet-row sheet-name orgfile docpop" >
+                            <div class="fake-link"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</div>
+
+                            <div class="docpopdata" style="display:none">
+                                <h2>Videos</h2>
+                                <div style="text-align:center"><a target="_blank" href="https://www.youtube.com/watch?v={{ thisdoc.video_youtube_id }}">{{ thisdoc.title }}</a></div>
+                                <div class="video-contain">
+                                <iframe src="https://www.youtube.com/embed/{{ thisdoc.video_youtube_id }}?loop=1&modestbranding=1" frameborder="0" title="{{ thisdoc.title }}"></iframe>
+                                </div>
+                            </div>
                         </div>
                     {%- elsif thisdoc.videos_local  -%}
                         {%- assign showarea = true -%}
                         {%- assign showtsvids = true -%}
                         {%- comment -%}local video{%- endcomment -%}
+                        {% comment %}
                         <div class="sheet-row sheet-name orgfile">
                             <a target="_blank" href="{{ thisdoc.videos_local | file_url }}"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</a>
                         </div>
+                        {% endcomment %}
+
+                        <div class="sheet-row sheet-name orgfile docpop" >
+                            <div class="fake-link"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</div>
+
+                            <div class="docpopdata" style="display:none">
+                                <h2>Videos</h2>
+                                <div style="text-align:center"> <a target="_blank" href="{{ thisdoc.videos_local | file_url }}"><i class="fa-solid fa-circle-play"></i> {{ thisdoc.title }}</a></div>
+                                <div class="video-contain">
+                                    <video controls="controls" style="width: 100%; height: auto;">
+                                        <source src="{{ thisdoc.videos_local | file_url }}" type="video/mp4" />
+                                        Your browser does not support our video.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+
                     {%- endif -%}
                 {%- endif -%}
             {%- endif -%}
@@ -136,7 +168,41 @@
 
             {% if showtsvids == true %}
                 .product-specs-info--section .ts-vids{display:block !important;}
+                .popup-container .video-contain{
+                    text-align:center;
+                }
+
+                .popup-container .video-contain video{
+                    width: 100%;
+                }
+                .popup-container .video-contain iframe {
+                    width: 100%;
+                    min-height: 250px;
+                }
+                @media screen and (min-width:720px) {
+                    .popup-container .video-contain iframe {
+                        min-height: 450px;
+                        width: 100%
+                    }
+                }
             {% endif %}
         </style>
+
+
+
+        <script>
+
+            $('.sheet-row.docpop').on('click', function() {
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                var newhtml = $(this).find('.docpopdata').html();
+                $('.popup-container .content').html(newhtml);
+                $('.popup-container').addClass('widepop');
+            });
+
+
+
+
+        </script>
     {%- endif -%}
 
