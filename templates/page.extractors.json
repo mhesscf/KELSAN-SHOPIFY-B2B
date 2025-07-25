@@ -12,6 +12,16 @@
     "29f88aed-5198-4ab8-956f-af2a43a1021d": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "banner_fqqLW6": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-national-carpet-cleaning-month-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-national-carpet-cleaning-month-mobile-banner.jpg",
+            "link": "/collections/box-extractors?refinementList[tags][0]=Free Gift Sale",
+            "coupon-code": ""
+          }
+        },
         "f99106b9-821e-475f-81ca-0cc8d5a1b428": {
           "type": "categoryhead",
           "settings": {
@@ -23,6 +33,7 @@
         },
         "banner_awrQYF": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "both",
             "banner-lg": "shopify://shop_images/tpl-12-100-ud-heat-tcp-bogo-deal-2025-desktop-banner.jpg",
@@ -33,6 +44,7 @@
         }
       },
       "block_order": [
+        "banner_fqqLW6",
         "f99106b9-821e-475f-81ca-0cc8d5a1b428",
         "banner_awrQYF"
       ],

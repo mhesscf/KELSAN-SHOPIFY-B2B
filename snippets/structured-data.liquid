@@ -153,6 +153,13 @@
     "@type": "Product",
     "name": {{ product_name | strip_newlines | json }},
     "image": {{ product_image | img_url: '1024x1024' | prepend: 'https:' | json }},
+    {%- if product.metafields.reviews.rating_count -%}
+       "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "{{ product.metafields.reviews.rating.value }}",
+          "reviewCount": "{{ product.metafields.reviews.rating_count }}"
+        },
+    {%- endif -%}
     {%- if product.description != blank -%}
       "description": {{ product.description | json }},
     {%- endif -%}
