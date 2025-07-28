@@ -13,8 +13,8 @@
 {% assign current_year = 'now' | date: "%Y" %}
 {% assign lowest_year = current_year %}
 
-{% assign yearlyGoal = 175000 %}
-{% assign overallGoal = 1000000 %}
+{% assign yearlyGoal = 200000 %}
+{% assign overallGoal = 2000000 %}
 {% assign graphstep = 100 %}
 {% comment %}total overall{% endcomment %}
 {% assign goal2tracking = 0 %}
@@ -451,7 +451,7 @@
 
         <div class="side-graph-title">Bottles Saved This Year</div>
 
-        <div class="side-graph graph-top">Goal:<br/><span>{{ yearlyGoal }}</span></div>
+        <div class="side-graph graph-top">Goal:<br/><span class="add-commas">{{ yearlyGoal }}</span></div>
         <div class="side-graph graph-main">
             <table class="main-graph thermometer">
 
