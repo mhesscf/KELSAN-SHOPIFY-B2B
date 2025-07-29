@@ -33,6 +33,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
@@ -54,6 +55,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
@@ -75,21 +77,20 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "6",
+            "sotm_icon": "8",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/cpl-dura-20b-special.png?v=173336204",
-            "middle_image_alt": "Trusted Clean 'Dura 20' Automatic Floor Scrubber w/ Pad Driver - 10.5 Gallons",
+            "middle_image": "/cdn/shop/files/wet-cf4240hv-2-special-1.png?v=173336204",
+            "middle_image_alt": "CleanFreak® 4.0 GPM Pressure Washer w/ Honda GX390 Engine (Gas) - 4,200 PSI",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Dura-able, Dependable & Affordable.</div>\n<h1>Trusted Clean 'Dura 20' Automatic Floor Scrubber</h1>\n<div>Was: $4,179.99<br/>Now: $3,749.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:34px;\n}\n\n@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:34px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 0px auto;\n\t}\n}",
-            "bg_link": "/products/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "text_area_html": "<div class=\"top-text\">Premium Power, Practical Price.</div>\n<h1>CleanFreak® 4.0 GPM Pressure Washer w/ Honda GX390 Engine (Gas)</h1>\n<div>Was: $1,349.99<br/>Now: $1,499.99</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:0px;\n}\n\n@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:34px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 0px auto;\n\t}\n}",
+            "bg_link": "/products/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer",
             "promo_link": "",
-            "button_one_label": "Save $430",
-            "button_one_link": "/products/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "button_one_label": "Save $150",
+            "button_one_link": "/products/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -97,10 +98,9 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "6",
+            "sotm_icon": "8",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/ies-tk464-y2-special.png?v=173336204",
             "middle_image_alt": "CleanFreak® 'EasySweep' Carpet & Floor Vacuum Sweeper",
