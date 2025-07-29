@@ -8,6 +8,7 @@
         color: white;
         border-radius: 30px;
     }
+
 </style>
 
 {% assign current_year = 'now' | date: "%Y" %}
@@ -57,6 +58,17 @@
     .cleaner-planet-initiative-graphs{ display:flex; }
     .cleaner-planet-initiative-graphs .center-col{flex-basis:75%}
     .cleaner-planet-initiative-graphs .right-col{flex-basis:25%; padding:0 15px;}
+
+    @media only screen and (max-width:1199px) {
+        .cleaner-planet-initiative-graphs .center-col{flex-basis:82%}
+        .cleaner-planet-initiative-graphs .right-col{flex-basis:18%; padding:0 10px;}
+    }
+
+    @media only screen and (max-width:859px) {
+        .cleaner-planet-initiative-graphs{ display:block; overflow: scroll;}
+        .cleaner-planet-initiative-graphs .center-col,
+        .cleaner-planet-initiative-graphs .right-col{min-width:420px}
+    }
 </style>
 <div class="cleaner-planet-initiative-graphs">
     <div class="graph-page-col center-col">
@@ -70,6 +82,10 @@
             #goaltable th{font-weight: bold;  text-align:center;}
             #goaltable td{border-top:1px solid #ccc; text-align:center; padding:4px 8px;}
             #goaltable tr:nth-child(even) {background-color: #F9F9F9; color:black}
+
+            @media only screen and (max-width:1199px) {
+                #goaltable{font-size:12px;}
+            }
         </style>
 
         <div class="goaltable-heading">Bottles Saved in {{ current_year }}</div>
@@ -163,13 +179,13 @@
         <style>
             .year-graph-heading{font-size:18px; font-weight:bold; padding:25px 5px 0 5px; border-bottom:1px solid #ccc;}
 
-            .x-year-col{float: left; clear:none; text-align:center; padding-top:10px;}
+            .x-year-col{float: left; clear:none; text-align:center; width:15%; padding-top:10px;}
             .year-key-side td{vertical-align: top;  font-size: 14px; height:{{ keyHeight }}px; width:75px; text-align:right; padding-right:5px;}
             .year-key-side td.mid{vertical-align: middle;}
             .year-key-side td.min{vertical-align: bottom;}
 
-            .year-graph{border:1px solid #000; margin:auto; border-spacing:0;}
-            .year-graph td{height:{{ stepHeight }}px; width:120px;}
+            .year-graph{border:1px solid #000; margin:auto; width:100%; border-spacing:0;}
+            .year-graph td{height:{{ stepHeight }}px;}
             .year-key, .year-value{padding-right:5px;}
             .year-col-key,
             .year-col-key td{font-weight:bold; text-align:right;}
@@ -177,7 +193,10 @@
             .year-graph td.filled{background-color:#54bddd;}
 
             @media only screen and (max-width:1199px) {
-                .year-graph td{width:80px;}
+
+                .year-graph-heading{font-size:14px}
+                .year-key, .year-value{font-size:12px}
+
             }
             @media only screen and (max-width:991px) {
                 .year-key-side td{width:50px; font-size:12px;}
@@ -323,6 +342,11 @@
             .total-graph-key .end{float:right;}
             .total-graph-key .midtext{text-align:center; clear:both; width:100%; top:-18px; position:relative}
             .total-graph-key .midtext span{color:#54bddd; font-weight:bold;}
+
+            @media only screen and (max-width:1199px) {
+                .total-graph-key,
+                .total-main-graph-container .totals{font-size:12px;}
+            }
         </style>
 
         {% comment %}reset counter{% endcomment %}
@@ -442,7 +466,11 @@
             .bubbles div.bubble-big{
                 height:50px;
             }
-
+            @media only screen and (max-width:1199px) {
+                .side-graph-title{
+                    font-size:14px;
+                }
+            }
         </style>
         {% assign graphCounter = 0 %}
         {% assign toptrigger = 1 %}
