@@ -747,7 +747,7 @@ jQuery(document).ready(function($){
                 infinite: false,
                 lazyLoad: 'ondemand',
                 slidesToShow: 5,
-                slidesToScroll: 3,
+                slidesToScroll: 4,
                 appendArrows: $(sliderArrows),
                 prevArrow: '<button class="slide-arrow prev-arrow"><div class="visually-hidden">previous slide</div><i class="fa-regular fa-arrow-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><div class="visually-hidden">next slide</div><i class="fa-regular fa-arrow-right"></i></button>',
