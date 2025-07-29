@@ -143,6 +143,7 @@
         },
         "banner_KcaJqE": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-national-carpet-cleaning-month-desktop-banner.jpg",
