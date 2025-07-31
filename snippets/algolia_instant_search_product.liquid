@@ -413,7 +413,7 @@
                                 ${hit.tags.includes("Made in the USA") ? html`<div onclick="stoplink(event);"><a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA"><div class="sm-row usamade"><div class="icon-wrap" style="font-size: 23px"><img style="margin-left: -1px" width="23" height="23" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"></img></div> <div class="sm-row-text"><span>Made in USA</span><br/><span class="sm-text">Supporting American Workers</span></div></div></a></div>`:''}
 
 
-                                ${hit.sku.includes("-DEMO") || hit.sku.includes("-REFURB") ? html `<div onclick="stoplink(event);"><a href="/collections/demoed-refurbished-equipment"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-screwdriver-wrench"></i></div><div class="sm-row-text"><span>Refurbished / Used Model</span><br/><span class="sm-text">Tested & approved to be in good working order!</span></div></div></a></div>`:``}
+                                ${hit.sku.includes("-DEMO") || hit.sku.includes("-REFURB") ? html `<div onclick="stoplink(event);"><a href="/collections/demoed-refurbished-equipment"><div class="sm-row"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-screwdriver-wrench"></i></div><div class="sm-row-text"><span>Refurbished Model</span><br/><span class="sm-text">Tested & approved to be in good working order!</span></div></div></a></div>`:``}
 
 
 
@@ -658,7 +658,7 @@ ${1 == 1 && html`
                 View Product <i class="fa-sharp fa-solid fa-caret-right"></i>
             </span><span class="atc-button--icon"><svg aria-hidden="true" focusable="false" role="presentation" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"></svg></span></button>
         `}
-        <div class="search-finance-wrapper" style="clear:both"></div>
+         ${!hit.sku.includes("-DEMO") ? html `<div class="search-finance-wrapper" style="clear:both"></div>`:``}
       `: html`
       <button class="ais-hit--cart-button ais-hit--cart-button__disabled main-atc-button productitem--action-trigger productitem--action-atc button-secondary disabled soldout" type="button" disabled=""><span class="atc-button--text">
             View Product

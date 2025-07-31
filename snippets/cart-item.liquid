@@ -269,7 +269,7 @@
                             {% if item.product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
                                 <i class="fa-sharp fa-solid fa-tags"></i> Clearance / Overstock (you saved {{ specialDiscount |  money }})
                             {% elsif item.product.selected_or_first_available_variant.sku contains "-DEMO" -%}
-                                <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i> Refurbished / Used Model (you saved {{ specialDiscount |  money }})
+                                <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i> Refurbished Model (you saved {{ specialDiscount |  money }})
                             {% else %}
                                 <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i> Hot Deal (you saved {{ specialDiscount |  money }})
                             {% endif %}
