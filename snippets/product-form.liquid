@@ -725,7 +725,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                 </div>
               </div>
               {%- if pdiscontinued == false -%}
-                {%- if shop.name contains "CleanFreak B2B"-%}
+                {%- if shop.name contains "CleanFreak B2B" or selected_variant.sku contains "-DEMO"  -%}
                   {% comment %}do nothing{% endcomment %}
                 {%- else -%}
                   <div class="financing-contain">
