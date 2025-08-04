@@ -64,7 +64,11 @@ function getLinkv3(sku,cost,title, qty=1){
     if(urlParams.get('finance') == 'pop'){
         //getPaymentOptions(event,cost,sku,qty,'');
     };
-    var LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"/></div><div class="clearer"></div>';
+    {% comment %}old text with estimate{% endcomment %}
+    {% comment %}var LSlink = '<div onclick="'+PaymentOptionPopCall+'" class="lsb2 finance-link">Finance for as low as <strong>$'+Math.ceil(LowestRateTotal)+'/month</strong> <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"/></div><div class="clearer"></div>';{% endcomment %}
+
+    var LSlink = '<div onclick="'+PaymentOptionPopCall+'" style="width:120px" class="financebtn product-form--atc-button main-atc-button thinbtn" onclick="" >Apply Now</div>';
+
 
     return LSlink;
 }
