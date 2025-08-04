@@ -732,7 +732,104 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                     {%- if selected_variant.price < 100000 -%}
                       <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"/></a></div>
                     {%- else -%}
-                      <div class="finance-wrapper"></div>
+                      {% comment %}<div class="finance-wrapper"></div>{% endcomment %}
+
+
+                      <style>
+                        .finance-info {
+                          text-align:left;
+                        }
+
+
+                        .finance-info h2{border-bottom:1px solid #C0D3D8; padding-bottom:15px; margin-bottom:20px;}
+                        .finance-info .finance-info-option{}
+                        .finance-info .finance-info-option ul{padding-left:15px; margin:10px 0 15px 0;}
+                        .finance-info .finance-info-option .finance-info-upto{font-size:14px;}
+                        .finance-info .finance-info-option .finance-info-left{text-align:left; float:left;}
+                        .finance-info .finance-info-option .finance-info-right{width:130px; float:right;}
+                        .finance-info .finance-info-option .finance-info-img img{margin:unset; max-width:150px;}
+                        .finance-info .finance-info-option .finance-info-list{clear:both;padding: 1px 0 15px 0;}
+                      </style>
+                      <script>
+
+                        $(document).ready(function () {
+                          $('.finance-info-trigger').on('click', function () {
+                            $('.finance-info').slideToggle(500); // 500ms animation
+
+                            if($('.finance-info-trigger').hasClass('showthis')){
+                              $('.finance-info-trigger').removeClass('showthis').addClass('hidethis').html('Hide financing options <i style="font-size:14px;" class="fa-solid fa-chevron-up"></i>');
+                            }else{
+                              $('.finance-info-trigger').removeClass('hidethis').addClass('showthis').html('See all financing options <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i>');
+                            }
+                          });
+                          $('.shoppaycheckout').on('click', function () {
+                            $('.product-form--atc #p-atc').click();
+                          });
+                        });
+
+
+
+                      </script>
+                      <div class="finance-wrapper-drop">
+                        <div class="finance-info-trigger fake-link showthis" style="padding-top:5px">See all financing options <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></div>
+
+                        <div class="finance-info" style="display: none;">
+                          <h2>Financing Options</h2>
+                          <div class="finance-info-option quickspark">
+                            <div class="finance-info-left">
+                              <div class="finance-info-img"><img src="{{ shop.url }}/cdn/shop/files/quickspark-v2.png?v=1747072990" class="img-responsive" alt="QuickSpark Logo"></div>
+                              <div class="finance-info-upto">Up to $5,000,000</div>
+                            </div>
+                            <div class="finance-info-right">
+                              {% comment %}<div style="width:120px" class="financebtn product-form--atc-button main-atc-button thinbtn" onclick="" >Apply Now</div>{% endcomment %}
+
+                              <div class="finance-wrapper"></div>
+
+                            </div>
+                            <div class="finance-info-list">
+                              <ul>
+                                <li>Terms up to 60 months</li>
+                                <li>Will analyze your application, and route it to the best lenders</li>
+                                <li>Up to 3 lenders may work your application at a time</li>
+                                <li>Lenders compete, so they are motivated to work quickly and present their best offers</li>
+                                <li>Choose the best term from up to 3 competing lenders</li>
+                                <li>Business accounts only – including start-ups</li>
+                              </ul>
+                            </div>
+                          </div>
+
+
+                          <div class="finance-info-option shoppay">
+                            <div class="finance-info-left">
+                              <div class="finance-info-img"><img src="{{ shop.url }}/cdn/shop/files/shop-pay-trans.png?v=1668624779" style="margin:0 0 0 -8px" class="img-responsive" alt="Shop pay Logo"></div>
+                              <div class="finance-info-upto">Up to $17,500</div>
+                            </div>
+                            <div class="finance-info-right">
+                              <div style="width:120px" class="financebtn shoppaycheckout product-form--atc-button main-atc-button thinbtn" >Check Out</div>
+                            </div>
+                            <div class="finance-info-list">
+                              <ul>
+                                <li>Four interest-free payments every two weeks for orders between $50.00 <br>and $999.99 before shipping and taxes</li>
+                                <li>Monthly payment options (3, 6, or 12-month) available, <br>for orders between $150.00 and $17,500.00 with a 0% - 36% APR interest rate<a href="/pages/financing-options#notes">**</a></li>
+                                <li>Checking eligibility has no impact to credit</li>
+                              </ul>
+                            </div>
+
+                          </div>
+
+                          <div class="finance-more-info" style="width:100%; text-align:right; padding-bottom:25px;">
+                            <a href="/pages/financing-options">View More Financing Options <i class="fa-solid fa-arrow-right"></i></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+
+
+
+
                     {%- endif -%}
                   </div>
                 {%- endif -%}
