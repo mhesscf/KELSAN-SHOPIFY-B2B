@@ -8,7 +8,7 @@
 {%- assign maxhandleholder = "" -%}
 {%- assign today_date = 'now' | date: '%s' %}
 {%- assign fgwp_Obj = shop.metaobjects.free_gift_with_product.values  -%}
-
+{%- assign current_var_id = product.selected_or_first_available_variant.id %}
 {%- comment -%}do not show freq if main item is discontinued, or there is no valid product{%- endcomment -%}
 {%- assign showfreq = true -%}
 {%- for c in product.collections -%}
@@ -568,91 +568,69 @@
                                 </div>
                             </div>
                         {%- elsif tab_rel_id != "freq_bought" -%}
-                            <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
-                                {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+
+
+                            {% comment %}children var product{% endcomment %}
+                                {%- assign showparent = true -%}
+                                {%- for variant in product.variants -%}
+                                    {%- assign showvar = false -%}
+
+                                    {% comment %}show parent if no var related products are found{% endcomment %}
+                                    {%- if current_var_id == variant.id and variant.metafields.plytix[tab_rel_id] != blank-%}
+                                        {% if hideSliderDefault %}
+                                            {%- assign showparent = false -%}
+                                        {% else %}
+                                            {%- assign showvar = true -%}
+                                            {%- assign showparent = false -%}
+                                        {% endif %}
+
+                                    {%- endif -%}
+
+                                    {%- if variant.metafields.plytix[tab_rel_id] != blank -%}
+                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-slider" data-varid="{{ variant.id }}" class=" tabbed-rel-slider {% if showvar == false %}sliderhidden{% endif %}">
+                                                {%- assign rel_products_arr = variant.metafields.plytix[tab_rel_id] | split: ", " -%}
+                                                {%- for relproduct in rel_products_arr -%}
+                                                    {%- assign product_handle = relproduct |  strip -%}
+                                                    {%- if product_handle != "undefined" -%}
+                                                        <div class="{{ tab_rel_id }}-rel-item rel-slider-item rel-slider-item-ajax " data-handle="{{ product_handle }}">
+                                                            {%- comment -%}{{ product_handle }}{%- endcomment -%}
+                                                        </div>
+                                                    {%- endif -%}
+                                                {%- endfor -%}
+                                        </div>
+
+                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if hideSliderDefault %}sliderhidden{% endif %}"></div>
+                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
+
+                                    {%- endif -%}
+                                {%- endfor -%}
+
+                            {% comment %}main product{% endcomment %}
+                            {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+                            <div id="{{ tab_rel_id }}-slider" data-varid="mainproduct" class="tabbed-rel-slider {% if showparent == false %}sliderhidden{% endif %}">
                                     {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
-                                    {%- for product in rel_products_arr -%}
-                                        {%- assign product_handle = product |  strip -%}
+                                    {%- for relproduct in rel_products_arr -%}
+                                        {%- assign product_handle = relproduct |  strip -%}
                                         {%- if product_handle != "undefined" -%}
                                             <div class="{{ tab_rel_id }}-rel-item rel-slider-item rel-slider-item-ajax " data-handle="{{ product_handle }}">
                                                 {%- comment -%}{{ product_handle }}{%- endcomment -%}
                                             </div>
                                         {%- endif -%}
                                     {%- endfor -%}
-                                {%- endif -%}
-                            </div>
-                            {%- comment -%} Old way before Ajax loading
-                            <div id="{{ tab_rel_id }}-slider" class="tabbed-rel-slider {% if hideSliderDefault %}sliderhidden{% endif %}">
-                                    {%- assign noProducts = true -%}
-                                    {%- if product.metafields.plytix[tab_rel_id] != blank -%}
-                                        {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
-                                        {%- for product in rel_products_arr -%}
-                                            {%- assign product_handle = product |  strip -%}
+                                </div>
+                            {%- endif -%}
 
-                                            {%- comment -%}check if under 20 and add to list to check{%- endcomment -%}
-                                            {%- assign show = false -%}
-                                            {%- if maxhandleholder contains product_handle -%}
-                                                {%- assign show = true -%}
-                                            {%- else -%}
-                                                {%- if maxproductscounter < maxproducts -%}
-                                                    {%- assign maxproductscounter = maxproductscounter | plus: 1 -%}
-                                                    {%- assign maxhandleholder = maxhandleholder | append: product_handle | append: "," -%}
-                                                    {%- assign show = true -%}
-                                                {%- else -%}
-                                                    {%- assign maxproductscounter = maxproductscounter | plus: 1 -%}
-                                                    <div class="crawlcheck crawlcheck-maxprod"><!-- check this for 20+ related/freq product calls (({{ product_handle }})) --></div>
-                                                {%- endif -%}
-                                            {%- endif -%}
-
-                                            {% assign crawlcheck = false %}
-                                            {% for c in all_products[product_handle].collections %}
-                                                {% if c.handle == "discontinued" %}
-                                                    {% assign crawlcheck = true %}
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% if crawlcheck == true %}
-                                                <div class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
-                                            {% endif %}
-
-                                            {%- if show == true -%}
-                                                {%- if product_handle != 'undefined' and all_products[product_handle].title != '' -%}
-                                                    {%- assign noProducts = false -%}
-                                                    {%- assign item = all_products[product_handle] -%}
-
-                                                    {%- comment -%}filter discontinued{%- endcomment -%}
-                                                    {%- assign showthisproduct = true -%}
-                                                    {%- for c in item.collections -%}
-                                                        {%- if c.handle == "discontinued" -%}
-                                                            {% assign showthisproduct = false -%}
-                                                        {%- endif -%}
-                                                    {%- endfor -%}
-                                                    {%- if  showthisproduct == true -%}
-                                                        <div class="{{ tab_rel_id }}-rel-item rel-slider-item">
-                                                            {%- assign location = 'NA' -%}
-                                                            {%- if  tab_rel_id == 'related_products' -%}
-                                                                {%- assign location = 'Related Products' -%}
-                                                            {%- elsif  tab_rel_id == 'similar_items' -%}
-                                                                {%- assign location = 'Similar Items' -%}
-                                                            {%- endif -%}
-                                                            {%-
-                                                                    render 'product-slider-item',
-                                                                    main_loc: 'Product Page',
-                                                                    item_loc: location,
-                                                                    product: item
-                                                            -%}
-                                                        </div>
-                                                    {%- endif -%}
-                                                {%- endif -%}
-                                            {%- endif -%}
-                                        {%- endfor -%}
-                                    {%- endif -%}
-                            </div>{%- endcomment -%}
                         {%- endif -%}
 
                         <div id="{{ tab_rel_id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if hideSliderDefault %}sliderhidden{% endif %}"></div>
                         <div id="{{ tab_rel_id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
                 {%- endcase -%}
             {%- endfor -%}
+
+
+
+
+
         </section>
     </div>
 </div>
