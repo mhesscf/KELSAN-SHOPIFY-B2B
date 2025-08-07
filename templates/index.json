@@ -22,13 +22,12 @@
       "blocks": {
         "banner_fLBUa3": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-made-in-usa-sale-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-made-in-usa-sale-mobile-banner.jpg",
+            "banner-lg": "shopify://shop_images/2025-back-to-school-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-back-to-school-sale-mobile-banner.jpg",
             "link": "/collections/made-in-the-usa",
-            "coupon-code": ""
+            "coupon-code": "https://www.cleanfreak.com/collections/current-sales?refinementList%5Btags%5D%5B0%5D=Back%20To%20School%20Sale"
           }
         },
         "slide_v2_cqVtUz": {
