@@ -26,7 +26,7 @@
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-back-to-school-sale-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/2025-back-to-school-sale-mobile-banner.jpg",
-            "link": "/collections/current-sales?refinementList%5Btags%5D%5B0%5D=Back%20To%20School%20Sale",
+            "link": "/collections/all?refinementList%5Btags%5D%5B0%5D=Back%20To%20School%20Sale",
             "coupon-code": ""
           }
         },
