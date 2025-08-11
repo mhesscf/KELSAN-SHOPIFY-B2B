@@ -599,7 +599,7 @@
                                                 {%- endfor -%}
                                         </div>
 
-                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if hideSliderDefault %}sliderhidden{% endif %}"></div>
+                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if hideSliderDefault or hideSliderDefault %}sliderhidden{% endif %}"></div>
                                         <div id="{{ tab_rel_id }}-{{ variant.id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
 
                                     {%- endif -%}
@@ -607,7 +607,7 @@
 
                             {% comment %}main product{% endcomment %}
                             {%- if product.metafields.plytix[tab_rel_id] != blank -%}
-                            <div id="{{ tab_rel_id }}-slider" data-varid="mainproduct" class="tabbed-rel-slider {% if showparent == false %}sliderhidden{% endif %}">
+                            <div id="{{ tab_rel_id }}-slider" data-varid="mainproduct" class="tabbed-rel-slider {% if showparent == false or hideSliderDefault %}sliderhidden{% endif %}">
                                     {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
                                     {%- for relproduct in rel_products_arr -%}
                                         {%- assign product_handle = relproduct |  strip -%}
