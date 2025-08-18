@@ -20,6 +20,16 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "banner_Hera6c": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-pads-with-a-purpose-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-pads-with-a-purpose-sale-mobile-banner.jpg",
+            "link": "/collections/current-sales?refinementList[tags][0]=Pads with a Purpose Sale",
+            "coupon-code": ""
+          }
+        },
         "banner_fLBUa3": {
           "type": "banner",
           "settings": {
@@ -173,6 +183,7 @@
         }
       },
       "block_order": [
+        "banner_Hera6c",
         "banner_fLBUa3",
         "slide_v2_cqVtUz",
         "slide_v2_nhVKm9",
