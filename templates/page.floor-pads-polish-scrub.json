@@ -15,6 +15,7 @@
         "c3e04012-d07f-47a4-afeb-ec102c8c19cf": {
           "type": "categoryhead",
           "settings": {
+            "show_on": "both",
             "cat_image": "shopify://shop_images/floor-polishing-scrubbing-stripping-pads-dept-page.jpg",
             "cat_title": "Floor Pads, Bonnets & Sanding Screens",
             "cat_text": "Durable CleanFreak® floor pads outlast the competition when it comes to polishing, scrubbing, and stripping hard floors. We also have carpet bonnets, sanding screens & other floor prep pads in stock & ready to ship!"
@@ -24,6 +25,7 @@
           "type": "banner",
           "disabled": true,
           "settings": {
+            "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-pads-with-a-purpose-sale-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/2025-pads-with-a-purpose-sale-mobile-banner.jpg",
             "link": "/",
