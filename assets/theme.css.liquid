@@ -5527,7 +5527,11 @@ body .mdc-ripple-surface:hover:before {
 	font-weight: bold;
 	color: {{ settings.color_headings }};
 }
-
+@media screen and (max-width: 599px) {
+	.collection--title {
+		margin-bottom: 0;
+	}
+}
 .collection--description {
 	width: 100%;
 	max-width: 110ch;
@@ -6475,6 +6479,13 @@ nav.breadcrumb {
 	 margin: 20px auto;
 	 padding: 0 25px;
  }
+
+@media screen and (max-width: 599px) {
+	.productgrid--outer-head{
+		margin: 10px auto;
+	}
+}
+
 nav.breadcrumb a, nav.breadcrumb span{
 	font-size: 14px;
 	text-decoration:none;
