@@ -9,6 +9,9 @@
 {% assign has_items = false %}
 {% assign show_continue_link = false %}
 
+{% comment %}variable to check for financing to exclude demos in the $1000 check.{% endcomment %}
+{% assign total4finance = 0 %}
+
 {% if section.blocks.size > 0 %}
   {% assign has_sidebar = true %}
 {% endif %}
@@ -180,6 +183,14 @@
     {% assign total_sf_savings = 0 %}
     {% comment %}calculate total discount of 10% SF discount{% endcomment %}
     {% for cartitem in cart.items %}
+
+      {%- if cartitem.sku contains "-DEMO" -%}
+        {% comment %}do nothing{% endcomment %}
+      {%- else -%}
+        {% comment %}total only non demo pricing{% endcomment %}
+        {% assign total4finance = total4finance | plus: cartitem.price %}
+      {%- endif -%}
+
       {% if cartitem.product.tags contains 'SuperFreak Discount Eligible' %}
 
         {% unless cartitem.properties == empty %}
@@ -343,7 +354,10 @@
                   <i class="fa-regular fa-cart-shopping checkout-btn"></i>
                 {{ 'cart.general.checkout' | t }}
               </button>
-              <div class="finance-wrapper"></div>
+              
+              {% if total4finance >= 100000 %}
+                <div class="finance-wrapper"></div>
+              {% endif %}
               {% comment %}
               <script>
                 jQuery(document).ready(function($){

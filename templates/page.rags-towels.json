@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "7ab906ec-3b57-4e96-9a5c-a2651828cf30": {
@@ -15,7 +15,8 @@
         "a2d2c8f2-0a91-4a59-9a1b-b076ab855f6b": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/rags-towels-wipes-dept-page.jpg",
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/rags-towels-wipes-dept-page.jpg",
             "cat_title": "Rags, Towels & Wipes",
             "cat_text": "Put dirt and grime in their place with our large selection of rags, sponges, towels, wipes & more. We have a solution for every cleaning application."
           }
@@ -128,57 +129,58 @@
         "e32fdb14-b78e-41de-adbf-2c9d2bb69562": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/surface-wipes.jpg",
+            "image": "shopify://shop_images/surface-wipes.jpg",
             "title": "Disinfectant Surface Wipes",
-            "url": "\/collections\/disinfectant-wipes"
+            "url": "/collections/disinfectant-wipes"
           }
         },
         "19d579ed-27c7-49c0-9ea3-cbf4fccc34c2": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/general-use-wipes.jpg",
+            "image": "shopify://shop_images/general-use-wipes.jpg",
             "title": "General Use Wipes & Disposable Towels",
-            "url": "\/collections\/general-use-wipes-disposable-towels"
+            "url": "/collections/general-use-wipes-disposable-towels"
           }
         },
         "6f79cc83-c4ea-44b4-b21a-63a6b7d3742f": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-cleaning-wipes_aa488c0b-fe83-4e57-b8b3-e479b123d528.jpg",
+            "image": "shopify://shop_images/hand-cleaning-wipes_aa488c0b-fe83-4e57-b8b3-e479b123d528.jpg",
             "title": "Hand Wipes",
-            "url": "\/collections\/hand-wipes"
+            "url": "/collections/hand-wipes"
           }
         },
         "95a12ef1-b65d-43dd-a421-70b51ef414db": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/microfiber-rags_8a366089-cd51-41ac-aaff-24f29505dd82.jpg",
+            "image": "shopify://shop_images/microfiber-rags_8a366089-cd51-41ac-aaff-24f29505dd82.jpg",
             "title": "Microfiber Rags",
-            "url": "\/collections\/microfiber-rags"
+            "url": "/collections/microfiber-rags"
           }
         },
         "0779c12d-e24a-4fdf-a6b6-4351ffc35bca": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/paper-towels.jpg",
+            "image": "shopify://shop_images/paper-towels.jpg",
             "title": "Paper Towels",
-            "url": "\/collections\/paper-toweling"
+            "url": "/collections/paper-toweling"
           }
         },
         "307ab0b4-a273-48a2-a99d-c3231caef58f": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/rag-washer.jpg",
+            "image": "shopify://shop_images/rag-washer.jpg",
             "title": "Rag Washers",
-            "url": "\/collections\/rag-washers"
+            "url": "/collections/rag-washers"
           }
         },
         "7b426d6a-44b5-4aae-ad31-0341b73ef884": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sponges.jpg",
+            "image": "shopify://shop_images/sponges.jpg",
             "title": "Sponges",
-            "url": "\/collections\/sponges"
+            "url": "/collections/sponges"
           }
         }
       },
@@ -268,16 +270,16 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "GOJO®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=GOJO",
-            "brand-image": "shopify:\/\/shop_images\/gojo-fast-towels-225-count-case-of-2-6299-02.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=GOJO",
+            "brand-image": "shopify://shop_images/gojo-fast-towels-225-count-case-of-2-6299-02.jpg"
           }
         },
         "53637d35-f469-4b7b-bc03-66c1daa423bf": {
           "type": "brandlink",
           "settings": {
             "brand-title": "KC WypAll®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Wypall&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=Wypall",
-            "brand-image": "shopify:\/\/shop_images\/wypall-l40-disposable-towels-05701.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Wypall&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=Wypall",
+            "brand-image": "shopify://shop_images/wypall-l40-disposable-towels-05701.jpg"
           }
         }
       },
@@ -291,8 +293,7 @@
     },
     "trustpilot_review_carousel_Gxzi4A": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

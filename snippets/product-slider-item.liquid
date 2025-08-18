@@ -628,7 +628,7 @@
               </div>
             {%- endif -%}
  
-            {%- if product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.show_quote == "true" or view_product_btn_override or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
+            {%- if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.show_quote == "true" or view_product_btn_override or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
               <div class="productitem--action viewproduct"><a class="" href="{{ product_link }}" onclick="{{ onclick_event }}" ><button class="productitem--action-trigger productitem--action main-atc-button thinbtn"><span class="atc-button--text">View Product <i class="fa-sharp fa-solid fa-caret-right"></i></span></button></a></div>
             {%- else -%}
               {%- if atc_button -%}

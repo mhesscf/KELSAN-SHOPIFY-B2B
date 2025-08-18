@@ -46,6 +46,14 @@
         "slideshow_text_below_image": true
       }
     },
+    "dynamic_html_rXE4bH": {
+      "type": "dynamic-html",
+      "name": "t:sections.custom_html.presets.custom_html.name",
+      "settings": {
+        "title": "",
+        "custom_html": "<style>\n.category-link-wrapper.blockfill {display:none;>\n</style>"
+      }
+    },
     "category_tabs_QqxNfr": {
       "type": "category-tabs",
       "blocks": {
@@ -143,11 +151,50 @@
         "enable_recently_viewed_products": true
       }
     },
+    "dept_category_area_RbrcAn": {
+      "type": "dept-category-area",
+      "blocks": {
+        "categorylink_XgyXfW": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/specials-category.jpg",
+            "title": "Clearance and Overstock",
+            "url": "/collections/clearance"
+          }
+        },
+        "categorylink_meYKdM": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/gold-medal-winners.jpg",
+            "title": "Gold Medal Winners",
+            "url": "/collections/gold-medal-winners"
+          }
+        },
+        "categorylink_Ed9BGh": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/refurbished-returns.jpg",
+            "title": "Used & Refurbished",
+            "url": "/collections/demoed-refurbished-equipment"
+          }
+        }
+      },
+      "block_order": [
+        "categorylink_XgyXfW",
+        "categorylink_meYKdM",
+        "categorylink_Ed9BGh"
+      ],
+      "name": "Department Category Links",
+      "settings": {
+        "block-title": "Deals"
+      }
+    },
     "026b0119-d79f-45dd-8251-faad1b0109c9": {
       "type": "dept-category-area",
       "blocks": {
         "20c39ad6-02d9-4d2c-b28b-4303a09d0beb": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/specials-category.jpg",
             "title": "Clearance and Overstock",
@@ -156,6 +203,7 @@
         },
         "331a6eca-3397-43e4-8ad7-75d4fa234636": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/gold-medal-winners.jpg",
             "title": "Gold Medal Winners",
@@ -164,6 +212,7 @@
         },
         "9aaaf909-3594-49e0-8341-75454ff53916": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/refurbished-returns.jpg",
             "title": "Used & Refurbished",
@@ -404,9 +453,11 @@
   },
   "order": [
     "cba53468-db6f-41ec-9ed7-fc3255c70c3e",
+    "dynamic_html_rXE4bH",
     "category_tabs_QqxNfr",
     "main",
     "static-recently-viewed",
+    "dept_category_area_RbrcAn",
     "026b0119-d79f-45dd-8251-faad1b0109c9",
     "16636174067db7bd8c",
     "9dc75e18-4f87-43e1-97b8-9261434ef62c",
