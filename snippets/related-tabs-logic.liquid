@@ -585,7 +585,6 @@
                                         {% endif %}
 
                                     {%- endif -%}
-
                                     {%- if variant.metafields.plytix[tab_rel_id] != blank -%}
                                         <div id="{{ tab_rel_id }}-{{ variant.id }}-slider" data-varid="{{ variant.id }}" class=" tabbed-rel-slider {% if showvar == false %}sliderhidden{% endif %}">
                                                 {%- assign rel_products_arr = variant.metafields.plytix[tab_rel_id] | split: ", " -%}
@@ -599,7 +598,7 @@
                                                 {%- endfor -%}
                                         </div>
 
-                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if hideSliderDefault or hideSliderDefault %}sliderhidden{% endif %}"></div>
+                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if showvar == false %}sliderhidden{% endif %}"></div>
                                         <div id="{{ tab_rel_id }}-{{ variant.id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
 
                                     {%- endif -%}
@@ -622,7 +621,7 @@
 
                         {%- endif -%}
 
-                        <div id="{{ tab_rel_id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if hideSliderDefault %}sliderhidden{% endif %}"></div>
+                        <div id="{{ tab_rel_id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if showparent == false or hideSliderDefault %}sliderhidden{% endif %}"></div>
                         <div id="{{ tab_rel_id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
                 {%- endcase -%}
             {%- endfor -%}
