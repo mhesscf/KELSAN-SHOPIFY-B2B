@@ -688,7 +688,7 @@ jQuery(document).ready(function($){
             // var
             $('#' + itemId + '-' + varid + '-slider').removeClass("sliderhidden");
             $('.rel-slide-arrows').addClass("sliderhidden");
-            $('#' + itemId + '-slider-arrows').removeClass("sliderhidden");
+            $('#' + itemId + '-' + varid + '-slider-arrows').removeClass("sliderhidden");
         }else{
             // main
             $('#'+itemId+'-slider').removeClass("sliderhidden");
