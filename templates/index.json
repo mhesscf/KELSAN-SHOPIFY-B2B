@@ -20,19 +20,30 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "banner_fLBUa3": {
+        "banner_Hera6c": {
           "type": "banner",
           "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-made-in-usa-sale-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-made-in-usa-sale-mobile-banner.jpg",
-            "link": "/collections/made-in-the-usa",
+            "banner-lg": "shopify://shop_images/2025-pads-with-a-purpose-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-pads-with-a-purpose-sale-mobile-banner.jpg",
+            "link": "/collections/current-sales?refinementList[tags][0]=Pads with a Purpose Sale",
+            "coupon-code": ""
+          }
+        },
+        "banner_fLBUa3": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-back-to-school-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-back-to-school-sale-mobile-banner.jpg",
+            "link": "/collections/current-sales?refinementList%5Btags%5D%5B0%5D=Back%20To%20School%20Sale",
             "coupon-code": ""
           }
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
@@ -54,6 +65,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
@@ -75,21 +87,20 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "6",
+            "sotm_icon": "8",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/cpl-dura-20b-special.png?v=173336204",
-            "middle_image_alt": "Trusted Clean 'Dura 20' Automatic Floor Scrubber w/ Pad Driver - 10.5 Gallons",
+            "middle_image": "/cdn/shop/files/wet-cf4240hv-2-special-1.png?v=173336204",
+            "middle_image_alt": "CleanFreak® 4.0 GPM Pressure Washer w/ Honda GX390 Engine (Gas) - 4,200 PSI",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Dura-able, Dependable & Affordable.</div>\n<h1>Trusted Clean 'Dura 20' Automatic Floor Scrubber</h1>\n<div>Was: $4,179.99<br/>Now: $3,749.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:34px;\n}\n\n@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:34px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 0px auto;\n\t}\n}",
-            "bg_link": "/products/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "text_area_html": "<div class=\"top-text\">Premium Power, Practical Price.</div>\n<h1>CleanFreak® 4.0 GPM Pressure Washer w/ Honda GX390 Engine (Gas)</h1>\n<div>Was: $1,499.99<br/>Now: $1,349.99</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:0px;\n}\n\n@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:0px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 0px auto;\n\t}\n}",
+            "bg_link": "/products/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer",
             "promo_link": "",
-            "button_one_label": "Save $430",
-            "button_one_link": "/products/trusted-clean-dura-20-inch-automatic-floor-scrubber",
+            "button_one_label": "Save $150",
+            "button_one_link": "/products/cleanfreak-cf4240hv-heavy-duty-4200-psi-gas-pressure-washer",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -97,21 +108,20 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "6",
+            "sotm_icon": "8",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/ies-tk464-y2-special.png?v=173336204",
-            "middle_image_alt": "CleanFreak® 'EasySweep' Carpet & Floor Vacuum Sweeper",
+            "middle_image": "/cdn/shop/files/cpl-cf-25xg-heat-2pw-special.png?v=173335204",
+            "middle_image_alt": "CleanFreak® Heated 500 PSI Portable Carpet Extractor",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Easy Operation, Exceptional Price.</div>\n<h1>CleanFreak® 'EasySweep' Carpet & Floor Vacuum Sweeper</h1>\n<div>Was: $2,599.99<br/>Now: $2,299.99</div>",
+            "text_area_html": "<div class=\"top-text\">Hot water meets a hot deal!</div>\n<h1>CleanFreak® Heated 500 PSI Portable Carpet Extractor</h1>\n<div>Was: $3,299.99<br/>Now: $2,899.99</div>",
             "text_area_css": "@media screen and (max-width: 718px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image{\nmax-width:302px;\npadding-top:0px;\n}\n}\n@media screen and (min-width: 1279px) {\n  .slideshow-v2 .custom-text h1 {\n    font-size: 35px;\n    line-height: 38px;\n  }\n}",
-            "bg_link": "/products/warehouse-concrete-floor-sweeper",
+            "bg_link": "/products/heated-500-psi-portable-extractor",
             "promo_link": "",
-            "button_one_label": "Save $300",
-            "button_one_link": "/products/warehouse-concrete-floor-sweeper",
+            "button_one_label": "Save $400",
+            "button_one_link": "/products/heated-500-psi-portable-extractor",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -143,6 +153,7 @@
         },
         "banner_KcaJqE": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-national-carpet-cleaning-month-desktop-banner.jpg",
@@ -155,9 +166,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/as430c-scrubber-bogo-deal-desktop-banner.png",
+            "banner-lg": "shopify://shop_images/viper-as710r-rider-scrubber-bogo-promo-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/as430c-scrubber-bogo-deal-mobile-banner.jpg",
-            "link": "/products/viper-as430c-17-inch-electric-auto-scrubber",
+            "link": "/products/viper-as710r-28-rider-scrubber",
             "coupon-code": ""
           }
         },
@@ -173,6 +184,7 @@
         }
       },
       "block_order": [
+        "banner_Hera6c",
         "banner_fLBUa3",
         "slide_v2_cqVtUz",
         "slide_v2_nhVKm9",

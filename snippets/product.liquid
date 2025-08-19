@@ -349,11 +349,13 @@
                                 {%- assign attr = freeprod | split: "#" -%}
                                 {%- assign freeproduct = attr[0] | strip -%}
                                 {%- assign fpkgqnty = attr[1] -%}
-                                {%- assign fprice = all_products[freeproduct].price | money_without_currency | times: fpkgqnty -%}
+                                {%- assign fprice = all_products[freeproduct].price | times: fpkgqnty -%}
                                 {%- assign savingsp = savingsp | plus: fprice -%}
+
+
                             {%- endfor -%}
                             {%- assign savingsp = savingsp | times:100 -%}
-                            <div class="free-product-savings">FREE {{ savingsp | money }} Included in FREE Products w/ this Package</div>
+                            <div class="free-product-savings">FREE {{ savingsp | divided_by: 100 | money }} Included in FREE Products w/ this Package</div>
                         {%- endif -%}
 
                             {%- assign current_variant_id = product.selected_or_first_available_variant.id -%}

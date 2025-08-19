@@ -56,6 +56,104 @@
 
                         {%- for free_gift in fgwp.free_product_options.value -%}
                             {%- if total_options_counter < total_options -%}
+
+                                {%- assign stockStatusMain = "" -%}
+                                {%- assign stockStatusSub = "" -%}
+                                {%- assign fservice = free_gift.selected_or_first_available_variant.fulfillment_service -%}
+                                {%- assign leadTime = free_gift.selected_or_first_available_variant.metafields.plytix.sxerp_lead_time -%}
+                                {%- assign inventoryQuantity = free_gift.selected_or_first_available_variant.inventory_quantity -%}
+                                {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
+                                {%- assign leadTime = leadTime | plus: 0 -%}
+
+                                {%- if free_gift.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
+                                    {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
+                                    {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
+                                {%- elsif free_gift.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
+
+                                    {% comment %}Look at po date instead of lead time{% endcomment %}
+                                    {%- if free_gift.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
+                                        {% assign dateStart = free_gift.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' %}
+                                        {% assign nowTimestamp = 'now' | date: '%s' %}
+                                        {% assign diffSeconds = dateStart | minus: nowTimestamp %}
+                                        {% assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 %}
+                                    {%- endif -%}
+
+                                    {%- assign stockStatusMain = "Temporarily On Backorder" -%}
+                                    {%- if leadTime < 22  -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" -%}
+                                    {%- elsif leadTime < 29 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" -%}
+                                    {%- elsif leadTime < 36 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" -%}
+                                    {%- elsif leadTime < 43 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 4 –6 wks" -%}
+                                    {%- elsif leadTime < 50 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" -%}
+                                    {%- elsif leadTime < 57 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" -%}
+                                    {%- elsif leadTime < 64 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" -%}
+                                    {%- elsif leadTime < 71 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" -%}
+                                    {%- elsif leadTime < 78 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" -%}
+                                    {%- elsif leadTime < 85 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" -%}
+                                    {%- elsif leadTime < 121 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" -%}
+                                    {%- elsif leadTime < 151 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" -%}
+                                    {%- elsif leadTime < 181 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" -%}
+                                    {%- elsif leadTime < 211 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" -%}
+                                    {%- elsif leadTime < 1000 -%}
+                                        {%- assign stockStatusSub = "Estimated Ship Date over 7 mths" -%}
+                                    {%- endif -%}
+                                {%- elsif free_gift.selected_or_first_available_variant.inventory_management == nil and leadTime -%}
+                                    {%- assign stockStatusMain = "Special Order Item" -%}
+                                    {%- if leadTime < 22  -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 1 – 3 wks" -%}
+                                    {%- elsif leadTime < 29 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 2 – 4 wks" -%}
+                                    {%- elsif leadTime < 36 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 3 – 5 wks" -%}
+                                    {%- elsif leadTime < 43 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 4 – 6 wks" -%}
+                                    {%- elsif leadTime < 50 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 5 – 7 wks" -%}
+                                    {%- elsif leadTime < 57 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 6 – 8 wks" -%}
+                                    {%- elsif leadTime < 64 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 7 – 9 wks" -%}
+                                    {%- elsif leadTime < 71 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 8 – 10 wks" -%}
+                                    {%- elsif leadTime < 78 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 9 – 11 wks" -%}
+                                    {%- elsif leadTime < 85 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 10 – 12 wks" -%}
+                                    {%- elsif leadTime < 121 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 3 – 4 mths" -%}
+                                    {%- elsif leadTime < 151 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 4 – 5 mths" -%}
+                                    {%- elsif leadTime < 181 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 5 – 6 mths" -%}
+                                    {%- elsif leadTime < 211 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in 6 – 7 mths" -%}
+                                    {%- elsif leadTime < 1000 -%}
+                                        {%- assign stockStatusSub = "Expected to ship in over 7 mths" -%}
+                                    {%- endif -%}
+                                {%- elsif free_gift.selected_or_first_available_variant.inventory_quantity > 0 -%}
+                                    {%- assign stockStatusMain = "In Stock" -%}
+                                {%- endif -%}
+
+                                {%- if stockStatusSub != "" -%}
+                                    {%- capture stockStatusNote -%}{{ stockStatusMain }} ({{ stockStatusSub }}){%- endcapture -%}
+                                {%- else -%}
+                                    {%- capture stockStatusNote -%}{{ stockStatusMain }}{%- endcapture -%}
+                                {%- endif -%}
+
+
                                 <div class="fgwp-card">
                                     <div class="inner">
                                         <div class="fgwp-card-imge image-wrap">
@@ -76,7 +174,7 @@
                                                  data-var_id="{{ free_gift.variants.first.id }}"
                                                  data-parent_id="{{ free_gift.id }}"
                                                  data-var_vissku="{{ free_gift.variants.first.sku }}"
-                                                 data-var_status=""
+                                                 data-var_status="{{ stockStatusNote }}"
                                                  data-var_erpsku="{{ free_gift.variants.first.metafields.plytix.erp_sku }}"
                                                  data-var_availqty="{{ free_gift.variants.first.inventory_quantity }}"
                                                  data-producttype="{{ free_gift.type }}"
