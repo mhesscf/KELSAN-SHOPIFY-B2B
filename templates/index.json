@@ -181,6 +181,16 @@
             "link": "/pages/about-us",
             "coupon-code": ""
           }
+        },
+        "banner_qaQPaP": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-labor-day-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-labor-day-sale-mobile-banner.jpg",
+            "link": "/collections/demoed-refurbished-equipment",
+            "coupon-code": ""
+          }
         }
       },
       "block_order": [
@@ -193,7 +203,8 @@
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "banner_KcaJqE",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
-        "banner_J8FYNy"
+        "banner_J8FYNy",
+        "banner_qaQPaP"
       ],
       "custom_css": [],
       "settings": {
