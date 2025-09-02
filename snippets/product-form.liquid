@@ -1150,7 +1150,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                          data-vissku="{{ free_product.selected_or_first_available_variant.sku }}"
                          data-availqty="{{ free_product.selected_or_first_available_variant.inventory_quantity }}"
                          data-status="{{ stockStatusFreeNote }}"
-                         data-tieredPricing="fg"
+                          {% if shop.name contains "CleanFreak B2B"%}
+                            data-tieredPricing=""
+                          {% else %}
+                            data-tieredPricing="fg"
+                          {% endif %}
                          data-qty="{{ free_product_entry_parts[1] }}"
                          data-price="{{ free_product.price }}"
                          value="{{ free_product_entry_parts[1] }}" />

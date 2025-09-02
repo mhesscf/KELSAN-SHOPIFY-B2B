@@ -417,11 +417,12 @@
 {%- comment -%}Inject @pixelunion/shopify-price-ui/price end{%- endcomment -%}
 
 
-{%- if product.metafields.plytix.package_products == blank -%}
-    {%
-            render 'product-sxstatus'
-            product: product
-    -%}
-  {%- else -%}
+{%- if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank -%}
     <div class="bundle-status-area status-area"></div>
+  {%- else -%}
+    {%
+        render 'product-sxstatus'
+        product: product
+    -%}
+
 {%- endif -%}

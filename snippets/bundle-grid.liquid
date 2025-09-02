@@ -4,6 +4,11 @@
 {%- assign stockisthesame = true -%}
 {%- assign soldoutitems = false -%}
 
+{%- assign showfg = false -%}
+{% if shop.name contains "CleanFreak B2B"%}
+    {%- assign showfg = false -%}
+{% endif %}
+
 {%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
 
     {%- if product.metafields.plytix.package_products != blank -%}
@@ -216,8 +221,6 @@
                 </tr>
             {%- endfor -%}
 
-
-
                 {% for bproduct in freeproducts -%}
                     {%- assign attr = bproduct | split: "#" -%}
                     {%- assign bundlep = attr[0] | strip -%}
@@ -228,7 +231,7 @@
                         {%- assign sellable = false -%}
                         {%- assign soldoutitems = true -%}
                     {%- endif -%}
-                    <tr class="bnd-product-row {% if sellable == false %}sold-product{% else %}freegift{% endif %}" data-handle="{{ all_products[bundlep].handle }}" itemtype="https://schema.org/Product" itemscope>
+                    <tr class="bnd-product-row {% if sellable == false %}sold-product{% elsif showfg %}freegift{% endif %}" data-handle="{{ all_products[bundlep].handle }}" itemtype="https://schema.org/Product" itemscope>
                         <td class="custom-bundle-col-img">
                             <div class="p-image">
                                 <img class="img-responsive" src="{{ all_products[bundlep].featured_image | img_url: '100x100' }}" alt="{{ all_products[bundlep].featured_image.alt }}"/>
@@ -410,8 +413,12 @@
                         <td class="custom-bundle-col-price">
                             <div class="price">
                                 {% assign pkgqnty = pkgqnty | plus: 0 %}
+                                {% if showfg %}
                                 <div class="free-tag">FREE!</div>
                                 <div class="full-p value"><span class="disount">{{ all_products[bundlep].price | times: pkgqnty | money }}</span> Value</div>
+                                {% else %}
+                                    <div class="full-p">{{ all_products[bundlep].price | times: pkgqnty | money }}</div>
+                                {% endif %}
                             </div>
                         </td>
                     </tr>
