@@ -304,8 +304,8 @@
         "settings": {
           "show_announcement": false,
           "homepage_announcement": false,
-          "announcement_text": "In observance of Memorial Day, we will be closed on Monday, May 26th. We will reopen Tuesday, May 27th.",
-          "announcement_text_mobile": "In observance of Memorial Day, we will be closed on Monday, May 26th. We will reopen Tuesday, May 27th.",
+          "announcement_text": "In observance of Labor Day, we will be closed on Monday, September 1st. We will reopen Tuesday, September 2nd.",
+          "announcement_text_mobile": "In observance of Labor Day, we will be closed on Monday, September 1st. We will reopen Tuesday, September 2nd.",
           "announcement_link": "/collections/flash-sale",
           "announcement_promo": "",
           "flash": false,
