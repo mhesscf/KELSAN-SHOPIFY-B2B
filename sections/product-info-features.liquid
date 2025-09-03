@@ -26,6 +26,10 @@
             <div class="prod-additional">
                 {%- if product.metafields.plytix.package_products != blank -%}
                     {%- assign bundle_product_arr = product.metafields.plytix.package_products | split: ", " -%}
+                    {%- assign showfg = true -%}
+                    {% if shop.name contains "CleanFreak B2B"%}
+                        {%- assign showfg = false -%}
+                    {% endif %}
                     <div class="bnd-prod-inc-contain">
                         <h2>Package Includes</h2>
 
@@ -44,10 +48,18 @@
                                 {%- assign attr = freebundlehandle | split: "#" -%}
                                 {%- assign productfg = attr[0] | strip -%}
                                 {%- assign productqtyfg = attr[1] | strip -%}
+
+                                {%- if showfg -%}
                                 <div class="bnd-child-ea free-product">
                                     <div class="fg-header"><strong>FREE Products!</strong><strong class="{{ attr[0] }}-fg-value" style="float:right;"></strong></div>
                                     <div class="bnd-child" data-qty="{{ productqtyfg }}" data-handle="{{ productfg }}"><div style="padding-top:5px; padding-left:10px">Loading...</div></div>
                                 </div>
+                                {%- else -%}
+                                    <div class="bnd-child-ea">
+                                        <div class="bnd-child" data-qty="{{ productqtyfg }}" data-handle="{{ productfg }}"><div style="padding-left:10px">Loading...</div></div>
+                                    </div>
+                                {%- endif -%}
+
                             {%- endfor -%}
                         {%- endif -%}
 
