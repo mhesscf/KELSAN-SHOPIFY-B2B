@@ -20,6 +20,16 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "banner_qaQPaP": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-labor-day-sale-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-labor-day-sale-mobile-banner.jpg",
+            "link": "/collections/demoed-refurbished-equipment",
+            "coupon-code": ""
+          }
+        },
         "banner_Hera6c": {
           "type": "banner",
           "disabled": true,
@@ -33,6 +43,7 @@
         },
         "banner_fLBUa3": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-back-to-school-sale-desktop-banner.jpg",
@@ -43,21 +54,20 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "7",
+            "sotm_icon": "9",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
-            "middle_image": "/cdn/shop/files/kob-00-4503-9-special.png?v=17333236204",
-            "middle_image_alt": "CleanFreak® Oscillating Floor Machine Special of the Month",
+            "middle_image": "/cdn/shop/files/tpl-dura-18hd-special.png?v=17333236204",
+            "middle_image_alt": "Trusted Clean 'Dura 18HD' Cord Electric 18\" Automatic Floor Scrubber Special of the Month",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Dry stripping at a discounted price!</div>\n<h1>CleanFreak® Oscillating Floor Machine (14\" x 20\" Head)</h1>\n<div>Was: $1,499.99<br/> Now: $1,349.99</div>",
+            "text_area_html": "<div class=\"top-text\">Superior Scrubbing at a Sensational Price!</div>\n<h1>Trusted Clean 'Dura 18HD' Cord Electric 18\" Automatic Floor Scrubber</h1>\n<div>Was: $1,999.99<br/> Now: $1,849.99</div>",
             "text_area_css": "",
-            "bg_link": "/products/cleanfreak-dry-surface-strip-machine",
+            "bg_link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
             "promo_link": "",
             "button_one_label": "Save $150",
-            "button_one_link": "/products/cleanfreak-dry-surface-strip-machine",
+            "button_one_link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -65,21 +75,20 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "7",
+            "sotm_icon": "9",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/kob-00-4430-5-special.png?v=17333262",
-            "middle_image_alt": "CleanFreak® 20\" High Speed Floor Burnisher Special of the Month",
+            "middle_image": "/cdn/shop/files/cpl-225fp-17-rh-cf-special.png?v=17333262",
+            "middle_image_alt": "CleanFreak® 17\" Heavy Duty Floor Buffer Special of the Month",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Polishing perfection without the price tag.</div>\n<h1>CleanFreak® 20\" High Speed Floor Burnisher</h1>\n<div>Was: $969.99<br/>Now: $869.99</div>",
+            "text_area_html": "<div class=\"top-text\">Buff Better, Buy for Less.</div>\n<h1>CleanFreak® 17\" Heavy Duty Floor Buffer</h1>\n<div>Was: $899.99<br/> Now: $799.99</div>",
             "text_area_css": ".slideshow-v2 .middle-image{\nmargin-top:8px;\nmax-height:336px;\n}",
-            "bg_link": "/products/1-5-hp-high-speed-20-inch-burnisher",
+            "bg_link": "/products/17-inch-rotary-floor-buffer",
             "promo_link": "",
             "button_one_label": "Save $100",
-            "button_one_link": "/products/1-5-hp-high-speed-20-inch-burnisher",
+            "button_one_link": "/products/17-inch-rotary-floor-buffer",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -87,6 +96,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "8",
@@ -108,6 +118,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "8",
@@ -184,6 +195,7 @@
         }
       },
       "block_order": [
+        "banner_qaQPaP",
         "banner_Hera6c",
         "banner_fLBUa3",
         "slide_v2_cqVtUz",

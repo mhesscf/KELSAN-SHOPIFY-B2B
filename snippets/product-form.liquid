@@ -10,6 +10,12 @@
 {% if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank %}
   {% assign isBundle = true %}
 
+  {%- assign showfg = true -%}
+  {% if shop.name contains "CleanFreak B2B"%}
+    {%- assign showfg = false -%}
+  {% endif %}
+
+
   {% comment %}for fgwp and warning pop{% endcomment %}
   {%- assign today_date = 'now' | date: '%s' %}
   {%- assign fgwp_Obj = shop.metaobjects.free_gift_with_product.values  -%}
@@ -1150,7 +1156,11 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                          data-vissku="{{ free_product.selected_or_first_available_variant.sku }}"
                          data-availqty="{{ free_product.selected_or_first_available_variant.inventory_quantity }}"
                          data-status="{{ stockStatusFreeNote }}"
-                         data-tieredPricing="fg"
+                          {% if showfg %}
+                            data-tieredPricing="fg"
+                          {% else %}
+                            data-tieredPricing=""
+                          {% endif %}
                          data-qty="{{ free_product_entry_parts[1] }}"
                          data-price="{{ free_product.price }}"
                          value="{{ free_product_entry_parts[1] }}" />

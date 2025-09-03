@@ -41,6 +41,11 @@
 {%- assign layout = layout | default: nil -%}
 {%- assign is_featured_product = is_featured_product | default: false -%}
 
+{%- assign showfg = true -%}
+{% if shop.name contains "CleanFreak B2B"%}
+    {%- assign showfg = false -%}
+{% endif %}
+
 {%- if layout == 'layout--three-col' -%}
     {%- assign product_form = true -%}
 {%- else -%}
@@ -355,7 +360,9 @@
 
                             {%- endfor -%}
                             {%- assign savingsp = savingsp | times:100 -%}
-                            <div class="free-product-savings">FREE {{ savingsp | divided_by: 100 | money }} Included in FREE Products w/ this Package</div>
+                            {%- if showfg -%}
+                                <div class="free-product-savings">FREE {{ savingsp | divided_by: 100 | money }} Included in FREE Products w/ this Package</div>
+                            {%- endif -%}
                         {%- endif -%}
 
                             {%- assign current_variant_id = product.selected_or_first_available_variant.id -%}

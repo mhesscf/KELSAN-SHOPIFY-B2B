@@ -340,8 +340,7 @@
       box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.31) !important;
       min-height:450px;
     }
-
-
+    
     .cat-shopall .tmenu_submenu_type_flyout .tmenu_item_level_1:hover{
       background-color:white !important;
       color: {{ settings.color_button_background }} !important;
@@ -349,6 +348,14 @@
 
     .cat-shopall ul.tmenu_submenu li.tmenu_item_level_1:not(.tmenu_item_mobile):hover > .tmenu_item_link{
       color:{{ settings.color_button_background }}  !important;
+    }
+
+    .cat-shopall .tmenu_submenu_type_flyout .tmenu_item_level_1 .tmenu_item_level_2:hover{
+      background-color: {{ settings.color_button_background }} !important;
+      color: white !important;
+    }
+    .cat-shopall .tmenu_submenu_type_flyout .tmenu_item_level_1 .tmenu_item_level_2:hover  > .tmenu_item_link{
+      color: white !important;
     }
 
     .tmenu_submenu_flyout_position_left .tmenu_indicator_icon{

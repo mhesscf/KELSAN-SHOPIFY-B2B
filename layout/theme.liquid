@@ -189,9 +189,9 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     {% include 'wiser' %}{% include 'wiser_popup' %}
     {%- comment -%}{% render 'judgeme_core' %}{%- endcomment -%}
 
-  {%- comment -%}keep for cleanfreak's atc tracking. Shouldn't interfere with analyzify's new code{%- endcomment -%}
+  {%- comment -%}keep for cleanfreak's atc tracking. Shouldn't interfere with analyzify's new code
 {% include 'cf-analyzify-gtm-body' %}
-
+{%- endcomment -%}
     {%- if settings.global_header_script != blank -%}
         {{ settings.global_header_script }}
     {%- endif -%}
@@ -419,6 +419,14 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     }
 </script>
 {%- comment -%}end of superfreak{%- endcomment -%}
+
+<style>
+{% if shop.name contains "CleanFreak B2B"%}
+    .onlyb2c{ display:none; }
+{% else %}
+    .onlyb2b{ display:none; }
+{% endif %}
+</style>
 
 {% section 'static-utility-bar' %}
 
