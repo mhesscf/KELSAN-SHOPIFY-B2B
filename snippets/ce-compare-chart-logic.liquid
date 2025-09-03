@@ -1,0 +1,334 @@
+{%- comment -%}Made by Cleanfreak{%- endcomment -%}
+
+{%- assign allhandles = "" -%}
+{%- assign allskus = "" -%}
+{%- assign allskusids = "" -%}
+
+{% paginate collections['walk-behind-auto-scrubbers'].products by 500 %}
+    {% for product in collections['walk-behind-auto-scrubbers'].products %}
+        {% for variant in product.variants %}
+            {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
+            {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
+            {%- assign allskusids = allskusids | append:'"' | append: variant.id | append:'",' -%}
+        {% endfor %}
+    {% endfor %}
+{% endpaginate %}
+
+{% paginate collections['ride-on-auto-scrubbers'].products by 500 %}
+    {% for product in collections['ride-on-auto-scrubbers'].products %}
+        {% for variant in product.variants %}
+            {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
+            {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
+            {%- assign allskusids = allskusids | append:'"' | append: variant.id | append:'",' -%}
+        {% endfor %}
+    {% endfor %}
+{% endpaginate %}
+
+<style>
+    .pcc-table{border-collapse:collapse; border-radius:10px 10px 0 0; width:100%; overflow:hidden;}
+    .pcc-table.table-striped th{background-color:#298EC6 !important; color:#fff; font-size:14px; font-weight:bold; vertical-align:bottom; text-align:center; padding:6px 3px}
+    .pcc-table .sortheading{cursor: pointer;}
+    .pcc-table td{text-align:center; vertical-align:middle; padding:2px 4px; font-size:12px; border-right:2px solid white;}
+    .pcc-table td .item-name{font-weight:bold;}
+    .pcc-table td img{width:65px; padding:3px;}
+    .pcc-table td .item-sku{padding-top:3px;}
+    .pcc-table td.item-price{width:100px;}
+    .pcc-table td.item-warranty{width:194px;}
+    .pcc-table td.item-battery_config{width:105px;}
+    .pcc-table td.item-cleaning_rate_on_charge{width:84px;}
+    .pcc-table td.item-price{font-size:16px; font-weight:bold;}
+    .pcc-table tr.addedsku td{background-color:#fff1cc !important;}
+    .pcc-table tr:last-child{border-bottom:1px solid #f9f9f9}
+    .pcc-table .subselect.body,
+    .pcc-table .subselect.parts,
+    .pcc-table .subselect.vacmotor{display:inline-block; width:58px; margin-left:-3px;}
+    .pcc-table .subselect.body,
+    .pcc-table .subselect.parts{border-right:1px solid #ccc;}
+    .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{background-color:#f9f9f9;}
+    .input-area .input-title{font-weight:bold; margin:8px 0 -8px 0;}
+    .input-area input{margin-right:10px; height:40px;}
+    .input-area button.button{margin:10px 3px;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+        border-radius: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+        height:40px;
+        lineheight:20px;
+    }
+    .remove button.button{margin:10px;
+        padding: 7px 15px;
+        text-align: center;
+        border-radius: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size:12px;
+        line-height:15px;
+    }
+    .pcc-table .warranty-hide{display:block;}
+
+
+    @media only screen and (max-width:1199px) {
+        .pcc-table td{font-size:12px;}
+        .pcc-table-wrapper{overflow: auto;}
+        .comparetable-container{overflow:scroll}
+    }
+
+</style>
+
+
+
+{%- assign chartProductsArray = chartproducts | split: ","-%}
+
+<div class="comparetable-container">
+    <div class="input-area">
+        <div class="input-title">Add Skus to Table</div>
+        <input type="text" name="sku-additions" id="sku-additions"/>
+        <button class="button button-secondary" onclick="addSku();"><span>Add Sku</span></button>
+        <button class="button button-secondary" onclick="restTable();"><span>Reset</span></button>
+        <div class="loading" style="display:none;">Please Wait<span id="wait">.</span></div>
+    </div>
+
+    <table class="pcc-table comparetable table-striped table-bordered">
+        <tbody><tr class="filter">
+            <th scope="row">
+            </th><th id="heading-item-model" class="sortheading" onclick="sortme(this)">Model</th>
+            <th id="heading-item-power_source" class="sortheading" onclick="sortme(this)">Battery or Electric</th>
+            <th id="heading-item-battery_config" class="sortheading" onclick="sortme(this)">Battery Type</th>
+            <th id="heading-item-run_time" class="sortheading" onclick="sortme(this)">Run Time</th>
+            <th id="heading-item-cleaning_rate_hour" class="sortheading" onclick="sortme(this)">Cleaning (Ft²/hr)</th>
+            <th id="heading-item-solution_capacity" class="sortheading" onclick="sortme(this)">Solution Tank</th>
+            <th id="heading-item-cleaning_rate_on_charge" class="sortheading" onclick="sortme(this)">Ft² Cleaned on a Charge</th>
+            <th id="heading-item-warranty" class="sortheading">Warranty<br><span onclick="warrantySort('body')">Body</span> | <span onclick="warrantySort('parts')">Parts</span> | <span onclick="warrantySort('vacmotor')">Motors</span></th>
+            <th id="heading-item-free_shipping" class="sortheading" onclick="sortme(this)">Free Shipping</th>
+            <th id="heading-item-price" class="sortheading" onclick="sortme(this)">Price</th>
+            <th id="remove"></th>
+        </tr>
+
+        {%- for productsku in chartProductsArray -%}
+            <tr class="item-row" data-sku="{{ productsku }}" >
+                <td scope="row"></td>
+                <td class="item-model"></td>
+                <td class="item-power_source"></td>
+                <td class="item-battery_config"></td>
+                <td class="item-run_time"></td>
+                <td class="item-cleaning_rate_hour"></td>
+                <td class="item-solution_capacity"></td>
+                <td class="item-cleaning_rate_on_charge"></td>
+                <td class="item-warranty"></td>
+                <td class="item-free_shipping"></td>
+                <td class="item-price"></td>
+                <td class="remove"></td>
+            </tr>
+        {%- endfor -%}
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+
+    jQuery(document).ready(function($){
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const additional = urlParams.get('addproduct')
+
+        runwhatisthere();
+        if (additional){
+            setTimeout(() => {
+                addSku(additional,1);
+            }, "2000");
+        }
+
+    });
+
+    // default products
+    function runwhatisthere(){
+        $($('.comparetable .item-row').get().reverse()).each(function () {
+            // If this box is higher than the cached highest then store it
+            var thissku =  $(this).data('sku');
+            addSku(thissku,0);
+        });
+    }
+
+    function addSku(sku,useradded){
+        // Use skuArr and handleArr to crossrefference sku with handle to add
+        const handleArr = [{{ allhandles }}];
+        const skuArr = [{{ allskus }}];
+        const idArr = [{{ allskusids }}];
+
+        if(sku){
+            var thissku = sku;
+        }else{
+            var thissku = jQuery("#sku-additions").val().trim();
+            useradded = 1;
+        }
+
+        let skuindex = skuArr.indexOf(thissku);
+
+        if(skuindex >= 0){
+            addhandle(handleArr[skuindex],idArr[skuindex],thissku,useradded);
+        }else{
+            alert(thissku+' was not found in our Floor Scrubber categories, please try a different sku.');
+        }
+    }
+
+    // remove product
+    function removeSku(sku){
+        $('.item-row[data-sku="'+sku+'"]').remove();
+    }
+
+    // Add Sku to row
+    function addhandle(thishandle,variantid,thissku,useradded){
+        removeSku(thissku);
+        if(thishandle !=""){
+            jQuery(".loading").show();
+            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${thishandle}?variant=${variantid}&view=fs-compare-row`;
+            $.get(fetchUrl).then(response => {
+                if(response.includes("not an auto scrubber")){
+                    alert(response.trim());
+                }else if(response != "not a scrubber" && response) {
+                    if(useradded == 1){
+                        $('<tr class="item-row addedsku" data-sku="'+thissku+'">'+response+'</tr>').insertAfter('tr.filter');
+                    }else{
+                        $('<tr class="item-row" data-sku="'+thissku+'">'+response+'</tr>').insertAfter('tr.filter');
+                    }
+                }else{
+                    console.log('error 32425t');
+                }
+            }).fail(function(){
+                alert('No Item found under this sku, please try a different one.');
+            });
+            jQuery(".loading").hide();
+        }
+    }
+
+    //reset
+    function restTable(){
+        const defaultproducts = "{{ chartproducts }}";
+        $('.item-row').remove();
+        const defaultprodarray = defaultproducts.split(",");
+        defaultprodarray.reverse().forEach((sku) => {
+            $('<tr class="item-row" data-sku="'+sku+'"></tr>').insertAfter('tr.filter');
+        });
+        runwhatisthere();
+    }
+
+
+
+    function sortme(element) {
+
+        var attrToSort = element.id;
+
+        if ($('#' + attrToSort).hasClass("asc-sort")) {
+            $('#' + attrToSort).addClass("desc-sort");
+            $('#' + attrToSort).removeClass("asc-sort");
+            var arrange = "desc"
+        } else {
+            $('#' + attrToSort).addClass("asc-sort");
+            $('#' + attrToSort).removeClass("desc-sort");
+            var arrange = "asc"
+        }
+
+
+        attrToSort = "." + attrToSort.replace("heading-", "");
+        var firstRow = $('.filter').prop('outerHTML');
+//        var lastRow = $('.table-totals').prop('outerHTML');
+        $(".pcc-table").each(function () {
+            var events = $('.item-row', this);
+            events.sort(function (a, b) {
+                if ($(attrToSort, a).data("subdata") > 0) {
+                    //for pricing
+                    a = $(attrToSort, a).data("subdata");
+                    b = $(attrToSort, b).data("subdata");
+                } else {
+                    //for text
+                    a = $(attrToSort, a).text();
+                    b = $(attrToSort, b).text();
+                }
+
+
+                if (arrange == "asc") {
+                    if (a > b) {
+                        return 1;
+                    } else if (a < b) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                } else {
+                    if (a > b) {
+                        return -1;
+                    } else if (a < b) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+            $(this).html(events);
+            $(this).prepend(firstRow);
+//            $(this).append(lastRow);
+        });
+    }
+
+    function warrantySort(type){
+        var attrToSort = '.'+type;
+
+        if ($("#heading-item-warranty").hasClass("asc-sort")) {
+            $("#heading-item-warranty").addClass("desc-sort");
+            $("#heading-item-warranty").removeClass("asc-sort");
+            var arrange = "desc";
+        } else {
+            $("#heading-item-warranty").addClass("asc-sort");
+            $("#heading-item-warranty").removeClass("desc-sort");
+            var arrange = "asc";
+        }
+
+        var firstRow = $('.filter').prop('outerHTML');
+//        var lastRow = $('.table-totals').prop('outerHTML');
+        $(".pcc-table").each(function () {
+            var events = $('.item-row', this);
+            events.sort(function (a, b) {
+
+                a = $(attrToSort, a).text();
+                b = $(attrToSort, b).text();
+
+                // console.log(a+"|"+b);
+                if (arrange == "asc") {
+                    if (a > b) {
+                        return 1;
+                    } else if (a < b) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                } else {
+                    if (a > b) {
+                        return -1;
+                    } else if (a < b) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+            $(this).html(events);
+            $(this).prepend(firstRow);
+//            $(this).append(lastRow);
+        });
+    }
+
+
+
+</script>
+
+
+
+
+
+
