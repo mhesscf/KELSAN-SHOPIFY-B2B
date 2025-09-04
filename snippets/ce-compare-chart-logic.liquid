@@ -4,8 +4,8 @@
 {%- assign allskus = "" -%}
 {%- assign allskusids = "" -%}
 
-{% paginate collections['walk-behind-auto-scrubbers'].products by 500 %}
-    {% for product in collections['walk-behind-auto-scrubbers'].products %}
+{% paginate collections['carpet-spotters'].products by 500 %}
+    {% for product in collections['carpet-spotters'].products %}
         {% for variant in product.variants %}
             {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
             {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
@@ -14,8 +14,28 @@
     {% endfor %}
 {% endpaginate %}
 
-{% paginate collections['ride-on-auto-scrubbers'].products by 500 %}
-    {% for product in collections['ride-on-auto-scrubbers'].products %}
+{% paginate collections['cold-water-carpet-extraction-machines'].products by 500 %}
+    {% for product in collections['cold-water-carpet-extraction-machines'].products %}
+        {% for variant in product.variants %}
+            {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
+            {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
+            {%- assign allskusids = allskusids | append:'"' | append: variant.id | append:'",' -%}
+        {% endfor %}
+    {% endfor %}
+{% endpaginate %}
+
+{% paginate collections['heated-carpet-extractors'].products by 500 %}
+    {% for product in collections['heated-carpet-extractors'].products %}
+        {% for variant in product.variants %}
+            {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
+            {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
+            {%- assign allskusids = allskusids | append:'"' | append: variant.id | append:'",' -%}
+        {% endfor %}
+    {% endfor %}
+{% endpaginate %}
+
+{% paginate collections['self-contained-carpet-extractors'].products by 500 %}
+    {% for product in collections['self-contained-carpet-extractors'].products %}
         {% for variant in product.variants %}
             {%- assign allhandles = allhandles | append:'"' | append: product.handle | append:'",' -%}
             {%- assign allskus = allskus | append:'"' | append: variant.sku | append:'",' -%}
@@ -26,7 +46,7 @@
 
 <style>
     .pcc-table{border-collapse:collapse; border-radius:10px 10px 0 0; width:100%; overflow:hidden;}
-    .pcc-table.table-striped th{background-color:#298EC6 !important; color:#fff; font-size:14px; font-weight:bold; vertical-align:bottom; text-align:center; padding:6px 3px}
+    .pcc-table.table-striped th{background-color:#b94b3e !important; color:#fff; font-size:14px; font-weight:bold; vertical-align:bottom; text-align:center; padding:6px 3px}
     .pcc-table .sortheading{cursor: pointer;}
     .pcc-table td{text-align:center; vertical-align:middle; padding:2px 4px; font-size:12px; border-right:2px solid white;}
     .pcc-table td .item-name{font-weight:bold;}
@@ -96,12 +116,13 @@
         <tbody><tr class="filter">
             <th scope="row">
             </th><th id="heading-item-model" class="sortheading" onclick="sortme(this)">Model</th>
-            <th id="heading-item-power_source" class="sortheading" onclick="sortme(this)">Battery or Electric</th>
-            <th id="heading-item-battery_config" class="sortheading" onclick="sortme(this)">Battery Type</th>
-            <th id="heading-item-run_time" class="sortheading" onclick="sortme(this)">Run Time</th>
-            <th id="heading-item-cleaning_rate_hour" class="sortheading" onclick="sortme(this)">Cleaning (Ft²/hr)</th>
+            <th id="heading-item-psi" class="sortheading" onclick="sortme(this)">PSI</th>
+            <th id="heading-item-heated" class="sortheading" onclick="sortme(this)">Heated</th>
             <th id="heading-item-solution_capacity" class="sortheading" onclick="sortme(this)">Solution Tank</th>
-            <th id="heading-item-cleaning_rate_on_charge" class="sortheading" onclick="sortme(this)">Ft² Cleaned on a Charge</th>
+            <th id="heading-item-waterlift" class="sortheading" onclick="sortme(this)">Water Lift</th>
+            <th id="heading-item-airflow" class="sortheading" onclick="sortme(this)">Airflow (CFM)</th>
+            <th id="heading-item-vac_motor" class="sortheading" onclick="sortme(this)">Vac Motor</th>
+            <th id="heading-item-hose_length" class="sortheading" onclick="sortme(this)">Hose Length</th>
             <th id="heading-item-warranty" class="sortheading">Warranty<br><span onclick="warrantySort('body')">Body</span> | <span onclick="warrantySort('parts')">Parts</span> | <span onclick="warrantySort('vacmotor')">Motors</span></th>
             <th id="heading-item-free_shipping" class="sortheading" onclick="sortme(this)">Free Shipping</th>
             <th id="heading-item-price" class="sortheading" onclick="sortme(this)">Price</th>
@@ -112,12 +133,13 @@
             <tr class="item-row" data-sku="{{ productsku }}" >
                 <td scope="row"></td>
                 <td class="item-model"></td>
-                <td class="item-power_source"></td>
-                <td class="item-battery_config"></td>
-                <td class="item-run_time"></td>
-                <td class="item-cleaning_rate_hour"></td>
+                <td class="item-psi"></td>
+                <td class="item-heated"></td>
                 <td class="item-solution_capacity"></td>
-                <td class="item-cleaning_rate_on_charge"></td>
+                <td class="item-waterlift"></td>
+                <td class="item-airflow"></td>
+                <td class="item-vac_motor"></td>
+                <td class="item-hose_length"></td>
                 <td class="item-warranty"></td>
                 <td class="item-free_shipping"></td>
                 <td class="item-price"></td>
@@ -132,7 +154,7 @@
 <script>
 
     jQuery(document).ready(function($){
-
+        {% comment %}onload product addition: https://www.carpetextractors.com/pages/sandia-comparison-chart?addproduct=TPL-12-500-CE-TCP{% endcomment %}
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const additional = urlParams.get('addproduct')
@@ -187,7 +209,7 @@
         removeSku(thissku);
         if(thishandle !=""){
             jQuery(".loading").show();
-            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${thishandle}?variant=${variantid}&view=fs-compare-row`;
+            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${thishandle}?variant=${variantid}&view=ce-compare-row`;
             $.get(fetchUrl).then(response => {
                 if(response.includes("not an auto scrubber")){
                     alert(response.trim());

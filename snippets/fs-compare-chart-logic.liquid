@@ -132,7 +132,7 @@
 <script>
 
     jQuery(document).ready(function($){
-
+        {% comment %}onload product addition: https://www.cleanfreak.com/pages/floor-scrubber-compare-chart?addproduct=NFA-56384686{% endcomment %}
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const additional = urlParams.get('addproduct')
