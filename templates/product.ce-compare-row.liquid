@@ -1,0 +1,184 @@
+{% layout none %}
+{% comment %}{%- assign freqarray =  product.metafields.plytix.freq_bought | split: ", " -%}{% endcomment %}
+
+{% comment %}if bundle get first product{% endcomment %}
+{% if product.metafields.plytix.package_products != blank %}
+    {%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
+    {%- assign mainproducthandle = bproducts[0] | split: "#" -%}
+    {%- assign product = all_products[mainproducthandle[0]] -%}
+{% endif %}
+
+
+{% assign isScrubber = false %}
+{% assign pdiscontinued = false %}
+{%- for c in product.collections -%}
+    {% if c.handle == "carpet-spotters" %}
+        {% assign isScrubber = true %}
+    {% elsif c.handle == "cold-water-carpet-extraction-machines" %}
+        {% assign isScrubber = true %}
+    {% elsif c.handle == "heated-carpet-extractors" %}
+        {% assign isScrubber = true %}
+    {% elsif c.handle == "self-contained-carpet-extractors" %}
+        {% assign isScrubber = true %}
+
+
+
+    {% elsif c.handle == "discontinued" %}
+        {% assign pdiscontinued = true %}
+    {% endif %}
+{%- endfor -%}
+
+{% if isScrubber == true %}
+
+    {%- assign variant = product.selected_or_first_available_variant -%}
+    {%- assign thisprice = 99999 -%}
+    {% comment %}Pricing{% endcomment %}
+    {%- if product.metafields.plytix.package_products != blank -%}
+                {%- if product.metafields.plytix.bundle_pricing != blank -%}
+                    {%- assign bundleprice = product.metafields.plytix.bundle_pricing | times: 100 -%}
+                    {%- assign thisprice = bundleprice -%}
+                {%- else -%}
+                    {%- assign thisprice = 99999 -%}
+                {%- endif -%}
+    {%- else -%}
+        {%- if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
+            {%- assign thisprice = variant.price -%}
+        {%- elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' -%}
+            {%- assign thisprice = 99999 -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {% comment %}Pull individual specs from spec metafield{% endcomment %}
+
+    {% comment %}fs specs
+    {% assign powersrc = "-" %}
+    {% assign batterytype = "-" %}
+    {% assign runtime = "-" %}
+    {% assign rate = "-" %}
+    {% assign solutiontank = "-" %}
+    {% assign cleaned-per-charge = "-" %}
+    {% endcomment %}
+
+
+
+    {% assign psi = "-" %}
+    {% assign heated = "-" %}
+    {% assign solutiontank = "-" %}
+    {% assign waterlift = "-" %}
+    {% assign airflow = "-" %}
+    {% assign vacmotor = "-" %}
+    {% assign hoselength = "-" %}
+
+
+    {% assign warranty = "-" %}
+    {% assign freeshipping = "No" %}
+    {% if product.metafields.plytix.free_shipping %}
+        {% assign freeshipping = "Yes" %}
+    {% endif %}
+
+
+    {% assign specs = product.metafields.plytix.specs | split: ";;" %}
+    {% for spec in specs %}
+        {% assign attr = spec | split: "::" %}
+        {% assign attrVal = attr[1] | remove: "[" | remove: "]" |  remove : "'" %}
+        {% if attr[1] != "None" %}
+            {% if attr[0] == "PSI" %}{% assign psi = attrVal %}{% endif %}
+            {% if attr[0] == "Heated" %}{% assign heated = attrVal %}{% endif %}
+            {% if attr[0] == "Solution Capacity" %}{% assign solutiontank = attrVal %}{% endif %}
+            {% if attr[0] == "Water Lift" %}{% assign waterlift = attrVal %}{% endif %}
+            {% if attr[0] == "Airflow (CFM)" %}{% assign airflow = attrVal %}{% endif %}
+            {% if attr[0] == "Vacuum Motor" %}{% assign vacmotor = attrVal %}{% endif %}
+            {% if attr[0] == "Vac Hose" %}{% assign hoselength = attrVal %}{% endif %}
+
+
+            {% if attr[0] == "Warranty" %}{% assign warranty = attr[1] | remove: "[" | remove: "]" |  remove : "'" | replace: ';', ', ' | newline_to_br %}{% endif %}
+
+
+
+
+
+        {% endif %}
+    {% endfor %}
+
+{% comment %}
+    {% if runtime != "-" and  rate != "-" and runtime contains "hours" %}
+        {% assign cleanrate = rate | remove: "," | remove: "sq. ft."%}
+        {% comment %}this below seems to remove everything but numbers{% endcomment %}
+        {% assign cleanrate = cleanrate | plus: 0 %}
+
+        {% assign cleanruntime = runtime | remove: " hours" %}
+        {% comment %}this below seems to remove everything but numbers{% endcomment %}
+        {% assign cleanruntime = cleanruntime | plus: 0 %}
+
+        {% assign cleaned-per-charge = cleanrate | times: cleanruntime | times: 100 %}
+        {% assign cleaned-per-charge = cleaned-per-charge | money_without_currency | remove: '.00' %}
+    {% endif %}
+{% endcomment %}
+
+    {% if warranty != "-" %}
+        {% assign warbody = " - " %}
+        {% assign warparts = " - " %}
+        {% assign warmotors = " - " %}
+
+        {% assign warranty = warranty | replace: "<br/>", "split" %}
+        {% assign warranty = warranty | replace: "<br />", "split" %}
+        {% assign warranty = warranty | replace: "<br>", "split" %}
+        {% assign warrantyArray = warranty | split: "split" %}
+        {% for section in warrantyArray %}
+            {% assign sectionArray = section | split: "-" %}
+            {% assign label = sectionArray[0] | remove: "<b>" | remove: "</b>" | strip %}
+            {% if label contains "Body" or label contains "Tank" or label contains "Part" or label contains "Motor"  %}
+                {% assign valuearr = sectionArray[1] | split: "(" %}
+                {% assign value = valuearr[0] %}
+                {% if label contains "Body" or label contains "Tank"  %}
+                    {% assign warbody = value %}
+                {% elsif label contains "Part"  %}
+                    {% assign warparts = value %}
+                {% elsif label contains "Motor"  %}
+                    {% assign warmotors = value %}
+                {% endif %}
+
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+
+        <td scope="row">
+            <div class="img-contain">
+                <a href="{{ product.url }}">
+                    {%
+                            render 'rimg',
+                            img: product.featured_media.preview_image.src
+                            size: '60x',
+                            class: 'productitem--image-primary'
+                    -%}
+                </a>
+            </div>
+        </td>
+        <td class="item-model">
+            <div class="item-name"><a href="{{ product.url }}">{{ product.title }}</a></div>
+            <div class="item-sku">{{ variant.sku }}</div>
+        </td>
+        <td class="item-psi">{{ psi }}</td>
+        <td class="item-heated">{{ heated }}</td>
+        <td class="item-solution_capacity">{{ solutiontank }}</td>
+        <td class="item-waterlift">{{ waterlift }}</td>
+        <td class="item-airflow">{{ airflow }}</td>
+        <td class="item-vac_motor">{{ vacmotor }} </td>
+        <td class="item-hose_length">{{ hoselength }} </td>
+        <td class="item-warranty">
+            <span class="subselect body">{{ warbody  }}</span>
+            <span class="subselect parts">{{ warparts }}</span>
+            <span class="subselect vacmotor">{{ warmotors }}</span>
+         </td>
+        <td class="item-free_shipping">{{ freeshipping }}</td>
+        <td class="item-price" subdata="{{ thisprice }}">
+            {{ thisprice | money}}
+        </td>
+        <td class="remove"><button class="button orange button-secondary" onclick="removeSku('{{ variant.sku }}');"><span><span>Remove</span></span></button>
+        </td>
+{% else %}
+    {%- assign variant = product.selected_or_first_available_variant -%}
+{{ variant.sku }} {{ mainproducthandle }}is not an auto scrubber. Please select a different product.
+{% endif %}
