@@ -231,6 +231,10 @@
                         {%- assign sellable = false -%}
                         {%- assign soldoutitems = true -%}
                     {%- endif -%}
+
+                    {%- if all_products[bundlep].metafields.plytix.erp_sku == "CPL-SA034800" and shop.name contains "CleanFreak B2B" -%}
+                        {% comment %}hide this kit and let the fg add it on the cart on b2b {% endcomment %}
+                    {%- else -%}
                     <tr class="bnd-product-row {% if sellable == false %}sold-product{% elsif showfg %}freegift{% endif %}" data-handle="{{ all_products[bundlep].handle }}" itemtype="https://schema.org/Product" itemscope>
                         <td class="custom-bundle-col-img">
                             <div class="p-image">
@@ -426,6 +430,7 @@
                             </div>
                         </td>
                     </tr>
+                    {%- endif -%}
                 {%- endfor -%}
             </tbody></table>
     </section>
