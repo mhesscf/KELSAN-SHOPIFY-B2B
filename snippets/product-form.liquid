@@ -735,7 +735,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {% comment %}do nothing{% endcomment %}
                 {%- else -%}
                   <div class="financing-contain">
-                    {%- if selected_variant.price < 100000 -%}
+                    {%- if selected_variant.price < 100000 and 1 == 0 -%}
                       <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></a></div>
                       {% comment %}
                       <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"/></a></div>
@@ -752,12 +752,14 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
                         .finance-info h2{border-bottom:1px solid #C0D3D8; padding-bottom:15px; margin-bottom:20px;}
                         .finance-info .finance-info-option{}
-                        .finance-info .finance-info-option ul{padding-left:15px; margin:10px 0 15px 0;}
-                        .finance-info .finance-info-option .finance-info-upto{font-size:14px;}
+                        .finance-info .finance-info-option ul{padding-left:15px; margin:0;}
+                        .finance-info .finance-info-option .finance-info-upto{font-size:14px; margin-bottom:10px}
                         .finance-info .finance-info-option .finance-info-left{text-align:left; float:left;}
                         .finance-info .finance-info-option .finance-info-right{width:130px; float:right;}
                         .finance-info .finance-info-option .finance-info-img img{margin:unset; max-width:150px;}
                         .finance-info .finance-info-option .finance-info-list{clear:both;padding: 1px 0 15px 0;}
+                        .finance-info .finance-info-option .under1000{text-align:center; border-radius:15px; border: 1px solid #ccc; width:176px; margin-left:-42px; line-height:20px;}
+
                       </style>
                       <script>
 
@@ -774,6 +776,19 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                           $('.shoppaycheckout').on('click', function () {
                             $('.product-form--atc #p-atc').click();
                           });
+
+
+                          $('.eqwebdata').on('click', function () {
+                            $('.eqwebdata-list').slideToggle(500); // 500ms animation
+
+                            if($('.finance-info-trigger').hasClass('showthis')){
+                              $('.eqwebdata').removeClass('showthis').addClass('hidethis').html('Less Data <i style="font-size:14px;" class="fa-solid fa-chevron-up"></i>');
+                            }else{
+                              $('.eqwebdata').removeClass('hidethis').addClass('showthis').html('More Data <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i>');
+                            }
+                          });
+
+
                         });
 
 
@@ -792,18 +807,26 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                             <div class="finance-info-right">
                               {% comment %}<div style="width:120px" class="financebtn product-form--atc-button main-atc-button thinbtn" onclick="" >Apply Now</div>{% endcomment %}
 
-                              <div class="finance-wrapper"></div>
+                              {%- if selected_variant.price < 100000 -%}
+                                <div class="under1000">Available for orders over $1000</div>
+                              {%- else -%}
+                                <div class="finance-wrapper"></div>
+                              {%- endif -%}
+
 
                             </div>
                             <div class="finance-info-list">
                               <ul>
                                 <li>Terms up to 60 months</li>
+                              </ul>
+                              <ul class="eqwebdata-list" style="display: none;">
                                 <li>Will analyze your application, and route it to the best lenders</li>
                                 <li>Up to 3 lenders may work your application at a time</li>
                                 <li>Lenders compete, so they are motivated to work quickly and present their best offers</li>
                                 <li>Choose the best term from up to 3 competing lenders</li>
                                 <li>Business accounts only – including start-ups</li>
                               </ul>
+                              <div class="eqwebdata fake-link">More Data <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></div>
                             </div>
                           </div>
 
@@ -1145,7 +1168,9 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- endif -%}
                   {%- comment -%}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
-
+                  {%- if free_product.selected_or_first_available_variant.metafields.plytix.erp_sku == "CPL-SA034800" and shop.name contains "CleanFreak B2B" -%}
+                    {% comment %}hide this kit and let the fg add it on the cart on b2b {% endcomment %}
+                  {%- else -%}
                   <input type="hidden"
                          name="updates[{{ free_product_handle }}]"
                          class="quantity field"
@@ -1157,13 +1182,14 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                          data-availqty="{{ free_product.selected_or_first_available_variant.inventory_quantity }}"
                          data-status="{{ stockStatusFreeNote }}"
                           {% if showfg %}
-                            data-tieredPricing="fg"
+                            data-tieredPricing="fg2"
                           {% else %}
                             data-tieredPricing=""
                           {% endif %}
                          data-qty="{{ free_product_entry_parts[1] }}"
                          data-price="{{ free_product.price }}"
                          value="{{ free_product_entry_parts[1] }}" />
+                  {%- endif -%}
                 {%- endfor -%}
               </div>
               <div class="product-form--atc">
