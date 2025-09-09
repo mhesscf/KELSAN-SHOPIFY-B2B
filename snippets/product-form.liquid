@@ -1168,7 +1168,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- endif -%}
                   {%- comment -%}End of bundle free stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
-                  {%- if free_product.selected_or_first_available_variant.metafields.plytix.erp_sku == "CPL-SA034800" and shop.name contains "CleanFreak B2B" -%}
+                  {%- if free_product.metafields.plytix.erp_sku == "CPL-SA034800" and shop.name contains "CleanFreak B2B" -%}
                     {% comment %}hide this kit and let the fg add it on the cart on b2b {% endcomment %}
                   {%- else -%}
                   <input type="hidden"
