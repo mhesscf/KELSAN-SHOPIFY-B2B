@@ -2042,6 +2042,33 @@ background:none;
   }
 }
 
+.compare-chart-link{
+  position: relative;
+  z-index:101;
+  max-width:1330px;
+  margin:0 15px 0 15px;
+}
+.compare-chart-link img{
+  border-radius: 15px;
+}
+@media (min-width: 1400px){
+  .compare-chart-link{
+    margin:auto;
+  }
+}
+
+.compare-chart-link img.compare-large{
+  display:none
+}
+@media (min-width: 860px) {
+  .compare-chart-link img.compare-small{
+    display:none;
+  }
+  .compare-chart-link img.compare-large{
+    display:block;
+  }
+}
+
   /*--- Gallery ---*/
 .product-gallery .stickme{
   position:sticky;

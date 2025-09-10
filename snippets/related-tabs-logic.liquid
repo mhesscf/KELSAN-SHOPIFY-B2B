@@ -11,9 +11,13 @@
 {%- assign current_var_id = product.selected_or_first_available_variant.id %}
 {%- comment -%}do not show freq if main item is discontinued, or there is no valid product{%- endcomment -%}
 {%- assign showfreq = true -%}
+{%- assign isfs = false -%}
 {%- for c in product.collections -%}
     {%- if c.handle == "discontinued" -%}
         {% assign showfreq = false -%}
+    {%- endif -%}
+    {%- if c.handle == "ride-on-auto-scrubbers" or c.handle == "walk-behind-auto-scrubbers" -%}
+        {%- assign isfs = true -%}
     {%- endif -%}
 {%- endfor -%}
 {%- assign freqitemcount = 0 -%}
@@ -625,14 +629,16 @@
                         <div id="{{ tab_rel_id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
                 {%- endcase -%}
             {%- endfor -%}
-
-
-
-
-
         </section>
     </div>
 </div>
+{%- if isfs -%}
+    {%- assign thissku = product.selected_or_first_available_variant.sku -%}
+    <div class="compare-chart-link">
+        <a href="/pages/floor-scrubber-compare-chart?addproduct={{ thissku }}"><img src="{{ "fs-compare-bnr-desktop.jpg" | file_url  }}" alt="Floor Scrubber Compare Chart" class="img-responsive compare-large" /></a>
+        <a href="/pages/floor-scrubber-compare-chart?addproduct={{ thissku }}"><img src="{{ "fs-compare-bnr-mobile.jpg" | file_url  }}" alt="Floor Scrubber Compare Chart" class="img-responsive compare-small" /></a>
+    </div>
+{%- endif -%}
 </section>
 {%- if maxproductscounter > maxproducts -%}
     <div data-allprodtotal="{{ maxproductscounter }}">----</div>
