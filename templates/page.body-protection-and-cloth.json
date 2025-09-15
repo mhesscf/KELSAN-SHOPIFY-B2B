@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "8f79c41e-cc0d-4748-8c46-078074d6a700": {
@@ -15,7 +15,8 @@
         "f6953e0f-60e6-4ef0-ba29-6f7605e3e0c4": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/body-protection-and-clothing-dept-page.jpg",
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/body-protection-and-clothing-dept-page.jpg",
             "cat_title": "Body Protection & Clothing",
             "cat_text": "Disposable & reusable PPE (Personal Protective Equipment) clothing to protect the body of the user."
           }
@@ -128,41 +129,49 @@
         "028ac1ee-b963-475a-9563-1dba9235672c": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aprons.jpg",
+            "image": "shopify://shop_images/aprons.jpg",
             "title": "Aprons",
-            "url": "\/collections\/aprons"
+            "url": "/collections/aprons"
           }
         },
         "aa4c2564-a95e-4a61-85be-f73ed0137784": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/coveralls.jpg",
+            "image": "shopify://shop_images/coveralls.jpg",
             "title": "Coveralls",
-            "url": "\/collections\/coveralls"
+            "url": "/collections/coveralls"
           }
         },
         "108ab338-e997-4f37-a3b5-3abe583e6dd3": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lab-coats.jpg",
+            "image": "shopify://shop_images/lab-coats.jpg",
             "title": "Lab Coats",
-            "url": "\/collections\/lab-coats"
+            "url": "/collections/lab-coats"
+          }
+        },
+        "categorylink_7Dm3t4": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/promotional-items-200x200.jpg",
+            "title": "Promotional Items",
+            "url": "/collections/promotional-items"
           }
         },
         "da0270b8-077a-4dab-8bd5-9999b542d764": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rain-suits.jpg",
+            "image": "shopify://shop_images/rain-suits.jpg",
             "title": "Rain Suits & Ponchos",
-            "url": "\/collections\/rain-suits-ponchos"
+            "url": "/collections/rain-suits-ponchos"
           }
         },
         "93044a66-2f9c-4c46-a697-b5ec8133cb4f": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sleeves.jpg",
+            "image": "shopify://shop_images/sleeves.jpg",
             "title": "Sleeves",
-            "url": "\/collections\/sleeves"
+            "url": "/collections/sleeves"
           }
         }
       },
@@ -170,6 +179,7 @@
         "028ac1ee-b963-475a-9563-1dba9235672c",
         "aa4c2564-a95e-4a61-85be-f73ed0137784",
         "108ab338-e997-4f37-a3b5-3abe583e6dd3",
+        "categorylink_7Dm3t4",
         "da0270b8-077a-4dab-8bd5-9999b542d764",
         "93044a66-2f9c-4c46-a697-b5ec8133cb4f"
       ],
@@ -229,24 +239,24 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Safety Zone®",
-            "brand-link": "\/collections\/vendors?refinementList[product_type][0]=Body Protection %26 Clothing&q=Safety Zone",
-            "brand-image": "shopify:\/\/shop_images\/polypropylene-disposable-lab-coat-white_1.jpg"
+            "brand-link": "/collections/vendors?refinementList[product_type][0]=Body Protection %26 Clothing&q=Safety Zone",
+            "brand-image": "shopify://shop_images/polypropylene-disposable-lab-coat-white_1.jpg"
           }
         },
         "e63063b0-a00f-4437-ac7e-53ba0bad5163": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Keystone Safety®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Keystone Safety&refinementList[product_type][0]=Body Protection %26 Clothing&q=Keystone Safety",
-            "brand-image": "shopify:\/\/shop_images\/keystone-ag-tvki-white-tyvek-sleeves.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Keystone Safety&refinementList[product_type][0]=Body Protection %26 Clothing&q=Keystone Safety",
+            "brand-image": "shopify://shop_images/keystone-ag-tvki-white-tyvek-sleeves.jpg"
           }
         },
         "2017ef73-834b-40c6-8cbe-f798fdf8b789": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Impact®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Body Protection %26 Clothing&q=Impact",
-            "brand-image": "shopify:\/\/shop_images\/impact-promax-microporous-coveralls-grp.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Body Protection %26 Clothing&q=Impact",
+            "brand-image": "shopify://shop_images/impact-promax-microporous-coveralls-grp.jpg"
           }
         }
       },
@@ -261,8 +271,7 @@
     },
     "trustpilot_review_carousel_7U4HzR": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

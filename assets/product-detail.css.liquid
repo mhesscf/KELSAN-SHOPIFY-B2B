@@ -897,6 +897,7 @@ input.qtyminus {
   justify-content: space-between;
   margin-top:42px
 }
+
 .product-form--atc .cart-buttons .qtydiv{
   margin:-31px 15px 0 0;
 }
@@ -1177,10 +1178,9 @@ background:none;
 }
 .product-is-bundle .product-form--atc .cart-buttons{
   flex-wrap: nowrap !important;
+  justify-content: end;
 }
-.product-is-bundle .product-form--atc .cart-buttons button.product-form--atc-button{
-  margin: 0 10px 0 0 !important;
-}
+
 /* ------------- Product Manufacturer Info Section --------------------- */
 
 .product-manufacturer-info{
@@ -2039,6 +2039,33 @@ background:none;
   .rel-product-tabbed-area .deal-rib{
     top:-20px;
     left: -20px;
+  }
+}
+
+.compare-chart-link{
+  position: relative;
+  z-index:101;
+  max-width:1330px;
+  margin:0 15px 0 15px;
+}
+.compare-chart-link img{
+  border-radius: 15px;
+}
+@media (min-width: 1400px){
+  .compare-chart-link{
+    margin:auto;
+  }
+}
+
+.compare-chart-link img.compare-large{
+  display:none
+}
+@media (min-width: 860px) {
+  .compare-chart-link img.compare-small{
+    display:none;
+  }
+  .compare-chart-link img.compare-large{
+    display:block;
   }
 }
 

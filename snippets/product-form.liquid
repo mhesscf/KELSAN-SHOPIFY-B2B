@@ -24,6 +24,13 @@
 
 {% endif %}
 
+{%- assign pdiscontinued = false -%}
+{%- for c in product.collections -%}
+  {%- if c.handle == "discontinued" -%}
+    {%- assign pdiscontinued = true %}
+  {%- endif -%}
+{%- endfor -%}
+
 {%- comment -%}
 Cleanfreak update: remove default functionality for add to cart on bundles (remove from) and add just a button. Fixes issue with bundles adding to cart at $0 when JS is turned off.
 {%- endcomment -%}
@@ -500,14 +507,6 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         <div class="rside">
           {%- comment -%} Quantity Discount Tieres{%- endcomment -%}
 
-          {%- assign pdiscontinued = false -%}
-          {%- for c in product.collections -%}
-            {%- if c.handle == "discontinued" -%}
-              {%- assign pdiscontinued = true %}
-            {%- endif -%}
-          {%- endfor -%}
-
-
 
     {%- for variant in product.variants -%}
 
@@ -730,142 +729,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- endif -%}
                 </div>
               </div>
-              {%- if pdiscontinued == false -%}
-                {%- if shop.name contains "CleanFreak B2B" or selected_variant.sku contains "-DEMO"  -%}
-                  {% comment %}do nothing{% endcomment %}
-                {%- else -%}
-                  <div class="financing-contain">
-                    {%- if selected_variant.price < 100000 and 1 == 0 -%}
-                      <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></a></div>
-                      {% comment %}
-                      <div class="default-text"><a href="/pages/financing-options">Financing available for orders over $1000 <img style="width:105px; float:right; margin-top:1px" src="{{ 'quickspark-v2.png' | file_url }}" alt="QuickSpark Financing"/></a></div>
-                      {% endcomment %}
-                    {%- else -%}
-                      {% comment %}<div class="finance-wrapper"></div>{% endcomment %}
 
 
-                      <style>
-                        .finance-info {
-                          text-align:left;
-                        }
-
-
-                        .finance-info h2{border-bottom:1px solid #C0D3D8; padding-bottom:15px; margin-bottom:20px;}
-                        .finance-info .finance-info-option{}
-                        .finance-info .finance-info-option ul{padding-left:15px; margin:0;}
-                        .finance-info .finance-info-option .finance-info-upto{font-size:14px; margin-bottom:10px}
-                        .finance-info .finance-info-option .finance-info-left{text-align:left; float:left;}
-                        .finance-info .finance-info-option .finance-info-right{width:130px; float:right;}
-                        .finance-info .finance-info-option .finance-info-img img{margin:unset; max-width:150px;}
-                        .finance-info .finance-info-option .finance-info-list{clear:both;padding: 1px 0 15px 0;}
-                        .finance-info .finance-info-option .under1000{text-align:center; border-radius:15px; border: 1px solid #ccc; width:176px; margin-left:-42px; line-height:20px;}
-
-                      </style>
-                      <script>
-
-                        $(document).ready(function () {
-                          $('.finance-info-trigger').on('click', function () {
-                            $('.finance-info').slideToggle(500); // 500ms animation
-
-                            if($('.finance-info-trigger').hasClass('showthis')){
-                              $('.finance-info-trigger').removeClass('showthis').addClass('hidethis').html('Hide financing options <i style="font-size:14px;" class="fa-solid fa-chevron-up"></i>');
-                            }else{
-                              $('.finance-info-trigger').removeClass('hidethis').addClass('showthis').html('See financing options <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i>');
-                            }
-                          });
-                          $('.shoppaycheckout').on('click', function () {
-                            $('.product-form--atc #p-atc').click();
-                          });
-
-
-                          $('.eqwebdata').on('click', function () {
-                            $('.eqwebdata-list').slideToggle(500); // 500ms animation
-
-                            if($('.finance-info-trigger').hasClass('showthis')){
-                              $('.eqwebdata').removeClass('showthis').addClass('hidethis').html('Less Data <i style="font-size:14px;" class="fa-solid fa-chevron-up"></i>');
-                            }else{
-                              $('.eqwebdata').removeClass('hidethis').addClass('showthis').html('More Data <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i>');
-                            }
-                          });
-
-
-                        });
-
-
-
-                      </script>
-                      <div class="finance-wrapper-drop">
-                        <div class="finance-info-trigger fake-link showthis" style="padding-top:5px">See financing options <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></div>
-
-                        <div class="finance-info" style="display: none;">
-                          <h2>Financing Options</h2>
-                          <div class="finance-info-option quickspark">
-                            <div class="finance-info-left">
-                              <div class="finance-info-img"><img src="{{ shop.url }}/cdn/shop/files/quickspark-v2.png?v=1747072990" class="img-responsive" alt="QuickSpark Logo"></div>
-                              <div class="finance-info-upto">Up to $5,000,000</div>
-                            </div>
-                            <div class="finance-info-right">
-                              {% comment %}<div style="width:120px" class="financebtn product-form--atc-button main-atc-button thinbtn" onclick="" >Apply Now</div>{% endcomment %}
-
-                              {%- if selected_variant.price < 100000 -%}
-                                <div class="under1000">Available for orders over $1000</div>
-                              {%- else -%}
-                                <div class="finance-wrapper"></div>
-                              {%- endif -%}
-
-
-                            </div>
-                            <div class="finance-info-list">
-                              <ul>
-                                <li>Terms up to 60 months</li>
-                              </ul>
-                              <ul class="eqwebdata-list" style="display: none;">
-                                <li>Will analyze your application, and route it to the best lenders</li>
-                                <li>Up to 3 lenders may work your application at a time</li>
-                                <li>Lenders compete, so they are motivated to work quickly and present their best offers</li>
-                                <li>Choose the best term from up to 3 competing lenders</li>
-                                <li>Business accounts only – including start-ups</li>
-                              </ul>
-                              <div class="eqwebdata fake-link">More Data <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></div>
-                            </div>
-                          </div>
-
-
-                          <div class="finance-info-option shoppay">
-                            <div class="finance-info-left">
-                              <div class="finance-info-img"><img src="{{ shop.url }}/cdn/shop/files/shop-pay-trans.png?v=1668624779" style="margin:0 0 0 -8px" class="img-responsive" alt="Shop pay Logo"></div>
-                              <div class="finance-info-upto">Up to $17,500</div>
-                            </div>
-                            <div class="finance-info-right">
-                              <div style="width:120px" class="financebtn shoppaycheckout product-form--atc-button main-atc-button thinbtn" >Check Out</div>
-                            </div>
-                            <div class="finance-info-list">
-                              <ul>
-                                <li>Four interest-free payments every two weeks for orders between $50.00 <br>and $999.99 before shipping and taxes</li>
-                                <li>Monthly payment options (3, 6, or 12-month) available, <br>for orders between $150.00 and $17,500.00 with a 0% - 36% APR interest rate<a href="/pages/financing-options#notes">**</a></li>
-                                <li>Checking eligibility has no impact to credit</li>
-                              </ul>
-                            </div>
-
-                          </div>
-
-                          <div class="finance-more-info" style="width:100%; text-align:right; padding-bottom:25px;">
-                            <a href="/pages/financing-options">View More Financing Options <i class="fa-solid fa-arrow-right"></i></a>
-                          </div>
-
-                        </div>
-
-                      </div>
-
-
-
-
-
-
-                    {%- endif -%}
-                  </div>
-                {%- endif -%}
-              {%- endif -%}
 
               <div data-payment-terms-reference style="display: none;">
                 {{ form | payment_terms }}
@@ -1396,13 +1261,15 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
 
 
-
+              {% comment %}
                   {%- if isBundle == true -%}
-                  {%- assign bundleprice = product.metafields.plytix.bundle_pricing | plus: 0.00 -%}
+                    {%- assign bundleprice = product.metafields.plytix.bundle_pricing | plus: 0.00 -%}
                     {%- if bundleprice > 1000 -%}
                       <button class="product-form--finance-atc-button2 main-atc-button" onclick="window.location.href = '/pages/financing-options'" style="">Financing Available</button>
                     {%- endif -%}
                   {%- endif -%}
+             {% endcomment %}
+
                 </div>
               </div>
               {% if pdiscontinued == false %}
@@ -1479,3 +1346,140 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
             });
           </script>
+
+{% comment %}--------------------------------Financing------------------------------{% endcomment %}
+{%- if pdiscontinued != true -%}
+  {%- if shop.name contains "CleanFreak B2B" or selected_variant.sku contains "-DEMO"  -%}
+    {% comment %}do nothing{% endcomment %}
+  {%- else -%}
+    <div class="financing-contain">
+        {% comment %}<div class="finance-wrapper"></div>{% endcomment %}
+
+
+        <style>
+          .finance-info {
+            text-align:left;
+          }
+
+          .finance-info h2{border-bottom:1px solid #C0D3D8; padding-bottom:15px; margin-bottom:20px;}
+          .finance-info .finance-info-option{}
+          .finance-info .finance-info-option ul{padding-left:15px; margin:0;}
+          .finance-info .finance-info-option .finance-info-upto{font-size:14px; margin-bottom:10px}
+          .finance-info .finance-info-option .finance-info-left{text-align:left; float:left;}
+          .finance-info .finance-info-option .finance-info-right{width:130px; float:right;}
+          .finance-info .finance-info-option .finance-info-img img{margin:unset; max-width:150px;}
+          .finance-info .finance-info-option .finance-info-list{clear:both;padding: 1px 0 15px 0;}
+          .finance-info .finance-info-option .under1000{text-align:center; border-radius:15px; border: 1px solid #ccc; width:176px; margin-left:-42px; line-height:20px;}
+          .finance-info .fake-link{padding-top:5px;}
+
+        </style>
+        <script>
+
+          $(document).ready(function () {
+            $('.finance-info-trigger').on('click', function () {
+              $('.finance-info').slideToggle(500); // 500ms animation
+
+              if($('.finance-info-trigger').hasClass('showthis')){
+                $('.finance-info-trigger').removeClass('showthis').addClass('hidethis').html('Hide financing options <i style="font-size:14px;" class="fa-solid fa-chevron-up"></i>');
+              }else{
+                $('.finance-info-trigger').removeClass('hidethis').addClass('showthis').html('See financing options <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i>');
+              }
+            });
+            $('.shoppaycheckout').on('click', function () {
+              $('.product-form--atc #p-atc').click();
+            });
+
+
+            $('.eqwebdata').on('click', function () {
+              $('.eqwebdata-list').slideToggle(500); // 500ms animation
+              if($('.eqwebdata').hasClass('showthisdata')){
+                $('.eqwebdata').removeClass('showthisdata').addClass('hidethisdata').html('Show Less <i style="font-size:14px;" class="fa-solid fa-chevron-up"></i>');
+              }else{
+                $('.eqwebdata').removeClass('hidethisdata').addClass('showthisdata').html('Show More <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i>');
+              }
+            });
+
+            $('.shoppaydata').on('click', function () {
+              $('.shoppaydata-list').slideToggle(500); // 500ms animation
+              if($('.shoppaydata').hasClass('showthisdata')){
+                $('.shoppaydata').removeClass('showthisdata').addClass('hidethisdata').html('Show Less <i style="font-size:14px;" class="fa-solid fa-chevron-up"></i>');
+              }else{
+                $('.shoppaydata').removeClass('hidethisdata').addClass('showthisdata').html('Show More <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i>');
+              }
+            });
+
+          });
+
+
+
+        </script>
+        <div class="finance-wrapper-drop">
+          <div class="finance-info-trigger fake-link showthis" style="padding-top:5px">See financing options <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></div>
+
+          <div class="finance-info" style="display: none;">
+            <h2>Financing Options</h2>
+            <div class="finance-info-option quickspark">
+              <div class="finance-info-left">
+                <div class="finance-info-img"><img src="{{ shop.url }}/cdn/shop/files/quickspark-v2.png?v=1747072990" class="img-responsive" alt="QuickSpark Logo"></div>
+                <div class="finance-info-upto">Up to $5,000,000</div>
+              </div>
+              <div class="finance-info-right">
+                {% comment %}<div style="width:120px" class="financebtn product-form--atc-button main-atc-button thinbtn" onclick="" >Apply Now</div>{% endcomment %}
+
+                {%- if selected_variant.price < 100000 -%}
+                  <div class="under1000">Available for orders over $1000</div>
+                {%- elsif isBundle == true -%}
+                        {%- assign bundleprice = product.metafields.plytix.bundle_pricing | plus: 0.00 -%}
+                      {%- if bundleprice < 1000 -%}
+                        <div class="under1000">Available for orders over $1000</div>
+                      {%- endif -%}
+                {%- else -%}
+                  <div class="finance-wrapper"></div>
+                {%- endif -%}
+
+              </div>
+              <div class="finance-info-list">
+                <ul>
+                  <li>Terms up to 60 months</li>
+                  <li>Business accounts only – including start-ups</li>
+                </ul>
+                <ul class="eqwebdata-list" style="display: none;">
+                  <li>Will analyze your application, and route it to the best lenders</li>
+                  <li>Up to 3 lenders may work your application at a time</li>
+                  <li>Lenders compete, so they are motivated to work quickly and present their best offers</li>
+                  <li>Choose the best term from up to 3 competing lenders</li>
+                </ul>
+                <div class="eqwebdata showthisdata fake-link">More Data <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <div class="finance-info-option shoppay">
+              <div class="finance-info-left">
+                <div class="finance-info-img"><img src="{{ shop.url }}/cdn/shop/files/shop-pay-trans.png?v=1668624779" style="margin:0 0 0 -8px" class="img-responsive" alt="Shop pay Logo"></div>
+                <div class="finance-info-upto">Up to $17,500</div>
+              </div>
+              <div class="finance-info-right">
+                <div style="width:120px" class="financebtn shoppaycheckout product-form--atc-button main-atc-button thinbtn" >Check Out</div>
+              </div>
+              <div class="finance-info-list">
+                <ul>
+                  <li>Four interest-free payments every two weeks for orders between $50.00 <br>and $999.99 before shipping and taxes</li>
+                  <li>Checking eligibility has no impact to credit</li>
+                </ul>
+
+                <ul class="shoppaydata-list" style="display: none;">
+                  <li>Monthly payment options (3, 6, or 12-month) available, <br>for orders between $150.00 and $17,500.00 with a 0% - 36% APR interest rate<a href="/pages/financing-options#notes">**</a></li>
+                </ul>
+
+                <div class="shoppaydata showthisdata fake-link">More Data <i style="font-size:14px;" class="fa-solid fa-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <div class="finance-more-info" style="width:100%; text-align:right; padding-bottom:25px;">
+              <a href="/pages/financing-options">View More Financing Options <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    {%- endif -%}
+{%- endif -%}

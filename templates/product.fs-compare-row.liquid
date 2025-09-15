@@ -58,13 +58,13 @@
     {% assign specs = product.metafields.plytix.specs | split: ";;" %}
     {% for spec in specs %}
         {% assign attr = spec | split: "::" %}
-        {% assign attrVal = attr[1] | remove: "[" | remove: "]" |  remove : "'" %}
+        {% assign attrVal = attr[1] | remove: "[" | remove: "]" |  remove : "''" %}
         {% if attr[1] != "None" %}
-            {% if attr[0] == "Power Source" %}{% assign powersrc = attrVal %}{% endif %}
-            {% if attr[0] == "Run Time" %}{% assign runtime = attrVal %}{% endif %}
-            {% if attr[0] == "Battery Type" %}{% assign batterytype = attrVal %}{% endif %}
-            {% if attr[0] == "Cleaning Rate Per Hour" %}{% assign rate = attrVal %}{% endif %}
-            {% if attr[0] == "Solution Capacity" %}{% assign solutiontank = attrVal %}{% endif %}
+            {% if attr[0] == "Power Source" %}{% assign powersrc = attrVal | escape %}{% endif %}
+            {% if attr[0] == "Run Time" %}{% assign runtime = attrVal | escape %}{% endif %}
+            {% if attr[0] == "Battery Type" %}{% assign batterytype = attrVal | escape %}{% endif %}
+            {% if attr[0] == "Cleaning Rate Per Hour" %}{% assign rate = attrVal | escape %}{% endif %}
+            {% if attr[0] == "Solution Capacity" %}{% assign solutiontank = attrVal | escape %}{% endif %}
             {% if attr[0] == "Warranty" %}{% assign warranty = attr[1] | remove: "[" | remove: "]" |  remove : "'" | replace: ';', ', ' | newline_to_br %}{% endif %}
         {% endif %}
     {% endfor %}
