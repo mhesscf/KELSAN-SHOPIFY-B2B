@@ -254,7 +254,7 @@
                 <source src="https://cdn.shopify.com/videos/c/o/v/{{ pyt[0] }}" type="video/mp4" />
                 Your browser does not support our video.
             </video>
-            <div class="alttext">{{ pyt[1] }}</div>
+            <div class="alttext">{{ pyt[1] | escape }}</div>
         </figure>
         {%- assign orgCounter = orgCounter | plus: 1  -%}
     {%- endfor -%}
