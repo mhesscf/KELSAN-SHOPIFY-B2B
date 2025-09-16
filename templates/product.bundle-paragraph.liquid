@@ -2,6 +2,12 @@
 {% assign productObj =  all_products[product] %}
 {% assign productFirstVar = product.first_available_variant %}
 {% assign variations = 0 %}
+
+{%- assign showfg = true -%}
+{% if shop.name contains "CleanFreak B2B"%}
+    {%- assign showfg = false -%}
+{% endif %}
+
 <table><tr>
     {% assign crawlcheck = false %}
     {% for c in all_products[product_handle].collections %}
@@ -39,7 +45,9 @@
                     {% assign fgtotal = fgtotal | plus: thisfgtotal %}
                 {% endfor %}
                 {% capture fgtotaltext %}
+                    {%- if showfg -%}
                     <span class="fgtotal">Includes <span>{{ fgtotal | money }}</span> in Free Products!</span>
+                    {% endif %}
                 {% endcapture %}
             {% endif %}
 
