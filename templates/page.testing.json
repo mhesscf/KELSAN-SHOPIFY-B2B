@@ -29,12 +29,21 @@
     },
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {}
+    },
+    "dynamic_custom_liquid_NLzLCB": {
+      "type": "dynamic-custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_liquid": "{% render 'testing1' %}\n    <br/><br/>\n    {% render 'testing2' %}"
+      }
     }
   },
   "order": [
     "a475181a-3079-4a36-9edf-37785d0fdb22",
     "d567f3fb-0056-4b4a-b887-445ab03fabaa",
-    "main"
+    "main",
+    "dynamic_custom_liquid_NLzLCB"
   ]
 }
