@@ -843,7 +843,27 @@ jQuery(document).ready(function($){
                 });
                 $('.' + slideritemId + ' .productitem--title', this).height(highestTitleBox);
             });
-            $('.rel-product-tab-header.active-tab').click();
+
+
+            // related products equalize title height
+            var highestTitleBox = 0;
+            $('.tabbed-rel-slider .productitem--title').each(function () {
+                if ($(this).height() > highestTitleBox) {
+                    highestTitleBox = $(this).height();
+                }
+            });
+            var highestBox = 0;
+            $('.tabbed-rel-slider .productgrid--item').each(function () {
+                if ($(this).height() > highestBox) {
+                    highestBox = $(this).height();
+                }
+            });
+            if($(window).width() > 719){
+                $('.tabbed-rel-slider .productitem--title').height(highestTitleBox);
+                $('.tabbed-rel-slider .productgrid--item').height(highestBox);
+            }
+
+
         }else{
             // console.log('slider not found');
             sliderGo();
