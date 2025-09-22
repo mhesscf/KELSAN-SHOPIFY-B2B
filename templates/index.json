@@ -85,7 +85,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Quench your mess for less!</div>\n<h1>Trusted Clean 'Quench' Wet Push Vacuum - 18 Gallons</h1>\n<div>Was: $874.99<br/> Now: $799.99</div>",
-            "text_area_css": ".slideshow-v2 .middle-image{\n\n}",
+            "text_area_css": ".slideshow-v2 .middle-image{\nmargin-top:8px;\nmax-height:336px;\n}",
             "bg_link": "/products/trusted-clean-quench-wet-push-vacuum",
             "promo_link": "",
             "button_one_label": "Save $75",
