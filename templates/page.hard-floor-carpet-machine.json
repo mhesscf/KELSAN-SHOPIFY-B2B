@@ -81,14 +81,6 @@
     "742eb16f-ac48-421d-bd2e-f867fe368979": {
       "type": "dept-category-area",
       "blocks": {
-        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify://shop_images/baseboard-edgers.jpg",
-            "title": "Portable Handheld Scrubbers",
-            "url": "/collections/portable-handheld-scrubbers"
-          }
-        },
         "f05d75b2-7018-420b-9bfa-98b62fad2cf6": {
           "type": "categorylink",
           "settings": {
@@ -111,6 +103,14 @@
             "image": "shopify://shop_images/industrial-sweepers.jpg",
             "title": "Industrial Sweepers",
             "url": "/pages/industrial-sweepers"
+          }
+        },
+        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/portable-handheld-scrubbers-dept.jpg",
+            "title": "Portable Handheld Scrubbers",
+            "url": "/collections/portable-handheld-scrubbers"
           }
         },
         "b9b0224c-9eae-417a-8a13-428ddce56e19": {
@@ -139,10 +139,10 @@
         }
       },
       "block_order": [
-        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146",
         "f05d75b2-7018-420b-9bfa-98b62fad2cf6",
         "c787aac2-a892-4ec9-b1a2-72bb3672ebbb",
         "8944d628-68f9-4791-9825-ebf7a34d90f5",
+        "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146",
         "b9b0224c-9eae-417a-8a13-428ddce56e19",
         "8e103da5-5a77-4b14-b3a3-8facbcccea34",
         "36864348-c948-496d-b80e-c0a8c7b6297a"
