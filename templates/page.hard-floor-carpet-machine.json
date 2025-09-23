@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "fe76ad0d-0220-4f99-b07f-392fc739c499": {
@@ -15,7 +15,8 @@
         "cd5afef0-f630-4752-8495-250801033f36": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/release-your-inner-cleanfreak-floor-carpet-machines-dept-page.jpg",
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/release-your-inner-cleanfreak-floor-carpet-machines-dept-page.jpg",
             "cat_title": "Hard Floor & Carpet Cleaning Machines",
             "cat_text": "Our industrially rated floor cleaning machines come in a wide range of applications and sizes."
           }
@@ -83,57 +84,57 @@
         "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/baseboard-edgers.jpg",
-            "title": "BaseBoard Edgers",
-            "url": "\/collections\/baseboard-edgers-portable-handheld-scrubbers"
+            "image": "shopify://shop_images/baseboard-edgers.jpg",
+            "title": "Portable Handheld Scrubbers",
+            "url": "/collections/portable-handheld-scrubbers"
           }
         },
         "f05d75b2-7018-420b-9bfa-98b62fad2cf6": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/carpet-extractors.jpg",
+            "image": "shopify://shop_images/carpet-extractors.jpg",
             "title": "Carpet Extractors",
-            "url": "\/pages\/extractors"
+            "url": "/pages/extractors"
           }
         },
         "c787aac2-a892-4ec9-b1a2-72bb3672ebbb": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hard-floor-cleaning-machines.jpg",
+            "image": "shopify://shop_images/hard-floor-cleaning-machines.jpg",
             "title": "Hard Floor Cleaning Machines",
-            "url": "\/pages\/hard-floor-cleaning-machines"
+            "url": "/pages/hard-floor-cleaning-machines"
           }
         },
         "8944d628-68f9-4791-9825-ebf7a34d90f5": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/industrial-sweepers.jpg",
+            "image": "shopify://shop_images/industrial-sweepers.jpg",
             "title": "Industrial Sweepers",
-            "url": "\/pages\/industrial-sweepers"
+            "url": "/pages/industrial-sweepers"
           }
         },
         "b9b0224c-9eae-417a-8a13-428ddce56e19": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pump-up-sprayers.jpg",
+            "image": "shopify://shop_images/pump-up-sprayers.jpg",
             "title": "Pump-up Dispenser & Trigger Sprayers",
-            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+            "url": "/collections/pump-up-dispensers-trigger-sprayers"
           }
         },
         "8e103da5-5a77-4b14-b3a3-8facbcccea34": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/steam-cleaner.jpg",
+            "image": "shopify://shop_images/steam-cleaner.jpg",
             "title": "Steam Cleaners",
-            "url": "\/collections\/steam-cleaners"
+            "url": "/collections/steam-cleaners"
           }
         },
         "36864348-c948-496d-b80e-c0a8c7b6297a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vertical-surface-cleaners.jpg",
+            "image": "shopify://shop_images/vertical-surface-cleaners.jpg",
             "title": "Vertical Surface Cleaners",
-            "url": "\/collections\/vertical-surface-cleaners"
+            "url": "/collections/vertical-surface-cleaners"
           }
         }
       },
@@ -269,40 +270,40 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/kob-00-4430-5-01_1.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=CleanFreak",
+            "brand-image": "shopify://shop_images/kob-00-4430-5-01_1.jpg"
           }
         },
         "ab45b39a-4ca1-4c7a-9f2a-21f9d599d892": {
           "type": "brandlink",
           "settings": {
             "brand-title": "EDIC",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=EDIC&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=EDIC",
-            "brand-image": "shopify:\/\/shop_images\/edic-endeavor-tile-and-grout-machine_3.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=EDIC&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=EDIC",
+            "brand-image": "shopify://shop_images/edic-endeavor-tile-and-grout-machine_3.jpg"
           }
         },
         "ba39cf02-daea-490b-bf18-ad866089a2ba": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=Mytee",
-            "brand-image": "shopify:\/\/shop_images\/mytee-2002cs-carpet-cleaning-extractor-with-wand-hose.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=Mytee",
+            "brand-image": "shopify://shop_images/mytee-2002cs-carpet-cleaning-extractor-with-wand-hose.jpg"
           }
         },
         "32530c79-1eee-4f83-8dd8-1cd3eb0658b6": {
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&refinementList[product_type][3]=Pump-Up Dispensers %26 Trigger Sprayers&q=IPC Eagle",
-            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&refinementList[product_type][3]=Pump-Up Dispensers %26 Trigger Sprayers&q=IPC Eagle",
+            "brand-image": "shopify://shop_images/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
           }
         },
         "ff8ee659-6e77-4d5b-9cd1-109ba6146b9e": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Advance®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Advance&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&refinementList[product_type][3]=Pump-Up Dispensers %26 Trigger Sprayers&q=Advance",
-            "brand-image": "shopify:\/\/shop_images\/advance-adfinity-x20c-scrubber.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Advance&refinementList[product_type][0]=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&refinementList[product_type][3]=Pump-Up Dispensers %26 Trigger Sprayers&q=Advance",
+            "brand-image": "shopify://shop_images/advance-adfinity-x20c-scrubber.jpg"
           }
         }
       },
@@ -323,31 +324,31 @@
         "01a14836-5d26-4ffe-bcd7-7627d3287c85": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/burnishing-a-floor.jpg",
+            "image": "shopify://shop_images/burnishing-a-floor.jpg",
             "heading": "Burnishing a Floor",
-            "subheading": "<p>How to burnish a finished floor to achieve the highest possible shine.<\/p>",
+            "subheading": "<p>How to burnish a finished floor to achieve the highest possible shine.</p>",
             "button_label": "Read The Guide",
-            "button_link": "\/pages\/burnishing-a-floor"
+            "button_link": "/pages/burnishing-a-floor"
           }
         },
         "0c8ac30e-adff-45e1-a0f2-57aef538adde": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Scrubbing_with_Buffer.jpg",
+            "image": "shopify://shop_images/Scrubbing_with_Buffer.jpg",
             "heading": "Floor Scrubbing With a Buffer",
-            "subheading": "<p>How to properly clean hard floor surfaces with a buffer to eliminate scuff marks and remove dirt.<\/p>",
+            "subheading": "<p>How to properly clean hard floor surfaces with a buffer to eliminate scuff marks and remove dirt.</p>",
             "button_label": "Read The Guide",
-            "button_link": "\/pages\/floor-buffer-scrubbing"
+            "button_link": "/pages/floor-buffer-scrubbing"
           }
         },
         "f258fca8-8298-439c-855f-72938a07a387": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Scrubbing_with_Auto_Scrubber.jpg",
+            "image": "shopify://shop_images/Scrubbing_with_Auto_Scrubber.jpg",
             "heading": "Scrubbing with an Auto Scrubber",
-            "subheading": "<p>How to clean a hard floor surface with an auto scrubber and leave it completely dry, eliminating any chance of a slip or fall due to a slippery floor. <\/p>",
+            "subheading": "<p>How to clean a hard floor surface with an auto scrubber and leave it completely dry, eliminating any chance of a slip or fall due to a slippery floor. </p>",
             "button_label": "Read The Guide",
-            "button_link": "\/pages\/automatic-floor-scrubbing"
+            "button_link": "/pages/automatic-floor-scrubbing"
           }
         }
       },
@@ -362,8 +363,7 @@
     },
     "trustpilot_review_carousel_RtUjNW": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
