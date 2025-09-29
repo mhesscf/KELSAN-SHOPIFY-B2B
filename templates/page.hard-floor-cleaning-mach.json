@@ -181,12 +181,28 @@
             "url": "/collections/floor-burnishers"
           }
         },
+        "categorylink_HRNPQE": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/micro-scrubbers-dep-200x200.jpg",
+            "title": "Micro Scrubbers",
+            "url": "/collections/micro-scrubbers"
+          }
+        },
         "fe7bb8e3-ad6c-411d-83c9-aa2c53bb5b92": {
           "type": "categorylink",
           "settings": {
             "image": "shopify://shop_images/multi-surface-scrubbers.jpg",
             "title": "Multi-Surface (Tile & Carpet) Machines",
             "url": "/collections/multi-surface-tile-carpet"
+          }
+        },
+        "categorylink_WbCm6f": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/oscillating-floor-machines-dept-200x200.jpg",
+            "title": "Oscillating Floor Machines",
+            "url": "/collections/oscillating-floor-machines"
           }
         },
         "3da1c72e-23ab-4454-b4fe-5bbf74084be7": {
@@ -227,7 +243,9 @@
         "1ccbf5c9-bed6-4b30-ad3b-ddd7061bc65a",
         "c2608ce9-35f5-497f-a7ee-7b3f21d95347",
         "1a6572ee-26f9-47e7-9950-4f81f39c4c1e",
+        "categorylink_HRNPQE",
         "fe7bb8e3-ad6c-411d-83c9-aa2c53bb5b92",
+        "categorylink_WbCm6f",
         "3da1c72e-23ab-4454-b4fe-5bbf74084be7",
         "87015220-2af2-4ca0-9d32-0e74aecc275c",
         "dae2e653-bde1-4561-bf7a-d224b90883cf",
