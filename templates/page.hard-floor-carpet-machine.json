@@ -108,6 +108,7 @@
         "categorylink_jy6nfF": {
           "type": "categorylink",
           "settings": {
+            "image": "shopify://shop_images/micro-scrubbers-dep-200x200.jpg",
             "title": "Micro Scrubbers",
             "url": "/collections/micro-scrubbers"
           }
