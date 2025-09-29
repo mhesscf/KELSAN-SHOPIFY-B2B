@@ -56,8 +56,22 @@
                                         {%- assign attrValfinal = attr[1] | replace: '&deg;' ,'°' | replace: '&sup2;' ,'²' | replace: '&#178;' ,'²' -%}
                                         {%- assign attrValfinal = attrValfinal | replace: '&amp;' ,'&' | replace: '&#38;' ,'&' -%}
                                         {%- assign attrValfinal = attrValfinal | replace: '&trade;' ,'™' | replace: '&reg;' ,'®' -%}
-                                        {%- if attr[0] == 'Operating Weight off' or attr[0] == 'Packaged Weight (lbs) off' -%}
-                                            <div class="value">{{ attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }} lbs.</div>
+                                        {%- if attr[0] == 'Operating Weight (lbs.)' or attr[0] == 'Packaged Weight (lbs.)' -%}
+
+                                            {%- assign attrValfinal = attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br -%}
+
+                                            {% comment %}Remove Decimal if there isn't a value other than 0 in it{% endcomment %}
+                                            {%- assign attrValfinalSplit = attrValfinal | split: "." -%}
+                                            {%- if attrValfinalSplit.size > 1 -%}
+                                                {%- assign decimalVal = attrValfinalSplit[1] | plus: 0 -%}
+                                                {%- if decimalVal == 0 -%}
+                                                    {%- assign attrValfinal =attrValfinalSplit[0] -%}
+                                                {%- endif -%}
+                                            {%- endif -%}
+
+                                            <div class="value">{{ attrValfinal }}</div>
+
+
                                         {%- else -%}
                                             <div class="value">{{ attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }}</div>
                                         {%- endif -%}
