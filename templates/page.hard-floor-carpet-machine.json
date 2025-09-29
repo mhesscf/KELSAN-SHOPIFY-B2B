@@ -105,6 +105,13 @@
             "url": "/pages/industrial-sweepers"
           }
         },
+        "categorylink_jy6nfF": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Micro Scrubbers",
+            "url": "/collections/micro-scrubbers"
+          }
+        },
         "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146": {
           "type": "categorylink",
           "settings": {
@@ -136,16 +143,25 @@
             "title": "Vertical Surface Cleaners",
             "url": "/collections/vertical-surface-cleaners"
           }
+        },
+        "categorylink_HhCFKJ": {
+          "type": "categorylink",
+          "settings": {
+            "title": "Oscillating Floor Machine",
+            "url": "/collections/oscillating-floor-machines"
+          }
         }
       },
       "block_order": [
         "f05d75b2-7018-420b-9bfa-98b62fad2cf6",
         "c787aac2-a892-4ec9-b1a2-72bb3672ebbb",
         "8944d628-68f9-4791-9825-ebf7a34d90f5",
+        "categorylink_jy6nfF",
         "b5d2d9a4-c74d-4be4-9e5f-c99e87f5f146",
         "b9b0224c-9eae-417a-8a13-428ddce56e19",
         "8e103da5-5a77-4b14-b3a3-8facbcccea34",
-        "36864348-c948-496d-b80e-c0a8c7b6297a"
+        "36864348-c948-496d-b80e-c0a8c7b6297a",
+        "categorylink_HhCFKJ"
       ],
       "settings": {
         "block-title": "Hard Floor & Carpet Machines by Type"
