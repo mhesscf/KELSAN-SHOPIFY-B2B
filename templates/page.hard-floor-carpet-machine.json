@@ -107,6 +107,7 @@
         },
         "categorylink_jy6nfF": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/micro-scrubbers-dep-200x200.jpg",
             "title": "Micro Scrubbers",
@@ -115,6 +116,7 @@
         },
         "categorylink_HhCFKJ": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/oscillating-floor-machines-dept-200x200.jpg",
             "title": "Oscillating Floor Machine",
