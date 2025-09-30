@@ -24,6 +24,7 @@
         {%- assign promo_text = wheel.promo_text -%}
         {%- assign spins = wheel.number_of_spins -%}
         {%- assign num_of_coupons = wheel.number_of_coupons -%}
+        {%- assign center_color = wheel.wheel_center_color -%}
 
 
         {%- assign coupon1 = wheel.coupon_option_1 | split: "::" -%}
@@ -146,7 +147,6 @@
                         max-width:320px;
                     }
 
-
                     #spin-wheel-embed .wrap {
                         display: grid;
                         gap: 12px;
@@ -180,7 +180,8 @@
                         transform-origin: 50% 50%;
                     }
                     #spin-wheel-embed .center-cap {
-                        fill: #fff; stroke: var(--ring); stroke-width: 4;
+                        fill: {{ center_color }};
+                        stroke: var(--ring); stroke-width: 4;
                         filter: drop-shadow(0 2px 2px rgba(0,0,0,.1));
                     }
                     #spin-wheel-embed .label {
@@ -205,6 +206,36 @@
                         padding:5px 8px;
                         border-radius: 7px;
                         border: 1px dashed black;
+                    }
+
+
+                    @media (max-width: 719px){
+
+                        #spin-wheel-embed .stage {
+                            width: 250px;
+                            height: 250px;
+                        }
+
+
+                        #spin-wheel-embed{
+                            display:block;
+                        }
+                        .wheel-text-area h2{
+                            font-size:18px;
+                            margin:0 25px 5px 0;
+                        }
+
+                        #spin-wheel-embed .prize-area-header{
+                            display:none;
+                        }
+
+                        #spin-wheel-embed button{
+                            margin: 10px 15px 4px 15px;
+                        }
+                        #spin-wheel-embed .wrap{
+                            padding:0 15px 15px 11px;
+                        }
+
                     }
 
 </style>
