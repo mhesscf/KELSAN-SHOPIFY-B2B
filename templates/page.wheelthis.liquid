@@ -146,7 +146,6 @@
                         max-width:320px;
                     }
 
-
                     #spin-wheel-embed .wrap {
                         display: grid;
                         gap: 12px;
@@ -205,6 +204,36 @@
                         padding:5px 8px;
                         border-radius: 7px;
                         border: 1px dashed black;
+                    }
+
+
+                    @media (max-width: 719px){
+
+                        #spin-wheel-embed .stage {
+                            width: 250px;
+                            height: 250px;
+                        }
+
+
+                        #spin-wheel-embed{
+                            display:block;
+                        }
+                        .wheel-text-area h2{
+                            font-size:18px;
+                            margin:0 25px 5px 0;
+                        }
+
+                        #spin-wheel-embed .prize-area-header{
+                            display:none;
+                        }
+
+                        #spin-wheel-embed button{
+                            margin: 10px 15px 4px 15px;
+                        }
+                        #spin-wheel-embed .wrap{
+                            padding:0 15px 15px 11px;
+                        }
+
                     }
 
 </style>
