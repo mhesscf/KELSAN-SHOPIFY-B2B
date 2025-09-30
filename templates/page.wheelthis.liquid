@@ -24,6 +24,7 @@
         {%- assign promo_text = wheel.promo_text -%}
         {%- assign spins = wheel.number_of_spins -%}
         {%- assign num_of_coupons = wheel.number_of_coupons -%}
+        {%- assign center_color = wheel.wheel_center_color -%}
 
 
         {%- assign coupon1 = wheel.coupon_option_1 | split: "::" -%}
@@ -179,7 +180,8 @@
                         transform-origin: 50% 50%;
                     }
                     #spin-wheel-embed .center-cap {
-                        fill: #fff; stroke: var(--ring); stroke-width: 4;
+                        fill: {{ center_color }};
+                        stroke: var(--ring); stroke-width: 4;
                         filter: drop-shadow(0 2px 2px rgba(0,0,0,.1));
                     }
                     #spin-wheel-embed .label {
