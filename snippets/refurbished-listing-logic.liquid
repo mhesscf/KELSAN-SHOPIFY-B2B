@@ -1,0 +1,352 @@
+{%- comment -%}Made by Cleanfreak{%- endcomment -%}
+<div class="refubished-list">
+
+        {%- assign refurbished_cats = "" -%}
+
+        {%- assign refurbisheditems = shop.metaobjects.refurbished_list.values   -%}
+        {%- for item in refurbisheditems -%}
+            {%- unless refurbished_cats contains item.product_type -%}
+                {%- assign refurbished_cats = refurbished_cats | append: item.product_type | append: "::" -%}
+            {% endunless %}
+        {% endfor %}
+
+        {%- assign refurbished_cats_arr = refurbished_cats | split: "::" -%}
+
+
+
+        <div class="custom-additional-info">
+            <div class="left-col"><div class="question">
+                    <h3>Where Does Your Refurbished Equipment Come From?</h3>
+                </div>
+                <div class="answer">
+                    <div class="metafield-rich_text_field">
+                        <p>Most of the equipment you see for sale here comes from either damage during shipment, demos used for training purposes, or from customers returning equipment to us in exchange for something different. Every piece of equipment is then thoroughly inspected, cleaned up, and refurbished to ensure it is in good working condition.</p>
+
+                        <h3><strong>Quick Links</strong></h3>
+                        <ul>
+                            {%- for refurbished_cat in refurbished_cats_arr -%}
+                                {%- assign cat_id = refurbished_cat | downcase | replace: " ", "_" -%}
+                                <li> <a href="#{{ cat_id }}">{{ refurbished_cat }}</a></li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="areas-of-use">
+                    <h3>Areas of Use</h3><p>- Customer Return<br>- Damaged in Shipment<br>- Demos<br>- Refurbished<br></p>
+                </div>
+            </div>
+            <div class="clearer"></div>
+        </div>
+
+
+    {%- for refurbished_cat in refurbished_cats_arr -%}
+        {%- assign cat_id = refurbished_cat | downcase | replace: " ", "_" -%}
+        <h2 id="refurb-floorscrubbers">{{ refurbished_cat }}</h2>
+
+
+
+
+
+
+        <div class="comparetable-container">
+            <table class="pcc-table comparetable table-striped table-bordered">
+                <tbody><tr class="filter">
+                    <th scope="row">
+                    </th>
+                    <th id="heading-item-model" class="sortheading" onclick="sortme(this)">Model</th>
+                    <th id="heading-item-cat" class="sortheading" onclick="sortme(this)">Product Type</th>
+                    <th id="heading-item-year_manuf" class="sortheading" onclick="sortme(this)">Year Manufactured</th>
+                    <th id="heading-item-condition" class="sortheading" onclick="sortme(this)">Condition</th>
+                    <th id="heading-item-price" class="sortheading" onclick="sortme(this)">Price<span style="color:red;">*</span></th>
+                    <th id="heading-item-form"></th>
+                </tr>
+
+
+                {%- for item in refurbisheditems -%}
+                    {%- if refurbished_cat == item.product_type -%}
+                        <tr class="item-row">
+                            <td class="item-pic">
+                                {%- if item.picture_from_live_product -%}
+                                    <img src="{{ item.picture_from_live_product.value.featured_image | image_url: width: 200, height: 200 }}" class="fromproduct" alt="{{ item.product_name }}"/>
+                                {%- elsif item.picture_from_file -%}
+                                    <img src="{{ item.picture_from_file | image_url: width: 200, height: 200 }}" class="fromfile" alt="{{ item.product_name }}"/>
+                                {%- endif -%}
+                            </td>
+                            <td class="item-model"><span class="item-name-data">{{ item.product_name }}</span><br/><span class="item-sku-data">{{ item.sku }}{% if item.picture_from_live_product %}<br/><a href="{{ item.picture_from_live_product.value.url }}" target="_blank" >View New Listing</a>{% endif %}</td>
+                            <td class="item-cat">{{ refurbished_cat }}</td>
+                            <td class="item-year_manuf">{{ item.year_manufactured }}</td>
+                            <td class="item-condition">{{ item.condition  }}</td>
+                            <td class="item-price">{{ item.condition }}</td>
+                            <td class="item-form"><button class="button orange button-secondary" onclick="popform('{{ item.product_name | remove: '"' | remove: "'" | escape }}','{{ item.sku }}');"><span><span>Inquire</span></span></button></td>
+                        </tr>
+                    {%- endif -%}
+                {% endfor %}
+
+
+                <tr class="nobg" >
+                    <td scope="row"></td>
+                    <td ></td>
+                    <td></td>
+                    <td></td>
+                    <td ></td>
+                    <td><span style="color:red;">*</span> Based on Availablity</td>
+                    <td></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+
+
+<style>
+    .pcc-table{border-collapse:collapse; border-radius:10px 10px 0 0; width:100%; overflow:hidden;}
+    .pcc-table.table-striped th{background-color:#298EC6 !important; color:#fff; font-size:14px; font-weight:bold; vertical-align:bottom; text-align:center; padding:6px 3px}
+    .pcc-table .sortheading{cursor: pointer;}
+    .pcc-table td{text-align:center; vertical-align:middle; padding:2px 4px; font-size:12px; border-right:2px solid white;}
+    .pcc-table td .item-name{font-weight:bold;}
+    .pcc-table td img{width:65px; padding:3px;}
+    .pcc-table td .item-sku{padding-top:3px;}
+    .pcc-table td.item-price{width:100px;}
+    .pcc-table td.item-warranty{width:194px;}
+    .pcc-table td.item-battery_config{width:105px;}
+    .pcc-table td.item-cleaning_rate_on_charge{width:84px;}
+    .pcc-table td.item-price{font-size:16px; font-weight:bold;}
+    .pcc-table tr.addedsku td{background-color:#fff1cc !important;}
+    .pcc-table tr:last-child{border-bottom:1px solid #f9f9f9}
+    .pcc-table tr.nobg{border-bottom:1px solid #fff !important;}
+    .pcc-table tr.nobg td{background-color:#fff !important;}
+    .pcc-table .subselect.body,
+    .pcc-table .subselect.parts,
+    .pcc-table .subselect.vacmotor{display:inline-block; width:58px; margin-left:-3px;}
+    .pcc-table .subselect.body,
+    .pcc-table .subselect.parts{border-right:1px solid #ccc;}
+    .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{background-color:#f9f9f9;}
+    .input-area .input-title{font-weight:bold; margin:8px 0 -8px 0;}
+    .input-area input{margin-right:10px; height:40px;}
+    .input-area button.button{margin:10px 3px;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+        border-radius: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+        height:40px;
+        lineheight:20px;
+    }
+    .remove button.button{margin:10px;
+        padding: 7px 15px;
+        text-align: center;
+        border-radius: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size:12px;
+        line-height:15px;
+    }
+    .pcc-table .warranty-hide{display:block;}
+
+
+    @media only screen and (max-width:1199px) {
+        .pcc-table td{font-size:12px;}
+        .pcc-table-wrapper{overflow: auto;}
+        .comparetable-container{overflow:scroll}
+    }
+
+
+    .refubished-list .custom-additional-info{
+        padding-bottom:15px;
+        margin-bottom:15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .refubished-list .custom-additional-info h3{
+        font-style: {{ settings.type_body.style }};
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        margin:0;
+        color: {{ settings.color_headings }};
+    }
+    .refubished-list .custom-additional-info .p,
+    .refubished-list .custom-additional-info .usage-list{
+        margin:10px 0;
+    }
+    .refubished-list .custom-additional-info .usage{
+        margin-left:10px;
+    }
+    .refubished-list .custom-additional-info .left-col{
+        float:left;
+        width:74%;
+    }
+    .refubished-list .custom-additional-info .right-col{
+        float:right;
+        width:25%;
+    }
+
+
+</style>
+
+<h2 id="conditionkey">Condition Key</h2>
+<ol>
+    <li>
+        <strong>Heavily Worn</strong><br>
+        Shows heavy use<br>
+        The equipment is fully functional but has significant cosmetic wear, visible dents, scratches, or faded surfaces. Best for budget buyers who care more about performance than appearance.
+    </li>
+    <li>
+        <strong>Well Used</strong><br>
+        Carries noticeable signs of use<br>
+        Fully operational with moderate wear, scuffs, or cosmetic imperfections. May have older parts but still tested for working condition.
+    </li>
+    <li>
+        <strong>Gently Used</strong><br>
+        Presents moderate use<br>
+        Equipment is in good working order with some minor cosmetic blemishes. No major repairs needed; reliable for regular use.
+    </li>
+    <li>
+        <strong>Refurbished</strong><br>
+        Performs like new<br>
+        Professionally serviced or refurbished to ensure strong functionality. Light cosmetic wear possible, but tested to meet quality standards.
+    </li>
+    <li>
+        <strong>Like New</strong><br>
+        Delivers near-new quality<br>
+        Excellent condition with little to no visible wear. Functionally and cosmetically close to brand new.
+    </li>
+</ol>
+
+
+<script>
+
+
+    // default products
+    function popform(title,sku){
+      var formhtml='<iframe height="793" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x1158p9q1u2a91y/?Field618='+title+'&Field619='+sku+'"> <a href="https://jbutchpti.wufoo.com/forms/x1158p9q1u2a91y/">Fill out my Wufoo form!</a> </iframe>'
+
+        $('.popup-container .content').html(formhtml);
+        $('.popup-container').addClass('rightpop');
+
+        $('.popup-container').removeClass('hidden');
+        $(".pop-grad").removeClass('hidden');
+    }
+
+
+    function sortme(element) {
+
+        var attrToSort = element.id;
+
+        if ($('#' + attrToSort).hasClass("asc-sort")) {
+            $('#' + attrToSort).addClass("desc-sort");
+            $('#' + attrToSort).removeClass("asc-sort");
+            var arrange = "desc"
+        } else {
+            $('#' + attrToSort).addClass("asc-sort");
+            $('#' + attrToSort).removeClass("desc-sort");
+            var arrange = "asc"
+        }
+
+
+        attrToSort = "." + attrToSort.replace("heading-", "");
+        var firstRow = $('.filter').prop('outerHTML');
+//        var lastRow = $('.table-totals').prop('outerHTML');
+        $(".pcc-table").each(function () {
+            var events = $('.item-row', this);
+            events.sort(function (a, b) {
+                if ($(attrToSort, a).data("subdata") > 0) {
+                    //for pricing
+                    a = $(attrToSort, a).data("subdata");
+                    b = $(attrToSort, b).data("subdata");
+                } else {
+                    //for text
+                    a = $(attrToSort, a).text();
+                    b = $(attrToSort, b).text();
+                }
+
+
+                if (arrange == "asc") {
+                    if (a > b) {
+                        return 1;
+                    } else if (a < b) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                } else {
+                    if (a > b) {
+                        return -1;
+                    } else if (a < b) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+            $(this).html(events);
+            $(this).prepend(firstRow);
+//            $(this).append(lastRow);
+        });
+    }
+
+    function warrantySort(type){
+        var attrToSort = '.'+type;
+
+        if ($("#heading-item-warranty").hasClass("asc-sort")) {
+            $("#heading-item-warranty").addClass("desc-sort");
+            $("#heading-item-warranty").removeClass("asc-sort");
+            var arrange = "desc";
+        } else {
+            $("#heading-item-warranty").addClass("asc-sort");
+            $("#heading-item-warranty").removeClass("desc-sort");
+            var arrange = "asc";
+        }
+
+        var firstRow = $('.filter').prop('outerHTML');
+//        var lastRow = $('.table-totals').prop('outerHTML');
+        $(".pcc-table").each(function () {
+            var events = $('.item-row', this);
+            events.sort(function (a, b) {
+
+                a = $(attrToSort, a).text();
+                b = $(attrToSort, b).text();
+
+                // console.log(a+"|"+b);
+                if (arrange == "asc") {
+                    if (a > b) {
+                        return 1;
+                    } else if (a < b) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                } else {
+                    if (a > b) {
+                        return -1;
+                    } else if (a < b) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+            $(this).html(events);
+            $(this).prepend(firstRow);
+//            $(this).append(lastRow);
+        });
+    }
+
+
+
+</script>
+
+
+
+
+
+
+</div>
