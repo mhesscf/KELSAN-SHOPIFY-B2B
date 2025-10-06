@@ -195,7 +195,7 @@
                                     {%- else -%}
                                         {%- assign vstep = 1 -%}
                                     {%- endif -%}
-                                    <div style="display:none;" class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-tier="{{ variant.metafields.plytix.tiered_pricing }}" data-orgprice="{{ variant.price }}" data-available-qty="{{ variant.inventory_quantity }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
+                                    <div style="display:none;" class="product-detail-sku variant-sku {% if sku == variant.sku %}current{% endif %}" id="v{{ variant.id }}" data-vid="{{ variant.id }}" data-tier="{{ variant.metafields.plytix.tiered_pricing }}:{{ variant.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",",""  }}" data-orgprice="{{ variant.price }}" data-available-qty="{{ variant.inventory_quantity }}" data-erpsku="{{ variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
                                     SKU:<span> {{ variant.sku }} </span>&nbsp;&nbsp; {{ vendortext }}
                                     </div>
                                 {% endfor %}
@@ -205,7 +205,7 @@
                                 {%- else -%}
                                     {%- assign vstep = 1 -%}
                                 {%- endif -%}
-                                <div class="product-detail-sku variant-sku current" id="v{{ selected_variant.id }}" data-vid="{{ selected_variant.id }}" data-tier="{{ selected_variant.metafields.plytix.tiered_pricing }}" data-available-qty="{{ selected_variant.inventory_quantity }}" data-erpsku="{{ selected_variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
+                                <div class="product-detail-sku variant-sku current" id="v{{ selected_variant.id }}" data-vid="{{ selected_variant.id }}" data-tier="{{ selected_variant.metafields.plytix.tiered_pricing }}:{{ selected_variant.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",",""  }}" data-available-qty="{{ selected_variant.inventory_quantity }}" data-erpsku="{{ selected_variant.metafields.plytix.erp_sku }}" data-increment="{{ vstep }}">
                                 SKU:<span> {{ sku }} </span>&nbsp;&nbsp; {{ vendortext }}
                                 </div>
                            {%- endif -%}
