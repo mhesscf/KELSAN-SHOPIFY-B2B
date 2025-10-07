@@ -302,6 +302,79 @@
       </span>
     </div>
   </section>
+
+
+
+
+    {% comment %}code for spinning wheel popup{% endcomment %}
+    {%- assign showwheel = false -%}
+    {%- assign today_date = 'now' | date: '%s' -%}
+    {%- assign wheelObj = shop.metaobjects.deal_wheel.values  -%}
+    {%- for wheel in wheelObj -%}
+      {%- assign start = wheel.promo_date_start | date: '%s' -%}
+
+      {%- comment -%}//add one day to the end date{%- endcomment -%}
+      {%- assign date = wheel.promo_date_end | date: '%s' -%}
+      {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+      {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+      {%- comment -%}if not active, skip{%- endcomment -%}
+      {%- if today_date < start or today_date > end -%}
+        {% continue %}
+      {%- else -%}
+        {%- assign showwheel = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+  {%- if showwheel -%}
+    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+    ----------------------------------Cookie Clearing For Dev----------------------------------------------
+      <div onclick="clearcook()"> Clear Cookie</div>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <script>
+      function clearcook() {
+      document.cookie = "thewheel=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
+      document.cookie = "discount_code=NA; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
+      }
+      </script>
+    {%- endif -%}
+    <script>
+      $(document).ready(function() {
+        if (readCookie('thewheel') == "spun" || readCookie('thewheel') == "optout" ) {
+          console.log('discount applied');
+        } else {
+          const fetchUrl = `${window.Theme.routes.root_url}pages/cfcs?view=wheelthis`;
+          $.get(fetchUrl).then(response => {
+            if (response) {
+              if (response.includes("this-pop")) {
+                $('.popup-container').removeClass('hidden');
+                $(".pop-grad").removeClass('hidden');
+                $('.popup-container').addClass('widepop');
+                $(".popup-container .close-pop").addClass('sf-off');
+                // var newhtml = response;
+                $('.popup-container .content').html(response);
+
+                //update "x" to reload page after alert
+
+                $('.close-pop').attr('onclick', 'event.stopPropagation(); closereload()');
+              }
+            } else {
+              console.log('page not returned');
+            }
+          });
+        }
+      });
+      function closereload() {
+        if (confirm("You haven’t claimed your prize yet!\n\nIf you leave now, you won’t be able to come back\nand claim it.") == true){
+          document.cookie = "thewheel=optout; expires=0; path=/";
+          closechildPop('bund-pop-');
+        }
+      }
+    </script>
+  {%- endif -%}
+
+
 </footer>
 
 {%- if shop.permanent_domain contains "cleanfreak" -%}

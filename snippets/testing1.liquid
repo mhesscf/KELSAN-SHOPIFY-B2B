@@ -1,0 +1,274 @@
+<div id="slot-machine">
+    <style>
+        #slot-machine {
+            --bg: #0b1020;
+            --panel: #11183a;
+            --accent: #7c5cff;
+            --accent-2: #00e1ff;
+            --text: #eaf2ff;
+            --muted: #9bb0d2;
+            --win: #00d68f;
+            --item-size: 88px;
+            --window-h: calc(var(--item-size) * 3);
+            --window-w: 160px;
+            --radius: 20px;
+            --shadow: 0 20px 60px rgba(0,0,0,.35);
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            color: var(--text);
+        }
+
+        #slot-machine * { box-sizing: border-box; }
+
+        #slot-machine .app {
+            width: min(92vw, 760px);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 28px;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        #slot-machine .machine {
+            background: linear-gradient(180deg, #121a3d, #0c1230);
+            border: 1px solid rgba(255,255,255,.06);
+            box-shadow: var(--shadow);
+            border-radius: 28px;
+            padding: 28px;
+            position: relative;
+        }
+
+        #slot-machine .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        #slot-machine .title {
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #slot-machine .title .dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+            box-shadow: 0 0 12px var(--accent-2);
+        }
+        #slot-machine .credits { color: var(--muted); font-size: 13px; }
+
+        #slot-machine .window {
+            width: var(--window-w);
+            height: var(--window-h);
+            overflow: hidden;
+            border-radius: var(--radius);
+            border: 2px solid rgba(255,255,255,.08);
+            background: linear-gradient(180deg, #0e1433, #0a0f25);
+            position: relative;
+            margin-inline: auto;
+        }
+
+        #slot-machine .reel {
+            will-change: transform;
+            transform: translateY(0);
+            transition: transform 2s cubic-bezier(.12,.65,.14,1);
+        }
+
+        #slot-machine .cell {
+            height: var(--item-size);
+            width: 100%;
+            display: grid;
+            place-items: center;
+            font-size: 32px;
+            font-weight: bold;
+            user-select: none;
+            color: var(--text);
+        }
+
+        #slot-machine .controls {
+            display: grid; gap: 14px; margin-top: 20px;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+        }
+
+        #slot-machine .btn {
+            appearance: none; border: 0; cursor: pointer;
+            padding: 14px 20px; border-radius: 999px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: #081021;
+        }
+        #slot-machine .btn:disabled { opacity: .6; cursor: not-allowed; }
+
+        #slot-machine .panel {
+            padding: 14px 16px; border-radius: 14px;
+            background: #0b122c; color: var(--muted); font-size: 14px;
+        }
+
+        #slot-machine .result { margin-top: 12px; text-align: center; font-weight: 600; }
+        #slot-machine .footer { margin-top: 10px; text-align: center; font-size: 12px; color: var(--muted); }
+        #slot-machine .badge { color: var(--win); font-weight: 700; }
+
+        #slot-machine .lever { display:none; }
+    </style>
+
+    <div class="app">
+        <div class="machine">
+            <div class="header">
+                <div class="title"><span class="dot"></span> Single-Reel Slot</div>
+                <div class="credits">4 symbols • fair RNG</div>
+            </div>
+            <div class="window">
+                <div class="reel" id="reel"></div>
+            </div>
+            <div class="controls">
+                <div class="panel">
+                    <div><strong>Symbols:</strong> <span id="symbols-list"></span></div>
+                    <div><strong>Last:</strong> <span id="last-value">—</span></div>
+                </div>
+                <button class="btn" id="spin">SPIN</button>
+            </div>
+            <div class="result" id="result"></div>
+            <div class="footer">Press <span class="badge">Space</span> to spin</div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            // Add as many values as you want here:
+            const SYMBOLS = ["5% Off", "10% off", "Free Shipping", "$20 off", "BOGO", "Mystery Prize"];
+
+            const ITEM_SIZE = 88;
+            const MAX_CYCLES = 9;               // keep animation length/tension the same
+            const COPIES = Math.max(MAX_CYCLES + 3, 16);
+            const VISIBLE_COUNT = 3;            // size of the window
+            const CENTER_OFFSET = Math.floor(VISIBLE_COUNT / 2); // -> 1 (middle row)
+
+            // We prepend/append a full sequence so we can safely center
+            // the selected item without exposing the reel edges.
+            const HEAD_TAIL_SEQS = 2;           // 1 head + 1 tail
+            const TOTAL_SEQS = COPIES + HEAD_TAIL_SEQS;
+            const BASE = SYMBOLS.length;        // start one full sequence in
+
+            const root = document.querySelector("#slot-machine");
+            const reel = root.querySelector("#reel");
+            const spinBtn = root.querySelector("#spin");
+            const lastValue = root.querySelector("#last-value");
+            const result = root.querySelector("#result");
+            const creditsEl = root.querySelector(".credits");
+            const symbolsListEl = root.querySelector("#symbols-list");
+
+            if (!Array.isArray(SYMBOLS) || SYMBOLS.length === 0) {
+                creditsEl.textContent = "0 symbols • add some to play";
+                spinBtn.disabled = true;
+                symbolsListEl.textContent = "—";
+                reel.innerHTML = "";
+                return;
+            }
+
+            creditsEl.textContent = `${SYMBOLS.length} ${SYMBOLS.length === 1 ? "symbol" : "symbols"} • fair RNG`;
+            symbolsListEl.textContent = SYMBOLS.join("  ");
+
+            function buildReel() {
+                const frag = document.createDocumentFragment();
+
+                // Head: 1 sequence buffer
+                for (let s of SYMBOLS) {
+                    const cell = document.createElement("div");
+                    cell.className = "cell";
+                    cell.textContent = s;
+                    frag.appendChild(cell);
+                }
+
+                // Core sequences
+                for (let i = 0; i < COPIES; i++) {
+                    for (let s of SYMBOLS) {
+                        const cell = document.createElement("div");
+                        cell.className = "cell";
+                        cell.textContent = s;
+                        frag.appendChild(cell);
+                    }
+                }
+
+                // Tail: 1 sequence buffer
+                for (let s of SYMBOLS) {
+                    const cell = document.createElement("div");
+                    cell.className = "cell";
+                    cell.textContent = s;
+                    frag.appendChild(cell);
+                }
+
+                reel.innerHTML = "";
+                reel.appendChild(frag);
+            }
+
+            let currentIndex = 0; // canonical index into SYMBOLS
+            let spinning = false;
+
+            function snapTo(symbolIndex) {
+                // Place chosen symbol in the middle row
+                const absoluteIndex = BASE + symbolIndex; // inside the safe middle region
+                const y = - (absoluteIndex - CENTER_OFFSET) * ITEM_SIZE;
+                reel.style.transition = "none";
+                reel.style.transform = `translateY(${y}px)`;
+                void reel.offsetHeight; // reflow
+                reel.style.transition = "";
+            }
+
+            function randomInt(min, max) {
+                const range = max - min + 1;
+                const buf = new Uint32Array(1);
+                crypto.getRandomValues(buf);
+                return min + (buf[0] % range);
+            }
+
+            function spin() {
+                if (spinning) return;
+                spinning = true;
+                spinBtn.disabled = true;
+                result.textContent = "";
+
+                const targetIndex = randomInt(0, SYMBOLS.length - 1);
+                const cycles = randomInt(6, MAX_CYCLES);
+
+                // Steps to land on target from current position (mod list length).
+                const steps = cycles * SYMBOLS.length +
+                    ((targetIndex - currentIndex + SYMBOLS.length) % SYMBOLS.length);
+
+                // Work in absolute indexes within our padded reel.
+                const startAbsolute = BASE + currentIndex;
+                const endAbsolute = startAbsolute + steps;
+
+                // Translate so the target ends in the middle row
+                const totalY = - (endAbsolute - CENTER_OFFSET) * ITEM_SIZE;
+
+                reel.style.transition = "transform 2.2s cubic-bezier(.12,.65,.14,1)";
+                reel.style.transform = `translateY(${totalY}px)`;
+
+                const onEnd = () => {
+                    reel.removeEventListener("transitionend", onEnd);
+                    currentIndex = targetIndex;
+                    snapTo(currentIndex);
+                    const value = SYMBOLS[currentIndex];
+                    lastValue.textContent = value;
+                    result.textContent = `You got ${value}!`;
+                    spinning = false;
+                    spinBtn.disabled = false;
+                };
+                reel.addEventListener("transitionend", onEnd, { once: true });
+            }
+
+            function onKey(e) {
+                if (e.code === "Space") {
+                    e.preventDefault();
+                    spin();
+                }
+            }
+
+            buildReel();
+            snapTo(currentIndex);
+            spinBtn.addEventListener("click", spin);
+            window.addEventListener("keydown", onKey);
+        })();
+    </script>
+</div>
