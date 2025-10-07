@@ -1,0 +1,461 @@
+{% layout none %}
+
+
+
+{% comment %}code for spinning wheel popup{% endcomment %}
+{%- assign today_date = 'now' | date: '%s' -%}
+{%- assign wheelObj = shop.metaobjects.deal_wheel.values  -%}
+{%- for wheel in wheelObj -%}
+
+    <div id="spin-wheel-embed" class="this-pop prize-wheel-pop">
+        {%- assign start = wheel.promo_date_start | date: '%s' -%}
+
+        {%- comment -%}//add one day to the end date{%- endcomment -%}
+        {%- assign date = wheel.promo_date_end | date: '%s' -%}
+        {%- assign seconds = 1 | times: 24 | times: 60 | times: 60 -%}
+        {%- assign end = date | date: "%s" | plus: seconds | date: "%s" -%}
+
+        {%- comment -%}if not active, skip{%- endcomment -%}
+        {%- if today_date < start or today_date > end -%}
+            {% continue %}
+        {%- endif -%}
+
+        {%- assign promo_name = wheel.promo_name -%}
+        {%- assign promo_text = wheel.promo_text -%}
+        {%- assign spins = wheel.number_of_spins -%}
+        {%- assign num_of_coupons = wheel.number_of_coupons -%}
+        {%- assign center_color = wheel.wheel_center_color -%}
+
+
+        {%- assign coupon1 = wheel.coupon_option_1 | split: "::" -%}
+        {%- assign coupon1text = coupon1[0] -%}
+        {%- assign coupon1code = coupon1[1] -%}
+        {%- assign coupon1bgcolor = coupon1[2] -%}
+        {%- assign coupon1textcolor = coupon1[3] -%}
+
+
+        {%- assign coupon2 = wheel.coupon_option_2 | split: "::" -%}
+        {%- assign coupon2text = coupon2[0] -%}
+        {%- assign coupon2code = coupon2[1] -%}
+        {%- assign coupon2bgcolor = coupon2[2] -%}
+        {%- assign coupon2textcolor = coupon2[3] -%}
+
+        {%- assign coupon3 = wheel.coupon_option_3 | split: "::" -%}
+        {%- assign coupon3text = coupon3[0] -%}
+        {%- assign coupon3code = coupon3[1] -%}
+        {%- assign coupon3bgcolor = coupon3[2] -%}
+        {%- assign coupon3textcolor = coupon3[3] -%}
+
+        {%- if num_of_coupons > 3 -%}
+            {%- assign coupon4 = wheel.coupon_option_4  | split: "::" -%}
+            {%- assign coupon4text = coupon4[0] -%}
+            {%- assign coupon4code = coupon4[1] -%}
+            {%- assign coupon4bgcolor = coupon4[2] -%}
+            {%- assign coupon4textcolor = coupon4[3] -%}
+
+            {%- if num_of_coupons > 4 -%}
+                {%- assign coupon5 = wheel.coupon_option_5 | split: "::" -%}
+                {%- assign coupon5text = coupon5[0] -%}
+                {%- assign coupon5code = coupon5[1] -%}
+                {%- assign coupon5bgcolor = coupon5[2] -%}
+                {%- assign coupon5textcolor = coupon5[3] -%}
+
+                {%- if num_of_coupons > 5 -%}
+                    {%- assign coupon6 = wheel.coupon_option_6 | split: "::" -%}
+                    {%- assign coupon6text = coupon6[0] -%}
+                    {%- assign coupon6code = coupon6[1] -%}
+                    {%- assign coupon6bgcolor = coupon6[2] -%}
+                    {%- assign coupon6textcolor = coupon6[3] -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- endif -%}
+
+
+        {% comment %}We are loading this wheel2{% endcomment %}
+        {% comment %}promo_name: {{ promo_name }}<br/>{% endcomment %}
+        {% comment %}promo_text: {{ promo_text }}<br/>{% endcomment %}
+        {% comment %}spins: {{ spins }}<br/>{% endcomment %}
+        {% comment %}num_of_coupons: {{ num_of_coupons }}<br/>{% endcomment %}
+        {% comment %}coupon1: {{ coupon1 }}<br/>{% endcomment %}
+        {% comment %}coupon2: {{ coupon2 }}<br/>{% endcomment %}
+        {% comment %}coupon3: {{ coupon3 }}<br/>{% endcomment %}
+        {% comment %}coupon4: {{ coupon4 }}<br/>{% endcomment %}
+        {% comment %}coupon5: {{ coupon5 }}<br/>{% endcomment %}
+        {% comment %}coupon6: {{ coupon6 }}<br/>{% endcomment %}
+
+
+
+
+            <div class="wheel-text-area">
+                <h2>{{ promo_name }}</h2>
+                <div class="wheel-info">{{ promo_text }}</div>
+                <div class="controls">
+                    <button id="spin-btn" type="button">Spin Now</button>
+                    <div class="result" id="spin-result"></div>
+                </div>
+
+                <div class="prize-area-header"><strong>Claim Your Prize</strong></div>
+                <div class="prize-area-contain option{{ spins }}">
+                {%- if spins == 2 -%}
+                    <div class="prize-1 prize-area"><div class="prize-1-text ticket"> - </div> <div class="claimbtn main-atc-button thinbtn claim-1" onclick="claim(1)">Claim</div></div>
+                    <div class="prize-2 prize-area"><div class="prize-2-text ticket"> - </div> <div class="claimbtn main-atc-button thinbtn claim-2" onclick="claim(2)">Claim</div></div>
+                {%- elsif spins == 1 -%}
+                    <div class="prize-1 prize-area"><div class="prize-1-text ticket"> - </div> <div class="claimbtn main-atc-button thinbtn claim-1" onclick="claim(1)">Claim</div></div>
+                {%- endif -%}
+                </div>
+            </div>
+            <div class="wheel-area" aria-label="Name picker wheel">
+                <style>
+                    #spin-wheel-embed{
+                        display:flex;
+                        flex-direction: row;
+                    }
+                    #spin-wheel-embed .prize-area-header{
+                        text-align:center;
+                        border-bottom:1px solid #ccc;
+                        margin-bottom:5px;
+                    }
+                    #spin-wheel-embed .prize-area-contain{
+                        display:flex;
+                        flex-direction: row;
+                    }
+                    #spin-wheel-embed .prize-area{
+                        text-align:center;
+                        padding:0px 10px;
+                    }
+                    #spin-wheel-embed .option1 .prize-area{
+                        flex-basis: 100%;
+                    }
+                    #spin-wheel-embed .option2 .prize-area{
+                        flex-basis: 50%;
+                    }
+
+                    #spin-wheel-embed .claimbtn{
+                        max-width: 100px;
+                        margin:5px auto;
+                    }
+
+
+                    #spin-wheel-embed .wheel-area {
+                        --size: 320px;
+                        --ring: #e5e7eb;
+                        --text: #111827;;
+                        --accent: #f59e0b;
+                        /*--shadow: 0 10px 25px rgba(0,0,0,.12);*/
+                        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+                        display: block;
+                        max-width:320px;
+                    }
+
+                    #spin-wheel-embed .wrap {
+                        display: grid;
+                        gap: 12px;
+                        justify-items: center;
+                        padding: 15px;
+                        border-radius: 15px;
+                        background: #fff;
+                        box-shadow: var(--shadow);
+                    }
+                    #spin-wheel-embed .stage {
+                        position: relative;
+                        width: 320px;
+                        height: 320px;
+                        display: grid;
+                        place-items: center;
+                    }
+                    #spin-wheel-embed .pointer {
+                        position: absolute;
+                        top: -6px;
+                        width: 0; height: 0;
+                        border-left: 14px solid transparent;
+                        border-right: 14px solid transparent;
+                        border-bottom: 18px solid var(--accent);
+                        filter: drop-shadow(0 2px 2px rgba(0,0,0,.2));
+                        z-index: 3;
+                    }
+                    #spin-wheel-embed svg { width: 100%; height: 100%; overflow: visible; }
+                    /* No CSS transition here anymore — WAAPI handles it */
+                    #spin-wheel-embed .wheel {
+                        transform-box: fill-box;
+                        transform-origin: 50% 50%;
+                    }
+                    #spin-wheel-embed .center-cap {
+                        fill: {{ center_color }};
+                        stroke: var(--ring); stroke-width: 4;
+                        filter: drop-shadow(0 2px 2px rgba(0,0,0,.1));
+                    }
+                    #spin-wheel-embed .label {
+                        font-size: 16px; font-weight: 700; fill: var(--text);
+                        text-anchor: middle; dominant-baseline: middle; user-select: none;
+                    }
+                    #spin-wheel-embed .controls { display: grid; gap: 8px; width: 100%; justify-items: center; }
+                    #spin-wheel-embed button {
+                        background: #111827; color: #ffffff; border: none;
+                        padding: 10px 35px; border-radius: 15px; font-weight: 700; cursor: pointer;
+                        transition: transform .06s ease;
+                        margin:20px;
+                    }
+                    #spin-wheel-embed button:active { transform: scale(.98); }
+                    #spin-wheel-embed button[disabled] { opacity: .2; cursor: not-allowed; }
+                    #spin-wheel-embed .result{ display: none;}
+                   {% comment %}#spin-wheel-embed .result { min-height: 1.5em; font-weight: 800; letter-spacing: .5px; min-width:150px; margin:10px; padding:10px; border: 1px solid #ccc; border-radius: 15px; }{% endcomment %}
+
+                    .ticket {
+                        font-weight:bold;
+                        margin:10px;
+                        padding:5px 8px;
+                        border-radius: 7px;
+                        border: 1px dashed black;
+                    }
+
+
+                    @media (max-width: 719px){
+
+                        #spin-wheel-embed .stage {
+                            width: 250px;
+                            height: 250px;
+                        }
+
+
+                        #spin-wheel-embed{
+                            display:block;
+                        }
+                        .wheel-text-area h2{
+                            font-size:18px;
+                            margin:0 25px 5px 0;
+                        }
+
+                        #spin-wheel-embed .prize-area-header{
+                            display:none;
+                        }
+
+                        #spin-wheel-embed button{
+                            margin: 10px 15px 4px 15px;
+                        }
+                        #spin-wheel-embed .wrap{
+                            padding:0 15px 15px 11px;
+                        }
+
+                    }
+
+</style>
+
+<div class="wrap">
+    <div class="stage">
+        <div class="pointer"></div>
+        <svg viewBox="0 0 320 320">
+            <circle cx="160" cy="160" r="150" fill="#fff" stroke="var(--ring)" stroke-width="6"></circle>
+            <g class="wheel" id="wheel-group"></g>
+            <circle cx="160" cy="160" r="36" class="center-cap"></circle>
+        </svg>
+    </div>
+</div>
+
+<script>
+    (function () {
+        {% comment %}Edit this list to use 3–6 options (or more){% endcomment %}
+        {% if num_of_coupons == 3 %}
+            const NAMES = ["{{ coupon1text }}","{{ coupon2text }}","{{ coupon3text }}"];
+            const CODES = ["{{ coupon1code }}","{{ coupon2code }}","{{ coupon3code }}"];
+            const COLORS = ["{{ coupon1bgcolor }}","{{ coupon2bgcolor }}","{{ coupon3bgcolor }}"];
+            const TEXTCOLORS = ["{{ coupon1textcolor }}","{{ coupon2textcolor }}","{{ coupon3textcolor }}"];
+        {% elsif num_of_coupons == 4 %}
+            const NAMES = ["{{ coupon1text }}","{{ coupon2text }}","{{ coupon3text }}", "{{ coupon4text }}"];
+            const CODES = ["{{ coupon1code }}","{{ coupon2code }}","{{ coupon3code }}", "{{ coupon4code }}"];
+            const COLORS = ["{{ coupon1bgcolor }}","{{ coupon2bgcolor }}","{{ coupon3bgcolor }}", "{{ coupon4bgcolor }}"];
+            const TEXTCOLORS = ["{{ coupon1textcolor }}","{{ coupon2textcolor }}","{{ coupon3textcolor }}", "{{ coupon4textcolor }}"];
+        {% elsif num_of_coupons == 5 %}
+            const NAMES = ["{{ coupon1text }}","{{ coupon2text }}","{{ coupon3text }}", "{{ coupon4text }}", "{{ coupon5text }}"];
+            const CODES = ["{{ coupon1code }}","{{ coupon2code }}","{{ coupon3code }}", "{{ coupon4code }}", "{{ coupon5code }}"];
+            const COLORS = ["{{ coupon1bgcolor }}","{{ coupon2bgcolor }}","{{ coupon3bgcolor }}", "{{ coupon4bgcolor }}", "{{ coupon5bgcolor }}"];
+            const TEXTCOLORS = ["{{ coupon1textcolor }}","{{ coupon2textcolor }}","{{ coupon3textcolor }}", "{{ coupon4textcolor }}", "{{ coupon5textcolor }}"];
+        {% elsif num_of_coupons == 6 %}
+            const NAMES = ["{{ coupon1text }}","{{ coupon2text }}","{{ coupon3text }}", "{{ coupon4text }}", "{{ coupon5text }}","{{ coupon6text }}"];
+            const CODES = ["{{ coupon1code }}","{{ coupon2code }}","{{ coupon3code }}", "{{ coupon4code }}", "{{ coupon5code }}","{{ coupon6code }}"];
+            const COLORS = ["{{ coupon1bgcolor }}","{{ coupon2bgcolor }}","{{ coupon3bgcolor }}", "{{ coupon4bgcolor }}", "{{ coupon5bgcolor }}","{{ coupon6bgcolor }}"];
+            const TEXTCOLORS = ["{{ coupon1textcolor }}","{{ coupon2textcolor }}","{{ coupon3textcolor }}", "{{ coupon4textcolor }}", "{{ coupon5textcolor }}","{{ coupon6textcolor }}"];
+        {% endif %}
+
+        const root   = document.querySelector("#spin-wheel-embed");
+        const elWheel= root.querySelector("#wheel-group");
+        const elBtn  = root.querySelector("#spin-btn");
+        const elRes  = root.querySelector("#spin-result"); // still update for screen-readers
+        const prize1 = root.querySelector(".prize-1-text");
+        const prize2 = root.querySelector(".prize-2-text");
+
+        let spinning = false;
+        let spinCount = 0; // <-- track how many spins have completed
+
+        if (readCookie('thewheel') && readCookie('thewheel') != "spun" && readCookie('thewheel') != "optout") {
+            const wheelVal = readCookie('thewheel')
+            const wheelValArr = wheelVal.split("**");
+
+            if (wheelValArr[0]) {
+                spinCount = 1;
+                const wheelVal1arr = wheelValArr[0].split("$$");
+                prize1.textContent = wheelVal1arr[0];
+                prize1.setAttribute("dataprize", wheelVal1arr[1] );
+            }
+            if (wheelValArr[1]) {
+                spinCount = 2;
+                const wheelVal2arr = wheelValArr[1].split("$$");
+                prize2.textContent = wheelVal2arr[0];
+                prize2.setAttribute("dataprize", wheelVal2arr[1] );
+                elBtn.disabled = true;
+            }
+        }
+
+        function polarToCartesian(cx, cy, r, deg) {
+            const rad = (deg - 90) * Math.PI / 180;
+            return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+        }
+        function describeArc(cx, cy, r, startDeg, endDeg) {
+            const start = polarToCartesian(cx, cy, r, endDeg);
+            const end   = polarToCartesian(cx, cy, r, startDeg);
+            const largeArcFlag = endDeg - startDeg <= 180 ? "0" : "1";
+            return `M ${cx} ${cy} L ${start.x} ${start.y} A ${r} ${r} 0 ${largeArcFlag} 0 ${end.x} ${end.y} Z`;
+        }
+
+        // Build wheel once
+        const cx = 160, cy = 160, R = 148;
+        const sliceAngle = 360 / NAMES.length;
+
+
+        for (let i = 0; i < NAMES.length; i++) {
+            const start = -sliceAngle / 2 + i * sliceAngle;
+            const end   = start + sliceAngle;
+
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", describeArc(cx, cy, R, start, end));
+            path.setAttribute("fill", COLORS[i % COLORS.length]);
+            path.setAttribute("stroke-width", "2");
+            elWheel.appendChild(path);
+
+            const centerAngle = start + sliceAngle / 2;
+            const labelPos = polarToCartesian(cx, cy, R * 0.65, centerAngle);
+
+            // --- HTML-inside-SVG label with max width ---
+            const maxWidth = 90;        // tweak to taste
+            const maxHeight = 80;       // give enough height for wrapping lines
+
+            const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+            // position the top-left corner so the box is centered on labelPos
+            fo.setAttribute("x", (labelPos.x - maxWidth / 2).toFixed(2));
+            fo.setAttribute("y", (labelPos.y - maxHeight / 2).toFixed(2));
+            fo.setAttribute("width", maxWidth);
+            fo.setAttribute("height", maxHeight);
+            fo.setAttribute("transform", `rotate(${centerAngle}, ${labelPos.x}, ${labelPos.y})`);
+
+            // Create an XHTML div so HTML & CSS work inside the foreignObject
+            const div = document.createElementNS("http://www.w3.org/1999/xhtml", "div");
+            div.className = "label";
+            // basic styling for wrapping and centering
+            div.style.display = "flex";
+            div.style.alignItems = "center";
+            div.style.justifyContent = "center";
+            div.style.textAlign = "center";
+            div.style.lineHeight = "1.1";
+            div.style.wordWrap = "break-word";
+            div.style.overflow = "hidden";   // prevent spillover
+            div.style.width = "100%";
+            div.style.height = "100%";
+            div.style.color = TEXTCOLORS[i]; // use your existing text color
+            // render the content as HTML (supports <br/>, <b>, etc.)
+            div.innerHTML = NAMES[i];
+
+            fo.appendChild(div);
+            elWheel.appendChild(fo);
+        }
+
+
+    function spin() {
+        if (spinning) return;
+        if (spinCount >= 2) return; // safety guard
+        spinning = true;
+        elBtn.disabled = true;
+        if (elRes) elRes.textContent = "… spinning …";
+
+        // Randomize a bit for natural feel
+        const turns = 5 + Math.floor(Math.random() * 3); // 5, 6, or 7 full turns
+        const extra = Math.floor(Math.random() * 360);   // extra degrees
+        const totalDeg = turns * 360 + extra;
+        const duration = (Math.random() * 1 + 3.5) * 1000; // 3500–4500 ms
+
+        const anim = elWheel.animate(
+        [{ transform: "rotate(0deg)" }, { transform: `rotate(${totalDeg}deg)` }],
+        { duration, easing: "cubic-bezier(.12,.74,.02,1)", fill: "forwards" }
+        );
+
+        anim.onfinish = () => {
+        const remainder = totalDeg % 360;
+        elWheel.style.transform = `rotate(${remainder}deg)`;
+        anim.cancel();
+
+        // Determine winner
+        const normalized = (360 - remainder + sliceAngle / 2) % 360;
+        const index = Math.floor(normalized / sliceAngle) % NAMES.length;
+        const prize = NAMES[index];
+        const codes = CODES[index];
+
+        // Route to prize-1 on first spin, prize-2 on second
+        spinCount += 1;
+        if (spinCount === 1) {
+        prize1.textContent = prize;
+        prize1.setAttribute("dataprize", codes );
+        document.cookie = "thewheel="+prize+"$$"+codes+"; expires=0; path=/";
+
+        } else if (spinCount === 2) {
+            prize2.textContent = prize;
+            prize2.setAttribute("dataprize", codes );
+
+            const prize1prize = prize1.innerText;
+            const prize1code = prize1.getAttribute("dataprize");
+            document.cookie = "thewheel="+prize1prize+"$$"+prize1code+"**"+prize+"$$"+codes+"; expires=0; path=/";
+
+        }
+
+        if (elRes) elRes.textContent = "Spin Result: "+prize.toUpperCase(); // optional/accessible
+
+        // Disable after 2 spins
+        if (spinCount >= {{ spins }}) {
+        elBtn.disabled = true;
+        } else {
+        elBtn.disabled = false;
+        }
+
+        spinning = false;
+        };
+    }
+
+    elBtn.addEventListener("click", spin);
+
+
+    })();
+
+
+    function claim(num) {
+        // Find the prize text span based on claim number
+        const prizeSpan = document.querySelector(`.prize-${num}-text`);
+        if (prizeSpan) {
+            // Get the dataprize attribute
+            const prize = prizeSpan.getAttribute("dataprize");
+            const prizetext = prizeSpan.innerText;
+            if (prize) {
+            // Set a cookie named "Coupon" with the value of dataprize
+            // document.cookie = `Coupon=${prize}; path=/;`;
+            document.cookie = "thewheel=spun; expires=0; path=/";
+            promoRedirect(prize,'/');
+            } else {
+            alert("Please Spin the Wheel...");
+            }
+        } else {
+            alert("Please Spin the Wheel...");
+        }
+    }
+</script>
+
+</div>
+
+
+</div>
+{%- endfor -%}

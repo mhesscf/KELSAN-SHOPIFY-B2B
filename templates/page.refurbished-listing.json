@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "a475181a-3079-4a36-9edf-37785d0fdb22": {
+      "type": "left-nav-on-pages",
+      "disabled": true,
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
+    "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
+      "type": "gradient-text-header",
+      "settings": {
+        "chsectionheading": "Refurbished Listings",
+        "chsectiontext": ""
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "b75c15c7-77d5-4f80-a007-8d06ec2d1abc": {
+      "type": "dynamic-custom-liquid",
+      "settings": {
+        "custom_liquid": "{%- assign chartproducts = \"CPL-DURA-17C,TPL-DURA-18HD,CPL-DURA-20B,IES-20-SLND,APL-20B-115A-XC,VIP-50000226,VIP-50000243,VIP-56384810\" -%}\n{%-\n\trender 'refurbished-listing-logic',\n\tchartproducts: chartproducts\n-%}"
+      }
+    }
+  },
+  "order": [
+    "a475181a-3079-4a36-9edf-37785d0fdb22",
+    "d567f3fb-0056-4b4a-b887-445ab03fabaa",
+    "main",
+    "b75c15c7-77d5-4f80-a007-8d06ec2d1abc"
+  ]
+}
