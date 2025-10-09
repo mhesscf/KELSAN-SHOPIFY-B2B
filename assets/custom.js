@@ -782,29 +782,31 @@ jQuery(document).ready(function($){
                     }
                 ]
             });
-
+            setTimeout(()=>{
 
             // Equalize Box and Title Height
-            var slideritemId = itemId.replace('-slider', '-rel-item');
+            // var slideritemId = itemId.replace('-slider', '-rel-item');
+            var slideritemId = itemId;
             var highestBox = 0;
             var highestTitleBox = 0;
 
             //Title Height
             var highestTitleBox = 0;
-            $('.' + slideritemId + ' .productitem--title', this).each(function () {
+            $('#' + slideritemId + ' .productitem--title').each(function () {
                 if ($(this).height() > highestTitleBox) {
                     highestTitleBox = $(this).height();
                 }
             });
-            $('.' + slideritemId + ' .productitem--title', this).height(highestTitleBox);
+            $('#' + slideritemId + ' .productitem--title').height(highestTitleBox);
 
             //box height
-            $('.' + slideritemId + ' .productgrid--item', this).each(function () {
+            $('#' + slideritemId + ' .productgrid--item').each(function () {
                 if ($(this).height() > highestBox) {
                     highestBox = $(this).height();
                 }
             });
-            $('.' + slideritemId + ' .productgrid--item', this).height(highestBox);
+            $('#' + slideritemId + ' .productgrid--item').height(highestBox).style("background-color","green");
+            },100);
         });
 
         // Equalize Title Height which is exlcuded above
@@ -812,22 +814,23 @@ jQuery(document).ready(function($){
             var itemId = $(this).attr('id');
 
             // Equalize Box and Title Height
-            var slideritemId = itemId.replace('-slider', '-rel-item');
-
+            // var slideritemId = itemId.replace('-slider', '-rel-item');
+            var slideritemId = itemId;
             //Title Height
             var highestTitleBox = 0;
-            $('.' + slideritemId + ' .productitem--title', this).each(function () {
+            $('#' + slideritemId + ' .productitem--title').each(function () {
                 if ($(this).height() > highestTitleBox) {
                     highestTitleBox = $(this).height();
                 }
             });
-            $('.' + slideritemId + ' .productitem--title', this).height(highestTitleBox);
+            $('#' + slideritemId + ' .productitem--title').height(highestTitleBox);
         });
     }
     //check for slider, initiate slider if not found, continue to run since atc functionlity will remove it if slider runs early
     function checkRelSlider(){
         if($('.rel-product-tabbed-area .slick-initialized').length) {
             // console.log('slider found');
+            /*
             $(".rel-product-tabbed-area .tabbed-rel-freq").each(function (index) {
                 var itemId = $(this).attr('id');
 
@@ -846,6 +849,7 @@ jQuery(document).ready(function($){
 
 
             // related products equalize title height
+
             var highestTitleBox = 0;
             $('.tabbed-rel-slider .productitem--title').each(function () {
                 if ($(this).height() > highestTitleBox) {
@@ -862,7 +866,7 @@ jQuery(document).ready(function($){
                 $('.tabbed-rel-slider .productitem--title').height(highestTitleBox);
                 $('.tabbed-rel-slider .productgrid--item').height(highestBox);
             }
-
+*/
 
         }else{
             // console.log('slider not found');
