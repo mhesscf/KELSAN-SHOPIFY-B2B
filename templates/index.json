@@ -22,12 +22,11 @@
       "blocks": {
         "banner_qaQPaP": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-labor-day-sale-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-labor-day-sale-mobile-banner.jpg",
-            "link": "/collections/demoed-refurbished-equipment",
+            "banner-lg": "shopify://shop_images/2025-ryicf-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-ryicf-mobile-banner.jpg",
+            "link": "/pages/release-your-inner-cleanfreak",
             "coupon-code": ""
           }
         },
