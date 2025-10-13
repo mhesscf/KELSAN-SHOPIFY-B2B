@@ -1089,7 +1089,9 @@ Each source can be styled independently
     opacity: 0;
     transition: opacity 0.2s ease-out;
 }
-
+.aa-ItemPicture img.auto-bogoicon {
+    border: 0px solid black !important;
+}
 .aa-ItemPicture--loaded img {
     opacity: 1;
 }
@@ -1294,11 +1296,19 @@ Each source can be styled independently
     border:1px solid #fdb913;
     border-radius: 8px;
 }
+.aa-Source[data-autocomplete-source-id="products"] .aa-ItemContent.bogo img{
+    border:1px solid #2D3F4E;
+    border-radius: 8px;
+}
 .aa-Source[data-autocomplete-source-id="products"] .aa-ItemContent .ac-icon{
     padding-left:5px;
     position: absolute;
     top:-5px;
     left:-7px;
+}
+.aa-Source[data-autocomplete-source-id="products"] .aa-ItemContent.bogo .ac-icon{
+    top:-6px;
+    left:-14px;
 }
 .aa-Source[data-autocomplete-source-id="products"] .aa-ItemContentBody{
     flex-direction:row;

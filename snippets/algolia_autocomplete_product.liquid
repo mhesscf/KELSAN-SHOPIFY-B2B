@@ -18,6 +18,8 @@
                   <div class="ac-icon">
                             ${specialtype(item) == "clearance" ? html `<i class="fa-sharp fa-solid fa-tags"></i>`: html ``}
                             ${specialtype(item) == "hotdeal" ? html `<i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>`: html ``}
+                            ${specialtype(item) == "bogo" ? html `<img class="auto-bogoicon" src="{{ 'bogo-icon.png' | file_img_url: '30x' }}" alt="On Sale" />`: html ``}
+
                         </div>
               </div>
               <div class="aa-ItemContentBody">
@@ -72,6 +74,8 @@
   function specialtype(thisitem){
       if (thisitem.meta.plytix.clearance_overstock == "true"){
           return "clearance";
+      }else if(thisitem.tags.includes("BOGO Deal")){
+          return "bogo";
       }else if(thisitem.compare_at_price > thisitem.price) {
           var rawdate = thisitem.meta.plytix.special_enddate;
           if (rawdate){
