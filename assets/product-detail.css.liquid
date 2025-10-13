@@ -766,9 +766,18 @@ input.qtyminus {
   }
 }
 /* ---------- Hot Deal Gallery Icon -------------- */
+.product--container .isbogo,
 .product--container .isclearance,
 .product--container .isspecial{
   padding:5px;
+}
+.product--container .isbogo{
+  padding:10px;
+}
+@media (max-width: 720px){
+  .product--container .isbogo{
+    padding:5px;
+  }
 }
 .product--container .isclearance .product-gallery--image-background{
   border:3px solid #fdb913;
@@ -780,6 +789,11 @@ input.qtyminus {
   border-radius: 30px;
   overflow: hidden;
 }
+.product--container .isbogo .product-gallery--image-background{
+  border:3px solid #2D3F4E;
+  border-radius: 30px;
+  overflow: hidden;
+}
 .product--container .deal-rib{
   position:absolute;
   top:-2px;
@@ -787,6 +801,11 @@ input.qtyminus {
   width:135px;
   z-index:100;
 }
+.product--container .deal-rib.bogo-icon{
+  top:-2px;
+  left: -9px;
+}
+
 @media (max-width: 720px){
   .product--container .deal-rib{
     position:absolute;
@@ -799,6 +818,16 @@ input.qtyminus {
     max-width:110px;
     max-height:110px;
   }
+
+  .product--container .deal-rib.bogo-icon{
+    top:-2px;
+    left: -20px;
+  }
+  .product--container .deal-rib.bogo-icon img{
+    max-width:75px;
+    max-height:75px;
+  }
+
 }
 
 /* ---------- hot deal under the image -------------- */
@@ -813,11 +842,20 @@ input.qtyminus {
   text-align:center;
   padding-top:5px;
 }
+
+.sale-icon-by-pic .sale-icon-by-pic-title img{
+  max-width:32px;
+  position:relative;
+  top:8px;
+  left:-4px;
+}
+
 .sale-icon-by-pic .sale-icon-by-pic-title i{
   padding: 0 5px 0 0;
 }
 .sale-icon-by-pic .sale-icon-by-pic-title strong{
   padding-right:8px;
+  line-height: 27px;
 }
 .sale-icon-by-pic .sale-icon-by-pic-text{
   font-size:14px;

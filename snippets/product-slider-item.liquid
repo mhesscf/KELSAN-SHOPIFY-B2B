@@ -80,7 +80,11 @@
 
     {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
       {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-        {% assign specialclass = "isspecial" %}
+        {% if product.tags contains "BOGO Deal" %}
+          {%- assign specialclass = "isbogo" -%}
+        {%- else -%}
+          {%- assign specialclass = "isspecial" -%}
+        {%- endif -%}
       {%- endif -%}
     {%- endif -%}
   {%- endif -%}
@@ -297,6 +301,8 @@
 
       {%- if specialclass == "isspecial" -%}
         <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
+      {%- elsif specialclass == "isbogo" -%}
+        <div class="deal-rib bogo"><img class="img-responsive" src="{{ 'bogo-icon.png' | file_img_url: '260x' }}" alt="Bogo Deal" /></div>
       {%- elsif specialclass == "isclearance" -%}
         <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon-clearance.png' | file_img_url: '260x' }}" alt="Clearance Item" /></div>
       {%- endif -%}
