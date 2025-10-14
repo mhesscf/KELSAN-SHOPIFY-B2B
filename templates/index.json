@@ -177,9 +177,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/september-2025-bogo-reliable-14-battery-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/september-2025-bogo-reliable-14-battery-mobile-banner.jpg",
-            "link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber",
+            "banner-lg": "shopify://shop_images/tennant-dual-speed-buffer-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/tennant-dual-speed-buffer-bogo-mobile-banner.jpg",
+            "link": "/products/tennant-fm-20-ds-20-inch-dual-speed-floor-buffer",
             "coupon-code": ""
           }
         },
