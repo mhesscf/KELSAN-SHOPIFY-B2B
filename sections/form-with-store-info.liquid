@@ -272,6 +272,13 @@
                             }
                         });
 
+                        if (window.location.search.includes('tab=problems')) {
+                            $('.form-tab').removeClass('highlight');
+                            $('.form-tab.problem-tab').addClass('highlight');
+                            $('.cu-custom-form').removeClass('formshow');
+                            $('.problem-form').addClass('formshow');
+                        }
+                        
                         setTimeout(() => {
                             $('.cu-custom-form').addClass('formshow');
                             $('.problem-form').removeClass('formshow');
