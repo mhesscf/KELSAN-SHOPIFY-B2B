@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "c468a4d3-de88-424d-95ef-f27e5ba4be48": {
@@ -15,9 +15,10 @@
         "8be4f419-942d-4bf7-9413-37852bb03868": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/floor-buffer-burnisher-parts-dept-page.jpg",
-            "cat_title": "Floor Buffer & Burnisher Parts",
-            "cat_text": "A full offering of repair parts and accessories to keep your floor machines operating smoothly."
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/floor-buffer-burnisher-parts-dept-page.jpg",
+            "cat_title": "Floor Machine Parts",
+            "cat_text": "A full offering of repair parts and accessories to keep your floor buffers, burnishers, and other floor machines operating smoothly."
           }
         }
       },
@@ -128,25 +129,25 @@
         "9e79d6bb-8926-49d9-9081-eeafc95b815a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-components.jpg",
+            "image": "shopify://shop_images/buffer-components.jpg",
             "title": "Components",
-            "url": "\/collections\/buffer-burnisher-components"
+            "url": "/collections/buffer-burnisher-components"
           }
         },
         "9e89a25f-e76d-4308-9f05-f7008459241a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-motors.jpg",
+            "image": "shopify://shop_images/buffer-motors.jpg",
             "title": "Motors",
-            "url": "\/collections\/motors"
+            "url": "/collections/motors"
           }
         },
         "132a63c5-c189-483e-8957-6586877bf15b": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-weights.jpg",
+            "image": "shopify://shop_images/buffer-weights.jpg",
             "title": "Floor Buffer Weights",
-            "url": "\/collections\/weights"
+            "url": "/collections/weights"
           }
         }
       },
@@ -165,33 +166,33 @@
         "69a93430-1b18-49a8-83e9-b105118a9405": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/concrete-preparation.jpg",
+            "image": "shopify://shop_images/concrete-preparation.jpg",
             "title": "Concrete Preparation",
-            "url": "\/collections\/concrete-preparation-polishing"
+            "url": "/collections/concrete-preparation-polishing"
           }
         },
         "9ccc27ca-c01a-473e-9c6f-f2a3b4fd2bfb": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-buffer-brushes.jpg",
+            "image": "shopify://shop_images/floor-buffer-brushes.jpg",
             "title": "Floor Buffer Brushes",
-            "url": "\/collections\/floor-buffer-brushes"
+            "url": "/collections/floor-buffer-brushes"
           }
         },
         "20217013-92c1-454c-bd13-06068b6ba41b": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-buffer-pad-drivers.jpg",
+            "image": "shopify://shop_images/floor-buffer-pad-drivers.jpg",
             "title": "Floor Buffer Pad Drivers",
-            "url": "\/collections\/floor-buffer-pad-drivers"
+            "url": "/collections/floor-buffer-pad-drivers"
           }
         },
         "95a144fa-1e65-44a2-b7eb-c370fb758232": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/solution-tanks.jpg",
+            "image": "shopify://shop_images/solution-tanks.jpg",
             "title": "Solution Tanks",
-            "url": "\/collections\/solution-tanks"
+            "url": "/collections/solution-tanks"
           }
         }
       },
@@ -264,24 +265,24 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/sa034800-tank-kit-open.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=CleanFreak",
+            "brand-image": "shopify://shop_images/sa034800-tank-kit-open.jpg"
           }
         },
         "7a6a5e66-6d35-417d-92ba-ee20c44a0c56": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Malish",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=Malish",
-            "brand-image": "shopify:\/\/shop_images\/malish-big-mouth-792455-closed.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=Malish",
+            "brand-image": "shopify://shop_images/malish-big-mouth-792455-closed.jpg"
           }
         },
         "2540ae20-5a02-4edb-a991-f82e03adefa3": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Koblenz®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Koblenz&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=Koblenz",
-            "brand-image": "shopify:\/\/shop_images\/koblenz-45-0865-1-oscillating-floor-buffer-weight.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Koblenz&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=Koblenz",
+            "brand-image": "shopify://shop_images/koblenz-45-0865-1-oscillating-floor-buffer-weight.jpg"
           }
         }
       },
@@ -296,8 +297,7 @@
     },
     "trustpilot_review_carousel_nERGpY": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
