@@ -134,6 +134,14 @@
             "url": "/collections/concrete-preparation-polishing"
           }
         },
+        "categorylink_4DnbN8": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/dust-skirt-cat.jpg",
+            "title": "Dust Skirts",
+            "url": "/collections/dust-skirts"
+          }
+        },
         "243be5ff-1a3e-45c8-be0b-82a6be73aff2": {
           "type": "categorylink",
           "settings": {
@@ -161,6 +169,7 @@
       },
       "block_order": [
         "4d0fa2ed-e0e7-4e5c-a489-2c107b72764a",
+        "categorylink_4DnbN8",
         "243be5ff-1a3e-45c8-be0b-82a6be73aff2",
         "a4e4b977-a5cc-4c90-a601-1a0677c4a308",
         "74bd558c-8495-4b07-92ee-e6b01b7148e2"
