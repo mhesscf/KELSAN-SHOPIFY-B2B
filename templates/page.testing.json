@@ -36,7 +36,7 @@
       "type": "dynamic-custom-liquid",
       "name": "t:sections.custom_liquid.presets.custom_liquid.name",
       "settings": {
-        "custom_liquid": "{% render 'testing1' %}\n    <br/><br/>\n    {% render 'testing2' %}"
+        "custom_liquid": "<a href=\"https://cdn.shopify.com/videos/c/o/v/a7ca0da1f7ad4379af6f37a57e8db8d3.mp4\" target=\"_blank\">Test external link</a><br/><br/>\n\n\n\n{% render 'testing1' %}\n    <br/><br/>\n    {% render 'testing2' %}"
       }
     }
   },
