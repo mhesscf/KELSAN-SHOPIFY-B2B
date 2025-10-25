@@ -2043,3 +2043,8 @@ function linkdl(mainloc,linkloc,href){
     // console.log(mainloc+"/"+linkloc+"/"+href+"/"+cpage);
 }
 
+function playVideo(localvidid) {
+    const vid = document.getElementById('localv-'+localvidid);
+    vid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    vid.play();
+}
