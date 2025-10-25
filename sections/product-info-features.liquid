@@ -806,9 +806,10 @@
                     {%- assign lvideo = product.metafields.plytix.local_video | split: ";" -%}
                     {%- for vid in lvideo -%}
                         {%- assign pyt = vid | split: "::" -%}
-                        <div class="container">
+                        {%- assign pytid = pyt[0] | split: "." | first  -%}
+                        <div class="container" id="localv-{{ pytid }}-top">
                             <div class="video-wrap-local">
-                                <video controls="controls" style="width: 100%; height: auto;">
+                                <video id="localv-{{ pytid }}" controls="controls" style="width: 100%; height: auto;">
                                     <source src="https://cdn.shopify.com/videos/c/o/v/{{ pyt[0] }}" type="video/mp4" />
                                     Your browser does not support our video.
                                 </video>
@@ -821,7 +822,8 @@
 
                     {%- for vid in pvideo -%}
                         {%- assign pyt = vid | split: "::" -%}
-                        <div class="container">
+                        {%- assign pytid = pyt[0] | split: "." | first  -%}
+                        <div class="container" id="extv-{{ pytid }}">
                             <div class="video-wrap">
                                 {%- if pyt[0] contains "vimeo" -%}
                                     {%- assign vimeoid = pyt[0] | replace: "vimeo-","" -%}
