@@ -904,6 +904,7 @@ padding-left: 4px;
   .ais-page .is-review .jdgm-prev-badge{margin-bottom:2px}
   .ais-page .ais-hit--cart{margin:10px 0 0 0;}
   .ais-results-as-list .ais-Hits-item .cfais-productitem__image-container-col{padding:5px;  }
+  .ais-results-as-list .ais-Hits-item .productitem.bogoitem .productitem--info,
   .ais-results-as-list .ais-Hits-item .productitem.clearanceitem .productitem--info,
   .ais-results-as-list .ais-Hits-item .productitem.specialitem .productitem--info{padding:5px;}
 }
@@ -1227,14 +1228,17 @@ margin-right:0;
 .ais-results-as-list .ais-Hits-item .productitem.clearanceitem{
   border:3px solid #fdb913;
 }
-
+.ais-results-as-list .ais-Hits-item .productitem.bogoitem{
+  border:3px solid #2D3F4E;
+}
+.ais-results-as-list .ais-Hits-item .productitem.bogoitem .productitem--info,
 .ais-results-as-list .ais-Hits-item .productitem.clearanceitem .productitem--info,
 .ais-results-as-list .ais-Hits-item .productitem.specialitem .productitem--info{
   min-height:300px;
   justify-content: flex-start;
 }
 @media screen and (max-width: 599px) {
-
+  .ais-results-as-list .ais-Hits-item .productitem.bogoitem .productitem--info,
   .ais-results-as-list .ais-Hits-item .productitem.clearanceitem .productitem--info,
   .ais-results-as-list .ais-Hits-item .productitem.specialitem .productitem--info{
     min-height:unset;
@@ -1249,6 +1253,11 @@ margin-right:0;
   left:-11px;
   top:-10px;
   width:135px;
+}
+.ais-results-as-list .ais-Hits-item .productitem .deal-rib.bogo{
+  left:-20px;
+  top:-17px;
+  width:115px;
 }
 
 @media screen and (max-width: 479px) {
@@ -1475,7 +1484,11 @@ margin-right:0;
 .ais-results-as-block .productitem.clearanceitem{
   border:3px solid #fdb913;
 }
+.ais-results-as-block .productitem.bogoitem{
+  border:3px solid #2D3F4E;
+}
 .ais-results-as-block .productitem.clearanceitem .deal-rib,
+.ais-results-as-block .productitem.bogoitem .deal-rib,
 .ais-results-as-block .productitem.specialitem .deal-rib{
   position:absolute;
   left:-9px;
@@ -1483,7 +1496,11 @@ margin-right:0;
   width:110px;
   z-index:100;
 }
-
+.ais-results-as-block .productitem.bogoitem .deal-rib{
+  left:-20px;
+  top:-12px;
+  width:100px;
+}
 .ais-results-size-lg .ais-page .ais-results-as-block .ais-hit{
   padding:15px 10px;
   margin:0;

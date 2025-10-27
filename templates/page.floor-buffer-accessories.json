@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "239b79e1-9eb1-4460-9439-e5093c6fa480": {
@@ -15,8 +15,9 @@
         "6caff2f2-34f9-407d-ac7e-4595e1c7e9df": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/floor-buffer-accessories-dept-page.jpg",
-            "cat_title": "Floor Buffer Accessories",
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/floor-buffer-accessories-dept-page.jpg",
+            "cat_title": "Floor Machine Accessories",
             "cat_text": "Accessories for everyday floor maintenance tasks from concrete prep work to buffing, scrubbing, and stripping hard floors. Many different tools, brushes, pad drivers, and solution tanks in stock."
           }
         }
@@ -128,44 +129,53 @@
         "4d0fa2ed-e0e7-4e5c-a489-2c107b72764a": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/concrete-preparation.jpg",
+            "image": "shopify://shop_images/concrete-preparation.jpg",
             "title": "Concrete Preparation",
-            "url": "\/collections\/concrete-preparation-polishing"
+            "url": "/collections/concrete-preparation-polishing"
+          }
+        },
+        "categorylink_4DnbN8": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/dust-skirt-cat.jpg",
+            "title": "Dust Skirts",
+            "url": "/collections/dust-skirts"
           }
         },
         "243be5ff-1a3e-45c8-be0b-82a6be73aff2": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-buffer-brushes.jpg",
+            "image": "shopify://shop_images/floor-buffer-brushes.jpg",
             "title": "Floor Buffer Brushes",
-            "url": "\/collections\/floor-buffer-brushes"
+            "url": "/collections/floor-buffer-brushes"
           }
         },
         "a4e4b977-a5cc-4c90-a601-1a0677c4a308": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floor-buffer-pad-drivers.jpg",
+            "image": "shopify://shop_images/floor-buffer-pad-drivers.jpg",
             "title": "Floor Buffer Pad Drivers",
-            "url": "\/collections\/floor-buffer-pad-drivers"
+            "url": "/collections/floor-buffer-pad-drivers"
           }
         },
         "74bd558c-8495-4b07-92ee-e6b01b7148e2": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/solution-tanks.jpg",
+            "image": "shopify://shop_images/solution-tanks.jpg",
             "title": "Solution Tanks",
-            "url": "\/collections\/solution-tanks"
+            "url": "/collections/solution-tanks"
           }
         }
       },
       "block_order": [
         "4d0fa2ed-e0e7-4e5c-a489-2c107b72764a",
+        "categorylink_4DnbN8",
         "243be5ff-1a3e-45c8-be0b-82a6be73aff2",
         "a4e4b977-a5cc-4c90-a601-1a0677c4a308",
         "74bd558c-8495-4b07-92ee-e6b01b7148e2"
       ],
       "settings": {
-        "block-title": "Floor Buffer Accessories by Type"
+        "block-title": "Floor Machine Accessories by Type"
       }
     },
     "0541121f-89a6-42fe-b7b1-c449e013c65c": {
@@ -174,25 +184,25 @@
         "9e7e49e4-5ee4-4992-9bb1-61acf814c7ec": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-components.jpg",
+            "image": "shopify://shop_images/buffer-components.jpg",
             "title": "Components",
-            "url": "\/collections\/buffer-burnisher-components"
+            "url": "/collections/buffer-burnisher-components"
           }
         },
         "b59ee9f3-5a2d-446f-a34a-d3a8eaab0408": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-weights.jpg",
+            "image": "shopify://shop_images/buffer-weights.jpg",
             "title": "Floor Buffer Weights",
-            "url": "\/collections\/weights"
+            "url": "/collections/weights"
           }
         },
         "cb800bef-d22d-490a-8ecb-e5e27ebd8e48": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/buffer-motors.jpg",
+            "image": "shopify://shop_images/buffer-motors.jpg",
             "title": "Motors",
-            "url": "\/collections\/motors"
+            "url": "/collections/motors"
           }
         }
       },
@@ -278,24 +288,24 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Floor Buffer Accessories&q=Trusted Clean",
-            "brand-image": "shopify:\/\/shop_images\/tank_1.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Floor Buffer Accessories&q=Trusted Clean",
+            "brand-image": "shopify://shop_images/tank_1.jpg"
           }
         },
         "84388f15-c047-49a0-a202-7182ea1997ee": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Oreck&refinementList[product_type][0]=Floor Buffer Accessories&q=Oreck",
-            "brand-image": "shopify:\/\/shop_images\/oreck-buffer-carpet-scrubbing-brush.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Oreck&refinementList[product_type][0]=Floor Buffer Accessories&q=Oreck",
+            "brand-image": "shopify://shop_images/oreck-buffer-carpet-scrubbing-brush.jpg"
           }
         },
         "af361663-843a-4d31-aa39-a7de2dd69c3b": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Malish",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer Accessories&q=Malish",
-            "brand-image": "shopify:\/\/shop_images\/malish-pad-lok-19-inch-pad-driver-with-bristles-782719np.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer Accessories&q=Malish",
+            "brand-image": "shopify://shop_images/malish-pad-lok-19-inch-pad-driver-with-bristles-782719np.jpg"
           }
         }
       },
@@ -310,8 +320,7 @@
     },
     "trustpilot_review_carousel_jgJcFE": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
