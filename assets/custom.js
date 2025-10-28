@@ -782,6 +782,7 @@ jQuery(document).ready(function($){
                     }
                 ]
             });
+            equalRelCards(itemId);
             setTimeout(()=>{
                 equalRelCards(itemId);
             },100);
@@ -2034,7 +2035,6 @@ function playVideo(localvidid) {
 }
 
 function equalRelCards(itemId){
-    alert('test');
     // Equalize Box and Title Height
     // var slideritemId = itemId.replace('-slider', '-rel-item');
     var slideritemId = itemId;
