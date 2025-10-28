@@ -782,31 +782,6 @@ jQuery(document).ready(function($){
                     }
                 ]
             });
-            setTimeout(()=>{
-
-            // Equalize Box and Title Height
-            // var slideritemId = itemId.replace('-slider', '-rel-item');
-            var slideritemId = itemId;
-            var highestBox = 0;
-            var highestTitleBox = 0;
-
-            //Title Height
-            var highestTitleBox = 0;
-            $('#' + slideritemId + ' .productitem--title').each(function () {
-                if ($(this).height() > highestTitleBox) {
-                    highestTitleBox = $(this).height();
-                }
-            });
-            $('#' + slideritemId + ' .productitem--title').height(highestTitleBox);
-
-            //box height
-            $('#' + slideritemId + ' .productgrid--item').each(function () {
-                if ($(this).height() > highestBox) {
-                    highestBox = $(this).height();
-                }
-            });
-            $('#' + slideritemId + ' .productgrid--item').height(highestBox).style("background-color","green");
-            },100);
         });
 
         // Equalize Title Height which is exlcuded above
@@ -829,6 +804,7 @@ jQuery(document).ready(function($){
     //check for slider, initiate slider if not found, continue to run since atc functionlity will remove it if slider runs early
     function checkRelSlider(){
         if($('.rel-product-tabbed-area .slick-initialized').length) {
+            equalRelCards();
             // console.log('slider found');
             /*
             $(".rel-product-tabbed-area .tabbed-rel-freq").each(function (index) {
@@ -871,6 +847,7 @@ jQuery(document).ready(function($){
         }else{
             // console.log('slider not found');
             sliderGo();
+            equalRelCards();
         }
     }
 
@@ -2047,4 +2024,36 @@ function playVideo(localvidid) {
     const vid = document.getElementById('localv-'+localvidid);
     vid.scrollIntoView({ behavior: 'smooth', block: 'center' });
     vid.play();
+}
+
+function equalRelCards(itemId){
+
+    $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, #part_items-slider, #part_used_on-slider')").each(function (index) {
+        var itemId = $(this).attr('id');
+        var sliderArrows = '#' + itemId + '-arrows';
+
+    // Equalize Box and Title Height
+    // var slideritemId = itemId.replace('-slider', '-rel-item');
+    var slideritemId = itemId;
+    var highestBox = 0;
+    var highestTitleBox = 0;
+
+    //Title Height
+    var highestTitleBox = 0;
+    $('#' + slideritemId + ' .productitem--title').each(function () {
+        if ($(this).height() > highestTitleBox) {
+            highestTitleBox = $(this).height();
+        }
+    });
+    $('#' + slideritemId + ' .productitem--title').height(highestTitleBox);
+
+    //box height
+    $('#' + slideritemId + ' .productgrid--item').each(function () {
+        if ($(this).height() > highestBox) {
+            highestBox = $(this).height();
+        }
+    });
+    $('#' + slideritemId + ' .productgrid--item').height(highestBox);
+    });
+
 }
