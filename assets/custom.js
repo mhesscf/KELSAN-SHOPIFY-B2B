@@ -783,30 +783,14 @@ jQuery(document).ready(function($){
                 ]
             });
             setTimeout(()=>{
-
-            // Equalize Box and Title Height
-            // var slideritemId = itemId.replace('-slider', '-rel-item');
-            var slideritemId = itemId;
-            var highestBox = 0;
-            var highestTitleBox = 0;
-
-            //Title Height
-            var highestTitleBox = 0;
-            $('#' + slideritemId + ' .productitem--title').each(function () {
-                if ($(this).height() > highestTitleBox) {
-                    highestTitleBox = $(this).height();
-                }
-            });
-            $('#' + slideritemId + ' .productitem--title').height(highestTitleBox);
-
-            //box height
-            $('#' + slideritemId + ' .productgrid--item').each(function () {
-                if ($(this).height() > highestBox) {
-                    highestBox = $(this).height();
-                }
-            });
-            $('#' + slideritemId + ' .productgrid--item').height(highestBox).style("background-color","green");
+                equalRelCards(itemId);
             },100);
+            setTimeout(()=>{
+                equalRelCards(itemId);
+            },200);
+            setTimeout(()=>{
+                equalRelCards(itemId);
+            },300);
         });
 
         // Equalize Title Height which is exlcuded above
@@ -2047,4 +2031,29 @@ function playVideo(localvidid) {
     const vid = document.getElementById('localv-'+localvidid);
     vid.scrollIntoView({ behavior: 'smooth', block: 'center' });
     vid.play();
+}
+
+function equalRelCards(itemId){
+    // Equalize Box and Title Height
+    // var slideritemId = itemId.replace('-slider', '-rel-item');
+    var slideritemId = itemId;
+    var highestBox = 0;
+    var highestTitleBox = 0;
+
+    //Title Height
+    var highestTitleBox = 0;
+    $('#' + slideritemId + ' .productitem--title').each(function () {
+        if ($(this).height() > highestTitleBox) {
+            highestTitleBox = $(this).height();
+        }
+    });
+    $('#' + slideritemId + ' .productitem--title').height(highestTitleBox);
+
+    //box height
+    $('#' + slideritemId + ' .productgrid--item').each(function () {
+        if ($(this).height() > highestBox) {
+            highestBox = $(this).height();
+        }
+    });
+    $('#' + slideritemId + ' .productgrid--item').height(highestBox);
 }
