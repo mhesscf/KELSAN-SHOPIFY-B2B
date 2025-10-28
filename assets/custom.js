@@ -2034,6 +2034,7 @@ function playVideo(localvidid) {
 }
 
 function equalRelCards(itemId){
+    alert('test');
     // Equalize Box and Title Height
     // var slideritemId = itemId.replace('-slider', '-rel-item');
     var slideritemId = itemId;
