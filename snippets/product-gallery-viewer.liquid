@@ -68,7 +68,12 @@
 
         {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
             {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                {%- assign specialclass = "isspecial" -%}
+
+                {% if product.tags contains "BOGO Deal" %}
+                    {%- assign specialclass = "isbogo" -%}
+                {%- else -%}
+                    {%- assign specialclass = "isspecial" -%}
+                {%- endif -%}
             {%- endif -%}
         {%- endif -%}
     {%- elsif product.metafields.plytix.bundle_special_data -%}
@@ -175,6 +180,8 @@
                 <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
             {%- elsif specialclass == "isclearance" -%}
                 <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon-clearance.png' | file_img_url: '260x' }}" alt="Clearance Item" /></div>
+            {%- elsif specialclass == "isbogo" -%}
+                <div class="deal-rib bogo-icon"><img class="img-responsive" src="{{ 'bogo-icon.png' | file_img_url: '260x' }}" alt="BOGO Item" /></div>
             {%- endif -%}
           {%
             render 'rimg',
@@ -237,6 +244,7 @@
     {%- assign lvideo = product.metafields.plytix.local_video | split: ";" -%}
     {%- for vid in lvideo -%}
         {%- assign pyt = vid | split: "::" -%}
+        {%- assign pytid = pyt[0] | split: "." | first  -%}
         {%- comment -%}{% assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" %}{%- endcomment -%}
 
         <figure class="
@@ -250,15 +258,33 @@
                 data-media="{{orgCounter }}"
                 data-media-type="video"
                >
-            <video controls="controls" style="width: 100%; height: auto;">
-                <source src="https://cdn.shopify.com/videos/c/o/v/{{ pyt[0] }}" type="video/mp4" />
-                Your browser does not support our video.
-            </video>
-            <div class="alttext">{{ pyt[1] | escape }}</div>
+            <div class="gallery-product-video">
+                <video controls="controls" style="width: 100%; height: auto;">
+                    <source src="https://cdn.shopify.com/videos/c/o/v/{{ pyt[0] }}" type="video/mp4" />
+                    Your browser does not support our video.
+                </video>
+                <div class="alttext">{{ pyt[1] | escape }}</div>
+            </div>
+
+            <div class="gallery-product-video-placeholder">
+                <a href="#localv-{{ pytid }}-top" onclick="playVideo('{{ pytid }}')">
+                    <img class="img-responsive" src="{{ shop.url }}/cdn/shop/files/video-placeholder.png" alt="Video Placeholder" />
+                </a>
+                <div class="alttext"><a href="#localv-{{ pytid }}-top" onclick="playVideo('{{ pytid }}')">{{ pyt[1] | escape }}</a></div>
+            </div>
+
+
+
+{% comment %}
+            <div class="alttext"><a href="https://cdn.shopify.com/videos/c/o/v/{{ pyt[0] }}" target="_blank">open video</a></div>
+
+            <a href="#localv-{{ pytid }}-top" onclick="playVideo('{{ pytid }}')">Watch Video</a>
+            {% endcomment %}
+
         </figure>
         {%- assign orgCounter = orgCounter | plus: 1  -%}
     {%- endfor -%}
-
+    
     {%- comment -%}youtube video -------------------------------------------------------{%- endcomment -%}
     {%- assign pvideo = product.metafields.plytix.product_video | split: ";" -%}
     {%- for vid in pvideo -%}
@@ -288,8 +314,7 @@
                 {%- else -%}
                     <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
                 {%- endif -%}
-
-            <div class="alttext">{{ pyt[1] }}</div>
+                <div class="alttext">{{ pyt[1] }}</div>
 
         </figure>
         {%- assign orgCounter = orgCounter | plus: 1  -%}

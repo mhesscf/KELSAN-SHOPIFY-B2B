@@ -60,7 +60,7 @@
                     <th id="heading-item-cat" class="sortheading" onclick="sortme(this)">Product Type</th>
                     <th id="heading-item-year_manuf" class="sortheading" onclick="sortme(this)">Year Manufactured</th>
                     <th id="heading-item-condition" class="sortheading" onclick="sortme(this)">Condition</th>
-                    <th id="heading-item-price" class="sortheading" onclick="sortme(this)">Price<span style="color:red;">*</span></th>
+                    <th id="heading-item-price" class="sortheading" onclick="sortme(this)">Price<span class="ast">*</span></th>
                     <th id="heading-item-form"></th>
                 </tr>
 
@@ -75,12 +75,21 @@
                                     <img src="{{ item.picture_from_file | image_url: width: 200, height: 200 }}" class="fromfile" alt="{{ item.product_name }}"/>
                                 {%- endif -%}
                             </td>
-                            <td class="item-model"><span class="item-name-data">{{ item.product_name }}</span><br/><span class="item-sku-data">{{ item.sku }}{% if item.picture_from_live_product %}<br/><a href="{{ item.picture_from_live_product.value.url }}" target="_blank" >View New Listing</a>{% endif %}</td>
+                            <td class="item-model"><strong><span class="item-name-data">{{ item.product_name }}</span></strong><br/><span class="item-sku-data">{{ item.sku }}{% if item.picture_from_live_product %}<br/><a href="{{ item.picture_from_live_product.value.url }}" target="_blank" >View New Listing</a>{% endif %}</td>
                             <td class="item-cat">{{ refurbished_cat }}</td>
                             <td class="item-year_manuf">{{ item.year_manufactured }}</td>
                             <td class="item-condition">{{ item.condition  }}</td>
-                            <td class="item-price">{{ item.condition }}</td>
-                            <td class="item-form"><button class="button orange button-secondary" onclick="popform('{{ item.product_name | remove: '"' | remove: "'" | escape }}','{{ item.sku }}');"><span><span>Inquire</span></span></button></td>
+
+
+                            {%- assign thisprice = item.price | times: 100 | money -%}
+                            {%- if item.show_inquire_for_pricing -%}
+                                {%- assign thisprice = "Inquire for Pricing" -%}
+                            {%- else -%}
+                                {%- assign thisprice = thisprice | append: "<span class='ast'>*</span>" -%}
+                            {%- endif -%}
+
+                            <td class="item-price">{{ thisprice }}</td>
+                            <td class="item-form"><button class="productitem--action-trigger productitem--action main-atc-button thinbtn" onclick="popform('{{ item.product_name | remove: '"' | remove: "'" | escape }}','{{ item.sku }}');"><span><span>Inquire</span></span></button></td>
                         </tr>
                     {%- endif -%}
                 {% endfor %}
@@ -125,6 +134,12 @@
     .pcc-table .subselect.vacmotor{display:inline-block; width:58px; margin-left:-3px;}
     .pcc-table .subselect.body,
     .pcc-table .subselect.parts{border-right:1px solid #ccc;}
+
+    .pcc-table .ast{color:red;}
+
+    .pcc-table .main-atc-button{font-size:16px;}
+
+
     .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th{background-color:#f9f9f9;}
     .input-area .input-title{font-weight:bold; margin:8px 0 -8px 0;}
     .input-area input{margin-right:10px; height:40px;}
@@ -196,27 +211,27 @@
 <ol>
     <li>
         <strong>Heavily Worn</strong><br>
-        Shows heavy use<br>
+        Shows heavy use.<br>
         The equipment is fully functional but has significant cosmetic wear, visible dents, scratches, or faded surfaces. Best for budget buyers who care more about performance than appearance.
     </li>
     <li>
         <strong>Well Used</strong><br>
-        Carries noticeable signs of use<br>
+        Carries noticeable signs of use.<br>
         Fully operational with moderate wear, scuffs, or cosmetic imperfections. May have older parts but still tested for working condition.
     </li>
     <li>
         <strong>Gently Used</strong><br>
-        Presents moderate use<br>
+        Presents moderate use.<br>
         Equipment is in good working order with some minor cosmetic blemishes. No major repairs needed; reliable for regular use.
     </li>
     <li>
         <strong>Refurbished</strong><br>
-        Performs like new<br>
+        Performs like new.<br>
         Professionally serviced or refurbished to ensure strong functionality. Light cosmetic wear possible, but tested to meet quality standards.
     </li>
     <li>
         <strong>Like New</strong><br>
-        Delivers near-new quality<br>
+        Delivers near-new quality.<br>
         Excellent condition with little to no visible wear. Functionally and cosmetically close to brand new.
     </li>
 </ol>
