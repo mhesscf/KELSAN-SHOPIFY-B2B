@@ -782,16 +782,6 @@ jQuery(document).ready(function($){
                     }
                 ]
             });
-            equalRelCards(itemId);
-            setTimeout(()=>{
-                equalRelCards(itemId);
-            },100);
-            setTimeout(()=>{
-                equalRelCards(itemId);
-            },200);
-            setTimeout(()=>{
-                equalRelCards(itemId);
-            },300);
         });
 
         // Equalize Title Height which is exlcuded above
@@ -814,6 +804,7 @@ jQuery(document).ready(function($){
     //check for slider, initiate slider if not found, continue to run since atc functionlity will remove it if slider runs early
     function checkRelSlider(){
         if($('.rel-product-tabbed-area .slick-initialized').length) {
+            equalRelCards();
             // console.log('slider found');
             /*
             $(".rel-product-tabbed-area .tabbed-rel-freq").each(function (index) {
@@ -856,6 +847,7 @@ jQuery(document).ready(function($){
         }else{
             // console.log('slider not found');
             sliderGo();
+            equalRelCards();
         }
     }
 
@@ -2035,6 +2027,11 @@ function playVideo(localvidid) {
 }
 
 function equalRelCards(itemId){
+
+    $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, #part_items-slider, #part_used_on-slider')").each(function (index) {
+        var itemId = $(this).attr('id');
+        var sliderArrows = '#' + itemId + '-arrows';
+
     // Equalize Box and Title Height
     // var slideritemId = itemId.replace('-slider', '-rel-item');
     var slideritemId = itemId;
@@ -2057,4 +2054,6 @@ function equalRelCards(itemId){
         }
     });
     $('#' + slideritemId + ' .productgrid--item').height(highestBox);
+    });
+
 }
