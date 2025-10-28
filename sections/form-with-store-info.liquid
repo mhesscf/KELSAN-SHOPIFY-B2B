@@ -277,12 +277,14 @@
                             $('.form-tab.problem-tab').addClass('highlight');
                             $('.cu-custom-form').removeClass('formshow');
                             $('.problem-form').addClass('formshow');
+                        }else{
+                            setTimeout(() => {
+                                $('.cu-custom-form').addClass('formshow');
+                                $('.problem-form').removeClass('formshow');
+                            }, 600);
                         }
                         
-                        setTimeout(() => {
-                            $('.cu-custom-form').addClass('formshow');
-                            $('.problem-form').removeClass('formshow');
-                        }, 600);
+
 
                     });
                 </script>
