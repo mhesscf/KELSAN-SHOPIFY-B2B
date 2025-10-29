@@ -141,9 +141,9 @@
         <div class="cart-item--product-options" data-details="{{ product_bundle_details }}">
           {%- assign current_variant = all_products[product_bundle].selected_or_first_available_variant -%}
             {% if product_bundle_details == 'gpack' %}
-                Part of free gift package for <a style="color: inherit;" href="{{ all_products[product_bundle].url }}">{{ all_products[product_bundle].metafields.plytix.main_sku }}</a>.
+                Part of free gift package for <a style="" href="{{ all_products[product_bundle].url }}">{{ all_products[product_bundle].metafields.plytix.main_sku }}</a>
             {% else %}
-                Part of package <a style="color: inherit;" href="{{ all_products[product_bundle].url }}">{{ current_variant.sku }}</a>.
+                Part of package <a style="" href="{{ all_products[product_bundle].url }}">{{ current_variant.sku }}</a>
             {% endif %}
         </div>
       {% endif %}
