@@ -107,7 +107,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Electric, Efficient, Economical.</div>\n<h1>Trusted Clean 'Dura 17' Electric Auto Floor Scrubber</h1>\n<div>Was: $1,899.99<br/>Now: $1,699.99</div>",
-            "text_area_css": "@media screen and (min-width: 718px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image{\npadding-top:37px;\n}\n}",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image{\npadding-top:37px;",
             "bg_link": "/products/17-inch-electric-auto-scrubber",
             "promo_link": "",
             "button_one_label": "Save $200",
