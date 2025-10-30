@@ -54,6 +54,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "10",
@@ -75,6 +76,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "10",
@@ -96,10 +98,9 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "8",
+            "sotm_icon": "11",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/wet-cf4240hv-2-special-1.png?v=173336204",
             "middle_image_alt": "CleanFreak® 4.0 GPM Pressure Washer w/ Honda GX390 Engine (Gas) - 4,200 PSI",
@@ -118,21 +119,20 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "8",
+            "sotm_icon": "11",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/cpl-cf-25xg-heat-2pw-special.png?v=173335204",
-            "middle_image_alt": "CleanFreak® Heated 500 PSI Portable Carpet Extractor",
+            "middle_image": "/cdn/shop/files/cpl-dura-17c-special.png?v=173335204",
+            "middle_image_alt": "Trusted Clean 'Dura 17' Electric Auto Floor Scrubber November Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Hot water meets a hot deal!</div>\n<h1>CleanFreak® Heated 500 PSI Portable Carpet Extractor</h1>\n<div>Was: $3,299.99<br/>Now: $2,899.99</div>",
+            "text_area_html": "<div class=\"top-text\">Electric, Efficient, Economical.</div>\n<h1>Trusted Clean 'Dura 17' Electric Auto Floor Scrubber</h1>\n<div>Was: $1,899.99<br/>Now: $1,699.99</div>",
             "text_area_css": "@media screen and (max-width: 718px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image{\nmax-width:302px;\npadding-top:0px;\n}\n}\n@media screen and (min-width: 1279px) {\n  .slideshow-v2 .custom-text h1 {\n    font-size: 35px;\n    line-height: 38px;\n  }\n}",
-            "bg_link": "/products/heated-500-psi-portable-extractor",
+            "bg_link": "/products/17-inch-electric-auto-scrubber",
             "promo_link": "",
-            "button_one_label": "Save $400",
-            "button_one_link": "/products/heated-500-psi-portable-extractor",
+            "button_one_label": "Save $200",
+            "button_one_link": "/products/17-inch-electric-auto-scrubber",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
