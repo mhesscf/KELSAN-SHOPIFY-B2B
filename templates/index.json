@@ -20,16 +20,6 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "banner_qaQPaP": {
-          "type": "banner",
-          "settings": {
-            "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-ryicf-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-ryicf-mobile-banner.jpg",
-            "link": "/pages/release-your-inner-cleanfreak",
-            "coupon-code": ""
-          }
-        },
         "banner_Hera6c": {
           "type": "banner",
           "settings": {
@@ -37,6 +27,16 @@
             "banner-lg": "shopify://shop_images/2025-pre-black-friday-sale-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/2025-pre-black-friday-sale-mobile-banner.jpg",
             "link": "/collections/demoed-refurbished-equipment",
+            "coupon-code": ""
+          }
+        },
+        "banner_qaQPaP": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-ryicf-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-ryicf-mobile-banner.jpg",
+            "link": "/pages/release-your-inner-cleanfreak",
             "coupon-code": ""
           }
         },
@@ -194,8 +194,8 @@
         }
       },
       "block_order": [
-        "banner_qaQPaP",
         "banner_Hera6c",
+        "banner_qaQPaP",
         "banner_fLBUa3",
         "slide_v2_cqVtUz",
         "slide_v2_nhVKm9",
