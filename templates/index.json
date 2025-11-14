@@ -176,9 +176,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/tennant-dual-speed-buffer-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/tennant-dual-speed-buffer-bogo-mobile-banner.jpg",
-            "link": "/products/tennant-fm-20-ds-20-inch-dual-speed-floor-buffer",
+            "banner-lg": "shopify://shop_images/november-2025-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/november-2025-bogo-mobile-banner.jpg",
+            "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
             "coupon-code": ""
           }
         },
