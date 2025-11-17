@@ -166,7 +166,7 @@
           "type": "categorylink",
           "settings": {
             "image": "shopify://shop_images/current-sales-dept.jpg",
-            "title": "Current Sales & Promos",
+            "title": "Current Sales & Promotions",
             "url": "/collections/current-sales"
           }
         },
