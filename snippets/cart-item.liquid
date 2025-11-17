@@ -122,9 +122,17 @@
       {% endfor %}
     {% endunless %}
 
+      {% assign itemlink = item.url  %}
+      {% if product_bundle != '' %}
+          {% if item.product.metafields.plytix.hide_product == 'true' %}
+              {% assign itemlink = all_products[product_bundle].url %}
+          {% endif %}
+      {% endif %}
+
+
     <div class="cart-item--content">
       <h2 class="cart-item--content-title">
-        <a href="{{ item.url }}">
+        <a href="{{ itemlink }}">
           {{ item.product.title }}{% if sf_sku != "" %} for "{{ sf_sku }}"{% endif %}
         </a>
       </h2>
