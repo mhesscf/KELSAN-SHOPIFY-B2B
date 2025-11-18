@@ -83,6 +83,15 @@
   {% endfor %}
 {% endunless %}
 
+{% assign itemlink = item.url  %}
+{% if product_bundle != '' %}
+    {% if item.product.metafields.plytix.hide_product == 'true' %}
+        {% assign itemlink = all_products[product_bundle].url %}
+    {% endif %}
+{% endif %}
+
+
+
 <li
         class="cart-item {% if sf_addon == 0 %}sf-cart-addon{% elsif sf_addon > 0 %}has-sf-cart-addon{% endif %} {% if product_bundle != '' %}{{ product_bundle | escape  }}{% endif %} {% if pstep != '' %}stepValItem{% endif %} {% if fgbogo-rule %}{{ fgbogo-rule }}{% endif %}"
         id="lineitem-{{ item.variant_id }}"
@@ -93,7 +102,7 @@
         data-cartitem-step="{{ pstep }}"
 >
   <figure class="cart-item--image-wrapper">
-    <a href="{{ item.url }}">
+    <a href="{{ itemlink }}">
       {% if item.image %}
         {% if sf_addon == 0 %}
           <img src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="Superfreak" />
@@ -121,13 +130,6 @@
         {% endif %}
       {% endfor %}
     {% endunless %}
-
-      {% assign itemlink = item.url  %}
-      {% if product_bundle != '' %}
-          {% if item.product.metafields.plytix.hide_product == 'true' %}
-              {% assign itemlink = all_products[product_bundle].url %}
-          {% endif %}
-      {% endif %}
 
 
     <div class="cart-item--content">
