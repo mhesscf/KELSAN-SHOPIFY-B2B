@@ -122,9 +122,17 @@
       {% endfor %}
     {% endunless %}
 
+      {% assign itemlink = item.url  %}
+      {% if product_bundle != '' %}
+          {% if item.product.metafields.plytix.hide_product == 'true' %}
+              {% assign itemlink = all_products[product_bundle].url %}
+          {% endif %}
+      {% endif %}
+
+
     <div class="cart-item--content">
       <h2 class="cart-item--content-title">
-        <a href="{{ item.url }}">
+        <a href="{{ itemlink }}">
           {{ item.product.title }}{% if sf_sku != "" %} for "{{ sf_sku }}"{% endif %}
         </a>
       </h2>
@@ -141,9 +149,9 @@
         <div class="cart-item--product-options" data-details="{{ product_bundle_details }}">
           {%- assign current_variant = all_products[product_bundle].selected_or_first_available_variant -%}
             {% if product_bundle_details == 'gpack' %}
-                Part of free gift package for <a style="color: inherit;" href="{{ all_products[product_bundle].url }}">{{ all_products[product_bundle].metafields.plytix.main_sku }}</a>.
+                Part of free gift package for <a style="" href="{{ all_products[product_bundle].url }}">{{ all_products[product_bundle].metafields.plytix.main_sku }}</a>
             {% else %}
-                Part of package <a style="color: inherit;" href="{{ all_products[product_bundle].url }}">{{ current_variant.sku }}</a>.
+                Part of package <a style="" href="{{ all_products[product_bundle].url }}">{{ current_variant.sku }}</a>
             {% endif %}
         </div>
       {% endif %}
