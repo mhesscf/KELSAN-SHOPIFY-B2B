@@ -162,6 +162,14 @@
             "url": "/collections/clearance"
           }
         },
+        "categorylink_tJkihJ": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/current-sales-dept.jpg",
+            "title": "Current Sales & Promotions",
+            "url": "/collections/current-sales"
+          }
+        },
         "categorylink_meYKdM": {
           "type": "categorylink",
           "settings": {
@@ -181,6 +189,7 @@
       },
       "block_order": [
         "categorylink_XgyXfW",
+        "categorylink_tJkihJ",
         "categorylink_meYKdM",
         "categorylink_Ed9BGh"
       ],

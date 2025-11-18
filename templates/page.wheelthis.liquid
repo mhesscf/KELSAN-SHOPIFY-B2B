@@ -402,7 +402,8 @@
         if (spinCount === 1) {
         prize1.textContent = prize;
         prize1.setAttribute("dataprize", codes );
-        document.cookie = "thewheel="+prize+"$$"+codes+"; expires=0; path=/";
+        // document.cookie = "thewheel="+prize+"$$"+codes+"; expires=0; path=/";
+        document.cookie = "thewheel="+prize+"$$"+codes+"; max-age=" + (7 * 24 * 60 * 60) + "; path=/";
 
         } else if (spinCount === 2) {
             prize2.textContent = prize;
@@ -410,7 +411,8 @@
 
             const prize1prize = prize1.innerText;
             const prize1code = prize1.getAttribute("dataprize");
-            document.cookie = "thewheel="+prize1prize+"$$"+prize1code+"**"+prize+"$$"+codes+"; expires=0; path=/";
+            // document.cookie = "thewheel="+prize1prize+"$$"+prize1code+"**"+prize+"$$"+codes+"; expires=0; path=/";
+            document.cookie = "thewheel="+prize1prize+"$$"+prize1code+"**"+prize+"$$"+codes+"; max-age=" + (7 * 24 * 60 * 60) + "; path=/";
 
         }
 
@@ -443,8 +445,10 @@
             if (prize) {
             // Set a cookie named "Coupon" with the value of dataprize
             // document.cookie = `Coupon=${prize}; path=/;`;
-            document.cookie = "thewheel=spun; expires=0; path=/";
-            promoRedirect(prize,'/');
+            // document.cookie = "thewheel=spun; expires=0; path=/";
+            document.cookie = "thewheel=spun; max-age=" + (7 * 24 * 60 * 60) + "; path=/";
+            const currentUrl = window.location.pathname;
+            promoRedirect(prize,currentUrl);
             } else {
             alert("Please Spin the Wheel...");
             }

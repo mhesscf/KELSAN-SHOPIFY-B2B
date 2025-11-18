@@ -367,7 +367,8 @@
       });
       function closereload() {
         if (confirm("You haven’t claimed your prize yet!\n\nIf you leave now, you won’t be able to come back\nand claim it.") == true){
-          document.cookie = "thewheel=optout; expires=0; path=/";
+          // document.cookie = "thewheel=optout; expires=0; path=/";
+          document.cookie = "thewheel=optout; max-age=" + (7 * 24 * 60 * 60) + "; path=/";
           closechildPop('bund-pop-');
         }
       }
