@@ -74,7 +74,13 @@
                                     <img src="{{ item.picture_from_file | image_url: width: 200, height: 200 }}" class="fromfile" alt="{{ item.product_name }}"/>
                                 {%- endif -%}
                             </td>
-                            <td class="item-model"><strong><span class="item-name-data">{{ item.product_name }}</span></strong><br/><span class="item-sku-data">{{ item.sku }}{% if item.picture_from_live_product %}<br/><a href="{{ item.picture_from_live_product.value.url }}" target="_blank" >View New Listing</a>{% endif %}</td>
+                            <td class="item-model"><strong><span class="item-name-data">{{ item.product_name }}</span></strong><br/>
+
+                                <span class="item-sku-data">{{ item.sku }}{% if item.picture_from_live_product %}
+                                        <br/><a href="{{ item.picture_from_live_product.value.url }}" target="_blank" >View New Listing</a>
+                                    {% endif %}
+                                </span>
+                            </td>
                             <td class="item-cat">{{ refurbished_cat }}</td>
                             <td class="item-year_manuf">{{ item.year_manufactured }}</td>
                             <td class="item-condition">{{ item.condition  }}</td>
