@@ -624,7 +624,7 @@ margin-top:76px;
     <div class="promo-details">
         <h2>Promotions Details</h2>
 
-        {% for promo in promoObjSorted %}
+        {% for promo in promoObjSortedRev %}
             {% assign startDateSeconds = promo.start_date_time | date: "%s" | plus: 0 %}
             {% assign endDateSeconds = promo.end_date_time | date: "%s" | plus: 0 %}
 
