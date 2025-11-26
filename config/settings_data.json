@@ -304,8 +304,8 @@
         "settings": {
           "show_announcement": false,
           "homepage_announcement": false,
-          "announcement_text": "In observance of Labor Day, we will be closed on Monday, September 1st. We will reopen Tuesday, September 2nd.",
-          "announcement_text_mobile": "In observance of Labor Day, we will be closed on Monday, September 1st. We will reopen Tuesday, September 2nd.",
+          "announcement_text": "In observance of Thanksgiving, we will be closed on Thursday, November 27 & Friday, November 28. We will reopen on Monday, December 1.",
+          "announcement_text_mobile": "In observance of Thanksgiving, we will be closed on Thursday, November 27 & Friday, November 28. We will reopen on Monday, December 1.",
           "announcement_link": "/collections/flash-sale",
           "announcement_promo": "",
           "flash": false,
@@ -381,9 +381,7 @@
         "disabled": false,
         "settings": {
           "vwoAccountId": "968594",
-          "settingsTolerance": 2000,
-          "libraryTolerance": 2500,
-          "existingJquery": "false"
+          "settingsTolerance": 2000
         }
       },
       "234697707474025726": {
