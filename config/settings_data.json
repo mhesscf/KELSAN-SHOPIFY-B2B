@@ -304,8 +304,8 @@
         "settings": {
           "show_announcement": false,
           "homepage_announcement": false,
-          "announcement_text": "In observance of Thanksgiving, we will be closed on Thursday, November 27 & Friday, November 28. We will reopen on Monday, December 1.",
-          "announcement_text_mobile": "In observance of Thanksgiving, we will be closed on Thursday, November 27 & Friday, November 28. We will reopen on Monday, December 1.",
+          "announcement_text": "In observance of Thanksgiving, we will be closed on Thursday, November 27th & Friday, November 28th. We will reopen on Monday, December 1st.",
+          "announcement_text_mobile": "In observance of Thanksgiving, we will be closed on Thursday, November 27th & Friday, November 28th. We will reopen on Monday, December 1st.",
           "announcement_link": "/collections/flash-sale",
           "announcement_promo": "",
           "flash": false,
