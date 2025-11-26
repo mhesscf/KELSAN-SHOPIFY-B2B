@@ -20,6 +20,16 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "banner_xWQm6F": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/2025-cyber-monday-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2025-cyber-monday-mobile-banner.jpg",
+            "link": "/collections/black-friday-cyber-monday-deals",
+            "coupon-code": ""
+          }
+        },
         "banner_fLBUa3": {
           "type": "banner",
           "settings": {
@@ -193,6 +203,7 @@
         }
       },
       "block_order": [
+        "banner_xWQm6F",
         "banner_fLBUa3",
         "banner_Hera6c",
         "banner_qaQPaP",
