@@ -620,7 +620,108 @@
         <div class="warningpop-text-{{ varid }}" style="display:none;">
             <h2 style="margin-bottom:0">{{ product.metafields.plytix.warning_title }}</h2>
             <div style="font-size:12px; margin-bottom:15px; ">Notice for {{ product.metafields.plytix.main_sku }}</div>
-            <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">{{ product.metafields.plytix.warning_body }}</div>
+            <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">
+                {{ product.metafields.plytix.warning_body }}
+
+
+                {%- if product.metafields.plytix.warning_pop_product -%}
+                    <style>
+                        .warning-pop-products .productitem--title{
+                            font-size:14px;
+                            line-height:18px;
+                            margin:3px 0 0 0
+                        }
+                        .warning-pop-products .productitem--title.longtext{
+                            width: 155px;           /* your fixed width */
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;  /* limit to 2 lines */
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+
+                        .warning-pop-products .product-detail-sku{display:none;}
+                        .warning-pop-products .productitem__price{margin:0;}
+                        .warning-pop-products .productitem__price .price__current span{
+                            font-size:18px;
+                        }
+                        .warning-pop-products figure{
+                            margin:0;
+                        }
+                        @media screen and (max-width: 719px) {
+                            /*.warning-pop-products .productitem__info-container,*/
+                            /*.warning-pop-products .productitem__image-container{*/
+                            /*    display:inline-block;*/
+                            /*}*/
+                            .warning-pop-products .accdrop-productitem__container{
+                                display:flex;
+                                align-items: center;
+                                text-align:left;
+                            }
+                            .warning-pop-products figure{
+                                margin:0 10px 0 0;
+                            }
+                           .warning-pop-products figure img {
+                               max-width: 45px;
+                           }
+                            .warning-pop-products .accdrop-productitem{
+                                text-align:center;
+                                border-bottom:1px solid #ccc;
+                                padding:8px 5px;
+                            }
+                            .warning-pop-products .cart-upsell-btn.productitem--action-trigger{
+                                margin-top:0;
+                            }
+
+                        }
+                        @media screen and (min-width: 720px) {
+                            .warning-pop-products{
+                                display:flex;
+                                justify-content: center;
+                            }
+                            .warning-pop-products section{
+                                padding:5px;
+                                flex-basis: 33%;
+                                max-width:220px
+                            }
+                            .warning-pop-products .accdrop-productitem{
+                                position: relative;
+                                width: 100%;
+                                min-height: 100%;
+                                height: var(--base-height, auto);
+                                padding: 10px 15px;
+                                box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14);
+                                border-radius: 30px;
+                                transition: all 250ms ease-in-out;
+                                text-align:center;
+                            }
+                            .warning-pop-products figure img{
+                                max-width:75px;
+                            }
+                            .warning-pop-products .cart-upsell-btn.productitem--action-trigger{
+                                margin-top:5px;
+                            }
+                        }
+                    </style>
+                    {%- assign warning_prod-arr =  product.metafields.plytix.warning_pop_product | split: ", " -%}
+                    <div class="warning-pop-products" data-warning-products>
+                        {%- for warning_prod in warning_prod-arr -%}
+                            {%- if warning_prod != "" and warning_prod !="undefined" -%}
+
+                                    {%- assign  thisprod = all_products[warning_prod] -%}
+                                    {%-
+                                            render 'accdrop-items',
+                                            main_loc: 'product',
+                                            item_loc: 'warningpop',
+                                            product: thisprod
+                                    -%}
+
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div style="text-align:center; padding-top:10px;">Click “Agree” to confirm you’ve read & understood this notice.</div>{%- endif -%}
+            </div>
             <div class="warning-actions">
                 <div style="margin-top:10px; text-align:center">
                     <div style="max-width:200px; margin:3px;" class="product-form--atc-button outlinebtn main-atc-button" onclick="event.stopPropagation(); closechildPop('bund-pop-')" >Cancel</div>
