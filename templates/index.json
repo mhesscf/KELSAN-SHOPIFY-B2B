@@ -52,20 +52,19 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "10",
+            "sotm_icon": "12",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
             "middle_image": "/cdn/shop/files/cpl-cf-25xg-2pw-special.png?v=17333236204",
-            "middle_image_alt": "CleanFreak® 500 PSI Commercial Carpet Extractor w/ 12\" Wand & 25' Hose Special of the Month",
+            "middle_image_alt": "Trusted Clean 'Deluxe' Non-Heated 12-Gallon Box Extractor w/ 12\" Wand & 25' Hose Special of the Month",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Deep Clean Carpets at a Discount.</div>\n<h1>CleanFreak® 500 PSI Commercial Carpet Extractor</h1>\n<div>Was: $2,599.99<br/> Now: $2,299.99</div>",
+            "text_area_html": "<div class=\"top-text\">Deluxe Power at a Discounted Price.</div>\n<h1>Trusted Clean 'Deluxe' Non-Heated 12-Gallon Box Extractor</h1>\n<div>Was: $2,089.99<br/> Now: $1,799.99</div>",
             "text_area_css": "",
             "bg_link": "/products/500-psi-commercial-carpet-cleaner",
             "promo_link": "",
-            "button_one_label": "Save $300",
+            "button_one_label": "Save $290",
             "button_one_link": "/products/500-psi-commercial-carpet-cleaner",
             "button_two_label": "",
             "button_two_link": "",
@@ -74,10 +73,9 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "10",
+            "sotm_icon": "12",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/cpl-18vac-24sq-special.png?v=17333262",
             "middle_image_alt": "Trusted Clean 'Quench' Wet Push Vacuum - 18 Gallons Special",
@@ -96,6 +94,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "11",
@@ -117,6 +116,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "11",
