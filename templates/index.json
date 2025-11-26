@@ -82,7 +82,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Flawless Floors, Festive Savings!</div>\n<h1>Trusted Clean 20\" Commercial Grade Floor Buffer</h1>\n<div>Was: $1,024.99<br/> Now: $849.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\nmargin-top:8px;\nmax-height:336px;\n}\n\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1{\nfont-size:12px;\n}",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\nmargin-top:8px;\nmax-height:336px;\n}\n\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1{\nfont-size:28px;\n}",
             "bg_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
             "promo_link": "",
             "button_one_label": "Save $175",
