@@ -26,7 +26,7 @@
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-cyber-monday-desktop-banner.jpg",
             "banner-sm": "shopify://shop_images/2025-cyber-monday-mobile-banner.jpg",
-            "link": "/collections/black-friday-cyber-monday-deals",
+            "link": "/collections/black-friday-cyber-monday-deals?refinementList[tags][0]=Cyber Monday Sale",
             "coupon-code": ""
           }
         },
