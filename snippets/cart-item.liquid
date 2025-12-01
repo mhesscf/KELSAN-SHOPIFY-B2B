@@ -246,14 +246,16 @@
               Compare_at_price: {{ compare_at_price }}<br/>
               org_price: {{ org_price }}<br/><br/>
               {%- endcomment -%}
+
               {% if org_price > item.price %}
                   {%- assign display_orgprice = org_price -%}
                   {%- assign discounted = true -%}
-              {% elsif item.original_price > item.price %}
-                  {%- assign display_orgprice = item.original_price -%}
-                  {%- assign discounted = true -%}
-              {% elsif compare_at_price > item.price %}
+              {% endif %}
+              {% if compare_at_price > item.price and compare_at_price > display_orgprice %}
                   {%- assign display_orgprice = compare_at_price -%}
+                  {%- assign discounted = true -%}
+              {% elsif item.original_price > item.price and item.original_price > display_orgprice %}
+                  {%- assign display_orgprice = item.original_price -%}
                   {%- assign discounted = true -%}
               {% endif %}
 
@@ -273,7 +275,17 @@
 
             <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
                 {%- if compare_at_price > item.price and item.price > 0-%}
-                    {%- assign specialDiscount = compare_at_price | minus: item.price -%}
+                    {%- assign coupondiscount = 0 -%}
+                    {%- if item_has_discounts -%}
+                        <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                            {% for discount_allocation in item.line_level_discount_allocations %}
+                                {%- assign coupondiscount = coupondiscount | plus: discount_allocation.amount-%}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+
+                    {%- assign specialDiscount = compare_at_price | minus: item.price | minus: coupondiscount -%}
                         <li class="discount-list-item">
                             {% comment %}{% render 'icon-library', id: 'icon-sale-tag' %}{% endcomment %}
                             {% if item.product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
