@@ -280,7 +280,14 @@
   {%- assign element = 'div' -%}
 {%- endif -%}
 
-<section class="{{ classes | strip_newlines }}" data-product-item data-product-quickshop-url="{{ product_link }}" {% if recently_viewed %}data-recently-viewed-card{% endif %}>
+{%- assign discontinued = "" -%}
+{%- for c in product.collections -%}
+  {%- if c.handle == "discontinued" -%}
+    {%- assign discontinued = "data-discontinueditem" -%}
+  {% endif %}
+{%- endfor -%}
+  
+<section class="{{ classes | strip_newlines }}" {{ discontinued }} data-product-item data-product-quickshop-url="{{ product_link }}" {% if recently_viewed %}data-recently-viewed-card{% endif %}>
   <div class="productitem {{ specialclass }}" data-product-item-content>
     {%- comment %}Inject template-allows-compare begin{% endcomment -%}
     {%- assign template_allows_compare = settings.enable_product_compare -%}
