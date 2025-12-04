@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "0eeba151-e2f1-4a6a-a446-c344151f30b8": {
@@ -15,7 +15,7 @@
         "3970a7d7-e233-4b22-9b0d-dba273d2c085": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/hand-soap-dish-laundry-detergents-dept-page.jpg",
+            "cat_image": "shopify://shop_images/hand-soap-dish-laundry-detergents-dept-page.jpg",
             "cat_title": "Soaps & Detergents",
             "cat_text": "We offer the best soap & detergent cleaning options from many top brands in the industry. Whether it is for cleaning your hands, or your dishes, we have the soap for you!"
           }
@@ -128,33 +128,33 @@
         "fa841d9e-dffe-4a83-9348-7702e252bbbe": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/dish-washing-soaps.jpg",
+            "image": "shopify://shop_images/dish-washing-soaps.jpg",
             "title": "Dish Washing Soaps",
-            "url": "\/collections\/dish-washing-soaps"
+            "url": "/collections/dish-washing-soaps"
           }
         },
         "881eae5c-4916-43a1-88a5-adada4d51b74": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hair-and-body-shampoo.jpg",
+            "image": "shopify://shop_images/hair-and-body-shampoo.jpg",
             "title": "Hair & Body Shampoo",
-            "url": "\/collections\/hair-body-shampoo"
+            "url": "/collections/hair-body-shampoo"
           }
         },
         "95aa2811-706b-4e26-9fda-b7b339f0c6b2": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-soaps.jpg",
+            "image": "shopify://shop_images/hand-soaps.jpg",
             "title": "Hand Soaps & Lotions",
-            "url": "\/collections\/hand-soaps-lotions"
+            "url": "/collections/hand-soaps-lotions"
           }
         },
         "33773475-a706-4a12-94d3-3eb8a8dee013": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/laundry-detergents.jpg",
+            "image": "shopify://shop_images/laundry-detergents.jpg",
             "title": "Laundry Detergents & Additives",
-            "url": "\/collections\/laundry-detergents-additives"
+            "url": "/collections/laundry-detergents-additives"
           }
         }
       },
@@ -174,9 +174,9 @@
         "8eee4c2d-7b60-4f99-8c9d-2221b2a3db13": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/soap-dispensers.jpg",
+            "image": "shopify://shop_images/soap-dispensers.jpg",
             "title": "Soap Dispensers (Wall & Counter Mount)",
-            "url": "\/collections\/soap-dispensers-wall-counter-mount"
+            "url": "/collections/soap-dispensers-wall-counter-mount"
           }
         }
       },
@@ -223,7 +223,7 @@
         "cfa95988-6a26-4e06-8cc6-a3381c82f5a9": {
           "type": "slide",
           "settings": {
-            "product": "case-of-tide-ultra-liquid-tide-laundry-detergent-46oz-bottles"
+            "product": "tide-original-liquid-laundry-detergent"
           }
         }
       },
@@ -246,24 +246,24 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Dial®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Dial&refinementList[product_type][0]=Body Soaps %26 Detergents&q=Dial",
-            "brand-image": "shopify:\/\/shop_images\/dial-original-gold-88047-antimicrobial-liquid-hand-soap.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Dial&refinementList[product_type][0]=Body Soaps %26 Detergents&q=Dial",
+            "brand-image": "shopify://shop_images/dial-original-gold-88047-antimicrobial-liquid-hand-soap.jpg"
           }
         },
         "17059dd6-3bba-4593-858b-675327176b53": {
           "type": "brandlink",
           "settings": {
             "brand-title": "GOJO®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Body Soaps %26 Detergents&q=GOJO",
-            "brand-image": "shopify:\/\/shop_images\/gojo-multi-green-hand-cleaner-case-4-jpg.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Body Soaps %26 Detergents&q=GOJO",
+            "brand-image": "shopify://shop_images/gojo-multi-green-hand-cleaner-case-4-jpg.jpg"
           }
         },
         "57d9164c-3900-4844-b1e1-2a1f263438da": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Tide®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tide&refinementList[product_type][0]=Body Soaps %26 Detergents&q=Tide",
-            "brand-image": "shopify:\/\/shop_images\/tide-40213-liquid-laundry-detergent.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Tide&refinementList[product_type][0]=Body Soaps %26 Detergents&q=Tide",
+            "brand-image": "shopify://shop_images/tide-40213-liquid-laundry-detergent.jpg"
           }
         }
       },
@@ -278,8 +278,7 @@
     },
     "trustpilot_review_carousel_t9YhtT": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
