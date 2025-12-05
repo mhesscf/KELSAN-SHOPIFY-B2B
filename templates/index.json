@@ -22,6 +22,7 @@
       "blocks": {
         "banner_xWQm6F": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-cyber-monday-desktop-banner.jpg",
@@ -32,6 +33,7 @@
         },
         "banner_fLBUa3": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-black-friday-starts-desktop-banner.jpg",
