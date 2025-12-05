@@ -40,17 +40,6 @@
             "coupon-code": ""
           }
         },
-        "banner_Hera6c": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-pre-black-friday-sale-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-pre-black-friday-sale-mobile-banner.jpg",
-            "link": "/collections/demoed-refurbished-equipment",
-            "coupon-code": ""
-          }
-        },
         "banner_qaQPaP": {
           "type": "banner",
           "settings": {
@@ -201,12 +190,21 @@
             "link": "/pages/about-us",
             "coupon-code": ""
           }
+        },
+        "banner_Hera6c": {
+          "type": "banner",
+          "settings": {
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/buffer-10-percent-off-offer-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/buffer-10-percent-off-offer-mobile-banner.jpg",
+            "link": "/collections/floor-buffers",
+            "coupon-code": "BUFFER10"
+          }
         }
       },
       "block_order": [
         "banner_xWQm6F",
         "banner_fLBUa3",
-        "banner_Hera6c",
         "banner_qaQPaP",
         "slide_v2_cqVtUz",
         "slide_v2_nhVKm9",
@@ -215,7 +213,8 @@
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "banner_KcaJqE",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
-        "banner_J8FYNy"
+        "banner_J8FYNy",
+        "banner_Hera6c"
       ],
       "custom_css": [],
       "settings": {
