@@ -49,12 +49,14 @@
 {% unless item.properties == empty %}
   {% for property in item.properties %}
     {% if property.first == '_bundle_product' %}
-        {% assign bnd_parts = property.last | split: '::' %}
-        {% assign product_bundle_details = "" %}
-        {% if bnd_parts[1]  %}
-            {% assign product_bundle_details = bnd_parts[1] %}
+        {% if property.last != '' %}
+            {% assign bnd_parts = property.last | split: '::' %}
+            {% assign product_bundle_details = "" %}
+            {% if bnd_parts[1]  %}
+                {% assign product_bundle_details = bnd_parts[1] %}
+            {% endif %}
+            {% assign product_bundle = bnd_parts[0] %}
         {% endif %}
-        {% assign product_bundle = bnd_parts[0] %}
     {% endif %}
     {% if property.first == 'Status' %}
       {% assign stock_status = property.last %}
@@ -383,7 +385,9 @@
                             <li class="discount-list-item">
                                 <i class="fa-sharp fa-solid fa-tags"></i>
                                 {{ discount_allocation.discount_application.title }}
-                                (you saved <span class="money">{{ discount_allocation.amount | money }}</span>)
+                                {%- if discount_allocation.amount > 0 -%}
+                                    (you saved <span class="money">{{ discount_allocation.amount | money }}</span>)
+                                {%- endif -%}
                             </li>
                         {% endfor %}
                     </ul>
