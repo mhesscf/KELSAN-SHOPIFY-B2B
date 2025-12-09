@@ -6493,17 +6493,18 @@ nav.breadcrumb a, nav.breadcrumb span{
 	text-decoration:none;
 }
 .template-product nav.breadcrumb span.current span {
-	max-width: 250px;     /* adjust to your needs */
+	max-width: 450px;     /* adjust to your needs */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: inline-block;
 	vertical-align: bottom;
+	color: {{ settings.color_product_detail_title }}
 }
 
 
 nav.breadcrumb span.current{
-	font-weight: 600;
+	{% comment %}font-weight: 600;{% endcomment %}
 }
 nav.breadcrumb span.separator{
 	margin: 0 10px;
