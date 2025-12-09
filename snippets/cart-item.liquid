@@ -49,12 +49,14 @@
 {% unless item.properties == empty %}
   {% for property in item.properties %}
     {% if property.first == '_bundle_product' %}
-        {% assign bnd_parts = property.last | split: '::' %}
-        {% assign product_bundle_details = "" %}
-        {% if bnd_parts[1]  %}
-            {% assign product_bundle_details = bnd_parts[1] %}
+        {% if property.last != '' %}
+            {% assign bnd_parts = property.last | split: '::' %}
+            {% assign product_bundle_details = "" %}
+            {% if bnd_parts[1]  %}
+                {% assign product_bundle_details = bnd_parts[1] %}
+            {% endif %}
+            {% assign product_bundle = bnd_parts[0] %}
         {% endif %}
-        {% assign product_bundle = bnd_parts[0] %}
     {% endif %}
     {% if property.first == 'Status' %}
       {% assign stock_status = property.last %}
@@ -83,6 +85,15 @@
   {% endfor %}
 {% endunless %}
 
+{% assign itemlink = item.url  %}
+{% if product_bundle != '' %}
+    {% if item.product.metafields.plytix.hide_product == 'true' %}
+        {% assign itemlink = all_products[product_bundle].url %}
+    {% endif %}
+{% endif %}
+
+
+
 <li
         class="cart-item {% if sf_addon == 0 %}sf-cart-addon{% elsif sf_addon > 0 %}has-sf-cart-addon{% endif %} {% if product_bundle != '' %}{{ product_bundle | escape  }}{% endif %} {% if pstep != '' %}stepValItem{% endif %} {% if fgbogo-rule %}{{ fgbogo-rule }}{% endif %}"
         id="lineitem-{{ item.variant_id }}"
@@ -93,7 +104,7 @@
         data-cartitem-step="{{ pstep }}"
 >
   <figure class="cart-item--image-wrapper">
-    <a href="{{ item.url }}">
+    <a href="{{ itemlink }}">
       {% if item.image %}
         {% if sf_addon == 0 %}
           <img src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="Superfreak" />
@@ -121,13 +132,6 @@
         {% endif %}
       {% endfor %}
     {% endunless %}
-
-      {% assign itemlink = item.url  %}
-      {% if product_bundle != '' %}
-          {% if item.product.metafields.plytix.hide_product == 'true' %}
-              {% assign itemlink = all_products[product_bundle].url %}
-          {% endif %}
-      {% endif %}
 
 
     <div class="cart-item--content">
@@ -244,14 +248,16 @@
               Compare_at_price: {{ compare_at_price }}<br/>
               org_price: {{ org_price }}<br/><br/>
               {%- endcomment -%}
+
               {% if org_price > item.price %}
                   {%- assign display_orgprice = org_price -%}
                   {%- assign discounted = true -%}
-              {% elsif item.original_price > item.price %}
-                  {%- assign display_orgprice = item.original_price -%}
-                  {%- assign discounted = true -%}
-              {% elsif compare_at_price > item.price %}
+              {% endif %}
+              {% if compare_at_price > item.price and compare_at_price > display_orgprice %}
                   {%- assign display_orgprice = compare_at_price -%}
+                  {%- assign discounted = true -%}
+              {% elsif item.original_price > item.price and item.original_price > display_orgprice %}
+                  {%- assign display_orgprice = item.original_price -%}
                   {%- assign discounted = true -%}
               {% endif %}
 
@@ -271,7 +277,17 @@
 
             <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
                 {%- if compare_at_price > item.price and item.price > 0-%}
-                    {%- assign specialDiscount = compare_at_price | minus: item.price -%}
+                    {%- assign coupondiscount = 0 -%}
+                    {%- if item_has_discounts -%}
+                        <ul class="discount-list" aria-label="{{ 'product.general.discounts' | t }}">
+                            {% for discount_allocation in item.line_level_discount_allocations %}
+                                {%- assign coupondiscount = coupondiscount | plus: discount_allocation.amount-%}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+
+                    {%- assign specialDiscount = compare_at_price | minus: item.price | minus: coupondiscount -%}
                         <li class="discount-list-item">
                             {% comment %}{% render 'icon-library', id: 'icon-sale-tag' %}{% endcomment %}
                             {% if item.product.metafields.plytix.clearance_overstock == 'true' or pclearance == true %}
@@ -369,7 +385,9 @@
                             <li class="discount-list-item">
                                 <i class="fa-sharp fa-solid fa-tags"></i>
                                 {{ discount_allocation.discount_application.title }}
-                                (you saved <span class="money">{{ discount_allocation.amount | money }}</span>)
+                                {%- if discount_allocation.amount > 0 -%}
+                                    (you saved <span class="money">{{ discount_allocation.amount | money }}</span>)
+                                {%- endif -%}
                             </li>
                         {% endfor %}
                     </ul>

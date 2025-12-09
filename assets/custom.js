@@ -721,7 +721,7 @@ jQuery(document).ready(function($){
 
 
             $('.related-fade-r').addClass("sliderhidden");
-            $('#' + slideritemId + '-slider-fade-r').height(highestBox+20).removeClass("sliderhidden");;
+            $('#' + slideritemId + '-slider-fade-r').height(highestBox+20).removeClass("sliderhidden");
 
 
             if(slideritemId == "part_items-rel-item" || slideritemId == "part_used_on-rel-item") {
@@ -2029,6 +2029,7 @@ function playVideo(localvidid) {
 function equalRelCards(itemId){
 
     $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, #part_items-slider, #part_used_on-slider')").each(function (index) {
+
         var itemId = $(this).attr('id');
         var sliderArrows = '#' + itemId + '-arrows';
 
@@ -2054,6 +2055,9 @@ function equalRelCards(itemId){
         }
     });
     $('#' + slideritemId + ' .productgrid--item').height(highestBox);
+    var fadid = slideritemId.replace("-slider", "");
+    $('#' + fadid + '-rel-item-slider-fade-r').height(highestBox+20);
     });
+
 
 }

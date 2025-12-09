@@ -147,9 +147,18 @@
 
       <div class="productitem__info-container">
         <div class="productitem--info">
-           <h2 class="productitem--title">
+           <h2 class="productitem--title {% if product.metafields.plytix.short_title and item_loc == "warningpop" %}shorttext{% else %}longtext{% endif %}">
             <a href="{{ product_link }}" target="_blank" data-product-page-link onclick="{{ onclick_event }}">
-              {{ product_title }}
+              {%- if item_loc == "warningpop" -%}
+                {% comment %}add short tile for warning pop only{% endcomment %}
+                {% if product.metafields.plytix.short_title %}
+                  {{ product.metafields.plytix.short_title }}
+                {%- else -%}
+                  {{ product_title }}
+                {%- endif -%}
+              {%- else -%}
+                {{ product_title }}
+              {%- endif -%}
             </a>
           </h2>
         </div>
@@ -269,7 +278,7 @@
 
                       {%- if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
                         <div class="price productitem__price ">
-                          <div class="price__current " data-price-container="" style=""><span class="money" data-price="{{ variant.price }}">{{ variant.price | money }}</span></div>
+                          <div class="price__current " data-price-container-pop="" style=""><span class="money" data-price="{{ variant.price }}">{{ variant.price | money }}</span></div>
                         </div>
                       {%- elsif product.metafields.plytix.hide_pricing == 'Hide Price Only (View in cart)' -%}
                         <span style="font-size:14px; line-height:36px;">View Price in Cart</span>
