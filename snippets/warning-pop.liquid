@@ -44,12 +44,28 @@
         {%- assign total_options = fgwp.total_options -%}
         {%- assign final_total_options = fgwp.total_options -%}
         {%- assign total_options_counter = 0 -%}
+        {% comment %}add change to add product at price or as free gift. If added at a price, rely on shopify's "Buy X get Y" functionality{% endcomment %}
+
+        {%- if fgwp.free_gift_or_promo contains "Discounted Gifts" -%}
+            {%- if fgwp.free_gift_or_promo == "Discounted Gifts - Dollar Off" -%}
+                {%- assign popupdiscounttype = "discount-dollar" -%}
+                {%- assign discount = fgwp.price_adjust | times: 100 -%}
+            {%- elsif fgwp.free_gift_or_promo == "Discounted Gifts - Percent Off" -%}
+                {%- assign popupdiscounttype = "discount-percent" -%}
+                {%- assign discount = fgwp.price_adjust -%}
+            {%- endif -%}
+            {%- assign buttontext = "Add to Cart" -%}
+        {%- else -%}
+            {%- assign popupdiscounttype = "fg" -%}
+            {%- assign buttontext = "Select" -%}
+        {%- endif -%}
 
         <div class="fgwp-text-{{ varid }} fgwp-text-area-{{ area }} " style="display:none;">
             <div class="fgwp-pop-content">
                 <div class="fgwp-pop-contain">
                     <div class="fgwp-pop-title" style="display:block; font-size:26px;">{{ fgwp.name }}</div>
-                    <div style="font-size:12px; margin-bottom:15px; ">Notice for {{ product.metafields.plytix.main_sku }}</div>
+                    <div style="font-size:12px; margin-bottom:5px; ">Notice for {{ product.metafields.plytix.main_sku }}</div>
+                    <div style="font-size:14px; margin-bottom:15px">{{ fgwp.body_text }}</div>
                     <div class="fgwp-card-container fgwp-card-container-{{ varid }}-{{ area }}">
 
 
@@ -155,16 +171,30 @@
 
 
                                 <div class="fgwp-card">
-                                    <div class="inner">
+                                    <div class="inner {{ popupdiscounttype }}-inner">
                                         <div class="fgwp-card-imge image-wrap">
                                             <img src="{{ free_gift.featured_media.preview_image.src | img_url: '100x' }}" class="img-responsive" alt="{{ free_gift.featured_media.alt }}" />
                                         </div>
                                         <div class="fgwp-title">
-                                            {{ free_gift.title }}
+                                            {%- if popupdiscounttype == "fg" -%}
+                                                {{ free_gift.title }}
+                                            {%- else -%}
+                                                <a href="{{ free_gift.url }}">{{ free_gift.title }}</a>
+                                            {%- endif -%}
                                         </div>
                                         <div class="fgwp-bottom">
                                             <div class="fgwp-sku" style="display:none;">{{ free_gift.selected_or_first_available_variant.sku }}</div>
-                                            <div class="fgwp-value-price"><span>${{ free_gift.selected_or_first_available_variant.price | money_without_currency }}</span> Value</div>
+
+                                            {%- if popupdiscounttype == "fg" -%}
+                                                <div class="fgwp-value-price"><span>${{ free_gift.selected_or_first_available_variant.price | money_without_currency }}</span> Value</div>
+                                            {%- elsif popupdiscounttype == "discount-dollar" -%}
+                                                {%- assign discountprice = free_gift.selected_or_first_available_variant.price | minus: discount -%}
+                                                <div class="fgwp-value-price"><span>${{ discountprice | money_without_currency }}</span><br/><span class="pop-discount">({{ discount | money }} Off)</span></div>
+                                            {%- elsif popupdiscounttype == "discount-percent" -%}
+                                                {%- assign percentpaid = 100 | minus: discount | divided_by: 100 -%}
+                                                {%- assign discountprice = free_gift.selected_or_first_available_variant.price | times: percentpaid -%}
+                                                <div class="fgwp-value-price"><span>${{ discountprice | money_without_currency }}</span> <br/><span class="pop-discount">({{ discount | floor }}% Off)</span></div>
+                                            {%- endif -%}
 
                                             <div id="data-fgwp-var{{ free_gift.variants.first.id }}"
                                                  class="data-fgwp-var"
@@ -187,7 +217,7 @@
                                                  style="display: none" >
                                             </div>
 
-                                            <div style="width:150px" class="fgwp-var-btn{{ free_gift.variants.first.id }} fgwp-select-{{ area }} product-form--atc-button main-atc-button thinbtn" onclick="fgwpatc{{ varid }}({{ free_gift.variants.first.id }})" >Select</div>
+                                            <div style="width:150px" class="fgwp-var-btn{{ free_gift.variants.first.id }} fgwp-select-{{ area }} product-form--atc-button main-atc-button thinbtn" onclick="fgwpatc{{ varid }}('{{ free_gift.variants.first.id }}','{{ popupdiscounttype }}')" >{{ buttontext }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -251,6 +281,7 @@
             }
             .fgwp-pop-content .fgwp-card-container{
                 display:flex;
+                justify-content: center;
             }
 
             .fgwp-pop-content .fgwp-card-container .fgwp-card .inner{
@@ -261,6 +292,10 @@
                 text-align:center;
                 height:100%;
             }
+            .fgwp-pop-content .fgwp-card-container .fgwp-card .inner.discount-percent-inner,
+            .fgwp-pop-content .fgwp-card-container .fgwp-card .inner.discount-dollar-inner{
+                padding:0 0 96px 0;
+            }
             .fgwp-pop-content .fgwp-title{
                 padding:4px 10px 0 10px;
             }
@@ -268,6 +303,11 @@
                 font-size:20px;
                 font-weight:bold;
                 padding:5px 10px;
+            }
+            .fgwp-pop-content .fgwp-card-container .fgwp-card .fgwp-value-price .pop-discount{
+                color: #d74018;
+                font-size:14px;
+                font-weight: normal;
             }
             .fgwp-pop-content .fgwp-bottom{
                 position: absolute;
@@ -350,10 +390,19 @@
                     $(thisbtn).text('Adding...');
                     $(thisbtn).show();
 
-                {% comment %}add bundle data to main product{% endcomment %}
-                $('#freq-product-{{ product.id }}').find('.current-freq-var [data-freqbundle-subproduct]').attr('data-bundle-name', 'properties[_bundle_product]').attr('data-bundle', '{{ product.handle }}::gpack');
-
+                {% comment %}add bundle data to main product only for free gift{% endcomment %}
+                var bundlehandle = "";
+                if (type == "fg"){
+                    $('#freq-product-{{ product.id }}').find('.current-freq-var [data-freqbundle-subproduct]').attr('data-bundle-name', 'properties[_bundle_product]').attr('data-bundle', '{{ product.handle }}::gpack');
+                    bundlehandle = "{{ product.handle }}::gpack";
+                }
                 {% comment %}add a spoof item which basically mirrors a card to frequently bought together {% endcomment %}
+
+                var thistier = $(item_class).data('var_tieredpricing');
+                if (type == "fg"){
+                    thistier = "fg";
+                }
+
                 var toadd = "";
                 toadd += '<div class="freq_bought-rel-item rel-slider-item freq-item freq-item-fgwp" style="display:none !important" data-freqbundle-subproducts="">';
                 toadd += '<section class="productgrid--item  imagestyle--natural" ' +
@@ -370,9 +419,9 @@
                     'data-var_status="'+$(item_class).data('var_status')+'" ' +
                     'data-var_erpsku="'+$(item_class).data('var_erpsku')+'" ' +
                     'data-producttype="" ' +
-                    'data-bundle="{{ product.handle }}::gpack"' +
+                    'data-bundle="'+bundlehandle+'"' +
                     'data-brand="" ' +
-                    'data-var_tieredpricing="fg" ' +
+                    'data-var_tieredpricing="'+thistier+'" ' +
                     'data-var_availqty="'+$(item_class).data('var_availqty')+'" ' +
                     'data-var_price="'+$(item_class).data('var_price')+'"' +
                     'data-freqbundle-subproduct="" ' +
@@ -411,6 +460,10 @@
                 $(thisbtn).text('Adding...');
                 $(thisbtn).show();
 
+                var thistier = $(item_class).data('var_tieredpricing');
+                if (type == "fg"){
+                    thistier = "fg";
+                }
                 {% comment %}add a spoof item which basically mirrors a card to frequently bought together {% endcomment %}
                 var toadd = "";
                 toadd += '<input type="hidden" ' +
@@ -422,7 +475,7 @@
                     'data-status="'+$(item_class).data('var_status')+'" ' +
                     'data-erpsku="'+$(item_class).data('var_erpsku')+'" ' +
                     'data-step="" ' +
-                    'data-tieredpricing="fg" ' +
+                    'data-tieredpricing="'+thistier+'" ' +
                     'data-availqty="'+$(item_class).data('var_availqty')+'" ' +
                     'data-qty="1" ' +
                     'data-price="'+$(item_class).data('var_price')+'"' +
@@ -509,13 +562,15 @@
 
                             });
                         return;
-                    }else{
+                    }else {
                         // add for grouping fg when not a code
-                        {% if area == "main" %}
-                            $('.product-form--regular form').prepend('<input type="hidden" name="properties[_bundle_product]" value="{{ product.handle }}::gpack">');
-                        {% elsif area == "slider" %}
-                            $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').attr('data-bundle-name', 'properties[_bundle_product]').attr('data-bundle', '{{ product.handle }}::gpack');
-                        {% endif %}
+                        if (type == "fg") {
+                            {% if area == "main" %}
+                                $('.product-form--regular form').prepend('<input type="hidden" name="properties[_bundle_product]" value="{{ product.handle }}::gpack">');
+                            {% elsif area == "slider" %}
+                                $('.productitem--action-trigger[data-id="{{ product.variants.first.id }}"]').attr('data-bundle-name', 'properties[_bundle_product]').attr('data-bundle', '{{ product.handle }}::gpack');
+                            {% endif %}
+                        }
                     }
 
                     console.log("ERP: "+$(item_class).data('var_erpsku'));
@@ -545,16 +600,25 @@
                         'quantity': 0
                     }
 
-                    const form_datas = []
+
+
+                var thistier = $(item_class).data('var_tieredpricing');
+                if (type == "fg"){
+                    thistier = "fg";
+                }
+
+                const form_datas = []
 
                     form_template["properties[_erp_sku]"] = $(item_class).data('var_erpsku');
                     form_template["properties[_sf_eligible]"] = $(item_class).data('sfeligible');
                     form_template["properties[Sku]"] = $(item_class).data('var_vissku');
                     form_template["properties[Status]"] = $(item_class).data('var_status');
-                    form_template["properties[_tiered_pricing]"] = "fg";
+                    form_template["properties[_tiered_pricing]"] = thistier;
                     form_template["properties[_available_qty]"] = $(item_class).data('var_availqty');
                     form_template["properties[_org_price]"] = $(item_class).data('var_price');
-                    form_template["properties[_bundle_product]"] = "{{ product.handle }}::gpack";
+                    if (type == "fg") {
+                        form_template["properties[_bundle_product]"] = "{{ product.handle }}::gpack";
+                    }
                     form_template.id = varid.toString() + ""
                     form_template.quantity = addqty.toString() + ""
 
@@ -597,15 +661,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 {% comment %}start if warning pop ---------------------------------------------------------------------------------------------------------------------------------------{% endcomment %}
 {% if product.metafields.plytix.warning_title %}
     {%- assign show_warning = true -%}
@@ -620,7 +675,108 @@
         <div class="warningpop-text-{{ varid }}" style="display:none;">
             <h2 style="margin-bottom:0">{{ product.metafields.plytix.warning_title }}</h2>
             <div style="font-size:12px; margin-bottom:15px; ">Notice for {{ product.metafields.plytix.main_sku }}</div>
-            <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">{{ product.metafields.plytix.warning_body }}</div>
+            <div style="margin-bottom:10px; max-height:300px; overflow-y:scroll">
+                {{ product.metafields.plytix.warning_body }}
+
+
+                {%- if product.metafields.plytix.warning_pop_product -%}
+                    <style>
+                        .warning-pop-products .productitem--title{
+                            font-size:14px;
+                            line-height:18px;
+                            margin:3px 0 0 0
+                        }
+                        .warning-pop-products .productitem--title.longtext{
+                            width: 155px;           /* your fixed width */
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;  /* limit to 2 lines */
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+
+                        .warning-pop-products .product-detail-sku{display:none;}
+                        .warning-pop-products .productitem__price{margin:0;}
+                        .warning-pop-products .productitem__price .price__current span{
+                            font-size:18px;
+                        }
+                        .warning-pop-products figure{
+                            margin:0;
+                        }
+                        @media screen and (max-width: 719px) {
+                            /*.warning-pop-products .productitem__info-container,*/
+                            /*.warning-pop-products .productitem__image-container{*/
+                            /*    display:inline-block;*/
+                            /*}*/
+                            .warning-pop-products .accdrop-productitem__container{
+                                display:flex;
+                                align-items: center;
+                                text-align:left;
+                            }
+                            .warning-pop-products figure{
+                                margin:0 10px 0 0;
+                            }
+                           .warning-pop-products figure img {
+                               max-width: 45px;
+                           }
+                            .warning-pop-products .accdrop-productitem{
+                                text-align:center;
+                                border-bottom:1px solid #ccc;
+                                padding:8px 5px;
+                            }
+                            .warning-pop-products .cart-upsell-btn.productitem--action-trigger{
+                                margin-top:0;
+                            }
+
+                        }
+                        @media screen and (min-width: 720px) {
+                            .warning-pop-products{
+                                display:flex;
+                                justify-content: center;
+                            }
+                            .warning-pop-products section{
+                                padding:5px;
+                                flex-basis: 33%;
+                                max-width:220px
+                            }
+                            .warning-pop-products .accdrop-productitem{
+                                position: relative;
+                                width: 100%;
+                                min-height: 100%;
+                                height: var(--base-height, auto);
+                                padding: 10px 15px;
+                                box-shadow: 0 2px 10px 0 rgba(0,0,0,0.14);
+                                border-radius: 30px;
+                                transition: all 250ms ease-in-out;
+                                text-align:center;
+                            }
+                            .warning-pop-products figure img{
+                                max-width:75px;
+                            }
+                            .warning-pop-products .cart-upsell-btn.productitem--action-trigger{
+                                margin-top:5px;
+                            }
+                        }
+                    </style>
+                    {%- assign warning_prod-arr =  product.metafields.plytix.warning_pop_product | split: ", " -%}
+                    <div class="warning-pop-products" data-warning-products>
+                        {%- for warning_prod in warning_prod-arr -%}
+                            {%- if warning_prod != "" and warning_prod !="undefined" -%}
+
+                                    {%- assign  thisprod = all_products[warning_prod] -%}
+                                    {%-
+                                            render 'accdrop-items',
+                                            main_loc: 'product',
+                                            item_loc: 'warningpop',
+                                            product: thisprod
+                                    -%}
+
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div style="text-align:center; padding-top:10px;">Click “Agree” to confirm you’ve read & understood this notice.</div>{%- endif -%}
+            </div>
             <div class="warning-actions">
                 <div style="margin-top:10px; text-align:center">
                     <div style="max-width:200px; margin:3px;" class="product-form--atc-button outlinebtn main-atc-button" onclick="event.stopPropagation(); closechildPop('bund-pop-')" >Cancel</div>

@@ -45342,7 +45342,11 @@ const RULES = `
                     if (response) {
                         if(response.includes("data-product-item")){
                             $( ".parts-data-area .loading-text" ).hide();
-                            $(this).html(response);
+                            if(response.includes("data-discontinueditem")){
+                                $(this).html(response).hide();
+                            }else{
+                                $(this).html(response);
+                            }
                             counter = counter + 1;
                             if (counter == totalAjax){
                                 setTimeout(() => {

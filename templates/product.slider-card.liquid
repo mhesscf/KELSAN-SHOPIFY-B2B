@@ -1,10 +1,14 @@
 {% layout none %}
+
 {%- assign crawlcheck = false -%}
+{% comment %}turned this off to in fix for the add to cart issues we were having for discontinued{% endcomment %}
+{% comment %}
 {%- for c in product.collections -%}
-    {%- if c.handle == "discontinued" -%}
+    {%- if c.handle == "discontinued-off" -%}
         {%- assign crawlcheck = true -%}
     {% endif %}
 {%- endfor -%}
+{% endcomment %}
 {%- if crawlcheck == true -%}
     <div class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
 {%- else -%}
