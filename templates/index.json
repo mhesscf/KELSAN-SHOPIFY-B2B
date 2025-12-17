@@ -196,6 +196,7 @@
         },
         "banner_Hera6c": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/buffer-10-percent-off-offer-desktop-banner.jpg",
