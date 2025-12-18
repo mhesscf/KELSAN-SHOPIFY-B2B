@@ -43,7 +43,6 @@
                 {%- case block.type -%}
                     {%- when 'tabinfo' -%}
                         {%- if product.metafields.plytix[block.settings.tab_rel_id] != blank -%}
-
                             {%- comment -%}check for atleast 1 item{%- endcomment -%}
                             {%- assign prod_check_arr = product.metafields.plytix[block.settings.tab_rel_id] | split: ", " -%}
                             {% assign show = 0 %}
@@ -52,7 +51,9 @@
                                 {%- assign discontinued = false -%}
                                 {%- for c in all_products[product_handle].collections -%}
                                     {%- if c.handle == "discontinued" -%}
-                                        {% assign discontinued = true -%}
+                                        {%- if block.settings.tab_rel_id != "part_used_on" -%}
+                                            {% assign discontinued = true -%}
+                                        {%- endif -%}
                                     {%- endif -%}
                                 {%- endfor -%}
                                 {%- if product_handle != 'undefined' and all_products[product_handle].title != '' and discontinued == false -%}
