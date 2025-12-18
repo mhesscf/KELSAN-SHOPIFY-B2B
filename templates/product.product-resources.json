@@ -1,0 +1,238 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "static-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "judgeme_preview_badge_product_page_f9b6a453": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "subscriptions_app_block_8Vn9dM": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "settings": {
+            "color_text_body": "#6d7175",
+            "dividers_color": "#8f8d8d",
+            "bacgkround_color": "#ffffff",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "subscription_policy_url": "",
+            "product": "{{product}}"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "enable_local_pickup": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "judgeme_preview_badge_product_page_f9b6a453",
+        "rating",
+        "price",
+        "description",
+        "subscriptions_app_block_8Vn9dM",
+        "form",
+        "share"
+      ],
+      "settings": {
+        "gallery_aspect_ratio": "natural",
+        "gallery_image_crop": false,
+        "gallery_thumbnail_position": "below",
+        "gallery_video_autoplay": true,
+        "gallery_video_looping": true,
+        "gallery_hover_zoom": "disabled",
+        "gallery_click_to_zoom": "always"
+      }
+    },
+    "1663861234f6954415": {
+      "type": "product-frequently-bought",
+      "disabled": true,
+      "settings": {}
+    },
+    "16639438241c11df3b": {
+      "type": "product-manufacturer-info",
+      "settings": {}
+    },
+    "d10cdd15-1629-4449-91e1-ec84724ecc7d": {
+      "type": "related-tabs",
+      "blocks": {
+        "f1b95c38-8fb7-4cae-bd6b-2610e41f8acd": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Frequently Bought Together",
+            "tab_name_sm": "Bought Together",
+            "tab_rel_id": "freq_bought"
+          }
+        },
+        "b5f685c0-087d-4f5b-82a0-1b3ab914619b": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Related Products",
+            "tab_name_sm": "Related",
+            "tab_rel_id": "related_products"
+          }
+        },
+        "cac90bff-26fa-4e04-a472-516032b68d4e": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Replacement Parts",
+            "tab_name_sm": "Parts",
+            "tab_rel_id": "part_items"
+          }
+        },
+        "tabinfo_cxCXnA": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Part Used On",
+            "tab_name_sm": "Used On",
+            "tab_rel_id": "part_used_on"
+          }
+        },
+        "908ae5ae-8f36-43b2-9c13-a3102c783b4a": {
+          "type": "tabinfo",
+          "settings": {
+            "tab_name": "Similar Items",
+            "tab_name_sm": "Similar",
+            "tab_rel_id": "similar_items"
+          }
+        }
+      },
+      "block_order": [
+        "f1b95c38-8fb7-4cae-bd6b-2610e41f8acd",
+        "b5f685c0-087d-4f5b-82a0-1b3ab914619b",
+        "cac90bff-26fa-4e04-a472-516032b68d4e",
+        "tabinfo_cxCXnA",
+        "908ae5ae-8f36-43b2-9c13-a3102c783b4a"
+      ],
+      "settings": {
+        "show_section": true,
+        "debugme": false
+      }
+    },
+    "16638607221d159a92": {
+      "type": "product-info-features",
+      "blocks": {
+        "2c2ceb11-9376-41b8-a6fc-df382fe72bcc": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "2c2ceb11-9376-41b8-a6fc-df382fe72bcc"
+      ],
+      "settings": {}
+    },
+    "1663947190a886277c": {
+      "type": "product-video",
+      "disabled": true,
+      "settings": {}
+    },
+    "16638604598b87d9a0": {
+      "type": "product-specs-info",
+      "settings": {}
+    },
+    "judgeme_section_review_widget_0f5e": {
+      "type": "apps",
+      "blocks": {
+        "judgeme_review_widget_0dca22e1": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judgeme_review_widget_0dca22e1"
+      ],
+      "settings": {
+        "include_padding": true
+      }
+    },
+    "recommendations": {
+      "type": "static-product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "Shop Similar Products"
+      }
+    },
+    "recently-viewed": {
+      "type": "static-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    },
+    "166387146685195dfc": {
+      "type": "product-bottom-strap",
+      "disabled": true,
+      "settings": {}
+    },
+    "166257625372457859": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_padding": true
+      }
+    },
+    "1666286255a09a3e65": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_padding": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1663861234f6954415",
+    "16639438241c11df3b",
+    "d10cdd15-1629-4449-91e1-ec84724ecc7d",
+    "16638607221d159a92",
+    "1663947190a886277c",
+    "16638604598b87d9a0",
+    "judgeme_section_review_widget_0f5e",
+    "recommendations",
+    "recently-viewed",
+    "166387146685195dfc",
+    "166257625372457859",
+    "1666286255a09a3e65"
+  ]
+}
