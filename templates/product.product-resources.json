@@ -22,6 +22,7 @@
         },
         "judgeme_preview_badge_product_page_f9b6a453": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {}
         },
         "rating": {
@@ -31,14 +32,17 @@
         },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {}
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         },
         "subscriptions_app_block_8Vn9dM": {
           "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "disabled": true,
           "settings": {
             "color_text_body": "#6d7175",
             "dividers_color": "#8f8d8d",
@@ -51,6 +55,7 @@
         },
         "form": {
           "type": "form",
+          "disabled": true,
           "settings": {
             "enable_local_pickup": true
           }
@@ -89,6 +94,7 @@
     },
     "16639438241c11df3b": {
       "type": "product-manufacturer-info",
+      "disabled": true,
       "settings": {}
     },
     "d10cdd15-1629-4449-91e1-ec84724ecc7d": {
@@ -142,6 +148,7 @@
         "tabinfo_cxCXnA",
         "908ae5ae-8f36-43b2-9c13-a3102c783b4a"
       ],
+      "disabled": true,
       "settings": {
         "show_section": true,
         "debugme": false
@@ -152,12 +159,18 @@
       "blocks": {
         "2c2ceb11-9376-41b8-a6fc-df382fe72bcc": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
         }
       },
       "block_order": [
         "2c2ceb11-9376-41b8-a6fc-df382fe72bcc"
       ],
+      "disabled": true,
       "settings": {}
     },
     "1663947190a886277c": {
@@ -175,7 +188,12 @@
         "judgeme_review_widget_0dca22e1": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "disabled": true,
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
         }
       },
       "block_order": [
