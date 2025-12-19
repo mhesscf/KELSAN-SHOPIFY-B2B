@@ -707,7 +707,8 @@ jQuery(document).ready(function($){
         });
 
         $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
-
+        $('.related-fade-r').addClass("sliderhidden");
+        
         if(slideritemId != "freq_bought-rel-item") {
             //box height (exclude frequently bought together)
             $('.' + slideritemId + ' .productgrid--item').css({'height': ''});
@@ -719,8 +720,6 @@ jQuery(document).ready(function($){
             });
             $('.' + slideritemId + ' .productgrid--item').height(highestBox);
 
-
-            $('.related-fade-r').addClass("sliderhidden");
             $('#' + slideritemId + '-slider-fade-r').height(highestBox+20).removeClass("sliderhidden");
 
 
