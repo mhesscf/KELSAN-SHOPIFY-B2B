@@ -60,7 +60,7 @@
 
 
 {% comment %}hot deal icon ----------------------------------------------------------{% endcomment %}
-{%- if pdiscontinued != true -%}
+{%- if pdiscontinued != true and template != 'product.product-resources' -%}
     <div class="additional-deal-notification">
       {%- if product.selected_or_first_available_variant.compare_at_price -%}
         {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}

@@ -80,6 +80,11 @@
         {%- assign specialclass = "isspecial" -%}
     {%- endif -%}
 {%- endif -%}
+
+{%- if template == 'product.product-resources' -%}
+{% comment %}remove any special stylizing or banners if on resource template{% endcomment %}
+    {%- assign specialclass = "" -%}
+{%- endif -%}
 <div
   class="
     product-gallery--viewer

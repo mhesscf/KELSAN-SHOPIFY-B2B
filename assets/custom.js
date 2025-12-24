@@ -708,7 +708,7 @@ jQuery(document).ready(function($){
 
         $('.' + slideritemId + ' .productitem--title').height(highestTitleBox);
         $('.related-fade-r').addClass("sliderhidden");
-        
+
         if(slideritemId != "freq_bought-rel-item") {
             //box height (exclude frequently bought together)
             $('.' + slideritemId + ' .productgrid--item').css({'height': ''});
@@ -749,7 +749,7 @@ jQuery(document).ready(function($){
 
     //tabbed sliders:
     function sliderGo() {
-        $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, #part_items-slider, #part_used_on-slider')").each(function (index) {
+        $(".rel-product-tabbed-area .tabbed-rel-slider:not('.tabbed-rel-freq, .resource-tabbed-rel-slider, #part_items-slider, #part_used_on-slider')").each(function (index) {
             var itemId = $(this).attr('id');
             var sliderArrows = '#' + itemId + '-arrows';
             $('#' + itemId).slick({
