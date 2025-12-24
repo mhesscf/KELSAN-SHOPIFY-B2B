@@ -41,7 +41,10 @@
                 if (response) {
                     if(response.includes("data-part-title")){
                         $( ".parts-data-area .loading-text" ).hide();
+
                         $(this).html(response);
+                        $(this).find('.parts-title a').attr('target', '_blank');
+
                     }
                 }else{
                     console.log('product not returned');
