@@ -126,6 +126,8 @@
 {%- endcapture  -%}
 
 <article class="product--outer {{ productType }} {%- if pdiscontinued == true -%}discontinued{%- endif -%}">
+
+
     {%
             render 'product-gallery',
             product: product,
@@ -136,6 +138,18 @@
             gallery_click_to_zoom: gallery_click_to_zoom,
             gallery_hover_zoom: gallery_hover_zoom
     %}
+
+
+    {%- if template == 'product.product-resources' -%}
+        {% comment %}hide thumbnails on resource page{% endcomment %}
+        <style>
+            .product-gallery .nav-tabs,
+            .product-gallery .nav-tabs .thumb-show.imgs-thumbs,
+            .product-gallery--navigation-slick,
+            .product-gallery--expand{ display: none !important;}
+
+        </style>
+    {%- endif  -%}
 
     <div class="product-main">
         <div class="product-details {% if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank %}product-is-bundle{% endif %}" data-product-details>
@@ -161,20 +175,32 @@
                             {%- else -%}
                                 {%- if template == 'index' -%}
                                     <h2 class="product-title">
-                                {%- else -%}
-                                    <h1 class="product-title">
-                                {%- endif -%}
-                                {%- unless onboarding -%}
-                                    {{ product.title }}
-                                {%- else -%}
-                                    {{ 'onboarding.product.title' | t }}
-                                {%- endunless -%}
-                                {%- if template == 'index' -%}
+                                        {%- unless onboarding -%}
+                                            {{ product.title }}
+                                        {%- else -%}
+                                            {{ 'onboarding.product.title' | t }}
+                                        {%- endunless -%}
                                     </h2>
+                                {%- elsif template == 'product.product-resources' -%}
+                                        <h2 class="product-title">
+                                            {%- unless onboarding -%}
+                                                Resources for <br/>{{ product.title }}
+                                            {%- else -%}
+                                                {{ 'onboarding.product.title' | t }}
+                                            {%- endunless -%}
+                                        </h2>
+                                    <div class="resource-product-link"><a href="{{ product.url }}">View Product Page <i class="fa-solid fa-angle-right"></i></a></div>
                                 {%- else -%}
+                                        <h1 class="product-title">
+                                        {%- unless onboarding -%}
+                                            {{ product.title }}
+                                        {%- else -%}
+                                            {{ 'onboarding.product.title' | t }}
+                                        {%- endunless -%}
                                     </h1>
                                 {%- endif -%}
                             {%- endif -%}
+
 
                             {%- capture vendortext -%}
                                 {%- if product.vendor != blank or onboarding -%}
@@ -640,6 +666,46 @@
                 </div>
             {%- endif -%}
         </div>
+        {%- if template == 'product.product-resources' -%}
+            <div class="resource-quicklinks">
+                <h2>Quick Links</h2>
+                <span id="doc-area-link">Documents & Links</span> |  <span id="rel-products-area-link">Related Products</span> | <span id="parts-area-link">Replacement Parts</span> | <span id="all-area-link" class="nolink">View All</span>
+
+            </div>
+            <div id="quick-link-placeholder"></div>
+            <script>
+                $('.resource-quicklinks span').on('click', function() {
+                    var thisid = $(this).attr('id');
+                    $(".resource-quicklinks span").removeClass("nolink");
+                    $(this).addClass("nolink");
+
+                    $('#quick-link-placeholder').html("");
+                    if (thisid == "all-area-link") {
+                        $('.doc-area, .rel-products-area, .parts-area').show();
+                    } else {
+                        $('.doc-area, .rel-products-area, .parts-area').hide();
+                        var newarea = "";
+                        if (thisid == "doc-area-link") {
+                            newarea = $(".doc-area").html();
+                        }else if (thisid == "rel-products-area-link") {
+                            newarea = $(".rel-products-area").html();
+                        }else if (thisid == "parts-area-link") {
+                            newarea = $(".parts-area").html();
+                        }
+                        $('#quick-link-placeholder').html(newarea);
+                    }
+                });
+            </script>
+            <div class="doc-area">
+                <div class="resource-docs product-single-spec-manual">
+                {%
+                        render 'docs_and_links',
+                        product: product,
+                        location: "productresourcepage"
+                %}
+                </div>
+            </div>
+        {%- endif -%}
     </div>
     {%- if layout == 'layout--three-col' -%}
         <div class="product-form--alt" data-product-form-alt></div>
@@ -654,4 +720,106 @@
     <div class="product-readmore rte" data-product-readmore>
         {{ readmore_split[1] }}
     </div>
+{%- endif -%}
+
+{%- if template == 'product.product-resources' -%}
+    {% comment %}related products and replacement part area{% endcomment %}
+    <style>
+        .resource-product-link{
+            text-align:right;
+            font-size:14px;
+            margin-top:-12px;
+        }
+        .resource-quicklinks{
+            background-color: #F3F6F9;
+            padding:15px;
+            border-radius: 10px;
+        }
+        .resource-quicklinks h2{
+            margin-top:0px;
+        }
+        .resource-quicklinks span:not(.nolink){
+            color: #32758b;
+            cursor: pointer;
+        }
+        .resource-products{
+            display:flex;
+            max-width:1400px;
+        }
+        .resource-products .grid-column{
+            flex-basis: 50%;
+            padding:15px;
+            margin-left:auto;
+        }
+        .resource-products .chem-price{
+            display:none !important;
+        }
+
+        .rel-product-tabbed-area .parts-data-area,
+        .resource-related-products .rel-product-tabbed-area .tabbed-rel-slider,
+        .resource-replacement_parts .rel-product-tabbed-area .tabbed-rel-slider{
+            margin:0;
+            padding:0;
+        }
+    </style>
+<div class="resource-products">
+    <div class="grid-column grid-column-1 rel-products-area">
+        <div class="resource-related-products">
+            {%
+                    render 'resource-related-products',
+                    product: product,
+                    related_type: 'related'
+            %}
+        </div>
+    </div>
+    {%- if product.metafields.plytix.part_items != blank -%}
+        <div class="grid-column grid-column-2 parts-area">
+            <div class="resource-replacement_parts">
+                {%
+                        render 'resource-related-products',
+                        product: product,
+                        related_type: 'replacement_parts'
+                %}
+            </div>
+        </div>
+    {% elsif product.metafields.plytix.general_product_type == "Machine" %}
+        {% comment %}show a request form if a machine and now parts found.{% endcomment %}
+        <div class="grid-column grid-column-2 parts-area">
+
+
+            <div class="resource-replacement_parts">
+
+
+                <h2>Replacement Parts</h2>
+                <div class="rel-product-tabbed-area tabbed-area">
+
+                        <div class="data-sheets">
+                            <div class="sheet-row sheet-name"><i class="fa-solid fa-ban"></i> No replacement parts found.</div><div class="sheet-row sheet-name document-inquiry" style="margin-top:12px"> Are you looking for a specific part for this product?<br><strong class="fake-link">Click here</strong> to make a request.</div>
+
+
+                            <div class="document-inquiry-form" style="display:none;"><iframe height="722" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x17n92om0rqevnr/def/Field60=DIV-904192&amp;Field63=Diversey™ General Purpose Hydrogen Peroxide Based Carpet Spotter w/ Percolator Technology (32 oz Squeeze Bottles) - Case of 6&amp;Field62=www.cleanfreak.com/products/general-purpose-spotter-floral-scent-liquid-qt-squeeze-bottle-drk"> <a href="https://jbutchpti.wufoo.com/forms/x17n92om0rqevnr/">Fill out my Wufoo form!</a> </iframe></div>
+                            <script>
+
+                                jQuery(document).ready(function($) {
+                                    $('.document-inquiry').on('click', function (e) {
+
+                                        var formhtml = $('.document-inquiry-form').html();
+
+                                        $('.popup-container .content').html(formhtml);
+                                        $('.popup-container').addClass('rightpop');
+
+                                        $('.popup-container').removeClass('hidden');
+                                        $(".pop-grad").removeClass('hidden');
+
+                                    });
+                                });
+                            </script>
+                        </div>
+                </div>
+            </div>
+
+
+        </div>
+    {%- endif -%}
+</div>
 {%- endif -%}
