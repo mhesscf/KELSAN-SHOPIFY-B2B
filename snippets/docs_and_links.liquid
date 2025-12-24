@@ -1,0 +1,515 @@
+
+{%- if product -%}
+    {%- assign blogsclean = product.metafields.plytix.related_blogs | remove: ", " | remove: "," | remove: "NA" -%}
+    {%- assign blogscleansize = blogsclean | size -%}
+    {%- if 1==1 or product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank or blogscleansize > 3 -%}
+        {%- assign pdf_names = product.metafields.plytix.pdf_file_names | split: "::"  -%}
+        {%- assign pdf_titles = product.metafields.plytix.pdf_file_titles | split: "::"  -%}
+        {%- assign docCount = 0 -%}
+        <div class="r">
+            <h2>Documents</h2>
+            <div class="data-sheets">
+                {%- if product.metafields.plytix.sds_file != blank and product.metafields.plytix.sds_file != "[]" -%}
+                    <div class="sheet-row">
+                        <div class="sheet-label"><strong>Product Safety Data Sheet</strong></div>
+                    </div>
+
+                    {% comment %}New way since plytix is pushing an object now (SDS):{% endcomment %}
+                    {% comment %}
+                    {% assign json_str_sds = product.metafields.plytix.sds_file %}
+                    {% assign json_token_sds = json_str_sds | split: ',' %}
+                    {% for token_sds in json_token_sds %}
+                        {% assign res = token_sds | split: ':' %}
+                        {% assign thisname = res[0] | remove: "'" | remove: " " %}
+                        {% assign thisvalue = res[1] | remove: "'" | remove: " " %}
+                        {% if thisname == "original_filename" %}
+                            {% comment %}Test: {{ thisname }} {{ thisvalue }}<br/><br/>{% endcomment %}
+                            {%- assign basefilename = thisvalue -%}
+                            {%- assign filetitle = basefilename -%}
+                            {%- assign indexofname = 0 -%}
+                            {%- assign pdftitlecheck = 0 -%}
+                            {%- for file_name in pdf_names -%}
+                                {%- if basefilename == file_name -%}
+                                    {%- if pdf_titles[indexofname] and pdf_titles[indexofname] != "" -%}
+                                        {%- assign filetitle = pdf_titles[indexofname] -%}
+                                    {%- endif -%}
+                                {%- endif -%}
+                                {%- assign indexofname = indexofname | plus: 1 -%}
+                            {%- endfor -%}
+
+                            {%- assign docCount = docCount | plus: 1 -%}
+                            <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                                <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                {% comment %}<a target="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
+
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% endcomment %}
+
+                    {% comment %}old way{% endcomment %}
+                    {%- assign sdsheets = product.metafields.plytix.sds_file | split:"," -%}
+                    {%- for sdsheet in sdsheets -%}
+                        {%- assign basefilename = sdsheet | split: '/' | last -%}
+                        {%- assign filetitle = basefilename -%}
+                        {%- assign indexofname = 0 -%}
+                        {%- assign pdftitlecheck = 0 -%}
+                        {%- for file_name in pdf_names -%}
+                            {%- if basefilename == file_name  -%}
+                                {%- if pdf_titles[indexofname]  -%}
+                                    {%- assign filetitle = pdf_titles[indexofname] -%}
+                                {%- endif -%}
+                            {%- endif -%}
+                            {%- assign indexofname = indexofname | plus: 1 -%}
+                        {%- endfor -%}
+
+                        {%- assign docCount = docCount | plus: 1 -%}
+                        <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                            <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                            {% comment %}<a target="_blank" href="{{ sdsheet }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
+
+                        </div>
+                    {%- endfor -%}
+                {%- endif -%}
+
+                {%- assign showManualHeader = false -%}
+
+                {%- if product.metafields.plytix.manual != blank and product.metafields.plytix.manual != "[]" -%}
+                    {%- assign showManualHeader = true -%}
+                {%- endif -%}
+                {%- if product.metafields.plytix.manual_plytix != blank and product.metafields.plytix.manual_plytix != "[]" -%}
+                    {%- assign showManualHeader = true -%}
+                {%- endif -%}
+
+                {%- if showManualHeader -%}
+                    <div class="sheet-row">
+                        <div class="sheet-label"><strong>Product Manual</strong></div>
+                    </div>
+                    {% comment %}{{ product.metafields.plytix.manual }}{% endcomment %}
+                    {% comment %}{% assign testme = product.metafields.plytix.manual | json_string %}{% endcomment %}
+                    {% comment %}{% for manuala in testme %}{% endcomment %}
+                    {% comment %}TEST2 -> {{ manuala.original_filename }} <- <br/>{% endcomment %}
+                    {% comment %}{% endfor %}{% endcomment %}
+
+
+
+                    {% comment %}New way since plytix is pushing an object now (Manual):{% endcomment %}
+                    {% comment %}
+                    {% assign json_str_manual = product.metafields.plytix.manual %}
+                    {% assign json_token_manual = json_str_manual | split: ',' %}
+                    {% for token_manual in json_token_manual %}
+                        {% assign res = token_manual | split: ':' %}
+                        {% assign thisname = res[0] | remove: "'" | remove: " " %}
+                        {% assign thisvalue = res[1] | remove: "'" | remove: " " %}
+                         {% if thisname == "original_filename" %}
+                             {% comment %}Test: {{ thisname }} {{ thisvalue }}<br/><br/>{% endcomment %}
+                             {%- assign basefilename = thisvalue -%}
+                             {%- assign filetitle = basefilename -%}
+                             {%- assign indexofname = 0 -%}
+                             {%- assign pdftitlecheck = 0 -%}
+                             {%- for file_name in pdf_names -%}
+                                 {%- if basefilename == file_name -%}
+                                     {%- if pdf_titles[indexofname] and pdf_titles[indexofname] != "" -%}
+                                         {%- assign filetitle = pdf_titles[indexofname] -%}
+                                     {%- endif -%}
+                                 {%- endif -%}
+                                 {%- assign indexofname = indexofname | plus: 1 -%}
+                             {%- endfor -%}
+
+                             {%- assign docCount = docCount | plus: 1 -%}
+                             <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                                 <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                 {% comment %}<a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
+                             </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% endcomment %}
+                    {% comment %}old way{% endcomment %}
+
+                    {%- assign manuals = product.metafields.plytix.manual | split:"," -%}
+                    {%- for manual in manuals -%}
+                        {%- assign basefilename = manual | split: '/' | last -%}
+                        {%- assign filetitle = basefilename -%}
+                        {%- assign indexofname = 0 -%}
+                        {%- assign pdftitlecheck = 0 -%}
+                        {%- for file_name in pdf_names -%}
+                            {%- if basefilename == file_name -%}
+                                {%- if pdf_titles[indexofname] and pdf_titles[indexofname] != "" -%}
+                                    {%- assign filetitle = pdf_titles[indexofname] -%}
+                                {%- endif -%}
+                            {%- endif -%}
+                            {%- assign indexofname = indexofname | plus: 1 -%}
+                        {%- endfor -%}
+
+                        {%- assign docCount = docCount | plus: 1 -%}
+                        <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                            <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                            {% comment %}<a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
+                        </div>
+                    {%- endfor -%}
+                    {% comment %}end old way{% endcomment %}
+
+
+                    {% comment %}New way since plytix is pushing an object now (Manual external):{% endcomment %}
+                    {% comment %}
+                    {% assign json_str_manualx = product.metafields.plytix.manual_plytix %}
+                    {% assign json_token_manualx = json_str_manualx | split: ',' %}
+                    {% for token_manualx in json_token_manualx %}
+                        {% assign res = token_manualx | split: ':' %}
+                        {% assign thisname = res[0] | remove: "'" | remove: " " %}
+                        {% assign thisvalue = res[1] | remove: "'" | remove: " " %}
+                        {% if thisname == "original_filename" %}
+                            {% comment %}Test: {{ thisname }} {{ thisvalue }}<br/><br/>{% endcomment %}
+                            {%- assign basefilename = thisvalue -%}
+                            {%- assign filetitle = basefilename -%}
+                            {%- assign indexofname = 0 -%}
+                            {%- assign pdftitlecheck = 0 -%}
+                            {%- for file_name in pdf_names -%}
+                                {%- if basefilename == file_name -%}
+                                    {%- if pdf_titles[indexofname] and pdf_titles[indexofname] != "" -%}
+                                        {%- assign filetitle = pdf_titles[indexofname] -%}
+                                    {%- endif -%}
+                                {%- endif -%}
+                                {%- assign indexofname = indexofname | plus: 1 -%}
+                            {%- endfor -%}
+
+                            {%- assign docCount = docCount | plus: 1 -%}
+                            <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                                <a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% endcomment %}
+                    {% comment %}old way{% endcomment %}
+
+                    {%- assign manualexternal = product.metafields.plytix.manual_plytix | split:"," -%}
+                    {%- for manual in manualexternal -%}
+                        {%- assign basefilename = manual | split: '/' | last -%}
+                        {%- assign filetitle = basefilename -%}
+                        {%- assign indexofname = 0 -%}
+                        {%- assign pdftitlecheck = 0 -%}
+                        {%- for file_name in pdf_names -%}
+                            {%- if basefilename == file_name  -%}
+                                {%- if pdf_titles[indexofname]  -%}
+                                    {%- assign filetitle = pdf_titles[indexofname] -%}
+                                {%- endif -%}
+                            {%- endif -%}
+                            {%- assign indexofname = indexofname | plus: 1 -%}
+                        {%- endfor -%}
+
+                        {%- assign docCount = docCount | plus: 1 -%}
+                        <div class="sheet-row sheet-name {% if pdftitlecheck == 0 %}orgfile{% endif %}">
+                            <a target="_blank" href="{{ manual }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                        </div>
+                    {%- endfor -%}
+
+                {%- endif -%}
+                {%- if product.metafields.plytix.literature != blank and product.metafields.plytix.literature != "[]"  -%}
+                    <div class="sheet-row">
+                        <div class="sheet-label"><strong>Product Literature</strong></div>
+                    </div>
+
+                    {% comment %}New way since plytix is pushing an object now (Literature):{% endcomment %}
+                    {% comment %}
+                    {% assign json_str_lit = product.metafields.plytix.literature %}
+                    {% assign json_token_lit = json_str_lit | split: ',' %}
+                    {% for token_lit in json_token_lit %}
+                        {% assign res = token_lit | split: ':' %}
+                        {% assign thisname = res[0] | remove: "'" | remove: " " %}
+                        {% assign thisvalue = res[1] | remove: "'" | remove: " " %}
+                        {% if thisname == "original_filename" %}
+                            {% comment %}Test: {{ thisname }} {{ thisvalue }}<br/><br/>{% endcomment %}
+                            {%- assign basefilename = thisvalue -%}
+                            {%- assign filetitle = basefilename -%}
+                            {%- assign indexofname = 0 -%}
+                            {%- assign pdftitlecheck = 0 -%}
+                            {%- for file_name in pdf_names -%}
+                                {%- if basefilename == file_name -%}
+                                    {%- if pdf_titles[indexofname] and pdf_titles[indexofname] != "" -%}
+                                        {%- assign filetitle = pdf_titles[indexofname] -%}
+                                    {%- endif -%}
+                                {%- endif -%}
+                                {%- assign indexofname = indexofname | plus: 1 -%}
+                            {%- endfor -%}
+
+                            {%- assign docCount = docCount | plus: 1 -%}
+                            <div class="sheet-row sheet-name {%- if pdftitlecheck == 0 -%}orgfile{% endif %}">
+                                <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                                {% comment %}<a target="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% endcomment %}
+                    {% comment %}oldway{% endcomment %}
+                    {%- assign literature = product.metafields.plytix.literature | split:"," -%}
+                    {%- for lit in literature -%}
+                        {%- assign basefilename = lit | split: '/' | last -%}
+                        {%- assign filetitle = basefilename -%}
+                        {%- assign indexofname = 0 -%}
+                        {%- assign pdftitlecheck = 0 -%}
+                        {%- for file_name in pdf_names -%}
+                            {%- if basefilename == file_name  -%}
+                                {%- if pdf_titles[indexofname]  -%}
+                                    {%- assign filetitle = pdf_titles[indexofname] -%}
+                                    {%- assign pdftitlecheck = 1 -%}
+                                {%- endif -%}
+                            {%- endif -%}
+                            {%- assign indexofname = indexofname | plus: 1 -%}
+                        {%- endfor -%}
+                        {%- assign docCount = docCount | plus: 1 -%}
+                        <div class="sheet-row sheet-name {%- if pdftitlecheck == 0 -%}orgfile{% endif %}">
+                            <a target="_blank" href="{{ basefilename | file_url }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>
+                            {% comment %}<a target="_blank" href="{{ lit }}"><i class="fa-solid fa-file-pdf"></i> {{ filetitle }}</a>{% endcomment %}
+                        </div>
+                    {%- endfor -%}
+                {%- endif -%}
+
+                {%- if docCount == 0 -%}
+
+                    <div class="sheet-row sheet-name"><i class="fa-solid fa-ban"></i> No documents found.</div>
+
+                    {%- liquid
+                        assign selected_variant = product.selected_variant
+                        if product.variants.size == 1 or select_first_available_variant or product_form == false
+                            assign selected_variant = product.selected_or_first_available_variant
+                        endif
+                    -%}
+
+                    <div class="sheet-row sheet-name document-inquiry" style="padding-left:21px; margin-top:-10px"> Are you looking for a specific document for this product?<br/><strong class="fake-link">Click here</strong> to make a request.</div>
+                    {% assign full_url = request.host | append: request.path %}
+
+                    <div class="document-inquiry-form" style="display:none;"><iframe height="722" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x17n92om0rqevnr/def/Field60={{ selected_variant.sku }}&Field63={{ product.title }}&Field62={{ full_url }}"> <a href="https://jbutchpti.wufoo.com/forms/x17n92om0rqevnr/">Fill out my Wufoo form!</a> </iframe></div>
+                    <script>
+
+                        jQuery(document).ready(function($) {
+                            $('.document-inquiry').on('click', function (e) {
+
+                                var formhtml = $('.document-inquiry-form').html();
+
+                                $('.popup-container .content').html(formhtml);
+                                $('.popup-container').addClass('rightpop');
+
+                                $('.popup-container').removeClass('hidden');
+                                $(".pop-grad").removeClass('hidden');
+
+                            });
+                        });
+                    </script>
+
+                {%- endif -%}
+            </div>
+
+
+            {%- assign blog_handles = product.metafields.plytix.related_blogs | split: "," -%}
+            {%- assign page_handles = product.metafields.plytix.related_pages | split: "," -%}
+            {%- assign blogcoutner = 0 -%}
+            {%- assign pagecoutner = 0 -%}
+            {%- for handle in blog_handles -%}
+                {% assign thishandle = handle | strip %}
+                {%- if thishandle != "NA" and thishandle !="" -%}
+                    {%- assign blogcoutner = blogcoutner | plus: 1 -%}
+                {%- endif -%}
+            {%- endfor -%}
+            {%- for handle in page_handles -%}
+                {% assign thishandle = handle | strip %}
+                {%- if thishandle != "NA" and thishandle !="" -%}
+                    {%- assign pagecoutner = pagecoutner | plus: 1 -%}
+                {%- endif -%}
+            {%- endfor -%}
+
+            {%- if blogcoutner > 0 or pagecoutner > 0 -%}
+                <h2 style="margin-top:30px;" >Related Links</h2>
+                <div class="data-sheets">
+
+                    {%- if blogcoutner > 0 -%}
+                        <div class="sheet-row">
+                            <div id="blog-area" class="sheet-label"><strong>Related Blogs</strong></div>
+                        </div>
+
+
+                        {% assign blog_array = "" %}
+                        {% for handle in blog_handles %}
+                            {% assign thishandle = handle | strip %}
+                            {% if thishandle != "NA" and thishandle != "" %}
+                                {% assign thisarticle = articles[thishandle] %}
+                                {% capture blog_array %}{{ blog_array }}{% if blog_array != blank %},{% endif %}{{ thisarticle.title }}::{{ thishandle }}{% endcapture %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% assign blog_array = blog_array | split: ',' %}
+                        {% assign sorted_pages = blog_array | sort %}
+
+                        {% for page_entry in sorted_pages %}
+                            {% assign parts = page_entry | split: '::' %}
+                            {% assign title = parts[0] %}
+                            {% assign handle = parts[1] %}
+
+                            <div class="sheet-row sheet-name">
+                                <a target="_blank" href="/blogs/{{ handle }}"><i class="fa-solid fa-blog"></i> {{ title }}</a>
+                            </div>
+
+                        {% endfor %}
+
+                        {%- comment -%}
+                        {%- for handle in blog_handles -%}
+                            {%- assign thishandle = handle | strip -%}
+                            {%- if thishandle != "NA" and thishandle !="" -%}
+                                {% assign thisarticle = articles[thishandle] %}
+                                <div class="sheet-row sheet-name">
+                                    <a target="_blank" href="/blogs/{{ thishandle }}"><i class="fa-solid fa-blog"></i> {{ thisarticle.title }}</a>
+                                </div>
+                            {%- endif -%}
+                        {%- endfor -%}
+                        {%- endcomment -%}
+
+
+
+                    {%- endif -%}
+
+                    {%- if pagecoutner > 0 -%}
+                        <div class="sheet-row">
+                            <div id="blog-area" class="sheet-label"><strong>Related Resources</strong></div>
+                        </div>
+
+
+                        {% assign pages_array = "" %}
+                        {% for handle in page_handles %}
+                            {% assign thishandle = handle | strip %}
+                            {% if thishandle != "NA" and thishandle != "" %}
+                                {% assign thisarticle = pages[thishandle] %}
+                                {% capture pages_array %}{{ pages_array }}{% if pages_array != blank %},{% endif %}{{ thisarticle.title }}::{{ thishandle }}{% endcapture %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% assign pages_array = pages_array | split: ',' %}
+                        {% assign sorted_pages = pages_array | sort %}
+
+                        {% for page_entry in sorted_pages %}
+                            {% assign parts = page_entry | split: '::' %}
+                            {% assign title = parts[0] %}
+                            {% assign handle = parts[1] %}
+                            <div class="sheet-row sheet-name">
+                                <a target="_blank" href="/pages/{{ handle }}"><i class="fa-solid fa-link"></i> {{ title }}</a>
+                            </div>
+                        {% endfor %}
+
+                        {%- comment -%}
+                        {%- for handle in page_handles -%}
+                            {%- assign thishandle = handle | strip -%}
+                            {%- if thishandle != "NA" and thishandle !="" -%}
+                                {% assign thisarticle = pages[thishandle] %}
+                                <div class="sheet-row sheet-name">
+                                    <a target="_blank" href="/pages/{{ thishandle }}"><i class="fa-solid fa-link"></i> {{ thisarticle.title }}</a>
+                                </div>
+                            {%- endif -%}
+                        {%- endfor -%}
+                        {%- endcomment -%}
+                    {%- endif -%}
+
+                    {%- if location == "productresourcepage" -%}
+
+                        {% if product.metafields.plytix.product_video != blank %}
+
+
+                                <div class="section-heading">
+                                    <h2>Videos</h2>
+                                </div>
+                                {% assign pvideo = product.metafields.plytix.product_video | split: ";" %}
+                                {% for vid in pvideo %}
+                                    {% assign pyt = vid | split: "::" %}
+
+
+
+
+                                    <div class="sheet-row sheet-name orgfile docpop" >
+                                        <div class="fake-link"><i class="fa-solid fa-circle-play"></i> {{ pyt[1] }}</div>
+
+                                        <div class="docpopdata" style="display:none">
+                                            <h2>Videos</h2>
+                                            <div style="text-align:center"><a target="_blank" href="https://www.youtube.com/watch?v={{ pyt[0] }}">{{ pyt[1] }}</a></div>
+                                            <div class="video-contain">
+                                                <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] }}"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                {% endfor %}
+
+                            <script>
+
+                                $('.sheet-row.docpop').on('click', function() {
+                                    $('.popup-container').removeClass('hidden');
+                                    $(".pop-grad").removeClass('hidden');
+                                    var newhtml = $(this).find('.docpopdata').html();
+                                    $('.popup-container .content').html(newhtml);
+                                    $('.popup-container').addClass('widepop');
+                                });
+                            </script>
+
+                            <style>
+
+
+                                .popup-container .video-contain video{
+                                    width: 100%;
+                                }
+                                .popup-container .video-contain iframe {
+                                    width: 100%;
+                                    min-height: 250px;
+                                }
+                                @media screen and (min-width:720px) {
+                                    .popup-container .video-contain iframe {
+                                        min-height: 450px;
+                                        width: 100%
+                                    }
+                                }
+                            </style>
+
+                        {% endif %}
+                    {%- endif -%}
+
+                </div>
+            {%- endif -%}
+
+            {%
+                    render 'troubleshoot-docs',
+                    product: product,
+                    location: 'product'
+            %}
+
+            {%- if product.metafields.plytix.prop65_text != blank and product.metafields.plytix.prop65_category != blank -%}
+                <div class="prop65" style="padding-top:5px;">
+                    <h2>Warnings</h2>
+                    <div class="prop65-item">
+                        <div class="hazard-title">
+                            <i class="fa-regular fa-triangle-exclamation"></i> <strong>Proposition 65 Warning</strong>: {{ product.metafields.plytix.prop65_category }}
+                        </div>
+                        <div class="prop65-text">
+                            {{ product.metafields.plytix.prop65_text }} For more information go to <a href="https://www.P65Warnings.ca.gov" target="_blank">www.P65Warnings.ca.gov</a>.</div>
+                    </div>
+                </div>
+            {%- endif -%}
+
+
+        </div>
+
+
+
+
+
+
+    {%- else -%}
+        <div class="r">
+            <div class="spec-default-img">
+                {{ images['spec-default-img.jpg'] | image_url: height: 300 | image_tag: class: 'img-responsive' }}
+            </div>
+        </div>
+        <style>
+            .r .spec-default-img{
+                margin-top: 35px;
+                padding: 25px;
+            }
+        </style>
+    {%- endif -%}
+
+{%- endif -%}

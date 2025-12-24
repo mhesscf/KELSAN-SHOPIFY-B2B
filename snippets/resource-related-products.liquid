@@ -1,0 +1,53 @@
+
+{%- if product -%}
+    {% comment %}use parts layout for related and parts{% endcomment %}
+    {%- if related_type == "related" -%}
+        {%- assign tab_rel_id  = "related_products" -%}
+        {%- assign products_to_load  = "related_products" -%}
+        {%- assign resource_title  = "Related Products" -%}
+    {%- elsif related_type == "replacement_parts" -%}
+        {%- assign tab_rel_id  = "part_items" -%}
+        {%- assign products_to_load  = "part_items" -%}
+        {%- assign resource_title  = "Replacement Parts" -%}
+    {%- endif -%}
+<h2>{{ resource_title }}</h2>
+    <div class="rel-product-tabbed-area tabbed-area">
+        <div id="resource-{{ products_to_load }}-slider" class="resource-tabbed-rel-slider tabbed-rel-slider">
+            <div class="parts-data-area" style="width:100% !important;">
+                <div class="loading-text">Loading.....</div>
+                <table>
+                    {%- if product.metafields.plytix[tab_rel_id] != blank -%}
+                        {%- assign rel_products_arr = product.metafields.plytix[tab_rel_id] | split: ", " -%}
+                        {%- for product in rel_products_arr -%}
+                            <tr class="part-item" data-handle="{{ product }}">
+                            </tr>
+                        {%- endfor -%}
+                    {%- endif -%}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{%- endif -%}
+
+
+
+<script>
+    $(document).ready(function() {
+        $( ".parts-data-area .part-item" ).each(function() {
+            const handle = $(this).data('handle');
+            const fetchUrl = `${window.Theme.routes.all_products_collection_url}/products/${handle}?view=partsrow`;
+            $.get(fetchUrl).then(response => {
+                if (response) {
+                    if(response.includes("data-part-title")){
+                        $( ".parts-data-area .loading-text" ).hide();
+                        $(this).html(response);
+                    }
+                }else{
+                    console.log('product not returned');
+                }
+            })
+        });
+    });
+</script>
+
