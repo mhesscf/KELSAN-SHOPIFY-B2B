@@ -743,13 +743,10 @@
             cursor: pointer;
         }
         .resource-products{
-            display:flex;
-            max-width:1400px;
+
         }
         .resource-products .grid-column{
-            flex-basis: 50%;
             padding:15px;
-            margin-left:auto;
         }
         .resource-products .chem-price{
             display:none !important;
@@ -760,6 +757,18 @@
         .resource-replacement_parts .rel-product-tabbed-area .tabbed-rel-slider{
             margin:0;
             padding:0;
+            max-width:unset;
+        }
+
+        @media (min-width: 720px) {
+            .resource-products{
+                display:flex;
+                max-width:1400px;
+            }
+            .resource-products .grid-column{
+                flex-basis: 50%;
+                margin-left:auto;
+            }
         }
     </style>
 <div class="resource-products">
