@@ -6501,7 +6501,11 @@ nav.breadcrumb a, nav.breadcrumb span{
 	vertical-align: bottom;
 	color: {{ settings.color_product_detail_title }}
 }
-
+@media screen and (max-width: 480px) {
+	.template-product nav.breadcrumb span.current span {
+		max-width: 280px;
+	}
+}
 nav.breadcrumb span.separator{
 	margin: 0 10px;
 	font-size: 25px;
