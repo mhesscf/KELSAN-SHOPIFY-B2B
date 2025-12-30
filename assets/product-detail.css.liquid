@@ -1747,7 +1747,15 @@ background:none;
   box-shadow: none !important;
 }
 .rel-product-tabbed-area .rel-slider-item .productitem--title{
-  font-size:16px;
+  font-size:15px;
+}
+
+.rel-product-tabbed-area .rel-slider-item .productitem--title a{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;      /* number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
 }
 .rel-product-tabbed-area .rel-slider-item .productitem--title,
 .rel-product-tabbed-area .rel-slider-item .product-detail-sku,
