@@ -132,7 +132,7 @@
                 {%- endif -%}
                 {% endcomment %}
                 {%- if product.metafields.plytix.made_in_USA -%}
-                    <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Made%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-left:-3px" width="25" height="25" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <div class="sm-row-text"><span>Assembled in USA</span><br/><span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span><span class="tooltip-desc sm-text">Supporting American Workers</span></div></div></a>
+                    <a href="/collections/all?refinementList%5Btags%5D%5B0%5D=assembled%20in%20the%20USA "><div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-left:-3px" width="25" height="25" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Assembled in the United States"/></div> <div class="sm-row-text"><span>Assembled in USA</span><br/><span  class="sm-text" >View All <i class="fa-solid fa-arrow-right"></i></span><span class="tooltip-desc sm-text">Supporting American Workers</span></div></div></a>
                 {%- endif -%}
                 {%- if product.metafields.plytix.free_shipping -%}
                     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
