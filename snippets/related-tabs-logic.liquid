@@ -43,7 +43,6 @@
                 {%- case block.type -%}
                     {%- when 'tabinfo' -%}
                         {%- if product.metafields.plytix[block.settings.tab_rel_id] != blank -%}
-
                             {%- comment -%}check for atleast 1 item{%- endcomment -%}
                             {%- assign prod_check_arr = product.metafields.plytix[block.settings.tab_rel_id] | split: ", " -%}
                             {% assign show = 0 %}
@@ -52,7 +51,9 @@
                                 {%- assign discontinued = false -%}
                                 {%- for c in all_products[product_handle].collections -%}
                                     {%- if c.handle == "discontinued" -%}
-                                        {% assign discontinued = true -%}
+                                        {%- if block.settings.tab_rel_id != "part_used_on" -%}
+                                            {% assign discontinued = true -%}
+                                        {%- endif -%}
                                     {%- endif -%}
                                 {%- endfor -%}
                                 {%- if product_handle != 'undefined' and all_products[product_handle].title != '' and discontinued == false -%}
@@ -603,7 +604,7 @@
                                         </div>
 
                                         <div id="{{ tab_rel_id }}-{{ variant.id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if showvar == false %}sliderhidden{% endif %}"></div>
-                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
+                                        <div id="{{ tab_rel_id }}-{{ variant.id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r {% if showvar == false %}sliderhidden{% endif %}"></div>
 
                                     {%- endif -%}
                                 {%- endfor -%}
@@ -626,7 +627,7 @@
                         {%- endif -%}
 
                         <div id="{{ tab_rel_id }}-slider-arrows" class="round-arrows rel-slide-arrows {% if showparent == false or hideSliderDefault %}sliderhidden{% endif %}"></div>
-                        <div id="{{ tab_rel_id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r"></div>
+                        <div id="{{ tab_rel_id }}-rel-item-slider-fade-r" class="related-fade-r slider-fade-r {% if showparent == false or hideSliderDefault %}sliderhidden{% endif %}"></div>
                 {%- endcase -%}
             {%- endfor -%}
         </section>
