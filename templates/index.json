@@ -22,12 +22,11 @@
       "blocks": {
         "banner_xWQm6F": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-cyber-monday-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-cyber-monday-mobile-banner.jpg",
-            "link": "/collections/black-friday-cyber-monday-deals?refinementList[tags][0]=Cyber Monday Sale",
+            "banner-lg": "shopify://shop_images/ipc-eagle-sale-2025-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/ipc-eagle-sale-2025-mobile-banner.jpg",
+            "link": "/collections/ipc-eagle",
             "coupon-code": ""
           }
         },
@@ -44,6 +43,7 @@
         },
         "banner_qaQPaP": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/2025-ryicf-desktop-banner.jpg",
@@ -177,9 +177,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/november-2025-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/november-2025-bogo-mobile-banner.jpg",
-            "link": "/products/1-5-hp-high-speed-20-inch-burnisher",
+            "banner-lg": "shopify://shop_images/tornado-14-auto-scrubber-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/tornado-14-auto-scrubber-bogo-mobile-banner.jpg",
+            "link": "/products/tornado-cordless-floor-scrubber",
             "coupon-code": ""
           }
         },
@@ -195,6 +195,7 @@
         },
         "banner_Hera6c": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/buffer-10-percent-off-offer-desktop-banner.jpg",

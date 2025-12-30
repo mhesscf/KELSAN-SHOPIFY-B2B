@@ -60,7 +60,7 @@
 
 
 {% comment %}hot deal icon ----------------------------------------------------------{% endcomment %}
-{%- if pdiscontinued != true -%}
+{%- if pdiscontinued != true and template != 'product.product-resources' -%}
     <div class="additional-deal-notification">
       {%- if product.selected_or_first_available_variant.compare_at_price -%}
         {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
@@ -171,7 +171,7 @@
                   <i class="fa-duotone fa-solid fa-location-pin-slash" style="--fa-primary-color: #EA4335; --fa-secondary-color: #EA4335; --fa-secondary-opacity: 1;"></i><strong>Shipping Restrictions</strong>
               </div>
               <div class="sale-icon-by-pic-text">
-                  Can not be shipped to: {{ states | join: ', ' }}
+                  Cannot be shipped to: {{ states | join: ', ' }}
               </div>
           </div>
         {%- endif -%}
