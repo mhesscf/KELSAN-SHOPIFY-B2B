@@ -54,6 +54,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "12",
@@ -75,6 +76,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "12",
@@ -96,29 +98,27 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "11",
+            "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/cpl-dura-17c-special.png?v=173335204",
-            "middle_image_alt": "Trusted Clean 'Dura 17' Electric Auto Floor Scrubber November Special",
+            "middle_image": "/cdn/shop/files/ies-14-floor-scrubber-sotm.png?v=173335204",
+            "middle_image_alt": "CleanFreak® 14\" Reliable Walk Behind Floor Scrubber Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Electric, Efficient, Economical.</div>\n<h1>Trusted Clean 'Dura 17' Electric Auto Floor Scrubber</h1>\n<div>Was: $1,899.99<br/>Now: $1,699.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image{\npadding-top:37px;",
+            "text_area_html": "<div class=\"top-text\">Reliable Results, Remarkable Savings.</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Electric: $2,199.99 (Save $350)<br/>Battery: $2,699.99 (Save $380)</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;",
             "bg_link": "/products/17-inch-electric-auto-scrubber",
             "promo_link": "",
-            "button_one_label": "Save $200",
+            "button_one_label": "Electric",
             "button_one_link": "/products/17-inch-electric-auto-scrubber",
-            "button_two_label": "",
-            "button_two_link": "",
+            "button_two_label": "Battery",
+            "button_two_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315577524",
             "button_color_override": ""
           }
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "11",
