@@ -18,10 +18,21 @@
 
 
     <td class="bnd-child-image">
-        <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '100x1000' | img_tag: product.featured_image.alt }}</a>
+        {% if product.metafields.plytix.hide_product %}
+            {{ product.featured_image | img_url: '100x1000' | img_tag: product.featured_image.alt }}
+        {% else %}
+            <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '100x1000' | img_tag: product.featured_image.alt }}</a>
+        {% endif %}
     </td>
     <td class="bnd-child-content">
-        {% if product.metafields.plytix.short_title %}
+
+        {% if product.metafields.plytix.hide_product %}
+            {% if product.metafields.plytix.short_title %}
+            <div class="bnd-child-title" data-child-title >{{ product.metafields.plytix.short_title }}</div>
+            {% else %}
+            <div class="bnd-child-title" data-child-title >{{ product.title }}</div>
+            {% endif %}
+        {% elsif product.metafields.plytix.short_title %}
             <div class="bnd-child-title" data-child-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.metafields.plytix.short_title }}</a></div>
         {% else %}
             <div class="bnd-child-title" data-child-title ><a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')">{{ product.title }}</a></div>
