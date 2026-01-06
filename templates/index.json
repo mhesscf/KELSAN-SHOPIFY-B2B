@@ -22,6 +22,7 @@
       "blocks": {
         "banner_xWQm6F": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/ipc-eagle-sale-2025-desktop-banner.jpg",
