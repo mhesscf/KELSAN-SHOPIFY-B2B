@@ -164,7 +164,10 @@
                                 {{ all_products[bundlep].metafields.plytix.short_description }}
                                 <div class="general-details">
                                     {% if all_products[bundlep].metafields.plytix.made_in_USA %}
-                                        <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                        <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                    {% endif %}
+                                    {% if all_products[bundlep].metafields.plytix.assembled_in_USA %}
+                                        <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
                                     {% endif %}
                                     {% if all_products[bundlep].metafields.plytix.free_shipping %}
                                         <div class="sm-row"><div class="icon-wrap"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
@@ -259,8 +262,11 @@
                             </div>
                             {{ all_products[bundlep].metafields.plytix.short_description }}
                             <div class="general-details">
+                                {% if all_products[freeproduct].metafields.plytix.assembled_in_USA %}
+                                    <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                {% endif %}
                                 {% if all_products[freeproduct].metafields.plytix.made_in_USA %}
-                                    <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                    <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
                                 {% endif %}
                                 {% if all_products[freeproduct].metafields.plytix.free_shipping %}
                                     <div class="sm-row"><div class="icon-wrap"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
@@ -444,8 +450,11 @@
 
                                 {{ all_products[freeproduct].metafields.plytix.short_description }}
                                 <div class="general-details">
+                                    {% if all_products[freeproduct].metafields.plytix.assembled_in_USA %}
+                                        <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                    {% endif %}
                                     {% if all_products[freeproduct].metafields.plytix.made_in_USA %}
-                                        <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+                                        <div class="sm-row"><div class="icon-wrap"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
                                     {% endif %}
                                     {% if all_products[freeproduct].metafields.plytix.free_shipping %}
                                         <div class="sm-row"><div class="icon-wrap"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
@@ -517,10 +526,14 @@
                             </div>
                             {{ all_products[freeproduct].metafields.plytix.short_description }}
                             <div class="general-details">
-                                {% if all_products[freeproduct].metafields.plytix.made_in_USA %}
-                                    <div><i class="fa-duotone fa-solid fa-truck-fast"></i> <span>Free</span> shipping for this product.</div>                            {% endif %}
                                 {% if all_products[freeproduct].metafields.plytix.free_shipping %}
-                                    <div><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Assembled in the United States"/> <span>Assembled in the USA</span></div>
+                                    <div><i class="fa-duotone fa-solid fa-truck-fast"></i> <span>Free</span> shipping for this product.</div>
+                                {% endif %}
+                                {% if all_products[freeproduct].metafields.plytix.assembled_in_USA %}
+                                    <div><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/> <span>Assembled in the USA</span></div>
+                                {% endif %}
+                                {% if all_products[freeproduct].metafields.plytix.made_in_USA %}
+                                    <div><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="made in the United States"/> <span>Made in the USA</span></div>
                                 {% endif %}
                             </div>
                             {% if all_products[freeproduct].available %}
