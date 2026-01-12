@@ -404,11 +404,13 @@
                             {%- endif -%}
 
 
-                        {%- elsif product.metafields.plytix.eco_friendly -%}
+                        {%- endif -%}
+
+                        {%- if product.metafields.plytix.eco_friendly -%}
                             <hr style="border:0; border-top:1px solid #eee;" />
                             <div style="display:flex">
                                 <div>
-                                    <img style="padding-right:15px; width:75px; margin-top:1px" src="{{ 'green-seal-certified-logo.jpg' | file_img_url }}" alt="Green Seal Certified"/>
+                                    <img style="padding-right:15px; width:75px; margin-top:1px" src="{{ 'grean-seal-certified-logo-v2.jpg' | file_img_url }}" alt="Green Seal Certified"/>
                                 </div>
                                 <div>
                                     <div style="font-weight:bold; font-size:12px;">Green Seal™ Standard</div>
