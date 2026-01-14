@@ -22,12 +22,13 @@
       "blocks": {
         "banner_xWQm6F": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/ipc-eagle-sale-2025-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/ipc-eagle-sale-2025-mobile-banner.jpg",
-            "link": "/collections/ipc-eagle",
-            "coupon-code": ""
+            "banner-lg": "shopify://shop_images/national-clean-off-your-desk-day-2026-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/national-clean-off-your-desk-day-2026-mobile-banner.jpg",
+            "link": "/",
+            "coupon-code": "DESK26"
           }
         },
         "banner_fLBUa3": {
@@ -54,6 +55,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "12",
@@ -75,6 +77,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "12",
@@ -96,45 +99,43 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "11",
+            "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/cpl-dura-17c-special.png?v=173335204",
-            "middle_image_alt": "Trusted Clean 'Dura 17' Electric Auto Floor Scrubber November Special",
+            "middle_image": "/cdn/shop/files/ies-14-floor-scrubber-sotm.png?v=173335204",
+            "middle_image_alt": "CleanFreak® 14\" Reliable Walk Behind Floor Scrubber Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Electric, Efficient, Economical.</div>\n<h1>Trusted Clean 'Dura 17' Electric Auto Floor Scrubber</h1>\n<div>Was: $1,899.99<br/>Now: $1,699.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image{\npadding-top:37px;",
-            "bg_link": "/products/17-inch-electric-auto-scrubber",
+            "text_area_html": "<div class=\"top-text\">Reliable Results, Remarkable Savings.</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Electric: $2,199.99 (Save $350)<br/>Battery: $2,699.99 (Save $380)</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;",
+            "bg_link": "",
             "promo_link": "",
-            "button_one_label": "Save $200",
-            "button_one_link": "/products/17-inch-electric-auto-scrubber",
-            "button_two_label": "",
-            "button_two_link": "",
+            "button_one_label": "Electric",
+            "button_one_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315544756",
+            "button_two_label": "Battery",
+            "button_two_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315577524",
             "button_color_override": ""
           }
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "11",
+            "sotm_icon": "1",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/tpl-7-100-sce-tc-special.png?v=173336204",
-            "middle_image_alt": "Trusted Clean 'Pro-7' Self-Contained Carpet Extractor November Special",
+            "middle_image": "/cdn/shop/files/san-cf-3-special.png?v=173336204",
+            "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machine Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Pro Results, Priced Right!</div>\n<h1>Trusted Clean 'Pro-7' Self-Contained Carpet Extractor</h1>\n<div>Was: $3,299.99<br/>Now: $2,849.99</div>",
+            "text_area_html": "<div class=\"top-text\">Spot On Savings.</div>\n<h1>CleanFreak® Commercial Carpet Spot Cleaning Machine</h1>\n<div>Non-Heated: $489.99 (Save $70)<br/>Heated: $849.99 (Save $120)</div>",
             "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\n}\n\n@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 0px auto;\n\t}\n}",
-            "bg_link": "/products/7-gallon-professional-carpet-extractor",
+            "bg_link": "",
             "promo_link": "",
-            "button_one_label": "Save $450",
-            "button_one_link": "/products/7-gallon-professional-carpet-extractor",
-            "button_two_label": "",
-            "button_two_link": "",
+            "button_one_label": "Non-Heated",
+            "button_one_link": "/products/commercial-carpet-spot-cleaning-machine",
+            "button_two_label": "Heated",
+            "button_two_link": "/products/heated-carpet-spot-cleaner",
             "button_color_override": ""
           }
         },

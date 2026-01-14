@@ -78,6 +78,9 @@
                         .bnd-prod-inc-contain .bnd-child-image img{
                             padding-right:10px;
                         }
+                        .bnd-prod-inc-contain a.bnd-child-title{
+                            color:{{ settings.color_links }};
+                        }
                         .bnd-prod-inc-contain .bnd-child-title{
                             font-size: 18px;
                             padding:10px 0 5px 0;
@@ -401,11 +404,13 @@
                             {%- endif -%}
 
 
-                        {%- elsif product.metafields.plytix.eco_friendly -%}
+                        {%- endif -%}
+
+                        {%- if product.metafields.plytix.eco_friendly -%}
                             <hr style="border:0; border-top:1px solid #eee;" />
                             <div style="display:flex">
                                 <div>
-                                    <img style="padding-right:15px; width:75px; margin-top:1px" src="{{ 'green-seal-certified-logo.jpg' | file_img_url }}" alt="Green Seal Certified"/>
+                                    <img style="margin-right:15px; width:70px; height:70px; margin-top:7px" src="{{ 'grean-seal-certified-logo-v2.jpg' | file_img_url }}" alt="Green Seal Certified"/>
                                 </div>
                                 <div>
                                     <div style="font-weight:bold; font-size:12px;">Green Seal™ Standard</div>

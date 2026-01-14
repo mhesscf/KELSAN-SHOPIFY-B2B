@@ -471,6 +471,9 @@ data-product-quickshop-url="{{ product_link }}"
           {%- if pdiscontinued == true -%}
             <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <span class="sm-row-text"><span>Discontinued</span> <span class="sm-text">This Product has Been Discontinued</span></span></div>
           {%- else -%}
+            {%- if product.metafields.plytix.assembled_in_USA -%}
+              <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
+            {%- endif -%}
             {%- if product.metafields.plytix.made_in_USA -%}
               <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
             {%- endif -%}
