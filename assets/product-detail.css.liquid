@@ -1747,7 +1747,15 @@ background:none;
   box-shadow: none !important;
 }
 .rel-product-tabbed-area .rel-slider-item .productitem--title{
-  font-size:16px;
+  font-size:15px;
+}
+
+.rel-product-tabbed-area .rel-slider-item .productitem--title a{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;      /* number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
 }
 .rel-product-tabbed-area .rel-slider-item .productitem--title,
 .rel-product-tabbed-area .rel-slider-item .product-detail-sku,
@@ -1757,12 +1765,22 @@ background:none;
   margin-bottom:4px;
   padding:0;
 }
+.rel-product-tabbed-area .rel-slider-item .productitem--title{
+  padding-top:15px;
+}
 .rel-product-tabbed-area .rel-slider-item .price__compare-at-visible-2{
   display:none;
 }
 .rel-product-tabbed-area .rel-slider-item .productitem--image{
   max-height:120px;
 }
+.rel-product-tabbed-area .rel-slider-item .productitem--image,
+.rel-product-tabbed-area .rel-slider-item .productitem--image img{
+  height:120px;
+  width:120px;
+  margin:auto;
+}
+
 .rel-product-tabbed-area .rel-slider-item .productitem__compare{
   display:none;
 }
@@ -1870,7 +1888,11 @@ background:none;
 }
 
 /*--- Freq bought together responsive ---*/
-
+@media (min-width: 1280px) {
+  .rel-product-tabbed-area .tabbed-rel-freq .rel-slider-item .productitem--title {
+    min-height: 66px;
+  }
+}
 @media (max-width: 1079px){
 
 
@@ -1909,9 +1931,9 @@ background:none;
       .rel-product-tabbed-area .productitem__container{
         display:block;
       }
-  .rel-product-tabbed-area .freq_bought-rel-item .productitem__container{
-    padding-bottom:10px;
-  }
+      .rel-product-tabbed-area .freq_bought-rel-item .productitem__container{
+        padding-bottom:10px;
+      }
       .rel-product-tabbed-area .tabbed-rel-freq .freq-bought-items{
         max-width: 75%;
       }
@@ -1929,6 +1951,14 @@ background:none;
         border:none !important;
         padding-top:0;
         padding-bottom:0;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .rel-slider-item .productitem--title{
+        padding-top:0;
+      }
+      .rel-product-tabbed-area .tabbed-rel-freq .rel-slider-item .productitem--image,
+      .rel-product-tabbed-area .tabbed-rel-freq .rel-slider-item .productitem--image img{
+        height:45px;
+        width:45px;
       }
       .rel-product-tabbed-area .tabbed-rel-freq .freq-item .freq-check{
         top:10px;

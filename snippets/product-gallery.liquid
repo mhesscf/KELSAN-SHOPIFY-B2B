@@ -62,44 +62,60 @@
 {% comment %}hot deal icon ----------------------------------------------------------{% endcomment %}
 {%- if pdiscontinued != true and template != 'product.product-resources' -%}
     <div class="additional-deal-notification">
-      {%- if product.selected_or_first_available_variant.compare_at_price -%}
-        {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
-          {%- assign specialSavings = product.compare_at_price | minus: product.price -%}
-          {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
-          {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' -%}
-          {%- assign nowTimestamp = 'now' | date: '%s' -%}
+        {%- assign current_variant_id = product.selected_or_first_available_variant.id -%}
 
-          {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
-          {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+        {%- for variant in product.variants -%}
+            {%- if variant.compare_at_price -%}
+                {%- if variant.price < variant.compare_at_price -%}
+                    {%- assign specialSavings = variant.compare_at_price | minus: variant.price -%}
+                    {%- assign endDate = variant.metafields.plytix.special_enddate | date: '%s' -%}
+                    {%- assign startDate = variant.metafields.plytix.special_startdate | date: '%s' -%}
+                    {%- assign nowTimestamp = 'now' | date: '%s' -%}
 
-          {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
-          {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+                    {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+                    {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-          {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
-            {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
-                <a class="sale-icon-by-pic-link" href="/collections/current-sales">
-                    <div class="sale-icon-by-pic">
-                        <div class="sale-icon-by-pic-title">
-                            <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
-                        </div>
-                        <div class="sale-icon-by-pic-text">
-                            Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong>
-                        </div>
-                    </div>
-                </a>
-            {%- else -%}
-                <div class="sale-icon-by-pic">
-                    <div class="sale-icon-by-pic-title">
-                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
-                    </div>
-                    <div class="sale-icon-by-pic-text">
-                        Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong>
-                    </div>
-                </div>
+                    {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+                    {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+                    {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
+                        {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+
+                            <div class="var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+
+
+                                <a class="sale-icon-by-pic-link" href="/collections/current-sales">
+                                    <div class="sale-icon-by-pic">
+                                        <div class="sale-icon-by-pic-title">
+                                            <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
+                                        </div>
+                                        <div class="sale-icon-by-pic-text">
+                                            Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong>
+                                        </div>
+                                    </div>
+                                </a>
+
+
+                            </div>
+                        {%- else -%}
+                            <div class="var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                                <div class="sale-icon-by-pic">
+                                    <div class="sale-icon-by-pic-title">
+                                        <i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i><strong>Hot Deal</strong>
+                                    </div>
+                                    <div class="sale-icon-by-pic-text">
+                                        Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endif -%}
+                {%- endif -%}
             {%- endif -%}
-          {%- endif -%}
-        {%- endif -%}
-      {%- endif -%}
+        {% endfor %}
+
+
+
       {%- if product.metafields.plytix.custom_hot_deal_message -%}
 
         {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' -%}
