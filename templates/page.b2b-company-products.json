@@ -37,7 +37,7 @@
       "type": "dynamic-custom-liquid",
       "name": "t:sections.custom_liquid.presets.custom_liquid.name",
       "settings": {
-        "custom_liquid": "{%                                                        render 'b2b-company-product-list',\nthiscompany: company\n                         %}"
+        "custom_liquid": "{%                                                        render 'b2b-company-product-list'                         %}"
       }
     }
   },
