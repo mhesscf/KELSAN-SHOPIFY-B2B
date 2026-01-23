@@ -2,14 +2,12 @@
 {%- if customer and customer.b2b?-%}
     <div class="b2b-summary">
         <div class="b2b-current">
-            {%- assign company_obj = customer.current_company -%}
-
-            <h2>Customer</h2>
+            <h2>Current Customer</h2>
             <strong>Name:</strong> {{ customer.name }}<br/>
             <strong>Email:</strong> {{ customer.email }}
-            <h2>Company</h2>
-            {{ customer.current_company.name }}
+
             <h2>Location Address</h2>
+            {%- assign company_obj = customer.current_company -%}
             {%- assign current_loc = customer.current_location -%}
             {%- if current_loc -%}
                 {%- assign addr = current_loc.shipping_address | default: current_loc.billing_address -%}
@@ -24,7 +22,7 @@
                     <p><em>No address found on the current location.</em></p>
                 {%- endif -%}
 
-                {% comment %}{% endcomment %}
+                {% comment %}
                 <strong>Location Payment Terms: </strong>
                     {%- if current_loc.payment_terms -%}
                         {{ current_loc.payment_terms.description | default: current_loc.payment_terms.type }}
@@ -37,7 +35,7 @@
                     {%- else -%}
                         <em>None / due at checkout</em>
                     {%- endif -%}
-
+                {% endcomment %}
             {%- else -%}
                 <p><em>No current location selected. Select a location above to see address and terms.</em></p>
             {%- endif -%}
