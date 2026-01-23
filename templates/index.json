@@ -178,9 +178,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/tornado-14-auto-scrubber-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/tornado-14-auto-scrubber-bogo-mobile-banner.jpg",
-            "link": "/products/tornado-cordless-floor-scrubber",
+            "banner-lg": "shopify://shop_images/viper-as5160to-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/viper-as5160to-bogo-mobile-banner.jpg",
+            "link": "/products/viper-as5160to-walk-behind-orbital-auto-scrubber",
             "coupon-code": ""
           }
         },
@@ -190,19 +190,18 @@
             "show_on": "b2b",
             "banner-lg": "shopify://shop_images/b2b-welcome-banner-1400x350-2.jpg",
             "banner-sm": "shopify://shop_images/b2b-welcome-banner-800x427-2.jpg",
-            "link": "/pages/about-us",
+            "link": "/pages/b2b-product-list-quick-order",
             "coupon-code": ""
           }
         },
         "banner_Hera6c": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/buffer-10-percent-off-offer-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/buffer-10-percent-off-offer-mobile-banner.jpg",
-            "link": "/collections/floor-buffers",
-            "coupon-code": "BUFFER10"
+            "banner-lg": "shopify://shop_images/2026-advantage-20-save-500-promo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/2026-advantage-20-save-500-promo-mobile-banner.jpg",
+            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "coupon-code": ""
           }
         }
       },
