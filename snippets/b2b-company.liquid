@@ -1,0 +1,96 @@
+
+{%- if customer and customer.b2b?-%}
+    <div class="b2b-summary">
+        <div class="b2b-current">
+            <h2>Current Customer</h2>
+            <strong>Name:</strong> {{ customer.name }}<br/>
+            <strong>Email:</strong> {{ customer.email }}
+
+            <h2>Location Address</h2>
+            {%- assign company_obj = customer.current_company -%}
+            {%- assign current_loc = customer.current_location -%}
+            {%- if current_loc -%}
+                {%- assign addr = current_loc.shipping_address | default: current_loc.billing_address -%}
+                {%- if addr -%}
+
+                        {{ addr.address1 }}{% if addr.address2 != blank %}, {{ addr.address2 }}{% endif %}<br>
+                        {{ addr.city }}, {{ addr.province }} {{ addr.zip }}<br>
+                        {{ addr.country }}<br>
+                        {%- if addr.phone != blank -%}{{ addr.phone }}<br>{%- endif -%}
+
+                {%- else -%}
+                    <p><em>No address found on the current location.</em></p>
+                {%- endif -%}
+
+                {% comment %}
+                <strong>Location Payment Terms: </strong>
+                    {%- if current_loc.payment_terms -%}
+                        {{ current_loc.payment_terms.description | default: current_loc.payment_terms.type }}
+                        {%- if current_loc.payment_terms.due_in_days -%}
+                            (Due in {{ current_loc.payment_terms.due_in_days }} days)
+                        {%- endif -%}
+                        {%- if current_loc.payment_terms.fixed_due_date -%}
+                            (Due {{ current_loc.payment_terms.fixed_due_date }})
+                        {%- endif -%}
+                    {%- else -%}
+                        <em>None / due at checkout</em>
+                    {%- endif -%}
+                {% endcomment %}
+            {%- else -%}
+                <p><em>No current location selected. Select a location above to see address and terms.</em></p>
+            {%- endif -%}
+        </div>
+        <div class="b2b-available-loc">
+
+            <h2>Available Locations</h2>
+
+            {%- if customer.company_available_locations_count and customer.company_available_locations_count > 0 -%}
+                <ul>
+                    {%- for loc in customer.company_available_locations -%}
+                        <li style="margin-bottom: 1rem;">
+                            <strong>{{ loc.name }}</strong> {% if current_loc and loc.id == current_loc.id and customer.company_available_locations.size > 1 %} <em>(current)</em>{% endif %}<br>
+                            {%- assign loc_addr = loc.shipping_address | default: loc.billing_address -%}
+                            {%- if loc_addr -%}
+                                {{ loc_addr.address1 }}{% if loc_addr.address2 != blank %}, {{ loc_addr.address2 }}{% endif %}<br>
+                                {{ loc_addr.city }}, {{ loc_addr.province }} {{ loc_addr.zip }}<br>
+                                {{ loc_addr.country }}<br>
+                                {%- if loc_addr.phone != blank -%}{{ loc_addr.phone }}<br>{%- endif -%}
+                            {%- else -%}
+                                <em>No address on this location.</em>
+                            {%- endif -%}
+
+                            {% comment %}
+                                <div>
+                                    <strong>Payment terms:</strong>
+                                    {% if loc.payment_terms %}
+                                        {{ loc.payment_terms.description | default: loc.payment_terms.type }}
+                                        {% if loc.payment_terms.due_in_days %}
+                                            (Due in {{ loc.payment_terms.due_in_days }} days)
+                                        {%- endif -%}
+                                        {% if loc.payment_terms.fixed_due_date %}
+                                            (Due {{ loc.payment_terms.fixed_due_date }})
+                                        {%- endif -%}
+                                    {% else %}
+                                        <em>None / Due at checkout</em>
+                                    {% endif %}
+                                </div>
+                            {% endcomment %}
+
+                            {%- unless current_loc and loc.id == current_loc.id -%}
+                                <div style="margin-top: .25rem;">
+                                    <a href="{{ loc.url_to_set_as_current }}">Set as current</a>
+                                </div>
+                            {%- endunless -%}
+                        </li>
+                    {%- endfor -%}
+                </ul>
+            {%- else -%}
+                <p><em>No available locations found.</em></p>
+            {%- endif -%}
+        </div>
+    </div>
+{%- else -%}
+    <p><em>No customer logged in.</em></p>
+{%- endif -%}
+
+
