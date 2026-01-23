@@ -1,0 +1,92 @@
+
+{%- comment -%}
+  B2B Company Summary + Location Selector
+  Save as: snippets/b2b-company-summary.liquid
+  Include with: {% render 'b2b-company-summary' %}
+
+  What it does:
+  - Shows customer name/email
+  - Shows current company + "company address" based on current location
+  - Shows a B2B location selector (sets active location using url_to_set_as_current)
+  - Lists ALL available locations for the logged-in B2B customer (even if none is selected)
+  - Shows payment terms per location (terms are location-based)
+  - Loops company metafield custom.company_products (expected list.product) and prints
+    product handle/title + variant SKUs
+{%- endcomment -%}
+
+{%- assign company_obj = customer.current_company -%}
+{%- assign product-count = 0 -%}
+
+{%- assign catalogname = "Tim's Test Catalog Pricing" -%}
+{%- assign catalog_name = customer.current_location.metafields.custom.company_location_catalog_name.value -%}
+
+{%- assign catalog_name_arr = catalog_name | split: "::" -%}
+
+<h2>Your Catalog <span class="product-count"></span></h2>
+<div class="b2b-company-product-list">
+
+
+    {% for catalog_name_ea in catalog_name_arr %}
+        {% assign catalognamesearch = catalog_name_ea | url_encode %}
+        <div style="display:none">Index Name: {{ catalognamesearch }}</div>
+        <div class="b2b-collection-ajax" data-caturl="{{ catalognamesearch }}"><div style="padding:30px 0 30px 0">Loading Catalog...</div></div>
+    {% endfor %}
+
+
+<div class="list-atc-container">
+    <div class="add-selected productitem--action-atc main-atc-button b2b-atc-btn" tabindex="0" data-b2blist-productlist-atc >
+        <span class="atc-button--text"><span class="atc-plus">+</span>Add Selected</span>
+        <span class="atc-button--icon">{%- render 'icon-spinner' -%}</span>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+{% comment %}
+<script>
+    $(document).ready(function() {
+        $(".b2b-company-product-list .b2b-collection-ajax").each(async function () {
+
+            var $el = $(this);
+            var filter = $el.data('caturl');
+
+            var params = new URLSearchParams(window.location.search);
+            var productType = encodeURIComponent(params.get("product_type"));
+
+            let finalresponse = "";
+
+            for (let page = 1; page <= 4; page++) {
+                if(productType == "null"){
+                    var fetchUrl = `${window.Theme.routes.all_products_collection_url}?view=b2b-list-ajax&page=${page}&filter.p.m.plytix.b2b_catalogs_list=${filter}`;
+                }else{
+                    var fetchUrl = `${window.Theme.routes.all_products_collection_url}?view=b2b-list-ajax&page=${page}&filter.p.m.plytix.b2b_catalogs_list=${filter}&filter.p.product_type=${productType}`;
+                }
+
+                try {
+                    const response = await $.get(fetchUrl);
+
+                    if (response && response.includes("returned-product")) {
+                        $(".parts-data-area .loading-text").hide();
+                        finalresponse += response;
+                    }
+                } catch (err) {
+                    console.log(`Error loading page ${page}`, err);
+                }
+            }
+
+            // Only update HTML once ALL pages are fetched
+            $el.html(finalresponse);
+        });
+
+    });
+</script>
+
+{% endcomment %}
+
+

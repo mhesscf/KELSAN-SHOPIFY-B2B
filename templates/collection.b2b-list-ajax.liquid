@@ -1,0 +1,29 @@
+{%- layout none -%}
+
+
+
+
+
+{% comment %}
+notes:
+call url like below for filtering
+https://b2b-dev.cleanfreak.com/collections/all?filter.p.m.plytix.b2b_catalogs_list=Test+Catalog+1&filter.p.m.plytix.b2b_catalogs_list=Test+Catalog2
+and
+https://b2b-dev.cleanfreak.com/collections/all?filter.p.m.plytix.b2b_catalogs_list=Tim%27s+Test+Catalog+Pricing
+be sure to update pages for each call
+{% endcomment %}
+
+<div style="display:none"><h2>new page</h2></div>
+
+    {% assign productcount = 0 %}
+    {% paginate collection.products by 250 %}
+        {% comment %}change back to 250{% endcomment %}
+        {% comment %}we are calling this 4 times to equal 1000 records{% endcomment %}
+        {% for product in collection.products %}
+                {% render 'b2b-company-product-row', thisproduct: product %}
+                {% assign productcount = productcount | plus: 1 %}
+        {% endfor %}
+    {% endpaginate %}
+
+<span data-productcount="{{ productcount }}" style="display:none;"></span>
+
