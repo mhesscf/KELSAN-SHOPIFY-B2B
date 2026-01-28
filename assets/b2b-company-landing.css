@@ -11,7 +11,7 @@
 
 .b2b-company-landing .b2b-left-col .left-top-fix{
     position: sticky;
-    top: 0;                        /* change if you have a fixed header (see below) */
+    top: 100px;                        /* change if you have a fixed header (see below) */
     align-self: start;
 }
 .b2b-company-landing .b2b-right-col{
