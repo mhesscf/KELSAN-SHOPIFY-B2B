@@ -218,9 +218,9 @@ function b2blistscripts(){
             $(this).find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
 
 
-            $thisproduct.find('.atc-button--text').hide();
-            $thisproduct.find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
-            $thisproduct.find('.productitem--action-atc').addClass("loading");
+            // $thisproduct.find('.atc-button--text').hide();
+            // $thisproduct.find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
+            // $thisproduct.find('.productitem--action-atc').addClass("loading");
             $('.productitem--action-atc:not(.loading,.loaded)').addClass("disabled");
 
 
@@ -327,6 +327,7 @@ function b2blistscripts(){
                 }
                 $(this).find('.atc-button--text').show();
                 $(this).find('.atc-button--icon').css({"visibility": "hidden", "opacity": "0"});
+                $('.productitem--action-atc:not(.loading,.loaded)').removeClass("disabled");
             }
         })
     }
