@@ -85,7 +85,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Heavy-Duty Cleaning, Hefty Savings.</div>\n<h1>CleanFreak® 17\" Heavy Duty Floor Buffer w/ Pad Driver</h1>\n<div>Was: $899.99<br/>Now: $799.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\nmargin-top:8px;\nmax-height:336px;\n}\n\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1{\nfont-size:28px;\n}",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\nmargin-top:8px;\nmargin-right:150px;\nmax-height:336px;\n}\n\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1-off{\nfont-size:48px;\n}",
             "bg_link": "/products/17-inch-rotary-floor-buffer",
             "promo_link": "",
             "button_one_label": "Save $100",
