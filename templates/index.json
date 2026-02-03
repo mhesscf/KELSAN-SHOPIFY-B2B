@@ -55,21 +55,20 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "12",
+            "sotm_icon": "2",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
-            "middle_image": "/cdn/shop/files/tpl-12-100-ce-tcp-special.png?v=17333236204",
-            "middle_image_alt": "Trusted Clean 'Deluxe' Non-Heated 12-Gallon Box Extractor w/ 12\" Wand & 25' Hose Special of the Month",
+            "middle_image": "/cdn/shop/files/cpl-18vac-24sq-special.png",
+            "middle_image_alt": "Trusted Clean 'Quench' Wet Push Vacuum Special of the Month",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Deluxe Power at a Discounted Price.</div>\n<h1>Trusted Clean 'Deluxe' Non-Heated 12-Gallon Box Extractor</h1>\n<div>Was: $2,089.99<br/> Now: $1,799.99</div>",
+            "text_area_html": "<div class=\"top-text\">Quench Spills, Capture Deals!</div>\n<h1>Trusted Clean 'Quench' Wet Push Vacuum - 18 Gallons</h1>\n<div>Was: $924.99<br/>Now: $824.99</div>",
             "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\nmargin-top:8px;\nmax-height:336px;\nmargin-left: -34px;\n}\n\n.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz h1{\nfont-size:28px;\n}",
-            "bg_link": "/products/non-heated-12-gallon-box-extractor",
+            "bg_link": "/products/trusted-clean-quench-wet-push-vacuum",
             "promo_link": "",
-            "button_one_label": "Save $290",
-            "button_one_link": "/products/non-heated-12-gallon-box-extractor",
+            "button_one_label": "Save $100",
+            "button_one_link": "/products/trusted-clean-quench-wet-push-vacuum",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -77,21 +76,20 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "12",
+            "sotm_icon": "2",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/tpl-bk-20-tc-special.png?v=17333262",
-            "middle_image_alt": "Trusted Clean 20\" Commercial Grade Floor Buffer w/ Pad Driver Special",
+            "middle_image": "/cdn/shop/files/cpl-225fp-17-rh-cf-special.png",
+            "middle_image_alt": "CleanFreak® 17\" Heavy Duty Floor Buffer w/ Pad Driver Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Flawless Floors, Festive Savings!</div>\n<h1>Trusted Clean 20\" Commercial Grade Floor Buffer</h1>\n<div>Was: $1,024.99<br/> Now: $849.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\nmargin-top:8px;\nmax-height:336px;\n}\n\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1{\nfont-size:28px;\n}",
-            "bg_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "text_area_html": "<div class=\"top-text\">Heavy-Duty Cleaning, Hefty Savings.</div>\n<h1>CleanFreak® 17\" Heavy Duty Floor Buffer w/ Pad Driver</h1>\n<div>Was: $899.99<br/>Now: $799.99</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\nmargin-top:8px;\nmargin-right:150px;\nmax-height:336px;\n}\n\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1-off{\nfont-size:48px;\n}",
+            "bg_link": "/products/17-inch-rotary-floor-buffer",
             "promo_link": "",
-            "button_one_label": "Save $175",
-            "button_one_link": "/products/trusted-clean-bk-20-inch-heavy-duty-floor-buffer",
+            "button_one_label": "Save $100",
+            "button_one_link": "/products/17-inch-rotary-floor-buffer",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -99,6 +97,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "1",
@@ -120,6 +119,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "1",
@@ -188,8 +188,8 @@
           "type": "banner",
           "settings": {
             "show_on": "b2b",
-            "banner-lg": "shopify://shop_images/b2b-welcome-banner-1400x350-2.jpg",
-            "banner-sm": "shopify://shop_images/b2b-welcome-banner-800x427-2.jpg",
+            "banner-lg": "shopify://shop_images/b2b-welcome-servicemax-1400x350-3.jpg",
+            "banner-sm": "shopify://shop_images/b2b-welcome-servicemax-800x427.jpg",
             "link": "/pages/b2b-product-list-quick-order",
             "coupon-code": ""
           }
