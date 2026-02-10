@@ -158,6 +158,13 @@
 
 
 @media (max-width: 1079px){
+    .b2b-company-landing .left-top-fix h2,
+    .b2b-company-landing #product-type-links{
+        display:none;
+        padding:0;
+        margin:0;
+    }
+    
     .b2b-company-landing{
         display:block;
     }
@@ -199,14 +206,6 @@
 }
 
 @media (max-width: 719px){
-
-    .b2b-company-landing .left-top-fix h2,
-    .b2b-company-landing #product-type-links{
-        display:none;
-        padding:0;
-        margin:0;
-    }
-
     /* Outer row */
     .b2b-company-landing .returned-product{
         display: flex;
