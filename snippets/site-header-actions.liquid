@@ -8,13 +8,27 @@
                 </a>
             </li>
         {% else %}
-            <li class="site-header-actions__account-link account-log_in_out">
-                <i class="fa-regular fa-user"></i>
-                <span class="site-header__account-links">
-         <a href="{{ routes.account_url }}" class="site-header__account-link--account">{{ 'header.account.title' | t }}</a>
-         <a href="{{ routes.account_logout_url }}" class="site-header__account-link--logout" data-no-instant style="display: none;">{{ 'header.account.logout' | t }}</a>
-        </span>
-            </li>
+
+
+            {%- if shop.name contains "CleanFreak B2B"-%}
+
+                {%- assign b2blinklanding = "/pages/b2b-product-list-quick-order" -%}
+                <li class="site-header-actions__account-link account-log_in_out">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="site-header__account-links">
+                     <a href="{{ b2blinklanding }}" class="site-header__account-link--account">Your Account</a>
+                     <a href="{{ routes.account_logout_url }}" class="site-header__account-link--logout" data-no-instant style="display: none;">{{ 'header.account.logout' | t }}</a>
+                    </span>
+                </li>
+            {% else %}
+                <li class="site-header-actions__account-link account-log_in_out">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="site-header__account-links">
+                     <a href="{{ routes.account_url }}" class="site-header__account-link--account">{{ 'header.account.title' | t }}</a>
+                     <a href="{{ routes.account_logout_url }}" class="site-header__account-link--logout" data-no-instant style="display: none;">{{ 'header.account.logout' | t }}</a>
+                    </span>
+                </li>
+            {% endif %}
         {% endunless %}
     {% endif %}
 

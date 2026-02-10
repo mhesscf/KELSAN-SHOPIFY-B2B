@@ -2,12 +2,15 @@
 {%- if customer and customer.b2b?-%}
     <div class="b2b-summary">
         <div class="b2b-current">
-            <h2>Current Customer</h2>
-            <strong>Name:</strong> {{ customer.name }}<br/>
-            <strong>Email:</strong> {{ customer.email }}
-
-            <h2>Location Address</h2>
             {%- assign company_obj = customer.current_company -%}
+
+            <h2>Customer</h2>
+            <strong>Name:</strong> {{ customer.name }}<br/>
+            <strong>Email:</strong> {{ customer.email }}<br/>
+            <a href="{{ routes.account_url }}">Edit <i class="fa-sharp fa-solid fa-caret-right"></i></a>
+            <h2>Company</h2>
+            {{ customer.current_company.name }}
+            <h2>Location Address</h2>
             {%- assign current_loc = customer.current_location -%}
             {%- if current_loc -%}
                 {%- assign addr = current_loc.shipping_address | default: current_loc.billing_address -%}
@@ -22,7 +25,7 @@
                     <p><em>No address found on the current location.</em></p>
                 {%- endif -%}
 
-                {% comment %}
+                {% comment %}{% endcomment %}
                 <strong>Location Payment Terms: </strong>
                     {%- if current_loc.payment_terms -%}
                         {{ current_loc.payment_terms.description | default: current_loc.payment_terms.type }}
@@ -35,10 +38,26 @@
                     {%- else -%}
                         <em>None / due at checkout</em>
                     {%- endif -%}
-                {% endcomment %}
+
             {%- else -%}
                 <p><em>No current location selected. Select a location above to see address and terms.</em></p>
             {%- endif -%}
+
+            <h2>Orders</h2>
+            <a href="{{ routes.account_url }}">View Orders <i class="fa-sharp fa-solid fa-caret-right"></i></a>
+
+            <h2>Request New User</h2>
+            <div class="request-container">
+                <div class="newuser-link">
+                    <div class="fake-link"><span>View Form</span> <i class="fa-sharp fa-solid fa-caret-right"></i></div>
+                </div>
+
+                <div class="request-forms" style="display:none">
+                    <iframe height="380" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x4feh3q0jz6oou?Field1={{ customer.email }}"> <a href="https://jbutchpti.wufoo.com/forms/x4feh3q0jz6oou?Field1={{ customer.email }}">Fill out my Wufoo form!</a> </iframe>
+                </div>
+            </div>
+
+
         </div>
         <div class="b2b-available-loc">
 
@@ -87,10 +106,43 @@
             {%- else -%}
                 <p><em>No available locations found.</em></p>
             {%- endif -%}
+
+
+            <h2>New Location Request</h2>
+            <div class="request-container">
+                <div class="newuser-link">
+                    <div class="fake-link"><span>View Form</span> <i class="fa-sharp fa-solid fa-caret-right"></i></div>
+                </div>
+
+                <div class="request-forms" style="display:none">
+                    <iframe height="628" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/k1kwq43j1wxetk9/"> <a href="https://jbutchpti.wufoo.com/forms/k1kwq43j1wxetk9/">Fill out my Wufoo form!</a> </iframe>
+                </div>
+            </div>
         </div>
+
+
+
     </div>
 {%- else -%}
     <p><em>No customer logged in.</em></p>
 {%- endif -%}
 
 
+<script>
+    $(function () {
+        $('.fake-link').on('click', function () {
+            var $toggle = $(this);
+            var $container = $toggle.closest('.request-container');
+            var $form = $container.find('.request-forms');
+            var $label = $toggle.find('span');
+
+            if ($form.is(':visible')) {
+                $form.slideUp(200);
+                $label.text('View Form');
+            } else {
+                $form.slideDown(200);
+                $label.text('Hide Form');
+            }
+        });
+    });
+</script>

@@ -640,8 +640,32 @@
                 </button>
               </div>
             {%- endif -%}
- 
-            {%- if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.show_quote == "true" or view_product_btn_override or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
+
+
+            {%- assign showatc = "true" -%}
+            {%- if shop.name contains "CleanFreak B2B" -%}
+              {% if customer and customer.current_company %}
+                {% if customer.current_company.metafields.custom.hide_add_to_cart_for_non_catalog_items.value %}
+                  {% comment %}if enabled, hide atc unless the product is in their catalog{% endcomment %}
+
+                  {%- assign showatc = "request" -%}
+                  {%- assign catalog_name = customer.current_location.metafields.custom.company_location_catalog_name.value -%}
+                  {%- assign comany_catalog_name_arr = customer.current_location.metafields.custom.company_location_catalog_name.value | split: "::" -%}
+
+                  {% for catalog_name_ea in comany_catalog_name_arr %}
+                    {% for catalogs in product.metafields.plytix.b2b_catalogs_list.value %}
+                      {% if catalogs == catalog_name_ea %}
+                        {%- assign showatc = "true" -%}
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+
+                {% endif %}
+              {% endif %}
+            {%- endif-%}
+
+
+            {%- if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.show_quote == "true" or view_product_btn_override or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' or  showatc == "request" -%}
               <div class="productitem--action viewproduct"><a class="" href="{{ product_link }}" onclick="{{ onclick_event }}" ><button class="productitem--action-trigger productitem--action main-atc-button thinbtn"><span class="atc-button--text">View Product <i class="fa-sharp fa-solid fa-caret-right"></i></span></button></a></div>
             {%- else -%}
               {%- if atc_button -%}

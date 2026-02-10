@@ -31,10 +31,19 @@
 }
 
 
-.b2b-company-landing .b2b-summary .b2b-available-loc{
+.b2b-company-landing .b2b-summary .b2b-available-loc ul{
     flex-basis:35%;
     font-size:14px;
 }
+
+
+.b2b-company-landing .request-container .request-forms{
+    border-top:1px solid #ccc;
+    padding-top:15px;
+    margin-top:15px;
+    margin: 15px 30px 15px 0px;
+}
+
 
 .b2b-company-landing .returned-product{
     border-top:1px solid #ccc;
@@ -145,4 +154,170 @@
     color:#d74018;
     font-size:14px;
     margin-top:-6px;
+}
+
+
+@media (max-width: 1079px){
+    .b2b-company-landing{
+        display:block;
+    }
+    .b2b-company-landing .b2b-left-col,
+    .b2b-company-landing .b2b-right-col{
+        width:100%;
+        padding: 10px;
+    }
+
+    .b2b-company-landing .left-top-fix-off{
+        display:none;
+    }
+
+    .b2b-company-landing .b2b-left-col .left-top-fix{
+        position: relative;
+        top: 0px;
+    }
+
+    .b2b-company-landing .list-atc-container{
+        display:none;
+    }
+    .b2b-company-landing .list-atc-container.bottomfix{
+        display:block;
+        position: fixed;
+        bottom:50px;
+        left:50%;
+        margin-left:-150px;
+        max-width: 300px;
+        width:300px;
+        z-index: 99;
+    }
+    .b2b-company-landing .list-atc-container .b2b-atc-btn{
+        -webkit-box-shadow: 2px 2px 5px 2px #FFFFFF;
+        box-shadow: 2px 2px 5px 2px #FFFFFF;
+
+    }
+
+
+}
+
+@media (max-width: 719px){
+
+    .b2b-company-landing .left-top-fix h2,
+    .b2b-company-landing #product-type-links{
+        display:none;
+        padding:0;
+        margin:0;
+    }
+
+    /* Outer row */
+    .b2b-company-landing .returned-product{
+        display: flex;
+        flex-wrap: wrap;          /* allows title to be row 1, others row 2 */
+        align-items: stretch;     /* left columns stretch to match right-side height */
+        gap: 0;                /* spacing between boxes */
+    }
+
+    /* Optional: make each "box" look like your diagram */
+    .b2b-company-landing .returned-product > .b2b-col{
+        padding: 5px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    /* Left two skinny columns */
+    .b2b-company-landing .returned-product .b2b-product-check,
+    .b2b-company-landing .returned-product .b2b-product-image{
+        flex: 0 0 60px;           /* fixed width columns */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Right side: row 1 (title) spans full remaining width */
+    .b2b-company-landing .returned-product .b2b-product-title{
+        flex: 1 1 calc(100% - (60px * 2) - (12px * 2));
+        order: 1;
+    }
+
+    .b2b-company-landing .returned-product .b2b-col.b2b-product-price,
+    .b2b-company-landing .returned-product .b2b-col.b2b-atc-btn{
+        flex: 0 0 150px;
+        min-width:150px;
+    }
+
+    .b2b-company-landing .returned-product .b2b-product-price{
+        min-width: 160px;
+        order: 2;
+    }
+
+
+    .b2b-company-landing .returned-product .b2b-atc-btn{
+        order: 2;
+        padding:0;
+        margin:0;
+    }
+
+    .b2b-company-landing .returned-product .b2b-col.b2b-product-qty{
+        flex: 1 1 calc(100% - 160px);
+        /* remaining width divided into 3, accounting for gaps */
+        min-width: 160px;
+        order: 2;
+        align-items:end;
+    }
+
+    /* Keep these in the first flex positions (left side) */
+    .b2b-company-landing .returned-product .b2b-product-check{ order: 0; }
+    .b2b-company-landing .returned-product .b2b-product-image{ order: 0; }
+
+    /* Nice alignment inside qty + button (optional) */
+    .b2b-company-landing .returned-product .b2b-product-qty{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .b2b-company-landing .returned-product .b2b-atc-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}
+
+@media (max-width: 479px){
+
+    .b2b-company-landing .b2b-summary{
+        display:block;
+    }
+
+    .b2b-company-landing .returned-product .b2b-col.b2b-product-price{
+        flex-basis: 100%;
+    }
+
+    .b2b-company-landing .returned-product .b2b-col.b2b-product-price .price.productitem__price{
+        margin:0;
+    }
+    .b2b-company-landing .returned-product .b2b-col.b2b-product-qty{
+        flex-basis:50%;
+        max-width:150px;
+        min-width:unset;
+    }
+    .b2b-company-landing .returned-product .b2b-col.b2b-atc-btn{
+        flex-basis:50%;
+        max-width:150px;
+        min-width:unset;
+    }
+
+
+}
+
+@media (max-width: 450px){
+    .b2b-company-landing .returned-product .b2b-col.b2b-product-qty{
+        flex: unset;
+        margin-left:20%
+    }
+    .b2b-company-landing .returned-product .b2b-col.b2b-atc-btn{
+        flex: unset;
+    }
+
+
 }
