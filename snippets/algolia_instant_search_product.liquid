@@ -350,6 +350,42 @@
 
     }
 
+    function contractcheck(catalogs) {
+        var foundcatalog = false;
+        const catalogArray = JSON.parse(catalogs);
+
+        {%- assign catalog_name = "" -%}
+        {% if customer and customer.current_company %}
+        {%- assign catalog_name = customer.current_location.metafields.custom.company_location_catalog_name -%}
+        {% endif %}
+
+        const companycatalogs = {{ catalog_name | json }};
+
+        // alert(companycatalogs);
+        // handle bad input gracefully
+        const normalized = catalogArray.length === 1
+            ? catalogArray[0].split(',')
+            : catalogArray;
+
+        normalized.forEach(catalog => {
+
+            const companycatalogsarr = companycatalogs.split("::").map(c => c.trim());
+
+            companycatalogsarr.forEach(companycatalog => {
+                if (companycatalog.trim() == catalog.trim()){
+                 foundcatalog = true;
+                };
+                //console.log(catalog +"/"+ companycatalog);
+            });
+
+        });
+
+        return foundcatalog;
+    }
+
+
+
+
     (function(algolia) {
         'use strict';
 
@@ -585,18 +621,22 @@
              ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"bool") ? html `
                  ${hit.tags.includes("BOGO Deal") ? html `<div class="deal-rib bogo"><img class="img-responsive" src="{{ 'bogo-icon.png' | file_img_url: '260x' }}" alt="On Sale" /></div>`: html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="On Sale" /></div>`}
             `: ``}
+
+
                     {%- if shop.name contains "CleanFreak B2B"-%}
-                        <div class="price__compare-at-visible-2 cf-price-label">
-                            <div class="">CleanFreak Price:</div>
-                        </div>
-                    {%- endif -%}
-                    ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                        ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
-                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
-                                <div class="strikeprice">${numberScrub(hit.compare_at_price)}</div>
-                            </div>`:''}
+                    {%- comment -%}Hide strikethrough{%- endcomment -%}
+                    {%- else -%}
+
+                       ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                            ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
+                                ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2 strikethrough">
+                                    <div class="strikeprice">${numberScrub(hit.compare_at_price)}</div>
+                                </div>`:''}
+                            ` : html ``}
                         ` : html ``}
-                    ` : html ``}
+
+                    {%- endif -%}
+
 
                 <p class="ais-hit--price productitem__price ">
                     <meta itemprop="availability" content="http://schema.org/InStock" />
@@ -613,13 +653,23 @@
                         {%- comment -%}${algolia.helpers.displayPrice(hit, hit._distinct)}{%- endcomment -%}
                         </span>
                     </div>
-                    ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                        ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
-                            ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
-                                <div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.compare_at_price)}</div>
-                            </div>`:''}
+
+
+                    {%- if shop.name contains "CleanFreak B2B"-%}
+                        {%- comment -%}Check for catalog adn {%- endcomment -%}
+                        ${contractcheck(hit.meta.plytix.b2b_catalogs_list) ? html `<div class="special_pricing_notice">View product page for<br/>contract price.</div>` : html ``}
+                    {%- else -%}
+
+                        ${showPrice(hit.meta.plytix.hide_pricing) ? html `
+                            ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
+                                ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html `<div class="price__compare-at-visible-2">
+                                    <div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.compare_at_price)}</div>
+                                </div>`:''}
+                            ` : html ``}
                         ` : html ``}
-                    ` : html ``}
+
+                    {%- endif -%}
+
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-striked"><span>${algolia.helpers.displayStrikedPrice(hit.price, hit.compare_at_price)}</span></span>`}{%- endcomment -%}
 {%- comment -%}${!hit._distinct && html`<span class="ais-hit--price-discount">${algolia.helpers.displayDiscount(hit.price, hit.compare_at_price, hit.price_ratio)}</span>`}{%- endcomment -%}
 </p>
