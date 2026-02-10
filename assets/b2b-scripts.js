@@ -415,3 +415,23 @@ function loadfilters(){
 
     $('#product-type-links').html(linksHtml);
 }
+
+
+
+$(document).ready(function () {
+    const triggerEl = document.querySelector('.b2b-company-products-container');
+    const targetEl  = document.querySelector('.list-atc-container');
+
+    if (triggerEl && targetEl) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                targetEl.classList.toggle('bottomfix', entry.isIntersecting);
+            });
+        }, {
+            threshold: 0.1 // adjust visibility % if needed
+        });
+
+        observer.observe(triggerEl);
+    }
+
+});

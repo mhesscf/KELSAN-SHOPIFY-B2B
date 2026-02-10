@@ -679,10 +679,38 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                  data-tieredPricing=""/>
         </div>
 
+        {%- assign showatc = "true" -%}
+        {%- if shop.name contains "CleanFreak B2B" -%}
+          {% if customer and customer.current_company %}
+            {% if customer.current_company.metafields.custom.hide_add_to_cart_for_non_catalog_items.value %}
+              {% comment %}if enabled, hide atc unless the product is in their catalog{% endcomment %}
 
+              {%- assign showatc = "request" -%}
+              {%- assign catalog_name = customer.current_location.metafields.custom.company_location_catalog_name.value -%}
+              {%- assign comany_catalog_name_arr = customer.current_location.metafields.custom.company_location_catalog_name.value | split: "::" -%}
 
+              {% for catalog_name_ea in comany_catalog_name_arr %}
+                {% for catalogs in product.metafields.plytix.b2b_catalogs_list.value %}
+                  {% if catalogs == catalog_name_ea %}
+                    {%- assign showatc = "true" -%}
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
 
-        {%- if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" -%}
+            {% endif %}
+          {% endif %}
+
+          {%- if showatc == "request" -%}
+            <button class="product-form--atc-button main-atc-button request-btn">
+              <span class="atc-button--text">
+                Request Item
+              </span>
+            </button>
+          {%- endif-%}
+
+        {%- endif-%}
+
+        {%- if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" and showatc == "true" -%}
 
           {%
                   render 'warning-pop',

@@ -28,7 +28,7 @@
    {%- endcomment -%}
 
     {%- assign productpage = 0 -%}
-    {%- if template contains 'product' -%}
+    {%- if template contains 'product.' or template == 'product' -%}
         {%- assign productpage = 1 -%}
         {%- capture product_url_string -%}
             {%- for collection in product.collections -%}
@@ -714,7 +714,7 @@
         {%- if finalbread -%}
             {{finalbread}}
         {%- else -%}
-            {%- if template contains 'product' -%}
+            {%- if template contains 'product.' or template == 'product' -%}
 
                 <span class="product-bread" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <span title="home" itemscope itemtype="https://schema.org/WebPage" itemprop="item" ><span itemprop="name">
