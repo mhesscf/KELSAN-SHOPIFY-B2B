@@ -189,7 +189,7 @@
             "show_on": "b2b",
             "banner-lg": "shopify://shop_images/b2b-welcome-servicemax-1400x350-3.jpg",
             "banner-sm": "shopify://shop_images/b2b-welcome-servicemax-800x427.jpg",
-            "link": "/pages/b2b-product-list-quick-order",
+            "link": "/pages/product-list-quick-order",
             "coupon-code": ""
           }
         },
