@@ -377,7 +377,7 @@ function loadfiltersoff(){
         const linksHtml = uniqueSorted
             .map(value => {
                 const encodedValue = encodeURIComponent(value);
-                return `<li><a href="/pages/b2b-product-list-quick-order?product_type=${encodedValue}">${value}</a></li>`;
+                return `<li><a href="/pages/product-list-quick-order?product_type=${encodedValue}">${value}</a></li>`;
             })
             .join('');
 
@@ -405,11 +405,11 @@ function loadfilters(){
         .map(value => {
             // Special-case the "All Products" link
             if (value === 'All Products') {
-                return `<li><a href="/pages/b2b-product-list-quick-order">All Products</a></li>`;
+                return `<li><a href="/pages/product-list-quick-order">All Products</a></li>`;
             }
 
             const encodedValue = encodeURIComponent(value);
-            return `<li><a href="/pages/b2b-product-list-quick-order?product_type=${encodedValue}">${value}</a></li>`;
+            return `<li><a href="/pages/product-list-quick-order?product_type=${encodedValue}">${value}</a></li>`;
         })
         .join('');
 
