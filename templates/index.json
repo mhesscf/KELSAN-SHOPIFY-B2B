@@ -44,12 +44,11 @@
         },
         "banner_qaQPaP": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-ryicf-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-ryicf-mobile-banner.jpg",
-            "link": "/pages/release-your-inner-cleanfreak",
+            "banner-lg": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-mobile-banner.jpg",
+            "link": "/collections/box-extractors",
             "coupon-code": ""
           }
         },
@@ -190,7 +189,7 @@
             "show_on": "b2b",
             "banner-lg": "shopify://shop_images/b2b-welcome-servicemax-1400x350-3.jpg",
             "banner-sm": "shopify://shop_images/b2b-welcome-servicemax-800x427.jpg",
-            "link": "/pages/b2b-product-list-quick-order",
+            "link": "/pages/product-list-quick-order",
             "coupon-code": ""
           }
         },
