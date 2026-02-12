@@ -14,12 +14,11 @@
       "blocks": {
         "banner_fqqLW6": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-national-carpet-cleaning-month-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-national-carpet-cleaning-month-mobile-banner.jpg",
-            "link": "/collections/box-extractors?refinementList[tags][0]=Free Gift Sale",
+            "banner-lg": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-mobile-banner.jpg",
+            "link": "/collections/box-extractors",
             "coupon-code": ""
           }
         },
