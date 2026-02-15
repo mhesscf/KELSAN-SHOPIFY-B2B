@@ -177,9 +177,9 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/viper-as5160to-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/viper-as5160to-bogo-mobile-banner.jpg",
-            "link": "/products/viper-as5160to-walk-behind-orbital-auto-scrubber",
+            "banner-lg": "shopify://shop_images/ipc-eagle-gc290-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/ipc-eagle-gc290-bogo-mobile-banner.jpg",
+            "link": "/products/dual-motor-automatic-pump-out-wet-vacuum",
             "coupon-code": ""
           }
         },
