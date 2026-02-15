@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "5abbd3e1-1883-4ee8-a111-c1d18e02dd55": {
@@ -15,18 +15,19 @@
         "12b5e135-5ff0-4e2c-a065-173260b50108": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/InUse-18VAC-24SQ-Wide.jpg",
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/InUse-18VAC-24SQ-Wide.jpg",
             "cat_title": "Wet Dry Vacuums",
             "cat_text": "Shop a wide range of wet dry vacuums including auto discharge vacs, shop vacs, and tank vacs."
           }
         },
         "banner_8kenXN": {
           "type": "banner",
-          "disabled": true,
           "settings": {
-            "banner-lg": "shopify:\/\/shop_images\/wet-dry-vac-bogo-promo-homepage-banner-desktop.jpg",
-            "banner-sm": "shopify:\/\/shop_images\/wet-dry-vac-bogo-promo-homepage-banner-mobile.jpg",
-            "link": "\/products\/19-gallon-wet-dry-vac-with-front-mount-squeegee",
+            "show_on": "normal",
+            "banner-lg": "shopify://shop_images/ipc-eagle-gc290-bogo-desktop-banner.jpg",
+            "banner-sm": "shopify://shop_images/ipc-eagle-gc290-bogo-mobile-banner.jpg",
+            "link": "/products/dual-motor-automatic-pump-out-wet-vacuum",
             "coupon-code": ""
           }
         }
@@ -139,25 +140,25 @@
         "f76a9179-2d6b-4b3c-b704-7cef22da2caa": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/auto-discharge-vacuum.jpg",
+            "image": "shopify://shop_images/auto-discharge-vacuum.jpg",
             "title": "Auto Discharge Vacuums",
-            "url": "\/collections\/auto-discharge-vacs"
+            "url": "/collections/auto-discharge-vacs"
           }
         },
         "8f1046a3-fccf-4f39-ad66-9ed7f099f9d2": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shop-vacuums.jpg",
+            "image": "shopify://shop_images/shop-vacuums.jpg",
             "title": "Shop Vacuums",
-            "url": "\/collections\/shop-vacuums"
+            "url": "/collections/shop-vacuums"
           }
         },
         "d2eeff6f-71a0-4f35-a799-1bb07e3e4c46": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/tank-vacuums.jpg",
+            "image": "shopify://shop_images/tank-vacuums.jpg",
             "title": "Tank Vacuums",
-            "url": "\/collections\/tank-vacuums"
+            "url": "/collections/tank-vacuums"
           }
         }
       },
@@ -176,25 +177,25 @@
         "7774c5ef-6c06-4a92-8343-354273b100d5": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-accessories-1.jpg",
+            "image": "shopify://shop_images/vacuum-accessories-1.jpg",
             "title": "Vacuum Accessories",
-            "url": "\/pages\/vacuum-accessories"
+            "url": "/pages/vacuum-accessories"
           }
         },
         "152427b3-a5ff-4fa3-8a5a-170fc16c728c": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vacuum-parts-1.jpg",
+            "image": "shopify://shop_images/vacuum-parts-1.jpg",
             "title": "Vacuum Parts",
-            "url": "\/pages\/vacuum-parts"
+            "url": "/pages/vacuum-parts"
           }
         },
         "d7201133-b17c-49c7-9221-d697dfdcec53": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/liquid-defoamer.jpg",
+            "image": "shopify://shop_images/liquid-defoamer.jpg",
             "title": "Liquid Defoamers",
-            "url": "\/collections\/liquid-defoamers"
+            "url": "/collections/liquid-defoamers"
           }
         }
       },
@@ -280,40 +281,40 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Wet Dry Vacs&q=IPC Eagle",
-            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-gs278-19-gallon-steel-tank-vacuum.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Wet Dry Vacs&q=IPC Eagle",
+            "brand-image": "shopify://shop_images/ipc-eagle-gs278-19-gallon-steel-tank-vacuum.jpg"
           }
         },
         "449280f6-4a87-402d-96a3-dc63f6cfb198": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Wet Dry Vacs&q=Trusted Clean",
-            "brand-image": "shopify:\/\/shop_images\/trusted-clean-quench-wet-dry-vacuum.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Wet Dry Vacs&q=Trusted Clean",
+            "brand-image": "shopify://shop_images/trusted-clean-quench-wet-dry-vacuum.jpg"
           }
         },
         "a70a90c7-51c8-4f84-a518-0216575fa143": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Tornado®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Wet Dry Vacs&q=Tornado",
-            "brand-image": "shopify:\/\/shop_images\/tornado-taskforce-external-filter-commercial-tank-vacuum-98995.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Wet Dry Vacs&q=Tornado",
+            "brand-image": "shopify://shop_images/tornado-taskforce-external-filter-commercial-tank-vacuum-98995.jpg"
           }
         },
         "ac90f548-5237-4ecd-a08f-5507158ef359": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Wet Dry Vacs&q=Viper",
-            "brand-image": "shopify:\/\/shop_images\/viper-shovelnose-wet-dry-vac-with-tool-kits.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Wet Dry Vacs&q=Viper",
+            "brand-image": "shopify://shop_images/viper-shovelnose-wet-dry-vac-with-tool-kits.jpg"
           }
         },
         "ef0a6513-809d-4cef-ab0a-bcf082be2bbd": {
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Wet Dry Vacs&q=ProTeam",
-            "brand-image": "shopify:\/\/shop_images\/proteam-proguard-wet-vacuum.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Wet Dry Vacs&q=ProTeam",
+            "brand-image": "shopify://shop_images/proteam-proguard-wet-vacuum.jpg"
           }
         }
       },
@@ -330,8 +331,7 @@
     },
     "trustpilot_review_carousel_eDx3eH": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
