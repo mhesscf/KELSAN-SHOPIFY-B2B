@@ -23,6 +23,7 @@
         },
         "banner_GAtNWr": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "both",
             "banner-lg": "shopify://shop_images/viper-as5160to-bogo-desktop-banner.jpg",
