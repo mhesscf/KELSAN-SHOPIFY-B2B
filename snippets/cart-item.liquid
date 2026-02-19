@@ -403,8 +403,11 @@
                 {%- if item.product.metafields.plytix.gold_medal_winner -%}
                     <li><i class="fa-duotone fa-solid fa-medal"></i> Gold Medal Winner</li>
                 {%- endif -%}
+                {%- if item.product.metafields.plytix.assembled_in_USA -%}
+                    <li><img style="margin-left:-1px; margin-bottom:-2px" width="15" height="15" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/> Assembled in USA</li>
+                {%- endif -%}
                 {%- if item.product.metafields.plytix.made_in_USA -%}
-                    <li><img style="margin-left:-1px; margin-bottom:-2px" width="15" height="15" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Made in the United States"/> Assembled in USA</li>
+                    <li><img style="margin-left:-1px; margin-bottom:-2px" width="15" height="15" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/> Made in USA</li>
                 {%- endif -%}
             </ul>
 
