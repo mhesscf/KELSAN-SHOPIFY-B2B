@@ -351,6 +351,10 @@
     }
 
     function contractcheck(catalogs) {
+        if (catalogs == undefined){
+            // mark as normal if undefined
+            return false;
+        }
         var foundcatalog = false;
         const catalogArray = JSON.parse(catalogs);
 
