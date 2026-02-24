@@ -164,13 +164,12 @@
         },
         "banner_KcaJqE": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-national-carpet-cleaning-month-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-national-carpet-cleaning-month-mobile-banner.jpg",
-            "link": "/collections/box-extractors?refinementList[tags][0]=Free Gift Sale",
-            "coupon-code": ""
+            "banner-lg": "shopify://shop_images/cf-clearance-cleanout-desktop-banner-1400-x-350.jpg",
+            "banner-sm": "shopify://shop_images/cf-clearance-cleanout-mobile-banner-800-x-427-px.jpg",
+            "link": "/collections/clearance",
+            "coupon-code": "EXTRA25"
           }
         },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
