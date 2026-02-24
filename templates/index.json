@@ -96,6 +96,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "3",
@@ -105,7 +106,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Superior Scrubbing at a Sensational Price!</div>\n<h1>Trusted Clean 'Dura 18HD' Cord Electric 18\" Automatic Floor Scrubber</h1>\n<div>Was: $1,999.99<br/>Now: $1,849.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:28px;\n}",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:27px;\nline-height:30px;\n}",
             "bg_link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
             "promo_link": "",
             "button_one_label": "Save $150",
@@ -117,6 +118,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "3",
