@@ -44,6 +44,7 @@
         },
         "banner_qaQPaP": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-desktop-banner.jpg",
