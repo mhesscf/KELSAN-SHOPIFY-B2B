@@ -44,6 +44,7 @@
         },
         "banner_qaQPaP": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-desktop-banner.jpg",
@@ -54,6 +55,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "2",
@@ -75,6 +77,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "2",
@@ -96,45 +99,43 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "1",
+            "sotm_icon": "3",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/ies-14-floor-scrubber-sotm.png?v=173335204",
-            "middle_image_alt": "CleanFreak® 14\" Reliable Walk Behind Floor Scrubber Special",
+            "middle_image": "/cdn/shop/files/tpl-dura-18hd-special.png?v=173335204",
+            "middle_image_alt": "Trusted Clean 'Dura 18HD' Cord Electric 18\" Automatic Floor Scrubber Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Reliable Results, Remarkable Savings.</div>\n<h1>CleanFreak® 14\" Reliable Walk Behind Floor Scrubber</h1>\n<div>Electric: $2,199.99 (Save $350)<br/>Battery: $2,699.99 (Save $380)</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;",
-            "bg_link": "",
+            "text_area_html": "<div class=\"top-text\">Superior Scrubbing at a Sensational Price!</div>\n<h1>Trusted Clean 'Dura 18HD' Cord Electric 18\" Automatic Floor Scrubber</h1>\n<div>Was: $1,999.99<br/>Now: $1,849.99</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:27px;\nline-height:30px;\n}",
+            "bg_link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
             "promo_link": "",
-            "button_one_label": "Electric",
-            "button_one_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315544756",
-            "button_two_label": "Battery",
-            "button_two_link": "/products/14-inch-reliable-compact-walk-behind-floor-scrubber?variant=42078315577524",
+            "button_one_label": "Save $150",
+            "button_one_link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
+            "button_two_label": "",
+            "button_two_link": "",
             "button_color_override": ""
           }
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "1",
+            "sotm_icon": "3",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/san-cf-3-special.png?v=173336204",
-            "middle_image_alt": "CleanFreak® Commercial Carpet Spot Cleaning Machine Special",
+            "middle_image": "/cdn/shop/files/tpl-bk-20-1500hs-tc-special.png?v=173336204",
+            "middle_image_alt": "Trusted Clean 20\" High Speed Floor Burnisher Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Spot On Savings.</div>\n<h1>CleanFreak® Commercial Carpet Spot Cleaning Machine</h1>\n<div>Non-Heated: $489.99 (Save $70)<br/>Heated: $849.99 (Save $120)</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\n}\n\n@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\nmargin-left:-5px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 0px auto;\n\t}\n}",
-            "bg_link": "",
+            "text_area_html": "<div class=\"top-text\">Burnishing Brilliance on a Budget!</div>\n<h1>Trusted Clean 20\" High Speed Floor Burnisher - 1,500 RPM</h1>\n<div>Was: $1,149.99<br/>Now: $999.99</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\n}\n\n@media screen and (min-width: 1279px) {\n.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .middle-image{\nmargin-top:8px;\nmargin-left:-105px;\n}\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_8YK4yh .custom-text h1{\n\t\tfont-size:33px;\n\t\tline-height:36px;\n\t}\n\n}\n\n.slideshow-slide__content {\n\tmargin: 0 auto 50px auto;\n}\n\n@media screen and (min-width: 720px) {\n\t.slideshow-slide__content {\n\t\tmargin: 0px auto;\n\t}\n}",
+            "bg_link": "/products/trusted-clean-20-inch-high-speed-burnisher-1500-rpm",
             "promo_link": "",
-            "button_one_label": "Non-Heated",
-            "button_one_link": "/products/commercial-carpet-spot-cleaning-machine",
-            "button_two_label": "Heated",
-            "button_two_link": "/products/heated-carpet-spot-cleaner",
+            "button_one_label": "Save $150",
+            "button_one_link": "/products/trusted-clean-20-inch-high-speed-burnisher-1500-rpm",
+            "button_two_label": "",
+            "button_two_link": "",
             "button_color_override": ""
           }
         },
@@ -164,13 +165,12 @@
         },
         "banner_KcaJqE": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-national-carpet-cleaning-month-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-national-carpet-cleaning-month-mobile-banner.jpg",
-            "link": "/collections/box-extractors?refinementList[tags][0]=Free Gift Sale",
-            "coupon-code": ""
+            "banner-lg": "shopify://shop_images/cf-clearance-cleanout-desktop-banner-1400-x-350.jpg",
+            "banner-sm": "shopify://shop_images/cf-clearance-cleanout-mobile-banner-800-x-427-px.jpg",
+            "link": "/collections/clearance",
+            "coupon-code": "EXTRA25"
           }
         },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
