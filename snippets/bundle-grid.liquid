@@ -54,7 +54,7 @@
                                 <meta itemprop="ratingValue" content="{{ all_products[bundlep].metafields.reviews.rating.value }}" />
                             </div>
                         {% endif %}
-                        <meta itemprop="sku" content="{{ all_products[bundlep].metafields.plytix.erp_sku }}" />
+                        <meta itemprop="sku" content="{{ all_products[bundlep].selected_or_first_available_variant.sku }}" />
                         <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
                             {%- if all_products[bundlep].price_min == all_products[bundlep].price_max -%}
                                 <meta itemprop="price" content="{{ all_products[bundlep].price | money_without_currency | remove: ',' }}" />
@@ -254,7 +254,7 @@
                                     <meta itemprop="ratingValue" content="{{ all_products[bundlep].metafields.reviews.rating.value }}" />
                                 </div>
                             {% endif %}
-                            <meta itemprop="sku" content="{{ all_products[bundlep].metafields.plytix.erp_sku }}" />
+                            <meta itemprop="sku" content="{{ all_products[bundlep].selected_or_first_available_variant.sku }}" />
 
                             <div itemprop="offers" itemtype="https://schema.org/Offer" itemscope>
                             {% comment %}test for FLR-PACKAGE10 on bing{% endcomment %}

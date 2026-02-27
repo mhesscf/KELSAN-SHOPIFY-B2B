@@ -32,7 +32,21 @@
     {% assign showfreq = false -%}
 {%- elsif product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank-%}
         {% assign showfreq = false -%}
+
+
+{%- else -%}
+
+    {%- assign showatc = "true" -%}
+    {%- if shop.name contains "CleanFreak B2B" -%}
+        {% if customer and customer.current_company %}
+            {% if customer.current_company.metafields.custom.hide_add_to_cart_for_non_catalog_items.value %}
+                {% comment %}if enabled, hide atc unless the product is in their catalog{% endcomment %}
+                {% assign showfreq = false -%}
+            {% endif %}
+        {% endif %}
+    {%- endif-%}
 {%- endif -%}
+
 
 <div class="rel-product-tabbed-area tabbed-area">
     <div class="container">
