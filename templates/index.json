@@ -165,6 +165,7 @@
         },
         "banner_KcaJqE": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/cf-clearance-cleanout-desktop-banner-1400-x-350.jpg",
