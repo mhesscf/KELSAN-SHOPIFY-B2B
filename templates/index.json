@@ -25,8 +25,6 @@
           "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/national-clean-off-your-desk-day-2026-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/national-clean-off-your-desk-day-2026-mobile-banner.jpg",
             "link": "/",
             "coupon-code": "DESK26"
           }
@@ -36,8 +34,6 @@
           "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2025-black-friday-starts-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2025-black-friday-starts-mobile-banner.jpg",
             "link": "/collections/black-friday-cyber-monday-deals",
             "coupon-code": ""
           }
@@ -47,8 +43,6 @@
           "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/buy-extractor-get-50-percent-off-tool-mobile-banner.jpg",
             "link": "/collections/box-extractors",
             "coupon-code": ""
           }
@@ -165,10 +159,9 @@
         },
         "banner_KcaJqE": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/cf-clearance-cleanout-desktop-banner-1400-x-350.jpg",
-            "banner-sm": "shopify://shop_images/cf-clearance-cleanout-mobile-banner-800-x-427-px.jpg",
             "link": "/collections/clearance",
             "coupon-code": "EXTRA25"
           }
@@ -177,8 +170,6 @@
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/ipc-eagle-gc290-bogo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/ipc-eagle-gc290-bogo-mobile-banner.jpg",
             "link": "/products/dual-motor-automatic-pump-out-wet-vacuum",
             "coupon-code": ""
           }
@@ -198,8 +189,6 @@
           "disabled": true,
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2026-advantage-20-save-500-promo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2026-advantage-20-save-500-promo-mobile-banner.jpg",
             "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
             "coupon-code": ""
           }
