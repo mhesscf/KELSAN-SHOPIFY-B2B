@@ -11,6 +11,7 @@
   "sections": {
     "a475181a-3079-4a36-9edf-37785d0fdb22": {
       "type": "left-nav-on-pages",
+      "disabled": true,
       "settings": {
         "show_section": true,
         "navigation": "education",
@@ -20,8 +21,90 @@
         "hide_lvl_2_links": false
       }
     },
+    "17737777765d0f9e9e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d456638_Wje9PE": {
+          "type": "ai_gen_block_d456638",
+          "settings": {
+            "fallback_background_color": "#f4f4f4",
+            "heading": "<p>Your heading here</p>",
+            "text": "<p>Add your descriptive text content here. This section takes up two-thirds of the block width on desktop.</p>",
+            "heading_size": 36,
+            "text_size": 16,
+            "heading_color": "#303e48",
+            "text_color": "#303e48",
+            "content_padding": 40,
+            "mobile_content_padding": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_14f33bb_EWnDkA": {
+          "type": "ai_gen_block_14f33bb",
+          "settings": {
+            "product_1": "17-inch-electric-auto-scrubber",
+            "variant_1": "",
+            "product_2": "dura-18-cord-electric-automatic-floor-scrubber",
+            "variant_2": "",
+            "product_3": "14-inch-reliable-compact-walk-behind-floor-scrubber",
+            "variant_3": "43397150343380",
+            "product_4": "the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "variant_4": "",
+            "label_column_header": "Features",
+            "row_1_label": "Image",
+            "row_2_label": "Price",
+            "row_3_label": "SKU",
+            "row_4_label": "Specification 1",
+            "row_4_metafield": "plytix.brush_pad_size",
+            "row_5_label": "Specification 2",
+            "row_5_metafield": "plytix.cleaning_width",
+            "row_6_label": "Specification 3",
+            "row_6_metafield": "",
+            "row_7_label": "Specification 4",
+            "row_7_metafield": "",
+            "row_8_label": "Specification 5",
+            "row_8_metafield": "",
+            "row_9_label": "Specification 6",
+            "row_9_metafield": "",
+            "row_10_label": "Add to cart",
+            "button_text": "Add to cart",
+            "button_background_color": "#303e48",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#d74018",
+            "button_font_size": 14,
+            "button_padding": 12,
+            "button_border_radius": 4,
+            "desktop_width_percent": 100,
+            "table_background_color": "#ffffff",
+            "border_color": "#dddddd",
+            "header_background_color": "#303e48",
+            "header_text_color": "#ffffff",
+            "header_font_size": 16,
+            "label_background_color": "#f8f8f8",
+            "label_text_color": "#303e48",
+            "label_font_size": 14,
+            "cell_background_color": "#ffffff",
+            "cell_text_color": "#303e48",
+            "cell_font_size": 14,
+            "cell_padding": 16,
+            "price_color": "#32758b",
+            "price_font_size": 18,
+            "sku_color": "#666666",
+            "sku_font_size": 12,
+            "image_max_width": 200
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d456638_Wje9PE",
+        "ai_gen_block_14f33bb_EWnDkA"
+      ],
+      "settings": {}
+    },
     "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
       "type": "gradient-text-header",
+      "disabled": true,
       "settings": {
         "chsectionheading": "",
         "chsectiontext": ""
@@ -29,11 +112,13 @@
     },
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {}
     }
   },
   "order": [
     "a475181a-3079-4a36-9edf-37785d0fdb22",
+    "17737777765d0f9e9e",
     "d567f3fb-0056-4b4a-b887-445ab03fabaa",
     "main"
   ]
