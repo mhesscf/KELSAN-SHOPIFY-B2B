@@ -51,7 +51,7 @@
             "product_4": "the-advantage-20-red-automatic-floor-scrubber-battery-powered",
             "variant_4": "",
             "label_column_header": "Features",
-            "row_1_label": "Image",
+            "row_1_label": "Product Image",
             "row_2_label": "Price",
             "row_3_label": "SKU",
             "row_4_label": "Specification 1",
@@ -86,12 +86,12 @@
             "cell_background_color": "#ffffff",
             "cell_text_color": "#303e48",
             "cell_font_size": 14,
-            "cell_padding": 16,
+            "cell_padding": 18,
             "price_color": "#32758b",
-            "price_font_size": 18,
+            "price_font_size": 20,
             "sku_color": "#666666",
-            "sku_font_size": 12,
-            "image_max_width": 200
+            "sku_font_size": 13,
+            "image_max_width": 220
           },
           "blocks": {}
         }
