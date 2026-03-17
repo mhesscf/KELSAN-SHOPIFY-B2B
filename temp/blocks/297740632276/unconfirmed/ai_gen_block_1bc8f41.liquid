@@ -1,6 +1,778 @@
+{% doc %}
+  @prompt
+    Create me a table for 4 products comparison. each column will be a product, the first row will be the image, 2nd row price, 3-8 rows will be custom specs pulled from metafields on the variation, and the last field will be an atc., can you add the sku in the column under price, Make it so for the 4 products, I choose the variation of the product, not the product since there are some products that will have multiple variations
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-comparison-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .ai-product-comparison-table-{{ ai_gen_id }} {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: {{ block.settings.table_background_color }};
+    border: 1px solid {{ block.settings.border_color }};
+  }
+
+  .ai-product-comparison-table-{{ ai_gen_id }} th,
+  .ai-product-comparison-table-{{ ai_gen_id }} td {
+    padding: {{ block.settings.cell_padding }}px;
+    text-align: center;
+    border: 1px solid {{ block.settings.border_color }};
+  }
+
+  .ai-product-comparison-table-{{ ai_gen_id }} th {
+    background-color: {{ block.settings.header_background_color }};
+    color: {{ block.settings.header_text_color }};
+    font-weight: 600;
+    font-size: {{ block.settings.header_font_size }}px;
+  }
+
+  .ai-product-comparison-table-{{ ai_gen_id }} td {
+    background-color: {{ block.settings.cell_background_color }};
+    color: {{ block.settings.cell_text_color }};
+    font-size: {{ block.settings.cell_font_size }}px;
+  }
+
+  .ai-product-comparison-row-label-{{ ai_gen_id }} {
+    background-color: {{ block.settings.label_background_color }};
+    color: {{ block.settings.label_text_color }};
+    font-weight: 600;
+    text-align: left;
+    font-size: {{ block.settings.label_font_size }}px;
+  }
+
+  .ai-product-comparison-image-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: {{ block.settings.image_max_width }}px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .ai-product-comparison-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: {{ block.settings.image_max_width }}px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-product-comparison-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: {{ block.settings.image_max_width }}px;
+    max-height: {{ block.settings.image_max_width }}px;
+  }
+
+  .ai-product-comparison-price-{{ ai_gen_id }} {
+    font-weight: 600;
+    font-size: {{ block.settings.price_font_size }}px;
+    color: {{ block.settings.price_color }};
+  }
+
+  .ai-product-comparison-sku-{{ ai_gen_id }} {
+    font-size: {{ block.settings.sku_font_size }}px;
+    color: {{ block.settings.sku_color }};
+    margin-top: 4px;
+  }
+
+  .ai-product-comparison-atc-{{ ai_gen_id }} {
+    padding: {{ block.settings.button_padding }}px {{ block.settings.button_padding | times: 2 }}px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    cursor: pointer;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-product-comparison-atc-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-product-comparison-empty-{{ ai_gen_id }} {
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-product-comparison-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-product-comparison-table-{{ ai_gen_id }} th,
+    .ai-product-comparison-table-{{ ai_gen_id }} td {
+      padding: {{ block.settings.cell_padding | times: 0.5 }}px;
+      font-size: {{ block.settings.cell_font_size | times: 0.9 }}px;
+    }
+
+    .ai-product-comparison-image-{{ ai_gen_id }} {
+      max-width: {{ block.settings.image_max_width | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<product-comparison-{{ ai_gen_id }} class="ai-product-comparison-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <table class="ai-product-comparison-table-{{ ai_gen_id }}">
+    <thead>
+      <tr>
+        <th class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.label_column_header }}</th>
+        {% for i in (1..4) %}
+          {% liquid
+            assign product_key = 'product_' | append: i
+            assign variant_key = 'variant_' | append: i
+            assign product = block.settings[product_key]
+            assign variant_id = block.settings[variant_key]
+            assign variant = null
+            
+            if product != blank and variant_id != blank
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  break
+                endif
+              endfor
+            endif
+          %}
+          <th>
+            {% if product != blank %}
+              {{ product.title }}
+              {% if variant != blank and variant.title != 'Default Title' %}
+                <br><small>{{ variant.title }}</small>
+              {% endif %}
+            {% else %}
+              <span class="ai-product-comparison-empty-{{ ai_gen_id }}">Product {{ i }}</span>
+            {% endif %}
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_1_label }}</td>
+        {% for i in (1..4) %}
+          {% liquid
+            assign product_key = 'product_' | append: i
+            assign variant_key = 'variant_' | append: i
+            assign product = block.settings[product_key]
+            assign variant_id = block.settings[variant_key]
+            assign variant = null
+            assign variant_image = null
+            
+            if product != blank and variant_id != blank
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  if v.image
+                    assign variant_image = v.image
+                  endif
+                  break
+                endif
+              endfor
+            endif
+            
+            if variant_image == null and product != blank
+              assign variant_image = product.featured_image
+            endif
+          %}
+          <td>
+            {% if variant_image %}
+              <img
+                src="{{ variant_image | image_url: width: 400 }}"
+                alt="{{ variant_image.alt | escape }}"
+                class="ai-product-comparison-image-{{ ai_gen_id }}"
+                loading="lazy"
+                width="{{ variant_image.width }}"
+                height="{{ variant_image.height }}"
+              >
+            {% else %}
+              <div class="ai-product-comparison-image-placeholder-{{ ai_gen_id }}">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </td>
+        {% endfor %}
+      </tr>
+
+      <tr>
+        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_2_label }}</td>
+        {% for i in (1..4) %}
+          {% liquid
+            assign product_key = 'product_' | append: i
+            assign variant_key = 'variant_' | append: i
+            assign product = block.settings[product_key]
+            assign variant_id = block.settings[variant_key]
+            assign variant = null
+            
+            if product != blank and variant_id != blank
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  break
+                endif
+              endfor
+            endif
+          %}
+          <td>
+            {% if variant != blank %}
+              <div class="ai-product-comparison-price-{{ ai_gen_id }}">
+                {{ variant.price | money }}
+              </div>
+            {% else %}
+              <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+            {% endif %}
+          </td>
+        {% endfor %}
+      </tr>
+
+      <tr>
+        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_3_label }}</td>
+        {% for i in (1..4) %}
+          {% liquid
+            assign product_key = 'product_' | append: i
+            assign variant_key = 'variant_' | append: i
+            assign product = block.settings[product_key]
+            assign variant_id = block.settings[variant_key]
+            assign variant = null
+            
+            if product != blank and variant_id != blank
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  break
+                endif
+              endfor
+            endif
+          %}
+          <td>
+            {% if variant != blank and variant.sku != blank %}
+              <div class="ai-product-comparison-sku-{{ ai_gen_id }}">
+                {{ variant.sku }}
+              </div>
+            {% else %}
+              <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+            {% endif %}
+          </td>
+        {% endfor %}
+      </tr>
+
+      {% for row_num in (4..9) %}
+        {% liquid
+          assign label_key = 'row_' | append: row_num | append: '_label'
+          assign metafield_key = 'row_' | append: row_num | append: '_metafield'
+          assign row_label = block.settings[label_key]
+          assign metafield_namespace_key = block.settings[metafield_key]
+        %}
+        <tr>
+          <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ row_label }}</td>
+          {% for i in (1..4) %}
+            {% liquid
+              assign product_key = 'product_' | append: i
+              assign variant_key = 'variant_' | append: i
+              assign product = block.settings[product_key]
+              assign variant_id = block.settings[variant_key]
+              assign variant = null
+              
+              if product != blank and variant_id != blank
+                for v in product.variants
+                  if v.id == variant_id
+                    assign variant = v
+                    break
+                  endif
+                endfor
+              endif
+            %}
+            <td>
+              {% if variant != blank and metafield_namespace_key != blank %}
+                {% assign metafield_parts = metafield_namespace_key | split: '.' %}
+                {% if metafield_parts.size == 2 %}
+                  {% assign namespace = metafield_parts[0] %}
+                  {% assign key = metafield_parts[1] %}
+                  {% assign metafield_value = variant.metafields[namespace][key] %}
+                  {% if metafield_value != blank %}
+                    {{ metafield_value }}
+                  {% else %}
+                    <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+                  {% endif %}
+                {% else %}
+                  <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+                {% endif %}
+              {% else %}
+                <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+
+      <tr>
+        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_10_label }}</td>
+        {% for i in (1..4) %}
+          {% liquid
+            assign product_key = 'product_' | append: i
+            assign variant_key = 'variant_' | append: i
+            assign product = block.settings[product_key]
+            assign variant_id = block.settings[variant_key]
+            assign variant = null
+            
+            if product != blank and variant_id != blank
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  break
+                endif
+              endfor
+            endif
+          %}
+          <td>
+            {% if variant != blank %}
+              <form action="/cart/add" method="post" class="ai-product-comparison-form-{{ ai_gen_id }}">
+                <input type="hidden" name="id" value="{{ variant.id }}">
+                <button type="submit" class="ai-product-comparison-atc-{{ ai_gen_id }}">
+                  {{ block.settings.button_text }}
+                </button>
+              </form>
+            {% else %}
+              <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+            {% endif %}
+          </td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</product-comparison-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductComparison{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.forms = this.querySelectorAll('.ai-product-comparison-form-{{ ai_gen_id }}');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.forms.forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            fetch('/cart/add.js', {
+              method: 'POST',
+              body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+              window.location.href = '/cart';
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+          });
+        });
+      }
+    }
+
+    customElements.define('product-comparison-{{ ai_gen_id }}', ProductComparison{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product comparison table",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "variant_1",
+      "label": "Variant ID",
+      "info": "Enter the variant ID for this product"
+    },
+    {
+      "type": "header",
+      "content": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "variant_2",
+      "label": "Variant ID",
+      "info": "Enter the variant ID for this product"
+    },
+    {
+      "type": "header",
+      "content": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "variant_3",
+      "label": "Variant ID",
+      "info": "Enter the variant ID for this product"
+    },
+    {
+      "type": "header",
+      "content": "Product 4"
+    },
+    {
+      "type": "product",
+      "id": "product_4",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "variant_4",
+      "label": "Variant ID",
+      "info": "Enter the variant ID for this product"
+    },
+    {
+      "type": "header",
+      "content": "Table labels"
+    },
+    {
+      "type": "text",
+      "id": "label_column_header",
+      "label": "Label column header",
+      "default": "Features"
+    },
+    {
+      "type": "text",
+      "id": "row_1_label",
+      "label": "Row 1 label",
+      "default": "Image"
+    },
+    {
+      "type": "text",
+      "id": "row_2_label",
+      "label": "Row 2 label",
+      "default": "Price"
+    },
+    {
+      "type": "text",
+      "id": "row_3_label",
+      "label": "Row 3 label",
+      "default": "SKU"
+    },
+    {
+      "type": "text",
+      "id": "row_4_label",
+      "label": "Row 4 label",
+      "default": "Specification 1"
+    },
+    {
+      "type": "text",
+      "id": "row_4_metafield",
+      "label": "Row 4 metafield",
+      "info": "Format: namespace.key (e.g., custom.weight)"
+    },
+    {
+      "type": "text",
+      "id": "row_5_label",
+      "label": "Row 5 label",
+      "default": "Specification 2"
+    },
+    {
+      "type": "text",
+      "id": "row_5_metafield",
+      "label": "Row 5 metafield",
+      "info": "Format: namespace.key (e.g., custom.dimensions)"
+    },
+    {
+      "type": "text",
+      "id": "row_6_label",
+      "label": "Row 6 label",
+      "default": "Specification 3"
+    },
+    {
+      "type": "text",
+      "id": "row_6_metafield",
+      "label": "Row 6 metafield",
+      "info": "Format: namespace.key (e.g., custom.material)"
+    },
+    {
+      "type": "text",
+      "id": "row_7_label",
+      "label": "Row 7 label",
+      "default": "Specification 4"
+    },
+    {
+      "type": "text",
+      "id": "row_7_metafield",
+      "label": "Row 7 metafield",
+      "info": "Format: namespace.key (e.g., custom.color)"
+    },
+    {
+      "type": "text",
+      "id": "row_8_label",
+      "label": "Row 8 label",
+      "default": "Specification 5"
+    },
+    {
+      "type": "text",
+      "id": "row_8_metafield",
+      "label": "Row 8 metafield",
+      "info": "Format: namespace.key (e.g., custom.warranty)"
+    },
+    {
+      "type": "text",
+      "id": "row_9_label",
+      "label": "Row 9 label",
+      "default": "Specification 6"
+    },
+    {
+      "type": "text",
+      "id": "row_9_metafield",
+      "label": "Row 9 metafield",
+      "info": "Format: namespace.key (e.g., custom.capacity)"
+    },
+    {
+      "type": "text",
+      "id": "row_10_label",
+      "label": "Row 10 label",
+      "default": "Add to cart"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to cart"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Background color",
+      "default": "#303e48"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Hover background color",
+      "default": "#d74018"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Table style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "table_background_color",
+      "label": "Table background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#dddddd"
+    },
+    {
+      "type": "color",
+      "id": "header_background_color",
+      "label": "Header background",
+      "default": "#303e48"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Header text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "header_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Header font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "label_background_color",
+      "label": "Label background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "label_text_color",
+      "label": "Label text",
+      "default": "#303e48"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label font size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "cell_background_color",
+      "label": "Cell background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cell_text_color",
+      "label": "Cell text",
+      "default": "#303e48"
+    },
+    {
+      "type": "range",
+      "id": "cell_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Cell font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "cell_padding",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Cell padding",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#32758b"
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Price font size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "sku_color",
+      "label": "SKU color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "sku_font_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "SKU font size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "min": 100,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Image max width",
+      "default": 200
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product comparison table"
+    }
+  ]
+}
 {% endschema %}
