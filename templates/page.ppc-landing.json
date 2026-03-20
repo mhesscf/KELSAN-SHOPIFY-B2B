@@ -74,9 +74,6 @@
             "row_12_spec": "",
             "row_13_label": "",
             "row_13_spec": "",
-
-
-
             "desktop_width_percent": 100,
             "table_background_color": "#ffffff",
             "border_color": "#dddddd",
@@ -105,6 +102,13 @@
       ],
       "settings": {}
     },
+    "dynamic_custom_liquid_dpBNjD": {
+      "type": "dynamic-custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
     "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
       "type": "gradient-text-header",
       "disabled": true,
@@ -117,12 +121,19 @@
       "type": "page",
       "disabled": true,
       "settings": {}
+    },
+    "trustpilot_review_carousel_ccMUtg": {
+      "type": "trustpilot-review-carousel",
+      "name": "Trustpilot Carousel",
+      "settings": {}
     }
   },
   "order": [
     "a475181a-3079-4a36-9edf-37785d0fdb22",
     "17737777765d0f9e9e",
+    "dynamic_custom_liquid_dpBNjD",
     "d567f3fb-0056-4b4a-b887-445ab03fabaa",
-    "main"
+    "main",
+    "trustpilot_review_carousel_ccMUtg"
   ]
 }
