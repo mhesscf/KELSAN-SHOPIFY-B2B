@@ -29,12 +29,12 @@
           "settings": {
             "background_image": "shopify://shop_images/bg-blue-w-strip.jpg",
             "fallback_background_color": "#f4f4f4",
-            "heading": "<p>Your heading here</p>",
-            "text": "<p>Add your descriptive text content here. This section takes up two-thirds of the block width on desktop.</p>",
+            "heading": "<p><br/>Commercial Floor Scrubbers That Get Results<br/><br/></p>",
+            "text": "<p>Discover 4 reliable scrubbers designed for powerful cleaning and long-lasting performance.</p>",
             "heading_size": 36,
             "text_size": 16,
-            "heading_color": "#303e48",
-            "text_color": "#303e48",
+            "heading_color": "#ffffff",
+            "text_color": "#ffffff",
             "content_padding": 45,
             "right_image": "shopify://shop_images/ppc-group.png",
             "mobile_content_padding": 20
