@@ -21,10 +21,10 @@
         "hide_lvl_2_links": false
       }
     },
-    "17737777765d0f9e9e": {
+    "blocks_7Xa9TF": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_d456638_Wje9PE": {
+        "ai_gen_block_d456638_WAW9UR": {
           "type": "ai_gen_block_d456638",
           "settings": {
             "background_image": "shopify://shop_images/bg-blue-w-strip.jpg",
@@ -40,7 +40,24 @@
             "mobile_content_padding": 20
           },
           "blocks": {}
-        },
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d456638_WAW9UR"
+      ],
+      "name": "Split content block",
+      "settings": {}
+    },
+    "dynamic_custom_liquid_dpBNjD": {
+      "type": "dynamic-custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.ppc-review-block{\nmax-width:1400px;\npadding:15px;\n}\n.ppc-review-contain{\n\tdisplay:flex;\n\tmax-width:700px;\n\tmargin:auto;\n\talign-items: center; \n\tflex-direction:row;\n}\n.ppc-review-contain .dash{\n\tpadding:30px;\n\twidth:100px;\n\tfont-size:75px;\n}\n.ppc-review-contain .this-review{\ntext-align:center;\nflex: 1; \n}\n.this-review .star-rating{\ncolor:#ffca14;\n}\n.this-review .reviewer{\nfont-weight:bold;\ncolor:#E64D25;\n}\n\n</style>\n<div class=\"ppc-review-block\">\n\t<div class=\"ppc-review-contain\">\n\t\t<div class=\"left-dash dash\"><i class=\"fa-solid fa-dash\"></i></div>\n\t\t\n\t\t<div class=\"this-review\">\n\t\t\t<div class=\"star-rating\">\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t</div>\n\t\t\t<div class=\"text-review\">\n\t\t\t\tJohn W. (five star)\n\t\t\t\tI purchased a Reliable 14 Battery Scrubber roughly 3 years ago for my church and it still runs like a champ today! The process of ordering was super simple, the salesman and customer service treated me fantastic by listening to what we needed and not trying to oversell us on unnecessary things. We are super happy with CleanFreak and will 100% continue to buy from them in the future! - <span class=\"reviewer\">John W.</span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"right-dash dash\"><i class=\"fa-solid fa-dash\"></i></div>\n\t</div>\n\n</div>"
+      }
+    },
+    "17737777765d0f9e9e": {
+      "type": "_blocks",
+      "blocks": {
         "ai_gen_block_14f33bb_EWnDkA": {
           "type": "ai_gen_block_14f33bb",
           "settings": {
@@ -99,17 +116,9 @@
         }
       },
       "block_order": [
-        "ai_gen_block_d456638_Wje9PE",
         "ai_gen_block_14f33bb_EWnDkA"
       ],
       "settings": {}
-    },
-    "dynamic_custom_liquid_dpBNjD": {
-      "type": "dynamic-custom-liquid",
-      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
-      "settings": {
-        "custom_liquid": "<style>\n.ppc-review-block{\nmax-width:1400px;\npadding:15px;\n}\n.ppc-review-contain{\n\tdisplay:flex;\n\tmax-width:700px;\n\tmargin:auto;\n\talign-items: center; \n\tflex-direction:row;\n}\n.ppc-review-contain .dash{\n\tpadding:30px;\n\twidth:100px;\n\tfont-size:75px;\n}\n.ppc-review-contain .this-review{\ntext-align:center;\nflex: 1; \n}\n.this-review .star-rating{\ncolor:#ffca14;\n}\n.this-review .reviewer{\nfont-weight:bold;\ncolor:#E64D25;\n}\n\n</style>\n<div class=\"ppc-review-block\">\n\t<div class=\"ppc-review-contain\">\n\t\t<div class=\"left-dash dash\"><i class=\"fa-solid fa-dash\"></i></div>\n\t\t\n\t\t<div class=\"this-review\">\n\t\t\t<div class=\"star-rating\">\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t</div>\n\t\t\t<div class=\"text-review\">\n\t\t\t\tJohn W. (five star)\n\t\t\t\tI purchased a Reliable 14 Battery Scrubber roughly 3 years ago for my church and it still runs like a champ today! The process of ordering was super simple, the salesman and customer service treated me fantastic by listening to what we needed and not trying to oversell us on unnecessary things. We are super happy with CleanFreak and will 100% continue to buy from them in the future! - <span class=\"reviewer\">John W.</span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"right-dash dash\"><i class=\"fa-solid fa-dash\"></i></div>\n\t</div>\n\n</div>"
-      }
     },
     "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
       "type": "gradient-text-header",
@@ -132,8 +141,9 @@
   },
   "order": [
     "a475181a-3079-4a36-9edf-37785d0fdb22",
-    "17737777765d0f9e9e",
+    "blocks_7Xa9TF",
     "dynamic_custom_liquid_dpBNjD",
+    "17737777765d0f9e9e",
     "d567f3fb-0056-4b4a-b887-445ab03fabaa",
     "main",
     "trustpilot_review_carousel_ccMUtg"
