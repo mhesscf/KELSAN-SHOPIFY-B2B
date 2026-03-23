@@ -30,6 +30,7 @@
         },
         "slide_v2_P6jUBi": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "b2b",
             "sotm_icon": "na",
@@ -215,6 +216,7 @@
         },
         "banner_J8FYNy": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "b2b",
             "banner-lg": "shopify://shop_images/b2b-welcome-servicemax-1400x350-3.jpg",
