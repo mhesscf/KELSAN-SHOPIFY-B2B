@@ -20,12 +20,12 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
-        "categoryhead_JAKTER": {
-          "type": "categoryhead",
+        "banner_fBRmfm": {
+          "type": "banner",
           "settings": {
-            "show_on": "b2b",
-            "cat_title": "Category Name",
-            "cat_text": "Category Text"
+            "show_on": "b2b-company",
+            "link": "",
+            "coupon-code": ""
           }
         },
         "slide_v2_P6jUBi": {
@@ -225,7 +225,7 @@
         }
       },
       "block_order": [
-        "categoryhead_JAKTER",
+        "banner_fBRmfm",
         "slide_v2_P6jUBi",
         "banner_xWQm6F",
         "banner_fLBUa3",
