@@ -1,0 +1,135 @@
+
+
+{%- liquid  assign block_slide_type = block.type -%}
+{%- liquid  assign company_obj = company_obj -%}
+
+
+
+{%- assign block_class = block.type -%}
+{% if block_slide_type == "banner" %}
+  {%- liquid
+    assign slide_number = block_index | plus: 1
+    assign coupon_code = block.settings.coupon-code
+  -%}
+
+<style>
+    .b2b-company-banner{
+        line-height:50px;
+    }
+</style>
+    {% comment %}
+    <div
+            class="slideshow-slide custom-slideshow-slide {{ block_class }}"
+            aria-label="{{ 'sections.slideshow.slide_counter' | t: count: slide_number, total: section.blocks.size }}"
+            tabindex="-1"
+            data-slideshow-slide
+            data-slide-index="{{ block_index }}"
+            {{ block.shopify_attributes }}
+    >
+        <div class="slideshow-slide__image-wrapper b2b-company-banner" data-slide-image-wrapper >
+            <div class="slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
+                {{ company_obj.metafields.custom.company_logo.value }}<br/>
+                {{ company_obj.metafields.custom.banner_header.value }}<br/>
+                {{ company_obj.metafields.custom.banner_sub_heading.value }}<br/>
+                {{ company_obj.metafields.custom.banner_text.value }}<br/>
+                {{ company_obj.metafields.custom.banner_main_company_color_1.value }}<br/>
+                {{ company_obj.metafields.custom.banner_main_company_color_2.value }}<br/>
+            </div>
+        </div>
+    </div>
+    {% endcomment %}
+
+
+
+    {%- liquid
+        assign company_icon = company_obj.metafields.custom.company_logo.value
+        assign background_image = "/cdn/shop/files/company-banner-bg.jpg?v=1733326204"
+        assign middle_image = ""
+        assign right_image = block.settings.right_image
+        assign middle_image_alt = "Divider"
+        assign right_image_alt = ""
+        assign cust_block_css = "text_area_css"
+        assign cust_block_liquid = "Custom Text"
+        assign button_one_label = 'View Products <i class="fa-sharp fa-solid fa-caret-right"></i>'
+        assign button_one_link = "/pages/product-list-quick-order"
+        assign slide_number = block_index | plus: 1
+    -%}
+
+    <div
+            class="slideshow-slide slideshow-v2 b2b {{ block_class }}"
+            aria-label="{{ 'sections.slideshow.slide_counter' | t: count: slide_number, total: section.blocks.size }}"
+            tabindex="-1"
+            data-slideshow-slide
+            data-slide-index="{{ block_index }}"
+            {{ block.shopify_attributes }}
+    >
+        <div class="slideshow-slide-v2__image-wrapper" data-slide-image-wrapper >
+            <style>
+                .slideshow-slide__content--{{ block.id }} .middle-image-col{
+                {% if background_image %} background-image: url('{{ background_image }}'){% endif %}
+                }
+
+                @media screen and (min-width: 719px) {
+                    .slideshow-slide__content--{{ block.id }} {
+                    {% if background_image %} background-image: url('{{ background_image }}');{% endif %}
+                    background-position: right;
+                    }
+                    .slideshow-slide__content--{{ block.id }} .middle-image-col{
+                        background:none;
+                    }
+                }
+            </style>
+            {%- assign click_event = "" -%}
+            {%- assign additional_classes = "" -%}
+
+            {%- capture click_event -%}
+                    onclick="window.location.href = '{{ button_one_link }}';"
+            {%- endcapture -%}
+            {%- assign additional_classes = "fake-link-pointer" -%}
+
+
+            <div {{ click_event }} class="{{ additional_classes }} slideshow-slide__content  slideshow-slide__content--{{ block.id }}"  data-slide-content>
+                <div class="slide-inner-contain">
+                    <div class="slide-col-right right-image-col"><div class="img-contain">
+
+                            {%- if block.settings.company_icon != "NA" -%}
+                                <img class="img-responsive right-image" alt="{{ customer.current_company.name }}'s Logo" src="/cdn/shop/{{ company_icon }}"/>
+                            {%- endif -%}
+                        </div></div>
+                    <div class="slide-col-left">
+                        <div class="slide-col-left-contain">
+                            <div class="custom-text">
+                                <h1>{{ company_obj.metafields.custom.banner_header.value }}</h1>
+                                <div class="sub-text">{{ company_obj.metafields.custom.banner_sub_heading.value }}</div>
+                                <div>{{ company_obj.metafields.custom.banner_text.value }}</div>
+                            </div>
+                            {%- if button_one_link -%}
+                                <div class="btn-area">
+
+                                    {%- capture btn1_click_event -%}
+                                        {%- if promo_link != blank -%}
+                                            onclick="promoRedirect('{{ promo_link }}','{{ button_one_link }}');"
+                                        {%- else -%}
+                                            onclick="window.location.href = '{{ button_one_link }}';"
+                                        {%- endif-%}
+                                    {%- endcapture -%}
+
+                                    <div {{ btn1_click_event }} class="slide-btn slide-btn-1 fake-link-pointer main-atc-button" tabindex="0" style="">{{ button_one_label }}</div>
+                                </div>
+                            {%- endif -%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+{%- endif -%}
+
+
