@@ -20,6 +20,35 @@
     "dynamic_slideshow": {
       "type": "dynamic-slideshow",
       "blocks": {
+        "categoryhead_JAKTER": {
+          "type": "categoryhead",
+          "settings": {
+            "show_on": "b2b",
+            "cat_title": "Category Name",
+            "cat_text": "Category Text"
+          }
+        },
+        "slide_v2_P6jUBi": {
+          "type": "slide_v2",
+          "settings": {
+            "show_on": "b2b",
+            "sotm_icon": "na",
+            "background_image": "",
+            "middle_image": "",
+            "middle_image_alt": "",
+            "right_image": "",
+            "right_image_alt": "",
+            "text_area_html": "",
+            "text_area_css": "",
+            "bg_link": "",
+            "promo_link": "",
+            "button_one_label": "Button",
+            "button_one_link": "",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_color_override": ""
+          }
+        },
         "banner_xWQm6F": {
           "type": "banner",
           "disabled": true,
@@ -193,20 +222,11 @@
             "link": "/pages/product-list-quick-order",
             "coupon-code": ""
           }
-        },
-        "banner_Hera6c": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "show_on": "normal",
-            "banner-lg": "shopify://shop_images/2026-advantage-20-save-500-promo-desktop-banner.jpg",
-            "banner-sm": "shopify://shop_images/2026-advantage-20-save-500-promo-mobile-banner.jpg",
-            "link": "/products/the-advantage-20-red-automatic-floor-scrubber-battery-powered",
-            "coupon-code": ""
-          }
         }
       },
       "block_order": [
+        "categoryhead_JAKTER",
+        "slide_v2_P6jUBi",
         "banner_xWQm6F",
         "banner_fLBUa3",
         "banner_qaQPaP",
@@ -217,8 +237,7 @@
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "banner_KcaJqE",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
-        "banner_J8FYNy",
-        "banner_Hera6c"
+        "banner_J8FYNy"
       ],
       "custom_css": [],
       "settings": {
