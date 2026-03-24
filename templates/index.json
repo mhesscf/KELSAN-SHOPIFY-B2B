@@ -85,7 +85,6 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "4",
@@ -107,7 +106,6 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "4",
@@ -129,6 +127,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "3",
@@ -150,6 +149,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "3",
@@ -206,6 +206,7 @@
         },
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/ipc-eagle-gc290-bogo-desktop-banner.jpg",
