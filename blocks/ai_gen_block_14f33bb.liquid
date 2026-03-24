@@ -1,461 +1,470 @@
 {% doc %}
-  @prompt
-    Create me a table for 4 products comparison. each column will be a product, the first row will be the image, 2nd row price, 3-8 rows will be custom specs pulled from metafields on the variation, and the last field will be an atc., can you add the sku in the column under price, Make it so for the 4 products, I choose the variation of the product, not the product since there are some products that will have multiple variations, please default to the only variation if there is only one variation on a product
+@prompt
+Create me a table for 4 products comparison. each column will be a product, the first row will be the image, 2nd row price, 3-8 rows will be custom specs pulled from metafields on the variation, and the last field will be an atc., can you add the sku in the column under price, Make it so for the 4 products, I choose the variation of the product, not the product since there are some products that will have multiple variations, please default to the only variation if there is only one variation on a product
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
   .ai-product-comparison-{{ ai_gen_id }} {
-    display: block;
-    width: {{ block.settings.desktop_width_percent }}%;
-    max-width: 100%;
-    overflow-x: auto;
+  display: block;
+  width: {{ block.settings.desktop_width_percent }}%;
+  max-width: 100%;
+  overflow-x: auto;
   margin-bottom:30px;
   }
 
   .ai-product-comparison-table-{{ ai_gen_id }} {
-    width: 100%;
+  width: 100%;
   max-width:1400px;
   margin:auto;
-    border-collapse: collapse;
-    background-color: {{ block.settings.table_background_color }};
-    border: 1px solid {{ block.settings.border_color }};
+  border-collapse: collapse;
+  background-color: {{ block.settings.table_background_color }};
+  border: 1px solid {{ block.settings.border_color }};
   }
 
   .ai-product-comparison-table-{{ ai_gen_id }} th,
   .ai-product-comparison-table-{{ ai_gen_id }} td {
-    padding: {{ block.settings.cell_padding }}px;
-    text-align: center;
-    border: 1px solid {{ block.settings.border_color }};
+  padding: {{ block.settings.cell_padding }}px;
+  text-align: center;
+  border: 1px solid {{ block.settings.border_color }};
   }
 
   .ai-product-comparison-table-{{ ai_gen_id }} th,
   .ai-product-comparison-table-{{ ai_gen_id }} th a{
-    background-color: {{ block.settings.header_background_color }};
-    color: {{ block.settings.header_text_color }};
-    font-weight: 600;
-    font-size: {{ block.settings.header_font_size }}px;
+  background-color: {{ block.settings.header_background_color }};
+  color: {{ block.settings.header_text_color }};
+  font-weight: 600;
+  font-size: {{ block.settings.header_font_size }}px;
   }
 
+  @media screen and (max-width: 1079px) {
+  .ai-product-comparison-table-{{ ai_gen_id }} th,
+  .ai-product-comparison-table-{{ ai_gen_id }} th a{
+    font-size:13px
+  }
+
+  }
+
+
   .ai-product-comparison-table-{{ ai_gen_id }} td {
-    background-color: {{ block.settings.cell_background_color }};
-    color: {{ block.settings.cell_text_color }};
-    font-size: {{ block.settings.cell_font_size }}px;
+  background-color: {{ block.settings.cell_background_color }};
+  color: {{ block.settings.cell_text_color }};
+  font-size: {{ block.settings.cell_font_size }}px;
   }
 
   .ai-product-comparison-row-label-{{ ai_gen_id }} {
-    background-color: {{ block.settings.label_background_color }};
-    color: {{ block.settings.label_text_color }};
-    font-weight: 600;
-    text-align: left;
-    font-size: {{ block.settings.label_font_size }}px;
+  background-color: {{ block.settings.label_background_color }};
+  color: {{ block.settings.label_text_color }};
+  font-weight: 600;
+  text-align: left;
+  font-size: {{ block.settings.label_font_size }}px;
   }
 
   .ai-product-comparison-image-{{ ai_gen_id }} {
-    width: 100%;
-    max-width: {{ block.settings.image_max_width }}px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  width: 100%;
+  max-width: {{ block.settings.image_max_width }}px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   }
 
   .ai-product-comparison-image-placeholder-{{ ai_gen_id }} {
-    width: 100%;
-    max-width: {{ block.settings.image_max_width }}px;
-    height: auto;
-    margin: 0 auto;
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  max-width: {{ block.settings.image_max_width }}px;
+  height: auto;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
   .ai-product-comparison-image-placeholder-{{ ai_gen_id }} svg {
-    width: 100%;
-    height: 100%;
-    max-width: {{ block.settings.image_max_width }}px;
-    max-height: {{ block.settings.image_max_width }}px;
+  width: 100%;
+  height: 100%;
+  max-width: {{ block.settings.image_max_width }}px;
+  max-height: {{ block.settings.image_max_width }}px;
   }
 
   .ai-product-comparison-price-{{ ai_gen_id }} {
-    font-weight: 600;
-    font-size: {{ block.settings.price_font_size }}px;
-    color: {{ block.settings.price_color }};
+  font-weight: 600;
+  font-size: {{ block.settings.price_font_size }}px;
+  color: {{ block.settings.price_color }};
   }
 
   .ai-product-comparison-sku-{{ ai_gen_id }} {
-    font-size: {{ block.settings.sku_font_size }}px;
-    color: {{ block.settings.sku_color }};
-    margin-top: 4px;
+  font-size: {{ block.settings.sku_font_size }}px;
+  color: {{ block.settings.sku_color }};
+  margin-top: 4px;
   }
 
   .ai-product-comparison-empty-{{ ai_gen_id }} {
-    color: #999;
-    font-style: italic;
-    font-size: 14px;
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
   }
 
   @media screen and (max-width: 749px) {
-    .ai-product-comparison-{{ ai_gen_id }} {
-      width: 100%;
-    }
+  .ai-product-comparison-{{ ai_gen_id }} {
+  width: 100%;
+  }
 
-    .ai-product-comparison-table-{{ ai_gen_id }} th,
-    .ai-product-comparison-table-{{ ai_gen_id }} td {
-      padding: {{ block.settings.cell_padding | times: 0.5 }}px;
-      font-size: {{ block.settings.cell_font_size | times: 0.9 }}px;
-    }
+  .ai-product-comparison-table-{{ ai_gen_id }} th,
+  .ai-product-comparison-table-{{ ai_gen_id }} td {
+  padding: {{ block.settings.cell_padding | times: 0.5 }}px;
+  font-size: {{ block.settings.cell_font_size | times: 0.9 }}px;
+  }
 
-    .ai-product-comparison-image-{{ ai_gen_id }} {
-      max-width: {{ block.settings.image_max_width | times: 0.7 }}px;
-    }
+  .ai-product-comparison-image-{{ ai_gen_id }} {
+  max-width: {{ block.settings.image_max_width | times: 0.7 }}px;
+  }
   }
 {% endstyle %}
 
 <product-comparison-{{ ai_gen_id }} class="ai-product-comparison-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
   <table class="ai-product-comparison-table-{{ ai_gen_id }}">
     <thead>
-      <tr>
-        <th class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.label_column_header }}</th>
-        {% for i in (1..4) %}
-          {% liquid
-            assign product_key = 'product_' | append: i
-            assign variant_key = 'variant_' | append: i
-            assign product = block.settings[product_key]
-            assign variant_id = block.settings[variant_key] | plus: 0
-            assign variant = null
-            
-            if product != blank
-              if variant_id > 0
-                for v in product.variants
-                  if v.id == variant_id
-                    assign variant = v
-                    break
-                  endif
-                endfor
-              elsif product.variants.size == 1
-                assign variant = product.first_available_variant
-              endif
+    <tr>
+      <th class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.label_column_header }}</th>
+      {% for i in (1..4) %}
+        {% liquid
+          assign product_key = 'product_' | append: i
+          assign variant_key = 'variant_' | append: i
+          assign product = block.settings[product_key]
+          assign variant_id = block.settings[variant_key] | plus: 0
+          assign variant = null
+
+          if product != blank
+            if variant_id > 0
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  break
+                endif
+              endfor
+            elsif product.variants.size == 1
+              assign variant = product.first_available_variant
             endif
-          %}
-          <th>
-            {% if product != blank %}
-              {% assign url = product.url  %}
-              {% if variant != blank and variant_id != 0 %}
-                {% assign url = product.url | append: "?variant=" | append: variant_id %}
-              {% endif %}
-
-
-              <a href="{{ url }}">{{ product.title }}
-                {% if variant != blank and variant.title != 'Default Title' %}
-                  <br><span class="var-name">({{ variant.title }} Version)</span>
-                {% endif %}
-              </a>
-            {% else %}
-              <span class="ai-product-comparison-empty-{{ ai_gen_id }}">Product {{ i }}</span>
+          endif
+        %}
+        <th>
+          {% if product != blank %}
+            {% assign url = product.url  %}
+            {% if variant != blank and variant_id != 0 %}
+              {% assign url = product.url | append: "?variant=" | append: variant_id %}
             {% endif %}
-          </th>
-        {% endfor %}
-      </tr>
+
+
+            <a href="{{ url }}">{{ product.title }}
+              {% if variant != blank and variant.title != 'Default Title' %}
+                <br><span class="var-name">({{ variant.title }} Version)</span>
+              {% endif %}
+            </a>
+          {% else %}
+            <span class="ai-product-comparison-empty-{{ ai_gen_id }}">Product {{ i }}</span>
+          {% endif %}
+        </th>
+      {% endfor %}
+    </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_1_label }}</td>
-        {% for i in (1..4) %}
-          {% liquid
-            assign product_key = 'product_' | append: i
-            assign variant_key = 'variant_' | append: i
-            assign product = block.settings[product_key]
-            assign variant_id = block.settings[variant_key] | plus: 0
-            assign variant = null
-            assign variant_image = null
-            
-            if product != blank
-              if variant_id > 0
-                for v in product.variants
-                  if v.id == variant_id
-                    assign variant = v
-                    if v.image
-                      assign variant_image = v.image
-                    endif
-                    break
-                  endif
-                endfor
-              elsif product.variants.size == 1
-                assign variant = product.first_available_variant
-                if variant.image
-                  assign variant_image = variant.image
-                endif
-              endif
-            endif
-            
-            if variant_image == null and product != blank
-              assign variant_image = product.featured_image
-            endif
-          %}
-          <td>
-            {% if variant_image %}
-              <img
-                src="{{ variant_image | image_url: width: 400 }}"
-                alt="{{ variant_image.alt | escape }}"
-                class="ai-product-comparison-image-{{ ai_gen_id }}"
-                loading="lazy"
-                width="{{ variant_image.width }}"
-                height="{{ variant_image.height }}"
-              >
-            {% else %}
-              <div class="ai-product-comparison-image-placeholder-{{ ai_gen_id }}">
-                {{ 'product-1' | placeholder_svg_tag }}
-              </div>
-            {% endif %}
-          </td>
-        {% endfor %}
-      </tr>
-
-      <tr>
-        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_2_label }}</td>
-        {% for i in (1..4) %}
-          {% liquid
-            assign product_key = 'product_' | append: i
-            assign variant_key = 'variant_' | append: i
-            assign product = block.settings[product_key]
-            assign variant_id = block.settings[variant_key] | plus: 0
-            assign variant = null
-            
-            if product != blank
-              if variant_id > 0
-                for v in product.variants
-                  if v.id == variant_id
-                    assign variant = v
-                    break
-                  endif
-                endfor
-              elsif product.variants.size == 1
-                assign variant = product.first_available_variant
-              endif
-            endif
-          %}
-          <td>
-            {% if variant != blank %}
-              <div class="ai-product-comparison-price-{{ ai_gen_id }}">
-                {{ variant.price | money }}
-              </div>
-            {% else %}
-              <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
-            {% endif %}
-          </td>
-        {% endfor %}
-      </tr>
-
-      <tr>
-        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_3_label }}</td>
-        {% for i in (1..4) %}
-          {% liquid
-            assign product_key = 'product_' | append: i
-            assign variant_key = 'variant_' | append: i
-            assign product = block.settings[product_key]
-            assign variant_id = block.settings[variant_key] | plus: 0
-            assign variant = null
-            
-            if product != blank
-              if variant_id > 0
-                for v in product.variants
-                  if v.id == variant_id
-                    assign variant = v
-                    break
-                  endif
-                endfor
-              elsif product.variants.size == 1
-                assign variant = product.first_available_variant
-              endif
-            endif
-          %}
-          <td>
-            {% if variant != blank and variant.sku != blank %}
-              <div class="ai-product-comparison-sku-{{ ai_gen_id }}">
-                {{ variant.sku }}
-              </div>
-            {% else %}
-              <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
-            {% endif %}
-          </td>
-        {% endfor %}
-      </tr>
-
-      {% for row_num in (4..9) %}
+    <tr>
+      <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_1_label }}</td>
+      {% for i in (1..4) %}
         {% liquid
-          assign label_key = 'row_' | append: row_num | append: '_label'
-          assign metafield_key = 'row_' | append: row_num | append: '_metafield'
-          assign row_label = block.settings[label_key]
-          assign metafield_namespace_key = block.settings[metafield_key]
-        %}
-        {% if metafield_namespace_key != ""%}
-          <tr>
-            <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ row_label }}</td>
-            {% for i in (1..4) %}
-              {% liquid
-                assign product_key = 'product_' | append: i
-                assign variant_key = 'variant_' | append: i
-                assign product = block.settings[product_key]
-                assign variant_id = block.settings[variant_key] | plus: 0
-                assign variant = null
+          assign product_key = 'product_' | append: i
+          assign variant_key = 'variant_' | append: i
+          assign product = block.settings[product_key]
+          assign variant_id = block.settings[variant_key] | plus: 0
+          assign variant = null
+          assign variant_image = null
 
-                if product != blank
-                  if variant_id > 0
-                    for v in product.variants
-                      if v.id == variant_id
-                        assign variant = v
-                        break
-                      endif
-                    endfor
-                  elsif product.variants.size == 1
-                    assign variant = product.first_available_variant
+          if product != blank
+            if variant_id > 0
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  if v.image
+                    assign variant_image = v.image
                   endif
+                  break
                 endif
-              %}
-              <td>
-                {% if variant != blank and metafield_namespace_key != blank %}
-                  {% assign metafield_parts = metafield_namespace_key | split: '.' %}
-                  {% if metafield_parts.size == 2 %}
-                    {% assign namespace = metafield_parts[0] %}
-                    {% assign key = metafield_parts[1] %}
-                    {% assign metafield_value = variant.metafields[namespace][key] %}
-                    {% if metafield_value != blank %}
-                      {{ metafield_value }}
-                    {% else %}
-                      <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
-                    {% endif %}
+              endfor
+            elsif product.variants.size == 1
+              assign variant = product.first_available_variant
+              if variant.image
+                assign variant_image = variant.image
+              endif
+            endif
+          endif
+
+          if variant_image == null and product != blank
+            assign variant_image = product.featured_image
+          endif
+        %}
+        <td>
+          {% if variant_image %}
+            <img
+                    src="{{ variant_image | image_url: width: 400 }}"
+                    alt="{{ variant_image.alt | escape }}"
+                    class="ai-product-comparison-image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="{{ variant_image.width }}"
+                    height="{{ variant_image.height }}"
+            >
+          {% else %}
+            <div class="ai-product-comparison-image-placeholder-{{ ai_gen_id }}">
+              {{ 'product-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </td>
+      {% endfor %}
+    </tr>
+
+    <tr>
+      <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_2_label }}</td>
+      {% for i in (1..4) %}
+        {% liquid
+          assign product_key = 'product_' | append: i
+          assign variant_key = 'variant_' | append: i
+          assign product = block.settings[product_key]
+          assign variant_id = block.settings[variant_key] | plus: 0
+          assign variant = null
+
+          if product != blank
+            if variant_id > 0
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  break
+                endif
+              endfor
+            elsif product.variants.size == 1
+              assign variant = product.first_available_variant
+            endif
+          endif
+        %}
+        <td>
+          {% if variant != blank %}
+            <div class="ai-product-comparison-price-{{ ai_gen_id }}">
+              {{ variant.price | money }}
+            </div>
+          {% else %}
+            <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+          {% endif %}
+        </td>
+      {% endfor %}
+    </tr>
+
+    <tr>
+      <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ block.settings.row_3_label }}</td>
+      {% for i in (1..4) %}
+        {% liquid
+          assign product_key = 'product_' | append: i
+          assign variant_key = 'variant_' | append: i
+          assign product = block.settings[product_key]
+          assign variant_id = block.settings[variant_key] | plus: 0
+          assign variant = null
+
+          if product != blank
+            if variant_id > 0
+              for v in product.variants
+                if v.id == variant_id
+                  assign variant = v
+                  break
+                endif
+              endfor
+            elsif product.variants.size == 1
+              assign variant = product.first_available_variant
+            endif
+          endif
+        %}
+        <td>
+          {% if variant != blank and variant.sku != blank %}
+            <div class="ai-product-comparison-sku-{{ ai_gen_id }}">
+              {{ variant.sku }}
+            </div>
+          {% else %}
+            <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+          {% endif %}
+        </td>
+      {% endfor %}
+    </tr>
+
+    {% for row_num in (4..9) %}
+      {% liquid
+        assign label_key = 'row_' | append: row_num | append: '_label'
+        assign metafield_key = 'row_' | append: row_num | append: '_metafield'
+        assign row_label = block.settings[label_key]
+        assign metafield_namespace_key = block.settings[metafield_key]
+      %}
+      {% if metafield_namespace_key != ""%}
+        <tr>
+          <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ row_label }}</td>
+          {% for i in (1..4) %}
+            {% liquid
+              assign product_key = 'product_' | append: i
+              assign variant_key = 'variant_' | append: i
+              assign product = block.settings[product_key]
+              assign variant_id = block.settings[variant_key] | plus: 0
+              assign variant = null
+
+              if product != blank
+                if variant_id > 0
+                  for v in product.variants
+                    if v.id == variant_id
+                      assign variant = v
+                      break
+                    endif
+                  endfor
+                elsif product.variants.size == 1
+                  assign variant = product.first_available_variant
+                endif
+              endif
+            %}
+            <td>
+              {% if variant != blank and metafield_namespace_key != blank %}
+                {% assign metafield_parts = metafield_namespace_key | split: '.' %}
+                {% if metafield_parts.size == 2 %}
+                  {% assign namespace = metafield_parts[0] %}
+                  {% assign key = metafield_parts[1] %}
+                  {% assign metafield_value = variant.metafields[namespace][key] %}
+                  {% if metafield_value != blank %}
+                    {{ metafield_value }}
                   {% else %}
                     <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
                   {% endif %}
                 {% else %}
                   <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
                 {% endif %}
-              </td>
-            {% endfor %}
-          </tr>
-        {% endif %}
-      {% endfor %}
+              {% else %}
+                <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endif %}
+    {% endfor %}
 
-      {% for row_num in (10..13) %}
-        {% liquid
-          assign label_key = 'row_' | append: row_num | append: '_label'
-          assign spec_key = 'row_' | append: row_num | append: '_spec'
-          assign row_label = block.settings[label_key]
-          assign specname = block.settings[spec_key]
-        %}
+    {% for row_num in (10..13) %}
+      {% liquid
+        assign label_key = 'row_' | append: row_num | append: '_label'
+        assign spec_key = 'row_' | append: row_num | append: '_spec'
+        assign row_label = block.settings[label_key]
+        assign specname = block.settings[spec_key]
+      %}
 
-        {% if row_label != "" %}
-          <tr>
-            <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ row_label }}</td>
-            {% for i in (1..4) %}
-              {% liquid
-                assign product_key = 'product_' | append: i
-                assign variant_key = 'variant_' | append: i
-                assign product = block.settings[product_key]
-                assign variant_id = block.settings[variant_key] | plus: 0
-                assign variant = null
+      {% if row_label != "" %}
+        <tr>
+          <td class="ai-product-comparison-row-label-{{ ai_gen_id }}">{{ row_label }}</td>
+          {% for i in (1..4) %}
+            {% liquid
+              assign product_key = 'product_' | append: i
+              assign variant_key = 'variant_' | append: i
+              assign product = block.settings[product_key]
+              assign variant_id = block.settings[variant_key] | plus: 0
+              assign variant = null
 
-                if product != blank
-                  if variant_id > 0
-                    for v in product.variants
-                      if v.id == variant_id
-                        assign variant = v
-                        break
-                      endif
-                    endfor
-                  elsif product.variants.size == 1
-                    assign variant = product.first_available_variant
-                  endif
+              if product != blank
+                if variant_id > 0
+                  for v in product.variants
+                    if v.id == variant_id
+                      assign variant = v
+                      break
+                    endif
+                  endfor
+                elsif product.variants.size == 1
+                  assign variant = product.first_available_variant
                 endif
-              %}
-              <td>
+              endif
+            %}
+            <td>
 
 
-                {% comment %}spec process{% endcomment %}
-                {%- assign specs = product.metafields.plytix.specs | split: ";;" -%}
-                {%- assign brand = "" -%}
-                {%- for spec in specs -%}
-                  {%- assign attr = spec | split: "::" -%}
+              {% comment %}spec process{% endcomment %}
+              {%- assign specs = product.metafields.plytix.specs | split: ";;" -%}
+              {%- assign brand = "" -%}
+              {%- for spec in specs -%}
+                {%- assign attr = spec | split: "::" -%}
 
-                  {%- if attr[0] == specname-%}
-                    {%- assign attrVal = attr[1] | remove: "[" | remove: "]" |  remove : "'" -%}
-                    {%- if attrVal == 'false' or attrVal == 'False' -%}
-                      <div class="value">No</div>
-                    {%- else -%}
-                      {%- assign attrValfinal = attr[1] | replace: '&deg;' ,'°' | replace: '&sup2;' ,'²' | replace: '&#178;' ,'²' -%}
-                      {%- assign attrValfinal = attrValfinal | replace: '&amp;' ,'&' | replace: '&#38;' ,'&' -%}
-                      {%- assign attrValfinal = attrValfinal | replace: '&trade;' ,'™' | replace: '&reg;' ,'®' -%}
-                      {%- if attr[0] == 'Operating Weight (lbs.)' or attr[0] == 'Packaged Weight (lbs.)' -%}
+                {%- if attr[0] == specname-%}
+                  {%- assign attrVal = attr[1] | remove: "[" | remove: "]" |  remove : "'" -%}
+                  {%- if attrVal == 'false' or attrVal == 'False' -%}
+                    <div class="value">No</div>
+                  {%- else -%}
+                    {%- assign attrValfinal = attr[1] | replace: '&deg;' ,'°' | replace: '&sup2;' ,'²' | replace: '&#178;' ,'²' -%}
+                    {%- assign attrValfinal = attrValfinal | replace: '&amp;' ,'&' | replace: '&#38;' ,'&' -%}
+                    {%- assign attrValfinal = attrValfinal | replace: '&trade;' ,'™' | replace: '&reg;' ,'®' -%}
+                    {%- if attr[0] == 'Operating Weight (lbs.)' or attr[0] == 'Packaged Weight (lbs.)' -%}
 
-                        {%- assign attrValfinal = attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br -%}
+                      {%- assign attrValfinal = attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br -%}
 
-                        {% comment %}Remove Decimal if there isn't a value other than 0 in it{% endcomment %}
-                        {%- assign attrValfinalSplit = attrValfinal | split: "." -%}
-                        {%- if attrValfinalSplit.size > 1 -%}
-                          {%- assign decimalVal = attrValfinalSplit[1] | plus: 0 -%}
-                          {%- if decimalVal == 0 -%}
-                            {%- assign attrValfinal =attrValfinalSplit[0] -%}
-                          {%- endif -%}
+                      {% comment %}Remove Decimal if there isn't a value other than 0 in it{% endcomment %}
+                      {%- assign attrValfinalSplit = attrValfinal | split: "." -%}
+                      {%- if attrValfinalSplit.size > 1 -%}
+                        {%- assign decimalVal = attrValfinalSplit[1] | plus: 0 -%}
+                        {%- if decimalVal == 0 -%}
+                          {%- assign attrValfinal =attrValfinalSplit[0] -%}
                         {%- endif -%}
-
-                        <div class="value">{{ attrValfinal }} 11111</div>
-
-                      {%- elsif attrValfinal == "None" -%}
-                        <div class="value"> - </div>
-                      {%- else -%}
-                        <div class="value">{{ attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }}</div>
                       {%- endif -%}
+
+                      <div class="value">{{ attrValfinal }} 11111</div>
+
+                    {%- elsif attrValfinal == "None" -%}
+                      <div class="value"> - </div>
+                    {%- else -%}
+                      <div class="value">{{ attrValfinal | remove: "[" | remove: "]" | replace: ';', ', ' | newline_to_br }}</div>
                     {%- endif -%}
                   {%- endif -%}
+                {%- endif -%}
 
-                {%- endfor -%}
+              {%- endfor -%}
 
-              </td>
-            {% endfor %}
-          </tr>
-        {% endif %}
-      {% endfor %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endif %}
+    {% endfor %}
 
-      <tr>
-        <td class="ai-product-comparison-row-label-{{ ai_gen_id }}"></td>
-        {% for i in (1..4) %}
-          {% liquid
-            assign product_key = 'product_' | append: i
-            assign variant_key = 'variant_' | append: i
-            assign product = block.settings[product_key]
-            assign variant_id = block.settings[variant_key] | plus: 0
-            assign variant = null
-          %}
+    <tr>
+      <td class="ai-product-comparison-row-label-{{ ai_gen_id }}"></td>
+      {% for i in (1..4) %}
+        {% liquid
+          assign product_key = 'product_' | append: i
+          assign variant_key = 'variant_' | append: i
+          assign product = block.settings[product_key]
+          assign variant_id = block.settings[variant_key] | plus: 0
+          assign variant = null
+        %}
 
-          {% if product != blank %}
-              {% if variant_id > 0 %}
-                {% for v in product.variants %}
-                  {% if v.id == variant_id  %}
-                    {% assign variant = v  %}
-                    {% break  %}
-                  {% endif  %}
-                {% endfor  %}
-              {% elsif product.variants.size == 1  %}
-                {% assign variant = product.first_available_variant  %}
+        {% if product != blank %}
+          {% if variant_id > 0 %}
+            {% for v in product.variants %}
+              {% if v.id == variant_id  %}
+                {% assign variant = v  %}
+                {% break  %}
               {% endif  %}
+            {% endfor  %}
+          {% elsif product.variants.size == 1  %}
+            {% assign variant = product.first_available_variant  %}
           {% endif  %}
+        {% endif  %}
 
-          <td>
-            {% assign url = product.url  %}
-            {% if variant != blank and variant_id != 0 %}
-              {% assign url = product.url | append: "?variant=" | append: variant_id%}
-            {% endif %}
-            <div class="productitem--action viewproduct">
-              <a class="" href="{{ url }}">
-                <button class="productitem--action-trigger productitem--action main-atc-button thinbtn" tabindex="0">
-                  <span class="atc-button--text">View Product <i class="fa-sharp fa-solid fa-caret-right"></i></span>
-                </button>
-              </a>
-            </div>
-          </td>
-        {% endfor %}
-      </tr>
+        <td>
+          {% assign url = product.url  %}
+          {% if variant != blank and variant_id != 0 %}
+            {% assign url = product.url | append: "?variant=" | append: variant_id%}
+          {% endif %}
+          <div class="productitem--action viewproduct">
+            <a class="" href="{{ url }}">
+              <button class="productitem--action-trigger productitem--action main-atc-button thinbtn" tabindex="0">
+                <span class="atc-button--text">View Product <i class="fa-sharp fa-solid fa-caret-right"></i></span>
+              </button>
+            </a>
+          </div>
+        </td>
+      {% endfor %}
+    </tr>
     </tbody>
   </table>
 </product-comparison-{{ ai_gen_id }}>
@@ -476,20 +485,20 @@
         this.forms.forEach((form) => {
           form.addEventListener('submit', (event) => {
             event.preventDefault();
-            
+
             const formData = new FormData(form);
-            
+
             fetch('/cart/add.js', {
               method: 'POST',
               body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-              window.location.href = '/cart';
-            })
-            .catch(error => {
-              console.error('Error:', error);
-            });
+                    .then(response => response.json())
+                    .then(data => {
+                      window.location.href = '/cart';
+                    })
+                    .catch(error => {
+                      console.error('Error:', error);
+                    });
           });
         });
       }
