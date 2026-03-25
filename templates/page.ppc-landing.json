@@ -1,0 +1,151 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "a475181a-3079-4a36-9edf-37785d0fdb22": {
+      "type": "left-nav-on-pages",
+      "disabled": true,
+      "settings": {
+        "show_section": true,
+        "navigation": "education",
+        "nav_title": "",
+        "left_classes": "",
+        "hide_lvl_1_links": true,
+        "hide_lvl_2_links": false
+      }
+    },
+    "blocks_7Xa9TF": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d456638_WAW9UR": {
+          "type": "ai_gen_block_d456638",
+          "settings": {
+            "background_image": "shopify://shop_images/bg-blue-w-strip.jpg",
+            "fallback_background_color": "#f4f4f4",
+            "heading": "<p>Commercial Floor Scrubbers That Get Results</p>",
+            "text": "<p>Discover 4 reliable scrubbers designed for powerful cleaning and long-lasting performance.</p>",
+            "heading_size": 36,
+            "text_size": 20,
+            "heading_color": "#000000",
+            "text_color": "#ffffff",
+            "content_padding": 45,
+            "right_image": "shopify://shop_images/ppc-group.png",
+            "mobile_content_padding": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d456638_WAW9UR"
+      ],
+      "name": "Split content block",
+      "settings": {}
+    },
+    "dynamic_custom_liquid_dpBNjD": {
+      "type": "dynamic-custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.ppc-review-block{\nmax-width:1400px;\npadding:0 15px 30px 15px;\n}\n.ppc-review-contain{\n\tdisplay:flex;\n\tmax-width:1000px;\n\tmargin:auto;\n\talign-items: center; \n\tflex-direction:row;\n}\n.ppc-review-contain .dash{\n\twidth:100px;\n\tfont-size:55px;\n\ttext-align:center;\n}\n.ppc-review-contain .this-review{\ntext-align:center;\nflex: 1; \n}\n.this-review .star-rating{\ncolor:#ffca14;\npadding-bottom:5px;\n}\n.this-review .reviewer{\nfont-weight:bold;\ncolor:#E64D25;\n}\n\n</style>\n<div class=\"ppc-review-block\">\n\t<div class=\"ppc-review-contain\">\n\t\t<div class=\"left-dash dash\"><i class=\"fa-solid fa-dash\"></i></div>\n\t\t\n\t\t<div class=\"this-review\">\n\t\t\t<div class=\"star-rating\">\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t\t<i class=\"fa-solid fa-star\"></i>\n\t\t\t</div>\n\t\t\t<div class=\"text-review\">\n\t\t\t\tI purchased a Reliable 14 Battery Scrubber roughly 3 years ago for my church and it still runs like a champ today! The process of ordering was super simple, the salesman and customer service treated me fantastic by listening to what we needed and not trying to oversell us on unnecessary things. We are super happy with CleanFreak and will 100% continue to buy from them in the future! - <span class=\"reviewer\">John W.</span>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"right-dash dash\"><i class=\"fa-solid fa-dash\"></i></div>\n\t</div>\n\n</div>"
+      }
+    },
+    "17737777765d0f9e9e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_14f33bb_EWnDkA": {
+          "type": "ai_gen_block_14f33bb",
+          "settings": {
+            "product_1": "17-inch-electric-auto-scrubber",
+            "variant_1": "",
+            "product_2": "dura-18-cord-electric-automatic-floor-scrubber",
+            "variant_2": "",
+            "product_3": "14-inch-reliable-compact-walk-behind-floor-scrubber",
+            "variant_3": "43397150343380",
+            "product_4": "the-advantage-20-red-automatic-floor-scrubber-battery-powered",
+            "variant_4": "",
+            "label_column_header": "Features",
+            "row_1_label": "Product Image",
+            "row_2_label": "Price",
+            "row_3_label": "SKU",
+            "row_4_label": "Power Source",
+            "row_4_metafield": "plytix.power_source",
+            "row_5_label": "Solution Tank",
+            "row_5_metafield": "plytix.solution_capacity",
+            "row_6_label": "Cleaning Width",
+            "row_6_metafield": "plytix.cleaning_width",
+            "row_7_label": "Brush/Pad Speed",
+            "row_7_metafield": "plytix.brush_pad_speed",
+            "row_8_label": "",
+            "row_8_metafield": "",
+            "row_9_label": "Specification 6",
+            "row_9_metafield": "",
+            "row_10_label": "Run Time",
+            "row_10_spec": "Run Time",
+            "row_11_label": "Cleaning Rate Per Hour",
+            "row_11_spec": "Cleaning Rate Per Hour",
+            "row_12_label": "",
+            "row_12_spec": "",
+            "row_13_label": "",
+            "row_13_spec": "",
+            "desktop_width_percent": 100,
+            "table_background_color": "#ffffff",
+            "border_color": "#dddddd",
+            "header_background_color": "#303e48",
+            "header_text_color": "#ffffff",
+            "header_font_size": 16,
+            "label_background_color": "#f8f8f8",
+            "label_text_color": "#303e48",
+            "label_font_size": 14,
+            "cell_background_color": "#ffffff",
+            "cell_text_color": "#303e48",
+            "cell_font_size": 14,
+            "cell_padding": 18,
+            "price_color": "#32758b",
+            "price_font_size": 20,
+            "sku_color": "#666666",
+            "sku_font_size": 13,
+            "image_max_width": 220
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_14f33bb_EWnDkA"
+      ],
+      "settings": {}
+    },
+    "d567f3fb-0056-4b4a-b887-445ab03fabaa": {
+      "type": "gradient-text-header",
+      "disabled": true,
+      "settings": {
+        "chsectionheading": "",
+        "chsectiontext": ""
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "trustpilot_review_carousel_ccMUtg": {
+      "type": "trustpilot-review-carousel",
+      "name": "Trustpilot Carousel",
+      "settings": {}
+    }
+  },
+  "order": [
+    "a475181a-3079-4a36-9edf-37785d0fdb22",
+    "blocks_7Xa9TF",
+    "dynamic_custom_liquid_dpBNjD",
+    "17737777765d0f9e9e",
+    "d567f3fb-0056-4b4a-b887-445ab03fabaa",
+    "main",
+    "trustpilot_review_carousel_ccMUtg"
+  ]
+}
