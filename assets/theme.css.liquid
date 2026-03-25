@@ -2824,10 +2824,12 @@ footer .footer-icon svg{
 	cursor: pointer;
 }
 
-.request-btn{
-	color: {{ settings.color_text }};
-	background-color: white;
-	border: 1px solid {{ settings.color_button_secondary_background }};
+.unavailable-btn,
+.unavailable-btn:hover{
+	color: {{ settings.color_text }} !important;
+	background-color: white !important;
+	border: 1px solid {{ settings.color_button_secondary_background }} !important;
+	cursor:unset;
 }
 
 .main-atc-button.disabled{
