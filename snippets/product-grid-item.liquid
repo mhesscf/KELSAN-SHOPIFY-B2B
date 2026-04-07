@@ -542,7 +542,7 @@ data-product-quickshop-url="{{ product_link }}"
               unknown.</p>
           </details>
         </div>
-      {%- elsif product.first_available_variant.inventory_management == 'middleware-fulfillment' and  product.first_available_variant.inventory_quantity < 1 and pdiscontinued == false -%}
+      {%- elsif product.first_available_variant.inventory_management == 'shopify' and  product.first_available_variant.inventory_quantity < 1 and pdiscontinued == false -%}
         <div class="sx-status">
 
           {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
