@@ -60,6 +60,13 @@ Create me a table for 4 products comparison. each column will be a product, the 
   font-size: {{ block.settings.label_font_size }}px;
   }
 
+  .ai-jdm-reviews{
+    margin:5px 0 -15px 0
+  }
+  .ai-jdm-reviews .jdgm-prev-badge__text{
+    display:block;
+  }
+
   .ai-product-comparison-image-{{ ai_gen_id }} {
   width: 100%;
   max-width: {{ block.settings.image_max_width }}px;
@@ -217,6 +224,9 @@ Create me a table for 4 products comparison. each column will be a product, the 
               {{ 'product-1' | placeholder_svg_tag }}
             </div>
           {% endif %}
+          <div class="ai-jdm-reviews">
+            {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
+          </div>
         </td>
       {% endfor %}
     </tr>
