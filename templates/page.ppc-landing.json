@@ -36,7 +36,7 @@
             "heading_color": "#000000",
             "text_color": "#ffffff",
             "content_padding": 45,
-            "right_image": "shopify://shop_images/ppc-group.png",
+            "right_image": "shopify://shop_images/ppc-group-600x500.png",
             "mobile_content_padding": 20
           },
           "blocks": {}
