@@ -19,7 +19,7 @@
           {%- assign compare_at_price = item.product.metafields.plytix.org-price-b4-special | times: 100 -%}
       {%- endif -%}
 
-    {% if variant.inventory_management == 'middleware-fulfillment' and  variant.inventory_quantity >  1 %}
+    {% if variant.inventory_management == 'shopify' and  variant.inventory_quantity >  1 %}
       {% assign available = variant.inventory_quantity %}
     {% endif %}
     {% break %}
@@ -27,7 +27,7 @@
       {%- assign compare_at_price = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
        {% if compare_at_price > item.price %}
             {%- assign compare_at_price = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
-            {% if variant.inventory_management == 'middleware-fulfillment' and  variant.inventory_quantity >  1 %}
+            {% if variant.inventory_management == 'shopify' and  variant.inventory_quantity >  1 %}
                 {% assign available = variant.inventory_quantity %}
             {% endif %}
             {% break %}

@@ -157,7 +157,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
     {%- if selected_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
       {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
       {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
-    {%- elsif selected_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
+    {%- elsif selected_variant.inventory_management == 'shopify' and  inventoryQuantity <  1 -%}
 
       {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
       {%- if selected_variant.metafields.plytix.sxerp_po_date -%}
@@ -554,7 +554,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {%- comment -%}get instock{%- endcomment -%}
           {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' -%}
               {%- comment -%}<span class="status-desc main-notice">Ships Direct from Manufacturer</span>{%- endcomment -%}
-          {%- elsif variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
+          {%- elsif variant.inventory_management == 'shopify' and  inventoryQuantity <  1 -%}
               {%- comment -%}<span class="status-desc main-notice">Temporarily On Backorder</span>{%- endcomment -%}
           {%- elsif variant.inventory_management == nil and leadTime -%}
               {%- comment -%}<span class="status-desc main-notice">Special Order Item</span>{%- endcomment -%}
@@ -799,7 +799,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityBun <  1 -%}
                     {%- assign stockStatusBunMain = "Ships Direct from Manufacturer" -%}
                     {%- assign stockStatusBunSub = "May Have Extended Lead Times" -%}
-                  {%- elsif bundle_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityBun <  1 -%}
+                  {%- elsif bundle_product.selected_or_first_available_variant.inventory_management == 'shopify' and  inventoryQuantityBun <  1 -%}
 
                     {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
                     {%- if bundle_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
@@ -976,7 +976,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- if free_product.selected_or_first_available_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantityFree <  1 -%}
                     {%- assign stockStatusFreeMain = "Ships Direct from Manufacturer" -%}
                     {%- assign stockStatusFreeSub = "May Have Extended Lead Times" -%}
-                  {%- elsif free_product.selected_or_first_available_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantityFree <  1 -%}
+                  {%- elsif free_product.selected_or_first_available_variant.inventory_management == 'shopify' and  inventoryQuantityFree <  1 -%}
                     {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
                     {%- if free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date -%}
                       {%- assign dateStart = free_product.selected_or_first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}

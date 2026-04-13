@@ -499,7 +499,7 @@
           {%- if current_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
             {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
             {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
-          {%- elsif current_variant.inventory_management == 'middleware-fulfillment' and  inventoryQuantity <  1 -%}
+          {%- elsif current_variant.inventory_management == 'shopify' and  inventoryQuantity <  1 -%}
 
             {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
             {%- if current_variant.metafields.plytix.sxerp_po_date -%}

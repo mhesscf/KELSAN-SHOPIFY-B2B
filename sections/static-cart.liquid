@@ -153,21 +153,23 @@
 
 
           {% if shop.name contains "CleanFreak" %}
-            {% assign cart-size = cart.total_price | divided_by: 100.00 %}
-            {% assign threshold-1 = 1000 | minus: 0.01 %}
-            {% if cart-size < threshold-1 %}
-              {% assign threshold-left =  1000 |  minus: cart-size %}
-              {% assign threshold-left =  threshold-left | times:100 %}
+            {%- unless shop.name contains "CleanFreak B2B"-%}
+              {% assign cart-size = cart.total_price | divided_by: 100.00 %}
+              {% assign threshold-1 = 1000 | minus: 0.01 %}
+              {% if cart-size < threshold-1 %}
+                {% assign threshold-left =  1000 |  minus: cart-size %}
+                {% assign threshold-left =  threshold-left | times:100 %}
 
-                <div class="fg-notice fg-notice-thresh">
-                  <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
+                  <div class="fg-notice fg-notice-thresh">
+                    <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
+                  </div>
+
+              {% else %}
+                <div class="fg-notice fg-notice-link">
+                  <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
                 </div>
-
-            {% else %}
-              <div class="fg-notice fg-notice-link">
-                <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
-              </div>
-            {% endif %}
+              {% endif %}
+            {% endunless %}
           {% endif %}
 
         {% elsif show_continue_link %}
@@ -270,10 +272,10 @@
         </div>
     </div>
   </section>
-
-  <div class="fg-area">
-  </div>
-
+  {%- unless shop.name contains "CleanFreak B2B"-%}
+    <div class="fg-area">
+    </div>
+  {% endunless %}
   {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
       {% for tag in customer.tags %}
         {% if tag == "PO-Approved" %}
@@ -366,21 +368,23 @@
               </script>
               {% endcomment %}
               {% if shop.name contains "CleanFreak" %}
-                {% assign cart-size = cart.total_price | divided_by: 100.00 %}
-                {% assign threshold-1 = 1000 | minus: 0.01 %}
-                {% if cart-size < threshold-1 %}
-                  {% assign threshold-left =  1000 |  minus: cart-size %}
-                  {% assign threshold-left =  threshold-left | times:100 %}
+                {%- unless shop.name contains "CleanFreak B2B"-%}
+                  {% assign cart-size = cart.total_price | divided_by: 100.00 %}
+                  {% assign threshold-1 = 1000 | minus: 0.01 %}
+                  {% if cart-size < threshold-1 %}
+                    {% assign threshold-left =  1000 |  minus: cart-size %}
+                    {% assign threshold-left =  threshold-left | times:100 %}
 
-                  <div class="fg-notice fg-notice-thresh">
-                    <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
-                  </div>
+                    <div class="fg-notice fg-notice-thresh">
+                      <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
+                    </div>
 
-                {% else %}
-                  <div class="fg-notice fg-notice-link">
-                    <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
-                  </div>
-                {% endif %}
+                  {% else %}
+                    <div class="fg-notice fg-notice-link">
+                      <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
+                    </div>
+                  {% endif %}
+                {% endunless %}
               {% endif %}
 
               {% if additional_checkout_buttons %}
@@ -478,12 +482,12 @@
                 pointer-events: none;
               }
             </style>
-
-            <div class="fg-notice fg-notice-link">
-              <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> $1000.00 away from a Free Gift!
-              </span>
-            </div>
-
+            {%- unless shop.name contains "CleanFreak B2B"-%}
+              <div class="fg-notice fg-notice-link">
+                <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> $1000.00 away from a Free Gift!
+                </span>
+              </div>
+            {% endunless %}
             {{ continue_link_html }}
           </div>
         </div>
