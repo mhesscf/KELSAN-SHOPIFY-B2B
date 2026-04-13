@@ -210,20 +210,22 @@ Create me a table for 4 products comparison. each column will be a product, the 
           endif
         %}
         <td>
-          {% if variant_image %}
-            <img
-                    src="{{ variant_image | image_url: width: 400 }}"
-                    alt="{{ variant_image.alt | escape }}"
-                    class="ai-product-comparison-image-{{ ai_gen_id }}"
-                    loading="lazy"
-                    width="{{ variant_image.width }}"
-                    height="{{ variant_image.height }}"
-            >
-          {% else %}
-            <div class="ai-product-comparison-image-placeholder-{{ ai_gen_id }}">
-              {{ 'product-1' | placeholder_svg_tag }}
-            </div>
-          {% endif %}
+          <a href="{{ url }}">
+            {% if variant_image %}
+              <img
+                      src="{{ variant_image | image_url: width: 400 }}"
+                      alt="{{ variant_image.alt | escape }}"
+                      class="ai-product-comparison-image-{{ ai_gen_id }}"
+                      loading="lazy"
+                      width="{{ variant_image.width }}"
+                      height="{{ variant_image.height }}"
+              >
+            {% else %}
+              <div class="ai-product-comparison-image-placeholder-{{ ai_gen_id }}">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </a>
           <div class="ai-jdm-reviews">
             {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
           </div>
