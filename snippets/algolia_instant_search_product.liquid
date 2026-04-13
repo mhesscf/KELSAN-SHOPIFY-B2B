@@ -94,6 +94,9 @@
 
     function stocklookup(im,inventory,leadtime,dropship,variants_count,bundleitems = "",clearance = "false",sku,sxerp_po_date){
         leadtime = Number(leadtime);
+        if (im == "manual"){
+            inventory = 0;
+        }
         var finalmessage = '';
         if (variants_count != "1" || bundleitems != ""){
             finalmessage += '<span class="status-desc main-notice">See Product Page for Stock Status Details</span>';
@@ -102,14 +105,14 @@
             finalmessage += '<summary onClick="stoplink(event)" tabindex="0" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
             finalmessage += '<p>This product has multiple item offerings. See product page for the stock status of each individual item.</p>';
             finalmessage += '</details>';
-        }else if(dropship == "true"  && inventory < 1 ) {
+        }else if(dropship == "true" && inventory < 1 ) {
             finalmessage += '<span class="status-desc main-notice">Ships Direct from Manufacturer</span>';
             finalmessage += '<span class="status-time">May Have Extended Lead Times</span>';
             finalmessage += '<details>';
             finalmessage += '<summary onClick="stoplink(event)" tabindex="0" class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>';
             finalmessage += '<p>We do not currently stock this item. It will ship directly from the manufacturer to you for the quickest delivery time possible. Current inventory levels at the manufacturer are unknown.</p>';
             finalmessage += '</details>';
-        }else if(im == "middleware-fulfillment" && inventory < 1 ){
+        }else if((im == "middleware-fulfillment" || im == "shopify") && inventory < 1 ){
             if(sxerp_po_date){
                 var currentDate = new Date();
                 var targetDate = new Date(sxerp_po_date);
@@ -119,7 +122,7 @@
             var leadtimeText = backorderLeadtimeLookup(leadtime);
             finalmessage += '<span class="status-desc main-notice">Temporarily On Backorder</span>';
             finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
-        }else if(im != "middleware-fulfillment" && leadtime){
+        }else if((im == "middleware-fulfillment" || im == "manual" || im == "shopify") && inventory < 1 && leadtime){
             var leadtimeText = specialLeadtimeLookup(leadtime);
             finalmessage += '<span class="status-desc main-notice">Special Order Item</span>';
             finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
@@ -130,6 +133,7 @@
             }
             finalmessage += '</span>';
         }
+        // alert(im +"/"+ inventory +"/"+ leadtime)
         return finalmessage;
     };
 
@@ -143,7 +147,7 @@
         }else if(dropship == "true") {
             stockStatusMain = "Ships Direct from Manufacturer";
             stockStatusSub = "May Have Extended Lead Times";
-        }else if(im == "middleware-fulfillment" && inventory < 1){
+        }else if((im == "middleware-fulfillment" || im == "shopify") && inventory < 1){
             if(sxerp_po_date){
                 var currentDate = new Date();
                 var targetDate = new Date(sxerp_po_date);
@@ -152,7 +156,7 @@
             }
             stockStatusMain = "Temporarily On Backorder";
             stockStatusSub = backorderLeadtimeLookup(leadtime);
-        }else if(im != "middleware-fulfillment" && leadtime){
+        }else if((im == "middleware-fulfillment" || im == "shopify") && leadtime){
             stockStatusMain = "Special Order Item";
             stockStatusSub =  specialLeadtimeLookup(leadtime);
         }else if(inventory > 0) {
