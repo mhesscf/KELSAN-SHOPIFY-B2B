@@ -13984,6 +13984,11 @@ display:none;
 	margin-top:-15px;
 	text-align:right;
 }
+{%- unless shop.name contains "CleanFreak B2B"-%}
+	.fg-area-minicart{
+		display:none !important;
+	}
+  {% endunless %}
 .fg-area-minicart a{
 	text-decoration: none;
 	color:#666666;
