@@ -16,8 +16,16 @@
     {%- assign leadTime = variant.metafields.plytix.sxerp_lead_time -%}
     {%- assign inventoryQuantity = variant.inventory_quantity -%}
     {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
+
+      {%- if variant.inventory_management == nil -%}
+        {% comment %}override inventory quantity if there is no inventory management set{% endcomment %}
+        {%- assign inventoryQuantity = 0 -%}
+      {%- endif -%}
+
     {%- assign leadTime = leadTime | plus: 0 -%}
     {% comment %}{%- assign pclearance = false -%}{% endcomment %}
+
+
     {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
       <div class="sx-status">
         <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
@@ -74,7 +82,7 @@
         {%- endif -%}
         <span class="status-order">Order Now to Reserve</span>
       </div>
-    {%- elsif variant.inventory_management == nil and leadTime -%}
+    {%- elsif variant.inventory_management == nil and leadTime > 0 -%}
       <div class="sx-status">
         <span class="status-desc main-notice">Special Order Item</span>
         {%- if leadTime < 22  -%}
