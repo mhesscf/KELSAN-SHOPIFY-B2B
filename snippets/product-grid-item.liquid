@@ -526,6 +526,17 @@ data-product-quickshop-url="{{ product_link }}"
       {%- assign current_variant = product.selected_or_first_available_variant -%}
       {%- assign fservice = current_variant.fulfillment_service -%}
       {%- assign leadTime = product.metafields.plytix.sxerp_lead_time -%}
+
+
+        {%- assign inventoryQuantity = current_variant.inventory_quantity -%}
+        {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
+
+        {%- if current_variant.inventory_management == nil -%}
+          {% comment %}override inventory quantity if there is no inventory management set{% endcomment %}
+          {%- assign inventoryQuantity = 0 -%}
+        {%- endif -%}
+
+
       {%- assign leadTime = leadTime | plus: 0 -%}
         {%- assign stockStatusMain = "" -%}
         {%- assign stockStatusSub = "" -%}
@@ -542,7 +553,7 @@ data-product-quickshop-url="{{ product_link }}"
               unknown.</p>
           </details>
         </div>
-      {%- elsif product.first_available_variant.inventory_management == 'shopify' and  product.first_available_variant.inventory_quantity < 1 and pdiscontinued == false -%}
+      {%- elsif product.first_available_variant.inventory_management == 'shopify' and  inventoryQuantity < 1 and pdiscontinued == false -%}
         <div class="sx-status">
 
           {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
@@ -603,7 +614,7 @@ data-product-quickshop-url="{{ product_link }}"
           {%- endif -%}
           <span class="status-order">Order Now to Reserve</span>
         </div>
-      {%- elsif product.first_available_variant.inventory_management == nil and leadTime and pdiscontinued == false -%}
+      {%- elsif product.first_available_variant.inventory_management == nil and leadTime > 0 and pdiscontinued == false -%}
         <div class="sx-status">
           {%- assign stockStatusMain = "Special Order Item" -%}
           <span class="status-desc main-notice">Special Order Item</span>
