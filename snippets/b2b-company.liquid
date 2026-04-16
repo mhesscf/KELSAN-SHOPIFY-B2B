@@ -68,7 +68,7 @@
             <h2>Available Locations</h2>
 
             {%- if customer.company_available_locations_count and customer.company_available_locations_count > 0 -%}
-                <ul>
+                <ul class="b2b-all-locations show-bottom">
                     {%- for loc in customer.company_available_locations -%}
                         <li style="margin-bottom: 1rem;">
                             <strong>{{ loc.name }}</strong> {% if current_loc and loc.id == current_loc.id and customer.company_available_locations.size > 1 %} <em>(current)</em>{% endif %}<br>
@@ -149,5 +149,39 @@
                 $label.text('Hide Form');
             }
         });
+
+
+
+// scrolling fade
+        (function () {
+            const lists = document.querySelectorAll('.b2b-all-locations');
+
+            function updateFades(el) {
+                const scrollTop = el.scrollTop;
+                const clientHeight = el.clientHeight;
+                const scrollHeight = el.scrollHeight;
+
+                const atTop = scrollTop <= 1;
+                const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+
+                el.classList.toggle('show-top', !atTop);
+                el.classList.toggle('show-bottom', !atBottom);
+            }
+
+            lists.forEach((el) => {
+                updateFades(el);
+                el.addEventListener('scroll', () => updateFades(el));
+            });
+
+            window.addEventListener('load', () => {
+                lists.forEach(updateFades);
+            });
+
+            window.addEventListener('resize', () => {
+                lists.forEach(updateFades);
+            });
+        })();
+
     });
+
 </script>
