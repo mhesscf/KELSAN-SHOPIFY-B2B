@@ -63,6 +63,9 @@ Create me a table for 4 products comparison. each column will be a product, the 
   .ai-jdm-reviews{
     margin:5px 0 -15px 0
   }
+  .ai-jdm-reviews .jdgm-qa-badge{
+  display:none !important;
+  }
   .ai-jdm-reviews .jdgm-prev-badge__text{
     display:block;
   }
@@ -93,11 +96,32 @@ Create me a table for 4 products comparison. each column will be a product, the 
   max-height: {{ block.settings.image_max_width }}px;
   }
 
-  .ai-product-comparison-price-{{ ai_gen_id }} {
-  font-weight: 600;
-  font-size: {{ block.settings.price_font_size }}px;
-  color: {{ block.settings.price_color }};
+  .ai-product-comparison-price-{{ ai_gen_id }} .price__compare-at-visible-2{
+  margin-bottom:-5px;
   }
+
+
+   .ai-product-comparison-price-{{ ai_gen_id }}  .price__compare-at{
+    color: {{ settings.color_text_medium }};
+  font-size: 14px;
+  line-height:14px;
+  }
+  .ai-product-comparison-price-{{ ai_gen_id }} .price__current{
+  margin-top:-5px;
+  }
+  .ai-product-comparison-price-{{ ai_gen_id }} .price__current span{
+  order: 0;
+  color: {{ settings.color_text }};
+  font-size: 26px;
+  font-weight: 600;
+  display: inline-block;
+  }
+  .ai-product-comparison-price-{{ ai_gen_id }} .yousave{
+  color:#d74018;
+  font-size:14px;
+  margin-top:-8px;
+  }
+
 
   .ai-product-comparison-sku-{{ ai_gen_id }} {
   font-size: {{ block.settings.sku_font_size }}px;
@@ -210,6 +234,11 @@ Create me a table for 4 products comparison. each column will be a product, the 
           endif
         %}
         <td>
+          {% assign url = product.url  %}
+          {% if variant != blank and variant_id != 0 %}
+            {% assign url = product.url | append: "?variant=" | append: variant_id %}
+          {% endif %}
+
           <a href="{{ url }}">
             {% if variant_image %}
               <img
@@ -258,9 +287,42 @@ Create me a table for 4 products comparison. each column will be a product, the 
         %}
         <td>
           {% if variant != blank %}
+
+
+
             <div class="ai-product-comparison-price-{{ ai_gen_id }}">
-              {{ variant.price | money }}
+
+              {%- if variant.compare_at_price > variant.price -%}
+                  {% comment %}on sale style--------------------------------{% endcomment %}
+                  <div class="price__compare-at-visible-2 strikethrough var-specs var{{ variant.id }}" >
+                    <div class="strikeprice">{{ variant.compare_at_price | money }}</div>
+                  </div>
+
+
+                <div class="price__current  price__current--on-sale" data-price-container="" style="">
+                  <span class="visually-hidden" style="display:none;">Current price</span>
+                  <span class="money" data-price="">{{ variant.price | money }}</span>
+                </div>
+
+
+                {%- assign varprice = variant.price -%}
+                {%- assign varlpsavings = variant.compare_at_price | minus: varprice -%}
+                  <div class="price__compare-at-visible-2 var-specs var{{ variant.id }}" >
+                    <div class="yousave">You Save: {{ varlpsavings | money }}</div>
+                  </div>
+
+              {%- else -%}
+                <div class="price__current  " data-price-container="" style="">
+                  <span class="visually-hidden" style="display:none;">Current price</span>
+                  <span class="money" data-price="">{{ variant.price | money }}</span>
+                </div>
+              {%- endif -%}
+
             </div>
+
+
+
+
           {% else %}
             <span class="ai-product-comparison-empty-{{ ai_gen_id }}">-</span>
           {% endif %}

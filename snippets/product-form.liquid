@@ -723,14 +723,16 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
         {%- endif-%}
 
         {%- if product.metafields.plytix.hide_pricing != "Hide Button Only" and product.metafields.plytix.hide_pricing != "Hide Price and Button" and showatc == "true" -%}
+            {% if pdiscontinued == false %}
 
-          {%
-                  render 'warning-pop',
-                  product: product,
-                  area:'main',
-                  varid:'mainatc'
-          %}
-
+                {%
+                        render 'warning-pop',
+                        product: product,
+                        area:'main',
+                        varid:'mainatc'
+                %}
+            {% endif %}
+          
                     <button class=" product-form--atc-button main-atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
                             id="p-atc"
                             type="submit"
@@ -1108,19 +1110,51 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                   {%- endif -%}
                 {%- endfor -%}
               </div>
+
+  {% comment %}bundle atc{% endcomment %}
+              {%- assign showatc = "true" -%}
+              {%- if shop.name contains "CleanFreak B2B" -%}
+                {% if customer and customer.current_company %}
+                  {% if customer.current_company.metafields.custom.hide_add_to_cart_for_non_catalog_items.value %}
+                    {% comment %}if enabled, hide atc unless the product is in their catalog{% endcomment %}
+
+                    {%- assign showatc = "request" -%}
+                    {%- assign catalog_name = customer.current_location.metafields.custom.company_location_catalog_name.value -%}
+                    {%- assign comany_catalog_name_arr = customer.current_location.metafields.custom.company_location_catalog_name.value | split: "::" -%}
+
+                    {% for catalog_name_ea in comany_catalog_name_arr %}
+                      {% for catalogs in product.metafields.plytix.b2b_catalogs_list.value %}
+                        {% if catalogs == catalog_name_ea %}
+                          {%- assign showatc = "true" -%}
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+
+                  {% endif %}
+                {% endif %}
+              {%- endif-%}
+
+
               <div class="product-form--atc">
                 <div class="cart-buttons">
-                  <button class="product-form--atc-button main-atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
-                          <span class="atc-button--text">
-                            {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
-                            <span class="atc-plus">+</span>
-                            {{ 'product.buttons.add_to_cart' | t }}
-                          </span>
-                    <span class="atc-button--icon">
-                            {%- render 'icon-spinner' -%}
-                          </span>
-                  </button>
-
+                  {%- if showatc == "request" -%}
+                      <button class="product-form--atc-button main-atc-button unavailable-btn">
+                            <span class="atc-button--text">
+                              Unavailable
+                            </span>
+                      </button>
+                  {%- else-%}
+                    <button class="product-form--atc-button main-atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
+                            <span class="atc-button--text">
+                              {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
+                              <span class="atc-plus">+</span>
+                              {{ 'product.buttons.add_to_cart' | t }}
+                            </span>
+                      <span class="atc-button--icon">
+                              {%- render 'icon-spinner' -%}
+                            </span>
+                    </button>
+                  {%- endif-%}
                   {%- comment -%}start if warning pop -------------------------------------------------------------------------------{%- endcomment -%}
                   {%- if warning_pops_avaliable > 0 or fgwp_pops_avaliable > 0-%}
                   {%- if warning_pops_avaliable > 0 -%}
