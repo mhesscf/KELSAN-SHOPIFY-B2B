@@ -142,17 +142,35 @@
         <div class="grid">
             <div class="grid__item one-half">
                 <div class="inner vertical-center">
-                    {% if section.settings.storephone != blank %}
-                    <div class="info-row">
-                        <p><b>Phone Number</b></p>
-                        <p><a href="tel:{{ section.settings.storephone }}">{{ section.settings.storephone }}</a></p>
-                    </div>
-                    {% endif %}
-                    {% if section.settings.localphone != blank %}
+
+
+
+                    {%- assign phone = settings.phone_number -%}
+                    {%- if customer.current_company.metafields.custom.company_rep_phone.value -%}
+                        {% comment %}rep phone{% endcomment %}
+                        {%- assign phone = customer.current_company.metafields.custom.company_rep_phone.value -%}
+                        {%- assign phonelink = phone | replace: "(", "" | replace: ")", "" | replace: "-", "" | replace: " ", "" -%}
+
                         <div class="info-row">
-                            <p><b>Local Number</b></p>
-                            <p><a href="tel:{{ section.settings.localphone }}">{{ section.settings.localphone }}</a></p>
+                            <p><b>Representative Phone Number</b></p>
+                            <p><a href="tel:{{ phonelink }}">{{ phone }}</a></p>
                         </div>
+
+
+                    {% else %}
+                        {% comment %}normal phone{% endcomment %}
+                        {% if section.settings.storephone != blank %}
+                            <div class="info-row">
+                                <p><b>Phone Number</b></p>
+                                <p><a href="tel:{{ section.settings.storephone }}">{{ section.settings.storephone }}</a></p>
+                            </div>
+                        {% endif %}
+                        {% if section.settings.localphone != blank %}
+                            <div class="info-row">
+                                <p><b>Local Number</b></p>
+                                <p><a href="tel:{{ section.settings.localphone }}">{{ section.settings.localphone }}</a></p>
+                            </div>
+                        {% endif %}
                     {% endif %}
                     {% if section.settings.storeemail != blank %}
                         <div class="info-row">
