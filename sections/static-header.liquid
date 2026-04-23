@@ -56,7 +56,14 @@
     </div>
     <div class="top-menu-links">
       {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" or shop.permanent_domain contains "airmovers-prod.myshopify.com" or shop.permanent_domain contains "airmovers-dev.myshopify.com" -%}
-        <div class="header-t2u launch-t2u-side"><i class="fa-regular fa-comments-question"></i> Get help from an expert!</div>
+        {% comment %}hide "get help from an expert if company has a rep"{% endcomment %}
+        {%- assign show_get_help = true -%}
+        {%- if customer.current_company.metafields.custom.company_rep_phone.value -%}
+          {%- assign show_get_help = false -%}
+        {%- endif -%}
+        {%- if show_get_help == true -%}
+          <div class="header-t2u launch-t2u-side"><i class="fa-regular fa-comments-question"></i> Get help from an expert!</div>
+        {%- endif -%}
       {%- endif -%}
       <ul class="top-menu-link-list">
 
@@ -105,7 +112,19 @@
 
 
         {% for link in linklists.top-menu.links %}
-          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+
+          {% comment %}swap for b2b phone logic:{% endcomment %}
+          {%- if link.url contains "tel:"-%}
+            {%- assign phone = link.title -%}
+            {%- assign phonelink = link.url -%}
+            {%- if customer.current_company.metafields.custom.company_rep_phone.value -%}
+              {%- assign phone = customer.current_company.metafields.custom.company_rep_phone.value -%}
+              {%- assign phonelink = "tel:+1" | append: phone | replace: "(", "" | replace: ")", "" | replace: "-", "" | replace: " ", "" -%}
+            {%- endif -%}
+            <li class="header-phone"><a href="{{ phonelink }}">{{ phone }}</a></li>
+          {%- else -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endif -%}
         {% endfor %}
           {% if cart.total_price > 100000 %}
             <li class="approve-quicklink"><a href="/pages/financing-options">Financing</a></li>
@@ -190,7 +209,12 @@
         {%- endif -%}
             </a>
     </div>
-    <a class="top-mobile-phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a>
+    {%- assign phone = settings.phone_number -%}
+    {%- if customer.current_company.metafields.custom.company_rep_phone.value -%}
+      {%- assign phone = customer.current_company.metafields.custom.company_rep_phone.value -%}
+    {%- endif -%}
+    {%- assign phonelink = phone | replace: "(", "" | replace: ")", "" | replace: "-", "" | replace: " ", "" -%}
+    <a class="top-mobile-phone" href="tel:+1{{ phonelink }}" target="_blank" rel="noreferrer noopener">{{ phone }}</a>
     {%
       render 'live-search-form',
       quick_links: linklists[section.settings.quick_links],

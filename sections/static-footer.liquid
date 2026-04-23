@@ -7,7 +7,7 @@
 <footer role="contentinfo" aria-label="Footer">
   <section class="site-footer-wrapper">
 
-      {%- if shop.permanent_domain contains "cleanfreak" or shop.name contains "CleanFreak B2B" -%}
+      {%- if shop.permanent_domain contains "cleanfreak" -%}
         <!-- TrustBox widget - Horizontal -->
         <div class="trustpilot-footer-contain trustpilot-horizontal">
           <div class="trustpilot-widget" data-locale="en-US" data-template-id="5406e65db0d04a09e042d5fc" data-businessunit-id="48f26645000064000503cd0d" data-style-height="28px" data-style-width="100%" data-theme="light">
@@ -42,9 +42,9 @@
                   {%- comment -%}<a href="XXXXXXXX" title="XXXXXXX"><button class="main-default-button thinbtn"><span class="atc-button--text">Chat Now</span></button></a>{%- endcomment -%}
                   {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                     {% comment %}CF Script{% endcomment %}
-                    <div data-id="eTfn5A8fCFQ" id="thischat" class="main-default-button thinbtn livechat_button"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759"><span class="atc-button--text">live chat customer service</span></a></div>
+                    <div data-id="eTfn5A8fCFQ" id="thischat" class="main-default-button thinbtn livechat_button cfchat"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759"><span class="atc-button--text">live chat customer service</span></a></div>
                   {%- elsif shop.name contains "CleanFreak B2B"-%}
-                    <div data-id="TVkYGCGQYTk" id="thischat" class="main-default-button thinbtn livechat_button"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759">chat with us</a></div>
+                    <div data-id="TVkYGCGQYTk" id="thischat" class="main-default-button thinbtn livechat_button b2bchat"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759">chat with us</a></div>
                   {%- endif -%}
                 </div>
               </div>
