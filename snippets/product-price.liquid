@@ -368,75 +368,125 @@
 {% if b2bshop %}
       {% comment %}b2b pricing{% endcomment %}
       <div class="b2b-price-contain productitem__price">
-          {%- for variant in product.variants -%}
-              {%- assign b2bprice = false -%}
-              {%- assign specialprice = false -%}
-              
-              {% comment %}b2b strike price{% endcomment %}
-              {%- assign varorgprice = variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
-              {%- assign varorgpriceb4special = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
 
-              {% comment %}{{ variant.price  }}<br/>{{ variant.compare_at_price }}<br/>{{ varorgprice }}<br/>{{ varorgpriceb4special }}<br/>{% endcomment %}
-              {% comment %}b2b compare price{% endcomment %}
-              {% if pdiscontinued == false %}
-                  {%- if varorgprice > variant.price -%}
-                      {%- assign b2bprice = true -%}
-                      <div class="price__compare-at-visible-2 strikethrough var-specs b2b-compare-price b2b-price-col var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                          <div class="strikeprice" style="text-decoration: none !important"><div class="price-text norm-price-text">Normal Price</div><div class="norm-price">{{ varorgprice | money }}</div></div>
+          {%- if product.metafields.plytix.package_products != blank -%}
+            {% comment %}b2b bundle pricing{% endcomment %}
+                {%- assign bproducts = product.metafields.plytix.package_products | split: "," -%}
+                {%- assign bundle_price = 0 -%}
+                {%- assign bundle_org_price = 0 -%}
+                {%- assign iscontract = false -%}
+                {%- for bproduct in bproducts -%}
+                    {%- assign attr = bproduct | split: "#" -%}
+                    {%- assign bundlep = attr[0] | strip -%}
+                    {%- assign bundle_price = all_products[bundlep].price | times: attr[1] | plus: bundle_price -%}
+
+                    {% comment %}contract pricing{% endcomment %}
+                    {%- assign varorgprice = all_products[bundlep].selected_or_first_available_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+                    {%- assign bundle_org_price = varorgprice | times: attr[1] | plus: bundle_org_price -%}
+                    {%- if varorgprice > all_products[bundlep].selected_or_first_available_variant.price -%}
+                        {%- assign iscontract = true -%}
+                    {%- endif -%}
+
+                {%- endfor -%}
+
+              {%- if iscontract -%}
+                  <div class="price__compare-at-visible-2 strikethrough var-specs b2b-compare-price b2b-price-col var53635466264942">
+                      <div class="strikeprice" style="text-decoration: none !important">
+                          <div class="price-text norm-price-text">Normal Price</div><div class="norm-price">{{ bundle_org_price | money }}</div>
                       </div>
-                  {%- elsif varorgpriceb4special > variant.price -%}
-                      {% comment %}needed since compare price doesn't come though on b2b catalogs apparently{% endcomment %}
-                      {%- assign specialprice = true -%}
-                      <div class="price__compare-at-visible-2 strikethrough var-specs b2b-compare-price nonb2bspecial b2b-price-col var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                          <div class="strikeprice" style="text-decoration: none !important"><div class="price-text norm-price-text">Normal Price</div><div class="norm-price">{{ varorgpriceb4special | money }}</div></div>
-                      </div>
-                  {%- elsif variant.compare_at_price > variant.price -%}
-                      <div class="price__compare-at-visible-2 strikethrough var-specs truespecial b2b-price-col var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                          <div class="strikeprice">{{ variant.compare_at_price | money }}</div>
-                      </div>
-                  {% endif %}
-              {% endif %}
-
-              {% comment %}b2b current price{% endcomment %}
-              {%- if b2bprice == true or specialprice == true -%}
-                  <div class="var-specs b2b-price-col b2b-current-price var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                      <div class="price-text contract-price-text">Contract Price</div><div class="contract-price">{{ variant.price | money }}</div>
-
-                      {% comment %}you save area{% endcomment %}
-                      {% if pdiscontinued == false %}
-                          {%- assign varorgprice = variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
-                          {%- assign varprice = variant.price -%}
-                          {%- if varorgprice > variant.price -%}
-                              {%- assign varlpsavings = varorgprice | minus: varprice -%}
-                              <div class="b2b-yousave var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                                  <div class="yousave b2b-yousave">You Save: {{ varlpsavings | money }}</div>
-                              </div>
-                          {%- elsif varorgpriceb4special > variant.price -%}
-                              {%- assign varlpsavings = varorgpriceb4special | minus: varprice -%}
-                              <div class="b2b-yousave var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                                  <div class="yousave b2b-yousave">You Save: {{ varlpsavings | money }}</div>
-                              </div>
-                          {%- elsif variant.compare_at_price > variant.price-%}
-                              {%- assign varlpsavings = variant.compare_at_price | minus: varprice -%}
-                              <div class="b2b-yousave var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                                  <div class="yousave">You Save: {{ varlpsavings | money }}</div>
-                              </div>
-                          {%- endif -%}
-                      {%- endif -%}
-
                   </div>
+                  <div class="var-specs b2b-price-col b2b-current-price var53635466264942">
+                      <div class="price-text contract-price-text">Contract Price</div>
+                      <div class="contract-price">{{ bundle_price | money }}</div>
+                      <div class="b2b-yousave var-specs">
+                          {%- assign bundlesavings = bundle_org_price | minus:  bundle_price -%}
+                          <div class="yousave b2b-yousave">You Save: {{  bundlesavings | money }}</div>
+                      </div>
+                  </div>
+
+
               {%- else -%}
-                  <div class="product__price var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
-                      <div class="price__current">
-                          <span>{{ variant.price | money }}</span>
+                  <div class="product__price">
+                      <div class="price__current  " data-price-container="" style="">
+                          <span class="money bundle-price" data-bundle-price="">{{ bundle_price | money }}</span>
                       </div>
                   </div>
               {%- endif -%}
 
+        {%- else -%}
+              {%- for variant in product.variants -%}
+                  {%- assign b2bprice = false -%}
+                  {%- assign specialprice = false -%}
+
+                  {% comment %}b2b strike price{% endcomment %}
+                  {%- assign varorgprice = variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+                  {%- assign varorgpriceb4special = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
+
+                  {% comment %}{{ variant.price  }}<br/>{{ variant.compare_at_price }}<br/>{{ varorgprice }}<br/>{{ varorgpriceb4special }}<br/>{% endcomment %}
+                  {% comment %}b2b compare price{% endcomment %}
+                  {% if pdiscontinued == false %}
+                      {%- if varorgprice > variant.price -%}
+                          {%- assign b2bprice = true -%}
+                          <div class="price__compare-at-visible-2 strikethrough var-specs b2b-compare-price b2b-price-col var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                              <div class="strikeprice" style="text-decoration: none !important"><div class="price-text norm-price-text">Normal Price</div><div class="norm-price">{{ varorgprice | money }}</div></div>
+                          </div>
+                      {%- elsif varorgpriceb4special > variant.price -%}
+                          {% comment %}needed since compare price doesn't come though on b2b catalogs apparently{% endcomment %}
+                          {%- assign specialprice = true -%}
+                          <div class="price__compare-at-visible-2 strikethrough var-specs b2b-compare-price nonb2bspecial b2b-price-col var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                              <div class="strikeprice" style="text-decoration: none !important"><div class="price-text norm-price-text">Normal Price</div><div class="norm-price">{{ varorgpriceb4special | money }}</div></div>
+                          </div>
+                      {%- elsif variant.compare_at_price > variant.price -%}
+                          <div class="price__compare-at-visible-2 strikethrough var-specs truespecial b2b-price-col var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                              <div class="strikeprice">{{ variant.compare_at_price | money }}</div>
+                          </div>
+                      {% endif %}
+                  {% endif %}
+
+                  {% comment %}b2b current price{% endcomment %}
+                  {%- if b2bprice == true or specialprice == true -%}
+                      <div class="var-specs b2b-price-col b2b-current-price var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                          <div class="price-text contract-price-text">Contract Price</div><div class="contract-price">{{ variant.price | money }}</div>
+
+                          {% comment %}you save area{% endcomment %}
+                          {% if pdiscontinued == false %}
+                              {%- assign varorgprice = variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+                              {%- assign varprice = variant.price -%}
+                              {%- if varorgprice > variant.price -%}
+                                  {%- assign varlpsavings = varorgprice | minus: varprice -%}
+                                  <div class="b2b-yousave var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                                      <div class="yousave b2b-yousave">You Save: {{ varlpsavings | money }}</div>
+                                  </div>
+                              {%- elsif varorgpriceb4special > variant.price -%}
+                                  {%- assign varlpsavings = varorgpriceb4special | minus: varprice -%}
+                                  <div class="b2b-yousave var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                                      <div class="yousave b2b-yousave">You Save: {{ varlpsavings | money }}</div>
+                                  </div>
+                              {%- elsif variant.compare_at_price > variant.price-%}
+                                  {%- assign varlpsavings = variant.compare_at_price | minus: varprice -%}
+                                  <div class="b2b-yousave var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                                      <div class="yousave">You Save: {{ varlpsavings | money }}</div>
+                                  </div>
+                              {%- endif -%}
+                          {%- endif -%}
+
+                      </div>
+                  {%- else -%}
+                      <div class="product__price var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                          <div class="price__current">
+                              <span>{{ variant.price | money }}</span>
+                          </div>
+                      </div>
+                  {%- endif -%}
 
 
 
-          {%- endfor -%}
+
+              {%- endfor -%}
+
+        {%- endif -%}
+
+
       </div>
 
   {% endif %}
