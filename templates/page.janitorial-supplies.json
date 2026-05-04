@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "d40a038f-aa25-4373-a2b7-118f38976c64": {
@@ -15,7 +15,8 @@
         "baa22bd3-9bec-4228-ae1d-604af7b8c574": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/janitorial-mopping-cleaning-supplies-dept-page.jpg",
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/janitorial-mopping-cleaning-supplies-dept-page.jpg",
             "cat_title": "Janitorial Supplies",
             "cat_text": "Comprehensive assortment of products and supplies to keep you organized and assist you in performing your normal cleaning tasks more efficiently."
           }
@@ -133,75 +134,75 @@
     "9a1c3e17-0631-4079-8687-306e1e4abd89": {
       "type": "dept-category-area",
       "blocks": {
+        "64e88809-ed07-457a-8dfa-69fe9b3723df": {
+          "type": "categorylink",
+          "settings": {
+            "image": "shopify://shop_images/bottles-dispensers-sprayers.jpg",
+            "title": "Pump-Up Dispensers & Trigger Sprayers",
+            "url": "/collections/pump-up-dispensers-trigger-sprayers"
+          }
+        },
         "3ff41045-59bf-41c0-a59d-e3647fcc22ee": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/carts-orginizers-signs.jpg",
+            "image": "shopify://shop_images/carts-orginizers-signs.jpg",
             "title": "Carts, Organizers & Signs",
-            "url": "\/pages\/carts-organizers-signs"
+            "url": "/pages/carts-organizers-signs"
           }
         },
         "27488bdb-cb10-4655-ab60-39f3e351a900": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/chemical-dilution-control.jpg",
+            "image": "shopify://shop_images/chemical-dilution-control.jpg",
             "title": "Chemical Dilution Control",
-            "url": "\/collections\/chemical-dilution-control"
-          }
-        },
-        "64e88809-ed07-457a-8dfa-69fe9b3723df": {
-          "type": "categorylink",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/bottles-dispensers-sprayers.jpg",
-            "title": "Pump-Up Dispensers & Trigger Sprayers",
-            "url": "\/collections\/pump-up-dispensers-trigger-sprayers"
+            "url": "/collections/chemical-dilution-control"
           }
         },
         "28952ee1-8a64-4c01-b698-ae7068d4b537": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rags-towels-wipes.jpg",
+            "image": "shopify://shop_images/rags-towels-wipes.jpg",
             "title": "Rags, Towels & Wipes",
-            "url": "\/pages\/rags-towels-wipes"
+            "url": "/pages/rags-towels-wipes"
           }
         },
         "5213e7a7-131f-4eab-a927-b18f89f7e2cc": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/restroom-supplies.jpg",
+            "image": "shopify://shop_images/restroom-supplies.jpg",
             "title": "Restroom Supplies",
-            "url": "\/pages\/restroom-supplies"
+            "url": "/pages/restroom-supplies"
           }
         },
         "078cbbec-3c84-4b75-a61f-ffb6f1fc4f32": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sweeping-mopping-scrubbing.jpg",
+            "image": "shopify://shop_images/sweeping-mopping-scrubbing.jpg",
             "title": "Sweeping & Mopping",
-            "url": "\/pages\/mop-sweep"
+            "url": "/pages/mop-sweep"
           }
         },
         "ea8cd9f6-bc25-4a35-85ef-b98b5df758c4": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/waste-managment.jpg",
+            "image": "shopify://shop_images/waste-managment.jpg",
             "title": "Waste Management",
-            "url": "\/pages\/waste-management"
+            "url": "/pages/waste-management"
           }
         },
         "ae32e330-f41c-4d09-a5d0-e128c2046dfd": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/window-cleaning-equipment.jpg",
+            "image": "shopify://shop_images/window-cleaning-equipment.jpg",
             "title": "Window Cleaning Equipment",
-            "url": "\/pages\/window-cleaning-equipment"
+            "url": "/pages/window-cleaning-equipment"
           }
         }
       },
       "block_order": [
+        "64e88809-ed07-457a-8dfa-69fe9b3723df",
         "3ff41045-59bf-41c0-a59d-e3647fcc22ee",
         "27488bdb-cb10-4655-ab60-39f3e351a900",
-        "64e88809-ed07-457a-8dfa-69fe9b3723df",
         "28952ee1-8a64-4c01-b698-ae7068d4b537",
         "5213e7a7-131f-4eab-a927-b18f89f7e2cc",
         "078cbbec-3c84-4b75-a61f-ffb6f1fc4f32",
@@ -218,73 +219,73 @@
         "40674d08-1883-4401-b96c-adb73586ed43": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/soaps-and-detergents.jpg",
+            "image": "shopify://shop_images/soaps-and-detergents.jpg",
             "title": "Body Soaps & Detergents (Hand, Body, Dish & Laundry)",
-            "url": "\/pages\/detergent"
+            "url": "/pages/detergent"
           }
         },
         "d20ef440-2d5b-4a81-bed3-5c5376c943ca": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/deodorizers-and-absorbents-chemicals.jpg",
+            "image": "shopify://shop_images/deodorizers-and-absorbents-chemicals.jpg",
             "title": "Deodorizers & Absorbents",
-            "url": "\/pages\/absorbents"
+            "url": "/pages/absorbents"
           }
         },
         "587900c4-559a-4335-948b-f549824ac948": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/disinfectants-and-sanitizers.jpg",
+            "image": "shopify://shop_images/disinfectants-and-sanitizers.jpg",
             "title": "Disinfectants & Sanitizers",
-            "url": "\/pages\/disinfectants"
+            "url": "/pages/disinfectants"
           }
         },
         "c578f157-0987-4f1e-a139-77dd048c7c58": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/electrostatic-disinfecting-sprayers.jpg",
+            "image": "shopify://shop_images/electrostatic-disinfecting-sprayers.jpg",
             "title": "Electrostatic Disinfecting & Sanitizing Sprayers",
-            "url": "\/collections\/electrostatic-disinfecting-sanitizing-sprayers"
+            "url": "/collections/electrostatic-disinfecting-sanitizing-sprayers"
           }
         },
         "e4a82545-e59e-4d66-ae6e-388ea8323016": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gloves-hand-protection.jpg",
+            "image": "shopify://shop_images/gloves-hand-protection.jpg",
             "title": "Gloves & Hand Protection",
-            "url": "\/pages\/glove-and-hand-protection"
+            "url": "/pages/glove-and-hand-protection"
           }
         },
         "3dcb83b8-78ac-4c0b-8952-b03b9e3ad9da": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/signs.jpg",
+            "image": "shopify://shop_images/signs.jpg",
             "title": "Signs",
-            "url": "\/collections\/signs"
+            "url": "/collections/signs"
           }
         },
         "580cb128-2cbb-41a2-885e-2f93414c5cd9": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/spill-cleanup.jpg",
+            "image": "shopify://shop_images/spill-cleanup.jpg",
             "title": "Spill Cleanup",
-            "url": "\/collections\/spill-cleanup"
+            "url": "/collections/spill-cleanup"
           }
         },
         "b486ba59-8052-48ce-a147-b9a9f6ef69f8": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/stain-removal-chemicals.jpg",
+            "image": "shopify://shop_images/stain-removal-chemicals.jpg",
             "title": "Stain Removal & Prevention",
-            "url": "\/pages\/stain-removal"
+            "url": "/pages/stain-removal"
           }
         },
         "3858e3df-7655-4234-ba18-e8c29cf0d530": {
           "type": "related_cat_link",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hard-surface-cleaners.jpg",
+            "image": "shopify://shop_images/hard-surface-cleaners.jpg",
             "title": "Window & Hard Surface Cleaners",
-            "url": "\/pages\/hard-surface-cleaners"
+            "url": "/pages/hard-surface-cleaners"
           }
         }
       },
@@ -369,24 +370,24 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Rubbermaid®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Rubbermaid&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&refinementList[product_type][6]=Waste Management&q=Rubbermaid",
-            "brand-image": "shopify:\/\/shop_images\/rubbermaid_black_tilt_truck_lg.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Rubbermaid&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&refinementList[product_type][6]=Waste Management&q=Rubbermaid",
+            "brand-image": "shopify://shop_images/rubbermaid_black_tilt_truck_lg.jpg"
           }
         },
         "343719c6-3991-4508-95ac-d0a56e043a51": {
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&q=IPC Eagle",
-            "brand-image": "shopify:\/\/shop_images\/ipc-eagle-window-pole.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&q=IPC Eagle",
+            "brand-image": "shopify://shop_images/ipc-eagle-window-pole.jpg"
           }
         },
         "c1bf4e7a-7dd2-4b8d-9071-493f942c2b7a": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Impact®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&q=Impact",
-            "brand-image": "shopify:\/\/shop_images\/red_microfiber_wipes_lg.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&q=Impact",
+            "brand-image": "shopify://shop_images/red_microfiber_wipes_lg.jpg"
           }
         }
       },
@@ -405,11 +406,11 @@
         "db3f9533-eb88-409b-8fa2-9f2f48efcd39": {
           "type": "resourcelink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rags-towels-wipes-dept-page.jpg",
+            "image": "shopify://shop_images/rags-towels-wipes-dept-page.jpg",
             "heading": "Commercial Spring Cleaning Checklist",
-            "subheading": "<p>Spring has finally sprung and many people are eager to begin spring cleaning! In a commercial setting, this means adding on a good thorough cleaning of high traffic areas and those hard to reach spots that don’t get covered during regular cleanings.<\/p>",
+            "subheading": "<p>Spring has finally sprung and many people are eager to begin spring cleaning! In a commercial setting, this means adding on a good thorough cleaning of high traffic areas and those hard to reach spots that don’t get covered during regular cleanings.</p>",
             "button_label": "Read The Guide",
-            "button_link": "\/blogs\/clean\/commercial-spring-cleaning-checklist"
+            "button_link": "/blogs/clean/commercial-spring-cleaning-checklist"
           }
         }
       },
@@ -422,8 +423,7 @@
     },
     "trustpilot_review_carousel_aTEyJL": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

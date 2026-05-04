@@ -829,11 +829,14 @@
                         {%- assign pyt = vid | split: "::" -%}
                         {%- assign pytid = pyt[0] | split: "." | first  -%}
                         <div class="container" id="extv-{{ pytid }}">
-                            <div class="video-wrap">
+                            <div class="video-wrap {% if pyt[0] contains "shorts-" %}shorts-wrap{% endif %}">
                                 {%- if pyt[0] contains "vimeo" -%}
                                     {%- assign vimeoid = pyt[0] | replace: "vimeo-","" -%}
                                     {%- comment -%}<iframe src="https://player.vimeo.com/video/474973525?h=9cd571a900&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>{%- endcomment -%}
                                      <iframe src="https://player.vimeo.com/video/{{ vimeoid }}?title=0&byline=0&portrait=0?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
+                                {%- elsif pyt[0] contains "shorts-" -%}
+                                    {%- assign shortsid = pyt[0] | replace: "shorts-","" -%}
+                                    <iframe src="https://www.youtube.com/embed/{{ shortsid }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
                                 {%- else -%}
                                     <iframe src="https://www.youtube.com/embed/{{ pyt[0] }}?loop=1&modestbranding=1" frameborder="0" title="{{ pyt[1] | escape }}"></iframe>
                                 {%- endif -%}

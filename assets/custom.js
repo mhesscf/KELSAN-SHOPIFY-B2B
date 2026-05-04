@@ -1347,6 +1347,15 @@ jQuery(document).ready(function($){
 
     });
 
+    // replacement for judge.me popup functionality in kla
+    const params = new URLSearchParams(window.location.search);
+    const reviewId = params.get('jdm-review');
+    if(reviewId > 1 ){
+        console.log('trigger jdm review pop')
+        setTimeout(function(){
+            $('.jm-button--primary.jm-action-buttons__button').click();
+        }, 7000);
+    }
 
     $('#empty-cart').on('click', function(){
         window.location = $(this).data('href');

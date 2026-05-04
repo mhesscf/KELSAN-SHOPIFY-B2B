@@ -133,6 +133,7 @@
         },
         "b9b0224c-9eae-417a-8a13-428ddce56e19": {
           "type": "categorylink",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/pump-up-sprayers.jpg",
             "title": "Pump-up Dispenser & Trigger Sprayers",
