@@ -1,3 +1,5 @@
+{%- unless shop.name contains "CleanFreak B2B"-%}
+
 {% assign cart-size = cart.total_price | divided_by: 100.00 %}
 {% assign threshold-1 = section.settings.top_order_threshold | minus: 0.01 %}
 {% assign threshold-2 = section.settings.second_order_threshold | minus: 0.01 %}
@@ -689,3 +691,4 @@
     });
 
 </script>
+{% endunless %}
