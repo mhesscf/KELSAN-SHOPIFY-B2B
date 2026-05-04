@@ -144,7 +144,7 @@
       {% endif %}
     </div>
   </div>
-  <div class="productgrid--outer {{ collection_classes | strip_newlines }} collection-main-area" data-productgrid-outer>
+  <div class="productgrid--outer {{ collection_classes | strip_newlines }} collection-main-area {% if collection.title != "All" and collection.title != "All - Dynamic" %}trigger-algolia{% endif %}" data-productgrid-outer>
     {% if show_sidebar %}
       {%
         render 'product-grid-sidebar',
