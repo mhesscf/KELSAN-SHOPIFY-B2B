@@ -19016,7 +19016,11 @@ nav.breadcrumb a.homebread:hover span,
 	.productgrid--sidebar {
 		float: left;
 		display: inline-block;
-		width: 185px;
+		width: 20%;
+		padding-right:30px;
+	}
+	.productgrid--wrapper{
+		width: 80%;
 	}
 }
 
@@ -21277,15 +21281,27 @@ shopify-payment-terms {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	text-align:center;
 }
 .product-gallery--viewer .product-gallery--video .vid-contain{
 	height:500px;
 }
+
 .product-gallery--viewer .product-gallery--video iframe{
 	width: 100%;
 	height: 280px;
 	margin-bottom:-5px;
 }
+.product-gallery--viewer .product-gallery--video iframe.shorts-wrap{
+	width:55%;
+	height:unset;
+	min-width:250px;
+	max-width:400px;
+	aspect-ratio:9/16;
+	margin:0 auto 0 auto;
+	border-radius:25px;
+}
+
 .product-gallery--viewer .product-gallery--video .alttext{
 	padding:8px 0;
 }
@@ -21304,6 +21320,11 @@ shopify-payment-terms {
 		height:244px;
 		transform:unset;
 	}
+
+	.product-gallery--viewer .product-gallery--video iframe.shorts-wrap{
+		height:unset;
+	}
+
 }
 
 .product-gallery .nav-tabs {

@@ -134,9 +134,13 @@
       {%- for vid in pvideo -%}
         {%- assign videoCounter = videoCounter | plus: 1  -%}
         {%- assign pyt = vid | split: "::" -%}
-        {%- assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" -%}
-        {%- if pyt[0] contains "vimeo" -%}
+        {%- if pyt[0] contains "shorts-" -%}
+          {%- assign shortsid = pyt[0] | replace: "shorts-","" -%}
+          {%- assign videoimg = "http://img.youtube.com/vi/" | append: shortsid | append: "/0.jpg" -%}
+        {%- elsif pyt[0] contains "vimeo" -%}
           {%- assign videoimg = 'video-thumbnail.png' | file_img_url -%}
+        {%- else -%}
+          {%- assign videoimg = "http://img.youtube.com/vi/" | append: pyt[0] | append: "/0.jpg" -%}
         {%- endif -%}
         {%- comment -%}http://img.youtube.com/vi/LFbhGEiFWk4/0.jpg{%- endcomment -%}
         <button

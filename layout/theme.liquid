@@ -120,9 +120,17 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
 
     {% render 'favicon' %}
 
-    {% if template contains 'collection' and current_tags %}
+   {% if template contains 'collection' and current_tags %}
         <meta name="robots" content="noindex"/>
         <link rel="canonical" href="{{ shop.url }}{{ collection.url }}"/>
+    {% elsif template contains 'collection' %}
+        {% assign getfullurl = content_for_header | split: '"pageurl":"' | last | split: '"' | first | split: '.myshopify.com' | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&' %}
+        {% if getfullurl contains "refinementList" %}
+            <meta name="robots" content="noindex"/>
+            <link rel="canonical" href="{{ shop.url }}{{ collection.url }}"/>
+        {% else %}
+            <link rel="canonical" href="{{ shop.url }}{{ collection.url }}"/>
+        {% endif %}
     {% else %}
         <link rel="canonical" href="{{ canonical_url }}"/>
     {% endif %}
