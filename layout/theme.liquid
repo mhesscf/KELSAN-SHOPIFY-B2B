@@ -209,7 +209,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
     {%- assign showalgolia = true -%}
     {%- if template contains 'collection' -%}
-        {% if collection.url == '/collections/all' %}
+        {% if collection.url == '/collections/all-off' %}
             {%- assign showalgolia = false -%}
         {%  endif %}
     {%  endif %}
