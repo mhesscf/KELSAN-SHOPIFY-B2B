@@ -17813,6 +17813,7 @@ nav.breadcrumb a.homebread:hover span,
 .collection-filters__filter-range {
 	display: flex;
 	margin: 1rem 0;
+	padding-right:2px;
 }
 @media screen and (min-width: 860px) {
 	.collection-filters__filter-range {
@@ -18081,7 +18082,7 @@ nav.breadcrumb a.homebread:hover span,
 }
 
 @media screen and (min-width: 860px) {
-	.collection--section .productgrid--outer {
+	.collection--section .productgrid--outer-off {
 		display: grid;
 		grid-template-columns: 185px calc(
           100% - 210px
@@ -18090,6 +18091,9 @@ nav.breadcrumb a.homebread:hover span,
 		grid-template-areas: "masthead masthead" "sidebar product-items-wrapper";
 		column-gap: 25px;
 		row-gap: {{ space_x_small | divided_by: 16.0 | append: 'rem' }};
+	}
+	.collection--section .productgrid--outer {
+		display:block;
 	}
 	.collection--section .productgrid--outer.layout--no-sidebar {
 		grid-template-areas: "masthead masthead" "product-items-wrapper product-items-wrapper";
@@ -18661,6 +18665,9 @@ nav.breadcrumb a.homebread:hover span,
 .no-touch .productgrid-listview .productitem--actions .productitem--listview-price, .productgrid-listview .productitem--actions .productitem--listview-price{
 	margin-bottom: 0px !important;
 }
+.no-touch .productgrid-listview .productitem--actions .productitem--listview-price .status-area, .productgrid-listview .productitem--actions .productitem--listview-price .status-area{
+	display:none !important;
+}
 .no-touch .productgrid-listview .productitem--actions .productitem--listview-price .productitem__price, .productgrid-listview .productitem--actions .productitem--listview-price .productitem__price{
 	text-align: center;
 	display: block;
@@ -18706,6 +18713,28 @@ nav.breadcrumb a.homebread:hover span,
 	.productgrid-listview .productitem--image-link {
 		margin: 0;
 	}
+}
+
+@media screen and (max-width: 479px) {
+	.productgrid-listview .productgrid--items .productgrid--item .productitem .productitem__container{
+		display:flex;
+		flex-direction: column;
+		text-align:center;
+	}
+	.productgrid-listview .productgrid--items .productgrid--item .productitem--actions{
+		margin:auto;
+		padding:10px;
+	}
+	.productgrid-listview .productitem--info {
+		margin: 0 !important;
+		padding: 5px;
+	}
+	.productgrid-listview .productitem__image-container{
+		margin:auto;
+		max-width:200px;
+	}
+
+
 }
 .no-touch .productgrid-listview .productitem--actions,
 .productgrid-listview .productitem--actions {
@@ -19016,11 +19045,11 @@ nav.breadcrumb a.homebread:hover span,
 	.productgrid--sidebar {
 		float: left;
 		display: inline-block;
-		width: 20%;
+		width: 25%;
 		padding-right:30px;
 	}
 	.productgrid--wrapper{
-		width: 80%;
+		width: 75%;
 	}
 }
 
