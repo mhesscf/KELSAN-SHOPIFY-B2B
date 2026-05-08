@@ -207,8 +207,13 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Starts.  uninstalled 10/17 -->
       {%- comment -%}<script src='https://upsell-app.logbase.io/lb-upsell.js?shop=cleanfreak-prod.myshopify.com' defer></script>{%- endcomment -%}
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
-
-
+    {%- assign showalgolia = true -%}
+    {%- if template contains 'collection' -%}
+        {% if collection.url == '/collections/all-off' %}
+            {%- assign showalgolia = false -%}
+        {%  endif %}
+    {%  endif %}
+    {%- if showalgolia == true -%}
     {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
 
         <!-- Algolia head -->
@@ -272,7 +277,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
 {% include 'algolia_instant_search_product' %}
 {% include 'algolia_instant_search_no_result' %}
   <!-- /Algolia head -->
-
+{%  endif %}
     {%- if shop.name contains "CleanFreak B2B"-%}
         {% comment %}do nothing{% endcomment %}
     {%- else -%}

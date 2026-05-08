@@ -14,7 +14,7 @@
     function showBtn(variants_count,bundleitems = "",freeitems = "",hide_price = "",show_quote = "",warning_title = "",tag = "" ){
         var showButton = "addToCart";
 
-        if (variants_count != "1" || bundleitems != "" || freeitems != "" || hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" || warning_title !="" ){
+        if ((variants_count != "1" && variants_count != "0") || bundleitems != "" || freeitems != "" || hide_price == "Hide Button Only" || hide_price == "Hide Price and Button" || warning_title !="" ){
             showButton = "viewProduct";
         }else if(show_quote == "True"){
             showButton = "viewProduct";
@@ -98,7 +98,10 @@
             inventory = 0;
         }
         var finalmessage = '';
-        if (variants_count != "1" || bundleitems != ""){
+
+
+
+        if ((variants_count != "1" && variants_count != "0") || bundleitems != ""){
             finalmessage += '<span class="status-desc main-notice">See Product Page for Stock Status Details</span>';
             finalmessage += '<span class="status-time"></span>';
             finalmessage += '<details>';
@@ -127,7 +130,13 @@
             finalmessage += '<span class="status-desc main-notice">Special Order Item</span>';
             finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
         }else if(inventory > 0) {
-            finalmessage += '<span class="status-desc main-notice"><i class="fa-regular fa-circle-check"></i> In Stock ';
+            {%- assign b2binventory = false -%}
+            {%- if shop.name contains "CleanFreak B2B"-%}
+                {%- if customer.current_company.metafields.custom.show_inventory_level.value == true -%}
+                    {%- assign b2binventory = true -%}
+                {%- endif -%}
+            {%- endif -%}
+            finalmessage += '<span class="status-desc main-notice"><i class="fa-regular fa-circle-check"></i> In Stock {%- if b2binventory == true -%}<span class="invcount"> ('+inventory +' Available)</span>{%- endif -%}';
             if (clearance == 'true' || sku.includes("-DEMO") || sku.includes("-REFURB") ){
                 finalmessage += '<span class="invcount">('+inventory +' Available)</span>';
             }
@@ -142,7 +151,7 @@
         leadtime = Number(leadtime);
         var stockStatusMain = '';
         var stockStatusSub = '';
-        if (variants_count != "1" || bundleitems != ""){
+        if ((variants_count != "1" && variants_count != "0") || bundleitems != ""){
             stockStatusMain = "See Product Page for Stock Status Details";
         }else if(dropship == "true") {
             stockStatusMain = "Ships Direct from Manufacturer";
