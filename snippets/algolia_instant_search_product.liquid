@@ -130,7 +130,13 @@
             finalmessage += '<span class="status-desc main-notice">Special Order Item</span>';
             finalmessage += '<span class="status-time">'+leadtimeText+'</span>';
         }else if(inventory > 0) {
-            finalmessage += '<span class="status-desc main-notice"><i class="fa-regular fa-circle-check"></i> In Stock ';
+            {%- assign b2binventory = false -%}
+            {%- if shop.name contains "CleanFreak B2B"-%}
+                {%- if customer.current_company.metafields.custom.show_inventory_level.value == true -%}
+                    {%- assign b2binventory = true -%}
+                {%- endif -%}
+            {%- endif -%}
+            finalmessage += '<span class="status-desc main-notice"><i class="fa-regular fa-circle-check"></i> In Stock {%- if b2binventory == true -%}<span class="invcount"> ('+inventory +' Available)</span>{%- endif -%}';
             if (clearance == 'true' || sku.includes("-DEMO") || sku.includes("-REFURB") ){
                 finalmessage += '<span class="invcount">('+inventory +' Available)</span>';
             }
