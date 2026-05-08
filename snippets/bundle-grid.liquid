@@ -168,7 +168,17 @@
                                     {%- assign stockStatusSub = "Expected to ship in over 7 mths" -%}
                                 {%- endif -%}
                             {%- elsif all_products[bundlep].selected_or_first_available_variant.inventory_quantity > 0 -%}
-                                {%- assign stockStatusMain = '<div class="product-detail-stock-and-shipping"><i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock</div></div>' -%}
+
+                                {%- assign b2binventory = false -%}
+                                {%- if shop.name contains "CleanFreak B2B"-%}
+                                    {%- if customer.current_company.metafields.custom.show_inventory_level.value == true -%}
+                                        {%- assign b2binventory = true -%}
+                                    {%- endif -%}
+                                {%- endif -%}
+
+                                {% capture stockStatusMain %}
+                                    <div class="product-detail-stock-and-shipping"><i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock {% if b2binventory == true %}<span class="bndchild-inv">({{ all_products[bundlep].selected_or_first_available_variant.inventory_quantity }} Available)</span>{% endif %}</div></div>
+                                {% endcapture %}
                             {%- endif -%}
 
                             {%- if stockStatusSub != "" -%}
@@ -377,8 +387,11 @@
                                         {%- assign stockStatusSub = "Expected to ship in over 7 mths" -%}
                                     {%- endif -%}
                                 {%- elsif all_products[bundlep].selected_or_first_available_variant.inventory_quantity > 0 -%}
-                                    {%- assign stockStatusMain = '<div class="product-detail-stock-and-shipping"><i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock</div></div>' -%}
-                                {%- endif -%}
+                                    {% capture stockStatusMain %}
+                                        <div class="product-detail-stock-and-shipping"><i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock {% if b2binventory == true %}<span class="bndchild-inv">({{ all_products[bundlep].selected_or_first_available_variant.inventory_quantity }} Available)</span>{% endif %}</div></div>
+                                    {% endcapture %}
+
+                                           {%- endif -%}
 
                                 {%- if stockStatusSub != "" -%}
                                     {%- capture stockStatusNote -%}<span class="status"><strong>{{ stockStatusMain }}</strong></span><br/><span class="substatus">({{ stockStatusSub }}.<br/>Products will ship as one once all items are in stock.)</span>{%- endcapture -%}
@@ -500,7 +513,16 @@
 
             $('.bundled-products-grid table .stock-status').addClass('showme');
             $('.bundled-products-grid table .bnd-product-row').each(function(){
-                if($(this).find(".stock-status").text().trim() != "In Stock"){
+                var stockmessage = $(this).find(".stock-status").text().trim();
+
+                var stockmessage = $(this)
+                    .find(".stock-status")
+                    .clone()
+                    .find(".bndchild-inv")
+                    .remove()
+                    .end()
+                    .text().trim();
+                if(stockmessage != "In Stock"){
                     $(this).addClass('sold-product');
                 }
             });
