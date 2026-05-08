@@ -2,6 +2,7 @@
 {%- assign current_variant_id = thisproduct.selected_or_first_available_variant.id -%}
 {%- assign pclearance = false -%}
 {%- assign pdiscontinued = false -%}
+
 {%- for c in thisproduct.collections -%}
   {%- if c.handle == "clearance" -%}
     {%- assign pclearance = true -%}
@@ -9,6 +10,14 @@
     {%- assign pdiscontinued = true -%}
   {%- endif -%}
 {%- endfor -%}
+
+{%- assign b2binventory = false -%}
+{%- if shop.name contains "CleanFreak B2B"-%}
+  {%- if customer.current_company.metafields.custom.show_inventory_level.value == true -%}
+    {%- assign b2binventory = true -%}
+  {%- endif -%}
+{%- endif -%}
+
 {%- if pdiscontinued == false and thisproduct.selected_or_first_available_variant.sku != "SUPERFREAK" and thisproduct.selected_or_first_available_variant.sku != "SVCCALL30"  and thisproduct.selected_or_first_available_variant.sku != "SVCCALL30-SF"-%}
   {%- for variant in thisproduct.variants -%}
     <div class="var-specs var{{ variant.id }} status-area" {%- if current_variant_id != variant.id -%}style="display:none;"{%- endif -%}>
@@ -127,7 +136,7 @@
         <i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock
           {% if thisproduct.metafields.plytix.clearance_overstock == 'true' %}
             ({{ variant.inventory_quantity }} Available)
-          {% elsif pclearance == true or pdemoitem == true %}
+          {% elsif pclearance == true or pdemoitem == true or b2binventory == true %}
             ({{ variant.inventory_quantity }} Available)
           {% endif %}
         </div>
