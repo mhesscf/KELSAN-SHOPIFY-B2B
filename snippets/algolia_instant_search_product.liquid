@@ -98,7 +98,7 @@
             inventory = 0;
         }
         var finalmessage = '';
-        if (variants_count != "1" || bundleitems != ""){
+        if (variants_count <= "1" || bundleitems != ""){
             finalmessage += '<span class="status-desc main-notice">See Product Page for Stock Status Details</span>';
             finalmessage += '<span class="status-time"></span>';
             finalmessage += '<details>';
@@ -142,7 +142,7 @@
         leadtime = Number(leadtime);
         var stockStatusMain = '';
         var stockStatusSub = '';
-        if (variants_count != "1" || bundleitems != ""){
+        if (variants_count <= "1" || bundleitems != ""){
             stockStatusMain = "See Product Page for Stock Status Details";
         }else if(dropship == "true") {
             stockStatusMain = "Ships Direct from Manufacturer";
