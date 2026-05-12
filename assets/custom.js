@@ -1781,6 +1781,73 @@ jQuery(document).ready(function($){
     });
 
 
+
+    var urlparams = new URLSearchParams(window.location.search);
+    if (urlparams.has('related') || urlparams.has('parts') || urlparams.has('videos') || urlparams.has('documents') ) {
+        if (urlparams.has('related')){
+            var $target = $('#tab-related_products-header');
+        }else if(urlparams.has('parts')){
+            var $target = $('#tab-part_items-header');
+        }else if(urlparams.has('videos')){
+            var $target = $('.video-area-dynamic');
+        }else if(urlparams.has('documents')){
+            var $target = $('.data-sheets');
+        }
+        showLoading()
+        setTimeout(() => {
+                if ($target.length) {
+                    var offsetTop = $target.offset().top - 60;
+                    $('html, body').animate({ scrollTop: offsetTop }, 600);
+                    $target.click();
+                }
+            setTimeout(() => {
+                hideLoading();
+            }, "500");
+        }, "400");
+    }
+
+
+
+
+    function showLoading() {
+        const overlay = document.createElement('div');
+        overlay.id = 'loading-overlay';
+        overlay.style.cssText = `
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+  `;
+
+        overlay.innerHTML = `
+    <div style="
+      width: 52px;
+      height: 52px;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    "></div>
+    <style>
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  `;
+
+        document.body.appendChild(overlay);
+    }
+
+    // Hide loading overlay
+    function hideLoading() {
+        const overlay = document.getElementById('loading-overlay');
+        if (overlay) overlay.remove();
+    }
+
+
 });
 
 function accdropSelect(selectObject,productid){
