@@ -304,7 +304,7 @@
     {%- endif -%}
 
 
-    <div class="productitem__container">
+    <div class="productitem__container {% if  shop.name contains "CleanFreak B2B" %}b2bsite{% endif %}">
       {{ recently_viewed_header }}
 
       {%- if specialclass == "isspecial" -%}
