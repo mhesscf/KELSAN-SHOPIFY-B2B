@@ -47,6 +47,12 @@
   display: inline-block;
   margin-left: 5px;
 }
+.sitemain-product .product-detail-sku span.fake-link{
+  color: {{ settings.color_links }}; !important;
+}
+.sitemain-product .product-detail-sku span.brand-value{
+  padding-right:5px;
+}
 .sitemain-product .form-field-title, .sitemain-product .options-selection__select-label{
   position: relative !important;
   color: {{ settings.color_text }} !important;
@@ -1268,7 +1274,7 @@ background:none;
 }
 .product-is-bundle .product-form--atc .cart-buttons{
   flex-wrap: nowrap !important;
-  justify-content: end;
+  {% comment %}justify-content: end;{% endcomment %}
 }
 
 /* ------------- Product Manufacturer Info Section --------------------- */
@@ -2527,6 +2533,19 @@ popup-container .bundle-child-details .pop-icons .sm-row-text span{
 .popup-container .bundle-child-details .prod-promo-image{
   display:none;
 }
+
+/*-- resources popup --*/
+.popup-container .product-resource-pop-contain .resource-link{
+  padding:3px 0;
+}
+.popup-container .product-resource-pop-contain .resource-link i{
+  color: {{ settings.color_text }} !important;
+  font-size:15px;
+}
+
+
+
+
 /*-- Subscription Widget --*/
 
 .shopify_subscriptions_app__title{
