@@ -1783,6 +1783,11 @@ jQuery(document).ready(function($){
 
 
     var urlparams = new URLSearchParams(window.location.search);
+    if (urlparams.has('resources')) {
+        setTimeout(() => {
+            $('.resource-pop').click();
+        }, "500");
+    }
     if (urlparams.has('related') || urlparams.has('parts') || urlparams.has('videos') || urlparams.has('documents') ) {
         if (urlparams.has('related')){
             var $target = $('#tab-related_products-header');
