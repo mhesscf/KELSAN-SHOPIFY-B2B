@@ -1105,7 +1105,8 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                             data-tieredPricing=""
                           {% endif %}
                          data-qty="{{ free_product_entry_parts[1] }}"
-                         data-price="{{ free_product.price }}"
+                         {% comment %}data-price="{{ free_product.price }}"{% endcomment %}
+                         data-price="0"
                          value="{{ free_product_entry_parts[1] }}" />
                   {%- endif -%}
                 {%- endfor -%}
@@ -1144,16 +1145,43 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                             </span>
                       </button>
                   {%- else-%}
-                    <button class="product-form--atc-button main-atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
-                            <span class="atc-button--text">
-                              {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
-                              <span class="atc-plus">+</span>
-                              {{ 'product.buttons.add_to_cart' | t }}
-                            </span>
-                      <span class="atc-button--icon">
-                              {%- render 'icon-spinner' -%}
-                            </span>
-                    </button>
+
+                      <div class="qtydiv" data-quantity-wrapper="">
+                        {% comment %}bundle qty box{% endcomment %}
+                        <div class="lside">
+                        <label for="Quantity" class="quantity-selector">Quantity</label>
+                        <div class="qtybox" id="qtybox">
+                          <input type='button' value='−' data-step="1" class='qtyminus bndlr-qty-step' data-field='quantity' />
+
+
+                          <input
+                                  type='text'
+                                  name='quantity'
+                                  id="product-quantity-input"
+                                  class="form-field-input form-field-number form-field-filled qty bndlr-qty"
+                                  value="1"
+                                  data-step="1"
+                                  pattern="\d*"
+                                  aria-label="{{ 'general.general.quantity' | t }}"
+                                  data-quantity-input
+                          />
+                          <input type='button' value='+' class='qtyplus bndlr-qty-step' data-step="1" data-field='quantity' />
+                        </div>
+                        </div>
+                      </div>
+                      <div></div>
+                      {% comment %}bundle atc button{% endcomment %}
+                      <button class="product-form--atc-button main-atc-button" id="p-atc" type="submit" data-bundle-product-atc data-bundle="{{ product.handle }}">
+                              <span class="atc-button--text">
+                                {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
+                                <span class="atc-plus">+</span>
+                                {{ 'product.buttons.add_to_cart' | t }}
+                              </span>
+                        <span class="atc-button--icon">
+                                {%- render 'icon-spinner' -%}
+                              </span>
+                      </button>
+
                   {%- endif-%}
                   {%- comment -%}start if warning pop -------------------------------------------------------------------------------{%- endcomment -%}
                   {%- if warning_pops_avaliable > 0 or fgwp_pops_avaliable > 0-%}
