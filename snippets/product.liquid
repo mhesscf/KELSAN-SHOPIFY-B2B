@@ -206,7 +206,39 @@
                                 {%- if product.vendor != blank or onboarding -%}
                                        {%- unless onboarding -%}
                                            {%- assign vendorclean = product.vendor | replace: "&", "%26"-%}
-                                           Brand:<span><a href="/collections/vendors?refinementList[vendor][0]={{ vendorclean }}&q={{ vendorclean }}">{{ product.vendor }}</a></span>
+                                           Brand:<span class="brand-value"><a href="/collections/vendors?refinementList[vendor][0]={{ vendorclean }}&q={{ vendorclean }}">{{ product.vendor }}</a></span>
+
+                                            {% comment %}Resource gathering{% endcomment %}
+                                                {%- assign show_resources = "" -%}
+                                                {%- assign show_resources_text = false -%}
+
+                                                {%- if product.metafields.plytix.sds_file != blank or product.metafields.plytix.manual != blank or product.metafields.plytix.literature != blank -%}
+                                                    {%- assign show_resources = show_resources | append: "documents||" -%}
+                                                    {%- assign show_resources_text = true -%}
+                                                {%- endif -%}
+                                                {%- if  product.metafields.plytix.product_video or product.metafields.plytix.local_video -%}
+                                                    {%- assign show_resources = show_resources | append: "videos||" -%}
+                                                    {%- assign show_resources_text = true -%}
+                                                {%- endif -%}
+
+                                                {%- for variant in product.variants -%}
+                                                    {%- if  variant.metafields.plytix.related_products -%}
+                                                        {%- assign show_resources = show_resources | append: "related||" -%}
+                                                    {%- endif -%}
+                                                {% endfor %}
+
+                                                {%- for variant in product.variants -%}
+                                                    {%- if  variant.metafields.plytix.part_items -%}
+                                                        {%- assign show_resources = show_resources | append: "parts||" -%}
+                                                        {%- assign show_resources_text = true -%}
+                                                    {%- endif -%}
+                                                {% endfor %}
+                                                {% if show_resources_text %}
+                                                 Go to:<span class="fake-link resource-pop" onclick="resource_pop('{{ show_resources }}')" >Product Resources<span>
+                                                {% endif %}
+                                            {% comment %}end Resource gathering{% endcomment %}
+
+
                                            {% comment %}Vendor:<span>{{ product.vendor | link_to_vendor }}</span>{% endcomment %}
                                         {%- else -%}
                                             {{ 'onboarding.product.by_vendor' | t }}
@@ -468,6 +500,7 @@
 
                                                 });
                                             });
+
                                         </script>
                                     {%- endif -%}
 
@@ -831,4 +864,104 @@
         </div>
     {%- endif -%}
 </div>
+{%- endif -%}
+
+{%- if show_resources != "" -%}
+    <script>
+        function resource_pop(types) {
+            var newhtml = "<div class='product-resource-pop-contain'>";
+            newhtml += "<h2>Product Resources</h2>";
+            newhtml += "<div class='resource-links'>";
+            types.split("||").filter(Boolean).forEach(type => {
+                var title = "";
+                var icon = "";
+                if (type == "related"){
+                    title = "Related Products";
+                    icon = "<i class='fa-light fa-left-right'></i>";
+                }else if (type == "parts"){
+                    title = "Parts";
+                    icon = "<i class='fa-regular fa-wrench'></i>";
+                }else if (type == "videos"){
+                    title = "Videos";
+                    icon = "<i class='fa-brands fa-youtube'></i>";
+                }else if (type == "documents"){
+                    title = "Product Documents";
+                    icon = "<i class='fa-solid fa-file-pdf'></i>";
+                }
+                newhtml += "<div class='fake-link resource-link' onclick='gotolink(\""+type+"\")'>"+icon+" "+title+" <i class='fa-solid fa-angle-right'></i></div>";
+            });
+            newhtml += "</div>";
+            newhtml += "</div>";
+
+            $('.popup-container').removeClass('hidden');
+            $(".pop-grad").removeClass('hidden');
+            $('.popup-container .content').html(newhtml);
+        }
+
+
+        function gotolink(dataType) {
+            if (dataType =='related'){
+                var $target = $('#tab-related_products-header');
+            }else if (dataType =='parts'){
+                var $target = $('#tab-part_items-header');
+            }else if (dataType =='videos'){
+                var $target = $('.video-area-dynamic');
+            }else if (dataType =='documents'){
+                var $target = $('.data-sheets');
+            }
+            showLoading();
+            setTimeout(() => {
+                if ($target.length) {
+                    var offsetTop = $target.offset().top - 60;
+                    $('html, body').animate({ scrollTop: offsetTop }, 600);
+                    $target.click();
+                }
+                setTimeout(() => {
+                    hideLoading();
+                }, "100");
+            }, "100");
+            closechildPop('bund-pop-');
+        };
+
+
+        function showLoading() {
+            const overlay = document.createElement('div');
+            overlay.id = 'loading-overlay';
+            overlay.style.cssText = `
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+      `;
+
+            overlay.innerHTML = `
+        <div style="
+          width: 52px;
+          height: 52px;
+          border: 5px solid rgba(255,255,255,0.3);
+          border-top-color: #fff;
+          border-radius: 50%;
+          animation: spin 0.8s linear infinite;
+        "></div>
+        <style>
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+        </style>
+      `;
+
+            document.body.appendChild(overlay);
+        }
+
+        // Hide loading overlay
+        function hideLoading() {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) overlay.remove();
+        }
+
+
+    </script>
 {%- endif -%}
