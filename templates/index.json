@@ -84,21 +84,20 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "4",
+            "sotm_icon": "6",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/cpl-cf-fm-flood-master-special.png",
-            "middle_image_alt": "CleanFreak® 17\" Heavy Duty Floor Buffer w/ Pad Driver Special",
+            "middle_image": "/cdn/shop/files/cpl-dura-20b-special.png",
+            "middle_image_alt": "Trusted Clean 'Dura 20' Automatic Floor Scrubber Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Maximize Savings, Minimize Mess.</div>\n<h1>CleanFreak® 'Flood Master' Portable Flood Pumper & Extractor</h1>\n<div>Was: $2,499.99<br/>Now: $2,199.99</div>",
+            "text_area_html": "<div class=\"top-text\">Maximize Savings, Minimize Mess.</div>\n<h1>Trusted Clean 'Dura 20' Automatic Floor Scrubber</h1>\n<div>Was: $4,649.99<br/>Now: $4,199.99</div>",
             "text_area_css": "@media screen and (min-width: 719px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\n\tmargin-top:43px;\n\tmargin-left:-71px;\n\tmax-height:268px;\n\t}\n}\n\n@media screen and (max-width: 718px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\n\tpadding-top:70px;\n\t}\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1{\nfont-size:28px;\n}",
-            "bg_link": "/products/flood-pumper-portable-flood-extractor",
+            "bg_link": "/products/trusted-clean-dura-20-inch-automatic-floor-scrubber",
             "promo_link": "",
-            "button_one_label": "Save $300",
-            "button_one_link": "/products/flood-pumper-portable-flood-extractor",
+            "button_one_label": "Save $450",
+            "button_one_link": "/products/trusted-clean-dura-20-inch-automatic-floor-scrubber",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -106,10 +105,9 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "4",
+            "sotm_icon": "6",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
             "middle_image": "/cdn/shop/files/san-86-4000-pac100-special.png",
             "middle_image_alt": "CleanFreak® Compact Car Wash Upholstery Detailing Machine Special of the Month",
@@ -128,6 +126,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "5",
@@ -149,6 +148,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "5",
