@@ -84,6 +84,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "6",
@@ -105,6 +106,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "6",
@@ -114,7 +116,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Easy Operation, Exceptional Price.</div>\n<h1>CleanFreak® 'EasySweep' Carpet & Floor Vacuum Sweeper</h1>\n<div>Was: $2,599.99<br/>Now: $2,299.99</div>",
-            "text_area_css": "@media screen and (min-width: 719px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tmargin-top:8px;\n\tmax-height:336px;\n\tmargin-left: -14px;\n\t}\n}\n@media screen and (max-width: 718px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tpadding-top:23px;\n\t}\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz h1{\nfont-size:28px;\n}",
+            "text_area_css": "@media screen and (min-width: 719px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tmargin-top:8px;\n\tmax-height:336px;\n\tmargin-left: -14px;\n\t}\n}\n@media screen and (max-width: 718px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tpadding-top:7px;\n\t}\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz h1{\nfont-size:28px;\n}",
             "bg_link": "/products/warehouse-concrete-floor-sweeper",
             "promo_link": "",
             "button_one_label": "Save $300",
@@ -126,7 +128,6 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "5",
@@ -148,7 +149,6 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "5",
@@ -170,7 +170,6 @@
         },
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
             "background_image": "shopify://shop_images/flash-sale-1400x350.jpg",
