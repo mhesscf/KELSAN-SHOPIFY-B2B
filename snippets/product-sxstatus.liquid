@@ -134,13 +134,13 @@
 
       {%- assign showinv = false -%}
 
-      {%- if shop.name contains "CleanFreak B2B"-%}
+
         {% if thisproduct.metafields.plytix.clearance_overstock == 'true' %}
           {%- assign showinv = true -%}
         {% elsif pclearance == true or pdemoitem == true or b2binventory == true %}
           {%- assign showinv = true -%}
         {% endif %}
-      {% endif %}
+
 
       <div class="product-detail-stock-and-shipping {% if showinv == true %}showinv{% endif %}">
         <i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock
