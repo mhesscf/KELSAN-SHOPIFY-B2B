@@ -30,7 +30,7 @@
             {% if crawlcheck == true %}
                 <div style="display:none;" class="crawlcheck crawlcheck-related"><!-- check product that is supposed to be here for discontinued or broken handle ({{ product_handle }})--></div>
             {% endif %}
-            <div class="returned-product" id="b2blist-product-{{ product.id }}" data-producttype="{{ product.type }}">
+            <div class="returned-product" id="b2blist-product-{{ product.id }}" data-producttype="{{ product.type }}" data-productgroup="{{ product.metafields.plytix.product_type_grouping }}">
                     <div class="b2b-col b2b-product-check" >
 
                         {% if product.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank %}
