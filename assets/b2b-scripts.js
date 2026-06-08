@@ -1,7 +1,6 @@
 $(document).ready(function () {
     function loadOneElement($el) {
         var dfd = $.Deferred();
-
         var filter = $el.data('caturl');
         var params = new URLSearchParams(window.location.search);
         var productType = encodeURIComponent(params.get("product_type")); // becomes "null" if missing
