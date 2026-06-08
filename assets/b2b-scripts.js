@@ -5,6 +5,7 @@ $(document).ready(function () {
         var filter = $el.data('caturl');
         var params = new URLSearchParams(window.location.search);
         var productType = encodeURIComponent(params.get("product_type")); // becomes "null" if missing
+        var productGroup = encodeURIComponent(params.get("product_group")); // becomes "null" if missing
         var finalresponse = "";
 
         var page = 1;
@@ -19,15 +20,14 @@ $(document).ready(function () {
             }
 
             var fetchUrl;
-            if (productType === "null") {
-                fetchUrl = window.Theme.routes.all_products_collection_url +
-                    "?view=b2b-list-ajax&page=" + page +
-                    "&filter.p.m.plytix.b2b_catalogs_list=" + filter;
-            } else {
-                fetchUrl = window.Theme.routes.all_products_collection_url +
-                    "?view=b2b-list-ajax&page=" + page +
-                    "&filter.p.m.plytix.b2b_catalogs_list=" + filter +
-                    "&filter.p.product_type=" + productType;
+
+            fetchUrl = window.Theme.routes.all_products_collection_url + "?view=b2b-list-ajax&page=" + page + "&filter.p.m.plytix.b2b_catalogs_list=" + filter;
+
+            if (productType != "null") {
+                fetchUrl += "&filter.p.product_type=" + productType;
+            }
+            if (productGroup != "null") {
+                fetchUrl += "&filter.p.m.plytix.product_type_grouping=" + productGroup;
             }
 
             $.get(fetchUrl)
@@ -388,6 +388,44 @@ function loadfiltersoff(){
 
 
 function loadfilters(){
+    const groupurl = new URL(window.location.href);
+    const typeurl = new URL(window.location.href);
+    // Product Grouping Filtering
+    let productGroups = $('.returned-product')
+        .map(function () {
+            return $(this).data('productgroup');
+        })
+        .get()
+        .filter(Boolean);
+
+    // Add "All Products" before dedupe & sort'
+    if (groupurl.searchParams.has('product_group')) {
+        productGroups.push('All Groups');
+    }
+
+    const uniqueSortedGroup = [...new Set(productGroups)]
+        .sort((a, b) => a.localeCompare(b));
+
+
+    const linksHtmlGroup = uniqueSortedGroup
+        .map(value => {
+            // Special-case the "All Products" link
+            if (value === 'All Groups') {
+                groupurl.searchParams.delete('product_group');
+                var newgroupurl = groupurl.toString();
+                return `<li><a href="${newgroupurl}">All Groups</a></li>`;
+            }
+
+            groupurl.searchParams.set('product_group', value);
+            var newgroupurl = groupurl.toString();
+            return `<li><a href="${newgroupurl}">${value}</a></li>`;
+        })
+        .join('');
+
+    $('#product-group-links').html(linksHtmlGroup);
+
+
+    // Product Category Filtering
     let productTypes = $('.returned-product')
         .map(function () {
             return $(this).data('producttype');
@@ -396,20 +434,25 @@ function loadfilters(){
         .filter(Boolean);
 
     // Add "All Products" before dedupe & sort
-    productTypes.push('All Products');
-
+    if (groupurl.searchParams.has('product_type')) {
+        productTypes.push('All Types');
+    }
     const uniqueSorted = [...new Set(productTypes)]
         .sort((a, b) => a.localeCompare(b));
 
     const linksHtml = uniqueSorted
         .map(value => {
             // Special-case the "All Products" link
-            if (value === 'All Products') {
-                return `<li><a href="/pages/product-list-quick-order">All Products</a></li>`;
+            if (value === 'All Types') {
+                typeurl.searchParams.delete('product_type');
+                var newtypeurl = typeurl.toString();
+                return `<li><a href="${newtypeurl}">All Types</a></li>`;
             }
 
-            const encodedValue = encodeURIComponent(value);
-            return `<li><a href="/pages/product-list-quick-order?product_type=${encodedValue}">${value}</a></li>`;
+            typeurl.searchParams.set('product_type', value);
+            var newtypeurl = typeurl.toString();
+
+            return `<li><a href="${newtypeurl}">${value}</a></li>`;
         })
         .join('');
 
