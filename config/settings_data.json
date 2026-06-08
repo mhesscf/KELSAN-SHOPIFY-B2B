@@ -393,6 +393,11 @@
         "type": "shopify://apps/analyzify-ga4-ads-tracking/blocks/app-embed/69637cfd-dd6f-4511-aa97-7037cfb5515c",
         "disabled": true,
         "settings": {}
+      },
+      "5607836560570363390": {
+        "type": "shopify://apps/shieldify-fraud-filter/blocks/app_embed/55e34c08-5add-41cc-b0cd-5e853bb58fdb",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

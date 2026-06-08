@@ -207,9 +207,12 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Starts.  uninstalled 10/17 -->
       {%- comment -%}<script src='https://upsell-app.logbase.io/lb-upsell.js?shop=cleanfreak-prod.myshopify.com' defer></script>{%- endcomment -%}
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
-    {%- assign showalgolia = true -%}
+    {%- assign showalgolia = false -%}
+    {% if localization.country.iso_code == 'US' %}
+      {%- assign showalgolia = true -%}
+    {% endif %}
     {%- if template contains 'collection' -%}
-        {% if collection.url == '/collections/all-off' %}
+        {% if collection.url == '/collections/all' %}
             {%- assign showalgolia = false -%}
         {%  endif %}
     {%  endif %}

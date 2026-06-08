@@ -2537,10 +2537,40 @@ popup-container .bundle-child-details .pop-icons .sm-row-text span{
 /*-- resources popup --*/
 .popup-container .product-resource-pop-contain .resource-link{
   padding:3px 0;
+  display:block;
+  position: relative;
 }
 .popup-container .product-resource-pop-contain .resource-link i{
   color: {{ settings.color_text }} !important;
   font-size:15px;
+}
+.popup-container .product-resource-pop-contain .resource-link .copy-icon{
+  float:right;
+  padding-top:1px;
+  display:none;
+}
+.popup-container .product-resource-pop-contain .resource-link .copy-icon.copied::after,
+.popup-container .product-resource-pop-contain .resource-link .copy-icon:hover::after{
+  content: 'Copy Link';
+  font-size:10px;
+  line-height:11px;
+  border:1px solid #ccc;
+  position: absolute;
+  border-radius: 5px;
+  background:white;
+  padding:5px;
+  top:30px;
+  right:-32px;
+  z-index:1;
+  color: {{ settings.color_text }} !important;
+}
+.popup-container .product-resource-pop-contain .resource-link .copy-icon.copied::after{
+  content: 'Link Copied';
+}
+
+
+.popup-container .product-resource-pop-contain .resource-link:hover .copy-icon{
+  display:inline;
 }
 
 
