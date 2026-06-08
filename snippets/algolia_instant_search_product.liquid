@@ -138,7 +138,7 @@
             {%- endif -%}
             finalmessage += '<span class="status-desc main-notice"><i class="fa-regular fa-circle-check"></i> In Stock {%- if b2binventory == true -%}<span class="invcount"> ('+inventory +' Available)</span>{%- endif -%}';
             if (clearance == 'true' || sku.includes("-DEMO") || sku.includes("-REFURB") ){
-                finalmessage += '<span class="invcount">('+inventory +' Available)</span>';
+                finalmessage += '<span class="invcount"> ('+inventory +' Available)</span>';
             }
             finalmessage += '</span>';
         }
