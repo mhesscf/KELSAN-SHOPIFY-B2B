@@ -68,6 +68,10 @@ $(document).ready(function () {
     $.when.apply($, requests).done(function () {
         b2blistscripts();
         loadfilters();
+        setTimeout(() => {
+            prepsearch();
+        }, 500);
+
     });
 
 });
@@ -467,7 +471,10 @@ $(document).ready(function () {
     if (triggerEl && targetEl) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                targetEl.classList.toggle('bottomfix', entry.isIntersecting);
+
+                setTimeout(() => {
+                    $(targetEl).addClass('bottomfix');
+                }, 500);
             });
         }, {
             threshold: 0.1 // adjust visibility % if needed
@@ -477,3 +484,65 @@ $(document).ready(function () {
     }
 
 });
+
+
+
+
+function prepsearch() {
+
+    // --- Build the search UI ---
+    const wrapper = document.querySelector('.b2b-collection-ajax');
+    const searchbox = document.querySelector('.search-box-contain');
+    if (!wrapper) return;
+
+    const searchContainer = document.createElement('div');
+    searchContainer.style.cssText = 'padding: 1rem 0;';
+    searchContainer.innerHTML = `
+    <input
+      type="text"
+      id="b2b-keyword-search"
+      placeholder="Search products by keyword…"
+      autocomplete="off"
+      style="width:100%;padding:10px 14px;font-size:15px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;outline:none;"
+    >
+    <div id="b2b-search-count" style="font-size:13px;color:#666;margin-top:8px;"></div>
+  `;
+
+    searchbox.insertBefore(searchContainer, searchbox.firstChild);
+
+    // --- Utility ---
+    function escapeRE(s) {
+        return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // --- Search handler ---
+    document.getElementById('b2b-keyword-search').addEventListener('input', function () {
+        const word = this.value.trim();
+        const countEl = document.getElementById('b2b-search-count');
+        const rows = wrapper.querySelectorAll('.returned-product');
+
+        if (!word) {
+            rows.forEach(row => row.style.display = '');
+            countEl.textContent = '';
+            return;
+        }
+
+        const re = new RegExp(escapeRE(word), 'i');
+        let matches = 0;
+
+        rows.forEach(function (row) {
+            const titleEl = row.querySelector('.b2b-product-title a');
+            const titleText = titleEl ? titleEl.textContent : '';
+
+            if (re.test(titleText)) {
+                row.style.display = '';
+                matches++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        countEl.textContent = matches + ' result' + (matches !== 1 ? 's' : '') + ' for "' + word + '"';
+    });
+
+}
