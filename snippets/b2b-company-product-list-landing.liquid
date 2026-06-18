@@ -20,14 +20,14 @@
     {%- if customer and customer.b2b? -%}
         <div class="b2b-left-col">
             <div class="left-top-fix">
-
+{% comment %}
                 <h2>Filter by Group</h2>
                 <ul id="product-group-links">
                     <li><a href="/pages/product-list-quick-order">Loading...</a></li>
                     {% comment %}<li><a href="/pages/product-list-quick-order?product_type=Floor+Pads%2C+Bonnets+%26+Sanding+Screens">Floor Pads, Bonnets & Sanding Screens</a></li>{% endcomment %}
                     {% comment %}<li><a href="/pages/product-list-quick-order?product_type=Floor+Buffer+%26+Burnisher+Parts">Floor Buffer & Burnisher Parts</a></li>{% endcomment %}
                 </ul>
-
+{% endcomment %}
 
                 <h2>Filter by Category</h2>
                 <ul id="product-type-links">
