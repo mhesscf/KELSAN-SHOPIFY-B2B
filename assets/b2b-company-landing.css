@@ -89,6 +89,21 @@
 /* end ---------------------------------------------------------------------------------------------------------  */
 
 
+.b2b-company-landing .title-search-row{
+    display:flex;
+    flex-direction: row;
+}
+@media (max-width: 719px){
+    .b2b-company-landing .title-search-row{
+        display:block;
+    }
+}
+.b2b-company-landing .title-search-row div{
+    flex-basis:50%
+}
+.b2b-company-landing .title-search-row .search-box-contain{
+    justify-content: right;
+}
 
 .b2b-company-landing .request-container .request-forms{
     border-top:1px solid #ccc;
