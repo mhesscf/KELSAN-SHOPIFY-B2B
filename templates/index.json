@@ -138,7 +138,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Dry stripping at a discounted price!</div>\n<h1>CleanFreak® Oscillating Floor Machine (14\" x 20\" Head)</h1>\n<div>Was: $1,599.99<br/>Now: $1,449.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:27px;\nline-height:30px;\n}\n\n@media screen and (max-width: 720px) {\n\t.slideshow-v2 .middle-image{\n\t\tpadding-top:7px;\n\t}\n\t\n}",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:27px;\nline-height:30px;\n}\n.slideshow-v2 .middle-image{\n\tmax-width:228px;\n}\n@media screen and (max-width: 720px) {\n\t.slideshow-v2 .middle-image{\n\t\tpadding-top:7px;\n\t}\n\t\n}",
             "bg_link": "/products/cleanfreak-dry-surface-strip-machine",
             "promo_link": "",
             "button_one_label": "Save $150",
