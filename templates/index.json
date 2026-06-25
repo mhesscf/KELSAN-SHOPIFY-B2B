@@ -85,6 +85,7 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "6",
@@ -106,6 +107,7 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "6",
@@ -127,21 +129,20 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "5",
+            "sotm_icon": "7",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/tpl-bk-17-tc-special.png?v=173335204",
-            "middle_image_alt": "Trusted Clean 17\" Commercial Grade Floor Buffer w/ Pad Driver Special",
+            "middle_image": "/cdn/shop/files/kob-00-4503-9-special.png?v=173335204",
+            "middle_image_alt": "CleanFreak® Oscillating Floor Machine (14\" x 20\" Head) Special",
             "right_image": "",
             "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Ultimate Clean, Unmatched Value!</div>\n<h1>Trusted Clean 17\" Commercial Grade Floor Buffer w/ Pad Driver</h1>\n<div>Was: $949.99<br/>Now: $849.99</div>",
+            "text_area_html": "<div class=\"top-text\">Ultimate Clean, Unmatched Value!</div>\n<h1>CleanFreak® Oscillating Floor Machine (14\" x 20\" Head)</h1>\n<div>Was: $1,599.99<br/>Now: $1,449.99</div>",
             "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:27px;\nline-height:30px;\n}",
-            "bg_link": "/products/trusted-clean-17-inch-commercial-grade-floor-buffer",
+            "bg_link": "/products/cleanfreak-dry-surface-strip-machine",
             "promo_link": "",
-            "button_one_label": "Save $100",
-            "button_one_link": "/products/trusted-clean-17-inch-commercial-grade-floor-buffer",
+            "button_one_label": "Save $150",
+            "button_one_link": "/products/cleanfreak-dry-surface-strip-machine",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -149,10 +150,9 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "5",
+            "sotm_icon": "6",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/tpl-12-100-ce-heat-tcp-special.png?v=173336204",
             "middle_image_alt": "Trusted Clean 'Ultimate' Heated Carpet Cleaning Box Extractor Special",
