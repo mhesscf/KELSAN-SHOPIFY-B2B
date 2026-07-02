@@ -81,24 +81,6 @@
                             {%- else -%}
                                 <em>No address on this location.</em>
                             {%- endif -%}
-
-                            {% comment %}
-                                <div>
-                                    <strong>Payment terms:</strong>
-                                    {% if loc.payment_terms %}
-                                        {{ loc.payment_terms.description | default: loc.payment_terms.type }}
-                                        {% if loc.payment_terms.due_in_days %}
-                                            (Due in {{ loc.payment_terms.due_in_days }} days)
-                                        {%- endif -%}
-                                        {% if loc.payment_terms.fixed_due_date %}
-                                            (Due {{ loc.payment_terms.fixed_due_date }})
-                                        {%- endif -%}
-                                    {% else %}
-                                        <em>None / Due at checkout</em>
-                                    {% endif %}
-                                </div>
-                            {% endcomment %}
-
                             {%- unless current_loc and loc.id == current_loc.id -%}
                                 <div style="margin-top: .25rem;">
                                     <a href="{{ loc.url_to_set_as_current }}">Set as current</a>
