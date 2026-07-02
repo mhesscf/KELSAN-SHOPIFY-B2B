@@ -221,6 +221,11 @@
         stateMapping: singleIndex(targetIndexName),
       },
       searchFunction: function(searchFunctionHelper) {
+        // Prevent empty searches from hitting Algolia (search page only)
+        if (!collectionPageEnabled && !searchFunctionHelper.state.query) {
+          return;
+        }
+
         // Set query parameters here because they're not kept when someone
         // presses the Back button if set in the `init` function of a custom widget
         var page = searchFunctionHelper.getPage();
