@@ -13,6 +13,9 @@
   const containerClasses = container.classList;
   containerClasses.add('aa-MainContainer');
 
+  // Minimum characters before autocomplete triggers
+  const MIN_QUERY_LENGTH = 3;
+
   // Set plugins
   const { productsPlugin, collectionsPlugin, articlesPlugin, pagesPlugin, querySuggestionsPlugin, algoliaInsightsPlugin } = algolia;
   const plugins = [
@@ -23,6 +26,20 @@
     algolia.config.index_pages && pagesPlugin,
     algolia.config.autocomplete_query_suggestions && querySuggestionsPlugin
   ];
+
+  // Wrap every plugin's getSources so no requests fire below the minimum length
+  const gatedPlugins = plugins.map((plugin) => {
+    if (!plugin || !plugin.getSources) return plugin;
+    return {
+      ...plugin,
+      getSources(params) {
+        if (!params.query || params.query.length < MIN_QUERY_LENGTH) {
+          return [];
+        }
+        return plugin.getSources(params);
+      }
+    };
+  });
 
   const cssFile = document.getElementById('template_algolia_autocomplete.css');
   //Set CSS variables
@@ -36,8 +53,11 @@
   autocomplete({
     container,
     openOnFocus: false,
+    shouldPanelOpen({ state }) {
+      return state.query.length >= MIN_QUERY_LENGTH;
+    },
     debug: algolia.config.autocomplete_debug,
-    plugins,
+    plugins: gatedPlugins,
     render({ elements, render, html, state }, root) {
       const sourceIdsToExclude = ['products'];
       const hasLeftPanelResults = state.collections
@@ -46,11 +66,11 @@
               )
               .reduce((prev, curr) => prev + curr.items.length, 0) > 0;
       const [querySuggestionsPluginResults] = state.collections.filter(({source}) => source.sourceId === 'querySuggestionsPlugin');
-      const displaySuggestions = algolia.config.autocomplete_query_suggestions && querySuggestionsPluginResults.items.length > 0;
+      const displaySuggestions = algolia.config.autocomplete_query_suggestions && querySuggestionsPluginResults && querySuggestionsPluginResults.items.length > 0;
       render(
               hasLeftPanelResults ?
-              algolia.mainTemplate({ html, state }, elements, displaySuggestions)
-              : algolia.mainProductsTemplate({ html, state }, elements),
+                      algolia.mainTemplate({ html, state }, elements, displaySuggestions)
+                      : algolia.mainProductsTemplate({ html, state }, elements),
               root
       );
     },

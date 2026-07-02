@@ -1002,9 +1002,11 @@ jQuery(document).ready(function($){
         var filterChoices = 0;
         var $this = $(this);
         $this.children('.collection-filters__filter-list-item').each(function(){
-            filterChoices++;
-            if(filterChoices > 4){
-                $(this).addClass('closed');
+            if ($(this).find('.collection-filters__filter-link').is(":visible")) {
+                filterChoices++;
+                if (filterChoices > 4) {
+                    $(this).addClass('closed');
+                }
             }
         });
         if(filterChoices > 4){
@@ -1016,6 +1018,40 @@ jQuery(document).ready(function($){
         $(this).siblings('li').removeClass('closed');
         $(this).toggle();
     });
+
+
+    //collection icon functionality
+    $( ".collection-filters__filter-group" ).each(function( index ) {
+
+        if ($(this).find(".collection-filters__filter-group-heading .collection-filters__filter-title").text().trim() == "Tags") {
+                // $(this).find( ".ais-RefinementList-item" ).each(function( index ) {
+                //     var labelTextcheck = $(this).clone().find('.ais-RefinementList-count').remove().end().text().trim();
+                //     if(labelTextcheck == "Discontinued"){
+                //         showallicons = "false";
+                //         if ($('.ais-page .ais-key-area .icon-filtering[data-filtername="' + "Discontinued" + '"]').length) {
+                //             $('.ais-page .ais-key-area').addClass('showicon');
+                //             $('.ais-page .ais-key-area .icon-filtering[data-filtername="' + "Discontinued" + '"]').addClass('showicon');
+                //         }
+                //     }
+                // });
+
+                $(this).find(".collection-filters__filter-list-item").each(function (index) {
+                    if (!$(this).hasClass('data-disabled')) {
+                        var labelText = $(this).find('.collection-filters__filter-list-item-text .item-title').text().trim();
+                        if ($('.productgrid-key-area .icon-filtering[data-filtername="' + labelText + '"]').length) {
+                            $('.productgrid-key-area').addClass('showicon');
+                            $('.productgrid-key-area .icon-filtering[data-filtername="' + labelText + '"]').addClass('showicon');
+                        }
+                    }
+                });
+        }
+    })
+
+    $( ".productgrid-key-area .icon-filtering" ).click(function( e ) {
+        var filtername = $(this).data('filtername');
+        $('.collection-filters__filter-list-item-text:contains('+filtername+')').trigger("click");
+    });
+
 
     // Bundle qty handling
     const $sub_product_container = $('[data-bundle-subproducts]')
