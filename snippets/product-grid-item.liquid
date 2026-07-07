@@ -246,7 +246,99 @@ data-product-quickshop-url="{{ product_link }}"
   data-recently-viewed-card
 {% endif %}
 >
-<div class="productitem" data-product-item-content>
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+
+
+{% comment %}end special class/icons------------------------------------------------------------{% endcomment %}
+
+{%- assign specialclass = "" -%}
+{%- assign isSpecial = false -%}
+{%- if pdiscontinued != true -%}
+  {%- if product.selected_or_first_available_variant.compare_at_price -%}
+    {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
+      {%- assign specialSavings = product.compare_at_price | minus: product.price -%}
+      {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
+      {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' -%}
+      {%- assign nowTimestamp = 'now' | date: '%s' -%}
+
+      {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+      {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+      {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+      {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+      {% comment %}{%- if enddiffDays >= -1 and  startdiffDays < 0 -%}{% endcomment %}
+      {%- if product.selected_or_first_available_variant.metafields.plytix.special_enddate -%}
+        {%- assign specialclass = "isspecial" -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if shop.name contains "CleanFreak B2B-off"-%}
+    {%- assign varorgprice = product.selected_or_first_available_variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+    {%- assign varorgpriceb4special = product.selected_or_first_available_variant.metafields.plytix.org-price-b4-special | times: 100 -%}
+    {%- if varorgprice > product.selected_or_first_available_variant.price -%}
+      {%- assign specialclass = "isspecial" -%}
+      {%- assign isSpecial = true -%}
+    {%- elsif varorgpriceb4special > product.selected_or_first_available_variant.price -%}
+      {%- assign specialclass = "isspecial" -%}
+      {%- assign isSpecial = true -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- for c in product.collections -%}
+    {%- if c.handle == "clearance" -%}
+      {%- assign specialclass = "isclearance" -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if product.metafields.plytix.custom_hot_deal_message -%}
+
+    {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' -%}
+    {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' -%}
+    {%- assign nowTimestamp = 'now' | date: '%s' -%}
+    {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+    {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+    {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+    {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+    {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
+      {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+
+        {% if product.tags contains "BOGO Deal" %}
+          {%- assign specialclass = "isbogo" -%}
+        {%- else -%}
+          {%- assign specialclass = "isspecial" -%}
+          {%- assign isSpecial = true -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- elsif product.metafields.plytix.bundle_special_data -%}
+    {%- assign specialclass = "isspecial" -%}
+
+  {%- endif -%}
+{%- endif -%}
+
+{%- if template == 'product.product-resources' -%}
+  {% comment %}remove any special stylizing or banners if on resource template{% endcomment %}
+  {%- assign specialclass = "" -%}
+{%- endif -%}
+
+
+{% comment %}end special class/icons------------------------------------------------------------{% endcomment %}
+
+<div class="productitem collection-item {{ specialclass }}" data-product-item-content>
+
+  {%- if specialclass == "isspecial" -%}
+    <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>
+  {%- elsif specialclass == "isclearance" -%}
+    <div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon-clearance.png' | file_img_url: '260x' }}" alt="Clearance Item" /></div>
+  {%- elsif specialclass == "isbogo" -%}
+    <div class="deal-rib bogo-icon"><img class="img-responsive" src="{{ 'bogo-icon.png' | file_img_url: '260x' }}" alt="BOGO Item" /></div>
+  {%- endif -%}
+
+
   {%- comment -%}Inject template-allows-compare begin{%- endcomment -%}
   {%- assign template_allows_compare = settings.enable_product_compare -%}
   {%- if template.name == 'cart' -%}
@@ -335,6 +427,117 @@ data-product-quickshop-url="{{ product_link }}"
         {%- endcomment -%}
         </figure>
       </a>
+
+      <div class="product-icons-only under-pic">
+        {%- assign pclearance = false -%}
+        {%- for c in product.collections -%}
+          {%- if c.handle == "clearance" -%}
+            {%- assign pclearance = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+
+        {%- assign toplineClass = "" -%}
+        {%- if pdiscontinued == true
+        or product.metafields.plytix.assembled_in_USA
+        or product.metafields.plytix.made_in_USA
+        or product.metafields.plytix.free_shipping
+        or product.metafields.plytix.eco_friendly
+        or product.metafields.plytix.gold_medal_winner
+        or product.metafields.plytix.clearance_overstock == 'true'
+        or pclearance == true
+        or product.tags contains "Not Returnable"
+        -%}
+          {%- assign toplineClass = "topline" -%}
+        {%- endif -%}
+
+
+
+        <div class="ship-made {{ toplineClass }}">
+          {%- if pdiscontinued == true -%}
+            <a href="/collections/discontinued">
+            <div class="sm-row discontinued">
+              <div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div>
+              <div class="sm-row-text"><span>Discontinued</span><br><span class="sm-text">This Product has Been Discontinued</span></div>
+            </div>
+            </a>
+          {%- else -%}
+            {%- if product.metafields.plytix.assembled_in_USA -%}
+              <a href="/collections/assembled-in-the-usa">
+                <div class="sm-row usmade">
+                  <div class="icon-wrap" style="font-size: 22px;"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/></div>
+                  <div class="sm-row-text"><span>Assembled in USA</span><br><span class="sm-text">Supporting American Workers</span></div>
+                </div>
+              </a>
+            {%- endif -%}
+            {%- if product.metafields.plytix.made_in_USA -%}
+              <a href="/collections/assembled-in-the-usa">
+                <div class="sm-row usmade">
+                  <div class="icon-wrap" style="font-size: 22px;"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div>
+                  <div class="sm-row-text"><span>Made in USA</span><br><span class="sm-text">Supporting American Workers</span></div>
+                </div>
+              </a>
+            {%- endif -%}
+            {%- if product.metafields.plytix.free_shipping -%}
+              <a href="/collections/free-shipping">
+                <div class="sm-row freeship">
+                  <div class="icon-wrap" style="font-size: 22px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div>
+                  <div class="sm-row-text"><span>Free Shipping</span><br><span class="sm-text">Anywhere in the Continental US</span></div>
+                </div>
+              </a>
+            {%- endif -%}
+            {%- if product.metafields.plytix.eco_friendly -%}
+              <a href="/collections/all?filter.p.tag=Environmentally+Responsible">
+                <div class="sm-row greenproduct">
+                  <div class="icon-wrap" style="font-size: 22px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div>
+                  <div class="sm-row-text"><span>Environmentally Responsible</span><br><span class="sm-text">Reduced Impact on the Environment</span></div>
+                </div>
+              </a>
+            {%- endif -%}
+            {%- if product.metafields.plytix.gold_medal_winner -%}
+
+              <a href="/collections/gold-medal-winners">
+                <div class="sm-row goldmedal">
+                  <div class="icon-wrap" style="font-size: 22px;"><i class="fa-duotone fa-solid fa-medal"></i></div>
+                  <div class="sm-row-text"><span>Gold Medal Winner</span><br><span class="sm-text">It's that Awesome!</span></div>
+                </div>
+              </a>
+
+            {%- endif -%}
+
+            {%- if product.metafields.plytix.clearance_overstock == 'true' -%}
+              <a href="/collections/clearance">
+                <div class="sm-row clearance">
+                  <div class="icon-wrap" style="font-size: 22px;"><i class="fa-duotone fa-solid fa-tags"></i></div>
+                  <div class="sm-row-text"><span>Clearance / Overstock</span><span class="sm-text">Buy now before they are gone!</span></div>
+                </div>
+              </a>
+            {%- elsif pclearance == true -%}
+              <a href="/collections/clearance">
+                <div class="sm-row clearance">
+                  <div class="icon-wrap" style="font-size: 22px;"><i class="fa-duotone fa-solid fa-tags"></i></div>
+                  <div class="sm-row-text"><span>Clearance / Overstock</span><span class="sm-text">Buy now before they are gone!</span></div>
+                </div>
+              </a>
+            {%- endif -%}
+
+
+            {%- if product.tags contains "Not Returnable" -%}
+              <div class="sm-row nolink">
+                <div class="icon-wrap">
+                  <img style="margin-left:-2px;" width="25" height="25" src="{{ 'not-returnable-icon.png' | file_img_url }}" alt="Not Returnable">
+                </div>
+                <div class="sm-row-text "><span>Not Returnable</span><br/>
+                  <span class="sm-text">Due to the nature of this product, it cannot be returned.</span>
+                </div>
+              </div>
+
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+
     </div>
 
     {%- capture product_item_price -%}
@@ -468,225 +671,170 @@ data-product-quickshop-url="{{ product_link }}"
       <div class="product-icons">
         <div class="ship-made">
 
-          {%- if pdiscontinued == true -%}
-            <div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <span class="sm-row-text"><span>Discontinued</span> <span class="sm-text">This Product has Been Discontinued</span></span></div>
-          {%- else -%}
-            {%- if product.metafields.plytix.assembled_in_USA -%}
-              <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'assembled-in-usa.png' | file_img_url }}" alt="Assembled in the United States"/></div> <span class="sm-row-text"><span>Assembled in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
-            {%- endif -%}
-            {%- if product.metafields.plytix.made_in_USA -%}
-              <div class="sm-row"><div class="icon-wrap" style="font-size: 23px"><img style="margin-bottom:-3px" width="20" height="20" src="{{ 'made-in-usa-logo.png' | file_img_url }}" alt="Made in the United States"/></div> <span class="sm-row-text"><span>Made in USA</span> <span class="sm-text">Supporting American Workers</span></span></div>
-            {%- endif -%}
-            {%- if product.metafields.plytix.free_shipping -%}
-              <div class="sm-row"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <span class="sm-row-text"><span>Free Shipping</span> <span class="sm-text">Anywhere in the Continental US</span></span></div>
-            {%- endif -%}
-            {%- if product.metafields.plytix.eco_friendly -%}
-              <div class="sm-row">
-                <div class="icon-wrap" style="font-size: 20px;"><i style="color: #019a00" class="fa-solid fa-recycle"></i></div>
-                <span class="sm-row-text"><span>Environmentally Responsible</span>
-                <span class="sm-text">Reduced Impact on the Environment</span></span>
-              </div>
-            {%- endif -%}
-            {%- if product.metafields.plytix.gold_medal_winner -%}
-              <div class="sm-row">
-                <div class="icon-wrap">
-                  <i class="fa-duotone fa-solid fa-medal"></i>
-                </div>
-                <span class="sm-row-text"><span>Gold Medal Winner</span>
-                <span class="sm-text">It's that Awesome!</span></span>
-              </div>
-            {%- endif -%}
-            {%- assign pclearance = false -%}
-            {%- for c in product.collections -%}
-              {%- if c.handle == "clearance" -%}
-                {%- assign pclearance = true -%}
+          {%- if product.selected_or_first_available_variant.compare_at_price -%}
+            {%- if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price -%}
+              {%- assign specialSavings = product.compare_at_price | minus: product.price -%}
+              {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.special_enddate | date: '%s' -%}
+              {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.special_startdate | date: '%s' -%}
+              {%- assign nowTimestamp = 'now' | date: '%s' -%}
+
+              {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+              {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+              {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+              {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+              {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
+                {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                  <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div></a>
+                {%- else -%}
+                  <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and <strong>Save {{ specialSavings | money }}</strong></span></div></div>
+                {%- endif -%}
               {%- endif -%}
-            {%- endfor -%}
-            {%- if product.metafields.plytix.clearance_overstock == 'true' -%}
-              <div class="sm-row">
-                <div class="icon-wrap" style="font-size: 23px;">
-                  <i class="fa-solid fa-tag"></i>
-                </div>
-                <span class="sm-row-text"><span>Clearance / Overstock</span>
-                <span class="sm-text">Buy now before they are gone!</span></span>
-              </div>
-            {%- elsif pclearance == true -%}
-              <div class="sm-row">
-                <div class="icon-wrap" style="font-size: 23px;">
-                  <i class="fa-solid fa-tag"></i>
-                </div>
-                <span class="sm-row-text"><span>Clearance / Overstock</span>
-                <span class="sm-text">Buy now before they are gone!</span></span>
-              </div>
             {%- endif -%}
           {%- endif -%}
+          {%- if product.metafields.plytix.custom_hot_deal_message -%}
+
+            {%- assign endDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_to_date | date: '%s' -%}
+            {%- assign startDate = product.selected_or_first_available_variant.metafields.plytix.custom_hot_deal_from_date | date: '%s' -%}
+            {%- assign nowTimestamp = 'now' | date: '%s' -%}
+            {%- assign enddiffSeconds = endDate | minus: nowTimestamp -%}
+            {%- assign enddiffDays = enddiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+            {%- assign startdiffSeconds = startDate | minus: nowTimestamp -%}
+            {%- assign startdiffDays = startdiffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+            {%- if enddiffDays >= -1 and  startdiffDays < 0 -%}
+              {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+                {{ diffDays }} <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ endDate | date: '%m/%d' }}</strong> and {{ product.metafields.plytix.custom_hot_deal_message }}</span></div></div></a>
+              {%- endif -%}
+            {%- endif -%}
+
+
+
+          {%- endif -%}
+          {%- if product.metafields.plytix.bundle_special_data -%}
+            {%- assign bundle_spec_data_array = product.metafields.plytix.bundle_special_data |split: "," -%}
+            {%- assign bundsavings = bundle_spec_data_array[0] | times: 100 -%}
+
+            {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
+              <a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div></a>
+            {%- else -%}
+              <div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal</span><br/><span class="sm-text">Buy Before <strong>{{ bundle_spec_data_array[1] }}</strong> and <strong>Save {{ bundsavings | money }}</strong></span></div></div>
+            {%- endif -%}
+
+          {%- endif -%}
+
         </div>
       </div>
-      {% comment %}
-      {%- if product.metafields.plytix.package_products == blank -%}
-      {%- assign current_variant = product.selected_or_first_available_variant -%}
-      {%- assign fservice = current_variant.fulfillment_service -%}
-      {%- assign leadTime = product.metafields.plytix.sxerp_lead_time -%}
+      {%- comment -%}Get stock status for logging in order at time of order --------------------------------------------------------------------{%- endcomment -%}
 
+      {%- assign stockStatusMain = "" -%}
+      {%- assign stockStatusSub = "" -%}
+      {%- assign fservice = selected_variant.fulfillment_service -%}
+      {%- assign leadTime = selected_variant.metafields.plytix.sxerp_lead_time -%}
+      {%- assign inventoryQuantity = selected_variant.inventory_quantity -%}
+      {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
 
-        {%- assign inventoryQuantity = current_variant.inventory_quantity -%}
-        {%- assign inventoryQuantity = inventoryQuantity | plus: 0 -%}
-
-        {%- if current_variant.inventory_management == nil -%}
-          {% comment %}override inventory quantity if there is no inventory management set{% endcomment %}
-          {%- assign inventoryQuantity = 0 -%}
-        {%- endif -%}
-
+      {%- if selected_variant.inventory_management == nil -%}
+        {% comment %}override inventory quantity if there is no inventory management set{% endcomment %}
+        {%- assign inventoryQuantity = 0 -%}
+      {%- endif -%}
 
       {%- assign leadTime = leadTime | plus: 0 -%}
-        {%- assign stockStatusMain = "" -%}
-        {%- assign stockStatusSub = "" -%}
-      {%- if product.metafields.plytix.sx_erp_is_drop_ship == 'true' and pdiscontinued == false -%}
+
+      {%- if selected_variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
         {%- assign stockStatusMain = "Ships Direct from Manufacturer" -%}
         {%- assign stockStatusSub = "May Have Extended Lead Times" -%}
-        <div class="sx-status">
-          <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
-          <span class="status-time">May Have Extended Lead Times</span>
-          <details>
-            <summary class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>
-            <p>We do not currently stock this item. It will ship directly from the manufacturer to you for
-              the quickest delivery time possible. Current inventory levels at the manufacturer are
-              unknown.</p>
-          </details>
-        </div>
-      {%- elsif product.first_available_variant.inventory_management == 'shopify' and  inventoryQuantity < 1 and pdiscontinued == false -%}
-        <div class="sx-status">
+      {%- elsif selected_variant.inventory_management == 'shopify' and  inventoryQuantity <  1 -%}
 
-          {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
-          {%- if product.first_available_variant.metafields.plytix.sxerp_po_date -%}
-            {%- assign dateStart = product.first_available_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}
-            {%- assign nowTimestamp = 'now' | date: '%s' -%}
-            {%- assign diffSeconds = dateStart | minus: nowTimestamp -%}
-            {%- assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
-          {%- endif -%}
+        {%- comment -%}Look at po date instead of lead time{%- endcomment -%}
+        {%- if selected_variant.metafields.plytix.sxerp_po_date -%}
+          {%- assign dateStart = selected_variant.metafields.plytix.sxerp_po_date | date: '%s' -%}
+          {%- assign nowTimestamp = 'now' | date: '%s' -%}
+          {%- assign diffSeconds = dateStart | minus: nowTimestamp -%}
+          {%- assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
+        {%- endif -%}
 
-          {%- assign stockStatusMain = "Temporarily On Backorder" -%}
-          <span class="status-desc main-notice">Temporarily On Backorder2</span>
-          {%- if leadTime < 22  -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" -%}
-            <span class="status-time">Estimated Ship Date 1 – 3 wks</span>
-          {%- elsif leadTime < 29 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" -%}
-            <span class="status-time">Estimated Ship Date 2 – 4 wks</span>
-          {%- elsif leadTime < 36 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" -%}
-            <span class="status-time">Estimated Ship Date 3 – 5 wks</span>
-          {%- elsif leadTime < 43 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 4 – 6 wks" -%}
-            <span class="status-time">Estimated Ship Date 4 –6 wks</span>
-          {%- elsif leadTime < 50 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" -%}
-            <span class="status-time">Estimated Ship Date 5 – 7 wks</span>
-          {%- elsif leadTime < 57 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" -%}
-            <span class="status-time">Estimated Ship Date 6 – 8 wks</span>
-          {%- elsif leadTime < 64 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" -%}
-            <span class="status-time">Estimated Ship Date 7 – 9 wks</span>
-          {%- elsif leadTime < 71 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" -%}
-            <span class="status-time">Estimated Ship Date 8 – 10 wks</span>
-          {%- elsif leadTime < 78 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" -%}
-            <span class="status-time">Estimated Ship Date 9 – 11 wks</span>
-          {%- elsif leadTime < 85 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" -%}
-            <span class="status-time">Estimated Ship Date 10 – 12 wks</span>
-          {%- elsif leadTime < 121 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" -%}
-            <span class="status-time">Estimated Ship Date 3 – 4 mths</span>
-          {%- elsif leadTime < 151 -%}
-            {% assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" %}
-            <span class="status-time">Estimated Ship Date 4 – 5 mths</span>
-          {%- elsif leadTime < 181 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" -%}
-            <span class="status-time">Estimated Ship Date 5 – 6 mths</span>
-          {%- elsif leadTime < 211 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" -%}
-            <span class="status-time">Estimated Ship Date 6 – 7 mths</span>
-          {%- elsif leadTime < 1000 -%}
-            {%- assign stockStatusSub = "Estimated Ship Date over 7 mths" -%}
-            <span class="status-time">Estimated Ship Date over 7 mths</span>
-          {%- endif -%}
-          <span class="status-order">Order Now to Reserve</span>
-        </div>
-      {%- elsif product.first_available_variant.inventory_management == nil and leadTime > 0 and pdiscontinued == false -%}
-        <div class="sx-status">
-          {%- assign stockStatusMain = "Special Order Item" -%}
-          <span class="status-desc main-notice">Special Order Item</span>
-          {%- if leadTime < 22  -%}
-            {%- assign stockStatusSub = "Expected to ship in 1 – 3 wks" -%}
-            <span class="status-time">Expected to ship in 1 – 3 wks</span>
-          {%- elsif leadTime < 29 -%}
-            {%- assign stockStatusSub = "Expected to ship in 2 – 4 wks" -%}
-            <span class="status-time">Expected to ship in 2 – 4 wks</span>
-          {%- elsif leadTime < 36 -%}
-            {%- assign stockStatusSub = "Expected to ship in 3 – 5 wks" -%}
-            <span class="status-time">Expected to ship in 3 – 5 wks</span>
-          {%- elsif leadTime < 43 -%}
-            {%- assign stockStatusSub = "Expected to ship in 4 – 6 wks" -%}
-            <span class="status-time">Expected to ship in 4 – 6 wks</span>
-          {%- elsif leadTime < 50 -%}
-            {%- assign stockStatusSub = "Expected to ship in 5 – 7 wks" -%}
-            <span class="status-time">Expected to ship in 5 – 7 wks</span>
-          {%- elsif leadTime < 57 -%}
-            {%- assign stockStatusSub = "Expected to ship in 6 – 8 wks" -%}
-            <span class="status-time">Expected to ship in 6 – 8 wks</span>
-          {%- elsif leadTime < 64 -%}
-            {%- assign stockStatusSub = "Expected to ship in 7 – 9 wks" -%}
-            <span class="status-time">Expected to ship in 7 – 9 wks</span>
-          {%- elsif leadTime < 71 -%}
-            {%- assign stockStatusSub = "Expected to ship in 8 – 10 wks" -%}
-            <span class="status-time">Expected to ship in 8 – 10 wks</span>
-          {%- elsif leadTime < 78 -%}
-            {%- assign stockStatusSub = "Expected to ship in 9 – 11 wks" -%}
-            <span class="status-time">Expected to ship in 9 – 11 wks</span>
-          {%- elsif leadTime < 85 -%}
-            {%- assign stockStatusSub = "Expected to ship in 10 – 12 wks" -%}
-            <span class="status-time">Expected to ship in 10 – 12 wks</span>
-          {%- elsif leadTime < 121 -%}
-            {%- assign stockStatusSub = "Expected to ship in 3 – 4 mths" -%}
-            <span class="status-time">Expected to ship in 3 – 4 mths</span>
-          {%- elsif leadTime < 151 -%}
-            {%- assign stockStatusSub = "Expected to ship in 4 – 5 mths" -%}
-            <span class="status-time">Expected to ship in 4 – 5 mths</span>
-          {%- elsif leadTime < 181 -%}
-            {%- assign stockStatusSub = "Expected to ship in 5 – 6 mths" -%}
-            <span class="status-time">Expected to ship in 5 – 6 mths</span>
-          {%- elsif leadTime < 211 -%}
-            {%- assign stockStatusSub = "Expected to ship in 6 – 7 mths" -%}
-            <span class="status-time">Expected to ship in 6 – 7 mths</span>
-          {%- elsif leadTime < 1000 -%}
-            {%- assign stockStatusSub = "Expected to ship in over 7 mths" -%}
-            <span class="status-time">Expected to ship in over 7 mths</span>
-          {%- endif -%}
-        </div>
-      {%- elsif current_variant.inventory_quantity > 0 and pdiscontinued == false -%}
+        {%- assign stockStatusMain = "Temporarily On Backorder" -%}
+        {%- if leadTime < 22  -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" -%}
+        {%- elsif leadTime < 29 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" -%}
+        {%- elsif leadTime < 36 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 3 – 5 wks" -%}
+        {%- elsif leadTime < 43 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 4 –6 wks" -%}
+        {%- elsif leadTime < 50 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 5 – 7 wks" -%}
+        {%- elsif leadTime < 57 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 6 – 8 wks" -%}
+        {%- elsif leadTime < 64 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 7 – 9 wks" -%}
+        {%- elsif leadTime < 71 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 8 – 10 wks" -%}
+        {%- elsif leadTime < 78 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 9 – 11 wks" -%}
+        {%- elsif leadTime < 85 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 10 – 12 wks" -%}
+        {%- elsif leadTime < 121 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 3 – 4 mths" -%}
+        {%- elsif leadTime < 151 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 4 – 5 mths" -%}
+        {%- elsif leadTime < 181 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 5 – 6 mths" -%}
+        {%- elsif leadTime < 211 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date 6 – 7 mths" -%}
+        {%- elsif leadTime < 1000 -%}
+          {%- assign stockStatusSub = "Estimated Ship Date over 7 mths" -%}
+        {%- endif %}
+      {%- elsif selected_variant.inventory_management == nil and leadTime > 0 -%}
+        {%- assign stockStatusMain = "Special Order Item" -%}
+        {%- if leadTime < 22  -%}
+          {%- assign stockStatusSub = "Expected to ship in 1 – 3 wks" -%}
+        {%- elsif leadTime < 29 -%}
+          {%- assign stockStatusSub = "Expected to ship in 2 – 4 wks" -%}
+        {%- elsif leadTime < 36 -%}
+          {%- assign stockStatusSub = "Expected to ship in 3 – 5 wks" -%}
+        {%- elsif leadTime < 43 -%}
+          {%- assign stockStatusSub = "Expected to ship in 4 – 6 wks" -%}
+        {%- elsif leadTime < 50 -%}
+          {%- assign stockStatusSub = "Expected to ship in 5 – 7 wks" -%}
+        {%- elsif leadTime < 57 -%}
+          {%- assign stockStatusSub = "Expected to ship in 6 – 8 wks" -%}
+        {%- elsif leadTime < 64 -%}
+          {%- assign stockStatusSub = "Expected to ship in 7 – 9 wks" -%}
+        {%- elsif leadTime < 71 -%}
+          {%- assign stockStatusSub = "Expected to ship in 8 – 10 wks" -%}
+        {%- elsif leadTime < 78 -%}
+          {%- assign stockStatusSub = "Expected to ship in 9 – 11 wks" -%}
+        {%- elsif leadTime < 85 -%}
+          {%- assign stockStatusSub = "Expected to ship in 10 – 12 wks" -%}
+        {%- elsif leadTime < 121 -%}
+          {%- assign stockStatusSub = "Expected to ship in 3 – 4 mths" -%}
+        {%- elsif leadTime < 151 -%}
+          {%- assign stockStatusSub = "Expected to ship in 4 – 5 mths" -%}
+        {%- elsif leadTime < 181 -%}
+          {%- assign stockStatusSub = "Expected to ship in 5 – 6 mths" -%}
+        {%- elsif leadTime < 211 -%}
+          {%- assign stockStatusSub = "Expected to ship in 6 – 7 mths" -%}
+        {%- elsif leadTime < 1000 -%}
+          {%- assign stockStatusSub = "Expected to ship in over 7 mths" -%}
+        {%- endif %}
+      {%- elsif selected_variant.inventory_quantity > 0 -%}
         {%- assign stockStatusMain = "In Stock" -%}
-        <div class="product-detail-stock-and-shipping">
-          <div class="stock-message">
-            In Stock
-            {%- if product.metafields.plytix.clearance_overstock == 'true' -%}
-              ({{ current_variant.inventory_quantity }} Available)
-            {%- elsif pclearance == true -%}
-              ({{ current_variant.inventory_quantity }} Available)
-            {%- endif -%}
-          </div>
-        </div>
-      {%- endif -%}
       {%- endif -%}
 
-      {%- if stockStatusSub != "" -%}
+      {% if stockStatusSub != "" %}
         {% capture stockStatusNote %}{{ stockStatusMain }} ({{ stockStatusSub }}){% endcapture %}
-      {%- else -%}
+      {% else %}
         {% capture stockStatusNote %}{{ stockStatusMain }}{% endcapture %}
-      {%- endif -%}
-      {% endcomment %}
+      {% endif %}
+      {% if selected_variant.sku == "SUPERFREAK" %}
+        {% assign stockStatusNote = ""  %}
+      {% endif %}
+
+      {%- comment -%}End of stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
     </div>
 
     {%- unless recently_viewed -%}
@@ -770,7 +918,7 @@ data-product-quickshop-url="{{ product_link }}"
 
 
           {% comment %}added 1==1 to always show{% endcomment %}
-          {%- if 1==1 or product.metafields.plytix.package_products != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
+          {%- if 1==2 or product.metafields.plytix.package_products != blank or product.metafields.plytix.warning_pop_product != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
             <a class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" href="{{ product_link }}" >
             <span class="atc-button--text">
                 View Product <i class="fa-sharp fa-solid fa-caret-right"></i>
@@ -835,6 +983,7 @@ data-product-quickshop-url="{{ product_link }}"
                   {%- endif -%}
                 {%- endfor -%}
                 {%- if product.variants.first.price > 0 and product.metafields.plytix.hide_product != 'true' and product.metafields.plytix.hide_pricing != 'Hide Button Only' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
+                {% comment %}
                 <button
                         class="{{ quick_buy_classes }}"
                         type="button"
@@ -872,6 +1021,71 @@ data-product-quickshop-url="{{ product_link }}"
                           disabled
                         {% endif %}
                 >
+{% endcomment %}
+
+                  <button
+
+
+
+                          {% if product.metafields.plytix.general_product_type == "Machine" %}
+                            data-sfeligible-name="properties[_sf_eligible]"
+                            data-sfeligible="true"
+                          {% endif %}
+
+                          class="{{ quick_buy_classes }} main-atc-button"
+                          type="button"
+                          aria-label="{{ quick_buy_text }}"
+                          {% unless has_variants %}
+                            data-quick-buy
+                          {% else %}
+                            data-quickshop-slim
+                          {% endunless %}
+                          data-erpsku-name="properties[_erp_sku]"
+                          data-availqty-name="properties[_available_qty]"
+                          {% if product.metafields.plytix.general_product_type == "Machine" %}
+                            data-sfeligible-name="properties[_sf_eligible]"
+                            data-sfeligible="true"
+                          {% endif %}
+
+
+                          {% if isSpecial == false %}
+                            data-tp-name="properties[_tiered_pricing]"
+                          {% endif %}
+                          data-org-price-name="properties[_org_price]"
+                          data-vissku-name="properties[Sku]"
+                          data-status-name="properties[Status]"
+                          data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
+                          data-erpSku="{{ product.selected_or_first_available_variant.metafields.plytix.erp_sku }}"
+                          data-availqty="{{ product.selected_or_first_available_variant.inventory_quantity }}"
+                          {% if isSpecial == false %}
+                            {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",","" }}"
+                            {%- else -%}
+                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
+                            {%- endif -%}
+                          {% endif %}
+                          data-org-price="{{product.variants.first.price}}"
+                          data-vissku="{{ product.selected_or_first_available_variant.sku }}"
+                          data-status="{{ stockStatusNote }}"
+                          data-variant-id="{{ product.variants.first.id }}"
+                          data-pid = "{{product.id}}"
+                          data-id="{{ product.variants.first.id }}"
+                          data-ptitle = "{{product.title | remove: "'" | remove: '"'}}"
+                          data-pprice = "{{product.variants.first.price | times: 0.01}}"
+                          data-pbrand = "{{product.vendor | remove: "'" | remove: '"'}}"
+                          data-ptype = "{{product.type | remove: "'" | remove: '"'}}"
+                          data-pcategory_id = "{{ product.collections.first.id }}"
+                          data-pcategory_name = "{{ product.collections.first.title | remove: "'" | remove: '"' }}"
+                          data-pvtitle = "{{ product.variants.first.title | remove: "'" | remove: '"' }}"
+                          data-psku = "{{ product.variants.first.sku }}"
+                          {% if canonical_url contains "/collections/" %}
+                            data-atc_loc = "Collections"
+                          {% endif %}
+                          {% if product == false or product_available == false %}
+                            disabled
+                          {% endif %}
+                  >
+
                   <span class="atc-button--text">
                     {{ quick_buy_text }}
                   </span>
