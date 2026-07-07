@@ -38,12 +38,13 @@
         data-accordion-content
         >
         {%- for value in filter.values -%}
+          {% unless value.label == "Hidden" %}
           <li
-            class="collection-filters__filter-list-item {% if value.active %}collection-filters__filter-list-item--active{% endif %}"
+            class="collection-filters__filter-list-item {% if value.active %}collection-filters__filter-list-item--active{% endif %} {% if value.count == 0 and value.active == false -%}data-disabled{%- endif %}"
             {% if value.active -%}data-filter-open="true"{% else %}data-filter-open="false"{% endif %}
           >
             <a
-              class="collection-filters__filter-link"
+              class="collection-filters__filter-link "
               data-name="{{ value.param_name }}"
               data-value="{{ value.value }}"
               data-handle="filter-{{ filter.label | escape | replace: ' ', '-'}}-{{ forloop.index0 }}"
@@ -64,7 +65,7 @@
                 {%- render 'icon-checkmark-animated', animation_state: animation_state -%}
               </span>
               <span class="collection-filters__filter-list-item-text">
-                {{ value.label | escape }}
+                <span class="item-title">{{ value.label | escape }}</span>
                 <span class="colored-count">
                 {%- if show_product_count -%}
                   ({{ value.count }})
@@ -73,8 +74,9 @@
               </span>
             </a>
           </li>
-        {%- endfor -%}
-      </ul>
+        {% endunless %}
+      {%- endfor -%}
+    </ul>
     {% when 'price_range' %}
       <form
         class="collection-filters__price-range-form"
@@ -102,7 +104,7 @@
               {% if filter.min_value.value -%}
                 value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
               {%- endif %}
-              type="number"
+              {% comment %}type="number"{% endcomment %}
               placeholder="0"
               min="0"
               max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
@@ -118,6 +120,7 @@
                   From
               </label>
           </div>
+          <div class="collection-filters__filter-to-wording">to </div>
           <div class="collection-filters__filter-range--to">
             <span class="collection-filters__filter-range-currency">{{ cart.currency.symbol }}</span>
             <input
@@ -132,7 +135,7 @@
               {% if filter.max_value.value -%}
                 value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
               {%- endif %}
-              type="number"
+              {% comment %}type="number"{% endcomment %}
               placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
               min="0"
               max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
