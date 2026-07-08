@@ -3,6 +3,15 @@
 {%- assign pclearance = false -%}
 {%- assign pdiscontinued = false -%}
 
+{% if template contains 'collection' %}
+  {% if product.variants.size > 1 %}
+    <!-- On collection pages, make sure variations status match before showing -->
+    {%- assign current_variant_id = "" -%}
+  {% endif %}
+{% endif %}
+{%- assign collection_var_status = "" -%}
+
+
 {%- for c in thisproduct.collections -%}
   {%- if c.handle == "clearance" -%}
     {%- assign pclearance = true -%}
@@ -17,6 +26,7 @@
     {%- assign b2binventory = true -%}
   {%- endif -%}
 {%- endif -%}
+
 
 {%- if pdiscontinued == false and thisproduct.selected_or_first_available_variant.sku != "SUPERFREAK" and thisproduct.selected_or_first_available_variant.sku != "SVCCALL30"  and thisproduct.selected_or_first_available_variant.sku != "SVCCALL30-SF"-%}
   {%- for variant in thisproduct.variants -%}
@@ -35,7 +45,14 @@
     {% comment %}{%- assign pclearance = false -%}{% endcomment %}
 
 
-    {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
+      {%- if variant.metafields.plytix.sx_erp_is_drop_ship == 'true' and  inventoryQuantity <  1 -%}
+
+      {%- if collection_var_status == "" or collection_var_status == "Ships Direct from Manufacturer" -%}
+        {%- assign collection_var_status = "Ships Direct from Manufacturer" -%}
+      {%- else -%}
+        {%- assign collection_var_status = "View Product" -%}
+      {%- endif -%}
+
       <div class="sx-status">
         <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
         <span class="status-time">May Have Extended Lead Times</span>
@@ -55,6 +72,12 @@
         {% assign diffSeconds = dateStart | minus: nowTimestamp %}
         {% assign leadTime = diffSeconds | divided_by: 3600 | divided_by: 24 %}
       {%- endif -%}
+
+        {%- if collection_var_status == "" or collection_var_status == "Temporarily On Backorder" -%}
+          {%- assign collection_var_status = "Temporarily On Backorder" -%}
+        {%- else -%}
+          {%- assign collection_var_status = "View Product" -%}
+        {%- endif -%}
 
       <div class="sx-status">
         <span class="status-desc main-notice">Temporarily On Backorder</span>
@@ -92,6 +115,13 @@
         <span class="status-order">Order Now to Reserve</span>
       </div>
     {%- elsif variant.inventory_management == nil and leadTime > 0 -%}
+
+        {%- if collection_var_status == "" or collection_var_status == "Special Order Item" -%}
+          {%- assign collection_var_status = "Special Order Item" -%}
+        {%- else -%}
+          {%- assign collection_var_status = "View Product" -%}
+        {%- endif -%}
+
       <div class="sx-status">
         <span class="status-desc main-notice">Special Order Item</span>
         {%- if leadTime < 22  -%}
@@ -141,6 +171,11 @@
           {%- assign showinv = true -%}
         {% endif %}
 
+        {%- if collection_var_status == "" or collection_var_status == "In Stock" -%}
+          {%- assign collection_var_status = "In Stock" -%}
+        {%- else -%}
+          {%- assign collection_var_status = "View Product" -%}
+        {%- endif -%}
 
       <div class="product-detail-stock-and-shipping {% if showinv == true %}showinv{% endif %}">
         <i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock
@@ -154,3 +189,48 @@
     </div>
   {%- endfor -%}
 {%- endif -%}
+
+
+{% if template contains 'collection' and product.variants.size > 1 %}
+  <div class="status-area">
+    {% if collection_var_status == "In Stock" %}
+      <div class="product-detail-stock-and-shipping">
+        <i class="fa-regular fa-circle-check"></i>&nbsp;<div class="stock-message main-notice">In Stock
+        </div>
+        <span class="status-time"></span>
+      </div>
+    {% elsif collection_var_status == "Special Order Item" %}
+      <div class="sx-status">
+        <span class="status-desc main-notice">Special Order Item</span>
+        <span class="status-time">View product for estimated shipping time.</span>
+      </div>
+
+    {% elsif collection_var_status == "Temporarily On Backorder" %}
+    <div class="sx-status">
+      <span class="status-desc main-notice">Temporarily On Backorder</span>
+      <span class="status-time">View product for estimated shipping time.</span>
+    </div>
+
+    {% elsif collection_var_status == "Ships Direct from Manufacturer" %}
+      <div class="sx-status">
+        <span class="status-desc main-notice">Ships Direct from Manufacturer</span>
+        <span class="status-time">May Have Extended Lead Times</span>
+        <details>
+          <summary class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>
+          <p>We do not currently stock this item. It will ship directly from the manufacturer to you for
+            the quickest delivery time possible. Current inventory levels at the manufacturer are
+            unknown.</p>
+        </details>
+      </div>
+    {% else  %}
+      <div class="sx-status">
+        <span class="status-desc main-notice">See Product Page for Stock Status Details</span>
+        <span class="status-time">May Have Extended Lead Times</span>
+        <details>
+          <summary class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>
+          <p>This product has multiple item offerings. See product page for the stock status of each individual item.</p>
+        </details>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

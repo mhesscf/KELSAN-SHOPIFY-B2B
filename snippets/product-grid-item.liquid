@@ -588,16 +588,17 @@ data-product-quickshop-url="{{ product_link }}"
         {%- endif -%}
       {%- endunless -%}
       {%- if product.metafields.plytix.package_products != blank -%}
-        <div class="productitem__price">
-          <div class="price__current">
-            <div class="see-item">See Product for Pricing</div>
+        {%- if product.metafields.plytix.bundle_pricing != blank -%}
+          <div class="price productitem__price ">
+            <div class="price__current" data-price-container="" style="">
+              <span class="money" data-price="">{{ product.metafields.plytix.bundle_pricing | times: 100 | money }}</span>
+            </div>
           </div>
-        </div>
+        {%- else -%}
+          <div class="see-item">See Product for Pricing</div>
+        {%- endif -%}
       {%- else -%}
-
-        {%- unless emphasize_price -%}
-          {{ product_item_price }}
-        {%- endunless -%}
+        {{ product_item_price }}
       {%- endif -%}
 
       {%- unless product_compare -%}
@@ -864,7 +865,15 @@ data-product-quickshop-url="{{ product_link }}"
         <div class="productitem--actions" data-product-actions>
           <div class="productitem--listview-price">
             {%- if product.metafields.plytix.package_products != blank -%}
-              <div class="see-item">See Product for Pricing</div>
+              {%- if product.metafields.plytix.bundle_pricing != blank -%}
+                <div class="price productitem__price ">
+                  <div class="price__current" data-price-container="" style="">
+                    <span class="money" data-price="">{{ product.metafields.plytix.bundle_pricing | times: 100 | money }}</span>
+                  </div>
+                </div>
+              {%- else -%}
+                <div class="see-item">See Product for Pricing</div>
+              {%- endif -%}
             {%- else -%}
               {{ product_item_price }}
             {%- endif -%}
