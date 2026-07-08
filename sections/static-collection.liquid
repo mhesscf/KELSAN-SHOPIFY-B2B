@@ -175,6 +175,33 @@
       {% endif %}
 
 
+      {% if collection.metafields.custom.brand_description %}
+        <div class="brand-desc-area">
+          <div class="brand-img"><img src="{{ collection.metafields.custom.brand_logo.value | image_url }}" alt="{{ collection.title }} Logo"/></div>
+          <div class="brand-desc">{{ collection.metafields.custom.brand_description }}</div>
+        </div>
+      {% elsif collection.metafields.custom.question %}
+        <div class="custom-additional-info">
+          <div class="left-col">
+            <div class="question"><h3>{{ collection.metafields.custom.question }}</h3></div>
+            <div class="answer">{{ collection.metafields.custom.answer | metafield_tag }}</div>
+          </div>
+          <div class="right-col">
+            <div class="areas-of-use">
+              <h3>Areas of Use</h3>
+              <p>
+                {% for area_of_use in collection.metafields.custom.area_of_use.value %}
+                  - {{ area_of_use }}<br/>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+          <div class="clearer"></div>
+        </div>
+      {% endif %}
+
+
+
 
       {% if show_filter_trigger or section.settings.sort_by or section.settings.grid_list %}
         {% capture utility_class %}

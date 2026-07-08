@@ -698,35 +698,6 @@ padding-left: 4px;
   }
 
 }
-.ais-page .ais-search-header .custom-additional-info{
-  padding-bottom:15px;
-  margin-bottom:15px;
-  border-bottom: 1px solid #ccc;
-}
-
-.ais-page .ais-search-header .custom-additional-info h3{
-  font-style: {{ settings.type_body.style }};
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 18px;
-  margin:0;
-  color: {{ settings.color_headings }};
-}
-.ais-page .ais-search-header .custom-additional-info .p,
-.ais-page .ais-search-header .custom-additional-info .usage-list{
-  margin:10px 0;
-}
-.ais-page .ais-search-header .custom-additional-info .usage{
-  margin-left:10px;
-}
-.ais-page .ais-search-header .custom-additional-info .left-col{
-  float:left;
-  width:74%;
-}
-.ais-page .ais-search-header .custom-additional-info .right-col{
-  float:right;
-  width:25%;
-}
 
 /* Stats */
 .ais-page .ais-Stats {
@@ -862,43 +833,9 @@ padding-left: 4px;
   float:right;
 }
 
-/****************** Category Pad Table ***********/
 
-.pad-grid-table{width:100%; margin:10px 0; border-collapse: collapse;}
-.ais-page .ais-search-header .pad-grid-table td span,
-.ais-page .ais-search-header .pad-grid-table td a{color:#509cb5; font-size:14px !important;}
-.pad-grid-table td a:hover{color:#2a6496;}
-.pad-grid-table tr.odd{background-color:#F2F7FB}
-.pad-grid-table tr.even{background-color:#DEF1F8}
-.pad-grid-table td{text-align: center; font-size:14px; padding: 3px;}
-.pad-grid-table td.pad-color{text-align:right; width:115px;}
-.pad-grid-table td.pad-image{width:30px;}
-.pad-grid-table td.pad-hint{width:10px;}
-.pad-grid-table td .tooltiptext{color:white !important;}
-.pad-grid-table td.pad-size-circle.last{border-right:1px solid #ccc;}
-.pad-grid-table td.pad-size-square{max-width:40px;}
-.pad-grid-table td img{padding:2px 2px 0 2px; margin-top:0; margin-bottom:-4px;}
 
-@media screen and (max-width: 1279px) {
-  .pad-grid-table td.pad-color span{display:none;}
-  .pad-grid-table td.pad-color{width: 90px;}
-}
-@media screen and (max-width: 1079px) {
-  .ais-page .ais-search-header .pad-grid-table td a{font-size:13px !important;}
-  .pad-grid-table td.pad-size-square{max-width:54px;}
-  .pad-grid-table td.pad-color{width:85px;}
-}
-@media screen and (max-width: 1023px) {
-  .pad-grid-table .pad-hint{display:none;}
-}
-@media screen and (max-width: 1023px) {
-  .pad-grid-table .pad-hint{display:none;}
-}
-@media screen and (max-width: 920px) {
-  .pad-grid-table td.pad-color{display:none;}
-}
 @media screen and (max-width: 600px) {
-  .pad-grid-table td.pad-size-square{display:none;}
   .ais-page .product-detail-sku{margin:2px 0}
   .ais-page.sx-status,
   .ais-page .is-review .jdgm-prev-badge{margin-bottom:2px}
@@ -908,42 +845,13 @@ padding-left: 4px;
   .ais-results-as-list .ais-Hits-item .productitem.clearanceitem .productitem--info,
   .ais-results-as-list .ais-Hits-item .productitem.specialitem .productitem--info{padding:5px;}
 }
-@media screen and (max-width: 500px) {
-  .pad-grid-table{display:none;}
-}
 @media screen and (max-width: 400px) {
   .ais-page{
     padding:0;
     margin:0 8px 10px 8px
   }
 }
-   /* Tooltip container */
-.pad-grid-table .tooltip {
-   position: relative;
-   display: inline-block;
- }
 
-/* Tooltip text */
-.pad-grid-table .tooltip .tooltiptext {
-  visibility: hidden;
-  width: 260px;
-  background-color: #303e48;
-  color: #fff;
-  text-align: left;
-  padding: 10px;
-  border-radius: 6px;
-  font-size:14px;
-  line-height:18px;
-
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 120;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.pad-grid-table .tooltip:hover .tooltiptext {
-  visibility: visible;
-}
 
 
 
@@ -1105,7 +1013,7 @@ padding-left: 4px;
 {% comment %}New Styles from Cleanfreak ----------------------------------------------------------------------------------------------------- {% endcomment %}
 .collection--section .productgrid--outer{
   display:block;
-  padding:0;
+  {% comment %}padding:0;{% endcomment %}
 }
 .ais-page .ais-Hits-list{
   margin:0;
@@ -1526,7 +1434,7 @@ margin-right:0;
 
 
 .ais-page .productitem__price .price__current span{
-  line-height:40px;
+  line-height:26px;
 }
 .ais-page .ais-results-as-block .productitem__price .price__current span,
 .ais-page .ais-results-as-block .price__current,
@@ -1679,16 +1587,6 @@ margin-right:0;
   .ais-results-as-list .ais-Hits-item .cfais-productitem--actions button{
     float:none;
     margin:auto;
-  }
-  .ais-page .ais-search-header .custom-additional-info .left-col,
-  .ais-page .ais-search-header .custom-additional-info .right-col{
-    float:none;
-    width:100%;
-  }
-  .ais-page .ais-search-header .custom-additional-info p,
-  .ais-page .ais-search-header .custom-additional-info li{
-    font-size: 14px;
-    line-height: 20px;
   }
 
 }
