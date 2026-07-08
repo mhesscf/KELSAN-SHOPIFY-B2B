@@ -69,7 +69,8 @@
 
             {%- if customer.company_available_locations_count and customer.company_available_locations_count > 0 -%}
                 <ul class="b2b-all-locations show-bottom">
-                    {%- for loc in customer.company_available_locations -%}
+                    {%- assign sorted_locations = customer.company_available_locations | sort: 'name' -%}
+                    {%- for loc in sorted_locations -%}
                         <li style="margin-bottom: 1rem;">
                             <strong>{{ loc.name }}</strong> {% if current_loc and loc.id == current_loc.id and customer.company_available_locations.size > 1 %} <em>(current)</em>{% endif %}<br>
                             {%- assign loc_addr = loc.shipping_address | default: loc.billing_address -%}
@@ -91,6 +92,9 @@
                 </ul>
             {%- else -%}
                 <p><em>No available locations found.</em></p>
+            {%- endif -%}
+            {%- if customer.company_available_locations_count and customer.company_available_locations_count > 100 -%}
+                <div style="padding:5px 15px;"><strong>Note:</strong> Due to number of your locations, some locations may be omitted from this list. If you do not see your location here, you can change you location on the <a href="{{ routes.account_url }}">your profile page</a> or at the time of checkout. </div>
             {%- endif -%}
 
             {%- if customer.metafields.custom.b2b_view_new_user_request_and_new_location_request_forms.value == true -%}
