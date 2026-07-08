@@ -574,7 +574,11 @@ data-product-quickshop-url="{{ product_link }}"
 
       </h2>
       {%- assign current_variant = product.selected_or_first_available_variant -%}
-      {%- if current_variant.sku != blank -%}
+      {% if variant_count > 1 and product.metafields.plytix.main_sku%}
+        <div class="product-detail-sku grid-itmen">
+          SKU: <span>{{ product.metafields.plytix.main_sku }}</span>
+        </div>
+      {%- elsif current_variant.sku != blank -%}
         <div class="product-detail-sku grid-itmen">
           SKU: <span>{{ current_variant.sku }}</span>
         </div>
@@ -582,7 +586,7 @@ data-product-quickshop-url="{{ product_link }}"
 
 
       {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
-      
+
       {%- unless product_compare -%}
         {%- if settings.product_show_vendor and product.vendor != blank -%}
           <span class="productitem--vendor">
