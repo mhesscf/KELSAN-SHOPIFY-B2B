@@ -580,6 +580,9 @@ data-product-quickshop-url="{{ product_link }}"
         </div>
       {%- endif -%}
 
+
+      {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
+      
       {%- unless product_compare -%}
         {%- if settings.product_show_vendor and product.vendor != blank -%}
           <span class="productitem--vendor">
