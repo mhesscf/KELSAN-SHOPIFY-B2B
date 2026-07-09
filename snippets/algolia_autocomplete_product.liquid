@@ -50,9 +50,11 @@
                             ${specialtype(item) == "hotdeal" ? html `<i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>`: html ``}
                         </span>
                         {% endcomment %}
-                      ${item.meta.plytix.package_products ? html`
-                        ${item.meta.plytix.bundle_pricing > 0 ? html `<span class="bundle-price">${priceFormat(item.meta.plytix.bundle_pricing)}</span>`: html `<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`}
-                      `: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
+                      ${item.meta.plytix.hide_pricing == "Hide Price Only (View in cart)" || item.meta.plytix.hide_pricing == "Hide Price and Button" ? html `` : html `
+                          ${item.meta.plytix.package_products ? html`
+                            ${item.meta.plytix.bundle_pricing > 0 ? html `<span class="bundle-price">${priceFormat(item.meta.plytix.bundle_pricing)}</span>`: html `<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`}
+                          `: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
+                          `}
                       `}
 
                           {% comment %}${algolia.helpers.displayPrice(item, distinct)}{% endcomment %}
