@@ -12,7 +12,7 @@
               class="aa-ItemLink aa-ProductItem"
               onClick="${(event) => getConversionData(event, item)}"
       >
-          <div class="aa-ItemContent ${item.collections.includes("discontinued") == true ? html `discontinued-item` : html ``} ${specialtype(item) ? html `${specialtype(item)}`: html ``} ">
+          <div class="aa-ItemContent ${item.tags.includes("discontinued") == true ? html `discontinued-item` : html ``} ${specialtype(item) ? html `${specialtype(item)}`: html ``} ">
               <div class="aa-ItemPicture aa-ItemPicture--loaded ">
                   <img src="${item.variants_count > 1 ? html `${compactpic(item.product_image)}` : html `${algolia.helpers.compactImage(item)}`}" alt="${item.title}" />
                   <div class="ac-icon">
@@ -39,7 +39,7 @@
 
                   <div class="aa-ItemContentPrice">
                       <div class="aa-ItemContentPriceCurrent">
-                      ${item.collections.includes("discontinued") == true ? html `<span class="discontinued-text">Discontinued</div>` : html `
+                      ${item.tags.includes("discontinued") == true ? html `<span class="discontinued-text">Discontinued</div>` : html `
                         ${specialtype(item) == "hotdeal" || specialtype(item) == "clearance" ? html `
                             ${item.compare_at_price > item.price ? html `<span class="cross-price">${numberScrubAC(item.compare_at_price)}</span><br/>`: html ``}
                         `: html ``}
