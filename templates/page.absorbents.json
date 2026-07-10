@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "b50e1c62-eace-4f33-84e1-f66c735be752": {
@@ -15,7 +15,8 @@
         "7b319128-5b79-4379-aa3e-ba1404cd147a": {
           "type": "categoryhead",
           "settings": {
-            "cat_image": "shopify:\/\/shop_images\/febreze-deodorizer-absorbents-dept-page.jpg",
+            "show_on": "both",
+            "cat_image": "shopify://shop_images/febreze-deodorizer-absorbents-dept-page.jpg",
             "cat_title": "Deodorizers & Absorbents",
             "cat_text": "A large selection of absorbents, deodorizers, and clean up kits to help you deal with different messes."
           }
@@ -128,57 +129,57 @@
         "3330f278-061c-4e00-ac57-98406437f066": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aerosol-deodorizers.jpg",
+            "image": "shopify://shop_images/aerosol-deodorizers.jpg",
             "title": "Aerosol Deodorizers",
-            "url": "\/collections\/aerosol-deodorizers"
+            "url": "/collections/aerosol-deodorizers"
           }
         },
         "c40703b8-1a37-446e-a144-d513ec01076b": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/air-fresheners.jpg",
+            "image": "shopify://shop_images/air-fresheners.jpg",
             "title": "Air Fresheners & Odor Eliminators",
-            "url": "\/collections\/air-fresheners-odor-eliminators"
+            "url": "/collections/air-fresheners-odor-eliminators"
           }
         },
         "5954a462-e123-404a-92b5-445d8670b452": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gel-deodorizers.jpg",
+            "image": "shopify://shop_images/gel-deodorizers.jpg",
             "title": "Gel Deodorizers",
-            "url": "\/collections\/gel-deodorizers"
+            "url": "/collections/gel-deodorizers"
           }
         },
         "262f8cc1-0cab-4cb2-94eb-41d76074f9de": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/liquid-deodorizers.jpg",
+            "image": "shopify://shop_images/liquid-deodorizers.jpg",
             "title": "Liquid Deodorizers",
-            "url": "\/collections\/liquid-deodorizers"
+            "url": "/collections/liquid-deodorizers"
           }
         },
         "fafc5f3c-7c38-4add-ba53-7a630589ffd9": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/powder-deodorizers.jpg",
+            "image": "shopify://shop_images/powder-deodorizers.jpg",
             "title": "Powder Deodorizers",
-            "url": "\/collections\/powder-deodorizers"
+            "url": "/collections/powder-deodorizers"
           }
         },
         "fdb052d2-7d61-49cb-8dfa-71b6533beb71": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/solid-deodorizers.jpg",
+            "image": "shopify://shop_images/solid-deodorizers.jpg",
             "title": "Solid Deodorizers",
-            "url": "\/collections\/solid-deodorizers"
+            "url": "/collections/solid-deodorizers"
           }
         },
         "278c598c-4e40-40b9-ada1-54cfa5264bac": {
           "type": "categorylink",
           "settings": {
-            "image": "shopify:\/\/shop_images\/spill-cleanup.jpg",
+            "image": "shopify://shop_images/spill-cleanup.jpg",
             "title": "Spill Cleanup",
-            "url": "\/collections\/spill-cleanup"
+            "url": "/collections/spill-cleanup"
           }
         }
       },
@@ -268,32 +269,32 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=CleanFreak",
-            "brand-image": "shopify:\/\/shop_images\/cleanfreak-deodorizers.jpg"
+            "brand-link": "/collections/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Deodorizers %26 Absorbents&q=CleanFreak",
+            "brand-image": "shopify://shop_images/cleanfreak-deodorizers.jpg"
           }
         },
         "37e6dcf9-be21-4fbd-9169-97eba07045d6": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Nyco",
-            "brand-image": "shopify:\/\/shop_images\/marvalosa-multi-purpose-cleaner-nl276-4gal.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Nyco",
+            "brand-image": "shopify://shop_images/marvalosa-multi-purpose-cleaner-nl276-4gal.jpg"
           }
         },
         "66e81919-0651-47dd-bd63-383cfb25b18b": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Trusted Clean",
-            "brand-image": "shopify:\/\/shop_images\/trusted-clean-magnifico-lavender-floor-soap-2-gal.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Trusted Clean",
+            "brand-image": "shopify://shop_images/trusted-clean-magnifico-lavender-floor-soap-2-gal.jpg"
           }
         },
         "789d16cf-eaf4-41e4-ab8b-193c30f8e2e4": {
           "type": "brandlink",
           "settings": {
             "brand-title": "Nilodor®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nilodor&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Nilodor",
-            "brand-image": "shopify:\/\/shop_images\/deodorizing-sock-supersock.jpg"
+            "brand-link": "/collections/vendors?refinementList[vendor][0]=Nilodor&refinementList[product_type][0]=Deodorizers %26 Absorbents&q=Nilodor",
+            "brand-image": "shopify://shop_images/deodorizing-sock-supersock.jpg"
           }
         }
       },
@@ -328,8 +329,7 @@
     },
     "trustpilot_review_carousel_g9HHcd": {
       "type": "trustpilot-review-carousel",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
