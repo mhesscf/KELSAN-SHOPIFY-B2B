@@ -290,7 +290,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Carpet %26 Upholstery&q=CleanFreak",
+            "brand-link": "/collections/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Carpet %26 Upholstery&q=CleanFreak",
             "brand-image": "shopify://shop_images/san-cf-3-h-01.jpg"
           }
         },
@@ -306,7 +306,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Armor All®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Armor All&refinementList[product_type][0]=Auto Detailing Chemicals&q=Armor All",
+            "brand-link": "/collections/vendors?filter.p.vendor=Armor All&filter.p.product_type=Auto Detailing Chemicals&q=Armor All",
             "brand-image": "shopify://shop_images/144680.jpg"
           }
         },
@@ -314,7 +314,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Carpet Extractors&q=Trusted Clean",
+            "brand-link": "/collections/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Carpet Extractors&q=Trusted Clean",
             "brand-image": "shopify://shop_images/trusted-clean-quench-wet-dry-vacuum.jpg"
           }
         },
@@ -322,7 +322,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Vapamore®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Vapamore&refinementList[product_type][0]=Steam Cleaners&q=Vapamore",
+            "brand-link": "/collections/vendors?filter.p.vendor=Vapamore&filter.p.product_type=Steam Cleaners&q=Vapamore",
             "brand-image": "shopify://shop_images/vapamore-mr-75-amico-handheld-steamer-with-hose.jpg"
           }
         }
