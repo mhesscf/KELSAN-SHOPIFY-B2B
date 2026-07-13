@@ -668,7 +668,7 @@
                     {%- endif -%}
 
 
-                <p class="ais-hit--price productitem__price ">
+                <p class="ais-hit--price productitem__price ${hit.variants_count > 1 ? `var-product` : ``}">
                     <meta itemprop="availability" content="http://schema.org/InStock" />
                     <meta itemprop="priceCurrency" content="USD" />
                     <div class="price__current">
