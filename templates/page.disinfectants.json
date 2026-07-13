@@ -248,7 +248,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Claire®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Claire&refinementList[product_type][0]=Disinfectants %26 Sanitizers&q=Claire",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Claire&filter.p.product_type=Disinfectants %26 Sanitizers&q=Claire",
             "brand-image": "shopify:\/\/shop_images\/claire-cl1002-disinfectant-spray-q-lemon-scent.jpg"
           }
         },
@@ -256,7 +256,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Clorox®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Clorox&refinementList[product_type][0]=Disinfectants %26 Sanitizers&q=Clorox",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Clorox&filter.p.product_type=Disinfectants %26 Sanitizers&q=Clorox",
             "brand-image": "shopify:\/\/shop_images\/clorox-disinfecting-wipes-6-pack.jpg"
           }
         },
@@ -264,7 +264,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Maxim®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Maxim&refinementList[product_type][0]=Disinfectants %26 Sanitizers&q=Maxim",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Maxim&filter.p.product_type=Disinfectants %26 Sanitizers&q=Maxim",
             "brand-image": "shopify:\/\/shop_images\/facility-plus-one-step-disinfectant-grp.jpg"
           }
         },
@@ -272,7 +272,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Lysol®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Lysol&refinementList[product_type][0]=Disinfectants %26 Sanitizers&q=Lysol",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Lysol&filter.p.product_type=Disinfectants %26 Sanitizers&q=Lysol",
             "brand-image": "shopify:\/\/shop_images\/lysol-74828-crisp-linen-scent-disinfectant-case-of-12-aerosol-cans.jpg"
           }
         }

@@ -315,7 +315,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Vacuum Accessories&q=ProTeam",
+            "brand-link": "/collections/vendors?filter.p.vendor=ProTeam&filter.p.product_type=Vacuum Accessories&q=ProTeam",
             "brand-image": "shopify://shop_images/proteam-100331-super-coachvac-vacuum-bags-bnd.jpg"
           }
         },
@@ -323,7 +323,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Tornado®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Vacuum Accessories&q=Tornado",
+            "brand-link": "/collections/vendors?filter.p.vendor=Tornado&filter.p.product_type=Vacuum Accessories&q=Tornado",
             "brand-image": "shopify://shop_images/tornado-wet-dry-accessory-kit.jpg"
           }
         },
@@ -331,7 +331,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Hoover®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=Hoover",
+            "brand-link": "/collections/vendors?filter.p.vendor=Hoover&filter.p.product_type=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=Hoover",
             "brand-image": "shopify://shop_images/m-pwr-40v-li-ion-battery-ch90040-front.jpg"
           }
         },
@@ -339,7 +339,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Vacuum Accessories&q=Viper",
+            "brand-link": "/collections/vendors?filter.p.vendor=Viper&filter.p.product_type=Vacuum Accessories&q=Viper",
             "brand-image": "shopify://shop_images/va20288.jpg"
           }
         }

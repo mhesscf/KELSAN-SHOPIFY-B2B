@@ -320,7 +320,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "EDIC",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Edic&refinementList[product_type][0]=Carpet Extractor Parts&q=Edic",
+            "brand-link": "/collections/vendors?filter.p.vendor=Edic&filter.p.product_type=Carpet Extractor Parts&q=Edic",
             "brand-image": "shopify://shop_images/1-4-male.jpg"
           }
         },
@@ -328,7 +328,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Carpet Extractor Parts&q=Mytee",
+            "brand-link": "/collections/vendors?filter.p.vendor=Mytee&filter.p.product_type=Carpet Extractor Parts&q=Mytee",
             "brand-image": "shopify://shop_images/a949_mufflers.jpg"
           }
         }

@@ -221,7 +221,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?refinementList[vendor][0]=Bright Solutions",
+            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?filter.p.vendor=Bright Solutions",
             "brand-image": "shopify:\/\/shop_images\/bright-solutions-activate-odor-removing-bioculture-case-with-1-sprayer.jpg"
           }
         },
@@ -229,7 +229,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?refinementList[vendor][0]=CleanFreak",
+            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?filter.p.vendor=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/cleanfreak-n-zyme-enzymatic-cleaner-case-of-6-quarts-mpl-0713-61q.jpg"
           }
         },
@@ -237,7 +237,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Claire&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Stain Removal %26 Prevention&q=Claire",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Claire&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Stain Removal %26 Prevention&q=Claire",
             "brand-image": "shopify:\/\/shop_images\/nyco-ink-spot-nl529-q6-cae_342d9ec0-8540-4df5-88e2-508b9e66232e.jpg"
           }
         },
@@ -245,7 +245,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?refinementList[vendor][0]=Trusted Clean",
+            "brand-link": "\/collections\/stain-removal-carpet-spotting-chemicals?filter.p.vendor=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/trusted-clean-pet-patrol-stain-remover-6-pack_1_3a054d95-deea-406c-8475-e85585803319.jpg"
           }
         }

@@ -307,7 +307,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Hard Surface Cleaners&q=Bright Solutions",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bright Solutions&filter.p.product_type=Hard Surface Cleaners&q=Bright Solutions",
             "brand-image": "shopify:\/\/shop_images\/bright-solutions-fireball-rtu-cleaner-degreaser-case-of-quart-bottles-with-1-spray-trigger.jpg"
           }
         },
@@ -315,7 +315,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Claire®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Claire&refinementList[product_type][0]=Hard Surface Cleaners&q=Claire",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Claire&filter.p.product_type=Hard Surface Cleaners&q=Claire",
             "brand-image": "shopify:\/\/shop_images\/c818-premium-furniture-polish-12-pack_1.jpg"
           }
         },
@@ -323,7 +323,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Hard Surface Cleaners&q=Nyco",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Nyco&filter.p.product_type=Hard Surface Cleaners&q=Nyco",
             "brand-image": "shopify:\/\/shop_images\/nyco_stainless_steel_cleaner_aerosol_lg.jpg"
           }
         },
@@ -331,7 +331,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Lysol®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Lysol&refinementList[product_type][0]=Hard Surface Cleaners&q=Lysol",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Lysol&filter.p.product_type=Hard Surface Cleaners&q=Lysol",
             "brand-image": "shopify:\/\/shop_images\/161558.jpg"
           }
         }

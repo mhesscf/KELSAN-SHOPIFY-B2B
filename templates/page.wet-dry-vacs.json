@@ -282,7 +282,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Wet Dry Vacs&q=IPC Eagle",
+            "brand-link": "/collections/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Wet Dry Vacs&q=IPC Eagle",
             "brand-image": "shopify://shop_images/ipc-eagle-gs278-19-gallon-steel-tank-vacuum.jpg"
           }
         },
@@ -290,7 +290,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Wet Dry Vacs&q=Trusted Clean",
+            "brand-link": "/collections/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Wet Dry Vacs&q=Trusted Clean",
             "brand-image": "shopify://shop_images/trusted-clean-quench-wet-dry-vacuum.jpg"
           }
         },
@@ -298,7 +298,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Tornado®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Wet Dry Vacs&q=Tornado",
+            "brand-link": "/collections/vendors?filter.p.vendor=Tornado&filter.p.product_type=Wet Dry Vacs&q=Tornado",
             "brand-image": "shopify://shop_images/tornado-taskforce-external-filter-commercial-tank-vacuum-98995.jpg"
           }
         },
@@ -306,7 +306,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Wet Dry Vacs&q=Viper",
+            "brand-link": "/collections/vendors?filter.p.vendor=Viper&filter.p.product_type=Wet Dry Vacs&q=Viper",
             "brand-image": "shopify://shop_images/viper-shovelnose-wet-dry-vac-with-tool-kits.jpg"
           }
         },
@@ -314,7 +314,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Wet Dry Vacs&q=ProTeam",
+            "brand-link": "/collections/vendors?filter.p.vendor=ProTeam&filter.p.product_type=Wet Dry Vacs&q=ProTeam",
             "brand-image": "shopify://shop_images/proteam-proguard-wet-vacuum.jpg"
           }
         }

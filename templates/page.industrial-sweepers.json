@@ -235,7 +235,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Industrial Sweepers&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Industrial Sweepers&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/ies-tk464-y2-01_1.jpg"
           }
         },
@@ -243,7 +243,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Industrial Sweepers&q=IPC Eagle",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Industrial Sweepers&q=IPC Eagle",
             "brand-image": "shopify:\/\/shop_images\/ipc-eagle-464-battery-vacuum-sweeper.jpg"
           }
         },
@@ -251,7 +251,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Industrial Sweepers&q=Viper",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Viper&filter.p.product_type=Industrial Sweepers&q=Viper",
             "brand-image": "shopify:\/\/shop_images\/ros1300-viper-ride-on-sweeper.jpg"
           }
         },
@@ -259,7 +259,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bissell®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bissell&refinementList[product_type][0]=Industrial Sweepers&q=Bissell",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bissell&filter.p.product_type=Industrial Sweepers&q=Bissell",
             "brand-image": "shopify:\/\/shop_images\/bissel-bg-677-sweeper.jpg"
           }
         }

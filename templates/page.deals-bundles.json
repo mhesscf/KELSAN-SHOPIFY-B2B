@@ -402,7 +402,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Trusted Clean",
+            "brand-link": "/collections/vendors?filter.p.vendor=Trusted Clean&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Trusted Clean",
             "brand-image": "shopify://shop_images/flr-package2-v6.jpg"
           }
         },
@@ -410,7 +410,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Oreck&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Oreck",
+            "brand-link": "/collections/vendors?filter.p.vendor=Oreck&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Oreck",
             "brand-image": "shopify://shop_images/oreck-orbiter-rotary-floor-machine-package-v2.jpg"
           }
         },

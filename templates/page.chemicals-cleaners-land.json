@@ -324,7 +324,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Disinfectants %26 Sanitizers&refinementList[product_type][3]=Floor Care Chemicals&refinementList[product_type][4]=Hard Surface Cleaners&q=Bright Solutions",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bright Solutions&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Disinfectants %26 Sanitizers&refinementList[product_type][3]=Floor Care Chemicals&refinementList[product_type][4]=Hard Surface Cleaners&q=Bright Solutions",
             "brand-image": "shopify:\/\/shop_images\/bright-solutions-reflection-neutral-floor-cleaner-case-of-4-gallons.jpg"
           }
         },
@@ -332,7 +332,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Deodorizers %26 Absorbents&refinementList[product_type][3]=Plumbing&refinementList[product_type][4]=Floor Care Chemicals&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Deodorizers %26 Absorbents&refinementList[product_type][3]=Plumbing&refinementList[product_type][4]=Floor Care Chemicals&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/trusted-clean-magnifico-lavender-floor-soap-2-gal.jpg"
           }
         },
@@ -340,7 +340,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Dial®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Dial&refinementList[product_type][0]=Disinfectants %26 Sanitizers&refinementList[product_type][1]=Body Soaps %26 Detergents&q=Dial",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Dial&filter.p.product_type=Disinfectants %26 Sanitizers&refinementList[product_type][1]=Body Soaps %26 Detergents&q=Dial",
             "brand-image": "shopify:\/\/shop_images\/dial-original-gold-88047-antimicrobial-liquid-hand-soap.jpg"
           }
         },

@@ -284,7 +284,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bissell®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bissell&refinementList[product_type][0]=Vacuum Parts&q=Bissell",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bissell&filter.p.product_type=Vacuum Parts&q=Bissell",
             "brand-image": "shopify:\/\/shop_images\/bissel_deal_motor_vac_lg.jpg"
           }
         },
@@ -292,7 +292,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Hoover®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Vacuum Parts&q=Hoover",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Hoover&filter.p.product_type=Vacuum Parts&q=Hoover",
             "brand-image": "shopify:\/\/shop_images\/hoover-mpwr-replacment-belt-40201160.jpg"
           }
         },
@@ -300,7 +300,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Oreck&refinementList[product_type][0]=Vacuum Parts&q=Oreck",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Oreck&filter.p.product_type=Vacuum Parts&q=Oreck",
             "brand-image": "shopify:\/\/shop_images\/oreck_vacuum_brush_roll_lg.jpg"
           }
         },
@@ -308,7 +308,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Vacuum Parts&q=ProTeam",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=ProTeam&filter.p.product_type=Vacuum Parts&q=ProTeam",
             "brand-image": "shopify:\/\/shop_images\/scp-hepa-filter-temp.jpg"
           }
         }

@@ -220,7 +220,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Safety Zone®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Safety Zone&refinementList[product_type][0]=Foot Protection&q=Safety Zone",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Safety Zone&filter.p.product_type=Foot Protection&q=Safety Zone",
             "brand-image": "shopify:\/\/shop_images\/yellow-bsye-safety-zone-rubber-boots.jpg"
           }
         },
@@ -228,7 +228,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Foot Protection&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Foot Protection&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/cleanfreak-floor-stripping-protective-boots.jpg"
           }
         },
@@ -236,7 +236,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Paws",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Paws&refinementList[product_type][0]=Foot Protection&q=Paws",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Paws&filter.p.product_type=Foot Protection&q=Paws",
             "brand-image": "shopify:\/\/shop_images\/shoe_stripping_soles_lg.jpg"
           }
         }
