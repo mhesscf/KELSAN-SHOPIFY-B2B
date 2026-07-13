@@ -2936,6 +2936,7 @@ footer .footer-icon svg{
 	-webkit-appearance: none;
 	appearance: none;
 }
+{% comment %}
 .form-field-select-wrapper .form-field-select:hover,
 .form-field-select-wrapper .options-selection__input-select:hover,
 .options-selection__select .form-field-select:hover,
@@ -2944,7 +2945,7 @@ footer .footer-icon svg{
 .options-selection__input-select-wrapper .options-selection__input-select:hover {
 	border-color: {{ color_input_border_morph_2 }};
 	box-shadow: 0 3px 8px {{ border_mix | color_modify: 'alpha', 0.15 }};
-}
+}{% endcomment %}
 .form-field-select-wrapper .form-field-select:focus,
 .form-field-select-wrapper .options-selection__input-select:focus,
 .options-selection__select .form-field-select:focus,
@@ -19710,10 +19711,6 @@ body:not(.user-is-tabbing) .utils-filter-button {
 	border-color: transparent;
 	box-shadow: none;
 }
-.form-field-select-wrapper .utils-sortby-select:hover {
-	border-color: transparent;
-	box-shadow: none;
-}
 
 .utils-sortby-title {
 	font-style: {{ fonts_type_body_style }};
@@ -19768,7 +19765,7 @@ body:not(.user-is-tabbing) .utils-filter-button {
 }
 .utils-sortby-select--wrapper svg {
 	color: {{ settings.color_text }};
-	top:36%
+	top:50%
 }
 
 .utils-sortby--modal {
