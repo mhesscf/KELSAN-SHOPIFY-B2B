@@ -257,7 +257,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Unger®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Unger&refinementList[product_type][0]=Window Cleaning Equipment&q=Unger",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Unger&filter.p.product_type=Window Cleaning Equipment&q=Unger",
             "brand-image": "shopify:\/\/shop_images\/hydroppower-ultra-20-ft-kit-uhpk1.jpg"
           }
         },
@@ -265,7 +265,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Window Cleaning Equipment&q=IPC Eagle",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Window Cleaning Equipment&q=IPC Eagle",
             "brand-image": "shopify:\/\/shop_images\/ipc-eagle-window-pole.jpg"
           }
         }

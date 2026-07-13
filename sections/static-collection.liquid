@@ -259,6 +259,13 @@
             </div>
           {% endif %}
 
+
+          <div class="results-count">
+            {% assign start = paginate.current_offset | plus: 1 %}
+            {% assign end = paginate.current_offset | plus: paginate.page_size | at_most: collection.products_count %}
+            {{ start }}-{{ end }} out of <strong>{{ collection.products_count }} products found</strong>
+          </div>
+
           {%- if section.settings.sort_by -%}
             {%-
               render 'product-grid-sortby',

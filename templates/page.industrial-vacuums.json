@@ -204,7 +204,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Industrial Vacuums&q=IPC Eagle",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Industrial Vacuums&q=IPC Eagle",
             "brand-image": "shopify:\/\/shop_images\/ipc-eagle-bv390-barrel-vacuum.jpg"
           }
         },
@@ -212,7 +212,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Tornado®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Industrial Vacuums&q=Tornado",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Tornado&filter.p.product_type=Industrial Vacuums&q=Tornado",
             "brand-image": "shopify:\/\/shop_images\/tornado-98450.jpg"
           }
         }

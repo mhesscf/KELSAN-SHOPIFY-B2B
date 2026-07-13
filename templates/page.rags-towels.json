@@ -270,7 +270,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "GOJO®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=GOJO&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=GOJO",
+            "brand-link": "/collections/vendors?filter.p.vendor=GOJO&filter.p.product_type=Rags%2C Towels %26 Wipes&q=GOJO",
             "brand-image": "shopify://shop_images/gojo-fast-towels-225-count-case-of-2-6299-02.jpg"
           }
         },
@@ -278,7 +278,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "KC WypAll®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Wypall&refinementList[product_type][0]=Rags%2C Towels %26 Wipes&q=Wypall",
+            "brand-link": "/collections/vendors?filter.p.vendor=Wypall&filter.p.product_type=Rags%2C Towels %26 Wipes&q=Wypall",
             "brand-image": "shopify://shop_images/wypall-l40-disposable-towels-05701.jpg"
           }
         }

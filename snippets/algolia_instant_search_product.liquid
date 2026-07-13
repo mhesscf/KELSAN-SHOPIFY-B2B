@@ -1,7 +1,14 @@
 
 <script>
-    function isBuyable(middleware,im,inv,collections,bundleitems = "",inventorypolicy){
-        if (collections.includes("discontinued")) {
+    function isDiscontinued(tag){
+        if(tag.includes("discontinued")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function isBuyable(middleware,im,inv,tags,bundleitems = "",inventorypolicy){
+        if (tags.includes("discontinued")) {
             return false;
         }else if (bundleitems != ""){
             return true;
@@ -410,12 +417,12 @@
             return html `
       <div data-algolia-index="${hit.index}" data-algolia-position="${hit.productPosition}" data-algolia-queryid="${hit.queryID}" data-algolia-objectid="${hit.objectID}" class="ais-hit ais-product" data-handle="${hit.handle}" data-variant-id="${hit.objectID}" data-distinct="${hit._distinct}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" data-inbundles="${bundleHandles(hit.meta.plytix.in_these_bundles,"handles")}">
         <meta itemprop="position" content="${hit.productPosition}" />
-        <div class="productitem {% unless shop.name contains "CleanFreak B2B"%}${hit.meta.plytix.clearance_overstock == "true" && hit.collections.includes("discontinued") == false ? html `clearanceitem` : ``} ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"bool") ? html `${hit.tags.includes("BOGO Deal") ? html `bogoitem` : `specialitem` }` : ``}  ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``} ${hit.meta.plytix.bundle_special_data ? html `specialitem` : `` }{% endunless %} " itemprop="item" itemscope itemtype="http://schema.org/Product" >
+        <div class="productitem {% unless shop.name contains "CleanFreak B2B"%}${hit.meta.plytix.clearance_overstock == "true" && isDiscontinued(hit.tags) == false ? html `clearanceitem` : ``} ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.meta.plytix.custom_hot_deal_message,"bool") ? html `${hit.tags.includes("BOGO Deal") ? html `bogoitem` : `specialitem` }` : ``}  ${hit.compare_at_price > hit.price && isDiscontinued(hit.tags) == false && hit.meta.plytix.special_enddate ? html `specialitem` : ``} ${hit.meta.plytix.bundle_special_data ? html `specialitem` : `` }{% endunless %} " itemprop="item" itemscope itemtype="http://schema.org/Product" >
 
             {% unless shop.name contains "CleanFreak B2B" %}
-                ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false && hit.meta.plytix.special_enddate ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>` : ``}
+                ${hit.compare_at_price > hit.price && isDiscontinued(hit.tags) == false && hit.meta.plytix.special_enddate ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>` : ``}
                  ${hit.meta.plytix.bundle_special_data ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon2.png' | file_img_url: '260x' }}" alt="Hot Deal Sale" /></div>` : ``}
-                ${hit.meta.plytix.clearance_overstock == "true" && hit.collections.includes("discontinued") == false ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon-clearance.png' | file_img_url: '260x' }}" alt="Clearance Item" /></div>` : ``}
+                ${hit.meta.plytix.clearance_overstock == "true" && isDiscontinued(hit.tags) == false ? html `<div class="deal-rib"><img class="img-responsive" src="{{ 'corner-ribbon-clearance.png' | file_img_url: '260x' }}" alt="Clearance Item" /></div>` : ``}
             {% endunless %}
 
             <div class="cfais-productitem__image-container-col">
@@ -429,11 +436,11 @@
                 <div class="product-icons-algolia underpic">
 
                     <div class="ship-made
- ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 0 || hit.tags.includes("Not Returnable") || hit.tags.includes("Free Shipping") || hit.meta.plytix.clearance_overstock == "true" || hit.collections.includes("discontinued") || hit.tags.includes("Made in the USA") || hit.tags.includes("Assembled in the USA") || hit.tags.includes("Environmentally Responsible") || hit.tags.includes("Gold Medal Winner") ? html `topline`: html `noline` }
+ ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 0 || hit.tags.includes("Not Returnable") || hit.tags.includes("Free Shipping") || hit.meta.plytix.clearance_overstock == "true" || isDiscontinued(hit.tags) || hit.tags.includes("Made in the USA") || hit.tags.includes("Assembled in the USA") || hit.tags.includes("Environmentally Responsible") || hit.tags.includes("Gold Medal Winner") ? html `topline`: html `noline` }
 
                     ">
-                        ${hit.collections.includes("discontinued") && !hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>`: html `
-                            ${hit.collections.includes("discontinued") && hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>`: html `
+                        ${isDiscontinued(hit.tags) && !hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>`: html `
+                            ${isDiscontinued(hit.tags) && hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>`: html `
 
                                 ${checkInBundle(hit.meta.plytix.in_these_bundles,0) > 0 ? html `
                                 <div onclick="stoplink(event);">
@@ -452,7 +459,7 @@
 
                                 {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
                                     ${hit.tags.includes("Free Shipping") ? html`<div onclick="stoplink(event);"><a href="/collections/free-shipping"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 20px; margin-top:3px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a></div>`:''}
-                                    ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.tags.includes("Free Shipping Special"),"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.tags.includes("Free Shipping Special"),"enddate") }</strong> and get <strong>Free Shipping</strong></span></div></div></a></div>` : ``}
+                                    ${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.tags.includes("Free Shipping Special"),"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/all?filter.p.tag=Free Shipping Special"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.custom_hot_deal_to_date,hit.meta.plytix.custom_hot_deal_from_date,hit.tags.includes("Free Shipping Special"),"enddate") }</strong> and get <strong>Free Shipping</strong></span></div></div></a></div>` : ``}
                                     {% else %}
                                      ${hit.tags.includes("Free Shipping") ? html`<div onclick="stoplink(event);"><a href="/collections/all?refinementList%5Btags%5D%5B0%5D=Free%20Shipping"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-duotone fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the continental US</span></div></div></a></div>`:''}
                                 {% endif %}
@@ -523,7 +530,7 @@
                 {%- comment -%}Beginning of Stock Status ---------------------------------------------------------{%- endcomment -%}
 
                 <div class="sx-status" >
-                  ${(hit.collections.includes("discontinued") || hit.sku == "SUPERFREAK") ? html``: html `<span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.sku,hit.meta.plytix.sxerp_po_date)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>`}
+                  ${(isDiscontinued(hit.tags) || hit.sku == "SUPERFREAK") ? html``: html `<span class="sx-status-other-raw" data-objid="${hit.objectID}" style="display:none">${stocklookup(hit.meta.plytix.fulfillment_for_algolia,hit.inventory_quantity,hit.meta.plytix.sxerp_lead_time,hit.meta.plytix.sx_erp_is_drop_ship,hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.clearance_overstock,hit.sku,hit.meta.plytix.sxerp_po_date)}</span><span class="sx-status-other" data-objid="${hit.objectID}"></span>`}
                  </div>
 
                 <div class="deleteme" style="display:none">
@@ -539,8 +546,8 @@
 
                 <div class="product-icons">
                     <div class="ship-made">
-                        ${hit.collections.includes("discontinued") && !hit.sku.includes("-DEMO") ? html``: html `
-                            ${hit.collections.includes("discontinued") && hit.sku.includes("-DEMO") ? html``: html `
+                        ${isDiscontinued(hit.tags) && !hit.sku.includes("-DEMO") ? html``: html `
+                            ${isDiscontinued(hit.tags) && hit.sku.includes("-DEMO") ? html``: html `
                                 {%- unless shop.name contains "CleanFreak B2B---"-%}
                                    {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
                                         ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/current-sales"><div class="sm-row sale-icon"><div class="icon-wrap" style="font-size: 23px;"><i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i></div> <div class="sm-row-text"><span>Hot Deal!</span><br/><span class="sm-text">Buy Before <strong>${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"enddate")}</strong> and <strong>Save ${specialDateCheck(hit.meta.plytix.special_enddate,hit.price,hit.compare_at_price,"savings")}</strong></span></div></div></a></div>` : ``}
@@ -562,8 +569,8 @@
                 {%- comment -%}
                 <div class="product-icons-algolia">
                     <div class="ship-made">
-                        ${hit.collections.includes("discontinued") && !hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>`: html `
-                            ${hit.collections.includes("discontinued") && hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>`: html `
+                        ${isDiscontinued(hit.tags) && !hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Discontinued</span><br/><span class="sm-text">This Product has Been Discontinued</span></div></div>`: html `
+                            ${isDiscontinued(hit.tags) && hit.sku.includes("-DEMO") ? html`<div class="sm-row"><div class="icon-wrap" style="font-size: 22px;"><i class="fa-solid fa-ban"></i></div> <div class="sm-row-text"><span>Unavailable</span><br/><span class="sm-text">This Unit has Been Sold</span></div></div>`: html `
                                {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
                                     ${hit.tags.includes("Free Shipping") ? html`<div onclick="stoplink(event);"><a href="/collections/free-shipping"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping</span><br/><span class="sm-text">Anywhere in the Continental US</span></div></div></a></div>`:''}
                                     ${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special"),"bool") ? html `<div onclick="stoplink(event);"><a href="/collections/all?refinementList[tags][0]=Free Shipping Special"><div class="sm-row freeship"><div class="icon-wrap" style="font-size: 18px;"><i class="fa-solid fa-truck-fast"></i></div> <div class="sm-row-text"><span>Free Shipping Special</span><br/><span class="sm-text">Buy Before <strong>${customSpecialDateCheck(hit.meta.plytix.special_enddate,hit.meta.plytix.special_startdate,hit.tags.includes("Free Shipping Special"),"enddate") }</strong> and get <strong>Free Shipping</strong></span></div></div></a></div>` : ``}
@@ -644,7 +651,7 @@
                     {%- else -%}
 
                        ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                            ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
+                            ${hit.compare_at_price > hit.price && isDiscontinued(hit.tags) == false ? html `
                                 <div class="price__compare-at-visible-2 strikethrough">
                                     <div class="strikeprice">${numberScrub(hit.compare_at_price)}</div>
                                 </div>
@@ -661,7 +668,7 @@
                     {%- endif -%}
 
 
-                <p class="ais-hit--price productitem__price ">
+                <p class="ais-hit--price productitem__price ${hit.variants_count > 1 ? `var-product` : ``}">
                     <meta itemprop="availability" content="http://schema.org/InStock" />
                     <meta itemprop="priceCurrency" content="USD" />
                     <div class="price__current">
@@ -684,7 +691,7 @@
                     {%- else -%}
 
                         ${showPrice(hit.meta.plytix.hide_pricing) ? html `
-                            ${hit.compare_at_price > hit.price && hit.collections.includes("discontinued") == false ? html `
+                            ${hit.compare_at_price > hit.price && isDiscontinued(hit.tags) == false ? html `
 
                                 <div class="price__compare-at-visible-2">
                                     <div class="yousave">You Save: $${priceSavings(algolia.helpers.displayPrice(hit, hit._distinct),hit.compare_at_price)}</div>
@@ -740,7 +747,7 @@ ${1 == 1 && html`
 <p class="ais-hit--cart">
     {%- comment -%} ${hit.can_order ? html` {%- endcomment -%}
 
-    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.meta.plytix.inventory_manage_for_algolia,hit.inventory_quantity,hit.collections,hit.meta.plytix.package_products,hit.inventory_policy) ? html`
+    ${isBuyable(hit.meta.plytix.fulfillment_for_algolia,hit.meta.plytix.inventory_manage_for_algolia,hit.inventory_quantity,hit.tags,hit.meta.plytix.package_products,hit.inventory_policy) ? html`
         ${showBtn(hit.variants_count,hit.meta.plytix.package_products,hit.meta.plytix.packaged_free_product,hit.meta.plytix.hide_pricing,hit.meta.plytix.show_quote,hit.meta.plytix.warning_title,hit.tags) == "addToCart"  ? html`
             <button class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" data-form-id="algolia-add-to-cart-${hit.objectID}"><span class="atc-plus">+</span> ${ algolia.translations.addToCart }</button>
         `:html`

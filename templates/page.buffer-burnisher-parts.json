@@ -274,7 +274,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=CleanFreak",
+            "brand-link": "/collections/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=CleanFreak",
             "brand-image": "shopify://shop_images/sa034800-tank-kit-open.jpg"
           }
         },
@@ -282,7 +282,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Malish",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=Malish",
+            "brand-link": "/collections/vendors?filter.p.vendor=Malish&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=Malish",
             "brand-image": "shopify://shop_images/malish-big-mouth-792455-closed.jpg"
           }
         },
@@ -290,7 +290,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Koblenz®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Koblenz&refinementList[product_type][0]=Floor Buffer %26 Burnisher Parts&q=Koblenz",
+            "brand-link": "/collections/vendors?filter.p.vendor=Koblenz&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=Koblenz",
             "brand-image": "shopify://shop_images/koblenz-45-0865-1-oscillating-floor-buffer-weight.jpg"
           }
         }

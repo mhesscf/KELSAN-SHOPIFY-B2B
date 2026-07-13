@@ -321,7 +321,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Carpet %26 Upholstery&refinementList[product_type][1]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][2]=Carpet Extractor Parts&refinementList[product_type][3]=Carpet Extractors&refinementList[product_type][4]=Carpet Fans&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Carpet %26 Upholstery&filter.p.product_type=Carpet Extractor Hoses%2C Wands %26 Accessories&filter.p.product_type=Carpet Extractor Parts&filter.p.product_type=Carpet Extractors&filter.p.product_type=Carpet Fans&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/trusted-clean-deluxe-12-gallon-carpet-cleaning-extractor-with-wand-and-hose.jpg"
           }
         },
@@ -329,7 +329,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Carpet Extractors&refinementList[product_type][1]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][2]=Carpet Extractor Parts&q=Mytee",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Mytee&filter.p.product_type=Carpet Extractors&filter.p.product_type=Carpet Extractor Hoses%2C Wands %26 Accessories&filter.p.product_type=Carpet Extractor Parts&q=Mytee",
             "brand-image": "shopify:\/\/shop_images\/mytee-2002cs-carpet-cleaning-extractor-with-wand-hose.jpg"
           }
         },
@@ -337,7 +337,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Carpet Extractors&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][4]=Carpet %26 Upholstery&refinementList[product_type][5]=Carpet Extractor Parts&refinementList[product_type][6]=Carpet Fans&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Carpet Extractors&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Carpet Extractor Hoses%2C Wands %26 Accessories&filter.p.product_type=Carpet %26 Upholstery&filter.p.product_type=Carpet Extractor Parts&filter.p.product_type=Carpet Fans&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/san-cf-3-01.jpg"
           }
         },
@@ -345,7 +345,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "EDIC",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=EDIC&refinementList[product_type][0]=Carpet Extractors&refinementList[product_type][1]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][2]=Carpet Extractor Parts&refinementList[product_type][3]=Disinfectant %26 Chemical Spray Applicators (Large Area)&q=EDIC",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=EDIC&filter.p.product_type=Carpet Extractors&filter.p.product_type=Carpet Extractor Hoses%2C Wands %26 Accessories&filter.p.product_type=Carpet Extractor Parts&filter.p.product_type=Disinfectant %26 Chemical Spray Applicators (Large Area)&q=EDIC",
             "brand-image": "shopify:\/\/shop_images\/edic-polaris-701ps-self-contained-carpet-extractor.jpg"
           }
         }

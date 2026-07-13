@@ -370,7 +370,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Rubbermaid®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Rubbermaid&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&refinementList[product_type][6]=Waste Management&q=Rubbermaid",
+            "brand-link": "/collections/vendors?filter.p.vendor=Rubbermaid&filter.p.product_type=Pump-Up Dispensers %26 Trigger Sprayers&filter.p.product_type=Window Cleaning Equipment&filter.p.product_type=Sweeping %26 Mopping&filter.p.product_type=Carts%2C Organizers %26 Signs&filter.p.product_type=Rags%2C Towels %26 Wipes&filter.p.product_type=Restroom Supplies&filter.p.product_type=Waste Management&q=Rubbermaid",
             "brand-image": "shopify://shop_images/rubbermaid_black_tilt_truck_lg.jpg"
           }
         },
@@ -378,7 +378,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&q=IPC Eagle",
+            "brand-link": "/collections/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Pump-Up Dispensers %26 Trigger Sprayers&filter.p.product_type=Window Cleaning Equipment&filter.p.product_type=Sweeping %26 Mopping&q=IPC Eagle",
             "brand-image": "shopify://shop_images/ipc-eagle-window-pole.jpg"
           }
         },
@@ -386,7 +386,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Impact®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Pump-Up Dispensers %26 Trigger Sprayers&refinementList[product_type][1]=Window Cleaning Equipment&refinementList[product_type][2]=Sweeping %26 Mopping&refinementList[product_type][3]=Carts%2C Organizers %26 Signs&refinementList[product_type][4]=Rags%2C Towels %26 Wipes&refinementList[product_type][5]=Restroom Supplies&q=Impact",
+            "brand-link": "/collections/vendors?filter.p.vendor=Impact&filter.p.product_type=Pump-Up Dispensers %26 Trigger Sprayers&filter.p.product_type=Window Cleaning Equipment&filter.p.product_type=Sweeping %26 Mopping&filter.p.product_type=Carts%2C Organizers %26 Signs&filter.p.product_type=Rags%2C Towels %26 Wipes&filter.p.product_type=Restroom Supplies&q=Impact",
             "brand-image": "shopify://shop_images/red_microfiber_wipes_lg.jpg"
           }
         }

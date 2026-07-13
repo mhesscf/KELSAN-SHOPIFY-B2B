@@ -288,7 +288,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Floor Buffer Accessories&q=Trusted Clean",
+            "brand-link": "/collections/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Floor Buffer Accessories&q=Trusted Clean",
             "brand-image": "shopify://shop_images/tank_1.jpg"
           }
         },
@@ -296,7 +296,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Oreck&refinementList[product_type][0]=Floor Buffer Accessories&q=Oreck",
+            "brand-link": "/collections/vendors?filter.p.vendor=Oreck&filter.p.product_type=Floor Buffer Accessories&q=Oreck",
             "brand-image": "shopify://shop_images/oreck-buffer-carpet-scrubbing-brush.jpg"
           }
         },
@@ -304,7 +304,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Malish",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Malish&refinementList[product_type][0]=Floor Buffer Accessories&q=Malish",
+            "brand-link": "/collections/vendors?filter.p.vendor=Malish&filter.p.product_type=Floor Buffer Accessories&q=Malish",
             "brand-image": "shopify://shop_images/malish-pad-lok-19-inch-pad-driver-with-bristles-782719np.jpg"
           }
         }

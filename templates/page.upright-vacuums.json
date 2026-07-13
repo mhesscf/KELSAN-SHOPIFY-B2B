@@ -262,7 +262,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bissell®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bissell&refinementList[product_type][0]=Upright Vacuums&q=Bissell",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bissell&filter.p.product_type=Upright Vacuums&q=Bissell",
             "brand-image": "shopify:\/\/shop_images\/bissell_vac_3822_lg_sq.jpg"
           }
         },
@@ -270,7 +270,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Hoover®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Upright Vacuums&q=Hoover",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Hoover&filter.p.product_type=Upright Vacuums&q=Hoover",
             "brand-image": "shopify:\/\/shop_images\/ch95519-mpwr-40v-upright-left3q-bnd.jpg"
           }
         },
@@ -278,7 +278,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Upright Vacuums&q=ProTeam",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=ProTeam&filter.p.product_type=Upright Vacuums&q=ProTeam",
             "brand-image": "shopify:\/\/shop_images\/proforce-15-vac.jpg"
           }
         },
@@ -286,7 +286,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Tornado®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Tornado&refinementList[product_type][0]=Upright Vacuums&q=Tornado",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Tornado&filter.p.product_type=Upright Vacuums&q=Tornado",
             "brand-image": "shopify:\/\/shop_images\/tornado-roam-cordless-upight-vacuum.jpg"
           }
         }

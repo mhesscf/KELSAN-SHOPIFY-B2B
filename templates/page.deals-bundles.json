@@ -386,7 +386,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "https://www.cleanfreak.com/collections/vendors?refinementList%5Bvendor%5D%5B0%5D=CleanFreak&refinementList%5Btags%5D%5B0%5D=Package&refinementList%5Btags%5D%5B1%5D=Gold%20Medal%20Winner&q=CleanFreak",
+            "brand-link": "https://www.cleanfreak.com/collections/vendors?filter.p.vendor=CleanFreak&filter.p.tag=Package&filter.p.tag=Gold%20Medal%20Winner&q=CleanFreak",
             "brand-image": "shopify://shop_images/orbital-floor-buffer-package-for-vinyl-tile-cleaning-and-grout-concrete-scrubbing-v3.jpg"
           }
         },
@@ -402,7 +402,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Trusted Clean",
+            "brand-link": "/collections/vendors?filter.p.vendor=Trusted Clean&filter.p.tag=Package&filter.p.tag=Gold Medal Winner&q=Trusted Clean",
             "brand-image": "shopify://shop_images/flr-package2-v6.jpg"
           }
         },
@@ -410,7 +410,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Oreck&refinementList[tags][0]=Package&refinementList[tags][1]=Gold Medal Winner&q=Oreck",
+            "brand-link": "/collections/vendors?filter.p.vendor=Oreck&filter.p.tag=Package&filter.p.tag=Gold Medal Winner&q=Oreck",
             "brand-image": "shopify://shop_images/oreck-orbiter-rotary-floor-machine-package-v2.jpg"
           }
         },

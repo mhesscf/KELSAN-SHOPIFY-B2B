@@ -364,7 +364,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][3]=Carpet Extractor Parts&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Floor Pads%2C Bonnets %26 Sanding Screens&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Carpet Extractor Hoses%2C Wands %26 Accessories&filter.p.product_type=Carpet Extractor Parts&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Floor Pads%2C Bonnets %26 Sanding Screens&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/tank_1.jpg"
           }
         },
@@ -372,7 +372,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "EDIC",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=EDIC&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][3]=Carpet Extractor Parts&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Floor Pads%2C Bonnets %26 Sanding Screens&refinementList[product_type][6]=Floor Buffer %26 Burnisher Parts&refinementList[product_type][7]=Vacuum Parts&refinementList[product_type][8]=Vacuum Accessories&refinementList[product_type][9]=Tile Cleaning Tools %26 Attachments&q=EDIC",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=EDIC&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Carpet Extractor Hoses%2C Wands %26 Accessories&filter.p.product_type=Carpet Extractor Parts&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Floor Pads%2C Bonnets %26 Sanding Screens&filter.p.product_type=Floor Buffer %26 Burnisher Parts&filter.p.product_type=Vacuum Parts&filter.p.product_type=Vacuum Accessories&filter.p.product_type=Tile Cleaning Tools %26 Attachments&q=EDIC",
             "brand-image": "shopify:\/\/shop_images\/705hr-external-heater-system.jpg"
           }
         },
@@ -380,7 +380,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Scrubber Accessories&refinementList[product_type][1]=Auto Scrubber Parts&refinementList[product_type][2]=Carpet Extractor Hoses%2C Wands %26 Accessories&refinementList[product_type][3]=Carpet Extractor Parts&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Floor Pads%2C Bonnets %26 Sanding Screens&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Carpet Extractor Hoses%2C Wands %26 Accessories&filter.p.product_type=Carpet Extractor Parts&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Floor Pads%2C Bonnets %26 Sanding Screens&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/case-of-12-inch-red-pads.jpg"
           }
         },
@@ -388,7 +388,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Hoover®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Hoover&refinementList[product_type][0]=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=Hoover",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Hoover&filter.p.product_type=Vacuum Parts&filter.p.product_type=Vacuum Accessories&q=Hoover",
             "brand-image": "shopify:\/\/shop_images\/m-pwr-40v-li-ion-battery-ch90040-front.jpg"
           }
         },
@@ -396,7 +396,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "ProTeam®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=ProTeam&refinementList[product_type][0]=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=ProTeam",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=ProTeam&filter.p.product_type=Vacuum Parts&filter.p.product_type=Vacuum Accessories&q=ProTeam",
             "brand-image": "shopify:\/\/shop_images\/proteam-100331-super-coachvac-vacuum-bags-bnd.jpg"
           }
         },
@@ -404,7 +404,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Auto Scrubber Accessories&refinementList[product_type][4]=Floor Buffer Accessories&refinementList[product_type][5]=Floor Pads%2C Bonnets %26 Sanding Screens&refinementList[product_type][6]=Sweeper Parts&refinementList[product_type][7]=Pump-Up Dispensers %26 Trigger Sprayers&q=IPC Eagle",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Vacuum Parts&filter.p.product_type=Vacuum Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Floor Pads%2C Bonnets %26 Sanding Screens&filter.p.product_type=Sweeper Parts&filter.p.product_type=Pump-Up Dispensers %26 Trigger Sprayers&q=IPC Eagle",
             "brand-image": "shopify:\/\/shop_images\/sppv01481-front-2_1.jpg"
           }
         }

@@ -233,7 +233,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Rubbermaid®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Rubbermaid&refinementList[product_type][0]=Carts%2C Organizers %26 Signs&q=Rubbermaid",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Rubbermaid&filter.p.product_type=Carts%2C Organizers %26 Signs&q=Rubbermaid",
             "brand-image": "shopify:\/\/shop_images\/rubbermaid_black_tilt_truck_lg.jpg"
           }
         },
@@ -241,7 +241,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Impact®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Carts%2C Organizers %26 Signs&q=Impact",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Impact&filter.p.product_type=Carts%2C Organizers %26 Signs&q=Impact",
             "brand-image": "shopify:\/\/shop_images\/impact-white-balck-janitorial-cart-6850.jpg"
           }
         },
@@ -249,7 +249,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Geerpres®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Geerpres&refinementList[product_type][0]=Carts%2C Organizers %26 Signs&q=Geerpres",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Geerpres&filter.p.product_type=Carts%2C Organizers %26 Signs&q=Geerpres",
             "brand-image": "shopify:\/\/shop_images\/waste-wagon.jpg"
           }
         },
@@ -257,7 +257,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Unger®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Unger&refinementList[product_type][0]=Carts%2C Organizers %26 Signs&q=Unger",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Unger&filter.p.product_type=Carts%2C Organizers %26 Signs&q=Unger",
             "brand-image": "shopify:\/\/shop_images\/broom_mop_handle_holder_lg.jpg"
           }
         }

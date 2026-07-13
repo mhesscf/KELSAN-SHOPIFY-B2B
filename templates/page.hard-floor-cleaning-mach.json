@@ -393,7 +393,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Trusted Clean",
+            "brand-link": "/collections/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Hard Floor Cleaning Machines&q=Trusted Clean",
             "brand-image": "shopify://shop_images/dura-17-c-with-dust-skirt.jpg"
           }
         },
@@ -401,7 +401,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=Viper",
+            "brand-link": "/collections/vendors?filter.p.vendor=Viper&filter.p.product_type=Hard Floor Cleaning Machines&q=Viper",
             "brand-image": "shopify://shop_images/viper-as430c-17-inch-electric-auto-scrubber.jpg"
           }
         },
@@ -409,7 +409,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=IPC Eagle&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=IPC Eagle",
+            "brand-link": "/collections/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Hard Floor Cleaning Machines&q=IPC Eagle",
             "brand-image": "shopify://shop_images/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
           }
         },
@@ -417,7 +417,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Hard Floor Cleaning Machines&q=CleanFreak",
+            "brand-link": "/collections/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Hard Floor Cleaning Machines&q=CleanFreak",
             "brand-image": "shopify://shop_images/kob-00-4497-4-01_dept.jpg"
           }
         },
@@ -425,7 +425,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Advance®",
-            "brand-link": "https://www.cleanfreak.com/collections/advance?refinementList%5Bvendor%5D%5B0%5D=Advance&refinementList%5Bproduct_type%5D%5B0%5D=Hard%20Floor%20Cleaning%20Machines",
+            "brand-link": "https://www.cleanfreak.com/collections/advance?filter.p.vendor=Advance&filter.p.product_type=Hard%20Floor%20Cleaning%20Machines",
             "brand-image": "shopify://shop_images/advance-adfinity-x20c-scrubber.jpg"
           }
         }

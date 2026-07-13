@@ -264,7 +264,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Viper&refinementList[product_type][0]=Auto Scrubber Parts&q=Viper",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Viper&filter.p.product_type=Auto Scrubber Parts&q=Viper",
             "brand-image": "shopify:\/\/shop_images\/viper-vf82168a-auto-scrubber-seat-filter-2.jpg"
           }
         },
@@ -272,7 +272,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Scrubber Parts&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Auto Scrubber Parts&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/auto_scrubber_vac_motor_lg.jpg"
           }
         },
@@ -281,7 +281,7 @@
           "disabled": true,
           "settings": {
             "brand-title": "Advance®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Advance&refinementList[product_type][0]=Auto Scrubber Parts&q=Advance",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Advance&filter.p.product_type=Auto Scrubber Parts&q=Advance",
             "brand-image": "shopify:\/\/shop_images\/advanced-56104483-squeegee-kit.jpg"
           }
         },
@@ -289,7 +289,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Scrubber Parts&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Auto Scrubber Parts&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/brush-motor-vf90729-for-trusted-clean-dura-17-floor-scrubber.jpg"
           }
         }

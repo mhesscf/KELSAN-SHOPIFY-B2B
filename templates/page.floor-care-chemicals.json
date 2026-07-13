@@ -273,7 +273,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Floor Care Chemicals&q=Bright Solutions",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bright Solutions&filter.p.product_type=Floor Care Chemicals&q=Bright Solutions",
             "brand-image": "shopify:\/\/shop_images\/bright-solutions-classroom-finish-floor-finish-case.jpg"
           }
         },
@@ -281,7 +281,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Floor Care Chemicals&q=Nyco",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Nyco&filter.p.product_type=Floor Care Chemicals&q=Nyco",
             "brand-image": "shopify:\/\/shop_images\/nl950-g4-green-kleen-nyco-case.jpg"
           }
         },
@@ -289,7 +289,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Floor Care Chemicals&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Floor Care Chemicals&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/cleanfreak-low-foam-floor-cleaning-degreaser-pouch-mpl-0610-125p.jpg"
           }
         }
