@@ -312,7 +312,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "/collections/vendors?refinementList%5Bvendor%5D%5B0%5D=Trusted%20Clean&refinementList%5Bproduct_type%5D%5B0%5D=Carpet%20Extractor%20Parts&q=Trusted%20Clean",
+            "brand-link": "/collections/vendors?filter.p.vendor=Trusted%20Clean&filter.p.product_type=Carpet%20Extractor%20Parts&q=Trusted%20Clean",
             "brand-image": "shopify://shop_images/2-stage-vac-motor.jpg"
           }
         },

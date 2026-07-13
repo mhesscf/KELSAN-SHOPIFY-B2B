@@ -425,7 +425,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Advance®",
-            "brand-link": "https://www.cleanfreak.com/collections/advance?refinementList%5Bvendor%5D%5B0%5D=Advance&refinementList%5Bproduct_type%5D%5B0%5D=Hard%20Floor%20Cleaning%20Machines",
+            "brand-link": "https://www.cleanfreak.com/collections/advance?filter.p.vendor=Advance&filter.p.product_type=Hard%20Floor%20Cleaning%20Machines",
             "brand-image": "shopify://shop_images/advance-adfinity-x20c-scrubber.jpg"
           }
         }

@@ -251,7 +251,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Dri-Eaz®",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Dri-Eaz&filter.p.product_type=Flood Restoration Equipment %26 Extractors&refinementList[product_type][1]=Commercial Dehumidifiers&refinementList[product_type][2]=Carpet Fans&refinementList[product_type][3]=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&refinementList[product_type][4]=Air Scrubbers %26 Other Commercial Filtration Devices&q=Dri-Eaz",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Dri-Eaz&filter.p.product_type=Flood Restoration Equipment %26 Extractors&filter.p.product_type=Commercial Dehumidifiers&filter.p.product_type=Carpet Fans&filter.p.product_type=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&filter.p.product_type=Air Scrubbers %26 Other Commercial Filtration Devices&q=Dri-Eaz",
             "brand-image": "shopify:\/\/shop_images\/hepa-700-air-scrubber.jpg"
           }
         },
@@ -259,7 +259,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Mytee&filter.p.product_type=Flood Restoration Equipment %26 Extractors&refinementList[product_type][1]=Commercial Dehumidifiers&refinementList[product_type][2]=Carpet Fans&refinementList[product_type][3]=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&refinementList[product_type][4]=Air Scrubbers %26 Other Commercial Filtration Devices&q=Mytee",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Mytee&filter.p.product_type=Flood Restoration Equipment %26 Extractors&filter.p.product_type=Commercial Dehumidifiers&filter.p.product_type=Carpet Fans&filter.p.product_type=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&filter.p.product_type=Air Scrubbers %26 Other Commercial Filtration Devices&q=Mytee",
             "brand-image": "shopify:\/\/shop_images\/7000sx-flood-pumper_2_1.jpg"
           }
         },
@@ -267,7 +267,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Flood Restoration Equipment %26 Extractors&refinementList[product_type][1]=Commercial Dehumidifiers&refinementList[product_type][2]=Carpet Fans&refinementList[product_type][3]=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&refinementList[product_type][4]=Air Scrubbers %26 Other Commercial Filtration Devices&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Flood Restoration Equipment %26 Extractors&filter.p.product_type=Commercial Dehumidifiers&filter.p.product_type=Carpet Fans&filter.p.product_type=Filters %26 Ducting (Air Scrubbers %26 Dehumidifiers)&filter.p.product_type=Air Scrubbers %26 Other Commercial Filtration Devices&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/high-speed-air-mover-quarter.jpg"
           }
         },
@@ -275,7 +275,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "XPower®",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=XPower&refinementList%5Bproduct_type%5D%5B0%5D=Flood%20Restoration%20Equipment%20%26%20Extractors&refinementList%5Bproduct_type%5D%5B1%5D=Commercial%20Dehumidifiers&refinementList%5Bproduct_type%5D%5B2%5D=Carpet%20Fans&refinementList%5Bproduct_type%5D%5B3%5D=Filters%20%26%20Ducting%20%28Air%20Scrubbers%20%26%20Dehumidifiers%29&refinementList%5Bproduct_type%5D%5B4%5D=Air%20Scrubbers%20%26%20Other%20Commercial%20Filtration%20Devices&q=XPower",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=XPower&filter.p.product_type=Flood%20Restoration%20Equipment%20%26%20Extractors&filter.p.product_type=Commercial%20Dehumidifiers&filter.p.product_type=Carpet%20Fans&filter.p.product_type=Filters%20%26%20Ducting%20%28Air%20Scrubbers%20%26%20Dehumidifiers%29&filter.p.product_type=Air%20Scrubbers%20%26%20Other%20Commercial%20Filtration%20Devices&q=XPower",
             "brand-image": "shopify:\/\/shop_images\/viking-pds-21-heated-air-mover-main-image.jpg"
           }
         }

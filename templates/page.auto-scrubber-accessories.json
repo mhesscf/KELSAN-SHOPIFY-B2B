@@ -284,7 +284,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Viper&refinementList%5Bproduct_type%5D%5B0%5D=Auto%20Scrubber%20Accessories&q=Viper",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Viper&filter.p.product_type=Auto%20Scrubber%20Accessories&q=Viper",
             "brand-image": "shopify:\/\/shop_images\/viper-vf90454-pad-holder-for-20-inch-auto-scrubbers.jpg"
           }
         },

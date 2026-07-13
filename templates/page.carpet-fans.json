@@ -234,7 +234,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "XPower®",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Xpower&refinementList%5Bproduct_type%5D%5B0%5D=Carpet%20Fans&q=Xpower",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Xpower&filter.p.product_type=Carpet%20Fans&q=Xpower",
             "brand-image": "shopify:\/\/shop_images\/viking-pds-21-heated-air-mover-main-image.jpg"
           }
         }

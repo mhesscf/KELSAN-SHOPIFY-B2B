@@ -237,7 +237,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Claire&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Stain Removal %26 Prevention&q=Claire",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Claire&filter.p.product_type=Auto Detailing Chemicals&filter.p.product_type=Stain Removal %26 Prevention&q=Claire",
             "brand-image": "shopify:\/\/shop_images\/nyco-ink-spot-nl529-q6-cae_342d9ec0-8540-4df5-88e2-508b9e66232e.jpg"
           }
         },

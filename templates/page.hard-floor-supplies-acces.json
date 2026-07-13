@@ -243,7 +243,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/tank_1.jpg"
           }
         },
@@ -251,7 +251,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Viper&filter.p.product_type=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=Viper",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Viper&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=Viper",
             "brand-image": "shopify:\/\/shop_images\/vf90453-pad-holder-top-view_1.jpg"
           }
         },
@@ -259,7 +259,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=IPC Eagle",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=IPC Eagle",
             "brand-image": "shopify:\/\/shop_images\/eag-sppv01498-front-v2.jpg"
           }
         },
@@ -267,7 +267,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Malish",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Malish&filter.p.product_type=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=Malish",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Malish&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=Malish",
             "brand-image": "shopify:\/\/shop_images\/17-inch-heavy-duty-malish-driver.jpg"
           }
         },
@@ -275,7 +275,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Floor Buffer Accessories&refinementList[product_type][1]=Auto Scrubber Accessories&refinementList[product_type][2]=Auto Scrubber Parts&refinementList[product_type][3]=Floor Buffer %26 Burnisher Parts&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Floor Buffer Accessories&filter.p.product_type=Auto Scrubber Accessories&filter.p.product_type=Auto Scrubber Parts&filter.p.product_type=Floor Buffer %26 Burnisher Parts&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/eag-mpvr08039-02_1.jpg"
           }
         }

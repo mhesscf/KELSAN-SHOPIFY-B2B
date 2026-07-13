@@ -324,7 +324,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Bright Solutions&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Disinfectants %26 Sanitizers&refinementList[product_type][3]=Floor Care Chemicals&refinementList[product_type][4]=Hard Surface Cleaners&q=Bright Solutions",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bright Solutions&filter.p.product_type=Auto Detailing Chemicals&filter.p.product_type=Carpet %26 Upholstery&filter.p.product_type=Disinfectants %26 Sanitizers&filter.p.product_type=Floor Care Chemicals&filter.p.product_type=Hard Surface Cleaners&q=Bright Solutions",
             "brand-image": "shopify:\/\/shop_images\/bright-solutions-reflection-neutral-floor-cleaner-case-of-4-gallons.jpg"
           }
         },
@@ -332,7 +332,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Auto Detailing Chemicals&refinementList[product_type][1]=Carpet %26 Upholstery&refinementList[product_type][2]=Deodorizers %26 Absorbents&refinementList[product_type][3]=Plumbing&refinementList[product_type][4]=Floor Care Chemicals&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Auto Detailing Chemicals&filter.p.product_type=Carpet %26 Upholstery&filter.p.product_type=Deodorizers %26 Absorbents&filter.p.product_type=Plumbing&filter.p.product_type=Floor Care Chemicals&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/trusted-clean-magnifico-lavender-floor-soap-2-gal.jpg"
           }
         },
@@ -340,7 +340,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Dial®",
-            "brand-link": "\/collections\/vendors?filter.p.vendor=Dial&filter.p.product_type=Disinfectants %26 Sanitizers&refinementList[product_type][1]=Body Soaps %26 Detergents&q=Dial",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Dial&filter.p.product_type=Disinfectants %26 Sanitizers&filter.p.product_type=Body Soaps %26 Detergents&q=Dial",
             "brand-image": "shopify:\/\/shop_images\/dial-original-gold-88047-antimicrobial-liquid-hand-soap.jpg"
           }
         },
@@ -348,7 +348,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Claire®",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Claire&refinementList%5Bproduct_type%5D%5B0%5D=Auto%20Detailing%20Chemicals&refinementList%5Bproduct_type%5D%5B1%5D=Disinfectants%20%26%20Sanitizers&refinementList%5Bproduct_type%5D%5B2%5D=Floor%20Care%20Chemicals&refinementList%5Bproduct_type%5D%5B3%5D=Hard%20Surface%20Cleaners&refinementList%5Bproduct_type%5D%5B4%5D=Insecticides&refinementList%5Bproduct_type%5D%5B5%5D=Stain%20Removal%20%26%20Prevention&q=Claire",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Claire&filter.p.product_type=Auto%20Detailing%20Chemicals&filter.p.product_type=Disinfectants%20%26%20Sanitizers&filter.p.product_type=Floor%20Care%20Chemicals&filter.p.product_type=Hard%20Surface%20Cleaners&filter.p.product_type=Insecticides&filter.p.product_type=Stain%20Removal%20%26%20Prevention&q=Claire",
             "brand-image": "shopify:\/\/shop_images\/claire-cl1002-disinfectant-spray-q-lemon-scent.jpg"
           }
         }

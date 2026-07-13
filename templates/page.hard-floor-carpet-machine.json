@@ -291,7 +291,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "/collections/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=CleanFreak",
+            "brand-link": "/collections/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Hard Floor Cleaning Machines&filter.p.product_type=Carpet Extractors&filter.p.product_type=Industrial Sweepers&q=CleanFreak",
             "brand-image": "shopify://shop_images/kob-00-4430-5-01_1.jpg"
           }
         },
@@ -299,7 +299,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "EDIC",
-            "brand-link": "/collections/vendors?filter.p.vendor=EDIC&filter.p.product_type=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=EDIC",
+            "brand-link": "/collections/vendors?filter.p.vendor=EDIC&filter.p.product_type=Hard Floor Cleaning Machines&filter.p.product_type=Carpet Extractors&filter.p.product_type=Industrial Sweepers&q=EDIC",
             "brand-image": "shopify://shop_images/edic-endeavor-tile-and-grout-machine_3.jpg"
           }
         },
@@ -307,7 +307,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "/collections/vendors?filter.p.vendor=Mytee&filter.p.product_type=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&q=Mytee",
+            "brand-link": "/collections/vendors?filter.p.vendor=Mytee&filter.p.product_type=Hard Floor Cleaning Machines&filter.p.product_type=Carpet Extractors&filter.p.product_type=Industrial Sweepers&q=Mytee",
             "brand-image": "shopify://shop_images/mytee-2002cs-carpet-cleaning-extractor-with-wand-hose.jpg"
           }
         },
@@ -315,7 +315,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "IPC Eagle",
-            "brand-link": "/collections/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&refinementList[product_type][3]=Pump-Up Dispensers %26 Trigger Sprayers&q=IPC Eagle",
+            "brand-link": "/collections/vendors?filter.p.vendor=IPC Eagle&filter.p.product_type=Hard Floor Cleaning Machines&filter.p.product_type=Carpet Extractors&filter.p.product_type=Industrial Sweepers&filter.p.product_type=Pump-Up Dispensers %26 Trigger Sprayers&q=IPC Eagle",
             "brand-image": "shopify://shop_images/ipc-eagle-ct30b45-automatic-floor-scrubber.jpg"
           }
         },
@@ -323,7 +323,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Advance®",
-            "brand-link": "/collections/vendors?filter.p.vendor=Advance&filter.p.product_type=Hard Floor Cleaning Machines&refinementList[product_type][1]=Carpet Extractors&refinementList[product_type][2]=Industrial Sweepers&refinementList[product_type][3]=Pump-Up Dispensers %26 Trigger Sprayers&q=Advance",
+            "brand-link": "/collections/vendors?filter.p.vendor=Advance&filter.p.product_type=Hard Floor Cleaning Machines&filter.p.product_type=Carpet Extractors&filter.p.product_type=Industrial Sweepers&filter.p.product_type=Pump-Up Dispensers %26 Trigger Sprayers&q=Advance",
             "brand-image": "shopify://shop_images/advance-adfinity-x20c-scrubber.jpg"
           }
         }

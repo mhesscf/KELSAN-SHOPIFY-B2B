@@ -331,7 +331,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Hoover®",
-            "brand-link": "/collections/vendors?filter.p.vendor=Hoover&filter.p.product_type=Vacuum Parts&refinementList[product_type][1]=Vacuum Accessories&q=Hoover",
+            "brand-link": "/collections/vendors?filter.p.vendor=Hoover&filter.p.product_type=Vacuum Parts&filter.p.product_type=Vacuum Accessories&q=Hoover",
             "brand-image": "shopify://shop_images/m-pwr-40v-li-ion-battery-ch90040-front.jpg"
           }
         },
