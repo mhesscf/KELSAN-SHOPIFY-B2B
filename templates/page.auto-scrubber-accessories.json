@@ -276,7 +276,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Auto Scrubber Accessories&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Auto Scrubber Accessories&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/trusted-clean-dura-18hd-pad-driver.jpg"
           }
         },
@@ -284,7 +284,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Viper",
-            "brand-link": "\/collections\/vendors?refinementList%5Bvendor%5D%5B0%5D=Viper&refinementList%5Bproduct_type%5D%5B0%5D=Auto%20Scrubber%20Accessories&q=Viper",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Viper&filter.p.product_type=Auto%20Scrubber%20Accessories&q=Viper",
             "brand-image": "shopify:\/\/shop_images\/viper-vf90454-pad-holder-for-20-inch-auto-scrubbers.jpg"
           }
         },
@@ -292,7 +292,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Auto Scrubber Accessories&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Auto Scrubber Accessories&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/sppv01481-front-2.jpg"
           }
         },
@@ -300,7 +300,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Clarke®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Clarke&refinementList[product_type][0]=Auto Scrubber Accessories&q=Clarke",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Clarke&filter.p.product_type=Auto Scrubber Accessories&q=Clarke",
             "brand-image": "shopify:\/\/shop_images\/vf90417-brush_1.jpg"
           }
         }

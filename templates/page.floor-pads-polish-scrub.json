@@ -302,7 +302,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Oreck",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Oreck&refinementList[product_type][0]=Floor Pads%2C Bonnets %26 Sanding Screens&q=Oreck",
+            "brand-link": "/collections/vendors?filter.p.vendor=Oreck&filter.p.product_type=Floor Pads%2C Bonnets %26 Sanding Screens&q=Oreck",
             "brand-image": "shopify://shop_images/oreck-12-inch-terry-cloth-bonnet-0437053.jpg"
           }
         },
@@ -310,7 +310,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Floor Pads%2C Bonnets %26 Sanding Screens&q=CleanFreak",
+            "brand-link": "/collections/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Floor Pads%2C Bonnets %26 Sanding Screens&q=CleanFreak",
             "brand-image": "shopify://shop_images/case-of-17-inch-red-pads.jpg"
           }
         },
@@ -318,7 +318,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "International Steel Wool",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=International Steel Wool&refinementList[product_type][0]=Floor Pads%2C Bonnets %26 Sanding Screens&q=International Steel Wool",
+            "brand-link": "/collections/vendors?filter.p.vendor=International Steel Wool&filter.p.product_type=Floor Pads%2C Bonnets %26 Sanding Screens&q=International Steel Wool",
             "brand-image": "shopify://shop_images/17-inch-texsteel-steel-wool-floor-pad.jpg"
           }
         }

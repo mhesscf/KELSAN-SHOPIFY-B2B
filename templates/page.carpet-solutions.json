@@ -280,7 +280,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Trusted Clean",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Trusted Clean&refinementList[product_type][0]=Carpet %26 Upholstery&q=Trusted Clean",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Trusted Clean&filter.p.product_type=Carpet %26 Upholstery&q=Trusted Clean",
             "brand-image": "shopify:\/\/shop_images\/trusted-clean-defoamer-vacuum-motor-protectant-n640-g2-case-of-2-gallons.jpg"
           }
         },
@@ -288,7 +288,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Bright Solutions®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Bright Solutions&refinementList[product_type][0]=Carpet %26 Upholstery&q=Bright Solutions",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Bright Solutions&filter.p.product_type=Carpet %26 Upholstery&q=Bright Solutions",
             "brand-image": "shopify:\/\/shop_images\/bright-solutions-deep-extractor-carpet-extraction-cleaner-92400-41-case.jpg"
           }
         },
@@ -296,7 +296,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nyco®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nyco&refinementList[product_type][0]=Carpet %26 Upholstery&q=Nyco",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Nyco&filter.p.product_type=Carpet %26 Upholstery&q=Nyco",
             "brand-image": "shopify:\/\/shop_images\/nyco-defoam-anti-foam-additive-nl640-case-of-4-gallons.jpg"
           }
         },
@@ -304,7 +304,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Nilodor®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Nilodor&refinementList[product_type][0]=Carpet %26 Upholstery&q=Nilodor",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Nilodor&filter.p.product_type=Carpet %26 Upholstery&q=Nilodor",
             "brand-image": "shopify:\/\/shop_images\/128sbn-shp-nilodor-encap-shampoo-and-carpet-cleaner-grp.jpg"
           }
         }

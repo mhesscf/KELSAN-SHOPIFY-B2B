@@ -216,7 +216,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "CleanFreak®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=CleanFreak&refinementList[product_type][0]=Flood Restoration Equipment %26 Extractors&q=CleanFreak",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=CleanFreak&filter.p.product_type=Flood Restoration Equipment %26 Extractors&q=CleanFreak",
             "brand-image": "shopify:\/\/shop_images\/cleanfreak-flood-extractor_1.jpg"
           }
         },
@@ -224,7 +224,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Mytee Products®, Inc.",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Mytee&refinementList[product_type][0]=Flood Restoration Equipment %26 Extractors&q=Mytee",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Mytee&filter.p.product_type=Flood Restoration Equipment %26 Extractors&q=Mytee",
             "brand-image": "shopify:\/\/shop_images\/7000sx-flood-pumper_2_1.jpg"
           }
         },
@@ -232,7 +232,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Dri-Eaz®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Dri-Eaz&refinementList[product_type][0]=Flood Restoration Equipment %26 Extractors&q=Dri-Eaz",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Dri-Eaz&filter.p.product_type=Flood Restoration Equipment %26 Extractors&q=Dri-Eaz",
             "brand-image": "shopify:\/\/shop_images\/dri-eaz-hve-3000-extractor-lg.jpg"
           }
         }

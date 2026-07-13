@@ -349,7 +349,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Safety Zone®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Safety Zone&refinementList[product_type][0]=Body Protection %26 Clothing&refinementList[product_type][1]=Eye Protection&refinementList[product_type][2]=First Aid Kits %26 Thermometers&refinementList[product_type][3]=Foot Protection&refinementList[product_type][4]=Gloves %26 Hand Protection&refinementList[product_type][5]=Hair %26 Beard Covers&refinementList[product_type][6]=Respiratory Protection&q=Safety Zone",
+            "brand-link": "/collections/vendors?filter.p.vendor=Safety Zone&filter.p.product_type=Body Protection %26 Clothing&filter.p.product_type=Eye Protection&filter.p.product_type=First Aid Kits %26 Thermometers&filter.p.product_type=Foot Protection&filter.p.product_type=Gloves %26 Hand Protection&filter.p.product_type=Hair %26 Beard Covers&filter.p.product_type=Respiratory Protection&q=Safety Zone",
             "brand-image": "shopify://shop_images/safety-zone-latex-powder-free-grpr-1-t-group.jpg"
           }
         },
@@ -357,7 +357,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Paws",
-            "brand-link": "/collections/paws?refinementList[product_type][0]=Foot Protection",
+            "brand-link": "/collections/paws?filter.p.product_type=Foot Protection",
             "brand-image": "shopify://shop_images/shoe_stripping_soles_lg.jpg"
           }
         },
@@ -365,7 +365,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "3M™",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=3M&refinementList[product_type][0]=Ear Protection&refinementList[product_type][1]=Matting&refinementList[product_type][2]=Respiratory Protection&q=3M",
+            "brand-link": "/collections/vendors?filter.p.vendor=3M&filter.p.product_type=Ear Protection&filter.p.product_type=Matting&filter.p.product_type=Respiratory Protection&q=3M",
             "brand-image": "shopify://shop_images/3m-peltor-x2-earmuffs.jpg"
           }
         },
@@ -373,7 +373,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Impact®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Body Protection %26 Clothing&refinementList[product_type][1]=Ear Protection&refinementList[product_type][2]=Respiratory Protection&q=Impact",
+            "brand-link": "/collections/vendors?filter.p.vendor=Impact&filter.p.product_type=Body Protection %26 Clothing&filter.p.product_type=Ear Protection&filter.p.product_type=Respiratory Protection&q=Impact",
             "brand-image": "shopify://shop_images/impact-promax-microporous-coveralls-grp.jpg"
           }
         }

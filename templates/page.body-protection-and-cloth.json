@@ -239,7 +239,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Safety Zone®",
-            "brand-link": "/collections/vendors?refinementList[product_type][0]=Body Protection %26 Clothing&q=Safety Zone",
+            "brand-link": "/collections/vendors?filter.p.product_type=Body Protection %26 Clothing&q=Safety Zone",
             "brand-image": "shopify://shop_images/polypropylene-disposable-lab-coat-white_1.jpg"
           }
         },
@@ -247,7 +247,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Keystone Safety®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Keystone Safety&refinementList[product_type][0]=Body Protection %26 Clothing&q=Keystone Safety",
+            "brand-link": "/collections/vendors?filter.p.vendor=Keystone Safety&filter.p.product_type=Body Protection %26 Clothing&q=Keystone Safety",
             "brand-image": "shopify://shop_images/keystone-ag-tvki-white-tyvek-sleeves.jpg"
           }
         },
@@ -255,7 +255,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Impact®",
-            "brand-link": "/collections/vendors?refinementList[vendor][0]=Impact&refinementList[product_type][0]=Body Protection %26 Clothing&q=Impact",
+            "brand-link": "/collections/vendors?filter.p.vendor=Impact&filter.p.product_type=Body Protection %26 Clothing&q=Impact",
             "brand-image": "shopify://shop_images/impact-promax-microporous-coveralls-grp.jpg"
           }
         }

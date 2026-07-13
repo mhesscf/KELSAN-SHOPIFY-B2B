@@ -375,7 +375,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Unger®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Unger&refinementList[product_type][0]=Sweeping %26 Mopping&q=Unger",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Unger&filter.p.product_type=Sweeping %26 Mopping&q=Unger",
             "brand-image": "shopify:\/\/shop_images\/24-inch-unger-excella-floor-kit-conf.jpg"
           }
         },
@@ -383,7 +383,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Geerpres®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Geerpres&refinementList[product_type][0]=Sweeping %26 Mopping&q=Geerpres",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Geerpres&filter.p.product_type=Sweeping %26 Mopping&q=Geerpres",
             "brand-image": "shopify:\/\/shop_images\/2023-geerpres-8-gal-round-bucket-w-casters-1.jpg"
           }
         },
@@ -391,7 +391,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Milwaukee Dustless",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Milwaukee Dustless&refinementList[product_type][0]=Sweeping %26 Mopping&q=Milwaukee Dustless",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Milwaukee Dustless&filter.p.product_type=Sweeping %26 Mopping&q=Milwaukee Dustless",
             "brand-image": "shopify:\/\/shop_images\/24in-gray-flagged-pvc-broom-lg.jpg"
           }
         }

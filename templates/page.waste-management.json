@@ -242,7 +242,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Rubbermaid®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Rubbermaid&refinementList[product_type][0]=Waste Management&q=Rubbermaid",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Rubbermaid&filter.p.product_type=Waste Management&q=Rubbermaid",
             "brand-image": "shopify:\/\/shop_images\/rubbermaid-untouchable-23-gal-recycling-bin-v2.jpg"
           }
         },
@@ -250,7 +250,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Unger®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Unger&refinementList[product_type][0]=Waste Management&q=Unger",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Unger&filter.p.product_type=Waste Management&q=Unger",
             "brand-image": "shopify:\/\/shop_images\/yard_waste_container_lg.jpg"
           }
         },
@@ -258,7 +258,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Sak-It™",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Sak-It&refinementList[product_type][0]=Waste Management&q=Sak-It",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Sak-It&filter.p.product_type=Waste Management&q=Sak-It",
             "brand-image": "shopify:\/\/shop_images\/sak-it-60-gallon-black-trash-can-liners-385815k.jpg"
           }
         }

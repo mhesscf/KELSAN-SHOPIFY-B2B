@@ -195,7 +195,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "Safety Zone®",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=Safety Zone&refinementList[product_type][0]=Respiratory Protection&q=Safety Zone",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=Safety Zone&filter.p.product_type=Respiratory Protection&q=Safety Zone",
             "brand-image": "shopify:\/\/shop_images\/safety-zone-3-ply-blue-face-masks-with-ear-loops-mfb-3-el-2k.jpg"
           }
         },
@@ -203,7 +203,7 @@
           "type": "brandlink",
           "settings": {
             "brand-title": "3M™",
-            "brand-link": "\/collections\/vendors?refinementList[vendor][0]=3M&refinementList[product_type][0]=Respiratory Protection&q=3M",
+            "brand-link": "\/collections\/vendors?filter.p.vendor=3M&filter.p.product_type=Respiratory Protection&q=3M",
             "brand-image": "shopify:\/\/shop_images\/3m-6000-series-respirator-left_2.jpg"
           }
         }

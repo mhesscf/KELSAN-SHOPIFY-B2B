@@ -12,7 +12,7 @@
               class="aa-ItemLink aa-ProductItem"
               onClick="${(event) => getConversionData(event, item)}"
       >
-          <div class="aa-ItemContent ${item.collections.includes("discontinued") == true ? html `discontinued-item` : html ``} ${specialtype(item) ? html `${specialtype(item)}`: html ``} ">
+          <div class="aa-ItemContent ${item.tags.includes("discontinued") == true ? html `discontinued-item` : html ``} ${specialtype(item) ? html `${specialtype(item)}`: html ``} ">
               <div class="aa-ItemPicture aa-ItemPicture--loaded ">
                   <img src="${item.variants_count > 1 ? html `${compactpic(item.product_image)}` : html `${algolia.helpers.compactImage(item)}`}" alt="${item.title}" />
                   <div class="ac-icon">
@@ -39,7 +39,7 @@
 
                   <div class="aa-ItemContentPrice">
                       <div class="aa-ItemContentPriceCurrent">
-                      ${item.collections.includes("discontinued") == true ? html `<span class="discontinued-text">Discontinued</div>` : html `
+                      ${item.tags.includes("discontinued") == true ? html `<span class="discontinued-text">Discontinued</div>` : html `
                         ${specialtype(item) == "hotdeal" || specialtype(item) == "clearance" ? html `
                             ${item.compare_at_price > item.price ? html `<span class="cross-price">${numberScrubAC(item.compare_at_price)}</span><br/>`: html ``}
                         `: html ``}
@@ -50,9 +50,11 @@
                             ${specialtype(item) == "hotdeal" ? html `<i class="fa-duotone fa-solid fa-fire" style="--fa-primary-color: #FFFF00; --fa-secondary-color: #FF8000; --fa-secondary-opacity: 1;"></i>`: html ``}
                         </span>
                         {% endcomment %}
-                      ${item.meta.plytix.package_products ? html`
-                        ${item.meta.plytix.bundle_pricing > 0 ? html `<span class="bundle-price">${priceFormat(item.meta.plytix.bundle_pricing)}</span>`: html `<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`}
-                      `: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
+                      ${item.meta.plytix.hide_pricing == "Hide Price Only (View in cart)" || item.meta.plytix.hide_pricing == "Hide Price and Button" ? html `` : html `
+                          ${item.meta.plytix.package_products ? html`
+                            ${item.meta.plytix.bundle_pricing > 0 ? html `<span class="bundle-price">${priceFormat(item.meta.plytix.bundle_pricing)}</span>`: html `<span class="bundle-price">See Product Page {% render 'icon-chevron-right' %}</span>`}
+                          `: html `<span class="norm-price">${algolia.helpers.displayPrice(item, distinct)}</span>`}
+                          `}
                       `}
 
                           {% comment %}${algolia.helpers.displayPrice(item, distinct)}{% endcomment %}
