@@ -206,8 +206,8 @@
                                 {%- if product.vendor != blank or onboarding -%}
                                        {%- unless onboarding -%}
                                            {%- assign vendorclean = product.vendor | replace: "&", "%26"-%}
-                                           Brand:<span class="brand-value"><a href="/collections/vendors?filter.p.vendor={{ vendorclean }}&q={{ vendorclean }}">{{ product.vendor }}</a></span>
-
+                                            {% comment %}Brand:<span class="brand-value"><a href="/collections/vendors?filter.p.vendor={{ vendorclean }}&q={{ vendorclean }}">{{ product.vendor }}</a></span>{% endcomment %}
+                                            Brand:<span class="brand-value"><a href="/collections/vendors?filter.p.vendor={{ vendorclean }}">{{ product.vendor }}</a></span>
                                             {% comment %}Resource gathering{% endcomment %}
                                                 {%- assign show_resources = "" -%}
                                                 {%- assign show_resources_text = false -%}
