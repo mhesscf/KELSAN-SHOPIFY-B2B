@@ -202,6 +202,7 @@ function b2blistscripts(){
                 } else {
                     if (missingOptions == 1) {
                         alert('Please choose an option.');
+                        $thisproduct.find('.productitem--action-atc').removeClass("loading");
                     } else {
                         alert("Please add a product.");
                     }
