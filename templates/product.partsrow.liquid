@@ -19,7 +19,11 @@
     {% assign variations = variations | plus: 1 %}
 {% endfor %}
 <td>
-    <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')" >{{ productFirstVar.sku }}</a>
+    {% if variations > 1 %}
+        <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')" >{{ product.metafields.plytix.main_sku }}</a>
+    {% else %}
+        <a href="/products/{{ product.handle }}" onclick="linkdl('Product Page','Parts','/products/{{ product.handle }}')" >{{ productFirstVar.sku }}</a>
+    {% endif %}
 </td>
         <td class="chem-image" >
             <a href="/products/{{ product.handle }}">{{ product.featured_image | img_url: '40x40' | img_tag: product.featured_image.alt }}</a>
