@@ -115,7 +115,7 @@
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Hot water meets a hot deal!</div>\n<h1>CleanFreak® Heated 500 PSI Portable Carpet Extractor</h1>\n<div>Was: $3,299.99<br/>Now: $2,999.99</div>",
-            "text_area_css": "@media screen and (min-width: 719px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tmargin-top:8px;\n\tmax-height:336px;\n\tmargin-left: -14px;\n\t}\n}\n@media screen and (max-width: 718px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tpadding-top:7px;\n\t}\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz h1{\nfont-size:28px;\n}",
+            "text_area_css": "@media screen and (min-width: 719px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tmargin-top:8px;\n\tmax-height:336px;\n\tmargin-left: -14px;\n\t}\n}\n@media screen and (max-width: 718px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_cqVtUz .middle-image{\n\tpadding-top:7px;\n\t}\n}",
             "bg_link": "/products/heated-500-psi-portable-extractor",
             "promo_link": "",
             "button_one_label": "Save $300",
