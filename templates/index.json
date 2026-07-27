@@ -85,10 +85,9 @@
         },
         "slide_v2_nhVKm9": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "6",
+            "sotm_icon": "8",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
             "middle_image": "/cdn/shop/files/cpl-dura-20b-special.png",
             "middle_image_alt": "Trusted Clean 'Dura 20' Automatic Floor Scrubber Special",
@@ -107,10 +106,9 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "6",
+            "sotm_icon": "7",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
             "middle_image": "/cdn/shop/files/ies-tk464-y2-special.png",
             "middle_image_alt": "CleanFreak® 'EasySweep' Carpet & Floor Vacuum Sweeper Special of the Month",
@@ -129,6 +127,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
@@ -150,6 +149,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "7",
