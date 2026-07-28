@@ -732,36 +732,51 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
                         varid:'mainatc'
                 %}
             {% endif %}
-          
-                    <button class=" product-form--atc-button main-atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
-                            id="p-atc"
-                            type="submit"
-                            {% if selected_variant and selected_variant.available == false %}
-                              disabled
-                            {% endif %}
-                            data-product-atc
-                            {% if product.template_suffix contains 'pre-order' %}
-                              data-product-atc-preorder
-                            {% endif %}
-                    >
 
-                      <span class="atc-button--text">
-                        {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
-                        <span class="atc-plus">+</span>
-                        {% unless selected_variant and selected_variant.available == false %}
-                          {% if product.template_suffix contains 'pre-order' %}
-                            {{ 'product.buttons.pre_order' | t }}
-                          {% else %}
-                            {{ 'product.buttons.add_to_cart' | t }}
-                          {% endif %}
-                        {% else %}
-                          {{ 'product.buttons.sold_out' | t }}
-                        {% endunless %}
-                      </span>
-                      <span class="atc-button--icon">
-                        {%- render 'icon-spinner' -%}
-                      </span>
-                    </button>
+
+            {% if pdiscontinued == false %}
+                <button class=" product-form--atc-button main-atc-button {% if selected_variant and selected_variant.available == false %} disabled {% endif %}"
+                        id="p-atc"
+                        type="submit"
+                        {% if selected_variant and selected_variant.available == false %}
+                          disabled
+                        {% endif %}
+                        data-product-atc
+                        {% if product.template_suffix contains 'pre-order' %}
+                          data-product-atc-preorder
+                        {% endif %}
+                >
+
+                  <span class="atc-button--text">
+                    {%- comment -%}<i class="fa-regular fa-cart-shopping"></i>{%- endcomment -%}
+                    <span class="atc-plus">+</span>
+                    {% unless selected_variant and selected_variant.available == false %}
+                      {% if product.template_suffix contains 'pre-order' %}
+                        {{ 'product.buttons.pre_order' | t }}
+                      {% else %}
+                        {{ 'product.buttons.add_to_cart' | t }}
+                      {% endif %}
+                    {% else %}
+                      {{ 'product.buttons.sold_out' | t }}
+                    {% endunless %}
+                  </span>
+                  <span class="atc-button--icon">
+                    {%- render 'icon-spinner' -%}
+                  </span>
+                </button>
+            {% else %}
+              <button class=" product-form--atc-button main-atc-button disabled"
+                      id="p-atc"
+                      type="submit"
+                      disabled
+                      data-product-atc
+              >
+                  <span class="atc-button--text">
+                    <span class="atc-plus">+</span>
+                      {{ 'product.buttons.sold_out' | t }}
+                  </span>
+              </button>
+            {%- endif -%}
                     {% comment %}\
 
                       {%- if show_dynamic_checkout_button -%}
