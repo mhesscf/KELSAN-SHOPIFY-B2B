@@ -72,7 +72,7 @@
         "type": "color",
         "id": "color_section_text",
         "label": "t:settings_schema.colors.color_section_text.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "color",
@@ -84,25 +84,25 @@
         "type": "color",
         "id": "color_section_secondary_heading",
         "label": "t:settings_schema.colors.color_section_secondary_heading.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "color",
         "id": "color_slide_arrow_background",
         "label": "t:settings_schema.colors.color_slide_arrow_background.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "color",
         "id": "color_product_highlights",
         "label": "t:settings_schema.colors.color_product_highlights.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "color",
         "id": "color_product_detail_title",
         "label": "t:settings_schema.colors.color_product_detail_title.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "color",
@@ -120,7 +120,7 @@
         "type": "color",
         "id": "color_link_hover_2",
         "label": "Alt Link Hover",
-        "default": "#32758b"
+        "default": "#3366cc"
       },
       {
         "type": "color",
@@ -178,19 +178,19 @@
         "type": "color",
         "id": "color_button_hollow_text",
         "label": "t:settings_schema.colors.color_button_hollow_text.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "color",
         "id": "color_button_hollow_border",
         "label": "t:settings_schema.colors.color_button_hollow_border.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "color",
         "id": "color_butt",
         "label": "t:settings_schema.colors.color_button_hollow_border.label",
-        "default": "#303E48"
+        "default": "#202122"
       },
       {
         "type": "header",

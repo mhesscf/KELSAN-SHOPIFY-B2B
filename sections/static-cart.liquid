@@ -1,639 +1,639 @@
-{% include 'cart-cf-promo-buy-x-and-y-get-z-logic' %}
+  {% include 'cart-cf-promo-buy-x-and-y-get-z-logic' %}
 
-{% assign is_customer = false %}
-{% if shop.customer_accounts_enabled and customer %}
-  {% assign is_customer = true %}
-{% endif %}
+  {% assign is_customer = false %}
+  {% if shop.customer_accounts_enabled and customer %}
+    {% assign is_customer = true %}
+  {% endif %}
 
-{% assign has_sidebar = false %}
-{% assign has_items = false %}
-{% assign show_continue_link = false %}
+  {% assign has_sidebar = false %}
+  {% assign has_items = false %}
+  {% assign show_continue_link = false %}
 
-{% comment %}variable to check for financing to exclude demos in the $1000 check.{% endcomment %}
-{% assign total4finance = 0 %}
+  {% comment %}variable to check for financing to exclude demos in the $1000 check.{% endcomment %}
+  {% assign total4finance = 0 %}
 
-{% if section.blocks.size > 0 %}
-  {% assign has_sidebar = true %}
-{% endif %}
+  {% if section.blocks.size > 0 %}
+    {% assign has_sidebar = true %}
+  {% endif %}
 
-{% if cart.items.size > 0 %}
-  {% assign has_items = true %}
-{% endif %}
+  {% if cart.items.size > 0 %}
+    {% assign has_items = true %}
+  {% endif %}
 
-{% assign continue_url = routes.all_products_collection_url %}
-{% if settings.continue_shopping_url != blank %}
-  {% assign continue_url = settings.continue_shopping_url %}
-{% endif %}
+  {% assign continue_url = routes.all_products_collection_url %}
+  {% if settings.continue_shopping_url != blank %}
+    {% assign continue_url = settings.continue_shopping_url %}
+  {% endif %}
 
-{% if settings.continue_url_cart %}
-  {% assign show_continue_link = true %}
-  {%- capture continue_link_html -%}
-    <a class="cart-continue" href="{{ continue_url }}">
-      {{ 'cart.general.continue_shopping' | t }}
-      {% render 'icon-library', id: 'icon-signpost-arrow' %}
-    </a>
-  {%- endcapture -%}
-{% endif %}
-
-
-{%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com-of" -%}
-<script>
-  {% comment %}csr tracking for dev only (load via gtm on frontend){% endcomment %}
-  // var name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
-  setTimeout(() => {
-  // #Get the IP-Adress and add customer field
-  $.get('http://jsonip.com/', function(r){
-  var csrCookie = "";
-  var cookiesArray = document.cookie.split(";");
-  var cookieName = "csrtracked"
-  // Iterate through the array to find the cookie with the specified name
-  for (var i = 0; i < cookiesArray.length; i++) {
-  var cookie = cookiesArray[i].trim(); // Remove leading and trailing spaces
-
-  // Check if this cookie is the one we're looking for
-  if (cookie.startsWith(cookieName + "=")) {
-  // Extract and return the cookie value
-  var csrCookie = cookie.substring(cookieName.length + 1);
-  }
-  }
-
-  if(r.ip == "135.131.203.150" || r.ip == "74.87.116.150" || csrCookie != ""){
-  var trackingCode = '<div id="csrpop" class="poppin"><div class="csr-inner"><strong>Please enter who is taking this order:</strong><p className="cart-attribute__field"><label>CSR Taking Order</label><br><select style="margin-top:5px;" id="csr-taking-order" name="attributes[CSR Taking Order]"><option value="NA">NA</option><option value="Mitch">Mitch</option><option value="Tim">Tim</option><option value="Taylor">Taylor</option></select><div class="fakebtn">Ok</div></p></div></div>';
-  $('.cart-checkout').append(trackingCode);
-
-  if(csrCookie != ""){
-  $("#csrpop select").val(csrCookie);
-  }
+  {% if settings.continue_url_cart %}
+    {% assign show_continue_link = true %}
+    {%- capture continue_link_html -%}
+      <a class="cart-continue" href="{{ continue_url }}">
+        {{ 'cart.general.continue_shopping' | t }}
+        {% render 'icon-library', id: 'icon-signpost-arrow' %}
+      </a>
+    {%- endcapture -%}
+  {% endif %}
 
 
-  $('#csrpop .fakebtn').on('click', function(e){
-  $('#csrpop').removeClass("poppin").addClass("notpoppin");
-  $('.fakebtn').hide();
-  });
+  {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com-of" -%}
+  <script>
+    {% comment %}csr tracking for dev only (load via gtm on frontend){% endcomment %}
+    // var name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+    setTimeout(() => {
+    // #Get the IP-Adress and add customer field
+    $.get('http://jsonip.com/', function(r){
+    var csrCookie = "";
+    var cookiesArray = document.cookie.split(";");
+    var cookieName = "csrtracked"
+    // Iterate through the array to find the cookie with the specified name
+    for (var i = 0; i < cookiesArray.length; i++) {
+    var cookie = cookiesArray[i].trim(); // Remove leading and trailing spaces
 
-  $('#csrpop select').on('change', function() {
-  var currentDate = new Date();
-  var expirationDate = new Date(currentDate.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
-  var expires = expirationDate.toUTCString();
-  document.cookie = "csrtracked="+this.value+"; expires=" + expires + "; path=/";;
-
-  });
-
-  }
-  })
-  }, "1000");
-  </script>
-{%- endif -%}
-{% comment %}end csr tracking on dev{% endcomment %}
-
-<script
-  type="application/json"
-  data-section-type="static-cart"
-  data-section-id="{{ section.id }}"
-  data-section-data>
-  {
-    "settings": {
-      "shipping": {{ section.settings.enable_shipping_calc | json }},
-      "money_format": {{ shop.money_format | strip_html | json }}
-    },
-    "shipping": {
-      "calculate_shipping": {{ 'cart.shipping.calculate_shipping' | t | json }},
-      "calculating": {{ 'cart.shipping.calculating' | t | json }},
-      "customer": {{ is_customer | default: false | json }},
-      "multiple_rates": {{ 'cart.shipping.multiple_rates' | t: number_of_rates: '*number_of_rates*', address: '*address*', rate: '*rate*' | json }},
-      "one_rate": {{ 'cart.shipping.one_rate' | t: address: '*address*' | json }},
-      "no_rates": {{ 'cart.shipping.no_rates' | t | json }},
-      "rate_value": {{ 'cart.shipping.rate_value' | t: rate_title: '*rate_title*', rate: '*rate*'  | json }},
-      "zip": {{ 'cart.shipping.zip' | t | json }},
-      "shipment_too_heavy": {{ 'cart.shipping.shipment_too_heavy' | t | json }},
-      "error_general": {{ 'cart.shipping.error_general' | t | json }}
+    // Check if this cookie is the one we're looking for
+    if (cookie.startsWith(cookieName + "=")) {
+    // Extract and return the cookie value
+    var csrCookie = cookie.substring(cookieName.length + 1);
     }
-  }
-</script>
+    }
+
+    if(r.ip == "135.131.203.150" || r.ip == "74.87.116.150" || csrCookie != ""){
+    var trackingCode = '<div id="csrpop" class="poppin"><div class="csr-inner"><strong>Please enter who is taking this order:</strong><p className="cart-attribute__field"><label>CSR Taking Order</label><br><select style="margin-top:5px;" id="csr-taking-order" name="attributes[CSR Taking Order]"><option value="NA">NA</option><option value="Mitch">Mitch</option><option value="Tim">Tim</option><option value="Taylor">Taylor</option></select><div class="fakebtn">Ok</div></p></div></div>';
+    $('.cart-checkout').append(trackingCode);
+
+    if(csrCookie != ""){
+    $("#csrpop select").val(csrCookie);
+    }
 
 
-<form
-  action="{{ routes.cart_url }}"
-  method="post"
-  aria-label="cart checkout"
-  id="update-cart"
-  class="sticky-layout"
->
-  <header class="cart-title">
-    <div class="cart-title-left">
-      <h1>{{ 'cart.general.your_cart' | t }}</h1>
+    $('#csrpop .fakebtn').on('click', function(e){
+    $('#csrpop').removeClass("poppin").addClass("notpoppin");
+    $('.fakebtn').hide();
+    });
 
-      {% if has_items %}
-        <div class="cart-title-total--small"></div>
-      {% endif %}
-    </div>
+    $('#csrpop select').on('change', function() {
+    var currentDate = new Date();
+    var expirationDate = new Date(currentDate.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+    var expires = expirationDate.toUTCString();
+    document.cookie = "csrtracked="+this.value+"; expires=" + expires + "; path=/";;
 
-    {% if has_items or show_continue_link %}
-      <div class="cart-title-right">
+    });
+
+    }
+    })
+    }, "1000");
+    </script>
+  {%- endif -%}
+  {% comment %}end csr tracking on dev{% endcomment %}
+
+  <script
+    type="application/json"
+    data-section-type="static-cart"
+    data-section-id="{{ section.id }}"
+    data-section-data>
+    {
+      "settings": {
+        "shipping": {{ section.settings.enable_shipping_calc | json }},
+        "money_format": {{ shop.money_format | strip_html | json }}
+      },
+      "shipping": {
+        "calculate_shipping": {{ 'cart.shipping.calculate_shipping' | t | json }},
+        "calculating": {{ 'cart.shipping.calculating' | t | json }},
+        "customer": {{ is_customer | default: false | json }},
+        "multiple_rates": {{ 'cart.shipping.multiple_rates' | t: number_of_rates: '*number_of_rates*', address: '*address*', rate: '*rate*' | json }},
+        "one_rate": {{ 'cart.shipping.one_rate' | t: address: '*address*' | json }},
+        "no_rates": {{ 'cart.shipping.no_rates' | t | json }},
+        "rate_value": {{ 'cart.shipping.rate_value' | t: rate_title: '*rate_title*', rate: '*rate*'  | json }},
+        "zip": {{ 'cart.shipping.zip' | t | json }},
+        "shipment_too_heavy": {{ 'cart.shipping.shipment_too_heavy' | t | json }},
+        "error_general": {{ 'cart.shipping.error_general' | t | json }}
+      }
+    }
+  </script>
+
+
+  <form
+    action="{{ routes.cart_url }}"
+    method="post"
+    aria-label="cart checkout"
+    id="update-cart"
+    class="sticky-layout"
+  >
+    <header class="cart-title">
+      <div class="cart-title-left">
+        <h1>{{ 'cart.general.your_cart' | t }}</h1>
+
         {% if has_items %}
-          <div class="cart-title-total--large">
-            <div class="cart-title-total" data-cart-title-total>
-              {{ 'cart.general.subtotal' | t }}
-
-              <span class="money" data-cart-total>
-                {{ cart.total_price | money }}
-              </span>
-            </div>
-          </div>
-
-          <button
-            class="button-primary main-atc-button cart-title-button checkout-btn"
-            style="width:200px"
-            name="checkout"
-            type="submit"
-            aria-label="{{ 'cart.general.checkout' | t }}"
-          >
-            <i class="fa-regular fa-cart-shopping"></i> {{ 'cart.general.checkout' | t }}
-          </button>
-
-
-          {% if shop.name contains "CleanFreak" %}
-            {%- unless shop.name contains "CleanFreak B2B"-%}
-              {% assign cart-size = cart.total_price | divided_by: 100.00 %}
-              {% assign threshold-1 = 1000 | minus: 0.01 %}
-              {% if cart-size < threshold-1 %}
-                {% assign threshold-left =  1000 |  minus: cart-size %}
-                {% assign threshold-left =  threshold-left | times:100 %}
-
-                  <div class="fg-notice fg-notice-thresh">
-                    <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
-                  </div>
-
-              {% else %}
-                <div class="fg-notice fg-notice-link">
-                  <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
-                </div>
-              {% endif %}
-            {% endunless %}
-          {% endif %}
-
-        {% elsif show_continue_link %}
-          {{ continue_link_html }}
+          <div class="cart-title-total--small"></div>
         {% endif %}
       </div>
-    {% endif %}
-  </header>
-  <div class="cart-warnings"></div>
 
-  {% assign override = 1 %}
-  {% if customer.tags contains 'SuperFreak' or override == 1 %}
-    {% assign total_sf_savings = 0 %}
-    {% comment %}calculate total discount of 10% SF discount{% endcomment %}
-    {% for cartitem in cart.items %}
+      {% if has_items or show_continue_link %}
+        <div class="cart-title-right">
+          {% if has_items %}
+            <div class="cart-title-total--large">
+              <div class="cart-title-total" data-cart-title-total>
+                {{ 'cart.general.subtotal' | t }}
 
-      {%- if cartitem.sku contains "-DEMO" -%}
-        {% comment %}do nothing{% endcomment %}
-      {%- else -%}
-        {% comment %}total only non demo pricing{% endcomment %}
-        {% assign total4finance = total4finance | plus: cartitem.price %}
-      {%- endif -%}
-
-      {% if cartitem.product.tags contains 'SuperFreak Discount Eligible' %}
-
-        {% unless cartitem.properties == empty %}
-          {%- assign org_price = 0 -%}
-          {%- assign itemtier = "" -%}
-          {% if cartitem.price > 0 %}
-            {% for property in cartitem.properties %}
-
-              {% if property.first == '_org_price' %}
-                    {%- assign org_price = property.last | plus: 0 | times: cartitem.quantity -%}
-              {% endif %}
-              {% if property.first == '_tiered_pricing' %}
-                {%- assign itemtier = property.last -%}
-              {% endif %}
-            {% endfor %}
-
-            {% if itemtier contains ":" %}
-
-              {%- assign tiered_pricing_sections_arr = itemtier | split: ":"  -%}
-              {%- assign tiered_pricing_arry = tiered_pricing_sections_arr[0] | split: "|"  -%}
-
-              {%- for tier in tiered_pricing_arry -%}
-                {%- assign tier_int = tier | plus: 0  -%}
-                {%- if cartitem.quantity >=  tier_int -%}
-                  {%- assign valid_tier = tier  -%}
-                  {%- assign valid_tier_count = forloop.index0 | plus: 1  -%}
-                {%- endif -%}
-              {%- endfor -%}
-              {%- assign tier_doll_off = tiered_pricing_sections_arr[1] | times: valid_tier_count -%}
-              {%- assign discount = tier_doll_off | times: cartitem.quantity | times: 100 -%}
-              {%- assign org_price = org_price | minus: discount -%}
-            {% endif %}
-            {% assign total_sf_savings = total_sf_savings | plus: org_price %}
-          {% endif %}
-          {% endunless %}
-       {% endif %}
-    {% endfor %}
-    {% if total_sf_savings > 0 %}
-      <div class="sf-promo-link promo-needed" style="display:none;" ><div>As a SuperFreak member, you can save <span class="sf-discount">{{ total_sf_savings | times: 0.1 | floor | money  }}</span> on this order. <br><a style="cursor:pointer" onClick="sfApply(1);">Click here to apply the promo code for this discount.</a></div></div>
-      <div class="sf-promo-link promo-applied" style="display:none;" ><div>As a SuperFreak member, you will save <span class="sf-discount">{{ total_sf_savings | times: 0.1 | floor | money  }}</span> on this order.<br>Your promo code has already been applied and will show up on the checkout.</div></div>
-    {% endif %}
-  {% endif %}
-
-  <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %} cartitems-contain">
-    <div class="cartitems">
-      {% if has_items %}
-        {%
-          render 'cart-item-list',
-          show_sku: section.settings.show_sku
-          cart: cart
-        %}
-        <div class="cart-total">
-          <a data-href="/cart/clear" class="btn main-default-button button-primary" id="empty-cart" style="margin-bottom:10px;"><i class="fa-regular fa-trash"></i> Empty Cart</a>
-          {% comment %}<a href="/cart" class="btn button-primary" id="update-cart" style="margin-bottom:10px;">Update Cart</a>{% endcomment %}
-          <a class="btn button-primary main-default-button btm-update-cart" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;"><i class="fa-solid fa-arrows-rotate"></i> Update Cart</a>
-
-          {% if section.settings.enable_order_notes %}
-            <div class="cart-ordernote">
-              <span class="cart-ordernote-heading">{{ 'cart.general.enter_order_note' | t }}</span>
-              <div class="form-field">
-                <textarea class="form-field-input form-field-textarea" name="note" id="cart-note">{{ cart.note }}</textarea>
-                <label class="form-field-title" for="cart-note">{{ 'cart.general.special_instructions' | t }}</label>
-              </div>
-            </div>
-          {% endif %}
-          {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
-            <span class="raq-btn"></span>
-            <script>
-              jQuery(document).ready(function($){
-                jQuery('#shopify-block-quick_quote_quote_button_ctYmQx a').prepend('<i class="fa-regular fa-notebook"></i>');
-                var btnHtml = jQuery('#shopify-block-quick_quote_quote_button_ctYmQx').html();
-                jQuery('.raq-btn').html(btnHtml);
-              });
-            </script>
-          {% endif %}
-          {% comment %}start of fg break out of form{% endcomment %}
-        </div>
-    </div>
-  </section>
-  {%- unless shop.name contains "CleanFreak B2B"-%}
-    <div class="fg-area">
-    </div>
-  {% endunless %}
-  {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
-      {% for tag in customer.tags %}
-        {% if tag == "PO-Approved" %}
-          {%- assign po_user = 1 -%}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      {%- if po_user == 1 -%}
-        <p class="cart-attribute__field">
-          <label for="po-number">PO Number</label>
-          <input id="po-number" type="text" name="attributes[PO Number]" value="{{ cart.attributes["PO Number"] }}">
-        </p>
-      {% endif %}
-  {% endif %}
-  <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %} total-area">
-    <div class="cartitems">
-        <div class="cart-total">
-          {% comment %}end fg break out of form{% endcomment %}
-          <div class="cart-total-title">Order Totals</div>
-          <div class="cart-total-contain">
-            <div class="cart-final-total">
-
-              <noscript>
-                <button
-                  class="cart-update"
-                  type="submit"
-                  aria-label="{{ 'cart.general.update' | t }}"
-                >
-                  {{ 'cart.general.update' | t }}
-                </button>
-              </noscript>
-
-              <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}">
-                {%
-                  render 'cart-discounts',
-                  cart: cart
-                %}
-              </ul>
-
-              <div class="cart-subtotal">
-                <span>{{ 'cart.general.subtotal' | t }}</span>
-                <span class="money" data-cart-total>{{ cart.total_price | money }}</span>
+                <span class="money" data-cart-total>
+                  {{ cart.total_price | money }}
+                </span>
               </div>
             </div>
 
-            <div class="cart-shipping">
-              {%- capture taxes_shipping_checkout -%}
-                {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                  {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                {%- elsif cart.taxes_included -%}
-                  {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
-                {%- elsif shop.shipping_policy.body != blank -%}
-                  {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
-                {%- else -%}
-                  {{ 'cart.general.tax_and_shipping' | t }}
-                {%- endif -%}
-              {%- endcapture -%}
+            <button
+              class="button-primary main-atc-button cart-title-button checkout-btn"
+              style="width:200px"
+              name="checkout"
+              type="submit"
+              aria-label="{{ 'cart.general.checkout' | t }}"
+            >
+              <i class="fa-regular fa-cart-shopping"></i> {{ 'cart.general.checkout' | t }}
+            </button>
 
-              <p class="cart-message meta">{{ taxes_shipping_checkout }}</p>
 
-              {% comment %}
-                snippets/cart-shipping.liquid has an internal check to see if shipping is required
-              {% endcomment %}
-              {% if section.settings.enable_shipping_calc and shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
-                {% render 'cart-shipping' %}
-              {% endif %}
-
-            </div>
-
-            <div class="cart-checkout">
-              <button
-                class="button-primary main-atc-button checkout-btn"
-                style="width:150px"
-                type="submit"
-                name="checkout"
-                aria-label="{{ 'cart.general.checkout' | t }}"
-              >
-                  <i class="fa-regular fa-cart-shopping checkout-btn"></i>
-                {{ 'cart.general.checkout' | t }}
-              </button>
-              
-              {% if total4finance >= 100000 %}
-                <div class="finance-wrapper"></div>
-              {% endif %}
-              {% comment %}
-              <script>
-                jQuery(document).ready(function($){
-                  jQuery(".sitemain-cart").addClass('sticky-layout')
-                });
-              </script>
-              {% endcomment %}
-              {% if shop.name contains "CleanFreak" %}
-                {%- unless shop.name contains "CleanFreak B2B"-%}
-                  {% assign cart-size = cart.total_price | divided_by: 100.00 %}
-                  {% assign threshold-1 = 1000 | minus: 0.01 %}
-                  {% if cart-size < threshold-1 %}
-                    {% assign threshold-left =  1000 |  minus: cart-size %}
-                    {% assign threshold-left =  threshold-left | times:100 %}
+            {% if shop.name contains "CleanFreak" %}
+              {%- unless shop.name contains "CleanFreak B2B"-%}
+                {% assign cart-size = cart.total_price | divided_by: 100.00 %}
+                {% assign threshold-1 = 1000 | minus: 0.01 %}
+                {% if cart-size < threshold-1 %}
+                  {% assign threshold-left =  1000 |  minus: cart-size %}
+                  {% assign threshold-left =  threshold-left | times:100 %}
 
                     <div class="fg-notice fg-notice-thresh">
                       <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
                     </div>
 
-                  {% else %}
-                    <div class="fg-notice fg-notice-link">
-                      <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
-                    </div>
-                  {% endif %}
-                {% endunless %}
-              {% endif %}
-
-              {% if additional_checkout_buttons %}
-                <div class="additional-checkout-buttons">
-                  {{ content_for_additional_checkout_buttons }}
-                </div>
-              {% endif %}
-
-              {% if show_continue_link %}
-                {{ continue_link_html }}
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      {% else %}
-        <div class="cartitems-empty">
-          <div class="cartitems-empty--inner">
-            <p>{{ 'cart.general.cart_empty' | t }}</p>
-
-            {% if show_continue_link %}
-              <a class="button-primary" href="{{ continue_url }}">
-                {% render 'icon-library', id: 'icon-cart' %}
-                {{ 'cart.general.continue_shopping' | t }}
-              </a>
+                {% else %}
+                  <div class="fg-notice fg-notice-link">
+                    <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
+                  </div>
+                {% endif %}
+              {% endunless %}
             {% endif %}
-          </div>
+
+          {% elsif show_continue_link %}
+            {{ continue_link_html }}
+          {% endif %}
         </div>
       {% endif %}
-    </div>
-    {% if has_sidebar %}
-      <div class="cart-sidebar" data-cart-sidebar>
-        {% for block in section.blocks %}
-          <div class="cart-sidebar-block" {{ block.shopify_attributes }}>
-            {% if block.type == 'image' %}
-              {% assign image = block.settings.image %}
+    </header>
+    <div class="cart-warnings"></div>
 
-              <article class="cart-sidebar-item">
-                {% if image %}
-                  {%
-                    render 'rimg',
-                    img: image,
-                    class: 'cart-sidebar-item-image',
-                    size: '445x',
-                    lazy: true,
-                    canvas: true
-                  %}
-                {% else %}
-                  {{ 'image' | placeholder_svg_tag: 'placeholder--image cart-sidebar-item-image' }}
+    {% assign override = 1 %}
+    {% if customer.tags contains 'SuperFreak' or override == 1 %}
+      {% assign total_sf_savings = 0 %}
+      {% comment %}calculate total discount of 10% SF discount{% endcomment %}
+      {% for cartitem in cart.items %}
+
+        {%- if cartitem.sku contains "-DEMO" -%}
+          {% comment %}do nothing{% endcomment %}
+        {%- else -%}
+          {% comment %}total only non demo pricing{% endcomment %}
+          {% assign total4finance = total4finance | plus: cartitem.price %}
+        {%- endif -%}
+
+        {% if cartitem.product.tags contains 'SuperFreak Discount Eligible' %}
+
+          {% unless cartitem.properties == empty %}
+            {%- assign org_price = 0 -%}
+            {%- assign itemtier = "" -%}
+            {% if cartitem.price > 0 %}
+              {% for property in cartitem.properties %}
+
+                {% if property.first == '_org_price' %}
+                      {%- assign org_price = property.last | plus: 0 | times: cartitem.quantity -%}
                 {% endif %}
-              </article>
+                {% if property.first == '_tiered_pricing' %}
+                  {%- assign itemtier = property.last -%}
+                {% endif %}
+              {% endfor %}
+
+              {% if itemtier contains ":" %}
+
+                {%- assign tiered_pricing_sections_arr = itemtier | split: ":"  -%}
+                {%- assign tiered_pricing_arry = tiered_pricing_sections_arr[0] | split: "|"  -%}
+
+                {%- for tier in tiered_pricing_arry -%}
+                  {%- assign tier_int = tier | plus: 0  -%}
+                  {%- if cartitem.quantity >=  tier_int -%}
+                    {%- assign valid_tier = tier  -%}
+                    {%- assign valid_tier_count = forloop.index0 | plus: 1  -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- assign tier_doll_off = tiered_pricing_sections_arr[1] | times: valid_tier_count -%}
+                {%- assign discount = tier_doll_off | times: cartitem.quantity | times: 100 -%}
+                {%- assign org_price = org_price | minus: discount -%}
+              {% endif %}
+              {% assign total_sf_savings = total_sf_savings | plus: org_price %}
             {% endif %}
-
-            {% if block.type == 'richtext' %}
-              <article class="cart-sidebar-item cart-sidebar-item--text rte">
-                {{ block.settings.richtext }}
-              </article>
-            {% endif %}
-
-            {% if block.type == 'page' %}
-              <article class="cart-sidebar-item cart-sidebar-item--text rte">
-                {{ pages[block.settings.page].content }}
-              </article>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </section>
-
-{% if has_items == false %}
-  {% comment %}empty cart sidebar{% endcomment %}
-  <section class="cartitems--container  total-area">
-    <div class="cartitems">
-      <div class="cart-total">
-        <div class="cart-total-title">Order Totals</div>
-        <div class="cart-total-contain">
-          <div class="cart-final-total">
-            <div class="cart-subtotal">
-              <span>Subtotal</span>
-              <span class="money" data-cart-total="">$0.00</span>
-            </div>
-          </div>
-
-          <div class="cart-shipping"><p class="cart-message meta">Taxes and shipping calculated at checkout
-            </p>
-          </div>
-
-          <div class="cart-checkout">
-            <div class="button-primary main-atc-button checkout-btn mdc-ripple-surface mdc-ripple-upgraded disabled" style="width:150px">
-              <i class="fa-regular fa-cart-shopping checkout-btn"></i>
-              Check out
-            </div>
-            <style>
-              .button-primary.mdc-ripple-surface.mdc-ripple-upgraded.disabled{
-                pointer-events: none;
-              }
-            </style>
-            {%- unless shop.name contains "CleanFreak B2B"-%}
-              <div class="fg-notice fg-notice-link">
-                <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> $1000.00 away from a Free Gift!
-                </span>
-              </div>
             {% endunless %}
-            {{ continue_link_html }}
+         {% endif %}
+      {% endfor %}
+      {% if total_sf_savings > 0 %}
+        <div class="sf-promo-link promo-needed" style="display:none;" ><div>As a SuperFreak member, you can save <span class="sf-discount">{{ total_sf_savings | times: 0.1 | floor | money  }}</span> on this order. <br><a style="cursor:pointer" onClick="sfApply(1);">Click here to apply the promo code for this discount.</a></div></div>
+        <div class="sf-promo-link promo-applied" style="display:none;" ><div>As a SuperFreak member, you will save <span class="sf-discount">{{ total_sf_savings | times: 0.1 | floor | money  }}</span> on this order.<br>Your promo code has already been applied and will show up on the checkout.</div></div>
+      {% endif %}
+    {% endif %}
+
+    <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %} cartitems-contain">
+      <div class="cartitems">
+        {% if has_items %}
+          {%
+            render 'cart-item-list',
+            show_sku: section.settings.show_sku
+            cart: cart
+          %}
+          <div class="cart-total">
+            <a data-href="/cart/clear" class="btn main-default-button button-primary" id="empty-cart" style="margin-bottom:10px;"><i class="fa-regular fa-trash"></i> Empty Cart</a>
+            {% comment %}<a href="/cart" class="btn button-primary" id="update-cart" style="margin-bottom:10px;">Update Cart</a>{% endcomment %}
+            <a class="btn button-primary main-default-button btm-update-cart" onClick="updateCart()" id="update-cart" style="margin-bottom:10px;"><i class="fa-solid fa-arrows-rotate"></i> Update Cart</a>
+
+            {% if section.settings.enable_order_notes %}
+              <div class="cart-ordernote">
+                <span class="cart-ordernote-heading">{{ 'cart.general.enter_order_note' | t }}</span>
+                <div class="form-field">
+                  <textarea class="form-field-input form-field-textarea" name="note" id="cart-note">{{ cart.note }}</textarea>
+                  <label class="form-field-title" for="cart-note">{{ 'cart.general.special_instructions' | t }}</label>
+                </div>
+              </div>
+            {% endif %}
+            {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+              <span class="raq-btn"></span>
+              <script>
+                jQuery(document).ready(function($){
+                  jQuery('#shopify-block-quick_quote_quote_button_ctYmQx a').prepend('<i class="fa-regular fa-notebook"></i>');
+                  var btnHtml = jQuery('#shopify-block-quick_quote_quote_button_ctYmQx').html();
+                  jQuery('.raq-btn').html(btnHtml);
+                });
+              </script>
+            {% endif %}
+            {% comment %}start of fg break out of form{% endcomment %}
+          </div>
+      </div>
+    </section>
+    {%- unless shop.name contains "CleanFreak B2B"-%}
+      <div class="fg-area">
+      </div>
+    {% endunless %}
+    {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" -%}
+        {% for tag in customer.tags %}
+          {% if tag == "PO-Approved" %}
+            {%- assign po_user = 1 -%}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {%- if po_user == 1 -%}
+          <p class="cart-attribute__field">
+            <label for="po-number">PO Number</label>
+            <input id="po-number" type="text" name="attributes[PO Number]" value="{{ cart.attributes["PO Number"] }}">
+          </p>
+        {% endif %}
+    {% endif %}
+    <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %} total-area">
+      <div class="cartitems">
+          <div class="cart-total">
+            {% comment %}end fg break out of form{% endcomment %}
+            <div class="cart-total-title">Order Totals</div>
+            <div class="cart-total-contain">
+              <div class="cart-final-total">
+
+                <noscript>
+                  <button
+                    class="cart-update"
+                    type="submit"
+                    aria-label="{{ 'cart.general.update' | t }}"
+                  >
+                    {{ 'cart.general.update' | t }}
+                  </button>
+                </noscript>
+
+                <ul class="discount-list" data-cart-discounts aria-label="{{ 'product.general.discounts' | t }}">
+                  {%
+                    render 'cart-discounts',
+                    cart: cart
+                  %}
+                </ul>
+
+                <div class="cart-subtotal">
+                  <span>{{ 'cart.general.subtotal' | t }}</span>
+                  <span class="money" data-cart-total>{{ cart.total_price | money }}</span>
+                </div>
+              </div>
+
+              <div class="cart-shipping">
+                {%- capture taxes_shipping_checkout -%}
+                  {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                    {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- elsif cart.taxes_included -%}
+                    {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+                  {%- elsif shop.shipping_policy.body != blank -%}
+                    {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                  {%- else -%}
+                    {{ 'cart.general.tax_and_shipping' | t }}
+                  {%- endif -%}
+                {%- endcapture -%}
+
+                <p class="cart-message meta">{{ taxes_shipping_checkout }}</p>
+
+                {% comment %}
+                  snippets/cart-shipping.liquid has an internal check to see if shipping is required
+                {% endcomment %}
+                {% if section.settings.enable_shipping_calc and shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
+                  {% render 'cart-shipping' %}
+                {% endif %}
+
+              </div>
+
+              <div class="cart-checkout">
+                <button
+                  class="button-primary main-atc-button checkout-btn"
+                  style="width:150px"
+                  type="submit"
+                  name="checkout"
+                  aria-label="{{ 'cart.general.checkout' | t }}"
+                >
+                    <i class="fa-regular fa-cart-shopping checkout-btn"></i>
+                  {{ 'cart.general.checkout' | t }}
+                </button>
+
+                {% if total4finance >= 100000 %}
+                  <div class="finance-wrapper"></div>
+                {% endif %}
+                {% comment %}
+                <script>
+                  jQuery(document).ready(function($){
+                    jQuery(".sitemain-cart").addClass('sticky-layout')
+                  });
+                </script>
+                {% endcomment %}
+                {% if shop.name contains "CleanFreak" %}
+                  {%- unless shop.name contains "CleanFreak B2B"-%}
+                    {% assign cart-size = cart.total_price | divided_by: 100.00 %}
+                    {% assign threshold-1 = 1000 | minus: 0.01 %}
+                    {% if cart-size < threshold-1 %}
+                      {% assign threshold-left =  1000 |  minus: cart-size %}
+                      {% assign threshold-left =  threshold-left | times:100 %}
+
+                      <div class="fg-notice fg-notice-thresh">
+                        <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span>{{ threshold-left | money}} away from a Free Gift!
+                      </div>
+
+                    {% else %}
+                      <div class="fg-notice fg-notice-link">
+                        <a href="#similar-products"><span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> You qualify for a Free Gift!<br/><span>View Details <i style="top:-1px" class="fa-solid fa-arrow-right"></i></span></a>
+                      </div>
+                    {% endif %}
+                  {% endunless %}
+                {% endif %}
+
+                {% if additional_checkout_buttons %}
+                  <div class="additional-checkout-buttons">
+                    {{ content_for_additional_checkout_buttons }}
+                  </div>
+                {% endif %}
+
+                {% if show_continue_link %}
+                  {{ continue_link_html }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="cartitems-empty">
+            <div class="cartitems-empty--inner">
+              <p>{{ 'cart.general.cart_empty' | t }}</p>
+
+              {% if show_continue_link %}
+                <a class="button-primary" href="{{ continue_url }}">
+                  {% render 'icon-library', id: 'icon-cart' %}
+                  {{ 'cart.general.continue_shopping' | t }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      {% if has_sidebar %}
+        <div class="cart-sidebar" data-cart-sidebar>
+          {% for block in section.blocks %}
+            <div class="cart-sidebar-block" {{ block.shopify_attributes }}>
+              {% if block.type == 'image' %}
+                {% assign image = block.settings.image %}
+
+                <article class="cart-sidebar-item">
+                  {% if image %}
+                    {%
+                      render 'rimg',
+                      img: image,
+                      class: 'cart-sidebar-item-image',
+                      size: '445x',
+                      lazy: true,
+                      canvas: true
+                    %}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder--image cart-sidebar-item-image' }}
+                  {% endif %}
+                </article>
+              {% endif %}
+
+              {% if block.type == 'richtext' %}
+                <article class="cart-sidebar-item cart-sidebar-item--text rte">
+                  {{ block.settings.richtext }}
+                </article>
+              {% endif %}
+
+              {% if block.type == 'page' %}
+                <article class="cart-sidebar-item cart-sidebar-item--text rte">
+                  {{ pages[block.settings.page].content }}
+                </article>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+
+  {% if has_items == false %}
+    {% comment %}empty cart sidebar{% endcomment %}
+    <section class="cartitems--container  total-area">
+      <div class="cartitems">
+        <div class="cart-total">
+          <div class="cart-total-title">Order Totals</div>
+          <div class="cart-total-contain">
+            <div class="cart-final-total">
+              <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span class="money" data-cart-total="">$0.00</span>
+              </div>
+            </div>
+
+            <div class="cart-shipping"><p class="cart-message meta">Taxes and shipping calculated at checkout
+              </p>
+            </div>
+
+            <div class="cart-checkout">
+              <div class="button-primary main-atc-button checkout-btn mdc-ripple-surface mdc-ripple-upgraded disabled" style="width:150px">
+                <i class="fa-regular fa-cart-shopping checkout-btn"></i>
+                Check out
+              </div>
+              <style>
+                .button-primary.mdc-ripple-surface.mdc-ripple-upgraded.disabled{
+                  pointer-events: none;
+                }
+              </style>
+              {%- unless shop.name contains "CleanFreak B2B"-%}
+                <div class="fg-notice fg-notice-link">
+                  <span class="mini-box">{{ images['gift-box-sm.png'] | image_url: height: 28 | image_tag }}</span> $1000.00 away from a Free Gift!
+                  </span>
+                </div>
+              {% endunless %}
+              {{ continue_link_html }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  {% endif %}
+    </section>
+    {% endif %}
 
-</form>
-{% schema %}
-{
-  "name": "t:sections.cart_page.name",
-  "class": "cart--section section--canonical",
-  "max_blocks": 2,
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_sku",
-      "label": "t:sections.cart_page.show_sku.label",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_order_notes",
-      "label": "t:sections.cart_page.enable_order_notes.label",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "t:sections.cart_page.header_1.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_shipping_calc",
-      "label": "t:sections.cart_page.enable_shipping_calc.label",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "shipping_calc_default_country",
-      "label": "t:sections.cart_page.shipping_calc_default_country.label",
-      "default": "United States"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "richtext",
-      "name": "t:sections.cart_page.blocks.rich_text.name",
-      "limit": 1,
-      "settings": [
-        {
-          "id": "richtext",
-          "type": "richtext",
-          "label": "t:sections.cart_page.blocks.rich_text.richtext.label",
-          "default": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.</p>"
-        }
-      ]
-    },
-    {
-      "type": "image",
-      "name": "t:sections.cart_page.blocks.image.name",
-      "limit": 1,
-      "settings": [
-        {
-          "id": "image",
-          "type": "image_picker",
-          "label": "t:sections.cart_page.blocks.image.image.label"
-        }
-      ]
-    },
-    {
-      "type": "page",
-      "name": "t:sections.cart_page.blocks.page.name",
-      "limit": 1,
-      "settings": [
-        {
-          "id": "page",
-          "type": "page",
-          "label": "t:sections.cart_page.blocks.page.page.label"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
-
-<script>
-  $(document).ready(function($){
-    $(".gwp-section").hide().prependTo(".fg-area");
-    $(".fg-area .gwp-section").show();
-  });
-
-
-  let timeoutId;
-  function qtyAdjust(key,plusminus, step){
-    step = parseInt(step)
-    if(isNaN(step)){
-      step = 1;
-    }
-
-    var inputId ="updates_"+key;
-    var quantityNumber = document.getElementById(inputId);
-    var currentValue = parseInt(quantityNumber.value);
-
-    if(plusminus == "minus"){
-      currentValue -= step;
-    }else{
-      currentValue += step;
-    }
-
-      quantityNumber.value = currentValue;
-
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      // console.log('updating');
-      window.Shopify.changeItem(key, currentValue, response => {
-        console.log("item updated");
-      });
-    }, "300");
-
+  </form>
+  {% schema %}
+  {
+    "name": "t:sections.cart_page.name",
+    "class": "cart--section section--canonical",
+    "max_blocks": 2,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_sku",
+        "label": "t:sections.cart_page.show_sku.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_order_notes",
+        "label": "t:sections.cart_page.enable_order_notes.label",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:sections.cart_page.header_1.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_shipping_calc",
+        "label": "t:sections.cart_page.enable_shipping_calc.label",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "shipping_calc_default_country",
+        "label": "t:sections.cart_page.shipping_calc_default_country.label",
+        "default": "United States"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "richtext",
+        "name": "t:sections.cart_page.blocks.rich_text.name",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "richtext",
+            "type": "richtext",
+            "label": "t:sections.cart_page.blocks.rich_text.richtext.label",
+            "default": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.</p>"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "name": "t:sections.cart_page.blocks.image.name",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "t:sections.cart_page.blocks.image.image.label"
+          }
+        ]
+      },
+      {
+        "type": "page",
+        "name": "t:sections.cart_page.blocks.page.name",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "page",
+            "type": "page",
+            "label": "t:sections.cart_page.blocks.page.page.label"
+          }
+        ]
+      }
+    ]
   }
+  {% endschema %}
 
-  function updateQtyTo(qty, key){
-
-    var inputId ="updates_"+key;
-    var quantityNumber = document.getElementById(inputId);
-    var newValue = parseInt(qty);
-
-
-
-    quantityNumber.value = newValue;
-
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      // console.log('updating');
-      window.Shopify.changeItem(key, newValue, response => {
-        console.log("item updated");
-      });
-    }, "300");
-
-    setTimeout(() => {
-      $('#update-cart').attr('href',"/cart");
-      window.location = $('#update-cart').attr('href');
-    }, "1000");
+  <script>
+    $(document).ready(function($){
+      $(".gwp-section").hide().prependTo(".fg-area");
+      $(".fg-area .gwp-section").show();
+    });
 
 
-  }
+    let timeoutId;
+    function qtyAdjust(key,plusminus, step){
+      step = parseInt(step)
+      if(isNaN(step)){
+        step = 1;
+      }
 
-</script>
+      var inputId ="updates_"+key;
+      var quantityNumber = document.getElementById(inputId);
+      var currentValue = parseInt(quantityNumber.value);
+
+      if(plusminus == "minus"){
+        currentValue -= step;
+      }else{
+        currentValue += step;
+      }
+
+        quantityNumber.value = currentValue;
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        // console.log('updating');
+        window.Shopify.changeItem(key, currentValue, response => {
+          console.log("item updated");
+        });
+      }, "300");
+
+    }
+
+    function updateQtyTo(qty, key){
+
+      var inputId ="updates_"+key;
+      var quantityNumber = document.getElementById(inputId);
+      var newValue = parseInt(qty);
+
+
+
+      quantityNumber.value = newValue;
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        // console.log('updating');
+        window.Shopify.changeItem(key, newValue, response => {
+          console.log("item updated");
+        });
+      }, "300");
+
+      setTimeout(() => {
+        $('#update-cart').attr('href',"/cart");
+        window.location = $('#update-cart').attr('href');
+      }, "1000");
+
+
+    }
+
+  </script>

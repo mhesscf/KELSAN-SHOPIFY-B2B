@@ -302,7 +302,7 @@
     </div>
     <hr>
     <div style="display: block; text-align: center; padding-bottom:10px;">
-      <span class="copy" style="display: block;text-align: center;font-size: 15px;color: #303e48;">Copyright © {{ "now" | date: "%Y" }} {{ shop.name }}, All Rights Reserved.<br/>
+      <span class="copy" style="display: block;text-align: center;font-size: 15px;color: #202122;">Copyright © {{ "now" | date: "%Y" }} {{ shop.name }}, All Rights Reserved.<br/>
       <span style="color:black;" class="bottom-kelsan">A Division of <img style="margin-bottom:-3px" src="{{ 'kelsan-logo-v2.png' | file_img_url  }}" alt="Kelsan" /></span>
       </span>
     </div>
@@ -475,7 +475,7 @@
         }
       }, 2000);
     }else if (window.location.href.indexOf("/apps/request-quote?page=accept&note=sf") > -1) {
-      $('#pnlQuote').prepend("<div class='waitblock' style='border-bottom:1px solid #303e48; padding:5px 10px;'><i class='fa-solid fa-hourglass-start'></i> Please wait... </div>")
+      $('#pnlQuote').prepend("<div class='waitblock' style='border-bottom:1px solid #202122; padding:5px 10px;'><i class='fa-solid fa-hourglass-start'></i> Please wait... </div>")
 
       setTimeout(function(){
         var note_box = $('#quote-txt-comment');
@@ -502,7 +502,7 @@
         if(show_confirm_note == 1 && run_sf_add == 0){
           $('.waitblock').hide();
           $('#quote-bottom-buttons').hide();
-          $('#pnlQuote').prepend("<div style='border-bottom:1px solid #303e48; padding:5px 10px;'><i class='fa-sharp fa-regular fa-notebook'></i> Thank you for your reply! A customer service representative will update your quote and notify you when it has been updated.</div>")
+          $('#pnlQuote').prepend("<div style='border-bottom:1px solid #202122; padding:5px 10px;'><i class='fa-sharp fa-regular fa-notebook'></i> Thank you for your reply! A customer service representative will update your quote and notify you when it has been updated.</div>")
         }else if(run_sf_add == 1){
           // check for comment before adding comment
           note_box.val(superfreak_note);

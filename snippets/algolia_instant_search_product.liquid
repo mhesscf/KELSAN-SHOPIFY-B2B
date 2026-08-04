@@ -1,14 +1,14 @@
 
 <script>
     function isDiscontinued(tag){
-        if(tag.includes("discontinued")){
+        if(tag.includes("Discontinued")){
             return true;
         }else{
             return false;
         }
     }
     function isBuyable(middleware,im,inv,tags,bundleitems = "",inventorypolicy){
-        if (tags.includes("discontinued")) {
+        if (tags.includes("Discontinued")) {
             return false;
         }else if (bundleitems != ""){
             return true;
