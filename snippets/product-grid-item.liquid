@@ -595,6 +595,18 @@ data-product-quickshop-url="{{ product_link }}"
         {%- endif -%}
       {%- endunless -%}
       {%- if product.metafields.plytix.package_products != blank -%}
+
+        <div class="status-area">
+          <div class="sx-status">
+            <span class="status-desc main-notice">See Product Page for Stock Status Details</span>
+            <details>
+              <summary class="status-order-pop ">What is this <i class="fa-solid fa-circle-question"></i></summary>
+              <p>This product has multiple item offerings. See product page for the stock status of each individual item.</p>
+            </details>
+          </div>
+        </div>
+
+
         {%- if product.metafields.plytix.bundle_pricing != blank -%}
           <div class="price productitem__price ">
             <div class="price__current" data-price-container="" style="">
@@ -1039,76 +1051,93 @@ data-product-quickshop-url="{{ product_link }}"
                 >
 {% endcomment %}
 
-                  <button
+
+                    {%- if pdiscontinued == false -%}
+
+                    <button
+                            {% if product.metafields.plytix.general_product_type == "Machine" %}
+                              data-sfeligible-name="properties[_sf_eligible]"
+                              data-sfeligible="true"
+                            {% endif %}
+
+                            class="{{ quick_buy_classes }} main-atc-button"
+                            type="button"
+                            aria-label="{{ quick_buy_text }}"
+                            {% unless has_variants %}
+                              data-quick-buy
+                            {% else %}
+                              data-quickshop-slim
+                            {% endunless %}
+                            data-erpsku-name="properties[_erp_sku]"
+                            data-availqty-name="properties[_available_qty]"
+                            {% if product.metafields.plytix.general_product_type == "Machine" %}
+                              data-sfeligible-name="properties[_sf_eligible]"
+                              data-sfeligible="true"
+                            {% endif %}
 
 
+                            {% if isSpecial == false %}
+                              data-tp-name="properties[_tiered_pricing]"
+                            {% endif %}
+                            data-org-price-name="properties[_org_price]"
+                            data-vissku-name="properties[Sku]"
+                            data-status-name="properties[Status]"
+                            data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
+                            data-erpSku="{{ product.selected_or_first_available_variant.metafields.plytix.erp_sku }}"
+                            data-availqty="{{ product.selected_or_first_available_variant.inventory_quantity }}"
+                            {% if isSpecial == false %}
+                              {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
+                                data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",","" }}"
+                              {%- else -%}
+                                data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
+                              {%- endif -%}
+                            {% endif %}
+                            data-org-price="{{product.variants.first.price}}"
+                            data-vissku="{{ product.selected_or_first_available_variant.sku }}"
+                            data-status="{{ stockStatusNote }}"
+                            data-variant-id="{{ product.variants.first.id }}"
+                            data-pid = "{{product.id}}"
+                            data-id="{{ product.variants.first.id }}"
+                            data-ptitle = "{{product.title | remove: "'" | remove: '"'}}"
+                            data-pprice = "{{product.variants.first.price | times: 0.01}}"
+                            data-pbrand = "{{product.vendor | remove: "'" | remove: '"'}}"
+                            data-ptype = "{{product.type | remove: "'" | remove: '"'}}"
+                            data-pcategory_id = "{{ product.collections.first.id }}"
+                            data-pcategory_name = "{{ product.collections.first.title | remove: "'" | remove: '"' }}"
+                            data-pvtitle = "{{ product.variants.first.title | remove: "'" | remove: '"' }}"
+                            data-psku = "{{ product.variants.first.sku }}"
+                            {% if canonical_url contains "/collections/" %}
+                              data-atc_loc = "Collections"
+                            {% endif %}
+                            {% if product == false or product_available == false %}
+                              disabled
+                            {% endif %}
+                    >
 
-                          {% if product.metafields.plytix.general_product_type == "Machine" %}
-                            data-sfeligible-name="properties[_sf_eligible]"
-                            data-sfeligible="true"
-                          {% endif %}
-
-                          class="{{ quick_buy_classes }} main-atc-button"
-                          type="button"
-                          aria-label="{{ quick_buy_text }}"
-                          {% unless has_variants %}
-                            data-quick-buy
-                          {% else %}
-                            data-quickshop-slim
-                          {% endunless %}
-                          data-erpsku-name="properties[_erp_sku]"
-                          data-availqty-name="properties[_available_qty]"
-                          {% if product.metafields.plytix.general_product_type == "Machine" %}
-                            data-sfeligible-name="properties[_sf_eligible]"
-                            data-sfeligible="true"
-                          {% endif %}
+                    <span class="atc-button--text">
+                      {{ quick_buy_text }}
+                    </span>
+                    <span class="atc-button--icon">
+                      {%- render 'icon-spinner' -%}
+                    </span>
+                  </button>
+                  {%- else -%}
 
 
-                          {% if isSpecial == false %}
-                            data-tp-name="properties[_tiered_pricing]"
-                          {% endif %}
-                          data-org-price-name="properties[_org_price]"
-                          data-vissku-name="properties[Sku]"
-                          data-status-name="properties[Status]"
-                          data-erp-sku="{{ product.metafields.plytix.erp_sku }}"
-                          data-erpSku="{{ product.selected_or_first_available_variant.metafields.plytix.erp_sku }}"
-                          data-availqty="{{ product.selected_or_first_available_variant.inventory_quantity }}"
-                          {% if isSpecial == false %}
-                            {%- if product.metafields.plytix.tiered_pricing != blank and product.metafields.plytix.tiered_pricing_dollar_off != blank -%}
-                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}:{{ product.metafields.plytix.tiered_pricing_dollar_off | times: 100.00 | money_without_currency | replace: ",","" }}"
-                            {%- else -%}
-                              data-tiered-pricing="{{ product.metafields.plytix.tiered_pricing }}"
-                            {%- endif -%}
-                          {% endif %}
-                          data-org-price="{{product.variants.first.price}}"
-                          data-vissku="{{ product.selected_or_first_available_variant.sku }}"
-                          data-status="{{ stockStatusNote }}"
-                          data-variant-id="{{ product.variants.first.id }}"
-                          data-pid = "{{product.id}}"
-                          data-id="{{ product.variants.first.id }}"
-                          data-ptitle = "{{product.title | remove: "'" | remove: '"'}}"
-                          data-pprice = "{{product.variants.first.price | times: 0.01}}"
-                          data-pbrand = "{{product.vendor | remove: "'" | remove: '"'}}"
-                          data-ptype = "{{product.type | remove: "'" | remove: '"'}}"
-                          data-pcategory_id = "{{ product.collections.first.id }}"
-                          data-pcategory_name = "{{ product.collections.first.title | remove: "'" | remove: '"' }}"
-                          data-pvtitle = "{{ product.variants.first.title | remove: "'" | remove: '"' }}"
-                          data-psku = "{{ product.variants.first.sku }}"
-                          {% if canonical_url contains "/collections/" %}
-                            data-atc_loc = "Collections"
-                          {% endif %}
-                          {% if product == false or product_available == false %}
-                            disabled
-                          {% endif %}
-                  >
+                      <button
+                              class="{{ quick_buy_classes }} disabled main-atc-button"
+                              type="button"
+                              aria-label="{{ quick_buy_text }}"
+                                disabled
+                      >
+                    <span class="atc-button--text">
+                      Sold Out
+                    </span>
 
-                  <span class="atc-button--text">
-                    {{ quick_buy_text }}
-                  </span>
-                  <span class="atc-button--icon">
-                    {%- render 'icon-spinner' -%}
-                  </span>
-                </button>
+                      </button>
+
+
+                  {%- endif -%}
                 {%- endif -%}
               </div>
             {%- endif -%}
