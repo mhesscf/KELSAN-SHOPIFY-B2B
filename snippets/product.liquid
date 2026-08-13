@@ -426,6 +426,9 @@
                             {%- assign current_variant_id = product.selected_or_first_available_variant.id -%}
 
                             {%- for variant in product.variants -%}
+
+                                {% comment %}Old Master Qty{% endcomment %}
+                                {% comment %}
                                 <div class="masterqty-container var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
                                     {%- if variant.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank -%}
                                         <div class="individually-sold">Sold as a Package</div>
@@ -441,6 +444,39 @@
                                         {%- endif -%}
                                     {%- endif -%}
                                 </div>
+                                {% endcomment %}
+
+
+                                 {% comment %}-------------------------NEW master qty----------------------------------------{% endcomment %}
+                                    <div class="masterqty-container var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                                    {%- if variant.metafields.plytix.package_products != blank or product.metafields.plytix.packaged_free_product != blank -%}
+                                        <div class="individually-sold">Sold as a Package</div>
+                                     {%- elsif variant.metafields.plytix.master_qty_text_override != blank -%}
+                                        <div class="individually-sold">{{ variant.metafields.plytix.master_qty_text_override }}</div>
+                                    {%- else -%}
+
+                                        {%- assign qty_per_carton = variant.metafields.plytix.qty_per_carton | times: 1  | round -%}
+
+
+                                        {%- if variant.metafields.plytix.sold_by_the_text == "Sold Individually" -%}
+                                            <div class="individually-sold">Sold Individually</div>
+                                        {%- elsif variant.metafields.plytix.sold_by_the_text != blank and qty_per_carton > 0 -%}
+                                            {%- if variant.metafields.plytix.sales_unit_uom_text != blank -%}
+                                                <div class="individually-sold">{{ qty_per_carton }} {{ variant.metafields.plytix.sales_unit_uom_text }} per {{ variant.metafields.plytix.sold_by_the_text }}</div>
+                                            {%- else -%}
+                                                <div class="individually-sold">{{ qty_per_carton }} per {{ variant.metafields.plytix.sold_by_the_text }}</div>
+                                            {%- endif -%}
+                                        {%- endif -%}
+                                    {%- endif -%}
+
+                                    {%- if variant.metafields.plytix.product_step > 1 -%}<div style="color:red">Must be bought in multiples of {{ variant.metafields.plytix.product_step }}.</div>{%- endif -%}
+
+                                </div>
+
+
+
+
+
                             {%- endfor -%}
 
                         {%- when 'sku' -%}
