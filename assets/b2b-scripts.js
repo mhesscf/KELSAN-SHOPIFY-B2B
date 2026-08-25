@@ -14,7 +14,7 @@ $(document).ready(function () {
             if (page > 4) {
                 $el.html(finalresponse);
                 dfd.resolve();
-                $('.b2b-company-products-container .product-count').html("("+productcount+")");
+                $('.b2b-company-products-container .product-count').html("(" + productcount + ")");
                 return;
             }
 
@@ -70,6 +70,7 @@ $(document).ready(function () {
         loadfilters();
         setTimeout(() => {
             prepsearch();
+            prepstatustoggle();
         }, 500);
 
     });
@@ -77,21 +78,18 @@ $(document).ready(function () {
 });
 
 
-
-
-
-function b2blistscripts(){
+function b2blistscripts() {
 
     const $b2blist_sub_product_container = $('.b2b-company-product-list') //items
     const $b2blist_bundle_button = $('[data-b2blist-productlist-atc]')
     const $b2blist_single_atc_button = $('[data-b2blist-product-atc]')
-    if($b2blist_sub_product_container.length) {
+    if ($b2blist_sub_product_container.length) {
 
-        $b2blist_single_atc_button.on('click', async function(e) {
+        $b2blist_single_atc_button.on('click', async function (e) {
             $thisproductid = $(this).data('returned-product');
-            $thisproduct = $("#"+$thisproductid);
+            $thisproduct = $("#" + $thisproductid);
 
-            if (1==1) {
+            if (1 == 1) {
                 var totalproducts = 0;
                 console.log('adding product');
 
@@ -118,66 +116,65 @@ function b2blistscripts(){
                 var missingOptions = 0;
 
                 $thisproduct.find('.b2blist-var-select').css('border', '');
-                    if ($thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku')) {
+                if ($thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku')) {
 
-                        console.log("ERP: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_erpsku'));
-                        console.log("vissku: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'));
-                        console.log("status: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_status'));
-                        console.log("tier: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_tieredpricing'));
-                        console.log("var id: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id'));
-                        console.log("product id: " + $thisproduct.attr('id').replace("b2blist-product-", ""));
-                        console.log("qty: " + $thisproduct.find('.b2b-product-qty input').val());
-                        console.log("--------");
+                    console.log("ERP: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_erpsku'));
+                    console.log("vissku: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'));
+                    console.log("status: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_status'));
+                    console.log("tier: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_tieredpricing'));
+                    console.log("var id: " + $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id'));
+                    console.log("product id: " + $thisproduct.attr('id').replace("b2blist-product-", ""));
+                    console.log("qty: " + $thisproduct.find('.b2b-product-qty input').val());
+                    console.log("--------");
 
-                        // log ee_addToCart for analytics
-                        window.dataLayer = window.dataLayer || [];
+                    // log ee_addToCart for analytics
+                    window.dataLayer = window.dataLayer || [];
 
-                        window.dataLayer.push({
-                            event: 'ee_addToCart',
-                            product_name: $thisproduct.find('.productitem--title').text().trim(),
-                            product_id: $thisproduct.attr('id').replace("b2blist-product-", ""),
-                            product_price: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_price') / 100,
-                            product_brand: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('brand'),
-                            currency: "USD",
-                            product_type: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('producttype'),
-                            variant_id: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id'),
-                            product_sku: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'),
-                            quantity: $thisproduct.find('.b2b-product-qty input').val(),
-                            atc_loc: "B2B List Single"
-                        });
+                    window.dataLayer.push({
+                        event: 'ee_addToCart',
+                        product_name: $thisproduct.find('.productitem--title').text().trim(),
+                        product_id: $thisproduct.attr('id').replace("b2blist-product-", ""),
+                        product_price: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_price') / 100,
+                        product_brand: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('brand'),
+                        currency: "USD",
+                        product_type: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('producttype'),
+                        variant_id: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id'),
+                        product_sku: $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'),
+                        quantity: $thisproduct.find('.b2b-product-qty input').val(),
+                        atc_loc: "B2B List Single"
+                    });
 
 
-                        var name = "atcloc";
-                        var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-                        if (thisCookie) {
-                            var newCookieVal = thisCookie[2] + "::" + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku') + ":" + "B2B List Single";
-                        } else {
-                            var newCookieVal = $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku') + ":" + "B2B List Single";
-                        }
-                        document.cookie = "atcloc=" + newCookieVal + "; expires=0; path=/";
-
-                        // console.log(window.dataLayer);
-                        // missingOptions = 1;
-
-                        form_template["properties[_erp_sku]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_erpsku');
-                        form_template["properties[_sf_eligible]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('sfeligible');
-                        form_template["properties[Sku]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku');
-                        form_template["properties[Status]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_status');
-                        form_template["properties[_tiered_pricing]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_tieredpricing');
-                        form_template["properties[_available_qty]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_availqty');
-                        form_template["properties[_org_price]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_price');
-                        form_template["properties[Notification]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('notification');
-                        form_template["properties[_bundle_product]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('bundle');
-                        form_template.id = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id') + ""
-                        form_template.quantity = $thisproduct.find('.b2b-product-qty input').val() + ""
-
-                        form_datas.push({...form_template})
-                        totalproducts++
+                    var name = "atcloc";
+                    var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                    if (thisCookie) {
+                        var newCookieVal = thisCookie[2] + "::" + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku') + ":" + "B2B List Single";
                     } else {
-                        $(this).find('.b2blist-var-select').css('border', '2px solid red');
-                        missingOptions = 1;
+                        var newCookieVal = $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku') + ":" + "B2B List Single";
                     }
+                    document.cookie = "atcloc=" + newCookieVal + "; expires=0; path=/";
 
+                    // console.log(window.dataLayer);
+                    // missingOptions = 1;
+
+                    form_template["properties[_erp_sku]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_erpsku');
+                    form_template["properties[_sf_eligible]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('sfeligible');
+                    form_template["properties[Sku]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku');
+                    form_template["properties[Status]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_status');
+                    form_template["properties[_tiered_pricing]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_tieredpricing');
+                    form_template["properties[_available_qty]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_availqty');
+                    form_template["properties[_org_price]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_price');
+                    form_template["properties[Notification]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('notification');
+                    form_template["properties[_bundle_product]"] = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('bundle');
+                    form_template.id = $thisproduct.find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id') + ""
+                    form_template.quantity = $thisproduct.find('.b2b-product-qty input').val() + ""
+
+                    form_datas.push({...form_template})
+                    totalproducts++
+                } else {
+                    $(this).find('.b2blist-var-select').css('border', '2px solid red');
+                    missingOptions = 1;
+                }
 
 
                 if (missingOptions != 1 && totalproducts != 0) {
@@ -214,7 +211,7 @@ function b2blistscripts(){
         })
 
         //add to cart list
-        $b2blist_bundle_button.on('click', async function(e) {
+        $b2blist_bundle_button.on('click', async function (e) {
             var totalproducts = 0;
             console.log('adding products');
             e.preventDefault();
@@ -226,7 +223,6 @@ function b2blistscripts(){
             // $thisproduct.find('.atc-button--icon').css({"visibility": "visible", "opacity": "100"});
             // $thisproduct.find('.productitem--action-atc').addClass("loading");
             $('.productitem--action-atc:not(.loading,.loaded)').addClass("disabled");
-
 
 
             const form_template = {
@@ -245,18 +241,18 @@ function b2blistscripts(){
 
             const form_datas = []
             var missingOptions = 0;
-            $b2blist_sub_product_container.find('.returned-product').each(function() {
-                $(this).find('.b2blist-var-select').css('border','');
-                if($(this).find('.b2blist-check').is(':checked')){
-                    if($(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku')){
+            $b2blist_sub_product_container.find('.returned-product').each(function () {
+                $(this).find('.b2blist-var-select').css('border', '');
+                if ($(this).find('.b2blist-check').is(':checked')) {
+                    if ($(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku')) {
 
-                        console.log("ERP: "+$(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_erpsku'));
-                        console.log("vissku: "+$(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'));
-                        console.log("status: "+$(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_status'));
-                        console.log("tier: "+$(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_tieredpricing'));
-                        console.log("var id: "+$(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id'));
-                        console.log("product id: "+$(this).attr('id').replace("b2blist-product-",""));
-                        console.log("qty: "+$(this).find('.b2b-product-qty input').val());
+                        console.log("ERP: " + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_erpsku'));
+                        console.log("vissku: " + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'));
+                        console.log("status: " + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_status'));
+                        console.log("tier: " + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_tieredpricing'));
+                        console.log("var id: " + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id'));
+                        console.log("product id: " + $(this).attr('id').replace("b2blist-product-", ""));
+                        console.log("qty: " + $(this).find('.b2b-product-qty input').val());
                         console.log("--------");
 
                         // log ee_addToCart for analytics
@@ -265,13 +261,13 @@ function b2blistscripts(){
                         window.dataLayer.push({
                             event: 'ee_addToCart',
                             product_name: $(this).find('.productitem--title').text().trim(),
-                            product_id : $(this).attr('id').replace("b2blist-product-",""),
-                            product_price: $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_price')/100,
-                            product_brand:  $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('brand'),
+                            product_id: $(this).attr('id').replace("b2blist-product-", ""),
+                            product_price: $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_price') / 100,
+                            product_brand: $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('brand'),
                             currency: "USD",
                             product_type: $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('producttype'),
                             variant_id: $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_id'),
-                            product_sku:  $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'),
+                            product_sku: $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku'),
                             quantity: $(this).find('.b2b-product-qty input').val(),
                             atc_loc: "B2B List"
                         });
@@ -279,12 +275,12 @@ function b2blistscripts(){
 
                         var name = "atcloc";
                         var thisCookie = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-                        if (thisCookie){
-                            var newCookieVal = thisCookie[2] + "::"+$(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku')+":"+"B2B List";
-                        }else{
-                            var newCookieVal = $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku')+":"+"B2B List";
+                        if (thisCookie) {
+                            var newCookieVal = thisCookie[2] + "::" + $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku') + ":" + "B2B List";
+                        } else {
+                            var newCookieVal = $(this).find('.current-b2blist-var [data-b2blistbundle-subproduct]').data('var_vissku') + ":" + "B2B List";
                         }
-                        document.cookie = "atcloc="+newCookieVal+"; expires=0; path=/";
+                        document.cookie = "atcloc=" + newCookieVal + "; expires=0; path=/";
 
                         // console.log(window.dataLayer);
                         // missingOptions = 1;
@@ -303,15 +299,16 @@ function b2blistscripts(){
 
                         form_datas.push({...form_template})
                         totalproducts++
-                    }else{
-                        $(this).find('.b2blist-var-select').css('border','2px solid red');
+                    } else {
+                        $(this).find('.b2blist-var-select').css('border', '2px solid red');
                         missingOptions = 1;
                     }
 
-                };
+                }
+                ;
             });
 
-            if(missingOptions != 1 && totalproducts != 0 ) {
+            if (missingOptions != 1 && totalproducts != 0) {
                 form_datas.reverse();
                 for (const f of form_datas) {
                     await $.ajax({
@@ -323,10 +320,10 @@ function b2blistscripts(){
                 }
 
                 location.href = window.Theme.routes.cart_url
-            }else {
-                if(missingOptions == 1){
+            } else {
+                if (missingOptions == 1) {
                     alert('Please choose an option.');
-                }else{
+                } else {
                     alert("Please add a product.");
                 }
                 $(this).find('.atc-button--text').show();
@@ -337,27 +334,26 @@ function b2blistscripts(){
     }
 
 
-
     // B2B List Bought Together Variation Change
-    $('.b2blist-var-select').on('change', function() {
-        var thisProductId = $(this).attr('id').replace("b2blist-var-select-","");
+    $('.b2blist-var-select').on('change', function () {
+        var thisProductId = $(this).attr('id').replace("b2blist-var-select-", "");
         var thisVariantId = this.value;
 
-        if(thisVariantId == ""){
-            $("#b2blist-product-"+thisProductId+" .b2blist-check").prop('checked', false);
-        }else{
+        if (thisVariantId == "") {
+            $("#b2blist-product-" + thisProductId + " .b2blist-check").prop('checked', false);
+        } else {
             // $("#b2blist-product-"+thisProductId+" .b2blist-check").prop('checked', true);
-            $("#b2blist-product-"+thisProductId+" .b2blist-var-variables").removeClass("current-b2blist-var");
-            $("#b2blist-product-"+thisProductId+" .b2blist-var"+thisVariantId).addClass("current-b2blist-var");
+            $("#b2blist-product-" + thisProductId + " .b2blist-var-variables").removeClass("current-b2blist-var");
+            $("#b2blist-product-" + thisProductId + " .b2blist-var" + thisVariantId).addClass("current-b2blist-var");
 
 
-            $("#b2blist-product-"+thisProductId+" .product-data").attr('data-id', $("#b2blist-product-"+thisProductId+" #data-b2blist-var"+thisVariantId).attr('data-var_id'));
-            $("#b2blist-product-"+thisProductId+" .product-data").attr('data-vissku', $("#b2blist-product-"+thisProductId+" #data-b2blist-var"+thisVariantId).attr('data-var_vissku'));
-            $("#b2blist-product-"+thisProductId+" .product-data").attr('data-status', $("#b2blist-product-"+thisProductId+" #data-b2blist-var"+thisVariantId).attr('data-var_status'));
-            $("#b2blist-product-"+thisProductId+" .product-data").attr('data-erpsku', $("#b2blist-product-"+thisProductId+" #data-b2blist-var"+thisVariantId).attr('data-var_erpsku'));
-            $("#b2blist-product-"+thisProductId+" .product-data").attr('data-availqty', $("#b2blist-product-"+thisProductId+" #data-b2blist-var"+thisVariantId).attr('data-var_availqty'));
-            $("#b2blist-product-"+thisProductId+" .product-data").attr('data-tieredpricing', $("#b2blist-product-"+thisProductId+" #data-b2blist-var"+thisVariantId).attr('data-var_tieredpricing'));
-            $("#b2blist-product-"+thisProductId+" .product-data").attr('data-price', $("#b2blist-product-"+thisProductId+" #data-b2blist-var"+thisVariantId).attr('data-var_price'));
+            $("#b2blist-product-" + thisProductId + " .product-data").attr('data-id', $("#b2blist-product-" + thisProductId + " #data-b2blist-var" + thisVariantId).attr('data-var_id'));
+            $("#b2blist-product-" + thisProductId + " .product-data").attr('data-vissku', $("#b2blist-product-" + thisProductId + " #data-b2blist-var" + thisVariantId).attr('data-var_vissku'));
+            $("#b2blist-product-" + thisProductId + " .product-data").attr('data-status', $("#b2blist-product-" + thisProductId + " #data-b2blist-var" + thisVariantId).attr('data-var_status'));
+            $("#b2blist-product-" + thisProductId + " .product-data").attr('data-erpsku', $("#b2blist-product-" + thisProductId + " #data-b2blist-var" + thisVariantId).attr('data-var_erpsku'));
+            $("#b2blist-product-" + thisProductId + " .product-data").attr('data-availqty', $("#b2blist-product-" + thisProductId + " #data-b2blist-var" + thisVariantId).attr('data-var_availqty'));
+            $("#b2blist-product-" + thisProductId + " .product-data").attr('data-tieredpricing', $("#b2blist-product-" + thisProductId + " #data-b2blist-var" + thisVariantId).attr('data-var_tieredpricing'));
+            $("#b2blist-product-" + thisProductId + " .product-data").attr('data-price', $("#b2blist-product-" + thisProductId + " #data-b2blist-var" + thisVariantId).attr('data-var_price'));
         }
         //recalc price
         // b2blistPriceCalc();
@@ -365,33 +361,33 @@ function b2blistscripts(){
 
 }
 
-function loadfiltersoff(){
+function loadfiltersoff() {
 
 
-        const productTypes = $('.returned-product')
-            .map(function () {
-                return $(this).data('producttype');
-            })
-            .get()                             // convert jQuery object to array
-            .filter(Boolean);                  // remove null/undefined
+    const productTypes = $('.returned-product')
+        .map(function () {
+            return $(this).data('producttype');
+        })
+        .get()                             // convert jQuery object to array
+        .filter(Boolean);                  // remove null/undefined
 
-        const uniqueSorted = [...new Set(productTypes)]
-            .sort((a, b) => a.localeCompare(b));
+    const uniqueSorted = [...new Set(productTypes)]
+        .sort((a, b) => a.localeCompare(b));
 
-        const linksHtml = uniqueSorted
-            .map(value => {
-                const encodedValue = encodeURIComponent(value);
-                return `<li><a href="/pages/product-list-quick-order?product_type=${encodedValue}">${value}</a></li>`;
-            })
-            .join('');
+    const linksHtml = uniqueSorted
+        .map(value => {
+            const encodedValue = encodeURIComponent(value);
+            return `<li><a href="/pages/product-list-quick-order?product_type=${encodedValue}">${value}</a></li>`;
+        })
+        .join('');
 
-        // Example: insert into a container
-        $('#product-type-links').html(linksHtml);
+    // Example: insert into a container
+    $('#product-type-links').html(linksHtml);
 
 }
 
 
-function loadfilters(){
+function loadfilters() {
     const groupurl = new URL(window.location.href);
     const typeurl = new URL(window.location.href);
     // Product Grouping Filtering
@@ -464,10 +460,9 @@ function loadfilters(){
 }
 
 
-
 $(document).ready(function () {
     const triggerEl = document.querySelector('.b2b-company-products-container');
-    const targetEl  = document.querySelector('.list-atc-container');
+    const targetEl = document.querySelector('.list-atc-container');
 
     if (triggerEl && targetEl) {
         const observer = new IntersectionObserver((entries) => {
@@ -485,8 +480,6 @@ $(document).ready(function () {
     }
 
 });
-
-
 
 
 function prepsearch() {
@@ -547,3 +540,38 @@ function prepsearch() {
     });
 
 }
+
+function prepstatustoggle() {
+    const $btnarea = $('.status-toggle-btn');
+    if (!$btnarea.length) return;
+    if ($('#b2blist-status-toggle').length) return; // guard against double-add
+
+    // start hidden (remove this line if you want it open by default)
+    $('.b2blist-status-area').hide();
+
+    // const $btn = $('<div>', {
+    //     id: 'b2blist-status-toggle',
+    //     class: 'b2blist-status-toogle-btn fake-link',
+    //     text: 'View Stock Status'
+    // }).css({
+    // });
+
+    const $btn = $('<div>', {
+        id: 'b2blist-status-toggle',
+        class: 'b2blist-status-toogle-btn fake-link'
+    }).html('View Stock Status <i class="fa-sharp fa-solid fa-caret-right"></i>').css({
+        // ... your existing css stays here
+    });
+
+    $btnarea.prepend($btn);
+}
+
+// Delegated: survives the fact that the button + status area are added after load
+$(document).on('click', '#b2blist-status-toggle', function () {
+    const $status = $('.b2blist-status-area');
+    $status.toggle();
+    // $(this).text($status.is(':visible') ? 'Hide Status' : 'View Stock Status');
+    $(this).html($status.is(':visible')
+        ? 'Hide Status <i class="fa-sharp fa-solid fa-caret-down"></i>'
+        : 'View Stock Status <i class="fa-sharp fa-solid fa-caret-right"></i>');
+});
