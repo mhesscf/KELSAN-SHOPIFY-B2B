@@ -101,6 +101,14 @@
 .b2b-company-landing .title-search-row div{
     flex-basis:50%
 }
+
+.b2b-company-landing .title-search-row .b2blist-status-toogle-btn{
+    margin:-12px 0 8px 0;
+
+}
+
+
+
 .b2b-company-landing .title-search-row .search-box-contain{
     justify-content: right;
 }
@@ -141,7 +149,7 @@
     flex: 3 1 0; /* 75% of remaining */
     align-items: flex-start;
 }
-
+.b2b-company-landing .returned-product .b2blist-status-area,
 .b2b-company-landing .returned-product .b2blist-detail-sku{
     font-size:14px;
 }
