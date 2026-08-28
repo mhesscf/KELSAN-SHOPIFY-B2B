@@ -127,27 +127,6 @@
             "button_color_override": ""
           }
         },
-        "slide_v2_AQhw3c": {
-          "type": "slide_v2",
-          "settings": {
-            "show_on": "normal",
-            "sotm_icon": "9",
-            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/kob-00-4503-9-special.png?v=173335204",
-            "middle_image_alt": "CleanFreak® Oscillating Floor Machine (14\" x 20\" Head) Special",
-            "right_image": "",
-            "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Dry stripping at a discounted price!</div>\n<h1>CleanFreak® Oscillating Floor Machine (14\" x 20\" Head)</h1>\n<div>Was: $1,599.99<br/>Now: $1,449.99</div>",
-            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:27px;\nline-height:30px;\n}\n.slideshow-v2 .middle-image{\n\tmax-width:228px;\n}\n@media screen and (max-width: 720px) {\n\t.slideshow-v2 .middle-image{\n\t\tpadding-top:7px;\n\t}\n\t\n}",
-            "bg_link": "/products/cleanfreak-dry-surface-strip-machine",
-            "promo_link": "",
-            "button_one_label": "Save $150",
-            "button_one_link": "/products/cleanfreak-dry-surface-strip-machine",
-            "button_two_label": "",
-            "button_two_link": "",
-            "button_color_override": ""
-          }
-        },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
           "settings": {
@@ -164,6 +143,27 @@
             "promo_link": "",
             "button_one_label": "Save $200",
             "button_one_link": "/products/dura-18-cord-electric-automatic-floor-scrubber",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_color_override": ""
+          }
+        },
+        "slide_v2_AQhw3c": {
+          "type": "slide_v2",
+          "settings": {
+            "show_on": "normal",
+            "sotm_icon": "9",
+            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
+            "middle_image": "/cdn/shop/files/cpl-225fp-17-rh-cf-special.png?v=173335204",
+            "middle_image_alt": "CleanFreak® 17\" Heavy Duty Floor Buffer Special",
+            "right_image": "",
+            "right_image_alt": "",
+            "text_area_html": "<div class=\"top-text\">Heavy-Duty Cleaning, Hefty Savings.</div>\n<h1>CleanFreak® 17\" Heavy Duty Floor Buffer w/ Pad Driver </h1>\n<div>Was: $949.99<br/>Now: $874.99</div>",
+            "text_area_css": ".slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .middle-image-off{\npadding-top:37px;\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_AQhw3c .custom-text h1{\nfont-size:27px;\nline-height:30px;\n}\n.slideshow-v2 .middle-image{\n\tmax-width:228px;\n}\n@media screen and (max-width: 720px) {\n\t.slideshow-v2 .middle-image{\n\t\tpadding-top:7px;\n\t}\n\t\n}",
+            "bg_link": "/products/17-inch-rotary-floor-buffer",
+            "promo_link": "",
+            "button_one_label": "Save $75",
+            "button_one_link": "/products/17-inch-rotary-floor-buffer",
             "button_two_label": "",
             "button_two_link": "",
             "button_color_override": ""
@@ -235,8 +235,8 @@
         "banner_qaQPaP",
         "slide_v2_nhVKm9",
         "slide_v2_cqVtUz",
-        "slide_v2_AQhw3c",
         "slide_v2_8YK4yh",
+        "slide_v2_AQhw3c",
         "fe73ce31-3a89-4c51-b8a5-69eaaba9c99a",
         "banner_KcaJqE",
         "ea789a59-8d75-4954-9fa4-6bb1739a3b62",
