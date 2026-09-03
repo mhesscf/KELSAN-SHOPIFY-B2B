@@ -27,6 +27,13 @@
         "chsectiontext": ""
       }
     },
+    "dynamic_custom_liquid_MdJHKK": {
+      "type": "dynamic-custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_liquid": "Test-------------\n<br/>\nPrivacy Policy:\n<div id=\"SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09\" class=\"policy_embed_div\" width=\"640\" height=\"480\" aria-live=\"polite\" aria-busy=\"true\">\nPlease wait while the policy is loaded. If it does not load, please <a rel=\"nofollow\" aria-label=\"click here to view the policy\" href=\"https://policies.termageddon.com/api/policy/SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09\" target=\"_blank\">click here to view the policy</a>.</div>\n<script src=\"https://policies.termageddon.com/api/embed/SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09.js\"></script>\n<br/>\nend test --------------"
+      }
+    },
     "dynamic_custom_liquid_Gbkyak": {
       "type": "dynamic-custom-liquid",
       "name": "t:sections.custom_liquid.presets.custom_liquid.name",
@@ -51,6 +58,7 @@
   "order": [
     "cf13ee47-bfcd-4169-a499-650a3712fc98",
     "28df9b5f-280b-44e5-b7c3-c5fecdeb8930",
+    "dynamic_custom_liquid_MdJHKK",
     "dynamic_custom_liquid_Gbkyak",
     "71af03e7-bf0b-48a4-ae7d-6278f7ecaf68",
     "main"
