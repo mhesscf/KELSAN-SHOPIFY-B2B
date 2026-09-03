@@ -38,12 +38,20 @@
       "type": "page-about",
       "disabled": true,
       "settings": {}
+    },
+    "dynamic_custom_liquid_bHpDHQ": {
+      "type": "dynamic-custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_liquid": "<link rel='preconnect' href='//privacy-proxy.usercentrics.eu'><link rel='preload' href='//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js' as='script'><script type='application/javascript' src='https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js'></script><script id='usercentrics-cmp' src='https://app.usercentrics.eu/browser-ui/latest/loader.js' data-settings-id='I-1p6AWg3HOeMA' async></script><script>uc.setCustomTranslations('https://termageddon.ams3.cdn.digitaloceanspaces.com/translations/');</script>"
+      }
     }
   },
   "order": [
     "cf13ee47-bfcd-4169-a499-650a3712fc98",
     "28df9b5f-280b-44e5-b7c3-c5fecdeb8930",
     "dynamic_custom_liquid_Gbkyak",
-    "main"
+    "main",
+    "dynamic_custom_liquid_bHpDHQ"
   ]
 }
