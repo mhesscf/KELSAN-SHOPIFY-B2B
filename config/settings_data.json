@@ -302,10 +302,10 @@
           ".alert-bar.show {border-bottom: 1px solid white;}"
         ],
         "settings": {
-          "show_announcement": false,
+          "show_announcement": true,
           "homepage_announcement": false,
-          "announcement_text": "In observance of Thanksgiving, we will be closed on Thursday, November 27th & Friday, November 28th. We will reopen on Monday, December 1st.",
-          "announcement_text_mobile": "In observance of Thanksgiving, we will be closed on Thursday, November 27th & Friday, November 28th. We will reopen on Monday, December 1st .",
+          "announcement_text": "In observance of Labor Day, we will be closed on Monday, September 7th, and will resume normal business hours on Tuesday, September 8th.",
+          "announcement_text_mobile": "In observance of Labor Day, we will be closed on Monday, September 7th, and will resume normal business hours on Tuesday, September 8th.",
           "announcement_link": "/collections/flash-sale",
           "announcement_promo": "",
           "flash": false,
@@ -376,14 +376,6 @@
         "disabled": false,
         "settings": {}
       },
-      "3576686563519644491": {
-        "type": "shopify://apps/vwo/blocks/vwo-smartcode/2ce905b2-3842-4d20-b6b0-8c51fc208426",
-        "disabled": false,
-        "settings": {
-          "vwoAccountId": "968594",
-          "settingsTolerance": 2000
-        }
-      },
       "234697707474025726": {
         "type": "shopify://apps/analyzify-ga4-ads-tracking/blocks/app-embed-v4/69637cfd-dd6f-4511-aa97-7037cfb5515c",
         "disabled": false,
@@ -392,11 +384,6 @@
       "12512365888938011351": {
         "type": "shopify://apps/analyzify-ga4-ads-tracking/blocks/app-embed/69637cfd-dd6f-4511-aa97-7037cfb5515c",
         "disabled": true,
-        "settings": {}
-      },
-      "5607836560570363390": {
-        "type": "shopify://apps/shieldify-fraud-filter/blocks/app_embed/55e34c08-5add-41cc-b0cd-5e853bb58fdb",
-        "disabled": false,
         "settings": {}
       }
     }
