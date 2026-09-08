@@ -302,7 +302,7 @@
           ".alert-bar.show {border-bottom: 1px solid white;}"
         ],
         "settings": {
-          "show_announcement": true,
+          "show_announcement": false,
           "homepage_announcement": false,
           "announcement_text": "In observance of Labor Day, we will be closed on Monday, September 7th, and will resume normal business hours on Tuesday, September 8th.",
           "announcement_text_mobile": "In observance of Labor Day, we will be closed on Monday, September 7th, and will resume normal business hours on Tuesday, September 8th.",
