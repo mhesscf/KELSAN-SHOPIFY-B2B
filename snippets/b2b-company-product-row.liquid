@@ -1,4 +1,3 @@
-        {% assign isSpecial = false %}
 
         {% assign product =  thisproduct %}
         {% assign productObj =  all_products[product] %}
@@ -169,6 +168,20 @@
 
                                 {% comment %}Print each of the variation values{% endcomment %}
 
+
+                                {%- assign varfinalorgprice = nill -%}
+                                {%- assign isSpecial = false -%}
+                                {%- assign varorgprice = variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
+                                {%- assign varorgpriceb4special = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
+                                {%- if varorgprice > variant.price -%}
+                                    {%- assign isSpecial = true -%}
+                                    {%- assign varfinalorgprice = varorgprice -%}
+                                {%- elsif varorgpriceb4special > variant.price -%}
+                                    {%- assign isSpecial = true -%}
+                                    {%- assign varfinalorgprice = varorgpriceb4special -%}
+                                {%- endif -%}
+
+
                                 <div class="b2blist-var{{ variant.id }} b2blist-var-variables {% if current_variant.id == variant.id and has_variants == false %}current-b2blist-var{% endif %}">
                                     <div class="b2blist-detail-sku"><strong>SKU:</strong> {{ variant.sku }}</div>
                                     <div class="b2blist-status-area" ><span class="status-label"><strong>Status:</strong></span> <span class="b2blist-status" >{{ stockStatusNote }}</span></div>
@@ -242,7 +255,7 @@
                                     {%- if product.metafields.plytix.hide_pricing != 'Hide Price Only (View in cart)' and product.metafields.plytix.hide_pricing != 'Hide Price and Button' -%}
                                         <div class="price productitem__price">
 
-
+                                            {%- assign isSpecial = false -%}
                                             {%- assign varfinalorgprice = nill -%}
                                             {%- assign varorgprice = variant.metafields.plytix.org-price-4-b2b | times: 100 -%}
                                             {%- assign varorgpriceb4special = variant.metafields.plytix.org-price-b4-special | times: 100 -%}
