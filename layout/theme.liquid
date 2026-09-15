@@ -589,6 +589,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
             </div>
 
             {%- comment -%}superfreak details: Hard coding to save any handle issues{%- endcomment -%}
+             {%- comment -%}
             {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
                 {% assign sf_item_id = "43956946534612" %}
                 {% assign sf_plan = "3287122132" %}
@@ -655,7 +656,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
                         Check out the SuperFreak membership <a href="/pages/superfreak">benefits</a>, as well as the <a href="/pages/superfreak-terms">terms & conditions</a> for more info.</div>
                 </div>
             </div>
-
+{%- endcomment -%}
             <div class="dropdown-productaccessories" data-dropaccessories data-handles="" >
                 <div class="prodacc-placeholder" data-prodacc-placeholder ></div>
             </div>
