@@ -32879,7 +32879,7 @@ const RULES = `
             /**
              * Get height of element, and combined height of element + actions
              *
-             * @returns {{heightBase, heightExpanded: *}}
+             * @returns {{ heightBase }}
              * @private
              */
 
@@ -39299,7 +39299,7 @@ const RULES = `
              * Retrieve information about user who tweeted
              *
              * @param el
-             * @returns {{$avatar: *, link: *, name, screenName}}
+             * @returns {{ avatar }}
              * @private
              */
 
@@ -39321,7 +39321,7 @@ const RULES = `
              * Retrieve link to tweet, and when it was tweeted
              *
              * @param el
-             * @returns {{link: *, postedAt: *}}
+             * @returns {{ link }}
              * @private
              */
 
@@ -45442,4 +45442,19 @@ const RULES = `
     })();
 
     /******/ })()
-;
+;{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{heightBase, heightExpanded: *}}"
+  to: "{{ heightBase }}"
+  position: 1492745..1492761
+- from: "{{$avatar: *, link: *, name, screenName}}"
+  to: "{{ avatar }}"
+  position: 1742884..1742896
+- from: "{{link: *, postedAt: *}}"
+  to: "{{ link }}"
+  position: 1743610..1743620
+{%- endcomment -%}
