@@ -447,269 +447,271 @@
       {% if sf_eligible == true and sf_addon < 0 %}
 
           {% comment %}<div onclick="sf_atc(this,'cart');" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn cart-upsell-btn add-to-cart-btn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak Plan</div></td>{% endcomment %}
-        {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
-          {% assign sf_item_id = "43956946534612" %}
-          {% assign sf_plan = "3287122132" %}
-        {% elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
-          {% assign sf_item_id = "42413671612596" %}
-          {% assign sf_plan = "1220608180" %}
-        {% elsif shop.permanent_domain contains "airmovers-dev.myshopify.com" %}
-          {% assign sf_item_id = "47125098594586" %}
-          {% assign sf_plan = "8983281946" %}
-        {% elsif shop.permanent_domain contains "airmovers-prod.myshopify.com" %}
-          {% assign sf_item_id = "41930992386253" %}
-          {% assign sf_plan = "1020854477" %}
-        {% elsif shop.permanent_domain contains "carpetextractors-dev1.myshopify.com" %}
-          {% assign sf_item_id = "47272142307640" %}
-          {% assign sf_plan = "693056930104" %}
-        {% elsif shop.permanent_domain contains "carpetextractors.myshopify.com" %}
-          {% assign sf_item_id = "44214778626282" %}
-          {% assign sf_plan = "31247302890" %}
-        {% elsif shop.permanent_domain contains "floorbuffers-dev.myshopify.com" %}
-          {% assign sf_item_id = "47289865011479" %}
-          {% assign sf_plan = "689912742167" %}
-        {% elsif shop.permanent_domain contains "floorbuffers-prod.myshopify.com" %}
-          {% assign sf_item_id = "44158887395548" %}
-          {% assign sf_plan = "28449734876" %}
-        {% elsif shop.permanent_domain contains "floorscrubbers-dev.myshopify.com" %}
-          {% assign sf_item_id = "47255628316965" %}
-          {% assign sf_plan = "689859363109" %}
-        {% elsif shop.permanent_domain contains "floorscrubbers-prod.myshopify.com" %}
-          {% assign sf_item_id = "44506347798694" %}
-          {% assign sf_plan = "1651736742" %}
-        {% endif %}
+{% comment %}
+  {% if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" %}
+  {% assign sf_item_id = "43956946534612" %}
+  {% assign sf_plan = "3287122132" %}
+{% elsif shop.permanent_domain contains "cleanfreak-prod.myshopify.com" %}
+  {% assign sf_item_id = "42413671612596" %}
+  {% assign sf_plan = "1220608180" %}
+{% elsif shop.permanent_domain contains "airmovers-dev.myshopify.com" %}
+  {% assign sf_item_id = "47125098594586" %}
+  {% assign sf_plan = "8983281946" %}
+{% elsif shop.permanent_domain contains "airmovers-prod.myshopify.com" %}
+  {% assign sf_item_id = "41930992386253" %}
+  {% assign sf_plan = "1020854477" %}
+{% elsif shop.permanent_domain contains "carpetextractors-dev1.myshopify.com" %}
+  {% assign sf_item_id = "47272142307640" %}
+  {% assign sf_plan = "693056930104" %}
+{% elsif shop.permanent_domain contains "carpetextractors.myshopify.com" %}
+  {% assign sf_item_id = "44214778626282" %}
+  {% assign sf_plan = "31247302890" %}
+{% elsif shop.permanent_domain contains "floorbuffers-dev.myshopify.com" %}
+  {% assign sf_item_id = "47289865011479" %}
+  {% assign sf_plan = "689912742167" %}
+{% elsif shop.permanent_domain contains "floorbuffers-prod.myshopify.com" %}
+  {% assign sf_item_id = "44158887395548" %}
+  {% assign sf_plan = "28449734876" %}
+{% elsif shop.permanent_domain contains "floorscrubbers-dev.myshopify.com" %}
+  {% assign sf_item_id = "47255628316965" %}
+  {% assign sf_plan = "689859363109" %}
+{% elsif shop.permanent_domain contains "floorscrubbers-prod.myshopify.com" %}
+  {% assign sf_item_id = "44506347798694" %}
+  {% assign sf_plan = "1651736742" %}
+{% endif %}
 
-        <div class="atc-sf-area" >
-          <div class="sf-main-text"><img src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="Superfreak" />Protect & Save with SuperFreak.</div>
-          <table class="sf-details">
-            <tr>
-              <td class="sf-price">$99.99</td>
-              <td class="sf-details-text">Get peace of mind with your purchase. Save 10%. Unlimited service. Add & save now! <span class="sf-info-pop" onclick="sf_info_pop()" >Learn more <i class="fa-solid fa-arrow-right"></i></span></td>
-              <td class="sf-atc"><div onclick="sf_atc(this,'cart',{{ sf_plan }});" data-at="{{ sf_item_id }}" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn main-atc-button thinbtn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
-              </td>
-            </tr>
-          </table>
-        </div>
+<div class="atc-sf-area" >
+  <div class="sf-main-text"><img src="{{ 'superfreak-logo-sm.png' | file_img_url  }}" alt="Superfreak" />Protect & Save with SuperFreak.</div>
+  <table class="sf-details">
+    <tr>
+      <td class="sf-price">$99.99</td>
+      <td class="sf-details-text">Get peace of mind with your purchase. Save 10%. Unlimited service. Add & save now! <span class="sf-info-pop" onclick="sf_info_pop()" >Learn more <i class="fa-solid fa-arrow-right"></i></span></td>
+      <td class="sf-atc"><div onclick="sf_atc(this,'cart',{{ sf_plan }});" data-at="{{ sf_item_id }}" data-plan-qty="{{ item.quantity }}" data-plan-item="{{ item.sku }}" data-plan-item-handle="{{ item.product.handle }}" class="sf-atc-btn main-atc-button thinbtn productitem--action-trigger productitem--action-atc" tabindex="0"><span>+</span> SuperFreak</div></td>
+      </td>
+    </tr>
+  </table>
+</div>
+{% endcomment %}
+{% endif %}
+</div>
+
+<div class="cart-item--info {% if product_bundle != '' %} bundle-item {% endif %}">
+<div
+      class="cart-item--quantity form-fields--qty"
+      data-quantity-wrapper
+>
+{% comment %}
+{% if pstep == '' %}
+<div class="form-field form-field--qty-select {% if item.quantity < 10 %}visible{% else %}hidden{% endif %}">
+  <div class="form-field-select-wrapper ">
+    <select
+            class="form-field-input form-field-select form-field-filled"
+            id="quantity_{{ item.key | replace: ':', '_' }}"
+            {% if item.quantity >= 10 %}tabindex="-1"{% endif %}
+            aria-label="{{ 'general.general.quantity' | t }}"
+            data-quantity-select
+            data-cartitem-quantity
+            {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
+            {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
+    >
+      {% if available < 10 %}
+        {% for i in (1..available) %}
+          <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
+          {{ i }}
+          </option>
+        {% endfor %}
+      {% else %}
+        {% for i in (1..9) %}
+          <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
+            {{ i }}
+          </option>
+        {% endfor %}
+        <option value="10">
+          10+
+        </option>
       {% endif %}
+    </select>
+    <label class="form-field-title" for="quantity_{{ item.key | replace: ':', '_' }}">
+      {{ 'general.general.quantity' | t }}
+    </label>
+    {% render 'icon-chevron-down-small' %}
+  </div>
+</div>
+{% endif %}
+{% if pstep != '' %}
+  <div id="qtInfo{{ item.key | replace: ':', '' }}"></div>
+  <div class="form-field form-field--qty-input visible">
+{% else %}
+  <div class="form-field form-field--qty-input {% if item.quantity < 10 %}hidden{% else %}visible{% endif %}">
+{% endif %}
+
+
+  <input
+          class="form-field-input form-field-number form-field-filled"
+          value="{{ item.quantity }}"
+          name="updates[]"
+          id="updates_{{ item.key }}"
+          data-qtkey="qtInfo{{ item.key }}"
+          data-original="{{ item.quantity }}"
+          data-step="{{ pstep }}"
+          type="text"
+          pattern="\d*"
+          {% if item.quantity < 10 %}tabindex="-1"{% endif %}
+          {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
+          {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
+          aria-label="{{ 'general.general.quantity' | t }}"
+          data-quantity-input
+          data-cartitem-quantity>
+  <label class="form-field-title" for="updates_{{ item.key }}">
+    {{ 'general.general.quantity' | t }}
+  </label>
+</div>
+   {% endcomment %}
+  {% assign editable = true %}
+  {% if product_bundle != '' %}
+      {% assign editable = false %}
+  {% elsif fgbogo == true %}
+      {% assign editable = false %}
+  {% endif %}
+
+  {% if editable == true %}
+    <div class="qtybox cart-qty-form-field form-field form-field--qty-input visible {% if editable == false %}qtyonly{% endif %}">
+        <input type="button" {% if editable == true %}onClick="qtyAdjust('{{ item.key }}','minus','{{ pstep }}')"{% endif %} value="−" data-step="{{ pstep }}" class="qtyminus" data-field="quantity">
+      <input
+              class="product-quantity-input form-field-input form-field-number form-field-filled"
+              value="{{ item.quantity }}"
+              name="updates[]"
+              id="updates_{{ item.key }}"
+              data-qtkey="qtInfo{{ item.key }}"
+              data-original="{{ item.quantity }}"
+              data-step="{{ pstep }}"
+              type="text"
+              pattern="\d*"
+              {% if item.quantity < 10 %}tabindex="-1"{% endif %}
+              {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
+              {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
+              aria-label="{{ 'general.general.quantity' | t }}"
+              data-quantity-input
+              data-cartitem-quantity>
+        <input type="button" {% if editable == true %}onClick="qtyAdjust('{{ item.key }}','plus','{{ pstep }}')"{% endif %} value="+" class="qtyplus" data-step="{{ pstep }}" data-field="quantity">
+
+      {% comment %}<label class="form-field-title" for="updates_{{ item.key }}">
+        {{ 'general.general.quantity' | t }}
+      </label>{% endcomment %}
     </div>
+  {% else %}
+      <div class="product-quantity-disabled">
+        {{ item.quantity }}
+      </div>
+  {% endif %}
 
-    <div class="cart-item--info {% if product_bundle != '' %} bundle-item {% endif %}">
-      <div
-              class="cart-item--quantity form-fields--qty"
-              data-quantity-wrapper
-      >
-        {% comment %}
-        {% if pstep == '' %}
-        <div class="form-field form-field--qty-select {% if item.quantity < 10 %}visible{% else %}hidden{% endif %}">
-          <div class="form-field-select-wrapper ">
-            <select
-                    class="form-field-input form-field-select form-field-filled"
-                    id="quantity_{{ item.key | replace: ':', '_' }}"
-                    {% if item.quantity >= 10 %}tabindex="-1"{% endif %}
-                    aria-label="{{ 'general.general.quantity' | t }}"
-                    data-quantity-select
-                    data-cartitem-quantity
-                    {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
-                    {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
-            >
-              {% if available < 10 %}
-                {% for i in (1..available) %}
-                  <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
-                  {{ i }}
-                  </option>
-                {% endfor %}
-              {% else %}
-                {% for i in (1..9) %}
-                  <option {% if i == item.quantity %}selected {% endif %}value="{{ i }}">
-                    {{ i }}
-                  </option>
-                {% endfor %}
-                <option value="10">
-                  10+
-                </option>
-              {% endif %}
-            </select>
-            <label class="form-field-title" for="quantity_{{ item.key | replace: ':', '_' }}">
-              {{ 'general.general.quantity' | t }}
-            </label>
-            {% render 'icon-chevron-down-small' %}
-          </div>
-        </div>
-        {% endif %}
-        {% if pstep != '' %}
-          <div id="qtInfo{{ item.key | replace: ':', '' }}"></div>
-          <div class="form-field form-field--qty-input visible">
-        {% else %}
-          <div class="form-field form-field--qty-input {% if item.quantity < 10 %}hidden{% else %}visible{% endif %}">
-        {% endif %}
-
-
-          <input
-                  class="form-field-input form-field-number form-field-filled"
-                  value="{{ item.quantity }}"
-                  name="updates[]"
-                  id="updates_{{ item.key }}"
-                  data-qtkey="qtInfo{{ item.key }}"
-                  data-original="{{ item.quantity }}"
-                  data-step="{{ pstep }}"
-                  type="text"
-                  pattern="\d*"
-                  {% if item.quantity < 10 %}tabindex="-1"{% endif %}
-                  {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
-                  {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
-                  aria-label="{{ 'general.general.quantity' | t }}"
-                  data-quantity-input
-                  data-cartitem-quantity>
-          <label class="form-field-title" for="updates_{{ item.key }}">
-            {{ 'general.general.quantity' | t }}
-          </label>
-        </div>
-           {% endcomment %}
-          {% assign editable = true %}
-          {% if product_bundle != '' %}
-              {% assign editable = false %}
-          {% elsif fgbogo == true %}
-              {% assign editable = false %}
-          {% endif %}
-
-          {% if editable == true %}
-            <div class="qtybox cart-qty-form-field form-field form-field--qty-input visible {% if editable == false %}qtyonly{% endif %}">
-                <input type="button" {% if editable == true %}onClick="qtyAdjust('{{ item.key }}','minus','{{ pstep }}')"{% endif %} value="−" data-step="{{ pstep }}" class="qtyminus" data-field="quantity">
-              <input
-                      class="product-quantity-input form-field-input form-field-number form-field-filled"
-                      value="{{ item.quantity }}"
-                      name="updates[]"
-                      id="updates_{{ item.key }}"
-                      data-qtkey="qtInfo{{ item.key }}"
-                      data-original="{{ item.quantity }}"
-                      data-step="{{ pstep }}"
-                      type="text"
-                      pattern="\d*"
-                      {% if item.quantity < 10 %}tabindex="-1"{% endif %}
-                      {% if product_bundle != '' or fgbogo == true or sf_addon == 0%} disabled {% endif %}
-                      {% if available < 999999 %}  data-available-qty = "{{ available }}" {% endif %}
-                      aria-label="{{ 'general.general.quantity' | t }}"
-                      data-quantity-input
-                      data-cartitem-quantity>
-                <input type="button" {% if editable == true %}onClick="qtyAdjust('{{ item.key }}','plus','{{ pstep }}')"{% endif %} value="+" class="qtyplus" data-step="{{ pstep }}" data-field="quantity">
-
-              {% comment %}<label class="form-field-title" for="updates_{{ item.key }}">
-                {{ 'general.general.quantity' | t }}
-              </label>{% endcomment %}
-            </div>
-          {% else %}
-              <div class="product-quantity-disabled">
-                {{ item.quantity }}
-              </div>
-          {% endif %}
-
-          {% if editable == true %}<a class="line-update" onClick="updateCart();"><i class="fa-solid fa-arrows-rotate"></i> Update</a>{% endif %}
+  {% if editable == true %}<a class="line-update" onClick="updateCart();"><i class="fa-solid fa-arrows-rotate"></i> Update</a>{% endif %}
 
 
 
-            {% if available < 999999 %}
-              <span class="package-qt-info" style="display:none;">
-                Limited Quantity Available. Please adjust your quantity to or below {{ available }}.
-            </span>
-            {% endif %}
-        {% if product_bundle != '' %}
-          <span class="package-qt-info">
-            Item is not editable because it is part of a package
-          </span>
-        {% elsif fgbogo == true %}
-          <span class="package-qt-info">
-              Item is not editable because it is a free gift.
-          </span>
-        {% endif %}
+    {% if available < 999999 %}
+      <span class="package-qt-info" style="display:none;">
+        Limited Quantity Available. Please adjust your quantity to or below {{ available }}.
+    </span>
+    {% endif %}
+{% if product_bundle != '' %}
+  <span class="package-qt-info">
+    Item is not editable because it is part of a package
+  </span>
+{% elsif fgbogo == true %}
+  <span class="package-qt-info">
+      Item is not editable because it is a free gift.
+  </span>
+{% endif %}
 
-          {%- assign buy_x_more = next_tier | minus: item.quantity -%}
-          {% if buy_x_more > 0 and product_bundle == '' %}
+  {%- assign buy_x_more = next_tier | minus: item.quantity -%}
+  {% if buy_x_more > 0 and product_bundle == '' %}
 
-              {%- assign addsavings = tiered_pricing_sections_arr[1] | times: 100 -%}
-              <div class="tier_upsell">
-                  Buy <strong>{{ buy_x_more }}</strong> more &<br/>Save an Additional<br/><strong>{{ addsavings | money }}</strong> per Item
-              </div>
-              <a class="line-update" onclick="updateQtyTo({{ next_tier }},'{{ item.key }}');"><i class="fa-solid fa-plus"></i> Add {{ buy_x_more }} More</a>
-          {% endif %}
-        {%- comment -%}
-             for testing
-             next_discount {{ next_discount }}<br/>
-             next_tier_doll_off {{ next_tier_doll_off }}<br/>
-             next_tier {{ next_tier }}<br/>
-             next_valid_tier_count: {{ next_valid_tier_count }}<br/>
-        {%- endcomment -%}
+      {%- assign addsavings = tiered_pricing_sections_arr[1] | times: 100 -%}
+      <div class="tier_upsell">
+          Buy <strong>{{ buy_x_more }}</strong> more &<br/>Save an Additional<br/><strong>{{ addsavings | money }}</strong> per Item
+      </div>
+      <a class="line-update" onclick="updateQtyTo({{ next_tier }},'{{ item.key }}');"><i class="fa-solid fa-plus"></i> Add {{ buy_x_more }} More</a>
+  {% endif %}
+{%- comment -%}
+     for testing
+     next_discount {{ next_discount }}<br/>
+     next_tier_doll_off {{ next_tier_doll_off }}<br/>
+     next_tier {{ next_tier }}<br/>
+     next_valid_tier_count: {{ next_valid_tier_count }}<br/>
+{%- endcomment -%}
 
-     </div>
+</div>
 
-     <div class="cart-item--total">
-       <span class="visually-hidden-cart">
-           Price:
-           {% comment %}{{ 'cart.general.total_line_price' | t }}{% endcomment %}
-       </span>
-         {%- comment -%}
-         {%- if org_price > item.price -%}
-               <s class="original-price money">{{ org_price | times: item.quantity | money }}</s>
+<div class="cart-item--total">
+<span class="visually-hidden-cart">
+   Price:
+   {% comment %}{{ 'cart.general.total_line_price' | t }}{% endcomment %}
+</span>
+ {%- comment -%}
+ {%- if org_price > item.price -%}
+       <s class="original-price money">{{ org_price | times: item.quantity | money }}</s>
 
-         {%- elsif compare_at_price > item.price -%}
-             <s class="original-price money">{{ compare_at_price | times: item.quantity | money }}</s>
-         {%- elsif item_has_discounts -%}
-               <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
-               <s class="original-price money">{{ item.original_line_price | money }}</s>
-               <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
-           {%- endif -%}
-       {%- endcomment -%}
-       <span
-               class="money {% if item_has_discounts %}cart-item--discount-price{% endif %}"
-               aria-live="polite"
-               data-cartitem-total
-       >
-         {{ item.final_line_price | money }}
-       </span>
-     </div>
+ {%- elsif compare_at_price > item.price -%}
+     <s class="original-price money">{{ compare_at_price | times: item.quantity | money }}</s>
+ {%- elsif item_has_discounts -%}
+       <span class="visually-hidden">{{ 'product_price.price.original' | t }}</span>
+       <s class="original-price money">{{ item.original_line_price | money }}</s>
+       <span class="visually-hidden">{{ 'product_price.price.current' | t }}</span>
+   {%- endif -%}
+{%- endcomment -%}
+<span
+       class="money {% if item_has_discounts %}cart-item--discount-price{% endif %}"
+       aria-live="polite"
+       data-cartitem-total
+>
+ {{ item.final_line_price | money }}
+</span>
+</div>
 
-     <div class="cart-item--remove">
-       {% if product_bundle == '' and  fgbogo-rule == false %}
-         <a
-                 href="{{ routes.cart_change_url }}?line={{ item_index }}&amp;quantity=0"
-                 class="cart-item--remove-link"
-                 data-cartitem-remove
-                 data-no-instant
-                 aria-label="remove {{ item.product.title | escape }}"
-         >
-           {%
-                   render 'icon-library',
-                   id: 'icon-remove'
-           %}
-         </a>
+<div class="cart-item--remove">
+{% if product_bundle == '' and  fgbogo-rule == false %}
+ <a
+         href="{{ routes.cart_change_url }}?line={{ item_index }}&amp;quantity=0"
+         class="cart-item--remove-link"
+         data-cartitem-remove
+         data-no-instant
+         aria-label="remove {{ item.product.title | escape }}"
+ >
+   {%
+           render 'icon-library',
+           id: 'icon-remove'
+   %}
+ </a>
 
-       {% elsif fgbogo-rule != false %}
+{% elsif fgbogo-rule != false %}
 
-         <a
-                 data-gall="{{ fgbogo-rule }}"
-                 data-name="Free Gift Promo"
-                 class="bundle-remove cart-item--remove-popup cart-item--remove-link"
-                 href="#">
-           {%
-                   render 'icon-library',
-                   id: 'icon-remove'
-           %}
-         </a>
+ <a
+         data-gall="{{ fgbogo-rule }}"
+         data-name="Free Gift Promo"
+         class="bundle-remove cart-item--remove-popup cart-item--remove-link"
+         href="#">
+   {%
+           render 'icon-library',
+           id: 'icon-remove'
+   %}
+ </a>
 
-       {% else %}
-         {%- assign bName = all_products[product_bundle].title | remove: '"' -%}
-         <a
-                 data-gall="{{ product_bundle | escape  }}"
-                 data-name="{{ bName }}"
-                 class="bundle-remove cart-item--remove-popup cart-item--remove-link"
-                 href="#">
-           {%
-                   render 'icon-library',
-                   id: 'icon-remove'
-           %}
-         </a>
-       {% endif %}
-     </div>
+{% else %}
+ {%- assign bName = all_products[product_bundle].title | remove: '"' -%}
+ <a
+         data-gall="{{ product_bundle | escape  }}"
+         data-name="{{ bName }}"
+         class="bundle-remove cart-item--remove-popup cart-item--remove-link"
+         href="#">
+   {%
+           render 'icon-library',
+           id: 'icon-remove'
+   %}
+ </a>
+{% endif %}
+</div>
 
-   </div>
- </div>
+</div>
+</div>
 </li>

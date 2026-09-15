@@ -180,17 +180,38 @@
 {%- endif -%}
     {% comment %}end of hot deal area -----------------------------------------------------------------------------------------{% endcomment %}
       {% comment %}Start of shipping restriction icon ----------------------------------------------------------{% endcomment %}
-        {%- if product.metafields.plytix.shipping_exclusions -%}
-            {% assign states = product.metafields.plytix.shipping_exclusions | remove: "[" | remove: "]"  | remove: '"' | replace: ",", ", " %}
+
+      {%- if product.metafields.plytix.shipping_exclusions -%}
+          {%- assign cleaned = product.metafields.plytix.shipping_exclusions | remove: "[" | remove: "]" | remove: '"' | replace: ", ", "," -%}
+          {%- assign excluded = cleaned | split: "," -%}
+          {%- assign all_states = "Alabama,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,Washington DC,West Virginia,Wisconsin,Wyoming" | split: "," -%}
+          {%- assign half = all_states.size | divided_by: 2 -%}
+
           <div class="sale-icon-by-pic">
               <div class="sale-icon-by-pic-title">
                   <i class="fa-duotone fa-solid fa-location-pin-slash" style="--fa-primary-color: #EA4335; --fa-secondary-color: #EA4335; --fa-secondary-opacity: 1;"></i><strong>Shipping Restrictions</strong>
               </div>
               <div class="sale-icon-by-pic-text">
-                  Cannot be shipped to: {{ states | join: ', ' }}
+                  {%- if excluded.size > half -%}
+                      {%- assign shippable = "" -%}
+                      {%- for state in all_states -%}
+                          {%- unless excluded contains state -%}
+                              {%- if shippable == "" -%}
+                                  {%- assign shippable = state -%}
+                              {%- else -%}
+                                  {%- assign shippable = shippable | append: ", " | append: state -%}
+                              {%- endif -%}
+                          {%- endunless -%}
+                      {%- endfor -%}
+                      Only available in: {{ shippable }}
+                  {%- else -%}
+                      Cannot be shipped to: {{ excluded | join: ", " }}
+                  {%- endif -%}
               </div>
           </div>
-        {%- endif -%}
+      {%- endif -%}
+
+
 
       {% comment %}end of shipping restriction icon ----------------------------------------------------------{% endcomment %}
 

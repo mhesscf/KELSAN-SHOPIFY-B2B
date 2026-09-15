@@ -31,7 +31,7 @@
       "type": "dynamic-custom-liquid",
       "name": "t:sections.custom_liquid.presets.custom_liquid.name",
       "settings": {
-        "custom_liquid": "<div id=\"SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09\" class=\"policy_embed_div\" width=\"640\" height=\"480\" aria-live=\"polite\" aria-busy=\"true\">\nPlease wait while the policy is loaded. If it does not load, please <a rel=\"nofollow\" aria-label=\"click here to view the policy\" href=\"https://policies.termageddon.com/api/policy/SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09\" target=\"_blank\">click here to view the policy</a>.</div>\n<script src=\"https://policies.termageddon.com/api/embed/SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09.js\"></script>"
+        "custom_liquid": "<div id=\"SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09\" class=\"policy_embed_div\" width=\"640\" height=\"480\" aria-live=\"polite\" aria-busy=\"true\">\nPlease wait while the policy is loaded. If it does not load, please <a rel=\"nofollow\" aria-label=\"click here to view our Privacy Policy\" href=\"https://policies.termageddon.com/api/policy/SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09\" target=\"_blank\">click here to view our Privacy Policy</a>.</div>\n<script src=\"https://policies.termageddon.com/api/embed/SzFSbVpFVjFkakZzU1dFM1dsRTlQUT09.js\"></script>"
       }
     },
     "main": {
