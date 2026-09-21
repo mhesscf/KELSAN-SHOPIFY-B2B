@@ -194,10 +194,10 @@
                             {%- endif -%}
 
                                 {%- comment -%}End of stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
-
+                            {%- assign stockStatusMain_check = stockStatusMain | strip -%}
                             {%- if stockcheck == "" -%}
-                                {%- assign stockcheck = stockStatusMain -%}
-                            {%- elsif stockcheck != stockStatusMain -%}
+                                {%- assign stockcheck = stockStatusMain_check -%}
+                            {%- elsif stockcheck != stockStatusMain_check -%}
                                 {%- assign stockisthesame = false -%}
                             {%- endif -%}
                         </div>
@@ -404,10 +404,10 @@
                                     <div class="soldout">Sold Out</div>
                                 {%- endif -%}
                                 {%- comment -%}End of stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
-
+                                {%- assign stockStatusMain_check = stockStatusMain | strip -%}
                                 {%- if stockcheck == "" -%}
-                                    {%- assign stockcheck = stockStatusMain -%}
-                                {%- elsif stockcheck != stockStatusMain -%}
+                                    {%- assign stockcheck = stockStatusMain_check -%}
+                                {%- elsif stockcheck != stockStatusMain_check -%}
                                     {%- assign stockisthesame = false -%}
                                 {%- endif -%}
                             </div>
