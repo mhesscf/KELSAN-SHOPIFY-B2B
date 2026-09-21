@@ -164,6 +164,11 @@
                                 {%- else -%}
                                     {%- capture stockStatusNote -%}{{ stockStatusMain }}{%- endcapture -%}
                                 {%- endif -%}
+
+                                {% if product.metafields.plytix.package_products %}
+                                    {%- capture stockStatusNote -%} See Product Page for Stock Status Details {%- endcapture -%}
+                                {%- endif -%}
+                                
                                 {%- comment -%}End of stock status logic ----------------------------------------------------------------------------------------------- {%- endcomment -%}
 
                                 {% comment %}Print each of the variation values{% endcomment %}
