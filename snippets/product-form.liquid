@@ -543,7 +543,56 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
 
                 </div>
               </div>
+          {%- elsif variant.metafields.plytix.hide_pricing == 'Bulk Buy'-%}
+            {%- assign pprice = variant.price | divided_by: 100.00 -%}
+            {%- assign bulkbuy_inventory_limit = variant.inventory_quantity | divided_by: 2 -%}
+              <div class="discount-info-wrap-v3 dollaroff var-specs var{{ variant.id }}" {% if current_variant_id != variant.id %}style="display:none;"{% endif %}>
+                <div class="discount-info-wrap-v2-header">Quantity Discounts</div>
+                <div class="tier-area tier-2-levels">
+                  <div class="tierlevel selected default" data-tierprice="{{ pprice | times: 100 | money }}" data-tierSaved="0" data-tierNum="1">
+                    <div class="tierNum">Buy 1+</div><div class="at-text"> at </div>
+                    <div class="tierPerItem"><strong>{{ pprice | times: 100 | money }}/ea</strong></div>
+                  </div>
+                  <div class="tierlevel bulkbuy lastTier" >
+                    <div class="tierNum"><strong>Bulk Buy</strong></div>
+                    {% comment %}<div class="tierPerItem">Buy <strong>{{ bulkbuy_inventory_limit }}+</strong> and save more!</div>{% endcomment %}
+                    <div class="tierPerItem">Looking to buy this in bulk?</div>
+                    <div class="quotetext"><span class="fake-link">Make us an Offer</span></div>
+
+                    {% assign full_url = request.host | append: request.path %}
+                    <div class="request-quote-form" style="display:none;">
+                      {% comment %}<iframe height="1064" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/x11ki5611oyeseg/def/Field60={{ variant.sku }}&Field63={{ product.title | escape }}&Field62={{ full_url | escape }}&Field65={{ bulkbuy_inventory_limit }}"> <a href="https://jbutchpti.wufoo.com/forms/x11ki5611oyeseg/">Fill out my Wufoo form!</a>{% endcomment %}
+
+                        <iframe height="1064" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin" src="https://jbutchpti.wufoo.com/embed/km1e73x04pl77c/def/Field60={{ variant.sku }}&Field63={{ product.title | escape }}&Field62={{ full_url | escape }}"> <a href="https://jbutchpti.wufoo.com/forms/x11ki5611oyeseg/">Fill out my Wufoo form!</a>
+
+
+
+                        </iframe></div>
+
+                    <script>
+
+                      jQuery(document).ready(function($) {
+                        $('.tierlevel.bulkbuy').on('click', function (e) {
+
+                          var formhtml = $('.request-quote-form').html();
+
+                          $('.popup-container .content').html(formhtml);
+                          $('.popup-container').addClass('rightpop');
+
+                          $('.popup-container').removeClass('hidden');
+                          $(".pop-grad").removeClass('hidden');
+
+                        });
+                      });
+
+                    </script>
+                    
+                  </div>
+                </div>
+              </div>
           {%- endif -%}
+
+
       {%- endfor -%}
           {%- comment -%} Quantity Discount Tieres END{%- endcomment -%}
         </div>
@@ -1415,7 +1464,7 @@ Cleanfreak update: remove default functionality for add to cart on bundles (remo
           {%- comment -%}  script for tier switching {%- endcomment -%}
           <script>
             $(document).ready(function() {
-              $('.tierlevel ').on('click', function(e){
+              $('.tierlevel:not(.bulkbuy) ').on('click', function(e){
                 var tierPrice = $(this).data('tierprice');
                 var tierSaved = $(this).data('tiersaved');
                 var tierNum = $(this).data('tiernum');
