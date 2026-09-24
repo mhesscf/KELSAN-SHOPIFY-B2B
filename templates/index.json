@@ -83,27 +83,6 @@
             "coupon-code": ""
           }
         },
-        "slide_v2_nhVKm9": {
-          "type": "slide_v2",
-          "settings": {
-            "show_on": "normal",
-            "sotm_icon": "na",
-            "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/san-70-2001-pac-special.png?v=2143",
-            "middle_image_alt": "FALL SAVINGS!!!!",
-            "right_image": "",
-            "right_image_alt": "",
-            "text_area_html": "<div class=\"top-text\">Take Cleaning to the Next Level.</div>\n<h1>Trusted Clean 6 Qt. Backpack Vacuum w/ 5 Piece Tool Kit </h1>\n<div>Was: $449.99<br/>Now: $399.99</div>",
-            "text_area_css": "@media screen and (min-width: 719px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\n\tmargin-top:10px;\n\tmargin-left:-15px;\nmax-width:275px;\n\t}\n}\n\n@media screen and (max-width: 718px) {\n\t.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 .middle-image{\n\tpadding-top:15px;\n\t}\n}\n.slideshow-v2 .slideshow-slide__content--slide_v2_nhVKm9 h1{\nfont-size:28px;\n}",
-            "bg_link": "/products/6-quart-backpack-vacuum",
-            "promo_link": "SCRUB26",
-            "button_one_label": "Viper AS430C",
-            "button_one_link": "/products/viper-as430c-17-inch-electric-auto-scrubber",
-            "button_two_label": "Tornado 99414",
-            "button_two_link": "/products/tornado-cordless-floor-scrubber",
-            "button_color_override": ""
-          }
-        },
         "slide_v2_tHeccM": {
           "type": "slide_v2",
           "disabled": true,
@@ -254,7 +233,6 @@
         "banner_xWQm6F",
         "banner_fLBUa3",
         "banner_qaQPaP",
-        "slide_v2_nhVKm9",
         "slide_v2_tHeccM",
         "slide_v2_cqVtUz",
         "slide_v2_8YK4yh",
