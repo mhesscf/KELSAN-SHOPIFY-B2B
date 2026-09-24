@@ -52,20 +52,19 @@
         },
         "banner_xWQm6F": {
           "type": "banner",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
             "banner-lg": "shopify://shop_images/cf-clearance-cleanout-desktop-fall-2026-1400-x-350.jpg",
-            "banner-sm": "shopify://shop_images/scrubber-sale-15-fall-2026-mobile.jpg",
-            "link": "/collections/walk-behind-auto-scrubbers?filter.p.tag=Fall-Scrubber-Sale",
-            "coupon-code": "SCRUB26"
+            "banner-sm": "shopify://shop_images/clearance-cleanout-mobile-fall-2026-800x427.jpg",
+            "link": "/collections/clearance",
+            "coupon-code": ""
           }
         },
         "banner_Umajqi": {
           "type": "banner",
           "settings": {
             "show_on": "normal",
-            "banner-lg": "shopify://shop_images/cf-clearance-cleanout-desktop-fall-2026-1400-x-350.jpg",
+            "banner-lg": "shopify://shop_images/scrubber-sale-15-fall-2026.jpg",
             "banner-sm": "shopify://shop_images/scrubber-sale-15-fall-2026-mobile.jpg",
             "link": "/collections/walk-behind-auto-scrubbers?filter.p.tag=Fall-Scrubber-Sale",
             "coupon-code": "SCRUB26"
