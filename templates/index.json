@@ -95,13 +95,12 @@
         },
         "slide_v2_tHeccM": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "8",
+            "sotm_icon": "10",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=1733326204",
-            "middle_image": "/cdn/shop/files/san-70-2001-pac-special.png?v=2143",
-            "middle_image_alt": "Trusted Clean 'Dura 20' Automatic Floor Scrubber Special",
+            "middle_image": "/cdn/shop/files/cpl-cf-25xg-2pw-special.jpg?v=2143",
+            "middle_image_alt": "CleanFreak® 500 PSI Commercial Carpet Extractor Special",
             "right_image": "",
             "right_image_alt": "",
             "text_area_html": "<div class=\"top-text\">Take Cleaning to the Next Level.</div>\n<h1>Trusted Clean 6 Qt. Backpack Vacuum w/ 5 Piece Tool Kit </h1>\n<div>Was: $449.99<br/>Now: $399.99</div>",
@@ -117,10 +116,9 @@
         },
         "slide_v2_cqVtUz": {
           "type": "slide_v2",
-          "disabled": true,
           "settings": {
             "show_on": "normal",
-            "sotm_icon": "8",
+            "sotm_icon": "10",
             "background_image": "/cdn/shop/files/bg-blue-w-strip.jpg?v=17333262043",
             "middle_image": "/cdn/shop/files/cpl-cf-25xg-heat-2pw-special.png",
             "middle_image_alt": "CleanFreak® 'EasySweep' Carpet & Floor Vacuum Sweeper Special of the Month",
@@ -139,6 +137,7 @@
         },
         "slide_v2_8YK4yh": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "9",
@@ -160,6 +159,7 @@
         },
         "slide_v2_AQhw3c": {
           "type": "slide_v2",
+          "disabled": true,
           "settings": {
             "show_on": "normal",
             "sotm_icon": "9",
