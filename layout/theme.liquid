@@ -1,6 +1,37 @@
 <!doctype html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
 <head>
+
+
+    <!-- Consent Mode (Basic): deny by default, then update from termageddon/Usercentrics choices -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', functionality_storage: 'granted', security_storage: 'granted',
+    wait_for_update: 500
+  });
+  (function () {
+    // Usercentrics service IDs from this site's settings (I-1p6AWg3HOeMA)
+    var GA = 'HkocEodjb7', MS_ADS = 'dsS7z9Hv4', DCLICK = '9V8bg4D63', CLARITY = 'jzMEq56vW';
+    function sync() {
+      if (!window.UC_UI || !UC_UI.getServicesBaseInfo) return;
+      var s = {};
+      UC_UI.getServicesBaseInfo().forEach(function (x) { s[x.id] = !!(x.consent && x.consent.status); });
+      var ads = s[MS_ADS] || s[DCLICK];
+      var v = function (b) { return b ? 'granted' : 'denied'; };
+      gtag('consent', 'update', {
+        analytics_storage: v(s[GA]),
+        ad_storage: v(ads), ad_user_data: v(ads), ad_personalization: v(ads)
+      });
+      dataLayer.push({ event: 'uc_consent_update', uc_ga: !!s[GA], uc_clarity: !!s[CLARITY], uc_ms_ads: !!s[MS_ADS] });
+    }
+    window.addEventListener('UC_UI_INITIALIZED', sync);
+    window.addEventListener('UC_UI_CMP_EVENT', function () { setTimeout(sync, 50); });
+  })();
+</script>
+
 <!-- termageddon -->
 <link rel='preconnect' href='//privacy-proxy.usercentrics.eu'><link rel='preload' href='//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js' as='script'><script type='application/javascript' src='https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js'></script><script id='usercentrics-cmp' src='https://app.usercentrics.eu/browser-ui/latest/loader.js' data-settings-id='I-1p6AWg3HOeMA' async></script><script>uc.setCustomTranslations('https://termageddon.ams3.cdn.digitaloceanspaces.com/translations/');</script>
 
