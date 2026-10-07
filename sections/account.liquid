@@ -83,7 +83,8 @@
 
           {% for tag in customer.tags %}
             {% if tag == "SuperFreak" or tag == "superfreak" %}
-              {%- assign sf_customer = 1 -%}
+              {% comment %}{%- assign sf_customer = 1 -%}{% endcomment %}
+              {%- assign sf_customer = 0 -%}
               {% break %}
             {% endif %}
           {% endfor %}
