@@ -43644,11 +43644,12 @@ const RULES = `
                     if (this.pagination) {
                         for (var i = 0; i < this.paginationButtons.length; i++) {
                             this.paginationButtons[i].dataset.selected = 'false';
-                            this.paginationButtons[i].setAttribute('aria-selected', 'false');
+                            {% comment %}this.paginationButtons[i].setAttribute('aria-current', 'false');{% endcomment %}
+                            this.paginationButtons[i].removeAttribute('aria-selected');
                         }
 
                         this.paginationButtons[this.flickity.selectedIndex].dataset.selected = 'true';
-                        this.paginationButtons[this.flickity.selectedIndex].setAttribute('aria-selected', 'true');
+                        this.paginationButtons[this.flickity.selectedIndex].setAttribute('aria-current', 'true');
                     }
                 }
             }, {
