@@ -334,6 +334,7 @@
             <button
                     class="slideshow-pagination__button"
                     data-selected="{% if counter == 0 %}true{% else %}false{% endif %}"
+                    {% if counter == 0 %}aria-selected="true"{% endif %}
                     data-slide-button="{{ counter }}"
             >
               <span class="visually-hidden">{{ 'sections.slideshow.slide_index' | t: count: counter }}</span>
@@ -378,6 +379,7 @@
               <button
                       class="slideshow-pagination__button"
                       data-selected="false"
+                      {% if counter == 0 %}aria-selected="true"{% endif %}
                       data-slide-button="{{ bulletCounter }}"
               >
                 <span class="visually-hidden">{{ 'sections.slideshow.slide_index' | t: count: forloop.index }}</span>
