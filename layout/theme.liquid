@@ -246,7 +246,34 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
     {%- assign showalgolia = false -%}
     {% if localization.country.iso_code == 'US' %}
-      {%- assign showalgolia = false -%}
+          {%- comment -%}Check for native filtering and max facets before loading algolia.{%- endcomment -%}
+                {%- capture cfh -%}{{ content_for_header }}{%- endcapture -%}
+                {%- assign algolia_facet_count = 0 -%}
+                {%- assign has_native_filters = false -%}
+
+                {%- if cfh contains '"pageurl":"' -%}
+                    {%- assign page_url = cfh
+                            | split: '"pageurl":"' | last
+                            | split: '"' | first
+                            | replace: '\/', '/'
+                            | url_decode -%}
+
+                    {%- comment -%} Native Shopify filter params: ?filter.xxx= or &filter.xxx= {%- endcomment -%}
+                    {%- if page_url contains 'filter.' -%}
+                        {%- assign has_native_filters = true -%}
+                        <script>console.log('native filters found');</script>
+                    {%- endif -%}
+
+                    {%- comment -%} Algolia facets: each distinct facet appears once as [name][0]= {%- endcomment -%}
+                    {%- assign algolia_facet_count = page_url | split: '][0]=' | size | minus: 1 -%}
+                    {%- if algolia_facet_count < 0 -%}{%- assign algolia_facet_count = 0 -%}{%- endif -%}
+                {%- endif -%}
+
+                {%- assign turn_algolia_on = true -%}
+                {%- if has_native_filters or algolia_facet_count > 3 -%}
+                    {%- assign turn_algolia_on = false -%}
+                {%- endif -%}
+            {%- comment -%}end of Check for native filtering and max facets before loading algolia.{%- endcomment -%}
     {% endif %}
     {%- if template contains 'collection' -%}
         {% if collection.url == '/collections/all' %}
