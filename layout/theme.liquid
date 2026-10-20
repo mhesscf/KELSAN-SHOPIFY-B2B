@@ -269,9 +269,9 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
                     {%- if algolia_facet_count < 0 -%}{%- assign algolia_facet_count = 0 -%}{%- endif -%}
                 {%- endif -%}
 
-                {%- assign turn_algolia_on = true -%}
+                {%- assign showalgolia = true -%}
                 {%- if has_native_filters or algolia_facet_count > 3 -%}
-                    {%- assign turn_algolia_on = false -%}
+                    {%- assign showalgolia = false -%}
                 {%- endif -%}
             {%- comment -%}end of Check for native filtering and max facets before loading algolia.{%- endcomment -%}
     {% endif %}
