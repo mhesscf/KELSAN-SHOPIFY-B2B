@@ -45,13 +45,13 @@
 
   function getServices() {
     // CMP v3
-    if (window.__ucCmp && __ucCmp.getConsentDetails) {
+    {% comment %} if (window.__ucCmp && __ucCmp.getConsentDetails) {
       return __ucCmp.getConsentDetails().then(function (d) {
         return Object.values(d.services || {}).map(function (s) {
           return { name: s.name, status: !!(s.consent && s.consent.given) };
         });
       });
-    }
+    } {% endcomment %}
     // CMP v2
     if (window.UC_UI && UC_UI.getServicesBaseInfo) {
       return Promise.resolve(UC_UI.getServicesBaseInfo().map(function (s) {
