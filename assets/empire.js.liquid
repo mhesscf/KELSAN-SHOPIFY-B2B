@@ -33225,8 +33225,14 @@ const RULES = `
         class FilterGroups {
             constructor(el, options) {
                 this.el = el;
-                this.filterGroupsSetting = options.groups;
+                // CUSTOM: CF CHANGE TO FORCE EXPAND_ALL. Ignore the section's "filter_groups" setting and always open
+                // every filter group. The original value came from section.data.filter_groups,
+                // which differed between the collection and search sections
+                // (search was set to 'expand_first').
+                // Original line: this.filterGroupsSetting = options.groups;
+                this.filterGroupsSetting = 'expand_all';
                 this.filterStyleSetting = options.style;
+
                 this.Accordion = new Accordion(el);
 
                 this._closeAllGroups(); // Filter group selectors
