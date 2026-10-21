@@ -174,6 +174,14 @@
         "image": "shopify://shop_images/how-to-floor-stripping.jpg"
       }
     },
+    "dynamic_html_EiKdbq": {
+      "type": "dynamic-html",
+      "name": "t:sections.custom_html.presets.custom_html.name",
+      "settings": {
+        "title": "Strip and Wax a Floor From Start to Finish",
+        "custom_html": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/RkxfR7PacIY?si=L7kyuptTG2GWH_HW\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>"
+      }
+    },
     "f4bf06c6-ebd4-4542-afbd-1332f952205d": {
       "type": "howto-steps",
       "blocks": {
@@ -259,6 +267,7 @@
     "4066156f-0209-43bd-8e13-3ede1264f71e",
     "0cdc8e39-664a-4dac-af93-93d2147cd6cc",
     "077235cb-6ded-4e06-80df-6ad080419fe3",
+    "dynamic_html_EiKdbq",
     "f4bf06c6-ebd4-4542-afbd-1332f952205d",
     "main"
   ]
