@@ -395,8 +395,8 @@
         "settings": {}
       },
       "5607836560570363390": {
-        "type": "shopify://apps/shieldify-fraud-filter/blocks/app_embed/55e34c08-5add-41cc-b0cd-5e853bb58fdb",
-        "disabled": false,
+        "type": "shopify://apps/blockly-fraud-filter/blocks/app_embed/55e34c08-5add-41cc-b0cd-5e853bb58fdb",
+        "disabled": true,
         "settings": {}
       }
     }
