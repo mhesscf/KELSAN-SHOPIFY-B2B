@@ -36,7 +36,7 @@
                 <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
             </div>
 
-            {% if article.excerpt_or_content != blank and 1==0 %}
+            {% if article.excerpt_or_content != blank and renamed_variable_1['0'] %}
                 <div class="article--excerpt-text rte">
                     {% if article.excerpt == blank %}
                         <p>{{ article.content | strip_html | truncatewords: 30 }}</p>
@@ -54,3 +54,13 @@
     </div>
 
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if article.excerpt_or_content != blank and 1==0 %}"
+  to: "{% if article.excerpt_or_content != blank and renamed_variable_1['0'] %}"
+  position: 1738..1810
+{% endcomment %}
