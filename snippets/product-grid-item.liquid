@@ -395,8 +395,8 @@ data-product-quickshop-url="{{ product_link }}"
             {%- endif -%}
             {%
                     render 'rimg',
-                    img: initial_image
-            size: '512x',
+                    img: initial_image,
+                    size: '512x',
                     lazy: true,
                     class: 'productitem--image-primary',
                     canvas: true
@@ -945,8 +945,8 @@ data-product-quickshop-url="{{ product_link }}"
 
 
 
-          {% comment %}added 1==1 to always show{% endcomment %}
-          {%- if 1==2 or shop.name contains "CleanFreak B2B" or product.metafields.plytix.package_products != blank or product.metafields.plytix.warning_pop_product != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
+          {% comment %}added true to always show{% endcomment %}
+          {%- if false or shop.name contains "CleanFreak B2B" or product.metafields.plytix.package_products != blank or product.metafields.plytix.warning_pop_product != blank or pstep > 1 or product.price <= 0 or has_variants or product.metafields.plytix.hide_pricing == 'Hide Button Only' or product.metafields.plytix.hide_pricing == 'Hide Price and Button' -%}
             <a class="ais-hit--cart-button main-atc-button productitem--action-trigger productitem--action-atc button-secondary mdc-ripple-surface mdc-ripple-upgraded" href="{{ product_link }}" >
             <span class="atc-button--text">
                 View Product <i class="fa-sharp fa-solid fa-caret-right"></i>
@@ -1150,8 +1150,8 @@ data-product-quickshop-url="{{ product_link }}"
         {%- if initial_image -%}
           {%
                   render 'rimg',
-                  img: initial_image
-          size: '250x',
+                  img: initial_image,
+                  size: '250x',
                   lazy: true,
                   class: 'productitem--image-primary',
                   canvas: true,
