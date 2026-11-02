@@ -42,9 +42,10 @@
                   {%- comment -%}<a href="XXXXXXXX" title="XXXXXXX"><button class="main-default-button thinbtn"><span class="atc-button--text">Chat Now</span></button></a>{%- endcomment -%}
                   {%- if shop.permanent_domain contains "cleanfreak-dev.myshopify.com" or shop.permanent_domain contains "cleanfreak-prod.myshopify.com"-%}
                     {% comment %}CF Script{% endcomment %}
-                    <div data-id="eTfn5A8fCFQ" id="thischat" class="main-default-button thinbtn livechat_button cfchat"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759"><span class="atc-button--text">live chat customer service</span></a></div>
+                    {% comment %}<div data-id="eTfn5A8fCFQ" id="thischat" class="main-default-button thinbtn livechat_button cfchat"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759"><span class="atc-button--text">live chat customer service</span></a></div>{% endcomment %}
+                    <div data-id="eTfn5A8fCFQ" id="thischat" class="main-default-button thinbtn livechat_button cfchat"><a href="/pages/contact"><span class="atc-button--text">Chat Unavailable</span></a></div>
                   {%- elsif shop.name contains "CleanFreak B2B"-%}
-                    <div data-id="TVkYGCGQYTk" id="thischat" class="main-default-button thinbtn livechat_button b2bchat"><a href="https://www.livechat.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_14667759">chat with us</a></div>
+                    <div data-id="TVkYGCGQYTk" id="thischat" class="main-default-button thinbtn livechat_button b2bchat"><a href="/pages/contact"><span class="atc-button--text">Chat Unavailable</span></a></div>
                   {%- endif -%}
                 </div>
               </div>
@@ -395,7 +396,8 @@
       </div>
       <div class="t2u-contact-info-slideout">
         <div class="t2u-phone"><i class="fa-regular fa-phone"></i><a class="phone" href="tel:{{ settings.phone_number }}" target="_blank" rel="noreferrer noopener">{{ settings.phone_number }}</a></div>
-        <div class="t2u-chat" onClick="triggerChat()"><i class="fa-regular fa-comment"></i><span class="atc-button--text">Live Chat</span></div>
+        {% comment %}<div class="t2u-chat" onClick="triggerChat()"><i class="fa-regular fa-comment"></i><span class="atc-button--text">Live Chat</span></div>{% endcomment %}
+        <div data-id="eTfn5A8fCFQ" onClick="triggerChat()" id="thischatpullout" class="t2u-chat livechat_button cfchat"><a href="/pages/contact"><span class="atc-button--text">Chat Unavailable</span></a></div>
       </div>
     </div>
   </div>

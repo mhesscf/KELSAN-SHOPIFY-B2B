@@ -90,7 +90,7 @@
     "continue_url_cart": true,
     "continue_url_404": true,
     "global_header_script": "<meta name=\"facebook-domain-verification\" content=\"h2rnc8wlhen7259usyok0q26z6cdxa\">\n<script type=\"text/javascript\" src=\"https://cdn.shopify.com/s/files/1/0624/3270/6740/t/6/assets/jquery-2.2.4.min.js\"></script>\n\n<script>\n//spoof check\n// <![CDATA[\nvar abc = \"wwwbobcleannatafreakbobcom\";\nvar abcd = \"devbobcleannatafreakbobcom\";\nvar sabc = \"cleanfreak-devbobmynatashopifybobcom\";\nvar sabcd = \"cleanfreak-prodbobmynatashopifybobcom\";\n\nvar efg = abc.replaceAll('bob','').replaceAll('nata','');\nvar efgd = abcd.replaceAll('bob','').replaceAll('nata','');\nvar sefg = sabc.replaceAll('bob','').replaceAll('nata','');\nvar sefgd = sabcd.replaceAll('bob','').replaceAll('nata','');\n\nvar hij = abc.replaceAll('bob','.').replaceAll('nata','');\n\nif (window.location.hostname !=\"127.0.0.1\" && window.location.hostname.replaceAll('.','') !== efg && window.location.hostname.replaceAll('.','') !== efgd && window.location.hostname.replaceAll('.','') !== sefg && window.location.hostname.replaceAll('.','') !== sefgd) {\n  if (window.location.hostname == \"{{ shop.permanent_domain }}\") {\n    console.log(\"{{ shop.permanent_domain }}\");\n  } else {\n  console.log(\"{{ shop.permanent_domain }}\");\n  }\n};\n// ]]></script>",
-    "global_footer_script": "<!-- Start of LiveChat (www.livechat.com) code -->\n<script async>\n    window.__lc = window.__lc || {};\n    window.__lc.license = 14667759;\n    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:\"2.0\",on:function(){i([\"on\",c.call(arguments)])},once:function(){i([\"once\",c.call(arguments)])},off:function(){i([\"off\",c.call(arguments)])},get:function(){if(!e._h)throw new Error(\"[LiveChatWidget] You can't use getters before load.\");return i([\"get\",c.call(arguments)])},call:function(){i([\"call\",c.call(arguments)])},init:function(){var n=t.createElement(\"script\");n.async=!0,n.type=\"text/javascript\",n.src=\"https://cdn.livechatinc.com/tracking.js\",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))\n</script>\n<noscript>\n<a href=\"https://www.livechat.com/chat-with/14667759/\" rel=\"nofollow\">Chat with us</a>, powered by <a href=\"https://www.livechat.com/?welcome\" rel=\"noopener nofollow\" target=\"_blank\">LiveChat</a>\n</noscript>\n<!-- End of LiveChat code -->",
+    "global_footer_script": "<script type=\"text/javascript\" data-usercentrics=\"LiveChat\">\n    window.__lc = window.__lc || {};\n    window.__lc.license = 14667759;\n    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:\"2.0\",on:function(){i([\"on\",c.call(arguments)])},once:function(){i([\"once\",c.call(arguments)])},off:function(){i([\"off\",c.call(arguments)])},get:function(){if(!e._h)throw new Error(\"[LiveChatWidget] You can't use getters before load.\");return i([\"get\",c.call(arguments)])},call:function(){i([\"call\",c.call(arguments)])},init:function(){var n=t.createElement(\"script\");n.async=!0,n.type=\"text/javascript\",n.src=\"https://cdn.livechatinc.com/tracking.js\",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))\n</script>\n<noscript>\n<a href=\"https://www.livechat.com/chat-with/14667759/\" rel=\"nofollow\">Chat with us</a>, powered by <a href=\"https://www.livechat.com/?welcome\" rel=\"noopener nofollow\" target=\"_blank\">LiveChat</a>\n</noscript>\n<!-- End of LiveChat code -->",
     "checkout_logo_image": "shopify://shop_images/CFlogo.png",
     "checkout_heading_font": "Roboto",
     "checkout_body_font": "Roboto",
@@ -304,8 +304,8 @@
         "settings": {
           "show_announcement": false,
           "homepage_announcement": false,
-          "announcement_text": "In observance of Labor Day, we will be closed on Monday, September 7th, and will resume normal business hours on Tuesday, September 8th.",
-          "announcement_text_mobile": "In observance of Labor Day, we will be closed on Monday, September 7th, and will resume normal business hours on Tuesday, September 8th.",
+          "announcement_text": "In observance of Thanksgiving, we will be closed on Thursday, November 27th & Friday, November 28th. We will reopen on Monday, December 1st.",
+          "announcement_text_mobile": "In observance of Thanksgiving, we will be closed on Thursday, November 27th & Friday, November 28th. We will reopen on Monday, December 1st .",
           "announcement_link": "/collections/flash-sale",
           "announcement_promo": "",
           "flash": false,
@@ -376,6 +376,14 @@
         "disabled": false,
         "settings": {}
       },
+      "3576686563519644491": {
+        "type": "shopify://apps/vwo/blocks/vwo-smartcode/2ce905b2-3842-4d20-b6b0-8c51fc208426",
+        "disabled": false,
+        "settings": {
+          "vwoAccountId": "968594",
+          "settingsTolerance": 2000
+        }
+      },
       "234697707474025726": {
         "type": "shopify://apps/analyzify-ga4-ads-tracking/blocks/app-embed-v4/69637cfd-dd6f-4511-aa97-7037cfb5515c",
         "disabled": false,
@@ -383,6 +391,11 @@
       },
       "12512365888938011351": {
         "type": "shopify://apps/analyzify-ga4-ads-tracking/blocks/app-embed/69637cfd-dd6f-4511-aa97-7037cfb5515c",
+        "disabled": true,
+        "settings": {}
+      },
+      "5607836560570363390": {
+        "type": "shopify://apps/blockly-fraud-filter/blocks/app_embed/55e34c08-5add-41cc-b0cd-5e853bb58fdb",
         "disabled": true,
         "settings": {}
       }
