@@ -33,8 +33,9 @@
 </script>
 
 <!-- termageddon -->
+{% comment %}
 <link rel='preconnect' href='//privacy-proxy.usercentrics.eu'><link rel='preload' href='//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js' as='script'><script type='application/javascript' src='https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js'></script><script id='usercentrics-cmp' src='https://app.usercentrics.eu/browser-ui/latest/loader.js' data-settings-id='I-1p6AWg3HOeMA' async></script><script>uc.setCustomTranslations('https://termageddon.ams3.cdn.digitaloceanspaces.com/translations/');</script>
-
+{% endcomment %}
 <script>
 (function () {
   var MAP = {
@@ -101,7 +102,7 @@
 
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-<script type='text/javascript' id='vwoCode' data-usercentrics="Visual Website Optimizer (VWO)" >
+<script type="text/plain" id='vwoCode' data-usercentrics="Visual Website Optimizer (VWO)" >
 window._vwo_code || (function() {
 var account_id=968594,
 version=2.1,
@@ -274,14 +275,6 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
     {% render 'qikify-apps' %}
 
     {{ 'qikify-auto-hide.js' | asset_url | script_tag }}
-    {%- comment -%}
-    <script type="text/javascript">if (typeof window.hulkappsWishlist === 'undefined') {
-            window.hulkappsWishlist = {};
-        }
-        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
-        window.hulkappsWishlist.hasAppBlockSupport = '1';
-    </script>
-    {%- endcomment -%}
     {% include 'wiser' %}{% include 'wiser_popup' %}
     {%- comment -%}{% render 'judgeme_core' %}{%- endcomment -%}
 
@@ -403,7 +396,8 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
         {% comment %}<script type="text/javascript" async> window.kwipped_approve = window.kwipped_approve || {}; window.kwipped_approve.url = "https://www.kwipped.com"; window.kwipped_approve.approve_id = "eyJpdiI6InoyTFJvUG14N1l2Z3BqSnR1bWpKK2c9PSIsInZhbHVlIjoiSDlnVDR2c01SaHJDRFBxOWdGbU84UT09IiwibWFjIjoiMmVjMzZlZTZhYjNkMmQwYjQzYTU1N2VjNWEwNGZkOGRlNjM3Y2UyNzUzMzhlMTY4ZTBjY2ZjMzUwMjUzY2IzMCJ9"; function init_kwipped_approve_snippet() { var b = document.getElementsByTagName('body')[0]; var t = document.querySelector('approve-widget'); if (!t) { t = document.createElement('approve-widget'); t.setAttribute('theme', 'custom'); t.setAttribute('themestyle', '{"bgcolor":"#303E48","header_font":{"fontFamily":"","fontWeight":"","fontStyle":""},"inner_bgcolor":"#FFFFFF","button_bgcolor":"#D74018","button_border_color":"#FFFFFF","button_text_color":"#FFFFFF","button_font":{"fontFamily":"","fontWeight":"","fontStyle":""},"maintext_font":{"fontFamily":"","fontWeight":"","fontStyle":""},"maintext_color":"#303E48","headertext_color":"#FFFFFF"}'); b.appendChild(t); } var s=document.createElement('script'); s.type= 'text/javascript'; s.src = 'https://api.kwipped.com/approve/plugin/3.0/approve_plugin_loader.php'; b.appendChild(s); } if(document.readyState != 'loading'){ init_kwipped_approve_snippet(); } else{ window.addEventListener('DOMContentLoaded',init_kwipped_approve_snippet); } </script>{% endcomment %}
     {%- endif -%}
     <!-- TrustBox script -->
-    <script type="text/plain" data-usercentrics="Trustpilot" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    {% comment %} <script type="text/plain" data-usercentrics="Trustpilot" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script> {% endcomment %}
+     <script type="text/javascript" data-usercentrics="Trustpilot" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
     <!-- End TrustBox script -->
 
 {%- comment -%}BEGIN MerchantWidget Code for CF{%- endcomment -%}
@@ -1137,7 +1131,7 @@ window.TriplePixelData={TripleName:"cleanfreak-prod.myshopify.com",ver:"2.12",pl
 >
 </script>
 {%- comment -%}
-{% render 'hulkappsWishlistPopup' %}
+
 {%- endcomment -%}
 {%- if settings.global_footer_script != blank -%}
     {{ settings.global_footer_script }}
