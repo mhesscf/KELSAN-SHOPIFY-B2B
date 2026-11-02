@@ -33225,8 +33225,14 @@ const RULES = `
         class FilterGroups {
             constructor(el, options) {
                 this.el = el;
-                this.filterGroupsSetting = options.groups;
+                // CUSTOM: CF CHANGE TO FORCE EXPAND_ALL. Ignore the section's "filter_groups" setting and always open
+                // every filter group. The original value came from section.data.filter_groups,
+                // which differed between the collection and search sections
+                // (search was set to 'expand_first').
+                // Original line: this.filterGroupsSetting = options.groups;
+                this.filterGroupsSetting = 'expand_all';
                 this.filterStyleSetting = options.style;
+
                 this.Accordion = new Accordion(el);
 
                 this._closeAllGroups(); // Filter group selectors
@@ -43644,11 +43650,12 @@ const RULES = `
                     if (this.pagination) {
                         for (var i = 0; i < this.paginationButtons.length; i++) {
                             this.paginationButtons[i].dataset.selected = 'false';
-                            this.paginationButtons[i].setAttribute('aria-selected', 'false');
+                            {% comment %}this.paginationButtons[i].setAttribute('aria-current', 'false');{% endcomment %}
+                            this.paginationButtons[i].removeAttribute('aria-selected');
                         }
 
                         this.paginationButtons[this.flickity.selectedIndex].dataset.selected = 'true';
-                        this.paginationButtons[this.flickity.selectedIndex].setAttribute('aria-selected', 'true');
+                        this.paginationButtons[this.flickity.selectedIndex].setAttribute('aria-current', 'true');
                     }
                 }
             }, {
@@ -45453,8 +45460,8 @@ Changes:
   position: 1492745..1492761
 - from: "{{$avatar: *, link: *, name, screenName}}"
   to: "{{ avatar }}"
-  position: 1742884..1742896
+  position: 1743307..1743319
 - from: "{{link: *, postedAt: *}}"
   to: "{{ link }}"
-  position: 1743610..1743620
+  position: 1744033..1744043
 {%- endcomment -%}

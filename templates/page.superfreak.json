@@ -20,8 +20,17 @@
         "hide_lvl_2_links": false
       }
     },
+    "dynamic_html_rFfii7": {
+      "type": "dynamic-html",
+      "name": "t:sections.custom_html.presets.custom_html.name",
+      "settings": {
+        "title": "",
+        "custom_html": "<div class=\"superfreak-discontinued\">\n  <h2>The SuperFreak Membership Program Has Been Discontinued</h2>\n\n  <p>\n    The SuperFreak membership program is being discontinued and is no longer available for new memberships or renewals.\n  </p>\n\n  <p>\n    Existing members will continue to receive their membership benefits through the end of their current subscription term. Memberships will not automatically renew, and no action is required to cancel your renewal.\n  </p>\n\n  <p>\n    Have questions about your membership, benefits, or when your current term ends? Our CleanFreak team is happy to help.\n  </p>\n\n  <p>\n    <a href=\"/pages/contact\">Contact Us for More Information</a>\n  </p>\n</div>"
+      }
+    },
     "14632851-f7fa-4221-ab0d-4d6a21d2a034": {
       "type": "dynamic-custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'superfreak-cust' %}"
       }
@@ -42,6 +51,7 @@
       "block_order": [
         "56f66ff0-bd3b-450d-b915-bfdf0fa6238f"
       ],
+      "disabled": true,
       "settings": {
         "enable_autoplay": true,
         "autoplay_duration": 8,
@@ -58,6 +68,7 @@
     },
     "08bfee3b-091f-4f05-9c9a-a16fda4aaf82": {
       "type": "dynamic-html",
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "title": "",
@@ -67,6 +78,7 @@
   },
   "order": [
     "66af8670-5d46-4605-84d6-21ccbd90e586",
+    "dynamic_html_rFfii7",
     "14632851-f7fa-4221-ab0d-4d6a21d2a034",
     "a96fc367-e4f3-483f-b57b-c8fd1c86847c",
     "main",

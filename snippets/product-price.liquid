@@ -93,7 +93,8 @@
 
 {%- for variant in product.variants -%}
   {%- if price_min == nil or variant.price < price_min -%}
-    {%- assign price_min = variant.price -%}
+    {% comment %}{%- assign price_min = variant.price -%}{% endcomment %}
+    {%- assign price_min = product.price_min -%}
   {%- endif -%}
   {%- if price_max == nil or variant.price > price_max -%}
     {%- assign price_max = variant.price -%}
