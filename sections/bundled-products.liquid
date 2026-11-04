@@ -90,7 +90,10 @@
                                     {%- endif -%}
 
                                     {% assign stockStatusMain = "Temporarily On Backorder" %}
-                                    {% if leadTime < 22  %}
+
+                                    {%- if all_products[bundlep].selected_or_first_available_variant.metafields.plytix.lead_time_override -%}
+                                        {%- assign stockStatusSub = all_products[bundlep].selected_or_first_available_variant.metafields.plytix.lead_time_override -%}
+                                    {% elsif leadTime < 22  %}
                                         {% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
                                     {% elsif leadTime < 29 %}
                                         {% assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" %}
@@ -123,7 +126,10 @@
                                     {% endif %}
                                 {% elsif all_products[bundlep].selected_or_first_available_variant.inventory_management == nil and leadTime > 0 %}
                                     {% assign stockStatusMain = "Special Order Item" %}
-                                    {% if leadTime < 22  %}
+
+                                    {% if all_products[bundlep].selected_or_first_available_variant.metafields.plytix.lead_time_override %}
+                                        {%- assign stockStatusSub = all_products[bundlep].selected_or_first_available_variant.metafields.plytix.lead_time_override -%}
+                                    {% elsif leadTime < 22  %}
                                         {% assign stockStatusSub = "Expected to ship in 1 – 3 wks" %}
                                     {% elsif leadTime < 29 %}
                                         {% assign stockStatusSub = "Expected to ship in 2 – 4 wks" %}
@@ -384,7 +390,10 @@
                                     {%- endif -%}
 
                                     {% assign stockStatusMain = "Temporarily On Backorder" %}
-                                    {% if leadTime < 22  %}
+
+                                    {%- if all_products[freeproduct].selected_or_first_available_variant.metafields.plytix.lead_time_override -%}
+                                        {%- assign stockStatusSub = all_products[freeproduct].selected_or_first_available_variant.metafields.plytix.lead_time_override -%}
+                                    {% elsif leadTime < 22  %}
                                         {% assign stockStatusSub = "Estimated Ship Date 1 – 3 wks" %}
                                     {% elsif leadTime < 29 %}
                                         {% assign stockStatusSub = "Estimated Ship Date 2 – 4 wks" %}
@@ -417,7 +426,10 @@
                                     {% endif %}
                                 {% elsif all_products[freeproduct].selected_or_first_available_variant.inventory_management == nil and leadTime > 0 %}
                                     {% assign stockStatusMain = "Special Order Item" %}
-                                    {% if leadTime < 22  %}
+
+                                    {% if all_products[freeproduct].selected_or_first_available_variant.metafields.plytix.lead_time_override %}
+                                        {%- assign stockStatusSub = all_products[freeproduct].selected_or_first_available_variant.metafields.plytix.lead_time_override -%}
+                                    {% elsif leadTime < 22  %}
                                         {% assign stockStatusSub = "Expected to ship in 1 – 3 wks" %}
                                     {% elsif leadTime < 29 %}
                                         {% assign stockStatusSub = "Expected to ship in 2 – 4 wks" %}

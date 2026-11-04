@@ -18,7 +18,7 @@
 {% elsif article.url contains "/life/" %}
     {% assign catcolor = "#f26ca5" %}
     {% assign category = "The Life" %}
-    {% assign categorylink = "/blogs//life/" %}
+    {% assign categorylink = "/blogs/life/" %}
 {% endif %}
 
     <div class="recent-excerpt-container">
@@ -36,7 +36,7 @@
                 <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
             </div>
 
-            {% if article.excerpt_or_content != blank and 1==0 %}
+            {% if article.excerpt_or_content != blank and false %}
                 <div class="article--excerpt-text rte">
                     {% if article.excerpt == blank %}
                         <p>{{ article.content | strip_html | truncatewords: 30 }}</p>
