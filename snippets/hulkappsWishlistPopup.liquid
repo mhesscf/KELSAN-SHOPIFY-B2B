@@ -114,43 +114,42 @@
                     </div>
                     <hr>
                     <div class="wishlist-modal__header" style="margin-bottom: 1rem;">
-                        {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.modal_title) %}
+                        {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.modal_title %}
                             <h5 style="font-size: 18px;">{{ shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.modal_title }}</h5>
                         {% else %}
                             <h5 style="font-size: 18px;">Or Share Via</h5>
                         {% endif %}
                     </div>
-                    {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'set_1_off') %}
-                        <ul class="social-list-icon">
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.facebook) %}
+                    {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'set_1_off' %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.facebook %}
                                 <li><a href="#" data-shareFacebook target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_facebook_1.svg" alt="Facebook Share" /></a></li>
                             {% endif %}
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.pinterest) %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.pinterest %}
                                 <li><a href="#" data-sharePintrest target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_pinterest_1.svg" alt="Pinterest Share" /></a></li>
                             {% endif %}
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.twitter) %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.twitter %}
                                 <li><a href="#" data-shareTwitter target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_twitter_1.svg" alt="Twitter Share" /></a></li>
                             {% endif %}
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.email) %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.email %}
                                 <li><a href="#" data-copyshareURLButton target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_email_1.svg" alt="Copy text" title="Copy wishlist link"/></a></li>
                             {% endif %}
                         </ul>
-                    {% elsif(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'set_2_off') %}
+                    {% elsif shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'set_2_off' %}
                         <ul class="social-list-icon">
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.facebook) %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.facebook %}
                                 <li><a href="#" data-shareFacebook target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_facebook_2.svg" alt="Facebook Share" /></a></li>
                             {% endif %}
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.pinterest) %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.pinterest %}
                                 <li><a href="#" data-sharePintrest target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_pinterest_2.svg" alt="Pinterest Share" /></a></li>
                             {% endif %}
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.twitter) %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.twitter %}
                                 <li><a href="#" data-shareTwitter target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_twitter_2.svg" alt="Twitter Share" /></a></li>
                             {% endif %}
-                            {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.email) %}
+                            {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.email %}
                                 <li><a href="#" data-copyshareURLButton target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_email_2.svg" alt="Email Share" title="Copy wishlist link"/></a></li>
                             {% endif %}
                         </ul>
-                    {% elsif(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'just-no') %}
+                    {% elsif shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.set_icon == 'just-no' %}
                         <ul class="social-list-icon">
                             <li><a href="#" data-shareFacebook target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_facebook_1.svg" alt="Facebook Share" /></a></li>
                             <li><a href="#" data-sharePintrest target="_blank"><img src="https://hulkapps-wishlist.nyc3.digitaloceanspaces.com/assets/images/ic_pinterest_1.svg" alt="Pinterest Share" /></a></li>
@@ -159,7 +158,7 @@
                         </ul>
                     {% endif %}
 
-                    {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.copy_link_title) %}
+                    {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.copy_link_title %}
                         <p style="display: none">{{ shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.copy_link_title }}</p>
                     {% else %}
                         <p style="display: none">Copy wishlist link to share</p>
@@ -168,7 +167,7 @@
                         <input type="text" id="shareURL" value="" class="input-group-field" data-shareURL readonly />
                         <span class="input-group-btn">
                           <button type="button" class="wishlist-btn hulkBtnStyle" data-copyshareURLButton>
-                          {% if(shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.copy_button_text) %}
+                          {% if shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.copy_button_text %}
                               <p>{{ shop.metafields.hulkapps_wishlist.hulkapps_wishlist_buttonstyle.copy_button_text }}</p>
                           {% else %}
                               <p>Copy</p>
