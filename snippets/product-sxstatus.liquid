@@ -81,7 +81,9 @@
 
       <div class="sx-status">
         <span class="status-desc main-notice">Temporarily On Backorder</span>
-        {%- if leadTime < 22  -%}
+        {% if variant.metafields.plytix.lead_time_override %}
+          <span class="status-time">{{ variant.metafields.plytix.lead_time_override }}</span>
+        {%- elsif leadTime < 22  -%}
           <span class="status-time">Estimated Ship Date 1 – 3 wks</span>
         {%- elsif leadTime < 29 -%}
           <span class="status-time">Estimated Ship Date 2 – 4 wks</span>
@@ -124,7 +126,9 @@
 
       <div class="sx-status">
         <span class="status-desc main-notice">Special Order Item</span>
-        {%- if leadTime < 22  -%}
+        {% if variant.metafields.plytix.lead_time_override %}
+          <span class="status-time">{{ variant.metafields.plytix.lead_time_override }}</span>
+        {%- elsif leadTime < 22  -%}
           <span class="status-time">Expected to ship in 1 – 3 wks</span>
         {%- elsif leadTime < 29 -%}
           <span class="status-time">Expected to ship in 2 – 4 wks</span>
