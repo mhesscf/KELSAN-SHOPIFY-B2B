@@ -660,11 +660,12 @@
     },
     "e020b3b7-65c8-4957-bcc2-137ec433b1f3": {
       "type": "image-gradient-section",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/plant-trees.jpg",
         "heading": "Plant a Tree",
         "subheading": "Our Initiatives",
-        "textcontent": "<p>Since CleanFreak floor pads are made from recycled fibers, we decided to give back by planting a tree for every case of pads sold through a partnership with One Tree Planted. </p>",
+        "textcontent": "<p>Since CleanFreak floor pads are made from recycled fibers, we decided to give back by planting a tree for every case of pads sold through a partnership with One Tree Planted.&nbsp;</p>",
         "button_label": "Tree Program",
         "button_link": "shopify://blogs/life/buy-floor-pads-plant-trees-progress-update",
         "content_right": true,
